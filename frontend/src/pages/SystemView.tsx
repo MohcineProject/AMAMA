@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { AlertTriangle, Home } from "lucide-react";
+import { AlertTriangle, Home, RotateCcw, X } from "lucide-react";
 
 import type { StageId, StepId } from "@/api/types";
 import { STAGES } from "@/api/types";
@@ -36,7 +36,7 @@ export function SystemView() {
   const [searchParams] = useSearchParams();
   const caseName = searchParams.get("case") ?? "";
 
-  const { state, launch } = useAnalysisRun({
+  const { state, launch, cancel } = useAnalysisRun({
     workspace: workspace ?? "",
     caseName,
   });
@@ -141,11 +141,35 @@ export function SystemView() {
                 </div>
               )}
             </div>
-            <div className="w-60 shrink-0">
-              <ProgressBar
-                value={overallPercent}
-                label={state.isComplete ? "Complete" : "Overall"}
-              />
+            <div className="flex items-center gap-3 shrink-0">
+              {state.isRunning && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={cancel}
+                  title="Cancel current run"
+                >
+                  <X className="h-3.5 w-3.5" />
+                  Cancel
+                </Button>
+              )}
+              {state.isComplete && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={onLaunch}
+                  title="Re-run the pipeline"
+                >
+                  <RotateCcw className="h-3.5 w-3.5" />
+                  Run again
+                </Button>
+              )}
+              <div className="w-60">
+                <ProgressBar
+                  value={overallPercent}
+                  label={state.isComplete ? "Complete" : "Overall"}
+                />
+              </div>
             </div>
           </div>
         </div>
