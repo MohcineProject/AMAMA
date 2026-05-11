@@ -12,10 +12,21 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import type {
+  Agent1Result,
+  Agent2Result,
+  Agent3Result,
+  CollectorResult,
+  GrepResult,
+} from "@/api/stage-results";
 import { PipelineStepper } from "@/components/pipeline/PipelineStepper";
 import { ProgressBar } from "@/components/pipeline/ProgressBar";
 import { STEP_DEFINITIONS, type StepStatus } from "@/components/pipeline/steps";
-import { GenericStagePanel } from "@/components/pipeline/stages/GenericStagePanel";
+import { Agent1Panel } from "@/components/pipeline/stages/Agent1Panel";
+import { Agent2Panel } from "@/components/pipeline/stages/Agent2Panel";
+import { CollectorPanel } from "@/components/pipeline/stages/CollectorPanel";
+import { GrepPanel } from "@/components/pipeline/stages/GrepPanel";
+import { ReportPanel } from "@/components/pipeline/stages/ReportPanel";
 import { StartStage } from "@/components/pipeline/stages/StartStage";
 import { useAnalysisRun } from "@/hooks/useAnalysisRun";
 import { useWorkspace } from "@/store/workspace";
@@ -195,52 +206,78 @@ function ActivePanel({
   isComplete,
   onLaunch,
 }: ActivePanelProps) {
-  if (activeStep === "start") {
-    return (
-      <StartStage
-        workspace={workspace}
-        caseName={caseName}
-        isRunning={isRunning}
-        onLaunch={onLaunch}
-      />
-    );
-  }
+  // Helper: only forward the live progress message when the user is looking
+  // at the stage that is actually running.
+  const liveMsg = (s: StageId) =>
+    s === currentStage ? progressMessage : undefined;
 
-  if (activeStep === "report") {
-    return (
-      <Card>
-        <CardHeader>
-          <CardTitle>Report</CardTitle>
-          <CardDescription>
-            Final 6-section narrative will be rendered here in the next commit.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          {stageResults.agent3 === undefined ? (
-            <div className="text-sm text-muted-foreground">
-              {isComplete
-                ? "No report data was received."
-                : "Waiting for the report writer to finish..."}
-            </div>
-          ) : (
-            <pre className="text-xs leading-relaxed overflow-auto max-h-[60vh] rounded-md border border-border bg-muted/40 p-3 font-mono whitespace-pre">
-              {JSON.stringify(stageResults.agent3, null, 2)}
-            </pre>
-          )}
-        </CardContent>
-      </Card>
-    );
-  }
+  switch (activeStep) {
+    case "start":
+      return (
+        <StartStage
+          workspace={workspace}
+          caseName={caseName}
+          isRunning={isRunning}
+          onLaunch={onLaunch}
+        />
+      );
 
-  const stage = activeStep as StageId;
-  return (
-    <GenericStagePanel
-      stage={stage}
-      status={stageStatuses[stage]}
-      result={stageResults[stage]}
-      progressMessage={stage === currentStage ? progressMessage : undefined}
-    />
-  );
+    case "collector":
+      return (
+        <CollectorPanel
+          status={stageStatuses.collector}
+          result={stageResults.collector as CollectorResult | undefined}
+          progressMessage={liveMsg("collector")}
+        />
+      );
+
+    case "agent1":
+      return (
+        <Agent1Panel
+          status={stageStatuses.agent1}
+          result={stageResults.agent1 as Agent1Result | undefined}
+          progressMessage={liveMsg("agent1")}
+        />
+      );
+
+    case "grep":
+      return (
+        <GrepPanel
+          status={stageStatuses.grep}
+          result={stageResults.grep as GrepResult | undefined}
+          progressMessage={liveMsg("grep")}
+        />
+      );
+
+    case "agent2":
+      return (
+        <Agent2Panel
+          status={stageStatuses.agent2}
+          result={stageResults.agent2 as Agent2Result | undefined}
+          progressMessage={liveMsg("agent2")}
+        />
+      );
+
+    case "agent3":
+      // Agent 3 still benefits from the live progress card while running;
+      // once it completes we show the polished Report on the `report` step.
+      return (
+        <ReportPanel
+          result={stageResults.agent3 as Agent3Result | undefined}
+          isComplete={
+            stageStatuses.agent3 === "done" || stageStatuses.agent3 === "error"
+          }
+        />
+      );
+
+    case "report":
+      return (
+        <ReportPanel
+          result={stageResults.agent3 as Agent3Result | undefined}
+          isComplete={isComplete}
+        />
+      );
+  }
 }
 
 function MissingPrereq({ title, message }: { title: string; message: string }) {
