@@ -1,0 +1,59 @@
+# ---------- OS / Editor ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.vscode/
+.idea/
+*.iml
+
+# ---------- Node / Frontend ----------
+node_modules/
+dist/
+dist-ssr/
+build/
+.vite/
+*.local
+.eslintcache
+.parcel-cache/
+.next/
+.turbo/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# ---------- Python / Backend ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.tox/
+
+# ---------- DFIR runtime artifacts ----------
+# Local case data should never be committed
+cases/
+*.mem
+*.raw
+*.vmem
+*.dmp
