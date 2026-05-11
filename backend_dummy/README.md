@@ -38,13 +38,28 @@ Interactive Swagger docs: <http://localhost:8000/docs>
 | Method | Path | Purpose |
 |---|---|---|
 | GET  | `/health` | liveness probe |
+| POST | `/api/workspace/validate` | validate a working directory path |
+| GET  | `/api/workspace/cases` | list cases under `<workdir>/cases/` |
+| GET  | `/api/cases/files` | list files inside a case folder |
+
+### Quick tests
+
+```bash
+# validate
+curl -X POST http://localhost:8000/api/workspace/validate \
+  -H "Content-Type: application/json" \
+  -d '{"path":"/home/analyst/DFIR_agent"}'
+
+# list cases
+curl "http://localhost:8000/api/workspace/cases?path=/home/analyst/DFIR_agent"
+
+# list files inside a case
+curl "http://localhost:8000/api/cases/files?workspace=/home/analyst/DFIR_agent&case=INCIDENT_2025_08_08"
+```
 
 ## Endpoints (planned, added in upcoming commits)
 
 | Method | Path | Purpose |
 |---|---|---|
-| POST | `/api/workspace/validate` | validate a working directory path |
-| GET  | `/api/workspace/cases` | list cases under `<workdir>/cases/` |
-| GET  | `/api/cases/files` | list files inside a case folder |
 | POST | `/api/cases/analyze` | start a (fake) analysis run |
 | GET  | `/api/runs/{run_id}/events` | SSE stream of stage events |

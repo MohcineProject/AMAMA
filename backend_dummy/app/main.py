@@ -11,6 +11,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
+from .routes import cases as cases_routes
+from .routes import workspace as workspace_routes
+
 app = FastAPI(
     title="AMAMA dummy backend",
     description="Mock backend for the AMAMA DFIR triage frontend.",
@@ -45,3 +48,7 @@ class HealthResponse(BaseModel):
 async def health() -> HealthResponse:
     """Simple liveness probe used by the frontend and ops checks."""
     return HealthResponse(status="ok", service="amama-backend-dummy", version="0.1.0")
+
+
+app.include_router(workspace_routes.router)
+app.include_router(cases_routes.router)
