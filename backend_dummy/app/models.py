@@ -55,3 +55,14 @@ class CaseFilesResponse(BaseModel):
     workspace: str
     case: str
     files: list[CaseFile] = Field(default_factory=list)
+
+
+class AnalyzeRequest(BaseModel):
+    workspace: str = Field(..., description="Absolute path to the analyst's working directory.")
+    case: str = Field(..., description="Case folder name to analyze.")
+
+
+class AnalyzeResponse(BaseModel):
+    run_id: str = Field(..., description="Identifier to subscribe to via the SSE events stream.")
+    workspace: str
+    case: str

@@ -33,7 +33,7 @@ curl http://localhost:8000/health
 
 Interactive Swagger docs: <http://localhost:8000/docs>
 
-## Endpoints (currently implemented)
+## Endpoints
 
 | Method | Path | Purpose |
 |---|---|---|
@@ -41,25 +41,42 @@ Interactive Swagger docs: <http://localhost:8000/docs>
 | POST | `/api/workspace/validate` | validate a working directory path |
 | GET  | `/api/workspace/cases` | list cases under `<workdir>/cases/` |
 | GET  | `/api/cases/files` | list files inside a case folder |
+| POST | `/api/cases/analyze` | start a (fake) analysis run, returns `run_id` |
+| GET  | `/api/runs/{run_id}/events` | SSE stream of stage events |
 
 ### Quick tests
 
 ```bash
-# validate
 curl -X POST http://localhost:8000/api/workspace/validate \
   -H "Content-Type: application/json" \
   -d '{"path":"/home/analyst/DFIR_agent"}'
 
-# list cases
 curl "http://localhost:8000/api/workspace/cases?path=/home/analyst/DFIR_agent"
 
-# list files inside a case
 curl "http://localhost:8000/api/cases/files?workspace=/home/analyst/DFIR_agent&case=INCIDENT_2025_08_08"
+
+# kick off a run
+curl -X POST http://localhost:8000/api/cases/analyze \
+  -H "Content-Type: application/json" \
+  -d '{"workspace":"/home/analyst/DFIR_agent","case":"INCIDENT_2025_08_08"}'
+# -> {"run_id":"...","workspace":"...","case":"..."}
+
+# stream events (use -N to disable buffering)
+curl -N http://localhost:8000/api/runs/<run_id>/events
 ```
 
-## Endpoints (planned, added in upcoming commits)
+## SSE event shapes
 
-| Method | Path | Purpose |
+Each SSE `data:` field is a JSON object:
+
+| `type` | Fields | When |
 |---|---|---|
-| POST | `/api/cases/analyze` | start a (fake) analysis run |
-| GET  | `/api/runs/{run_id}/events` | SSE stream of stage events |
+| `run_start` | `run_id, workspace, case` | once at the very beginning |
+| `stage_start` | `stage, kind` | when a stage begins |
+| `stage_progress` | `stage, percent, message` | several times per stage |
+| `stage_result` | `stage, data` | full result of a stage |
+| `stage_complete` | `stage` | after the result has been sent |
+| `run_complete` | `run_id` | once at the end |
+| `error` | `stage?, message` | on failure |
+
+The pipeline runs the 5 active stages in order: `collector -> agent1 -> grep -> agent2 -> agent3`.

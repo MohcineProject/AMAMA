@@ -12,6 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from .routes import cases as cases_routes
+from .routes import runs as runs_routes
 from .routes import workspace as workspace_routes
 
 app = FastAPI(
@@ -52,3 +53,4 @@ async def health() -> HealthResponse:
 
 app.include_router(workspace_routes.router)
 app.include_router(cases_routes.router)
+app.include_router(runs_routes.router)
