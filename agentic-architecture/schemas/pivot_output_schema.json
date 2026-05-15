@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pivot Output",
+  "type": "object",
+  "properties": {
+    "generated_at": { "type": "string" },
+    "targets": { "type": "object" },
+    "by_pid": { "type": "object" },
+    "by_path": { "type": "object" },
+    "notes": { "type": "array" }
+  },
+  "required": ["generated_at", "targets"],
+  "additionalProperties": true
+}

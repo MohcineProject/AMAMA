@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pivot Analyst Output (Agent 2)",
+  "description": "Validated, rejected, and inconclusive findings after evidence-based review by Agent 2.",
+  "type": "object",
+  "properties": {
+    "generated_at": { "type": "string", "format": "date-time" },
+    "analyst_summary": { "type": "string", "description": "2-4 sentence overall assessment" },
+    "validated_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "target":       { "type": "string" },
+          "verdict":      { "type": "string", "enum": ["confirmed"] },
+          "confidence":   { "type": "string", "enum": ["high", "medium"] },
+          "attack_phase": { "type": "string" },
+          "justification":{ "type": "string" },
+          "key_evidence": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["target", "verdict", "justification"]
+      }
+    },
+    "rejected_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "target":       { "type": "string" },
+          "verdict":      { "type": "string", "enum": ["rejected"] },
+          "justification":{ "type": "string" }
+        },
+        "required": ["target", "verdict", "justification"]
+      }
+    },
+    "inconclusive_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "target":       { "type": "string" },
+          "verdict":      { "type": "string", "enum": ["inconclusive"] },
+          "justification":{ "type": "string" }
+        },
+        "required": ["target", "verdict", "justification"]
+      }
+    }
+  },
+  "required": ["generated_at", "validated_findings", "rejected_findings", "inconclusive_findings"],
+  "additionalProperties": true
+}
