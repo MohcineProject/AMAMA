@@ -1,0 +1,167 @@
+Volatility 3 Framework 2.28.1
+
+PID	PPID	ImageFileName	Offset(V)	Threads	Handles	SessionId	Wow64	CreateTime	ExitTime	Audit	Cmd	Path
+
+4	0	System	0xc08eaa8ed480	139	-	N/A	False	2021-02-03 21:51:29.000000 UTC	N/A	-	-	-
+* 392	4	smss.exe	0xc08eac973040	2	-	N/A	False	2021-02-03 21:51:30.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\smss.exe	\SystemRoot\System32\smss.exe	\SystemRoot\System32\smss.exe
+** 636	392	smss.exe	0xc08eada6b080	0	-	1	False	2021-02-03 21:51:35.000000 UTC	2021-02-03 21:51:35.000000 UTC	\Device\HarddiskVolume2\Windows\System32\smss.exe	-	-
+*** 652	636	csrss.exe	0xc08eada7e080	10	-	1	False	2021-02-03 21:51:35.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\csrss.exe	%SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16	C:\WINDOWS\system32\csrss.exe
+*** 740	636	winlogon.exe	0xc08eadaf0080	2	-	1	False	2021-02-03 21:51:35.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\winlogon.exe	winlogon.exe	C:\WINDOWS\system32\winlogon.exe
+**** 448	740	LogonUI.exe	0xc08eaf216300	13	-	1	False	2021-02-03 21:51:36.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\LogonUI.exe	"LogonUI.exe" /flags:0x0 /state0:0xa3bf2055 /state1:0x41c64e6d	C:\WINDOWS\system32\LogonUI.exe
+**** 504	740	dwm.exe	0xc08eaf1b55c0	10	-	1	False	2021-02-03 21:51:36.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\dwm.exe	"dwm.exe"	C:\WINDOWS\system32\dwm.exe
+**** 900	740	fontdrvhost.ex	0xc08eadbcb5c0	5	-	1	False	2021-02-03 21:51:35.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\fontdrvhost.exe	"fontdrvhost.exe"	C:\WINDOWS\system32\fontdrvhost.exe
+** 540	392	smss.exe	0xc08ead694080	0	-	0	False	2021-02-03 21:51:35.000000 UTC	2021-02-03 21:51:35.000000 UTC	\Device\HarddiskVolume2\Windows\System32\smss.exe	-	-
+*** 552	540	csrss.exe	0xc08ead6a65c0	11	-	0	False	2021-02-03 21:51:35.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\csrss.exe	%SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16	C:\WINDOWS\system32\csrss.exe
+*** 644	540	wininit.exe	0xc08eada88080	1	-	0	False	2021-02-03 21:51:35.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\wininit.exe	wininit.exe	C:\WINDOWS\system32\wininit.exe
+**** 776	644	services.exe	0xc08eadb11480	7	-	0	False	2021-02-03 21:51:35.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\services.exe	C:\WINDOWS\system32\services.exe	C:\WINDOWS\system32\services.exe
+***** 109576	776	svchost.exe	0xc08eb6b205c0	0	-	0	False	2021-05-16 16:10:38.000000 UTC	2021-05-18 08:44:37.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 214536	776	svchost.exe	0xc08ebdd3c5c0	0	-	0	False	2021-09-03 07:56:15.000000 UTC	2021-09-04 18:02:25.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 81424	776	svchost.exe	0xc08eb50ed5c0	0	-	0	False	2021-04-19 15:44:40.000000 UTC	2021-04-21 12:08:45.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 194064	776	svchost.exe	0xc08ebc5665c0	0	-	0	False	2021-08-06 18:57:39.000000 UTC	2021-08-08 11:09:13.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2580	776	SecurityHealth	0xc08eaf9325c0	7	-	0	False	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\SecurityHealthService.exe	C:\WINDOWS\system32\SecurityHealthService.exe	C:\WINDOWS\system32\SecurityHealthService.exe
+***** 1048	776	svchost.exe	0xc08eaf2a85c0	4	-	0	False	2021-02-03 21:51:36.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalService	C:\WINDOWS\system32\svchost.exe
+***** 2072	776	svchost.exe	0xc08eae6045c0	7	-	0	False	2021-02-03 21:51:37.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalServiceNetworkRestricted -p	C:\WINDOWS\system32\svchost.exe
+***** 208920	776	svchost.exe	0xc08ebdb365c0	0	-	0	False	2021-09-12 14:19:29.000000 UTC	2021-09-13 14:41:42.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 214556	776	svchost.exe	0xc08ebd39e080	0	-	0	False	2021-09-01 18:27:49.000000 UTC	2021-09-03 07:56:15.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 544	776	svchost.exe	0xc08eaf24c5c0	50	-	0	False	2021-02-03 21:51:36.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k netsvcs -p	C:\WINDOWS\system32\svchost.exe
+***** 1056	776	svchost.exe	0xc08eaf2be5c0	16	-	0	False	2021-02-03 21:51:36.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\System32\svchost.exe -k LocalSystemNetworkRestricted -p	C:\WINDOWS\System32\svchost.exe
+***** 114208	776	svchost.exe	0xc08eb64a45c0	0	-	0	False	2021-05-20 11:07:29.000000 UTC	2021-05-21 13:46:09.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 117792	776	svchost.exe	0xc08eb7466080	0	-	0	False	2021-05-25 14:19:31.000000 UTC	2021-05-26 17:59:05.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 1064	776	svchost.exe	0xc08eaf2c25c0	19	-	0	False	2021-02-03 21:51:36.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalServiceNetworkRestricted -p	C:\WINDOWS\system32\svchost.exe
+***** 214568	776	svchost.exe	0xc08ebd4f9080	0	-	0	False	2021-09-11 12:34:29.000000 UTC	2021-09-12 14:19:29.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2092	776	svchost.exe	0xc08eaa923080	3	-	0	False	2021-02-03 21:51:37.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\System32\svchost.exe -k LocalServiceNetworkRestricted -p	C:\WINDOWS\System32\svchost.exe
+***** 2604	776	Sysmon64.exe	0xc08eaf9d05c0	14	-	0	False	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\Sysmon64.exe	C:\WINDOWS\Sysmon64.exe	C:\WINDOWS\Sysmon64.exe
+***** 59436	776	svchost.exe	0xc08eb3d595c0	0	-	0	False	2021-03-30 13:35:26.000000 UTC	2021-04-01 10:58:55.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 158764	776	svchost.exe	0xc08eba47e5c0	0	-	0	False	2021-07-05 16:46:59.000000 UTC	2021-07-07 18:41:32.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 89648	776	svchost.exe	0xc08eb57745c0	0	-	0	False	2021-04-27 10:58:03.000000 UTC	2021-04-28 13:05:53.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 121396	776	svchost.exe	0xc08eb6690080	0	-	0	False	2021-05-28 15:53:21.000000 UTC	2021-06-20 18:04:11.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 190516	776	svchost.exe	0xc08ebc4cf5c0	0	-	0	False	2021-08-04 10:40:27.000000 UTC	2021-08-05 18:09:01.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2616	776	Velociraptor.e	0xc08eaf9d85c0	15	-	0	False	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\Velociraptor\Velociraptor.exe	"C:\Program Files\Velociraptor\Velociraptor.exe" service run 	C:\Program Files\Velociraptor\Velociraptor.exe
+***** 4152	776	mcshield.exe	0xc08eb08eb5c0	33	-	0	False	2021-02-03 21:51:46.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\Common Files\McAfee\SystemCore\mcshield.exe	"C:\Program Files\Common Files\McAfee\SystemCore\mcshield.exe"	C:\Program Files\Common Files\McAfee\SystemCore\mcshield.exe
+***** 4160	776	macompatsvc.ex	0xc08eb08c75c0	13	-	0	True	2021-02-03 21:51:46.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\McAfee\Agent\x86\macompatsvc.exe	"C:\Program Files\McAfee\Agent\x86\macompatsvc.exe"	C:\Program Files\McAfee\Agent\x86\macompatsvc.exe
+***** 205376	776	svchost.exe	0xc08ebcef35c0	0	-	0	False	2021-08-17 15:59:19.000000 UTC	2021-08-19 09:33:32.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 199244	776	svchost.exe	0xc08ebc9295c0	0	-	0	False	2021-08-11 13:25:03.000000 UTC	2021-08-13 11:20:15.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 202316	776	svchost.exe	0xc08ebcdef5c0	0	-	0	False	2021-08-14 13:09:01.000000 UTC	2021-08-16 07:42:30.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 210004	776	svchost.exe	0xc08ebdcda5c0	0	-	0	False	2021-08-28 18:29:35.000000 UTC	2021-08-30 18:16:30.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2648	776	VGAuthService.	0xc08eaf9305c0	2	-	0	False	2021-02-03 21:51:39.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe	"C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"	C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe
+***** 28252	776	svchost.exe	0xc08eab875380	0	-	0	False	2021-03-07 16:08:22.000000 UTC	2021-03-08 17:41:39.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 63580	776	svchost.exe	0xc08eb3f105c0	0	-	0	False	2021-04-02 17:26:05.000000 UTC	2021-04-04 17:06:11.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2656	776	vmtoolsd.exe	0xc08eafa075c0	11	-	0	False	2021-02-03 21:51:39.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\VMware\VMware Tools\vmtoolsd.exe	"C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"	C:\Program Files\VMware\VMware Tools\vmtoolsd.exe
+***** 1124	776	svchost.exe	0xc08eaf2ee5c0	27	-	0	False	2021-02-03 21:51:36.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalServiceNoNetwork -p	C:\WINDOWS\system32\svchost.exe
+***** 114788	776	svchost.exe	0xc08eb75f65c0	0	-	0	False	2021-05-22 17:15:37.000000 UTC	2021-05-23 18:44:42.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 188004	776	svchost.exe	0xc08ebbaed080	0	-	0	False	2021-07-31 17:19:19.000000 UTC	2021-08-02 16:52:57.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 90732	776	svchost.exe	0xc08eb5b355c0	0	-	0	False	2021-04-28 13:05:53.000000 UTC	2021-04-30 09:11:28.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 210028	776	svchost.exe	0xc08ebd6515c0	0	-	0	False	2021-09-04 18:02:25.000000 UTC	2021-09-06 18:09:53.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2684	776	ManagementAgen	0xc08eafa2c5c0	8	-	0	False	2021-02-03 21:51:39.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\ManagementAgentHost.exe	"C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\ManagementAgentHost.exe"	C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\ManagementAgentHost.exe
+***** 188540	776	svchost.exe	0xc08ebba435c0	0	-	0	False	2021-08-02 16:52:57.000000 UTC	2021-08-04 10:40:26.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 214656	776	subject_srv.ex	0xc08ebd86b5c0	13	-	0	True	2021-09-16 03:01:58.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\subject_srv.exe	C:\windows\subject_srv.exe -s "172.16.5.25:5682" -l 3262 -v "F-Response Subject" -k "155522845"	C:\windows\subject_srv.exe
+***** 184964	776	svchost.exe	0xc08ebbb4b5c0	0	-	0	False	2021-07-28 16:37:41.000000 UTC	2021-07-30 10:03:18.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 116876	776	svchost.exe	0xc08eb77265c0	0	-	0	False	2021-05-23 18:44:42.000000 UTC	2021-05-25 14:19:31.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 22160	776	OfficeClickToR	0xc08eadbfb080	20	-	0	False	2021-02-21 13:27:02.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\Common Files\microsoft shared\ClickToRun\OfficeClickToRun.exe	"C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeClickToRun.exe" /service	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeClickToRun.exe
+****** 22388	22160	AppVShNotify.e	0xc08ead91d080	1	-	0	False	2021-02-21 13:27:19.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\Common Files\microsoft shared\ClickToRun\AppVShNotify.exe	"C:\Program Files\Common Files\Microsoft Shared\ClickToRun\AppVShNotify.exe"	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\AppVShNotify.exe
+***** 83600	776	svchost.exe	0xc08eb53635c0	0	-	0	False	2021-04-24 17:19:46.000000 UTC	2021-04-26 08:12:51.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 105616	776	svchost.exe	0xc08eb677a5c0	0	-	0	False	2021-05-13 18:22:54.000000 UTC	2021-05-15 14:05:52.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 213648	776	svchost.exe	0xc08ebd80f080	0	-	0	False	2021-09-09 18:26:56.000000 UTC	2021-09-11 12:34:29.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 5268	776	svchost.exe	0xc08eae69b500	103	-	0	False	2021-02-03 21:53:23.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalServiceAndNoImpersonation -p	C:\WINDOWS\system32\svchost.exe
+***** 34964	776	svchost.exe	0xc08eb1db05c0	0	-	0	False	2021-03-06 10:17:24.000000 UTC	2021-03-07 16:08:22.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 1688	776	svchost.exe	0xc08eae837080	5	-	0	False	2021-02-03 21:51:37.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k NetworkServiceNetworkRestricted -p	C:\WINDOWS\system32\svchost.exe
+***** 2204	776	spoolsv.exe	0xc08eae6325c0	7	-	0	False	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\spoolsv.exe	C:\WINDOWS\System32\spoolsv.exe	C:\WINDOWS\System32\spoolsv.exe
+***** 179360	776	svchost.exe	0xc08eb6d7a080	0	-	0	False	2021-07-24 13:49:17.000000 UTC	2021-07-26 15:03:04.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 66728	776	svchost.exe	0xc08eb46645c0	0	-	0	False	2021-04-06 07:02:33.000000 UTC	2021-04-07 12:53:50.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 194228	776	svchost.exe	0xc08ebc6c25c0	0	-	0	False	2021-08-08 11:09:13.000000 UTC	2021-08-09 18:32:47.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 1212	776	svchost.exe	0xc08eaf2de5c0	0	-	0	False	2021-02-03 21:51:36.000000 UTC	2021-03-04 17:33:11.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 171200	776	svchost.exe	0xc08eba91a5c0	0	-	0	False	2021-07-15 17:34:06.000000 UTC	2021-07-17 08:50:36.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 208576	776	svchost.exe	0xc08ebd03e080	0	-	0	False	2021-08-20 16:59:08.000000 UTC	2021-08-22 17:19:30.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 145604	776	svchost.exe	0xc08eacf36440	0	-	0	False	2021-06-20 18:04:11.000000 UTC	2021-07-04 16:25:48.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 212680	776	svchost.exe	0xc08ebd23b5c0	0	-	0	False	2021-08-24 18:01:12.000000 UTC	2021-08-26 07:06:08.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 174300	776	svchost.exe	0xc08eba9105c0	0	-	0	False	2021-07-18 18:46:34.000000 UTC	2021-07-20 15:13:57.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 73440	776	svchost.exe	0xc08eb49e95c0	0	-	0	False	2021-04-13 16:48:57.000000 UTC	2021-04-15 08:04:31.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 63204	776	svchost.exe	0xc08eb40765c0	0	-	0	False	2021-04-04 17:06:11.000000 UTC	2021-04-06 07:02:32.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 75496	776	svchost.exe	0xc08eb4e085c0	0	-	0	False	2021-04-15 08:04:31.000000 UTC	2021-04-16 13:18:26.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 192748	776	svchost.exe	0xc08ebc53f5c0	0	-	0	False	2021-08-05 18:09:01.000000 UTC	2021-08-06 18:57:39.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 196856	776	svchost.exe	0xc08ebc8175c0	0	-	0	False	2021-08-09 18:32:47.000000 UTC	2021-08-11 13:25:03.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 215296	776	svchost.exe	0xc08ebd7c0080	29	-	0	False	2021-09-15 17:49:04.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\System32\svchost.exe -k NetworkService -p	C:\WINDOWS\System32\svchost.exe
+***** 52996	776	svchost.exe	0xc08eb35fd5c0	0	-	0	False	2021-03-24 07:07:30.000000 UTC	2021-03-25 09:58:51.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 55044	776	svchost.exe	0xc08eb355d080	0	-	0	False	2021-03-25 09:58:51.000000 UTC	2021-03-27 08:03:23.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 202504	776	svchost.exe	0xc08eb68ed5c0	0	-	0	False	2021-08-16 07:42:30.000000 UTC	2021-08-17 15:59:19.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 214792	776	svchost.exe	0xc08ebdb395c0	0	-	0	False	2021-08-30 18:16:30.000000 UTC	2021-09-01 18:27:49.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 69388	776	svchost.exe	0xc08eb0a155c0	0	-	0	False	2021-04-08 16:47:46.000000 UTC	2021-04-10 17:07:15.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 4888	776	msdtc.exe	0xc08eb0c605c0	9	-	0	False	2021-02-03 21:51:53.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\msdtc.exe	C:\WINDOWS\System32\msdtc.exe	C:\WINDOWS\System32\msdtc.exe
+***** 102168	776	svchost.exe	0xc08eb62ec5c0	0	-	0	False	2021-05-08 09:06:20.000000 UTC	2021-05-09 17:37:52.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2332	776	svchost.exe	0xc08eae7895c0	12	-	0	False	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\System32\svchost.exe -k utcsvc -p	C:\WINDOWS\System32\svchost.exe
+***** 84256	776	svchost.exe	0xc08eb51215c0	0	-	0	False	2021-04-23 15:57:12.000000 UTC	2021-04-24 17:19:45.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2340	776	armsvc.exe	0xc08eae7985c0	2	-	0	True	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe	"C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe"	C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe
+***** 112420	776	svchost.exe	0xc08eb6dc75c0	0	-	0	False	2021-05-18 08:44:37.000000 UTC	2021-05-20 11:07:29.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 114980	776	svchost.exe	0xc08ead009080	0	-	0	False	2021-05-21 13:46:09.000000 UTC	2021-05-22 17:15:37.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 62248	776	svchost.exe	0xc08eb37f5080	0	-	0	False	2021-04-01 10:58:55.000000 UTC	2021-04-02 17:26:05.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 69928	776	svchost.exe	0xc08eb4af25c0	0	-	0	False	2021-04-12 16:12:18.000000 UTC	2021-04-13 16:48:56.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2348	776	FireSvc.exe	0xc08eae79f400	17	-	0	False	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\McAfee\Host Intrusion Prevention\FireSvc.exe	"C:\Program Files\McAfee\Host Intrusion Prevention\FireSvc.exe"	C:\Program Files\McAfee\Host Intrusion Prevention\FireSvc.exe
+****** 4104	2348	FireTray.exe	0xc08eb08b35c0	0	-	0	False	2021-02-03 21:51:46.000000 UTC	2021-02-03 21:51:47.000000 UTC	\Device\HarddiskVolume2\Program Files\McAfee\Host Intrusion Prevention\FireTray.exe	-	-
+***** 4912	776	svchost.exe	0xc08eb0c6a5c0	2	-	0	False	2021-02-03 21:51:53.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k appmodel -p	C:\WINDOWS\system32\svchost.exe
+***** 57136	776	svchost.exe	0xc08eb357f5c0	0	-	0	False	2021-03-27 08:03:24.000000 UTC	2021-03-28 14:12:35.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 172336	776	svchost.exe	0xc08eba3d7080	0	-	0	False	2021-07-17 08:50:37.000000 UTC	2021-07-18 18:46:32.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 201008	776	svchost.exe	0xc08ebc9fc5c0	0	-	0	False	2021-08-13 11:20:15.000000 UTC	2021-08-14 13:09:01.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 213816	776	svchost.exe	0xc08ebdd085c0	0	-	0	False	2021-09-08 12:57:57.000000 UTC	2021-09-09 18:26:56.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2376	776	HipMgmt.exe	0xc08eae7ab5c0	13	-	0	True	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files (x86)\McAfee\Host Intrusion Prevention\HipMgmt.exe	"C:\Program Files (x86)\McAfee\Host Intrusion Prevention\HipMgmt.exe"	C:\Program Files (x86)\McAfee\Host Intrusion Prevention\HipMgmt.exe
+***** 79692	776	svchost.exe	0xc08eb4f6a5c0	0	-	0	False	2021-04-18 15:28:07.000000 UTC	2021-04-19 15:44:40.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 88908	776	svchost.exe	0xc08eb56ae5c0	0	-	0	False	2021-04-26 08:12:51.000000 UTC	2021-04-27 10:58:03.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 848	776	svchost.exe	0xc08eaf28b5c0	24	-	0	False	2021-02-03 21:51:36.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\System32\svchost.exe -k NetworkService	C:\WINDOWS\System32\svchost.exe
+***** 83792	776	svchost.exe	0xc08eb4f0d080	0	-	0	False	2021-04-21 12:08:45.000000 UTC	2021-04-22 12:46:57.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2392	776	macmnsvc.exe	0xc08eae79d5c0	2	-	0	False	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\McAfee\Agent\macmnsvc.exe	"C:\Program Files\McAfee\Agent\macmnsvc.exe" /ServiceStart	C:\Program Files\McAfee\Agent\macmnsvc.exe
+***** 54616	776	svchost.exe	0xc08eb1dbf5c0	0	-	0	False	2021-03-28 14:12:36.000000 UTC	2021-03-30 13:35:26.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2408	776	masvc.exe	0xc08eae7c25c0	8	-	0	False	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\McAfee\Agent\masvc.exe	"C:\Program Files\McAfee\Agent\masvc.exe" /ServiceStart	C:\Program Files\McAfee\Agent\masvc.exe
+****** 4384	2408	mfemactl.exe	0xc08eb09c55c0	6	-	0	True	2021-02-03 21:51:47.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\McAfee\Agent\x86\mfemactl.exe	"C:\Program Files\McAfee\Agent\x86\\mfemactl.exe" --log "C:\ProgramData\McAfee\Agent\logs" --ppid 2408 --interface 4D454F57010000000000000000000000C00000000000004600000000050000004691D4BCAB9A2A0B96B668BFDF40754C0248000068090C1184AAE3F9D64F5A6800000000 	C:\Program Files\McAfee\Agent\x86\mfemactl.exe
+***** 37736	776	svchost.exe	0xc08eb193c080	0	-	0	False	2021-03-08 17:41:39.000000 UTC	2021-03-09 18:12:06.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 36200	776	svchost.exe	0xc08eb26155c0	0	-	0	False	2021-03-09 18:12:06.000000 UTC	2021-03-11 08:55:19.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 162664	776	svchost.exe	0xc08eba4915c0	0	-	0	False	2021-07-07 18:41:32.000000 UTC	2021-07-09 08:44:09.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 876	776	svchost.exe	0xc08eadbe22c0	12	-	0	False	2021-02-03 21:51:35.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k DcomLaunch -p	C:\WINDOWS\system32\svchost.exe
+****** 3184	876	unsecapp.exe	0xc08eaff985c0	3	-	0	False	2021-02-03 21:51:40.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\wbem\unsecapp.exe	C:\WINDOWS\system32\wbem\unsecapp.exe -Embedding	C:\WINDOWS\system32\wbem\unsecapp.exe
+****** 4648	876	dllhost.exe	0xc08eafeeb200	4	-	0	False	2021-02-03 21:51:51.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\dllhost.exe	C:\WINDOWS\system32\DllHost.exe /Processid:{3EB3C877-1F16-487C-9050-104DBCD66683}	C:\WINDOWS\system32\DllHost.exe
+****** 3456	876	WmiPrvSE.exe	0xc08eaaae45c0	11	-	0	False	2021-02-03 21:51:41.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\wbem\WmiPrvSE.exe	C:\WINDOWS\system32\wbem\wmiprvse.exe	C:\WINDOWS\system32\wbem\wmiprvse.exe
+***** 104812	776	svchost.exe	0xc08eb614a080	0	-	0	False	2021-05-11 15:13:42.000000 UTC	2021-05-13 18:22:54.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 214892	776	svchost.exe	0xc08ebd64a5c0	0	-	0	False	2021-09-06 18:09:53.000000 UTC	2021-09-08 12:57:57.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 214380	776	svchost.exe	0xc08ebdc035c0	0	-	0	False	2021-09-13 14:41:42.000000 UTC	2021-09-14 15:03:00.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 99696	776	svchost.exe	0xc08eb5fd7080	0	-	0	False	2021-05-06 15:57:16.000000 UTC	2021-05-08 09:06:20.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 52092	776	svchost.exe	0xc08eaaf4b5c0	0	-	0	False	2021-03-22 18:42:27.000000 UTC	2021-03-24 07:07:29.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 214400	776	svchost.exe	0xc08ebda015c0	0	-	0	False	2021-08-27 07:15:54.000000 UTC	2021-08-28 18:29:35.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2436	776	mfemms.exe	0xc08eae7d65c0	8	-	0	False	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\Common Files\McAfee\SystemCore\mfemms.exe	"C:\Program Files\Common Files\McAfee\SystemCore\mfemms.exe"	C:\Program Files\Common Files\McAfee\SystemCore\mfemms.exe
+****** 3224	2436	mfefire.exe	0xc08eb07eb5c0	7	-	0	False	2021-02-03 21:51:46.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\Common Files\McAfee\SystemCore\mfefire.exe	"C:\Program Files\Common Files\McAfee\SystemCore\mfefire.exe" -mms	C:\Program Files\Common Files\McAfee\SystemCore\mfefire.exe
+****** 2964	2436	mfehcs.exe	0xc08eb081e5c0	13	-	0	False	2021-02-03 21:51:46.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\Common Files\McAfee\SystemCore\mfehcs.exe	"C:\Program Files\Common Files\McAfee\SystemCore\mfehcs.exe" -mms	C:\Program Files\Common Files\McAfee\SystemCore\mfehcs.exe
+****** 3764	2436	mfevtps.exe	0xc08eb03855c0	6	-	0	False	2021-02-03 21:51:43.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\mfevtps.exe	"C:\WINDOWS\system32\mfevtps.exe" -mms	C:\WINDOWS\system32\mfevtps.exe
+***** 78212	776	svchost.exe	0xc08eb4ddd5c0	0	-	0	False	2021-04-16 13:18:26.000000 UTC	2021-04-17 13:20:28.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 160132	776	svchost.exe	0xc08eb965c5c0	0	-	0	False	2021-07-04 16:25:48.000000 UTC	2021-07-05 16:46:58.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2952	776	mfevtps.exe	0xc08eafc075c0	3	-	0	False	2021-02-03 21:51:39.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\mfevtps.exe	"C:\WINDOWS\system32\mfevtps.exe"	C:\WINDOWS\system32\mfevtps.exe
+***** 2444	776	VsTskMgr.exe	0xc08eae7fa5c0	21	-	0	True	2021-02-03 21:51:38.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files (x86)\McAfee\VirusScan Enterprise\VsTskMgr.exe	"C:\Program Files (x86)\McAfee\VirusScan Enterprise\VsTskMgr.exe"	C:\Program Files (x86)\McAfee\VirusScan Enterprise\VsTskMgr.exe
+****** 2068	2444	mfeann.exe	0xc08eafdb15c0	17	-	0	True	2021-02-03 21:51:40.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files (x86)\McAfee\VirusScan Enterprise\mfeann.exe	"C:\Program Files (x86)\McAfee\VirusScan Enterprise\mfeann.exe"	C:\Program Files (x86)\McAfee\VirusScan Enterprise\mfeann.exe
+******* 2636	2068	conhost.exe	0xc08eafdd5080	4	-	0	False	2021-02-03 21:51:40.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\conhost.exe	\??\C:\WINDOWS\system32\conhost.exe 0x4	C:\WINDOWS\system32\conhost.exe
+***** 109452	776	svchost.exe	0xc08eace36080	0	-	0	False	2021-05-15 14:05:52.000000 UTC	2021-05-16 16:10:38.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 120204	776	svchost.exe	0xc08eb75f55c0	0	-	0	False	2021-05-26 17:59:05.000000 UTC	2021-05-28 15:53:21.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 93596	776	svchost.exe	0xc08eb5b45080	0	-	0	False	2021-05-01 12:24:51.000000 UTC	2021-05-03 13:18:19.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 13216	776	SearchIndexer.	0xc08eb0f375c0	17	-	0	False	2021-02-21 13:27:44.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\SearchIndexer.exe	C:\WINDOWS\system32\SearchIndexer.exe /Embedding	C:\WINDOWS\system32\SearchIndexer.exe
+***** 99236	776	svchost.exe	0xc08ead21a5c0	0	-	0	False	2021-05-05 11:53:14.000000 UTC	2021-05-06 15:57:16.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 40360	776	svchost.exe	0xc08eb2ad25c0	0	-	0	False	2021-03-11 08:55:19.000000 UTC	2021-03-22 18:42:27.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 66472	776	svchost.exe	0xc08eb41fa5c0	0	-	0	False	2021-04-07 12:53:50.000000 UTC	2021-04-08 16:47:46.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 1456	776	svchost.exe	0xc08eaf5945c0	15	-	0	False	2021-02-03 21:51:37.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k netsvcs	C:\WINDOWS\system32\svchost.exe
+***** 164784	776	svchost.exe	0xc08eba841080	0	-	0	False	2021-07-09 08:44:10.000000 UTC	2021-07-15 17:34:05.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 436	776	vmacthlp.exe	0xc08eaf6dc5c0	1	-	0	False	2021-02-03 21:51:37.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files\VMware\VMware Tools\vmacthlp.exe	"C:\Program Files\VMware\VMware Tools\vmacthlp.exe"	C:\Program Files\VMware\VMware Tools\vmacthlp.exe
+***** 173504	776	svchost.exe	0xc08ebb1265c0	0	-	0	False	2021-07-20 15:14:01.000000 UTC	2021-07-22 16:04:20.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 84932	776	svchost.exe	0xc08eb52445c0	0	-	0	False	2021-04-22 12:46:57.000000 UTC	2021-04-23 15:57:12.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 87496	776	svchost.exe	0xc08ead376240	0	-	0	False	2021-04-30 09:11:28.000000 UTC	2021-05-01 12:24:51.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 96724	776	svchost.exe	0xc08eb5a3b5c0	0	-	0	False	2021-05-03 13:18:19.000000 UTC	2021-05-05 11:53:13.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 210388	776	svchost.exe	0xc08ebd2db5c0	0	-	0	False	2021-08-22 17:19:30.000000 UTC	2021-08-24 18:01:12.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 72152	776	svchost.exe	0xc08eb45a65c0	0	-	0	False	2021-04-10 17:07:16.000000 UTC	2021-04-12 16:12:18.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 177624	776	svchost.exe	0xc08ebb5325c0	0	-	0	False	2021-07-22 16:04:21.000000 UTC	2021-07-24 13:49:17.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 182232	776	svchost.exe	0xc08ebb5ab5c0	0	-	0	False	2021-07-26 15:03:04.000000 UTC	2021-07-28 16:37:41.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 214488	776	svchost.exe	0xc08ebd6fe080	0	-	0	False	2021-09-14 15:03:00.000000 UTC	2021-09-15 17:49:03.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 102876	776	svchost.exe	0xc08eb56df080	0	-	0	False	2021-05-09 17:37:52.000000 UTC	2021-05-11 15:13:42.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 996	776	svchost.exe	0xc08eaf2905c0	34	-	0	False	2021-02-03 21:51:36.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalService -p	C:\WINDOWS\system32\svchost.exe
+***** 185832	776	svchost.exe	0xc08ebbbc65c0	0	-	0	False	2021-07-30 10:03:18.000000 UTC	2021-07-31 17:19:19.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 207848	776	svchost.exe	0xc08ebd07c080	0	-	0	False	2021-08-19 09:33:32.000000 UTC	2021-08-20 16:59:08.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 1004	776	svchost.exe	0xc08eaf15a5c0	11	-	0	False	2021-02-03 21:51:36.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k RPCSS -p	C:\WINDOWS\system32\svchost.exe
+***** 78828	776	svchost.exe	0xc08eb4eb75c0	0	-	0	False	2021-04-17 13:20:28.000000 UTC	2021-04-18 15:28:07.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 33780	776	svchost.exe	0xc08eb1cce5c0	0	-	0	False	2021-03-04 17:33:11.000000 UTC	2021-03-06 10:17:24.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 215028	776	svchost.exe	0xc08ebd7775c0	0	-	0	False	2021-08-26 07:06:08.000000 UTC	2021-08-27 07:15:54.000000 UTC	\Device\HarddiskVolume2\Windows\System32\svchost.exe	-	-
+***** 2044	776	svchost.exe	0xc08eaf6f35c0	5	-	0	False	2021-02-03 21:51:37.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\WINDOWS\System32\svchost.exe -k LocalServiceNetworkRestricted -p	C:\WINDOWS\System32\svchost.exe
+**** 892	644	fontdrvhost.ex	0xc08eadbbb5c0	5	-	0	False	2021-02-03 21:51:35.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\fontdrvhost.exe	"fontdrvhost.exe"	C:\WINDOWS\system32\fontdrvhost.exe
+**** 788	644	lsass.exe	0xc08eadb385c0	9	-	0	False	2021-02-03 21:51:35.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\lsass.exe	C:\WINDOWS\system32\lsass.exe	C:\WINDOWS\system32\lsass.exe
+* 1724	4	MemCompression	0xc08eaf7765c0	6	-	N/A	False	2021-02-03 21:51:37.000000 UTC	N/A	MemCompression	-	-

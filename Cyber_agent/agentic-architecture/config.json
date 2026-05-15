@@ -1,0 +1,50 @@
+{
+  "top_n": 10,
+  "max_lines_per_file": 120,
+  "max_total_lines_per_target": 400,
+  "pid_files": [
+    "cmdline.txt",
+    "privileges.txt",
+    "handles.txt",
+    "dlllist.txt",
+    "envars.txt",
+    "getsids.txt",
+    "pstree.txt",
+    "pslist.txt"
+  ],
+  "path_files": [
+    "filescan.txt",
+    "dumpfiles.txt",
+    "registry_printkey.txt",
+    "modules.txt",
+    "dlllist.txt"
+  ],
+  "suspicious_keywords": [
+    "powershell",
+    "cmd.exe /c",
+    "rundll32",
+    "regsvr32",
+    "mshta",
+    "wscript",
+    "cscript",
+    "wmic",
+    "bitsadmin",
+    "certutil",
+    "svchost -k",
+    "schtasks",
+    "net user",
+    "net localgroup",
+    "psexec",
+    "mimikatz",
+    "procdump"
+  ],
+  "suspicious_dirs": [
+    "\\users\\",
+    "\\appdata\\",
+    "\\temp\\",
+    "\\programdata\\",
+    "\\windows\\tasks\\",
+    "\\windows\\system32\\drivers\\",
+    "\\windows\\system32\\wbem\\"
+  ]
+}

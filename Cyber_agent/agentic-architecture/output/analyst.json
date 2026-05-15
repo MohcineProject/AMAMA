@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-05-11T12:34:56Z",
+  "analyst_summary": "All flagged items lack corroborating Volatility evidence; the artifacts show only standard system handles and privileges. No malicious command lines, DLL loads, or file handles were found, indicating the findings are likely false positives.",
+  "validated_findings": [],
+  "rejected_findings": [
+    {
+      "target": "PID 3412 powershell.exe",
+      "verdict": "rejected",
+      "justification": "The only handle evidence links PID 3412 to mfeann.exe, not to PowerShell activity. No command\u2011line, DLL, or network artifacts supporting the claimed Base64 download were found."
+    },
+    {
+      "target": "PID 3688 a3f8c21d.exe",
+      "verdict": "rejected",
+      "justification": "No matches in any artifact (cmdline, handles, filescan, registry, etc.) for this PID or its executable, indicating no observable activity."
+    },
+    {
+      "target": "PID 3744 certutil.exe",
+      "verdict": "rejected",
+      "justification": "Handles point to WmiPrvSE.exe threads, not certutil.exe. No evidence of certutil downloading files or accessing the Temp directory."
+    },
+    {
+      "target": "PID 3900 svcupd.exe",
+      "verdict": "rejected",
+      "justification": "Handle evidence shows a thread from Sysmon64.exe; there is no record of svcupd.exe execution or mimikatz activity."
+    },
+    {
+      "target": "PID 3980 rundll32.exe",
+      "verdict": "rejected",
+      "justification": "No artifact entries (handles, dlllist, cmdline, etc.) were found for this PID, so the alleged DLL registration and outbound connection are unsupported."
+    },
+    {
+      "target": "PID 3120 WINWORD.EXE",
+      "verdict": "rejected",
+      "justification": "The only handle links to svchost.exe; there is no evidence of WINWORD spawning PowerShell or opening files from Downloads."
+    },
+    {
+      "target": "PID 4 System",
+      "verdict": "rejected",
+      "justification": "The process shows normal system privileges and command lines; its presence is expected and not indicative of malicious behavior."
+    },
+    {
+      "target": "PATH C:\\Users\\john.doe\\AppData\\Roaming\\a3f8c21d.exe",
+      "verdict": "rejected",
+      "justification": "No file, handle, or registry evidence for this path was found in any artifact."
+    },
+    {
+      "target": "PATH C:\\Users\\john.doe\\AppData\\Local\\Temp\\svcupd.exe",
+      "verdict": "rejected",
+      "justification": "No artifact evidence (filescan, handles, etc.) references this file, suggesting it does not exist in the captured memory."
+    }
+  ],
+  "inconclusive_findings": []
+}

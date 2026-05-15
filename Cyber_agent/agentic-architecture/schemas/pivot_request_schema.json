@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pivot Request",
+  "type": "object",
+  "properties": {
+    "pids": { "type": "array", "items": { "type": "string" } },
+    "paths": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

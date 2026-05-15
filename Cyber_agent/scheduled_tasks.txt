@@ -1,0 +1,304 @@
+Volatility 3 Framework 2.28.1
+
+Task Name	Principal ID	Display Name	Enabled	Creation Time	Last Run Time	Last Successful Run Time	Trigger Type	Trigger Description	Action Type	Action	Action Arguments	Action Context	Working Directory	Key Name
+
+Microsoft-Windows-DiskDiagnosticDataCollector	LocalSystem	-	-	2018-07-02 22:23:20.000000 UTC	2018-04-28 18:22:00.000000 UTC	2018-07-02 22:23:20.000000 UTC	-	-	Exe	%windir%\system32\rundll32.exe	dfdts.dll,DfdGetDefaultPolicyAndSMART	LocalSystem	-	{010DF13D-9738-48CC-8B14-AC1490A129A5}
+Registration	LocalSystem	-	True	2021-09-15 22:20:57.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-15 22:20:58.000000 UTC	Time	-	Exe	%windir%\system32\sc.exe	start pushtoinstall registration	LocalSystem	-	{0319D346-9E60-4CE2-B937-EF6C981CC0F1}
+Registration	LocalSystem	-	True	2021-09-15 22:20:57.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-15 22:20:58.000000 UTC	WindowsNotificationFacility	WNF state 750cbca3290b9641	Exe	%windir%\system32\sc.exe	start pushtoinstall registration	LocalSystem	-	{0319D346-9E60-4CE2-B937-EF6C981CC0F1}
+Proxy	LocalSystem	-	True	2021-02-03 22:31:41.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 22:31:41.000000 UTC	Boot	Boot trigger	Exe	%windir%\system32\rundll32.exe	/d acproxy.dll,PerformAutochkOperations	LocalSystem	-	{03BAB3F3-7CFB-408A-9756-70F45BE325AC}
+SpaceAgentTask	LocalSystem	-	False	-	2018-05-04 18:22:00.000000 UTC	-	Boot	Boot trigger	-	-	-	LocalSystem	-	{04E9E27D-20BA-4966-9A08-59E136EAC4E1}
+SpaceAgentTask	LocalSystem	-	True	-	2018-05-04 18:22:00.000000 UTC	-	WindowsNotificationFacility	WNF state 7508bca33e1e8702	-	-	-	LocalSystem	-	{04E9E27D-20BA-4966-9A08-59E136EAC4E1}
+BgTaskRegistrationMaintenanceTask	LocalSystem	-	-	2021-09-12 11:52:01.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-12 11:52:02.000000 UTC	-	-	ComHandler	{e984d939-e00-4dd9-ac3a-7aca04745521}	-	LocalSystem	N/A	{050CEDD3-9FA4-4FD4-9E7D-0C1BD2A2327C}
+SvcRestartTaskNetwork	NetworkService	-	True	2021-09-15 17:49:07.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-15 17:49:08.000000 UTC	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="Microsoft-Windows-NetworkProfile/Operational"><Select Path="Microsoft-Windows-NetworkProfile/Operational">*[System[EventID=10000]]</Select></Query></QueryList>, Queries: []	ComHandler	{b1aebb5d-ead9-4476-b375-9c3ed9f32afc}	network	NetworkService	N/A	{05336594-7C19-4BFE-BD11-D0C01A1BEBD9}
+DmClient	LocalSystem	-	-	2021-09-15 01:53:22.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-15 01:53:23.000000 UTC	-	-	-	-	-	LocalSystem	-	{0621FDBB-ADD5-44B7-A2AB-8288118B6295}
+EnableLicenseAcquisition	LocalSystem	-	True	2021-02-03 21:51:42.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:51:56.000000 UTC	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="Microsoft-Windows-User Device Registration/Admin"><Select Path="Microsoft-Windows-User Device Registration/Admin">*[System[Provider[@Name='Microsoft-Windows-User Device Registration'] and EventID=105]]</Select></Query></QueryList>, Queries: []	Exe	%SystemRoot%\system32\ClipRenew.exe	-e	LocalSystem	-	{06351248-4DCE-4469-938B-840F850C83B4}
+EnableLicenseAcquisition	LocalSystem	-	True	2021-02-03 21:51:42.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:51:56.000000 UTC	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="Application"><Select Path="Application">*[System[Provider[@Name='Microsoft-Windows-Security-SPP'] and EventID=1061]]</Select></Query></QueryList>, Queries: []	Exe	%SystemRoot%\system32\ClipRenew.exe	-e	LocalSystem	-	{06351248-4DCE-4469-938B-840F850C83B4}
+EnableLicenseAcquisition	LocalSystem	-	True	2021-02-03 21:51:42.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:51:56.000000 UTC	WindowsNotificationFacility	WNF state 7524bca33e06830d	Exe	%SystemRoot%\system32\ClipRenew.exe	-e	LocalSystem	-	{06351248-4DCE-4469-938B-840F850C83B4}
+Windows Defender Cleanup	LocalSystem	-	-	2021-09-16 01:52:15.000000 UTC	2020-09-21 00:31:43.000000 UTC	2021-09-16 01:52:27.000000 UTC	-	-	Exe	C:\Program Files\Windows Defender\MpCmdRun.exe	-IdleTask -TaskName WdCleanup	LocalSystem	-	{079B8E48-46BD-4514-9A31-41469CEE0840}
+Logon	LocalSystem	-	True	2020-09-21 01:47:55.000000 UTC	2018-05-04 18:22:00.000000 UTC	2020-09-21 01:52:15.000000 UTC	Logon	Logon trigger	Exe	%windir%\system32\ProvTool.exe	/turn 5 /source LogonIdleTask	LocalSystem	-	{08ECD6F8-3E70-482C-9F54-C96A9C1A773F}
+-	Author	-	True	-	2018-08-31 21:16:32.000000 UTC	-	Time	-	-	-	-	Author	-	{09F5824D-03D4-4B58-BB10-D5B0A0015DBD}
+BitLocker MDM policy Refresh	Users	-	True	-	2018-05-04 18:22:00.000000 UTC	-	WindowsNotificationFacility	WNF state 7540bca32b188341	ComHandler	{61bcd1b9-340c-40ec-9d41-d7f1c0632f05}	BitLockerPolicy	Users	N/A	{0B0769E9-1E00-4421-A10B-980BA1360A23}
+HandleCommand	System	-	True	-	2018-05-04 18:22:00.000000 UTC	-	WindowsNotificationFacility	WNF state 7520bda33e06830d	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-HandleCommand	System	N/A	{0F807A51-1ECC-4778-B874-7A001F54BA47}
+-	Author	-	True	-	2021-02-21 13:27:26.000000 UTC	-	Logon	Logon trigger	Exe	C:\Program Files (x86)\Microsoft Office\root\Office16\sdxhelper.exe	/onlogon	Author	-	{113FB934-E81C-414C-938A-8C289FFCC58A}
+-	Author	-	True	-	2021-02-21 13:27:26.000000 UTC	-	Session	Unknown	Exe	C:\Program Files (x86)\Microsoft Office\root\Office16\sdxhelper.exe	/onlogon	Author	-	{113FB934-E81C-414C-938A-8C289FFCC58A}
+Windows Defender Verification	LocalSystem	-	-	2021-09-16 01:52:15.000000 UTC	2020-09-21 00:31:43.000000 UTC	2021-09-16 01:52:27.000000 UTC	-	-	Exe	C:\Program Files\Windows Defender\MpCmdRun.exe	-IdleTask -TaskName WdVerification	LocalSystem	-	{149C3881-E0F1-4560-A1C2-5CC3B4A4BB11}
+StartupAppTask	Users	-	-	2021-02-03 14:15:02.000000 UTC	2018-05-03 18:22:00.000000 UTC	2021-02-03 14:15:02.000000 UTC	-	-	Exe	%windir%\system32\rundll32.exe	Startupscan.dll,SusRunTask	Users	-	{158D3281-FEB3-47C2-87B9-EE652382C0AB}
+PerformRemediation	LocalSystem	-	True	2021-09-16 00:00:51.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-16 00:01:12.000000 UTC	Time	-	Exe	%systemroot%\System32\WaaSMedic.exe	None	LocalSystem	-	{16A2AC70-D64E-4551-988D-74521DE45481}
+Recovery-Check	InteractiveUsers	-	True	-	2018-05-04 18:22:00.000000 UTC	-	Logon	Logon trigger	Exe	%SystemRoot%\System32\dsregcmd.exe	/checkrecovery	InteractiveUsers	-	{17A68EC1-555F-454C-9497-A48240207E9F}
+Adobe Acrobat Update Task	Author	-	True	2021-02-03 01:00:00.000000 UTC	2020-09-21 00:47:34.000000 UTC	2021-02-03 01:00:10.000000 UTC	Logon	Logon trigger	-	-	-	Author	-	{17CF68F8-5D23-419E-81B3-9F6BA646F52F}
+Adobe Acrobat Update Task	Author	-	True	2021-02-03 01:00:00.000000 UTC	2020-09-21 00:47:34.000000 UTC	2021-02-03 01:00:10.000000 UTC	Time	-	-	-	-	Author	-	{17CF68F8-5D23-419E-81B3-9F6BA646F52F}
+UsbCeip	LocalSystem	-	-	2021-09-12 11:52:01.000000 UTC	2018-04-28 18:22:00.000000 UTC	2021-09-12 11:52:02.000000 UTC	-	-	ComHandler	{c27f6b1d-fe0b-45e4-9257-38799fa69bc8}	SYSTEM	LocalSystem	N/A	{186E9E68-B19B-4176-A17A-52E89C77CE3C}
+.NET Framework NGEN v4.0.30319 64 Critical	Author	-	True	2018-05-07 19:40:40.000000 UTC	2018-05-04 18:22:00.000000 UTC	2018-05-07 19:43:12.000000 UTC	Logon	Logon trigger	ComHandler	{613fba38-a3df-4ab8-9674-5604984a299a}	/RuntimeWide	Author	N/A	{189D42EF-2591-48A8-B909-B9641012E4A0}
+MapsUpdateTask	NetworkService	-	True	-	2018-05-04 18:22:00.000000 UTC	-	Time	-	ComHandler	{b9033e87-33cf-4d77-bc9b-895afbba72e4}	-	NetworkService	N/A	{1AC6AC41-1738-4927-B753-9C8950F7EAC8}
+WinSAT	$creator	-	-	-	2018-05-01 18:22:00.000000 UTC	-	-	-	ComHandler	{a9a33436-678b-4c9c-a211-7cc38785e79d}	-	$creator	N/A	{1E292176-992E-47B7-A51F-8272CD6AC2EF}
+RegisterDeviceSettingChange	System	-	True	2019-06-14 20:19:55.000000 UTC	2018-05-04 18:22:00.000000 UTC	2019-06-14 20:19:55.000000 UTC	WindowsNotificationFacility	WNF state 75f8bca33e06830d	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -SettingChange -Full	System	N/A	{22CE4332-A8D7-4E5F-A8B1-CDF64CD796D8}
+RegisterDeviceSettingChange	System	-	True	2019-06-14 20:19:55.000000 UTC	2018-05-04 18:22:00.000000 UTC	2019-06-14 20:19:55.000000 UTC	WindowsNotificationFacility	WNF state 7520bca321078541	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -SettingChange -Full	System	N/A	{22CE4332-A8D7-4E5F-A8B1-CDF64CD796D8}
+UserTask-Roam	InteractiveUsers	-	True	2021-02-03 21:50:39.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:50:39.000000 UTC	Session	Unknown	ComHandler	{58fb76b9-ac85-4e55-ac04-427593b1d060}	KEYROAMING	InteractiveUsers	N/A	{2314E520-E0D7-4B46-8EB4-7FEAA89B859C}
+UserTask-Roam	InteractiveUsers	-	True	2021-02-03 21:50:39.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:50:39.000000 UTC	Session	Unknown	ComHandler	{58fb76b9-ac85-4e55-ac04-427593b1d060}	KEYROAMING	InteractiveUsers	N/A	{2314E520-E0D7-4B46-8EB4-7FEAA89B859C}
+StartComponentCleanup	System	-	-	2021-09-12 11:52:01.000000 UTC	2018-04-29 18:22:00.000000 UTC	2021-09-12 11:52:02.000000 UTC	-	-	ComHandler	{752073a1-23f2-4396-85f0-8fdb879ed0ed}	-	System	N/A	{24027046-B56F-4E19-9487-1C8F984C270B}
+SynchronizeTimeZone	Author	-	-	2021-09-12 23:52:03.000000 UTC	2018-05-01 18:22:00.000000 UTC	2021-09-12 23:52:22.000000 UTC	-	-	-	-	-	Author	-	{2646432D-A31A-41EC-88D5-495FF767E1ED}
+FamilySafetyMonitor	System	-	-	-	2018-05-04 18:22:00.000000 UTC	-	-	-	-	-	-	System	-	{26810429-E00E-44DC-8EB3-0F924A856085}
+RegisterDeviceLocationRightsChange	System	-	True	-	2018-05-04 18:22:00.000000 UTC	-	WindowsNotificationFacility	WNF state 7538bca321089541	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -SettingChange -NoLocation	System	N/A	{27063F07-F01A-4F6E-8A90-DF0D9F497D77}
+Maintenance Install	Author	-	-	-	2016-11-21 01:58:00.000000 UTC	-	-	-	Exe	%systemroot%\system32\usoclient.exe	StartInstall	Author	-	{292EC474-C640-440C-AA80-4695A6118CBF}
+License Validation	LocalSystem	-	False	-	2018-05-04 18:22:00.000000 UTC	-	Boot	Boot trigger	Exe	%SystemRoot%\system32\ClipUp.exe	-p -s -o	LocalSystem	-	{2C807F3D-B764-4990-BE1A-C2466CA7CF8E}
+-	Author	-	True	2018-05-04 17:23:36.000000 UTC	2018-01-05 22:08:28.000000 UTC	2018-05-04 17:23:39.000000 UTC	Time	-	-	-	-	Author	-	{2E643666-1A15-4B48-8534-686DF197BB59}
+-	Author	-	True	2018-05-04 17:23:36.000000 UTC	2018-01-05 22:08:28.000000 UTC	2018-05-04 17:23:39.000000 UTC	Logon	Logon trigger	-	-	-	Author	-	{2E643666-1A15-4B48-8534-686DF197BB59}
+Microsoft-Windows-DiskDiagnosticResolver	AllUsers	-	True	-	2018-05-04 18:22:00.000000 UTC	-	Logon	Logon trigger	-	-	-	AllUsers	-	{30640F6A-D10F-4FA9-9B1F-1384548CA2CD}
+SpeechModelDownloadTask	NetworkService	-	True	2021-09-15 04:00:00.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-15 04:00:00.000000 UTC	Time	-	-	-	-	NetworkService	-	{32274688-6925-4C3C-AC5D-E7F3278E9F9E}
+HybridDriveCachePrepopulate	LocalSystem	-	-	-	2018-05-04 18:22:00.000000 UTC	-	-	-	ComHandler	{17c82257-654e-4c47-8e23-dca24eaa76a0}	-	LocalSystem	N/A	{35586928-753A-4F72-9A56-EAB9F75B4092}
+LoginCheck	LocalSystem	-	True	-	2018-05-04 18:22:00.000000 UTC	-	Logon	Logon trigger	Exe	%windir%\system32\sc.exe	start pushtoinstall login	LocalSystem	-	{36713542-0103-4035-B316-A447E72506AC}
+-	Users	-	True	-	2018-05-04 18:22:00.000000 UTC	-	WindowsNotificationFacility	WNF state 7520bca33a19870f	Exe	%SystemRoot%\System32\WiFiTask.exe	wwan	Users	-	{36EECAE1-3E34-4A61-8394-42D7F23F0455}
+sih	LocalSystem	-	True	2021-09-16 00:33:59.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-16 00:34:01.000000 UTC	Time	-	-	-	-	LocalSystem	-	{37292EA8-F458-47ED-A55C-5A3A1CCF5FD5}
+sihboot	-	-	-	-	-	-	-	-	-	-	-	-	-	{37449A31-039E-4B1D-8F13-E8C24D7833D4}
+Data Integrity Scan	LocalSystem	-	False	-	2018-05-04 18:22:00.000000 UTC	-	Time	-	ComHandler	{dcfd3ea8-d960-4719-8206-490ae315f94f}	-	LocalSystem	N/A	{3C0B9BA7-7D02-4CCC-AE36-5E5F3CD1F9A3}
+Data Integrity Scan	LocalSystem	-	False	-	2018-05-04 18:22:00.000000 UTC	-	Boot	Boot trigger	ComHandler	{dcfd3ea8-d960-4719-8206-490ae315f94f}	-	LocalSystem	N/A	{3C0B9BA7-7D02-4CCC-AE36-5E5F3CD1F9A3}
+HiveUploadTask	LocalSystem	-	True	-	2018-05-04 18:22:00.000000 UTC	-	Time	-	ComHandler	{ba677074-762c-444b-94c8-8c83f93f6605}	-	LocalSystem	N/A	{3C336B7D-4F6B-4B02-8478-EAD76B10C9AD}
+{A7719E0F-10DB-4640-AD8C-490CC6AD5202}	Author	-	True	2021-09-16 01:37:00.000000 UTC	2018-05-07 21:48:25.000000 UTC	2021-09-16 01:37:05.000000 UTC	Time	-	Exe	gpupdate.exe	/target:user	Author	-	{4014CB54-1636-4F6A-A31F-4BED8992690B}
+{A7719E0F-10DB-4640-AD8C-490CC6AD5202}	Author	-	False	2021-09-16 01:37:00.000000 UTC	2018-05-07 21:48:25.000000 UTC	2021-09-16 01:37:05.000000 UTC	WindowsNotificationFacility	WNF state 7508bca33a0d8b41	Exe	gpupdate.exe	/target:user	Author	-	{4014CB54-1636-4F6A-A31F-4BED8992690B}
+StorageSense	Authenticated Users	-	-	2021-02-03 00:07:45.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 00:08:02.000000 UTC	-	-	ComHandler	{ab2a519b-3b0-43ce-940a-a73df850b49a}	-	Authenticated Users	N/A	{4028F806-9647-43EC-87FA-8B810DFD9141}
+Sysmon Update	Author	-	True	2021-09-16 02:38:56.000000 UTC	2019-12-22 16:23:26.000000 UTC	2021-09-16 02:39:18.000000 UTC	Time	-	-	-	-	Author	-	{41CBEE09-EED4-4651-B2C7-09BEB7B01720}
+AD RMS Rights Policy Template Management (Automated)	AllUsers	-	True	-	2018-05-04 18:22:00.000000 UTC	-	Time	-	ComHandler	{cf2cf428-325b-48d3-8ca8-7633e36e5a32}	-	AllUsers	N/A	{4296989E-CB82-465D-9B7A-E709F8492C99}
+AD RMS Rights Policy Template Management (Automated)	AllUsers	-	True	-	2018-05-04 18:22:00.000000 UTC	-	Logon	Logon trigger	ComHandler	{cf2cf428-325b-48d3-8ca8-7633e36e5a32}	-	AllUsers	N/A	{4296989E-CB82-465D-9B7A-E709F8492C99}
+Metadata Refresh	Users	-	-	2021-01-29 06:15:02.000000 UTC	2018-05-02 18:22:00.000000 UTC	2021-01-29 06:15:02.000000 UTC	-	-	ComHandler	{23c1f3cf-c110-4512-aca9-7b6174ece888}	-	Users	N/A	{43027CE9-4016-4145-93E0-BAECC8E89B94}
+Tpm-HASCertRetr	LocalSystem	-	True	-	2018-05-04 18:22:00.000000 UTC	-	WindowsNotificationFacility	WNF state 7508bca3250f9541	ComHandler	{5014b7c8-934e-4262-9816-887fa745a6c4}	HASCertRetr	LocalSystem	N/A	{4517DBBD-42D9-439E-B523-2294724133D2}
+SmartScreenSpecific	LocalSystem	-	True	2021-09-15 17:52:13.000000 UTC	2016-11-19 01:57:00.000000 UTC	2021-09-15 17:52:13.000000 UTC	Logon	Logon trigger	ComHandler	{9f2b0085-9218-42a1-88b0-9f0e65851666}	U	LocalSystem	N/A	{4520E8A9-AF06-4122-859B-E4B655B29B36}
+PolicyConverter	LocalSystem	-	-	-	2018-05-04 18:22:00.000000 UTC	-	-	-	-	-	-	LocalSystem	-	{483FAC9D-5977-47EF-80D1-80E063A3AAAB}
+{3E0A038B-D834-4930-9981-E89C9BFF83AA}	Author	-	True	2021-09-16 02:38:54.000000 UTC	2018-05-07 19:28:04.000000 UTC	2021-09-16 02:39:01.000000 UTC	Time	-	Exe	gpupdate.exe	/target:computer	Author	-	{4A41B4EE-473D-4ED2-A6F6-8FFE9AD5A14E}
+{3E0A038B-D834-4930-9981-E89C9BFF83AA}	Author	-	False	2021-09-16 02:38:54.000000 UTC	2018-05-07 19:28:04.000000 UTC	2021-09-16 02:39:01.000000 UTC	WindowsNotificationFacility	WNF state 7508bca33a0d8b41	Exe	gpupdate.exe	/target:computer	Author	-	{4A41B4EE-473D-4ED2-A6F6-8FFE9AD5A14E}
+Usb-Notifications	Users	-	True	-	2018-05-04 18:22:00.000000 UTC	-	WindowsNotificationFacility	WNF state 7530bca3381d8441	ComHandler	{e05be1c8-92a8-4757-b575-acaecb4e6a40}	-	Users	N/A	{4A52E557-CBD2-4032-A8DF-42811A3A773D}
+LicenseAcquisition	-	-	-	-	-	-	-	-	-	-	-	-	-	{4C2D2022-59FD-48E5-90A0-AD227FAAB208}
+RegisterDeviceScreenOnOff	System	-	True	-	2016-11-21 01:57:03.000000 UTC	-	Session	Unknown	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -ScreenOnOff	System	N/A	{51B7FB15-4DCB-400E-9A98-10E802F21FB3}
+RegisterDeviceScreenOnOff	System	-	True	-	2016-11-21 01:57:03.000000 UTC	-	Session	Unknown	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -ScreenOnOff	System	N/A	{51B7FB15-4DCB-400E-9A98-10E802F21FB3}
+SpaceManagerTask	LocalSystem	-	False	-	2018-05-04 18:22:00.000000 UTC	-	Boot	Boot trigger	Exe	%windir%\system32\spaceman.exe	/Work	LocalSystem	-	{5267392F-5BB8-45A6-AD93-10211E2F8850}
+SpaceManagerTask	LocalSystem	-	True	-	2018-05-04 18:22:00.000000 UTC	-	WindowsNotificationFacility	WNF state 7510bca33e1e8702	Exe	%windir%\system32\spaceman.exe	/Work	LocalSystem	-	{5267392F-5BB8-45A6-AD93-10211E2F8850}
+ProcessMemoryDiagnosticEvents	LocalAdmin	-	True	2018-05-14 05:25:24.000000 UTC	2018-05-04 18:22:00.000000 UTC	-	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="System"><Select Path="System">*[System[Provider[@Name='Microsoft-Windows-WER-SystemErrorReporting'] and (EventID=1000 or EventID=1001 or EventID=1006)]]</Select></Query></QueryList>, Queries: []	ComHandler	{8168e74a-b39f-46d8-adcd-7bed477b80a3}	Event	LocalAdmin	N/A	{545B5BF9-3D17-4EC0-8F78-A08C9F56FBCF}
+ProcessMemoryDiagnosticEvents	LocalAdmin	-	True	2018-05-14 05:25:24.000000 UTC	2018-05-04 18:22:00.000000 UTC	-	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="Application"><Select Path="Application">*[System[Provider[@Name='Application Error'] and EventID=1000]]</Select></Query></QueryList>, Queries: []	ComHandler	{8168e74a-b39f-46d8-adcd-7bed477b80a3}	Event	LocalAdmin	N/A	{545B5BF9-3D17-4EC0-8F78-A08C9F56FBCF}
+ProcessMemoryDiagnosticEvents	LocalAdmin	-	True	2018-05-14 05:25:24.000000 UTC	2018-05-04 18:22:00.000000 UTC	-	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="System"><Select Path="System">*[System[Provider[@Name='Application Popup'] and EventID=1801]]</Select></Query></QueryList>, Queries: []	ComHandler	{8168e74a-b39f-46d8-adcd-7bed477b80a3}	Event	LocalAdmin	N/A	{545B5BF9-3D17-4EC0-8F78-A08C9F56FBCF}
+ProcessMemoryDiagnosticEvents	LocalAdmin	-	True	2018-05-14 05:25:24.000000 UTC	2018-05-04 18:22:00.000000 UTC	-	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="Microsoft-Windows-Kernel-StoreMgr/Operational"><Select Path="Microsoft-Windows-Kernel-StoreMgr/Operational">*[System[Provider[@Name='Microsoft-Windows-Kernel-StoreMgr'] and EventID=6]]</Select></Query></QueryList>, Queries: []	ComHandler	{8168e74a-b39f-46d8-adcd-7bed477b80a3}	Event	LocalAdmin	N/A	{545B5BF9-3D17-4EC0-8F78-A08C9F56FBCF}
+MsCtfMonitor	AnyUser	-	True	2020-09-20 23:52:42.000000 UTC	2018-05-04 18:22:00.000000 UTC	2020-09-20 23:52:46.000000 UTC	Logon	Logon trigger	ComHandler	{1575cfe-9a55-4003-a5e1-f38d1ebdcbe1}	-	AnyUser	N/A	{56478235-C914-438B-85CA-52568369A023}
+Storage Tiers Optimization	LocalSystem	-	True	-	2018-05-04 18:22:00.000000 UTC	-	Time	-	Exe	%windir%\system32\defrag.exe	-c -h -g -# -m 8 -i 13500	LocalSystem	-	{568AC0B6-44BB-4D3E-B7CB-D4649085FAB7}
+IndexerAutomaticMaintenance	LocalService	-	-	2021-09-15 03:52:10.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-15 03:52:11.000000 UTC	-	-	ComHandler	{3fba60a6-7bf5-4868-a2ca-6623b3dffea6}	-	LocalService	N/A	{569538E5-354B-4206-BE67-47DAD594A707}
+.NET Framework NGEN v4.0.30319	Author	-	-	2021-09-16 01:52:18.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-16 01:52:25.000000 UTC	-	-	ComHandler	{84f0fae1-c27b-4f6f-807b-28cf6f96287d}	/RuntimeWide	Author	N/A	{57B14E59-8805-4BF3-B1F8-E86B92973ABF}
+CreateObjectTask	LocalSystem	-	-	2021-02-03 21:50:23.000000 UTC	2018-05-04 18:22:01.000000 UTC	-	-	-	ComHandler	{990a9f8f-301f-45f7-8d0e-68c5952dba43}	-	LocalSystem	N/A	{5810571C-1162-4627-BE06-95F3CCAF7821}
+Device	LocalSystem	-	True	2021-09-15 07:50:22.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 07:50:31.000000 UTC	Time	-	-	-	-	LocalSystem	-	{5A201377-91EE-4904-B2C6-9F7D7456A03F}
+Device	LocalSystem	-	False	2021-09-15 07:50:22.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 07:50:31.000000 UTC	WindowsNotificationFacility	WNF state 750cbca3290b9641	-	-	-	LocalSystem	-	{5A201377-91EE-4904-B2C6-9F7D7456A03F}
+UserTask	InteractiveUsers	-	True	2021-02-03 15:52:44.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 15:52:44.000000 UTC	WindowsNotificationFacility	WNF state f510bca32a1e890d	ComHandler	{58fb76b9-ac85-4e55-ac04-427593b1d060}	USER	InteractiveUsers	N/A	{5B3610B8-EB8F-483D-9D5D-EFB6075BE647}
+UserTask	InteractiveUsers	-	True	2021-02-03 15:52:44.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 15:52:44.000000 UTC	Logon	Logon trigger	ComHandler	{58fb76b9-ac85-4e55-ac04-427593b1d060}	USER	InteractiveUsers	N/A	{5B3610B8-EB8F-483D-9D5D-EFB6075BE647}
+UserTask	InteractiveUsers	-	True	2021-02-03 15:52:44.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 15:52:44.000000 UTC	Logon	Logon trigger	ComHandler	{58fb76b9-ac85-4e55-ac04-427593b1d060}	USER	InteractiveUsers	N/A	{5B3610B8-EB8F-483D-9D5D-EFB6075BE647}
+UserTask	InteractiveUsers	-	True	2021-02-03 15:52:44.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 15:52:44.000000 UTC	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="Microsoft-Windows-User Device Registration/Admin"><Select Path="Microsoft-Windows-User Device Registration/Admin">*[System[Provider[@Name='Microsoft-Windows-User Device Registration'] and EventID=300]]</Select></Query></QueryList>, Queries: []	ComHandler	{58fb76b9-ac85-4e55-ac04-427593b1d060}	USER	InteractiveUsers	N/A	{5B3610B8-EB8F-483D-9D5D-EFB6075BE647}
+SilentCleanup	Authenticated Users	-	-	2021-02-03 06:15:02.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-02-03 06:15:14.000000 UTC	-	-	Exe	%windir%\system32\cleanmgr.exe	/autoclean /d %systemdrive%	Authenticated Users	-	{5C020530-D866-421B-B15E-7EB9C7FA4D3B}
+MNO Metadata Parser	LocalSystem	-	True	-	2018-05-04 18:22:01.000000 UTC	-	Event	Event trigger: Subscription: <QueryList>
+            <Query Id='1'>
+            <Select Path='Microsoft-Windows-DeviceSetupManager/Operational'>*[System/EventID=302] and *[EventData/Data[@Name='Prop_ServiceInfoNamespace']='http://schemas.microsoft.com/windows/2010/12/DeviceMetadata/MobileBroadBandInfo']</Select>
+            </Query>
+            </QueryList>, Queries: []	-	-	-	LocalSystem	-	{5F5BF124-A1B2-4BEB-8C6B-5AD2F2D1C3DB}
+OneDrive Standalone Update Task-S-1-5-21-3445421715-2530590580-3149308974-500	Author	-	True	-	2018-05-14 04:00:17.000000 UTC	-	Time	-	-	-	-	Author	-	{611F0765-F665-48B7-AF01-4F50262A8FE7}
+appuriverifierdaily	AllUsers	-	-	2021-02-03 00:07:48.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-02-03 00:07:50.000000 UTC	-	-	-	-	-	AllUsers	-	{61BAF05A-8050-481F-9368-9B62A53BC9C5}
+AnalyzeSystem	LocalSystemAccount	-	-	2021-09-15 01:52:10.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 01:53:21.000000 UTC	-	-	ComHandler	{927ea2af-1c54-43d5-825e-74ce028eee}	-	LocalSystemAccount	N/A	{62378FC3-69C0-4B92-B72B-7652D823ABDE}
+Schedule Scan	LocalSystem	-	True	2021-09-16 00:48:15.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-16 00:48:17.000000 UTC	Time	-	Exe	%systemroot%\system32\usoclient.exe	StartScan	LocalSystem	-	{650751B8-0586-401C-95FF-65523D62D989}
+Schedule Scan	LocalSystem	-	True	2021-09-16 00:48:15.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-16 00:48:17.000000 UTC	WindowsNotificationFacility	WNF state 750cbca3290b9641	Exe	%systemroot%\system32\usoclient.exe	StartScan	LocalSystem	-	{650751B8-0586-401C-95FF-65523D62D989}
+Schedule Scan	LocalSystem	-	True	2021-09-16 00:48:15.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-16 00:48:17.000000 UTC	WindowsNotificationFacility	WNF state 7524bca33e06830d	Exe	%systemroot%\system32\usoclient.exe	StartScan	LocalSystem	-	{650751B8-0586-401C-95FF-65523D62D989}
+Schedule Scan	LocalSystem	-	True	2021-09-16 00:48:15.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-16 00:48:17.000000 UTC	WindowsNotificationFacility	WNF state 7550bca322028f02	Exe	%systemroot%\system32\usoclient.exe	StartScan	LocalSystem	-	{650751B8-0586-401C-95FF-65523D62D989}
+Schedule Scan	LocalSystem	-	True	2021-09-16 00:48:15.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-16 00:48:17.000000 UTC	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="System"><Select Path="System">*[System[EventID=8202]]</Select></Query></QueryList>, Queries: []	Exe	%systemroot%\system32\usoclient.exe	StartScan	LocalSystem	-	{650751B8-0586-401C-95FF-65523D62D989}
+Calibration Loader	Group	-	True	2020-09-20 23:52:43.000000 UTC	2018-05-04 18:22:00.000000 UTC	2020-09-20 23:53:02.000000 UTC	Logon	Logon trigger	ComHandler	{b210d694-c8df-490d-9576-9e20cdbc20bd}	-	Group	N/A	{66156864-BE3D-4705-B360-7A9055061F16}
+Calibration Loader	Group	-	True	2020-09-20 23:52:43.000000 UTC	2018-05-04 18:22:00.000000 UTC	2020-09-20 23:53:02.000000 UTC	Session	ConsoleConnect	ComHandler	{b210d694-c8df-490d-9576-9e20cdbc20bd}	-	Group	N/A	{66156864-BE3D-4705-B360-7A9055061F16}
+WiFiTask	Users	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7578bca33a078008	-	-	-	Users	-	{67889EEC-D7B4-43D3-B82C-D0DBA3522591}
+EduPrintProv	Users	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7508bca3280a9341	-	-	-	Users	-	{6831246E-D3E2-469C-9079-23FA53AC7712}
+CleanupTemporaryState	LocalSystem	-	-	2021-09-12 23:52:04.000000 UTC	2018-05-03 18:22:01.000000 UTC	2021-09-12 23:52:16.000000 UTC	-	-	Exe	%windir%\system32\rundll32.exe	Windows.Storage.ApplicationData.dll,CleanupTemporaryState	LocalSystem	-	{6AF2B5AF-12F7-4A18-8717-7EE7080D2E29}
+WIM-Hash-Validation	LocalSystem	-	-	2018-05-08 20:02:34.000000 UTC	2018-05-04 18:22:01.000000 UTC	2018-05-08 20:02:36.000000 UTC	-	-	ComHandler	{b7bffb5a-efa8-4d8c-bbde-c8d5faaf54a1}	WimHashValidation	LocalSystem	N/A	{6AF76128-8D3D-4190-88A8-78A1FDB651A8}
+MapsToastTask	Users	-	-	-	2018-05-04 18:22:01.000000 UTC	-	-	-	ComHandler	{9885aef2-bd9f-41e0-b15e-b3141395e803}	$(Arg0);$(Arg1);$(Arg2);$(Arg3);$(Arg4);$(Arg5);$(Arg6);$(Arg7)	Users	N/A	{6C347398-3BF5-4CFF-A5E4-2151CC42B359}
+RegisterDeviceProtectionStateChanged	System	-	True	2021-09-15 22:25:40.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 22:25:41.000000 UTC	WindowsNotificationFacility	WNF state 7540bea33e06830d	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -ProtectionStateChanged -FreeNetworkOnly -NoLocation	System	N/A	{6E5F8BCA-89EE-4A07-81A9-4BC979E04A40}
+BackgroundUploadTask	Users	-	-	2021-02-03 00:07:45.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-02-03 00:08:03.000000 UTC	-	-	ComHandler	{59b9640b-3f70-4d1c-b159-f26eeb8a4c87}	-	Users	N/A	{6EE17B2A-BD42-482C-8D89-88F3F3D06E9A}
+Sysprep Generalize Drivers	LocalSystem	-	-	2018-05-04 22:14:34.000000 UTC	2018-05-04 18:22:01.000000 UTC	2018-05-04 22:15:18.000000 UTC	-	-	Exe	%SystemRoot%\System32\drvinst.exe	6	LocalSystem	-	{6F0BC9E8-7975-4BBA-BA11-1B177AA4EBB4}
+Interactive	Users	-	-	-	2018-05-04 18:22:01.000000 UTC	-	-	-	ComHandler	{855fec53-d2e4-4999-9e87-3414e9cf0ff4}	$(Arg0)	Users	N/A	{71B5B3B5-F3E4-4EDE-ACCD-2668A19D5CE7}
+Automatic-Device-Join	LocalSystem	-	True	2021-09-16 02:56:06.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-16 02:56:07.000000 UTC	Logon	Logon trigger	-	-	-	LocalSystem	-	{724A82BA-0CD9-4932-A8F8-AE155346DC7A}
+Automatic-Device-Join	LocalSystem	-	True	2021-09-16 02:56:06.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-16 02:56:07.000000 UTC	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="Microsoft-Windows-User Device Registration/Admin"><Select Path="Microsoft-Windows-User Device Registration/Admin">*[System[Provider[@Name='Microsoft-Windows-User Device Registration'] and EventID=4096]]</Select></Query></QueryList>, Queries: []	-	-	-	LocalSystem	-	{724A82BA-0CD9-4932-A8F8-AE155346DC7A}
+ResolutionHost	Users	-	-	2020-09-21 00:18:15.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-02-03 21:51:02.000000 UTC	-	-	ComHandler	{900be39d-6be8-461a-bc4d-b0fa71f5ecb1}	-	Users	N/A	{72505299-C884-45D7-8FD6-026C2FFBE32D}
+LocateCommandUserSession	User	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7520bda33e06830d	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-UserSessionCommand	User	N/A	{72823FDD-BD1E-49B3-B82A-E44C027AE934}
+GoogleUpdateTaskMachineCore	Author	-	True	2021-09-15 20:53:16.000000 UTC	2018-05-04 18:51:24.000000 UTC	2021-09-15 21:01:38.000000 UTC	Logon	Logon trigger	Exe	C:\Program Files (x86)\Google\Update\GoogleUpdate.exe	/c	Author	-	{733180FB-AB84-4E60-99B9-720EB59BB2EC}
+GoogleUpdateTaskMachineCore	Author	-	True	2021-09-15 20:53:16.000000 UTC	2018-05-04 18:51:24.000000 UTC	2021-09-15 21:01:38.000000 UTC	Time	-	Exe	C:\Program Files (x86)\Google\Update\GoogleUpdate.exe	/c	Author	-	{733180FB-AB84-4E60-99B9-720EB59BB2EC}
+TempSignedLicenseExchange	AllUsers	-	-	2021-02-03 00:07:46.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-02-03 00:07:50.000000 UTC	-	-	ComHandler	{77646a68-ad14-4d53-897d-7be4dde5f929}	-	AllUsers	N/A	{798E0AF4-3ED7-4D41-B06F-5261474509DE}
+Office ClickToRun Service Monitor	Author	-	True	2021-09-15 13:42:16.000000 UTC	2021-02-21 13:27:24.000000 UTC	2021-09-15 13:42:17.000000 UTC	Time	-	Exe	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe	/WatchService	Author	-	{79E73F50-9C99-498D-836E-6BDAAFA135C4}
+CacheTask	AnyUser	-	True	2020-09-20 23:52:43.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:51:03.000000 UTC	Logon	Logon trigger	ComHandler	{358b920-ac7-461f-98f4-58e32cd89148}	-	AnyUser	N/A	{7CBDBFDC-601B-4E16-8FF7-A5B2D18AB963}
+-	Author	-	True	-	2021-02-21 13:27:26.000000 UTC	-	Time	-	-	-	-	-	-	{80F46E36-5BF1-4CB3-B592-01426BC526B5}
+-	Author	-	True	-	2021-02-21 13:27:26.000000 UTC	-	Time	-	-	-	-	-	-	{80F46E36-5BF1-4CB3-B592-01426BC526B5}
+-	Author	-	True	-	2021-02-21 13:27:26.000000 UTC	-	Time	-	-	-	-	-	-	{80F46E36-5BF1-4CB3-B592-01426BC526B5}
+-	Author	-	True	-	2021-02-21 13:27:26.000000 UTC	-	Time	-	-	-	-	-	-	{80F46E36-5BF1-4CB3-B592-01426BC526B5}
+-	Author	-	True	-	2021-02-21 13:27:26.000000 UTC	-	Time	-	-	-	-	-	-	{80F46E36-5BF1-4CB3-B592-01426BC526B5}
+-	Author	-	True	-	2021-02-21 13:27:26.000000 UTC	-	Time	-	-	-	-	-	-	{80F46E36-5BF1-4CB3-B592-01426BC526B5}
+UninstallDeviceTask	LocalSystem	-	-	-	2018-05-04 18:22:01.000000 UTC	-	-	-	Exe	BthUdTask.exe	$(Arg0)	LocalSystem	-	{823907E4-225B-4EF7-AF4B-8BD3F3493491}
+UPnPHostConfig	LocalSystem	-	-	-	2018-05-04 18:22:01.000000 UTC	-	-	-	Exe	sc.exe	config upnphost start= auto	LocalSystem	-	{82B5AAEF-39CD-42E6-839C-D4724378C033}
+RegisterUserDevice	User	-	True	2020-09-26 00:22:19.000000 UTC	2018-05-04 18:22:00.000000 UTC	2020-09-26 00:23:18.000000 UTC	Logon	Logon trigger	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterUserDevice -NewAccount	User	N/A	{82F4D23B-6094-4A71-881F-1E15A6319E3E}
+RegisterUserDevice	User	-	True	2020-09-26 00:22:19.000000 UTC	2018-05-04 18:22:00.000000 UTC	2020-09-26 00:23:18.000000 UTC	WindowsNotificationFacility	WNF state 7540bca33e0b8441	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterUserDevice -NewAccount	User	N/A	{82F4D23B-6094-4A71-881F-1E15A6319E3E}
+Scheduled	Users	-	-	2021-02-01 10:15:01.000000 UTC	2018-04-29 18:22:01.000000 UTC	2021-02-01 10:15:05.000000 UTC	-	-	ComHandler	{c1f85ef8-bcc2-4606-bb39-70c523715eb3}	-	Users	N/A	{87E3E665-30F8-4B90-95CA-CDFDAF7E5FEB}
+Cellular	LocalSystem	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7518bca33a19870f	Exe	%windir%\system32\ProvTool.exe	/turn 7 /source CellStateChangeTask	LocalSystem	-	{8A03F39A-BE2F-46DC-ABBA-81503AF1CDD5}
+ExploitGuard MDM policy Refresh	LocalSystem	-	True	2020-02-17 08:00:38.000000 UTC	2018-05-04 18:22:01.000000 UTC	2020-02-17 08:00:40.000000 UTC	WindowsNotificationFacility	WNF state 7508bea328009213	ComHandler	{711001cd-cc1d-4470-9b7e-1ef73849c79e}	ExploitGuardPolicy	LocalSystem	N/A	{8C5D0486-F6FB-491D-BDE8-EA17DFD04457}
+ExploitGuard MDM policy Refresh	LocalSystem	-	True	2020-02-17 08:00:38.000000 UTC	2018-05-04 18:22:01.000000 UTC	2020-02-17 08:00:40.000000 UTC	WindowsNotificationFacility	WNF state 7508bca32a1e890d	ComHandler	{711001cd-cc1d-4470-9b7e-1ef73849c79e}	ExploitGuardPolicy	LocalSystem	N/A	{8C5D0486-F6FB-491D-BDE8-EA17DFD04457}
+SvcRestartTaskLogon	InteractiveUser	-	True	2020-09-20 23:52:43.000000 UTC	2018-05-04 18:22:00.000000 UTC	2020-09-20 23:53:13.000000 UTC	Logon	Logon trigger	ComHandler	{b1aebb5d-ead9-4476-b375-9c3ed9f32afc}	logon	InteractiveUser	N/A	{8E41C770-D98C-4204-A13A-0BA7C577AD02}
+NetworkStateChangeTask	Users	-	True	2019-12-03 01:13:02.000000 UTC	2018-05-04 18:22:01.000000 UTC	2019-12-03 01:13:03.000000 UTC	WindowsNotificationFacility	WNF state 7508bca33e0b8441	ComHandler	{a4173a49-f373-4475-9a0f-2d615204dc20}	-	Users	N/A	{8E7BC73C-7600-496B-9EA7-DF5B30C4B9F1}
+NetworkStateChangeTask	Users	-	True	2019-12-03 01:13:02.000000 UTC	2018-05-04 18:22:01.000000 UTC	2019-12-03 01:13:03.000000 UTC	WindowsNotificationFacility	WNF state 7510bca33e0b8441	ComHandler	{a4173a49-f373-4475-9a0f-2d615204dc20}	-	Users	N/A	{8E7BC73C-7600-496B-9EA7-DF5B30C4B9F1}
+BfeOnServiceStartTypeChange	LocalSystem	-	True	-	2018-05-04 18:22:01.000000 UTC	-	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="System"><Select Path="System">*/System/Provider[@Name='Service Control Manager'] and */System/EventID='7040' and */EventData/Data[@Name='param4']='BFE'</Select></Query></QueryList>, Queries: []	Exe	%windir%\system32\rundll32.exe	bfe.dll,BfeOnServiceStartTypeChange	LocalSystem	-	{9202D2AF-F1E6-4D6B-AA7E-FC0654E3635A}
+EDP App Launch Task	Users	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 3508bca3280a9641	ComHandler	{61bcd1b9-340c-40ec-9d41-d7f1c0632f05}	AppLaunch	Users	N/A	{931BE2FA-8F50-4C1A-BFD8-150C55D25502}
+ProactiveScan	LocalSystem	-	-	2021-09-15 01:53:22.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 01:53:22.000000 UTC	-	-	ComHandler	{cf4270f5-2e43-4468-83b3-a8c45bb33ea1}	-	LocalSystem	N/A	{9382EF2C-1C04-478F-9AD2-8D98DCA93085}
+RemoteAssistanceTask	Creator	-	True	2020-02-17 08:00:54.000000 UTC	2018-05-04 18:22:01.000000 UTC	2020-02-17 08:00:54.000000 UTC	Event	Event trigger: Subscription: <QueryList><Query Id="0" Path="System"><Select Path="System">*[System[Provider[@Name='Microsoft-Windows-GroupPolicy'] and EventID=1502]]</Select></Query></QueryList>, Queries: []	Exe	%windir%\system32\RAServer.exe	/offerraupdate	Creator	%windir%	{95812E91-F632-41D2-BA27-1B515BFBF299}
+RemoteAssistanceTask	Creator	-	True	2020-02-17 08:00:54.000000 UTC	2018-05-04 18:22:01.000000 UTC	2020-02-17 08:00:54.000000 UTC	Logon	Logon trigger	Exe	%windir%\system32\RAServer.exe	/offerraupdate	Creator	%windir%	{95812E91-F632-41D2-BA27-1B515BFBF299}
+IntegrityCheck	System	-	True	2021-09-15 15:32:27.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 15:32:27.000000 UTC	Time	-	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-IntegrityCheck	System	N/A	{9A149913-6192-4221-841A-2D904528AAC3}
+Diagnostics	System	-	-	2021-09-15 01:53:22.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 01:53:23.000000 UTC	-	-	Exe	%windir%\system32\disksnapshot.exe	-z	System	-	{9C7D670F-D8AA-4310-B11E-79D3738AB035}
+RegIdleBackup	LocalSystem	-	-	2021-09-06 23:51:42.000000 UTC	2018-05-03 18:22:01.000000 UTC	2021-09-06 23:51:42.000000 UTC	-	-	ComHandler	{ca767aa8-9157-4604-b64b-40747123d5f2}	-	LocalSystem	N/A	{9D5DB7FB-8385-4592-B395-B99FADACACA3}
+KeyPreGenTask	LocalSystem	-	True	2021-02-03 21:50:36.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:50:40.000000 UTC	WindowsNotificationFacility	WNF state 7508bca323098541	ComHandler	{47e30d54-dac1-473a-aff7-2355bf78881f}	NGCKeyPregen	LocalSystem	N/A	{9EDF61A5-AC02-4911-A5F2-857CF14AFFAD}
+KeyPreGenTask	LocalSystem	-	True	2021-02-03 21:50:36.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:50:40.000000 UTC	WindowsNotificationFacility	WNF state 7520bca323098541	ComHandler	{47e30d54-dac1-473a-aff7-2355bf78881f}	NGCKeyPregen	LocalSystem	N/A	{9EDF61A5-AC02-4911-A5F2-857CF14AFFAD}
+KeyPreGenTask	LocalSystem	-	True	2021-02-03 21:50:36.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:50:40.000000 UTC	WindowsNotificationFacility	WNF state 75c0bca33e06830d	ComHandler	{47e30d54-dac1-473a-aff7-2355bf78881f}	NGCKeyPregen	LocalSystem	N/A	{9EDF61A5-AC02-4911-A5F2-857CF14AFFAD}
+KeyPreGenTask	LocalSystem	-	False	2021-02-03 21:50:36.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:50:40.000000 UTC	Logon	Logon trigger	ComHandler	{47e30d54-dac1-473a-aff7-2355bf78881f}	NGCKeyPregen	LocalSystem	N/A	{9EDF61A5-AC02-4911-A5F2-857CF14AFFAD}
+KeyPreGenTask	LocalSystem	-	False	2021-02-03 21:50:36.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:50:40.000000 UTC	Session	ConsoleConnect	ComHandler	{47e30d54-dac1-473a-aff7-2355bf78881f}	NGCKeyPregen	LocalSystem	N/A	{9EDF61A5-AC02-4911-A5F2-857CF14AFFAD}
+Storage Tiers Management Initialization	LocalSystem	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7508bca32b1d940d	ComHandler	{5c9ab547-345d-4175-9af6-65133463a100}	-	LocalSystem	N/A	{A108828C-AC12-4613-8D0C-9DF73E983E77}
+USO_Broker_Display	Author	-	True	2021-09-16 00:48:41.000000 UTC	2018-05-04 18:27:00.000000 UTC	2021-09-16 00:48:42.000000 UTC	WindowsNotificationFacility	WNF state 7510bca3381d8941	Exe	%systemroot%\system32\MusNotification.exe	Display	Author	-	{A4B1B9A3-CE8A-47A6-BF54-33730F9A61FA}
+EDP Inaccessible Credentials Task	Users	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7560bca3280a9641	ComHandler	{61bcd1b9-340c-40ec-9d41-d7f1c0632f05}	MissingCredentials	Users	N/A	{A5C1489F-D79F-43B2-B433-EAAFE0E7ADA5}
+Device Install Group Policy	LocalSystem	-	True	2020-02-17 08:00:38.000000 UTC	2018-05-04 18:22:01.000000 UTC	2020-02-17 08:00:40.000000 UTC	WindowsNotificationFacility	WNF state 7508bca32a1e890d	ComHandler	{60400283-b242-4fa8-8c25-caf695b88209}	-	LocalSystem	N/A	{A70D812D-3245-46FF-8651-2472A6A6875B}
+RunUpdateNotificationMgr	Author	-	True	-	2018-05-04 18:22:01.000000 UTC	-	Time	-	-	-	-	Author	-	{A7C57A41-D764-4AAB-BBDE-BB8DAA2BE5DD}
+RunUpdateNotificationMgr	Author	-	True	-	2018-05-04 18:22:01.000000 UTC	-	Logon	Logon trigger	-	-	-	Author	-	{A7C57A41-D764-4AAB-BBDE-BB8DAA2BE5DD}
+Sqm-Tasks	LocalSystem	-	-	2021-08-26 19:53:18.000000 UTC	2018-04-10 18:22:01.000000 UTC	2021-08-26 19:53:19.000000 UTC	-	-	ComHandler	{5014b7c8-934e-4262-9816-887fa745a6c4}	PiSqmTasks	LocalSystem	N/A	{A7FDF706-59A4-4F5F-8274-DAB060A8F56E}
+DsSvcCleanup	LocalSystem	-	-	2021-09-15 03:52:11.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 03:52:12.000000 UTC	-	-	-	-	-	LocalSystem	-	{A8E38795-E6D5-44C1-83B8-D3D0811ACE2E}
+RegisterDeviceAccountChange	System	-	True	2020-09-26 00:22:19.000000 UTC	2018-05-04 18:22:01.000000 UTC	2020-09-26 00:22:19.000000 UTC	WindowsNotificationFacility	WNF state 7540bca33e0b8441	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -AccountChange	System	N/A	{AB90E5E3-399D-47FF-B197-A0A789D8C521}
+RegisterDeviceAccountChange	System	-	True	2020-09-26 00:22:19.000000 UTC	2018-05-04 18:22:01.000000 UTC	2020-09-26 00:22:19.000000 UTC	WindowsNotificationFacility	WNF state 7560bda33e06830d	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -AccountChange	System	N/A	{AB90E5E3-399D-47FF-B197-A0A789D8C521}
+StorageCardEncryption Task	Users	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7548bca32b188341	ComHandler	{61bcd1b9-340c-40ec-9d41-d7f1c0632f05}	SDCardEncryptionPolicy	Users	N/A	{ABAAFA95-4331-4259-B7CF-AD53C5E8B786}
+Automatic App Update	-	-	-	-	-	-	-	-	-	-	-	-	-	{ABC2A8CE-766D-49C9-9126-FDEA4B45FB34}
+VerifyWinRE	LocalAdmin	-	-	-	2018-05-04 18:22:01.000000 UTC	-	-	-	ComHandler	{89d1d0c2-a3cf-490c-abe3-b86cde34b047}	VerifyWinRE	LocalAdmin	N/A	{B1044451-BB1F-408B-ACEA-4C3403A7E5A9}
+Account Cleanup	Author	-	-	-	2018-05-04 18:22:01.000000 UTC	-	-	-	Exe	%windir%\System32\rundll32.exe	%windir%\System32\Windows.SharedPC.AccountManager.dll,StartMaintenance	Author	-	{B2B85895-09A2-4BC3-BBF9-9B74780BFE62}
+SvcRestartTask	NetworkService	-	True	2021-09-15 15:03:01.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 15:03:02.000000 UTC	Time	-	ComHandler	{b1aebb5d-ead9-4476-b375-9c3ed9f32afc}	timer	NetworkService	N/A	{B2DBA6F1-683B-44EC-855D-620ECFE5185B}
+RegisterDevicePeriodic6	System	-	True	-	2016-11-21 01:57:04.000000 UTC	-	Time	-	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -Periodic	System	N/A	{B320E058-C6FA-413F-876B-0C9B4428AE66}
+Microsoft Compatibility Appraiser	LocalSystem	-	True	2021-09-15 07:20:44.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 07:22:44.000000 UTC	Time	-	-	-	-	LocalSystem	-	{B38EADAA-FBBE-4A90-BAE4-3F6BCC5C5BC7}
+Microsoft Compatibility Appraiser	LocalSystem	-	True	2021-09-15 07:20:44.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 07:22:44.000000 UTC	WindowsNotificationFacility	WNF state 750cbca3290b9641	-	-	-	LocalSystem	-	{B38EADAA-FBBE-4A90-BAE4-3F6BCC5C5BC7}
+Logon Synchronization	Users	-	True	-	2018-05-04 18:22:00.000000 UTC	-	Logon	Logon trigger	ComHandler	{fa3f3dd9-4c1a-456b-a8fa-c76ef3ed83b8}	Logon	Users	N/A	{B4A1C3B7-D040-441C-82D0-53300C1A0962}
+SystemSoundsService	Group	-	True	2020-09-20 23:52:43.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 21:51:03.000000 UTC	Logon	Logon trigger	ComHandler	{2dea658f-54c1-4227-af9b-260ab5fc3543}	-	Group	N/A	{B4B73970-0DD1-45A9-87C1-F7A21F9A05CC}
+WiFiTask	Users	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7518bca323028741	Exe	%SystemRoot%\System32\WiFiTask.exe	nla	Users	-	{BC40FCF6-98AA-466D-98D4-D4D532C3007D}
+WsSwapAssessmentTask	LocalSystem	-	-	2021-08-26 19:53:22.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-08-26 19:53:22.000000 UTC	-	-	Exe	%windir%\system32\rundll32.exe	sysmain.dll,PfSvWsSwapAssessmentTask	LocalSystem	-	{C05CF805-420D-41C7-9E13-86ED6E546B7E}
+Work Folders Logon Synchronization	InteractiveUsers	-	True	2020-09-20 23:59:07.000000 UTC	2018-05-04 18:22:00.000000 UTC	2020-09-20 23:59:21.000000 UTC	Logon	Logon trigger	ComHandler	{97d47d56-3777-49fb-8e8f-90d7e30e1a1e}	Logon	InteractiveUsers	N/A	{C6A91CB5-D958-4029-9301-1943231137AF}
+RegisterDevicePeriodic1	System	-	True	2017-12-14 21:02:43.000000 UTC	2016-11-21 01:57:04.000000 UTC	-	Time	-	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -Periodic -FreeNetworkOnly	System	N/A	{C6B2579B-4962-4D12-883D-BBD420573A6C}
+SynchronizeTime	LocalService	-	-	2021-09-15 03:52:11.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 03:52:13.000000 UTC	-	-	Exe	%windir%\system32\sc.exe	start w32time task_started	LocalService	-	{C8252966-561E-44F5-8E10-113984BF4843}
+MusUx_UpdateInterval	Author	-	True	2019-05-08 15:20:16.000000 UTC	2018-08-07 13:40:02.000000 UTC	2019-05-08 15:20:17.000000 UTC	Time	-	Exe	%systemroot%\system32\MusNotification.exe	Display	Author	-	{C8963E33-8632-46BC-A895-F0EB50F1028C}
+LPRemove	LocalSystem	-	-	2021-09-14 07:52:08.000000 UTC	2018-05-02 18:22:01.000000 UTC	2021-09-14 07:52:08.000000 UTC	-	-	-	-	-	LocalSystem	-	{C89FB80E-7881-4C3F-9506-00342D8BC3F1}
+Plug and Play Cleanup	LocalSystem	-	-	2021-08-26 19:53:18.000000 UTC	2016-10-20 01:57:04.000000 UTC	2021-08-26 19:53:19.000000 UTC	-	-	ComHandler	{def03232-9688-11e2-be7f-b4b52fd966ff}	-	LocalSystem	N/A	{C9ACBFD2-20AA-4A3F-BE1A-A3D5279BB1BB}
+ResPriStaticDbSync	LocalSystem	-	-	2021-09-11 01:58:23.000000 UTC	2018-04-28 18:22:01.000000 UTC	2021-09-11 01:58:47.000000 UTC	-	-	ComHandler	{297ee78c-ba95-4e94-81d3-d6e7f089c7b5}	-	LocalSystem	N/A	{CC012300-06C1-4CFD-AC88-5BDAB7548D99}
+Windows Defender Cache Maintenance	LocalSystem	-	-	2021-09-16 01:52:16.000000 UTC	2020-09-21 00:31:43.000000 UTC	2021-09-16 01:52:27.000000 UTC	-	-	Exe	C:\Program Files\Windows Defender\MpCmdRun.exe	-IdleTask -TaskName WdCacheMaintenance	LocalSystem	-	{CCF5AD6E-48A3-4915-B5EA-C043378638AF}
+Data Integrity Scan for Crash Recovery	LocalSystem	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7508bca32907950a	ComHandler	{dcfd3ea8-d960-4719-8206-490ae315f94f}	-CrashRecovery	LocalSystem	N/A	{CECD7802-159F-445B-B714-1BB3840E107E}
+ScheduledDefrag	LocalSystem	-	-	2021-09-11 01:51:57.000000 UTC	2018-05-01 18:22:01.000000 UTC	2021-09-11 01:58:22.000000 UTC	-	-	Exe	%windir%\system32\defrag.exe	-c -h -o -$	LocalSystem	-	{CF842F82-5CE4-44CE-93D4-750EE07191DC}
+Office Subscription Maintenance	Author	-	True	2021-09-15 21:26:43.000000 UTC	2020-01-22 15:42:08.000000 UTC	2021-09-15 21:26:49.000000 UTC	Time	-	-	-	-	Author	-	{CFE3A54A-8717-42B3-B4AC-5A8CFCE93833}
+Reboot	LocalSystem	-	True	-	2018-05-04 18:22:01.000000 UTC	-	Time	-	-	-	-	LocalSystem	-	{D0218C70-9C99-4043-BF17-667E1AE5C42E}
+File History (maintenance mode)	LocalService	-	-	2021-09-14 07:52:08.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-14 07:52:08.000000 UTC	-	-	ComHandler	{89917b7c-a1a6-11df-8bf6-18a90531a85a}	-	LocalService	N/A	{D075280B-9BB2-404D-9BA3-4586C36B7C7E}
+Notifications	Creator	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7508bca321089541	-	-	-	Creator	-	{D0A89826-6023-4661-975D-0CE62FBF194D}
+MobilityManager	LocalService	-	True	-	2018-05-04 18:22:01.000000 UTC	-	Event	Event trigger: Subscription: <QueryList>
+
+
+
+
+
+
+
+              <Query
+
+
+
+
+
+
+
+                  Id="0"
+
+
+
+
+
+
+
+                  Path="Application"
+
+
+
+
+
+
+
+                  >
+
+
+
+
+
+
+
+                <Select Path="Application">*[System[Provider[@Name='RasClient'] and (Level=4 or Level=0) and (EventID=20281)]]</Select>
+
+
+
+
+
+
+
+              </Query>
+
+
+
+
+
+
+
+            </QueryList>, Queries: []	ComHandler	{c463a0fc-794f-4fdf-9201-1938ceacafa}	-	LocalService	N/A	{D11010CF-25A1-43AD-B92C-EEBFAA4E1EFB}
+RegisterDeviceConnectedToNetwork	System	-	True	2017-12-14 21:03:55.000000 UTC	2016-11-21 01:57:04.000000 UTC	2017-12-14 21:04:53.000000 UTC	WindowsNotificationFacility	WNF state 7508bca33a0d8b41	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -ConnectedToNetwork	System	N/A	{D19A2726-897E-4F7D-9CE4-0773B449CE9E}
+VerifiedPublisherCertStoreCheck	LocalService	-	True	-	2018-05-04 18:22:00.000000 UTC	-	Boot	Boot trigger	-	-	-	LocalService	-	{D2E38DD0-019E-42DB-B34D-2CE5DC12ED7A}
+BackupTask	Users	-	-	2021-02-03 00:07:47.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-02-03 00:07:47.000000 UTC	-	-	ComHandler	{60a4c78c-e2b8-4e6e-876f-da203b02c05e}	-	Users	N/A	{D5272796-4812-49FB-B893-4B15630B0D4B}
+-	Author	-	True	2018-05-04 17:23:38.000000 UTC	2018-05-03 17:39:49.000000 UTC	2018-05-04 17:23:39.000000 UTC	Time	-	-	-	-	Author	-	{D5421108-F79C-46D4-8A44-7ADAF54DA2BE}
+UpdateLibrary	-	-	-	-	-	-	-	-	-	-	-	-	-	{D6BCA029-E2AB-4419-A6C5-CBED07BDE960}
+QueueReporting	LocalSystem	-	True	2021-09-16 03:03:35.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-16 03:03:58.000000 UTC	Boot	Boot trigger	Exe	%windir%\system32\wermgr.exe	-upload	LocalSystem	-	{D80AA3A2-189B-4A11-8828-511E6BAE5426}
+QueueReporting	LocalSystem	-	True	2021-09-16 03:03:35.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-16 03:03:58.000000 UTC	WindowsNotificationFacility	WNF state 7510bca33a0b9441	Exe	%windir%\system32\wermgr.exe	-upload	LocalSystem	-	{D80AA3A2-189B-4A11-8828-511E6BAE5426}
+QueueReporting	LocalSystem	-	True	2021-09-16 03:03:35.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-16 03:03:58.000000 UTC	WindowsNotificationFacility	WNF state 7510bca33e0b8441	Exe	%windir%\system32\wermgr.exe	-upload	LocalSystem	-	{D80AA3A2-189B-4A11-8828-511E6BAE5426}
+QueueReporting	LocalSystem	-	True	2021-09-16 03:03:35.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-16 03:03:58.000000 UTC	Time	-	Exe	%windir%\system32\wermgr.exe	-upload	LocalSystem	-	{D80AA3A2-189B-4A11-8828-511E6BAE5426}
+CreateObjectTask	LocalSystem	-	-	2018-05-08 14:03:39.000000 UTC	2018-05-04 18:22:01.000000 UTC	2018-05-08 14:04:09.000000 UTC	-	-	ComHandler	{e4544aba-62bf-4c54-aab2-ec246342626c}	-	LocalSystem	N/A	{D9F734C9-D893-4CC4-935E-10996BC25C9E}
+Background Synchronization	Users	-	True	-	2018-05-04 18:22:01.000000 UTC	-	Time	-	ComHandler	{fa3f3dd9-4c1a-456b-a8fa-c76ef3ed83b8}	-	Users	N/A	{D9FC781D-6C6E-41E5-9A76-FBB1F320B1D9}
+GoogleUpdateTaskMachineUA	Author	-	True	2021-09-16 02:53:18.000000 UTC	2018-05-04 18:51:24.000000 UTC	2021-09-16 02:53:18.000000 UTC	Time	-	Exe	C:\Program Files (x86)\Google\Update\GoogleUpdate.exe	/ua /installsource scheduler	Author	-	{DA0FAB58-4E4F-40EA-84A9-E41F820B924E}
+ProgramDataUpdater	LocalSystem	-	-	2021-09-15 03:52:12.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 03:52:13.000000 UTC	-	-	Exe	%windir%\system32\compattelrunner.exe	-maintenance	LocalSystem	-	{DE51FC11-6C38-440A-A9D2-2A0602690914}
+Office Automatic Updates 2.0	Author	-	True	2021-09-15 17:46:57.000000 UTC	2021-02-21 13:27:24.000000 UTC	2021-09-15 17:47:31.000000 UTC	Time	-	Exe	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe	/frequentupdate SCHEDULEDTASK displaylevel=False	Author	-	{DED11D8D-1467-46FC-B45C-6ABEBE1B2031}
+Office Automatic Updates 2.0	Author	-	True	2021-09-15 17:46:57.000000 UTC	2021-02-21 13:27:24.000000 UTC	2021-09-15 17:47:31.000000 UTC	Logon	Logon trigger	Exe	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe	/frequentupdate SCHEDULEDTASK displaylevel=False	Author	-	{DED11D8D-1467-46FC-B45C-6ABEBE1B2031}
+Office Automatic Updates 2.0	Author	-	True	2021-09-15 17:46:57.000000 UTC	2021-02-21 13:27:24.000000 UTC	2021-09-15 17:47:31.000000 UTC	Logon	Logon trigger	Exe	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe	/frequentupdate SCHEDULEDTASK displaylevel=False	Author	-	{DED11D8D-1467-46FC-B45C-6ABEBE1B2031}
+HybridDriveCacheRebalance	LocalSystem	-	-	-	2018-05-04 18:22:01.000000 UTC	-	-	-	ComHandler	{d44377b8-1f2f-4faa-9c8e-6c4ad2928e47}	-	LocalSystem	N/A	{DF75705A-4BC8-4B67-8016-42B33768A374}
+CreateExplorerShellUnelevatedTask	Author	-	True	2018-05-14 03:58:22.000000 UTC	2018-05-14 03:58:22.000000 UTC	2018-05-14 05:27:26.000000 UTC	Logon	Logon trigger	Exe	C:\WINDOWS\Explorer.EXE	/NOUACCHECK	Author	-	{DF76323A-B465-46DB-BB5B-75742917FC02}
+Tpm-Maintenance	LocalSystem	-	True	2018-05-08 20:02:37.000000 UTC	2018-05-04 18:22:01.000000 UTC	2018-05-08 20:02:38.000000 UTC	WindowsNotificationFacility	WNF state 7518bca3391e8b41	ComHandler	{5014b7c8-934e-4262-9816-887fa745a6c4}	TpmTasks	LocalSystem	N/A	{E07239B6-8134-4053-A9EB-3750C8C8997C}
+Tpm-Maintenance	LocalSystem	-	True	2018-05-08 20:02:37.000000 UTC	2018-05-04 18:22:01.000000 UTC	2018-05-08 20:02:38.000000 UTC	WindowsNotificationFacility	WNF state 7560bca322028f02	ComHandler	{5014b7c8-934e-4262-9816-887fa745a6c4}	TpmTasks	LocalSystem	N/A	{E07239B6-8134-4053-A9EB-3750C8C8997C}
+Tpm-Maintenance	LocalSystem	-	True	2018-05-08 20:02:37.000000 UTC	2018-05-04 18:22:01.000000 UTC	2018-05-08 20:02:38.000000 UTC	WindowsNotificationFacility	WNF state 7510bca3391e8b41	ComHandler	{5014b7c8-934e-4262-9816-887fa745a6c4}	TpmTasks	LocalSystem	N/A	{E07239B6-8134-4053-A9EB-3750C8C8997C}
+ErrorDetailsUpdate	Author	-	-	-	2018-04-10 16:06:07.000000 UTC	-	-	-	ComHandler	{9cda66be-3271-4723-8d35-dd834c58ad92}	-	Author	N/A	{E0851661-2322-4517-BDB6-5BCA6524D6DD}
+dusmtask	Users	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7508bca3291b950c	-	-	-	Users	-	{E0D45B22-1A56-43FE-854C-DAFD1DDA1D61}
+SR	LocalSystem	-	-	2021-09-14 23:52:10.000000 UTC	2018-05-03 18:22:01.000000 UTC	2021-09-14 23:54:58.000000 UTC	-	-	Exe	%windir%\system32\srtasks.exe	ExecuteScheduledSPPCreation	LocalSystem	-	{E3DBE120-A4C2-4CD4-A364-C51992B36C98}
+Scheduled Start	LocalSystem	-	True	2021-09-15 15:10:31.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 15:10:32.000000 UTC	Time	-	Exe	C:\WINDOWS\system32\sc.exe	start wuauserv	LocalSystem	-	{E5182B77-08AA-49E5-AE8E-806A8F509499}
+Scheduled Start	LocalSystem	-	False	2021-09-15 15:10:31.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 15:10:32.000000 UTC	Session	ConsoleDisconnect	Exe	C:\WINDOWS\system32\sc.exe	start wuauserv	LocalSystem	-	{E5182B77-08AA-49E5-AE8E-806A8F509499}
+Scheduled Start	LocalSystem	-	False	2021-09-15 15:10:31.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 15:10:32.000000 UTC	Session	RemoteDisconnect	Exe	C:\WINDOWS\system32\sc.exe	start wuauserv	LocalSystem	-	{E5182B77-08AA-49E5-AE8E-806A8F509499}
+Scheduled Start	LocalSystem	-	False	2021-09-15 15:10:31.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 15:10:32.000000 UTC	WindowsNotificationFacility	WNF state 7508bca3380c960c	Exe	C:\WINDOWS\system32\sc.exe	start wuauserv	LocalSystem	-	{E5182B77-08AA-49E5-AE8E-806A8F509499}
+-	LocalSystem	-	False	-	2018-05-04 18:22:01.000000 UTC	-	Logon	Logon trigger	Exe	%windir%\System32\XblGameSaveTask.exe	standby	LocalSystem	-	{E52928DD-BCA2-4E32-9B84-FFA7606694BE}
+.NET Framework NGEN v4.0.30319 Critical	Author	-	True	2018-05-07 19:40:40.000000 UTC	2018-05-04 18:22:01.000000 UTC	2018-05-07 19:43:11.000000 UTC	Logon	Logon trigger	ComHandler	{de434264-8fe9-4c0b-a83b-89ebeebff78e}	/RuntimeWide	Author	N/A	{E9347D1E-28CB-4927-9928-07E3F27C0BB6}
+Device Install Reboot Required	Users	-	True	2020-09-20 23:52:44.000000 UTC	2018-05-04 18:22:00.000000 UTC	2020-09-20 23:53:07.000000 UTC	WindowsNotificationFacility	WNF state 7508bca33d009602	ComHandler	{48794782-6a1f-47b9-bd52-1d5f95d49c1b}	-	Users	N/A	{E974E122-13F0-4D23-8F35-6BC2276522E4}
+Device Install Reboot Required	Users	-	True	2020-09-20 23:52:44.000000 UTC	2018-05-04 18:22:00.000000 UTC	2020-09-20 23:53:07.000000 UTC	Logon	Logon trigger	ComHandler	{48794782-6a1f-47b9-bd52-1d5f95d49c1b}	-	Users	N/A	{E974E122-13F0-4D23-8F35-6BC2276522E4}
+Consolidator	WinSQMAccount	-	True	2021-09-15 22:00:01.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-15 22:00:01.000000 UTC	Time	-	-	-	-	WinSQMAccount	-	{EAE44DBA-F158-4EAA-8864-BCB05E36C20E}
+Property Definition Sync	Author	-	True	-	2018-05-04 18:22:01.000000 UTC	-	Time	-	ComHandler	{2ae64751-b728-4d6b-97a0-b2da2e7d2a3b}	-	Author	N/A	{EBB66BED-91EF-4E44-AD01-62A97A169FEB}
+RegisterDevicePeriodic24	System	-	True	-	2018-05-04 18:22:01.000000 UTC	-	Time	-	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-RegisterDevice -Periodic	System	N/A	{EBC98788-6390-4C89-8DA8-94D6DBAF2038}
+EnableErrorDetailsUpdate	Users	-	True	-	2018-05-03 16:06:07.000000 UTC	-	WindowsNotificationFacility	WNF state 7508bca33e1b9611	ComHandler	{fe285c8c-5360-41c1-a700-45501c740de}	-	Users	N/A	{ECD13514-498E-4DEE-B7A9-9AB0E928A4E8}
+FamilySafetyRefreshTask	System	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7508bca33a089541	ComHandler	{c844c79d-aed8-4dce-ab25-4d359bed84f8}	$(Arg0)	System	N/A	{EF54804E-C223-4211-94FA-93F425575B5B}
+EDP Auth Task	Users	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7538bca3280a9641	ComHandler	{61bcd1b9-340c-40ec-9d41-d7f1c0632f05}	ReAuth	Users	N/A	{EFC1298E-E083-4116-982F-6E29309536D1}
+-	Author	-	True	2021-02-03 01:14:14.000000 UTC	2020-12-15 00:37:26.000000 UTC	2021-02-03 01:14:30.000000 UTC	Time	-	-	-	-	Author	-	{EFEE3703-0AA7-48AE-A90F-9FCB84C9F99B}
+AikCertEnrollTask	LocalSystem	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7510bca323098541	ComHandler	{47e30d54-dac1-473a-aff7-2355bf78881f}	AIKCertEnroll	LocalSystem	N/A	{F07217FD-A936-48B0-951B-876F836F05E2}
+Pre-staged app cleanup	LocalSystem	-	True	2018-05-08 15:13:29.000000 UTC	2018-05-04 18:22:00.000000 UTC	2018-05-08 15:13:29.000000 UTC	Logon	Logon trigger	Exe	%windir%\system32\rundll32.exe	%windir%\system32\AppxDeploymentClient.dll,AppxPreStageCleanupRunTask	LocalSystem	-	{F0A590C9-9AA0-48BB-B8D4-77D99A67BB0B}
+Uninstallation	LocalSystem	-	-	2018-05-14 19:28:14.000000 UTC	2018-05-02 18:22:01.000000 UTC	2018-05-14 19:28:14.000000 UTC	-	-	ComHandler	{6f58f65f-ec0e-4aca-99fe-fc5a1a25e4be}	Uninstall	LocalSystem	N/A	{F1D63C54-FA88-48CF-B9EB-583FC03CFB8E}
+RunFullMemoryDiagnostic	LocalAdmin	-	-	2018-05-14 05:25:24.000000 UTC	2018-04-30 18:22:01.000000 UTC	-	-	-	ComHandler	{8168e74a-b39f-46d8-adcd-7bed477b80a3}	Time	LocalAdmin	N/A	{F322AEB8-9975-47C8-879F-0E32A5EAF6A5}
+WIM-Hash-Management	LocalSystem	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7518bca32b188341	ComHandler	{b7bffb5a-efa8-4d8c-bbde-c8d5faaf54a1}	WimHashManagement	LocalSystem	N/A	{F42908E9-8C42-4B8B-9E7D-7D177027C265}
+WIM-Hash-Management	LocalSystem	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7528bca32b188341	ComHandler	{b7bffb5a-efa8-4d8c-bbde-c8d5faaf54a1}	WimHashManagement	LocalSystem	N/A	{F42908E9-8C42-4B8B-9E7D-7D177027C265}
+Installation	Interactive Users	-	True	2021-02-03 20:14:15.000000 UTC	2018-05-04 18:22:00.000000 UTC	2018-08-31 21:15:32.000000 UTC	Logon	Logon trigger	ComHandler	{6f58f65f-ec0e-4aca-99fe-fc5a1a25e4be}	Install $(Arg0)	Interactive Users	N/A	{F4D8C2F5-8D0F-46C5-B6A9-F766A9E4B26E}
+Installation	Interactive Users	-	True	2021-02-03 20:14:15.000000 UTC	2018-05-04 18:22:00.000000 UTC	2018-08-31 21:15:32.000000 UTC	Logon	Logon trigger	ComHandler	{6f58f65f-ec0e-4aca-99fe-fc5a1a25e4be}	Install $(Arg0)	Interactive Users	N/A	{F4D8C2F5-8D0F-46C5-B6A9-F766A9E4B26E}
+DmClientOnScenarioDownload	LocalSystem	-	True	2021-09-14 02:59:16.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-14 02:59:16.000000 UTC	WindowsNotificationFacility	WNF state 7518bea3390b8a41	Exe	%windir%\system32\dmclient.exe	utcwnf	LocalSystem	-	{F6027CB3-9A58-415A-80F2-B1404204D4F5}
+HandleWnsCommand	System	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7528bda33e06830d	ComHandler	{ae31b729-d5fd-401e-af42-784074835afe}	-WnsCommand	System	N/A	{F762479F-5A5A-4A57-99A4-19D5F576F34C}
+CryptoPolicyTask	LocalSystem	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7530bca323098541	ComHandler	{47e30d54-dac1-473a-aff7-2355bf78881f}	CryptoPolicy	LocalSystem	N/A	{F8F8902D-2BE6-4F12-8A9A-00FA221A3146}
+EDP Policy Manager	LocalService	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 7588bca328009213	ComHandler	{deca92e0-af85-439e-9204-86679978da08}	EdpPolicyManager	LocalService	N/A	{F9CE0C33-7E61-4DF2-BC66-B1BF04B51995}
+EDP Policy Manager	LocalService	-	True	-	2018-05-04 18:22:01.000000 UTC	-	WindowsNotificationFacility	WNF state 75e0bca328009213	ComHandler	{deca92e0-af85-439e-9204-86679978da08}	EdpPolicyManager	LocalService	N/A	{F9CE0C33-7E61-4DF2-BC66-B1BF04B51995}
+-	Author	-	True	-	2019-06-16 07:14:46.000000 UTC	-	Time	-	-	-	-	Author	-	{F9E42F61-F461-4A12-8B21-9AC4EB57C736}
+Work Folders Maintenance Work	InteractiveUsers	-	True	2021-02-03 00:07:47.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-02-03 00:07:47.000000 UTC	Logon	Logon trigger	ComHandler	{63260bce-a3fb-4a34-aa51-d4d8e877b62b}	-	InteractiveUsers	N/A	{FA539782-A208-4DAD-AADC-48BBF20F8853}
+-	LocalSystem	-	True	2020-09-21 01:47:57.000000 UTC	2018-05-03 16:06:08.000000 UTC	2020-09-21 01:48:29.000000 UTC	Logon	Logon trigger	Exe	%windir%\System32\XblGameSaveTask.exe	logon	LocalSystem	-	{FAD47B87-8C8C-47E9-A138-9E127E921F99}
+.NET Framework NGEN v4.0.30319 64	Author	-	-	2021-09-16 01:52:18.000000 UTC	2018-05-04 18:22:01.000000 UTC	2021-09-16 01:52:26.000000 UTC	-	-	ComHandler	{429bc048-379e-45e0-80e4-eb1977941b5c}	/RuntimeWide	Author	N/A	{FC3CC2E0-9D3F-4ABD-BF38-79661F7A01E8}
+SystemTask	LocalSystem	-	True	2021-09-15 21:51:48.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-15 21:51:49.000000 UTC	WindowsNotificationFacility	WNF state 7508bca32a1e890d	ComHandler	{58fb76b9-ac85-4e55-ac04-427593b1d060}	SYSTEM	LocalSystem	N/A	{FF41608D-1F8E-42BF-932D-C0C97E391B2E}
+SystemTask	LocalSystem	-	True	2021-09-15 21:51:48.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-15 21:51:49.000000 UTC	Logon	Logon trigger	ComHandler	{58fb76b9-ac85-4e55-ac04-427593b1d060}	SYSTEM	LocalSystem	N/A	{FF41608D-1F8E-42BF-932D-C0C97E391B2E}
+SystemTask	LocalSystem	-	True	2021-09-15 21:51:48.000000 UTC	2018-05-04 18:22:00.000000 UTC	2021-09-15 21:51:49.000000 UTC	Boot	Boot trigger	ComHandler	{58fb76b9-ac85-4e55-ac04-427593b1d060}	SYSTEM	LocalSystem	N/A	{FF41608D-1F8E-42BF-932D-C0C97E391B2E}

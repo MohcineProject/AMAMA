@@ -1,0 +1,93 @@
+{
+  "processes:": {
+    "process1": {
+      "PID": {},
+      "PPID": {},
+      "ImageFileName(process name)": {},
+      "CreateTime": {},
+      "ExitTime": {},
+      "AssociatedCommands(commandline, found in pstree, also other commands are found in windows.cmdline in the \"Args\" column\")": {
+        "Command1:": {},
+        "Command2:": {},
+        "Command3:": {}
+      },
+      "DllsLoaded": {
+        "DLL1.name": {},
+        "DLL1.path": {},
+        "DLL1.loadTime:": {},
+        "DLL2.name": {},
+        "DLL2.path": {},
+        "DLL2.loadTime:": {}
+      },
+      "NetworkEvents:": {
+        "Event1.LocalAddr": {},
+        "Event1.ForeignAddr": {},
+        "Event1.Proto(tcpor udp)": {},
+        "Event1.localport": {},
+        "Event1.foreignport": {},
+        "Event1.owner(initiatingprocess basically)": {},
+        "Event2.LocalAddr": {},
+        "Event2.ForeignAddr": {},
+        "Event2.Proto(tcpor udp)": {},
+        "Event2.localport": {},
+        "Event2.foreignport": {},
+        "Event2.owner(initiatingprocess basically)": {}
+      },
+      "AssociatedSIDs(using windows.getsids)": {
+        "SID1": {},
+        "Name": {},
+        "SID2": {},
+        "Name2": {},
+        "SID3": {},
+        "Name3": {},
+        "SID4": {},
+        "Name4": {}
+      },
+      "Execution": {}
+    },
+    "process2": {
+      "PID": {},
+      "PPID": {},
+      "ImageFileName(process name)": {},
+      "CreateTime": {},
+      "ExitTime": {},
+      "AssociatedCommands(commandline, found in pstree, also other commands are found in windows.cmdline in the \"Args\" column\")": {
+        "Command1:": {},
+        "Command2:": {},
+        "Command3:": {}
+      },
+      "DllsLoaded": {
+        "DLL1.name": {},
+        "DLL1.path": {},
+        "DLL1.loadTime:": {},
+        "DLL2.name": {},
+        "DLL2.path": {},
+        "DLL2.loadTime:": {}
+      },
+      "NetworkEvents:": {
+        "Event1.LocalAddr": {},
+        "Event1.ForeignAddr": {},
+        "Event1.Proto(tcpor udp)": {},
+        "Event1.localport": {},
+        "Event1.foreignport": {},
+        "Event1.owner(initiatingprocess basically)": {},
+        "Event2.LocalAddr": {},
+        "Event2.ForeignAddr": {},
+        "Event2.Proto(tcpor udp)": {},
+        "Event2.localport": {},
+        "Event2.foreignport": {},
+        "Event2.owner(initiatingprocess basically)": {}
+      },
+      "AssociatedSIDs(using windows.getsids)": {
+        "SID1": {},
+        "Name": {},
+        "SID2": {},
+        "Name2": {},
+        "SID3": {},
+        "Name3": {},
+        "SID4": {},
+        "Name4": {}
+      }
+    }
+  }
+}
