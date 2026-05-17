@@ -1,0 +1,114 @@
+2026-05-11 21:26:22  INFO      ============================================================
+2026-05-11 21:26:22  INFO        PIPELINE FORENSIQUE — TEST COMPLET
+2026-05-11 21:26:22  INFO      ============================================================
+2026-05-11 21:26:22  INFO        Run ID       : 20260511_192622
+2026-05-11 21:26:22  INFO        Log file     : C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\logs\run_20260511_192622.log
+2026-05-11 21:26:22  INFO        Collector    : C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\test_input.json
+2026-05-11 21:26:22  INFO        Artifacts    : C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent
+2026-05-11 21:26:22  INFO        Output dir   : C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\output
+2026-05-11 21:26:22  INFO        Mode LLM     : AUTO (LLM si clé dispo)
+2026-05-11 21:26:22  INFO      ============================================================
+2026-05-11 21:26:22  INFO      
+2026-05-11 21:26:22  INFO      ────────────────────────────────────────────────────────────
+2026-05-11 21:26:22  INFO      ÉTAPE 1/4 : Agent 1 — Triage
+2026-05-11 21:26:22  INFO      Commande : C:\Users\dahba\AppData\Local\Programs\Python\Python310\python.exe C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\scripts\triage_agent.py --collector C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\test_input.json --out C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\output\triage.json --llm-config C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\llm_config.json
+2026-05-11 21:26:22  INFO      ────────────────────────────────────────────────────────────
+2026-05-11 21:26:22  DEBUG       [Agent 1 — Triage] [triage] Running LLM analysis...
+2026-05-11 21:26:22  INFO        >> [triage] Running LLM analysis...
+2026-05-11 21:27:49  DEBUG       [Agent 1 — Triage] [triage] LLM analysis complete.
+2026-05-11 21:27:49  INFO        >> [triage] LLM analysis complete.
+2026-05-11 21:27:49  DEBUG       [Agent 1 — Triage] [triage] Running LLM analysis...
+2026-05-11 21:27:49  INFO        >> [triage] Running LLM analysis...
+2026-05-11 21:29:05  DEBUG       [Agent 1 — Triage] [triage] LLM analysis complete.
+2026-05-11 21:29:05  INFO        >> [triage] LLM analysis complete.
+2026-05-11 21:29:05  INFO        [OK] 'Agent 1 — Triage' terminé en 163.1s (exit 0)
+2026-05-11 21:29:05  INFO        [fichier] triage.json : triage.json (6483 octets)
+2026-05-11 21:29:05  INFO          -> 7 processus suspects, 3 chemins suspects
+2026-05-11 21:29:05  INFO          PID   3412 | score= 9 | powershell.exe            | execution
+2026-05-11 21:29:05  DEBUG                  reasons: Spawn anomaly: launched by WINWORD.EXE (macro execution); Encoded PowerShell command (-Enc) and secondary IEX download f
+2026-05-11 21:29:05  INFO          PID   3688 | score=10 | a3f8c21d.exe              | persistence
+2026-05-11 21:29:05  DEBUG                  reasons: Random executable name in AppData launched by PowerShell; Creates scheduled task running as SYSTEM and adds a new privil
+2026-05-11 21:29:05  INFO          PID   3744 | score= 8 | certutil.exe              | credential_access
+2026-05-11 21:29:05  DEBUG                  reasons: LOLBIN certutil used to download mimikatz.exe from external IP; Executed under the context of a malicious payload
+2026-05-11 21:29:05  INFO          PID   3900 | score= 8 | svcupd.exe                | credential_access
+2026-05-11 21:29:05  DEBUG                  reasons: Mimikatz binary executed to dump credentials (sekurlsa::logonpasswords, privilege::debug); Runs under SYSTEM context
+2026-05-11 21:29:05  INFO          PID   3980 | score= 7 | rundll32.exe              | persistence
+2026-05-11 21:29:05  DEBUG                  reasons: Executed by malicious payload to register a DLL from ProgramData; Outbound connection to 185.220.101.45:8080 (possible C
+2026-05-11 21:29:05  INFO      
+2026-05-11 21:29:05  INFO      ────────────────────────────────────────────────────────────
+2026-05-11 21:29:05  INFO      ÉTAPE 2/4 : Script — Grep Pivot
+2026-05-11 21:29:05  INFO      Commande : C:\Users\dahba\AppData\Local\Programs\Python\Python310\python.exe C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\scripts\pivot_grep.py --triage C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\output\triage.json --artifact-root C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent --out C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\output\pivot.json
+2026-05-11 21:29:05  INFO      ────────────────────────────────────────────────────────────
+2026-05-11 21:29:07  INFO        [OK] 'Script — Grep Pivot' terminé en 1.3s (exit 0)
+2026-05-11 21:29:07  INFO        [fichier] pivot.json : pivot.json (38815 octets)
+2026-05-11 21:29:07  INFO          -> 7 PIDs ciblés (328 lignes matchées)
+2026-05-11 21:29:07  INFO          -> 3 chemins ciblés (0 lignes matchées)
+2026-05-11 21:29:07  DEBUG            PID 3412: 1 hits dans ['handles.txt']
+2026-05-11 21:29:07  DEBUG            PID 3688: 0 hits dans []
+2026-05-11 21:29:07  DEBUG            PID 3744: 2 hits dans ['handles.txt']
+2026-05-11 21:29:07  DEBUG            PID 3900: 1 hits dans ['handles.txt']
+2026-05-11 21:29:07  DEBUG            PID 3980: 0 hits dans []
+2026-05-11 21:29:07  DEBUG            PID 3120: 1 hits dans ['handles.txt']
+2026-05-11 21:29:07  DEBUG            PID 1056: 323 hits dans ['cmdline.txt', 'privileges.txt', 'handles.txt', 'dlllist.txt', 'envars.txt', 'getsids.txt', 'pstree.txt', 'pslist.txt']
+2026-05-11 21:29:07  INFO      
+2026-05-11 21:29:07  INFO      ────────────────────────────────────────────────────────────
+2026-05-11 21:29:07  INFO      ÉTAPE 3/4 : Agent 2 — Pivot Analyst
+2026-05-11 21:29:07  INFO      Commande : C:\Users\dahba\AppData\Local\Programs\Python\Python310\python.exe C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\scripts\pivot_analyst.py --triage C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\output\triage.json --pivot C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\output\pivot.json --out C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\output\analyst.json --llm-config C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\llm_config.json
+2026-05-11 21:29:07  INFO      ────────────────────────────────────────────────────────────
+2026-05-11 21:29:07  DEBUG       [Agent 2 — Pivot Analyst] [pivot-analyst] Running LLM validation of findings...
+2026-05-11 21:29:07  INFO        >> [pivot-analyst] Running LLM validation of findings...
+2026-05-11 21:29:51  DEBUG       [Agent 2 — Pivot Analyst] [pivot-analyst] LLM validation complete.
+2026-05-11 21:29:51  INFO        >> [pivot-analyst] LLM validation complete.
+2026-05-11 21:29:51  INFO        [OK] 'Agent 2 — Pivot Analyst' terminé en 44.8s (exit 0)
+2026-05-11 21:29:51  INFO        [fichier] analyst.json : analyst.json (2857 octets)
+2026-05-11 21:29:51  INFO          -> Confirmés: 0 | Rejetés: 10 | Inconclusifs: 0
+2026-05-11 21:29:51  INFO          -> Résumé analyste: All examined findings lack corroborating artifact evidence; the available handles and command‑line data reflect normal system activity. Consequently, each item is rejected as benign or unsupported by 
+2026-05-11 21:29:51  INFO      
+2026-05-11 21:29:51  INFO      ────────────────────────────────────────────────────────────
+2026-05-11 21:29:51  INFO      ÉTAPE 4/4 : Agent 3 — Report Writer
+2026-05-11 21:29:51  INFO      Commande : C:\Users\dahba\AppData\Local\Programs\Python\Python310\python.exe C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\scripts\report_agent.py --analyst C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\output\analyst.json --pivot C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\output\pivot.json --out C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\output\report.md --llm-config C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\llm_config.json
+2026-05-11 21:29:51  INFO      ────────────────────────────────────────────────────────────
+2026-05-11 21:29:52  DEBUG       [Agent 3 — Report Writer] [report] Structured report generated (no LLM).
+2026-05-11 21:29:52  INFO        [OK] 'Agent 3 — Report Writer' terminé en 0.2s (exit 0)
+2026-05-11 21:29:52  INFO        [fichier] Rapport final : report.md (2180 octets)
+2026-05-11 21:29:52  INFO        [rapport] 25 lignes — aperçu :
+2026-05-11 21:29:52  INFO          # Incident Triage Report
+2026-05-11 21:29:52  INFO          _Generated at: 2026-05-11T12:34:56Z_
+2026-05-11 21:29:52  INFO          
+2026-05-11 21:29:52  INFO          ## Summary
+2026-05-11 21:29:52  INFO          All examined findings lack corroborating artifact evidence; the available handles and command‑line data reflect normal system activity. Consequently, each item is rejected as benign or unsupported by the memory dump.
+2026-05-11 21:29:52  INFO          
+2026-05-11 21:29:52  INFO          ## Confirmed Malicious Activity
+2026-05-11 21:29:52  INFO          _No findings were confirmed by Agent 2._
+2026-05-11 21:29:52  INFO          
+2026-05-11 21:29:52  INFO          ## Rejected (Confirmed Benign)
+2026-05-11 21:29:52  INFO          - ~~PID 3412 powershell.exe~~: Only a single handle entry linking to mfeann.exe is present; no cmdline, DLL, or network evidence confirms the alleged encoded PowerShell execution.
+2026-05-11 21:29:52  INFO          - ~~PID 3688 a3f8c21d.exe~~: No artifact matches (cmdline, handles, filescan, etc.) were found for this PID, indicating no observable activity.
+2026-05-11 21:29:52  INFO          - ~~PID 3744 certutil.exe~~: Handles show only WmiPrvSE.exe threads; there is no cmdline or file evidence of certutil downloading mimikatz.
+2026-05-11 21:29:52  INFO          - ~~PID 3900 svcupd.exe~~: Only a thread handle from Sysmon64.exe is present; no evidence of mimikatz execution or credential‑dumping activity.
+2026-05-11 21:29:52  INFO          - ~~PID 3980 rundll32.exe~~: No artifact entries (handles, cmdline, dlllist, etc.) were found for this PID, so the claimed malicious DLL registration cannot be confirmed.
+2026-05-11 21:29:52  INFO          - ~~PID 3120 WINWORD.EXE~~: A single handle from svchost.exe is normal for Office processes; no command‑line or other suspicious evidence is present.
+2026-05-11 21:29:52  INFO          - ~~PID 1056 svchost.exe~~: Cmdline and privilege listings match typical System‑level svchost operation; this entry serves as a baseline and shows no abnormal behavior.
+2026-05-11 21:29:52  INFO          - ~~PATH C:\Users\john.doe\AppData\Roaming\a3f8c21d.exe~~: No matches in any artifact file; the file is not observed in memory, handles, or registry, suggesting no active or persisted presence.
+2026-05-11 21:29:52  INFO          - ~~PATH C:\Users\john.doe\AppData\Local\Temp\svcupd.exe~~: No artifact evidence (filescan, handles, etc.) for this path; cannot confirm execution or presence.
+2026-05-11 21:29:52  INFO          - ~~PATH C:\ProgramData\update\srpd32.dll~~: No evidence of the DLL in memory, handles, or registry; the claimed rundll32 registration is unsupported.
+2026-05-11 21:29:52  INFO          
+2026-05-11 21:29:52  INFO          ## Evidence Pointers
+2026-05-11 21:29:52  INFO          - Full validated analysis: `analyst.json`
+2026-05-11 21:29:52  INFO          - Raw grep results: `pivot.json`
+2026-05-11 21:29:52  INFO          - Raw Volatility outputs: artifact root directory
+2026-05-11 21:29:52  INFO      
+2026-05-11 21:29:52  INFO      ============================================================
+2026-05-11 21:29:52  INFO        RÉSUMÉ DU RUN
+2026-05-11 21:29:52  INFO      ============================================================
+2026-05-11 21:29:52  INFO        ✓  OK  Agent 1 — Triage
+2026-05-11 21:29:52  INFO        ✓  OK  Script — Grep Pivot
+2026-05-11 21:29:52  INFO        ✓  OK  Agent 2 — Pivot Analyst
+2026-05-11 21:29:52  INFO        ✓  OK  Agent 3 — Report Writer
+2026-05-11 21:29:52  INFO      
+2026-05-11 21:29:52  INFO        Durée totale : 209.4s
+2026-05-11 21:29:52  INFO        Logs         : C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\logs\run_20260511_192622.log
+2026-05-11 21:29:52  INFO        Outputs      : C:\Users\dahba\Downloads\Cyber_agent\Cyber_agent - Copy\Cyber_agent\agentic-architecture\output
+2026-05-11 21:29:52  INFO      ============================================================
+2026-05-11 21:29:52  INFO        PIPELINE TERMINÉ AVEC SUCCÈS
+2026-05-11 21:29:52  INFO      ============================================================

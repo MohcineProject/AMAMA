@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Report Output",
+  "type": "object",
+  "properties": {
+    "summary": { "type": "string" },
+    "findings": { "type": "array" },
+    "evidence": { "type": "array" }
+  },
+  "additionalProperties": true
+}

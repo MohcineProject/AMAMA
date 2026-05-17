@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Collector Output",
+  "type": "object",
+  "properties": {
+    "processes": { "$ref": "#/definitions/processes" },
+    "processes:": { "$ref": "#/definitions/processes" }
+  },
+  "additionalProperties": true,
+  "definitions": {
+    "processes": {
+      "type": ["object", "array"],
+      "additionalProperties": true
+    }
+  }
+}
