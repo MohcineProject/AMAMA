@@ -8,23 +8,51 @@ Work like a senior DFIR analyst with a checklist: go through every process one b
 If you are in doubt about a process, still escalate it (at `LOW` severity); the pivot analyst will confirm whether it is benign.
 
 ## Input
-A **structured text file**, shaped like `Template_JSON/input.json` — process-centric, one entry per process. Per process, expect these fields:
 
-- `PID`, `PPID`
-- `ImageFileName` (process name)
-- `CreateTime`, `ExitTime`
-- `AssociatedCommands` — the commandline(s) found via pstree and `windows.cmdline`
-- `DllsLoaded` — list of `{name, path, loadTime}`
-- `NetworkEvents` — list of `{LocalAddr, ForeignAddr, Proto, localport, foreignport, owner}`
-- `AssociatedSIDs` — list of `{SID, Name}` pairs from `windows.getsids`
+A structured context block built from a FIND_EVIL collector chunk. It contains two sections:
+
+### Section 1 — `=== PROCESS LIST ===`
+
+One entry per process, with the following fields (only non-empty fields are shown):
+
+```
+[PID <pid>] <name>
+  Parent: PID <ppid> (<parent name>)
+  Path: <image path>
+  Start: <timestamp>  |  Exit: <timestamp>
+  Cmd: <command line>
+  Non-whitelisted DLLs: <dll1>, <dll2>, ...
+  Network connections: <net1>, <net2>, ...
+  Notable enabled privileges: <priv1>, <priv2>, ...
+```
+
+- **DLLs** listed are already filtered: paths matching the standard Windows whitelist are suppressed. Only DLLs from non-standard locations (e.g. `Temp`, `AppData`, user-writable dirs) appear.
+- **Network connections** are semicolon-separated entries from the memory snapshot.
+- **Notable privileges** listed are only those from the high-risk set: `SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege`, `SeLoadDriverPrivilege`, `SeTakeOwnershipPrivilege`, `SeAssignPrimaryTokenPrivilege`, `SeCreateTokenPrivilege`.
 
 The input does **not** include services, scheduled tasks, registry hives, or session/RDP data. Do not look for them and do not output buckets for them.
+
+### Section 2 — `=== PRE-COMPUTED STRUCTURAL ANOMALIES ===`
+
+A list of anomalies detected deterministically before calling the LLM:
+
+- **SPAWN ANOMALY**: a document/browser process spawned a shell interpreter.
+- **PRIVILEGE ANOMALY**: a process holds both SYSTEM and user SIDs — possible token manipulation.
+- **SPAWN VOLUME**: a shell interpreter spawned an unusually high number of child processes.
+
+Use these as confirmed starting points — they are factual, not guesses. Treat each anomaly as at least a `MEDIUM` signal for the listed PID.
 
 ## Core Logic & Heuristics
 
 Walk through **each process** in the input. For each, run the checklist below. If at least one rule fires, emit the process in the output with a severity tier and short reason tags.
 
 **Signal stacking:** when multiple weak signals from *different* categories converge on the same process, raise its severity by one tier. Keep this lightweight — it is just a tier bump, not a full attack-chain narrative.
+
+### 0. Known data artefact — EPROCESS name truncation (read before flagging names)
+
+The Windows kernel stores the process name in `EPROCESS.ImageFileName`, a **15-byte field (14 visible characters + null terminator)**. Every Volatility plugin that reads this field directly (`pslist`, `psscan`, `pstree`, `cmdline`, `dlllist`, `privileges`, `sessions`, `ldrmodules`, `vadinfo`, and others) will show a **truncated name** for any executable whose name is longer than 14 characters. The last character(s) of the extension are silently dropped — `fontdrvhost.exe` becomes `fontdrvhost.ex`, `smartscreen.exe` becomes `smartscreen.ex`.
+
+**This is a kernel artefact, not an IOC.** Do not flag `*.ex` or `*.e` names as typosquats unless the full command-line or path confirms something is wrong. To check the real name, look at the `Cmd:` field (from `cmdline.txt`) or the `Path:` field — both carry the full name.
 
 ### 1. Process identity & path
 - **Typosquats** of well-known Windows process names: `svch0st`, `lsasss`, `scvhost`, `csrsss`, `expIorer` (capital I instead of lowercase l), etc.

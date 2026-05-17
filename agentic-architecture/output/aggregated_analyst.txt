@@ -1,0 +1,198 @@
+=== CHUNK 1: chunk_001.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2024-07-30T12:00:00Z
+Summary: Analysis revealed a confirmed malicious command execution originating from an unknown parent, dropping and executing a suspicious batch file in a temporary directory. This activity was followed by a benign-looking ping command, likely for reconnaissance or as a decoy. Several other flagged processes were determined to be benign truncations of legitimate Windows process names.
+Counts: confirmed=2  inconclusive=1  rejected=4
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      2380
+PPID:     4240
+Image:    cmd.exe
+Cmdline:  C:\WINDOWS\system32\cmd.exe /c ""C:\Users\kali\AppData\Local\Temp\EMwLtc9FBmME.bat" "
+Severity: HIGH
+MITRE:    T1059.003 — Windows Command Shell
+
+Justification:
+  The command line shows `cmd.exe` executing a batch file (`.bat`) from a user's `AppData\Local\Temp` directory. The batch file has a random-looking filename (`EMwLtc9FBmME.bat`), which is a strong indicator of malicious activity, often associated with initial access, execution, or persistence. The parent PID 4240 is unknown, further increasing suspicion.
+
+Key Evidence:
+  - L138: 2380	4240	cmd.exe	0x990ef8261080	4	-	1	False	2026-05-13 19:26:56.000000 UTC	N/A	Disabled
+  - L138: 2380	cmd.exe	C:\WINDOWS\system32\cmd.exe /c ""C:\Users\kali\AppData\Local\Temp\EMwLtc9FBmME.bat" "
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      7284
+PPID:     2380
+Image:    PING.EXE
+Cmdline:  ping  -n 10 localhost
+Severity: MEDIUM
+MITRE:    T1083 — File and Directory Discovery
+
+Justification:
+  While `PING.EXE` with the command `ping -n 10 localhost` is benign in isolation, its parent process (PID 2380, `cmd.exe`) has been confirmed as malicious. Attackers frequently use legitimate system utilities like `ping` for basic reconnaissance, connectivity checks, or as a decoy to blend in with normal system activity.
+
+Key Evidence:
+  - L140: 7284	2380	PING.EXE	0x990efacf2080	6	-	1	False	2026-05-13 19:26:57.000000 UTC	N/A	Disabled
+  - L140: 7284	PING.EXE	ping  -n 10 localhost
+----------------------------------------------------------------
+
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      2388
+PPID:     6956
+Image:    cmd.exe
+Cmdline:  -
+Severity: 
+
+Justification:
+  This `cmd.exe` process is suspicious due to its unknown parent (PID 6956) and its short-lived nature, as indicated by the presence of an `ExitTime`. Crucially, no command line arguments were captured, making it impossible to determine the exact activity performed. While `cmd.exe` is a legitimate binary, this combination of factors prevents a definitive verdict without further information.
+
+Key Evidence:
+  - L133: 2388	6956	cmd.exe	0x990ef612e080	0	-	1	False	2026-05-13 19:26:14.000000 UTC	2026-05-13 19:26:23.000000 UTC	Disabled
+  - L133: 2388	cmd.exe	-
+----------------------------------------------------------------
+
+=== CHUNK 2: chunk_002.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-17T17:24:38Z
+Summary: LLM validation failed — all findings are inconclusive. Manual review required.
+Counts: confirmed=0  inconclusive=0  rejected=0
+================================================================
+
+
+=== CHUNK 3: chunk_003.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-17T17:27:11Z
+Summary: LLM validation failed — all findings are inconclusive. Manual review required.
+Counts: confirmed=0  inconclusive=0  rejected=0
+================================================================
+
+
+=== CHUNK 4: chunk_004.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-17T17:29:44Z
+Summary: LLM validation failed — all findings are inconclusive. Manual review required.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      7996
+PPID:     4968
+Image:    OneDrive.exe
+Cmdline:  \"C:\\Users\\kali\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\" /background
+
+Justification:
+  LLM unavailable — cannot validate. Agent 1 reasons: Unusual path: C:\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe
+----------------------------------------------------------------
+
+
+=== CHUNK 5: chunk_005.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-17T17:32:17Z
+Summary: LLM validation failed — all findings are inconclusive. Manual review required.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      5356
+PPID:     516
+Image:    FileCoAuth.exe
+Cmdline:  \"C:\\Users\\kali\\AppData\\Local\\Microsoft\\OneDrive\\26.070.0414.0001\\FileCoAuth.exe\" -Embedding
+
+Justification:
+  LLM unavailable — cannot validate. Agent 1 reasons: Unusual path: C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe
+----------------------------------------------------------------
+
+
+=== CHUNK 6: chunk_006.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-17T17:34:51Z
+Summary: LLM validation failed — all findings are inconclusive. Manual review required.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      2736
+PPID:     5452
+Image:    SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir=\"C:\\Users\\kali\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)\" --lang=en-US --mojo-named-platform-channel-pipe=5452.4512.18236964100010556028 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4"
+Cmdline:  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-
+
+Justification:
+  LLM unavailable — cannot validate. Agent 1 reasons: Unusual path: SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir=\"C:\\Users\\kali\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)\" --lang=en-US --mojo-named-platform-channel-pipe=5452.4512.18236964100010556028 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4"
+----------------------------------------------------------------
+
+
+=== CHUNK 7: chunk_007.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-17T17:37:24Z
+Summary: LLM validation failed — all findings are inconclusive. Manual review required.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      376
+PPID:     7980
+Image:    Client.exe
+Cmdline:  \"C:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe\"
+
+Justification:
+  LLM unavailable — cannot validate. Agent 1 reasons: Unusual path: C:\Users\kali\AppData\Roaming\SubDir\Client.exe
+----------------------------------------------------------------
+
+
+=== CHUNK 8: chunk_008.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-17T17:39:57Z
+Summary: LLM validation failed — all findings are inconclusive. Manual review required.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      4420
+PPID:     5652
+Image:    Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir=\"C:\\Users\\kali\\AppData\\Local\\Packages\\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1"
+Cmdline:  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-
+
+Justification:
+  LLM unavailable — cannot validate. Agent 1 reasons: Unusual path: Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir=\"C:\\Users\\kali\\AppData\\Local\\Packages\\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1"
+----------------------------------------------------------------
+
+
+=== CHUNK 9: chunk_009.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-17T17:42:30Z
+Summary: LLM validation failed — all findings are inconclusive. Manual review required.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      7772
+PPID:     896
+Image:    NisSrv.exe
+Cmdline:  \"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\NisSrv.exe\"
+
+Justification:
+  LLM unavailable — cannot validate. Agent 1 reasons: Unusual path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe
+----------------------------------------------------------------
+
+

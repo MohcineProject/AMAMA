@@ -1,0 +1,18 @@
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-17T17:37:24Z
+Summary: LLM validation failed — all findings are inconclusive. Manual review required.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      376
+PPID:     7980
+Image:    Client.exe
+Cmdline:  \"C:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe\"
+
+Justification:
+  LLM unavailable — cannot validate. Agent 1 reasons: Unusual path: C:\Users\kali\AppData\Roaming\SubDir\Client.exe
+----------------------------------------------------------------
+

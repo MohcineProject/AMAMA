@@ -1,0 +1,214 @@
+=== Volatility3 full sweep started at Sat May 16 15:38:44 UTC 2026 ===
+Image: /home/sansforensics/Documents/Claude_Projects/evil_windows.elf
+
+[15:38:44] START  windows.info
+[15:38:45] DONE   windows.info
+[15:38:45] START  windows.kpcrs
+[15:38:46] DONE   windows.kpcrs
+[15:38:46] START  windows.statistics
+[15:40:45] DONE   windows.statistics
+[15:40:45] START  windows.pslist
+[15:40:50] DONE   windows.pslist
+[15:40:50] START  windows.pstree
+[15:41:03] DONE   windows.pstree
+[15:41:03] START  windows.psscan
+[15:42:23] DONE   windows.psscan
+[15:42:23] START  windows.cmdline
+[15:42:28] DONE   windows.cmdline
+[15:42:28] START  windows.cmdscan
+[15:42:56] DONE   windows.cmdscan
+[15:42:56] START  windows.consoles
+[15:43:08] DONE   windows.consoles
+[15:43:08] START  windows.envars
+[15:43:18] DONE   windows.envars
+[15:43:18] START  windows.sessions
+[15:43:31] DONE   windows.sessions
+[15:43:31] START  windows.joblinks
+[15:43:35] DONE   windows.joblinks
+[15:43:35] START  windows.threads
+[15:44:58] DONE   windows.threads
+[15:44:59] START  windows.thrdscan
+[15:47:00] DONE   windows.thrdscan
+[15:47:00] START  windows.dlllist
+[15:47:17] DONE   windows.dlllist
+[15:47:17] START  windows.modules
+[15:47:20] DONE   windows.modules
+[15:47:20] START  windows.modscan
+[15:47:38] DONE   windows.modscan
+[15:47:38] START  windows.unloadedmodules
+[15:47:39] DONE   windows.unloadedmodules
+[15:47:39] START  windows.ldrmodules
+[15:48:27] DONE   windows.ldrmodules
+[15:48:27] START  windows.iat
+[15:48:43] DONE   windows.iat
+[15:48:43] START  windows.verinfo
+[15:51:16] DONE   windows.verinfo
+[15:51:16] START  windows.netscan
+[15:51:40] DONE   windows.netscan
+[15:51:40] START  windows.netstat
+[15:51:51] DONE   windows.netstat
+[15:51:51] START  windows.malfind
+[15:53:45] DONE   windows.malfind
+[15:53:45] START  windows.vadinfo
+[15:56:05] DONE   windows.vadinfo
+[15:56:05] START  windows.vadwalk
+[15:56:30] DONE   windows.vadwalk
+[15:56:30] START  windows.memmap
+
+=== Fast-only sweep started at Sat May 16 16:18:10 UTC 2026 ===
+(Skipped: memmap, handles, filescan, mftscan.MFTScan, mftscan.ADS, getsids — see TODO_slow_plugins.txt)
+
+[16:18:10] START  windows.virtmap
+[16:18:13] DONE   windows.virtmap
+[16:18:13] START  windows.bigpools
+[16:18:24] DONE   windows.bigpools
+[16:18:24] START  windows.mutantscan
+[16:19:45] DONE   windows.mutantscan
+[16:19:45] START  windows.symlinkscan
+[16:20:11] DONE   windows.symlinkscan
+[16:20:11] START  windows.privileges
+[16:20:14] DONE   windows.privileges
+[16:20:14] START  windows.mbrscan
+[16:22:34] DONE   windows.mbrscan
+[16:22:34] START  windows.shimcachemem
+[16:22:39] DONE   windows.shimcachemem
+[16:22:39] START  windows.svcscan
+[16:23:15] DONE   windows.svcscan
+[16:23:16] START  windows.driverscan
+[16:23:43] DONE   windows.driverscan
+[16:23:43] START  windows.driverirp
+[16:24:08] DONE   windows.driverirp
+[16:24:08] START  windows.devicetree
+[16:24:38] DONE   windows.devicetree
+[16:24:38] START  windows.ssdt
+[16:24:41] DONE   windows.ssdt
+[16:24:41] START  windows.callbacks
+[16:25:19] DONE   windows.callbacks
+[16:25:19] START  windows.timers
+[16:25:21] DONE   windows.timers
+[16:25:21] START  windows.desktops
+[16:26:00] DONE   windows.desktops
+[16:26:00] START  windows.windowstations
+[16:26:35] DONE   windows.windowstations
+[16:26:35] START  windows.malware.psxview
+[16:27:19] DONE   windows.malware.psxview
+[16:27:19] START  windows.malware.malfind
+[16:29:00] DONE   windows.malware.malfind
+[16:29:00] START  windows.malware.ldrmodules
+[16:29:28] DONE   windows.malware.ldrmodules
+[16:29:28] START  windows.malware.hollowprocesses
+[16:32:07] DONE   windows.malware.hollowprocesses
+[16:32:07] START  windows.malware.processghosting
+[16:32:36] DONE   windows.malware.processghosting
+[16:32:36] START  windows.malware.suspicious_threads
+[16:34:57] DONE   windows.malware.suspicious_threads
+[16:34:57] START  windows.malware.pebmasquerade
+[16:34:59] DONE   windows.malware.pebmasquerade
+[16:34:59] START  windows.malware.directsystemcalls
+[16:34:59] ERROR  windows.malware.directsystemcalls (see malware_directsystemcalls.txt)
+[16:34:59] START  windows.malware.indirectsystemcalls
+[16:34:59] ERROR  windows.malware.indirectsystemcalls (see malware_indirectsystemcalls.txt)
+[16:34:59] START  windows.malware.drivermodule
+[16:35:21] DONE   windows.malware.drivermodule
+[16:35:21] START  windows.malware.svcdiff
+[16:35:43] DONE   windows.malware.svcdiff
+[16:35:43] START  windows.malware.skeletonkeycheck
+[16:35:44] ERROR  windows.malware.skeletonkeycheck (see malware_skeletonkeycheck.txt)
+[16:35:44] START  windows.registry.hivelist
+[16:35:49] DONE   windows.registry.hivelist
+[16:35:49] START  windows.registry.hivescan
+[16:35:55] DONE   windows.registry.hivescan
+[16:35:55] START  windows.registry.printkey
+[16:36:01] DONE   windows.registry.printkey
+[16:36:01] START  windows.registry.amcache
+[16:36:08] DONE   windows.registry.amcache
+[16:36:08] START  windows.registry.certificates
+[16:36:15] DONE   windows.registry.certificates
+[16:36:15] START  windows.registry.scheduledtasks
+[16:36:15] ERROR  windows.registry.scheduledtasks (see registry_scheduledtasks.txt)
+[16:36:15] START  windows.registry.userassist
+[16:36:17] DONE   windows.registry.userassist
+[16:36:17] START  windows.registry.hashdump
+[16:36:18] ERROR  windows.registry.hashdump (see registry_hashdump.txt)
+[16:36:18] START  windows.registry.lsadump
+[16:36:18] ERROR  windows.registry.lsadump (see registry_lsadump.txt)
+[16:36:18] START  windows.registry.cacheddump
+[16:36:18] ERROR  windows.registry.cacheddump (see registry_cacheddump.txt)
+
+=== Fast sweep completed at Sat May 16 16:36:18 UTC 2026 ===
+
+--- File summary ---
+-rw-rw-r-- 1 sansforensics sansforensics 1.8K May 16 16:17 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/TODO_slow_plugins.txt
+-rw-rw-r-- 1 sansforensics sansforensics 365K May 16 16:18 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/bigpools.txt
+-rw-rw-r-- 1 sansforensics sansforensics  16K May 16 16:25 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/callbacks.txt
+-rw-rw-r-- 1 sansforensics sansforensics  22K May 16 15:42 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/cmdline.txt
+-rw-rw-r-- 1 sansforensics sansforensics 1.2K May 16 15:42 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/cmdscan.txt
+-rw-rw-r-- 1 sansforensics sansforensics  165 May 16 15:43 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/consoles.txt
+-rw-rw-r-- 1 sansforensics sansforensics   82 May 16 16:26 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/desktops.txt
+-rw-rw-r-- 1 sansforensics sansforensics  15K May 16 16:24 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/devicetree.txt
+-rw-rw-r-- 1 sansforensics sansforensics 845K May 16 15:47 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/dlllist.txt
+-rw-rw-r-- 1 sansforensics sansforensics 287K May 16 16:24 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/driverirp.txt
+-rw-rw-r-- 1 sansforensics sansforensics 9.1K May 16 16:23 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/driverscan.txt
+-rw-rw-r-- 1 sansforensics sansforensics 309K May 16 15:43 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/envars.txt
+-rw-rw-r-- 1 sansforensics sansforensics 1.9M May 16 15:48 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/iat.txt
+-rw-rw-r-- 1 sansforensics sansforensics  657 May 16 15:38 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/info.txt
+-rw-rw-r-- 1 sansforensics sansforensics 9.8K May 16 15:43 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/joblinks.txt
+-rw-rw-r-- 1 sansforensics sansforensics  171 May 16 15:38 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/kpcrs.txt
+-rw-rw-r-- 1 sansforensics sansforensics 547K May 16 15:48 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/ldrmodules.txt
+-rw-rw-r-- 1 sansforensics sansforensics 9.5K May 16 15:53 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malfind.txt
+-rw-rw-r-- 1 sansforensics sansforensics 6.3K May 16 16:34 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_directsystemcalls.txt
+-rw-rw-r-- 1 sansforensics sansforensics  138 May 16 16:35 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_drivermodule.txt
+-rw-rw-r-- 1 sansforensics sansforensics   50 May 16 16:32 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_hollowprocesses.txt
+-rw-rw-r-- 1 sansforensics sansforensics 6.3K May 16 16:34 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_indirectsystemcalls.txt
+-rw-rw-r-- 1 sansforensics sansforensics 547K May 16 16:29 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_ldrmodules.txt
+-rw-rw-r-- 1 sansforensics sansforensics 8.8K May 16 16:28 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_malfind.txt
+-rw-rw-r-- 1 sansforensics sansforensics  18K May 16 16:34 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_pebmasquerade.txt
+-rw-rw-r-- 1 sansforensics sansforensics   94 May 16 16:32 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_processghosting.txt
+-rw-rw-r-- 1 sansforensics sansforensics 7.0K May 16 16:27 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_psxview.txt
+-rw-rw-r-- 1 sansforensics sansforensics 6.3K May 16 16:35 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_skeletonkeycheck.txt
+-rw-rw-r-- 1 sansforensics sansforensics   78 May 16 16:34 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_suspicious_threads.txt
+-rw-rw-r-- 1 sansforensics sansforensics  108 May 16 16:35 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/malware_svcdiff.txt
+-rw-rw-r-- 1 sansforensics sansforensics  21M May 16 16:22 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/mbrscan.txt
+-rw-rw-r-- 1 sansforensics sansforensics 494M May 16 16:17 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/memmap.txt
+-rw-rw-r-- 1 sansforensics sansforensics  17K May 16 15:47 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/modscan.txt
+-rw-rw-r-- 1 sansforensics sansforensics  17K May 16 15:47 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/modules.txt
+-rw-rw-r-- 1 sansforensics sansforensics  20K May 16 16:19 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/mutantscan.txt
+-rw-rw-r-- 1 sansforensics sansforensics  113 May 16 15:51 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/netscan.txt
+-rw-rw-r-- 1 sansforensics sansforensics 4.1K May 16 15:51 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/netstat.txt
+-rw-rw-r-- 1 sansforensics sansforensics 385K May 16 16:20 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/privileges.txt
+-rw-rw-r-- 1 sansforensics sansforensics  13K May 16 15:40 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/pslist.txt
+-rw-rw-r-- 1 sansforensics sansforensics  14K May 16 15:42 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/psscan.txt
+-rw-rw-r-- 1 sansforensics sansforensics  46K May 16 15:41 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/pstree.txt
+-rw-rw-r-- 1 sansforensics sansforensics  15K May 16 16:36 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/registry_amcache.txt
+-rw-rw-r-- 1 sansforensics sansforensics 6.3K May 16 16:36 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/registry_cacheddump.txt
+-rw-rw-r-- 1 sansforensics sansforensics 3.2K May 16 16:36 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/registry_certificates.txt
+-rw-rw-r-- 1 sansforensics sansforensics 6.3K May 16 16:36 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/registry_hashdump.txt
+-rw-rw-r-- 1 sansforensics sansforensics 6.3K May 16 16:35 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/registry_hivelist.txt
+-rw-rw-r-- 1 sansforensics sansforensics  729 May 16 16:35 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/registry_hivescan.txt
+-rw-rw-r-- 1 sansforensics sansforensics 6.3K May 16 16:36 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/registry_lsadump.txt
+-rw-rw-r-- 1 sansforensics sansforensics  71K May 16 16:36 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/registry_printkey.txt
+-rw-rw-r-- 1 sansforensics sansforensics 6.3K May 16 16:36 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/registry_scheduledtasks.txt
+-rw-rw-r-- 1 sansforensics sansforensics  37K May 16 16:36 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/registry_userassist.txt
+-rw-rw-r-- 1 sansforensics sansforensics 5.6K May 16 16:36 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/run_log.txt
+-rw-rw-r-- 1 sansforensics sansforensics  10K May 16 15:43 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/sessions.txt
+-rw-rw-r-- 1 sansforensics sansforensics  31K May 16 16:22 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/shimcachemem.txt
+-rw-rw-r-- 1 sansforensics sansforensics  53K May 16 16:24 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/ssdt.txt
+-rw-rw-r-- 1 sansforensics sansforensics  204 May 16 15:40 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/statistics.txt
+-rw-rw-r-- 1 sansforensics sansforensics 250K May 16 16:23 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/svcscan.txt
+-rw-rw-r-- 1 sansforensics sansforensics  23K May 16 16:20 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/symlinkscan.txt
+-rw-rw-r-- 1 sansforensics sansforensics 305K May 16 15:46 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/thrdscan.txt
+-rw-rw-r-- 1 sansforensics sansforensics 305K May 16 15:44 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/threads.txt
+-rw-rw-r-- 1 sansforensics sansforensics 4.0K May 16 16:25 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/timers.txt
+-rw-rw-r-- 1 sansforensics sansforensics  746 May 16 15:47 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/unloadedmodules.txt
+-rw-rw-r-- 1 sansforensics sansforensics 2.4M May 16 15:55 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/vadinfo.txt
+-rw-rw-r-- 1 sansforensics sansforensics 1.7M May 16 15:56 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/vadwalk.txt
+-rw-rw-r-- 1 sansforensics sansforensics 393K May 16 15:51 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/verinfo.txt
+-rw-rw-r-- 1 sansforensics sansforensics  874 May 16 16:18 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/virtmap.txt
+-rw-rw-r-- 1 sansforensics sansforensics  412 May 16 16:26 /home/sansforensics/Documents/Claude_Projects/Windows11_evil_dump_analysis/windowstations.txt
+
+=== Registry re-run with corrected names Sat May 16 16:37:33 UTC 2026 ===
+[16:37:33] START  windows.registry.scheduled_tasks
+[16:37:44] DONE   windows.registry.scheduled_tasks
+[16:37:44] START  windows.registry.getcellroutine
+[16:37:49] DONE   windows.registry.getcellroutine
+=== Registry re-run complete Sat May 16 16:37:49 UTC 2026 ===

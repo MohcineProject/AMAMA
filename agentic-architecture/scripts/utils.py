@@ -52,40 +52,6 @@ def is_whitelisted_path(value: str, patterns: List[str]) -> bool:
     return False
 
 
-def iter_strings(obj: Any) -> Iterable[str]:
-    if isinstance(obj, str):
-        yield obj
-    elif isinstance(obj, dict):
-        for v in obj.values():
-            yield from iter_strings(v)
-    elif isinstance(obj, list):
-        for v in obj:
-            yield from iter_strings(v)
-
-
-def extract_processes(data: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
-    procs = data.get("processes") or data.get("processes:") or {}
-    if isinstance(procs, list):
-        return {str(i): p for i, p in enumerate(procs, start=1) if isinstance(p, dict)}
-    if isinstance(procs, dict):
-        return {str(k): v for k, v in procs.items() if isinstance(v, dict)}
-    return {}
-
-
-def find_value_by_key_substring(obj: Dict[str, Any], needle: str) -> str:
-    for key, val in obj.items():
-        if needle.lower() in str(key).lower():
-            if isinstance(val, str):
-                return val
-            if isinstance(val, (int, float)):
-                return str(val)
-    return ""
-
-
-def pick_strings(obj: Any) -> List[str]:
-    return [s for s in iter_strings(obj) if isinstance(s, str) and s.strip()]
-
-
 def grep_file_for_pattern(path: str, pattern: re.Pattern, max_lines: int) -> List[str]:
     hits: List[str] = []
     for line_no, line in read_lines(path):

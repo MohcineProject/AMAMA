@@ -1,15 +1,105 @@
 #!/usr/bin/env python3
+"""
+Grep Pivot — deterministic evidence extractor (no LLM).
+
+Reads triage.txt (key:value format), extracts suspicious PIDs,
+then greps each configured Volatility artifact file for those PIDs.
+Writes pivot.txt with verbatim matching lines per PID.
+"""
 import argparse
 import json
 import os
 import re
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
-from utils import grep_file_for_pattern, load_json, now_iso, write_json
+from utils import grep_file_for_pattern, now_iso
 
 
 def safe_compile_pid(pid: str) -> re.Pattern:
     return re.compile(r"\b" + re.escape(pid) + r"\b")
+
+
+def parse_triage_txt(path: str) -> List[Tuple[str, str, str, str]]:
+    """
+    Parse triage.txt and return a list of (pid, ppid, image, cmdline) tuples
+    for every [PROCESS] block.
+    """
+    results: List[Tuple[str, str, str, str]] = []
+    current: Dict[str, str] = {}
+    in_process = False
+
+    with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        for raw_line in f:
+            line = raw_line.rstrip()
+
+            if line == "[PROCESS]":
+                in_process = True
+                current = {}
+            elif in_process:
+                if line.startswith("pid: "):
+                    current["pid"] = line[5:].strip()
+                elif line.startswith("ppid: "):
+                    current["ppid"] = line[6:].strip()
+                elif line.startswith("image: "):
+                    current["image"] = line[7:].strip()
+                elif line.startswith("cmdline: "):
+                    current["cmdline"] = line[9:].strip()
+                elif line == "":
+                    if current.get("pid"):
+                        results.append((
+                            current.get("pid", ""),
+                            current.get("ppid", ""),
+                            current.get("image", ""),
+                            current.get("cmdline", ""),
+                        ))
+                    in_process = False
+                    current = {}
+
+    # Handle final block with no trailing blank line
+    if in_process and current.get("pid"):
+        results.append((
+            current.get("pid", ""),
+            current.get("ppid", ""),
+            current.get("image", ""),
+            current.get("cmdline", ""),
+        ))
+
+    return results
+
+
+def write_pivot_txt(
+    processes: List[Tuple[str, str, str, str]],
+    by_pid: Dict[str, Dict[str, List[str]]],
+    out_path: str,
+) -> None:
+    """Write evidence as structured TXT."""
+    lines: List[str] = []
+    lines.append("=== PIVOT EVIDENCE REPORT ===")
+    lines.append(f"Generated: {now_iso()}")
+    lines.append("")
+
+    for pid, ppid, image, cmdline in processes:
+        lines.append(f"=== PID {pid} ({image}, ppid={ppid}) ===")
+        if cmdline:
+            lines.append(f"Cmdline: {cmdline}")
+
+        evidence = by_pid.get(pid, {})
+        if evidence:
+            for fname, hits in evidence.items():
+                lines.append("")
+                lines.append(f"--- {fname} ---")
+                for h in hits:
+                    lines.append(h)
+        else:
+            lines.append("(no matching lines in any artifact file)")
+
+        lines.append("")
+
+    lines.append("=== END OF PIVOT REPORT ===")
+
+    os.makedirs(os.path.dirname(os.path.abspath(out_path)), exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
 
 
 _SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -17,55 +107,51 @@ _REPO_DIR = os.path.dirname(_SCRIPTS_DIR)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--triage", required=True)
-    parser.add_argument("--config", default=os.path.join(_REPO_DIR, "config.json"))
-    parser.add_argument("--artifact-root", required=True)
-    parser.add_argument("--out", required=True)
+    parser = argparse.ArgumentParser(description="Grep Pivot — deterministic evidence extractor")
+    parser.add_argument("--triage",       required=True, help="Path to triage.txt (Agent 1 output)")
+    parser.add_argument("--config",       default=os.path.join(_REPO_DIR, "config.json"))
+    parser.add_argument("--artifact-root", help="Override artifact directory (default: from config)")
+    parser.add_argument("--out",          required=True, help="Output path for pivot.txt")
     args = parser.parse_args()
 
-    triage = load_json(args.triage)
     with open(args.config, "r", encoding="utf-8", errors="ignore") as f:
         config = json.load(f)
 
-    pids = [p.get("pid") for p in triage.get("suspicious_processes", []) if p.get("pid")]
-    paths = [p.get("path") for p in triage.get("suspicious_paths", []) if p.get("path")]
+    # Resolve artifact root: CLI flag > config > fallback
+    artifact_root = args.artifact_root
+    if not artifact_root:
+        raw = config.get("grep_input_dir", "../Grep_input")
+        if os.path.isabs(raw):
+            artifact_root = raw
+        else:
+            artifact_root = os.path.normpath(os.path.join(_REPO_DIR, raw))
+
+    processes = parse_triage_txt(args.triage)
+    print(f"[pivot-grep] {len(processes)} PIDs to search.", file=__import__("sys").stderr)
+
+    max_per_file = config.get("max_lines_per_file", 120)
+    max_total = config.get("max_total_lines_per_target", 400)
 
     by_pid: Dict[str, Dict[str, List[str]]] = {}
-    by_path: Dict[str, Dict[str, List[str]]] = {}
 
-    for pid in pids:
+    for pid, _ppid, _image, _cmdline in processes:
         by_pid[pid] = {}
         pattern = safe_compile_pid(str(pid))
+        total = 0
         for fname in config.get("pid_files", []):
-            fpath = os.path.join(args.artifact_root, fname)
+            if total >= max_total:
+                break
+            fpath = os.path.join(artifact_root, fname)
             if not os.path.exists(fpath):
                 continue
-            hits = grep_file_for_pattern(fpath, pattern, config.get("max_lines_per_file", 100))
+            remaining = max_total - total
+            hits = grep_file_for_pattern(fpath, pattern, min(max_per_file, remaining))
             if hits:
                 by_pid[pid][fname] = hits
+                total += len(hits)
 
-    for path in paths:
-        by_path[path] = {}
-        pattern = re.compile(re.escape(path), re.IGNORECASE)
-        for fname in config.get("path_files", []):
-            fpath = os.path.join(args.artifact_root, fname)
-            if not os.path.exists(fpath):
-                continue
-            hits = grep_file_for_pattern(fpath, pattern, config.get("max_lines_per_file", 100))
-            if hits:
-                by_path[path][fname] = hits
-
-    output = {
-        "generated_at": now_iso(),
-        "targets": {"pids": pids, "paths": paths},
-        "by_pid": by_pid,
-        "by_path": by_path,
-        "notes": []
-    }
-
-    os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
-    write_json(args.out, output)
+    write_pivot_txt(processes, by_pid, args.out)
+    print(f"[pivot-grep] Written: {args.out}", file=__import__("sys").stderr)
 
 
 if __name__ == "__main__":

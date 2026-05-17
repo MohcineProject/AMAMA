@@ -1,0 +1,61 @@
+=== TRIAGE REPORT ===
+Generated: 2024-07-29T12:00:00Z
+Chunk: chunk_001.txt
+Summary: Multiple typosquatted process names; cmd.exe executing from user Temp directory with random name; short-lived cmd.exe with unknown parent.
+
+[PROCESS]
+pid: 2040
+ppid: 516
+image: ShellExperienc
+cmdline: "C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe" -ServerName:App.AppXtk181tbxbce2qsex02s8tw7hfxa9xb3t.mca
+severity: MEDIUM
+reasons: typosquat: ShellExperienc (missing 'e' in 'Experience')
+
+[PROCESS]
+pid: 2380
+ppid: 4240
+image: cmd.exe
+cmdline: C:\WINDOWS\system32\cmd.exe /c ""C:\Users\kali\AppData\Local\Temp\EMwLtc9FBmME.bat" "
+severity: HIGH
+reasons: parent_unknown: PID 4240 | lolbin_abuse: cmd.exe executing batch from AppData\Local\Temp | obfuscation: random-named batch file EMwLtc9FBmME.bat in Temp directory
+
+[PROCESS]
+pid: 7284
+ppid: 2380
+image: PING.EXE
+cmdline: ping  -n 10 localhost
+severity: MEDIUM
+reasons: parent_suspicious: child of cmd.exe (PID 2380) which is highly suspicious
+
+[PROCESS]
+pid: 2388
+ppid: 6956
+image: cmd.exe
+cmdline: 
+severity: MEDIUM
+reasons: parent_unknown: PID 6956 | short_lived: process exited quickly | missing_info: no command line or path provided for cmd.exe
+
+[PROCESS]
+pid: 4812
+ppid: 2388
+image: conhost.exe
+cmdline: 
+severity: LOW
+reasons: parent_suspicious: child of cmd.exe (PID 2388) which is suspicious
+
+[PROCESS]
+pid: 3304
+ppid: 516
+image: WidgetService.
+cmdline: "C:\Program Files\WindowsApps\Microsoft.WidgetsPlatformRuntime_1.6.14.0_x64__8wekyb3d8bbwe\WidgetService\WidgetService.exe" -RegisterProcessAsComServer -Embedding
+severity: MEDIUM
+reasons: typosquat: WidgetService. (trailing dot, missing 'exe')
+
+[PROCESS]
+pid: 3396
+ppid: 516
+image: backgroundTask
+cmdline: "C:\WINDOWS\system32\backgroundTaskHost.exe" -ServerName:App.AppXmtcan0h2tfbfy7k9kn8hbxb6dmzz1zh0.mca
+severity: MEDIUM
+reasons: typosquat: backgroundTask (missing 'Host.exe')
+

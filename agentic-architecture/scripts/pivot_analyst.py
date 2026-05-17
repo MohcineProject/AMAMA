@@ -1,96 +1,138 @@
 #!/usr/bin/env python3
 """
-Pivot Analyst — Agent 2 du pipeline forensique.
+Pivot Analyst — Agent 2 of the forensic pipeline.
 
-Reçoit les preuves grepées (pivot.json) et les confronte au triage initial.
-Pour chaque cible (PID ou path suspect identifié par Agent 1), l'Agent 2 :
-  - Lit les lignes réelles extraites des artefacts Volatility
-  - Valide ou rejette la suspicion avec justification
-  - Classe le verdict : confirmed / rejected / inconclusive
-
-Cela élimine les faux positifs de l'Agent 1 et empêche le rapport
-de contenir des findings non corroborés par les preuves.
+Reads triage.txt (Agent 1 key:value output) and pivot.txt (grep evidence),
+builds a compact context, calls the LLM, and saves the raw TXT response
+as analyst.txt. The output format is defined verbatim by agent2_pivot.md.
 """
 import argparse
-import json
 import os
 import sys
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Tuple
 
-from llm_client import call_chat, extract_json, load_llm_config
-from utils import load_json, now_iso, write_json
+from llm_client import call_chat, load_llm_config
+from utils import now_iso
 
 _SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 _REPO_DIR = os.path.dirname(_SCRIPTS_DIR)
 
 
 # ---------------------------------------------------------------------------
-# Pré-traitement : structurer le contexte pour le LLM
+# Parsers for TXT intermediates
+# ---------------------------------------------------------------------------
+
+def parse_triage_txt(path: str) -> Dict[str, Dict[str, str]]:
+    """
+    Parse triage.txt into {pid: {pid, ppid, image, cmdline, severity, reasons}}.
+    """
+    result: Dict[str, Dict[str, str]] = {}
+    current: Dict[str, str] = {}
+    in_process = False
+
+    with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        for raw_line in f:
+            line = raw_line.rstrip()
+
+            if line == "[PROCESS]":
+                in_process = True
+                current = {}
+            elif in_process:
+                if line.startswith("pid: "):
+                    current["pid"] = line[5:].strip()
+                elif line.startswith("ppid: "):
+                    current["ppid"] = line[6:].strip()
+                elif line.startswith("image: "):
+                    current["image"] = line[7:].strip()
+                elif line.startswith("cmdline: "):
+                    current["cmdline"] = line[9:].strip()
+                elif line.startswith("severity: "):
+                    current["severity"] = line[10:].strip()
+                elif line.startswith("reasons: "):
+                    current["reasons"] = line[9:].strip()
+                elif line == "":
+                    if current.get("pid"):
+                        result[current["pid"]] = dict(current)
+                    in_process = False
+                    current = {}
+
+    if in_process and current.get("pid"):
+        result[current["pid"]] = dict(current)
+
+    return result
+
+
+def parse_pivot_txt(path: str) -> Dict[str, Dict[str, List[str]]]:
+    """
+    Parse pivot.txt into {pid: {filename: [evidence_lines]}}.
+    """
+    result: Dict[str, Dict[str, List[str]]] = {}
+    current_pid: str = ""
+    current_file: str = ""
+
+    with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        for raw_line in f:
+            line = raw_line.rstrip()
+
+            # PID section header: "=== PID 3412 (powershell.exe, ppid=...) ==="
+            if line.startswith("=== PID ") and line.endswith(" ==="):
+                inner = line[4:-4].strip()
+                # Extract just the numeric PID
+                pid_part = inner.split()[1] if len(inner.split()) > 1 else inner
+                # Remove trailing parenthetical if present
+                pid_part = pid_part.split("(")[0].strip()
+                current_pid = pid_part
+                result.setdefault(current_pid, {})
+                current_file = ""
+            elif line.startswith("--- ") and line.endswith(" ---"):
+                if current_pid:
+                    current_file = line[4:-4].strip()
+                    result[current_pid].setdefault(current_file, [])
+            elif line in ("(no matching lines in any artifact file)", ""):
+                current_file = ""
+            elif line.startswith("=== END") or line.startswith("=== PIVOT"):
+                pass
+            elif current_pid and current_file and line and not line.startswith("Cmdline:"):
+                result[current_pid][current_file].append(line)
+
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Context builder for Agent 2
 # ---------------------------------------------------------------------------
 
 def _build_llm_context(
-    triage: Dict[str, Any],
-    pivot: Dict[str, Any],
+    triage_procs: Dict[str, Dict],
+    pivot_evidence: Dict[str, Dict],
     max_lines_per_target: int = 40,
 ) -> str:
-    """
-    Fusionne triage + pivot en un contexte compact pour l'Agent 2.
-    Chaque cible est présentée avec :
-      - Pourquoi Agent 1 l'a flaggée (reasons)
-      - Les lignes de preuve grepées dans les artefacts
-    """
     lines: List[str] = []
-
     lines.append("=== TRIAGE FINDINGS TO VALIDATE ===")
-    lines.append("For each finding below, you will see WHY Agent 1 flagged it,")
-    lines.append("followed by the ACTUAL EVIDENCE lines from Volatility artifacts.")
-    lines.append("Your job: confirm, reject, or mark inconclusive each finding.\n")
+    lines.append(
+        "For each finding: WHY Agent 1 flagged it, then ACTUAL EVIDENCE from Volatility artifacts."
+    )
+    lines.append("Confirm, reject, or mark inconclusive each finding.\n")
 
-    # --- Par PID ---
-    by_pid = pivot.get("by_pid", {})
-    triage_procs = {p.get("pid"): p for p in triage.get("suspicious_processes", []) if p.get("pid")}
+    for pid, proc in triage_procs.items():
+        image = proc.get("image", "unknown")
+        ppid = proc.get("ppid", "?")
+        severity = proc.get("severity", "?")
+        cmdline = proc.get("cmdline", "")
+        reasons = proc.get("reasons", "none given")
 
-    for pid, evidence_files in by_pid.items():
-        triage_entry = triage_procs.get(pid, {})
-        image   = triage_entry.get("image", "unknown")
-        reasons = triage_entry.get("reasons", [])
-        score   = triage_entry.get("score", "?")
-        phase   = triage_entry.get("attack_phase", "unknown")
+        lines.append(f"\n--- [PID {pid}] {image} (ppid={ppid}, Agent1 severity={severity}) ---")
+        if cmdline:
+            lines.append(f"  Cmdline: {cmdline}")
+        lines.append(f"  Agent 1 reasons: {reasons}")
 
-        lines.append(f"\n--- [PID {pid}] {image} (score={score}, phase={phase}) ---")
-        lines.append(f"  Agent 1 reasons: {'; '.join(reasons) if reasons else 'none given'}")
-
+        evidence = pivot_evidence.get(pid, {})
         budget = max_lines_per_target
-        if evidence_files:
-            for fname, hits in evidence_files.items():
-                alloc = min(len(hits), budget)
-                if alloc <= 0:
+        if evidence:
+            for fname, hits in evidence.items():
+                if budget <= 0:
                     break
-                lines.append(f"  [{fname}] ({len(hits)} hits, showing {alloc}):")
-                for h in hits[:alloc]:
-                    lines.append(f"    {h}")
-                budget -= alloc
-        else:
-            lines.append("  Evidence: NO MATCH FOUND in any artifact file")
-
-    # --- Par Path ---
-    by_path = pivot.get("by_path", {})
-    triage_paths = {p.get("path"): p for p in triage.get("suspicious_paths", []) if p.get("path")}
-
-    for path, evidence_files in by_path.items():
-        triage_entry = triage_paths.get(path, {})
-        reason = triage_entry.get("reason", "flagged by triage")
-        pids   = triage_entry.get("related_pids", [])
-
-        lines.append(f"\n--- [PATH] {path} (related PIDs: {pids}) ---")
-        lines.append(f"  Agent 1 reason: {reason}")
-
-        budget = max_lines_per_target
-        if evidence_files:
-            for fname, hits in evidence_files.items():
                 alloc = min(len(hits), budget)
-                if alloc <= 0:
-                    break
                 lines.append(f"  [{fname}] ({len(hits)} hits, showing {alloc}):")
                 for h in hits[:alloc]:
                     lines.append(f"    {h}")
@@ -102,38 +144,44 @@ def _build_llm_context(
 
 
 # ---------------------------------------------------------------------------
-# Agent 2 : LLM pivot analysis
+# Fallback TXT output when LLM fails
 # ---------------------------------------------------------------------------
 
-def _pivot_analyst_llm(
-    triage: Dict[str, Any],
-    pivot: Dict[str, Any],
-    prompt_path: str,
-    llm_config_path: str,
-    max_lines_per_target: int = 40,
-) -> Dict[str, Any]:
+def _build_fallback_analyst_txt(triage_procs: Dict[str, Dict]) -> str:
+    """Generate a valid analyst.txt when the LLM is unavailable."""
+    n = len(triage_procs)
+    out_lines: List[str] = []
+    out_lines.append("================================================================")
+    out_lines.append("FIND_EVIL — PIVOT REPORT")
+    out_lines.append(f"Generated: {now_iso()}")
+    out_lines.append(
+        "Summary: LLM validation failed — all findings are inconclusive. Manual review required."
+    )
+    out_lines.append(f"Counts: confirmed=0  inconclusive={n}  rejected=0")
+    out_lines.append("================================================================")
 
-    with open(prompt_path, "r", encoding="utf-8", errors="ignore") as f:
-        system_prompt = f.read().strip()
+    for pid, proc in triage_procs.items():
+        image = proc.get("image", "unknown")
+        ppid = proc.get("ppid", "?")
+        cmdline = proc.get("cmdline", "")
+        reasons = proc.get("reasons", "")
 
-    context = _build_llm_context(triage, pivot, max_lines_per_target)
+        out_lines.append("")
+        out_lines.append("[INCONCLUSIVE]")
+        out_lines.append("----------------------------------------------------------------")
+        out_lines.append(f"PID:      {pid}")
+        out_lines.append(f"PPID:     {ppid}")
+        out_lines.append(f"Image:    {image}")
+        if cmdline:
+            out_lines.append(f"Cmdline:  {cmdline}")
+        out_lines.append("")
+        out_lines.append("Justification:")
+        out_lines.append(
+            f"  LLM unavailable — cannot validate. Agent 1 reasons: {reasons}"
+        )
+        out_lines.append("----------------------------------------------------------------")
 
-    config = load_llm_config(llm_config_path)
-    raw = call_chat([
-        {"role": "system", "content": system_prompt},
-        {"role": "user",   "content": context},
-    ], config)
-
-    result = extract_json(raw)
-
-    # Garantir structure attendue
-    result.setdefault("generated_at", now_iso())
-    result.setdefault("validated_findings", [])
-    result.setdefault("rejected_findings", [])
-    result.setdefault("inconclusive_findings", [])
-    result.setdefault("analyst_summary", "")
-
-    return result
+    return "\n".join(out_lines) + "\n"
 
 
 # ---------------------------------------------------------------------------
@@ -142,44 +190,58 @@ def _pivot_analyst_llm(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Pivot Analyst — Agent 2 (LLM validation)")
-    parser.add_argument("--triage",     required=True, help="Path to triage.json (Agent 1 output)")
-    parser.add_argument("--pivot",      required=True, help="Path to pivot.json (grep output)")
-    parser.add_argument("--out",        required=True, help="Output path for validated findings")
+    parser.add_argument("--triage",     required=True, help="Path to triage.txt (Agent 1 output)")
+    parser.add_argument("--pivot",      required=True, help="Path to pivot.txt (grep output)")
+    parser.add_argument("--out",        required=True, help="Output path for analyst.txt")
     parser.add_argument("--llm-config", default=os.path.join(_REPO_DIR, "llm_config.json"))
     parser.add_argument("--prompt",     default=os.path.join(_REPO_DIR, "prompts", "agent2_pivot.md"))
-    parser.add_argument("--max-lines",  type=int, default=40, help="Max evidence lines per target")
+    parser.add_argument("--max-lines",  type=int, default=40,
+                        help="Max evidence lines per PID in LLM context")
+    parser.add_argument("--no-llm",    action="store_true", help="Skip LLM; write fallback analyst.txt")
     args = parser.parse_args()
 
-    triage = load_json(args.triage)
-    pivot  = load_json(args.pivot)
+    triage_procs = parse_triage_txt(args.triage)
+    pivot_evidence = parse_pivot_txt(args.pivot)
 
-    print("[pivot-analyst] Running LLM validation of findings...", file=sys.stderr)
-    try:
-        output = _pivot_analyst_llm(
-            triage, pivot, args.prompt, args.llm_config, args.max_lines
-        )
-        print("[pivot-analyst] LLM validation complete.", file=sys.stderr)
-    except Exception as exc:
-        # Si le LLM échoue, on passe tout en "inconclusive" pour ne pas bloquer le pipeline
-        print(f"[pivot-analyst] LLM failed ({exc}), marking all as inconclusive.", file=sys.stderr)
-        all_targets = []
-        for proc in triage.get("suspicious_processes", []):
-            all_targets.append({
-                "target": f"PID {proc.get('pid')} ({proc.get('image', '?')})",
-                "verdict": "inconclusive",
-                "justification": f"LLM unavailable — cannot validate. Original reasons: {'; '.join(proc.get('reasons', []))}"
-            })
-        output = {
-            "generated_at": now_iso(),
-            "validated_findings": [],
-            "rejected_findings": [],
-            "inconclusive_findings": all_targets,
-            "analyst_summary": "LLM validation failed — all findings are inconclusive.",
-            "_fallback": True,
-        }
+    print(
+        f"[pivot-analyst] {len(triage_procs)} findings to validate.",
+        file=sys.stderr,
+    )
+
+    if args.no_llm:
+        print("[pivot-analyst] --no-llm set; writing fallback analyst.txt.", file=sys.stderr)
+        content = _build_fallback_analyst_txt(triage_procs)
+    else:
+        with open(args.prompt, "r", encoding="utf-8", errors="ignore") as f:
+            system_prompt = f.read().strip()
+
+        context = _build_llm_context(triage_procs, pivot_evidence, args.max_lines)
+
+        llm_config = load_llm_config(args.llm_config)
+
+        print("[pivot-analyst] Calling LLM for validation...", file=sys.stderr)
+        try:
+            raw_response = call_chat([
+                {"role": "system", "content": system_prompt},
+                {"role": "user",   "content": context},
+            ], llm_config)
+
+            # Agent 2 outputs TXT directly — save raw response as-is
+            content = raw_response.strip()
+            print("[pivot-analyst] LLM validation complete.", file=sys.stderr)
+
+        except Exception as exc:
+            print(
+                f"[pivot-analyst] LLM failed ({exc}), writing fallback analyst.txt.",
+                file=sys.stderr,
+            )
+            content = _build_fallback_analyst_txt(triage_procs)
 
     os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
-    write_json(args.out, output)
+    with open(args.out, "w", encoding="utf-8") as f:
+        f.write(content + "\n")
+
+    print(f"[pivot-analyst] Written: {args.out}", file=sys.stderr)
 
 
 if __name__ == "__main__":

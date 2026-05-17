@@ -1,0 +1,95 @@
+Volatility 3 Framework 2.28.1
+
+Offset(V)	Name	PID	PPID	Sess	JobSess	Wow64	Total	Active	Term	JobLink	Process
+
+0x990ef6d77080	MpDefenderCore	3144	896	0	0	False	1	1	0	N/A	(Original Process)
+* 0x990ef6d77080	MpDefenderCore	3144	896	0	0	False	0	0	0	Yes	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpDefenderCoreService.exe
+0x990ef6e89080	MsMpEng.exe	3284	896	0	0	False	5	1	0	N/A	(Original Process)
+* 0x990ef6e89080	MsMpEng.exe	3284	896	0	0	False	0	0	0	Yes	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MsMpEng.exe
+0x990ef784c080	taskhostw.exe	4584	2168	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef784c080	taskhostw.exe	4584	2168	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\taskhostw.exe
+0x990ef7880080	MicrosoftEdgeU	4644	2168	0	0	True	7	1	0	N/A	(Original Process)
+* 0x990ef7880080	MicrosoftEdgeU	4644	2168	0	0	True	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
+0x990ef73ac080	CrossDeviceRes	5144	4276	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef73ac080	CrossDeviceRes	5144	4276	1	0	False	0	0	0	Yes	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\CrossDeviceResume.exe
+0x990ef7d8c080	StartMenuExper	5432	516	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef7d8c080	StartMenuExper	5432	516	1	0	False	0	0	0	Yes	C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe
+0x990ef7d8f080	SearchHost.exe	5452	516	1	1	False	8	7	0	N/A	(Original Process)
+* 0x990ef7d8f080	SearchHost.exe	5452	516	1	0	False	0	0	0	Yes	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe
+* 0x990ef76df080	msedgewebview2	2736	5452	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+* 0x990ef76da080	msedgewebview2	1316	2736	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef7e1c080	Widgets.exe	5652	516	1	1	False	8	7	0	N/A	(Original Process)
+* 0x990ef7e1c080	Widgets.exe	5652	516	1	0	False	0	0	0	Yes	C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe
+* 0x990ef8066080	msedgewebview2	4420	5652	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+* 0x990ef602c080	msedgewebview2	1292	4420	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef692c080	RuntimeBroker.	5684	516	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef692c080	RuntimeBroker.	5684	516	1	0	False	0	0	0	Yes	C:\Windows\System32\RuntimeBroker.exe
+0x990ef76df080	msedgewebview2	2736	5452	1	1	False	8	7	0	N/A	(Original Process)
+* 0x990ef7d8f080	SearchHost.exe	5452	516	1	0	False	0	0	0	Yes	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe
+* 0x990ef76df080	msedgewebview2	2736	5452	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+* 0x990ef76da080	msedgewebview2	1316	2736	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef76da080	msedgewebview2	1316	2736	1	1	False	8	7	0	N/A	(Original Process)
+* 0x990ef7d8f080	SearchHost.exe	5452	516	1	0	False	0	0	0	Yes	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe
+* 0x990ef76df080	msedgewebview2	2736	5452	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+* 0x990ef76da080	msedgewebview2	1316	2736	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef76d80c0	msedgewebview2	5408	2736	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef76d80c0	msedgewebview2	5408	2736	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef7036080	msedgewebview2	5156	2736	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef7036080	msedgewebview2	5156	2736	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef7f52080	msedgewebview2	6224	2736	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef7f52080	msedgewebview2	6224	2736	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef8446080	msedgewebview2	6296	2736	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef8446080	msedgewebview2	6296	2736	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef79b3080	taskhostw.exe	6420	2168	1	1	False	2	1	0	N/A	(Original Process)
+* 0x990ef79b3080	taskhostw.exe	6420	2168	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\taskhostw.exe
+0x990ef260b080	WmiPrvSE.exe	8004	516	0	0	False	5	2	0	N/A	(Original Process)
+* 0x990ef260b080	WmiPrvSE.exe	8004	516	0	0	False	0	0	0	Yes	C:\WINDOWS\system32\wbem\wmiprvse.exe
+* 0x990ef029c080	WmiPrvSE.exe	1560	516	0	0	False	0	0	0	Yes	C:\WINDOWS\system32\wbem\wmiprvse.exe
+0x990ef77b90c0	backgroundTask	3396	516	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef77b90c0	backgroundTask	3396	516	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\backgroundTaskHost.exe
+0x990ef76de080	RuntimeBroker.	6104	516	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef76de080	RuntimeBroker.	6104	516	1	0	False	0	0	0	Yes	C:\Windows\System32\RuntimeBroker.exe
+0x990ef8009080	WidgetService.	3304	516	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef8009080	WidgetService.	3304	516	1	0	False	0	0	0	Yes	C:\Program Files\WindowsApps\Microsoft.WidgetsPlatformRuntime_1.6.14.0_x64__8wekyb3d8bbwe\WidgetService\WidgetService.exe
+0x990ef8066080	msedgewebview2	4420	5652	1	1	False	8	7	0	N/A	(Original Process)
+* 0x990ef7e1c080	Widgets.exe	5652	516	1	0	False	0	0	0	Yes	C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe
+* 0x990ef8066080	msedgewebview2	4420	5652	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+* 0x990ef602c080	msedgewebview2	1292	4420	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef602c080	msedgewebview2	1292	4420	1	1	False	8	7	0	N/A	(Original Process)
+* 0x990ef7e1c080	Widgets.exe	5652	516	1	0	False	0	0	0	Yes	C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe
+* 0x990ef8066080	msedgewebview2	4420	5652	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+* 0x990ef602c080	msedgewebview2	1292	4420	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef6bb6080	msedgewebview2	6080	4420	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef6bb6080	msedgewebview2	6080	4420	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef6bb4080	msedgewebview2	1920	4420	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef6bb4080	msedgewebview2	1920	4420	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990efa161080	msedgewebview2	2724	4420	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990efa161080	msedgewebview2	2724	4420	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef77a5080	msedgewebview2	7932	4420	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef77a5080	msedgewebview2	7932	4420	1	0	False	0	0	0	Yes	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+0x990ef7bb0080	ShellExperienc	2040	516	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990ef7bb0080	ShellExperienc	2040	516	1	0	False	0	0	0	Yes	C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe
+0x990efacf0180	RuntimeBroker.	7044	516	1	1	False	1	1	0	N/A	(Original Process)
+* 0x990efacf0180	RuntimeBroker.	7044	516	1	0	False	0	0	0	Yes	C:\Windows\System32\RuntimeBroker.exe
+0x990ef01cb080	7zFM.exe	7476	4968	1	1	False	2	1	0	N/A	(Original Process)
+* 0x990ef01cb080	7zFM.exe	7476	4968	1	0	False	0	0	0	Yes	C:\Program Files\7-Zip\7zFM.exe
+0x990ef7d97080	SearchProtocol	4796	5220	0	0	False	1	1	0	N/A	(Original Process)
+* 0x990ef7d97080	SearchProtocol	4796	5220	0	0	False	0	0	0	Yes	C:\WINDOWS\System32\SearchProtocolHost.exe
+0x990ef612e080	cmd.exe	2388	6956	1	1	False	17	1	0	N/A	(Original Process)
+0x990ef7e64080	conhost.exe	4812	2388	1	1	False	17	1	0	N/A	(Original Process)
+0x990ef029c080	WmiPrvSE.exe	1560	516	0	0	False	5	2	0	N/A	(Original Process)
+* 0x990ef260b080	WmiPrvSE.exe	8004	516	0	0	False	0	0	0	Yes	C:\WINDOWS\system32\wbem\wmiprvse.exe
+* 0x990ef029c080	WmiPrvSE.exe	1560	516	0	0	False	0	0	0	Yes	C:\WINDOWS\system32\wbem\wmiprvse.exe
+0x990ef4b38080	Client.exe	376	7980	1	1	False	17	1	0	N/A	(Original Process)
+0x990ef8261080	cmd.exe	2380	4240	1	1	False	6	3	0	N/A	(Original Process)
+* 0x990ef8261080	cmd.exe	2380	4240	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\cmd.exe
+* 0x990ef240c080	conhost.exe	7924	2380	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\conhost.exe
+* 0x990efacf2080	PING.EXE	7284	2380	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\PING.EXE
+0x990ef240c080	conhost.exe	7924	2380	1	1	False	6	3	0	N/A	(Original Process)
+* 0x990ef8261080	cmd.exe	2380	4240	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\cmd.exe
+* 0x990ef240c080	conhost.exe	7924	2380	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\conhost.exe
+* 0x990efacf2080	PING.EXE	7284	2380	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\PING.EXE
+0x990efacf2080	PING.EXE	7284	2380	1	1	False	6	3	0	N/A	(Original Process)
+* 0x990ef8261080	cmd.exe	2380	4240	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\cmd.exe
+* 0x990ef240c080	conhost.exe	7924	2380	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\conhost.exe
+* 0x990efacf2080	PING.EXE	7284	2380	1	0	False	0	0	0	Yes	C:\WINDOWS\system32\PING.EXE

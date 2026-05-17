@@ -1,31 +1,24 @@
 #!/usr/bin/env python3
 """
-Triage Agent — Agent 1 du pipeline forensique.
+Triage Agent — Agent 1 of the forensic pipeline.
 
-Approche : LLM en premier, avec pré-traitement déterministe pour enrichir
-le contexte avant envoi (arbre de processus, anomalies de spawn, SIDs).
-Les règles keyword ne servent que de filet de secours si le LLM échoue.
+Reads a FIND_EVIL collector chunk (custom key=value text format),
+flags suspicious processes with the LLM, and writes triage.txt.
+
+Approach: LLM-first with deterministic pre-processing for anomaly
+detection. Rule-based scoring is a fallback if the LLM is unavailable.
 """
 import argparse
 import json
 import os
 import re
 import sys
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from llm_client import call_chat, extract_json, load_llm_config
-from utils import (
-    extract_processes,
-    find_value_by_key_substring,
-    is_whitelisted_path,
-    load_json,
-    load_whitelist,
-    now_iso,
-    pick_strings,
-    write_json,
-)
+from utils import is_whitelisted_path, load_json, load_whitelist, now_iso
 
-# Enfants inhabituels pour des parents spécifiques (anomalie de spawn)
+# Unusual parent→child spawn pairs
 _UNUSUAL_CHILDREN = {
     "winword.exe":   {"powershell.exe", "cmd.exe", "wscript.exe", "mshta.exe", "rundll32.exe"},
     "excel.exe":     {"powershell.exe", "cmd.exe", "wscript.exe", "mshta.exe", "rundll32.exe"},
@@ -33,6 +26,7 @@ _UNUSUAL_CHILDREN = {
     "acrord32.exe":  {"powershell.exe", "cmd.exe"},
     "chrome.exe":    {"powershell.exe", "cmd.exe", "wscript.exe"},
     "firefox.exe":   {"powershell.exe", "cmd.exe"},
+    "powerpnt.exe":  {"powershell.exe", "cmd.exe", "wscript.exe"},
 }
 
 _KNOWN_LEGIT_PARENTS = {
@@ -40,134 +34,195 @@ _KNOWN_LEGIT_PARENTS = {
     "smss.exe", "csrss.exe", "lsass.exe", "svchost.exe",
 }
 
+# Known field names for the chunk parser
+_KNOWN_FIELDS = ["pid", "ppid", "name", "path", "cmd", "start", "end",
+                 "dlls", "nets", "sids", "privs", "handles"]
+
 
 # ---------------------------------------------------------------------------
-# Pré-traitement déterministe (enrichit le contexte AVANT le LLM)
+# Input parser — custom FIND_EVIL text format
 # ---------------------------------------------------------------------------
 
-def _build_process_tree(processes: Dict[str, Dict]) -> Dict[str, Any]:
-    """Construit un index pid→proc et un index ppid→[child pids]."""
+def parse_input_chunk(text: str) -> List[Dict[str, str]]:
+    """
+    Parse a FIND_EVIL collector chunk into a list of process dicts.
+
+    Each non-comment, non-empty line is one process:
+      pid=136 ppid=4 name=Registry path= cmd="" start=... dlls=... privs=... handles=
+
+    Fields are space-separated key=value pairs where values may contain
+    spaces (e.g. timestamps). Known field names act as delimiters.
+    """
+    processes: List[Dict[str, str]] = []
+
+    # Build regex that matches the start of any known field: e.g. " pid="
+    # We use a lookahead pattern to find field boundaries.
+    field_start_re = re.compile(
+        r'(?<!\w)(' + '|'.join(re.escape(f) for f in _KNOWN_FIELDS) + r')='
+    )
+
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith('#'):
+            continue
+
+        # Find positions of all field markers
+        positions: List[Tuple[int, str, int]] = []
+        for m in field_start_re.finditer(line):
+            positions.append((m.start(), m.group(1), m.end()))
+
+        if not positions:
+            continue
+
+        positions.sort(key=lambda x: x[0])
+        proc: Dict[str, str] = {}
+
+        for i, (start, field, val_start) in enumerate(positions):
+            if i + 1 < len(positions):
+                val_end = positions[i + 1][0]
+                value = line[val_start:val_end].strip()
+            else:
+                value = line[val_start:].strip()
+            proc[field] = value
+
+        if proc.get("pid"):
+            # Strip outer double quotes from cmd
+            cmd = proc.get("cmd", "")
+            if cmd.startswith('"') and cmd.endswith('"') and len(cmd) > 1:
+                cmd = cmd[1:-1]
+            proc["cmd"] = cmd
+            processes.append(proc)
+
+    return processes
+
+
+# ---------------------------------------------------------------------------
+# Deterministic pre-processing (runs before LLM)
+# ---------------------------------------------------------------------------
+
+def _build_process_tree(processes: List[Dict]) -> Dict[str, Any]:
+    """Index by PID and build parent→children map."""
     by_pid: Dict[str, Dict] = {}
     children: Dict[str, List[str]] = {}
-    for _, proc in processes.items():
-        pid  = find_value_by_key_substring(proc, "PID")
-        ppid = find_value_by_key_substring(proc, "PPID")
+    for proc in processes:
+        pid = proc.get("pid", "")
+        ppid = proc.get("ppid", "")
         if pid:
             by_pid[pid] = proc
             children.setdefault(ppid, []).append(pid)
     return {"by_pid": by_pid, "children": children}
 
 
-def _extract_anomalies(processes: Dict[str, Dict], tree: Dict[str, Any]) -> List[str]:
-    """
-    Détecte des anomalies structurelles avant envoi au LLM :
-    - spawn inhabituel (Office/browser → shell)
-    - processus cumulant SID SYSTEM + SID utilisateur
-    - shell spawning un volume anormal d'enfants
-    """
+def _extract_anomalies(processes: List[Dict], tree: Dict) -> List[str]:
+    """Detect structural anomalies before sending to the LLM."""
     anomalies: List[str] = []
-    by_pid   = tree["by_pid"]
+    by_pid = tree["by_pid"]
     children = tree["children"]
 
-    for pid, proc in by_pid.items():
-        image        = (find_value_by_key_substring(proc, "ImageFileName") or "").lower()
-        ppid         = find_value_by_key_substring(proc, "PPID")
-        parent_proc  = by_pid.get(ppid, {})
-        parent_image = (find_value_by_key_substring(parent_proc, "ImageFileName") or "").lower()
+    for proc in processes:
+        pid = proc.get("pid", "")
+        ppid = proc.get("ppid", "")
+        image = proc.get("name", "").lower()
+        parent_proc = by_pid.get(ppid, {})
+        parent_image = parent_proc.get("name", "").lower()
 
-        # Spawn Office/browser → interpréteur shell
+        # Office/browser → shell interpreter
         for known_parent, bad_children in _UNUSUAL_CHILDREN.items():
             if known_parent in parent_image and image in bad_children:
                 anomalies.append(
-                    f"SPAWN ANOMALY: {parent_image} (PID {ppid}) -> {image} (PID {pid}) "
-                    f"— document/browser process should not launch a shell interpreter"
+                    f"SPAWN ANOMALY: {parent_image} (PID {ppid}) -> {image} (PID {pid})"
+                    f" — document/browser should not launch a shell interpreter"
                 )
 
-        # Processus portant à la fois SYSTEM et un SID utilisateur
-        sids = pick_strings(proc.get("AssociatedSIDs(using windows.getsids)", {}) or {})
-        has_system = any("system" in s.lower() or "s-1-5-18" in s.lower() for s in sids)
-        has_user   = any("s-1-5-21" in s.lower() for s in sids)
-        if has_system and has_user and image not in _KNOWN_LEGIT_PARENTS:
-            anomalies.append(
-                f"PRIVILEGE ANOMALY: {image} (PID {pid}) holds both SYSTEM and user SIDs "
-                f"— possible token impersonation or privilege escalation"
-            )
+        # SYSTEM SID + user SID on same process
+        sids = proc.get("sids", "").lower()
+        if sids:
+            has_system = "s-1-5-18" in sids or "system" in sids
+            has_user = "s-1-5-21" in sids
+            if has_system and has_user and image not in _KNOWN_LEGIT_PARENTS:
+                anomalies.append(
+                    f"PRIVILEGE ANOMALY: {image} (PID {pid}) holds both SYSTEM and user SIDs"
+                    f" — possible token impersonation"
+                )
 
-        # Shell avec trop d'enfants
+        # Shell spawning excessive children
         n_children = len(children.get(pid, []))
         if n_children > 5 and image in {"cmd.exe", "powershell.exe", "wscript.exe"}:
             anomalies.append(
-                f"SPAWN VOLUME: {image} (PID {pid}) spawned {n_children} child processes "
-                f"— unusual for an interactive shell"
+                f"SPAWN VOLUME: {image} (PID {pid}) spawned {n_children} child processes"
+                f" — unusual for an interactive shell"
             )
 
     return anomalies
 
 
+def _parse_enabled_privs(privs_field: str) -> List[str]:
+    """Extract privilege names that are Enabled from the privs= field."""
+    enabled = []
+    for entry in privs_field.split(";"):
+        entry = entry.strip()
+        if not entry:
+            continue
+        if "|" in entry:
+            name, attrs = entry.split("|", 1)
+            if "Enabled" in attrs:
+                enabled.append(name.strip())
+    return enabled
+
+
 def _build_llm_context(
-    processes: Dict[str, Dict],
-    tree: Dict[str, Any],
+    processes: List[Dict],
+    tree: Dict,
     anomalies: List[str],
     whitelist: List[str],
-    top_n: int,
 ) -> str:
     """
-    Construit un contexte synthétique compact à envoyer au LLM.
-    On n'envoie PAS le JSON brut — on envoie une vue enrichie
-    et pré-filtrée pour économiser les tokens.
+    Build a compact, human-readable context block for the LLM.
+    Sends a filtered view — not raw text — to save tokens.
     """
     lines: List[str] = ["=== PROCESS LIST ==="]
 
-    for pid, proc in tree["by_pid"].items():
-        image   = find_value_by_key_substring(proc, "ImageFileName") or "?"
-        ppid    = find_value_by_key_substring(proc, "PPID") or "?"
-        created = find_value_by_key_substring(proc, "CreateTime") or "?"
-        exited  = find_value_by_key_substring(proc, "ExitTime") or ""
+    for proc in processes:
+        pid = proc.get("pid", "?")
+        ppid = proc.get("ppid", "?")
+        name = proc.get("name", "?")
+        path = proc.get("path", "")
+        cmd = proc.get("cmd", "")
+        start = proc.get("start", "")
+        end = proc.get("end", "")
 
-        commands_obj = {}
-        for key in proc:
-            if "AssociatedCommands" in str(key):
-                commands_obj = proc.get(key, {})
-                break
-        cmds = [c for c in pick_strings(commands_obj) if c.strip()]
+        # Non-whitelisted DLLs only
+        dlls_raw = [d for d in proc.get("dlls", "").split(";") if d.strip()]
+        dlls = [d for d in dlls_raw if not is_whitelisted_path(d, whitelist)]
 
-        # DLLs non-whitelistées seulement (évite le bruit ntdll/kernel32)
-        dlls = [
-            v for v in pick_strings(proc.get("DllsLoaded", {}))
-            if v.lower().endswith(".dll") and not is_whitelisted_path(v, whitelist)
-        ]
+        # Network connections (non-empty entries)
+        nets = [n for n in proc.get("nets", "").split(";") if n.strip()]
 
-        # Adresses étrangères extraites proprement depuis les clés ForeignAddr
-        net_foreign: List[str] = []
-        for key in proc:
-            if "NetworkEvents" in str(key):
-                net_obj = proc.get(key, {})
-                if isinstance(net_obj, dict):
-                    for k, v in net_obj.items():
-                        if "ForeignAddr" in str(k) and isinstance(v, str) and v.strip():
-                            net_foreign.append(v)
-                break
+        # Enabled privileges worth noting
+        enabled_privs = _parse_enabled_privs(proc.get("privs", ""))
+        notable_privs = [p for p in enabled_privs if p in {
+            "SeDebugPrivilege", "SeTcbPrivilege", "SeImpersonatePrivilege",
+            "SeLoadDriverPrivilege", "SeTakeOwnershipPrivilege",
+            "SeAssignPrimaryTokenPrivilege", "SeCreateTokenPrivilege",
+        }]
 
-        sids = [s for s in pick_strings(
-            proc.get("AssociatedSIDs(using windows.getsids)", {}) or {}
-        ) if s.strip() and not s.upper().startswith("SID")]
+        parent_name = tree["by_pid"].get(ppid, {}).get("name", "unknown")
 
-        parent_proc  = tree["by_pid"].get(ppid, {})
-        parent_image = find_value_by_key_substring(parent_proc, "ImageFileName") or "unknown"
-
-        lines.append(f"\n[PID {pid}] {image}")
-        lines.append(f"  Parent : PID {ppid} ({parent_image})")
-        lines.append(f"  Start  : {created}" + (f"  |  Exit: {exited}" if exited else ""))
-        if cmds:
-            lines.append("  Commands:")
-            for c in cmds[:4]:
-                lines.append(f"    > {c}")
+        lines.append(f"\n[PID {pid}] {name}")
+        lines.append(f"  Parent: PID {ppid} ({parent_name})")
+        if path:
+            lines.append(f"  Path: {path}")
+        lines.append(
+            f"  Start: {start}" + (f"  |  Exit: {end}" if end else "")
+        )
+        if cmd:
+            lines.append(f"  Cmd: {cmd}")
         if dlls:
-            lines.append(f"  Non-whitelisted DLLs: {', '.join(dlls[:6])}")
-        if net_foreign:
-            lines.append(f"  Foreign connections: {', '.join(net_foreign[:4])}")
-        if sids:
-            lines.append(f"  SIDs/Users: {', '.join(sids[:4])}")
+            lines.append(f"  Non-whitelisted DLLs: {', '.join(dlls[:8])}")
+        if nets:
+            lines.append(f"  Network connections: {', '.join(nets[:6])}")
+        if notable_privs:
+            lines.append(f"  Notable enabled privileges: {', '.join(notable_privs)}")
 
     lines.append("\n=== PRE-COMPUTED STRUCTURAL ANOMALIES ===")
     if anomalies:
@@ -176,137 +231,153 @@ def _build_llm_context(
     else:
         lines.append("  None detected by pre-processor.")
 
-    lines.append(f"\n=== TASK ===")
-    lines.append(f"Identify the top {top_n} most suspicious processes.")
-    lines.append("Prioritize spawn chain reasoning over individual keyword matching.")
-
     return "\n".join(lines)
 
 
 # ---------------------------------------------------------------------------
-# Chemin LLM (principal)
+# LLM path (primary)
 # ---------------------------------------------------------------------------
 
 def _triage_with_llm(
-    data: Dict[str, Any],
-    processes: Dict[str, Dict],
-    tree: Dict[str, Any],
+    processes: List[Dict],
+    tree: Dict,
     anomalies: List[str],
     whitelist: List[str],
     prompt_path: str,
     llm_config_path: str,
-    top_n: int,
 ) -> Dict[str, Any]:
-
     with open(prompt_path, "r", encoding="utf-8", errors="ignore") as f:
         system_prompt = f.read().strip()
 
-    context = _build_llm_context(processes, tree, anomalies, whitelist, top_n)
+    context = _build_llm_context(processes, tree, anomalies, whitelist)
 
     llm_config = load_llm_config(llm_config_path)
     raw = call_chat([
         {"role": "system", "content": system_prompt},
-        {"role": "user",   "content": context}
+        {"role": "user",   "content": context},
     ], llm_config)
 
     result = extract_json(raw)
 
-    # Garantir les clés attendues par le pivot en aval
+    # Normalize required keys
     result.setdefault("generated_at", now_iso())
-    result.setdefault("top_n", top_n)
+    result.setdefault("top_n", len(result.get("suspicious_processes", [])))
+    result.setdefault("reasoning_summary", "")
     result.setdefault("suspicious_processes", [])
-    result.setdefault("suspicious_paths", [])
-    result.setdefault("suspicious_services", [])
-    result.setdefault("suspicious_tasks", [])
+
+    # Remove buckets the prompt explicitly forbids
+    for key in ("suspicious_paths", "suspicious_services", "suspicious_tasks"):
+        result.pop(key, None)
 
     return result
 
 
 # ---------------------------------------------------------------------------
-# Filet de secours (règles — uniquement si LLM indisponible)
+# Rule-based fallback (only when LLM is unavailable)
 # ---------------------------------------------------------------------------
 
+_LEGIT_NAMES = {
+    "svchost.exe", "services.exe", "explorer.exe", "lsass.exe", "csrss.exe",
+    "wininit.exe", "winlogon.exe", "smss.exe", "taskhost.exe", "taskhostw.exe",
+    "spoolsv.exe", "searchindexer.exe", "conhost.exe", "dllhost.exe",
+    "msiexec.exe", "wermgr.exe", "fontdrvhost.exe", "dwm.exe", "sihost.exe",
+    "runtimebroker.exe", "securityhealthservice.exe", "logonui.exe",
+    "registry", "system", "idle",
+}
+
+
 def _rule_based_fallback(
-    data: Dict[str, Any],
-    processes: Dict[str, Dict],
+    processes: List[Dict],
     config: Dict[str, Any],
     whitelist: List[str],
 ) -> Dict[str, Any]:
-    """Scoring par règles simples. Utilisé UNIQUEMENT si le LLM échoue."""
-    keywords        = [k.lower() for k in config.get("suspicious_keywords", [])]
+    """Keyword/path scoring — used only if the LLM fails."""
+    keywords = [k.lower() for k in config.get("suspicious_keywords", [])]
     suspicious_dirs = [d.lower() for d in config.get("suspicious_dirs", [])]
-    top_n           = config.get("top_n", 10)
-
-    _LEGIT_NAMES = {
-        "svchost.exe", "services.exe", "explorer.exe", "lsass.exe", "csrss.exe",
-        "wininit.exe", "winlogon.exe", "smss.exe", "taskhost.exe", "taskhostw.exe",
-        "spoolsv.exe", "searchindexer.exe", "conhost.exe", "dllhost.exe",
-        "msiexec.exe", "wermgr.exe", "fontdrvhost.exe", "dwm.exe", "sihost.exe",
-        "runtimebroker.exe", "securityhealthservice.exe", "logonui.exe",
-    }
 
     scored: List[Dict[str, Any]] = []
-    for _, proc in processes.items():
+    for proc in processes:
         reasons: List[str] = []
         score = 0
-        image = find_value_by_key_substring(proc, "ImageFileName")
-        pid   = find_value_by_key_substring(proc, "PID")
-        ppid  = find_value_by_key_substring(proc, "PPID")
+        name = proc.get("name", "")
+        pid = proc.get("pid", "")
+        ppid = proc.get("ppid", "")
+        cmd = proc.get("cmd", "")
+        path = proc.get("path", "")
 
-        commands_obj = {}
-        for key in proc:
-            if "AssociatedCommands" in str(key):
-                commands_obj = proc.get(key, {})
-                break
-        cmds = pick_strings(commands_obj)
-        dlls = pick_strings(proc.get("DllsLoaded", {}))
-
-        for cmd in cmds:
-            if any(k in cmd.lower() for k in keywords):
+        # Keyword match in command line
+        cmd_lower = cmd.lower()
+        for k in keywords:
+            if k in cmd_lower:
                 score += 3
-                reasons.append(f"Keyword match in command: {cmd}")
+                reasons.append(f"Keyword in cmdline: {k}")
                 break
 
-        for val in [image] + dlls:
-            low = val.lower() if val else ""
-            if low and not is_whitelisted_path(low, whitelist):
-                if any(d in low for d in suspicious_dirs):
+        # Suspicious directory
+        for val in [path, name]:
+            if val and not is_whitelisted_path(val, whitelist):
+                if any(d in val.lower() for d in suspicious_dirs):
                     score += 2
                     reasons.append(f"Unusual path: {val}")
                     break
 
-        img_lower = image.lower() if image else ""
-        if img_lower not in _LEGIT_NAMES and re.search(r"[a-f0-9]{8,}\.exe$", img_lower):
+        # Hex-like executable name
+        name_lower = name.lower()
+        if name_lower not in _LEGIT_NAMES and re.search(r"[a-f0-9]{8,}\.exe$", name_lower):
             score += 2
-            reasons.append(f"Randomized hex name: {image}")
+            reasons.append(f"Hex-like executable name: {name}")
 
-        scored.append({
-            "pid": pid, "ppid": ppid, "image": image,
-            "score": score, "reasons": reasons,
-            "evidence": {"commands": cmds[:5], "dlls": dlls[:5], "network": []}
-        })
+        if score > 0:
+            severity = "HIGH" if score >= 5 else ("MEDIUM" if score >= 3 else "LOW")
+            scored.append({
+                "pid": pid,
+                "ppid": ppid,
+                "image": name,
+                "command_line": cmd,
+                "severity": severity,
+                "reasons": reasons,
+            })
 
-    scored.sort(key=lambda x: x.get("score", 0), reverse=True)
-    suspicious = [s for s in scored if s.get("score", 0) > 0][:top_n]
-
-    paths: List[Dict] = []
-    seen: set = set()
-    for item in suspicious:
-        img = item.get("image") or ""
-        if img and img.lower() not in seen and not is_whitelisted_path(img, whitelist):
-            paths.append({"path": img, "related_pids": [item.get("pid")], "reason": "Unusual image path"})
-            seen.add(img.lower())
+    scored.sort(key=lambda x: len(x["reasons"]), reverse=True)
 
     return {
         "generated_at": now_iso(),
-        "top_n": top_n,
-        "suspicious_processes": suspicious,
-        "suspicious_paths": paths,
-        "suspicious_services": [],
-        "suspicious_tasks": [],
+        "top_n": len(scored),
+        "reasoning_summary": "Rule-based fallback — LLM unavailable",
+        "suspicious_processes": scored,
         "_fallback": True,
-        "_fallback_reason": "LLM unavailable — rule-based scoring used"
     }
+
+
+# ---------------------------------------------------------------------------
+# Output writer — key:value TXT format
+# ---------------------------------------------------------------------------
+
+def write_triage_txt(result: Dict[str, Any], chunk_name: str, out_path: str) -> None:
+    """Write the triage result as human-readable key:value TXT."""
+    lines: List[str] = []
+    lines.append("=== TRIAGE REPORT ===")
+    lines.append(f"Generated: {result.get('generated_at', now_iso())}")
+    lines.append(f"Chunk: {chunk_name}")
+    summary = result.get("reasoning_summary", "")
+    if summary:
+        lines.append(f"Summary: {summary}")
+    lines.append("")
+
+    for proc in result.get("suspicious_processes", []):
+        lines.append("[PROCESS]")
+        lines.append(f"pid: {proc.get('pid', '')}")
+        lines.append(f"ppid: {proc.get('ppid', '')}")
+        lines.append(f"image: {proc.get('image', '')}")
+        lines.append(f"cmdline: {proc.get('command_line', '')}")
+        lines.append(f"severity: {proc.get('severity', '')}")
+        reasons = proc.get("reasons", [])
+        lines.append(f"reasons: {' | '.join(reasons) if reasons else 'none'}")
+        lines.append("")
+
+    os.makedirs(os.path.dirname(os.path.abspath(out_path)), exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
 
 
 # ---------------------------------------------------------------------------
@@ -314,59 +385,54 @@ def _rule_based_fallback(
 # ---------------------------------------------------------------------------
 
 _SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
-_REPO_DIR    = os.path.dirname(_SCRIPTS_DIR)
+_REPO_DIR = os.path.dirname(_SCRIPTS_DIR)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Forensic Triage Agent — LLM-first")
-    parser.add_argument("--collector",  required=True)
-    parser.add_argument("--config",     default=os.path.join(_REPO_DIR, "config.json"))
-    parser.add_argument("--whitelist",  default=os.path.join(_SCRIPTS_DIR, "whitelist.txt"))
-    parser.add_argument("--out",        required=True)
+    parser = argparse.ArgumentParser(description="Forensic Triage Agent — Agent 1")
+    parser.add_argument("--input",     required=True, help="Path to input chunk_*.txt")
+    parser.add_argument("--config",    default=os.path.join(_REPO_DIR, "config.json"))
+    parser.add_argument("--whitelist", default=os.path.join(_SCRIPTS_DIR, "whitelist.txt"))
+    parser.add_argument("--out",       required=True, help="Output path for triage.txt")
     parser.add_argument("--llm-config", default=os.path.join(_REPO_DIR, "llm_config.json"))
-    parser.add_argument("--prompt",     default=os.path.join(_REPO_DIR, "prompts", "agent1_triage.md"))
-    parser.add_argument("--no-llm",     action="store_true", help="Force rule-based fallback (debug only)")
-    # Rétrocompatibilité : --use-llm accepté mais ignoré (LLM est toujours actif)
-    parser.add_argument("--use-llm",    action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--prompt",    default=os.path.join(_REPO_DIR, "prompts", "agent1_triage.md"))
+    parser.add_argument("--no-llm",   action="store_true", help="Force rule-based fallback")
     args = parser.parse_args()
 
-    data = load_json(args.collector)
+    with open(args.input, "r", encoding="utf-8", errors="ignore") as f:
+        chunk_text = f.read()
+
+    chunk_name = os.path.basename(args.input)
+    processes = parse_input_chunk(chunk_text)
+    print(f"[triage] Parsed {len(processes)} processes from {chunk_name}", file=sys.stderr)
+
     with open(args.config, "r", encoding="utf-8", errors="ignore") as f:
         config = json.load(f)
     whitelist = load_whitelist(args.whitelist)
-    top_n     = config.get("top_n", 10)
 
-    # Pré-traitement déterministe (toujours exécuté)
-    processes = extract_processes(data)
-    tree      = _build_process_tree(processes)
+    tree = _build_process_tree(processes)
     anomalies = _extract_anomalies(processes, tree)
 
-    output: Optional[Dict[str, Any]] = None
+    result: Optional[Dict[str, Any]] = None
 
     if not args.no_llm:
         try:
             print("[triage] Running LLM analysis...", file=sys.stderr)
-            output = _triage_with_llm(
-                data, processes, tree, anomalies,
-                whitelist, args.prompt, args.llm_config, top_n
+            result = _triage_with_llm(
+                processes, tree, anomalies, whitelist, args.prompt, args.llm_config
             )
-            print("[triage] LLM analysis complete.", file=sys.stderr)
+            n = len(result.get("suspicious_processes", []))
+            print(f"[triage] LLM complete — {n} suspicious processes flagged.", file=sys.stderr)
         except Exception as exc:
             print(f"[triage] LLM failed ({exc}), falling back to rules.", file=sys.stderr)
 
-    if output is None:
+    if result is None:
         print("[triage] Using rule-based fallback.", file=sys.stderr)
-        output = _rule_based_fallback(data, processes, config, whitelist)
+        result = _rule_based_fallback(processes, config, whitelist)
 
-    os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
-    write_json(args.out, output)
+    write_triage_txt(result, chunk_name, args.out)
+    print(f"[triage] Written: {args.out}", file=sys.stderr)
 
-
-if __name__ == "__main__":
-    main()
-
-    reasons: List[str] = []
-    score = 0
 
 if __name__ == "__main__":
     main()

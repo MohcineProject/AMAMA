@@ -1,0 +1,385 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-05-17T17:41:14Z
+
+=== PID 7772 (NisSrv.exe, ppid=896) ===
+Cmdline: \"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\NisSrv.exe\"
+
+--- pslist.txt ---
+L100: 7772	896	NisSrv.exe	0x990ef60a7080	5	-	0	False	2026-05-13 19:16:15.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L100: 7772	NisSrv.exe	"C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe"
+
+--- privileges.txt ---
+L3330: 7772	NisSrv.exe	2	SeCreateTokenPrivilege		Create a token object
+L3331: 7772	NisSrv.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L3332: 7772	NisSrv.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3333: 7772	NisSrv.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L3334: 7772	NisSrv.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3335: 7772	NisSrv.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3336: 7772	NisSrv.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L3337: 7772	NisSrv.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3338: 7772	NisSrv.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3339: 7772	NisSrv.exe	11	SeSystemProfilePrivilege		Profile system performance
+L3340: 7772	NisSrv.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L3341: 7772	NisSrv.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3342: 7772	NisSrv.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3343: 7772	NisSrv.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L3344: 7772	NisSrv.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3345: 7772	NisSrv.exe	17	SeBackupPrivilege		Backup files and directories
+L3346: 7772	NisSrv.exe	18	SeRestorePrivilege		Restore files and directories
+L3347: 7772	NisSrv.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L3348: 7772	NisSrv.exe	20	SeDebugPrivilege		Debug programs
+L3349: 7772	NisSrv.exe	21	SeAuditPrivilege	Present	Generate security audits
+L3350: 7772	NisSrv.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3351: 7772	NisSrv.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3352: 7772	NisSrv.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3353: 7772	NisSrv.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3354: 7772	NisSrv.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3355: 7772	NisSrv.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3356: 7772	NisSrv.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L3357: 7772	NisSrv.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L3358: 7772	NisSrv.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L3359: 7772	NisSrv.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3360: 7772	NisSrv.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3361: 7772	NisSrv.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3362: 7772	NisSrv.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3363: 7772	NisSrv.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3364: 7772	NisSrv.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L4479: 7772	NisSrv.exe	0x7ff68d240000	0x44f000	NisSrv.exe	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	-1	2026-05-13 19:16:15.000000 UTC	Disabled
+L4480: 7772	NisSrv.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:16:15.000000 UTC	Disabled
+L4481: 7772	NisSrv.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\SYSTEM32\KERNEL32.DLL	-1	2026-05-13 19:16:15.000000 UTC	Disabled
+L4482: 7772	NisSrv.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\SYSTEM32\KERNELBASE.dll	-1	2026-05-13 19:16:15.000000 UTC	Disabled
+L4483: 7772	NisSrv.exe	0x7fffe7b70000	0x1bc000	MpClient.dll	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpClient.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4484: 7772	NisSrv.exe	0x7ffff9820000	0xbb000	ADVAPI32.dll	C:\WINDOWS\SYSTEM32\ADVAPI32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4485: 7772	NisSrv.exe	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\SYSTEM32\USER32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4486: 7772	NisSrv.exe	0x7ffff56f0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4487: 7772	NisSrv.exe	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\SYSTEM32\CRYPT32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4488: 7772	NisSrv.exe	0x7ffff64b0000	0x81000	WINTRUST.dll	C:\WINDOWS\SYSTEM32\WINTRUST.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4489: 7772	NisSrv.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\SYSTEM32\msvcrt.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4490: 7772	NisSrv.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\SYSTEM32\RPCRT4.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4491: 7772	NisSrv.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\SYSTEM32\sechost.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4492: 7772	NisSrv.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\SYSTEM32\ucrtbase.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4493: 7772	NisSrv.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\SYSTEM32\win32u.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4494: 7772	NisSrv.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\SYSTEM32\GDI32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4495: 7772	NisSrv.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\SYSTEM32\gdi32full.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4496: 7772	NisSrv.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\SYSTEM32\msvcp_win.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4497: 7772	NisSrv.exe	0x7ffff5990000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4498: 7772	NisSrv.exe	0x7fffe8ac0000	0xb000	version.dll	C:\WINDOWS\system32\version.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4499: 7772	NisSrv.exe	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\SYSTEM32\ole32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4500: 7772	NisSrv.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\SYSTEM32\combase.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4501: 7772	NisSrv.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4502: 7772	NisSrv.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll	-1	2026-05-13 19:16:15.000000 UTC	Disabled
+L4503: 7772	NisSrv.exe	0x7fffee2a0000	0x127000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4504: 7772	NisSrv.exe	0x7ffff4a00000	0x33000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4505: 7772	NisSrv.exe	0x7ffff8700000	0xa000	NSI.dll	C:\WINDOWS\SYSTEM32\NSI.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4506: 7772	NisSrv.exe	0x7ffff0470000	0x1d000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4507: 7772	NisSrv.exe	0x7fffee670000	0x23000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4508: 7772	NisSrv.exe	0x7ffff8710000	0x75f000	SHELL32.dll	C:\WINDOWS\SYSTEM32\SHELL32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4509: 7772	NisSrv.exe	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	6	2026-05-13 19:16:16.000000 UTC	Disabled
+L4510: 7772	NisSrv.exe	0x7ffff6d60000	0x864000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	6	2026-05-13 19:16:16.000000 UTC	Disabled
+L4511: 7772	NisSrv.exe	0x7ffff9630000	0xf7000	SHCORE.dll	C:\WINDOWS\SYSTEM32\SHCORE.dll	6	2026-05-13 19:16:16.000000 UTC	Disabled
+L4512: 7772	NisSrv.exe	0x7ffff8e80000	0x67000	shlwapi.dll	C:\WINDOWS\SYSTEM32\shlwapi.dll	6	2026-05-13 19:16:16.000000 UTC	Disabled
+
+--- envars.txt ---
+L2869: 7772	NisSrv.exe	0x1d523104c30	ALLUSERSPROFILE	C:\ProgramData
+L2870: 7772	NisSrv.exe	0x1d523104c30	APPDATA	C:\WINDOWS\ServiceProfiles\LocalService\AppData\Roaming
+L2871: 7772	NisSrv.exe	0x1d523104c30	CommonProgramFiles	C:\Program Files\Common Files
+L2872: 7772	NisSrv.exe	0x1d523104c30	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
+L2873: 7772	NisSrv.exe	0x1d523104c30	CommonProgramW6432	C:\Program Files\Common Files
+L2874: 7772	NisSrv.exe	0x1d523104c30	COMPUTERNAME	CLEANWINDOWS11
+L2875: 7772	NisSrv.exe	0x1d523104c30	ComSpec	C:\WINDOWS\system32\cmd.exe
+L2876: 7772	NisSrv.exe	0x1d523104c30	DriverData	C:\Windows\System32\Drivers\DriverData
+L2877: 7772	NisSrv.exe	0x1d523104c30	LOCALAPPDATA	C:\WINDOWS\ServiceProfiles\LocalService\AppData\Local
+L2878: 7772	NisSrv.exe	0x1d523104c30	NUMBER_OF_PROCESSORS	4
+L2879: 7772	NisSrv.exe	0x1d523104c30	OS	Windows_NT
+L2880: 7772	NisSrv.exe	0x1d523104c30	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\ServiceProfiles\LocalService\AppData\Local\Microsoft\WindowsApps
+L2881: 7772	NisSrv.exe	0x1d523104c30	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+L2882: 7772	NisSrv.exe	0x1d523104c30	PROCESSOR_ARCHITECTURE	AMD64
+L2883: 7772	NisSrv.exe	0x1d523104c30	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+L2884: 7772	NisSrv.exe	0x1d523104c30	PROCESSOR_LEVEL	6
+L2885: 7772	NisSrv.exe	0x1d523104c30	PROCESSOR_REVISION	ba03
+L2886: 7772	NisSrv.exe	0x1d523104c30	ProgramData	C:\ProgramData
+L2887: 7772	NisSrv.exe	0x1d523104c30	ProgramFiles	C:\Program Files
+L2888: 7772	NisSrv.exe	0x1d523104c30	ProgramFiles(x86)	C:\Program Files (x86)
+L2889: 7772	NisSrv.exe	0x1d523104c30	ProgramW6432	C:\Program Files
+L2890: 7772	NisSrv.exe	0x1d523104c30	PSModulePath	%ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+L2891: 7772	NisSrv.exe	0x1d523104c30	PUBLIC	C:\Users\Public
+L2892: 7772	NisSrv.exe	0x1d523104c30	SystemDrive	C:
+L2893: 7772	NisSrv.exe	0x1d523104c30	SystemRoot	C:\WINDOWS
+L2894: 7772	NisSrv.exe	0x1d523104c30	TEMP	C:\WINDOWS\SERVIC~1\LOCALS~1\AppData\Local\Temp
+L2895: 7772	NisSrv.exe	0x1d523104c30	TMP	C:\WINDOWS\SERVIC~1\LOCALS~1\AppData\Local\Temp
+L2896: 7772	NisSrv.exe	0x1d523104c30	USERDOMAIN	NT AUTHORITY
+L2897: 7772	NisSrv.exe	0x1d523104c30	USERNAME	LOCAL SERVICE
+L2898: 7772	NisSrv.exe	0x1d523104c30	USERPROFILE	C:\WINDOWS\ServiceProfiles\LocalService
+L2899: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
+L2900: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
+L2901: 7772	NisSrv.exe	0x1d523104c30	les\LocalServic	les\LocalService
+L2902: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
+L2903: 7772	NisSrv.exe	0x1d523104c30	OMAIN	NT AUTHORITY
+L2904: 7772	NisSrv.exe	0x1d523104c30	USERNAME	LOCAL SERVICE
+L2905: 7772	NisSrv.exe	0x1d523104c30	USERPROFILE	C:\WINDOWS\ServiceProfiles\LocalService
+L2906: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
+L2907: 7772	NisSrv.exe	0x1d523104c30	SERPROFILE	C:\WINDOWS\ServiceProfiles\LocalService
+L2908: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
+L2909: 7772	NisSrv.exe	0x1d523104c30	NAME	LOCAL SERVICE
+L2910: 7772	NisSrv.exe	0x1d523104c30	USERPROFILE	C:\WINDOWS\ServiceProfiles\LocalService
+L2911: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
+L2912: 7772	NisSrv.exe	0x1d523104c30	iles\LocalServic	iles\LocalService
+L2913: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
+
+--- pstree.txt ---
+L53: ** 7772	896	NisSrv.exe	0x990ef60a7080	5	-	0	False	2026-05-13 19:16:15.000000 UTC	N/A	\Device\HarddiskVolume4\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	"C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe"	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe
+
+--- psscan.txt ---
+L40: 7772	896	NisSrv.exe	0x990ef60a7080	5	-	0	False	2026-05-13 19:16:15.000000 UTC	N/A	Disabled
+
+--- threads.txt ---
+L1180: 0x990ef4be10c0	7772	7776	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff68d25d760	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	2026-05-13 19:16:15.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L1181: 0x990ef609d040	7772	7828	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:16:15.000000 UTC	2026-05-13 19:18:29.000000 UTC
+L1182: 0x990ef67a2080	7772	7832	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff94d7600	\Windows\System32\sechost.dll	2026-05-13 19:16:15.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1183: 0x990ef69dc080	7772	1664	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:21:15.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1184: 0x990efa9af080	7772	7144	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:15.000000 UTC	1600-08-22 23:57:43.000000 UTC
+L1185: 0x990ef6817040	7772	6432	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:16.000000 UTC	1600-08-22 23:57:36.000000 UTC
+
+--- thrdscan.txt ---
+L371: 0x990ef4be10c0	7772	7776	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff68d25d760	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	2026-05-13 19:16:15.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L514: 0x990ef609d040	7772	7828	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:16:15.000000 UTC	2026-05-13 19:18:29.000000 UTC
+L636: 0x990ef67a2080	7772	7832	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff94d7600	\Windows\System32\sechost.dll	2026-05-13 19:16:15.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L659: 0x990ef6817040	7772	6432	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:16.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L736: 0x990ef69dc080	7772	1664	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:21:15.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1736: 0x990efa9af080	7772	7144	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:15.000000 UTC	1600-08-22 23:57:43.000000 UTC
+
+--- ldrmodules.txt ---
+L4757: 7772	NisSrv.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L4758: 7772	NisSrv.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L4759: 7772	NisSrv.exe	0x7ff68d240000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe
+L4760: 7772	NisSrv.exe	0x7fffe7b70000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpClient.dll
+L4761: 7772	NisSrv.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L4762: 7772	NisSrv.exe	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L4763: 7772	NisSrv.exe	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L4764: 7772	NisSrv.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L4765: 7772	NisSrv.exe	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L4766: 7772	NisSrv.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L4767: 7772	NisSrv.exe	0x7ffff64b0000	True	True	True	\Windows\System32\wintrust.dll
+L4768: 7772	NisSrv.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L4769: 7772	NisSrv.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L4770: 7772	NisSrv.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L4771: 7772	NisSrv.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L4772: 7772	NisSrv.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L4773: 7772	NisSrv.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L4774: 7772	NisSrv.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L4775: 7772	NisSrv.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L4776: 7772	NisSrv.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L4777: 7772	NisSrv.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L4778: 7772	NisSrv.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L4779: 7772	NisSrv.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L4780: 7772	NisSrv.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L4781: 7772	NisSrv.exe	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
+L4782: 7772	NisSrv.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L4783: 7772	NisSrv.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L4784: 7772	NisSrv.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L4785: 7772	NisSrv.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L4786: 7772	NisSrv.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L4787: 7772	NisSrv.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L4788: 7772	NisSrv.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L4789: 7772	NisSrv.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L4790: 7772	NisSrv.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L4755: 7772	NisSrv.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L4756: 7772	NisSrv.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L4757: 7772	NisSrv.exe	0x7ff68d240000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe
+L4758: 7772	NisSrv.exe	0x7fffe7b70000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpClient.dll
+L4759: 7772	NisSrv.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L4760: 7772	NisSrv.exe	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L4761: 7772	NisSrv.exe	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L4762: 7772	NisSrv.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L4763: 7772	NisSrv.exe	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L4764: 7772	NisSrv.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L4765: 7772	NisSrv.exe	0x7ffff64b0000	True	True	True	\Windows\System32\wintrust.dll
+L4766: 7772	NisSrv.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L4767: 7772	NisSrv.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L4768: 7772	NisSrv.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L4769: 7772	NisSrv.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L4770: 7772	NisSrv.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L4771: 7772	NisSrv.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L4772: 7772	NisSrv.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L4773: 7772	NisSrv.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L4774: 7772	NisSrv.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L4775: 7772	NisSrv.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L4776: 7772	NisSrv.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L4777: 7772	NisSrv.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L4778: 7772	NisSrv.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L4779: 7772	NisSrv.exe	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
+L4780: 7772	NisSrv.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L4781: 7772	NisSrv.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L4782: 7772	NisSrv.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L4783: 7772	NisSrv.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L4784: 7772	NisSrv.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L4785: 7772	NisSrv.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L4786: 7772	NisSrv.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L4787: 7772	NisSrv.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L4788: 7772	NisSrv.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- vadwalk.txt ---
+L12266: 7772	NisSrv.exe	0x990ef4a79ac0	0x0	0x990ef4a7a7e0	0x990ef4a7a380	0x7df5a5910000	0x7ff5a590ffff	Vad 
+L12267: 7772	NisSrv.exe	0x990ef4a7a7e0	0x990ef4a79ac0	0x990ef4a781c0	0x990ef4a7db20	0x1d522c00000	0x1d522c0ffff	Vad 
+L12268: 7772	NisSrv.exe	0x990ef4a781c0	0x990ef4a7a7e0	0x990ef87b5de0	0x990ef4a7c5e0	0x1d522b20000	0x1d522b49fff	Vad 
+L12269: 7772	NisSrv.exe	0x990ef87b5de0	0x990ef4a781c0	0x990ef4d62970	0x990ef4d63e10	0x6cd2720000	0x6cd279ffff	VadS
+L12270: 7772	NisSrv.exe	0x990ef4d62970	0x990ef87b5de0	0x990ef4d635a0	0x990ef4d63140	0x7ffed000	0x7ffedfff	VadS
+L12271: 7772	NisSrv.exe	0x990ef4d635a0	0x990ef4d62970	0x0	0x0	0x7ffe0000	0x7ffe0fff	VadS
+L12272: 7772	NisSrv.exe	0x990ef4d63140	0x990ef4d62970	0x0	0x990efa358e20	0x6cd2620000	0x6cd269ffff	VadS
+L12273: 7772	NisSrv.exe	0x990efa358e20	0x990ef4d63140	0x0	0x0	0x6cd26a0000	0x6cd271ffff	VadS
+L12274: 7772	NisSrv.exe	0x990ef4d63e10	0x990ef87b5de0	0x990ef4d63730	0x990ef4d63f50	0x6cd2b00000	0x6cd2b7ffff	VadS
+L12275: 7772	NisSrv.exe	0x990ef4d63730	0x990ef4d63e10	0x0	0x990efa355f90	0x6cd2800000	0x6cd29fffff	VadS
+L12276: 7772	NisSrv.exe	0x990efa355f90	0x990ef4d63730	0x0	0x0	0x6cd2a00000	0x6cd2a7ffff	VadS
+L12277: 7772	NisSrv.exe	0x990ef4d63f50	0x990ef4d63e10	0x0	0x990ef4a7b3c0	0x1d522b00000	0x1d522b0ffff	VadS
+L12278: 7772	NisSrv.exe	0x990ef4a7b3c0	0x990ef4d63f50	0x0	0x0	0x1d522b10000	0x1d522b11fff	Vad 
+L12279: 7772	NisSrv.exe	0x990ef4a7c5e0	0x990ef4a781c0	0x990ef4a79520	0x990ef4a7b280	0x1d522b90000	0x1d522ba0fff	Vad 
+L12280: 7772	NisSrv.exe	0x990ef4a79520	0x990ef4a7c5e0	0x990ef4a77a40	0x990ef4a7aa60	0x1d522b60000	0x1d522b60fff	Vad 
+L12281: 7772	NisSrv.exe	0x990ef4a77a40	0x990ef4a79520	0x0	0x0	0x1d522b50000	0x1d522b53fff	Vad 
+L12282: 7772	NisSrv.exe	0x990ef4a7aa60	0x990ef4a79520	0x0	0x0	0x1d522b70000	0x1d522b80fff	Vad 
+L12283: 7772	NisSrv.exe	0x990ef4a7b280	0x990ef4a7c5e0	0x990ef4a7a9c0	0x990ef4a7a2e0	0x1d522bd0000	0x1d522bd8fff	Vad 
+L12284: 7772	NisSrv.exe	0x990ef4a7a9c0	0x990ef4a7b280	0x990ef4a7ace0	0x0	0x1d522bc0000	0x1d522bc8fff	Vad 
+L12285: 7772	NisSrv.exe	0x990ef4a7ace0	0x990ef4a7a9c0	0x0	0x0	0x1d522bb0000	0x1d522bb2fff	Vad 
+L12286: 7772	NisSrv.exe	0x990ef4a7a2e0	0x990ef4a7b280	0x990ef4a7b960	0x0	0x1d522bf0000	0x1d522bf3fff	Vad 
+L12287: 7772	NisSrv.exe	0x990ef4a7b960	0x990ef4a7a2e0	0x0	0x0	0x1d522be0000	0x1d522be3fff	Vad 
+L12288: 7772	NisSrv.exe	0x990ef4a7db20	0x990ef4a7a7e0	0x990ef4a7b6e0	0x990ef4d64950	0x1d522d50000	0x1d522f4ffff	Vad 
+L12289: 7772	NisSrv.exe	0x990ef4a7b6e0	0x990ef4a7db20	0x990ef4a7bdc0	0x990ef4a7b0a0	0x1d522d00000	0x1d522d10fff	Vad 
+L12290: 7772	NisSrv.exe	0x990ef4a7bdc0	0x990ef4a7b6e0	0x990ef4a7b460	0x0	0x1d522c20000	0x1d522cf2fff	Vad 
+L12291: 7772	NisSrv.exe	0x990ef4a7b460	0x990ef4a7bdc0	0x0	0x0	0x1d522c10000	0x1d522c12fff	Vad 
+L12292: 7772	NisSrv.exe	0x990ef4a7b0a0	0x990ef4a7b6e0	0x990ef4a7c4a0	0x0	0x1d522d40000	0x1d522d40fff	Vad 
+L12293: 7772	NisSrv.exe	0x990ef4a7c4a0	0x990ef4a7b0a0	0x0	0x0	0x1d522d20000	0x1d522d30fff	Vad 
+L12294: 7772	NisSrv.exe	0x990ef4d64950	0x990ef4a7db20	0x990ef4d63dc0	0x990ef4a7ee80	0x1d523000000	0x1d523ffffff	VadS
+L12295: 7772	NisSrv.exe	0x990ef4d63dc0	0x990ef4d64950	0x990ef4a7d3a0	0x990ef4a7fce0	0x1d522f60000	0x1d522f79fff	VadS
+L12296: 7772	NisSrv.exe	0x990ef4a7d3a0	0x990ef4d63dc0	0x0	0x0	0x1d522f50000	0x1d522f57fff	Vad 
+L12297: 7772	NisSrv.exe	0x990ef4a7fce0	0x990ef4d63dc0	0x0	0x990ef4a823a0	0x1d522f80000	0x1d522f80fff	Vad 
+L12298: 7772	NisSrv.exe	0x990ef4a823a0	0x990ef4a7fce0	0x0	0x0	0x1d522f90000	0x1d522f90fff	Vad 
+L12299: 7772	NisSrv.exe	0x990ef4a7ee80	0x990ef4d64950	0x990ef4a7ea20	0x990ef4d63fa0	0x1d524190000	0x1d524250fff	Vad 
+L12300: 7772	NisSrv.exe	0x990ef4a7ea20	0x990ef4a7ee80	0x0	0x0	0x1d524000000	0x1d524180fff	Vad 
+L12301: 7772	NisSrv.exe	0x990ef4d63fa0	0x990ef4a7ee80	0x990ef4a83980	0x0	0x7df4a58f0000	0x7df5a590ffff	VadS
+L12302: 7772	NisSrv.exe	0x990ef4a83980	0x990ef4d63fa0	0x0	0x0	0x1d524260000	0x1d52459afff	Vad 
+L12303: 7772	NisSrv.exe	0x990ef4a7a380	0x990ef4a79ac0	0x990ef4a7f100	0x990ef4a7aba0	0x7ffff65f0000	0x7ffff69e3fff	Vad 
+L12304: 7772	NisSrv.exe	0x990ef4a7f100	0x990ef4a7a380	0x990ef4a756a0	0x990ef4a7c680	0x7fffe8ac0000	0x7fffe8acdfff	Vad 
+L12305: 7772	NisSrv.exe	0x990ef4a756a0	0x990ef4a7f100	0x990ef4d64180	0x990ef4a7a560	0x7ff68d240000	0x7ff68d68efff	Vad 
+L12306: 7772	NisSrv.exe	0x990ef4d64180	0x990ef4a756a0	0x990ef4a7bf00	0x990ef4a7a060	0x7ff5bdcc0000	0x7ff5bfcc0fff	VadS
+L12307: 7772	NisSrv.exe	0x990ef4a7bf00	0x990ef4d64180	0x0	0x0	0x7ff5bdbc0000	0x7ff5bdcbffff	Vad 
+L12308: 7772	NisSrv.exe	0x990ef4a7a060	0x990ef4d64180	0x0	0x0	0x7ff5bfcd0000	0x7ff5bfcd0fff	Vad 
+L12309: 7772	NisSrv.exe	0x990ef4a7a560	0x990ef4a756a0	0x0	0x0	0x7fffe7b70000	0x7fffe7d2bfff	Vad 
+L12310: 7772	NisSrv.exe	0x990ef4a7c680	0x990ef4a7f100	0x990ef4a80c80	0x990ef4a7ba00	0x7ffff56f0000	0x7ffff5724fff	Vad 
+L12311: 7772	NisSrv.exe	0x990ef4a80c80	0x990ef4a7c680	0x990ef4a7fec0	0x990ef4a7d8a0	0x7ffff4a00000	0x7ffff4a35fff	Vad 
+L12312: 7772	NisSrv.exe	0x990ef4a7fec0	0x990ef4a80c80	0x990ef4a7fc40	0x990ef4a80a00	0x7fffee670000	0x7fffee695fff	Vad 
+L12313: 7772	NisSrv.exe	0x990ef4a7fc40	0x990ef4a7fec0	0x0	0x0	0x7fffee2a0000	0x7fffee3c9fff	Vad 
+L12314: 7772	NisSrv.exe	0x990ef4a80a00	0x990ef4a7fec0	0x0	0x0	0x7ffff0470000	0x7ffff048ffff	Vad 
+L12315: 7772	NisSrv.exe	0x990ef4a7d8a0	0x990ef4a80c80	0x0	0x0	0x7ffff50d0000	0x7ffff50edfff	Vad 
+L12316: 7772	NisSrv.exe	0x990ef4a7ba00	0x990ef4a7c680	0x990ef4a7ec00	0x990ef4a7e200	0x7ffff64b0000	0x7ffff6533fff	Vad 
+L12317: 7772	NisSrv.exe	0x990ef4a7ec00	0x990ef4a7ba00	0x0	0x990ef4a7f7e0	0x7ffff5990000	0x7ffff59a5fff	Vad 
+L12318: 7772	NisSrv.exe	0x990ef4a7f7e0	0x990ef4a7ec00	0x0	0x0	0x7ffff6340000	0x7ffff64acfff	Vad 
+L12319: 7772	NisSrv.exe	0x990ef4a7e200	0x990ef4a7ba00	0x0	0x0	0x7ffff6540000	0x7ffff65e7fff	Vad 
+L12320: 7772	NisSrv.exe	0x990ef4a7aba0	0x990ef4a7a380	0x990ef4a7c7c0	0x990ef4a7b320	0x7ffff7c20000	0x7ffff7de7fff	Vad 
+L12321: 7772	NisSrv.exe	0x990ef4a7c7c0	0x990ef4a7aba0	0x990ef4a7b1e0	0x990ef4a7b8c0	0x7ffff75d0000	0x7ffff7675fff	Vad 
+L12322: 7772	NisSrv.exe	0x990ef4a7b1e0	0x990ef4a7c7c0	0x990ef4a7aec0	0x990ef4a7ac40	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 
+L12323: 7772	NisSrv.exe	0x990ef4a7aec0	0x990ef4a7b1e0	0x0	0x0	0x7ffff69f0000	0x7ffff6a19fff	Vad 
+L12324: 7772	NisSrv.exe	0x990ef4a7ac40	0x990ef4a7b1e0	0x0	0x990ef4a80b40	0x7ffff6c30000	0x7ffff6d5dfff	Vad 
+L12325: 7772	NisSrv.exe	0x990ef4a80b40	0x990ef4a7ac40	0x0	0x0	0x7ffff6d60000	0x7ffff75c6fff	Vad 
+L12326: 7772	NisSrv.exe	0x990ef4a7b8c0	0x990ef4a7c7c0	0x0	0x990ef4a7e2a0	0x7ffff7680000	0x7ffff77f9fff	Vad 
+L12327: 7772	NisSrv.exe	0x990ef4a7e2a0	0x990ef4a7b8c0	0x0	0x0	0x7ffff7890000	0x7ffff7c14fff	Vad 
+L12328: 7772	NisSrv.exe	0x990ef4a7b320	0x990ef4a7aba0	0x990ef4a7a920	0x990ef4a7be60	0x7ffff9560000	0x7ffff962bfff	Vad 
+L12329: 7772	NisSrv.exe	0x990ef4a7a920	0x990ef4a7b320	0x990ef4a7f6a0	0x990ef4a7b780	0x7ffff90f0000	0x7ffff911dfff	Vad 
+L12330: 7772	NisSrv.exe	0x990ef4a7f6a0	0x990ef4a7a920	0x990ef4a7bc80	0x990ef4a80820	0x7ffff8700000	0x7ffff870cfff	Vad 
+L12331: 7772	NisSrv.exe	0x990ef4a7bc80	0x990ef4a7f6a0	0x0	0x0	0x7ffff8050000	0x7ffff816afff	Vad 
+L12332: 7772	NisSrv.exe	0x990ef4a80820	0x990ef4a7f6a0	0x0	0x990ef4a80f00	0x7ffff8710000	0x7ffff8e71fff	Vad 
+L12333: 7772	NisSrv.exe	0x990ef4a80f00	0x990ef4a80820	0x0	0x0	0x7ffff8e80000	0x7ffff8ee9fff	Vad 
+L12334: 7772	NisSrv.exe	0x990ef4a7b780	0x990ef4a7a920	0x990ef4a7cae0	0x0	0x7ffff94b0000	0x7ffff9559fff	Vad 
+L12335: 7772	NisSrv.exe	0x990ef4a7cae0	0x990ef4a7b780	0x0	0x0	0x7ffff9120000	0x7ffff92b7fff	Vad 
+L12336: 7772	NisSrv.exe	0x990ef4a7be60	0x990ef4a7b320	0x990ef4a7a420	0x990ef4a757e0	0x7ffff9820000	0x7ffff98ddfff	Vad 
+L12337: 7772	NisSrv.exe	0x990ef4a7a420	0x990ef4a7be60	0x990ef4a7fba0	0x0	0x7ffff9770000	0x7ffff981bfff	Vad 
+L12338: 7772	NisSrv.exe	0x990ef4a7fba0	0x990ef4a7a420	0x0	0x0	0x7ffff9630000	0x7ffff9729fff	Vad 
+L12339: 7772	NisSrv.exe	0x990ef4a757e0	0x990ef4a7be60	0x0	0x0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 
+
+--- vadinfo.txt ---
+L12266: 7772	NisSrv.exe	0xffff990ef4a79ac0	0x7df5a5910000	0x7ff5a590ffff	Vad 	PAGE_NOACCESS	29	0	0x0	N/A	Disabled
+L12267: 7772	NisSrv.exe	0xffff990ef4a7a7e0	0x1d522c00000	0x1d522c0ffff	Vad 	PAGE_READWRITE	0	0	0xffff990ef4a79ac0	N/A	Disabled
+L12268: 7772	NisSrv.exe	0xffff990ef4a781c0	0x1d522b20000	0x1d522b49fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7a7e0	N/A	Disabled
+L12269: 7772	NisSrv.exe	0xffff990ef87b5de0	0x6cd2720000	0x6cd279ffff	VadS	PAGE_READWRITE	19	1	0xffff990ef4a781c0	N/A	Disabled
+L12270: 7772	NisSrv.exe	0xffff990ef4d62970	0x7ffed000	0x7ffedfff	VadS	PAGE_READONLY	1	1	0xffff990ef87b5de0	N/A	Disabled
+L12271: 7772	NisSrv.exe	0xffff990ef4d635a0	0x7ffe0000	0x7ffe0fff	VadS	PAGE_READONLY	1	1	0xffff990ef4d62970	N/A	Disabled
+L12272: 7772	NisSrv.exe	0xffff990ef4d63140	0x6cd2620000	0x6cd269ffff	VadS	PAGE_READWRITE	19	1	0xffff990ef4d62970	N/A	Disabled
+L12273: 7772	NisSrv.exe	0xffff990efa358e20	0x6cd26a0000	0x6cd271ffff	VadS	PAGE_READWRITE	19	1	0xffff990ef4d63140	N/A	Disabled
+L12274: 7772	NisSrv.exe	0xffff990ef4d63e10	0x6cd2b00000	0x6cd2b7ffff	VadS	PAGE_READWRITE	19	1	0xffff990ef87b5de0	N/A	Disabled
+L12275: 7772	NisSrv.exe	0xffff990ef4d63730	0x6cd2800000	0x6cd29fffff	VadS	PAGE_READWRITE	11	1	0xffff990ef4d63e10	N/A	Disabled
+L12276: 7772	NisSrv.exe	0xffff990efa355f90	0x6cd2a00000	0x6cd2a7ffff	VadS	PAGE_READWRITE	19	1	0xffff990ef4d63730	N/A	Disabled
+L12277: 7772	NisSrv.exe	0xffff990ef4d63f50	0x1d522b00000	0x1d522b0ffff	VadS	PAGE_READWRITE	6	1	0xffff990ef4d63e10	N/A	Disabled
+L12278: 7772	NisSrv.exe	0xffff990ef4a7b3c0	0x1d522b10000	0x1d522b11fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef4d63f50	N/A	Disabled
+L12279: 7772	NisSrv.exe	0xffff990ef4a7c5e0	0x1d522b90000	0x1d522ba0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a781c0	\Windows\System32\C_437.NLS	Disabled
+L12280: 7772	NisSrv.exe	0xffff990ef4a79520	0x1d522b60000	0x1d522b60fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7c5e0	N/A	Disabled
+L12281: 7772	NisSrv.exe	0xffff990ef4a77a40	0x1d522b50000	0x1d522b53fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a79520	N/A	Disabled
+L12282: 7772	NisSrv.exe	0xffff990ef4a7aa60	0x1d522b70000	0x1d522b80fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a79520	\Windows\System32\C_1252.NLS	Disabled
+L12283: 7772	NisSrv.exe	0xffff990ef4a7b280	0x1d522bd0000	0x1d522bd8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7c5e0	N/A	Disabled
+L12284: 7772	NisSrv.exe	0xffff990ef4a7a9c0	0x1d522bc0000	0x1d522bc8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7b280	N/A	Disabled
+L12285: 7772	NisSrv.exe	0xffff990ef4a7ace0	0x1d522bb0000	0x1d522bb2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7a9c0	\Windows\System32\l_intl.nls	Disabled
+L12286: 7772	NisSrv.exe	0xffff990ef4a7a2e0	0x1d522bf0000	0x1d522bf3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7b280	N/A	Disabled
+L12287: 7772	NisSrv.exe	0xffff990ef4a7b960	0x1d522be0000	0x1d522be3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7a2e0	N/A	Disabled
+L12288: 7772	NisSrv.exe	0xffff990ef4a7db20	0x1d522d50000	0x1d522f4ffff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7a7e0	N/A	Disabled
+L12289: 7772	NisSrv.exe	0xffff990ef4a7b6e0	0x1d522d00000	0x1d522d10fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7db20	\Windows\System32\C_1252.NLS	Disabled
+L12290: 7772	NisSrv.exe	0xffff990ef4a7bdc0	0x1d522c20000	0x1d522cf2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7b6e0	\Windows\System32\locale.nls	Disabled
+L12291: 7772	NisSrv.exe	0xffff990ef4a7b460	0x1d522c10000	0x1d522c12fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7bdc0	\Windows\System32\l_intl.nls	Disabled
+L12292: 7772	NisSrv.exe	0xffff990ef4a7b0a0	0x1d522d40000	0x1d522d40fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7b6e0	N/A	Disabled
+L12293: 7772	NisSrv.exe	0xffff990ef4a7c4a0	0x1d522d20000	0x1d522d30fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7b0a0	\Windows\System32\C_437.NLS	Disabled
+L12294: 7772	NisSrv.exe	0xffff990ef4d64950	0x1d523000000	0x1d523ffffff	VadS	PAGE_READWRITE	391	1	0xffff990ef4a7db20	N/A	Disabled
+L12295: 7772	NisSrv.exe	0xffff990ef4d63dc0	0x1d522f60000	0x1d522f79fff	VadS	PAGE_READWRITE	1	1	0xffff990ef4d64950	N/A	Disabled
+L12296: 7772	NisSrv.exe	0xffff990ef4a7d3a0	0x1d522f50000	0x1d522f57fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d63dc0	N/A	Disabled
+L12297: 7772	NisSrv.exe	0xffff990ef4a7fce0	0x1d522f80000	0x1d522f80fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef4d63dc0	N/A	Disabled
+L12298: 7772	NisSrv.exe	0xffff990ef4a823a0	0x1d522f90000	0x1d522f90fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef4a7fce0	\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\Windows\Safety\network\local\sinkholeCache	Disabled
+L12299: 7772	NisSrv.exe	0xffff990ef4a7ee80	0x1d524190000	0x1d524250fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d64950	N/A	Disabled
+L12300: 7772	NisSrv.exe	0xffff990ef4a7ea20	0x1d524000000	0x1d524180fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7ee80	N/A	Disabled
+L12301: 7772	NisSrv.exe	0xffff990ef4d63fa0	0x7df4a58f0000	0x7df5a590ffff	VadS	PAGE_READWRITE	2	1	0xffff990ef4a7ee80	N/A	Disabled
+L12302: 7772	NisSrv.exe	0xffff990ef4a83980	0x1d524260000	0x1d52459afff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d63fa0	\Windows\Globalization\Sorting\SortDefault.nls	Disabled
+L12303: 7772	NisSrv.exe	0xffff990ef4a7a380	0x7ffff65f0000	0x7ffff69e3fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef4a79ac0	\Windows\System32\KernelBase.dll	Disabled
+L12304: 7772	NisSrv.exe	0xffff990ef4a7f100	0x7fffe8ac0000	0x7fffe8acdfff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a7a380	\Windows\System32\version.dll	Disabled
+L12305: 7772	NisSrv.exe	0xffff990ef4a756a0	0x7ff68d240000	0x7ff68d68efff	Vad 	PAGE_EXECUTE_WRITECOPY	184	0	0xffff990ef4a7f100	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	Disabled
+L12306: 7772	NisSrv.exe	0xffff990ef4d64180	0x7ff5bdcc0000	0x7ff5bfcc0fff	VadS	PAGE_READWRITE	2	1	0xffff990ef4a756a0	N/A	Disabled
+L12307: 7772	NisSrv.exe	0xffff990ef4a7bf00	0x7ff5bdbc0000	0x7ff5bdcbffff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d64180	N/A	Disabled
+L12308: 7772	NisSrv.exe	0xffff990ef4a7a060	0x7ff5bfcd0000	0x7ff5bfcd0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d64180	N/A	Disabled
+L12309: 7772	NisSrv.exe	0xffff990ef4a7a560	0x7fffe7b70000	0x7fffe7d2bfff	Vad 	PAGE_EXECUTE_WRITECOPY	16	0	0xffff990ef4a756a0	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpClient.dll	Disabled
+L12310: 7772	NisSrv.exe	0xffff990ef4a7c680	0x7ffff56f0000	0x7ffff5724fff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef4a7f100	\Windows\System32\userenv.dll	Disabled
+L12311: 7772	NisSrv.exe	0xffff990ef4a80c80	0x7ffff4a00000	0x7ffff4a35fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef4a7c680	\Windows\System32\IPHLPAPI.DLL	Disabled
+L12312: 7772	NisSrv.exe	0xffff990ef4a7fec0	0x7fffee670000	0x7fffee695fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef4a80c80	\Windows\System32\dhcpcsvc.dll	Disabled
+L12313: 7772	NisSrv.exe	0xffff990ef4a7fc40	0x7fffee2a0000	0x7fffee3c9fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef4a7fec0	\Windows\System32\winhttp.dll	Disabled
+L12314: 7772	NisSrv.exe	0xffff990ef4a80a00	0x7ffff0470000	0x7ffff048ffff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef4a7fec0	\Windows\System32\dhcpcsvc6.dll	Disabled
+L12315: 7772	NisSrv.exe	0xffff990ef4a7d8a0	0x7ffff50d0000	0x7ffff50edfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef4a80c80	\Windows\System32\kernel.appcore.dll	Disabled
+L12316: 7772	NisSrv.exe	0xffff990ef4a7ba00	0x7ffff64b0000	0x7ffff6533fff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef4a7c680	\Windows\System32\wintrust.dll	Disabled
+L12317: 7772	NisSrv.exe	0xffff990ef4a7ec00	0x7ffff5990000	0x7ffff59a5fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a7ba00	\Windows\System32\msasn1.dll	Disabled
+L12318: 7772	NisSrv.exe	0xffff990ef4a7f7e0	0x7ffff6340000	0x7ffff64acfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef4a7ec00	\Windows\System32\WinTypes.dll	Disabled
+L12319: 7772	NisSrv.exe	0xffff990ef4a7e200	0x7ffff6540000	0x7ffff65e7fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a7ba00	\Windows\System32\bcryptprimitives.dll	Disabled
+L12320: 7772	NisSrv.exe	0xffff990ef4a7aba0	0x7ffff7c20000	0x7ffff7de7fff	Vad 	PAGE_EXECUTE_WRITECOPY	8	0	0xffff990ef4a7a380	\Windows\System32\user32.dll	Disabled
+L12321: 7772	NisSrv.exe	0xffff990ef4a7c7c0	0x7ffff75d0000	0x7ffff7675fff	Vad 	PAGE_EXECUTE_WRITECOPY	15	0	0xffff990ef4a7aba0	\Windows\System32\msvcp_win.dll	Disabled
+L12322: 7772	NisSrv.exe	0xffff990ef4a7b1e0	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef4a7c7c0	\Windows\System32\ucrtbase.dll	Disabled
+L12323: 7772	NisSrv.exe	0xffff990ef4a7aec0	0x7ffff69f0000	0x7ffff6a19fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a7b1e0	\Windows\System32\win32u.dll	Disabled
+L12324: 7772	NisSrv.exe	0xffff990ef4a7ac40	0x7ffff6c30000	0x7ffff6d5dfff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef4a7b1e0	\Windows\System32\gdi32full.dll	Disabled
+L12325: 7772	NisSrv.exe	0xffff990ef4a80b40	0x7ffff6d60000	0x7ffff75c6fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef4a7ac40	\Windows\System32\windows.storage.dll	Disabled
+L12326: 7772	NisSrv.exe	0xffff990ef4a7b8c0	0x7ffff7680000	0x7ffff77f9fff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef4a7c7c0	\Windows\System32\crypt32.dll	Disabled
+L12327: 7772	NisSrv.exe	0xffff990ef4a7e2a0	0x7ffff7890000	0x7ffff7c14fff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef4a7b8c0	\Windows\System32\combase.dll	Disabled
+L12328: 7772	NisSrv.exe	0xffff990ef4a7b320	0x7ffff9560000	0x7ffff962bfff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef4a7aba0	\Windows\System32\kernel32.dll	Disabled
+L12329: 7772	NisSrv.exe	0xffff990ef4a7a920	0x7ffff90f0000	0x7ffff911dfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef4a7b320	\Windows\System32\gdi32.dll	Disabled
+L12330: 7772	NisSrv.exe	0xffff990ef4a7f6a0	0x7ffff8700000	0x7ffff870cfff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a7a920	\Windows\System32\nsi.dll	Disabled
+L12331: 7772	NisSrv.exe	0xffff990ef4a7bc80	0x7ffff8050000	0x7ffff816afff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef4a7f6a0	\Windows\System32\rpcrt4.dll	Disabled
+L12332: 7772	NisSrv.exe	0xffff990ef4a80820	0x7ffff8710000	0x7ffff8e71fff	Vad 	PAGE_EXECUTE_WRITECOPY	18	0	0xffff990ef4a7f6a0	\Windows\System32\shell32.dll	Disabled
+L12333: 7772	NisSrv.exe	0xffff990ef4a80f00	0x7ffff8e80000	0x7ffff8ee9fff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef4a80820	\Windows\System32\shlwapi.dll	Disabled
+L12334: 7772	NisSrv.exe	0xffff990ef4a7b780	0x7ffff94b0000	0x7ffff9559fff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef4a7a920	\Windows\System32\sechost.dll	Disabled
+L12335: 7772	NisSrv.exe	0xffff990ef4a7cae0	0x7ffff9120000	0x7ffff92b7fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef4a7b780	\Windows\System32\ole32.dll	Disabled
+L12336: 7772	NisSrv.exe	0xffff990ef4a7be60	0x7ffff9820000	0x7ffff98ddfff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef4a7b320	\Windows\System32\advapi32.dll	Disabled
+L12337: 7772	NisSrv.exe	0xffff990ef4a7a420	0x7ffff9770000	0x7ffff981bfff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef4a7be60	\Windows\System32\msvcrt.dll	Disabled
+L12338: 7772	NisSrv.exe	0xffff990ef4a7fba0	0x7ffff9630000	0x7ffff9729fff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef4a7a420	\Windows\System32\SHCore.dll	Disabled
+L12339: 7772	NisSrv.exe	0xffff990ef4a757e0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef4a7be60	\Windows\System32\ntdll.dll	Disabled
+
+--- malware_pebmasquerade.txt ---
+L100: 7772	NisSrv.exe	\Device\HarddiskVolume4\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	False	False
+
+--- sessions.txt ---
+L73: 0	-	7772	NisSrv.exe	NT AUTHORITY/LOCAL SERVICE	2026-05-13 19:16:15.000000 UTC
+
+=== END OF PIVOT REPORT ===

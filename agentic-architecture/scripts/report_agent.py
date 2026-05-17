@@ -1,129 +1,224 @@
 #!/usr/bin/env python3
 """
-Report Writer — Agent 3 du pipeline forensique.
+Report Writer — Agent 3 of the forensic pipeline.
 
-Reçoit la sortie validée de l'Agent 2 (analyst.json) et génère un rapport
-d'incident Markdown structuré selon les phases MITRE ATT&CK.
-
-En mode LLM : génère un récit narratif de l'attaque.
-En mode fallback : génère un rapport structuré à partir des données brutes.
+Reads aggregated_analyst.txt (all chunk analyst.txt files concatenated),
+then either calls the LLM for a narrative report or generates a structured
+Markdown report from the parsed TXT.
 """
 import argparse
-import json
 import os
+import re
 import sys
-from typing import Dict, List
+from typing import Any, Dict, List
 
 from llm_client import call_chat, load_llm_config
-from utils import load_json
+from utils import now_iso
 
 _SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 _REPO_DIR = os.path.dirname(_SCRIPTS_DIR)
 
 
 # ---------------------------------------------------------------------------
-# Mode LLM : rapport narratif
+# TXT parser for analyst output
 # ---------------------------------------------------------------------------
 
-def _report_with_llm(analyst_path: str, pivot_path: str, prompt_path: str, llm_config_path: str) -> str:
+def _parse_analyst_txt(text: str) -> Dict[str, Any]:
+    """
+    Parse aggregated analyst TXT into a structured dict for the fallback report.
+    Extracts confirmed/inconclusive blocks and header metadata.
+    """
+    result: Dict[str, Any] = {
+        "summary": "",
+        "rejected_count": 0,
+        "confirmed": [],
+        "inconclusive": [],
+    }
+
+    # Extract overall summary (first Summary: line found)
+    m = re.search(r"^Summary:\s*(.+)$", text, re.MULTILINE)
+    if m:
+        result["summary"] = m.group(1).strip()
+
+    # Sum up rejected counts across all chunks
+    for m in re.finditer(r"rejected=(\d+)", text):
+        result["rejected_count"] += int(m.group(1))
+
+    # Extract CONFIRMED blocks
+    for block_text in re.findall(
+        r"\[CONFIRMED\]\s*-{3,}\s*(.*?)-{3,}", text, re.DOTALL
+    ):
+        block = _parse_finding_block(block_text)
+        block["verdict"] = "confirmed"
+        result["confirmed"].append(block)
+
+    # Extract INCONCLUSIVE blocks
+    for block_text in re.findall(
+        r"\[INCONCLUSIVE\]\s*-{3,}\s*(.*?)-{3,}", text, re.DOTALL
+    ):
+        block = _parse_finding_block(block_text)
+        block["verdict"] = "inconclusive"
+        result["inconclusive"].append(block)
+
+    return result
+
+
+def _parse_finding_block(text: str) -> Dict[str, Any]:
+    """Extract fields from a single CONFIRMED or INCONCLUSIVE block."""
+    block: Dict[str, Any] = {}
+
+    for field, prefix in [
+        ("pid", r"^PID:\s*(.+)$"),
+        ("ppid", r"^PPID:\s*(.+)$"),
+        ("image", r"^Image:\s*(.+)$"),
+        ("cmdline", r"^Cmdline:\s*(.+)$"),
+        ("severity", r"^Severity:\s*(.+)$"),
+        ("mitre", r"^MITRE:\s*(.+)$"),
+    ]:
+        m = re.search(prefix, text, re.MULTILINE)
+        if m:
+            block[field] = m.group(1).strip()
+
+    # Justification block (indented lines after "Justification:")
+    m = re.search(r"Justification:\n((?:  .+\n?)+)", text)
+    if m:
+        block["justification"] = " ".join(
+            l.strip() for l in m.group(1).strip().splitlines()
+        )
+
+    # Key Evidence lines ("  - ...")
+    block["key_evidence"] = re.findall(r"^  - (.+)$", text, re.MULTILINE)
+
+    return block
+
+
+# ---------------------------------------------------------------------------
+# LLM mode
+# ---------------------------------------------------------------------------
+
+def _report_with_llm(
+    analyst_path: str, prompt_path: str, llm_config_path: str
+) -> str:
     with open(prompt_path, "r", encoding="utf-8", errors="ignore") as f:
         system_prompt = f.read().strip()
 
-    analyst = load_json(analyst_path)
-    # On n'envoie que les findings validés + summary pour économiser les tokens
-    context_data = {
-        "analyst_summary": analyst.get("analyst_summary", ""),
-        "validated_findings": analyst.get("validated_findings", []),
-        "inconclusive_findings": analyst.get("inconclusive_findings", []),
-        "rejected_count": len(analyst.get("rejected_findings", [])),
-    }
-    context_json = json.dumps(context_data, indent=2)
+    with open(analyst_path, "r", encoding="utf-8", errors="ignore") as f:
+        analyst_text = f.read()
 
-    config = load_llm_config(llm_config_path)
-    content = call_chat([
-        {"role": "system", "content": system_prompt},
-        {"role": "user", "content": "Validated findings from Agent 2:\n\n" + context_json}
-    ], config)
-
+    llm_config = load_llm_config(llm_config_path)
+    content = call_chat(
+        [
+            {"role": "system", "content": system_prompt},
+            {
+                "role": "user",
+                "content": "Pivot analyst report (all chunks):\n\n" + analyst_text,
+            },
+        ],
+        llm_config,
+    )
     return content
 
 
 # ---------------------------------------------------------------------------
-# Mode fallback : rapport structuré sans LLM
+# Fallback structured report (no LLM)
 # ---------------------------------------------------------------------------
 
-def _generate_fallback_report(analyst: Dict, pivot: Dict) -> str:
+def _generate_fallback_report(parsed: Dict[str, Any]) -> str:
     lines: List[str] = []
     lines.append("# Incident Triage Report")
-    lines.append(f"_Generated at: {analyst.get('generated_at', 'unknown')}_")
+    lines.append(f"_Generated: {now_iso()}_")
     lines.append("")
 
-    # Summary
-    summary = analyst.get("analyst_summary", "")
-    validated = analyst.get("validated_findings", [])
-    rejected  = analyst.get("rejected_findings", [])
-    inconclusive = analyst.get("inconclusive_findings", [])
+    confirmed = parsed.get("confirmed", [])
+    inconclusive = parsed.get("inconclusive", [])
+    rejected_count = parsed.get("rejected_count", 0)
+    summary = parsed.get("summary", "")
 
-    lines.append("## Summary")
+    # --- Executive Summary ---
+    lines.append("## Executive Summary")
     if summary:
         lines.append(summary)
     else:
         lines.append(
-            f"Agent 2 validated **{len(validated)}** finding(s), "
-            f"rejected **{len(rejected)}**, "
-            f"and marked **{len(inconclusive)}** as inconclusive."
+            f"Agent 2 confirmed **{len(confirmed)}** finding(s), "
+            f"marked **{len(inconclusive)}** inconclusive, "
+            f"and rejected **{rejected_count}**."
         )
     lines.append("")
 
-    # Confirmed findings (the core of the report)
-    if validated:
-        lines.append("## Confirmed Malicious Activity")
-        for f in validated:
-            target = f.get("target", "?")
-            phase  = f.get("attack_phase", "unknown")
-            conf   = f.get("confidence", "?")
-            justif = f.get("justification", "")
-            evidence = f.get("key_evidence", [])
-
-            lines.append(f"### {target}")
-            lines.append(f"- **MITRE Phase**: {phase}")
-            lines.append(f"- **Confidence**: {conf}")
-            lines.append(f"- **Justification**: {justif}")
-            if evidence:
-                lines.append("- **Key Evidence**:")
-                lines.append("```")
-                for e in evidence[:5]:
-                    lines.append(f"  {e}")
-                lines.append("```")
-            lines.append("")
+    # --- Attack Timeline (from confirmed) ---
+    lines.append("## Attack Timeline")
+    if confirmed:
+        for f in confirmed:
+            pid = f.get("pid", "?")
+            image = f.get("image", "?")
+            cmdline = f.get("cmdline", "")
+            severity = f.get("severity", "")
+            entry = f"- **[{severity}]** PID {pid} ({image})"
+            if cmdline:
+                entry += f": `{cmdline[:120]}`"
+            lines.append(entry)
     else:
-        lines.append("## Confirmed Malicious Activity")
-        lines.append("_No findings were confirmed by Agent 2._")
-        lines.append("")
+        lines.append("_No confirmed findings to build a timeline from._")
+    lines.append("")
 
-    # Inconclusive
+    # --- MITRE ATT&CK ---
+    lines.append("## MITRE ATT&CK Mapping")
+    mitre_rows = [
+        f for f in confirmed
+        if f.get("mitre") and f["mitre"].strip()
+    ]
+    if mitre_rows:
+        lines.append("| Technique | Evidence (PID / Image) |")
+        lines.append("|-----------|------------------------|")
+        for f in mitre_rows:
+            lines.append(
+                f"| {f['mitre']} | PID {f.get('pid', '?')} ({f.get('image', '?')}) |"
+            )
+    else:
+        lines.append("_No MITRE mappings provided by Agent 2._")
+    lines.append("")
+
+    # --- IOCs ---
+    lines.append("## Indicators of Compromise (IOCs)")
+    all_evidence: List[str] = []
+    for f in confirmed:
+        all_evidence.extend(f.get("key_evidence", []))
+    if all_evidence:
+        lines.append("| Evidence |")
+        lines.append("|----------|")
+        for e in all_evidence[:20]:
+            lines.append(f"| `{e}` |")
+    else:
+        lines.append("_No verbatim IOCs extracted._")
+    lines.append("")
+
+    # --- Recommendations ---
+    lines.append("## Recommendations")
+    if confirmed:
+        lines.append("1. **Immediate**: Isolate affected host from the network.")
+        lines.append("2. **Investigation**: Collect full disk image; hunt fleet for extracted IOCs.")
+        lines.append("3. **Remediation**: Rotate credentials of affected accounts; patch entry point.")
+    else:
+        lines.append("1. **Review inconclusive findings** — manual analysis required.")
+        lines.append("2. **Collect additional artifacts** (disk image, EDR telemetry).")
+    lines.append("")
+
+    # --- Confidence Assessment ---
+    lines.append("## Confidence Assessment")
+    lines.append(
+        f"**{len(confirmed)}** confirmed finding(s) with corroborating evidence. "
+        f"**{len(inconclusive)}** inconclusive finding(s) requiring manual review. "
+        f"**{rejected_count}** finding(s) rejected as benign."
+    )
     if inconclusive:
-        lines.append("## Inconclusive (Requires Manual Review)")
-        for f in inconclusive:
-            target = f.get("target", "?")
-            justif = f.get("justification", "")
-            lines.append(f"- **{target}**: {justif}")
-        lines.append("")
-
-    # Rejected (brief)
-    if rejected:
-        lines.append("## Rejected (Confirmed Benign)")
-        for f in rejected:
-            target = f.get("target", "?")
-            justif = f.get("justification", "")
-            lines.append(f"- ~~{target}~~: {justif}")
-        lines.append("")
-
-    # Evidence pointers
-    lines.append("## Evidence Pointers")
-    lines.append("- Full validated analysis: `analyst.json`")
-    lines.append("- Raw grep results: `pivot.json`")
-    lines.append("- Raw Volatility outputs: artifact root directory")
+        lines.append(
+            "Inconclusive items may represent deleted artefacts or insufficient memory "
+            "capture coverage."
+        )
+    lines.append("")
+    lines.append("---")
+    lines.append("_Source: `aggregated_analyst.txt` — see per-chunk analyst.txt for full evidence._")
 
     return "\n".join(lines)
 
@@ -134,35 +229,42 @@ def _generate_fallback_report(analyst: Dict, pivot: Dict) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Report Writer — Agent 3")
-    parser.add_argument("--analyst", required=True, help="Path to analyst.json (Agent 2 output)")
-    parser.add_argument("--pivot",   required=True, help="Path to pivot.json (grep output)")
-    parser.add_argument("--out",     required=True, help="Output report.md path")
-    parser.add_argument("--use-llm", action="store_true", help="Use LLM to generate narrative report")
+    parser.add_argument(
+        "--analyst", required=True,
+        help="Path to aggregated_analyst.txt (all chunks combined)"
+    )
+    parser.add_argument("--out",        required=True, help="Output path for report.md")
+    parser.add_argument("--use-llm",    action="store_true", help="Use LLM for narrative report")
     parser.add_argument("--llm-config", default=os.path.join(_REPO_DIR, "llm_config.json"))
     parser.add_argument("--prompt",     default=os.path.join(_REPO_DIR, "prompts", "agent3_report.md"))
     args = parser.parse_args()
 
+    os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
+
     if args.use_llm:
         try:
             print("[report] Running LLM report generation...", file=sys.stderr)
-            content = _report_with_llm(args.analyst, args.pivot, args.prompt, args.llm_config)
-            os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
+            content = _report_with_llm(args.analyst, args.prompt, args.llm_config)
             with open(args.out, "w", encoding="utf-8") as f:
                 f.write(content.strip() + "\n")
-            print("[report] LLM report complete.", file=sys.stderr)
+            print(f"[report] LLM report written: {args.out}", file=sys.stderr)
             return
         except Exception as exc:
-            print(f"[report] LLM failed ({exc}), falling back to structured report.", file=sys.stderr)
+            print(
+                f"[report] LLM failed ({exc}), falling back to structured report.",
+                file=sys.stderr,
+            )
 
-    # Fallback : rapport structuré sans LLM
-    analyst = load_json(args.analyst)
-    pivot   = load_json(args.pivot)
-    content = _generate_fallback_report(analyst, pivot)
+    # Fallback: structured Markdown without LLM
+    with open(args.analyst, "r", encoding="utf-8", errors="ignore") as f:
+        analyst_text = f.read()
 
-    os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
+    parsed = _parse_analyst_txt(analyst_text)
+    content = _generate_fallback_report(parsed)
+
     with open(args.out, "w", encoding="utf-8") as f:
         f.write(content + "\n")
-    print("[report] Structured report generated (no LLM).", file=sys.stderr)
+    print(f"[report] Structured report written: {args.out}", file=sys.stderr)
 
 
 if __name__ == "__main__":
