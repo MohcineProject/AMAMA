@@ -1,0 +1,50 @@
+=== EntityQuery ===
+{
+  "contract_version": "1.0",
+  "query_id": "550e8400-e29b-41d4-a716-446655440005",
+  "round": 1,
+  "case_id": "test-001",
+  "target_module": "disk",
+  "entity": {
+    "type": "file_path",
+    "value": "C:\\Windows\\System32\\calc.exe"
+  },
+  "context": {
+    "source_module": "orchestrator",
+    "source_finding_id": "orch-002",
+    "reason": "Check if calc.exe has any anomalous disk artifacts"
+  }
+}
+
+=== Retrieved Evidence (1 lines) ===
+[mft_records.txt L1] type=file path="C:\Windows\System32\calc.exe" entropy=3.1 artifact_source=mft
+
+=== EntityFindings ===
+{
+  "contract_version": "1.0",
+  "query_id": "550e8400-e29b-41d4-a716-446655440005",
+  "responding_module": "disk",
+  "entity": {
+    "type": "file_path",
+    "value": "C:\\Windows\\System32\\calc.exe"
+  },
+  "verdict": "REJECTED",
+  "severity": null,
+  "mitre": [],
+  "justification": "'C:\\Windows\\System32\\calc.exe' matches the trusted-path whitelist and no suspicious indicators were found in the retrieved evidence.",
+  "evidence": [
+    {
+      "source_file": "mft_records.txt",
+      "line": 1,
+      "content": "type=file path=\"C:\\Windows\\System32\\calc.exe\" entropy=3.1 artifact_source=mft",
+      "verbatim": true,
+      "timestamp": null
+    }
+  ],
+  "related_entities": [],
+  "cost": {
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0
+  }
+}

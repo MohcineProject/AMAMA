@@ -1,0 +1,41 @@
+=== EntityQuery ===
+{
+  "contract_version": "1.0",
+  "query_id": "550e8400-e29b-41d4-a716-446655440002",
+  "round": 1,
+  "case_id": "test-001",
+  "target_module": "disk",
+  "entity": {
+    "type": "image_name",
+    "value": "definitely_not_here_xyz_fake_malware.exe"
+  },
+  "context": {
+    "source_module": "network",
+    "source_finding_id": "net-001-f001",
+    "reason": "Check if this binary has any disk artifacts"
+  }
+}
+
+=== Retrieved Evidence (0 lines) ===
+
+=== EntityFindings ===
+{
+  "contract_version": "1.0",
+  "query_id": "550e8400-e29b-41d4-a716-446655440002",
+  "responding_module": "disk",
+  "entity": {
+    "type": "image_name",
+    "value": "definitely_not_here_xyz_fake_malware.exe"
+  },
+  "verdict": "NOT_FOUND",
+  "severity": null,
+  "mitre": [],
+  "justification": "No matching lines found for image_name='definitely_not_here_xyz_fake_malware.exe' in any disk artifact file.",
+  "evidence": [],
+  "related_entities": [],
+  "cost": {
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0
+  }
+}

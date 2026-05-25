@@ -1,0 +1,41 @@
+=== EntityQuery ===
+{
+  "contract_version": "1.0",
+  "query_id": "550e8400-e29b-41d4-a716-446655440001",
+  "round": 1,
+  "case_id": "test-001",
+  "target_module": "disk",
+  "entity": {
+    "type": "pid",
+    "value": "3412"
+  },
+  "context": {
+    "source_module": "ram",
+    "source_finding_id": "ram-001-f001",
+    "reason": "Confirm whether this PID has a matching disk artifact"
+  }
+}
+
+=== Retrieved Evidence (0 lines) ===
+
+=== EntityFindings ===
+{
+  "contract_version": "1.0",
+  "query_id": "550e8400-e29b-41d4-a716-446655440001",
+  "responding_module": "disk",
+  "entity": {
+    "type": "pid",
+    "value": "3412"
+  },
+  "verdict": "NOT_APPLICABLE",
+  "severity": null,
+  "mitre": [],
+  "justification": "Disk module does not handle entity type 'pid'. Supported: domain, file_path, hash_md5, hash_sha1, hash_sha256, image_name, ip, registry_key, url, user_sid.",
+  "evidence": [],
+  "related_entities": [],
+  "cost": {
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0
+  }
+}

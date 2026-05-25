@@ -1,0 +1,68 @@
+{
+  "mft": {
+    "input": "INPUT_DISK/raw_mft",
+    "parser": "analyzemft",
+    "volume_root": null
+  },
+  "registry": {
+    "hive_dir": "INPUT_DISK/hives"
+  },
+  "eventlog": {
+    "evtx_dir": "INPUT_DISK/evtx"
+  },
+  "execution": {
+    "prefetch_dir": "INPUT_DISK/prefetch",
+    "amcache": "INPUT_DISK/hives/Amcache.hve",
+    "system_hive": "INPUT_DISK/hives/SYSTEM"
+  },
+  "persistence": {
+    "hive_dir": "INPUT_DISK/hives",
+    "tasks_dir": "INPUT_DISK/Tasks",
+    "wmi_dir": "INPUT_DISK/wbem"
+  },
+  "browser": {
+    "chrome_history": "INPUT_DISK/chrome/History",
+    "chrome_browser_name": "chrome",
+    "firefox_places": "INPUT_DISK/firefox/places.sqlite"
+  },
+  "high_signal_event_ids": [
+    4624, 4625, 4648, 4672, 4688, 4697, 4698, 4720, 4732,
+    5140, 7045, 1102, 104, 1, 3, 11, 13
+  ],
+  "always_emit_event_ids": [1102, 104],
+  "suspicious_paths": [
+    "AppData\\Roaming",
+    "AppData\\Local\\Temp",
+    "\\Temp\\",
+    "\\Downloads\\",
+    "ProgramData",
+    "\\Users\\Public\\",
+    "\\$Recycle.Bin\\"
+  ],
+  "entropy_threshold": 7.2,
+  "si_fn_mismatch_threshold_seconds": 2,
+  "mft_exclude_paths": [
+    "Windows\\WinSxS",
+    "Windows\\assembly",
+    "Windows\\Installer",
+    "Windows\\SoftwareDistribution",
+    "Windows\\servicing",
+    "Windows\\System32\\DriverStore",
+    "Windows\\System32\\CatRoot",
+    "Windows\\System32\\spool"
+  ],
+  "mft_exclude_extensions": [
+    ".cat", ".mum", ".manifest", ".mui",
+    ".ico", ".cur", ".ani",
+    ".fon", ".ttf", ".otf", ".ttc",
+    ".nls", ".etl", ".bin"
+  ],
+  "mft_write_only_suspicious": false,
+  "max_archive_age_days": null,
+  "zimmerman_tools": {
+    "base_dir": "/opt/zimmermantools",
+    "regedit_batch": "/opt/zimmermantools/RECmd/BatchExamples/DFIRBatch.reb",
+    "ntuser_search_dirs": [],
+    "user_hive_filename": "NTUSER.DAT"
+  }
+}

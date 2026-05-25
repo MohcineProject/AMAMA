@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cyber-agent.local/schemas/entity_query.schema.json",
+  "title": "EntityQuery",
+  "description": "Orchestrator → Module: ask a module about a specific entity.",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "query_id",
+    "round",
+    "case_id",
+    "target_module",
+    "entity",
+    "context"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "query_id": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+      "description": "UUID v4. Echoed back in the response."
+    },
+    "round": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Orchestrator round. 0 = derived from initial scans; 1..N = loop rounds."
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_module": {
+      "type": "string",
+      "enum": ["ram", "disk", "network"]
+    },
+    "entity": {
+      "type": "object",
+      "required": ["type", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ip", "domain", "url",
+            "hash_md5", "hash_sha1", "hash_sha256",
+            "file_path", "image_name",
+            "pid", "registry_key", "mutex", "user_sid"
+          ]
+        },
+        "value": { "type": "string", "minLength": 1 }
+      }
+    },
+    "context": {
+      "type": "object",
+      "required": ["source_module", "source_finding_id", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "source_module": {
+          "type": "string",
+          "enum": ["ram", "disk", "network", "ti", "orchestrator"]
+        },
+        "source_finding_id": { "type": "string", "minLength": 1 },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human/LLM-readable. The scoped LLM in the target module reads this to understand what kind of answer is wanted."
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_evidence_lines": { "type": "integer", "minimum": 1, "default": 50 },
+        "include_related_entities": { "type": "boolean", "default": true },
+        "time_window": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["from", "to"],
+              "additionalProperties": false,
+              "properties": {
+                "from": { "type": "string", "format": "date-time" },
+                "to":   { "type": "string", "format": "date-time" }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

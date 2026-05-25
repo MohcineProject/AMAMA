@@ -1,0 +1,442 @@
+=== EntityQuery ===
+{
+  "contract_version": "1.0",
+  "query_id": "550e8400-e29b-41d4-a716-446655440004",
+  "round": 1,
+  "case_id": "test-001",
+  "target_module": "disk",
+  "entity": {
+    "type": "file_path",
+    "value": "C:\\Windows\\System32\\svchost.exe"
+  },
+  "context": {
+    "source_module": "orchestrator",
+    "source_finding_id": "orch-001",
+    "reason": "Check if svchost.exe has any anomalous disk artifacts"
+  }
+}
+
+=== Retrieved Evidence (50 lines) ===
+[mft_records.txt L990] type=file path=Windows\Prefetch\SVCHOST.EXE-05F624AB.pf mft_ref=1743-3 size=22998 deleted=false created=2018-08-30T05:20:24Z modified=2018-08-30T05:20:24Z accessed=2018-08-30T05:20:24Z fn_created=2018-08-30T05:20:24Z fn_modified=2018-08-30T05:20:24Z fn_accessed=2018-08-30T05:20:24Z artifact_source=mft
+[mft_records.txt L1253] type=file path=Windows\Prefetch\SVCHOST.EXE-7AC6742A.pf mft_ref=2840-184 size=19090 deleted=false created=2018-08-29T06:48:08Z modified=2018-09-06T05:05:41Z accessed=2018-08-29T06:48:08Z fn_created=2018-08-29T06:48:08Z fn_modified=2018-08-29T06:48:08Z fn_accessed=2018-08-29T06:48:08Z artifact_source=mft
+[mft_records.txt L9215] type=file path="Windows\\Microsoft.NET\\Framework64\\v3.0\\Windows Communication Foundation\\SMSvcHost.exe.config" mft_ref=33211-1 size=1951 deleted=false created=2009-07-14T05:32:40Z modified=2009-07-14T05:32:32Z accessed=2009-07-14T05:32:32Z fn_created=2016-08-04T18:27:27Z fn_modified=2016-08-04T18:27:27Z fn_accessed=2016-08-04T18:27:27Z artifact_source=mft
+[mft_records.txt L9216] type=file path="Windows\\Microsoft.NET\\Framework\\v3.0\\Windows Communication Foundation\\SMSvcHost.exe.config" mft_ref=33212-1 size=1951 deleted=false created=2009-07-14T05:32:40Z modified=2009-07-14T05:32:32Z accessed=2009-07-14T05:32:32Z fn_created=2016-08-04T18:27:27Z fn_modified=2016-08-04T18:27:27Z fn_accessed=2016-08-04T18:27:27Z artifact_source=mft
+[mft_records.txt L9409] type=file path=Windows\Microsoft.NET\Framework64\v4.0.30319\SMSvcHost.exe mft_ref=33505-1 size=135848 deleted=false created=2015-11-06T00:36:48Z modified=2015-11-06T00:36:48Z accessed=2016-07-21T16:02:20Z fn_created=2016-08-04T18:27:30Z fn_modified=2016-08-04T18:27:30Z fn_accessed=2016-08-04T18:27:30Z artifact_source=mft
+[mft_records.txt L9410] type=file path=Windows\Microsoft.NET\Framework\v4.0.30319\SMSvcHost.exe mft_ref=33506-1 size=135848 deleted=false created=2015-11-06T00:36:48Z modified=2015-11-06T00:36:48Z accessed=2016-07-21T16:02:20Z fn_created=2016-08-04T18:27:30Z fn_modified=2016-08-04T18:27:30Z fn_accessed=2016-08-04T18:27:30Z artifact_source=mft
+[mft_records.txt L9411] type=file path=Windows\Microsoft.NET\Framework64\v4.0.30319\SMSvcHost.exe.config mft_ref=33507-1 size=2262 deleted=false created=2015-10-01T17:57:54Z modified=2015-10-01T17:57:54Z accessed=2016-07-21T16:02:20Z fn_created=2016-08-04T18:27:30Z fn_modified=2016-08-04T18:27:30Z fn_accessed=2016-08-04T18:27:30Z artifact_source=mft
+[mft_records.txt L9412] type=file path=Windows\Microsoft.NET\Framework\v4.0.30319\SMSvcHost.exe.config mft_ref=33508-1 size=2262 deleted=false created=2015-10-22T14:00:44Z modified=2015-10-22T14:00:44Z accessed=2016-07-21T16:02:20Z fn_created=2016-08-04T18:27:30Z fn_modified=2016-08-04T18:27:30Z fn_accessed=2016-08-04T18:27:30Z artifact_source=mft
+[mft_records.txt L10522] type=file path=Windows\Prefetch\SVCHOST.EXE-6168E4A3.pf mft_ref=37453-4 size=19402 deleted=false created=2018-09-06T07:43:14Z modified=2018-09-06T07:43:14Z accessed=2018-09-06T07:43:14Z fn_created=2018-09-06T07:43:14Z fn_modified=2018-09-06T07:43:14Z fn_accessed=2018-09-06T07:43:14Z artifact_source=mft
+[mft_records.txt L12591] type=file path=Windows\Prefetch\SVCHOST.EXE-80F4A784.pf mft_ref=60049-5 size=9554 deleted=false created=2018-08-17T18:57:38Z modified=2018-09-04T21:53:52Z accessed=2018-08-17T18:57:38Z fn_created=2018-08-17T18:57:38Z fn_modified=2018-08-17T18:57:38Z fn_accessed=2018-08-17T18:57:38Z artifact_source=mft
+[mft_records.txt L14253] type=file path=DELETED:Windows\Prefetch\SVCHOST.EXE-7AC6742A.pf mft_ref=68094-5 size=18844 deleted=true created=2018-08-18T11:24:40Z modified=2018-08-27T22:14:00Z accessed=2018-08-18T11:24:40Z fn_created=2018-08-18T11:24:40Z fn_modified=2018-08-18T11:24:40Z fn_accessed=2018-08-18T11:24:40Z artifact_source=mft
+[mft_records.txt L29592] type=file path=Windows\Prefetch\SVCHOST.EXE-7CFEDEA3.pf mft_ref=111045-330 size=19942 deleted=false created=2018-05-10T04:00:10Z modified=2018-09-07T04:25:02Z accessed=2018-05-10T04:00:10Z fn_created=2018-05-10T04:00:10Z fn_modified=2018-05-10T04:00:10Z fn_accessed=2018-05-10T04:00:10Z artifact_source=mft
+[registry_autoruns.txt L548] type=registry key="System\\ROOT\\ControlSet001\\Control\\Session Manager\\AppCompatCache" value=AppCompatCache data=C:\Windows\system32\svchost.exe modified="2020-11-11 08:13:00.4835065" category="Program Execution" description=AppCompatCache artifact_source=SYSTEM
+[registry_misc.txt L4562] type=registry key=Software\ROOT\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam\NonPackaged\C:#Windows#System32#svchost.exe value=LastUsedTimeStart data="2020-11-16 02:29:35.7935787" modified="2020-11-16 02:29:36.3061799" category=Devices description=Webcam artifact_source=SOFTWARE
+[registry_misc.txt L4563] type=registry key=Software\ROOT\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam\NonPackaged\C:#Windows#System32#svchost.exe value=LastUsedTimeStop data="2020-11-16 02:29:36.3061799" modified="2020-11-16 02:29:36.3061799" category=Devices description=Webcam artifact_source=SOFTWARE
+[registry_shimcache.txt L525] type=execution path=C:\Windows\system32\svchost.exe last_modified="2020-10-09 20:47:23" executed=No controlset=1 artifact_source=shimcache
+[eventlog_security.txt L48475] type=event id=4648 time="2020-11-02 13:01:42.4228452" computer=SRL-FORGE user=SRL\SRL-FORGE$ src_ip=127.0.0.1:0 description="A logon was attempted using explicit credentials" detail1="Target: MicrosoftAccount\\fred.rocba@outlook.com" detail2="TargetServerName: localhost" detail3="PID: 0xB14" cmdline=C:\Windows\System32\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48476] type=event id=4624 time="2020-11-02 13:01:42.4228793" computer=SRL-FORGE user=SRL\SRL-FORGE$ src_ip="SRL-FORGE (127.0.0.1)" description="Successful logon" detail1="Target: MicrosoftAccount\\fred.rocba@outlook.com" detail2="LogonType 11" detail3="LogonId: 0x15BBBD8" cmdline=C:\Windows\System32\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48477] type=event id=4624 time="2020-11-02 13:01:42.4229829" computer=SRL-FORGE user=SRL\SRL-FORGE$ src_ip="SRL-FORGE (127.0.0.1)" description="Successful logon" detail1="Target: MicrosoftAccount\\fred.rocba@outlook.com" detail2="LogonType 11" detail3="LogonId: 0x15BBC1F" cmdline=C:\Windows\System32\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48489] type=event id=4697 time="2020-11-02 13:01:42.9116874" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: AarSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k AarSvcGroup -p" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48490] type=event id=4697 time="2020-11-02 13:01:42.9122301" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: BcastDVRUserService_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k BcastDVRUserService" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48491] type=event id=4697 time="2020-11-02 13:01:42.9126826" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: BluetoothUserService_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k BthAppGroup -p" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48492] type=event id=4697 time="2020-11-02 13:01:42.9160154" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: CaptureService_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48493] type=event id=4697 time="2020-11-02 13:01:42.9165391" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: cbdhsvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k ClipboardSvcGroup -p" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48494] type=event id=4697 time="2020-11-02 13:01:42.9170045" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: CDPUserSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48495] type=event id=4697 time="2020-11-02 13:01:42.9174103" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: ConsentUxUserSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48497] type=event id=4697 time="2020-11-02 13:01:42.9184325" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: DeviceAssociationBrokerSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow -p" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48498] type=event id=4697 time="2020-11-02 13:01:42.9191090" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: DevicePickerUserSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48499] type=event id=4697 time="2020-11-02 13:01:42.9196552" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: DevicesFlowUserSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48500] type=event id=4697 time="2020-11-02 13:01:42.9201375" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: MessagingService_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48501] type=event id=4697 time="2020-11-02 13:01:42.9254493" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: OneSyncSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48502] type=event id=4697 time="2020-11-02 13:01:42.9260098" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: PimIndexMaintenanceSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48503] type=event id=4697 time="2020-11-02 13:01:42.9265432" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: PrintWorkflowUserSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k PrintWorkflow" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48504] type=event id=4697 time="2020-11-02 13:01:42.9270620" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: UdkUserSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k UdkSvcGroup" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48505] type=event id=4697 time="2020-11-02 13:01:42.9275653" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: UnistoreSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\System32\\svchost.exe -k UnistackSvcGroup" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48506] type=event id=4697 time="2020-11-02 13:01:42.9280632" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: UserDataSvc_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L48507] type=event id=4697 time="2020-11-02 13:01:42.9286051" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: WpnUserService_15c0258" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx
+[eventlog_security.txt L78633] type=event id=4648 time="2020-11-02 17:07:17.3313162" computer=SRL-FORGE user=SRL\SRL-FORGE$ src_ip=127.0.0.1:0 description="A logon was attempted using explicit credentials" detail1="Target: MicrosoftAccount\\fred.rocba@outlook.com" detail2="TargetServerName: localhost" detail3="PID: 0x4A4" cmdline=C:\Windows\System32\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78634] type=event id=4624 time="2020-11-02 17:07:17.3313580" computer=SRL-FORGE user=SRL\SRL-FORGE$ src_ip="SRL-FORGE (127.0.0.1)" description="Successful logon" detail1="Target: MicrosoftAccount\\fred.rocba@outlook.com" detail2="LogonType 11" detail3="LogonId: 0x23A67" cmdline=C:\Windows\System32\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78635] type=event id=4624 time="2020-11-02 17:07:17.3314265" computer=SRL-FORGE user=SRL\SRL-FORGE$ src_ip="SRL-FORGE (127.0.0.1)" description="Successful logon" detail1="Target: MicrosoftAccount\\fred.rocba@outlook.com" detail2="LogonType 11" detail3="LogonId: 0x23CF5" cmdline=C:\Windows\System32\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78673] type=event id=4697 time="2020-11-02 17:07:21.5967882" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: AarSvc_5e22d" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k AarSvcGroup -p" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78674] type=event id=4697 time="2020-11-02 17:07:21.5980814" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: BcastDVRUserService_5e22d" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k BcastDVRUserService" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78675] type=event id=4697 time="2020-11-02 17:07:21.5993047" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: BluetoothUserService_5e22d" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k BthAppGroup -p" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78676] type=event id=4697 time="2020-11-02 17:07:21.6027353" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: CaptureService_5e22d" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78677] type=event id=4697 time="2020-11-02 17:07:21.6038035" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: cbdhsvc_5e22d" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k ClipboardSvcGroup -p" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78678] type=event id=4697 time="2020-11-02 17:07:21.6048620" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: CDPUserSvc_5e22d" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78679] type=event id=4697 time="2020-11-02 17:07:21.6063871" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: ConsentUxUserSvc_5e22d" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78681] type=event id=4697 time="2020-11-02 17:07:21.6086240" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: DeviceAssociationBrokerSvc_5e22d" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow -p" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78682] type=event id=4697 time="2020-11-02 17:07:21.6098664" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: DevicePickerUserSvc_5e22d" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+[eventlog_security.txt L78683] type=event id=4697 time="2020-11-02 17:07:21.6109658" computer=SRL-FORGE user=SRL\SRL-FORGE$ description="A service was installed on the system" detail1="ServiceName: DevicesFlowUserSvc_5e22d" detail2="ServiceFileName: C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow" detail3="ServiceType: Unknown code (0xE0)" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx
+
+=== EntityFindings ===
+{
+  "contract_version": "1.0",
+  "query_id": "550e8400-e29b-41d4-a716-446655440004",
+  "responding_module": "disk",
+  "entity": {
+    "type": "file_path",
+    "value": "C:\\Windows\\System32\\svchost.exe"
+  },
+  "verdict": "INCONCLUSIVE",
+  "severity": null,
+  "mitre": [],
+  "justification": "LLM unavailable \u2014 manual review required. (no-llm mode \u2014 manual review required)",
+  "evidence": [
+    {
+      "source_file": "mft_records.txt",
+      "line": 990,
+      "content": "type=file path=Windows\\Prefetch\\SVCHOST.EXE-05F624AB.pf mft_ref=1743-3 size=22998 deleted=false created=2018-08-30T05:20:24Z modified=2018-08-30T05:20:24Z accessed=2018-08-30T05:20:24Z fn_created=2018-08-30T05:20:24Z fn_modified=2018-08-30T05:20:24Z fn_accessed=2018-08-30T05:20:24Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2018-08-30T05:20:24Z"
+    },
+    {
+      "source_file": "mft_records.txt",
+      "line": 1253,
+      "content": "type=file path=Windows\\Prefetch\\SVCHOST.EXE-7AC6742A.pf mft_ref=2840-184 size=19090 deleted=false created=2018-08-29T06:48:08Z modified=2018-09-06T05:05:41Z accessed=2018-08-29T06:48:08Z fn_created=2018-08-29T06:48:08Z fn_modified=2018-08-29T06:48:08Z fn_accessed=2018-08-29T06:48:08Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2018-08-29T06:48:08Z"
+    },
+    {
+      "source_file": "mft_records.txt",
+      "line": 9215,
+      "content": "type=file path=\"Windows\\\\Microsoft.NET\\\\Framework64\\\\v3.0\\\\Windows Communication Foundation\\\\SMSvcHost.exe.config\" mft_ref=33211-1 size=1951 deleted=false created=2009-07-14T05:32:40Z modified=2009-07-14T05:32:32Z accessed=2009-07-14T05:32:32Z fn_created=2016-08-04T18:27:27Z fn_modified=2016-08-04T18:27:27Z fn_accessed=2016-08-04T18:27:27Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2009-07-14T05:32:40Z"
+    },
+    {
+      "source_file": "mft_records.txt",
+      "line": 9216,
+      "content": "type=file path=\"Windows\\\\Microsoft.NET\\\\Framework\\\\v3.0\\\\Windows Communication Foundation\\\\SMSvcHost.exe.config\" mft_ref=33212-1 size=1951 deleted=false created=2009-07-14T05:32:40Z modified=2009-07-14T05:32:32Z accessed=2009-07-14T05:32:32Z fn_created=2016-08-04T18:27:27Z fn_modified=2016-08-04T18:27:27Z fn_accessed=2016-08-04T18:27:27Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2009-07-14T05:32:40Z"
+    },
+    {
+      "source_file": "mft_records.txt",
+      "line": 9409,
+      "content": "type=file path=Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\SMSvcHost.exe mft_ref=33505-1 size=135848 deleted=false created=2015-11-06T00:36:48Z modified=2015-11-06T00:36:48Z accessed=2016-07-21T16:02:20Z fn_created=2016-08-04T18:27:30Z fn_modified=2016-08-04T18:27:30Z fn_accessed=2016-08-04T18:27:30Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2015-11-06T00:36:48Z"
+    },
+    {
+      "source_file": "mft_records.txt",
+      "line": 9410,
+      "content": "type=file path=Windows\\Microsoft.NET\\Framework\\v4.0.30319\\SMSvcHost.exe mft_ref=33506-1 size=135848 deleted=false created=2015-11-06T00:36:48Z modified=2015-11-06T00:36:48Z accessed=2016-07-21T16:02:20Z fn_created=2016-08-04T18:27:30Z fn_modified=2016-08-04T18:27:30Z fn_accessed=2016-08-04T18:27:30Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2015-11-06T00:36:48Z"
+    },
+    {
+      "source_file": "mft_records.txt",
+      "line": 9411,
+      "content": "type=file path=Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\SMSvcHost.exe.config mft_ref=33507-1 size=2262 deleted=false created=2015-10-01T17:57:54Z modified=2015-10-01T17:57:54Z accessed=2016-07-21T16:02:20Z fn_created=2016-08-04T18:27:30Z fn_modified=2016-08-04T18:27:30Z fn_accessed=2016-08-04T18:27:30Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2015-10-01T17:57:54Z"
+    },
+    {
+      "source_file": "mft_records.txt",
+      "line": 9412,
+      "content": "type=file path=Windows\\Microsoft.NET\\Framework\\v4.0.30319\\SMSvcHost.exe.config mft_ref=33508-1 size=2262 deleted=false created=2015-10-22T14:00:44Z modified=2015-10-22T14:00:44Z accessed=2016-07-21T16:02:20Z fn_created=2016-08-04T18:27:30Z fn_modified=2016-08-04T18:27:30Z fn_accessed=2016-08-04T18:27:30Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2015-10-22T14:00:44Z"
+    },
+    {
+      "source_file": "mft_records.txt",
+      "line": 10522,
+      "content": "type=file path=Windows\\Prefetch\\SVCHOST.EXE-6168E4A3.pf mft_ref=37453-4 size=19402 deleted=false created=2018-09-06T07:43:14Z modified=2018-09-06T07:43:14Z accessed=2018-09-06T07:43:14Z fn_created=2018-09-06T07:43:14Z fn_modified=2018-09-06T07:43:14Z fn_accessed=2018-09-06T07:43:14Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2018-09-06T07:43:14Z"
+    },
+    {
+      "source_file": "mft_records.txt",
+      "line": 12591,
+      "content": "type=file path=Windows\\Prefetch\\SVCHOST.EXE-80F4A784.pf mft_ref=60049-5 size=9554 deleted=false created=2018-08-17T18:57:38Z modified=2018-09-04T21:53:52Z accessed=2018-08-17T18:57:38Z fn_created=2018-08-17T18:57:38Z fn_modified=2018-08-17T18:57:38Z fn_accessed=2018-08-17T18:57:38Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2018-08-17T18:57:38Z"
+    },
+    {
+      "source_file": "mft_records.txt",
+      "line": 14253,
+      "content": "type=file path=DELETED:Windows\\Prefetch\\SVCHOST.EXE-7AC6742A.pf mft_ref=68094-5 size=18844 deleted=true created=2018-08-18T11:24:40Z modified=2018-08-27T22:14:00Z accessed=2018-08-18T11:24:40Z fn_created=2018-08-18T11:24:40Z fn_modified=2018-08-18T11:24:40Z fn_accessed=2018-08-18T11:24:40Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2018-08-18T11:24:40Z"
+    },
+    {
+      "source_file": "mft_records.txt",
+      "line": 29592,
+      "content": "type=file path=Windows\\Prefetch\\SVCHOST.EXE-7CFEDEA3.pf mft_ref=111045-330 size=19942 deleted=false created=2018-05-10T04:00:10Z modified=2018-09-07T04:25:02Z accessed=2018-05-10T04:00:10Z fn_created=2018-05-10T04:00:10Z fn_modified=2018-05-10T04:00:10Z fn_accessed=2018-05-10T04:00:10Z artifact_source=mft",
+      "verbatim": true,
+      "timestamp": "2018-05-10T04:00:10Z"
+    },
+    {
+      "source_file": "registry_autoruns.txt",
+      "line": 548,
+      "content": "type=registry key=\"System\\\\ROOT\\\\ControlSet001\\\\Control\\\\Session Manager\\\\AppCompatCache\" value=AppCompatCache data=C:\\Windows\\system32\\svchost.exe modified=\"2020-11-11 08:13:00.4835065\" category=\"Program Execution\" description=AppCompatCache artifact_source=SYSTEM",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "registry_misc.txt",
+      "line": 4562,
+      "content": "type=registry key=Software\\ROOT\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\webcam\\NonPackaged\\C:#Windows#System32#svchost.exe value=LastUsedTimeStart data=\"2020-11-16 02:29:35.7935787\" modified=\"2020-11-16 02:29:36.3061799\" category=Devices description=Webcam artifact_source=SOFTWARE",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "registry_misc.txt",
+      "line": 4563,
+      "content": "type=registry key=Software\\ROOT\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\webcam\\NonPackaged\\C:#Windows#System32#svchost.exe value=LastUsedTimeStop data=\"2020-11-16 02:29:36.3061799\" modified=\"2020-11-16 02:29:36.3061799\" category=Devices description=Webcam artifact_source=SOFTWARE",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "registry_shimcache.txt",
+      "line": 525,
+      "content": "type=execution path=C:\\Windows\\system32\\svchost.exe last_modified=\"2020-10-09 20:47:23\" executed=No controlset=1 artifact_source=shimcache",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48475,
+      "content": "type=event id=4648 time=\"2020-11-02 13:01:42.4228452\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ src_ip=127.0.0.1:0 description=\"A logon was attempted using explicit credentials\" detail1=\"Target: MicrosoftAccount\\\\fred.rocba@outlook.com\" detail2=\"TargetServerName: localhost\" detail3=\"PID: 0xB14\" cmdline=C:\\Windows\\System32\\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48476,
+      "content": "type=event id=4624 time=\"2020-11-02 13:01:42.4228793\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ src_ip=\"SRL-FORGE (127.0.0.1)\" description=\"Successful logon\" detail1=\"Target: MicrosoftAccount\\\\fred.rocba@outlook.com\" detail2=\"LogonType 11\" detail3=\"LogonId: 0x15BBBD8\" cmdline=C:\\Windows\\System32\\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48477,
+      "content": "type=event id=4624 time=\"2020-11-02 13:01:42.4229829\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ src_ip=\"SRL-FORGE (127.0.0.1)\" description=\"Successful logon\" detail1=\"Target: MicrosoftAccount\\\\fred.rocba@outlook.com\" detail2=\"LogonType 11\" detail3=\"LogonId: 0x15BBC1F\" cmdline=C:\\Windows\\System32\\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48489,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9116874\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: AarSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k AarSvcGroup -p\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48490,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9122301\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: BcastDVRUserService_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k BcastDVRUserService\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48491,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9126826\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: BluetoothUserService_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k BthAppGroup -p\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48492,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9160154\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: CaptureService_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k LocalService -p\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48493,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9165391\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: cbdhsvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k ClipboardSvcGroup -p\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48494,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9170045\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: CDPUserSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k UnistackSvcGroup\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48495,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9174103\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: ConsentUxUserSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k DevicesFlow\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48497,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9184325\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: DeviceAssociationBrokerSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k DevicesFlow -p\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48498,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9191090\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: DevicePickerUserSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k DevicesFlow\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48499,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9196552\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: DevicesFlowUserSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k DevicesFlow\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48500,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9201375\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: MessagingService_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k UnistackSvcGroup\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48501,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9254493\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: OneSyncSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k UnistackSvcGroup\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48502,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9260098\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: PimIndexMaintenanceSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k UnistackSvcGroup\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48503,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9265432\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: PrintWorkflowUserSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k PrintWorkflow\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48504,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9270620\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: UdkUserSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k UdkSvcGroup\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48505,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9275653\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: UnistoreSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\System32\\\\svchost.exe -k UnistackSvcGroup\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48506,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9280632\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: UserDataSvc_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k UnistackSvcGroup\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 48507,
+      "content": "type=event id=4697 time=\"2020-11-02 13:01:42.9286051\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: WpnUserService_15c0258\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k UnistackSvcGroup\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-14-13-50-124.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78633,
+      "content": "type=event id=4648 time=\"2020-11-02 17:07:17.3313162\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ src_ip=127.0.0.1:0 description=\"A logon was attempted using explicit credentials\" detail1=\"Target: MicrosoftAccount\\\\fred.rocba@outlook.com\" detail2=\"TargetServerName: localhost\" detail3=\"PID: 0x4A4\" cmdline=C:\\Windows\\System32\\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78634,
+      "content": "type=event id=4624 time=\"2020-11-02 17:07:17.3313580\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ src_ip=\"SRL-FORGE (127.0.0.1)\" description=\"Successful logon\" detail1=\"Target: MicrosoftAccount\\\\fred.rocba@outlook.com\" detail2=\"LogonType 11\" detail3=\"LogonId: 0x23A67\" cmdline=C:\\Windows\\System32\\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78635,
+      "content": "type=event id=4624 time=\"2020-11-02 17:07:17.3314265\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ src_ip=\"SRL-FORGE (127.0.0.1)\" description=\"Successful logon\" detail1=\"Target: MicrosoftAccount\\\\fred.rocba@outlook.com\" detail2=\"LogonType 11\" detail3=\"LogonId: 0x23CF5\" cmdline=C:\\Windows\\System32\\svchost.exe artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78673,
+      "content": "type=event id=4697 time=\"2020-11-02 17:07:21.5967882\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: AarSvc_5e22d\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k AarSvcGroup -p\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78674,
+      "content": "type=event id=4697 time=\"2020-11-02 17:07:21.5980814\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: BcastDVRUserService_5e22d\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k BcastDVRUserService\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78675,
+      "content": "type=event id=4697 time=\"2020-11-02 17:07:21.5993047\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: BluetoothUserService_5e22d\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k BthAppGroup -p\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78676,
+      "content": "type=event id=4697 time=\"2020-11-02 17:07:21.6027353\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: CaptureService_5e22d\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k LocalService -p\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78677,
+      "content": "type=event id=4697 time=\"2020-11-02 17:07:21.6038035\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: cbdhsvc_5e22d\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k ClipboardSvcGroup -p\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78678,
+      "content": "type=event id=4697 time=\"2020-11-02 17:07:21.6048620\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: CDPUserSvc_5e22d\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k UnistackSvcGroup\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78679,
+      "content": "type=event id=4697 time=\"2020-11-02 17:07:21.6063871\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: ConsentUxUserSvc_5e22d\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k DevicesFlow\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78681,
+      "content": "type=event id=4697 time=\"2020-11-02 17:07:21.6086240\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: DeviceAssociationBrokerSvc_5e22d\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k DevicesFlow -p\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78682,
+      "content": "type=event id=4697 time=\"2020-11-02 17:07:21.6098664\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: DevicePickerUserSvc_5e22d\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k DevicesFlow\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "eventlog_security.txt",
+      "line": 78683,
+      "content": "type=event id=4697 time=\"2020-11-02 17:07:21.6109658\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ description=\"A service was installed on the system\" detail1=\"ServiceName: DevicesFlowUserSvc_5e22d\" detail2=\"ServiceFileName: C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k DevicesFlow\" detail3=\"ServiceType: Unknown code (0xE0)\" artifact_source=/tmp/dfir_ntfs/Windows/System32/winevt/Logs/Archive-Security-2020-11-02-19-09-45-949.evtx",
+      "verbatim": true,
+      "timestamp": null
+    }
+  ],
+  "related_entities": [],
+  "cost": {
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0
+  }
+}
