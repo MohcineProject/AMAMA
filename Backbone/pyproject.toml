@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "backbone"
+version = "0.1.0"
+description = "Orchestrator, threat intel, and report agents for multi-module DFIR"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "jsonschema>=4.20",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+backbone = "backbone.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["backbone*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
