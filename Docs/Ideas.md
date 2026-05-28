@@ -34,3 +34,8 @@
 
 - Use filtering layers before the agents access the data of the images.
 - Use a recall mechanism, where the agents output some notes and go back to them regularly.
+- Hybrid for agent 2 where it should use sift workstation but also limit commands.
+- Make it able to detect the registry persistence check `registry_persistence_detection.txt`.
+- fot the threat intel make it group its tools to check multiple sites once
+- Use a determinstic approach by using rules like Sigma/YARA/custom rules or an open source EDR engine, and also heuristics and statistics
+- Use graph to make correlations
