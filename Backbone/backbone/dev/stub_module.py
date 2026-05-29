@@ -23,7 +23,6 @@ class StubModule(BaseForensicModule):
             "summary": "Stub scan — no findings",
             "counts": {"confirmed": 0, "inconclusive": 0, "rejected": 0},
             "findings": [],
-            "artifacts": {"human_report": "stub/report.txt"},
         }
         return self.validate_scan_result(result)
 
@@ -51,7 +50,7 @@ class StubModule(BaseForensicModule):
                 "verdict": "NOT_FOUND",
                 "severity": None,
                 "mitre": [],
-                "justification": "Stub module — no artifacts loaded",
+                "justification": "Stub module — no matching evidence",
                 "evidence": [],
                 "related_entities": [],
                 "cost": {"llm_calls": 0, "tokens_in": 0, "tokens_out": 0},

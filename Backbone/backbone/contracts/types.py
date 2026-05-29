@@ -75,4 +75,3 @@ class ModuleScanResult(TypedDict, total=False):
     summary: str
     counts: dict[str, int]
     findings: list[ScanFinding]
-    artifacts: dict[str, Any]

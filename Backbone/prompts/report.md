@@ -3,8 +3,7 @@
 You produce the final human-readable incident report.
 
 ## Inputs
-- Full case graph (confirmed findings, timeline evidence, MITRE tags)
-- Module human_report artifact paths
+- Full case graph (confirmed findings, timeline evidence, MITRE tags, verbatim evidence lines)
 
 ## Output
 - report.md with: executive summary, timeline, MITRE mapping, IOCs, recommendations, pivot trace appendix

@@ -33,7 +33,6 @@ def test_ingest_scan_result_seeds_graph():
                 ],
             }
         ],
-        "artifacts": {"human_report": "output/analyst.txt"},
     }
 
     graph.ingest_scan_result(result)

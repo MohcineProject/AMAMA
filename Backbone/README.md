@@ -44,6 +44,8 @@ python -m backbone run --case-id test-001
 
 All cross-component messages use the JSON schemas in `schemas/`. Every model under `../models/` **must inherit** `BaseForensicModule` from `backbone.contracts.base_model`.
 
+**Full architecture (flow + file/class map):** [`ARCHITECTURE.md`](ARCHITECTURE.md)
+
 ## Flow (batch model)
 
 1. Registry loads `BaseForensicModule` subclasses from config.

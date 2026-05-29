@@ -61,11 +61,10 @@ class InvestigationLoop:
         """
         Run the batch investigation pipeline.
 
-        Steps (implemented incrementally):
-          1. Parallel module scans → ingest ModuleScanResult
-          2. Orchestrator review + TI enrichment
-          3. Follow-up EntityQuery rounds until convergence
-          4. Report generation
+        Calls run_initial_scans() first, then (implemented incrementally):
+          1. Orchestrator review + TI enrichment
+          2. Follow-up EntityQuery rounds until convergence
+          3. Report generation
         """
         output_dir = Path(self.config.get("case", {}).get("output_dir", "./output"))
         output_dir.mkdir(parents=True, exist_ok=True)
