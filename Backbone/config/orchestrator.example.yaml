@@ -6,8 +6,11 @@ case:
   max_queries_per_round: 30
   output_dir: "./output"
 
-# Module manifests (added in a later commit).
-# Each manifest declares scan/query entrypoints and supported entity types.
+# In-process modules: each must inherit BaseForensicModule (see models/README.md).
+# Example (dev stub):
+# modules:
+#   - class: backbone.dev.stub_module.StubModule
+#
 modules: []
 
 threat_intel:

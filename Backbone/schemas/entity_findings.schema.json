@@ -24,7 +24,7 @@
     },
     "responding_module": {
       "type": "string",
-      "enum": ["ram", "disk", "network", "ti"]
+      "pattern": "^[a-z][a-z0-9_]{0,31}$"
     },
     "entity": {
       "type": "object",

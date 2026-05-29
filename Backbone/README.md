@@ -10,41 +10,43 @@ Central coordination layer for the multi-module forensic agent system.
 | **Threat Intel agent** | Enriches entities via external IOC sources (VirusTotal, etc.) |
 | **Report agent** | Produces the final incident report from case state |
 
-Forensic modules (RAM, disk, network) live under `../models/` and are plugged in via config manifests.
+Forensic modules (RAM, disk, network) live under `../models/` and are loaded by class import path.
 
 ## Layout
 
 ```
 Backbone/
-├── backbone/           # Python package
+├── backbone/
 │   ├── orchestrator/   # investigation loop + LLM agent
 │   ├── threat_intel/   # IOC enrichment
 │   ├── report/         # final report builder
 │   ├── case_graph.py   # entity graph (orchestrator memory)
-│   ├── contracts/      # schema validation helpers
-│   └── dispatch/       # async module adapters
-├── schemas/            # JSON contracts (EntityQuery, EntityFindings, ModuleScanResult)
-├── prompts/            # LLM system prompts
-├── config/             # orchestrator + module manifest examples
+│   ├── contracts/      # schemas, validation, BaseForensicModule
+│   └── registry.py     # loads module classes from config
+├── schemas/            # JSON contracts
+├── prompts/
+├── config/
 └── tests/
 ```
 
-## Quick start (scaffold)
+## Quick start
 
 ```bash
 cd Backbone
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1   # Windows
 pip install -e ".[dev]"
-python -m backbone --help
+pytest -q
+python -m backbone run --case-id test-001
 ```
 
 ## Contracts
 
-All cross-component messages use the JSON schemas in `schemas/`. Human-readable spec: `../COMPLETE_ARCHITECTURE/02_contracts.md`.
+All cross-component messages use the JSON schemas in `schemas/`. Every model under `../models/` **must inherit** `BaseForensicModule` from `backbone.contracts.base_model`.
 
 ## Flow (batch model)
 
-1. Orchestrator triggers **scan** on each registered module (parallel).
-2. Modules return `ModuleScanResult` → ingested into **case graph**.
-3. Orchestrator agent reviews graph summary → may call **Threat Intel** → issues `EntityQuery` to modules.
-4. `EntityFindings` responses merge back into the graph until convergence.
-5. **Report agent** writes `report.md`.
+1. Registry loads `BaseForensicModule` subclasses from config.
+2. Orchestrator calls `module.scan(case_id)` on each (parallel) → `ModuleScanResult` → case graph.
+3. Orchestrator agent reviews → Threat Intel → `module.query(EntityQuery)` follow-ups.
+4. Report agent writes `report.md`.

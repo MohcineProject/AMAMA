@@ -1,5 +1,6 @@
 """Typed helpers and JSON-schema validation for cross-agent contracts."""
 
+from backbone.contracts.base_model import BaseForensicModule
 from backbone.contracts.types import Entity, EntityFindings, EntityQuery, ModuleScanResult
 from backbone.contracts.validate import (
     load_schema,
@@ -9,6 +10,7 @@ from backbone.contracts.validate import (
 )
 
 __all__ = [
+    "BaseForensicModule",
     "Entity",
     "EntityQuery",
     "EntityFindings",
