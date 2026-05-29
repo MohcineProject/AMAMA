@@ -39,3 +39,4 @@
 - fot the threat intel make it group its tools to check multiple sites once
 - Use a determinstic approach by using rules like Sigma/YARA/custom rules or an open source EDR engine, and also heuristics and statistics
 - Use graph to make correlations
+- Use a determinstic script to check if the evidences does exists in the files.
