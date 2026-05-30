@@ -1,0 +1,31 @@
+{
+  "contract_version": "1.0",
+  "case_id": "test-llm-routing",
+  "module": "disk",
+  "scan_started_at": "2026-05-20T10:00:00Z",
+  "scan_completed_at": "2026-05-20T10:00:01Z",
+  "summary": "2 findings: 1 CONFIRMED (should be pre-filtered), 1 INCONCLUSIVE (should be routed by LLM).",
+  "counts": {"confirmed": 1, "inconclusive": 1, "rejected": 0},
+  "findings": [
+    {
+      "finding_id": "disk-f001",
+      "verdict": "CONFIRMED",
+      "severity": "CRITICAL",
+      "mitre": [],
+      "primary_entity": {"type": "file_path", "value": "C:\\Temp\\evil.exe"},
+      "related_entities": [],
+      "justification": "Confirmed malicious — must NOT appear in LLM candidates.",
+      "evidence": []
+    },
+    {
+      "finding_id": "disk-f002",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {"type": "ip", "value": "172.16.10.13"},
+      "related_entities": [],
+      "justification": "IP seen in event logs; needs RAM corroboration. Module ram supports ip.",
+      "evidence": []
+    }
+  ]
+}

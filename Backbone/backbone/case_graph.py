@@ -26,6 +26,14 @@ class EntityNode:
     def key(self) -> tuple[str, str]:
         return entity_key(self.type, self.value)
 
+    @property
+    def verdicts_received(self) -> list[dict[str, Any]]:
+        return [
+            {"module": f.get("module"), "verdict": f.get("verdict"), "severity": f.get("severity")}
+            for f in self.findings
+            if f.get("verdict")
+        ]
+
 
 @dataclass
 class CaseGraph:
@@ -35,6 +43,7 @@ class CaseGraph:
     nodes: dict[tuple[str, str], EntityNode] = field(default_factory=dict)
     initial_scans: dict[str, ModuleScanResult] = field(default_factory=dict)
     rounds: list[dict[str, Any]] = field(default_factory=list)
+    termination_reason: str | None = None
 
     def get_or_create_node(
         self,
@@ -68,6 +77,7 @@ class CaseGraph:
                 source_module=module,
                 finding_id=finding.get("finding_id"),
             )
+            node.queried_modules.add(module)
             node.findings.append({"source": "scan", "module": module, **finding})
             added += 1 if node.first_seen_finding_id == finding.get("finding_id") else 0
 
@@ -120,6 +130,8 @@ class CaseGraph:
             "case_id": self.case_id,
             "entity_count": len(self.nodes),
             "modules_scanned": list(self.initial_scans.keys()),
+            "termination_reason": self.termination_reason,
+            "rounds": self.rounds,
             "nodes": {
                 f"{t}:{v}": {
                     "type": n.type,
@@ -127,6 +139,7 @@ class CaseGraph:
                     "first_seen_module": n.first_seen_module,
                     "queried_modules": sorted(n.queried_modules),
                     "finding_count": len(n.findings),
+                    "verdicts_received": n.verdicts_received,
                 }
                 for (t, v), n in self.nodes.items()
             },

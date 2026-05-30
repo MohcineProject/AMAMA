@@ -1,11 +1,13 @@
-"""Investigation loop — batch scans, graph ingest, orchestrator rounds."""
+"""Investigation loop — batch scans, graph ingest, LLM-driven routing rounds."""
 
 from __future__ import annotations
 
 import asyncio
+import json
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+from uuid import uuid4
 
 import yaml
 
@@ -33,9 +35,7 @@ class InvestigationLoop:
             config = {}
 
         graph = CaseGraph(case_id=case_id)
-        orchestrator = OrchestratorAgent(
-            use_llm=config.get("orchestrator", {}).get("use_llm", False)
-        )
+        orchestrator = OrchestratorAgent()
         modules = load_modules(config)
 
         return cls(
@@ -57,24 +57,87 @@ class InvestigationLoop:
         for result in results:
             self.graph.ingest_scan_result(result)
 
+    async def _dispatch_round(self, decisions: list[dict[str, Any]], round_num: int) -> int:
+        """Dispatch query-action decisions to their target modules. Returns new entity count."""
+        entities_before = len(self.graph.nodes)
+
+        tasks = []
+        for decision in decisions:
+            if decision.get("action") != "query":
+                continue
+            mid = decision.get("target_module")
+            if not mid or mid not in self.modules:
+                continue
+            entity = decision.get("entity", {})
+            if (entity.get("type"), entity.get("value")) not in self.graph.nodes:
+                continue  # LLM invented an entity not in the graph — skip
+            query = {
+                "contract_version": "1.0",
+                "query_id": str(uuid4()),
+                "round": round_num,
+                "case_id": self.case_id,
+                "target_module": mid,
+                "entity": decision["entity"],
+                "context": {
+                    "source_module": "orchestrator",
+                    "source_finding_id": None,
+                    "reason": decision.get("reason", ""),
+                },
+            }
+            tasks.append(self.modules[mid].query(query))
+
+        if tasks:
+            findings_list = await asyncio.gather(*tasks)
+            for findings in findings_list:
+                self.graph.ingest_findings(findings)
+
+        return len(self.graph.nodes) - entities_before
+
     def run(self) -> CaseGraph:
         """
-        Run the batch investigation pipeline.
-
-        Calls run_initial_scans() first, then (implemented incrementally):
-          1. Orchestrator review + TI enrichment
-          2. Follow-up EntityQuery rounds until convergence
-          3. Report generation
+        Full investigation pipeline:
+          1. Initial parallel scans from all modules
+          2. LLM-driven routing rounds until convergence or max_rounds
+          3. Write case_state.json to output_dir
         """
-        output_dir = Path(self.config.get("case", {}).get("output_dir", "./output"))
+        case_cfg = self.config.get("case", {})
+        output_dir = Path(case_cfg.get("output_dir", "./output"))
+        max_rounds = int(case_cfg.get("max_rounds", 5))
+
         output_dir.mkdir(parents=True, exist_ok=True)
 
         asyncio.run(self.run_initial_scans())
 
-        review = self.orchestrator.review(self.graph)
-        entity_count = self.graph.summary_for_agent()["entity_count"]
+        for round_num in range(1, max_rounds + 1):
+            decisions = self.orchestrator.review(self.graph, self.modules)
+            queries = [d for d in decisions if d.get("action") == "query"]
+
+            if not queries:
+                self.graph.termination_reason = "convergence"
+                break
+
+            new_entities = asyncio.run(self._dispatch_round(decisions, round_num))
+            self.graph.rounds.append(
+                {
+                    "round": round_num,
+                    "queries_dispatched": len(queries),
+                    "new_entities_added": new_entities,
+                }
+            )
+        else:
+            self.graph.termination_reason = "max_rounds_reached"
+
+        state_path = output_dir / "case_state.json"
+        state_path.write_text(
+            json.dumps(self.graph.to_dict(), indent=2, default=list),
+            encoding="utf-8",
+        )
+
         module_ids = list(self.modules.keys())
-        print(f"[backbone] case={self.case_id} modules={module_ids} entities={entity_count}")
-        print(f"[backbone] orchestrator notes: {review['notes']}")
+        entity_count = self.graph.summary_for_agent()["entity_count"]
+        print(
+            f"[backbone] case={self.case_id} modules={module_ids} "
+            f"entities={entity_count} termination={self.graph.termination_reason}"
+        )
 
         return self.graph

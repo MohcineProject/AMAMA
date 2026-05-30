@@ -1,0 +1,769 @@
+{
+  "contract_version": "1.0",
+  "case_id": "dmz-ftp-2026-05-28",
+  "module": "disk",
+  "scan_started_at": "2026-05-28T21:29:58Z",
+  "scan_completed_at": "2026-05-28T21:29:58Z",
+  "summary": "23 finding(s) from disk artifacts (source: analyst.txt). 19 CONFIRMED, 4 INCONCLUSIVE, 0 REJECTED.",
+  "counts": {
+    "confirmed": 19,
+    "inconclusive": 4,
+    "rejected": 0
+  },
+  "findings": [
+    {
+      "finding_id": "disk-scan-f001",
+      "verdict": "CONFIRMED",
+      "severity": "CRITICAL",
+      "mitre": [
+        "T1003"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "SYSVOL\\Windows\\Temp\\perfmon\\PWDumpX.exe"
+      },
+      "related_entities": [],
+      "justification": "PWDumpX.exe is a known credential-dumping tool placed in a masqueraded staging directory (Windows\\Temp\\perfmon). MFT confirms the file exists with no Zone.Identifier and no version info. Shimcache and amcache both record execution. Event 4688 and Sysmon event 1 confirm it was launched by DMZ-FTP\\rsydow at 2018-09-04T18:22:33 via cmd.exe. This finding is directly corroborated by MFT finding M001 (Finding 26), which independently flags the same file from the filesystem layer, and by Finding P002/M004 (PsExec co-located in the same perfmon directory), establishing a complete attack staging cluster.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 42522,
+          "content": "type=file path=Windows\\Temp\\perfmon\\PWDumpX.exe ... has_version_info=false suspicious_path=true",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 36439,
+          "content": "type=event id=4688 time=\"2018-09-04 18:22:33...\" cmdline=\"C:\\\\Windows\\\\Temp\\\\perfmon\\\\PWDumpX.exe c:\\\\windows\\\\temp\\\\perfmon\\\\PWDumpX.exe\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 20248,
+          "content": "type=event id=1 ... detail2=\"RuleName: Info=Executables Launched In Temp\" detail3=\"...SHA256=A23BB3BC0CB2CE9746F665D3CE874AEB168A3D2D6B8953AB541364DB6F6E9CA4...\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 58,
+          "content": "type=execution path=SYSVOL\\Windows\\Temp\\perfmon\\PWDumpX.exe last_modified=\"2018-09-04 18:20:44\" executed=Yes",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 15,
+          "content": "type=execution path=C:\\Windows\\Temp\\perfmon\\PWDumpX.exe link_date=\"2008-01-07 19:36:54\" artifact_source=amcache hash=sha256:600001da3f",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f002",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1569.002"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "SYSVOL\\Windows\\Temp\\perfmon\\PsExec.exe"
+      },
+      "related_entities": [],
+      "justification": "PsExec.exe was staged in the same attacker-controlled perfmon directory as PWDumpX.exe (Finding P001/M001). MFT, shimcache, and amcache all confirm presence and execution. Event 4688 shows rsydow executing it with \"-i -s powershell.exe\" (interactive SYSTEM shell) at 2018-09-04T18:32:20 and again at 22:51:49. System event 7045 confirms PSEXESVC was installed twice as a service. Sysmon fired \"Alert=Psexec Utilities\" on both executions. This is corroborated by MFT finding M004 (Finding 29).",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 36463,
+          "content": "cmdline=\"C:\\\\Windows\\\\Temp\\\\perfmon\\\\PsExec.exe ... -i -s powershell.exe\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 171,
+          "content": "type=event id=7045 time=\"2018-09-04 18:32:23...\" detail1=\"Name: PSEXESVC\" detail2=\"StartType: demand start\" detail3=\"Account: LocalSystem\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 20280,
+          "content": "detail2=\"RuleName: Alert=Psexec Utilities\" detail3=\"...SHA256=3337E3875B05E0BFBA69AB926532E3F179E8CFBF162EBB60CE58A0281437A7EF...\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 47,
+          "content": "type=execution path=SYSVOL\\Windows\\Temp\\perfmon\\PsExec.exe last_modified=\"2018-09-04 18:31:47\" executed=Yes",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 39549,
+          "content": "type=file path=Windows\\Temp\\perfmon\\PsExec.exe ... suspicious_path=true",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f003",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1560.001"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "C:\\ProgramData\\staging\\7za.exe"
+      },
+      "related_entities": [],
+      "justification": "7za.exe in a directory literally named \"staging\" is a strong attacker convention. MFT confirms the file was created 2018-03-14T13:44:14 with no Zone.Identifier, consistent with lateral drop rather than download. Amcache confirms execution. The same date (2018-03-14) is the date of the log-clearing event on windows2012r2 (Finding E001), suggesting this staging activity preceded or accompanied the anti-forensics operation. MFT finding M010 (Finding 35) independently flags the same file.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 17418,
+          "content": "type=file path=ProgramData\\staging\\7za.exe ... created=2018-03-14T13:44:14Z ... suspicious_path=true",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 31,
+          "content": "type=execution path=C:\\ProgramData\\staging\\7za.exe artifact_source=amcache hash=sha256:4000016b7f",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f004",
+      "verdict": "CONFIRMED",
+      "severity": "CRITICAL",
+      "mitre": [
+        "T1070.001"
+      ],
+      "primary_entity": {
+        "type": "image_name",
+        "value": "event_log_cleared"
+      },
+      "related_entities": [],
+      "justification": "Four distinct Windows event logs (Security, System, Application, Setup) were cleared within the same second (2018-03-14T20:48:48) by WINDOWS2012R2\\Administrator, followed by a system shutdown 74 seconds later. This is a textbook systematic cover-up sequence. Both Security (id=1102) and System (id=104) log-clear events are present in the pivot evidence. The absence of earlier event log data on windows2012r2 must be interpreted in light of this confirmed clearing.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "type=event id=1102 time=\"2018-03-14 20:48:48.2393303\" computer=windows2012r2 user=WINDOWS2012R2\\Administrator description=\"Event log cleared\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "type=event id=104 time=\"2018-03-14 20:48:48.2237185\" computer=windows2012r2 user=WINDOWS2012R2\\Administrator description=\"Event log cleared\" detail1=\"The System log file was cleared\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 2,
+          "content": "type=event id=104 time=\"2018-03-14 20:48:48.2237185\" computer=windows2012r2 user=WINDOWS2012R2\\Administrator description=\"Event log cleared\" detail1=\"The Application log file was cleared\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 4,
+          "content": "type=event id=13 time=\"2018-03-14 20:50:02.0824247\" computer=windows2012r2 description=\"OS was shutdown\"",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f005",
+      "verdict": "CONFIRMED",
+      "severity": "CRITICAL",
+      "mitre": [
+        "T1110.001"
+      ],
+      "primary_entity": {
+        "type": "image_name",
+        "value": "DMZ-FTP (-) [local svchost]"
+      },
+      "related_entities": [],
+      "justification": "20,567 type-8 (network cleartext) logon failures targeting user \"mike\" originated from svchost.exe on dmz-ftp itself, indicating a compromised host running an automated credential-stuffing tool. This is corroborated by the subsequent successful type-8 logon for DMZ-FTP\\nfury (count=9) from the same host pattern (Finding E011), establishing a brute-force-then-success sequence. The event log summary confirms the full user and IP scope of activity on dmz-ftp.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "Agent 1 source: Security.evtx id=4625 count=20567 type=8 user=\\\\mike; id=4624 type=8 user=nfury count=9",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "eventlog_security.txt total_hits=37549 time_range=2018-05-03\u21922018-09-07 (summarized pivot confirms scope)",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f006",
+      "verdict": "CONFIRMED",
+      "severity": "CRITICAL",
+      "mitre": [
+        "T1078"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "DMZ-FTP\\rsydow"
+      },
+      "related_entities": [],
+      "justification": "Three distinct internal IPs (172.16.5.26, 172.16.10.13, 172.16.4.5) authenticated via RDP (type=10) as rsydow to dmz-ftp. The pivot evidence for Finding 7 (AcroRdr) contains verbatim 4624 type=10 logon events from 172.16.5.26 and explicit-credential (4648) events from the same IP via winlogon.exe. 194 privilege-assignment events (4672) with SeDebugPrivilege and SeImpersonatePrivilege confirm elevated access. This is directly linked to Finding E008 (172.16.5.26 lateral movement) and Finding E004 (rsydow privilege escalation).",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 764,
+          "content": "type=event id=4624 time=\"2018-06-25 19:21:10...\" src_ip=\"DMZ-FTP (172.16.5.26)\" detail1=\"Target: DMZ-FTP\\\\rsydow\" detail2=\"LogonType 10\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 763,
+          "content": "type=event id=4648 time=\"2018-06-25 19:21:10...\" src_ip=172.16.5.26:0 detail1=\"Target: DMZ-FTP\\\\rsydow\" cmdline=C:\\Windows\\System32\\winlogon.exe",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 766,
+          "content": "type=event id=4672 ... detail1=\"PrivilegeList: ...SeDebugPrivilege...SeImpersonatePrivilege...\"",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f007",
+      "verdict": "CONFIRMED",
+      "severity": "CRITICAL",
+      "mitre": [
+        "T1136.001"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "DMZ-FTP\\rsydow"
+      },
+      "related_entities": [],
+      "justification": "rsydow created the ftpadmin account (event 4720, SID S-1-5-21-...-1004) and added members to Builtin\\Users (4732, count=9). The pivot evidence for Finding 7 contains verbatim event 4720 at 2018-07-16T22:27:33 showing rsydow creating ftpadmin, and event 4720 at 22:30:33 creating rsydow-a. The ftpadmin account subsequently accessed IPC$ from 172.16.5.25 (Finding E016). Combined with 194 SeDebugPrivilege assignments (Finding E003), this confirms rsydow as a fully compromised privileged account used for persistence and lateral movement.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 991,
+          "content": "type=event id=4720 time=\"2018-07-16 22:27:33...\" user=\"DMZ-FTP\\\\rsydow...\" detail1=\"Target: DMZ-FTP\\\\ftpadmin (S-1-5-21-572887454-1858499753-1978773125-1004)\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 993,
+          "content": "type=event id=4720 time=\"2018-07-16 22:30:33...\" detail1=\"Target: DMZ-FTP\\\\rsydow-a (S-1-5-21-572887454-1858499753-1978773125-1005)\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 995,
+          "content": "type=event id=4732 time=\"2018-07-16 22:30:45...\" detail1=\"Target: Builtin\\\\Administrators (S-1-5-32-544)\"",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f008",
+      "verdict": "CONFIRMED",
+      "severity": "CRITICAL",
+      "mitre": [
+        "T1021.002"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "DMZ-FTP\\rsydow-a"
+      },
+      "related_entities": [],
+      "justification": "rsydow-a (created by rsydow per Finding E004) received type-3 network logons from three distinct hosts (BASE-FILE 172.16.4.5, BASE-HUNT 172.16.5.25, BASE-FILE 10.10.4.5) with 47 SeDebugPrivilege assignments. 117 failed logons from 172.16.4.5 targeting shieldbase\\rsydow-a indicate domain credential probing. Explicit-credential events (4648) from 172.16.5.26 and 127.0.0.1 via winlogon.exe confirm the account was actively used for lateral movement. This is corroborated by Findings E008 and E009.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "Agent 1 source: Security.evtx id=4624 logon_type=3 count=16+7+5; id=4672 count=47; id=4625 count=117; id=4648 multiple",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "eventlog_security.txt users list includes DMZ-FTP\\rsydow-a; source_ips include 10.10.4.5, 172.16.5.25",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f009",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1059.001"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "powershell.exe (NT AUTHORITY\\SYSTEM)"
+      },
+      "related_entities": [],
+      "justification": "10,869 outbound network connections from powershell.exe running as NT AUTHORITY\\SYSTEM on dmz-ftp is anomalous at any scale. The pivot evidence for Finding 6 contains verbatim Sysmon events showing rsydow using PowerShell to download Sysmon64.exe from live.sysinternals.com, and the SYSTEM-context sysmon64.exe process making HTTP connections. The 10,869 SYSTEM PowerShell connections are corroborated by the PsExec finding (P002) which shows rsydow using PsExec \"-i -s powershell.exe\" to spawn SYSTEM-context PowerShell sessions.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 36463,
+          "content": "cmdline=\"C:\\\\Windows\\\\Temp\\\\perfmon\\\\PsExec.exe ... -i -s powershell.exe\" (rsydow spawning SYSTEM PowerShell)",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 3350,
+          "content": "cmdline=\"...powershell  (new-object System.Net.WebClient).DownloadFile('https://live.sysinternals.com/Sysmon64.exe'...)\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "Agent 1 source: Sysmon id=3 powershell.exe as NT AUTHORITY\\SYSTEM count=10869",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f010",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1562.001"
+      ],
+      "primary_entity": {
+        "type": "image_name",
+        "value": "sc failure Sysmon64"
+      },
+      "related_entities": [],
+      "justification": "rsydow executed \"sc failure Sysmon64 actions= restart/10000/restart/10000// reset= 120\" 165 times. The pivot evidence for Finding 6 contains verbatim Sysmon event 1 at 2018-08-07T19:06:03 showing this exact command executed by rsydow immediately after Sysmon installation. The repetition (165 times) indicates a scripted loop. This is corroborated by the sysmon64 deployment context (Finding P005/P006): rsydow installed Sysmon then immediately attempted to degrade its failure recovery, a known EDR-tampering technique.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 150,
+          "content": "type=event id=1 time=\"2018-08-07 19:06:03...\" user=DMZ-FTP\\rsydow cmdline=\"sc  failure Sysmon64 actions= restart/10000/restart/10000// reset= 120\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 175,
+          "content": "type=event id=1 time=\"2018-08-07 19:09:56...\" user=DMZ-FTP\\rsydow cmdline=\"sc  failure Sysmon64 actions= restart/10000/restart/10000// reset= 120\"",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f011",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1021.001"
+      ],
+      "primary_entity": {
+        "type": "image_name",
+        "value": "172.16.5.26 (BASE-ADMIN)"
+      },
+      "related_entities": [],
+      "justification": "172.16.5.26 (BASE-ADMIN) is the primary source of lateral movement to dmz-ftp, responsible for 22 successful RDP logons as rsydow, explicit-credential events targeting both rsydow and rsydow-a, and 14 IPC$ share accesses. The pivot evidence for Finding 7 contains verbatim 4648 and 4624 type=10 events from 172.16.5.26 spanning 2018-06-25 through 2018-08-17. This finding is the source host for Findings E003 and E005, and the same IP appears in Finding E010 (172.16.10.13 appearing late in the timeline on 2018-09-04, the same day as PWDumpX execution).",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 763,
+          "content": "type=event id=4648 time=\"2018-06-25 19:21:10...\" src_ip=172.16.5.26:0 detail1=\"Target: DMZ-FTP\\\\rsydow\" cmdline=C:\\Windows\\System32\\winlogon.exe",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 764,
+          "content": "type=event id=4624 ... src_ip=\"DMZ-FTP (172.16.5.26)\" detail2=\"LogonType 10\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "Agent 1 source: id=5140 rsydow-a from 172.16.5.26:65490 IPC$ count=14",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f012",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1021.002"
+      ],
+      "primary_entity": {
+        "type": "image_name",
+        "value": "172.16.4.5 (BASE-FILE)"
+      },
+      "related_entities": [],
+      "justification": "172.16.4.5 (BASE-FILE) accessed dmz-ftp as rsydow-a (16 type-3 logons), rsydow-f (18 srl-ftp share accesses), and Administrator (3 IPC$ accesses), with 117 failed domain credential attempts. Multiple accounts accessed from a single source IP is a strong lateral movement indicator. This is corroborated by Finding E005 (rsydow-a logon pattern) and Finding E012 (rsydow-f svchost credential events).",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "Agent 1 source: id=4624 type=3 from 172.16.4.5 targeting rsydow-a count=16; id=4625 count=117; id=5140 rsydow-f srl-ftp count=18; id=4648 targeting rsydow via winlogon",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f013",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1021.001"
+      ],
+      "primary_entity": {
+        "type": "ip",
+        "value": "172.16.10.13"
+      },
+      "related_entities": [],
+      "justification": "172.16.10.13 appears for the first time on 2018-09-04 \u2014 the same date PWDumpX.exe was executed (Finding P001/M001) \u2014 with 6 RDP logons as rsydow and multiple explicit-credential events via winlogon.exe. The temporal correlation with the credential-dumping operation strongly suggests this is an additional host compromised using credentials harvested by PWDumpX. This is corroborated by Findings E003 and E008 establishing the rsydow RDP pattern.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "Agent 1 source: id=4624 type=10 from 172.16.10.13 count=6; id=4648 from 172.16.10.13 targeting rsydow via winlogon.exe on 2018-09-04",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 36439,
+          "content": "PWDumpX executed 2018-09-04T18:22:33 (same date as 172.16.10.13 first appearance)",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f014",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1110"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "DMZ-FTP\\nfury"
+      },
+      "related_entities": [],
+      "justification": "9 successful type-8 logons for nfury followed 20,567 type-8 failures (Finding E002) on the same host. Additionally, 24 failed domain credential attempts from BASE-WKSTN-05 (172.16.7.15) preceded 2 successful type-3 logons and 12 IPC$ share accesses. An explicit-credential event (4648) from svchost.exe on 2018-08-07 targeting nfury is anomalous. The brute-force-then-success pattern across two independent logon types confirms nfury credentials were compromised.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "Agent 1 source: id=4624 type=8 count=9 following 20567 failures; id=4625 count=24 from 172.16.7.15; id=5140 nfury IPC$ count=12; id=4648 from svchost.exe",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f015",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1078"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "DMZ-FTP\\rsydow-f"
+      },
+      "related_entities": [],
+      "justification": "rsydow-f first appears 2018-09-05 with explicit-credential events (4648) generated by svchost.exe PID 0x4F4 across multiple instances through 2018-09-07, and 18 accesses to the \\\\*\\srl-ftp share from 172.16.4.5. svchost.exe generating 4648 events for a user account is anomalous and indicates credential material stored in a service context. The account's late appearance and share access pattern is consistent with a newly created or harvested account used for data collection. This is corroborated by Finding E009 (172.16.4.5 share access pattern).",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 1,
+          "content": "Agent 1 source: id=4648 from svchost.exe PID 0x4F4 targeting rsydow-f 2018-09-05 to 2018-09-07; id=5140 rsydow-f srl-ftp count=18",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f016",
+      "verdict": "CONFIRMED",
+      "severity": "CRITICAL",
+      "mitre": [
+        "T1003"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "Windows\\Temp\\perfmon\\PWDumpX.exe"
+      },
+      "related_entities": [],
+      "justification": "MFT independently confirms PWDumpX.exe at Windows\\Temp\\perfmon with no Zone.Identifier, no version info, PE32 signature, and entropy=4.98. SI and FN timestamps agree (both 2018-09-04T18:20:44Z), ruling out timestomping. This is a direct cross-artifact corroboration of Finding P001 (shimcache/amcache) and is further confirmed by event log execution evidence. The companion DumpExt.dll (Finding M002) was created 55 seconds later in the same directory.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 42522,
+          "content": "type=file path=Windows\\Temp\\perfmon\\PWDumpX.exe ... has_version_info=false suspicious_path=true entropy=4.98",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f017",
+      "verdict": "CONFIRMED",
+      "severity": "CRITICAL",
+      "mitre": [
+        "T1003"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "Windows\\Temp\\perfmon\\DumpExt.dll"
+      },
+      "related_entities": [],
+      "justification": "DumpExt.dll is the companion DLL for PWDumpX credential dumping, placed in the same perfmon staging directory 55 seconds after PWDumpX (2018-09-04T18:21:39 vs 18:20:44). MFT confirms no Zone.Identifier, no version info, PE32 signature. SI/FN timestamps agree. The temporal cluster with PWDumpX (Finding M001/P001) and PsExec (Finding M004/P002) in the same directory constitutes a complete credential-dumping toolkit staging event.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 42523,
+          "content": "type=file path=Windows\\Temp\\perfmon\\DumpExt.dll mft_ref=121408-5 ... created=2018-09-04T18:21:39Z ... has_version_info=false suspicious_path=true entropy=5.442",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f018",
+      "verdict": "CONFIRMED",
+      "severity": "MEDIUM",
+      "mitre": [
+        "T1053.005"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "C:\\ProgramData\\sysmon\\Auto_Update.bat"
+      },
+      "related_entities": [],
+      "justification": "A scheduled task named \"Update_Sysmon_Rules\" was registered by user rsydow on 2018-08-07T15:09:56 to run as SYSTEM (S-1-5-18), executing Auto_Update.bat from ProgramData\\sysmon. The scheduled_tasks.txt pivot confirms the task definition verbatim. The same date, rsydow executed \"sc failure Sysmon64\" 165 times (Finding E007), establishing that rsydow was actively manipulating Sysmon on this date. The non-SYSTEM author combined with SYSTEM run-as is a persistence red flag. Shimcache and amcache confirm sysmon64.exe execution from ProgramData\\sysmon.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 4,
+          "content": "type=persistence mechanism=scheduled_task name=Update_Sysmon_Rules ... action=C:\\ProgramData\\sysmon\\Auto_Update.bat run_as=S-1-5-18 author=rsydow registered=2018-08-07T15:09:56",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 5,
+          "content": "type=execution path=SYSVOL\\ProgramData\\sysmon\\sysmon64.exe last_modified=\"2018-08-07 19:09:55\" executed=Yes",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 13,
+          "content": "type=execution path=C:\\ProgramData\\sysmon\\sysmon64.exe artifact_source=amcache hash=sha256:400001cc19",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f019",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1569.002"
+      ],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "Windows\\Temp\\perfmon\\PsExec.exe"
+      },
+      "related_entities": [],
+      "justification": "MFT independently confirms PsExec.exe in the attacker staging directory with no Zone.Identifier, created 2018-09-04T18:31:47Z (11 minutes after PWDumpX). SI/FN timestamps agree. This is a direct cross-artifact corroboration of Finding P002. The MFT hash (sha256:3337e387...) matches the Sysmon event hash, confirming file identity across artifact types.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 39549,
+          "content": "type=file path=Windows\\Temp\\perfmon\\PsExec.exe ... created=2018-09-04T18:31:47Z ... suspicious_path=true entropy=6.384",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 20280,
+          "content": "detail3=\"...SHA256=3337E3875B05E0BFBA69AB926532E3F179E8CFBF162EBB60CE58A0281437A7EF...\" (matches MFT hash)",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f020",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "SYSVOL\\Windows\\subject_srv.exe"
+      },
+      "related_entities": [],
+      "justification": "The pivot evidence reveals subject_srv.exe is F-Response Subject software \u2014 a legitimate forensic/IR remote acquisition tool. Event 4688 and Sysmon event 1 show it running with arguments \"-s base-hunt.shieldbase.lan:5682 -l 3262 -v \\\"F-Response Subject\\\"\", connecting to base-hunt.shieldbase.lan. System event 7045 shows it installed as \"F-Response Subject\" service with auto-start. This is consistent with an authorized DFIR investigation tool deployed by the incident response team. However, the binary resides in Windows root (not System32), has no vendor attribution in shimcache, and was installed twice (2018-09-07 05:24 and 21:08). Cannot CONFIRM as malicious given the F-Response identification, but cannot REJECT because the non-standard path and repeated reinstallation warrant verification that this deployment was authorized.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 37437,
+          "content": "cmdline=\"C:\\\\Windows\\\\subject_srv.exe ... -s base-hunt.shieldbase.lan:5682 -l 3262 -v \\\\\\\"F-Response Subject\\\\\\\" -k 155522845 -n\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 191,
+          "content": "type=event id=7045 ... detail1=\"Name: F-Response Subject\" detail2=\"StartType: auto start\" detail3=\"Account: LocalSystem\"",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f021",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "SYSVOL\\Windows\\sysmon64.exe"
+      },
+      "related_entities": [],
+      "justification": "The pivot evidence explains the Windows root copy: event 4688 at 2018-08-07T19:06:01 shows rsydow running \"C:\\ProgramData\\sysmon\\sysmon64.exe -accepteula -i sysmonconfig-export.xml\", which spawned \"C:\\Windows\\sysmon64.exe -nologo -accepteula -m\" \u2014 this is the standard Sysmon installation behavior where the installer copies itself to Windows root as the service binary. System event 7045 confirms \"sysmon64\" service installed pointing to C:\\windows\\sysmon64.exe. The two copies (ProgramData and Windows root) have different amcache hashes (400001cc19 vs 400001cc1c), which warrants verification but may reflect the installer vs. installed binary. The \"sc failure\" tampering (Finding E007) by rsydow immediately after installation is the more significant concern.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 3367,
+          "content": "cmdline=\"C:\\\\Windows\\\\sysmon64.exe \\\"C:\\\\windows\\\\sysmon64.exe\\\" -nologo -accepteula -m\" (spawned by sysmon64 installer)",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 152,
+          "content": "type=event id=7045 ... detail1=\"Name: sysmon64\" cmdline=C:\\windows\\sysmon64.exe",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 13,
+          "content": "type=execution path=C:\\ProgramData\\sysmon\\sysmon64.exe hash=sha256:400001cc19",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 14,
+          "content": "type=execution path=C:\\Windows\\sysmon64.exe hash=sha256:400001cc1c",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f022",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "SYSVOL\\Users\\rsydow\\Downloads\\AcroRdrDC1801120035_en_US.exe"
+      },
+      "related_entities": [],
+      "justification": "Amcache confirms company=\"Adobe Systems Incorporated\" and MFT confirms Zone.Identifier present (browser download). Sysmon event 1 at 2018-08-10T03:00:20 shows rsydow executing it from Downloads, spawning setup.exe and msiexec.exe in a standard Adobe installation chain. The max_section_entropy=8.0 is expected for a compressed installer. The only remaining concern is that rsydow is a compromised account (Findings E003/E004), so the installation timing (2018-08-10, during active compromise) warrants noting. Cannot CONFIRM as malicious given the legitimate Adobe installation evidence.",
+      "evidence": [
+        {
+          "source_file": "analyst.txt",
+          "line": 5369,
+          "content": "cmdline=\"\\\"C:\\\\Users\\\\rsydow\\\\Downloads\\\\AcroRdrDC1801120035_en_US.exe\\\"\" (Sysmon RuleName: Info=Executables Launched In User Dirs)",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 5376,
+          "content": "cmdline=\"\\\"C:\\\\ProgramData\\\\Adobe\\\\Setup\\\\...\\\\setup.exe\\\" /msi DISABLE_CACHE=1\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 11,
+          "content": "type=execution ... company=\"Adobe Systems Incorporated\" artifact_source=amcache",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "analyst.txt",
+          "line": 39508,
+          "content": "ads=Zone.Identifier (confirms browser download)",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "disk-scan-f023",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "file_path",
+        "value": "172.16.5.26 (shieldbase\\rsydow failures)"
+      },
+      "related_entities": [],
+      "justification": "Disk finding: 172.16.5.26 (shieldbase\\rsydow failures)",
+      "evidence": []
+    }
+  ],
+  "artifacts": {
+    "human_report": "output/analyst.txt"
+  }
+}

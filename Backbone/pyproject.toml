@@ -9,6 +9,7 @@ description = "Orchestrator, threat intel, and report agents for multi-module DF
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "anthropic>=0.28",
     "jsonschema>=4.20",
     "pyyaml>=6.0",
 ]

@@ -1,0 +1,21 @@
+{
+  "contract_version": "1.0",
+  "case_id": "test-convergence",
+  "module": "disk",
+  "scan_started_at": "2026-05-20T10:00:00Z",
+  "scan_completed_at": "2026-05-20T10:00:01Z",
+  "summary": "1 confirmed finding — loop should converge without any routing round.",
+  "counts": {"confirmed": 1, "inconclusive": 0, "rejected": 0},
+  "findings": [
+    {
+      "finding_id": "disk-f001",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": ["T1003"],
+      "primary_entity": {"type": "file_path", "value": "C:\\Temp\\evil.exe"},
+      "related_entities": [],
+      "justification": "Malicious credential-dumping tool confirmed by MFT and shimcache.",
+      "evidence": []
+    }
+  ]
+}

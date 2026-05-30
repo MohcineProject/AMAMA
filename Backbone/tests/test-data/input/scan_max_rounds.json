@@ -1,0 +1,21 @@
+{
+  "contract_version": "1.0",
+  "case_id": "test-max-rounds",
+  "module": "disk",
+  "scan_started_at": "2026-05-20T10:00:00Z",
+  "scan_completed_at": "2026-05-20T10:00:01Z",
+  "summary": "1 INCONCLUSIVE finding. Loop runs with max_rounds=1 — must terminate with max_rounds_reached even if entity is still unresolved.",
+  "counts": {"confirmed": 0, "inconclusive": 1, "rejected": 0},
+  "findings": [
+    {
+      "finding_id": "disk-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {"type": "ip", "value": "10.0.0.1"},
+      "related_entities": [],
+      "justification": "IP seen in event log; corroboration needed but loop cap prevents it.",
+      "evidence": []
+    }
+  ]
+}

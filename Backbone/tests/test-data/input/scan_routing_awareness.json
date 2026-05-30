@@ -1,0 +1,31 @@
+{
+  "contract_version": "1.0",
+  "case_id": "test-routing-awareness",
+  "module": "triage",
+  "scan_started_at": "2026-05-20T10:00:00Z",
+  "scan_completed_at": "2026-05-20T10:00:01Z",
+  "summary": "2 INCONCLUSIVE findings from a triage module not in available_modules — neither disk nor ram pre-queried. LLM must select the correct module for each entity type.",
+  "counts": {"confirmed": 0, "inconclusive": 2, "rejected": 0},
+  "findings": [
+    {
+      "finding_id": "triage-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {"type": "pid", "value": "9999"},
+      "related_entities": [],
+      "justification": "PID observed in network traffic; needs process context. Expected routing: ram (supports pid, image_name, mutex).",
+      "evidence": []
+    },
+    {
+      "finding_id": "triage-f002",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {"type": "file_path", "value": "C:\\Temp\\suspicious.exe"},
+      "related_entities": [],
+      "justification": "Path referenced in logs; needs filesystem corroboration. Expected routing: disk (supports file_path, ip, domain, hash_*, user_sid).",
+      "evidence": []
+    }
+  ]
+}
