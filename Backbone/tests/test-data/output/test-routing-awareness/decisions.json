@@ -1,0 +1,20 @@
+[
+  {
+    "entity": {
+      "type": "pid",
+      "value": "9999"
+    },
+    "target_module": "ram",
+    "action": "query",
+    "reason": "Verdict is INCONCLUSIVE from triage. RAM module supports pid analysis and has not yet been queried."
+  },
+  {
+    "entity": {
+      "type": "file_path",
+      "value": "C:\\Temp\\suspicious.exe"
+    },
+    "target_module": "disk",
+    "action": "query",
+    "reason": "Verdict is INCONCLUSIVE from triage. Disk module supports file_path analysis and has not yet been queried."
+  }
+]

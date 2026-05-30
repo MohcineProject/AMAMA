@@ -1,0 +1,27 @@
+{
+  "case_id": "test-convergence",
+  "entity_count": 1,
+  "modules_scanned": [
+    "disk"
+  ],
+  "termination_reason": "convergence",
+  "rounds": [],
+  "nodes": {
+    "file_path:C:\\Temp\\evil.exe": {
+      "type": "file_path",
+      "value": "C:\\Temp\\evil.exe",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    }
+  }
+}

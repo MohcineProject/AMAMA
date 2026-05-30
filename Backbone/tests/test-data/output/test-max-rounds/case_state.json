@@ -1,0 +1,40 @@
+{
+  "case_id": "test-max-rounds",
+  "entity_count": 1,
+  "modules_scanned": [
+    "disk",
+    "ram"
+  ],
+  "termination_reason": "max_rounds_reached",
+  "rounds": [
+    {
+      "round": 1,
+      "queries_dispatched": 1,
+      "new_entities_added": 0
+    }
+  ],
+  "nodes": {
+    "ip:10.0.0.1": {
+      "type": "ip",
+      "value": "10.0.0.1",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk",
+        "ram"
+      ],
+      "finding_count": 2,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        },
+        {
+          "module": "ram",
+          "verdict": "NOT_FOUND",
+          "severity": null
+        }
+      ]
+    }
+  }
+}

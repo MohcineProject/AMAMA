@@ -1,0 +1,409 @@
+{
+  "case_id": "test-e2e-real",
+  "entity_count": 22,
+  "modules_scanned": [
+    "disk",
+    "ram"
+  ],
+  "termination_reason": "convergence",
+  "rounds": [
+    {
+      "round": 1,
+      "queries_dispatched": 3,
+      "new_entities_added": 0
+    },
+    {
+      "round": 2,
+      "queries_dispatched": 1,
+      "new_entities_added": 0
+    },
+    {
+      "round": 3,
+      "queries_dispatched": 1,
+      "new_entities_added": 0
+    }
+  ],
+  "nodes": {
+    "file_path:SYSVOL\\Windows\\Temp\\perfmon\\PWDumpX.exe": {
+      "type": "file_path",
+      "value": "SYSVOL\\Windows\\Temp\\perfmon\\PWDumpX.exe",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    "file_path:SYSVOL\\Windows\\Temp\\perfmon\\PsExec.exe": {
+      "type": "file_path",
+      "value": "SYSVOL\\Windows\\Temp\\perfmon\\PsExec.exe",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "file_path:C:\\ProgramData\\staging\\7za.exe": {
+      "type": "file_path",
+      "value": "C:\\ProgramData\\staging\\7za.exe",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "image_name:event_log_cleared": {
+      "type": "image_name",
+      "value": "event_log_cleared",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    "image_name:DMZ-FTP (-) [local svchost]": {
+      "type": "image_name",
+      "value": "DMZ-FTP (-) [local svchost]",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    "file_path:DMZ-FTP\\rsydow": {
+      "type": "file_path",
+      "value": "DMZ-FTP\\rsydow",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 2,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "CRITICAL"
+        },
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    "file_path:DMZ-FTP\\rsydow-a": {
+      "type": "file_path",
+      "value": "DMZ-FTP\\rsydow-a",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    "file_path:powershell.exe (NT AUTHORITY\\SYSTEM)": {
+      "type": "file_path",
+      "value": "powershell.exe (NT AUTHORITY\\SYSTEM)",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "image_name:sc failure Sysmon64": {
+      "type": "image_name",
+      "value": "sc failure Sysmon64",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "image_name:172.16.5.26 (BASE-ADMIN)": {
+      "type": "image_name",
+      "value": "172.16.5.26 (BASE-ADMIN)",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "image_name:172.16.4.5 (BASE-FILE)": {
+      "type": "image_name",
+      "value": "172.16.4.5 (BASE-FILE)",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "ip:172.16.10.13": {
+      "type": "ip",
+      "value": "172.16.10.13",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "file_path:DMZ-FTP\\nfury": {
+      "type": "file_path",
+      "value": "DMZ-FTP\\nfury",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "file_path:DMZ-FTP\\rsydow-f": {
+      "type": "file_path",
+      "value": "DMZ-FTP\\rsydow-f",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "file_path:Windows\\Temp\\perfmon\\PWDumpX.exe": {
+      "type": "file_path",
+      "value": "Windows\\Temp\\perfmon\\PWDumpX.exe",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    "file_path:Windows\\Temp\\perfmon\\DumpExt.dll": {
+      "type": "file_path",
+      "value": "Windows\\Temp\\perfmon\\DumpExt.dll",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    "file_path:C:\\ProgramData\\sysmon\\Auto_Update.bat": {
+      "type": "file_path",
+      "value": "C:\\ProgramData\\sysmon\\Auto_Update.bat",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    "file_path:Windows\\Temp\\perfmon\\PsExec.exe": {
+      "type": "file_path",
+      "value": "Windows\\Temp\\perfmon\\PsExec.exe",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "file_path:SYSVOL\\Windows\\subject_srv.exe": {
+      "type": "file_path",
+      "value": "SYSVOL\\Windows\\subject_srv.exe",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk",
+        "ram"
+      ],
+      "finding_count": 2,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        },
+        {
+          "module": "ram",
+          "verdict": "NOT_FOUND",
+          "severity": null
+        }
+      ]
+    },
+    "file_path:SYSVOL\\Windows\\sysmon64.exe": {
+      "type": "file_path",
+      "value": "SYSVOL\\Windows\\sysmon64.exe",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk",
+        "ram"
+      ],
+      "finding_count": 2,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        },
+        {
+          "module": "ram",
+          "verdict": "NOT_FOUND",
+          "severity": null
+        }
+      ]
+    },
+    "file_path:SYSVOL\\Users\\rsydow\\Downloads\\AcroRdrDC1801120035_en_US.exe": {
+      "type": "file_path",
+      "value": "SYSVOL\\Users\\rsydow\\Downloads\\AcroRdrDC1801120035_en_US.exe",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk",
+        "ram"
+      ],
+      "finding_count": 2,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        },
+        {
+          "module": "ram",
+          "verdict": "NOT_FOUND",
+          "severity": null
+        }
+      ]
+    },
+    "file_path:172.16.5.26 (shieldbase\\rsydow failures)": {
+      "type": "file_path",
+      "value": "172.16.5.26 (shieldbase\\rsydow failures)",
+      "first_seen_module": "disk",
+      "queried_modules": [
+        "disk",
+        "ram"
+      ],
+      "finding_count": 2,
+      "verdicts_received": [
+        {
+          "module": "disk",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        },
+        {
+          "module": "ram",
+          "verdict": "NOT_FOUND",
+          "severity": null
+        }
+      ]
+    }
+  }
+}
