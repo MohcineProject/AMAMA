@@ -1,0 +1,20 @@
+{
+  "contract_version": "1.0",
+  "query_id": "00000000-0000-0000-0000-000000000006",
+  "responding_module": "ti",
+  "entity": {
+    "type": "pid",
+    "value": "4512"
+  },
+  "verdict": "NOT_APPLICABLE",
+  "severity": null,
+  "mitre": [],
+  "justification": "TI module does not enrich entity type 'pid'",
+  "evidence": [],
+  "related_entities": [],
+  "cost": {
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0
+  }
+}

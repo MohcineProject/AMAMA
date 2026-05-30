@@ -36,9 +36,21 @@ cd Backbone
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1   # Windows
 pip install -e ".[dev]"
+cp .env.example .env            # then fill in your API keys (see below)
 pytest -q
 python -m backbone run --case-id test-001
 ```
+
+## API keys
+
+Copy `.env.example` to `.env` (git-ignored) and fill in the two keys before running tests:
+
+| Key | Used by | Where to get it |
+|-----|---------|-----------------|
+| `VT_API_KEY` | Threat Intel module — live IOC lookups against VirusTotal | [virustotal.com/gui/my-apikey](https://www.virustotal.com/gui/my-apikey) |
+| `ANTHROPIC_API_KEY` | Orchestrator agent — LLM routing decisions (Claude Haiku) | [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) |
+
+The 25 Threat Intel tests are fully mocked and run without any keys. The 3 non-LLM orchestrator tests also run without keys. The 4 `@pytest.mark.llm` orchestrator tests require `ANTHROPIC_API_KEY` and are skipped automatically when it is absent.
 
 ## Contracts
 

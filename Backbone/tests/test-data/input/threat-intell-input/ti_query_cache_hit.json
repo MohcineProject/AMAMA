@@ -1,0 +1,32 @@
+{
+  "description": "Same entity queried twice in the same case. VTClient.lookup called once; second response served from cache with updated query_id.",
+  "first_query": {
+    "contract_version": "1.0",
+    "query_id": "00000000-0000-0000-0000-000000000009",
+    "case_id": "case-cache-001",
+    "entity": {
+      "type": "ip",
+      "value": "10.0.0.42"
+    },
+    "context": {
+      "source_module": "orchestrator",
+      "source_finding_id": null,
+      "reason": "test"
+    }
+  },
+  "second_query": {
+    "contract_version": "1.0",
+    "query_id": "00000000-0000-0000-0000-000000000010",
+    "case_id": "case-cache-001",
+    "entity": {
+      "type": "ip",
+      "value": "10.0.0.42"
+    },
+    "context": {
+      "source_module": "orchestrator",
+      "source_finding_id": null,
+      "reason": "test"
+    }
+  },
+  "http_calls_made": 1
+}

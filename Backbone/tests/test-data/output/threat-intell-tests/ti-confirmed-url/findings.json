@@ -1,0 +1,28 @@
+{
+  "contract_version": "1.0",
+  "query_id": "00000000-0000-0000-0000-000000000005",
+  "responding_module": "ti",
+  "entity": {
+    "type": "url",
+    "value": "https://malware-distribution.example.com/payload.exe"
+  },
+  "verdict": "CONFIRMED",
+  "severity": "HIGH",
+  "mitre": [],
+  "justification": "VirusTotal: 10/80 engines flagged as malicious (severity=HIGH)",
+  "evidence": [
+    {
+      "source_file": "virustotal",
+      "line": 1,
+      "content": "VT detections: 10/80 engines flagged as malicious",
+      "verbatim": true,
+      "timestamp": "2023-11-14T22:13:20Z"
+    }
+  ],
+  "related_entities": [],
+  "cost": {
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0
+  }
+}

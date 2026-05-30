@@ -26,8 +26,8 @@ from backbone.orchestrator.agent import OrchestratorAgent
 from backbone.orchestrator.loop import InvestigationLoop
 
 _TEST_DATA = Path(__file__).parent / "test-data"
-_INPUT = _TEST_DATA / "input"
-_OUTPUT = _TEST_DATA / "output"
+_INPUT = _TEST_DATA / "input" / "orchestrator-input"
+_OUTPUT = _TEST_DATA / "output" / "orchestrator-tests"
 
 
 # ---------------------------------------------------------------------------
