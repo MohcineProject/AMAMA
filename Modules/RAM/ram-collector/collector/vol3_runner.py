@@ -239,8 +239,14 @@ def _run_vol_plugin(image_path: str, plugin: str, timeout: int = 3600) -> Option
     """
     if not Path(VOL3_PATH).exists():
         raise FileNotFoundError(
-            f"Volatility 3 not found at {VOL3_PATH}. "
-            f"Set VOL3_PATH env var to point to your local vol.py."
+            f"Volatility 3 not found at: {VOL3_PATH}\n\n"
+            "To fix:\n"
+            "  export VOL3_PATH=/path/to/volatility3/vol.py\n\n"
+            "vol.py lives in the root of your Volatility 3 install directory.\n"
+            "Example paths:\n"
+            "  /opt/volatility3/vol.py\n"
+            "  /home/<user>/tools/volatility3/vol.py\n"
+            "  /usr/local/volatility3/vol.py"
         )
 
     cmd = [PYTHON, VOL3_PATH, "-q", "-f", image_path, plugin]
@@ -430,8 +436,14 @@ def run_all_plugins(image_path: str, include_handles: bool = True) -> AllRawData
         raise FileNotFoundError(f"Memory image not found: {image_path}")
     if not Path(VOL3_PATH).exists():
         raise FileNotFoundError(
-            f"Volatility 3 not found at {VOL3_PATH}. "
-            f"Set VOL3_PATH env var to point to your local vol.py."
+            f"Volatility 3 not found at: {VOL3_PATH}\n\n"
+            "To fix:\n"
+            "  export VOL3_PATH=/path/to/volatility3/vol.py\n\n"
+            "vol.py lives in the root of your Volatility 3 install directory.\n"
+            "Example paths:\n"
+            "  /opt/volatility3/vol.py\n"
+            "  /home/<user>/tools/volatility3/vol.py\n"
+            "  /usr/local/volatility3/vol.py"
         )
 
     raw = AllRawData()

@@ -1,5 +1,5 @@
 === PIVOT EVIDENCE REPORT ===
-Generated: 2026-05-31T18:26:06Z
+Generated: 2026-05-31T20:09:02Z
 
 === PID 4420 (Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir=\"C:\\Users\\kali\\AppData\\Local\\Packages\\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1", ppid=5652) ===
 Cmdline: "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-
@@ -358,70 +358,70 @@ L1654: 0x990efa163080	4420	2316	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff
 L1776: 0x990efadd3080	4420	1848	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:53.000000 UTC	1600-08-22 23:57:44.000000 UTC
 
 --- ldrmodules.txt ---
-L5804: 4420	msedgewebview2	0x20887780000	False	False	False	\Windows\System32\en-US\kernel32.dll.mui
-L5805: 4420	msedgewebview2	0x20881b70000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
-L5806: 4420	msedgewebview2	0x208896f0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
-L5807: 4420	msedgewebview2	0x2088a2e0000	False	False	False	\Windows\System32\oleaccrc.dll
-L5808: 4420	msedgewebview2	0x2088a800000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
-L5809: 4420	msedgewebview2	0x2088a5e0000	False	False	False	\Windows\System32\en-US\Windows.Security.Authentication.Web.Core.dll.mui
-L5810: 4420	msedgewebview2	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
-L5811: 4420	msedgewebview2	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
-L5812: 4420	msedgewebview2	0x7fffd3410000	True	True	True	\Windows\System32\nlansp_c.dll
-L5813: 4420	msedgewebview2	0x7fffb7f40000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneds.dll
-L5814: 4420	msedgewebview2	0x7ff7021c0000	True	False	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
-L5815: 4420	msedgewebview2	0x7fffb0b10000	True	True	True	\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll
-L5816: 4420	msedgewebview2	0x7fffb6fd0000	True	True	True	\Windows\System32\Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient.dll
-L5817: 4420	msedgewebview2	0x7fffb8c70000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe\vcruntime140.dll
-L5818: 4420	msedgewebview2	0x7fffb8290000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\telclient.dll
-L5819: 4420	msedgewebview2	0x7fffbef70000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll
-L5820: 4420	msedgewebview2	0x7fffba5f0000	True	True	True	\Windows\System32\MicrosoftAccountWAMExtension.dll
-L5821: 4420	msedgewebview2	0x7fffbf540000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll
-L5822: 4420	msedgewebview2	0x7fffe02d0000	True	True	True	\Windows\System32\capauthz.dll
-L5823: 4420	msedgewebview2	0x7fffdc910000	True	True	True	\Windows\System32\DataExchange.dll
-L5824: 4420	msedgewebview2	0x7fffd6500000	True	True	True	\Windows\System32\CryptoWinRT.dll
-L5825: 4420	msedgewebview2	0x7fffd4410000	True	True	True	\Windows\System32\PCPKsp.dll
-L5826: 4420	msedgewebview2	0x7fffdca00000	True	True	True	\Windows\System32\oleacc.dll
-L5827: 4420	msedgewebview2	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
-L5828: 4420	msedgewebview2	0x7fffe2a30000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge_elf.dll
-L5829: 4420	msedgewebview2	0x7fffe03b0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
-L5830: 4420	msedgewebview2	0x7fffe2060000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\ffmpeg.dll
-L5831: 4420	msedgewebview2	0x7fffe5300000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll
-L5832: 4420	msedgewebview2	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
-L5833: 4420	msedgewebview2	0x7fffe55a0000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
-L5834: 4420	msedgewebview2	0x7fffe5820000	True	True	True	\Windows\System32\mfplat.dll
-L5835: 4420	msedgewebview2	0x7ffff0350000	True	True	True	\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll
-L5836: 4420	msedgewebview2	0x7fffeb830000	True	True	True	\Windows\System32\InputHost.dll
-L5837: 4420	msedgewebview2	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
-L5838: 4420	msedgewebview2	0x7fffe6b10000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
-L5839: 4420	msedgewebview2	0x7fffe6740000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
-L5840: 4420	msedgewebview2	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
-L5841: 4420	msedgewebview2	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
-L5842: 4420	msedgewebview2	0x7fffe9de0000	True	True	True	\Windows\System32\Windows.Web.dll
-L5843: 4420	msedgewebview2	0x7fffeb410000	True	True	True	\Windows\System32\directmanipulation.dll
-L5844: 4420	msedgewebview2	0x7fffea450000	True	True	True	\Windows\System32\RTWorkQ.dll
-L5845: 4420	msedgewebview2	0x7fffeb2c0000	True	True	True	\Windows\System32\ncryptprov.dll
-L5846: 4420	msedgewebview2	0x7fffeb690000	True	True	True	\Windows\System32\TextInputFramework.dll
-L5847: 4420	msedgewebview2	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
-L5848: 4420	msedgewebview2	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
-L5849: 4420	msedgewebview2	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
-L5850: 4420	msedgewebview2	0x7fffec800000	True	True	True	\Windows\System32\wkscli.dll
-L5851: 4420	msedgewebview2	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
-L5852: 4420	msedgewebview2	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
-L5853: 4420	msedgewebview2	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
-L5854: 4420	msedgewebview2	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
-L5855: 4420	msedgewebview2	0x7fffedfc0000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
-L5856: 4420	msedgewebview2	0x7fffee5a0000	True	True	True	\Windows\System32\mscms.dll
-L5857: 4420	msedgewebview2	0x7fffefa40000	True	True	True	\Windows\System32\Windows.UI.dll
-L5858: 4420	msedgewebview2	0x7fffeffd0000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\webview2_integration.dll
-L5859: 4420	msedgewebview2	0x7ffff23f0000	True	True	True	\Windows\System32\DWrite.dll
-L5860: 4420	msedgewebview2	0x7ffff1550000	True	True	True	\Windows\System32\netprofm.dll
-L5861: 4420	msedgewebview2	0x7ffff06c0000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe\vcruntime140_1.dll
-L5862: 4420	msedgewebview2	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
-L5863: 4420	msedgewebview2	0x7ffff1530000	True	True	True	\Windows\System32\tbs.dll
-L5864: 4420	msedgewebview2	0x7ffff23d0000	True	True	True	\Windows\System32\Microsoft.Internal.WarpPal.dll
-L5865: 4420	msedgewebview2	0x7ffff1960000	True	True	True	\Windows\System32\wevtapi.dll
-L5866: 4420	msedgewebview2	0x7ffff3b60000	True	True	True	\Windows\System32\winmm.dll
-L5867: 4420	msedgewebview2	0x7ffff3700000	True	True	True	\Windows\System32\CoreMessaging.dll
-L5868: 4420	msedgewebview2	0x7ffff2f10000	True	True	True	\Windows\System32\dcomp.dll
+L5802: 4420	msedgewebview2	0x20887780000	False	False	False	\Windows\System32\en-US\kernel32.dll.mui
+L5803: 4420	msedgewebview2	0x20881b70000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L5804: 4420	msedgewebview2	0x208896f0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
+L5805: 4420	msedgewebview2	0x2088a2e0000	False	False	False	\Windows\System32\oleaccrc.dll
+L5806: 4420	msedgewebview2	0x2088a800000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
+L5807: 4420	msedgewebview2	0x2088a5e0000	False	False	False	\Windows\System32\en-US\Windows.Security.Authentication.Web.Core.dll.mui
+L5808: 4420	msedgewebview2	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L5809: 4420	msedgewebview2	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L5810: 4420	msedgewebview2	0x7fffd3410000	True	True	True	\Windows\System32\nlansp_c.dll
+L5811: 4420	msedgewebview2	0x7fffb7f40000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneds.dll
+L5812: 4420	msedgewebview2	0x7ff7021c0000	True	False	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+L5813: 4420	msedgewebview2	0x7fffb0b10000	True	True	True	\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll
+L5814: 4420	msedgewebview2	0x7fffb6fd0000	True	True	True	\Windows\System32\Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient.dll
+L5815: 4420	msedgewebview2	0x7fffb8c70000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe\vcruntime140.dll
+L5816: 4420	msedgewebview2	0x7fffb8290000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\telclient.dll
+L5817: 4420	msedgewebview2	0x7fffbef70000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll
+L5818: 4420	msedgewebview2	0x7fffba5f0000	True	True	True	\Windows\System32\MicrosoftAccountWAMExtension.dll
+L5819: 4420	msedgewebview2	0x7fffbf540000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll
+L5820: 4420	msedgewebview2	0x7fffe02d0000	True	True	True	\Windows\System32\capauthz.dll
+L5821: 4420	msedgewebview2	0x7fffdc910000	True	True	True	\Windows\System32\DataExchange.dll
+L5822: 4420	msedgewebview2	0x7fffd6500000	True	True	True	\Windows\System32\CryptoWinRT.dll
+L5823: 4420	msedgewebview2	0x7fffd4410000	True	True	True	\Windows\System32\PCPKsp.dll
+L5824: 4420	msedgewebview2	0x7fffdca00000	True	True	True	\Windows\System32\oleacc.dll
+L5825: 4420	msedgewebview2	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
+L5826: 4420	msedgewebview2	0x7fffe2a30000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge_elf.dll
+L5827: 4420	msedgewebview2	0x7fffe03b0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L5828: 4420	msedgewebview2	0x7fffe2060000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\ffmpeg.dll
+L5829: 4420	msedgewebview2	0x7fffe5300000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll
+L5830: 4420	msedgewebview2	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L5831: 4420	msedgewebview2	0x7fffe55a0000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L5832: 4420	msedgewebview2	0x7fffe5820000	True	True	True	\Windows\System32\mfplat.dll
+L5833: 4420	msedgewebview2	0x7ffff0350000	True	True	True	\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll
+L5834: 4420	msedgewebview2	0x7fffeb830000	True	True	True	\Windows\System32\InputHost.dll
+L5835: 4420	msedgewebview2	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L5836: 4420	msedgewebview2	0x7fffe6b10000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L5837: 4420	msedgewebview2	0x7fffe6740000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L5838: 4420	msedgewebview2	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L5839: 4420	msedgewebview2	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L5840: 4420	msedgewebview2	0x7fffe9de0000	True	True	True	\Windows\System32\Windows.Web.dll
+L5841: 4420	msedgewebview2	0x7fffeb410000	True	True	True	\Windows\System32\directmanipulation.dll
+L5842: 4420	msedgewebview2	0x7fffea450000	True	True	True	\Windows\System32\RTWorkQ.dll
+L5843: 4420	msedgewebview2	0x7fffeb2c0000	True	True	True	\Windows\System32\ncryptprov.dll
+L5844: 4420	msedgewebview2	0x7fffeb690000	True	True	True	\Windows\System32\TextInputFramework.dll
+L5845: 4420	msedgewebview2	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L5846: 4420	msedgewebview2	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L5847: 4420	msedgewebview2	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L5848: 4420	msedgewebview2	0x7fffec800000	True	True	True	\Windows\System32\wkscli.dll
+L5849: 4420	msedgewebview2	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L5850: 4420	msedgewebview2	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L5851: 4420	msedgewebview2	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L5852: 4420	msedgewebview2	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L5853: 4420	msedgewebview2	0x7fffedfc0000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L5854: 4420	msedgewebview2	0x7fffee5a0000	True	True	True	\Windows\System32\mscms.dll
+L5855: 4420	msedgewebview2	0x7fffefa40000	True	True	True	\Windows\System32\Windows.UI.dll
+L5856: 4420	msedgewebview2	0x7fffeffd0000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\webview2_integration.dll
+L5857: 4420	msedgewebview2	0x7ffff23f0000	True	True	True	\Windows\System32\DWrite.dll
+L5858: 4420	msedgewebview2	0x7ffff1550000	True	True	True	\Windows\System32\netprofm.dll
+L5859: 4420	msedgewebview2	0x7ffff06c0000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe\vcruntime140_1.dll
+L5860: 4420	msedgewebview2	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L5861: 4420	msedgewebview2	0x7ffff1530000	True	True	True	\Windows\System32\tbs.dll
+L5862: 4420	msedgewebview2	0x7ffff23d0000	True	True	True	\Windows\System32\Microsoft.Internal.WarpPal.dll
+L5863: 4420	msedgewebview2	0x7ffff1960000	True	True	True	\Windows\System32\wevtapi.dll
+L5864: 4420	msedgewebview2	0x7ffff3b60000	True	True	True	\Windows\System32\winmm.dll
+L5865: 4420	msedgewebview2	0x7ffff3700000	True	True	True	\Windows\System32\CoreMessaging.dll
+L5866: 4420	msedgewebview2	0x7ffff2f10000	True	True	True	\Windows\System32\dcomp.dll
 
 === END OF PIVOT REPORT ===

@@ -1,5 +1,5 @@
 === PIVOT EVIDENCE REPORT ===
-Generated: 2026-05-31T18:26:04Z
+Generated: 2026-05-31T20:08:59Z
 
 === PID 2380 (cmd.exe, ppid=4240) ===
 Cmdline: C:\\WINDOWS\\system32\\cmd.exe /c \"\"C:\\Users\\kali\\AppData\\Local\\Temp\\EMwLtc9FBmME.bat\" \"
@@ -144,32 +144,32 @@ L1278: 0x990ef7d84080	2380	2180	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff
 L1688: 0x990efa3af080	2380	4204	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff608f87b30	\Windows\System32\cmd.exe	2026-05-13 19:26:56.000000 UTC	1600-08-22 23:57:43.000000 UTC
 
 --- ldrmodules.txt ---
-L6653: 2380	cmd.exe	0x272beed0000	False	False	False	\Windows\System32\en-US\cmd.exe.mui
-L6654: 2380	cmd.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
-L6655: 2380	cmd.exe	0x7ffff1640000	True	True	True	\Windows\System32\cmdext.dll
-L6656: 2380	cmd.exe	0x7ff608f60000	True	False	True	\Windows\System32\cmd.exe
-L6657: 2380	cmd.exe	0x7fffed4a0000	True	True	True	\Windows\System32\appidapi.dll
-L6658: 2380	cmd.exe	0x7fffed440000	True	True	True	\Windows\System32\srpapi.dll
-L6659: 2380	cmd.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
-L6660: 2380	cmd.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
-L6661: 2380	cmd.exe	0x7ffff5a00000	True	True	True	\Windows\System32\wldp.dll
-L6662: 2380	cmd.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
-L6663: 2380	cmd.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
-L6664: 2380	cmd.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
-L6665: 2380	cmd.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
-L6666: 2380	cmd.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
-L6667: 2380	cmd.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
-L6668: 2380	cmd.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
-L6669: 2380	cmd.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
-L6670: 2380	cmd.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
-L6671: 2380	cmd.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
-L6672: 2380	cmd.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
-L6673: 2380	cmd.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
-L6674: 2380	cmd.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
-L6675: 2380	cmd.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
-L6676: 2380	cmd.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
-L6677: 2380	cmd.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
-L6678: 2380	cmd.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L6651: 2380	cmd.exe	0x272beed0000	False	False	False	\Windows\System32\en-US\cmd.exe.mui
+L6652: 2380	cmd.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6653: 2380	cmd.exe	0x7ffff1640000	True	True	True	\Windows\System32\cmdext.dll
+L6654: 2380	cmd.exe	0x7ff608f60000	True	False	True	\Windows\System32\cmd.exe
+L6655: 2380	cmd.exe	0x7fffed4a0000	True	True	True	\Windows\System32\appidapi.dll
+L6656: 2380	cmd.exe	0x7fffed440000	True	True	True	\Windows\System32\srpapi.dll
+L6657: 2380	cmd.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L6658: 2380	cmd.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L6659: 2380	cmd.exe	0x7ffff5a00000	True	True	True	\Windows\System32\wldp.dll
+L6660: 2380	cmd.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6661: 2380	cmd.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6662: 2380	cmd.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6663: 2380	cmd.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6664: 2380	cmd.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6665: 2380	cmd.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6666: 2380	cmd.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6667: 2380	cmd.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L6668: 2380	cmd.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6669: 2380	cmd.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6670: 2380	cmd.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6671: 2380	cmd.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6672: 2380	cmd.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6673: 2380	cmd.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6674: 2380	cmd.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6675: 2380	cmd.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6676: 2380	cmd.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
 
 --- malware_ldrmodules.txt ---
 L6651: 2380	cmd.exe	0x272beed0000	False	False	False	\Windows\System32\en-US\cmd.exe.mui
@@ -510,61 +510,61 @@ L911: 0x990ef70b0080	3144	3764	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7
 L1137: 0x990ef78f5040	3144	4428	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:23:52.000000 UTC	1600-08-22 23:57:38.000000 UTC
 
 --- ldrmodules.txt ---
-L1920: 3144	MpDefenderCore	0x7fffe9270000	True	True	True	\Windows\System32\tdh.dll
-L1921: 3144	MpDefenderCore	0x14761300000	False	False	False	\Windows\System32\en-US\pdh.dll.mui
-L1922: 3144	MpDefenderCore	0x14762520000	False	False	False	\Windows\SystemResources\wininet.dll.mun
-L1923: 3144	MpDefenderCore	0x7fffe77e0000	True	True	True	\Windows\System32\perfproc.dll
-L1924: 3144	MpDefenderCore	0x7fffe6ce0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
-L1925: 3144	MpDefenderCore	0x7ff7d1880000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpDefenderCoreService.exe
-L1926: 3144	MpDefenderCore	0x7fffe6e00000	True	True	True	\Windows\System32\perfos.dll
-L1927: 3144	MpDefenderCore	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
-L1928: 3144	MpDefenderCore	0x7fffe7990000	True	True	True	\Windows\System32\pdh.dll
-L1929: 3144	MpDefenderCore	0x7fffe8fe0000	True	True	True	\Windows\System32\wininet.dll
-L1930: 3144	MpDefenderCore	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
-L1931: 3144	MpDefenderCore	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
-L1932: 3144	MpDefenderCore	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
-L1933: 3144	MpDefenderCore	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
-L1934: 3144	MpDefenderCore	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
-L1935: 3144	MpDefenderCore	0x7fffe9f10000	True	True	True	\Windows\System32\rasadhlp.dll
-L1936: 3144	MpDefenderCore	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
-L1937: 3144	MpDefenderCore	0x7fffedb90000	True	True	True	\Windows\System32\urlmon.dll
-L1938: 3144	MpDefenderCore	0x7ffff41c0000	True	True	True	\Windows\System32\pfclient.dll
-L1939: 3144	MpDefenderCore	0x7ffff4030000	True	True	True	\Windows\System32\winnsi.dll
-L1940: 3144	MpDefenderCore	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
-L1941: 3144	MpDefenderCore	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
-L1942: 3144	MpDefenderCore	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
-L1943: 3144	MpDefenderCore	0x7ffff4b20000	True	True	True	\Windows\System32\dnsapi.dll
-L1944: 3144	MpDefenderCore	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
-L1945: 3144	MpDefenderCore	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
-L1946: 3144	MpDefenderCore	0x7ffff51f0000	True	True	True	\Windows\System32\ntmarta.dll
-L1947: 3144	MpDefenderCore	0x7ffff5640000	True	True	True	\Windows\System32\mswsock.dll
-L1948: 3144	MpDefenderCore	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
-L1949: 3144	MpDefenderCore	0x7ffff64b0000	True	True	True	\Windows\System32\wintrust.dll
-L1950: 3144	MpDefenderCore	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
-L1951: 3144	MpDefenderCore	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
-L1952: 3144	MpDefenderCore	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
-L1953: 3144	MpDefenderCore	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
-L1954: 3144	MpDefenderCore	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
-L1955: 3144	MpDefenderCore	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
-L1956: 3144	MpDefenderCore	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
-L1957: 3144	MpDefenderCore	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
-L1958: 3144	MpDefenderCore	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
-L1959: 3144	MpDefenderCore	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
-L1960: 3144	MpDefenderCore	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
-L1961: 3144	MpDefenderCore	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
-L1962: 3144	MpDefenderCore	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
-L1963: 3144	MpDefenderCore	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
-L1964: 3144	MpDefenderCore	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
-L1965: 3144	MpDefenderCore	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
-L1966: 3144	MpDefenderCore	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
-L1967: 3144	MpDefenderCore	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
-L1968: 3144	MpDefenderCore	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
-L1969: 3144	MpDefenderCore	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
-L1970: 3144	MpDefenderCore	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
-L1971: 3144	MpDefenderCore	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
-L1972: 3144	MpDefenderCore	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
-L1973: 3144	MpDefenderCore	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
-L1974: 3144	MpDefenderCore	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L1918: 3144	MpDefenderCore	0x7fffe9270000	True	True	True	\Windows\System32\tdh.dll
+L1919: 3144	MpDefenderCore	0x14761300000	False	False	False	\Windows\System32\en-US\pdh.dll.mui
+L1920: 3144	MpDefenderCore	0x14762520000	False	False	False	\Windows\SystemResources\wininet.dll.mun
+L1921: 3144	MpDefenderCore	0x7fffe77e0000	True	True	True	\Windows\System32\perfproc.dll
+L1922: 3144	MpDefenderCore	0x7fffe6ce0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L1923: 3144	MpDefenderCore	0x7ff7d1880000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpDefenderCoreService.exe
+L1924: 3144	MpDefenderCore	0x7fffe6e00000	True	True	True	\Windows\System32\perfos.dll
+L1925: 3144	MpDefenderCore	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L1926: 3144	MpDefenderCore	0x7fffe7990000	True	True	True	\Windows\System32\pdh.dll
+L1927: 3144	MpDefenderCore	0x7fffe8fe0000	True	True	True	\Windows\System32\wininet.dll
+L1928: 3144	MpDefenderCore	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L1929: 3144	MpDefenderCore	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L1930: 3144	MpDefenderCore	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L1931: 3144	MpDefenderCore	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L1932: 3144	MpDefenderCore	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L1933: 3144	MpDefenderCore	0x7fffe9f10000	True	True	True	\Windows\System32\rasadhlp.dll
+L1934: 3144	MpDefenderCore	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L1935: 3144	MpDefenderCore	0x7fffedb90000	True	True	True	\Windows\System32\urlmon.dll
+L1936: 3144	MpDefenderCore	0x7ffff41c0000	True	True	True	\Windows\System32\pfclient.dll
+L1937: 3144	MpDefenderCore	0x7ffff4030000	True	True	True	\Windows\System32\winnsi.dll
+L1938: 3144	MpDefenderCore	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L1939: 3144	MpDefenderCore	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L1940: 3144	MpDefenderCore	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L1941: 3144	MpDefenderCore	0x7ffff4b20000	True	True	True	\Windows\System32\dnsapi.dll
+L1942: 3144	MpDefenderCore	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L1943: 3144	MpDefenderCore	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L1944: 3144	MpDefenderCore	0x7ffff51f0000	True	True	True	\Windows\System32\ntmarta.dll
+L1945: 3144	MpDefenderCore	0x7ffff5640000	True	True	True	\Windows\System32\mswsock.dll
+L1946: 3144	MpDefenderCore	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L1947: 3144	MpDefenderCore	0x7ffff64b0000	True	True	True	\Windows\System32\wintrust.dll
+L1948: 3144	MpDefenderCore	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L1949: 3144	MpDefenderCore	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L1950: 3144	MpDefenderCore	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L1951: 3144	MpDefenderCore	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L1952: 3144	MpDefenderCore	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L1953: 3144	MpDefenderCore	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L1954: 3144	MpDefenderCore	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L1955: 3144	MpDefenderCore	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L1956: 3144	MpDefenderCore	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L1957: 3144	MpDefenderCore	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L1958: 3144	MpDefenderCore	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L1959: 3144	MpDefenderCore	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
+L1960: 3144	MpDefenderCore	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L1961: 3144	MpDefenderCore	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L1962: 3144	MpDefenderCore	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L1963: 3144	MpDefenderCore	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
+L1964: 3144	MpDefenderCore	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L1965: 3144	MpDefenderCore	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L1966: 3144	MpDefenderCore	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L1967: 3144	MpDefenderCore	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L1968: 3144	MpDefenderCore	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L1969: 3144	MpDefenderCore	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L1970: 3144	MpDefenderCore	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L1971: 3144	MpDefenderCore	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L1972: 3144	MpDefenderCore	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
 
 --- malware_ldrmodules.txt ---
 L1918: 3144	MpDefenderCore	0x7fffe9270000	True	True	True	\Windows\System32\tdh.dll
@@ -1032,20 +1032,20 @@ L1667: 0x990efa19c080	3284	7736	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff
 L1706: 0x990efa6ce080	3284	2584	0xe08e87cda630	-	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:05.000000 UTC	1600-08-22 23:57:43.000000 UTC
 
 --- malfind.txt ---
-L9: 3284	MsMpEng.exe	0x1f0a21d0000	0x1f0a22dcfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
-L14: 3284	MsMpEng.exe	0x1f0a20b0000	0x1f0a21bcfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
-L19: 3284	MsMpEng.exe	0x1f0a22f0000	0x1f0a23fcfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
-L24: 3284	MsMpEng.exe	0x1f0aa640000	0x1f0aa642fff	VadS	PAGE_EXECUTE_READWRITE	3	1	Disabled	Function prologue	
-L29: 3284	MsMpEng.exe	0x1f0aa570000	0x1f0aa570fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
-L34: 3284	MsMpEng.exe	0x1f0aa560000	0x1f0aa560fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
-L39: 3284	MsMpEng.exe	0x1f0aa5b0000	0x1f0aa5b1fff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	Function prologue	
-L44: 3284	MsMpEng.exe	0x1f0aa650000	0x1f0aa650fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
-L49: 3284	MsMpEng.exe	0x1f0aa750000	0x1f0aa751fff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	Function prologue	
-L54: 3284	MsMpEng.exe	0x1f0aa7f0000	0x1f0aa7f0fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
-L59: 3284	MsMpEng.exe	0x1f0aa830000	0x1f0aa83dfff	VadS	PAGE_EXECUTE_READWRITE	14	1	Disabled	Function prologue	
-L64: 3284	MsMpEng.exe	0x1f0aadd0000	0x1f0aaecffff	VadS	PAGE_EXECUTE_READWRITE	256	1	Disabled	N/A	
-L69: 3284	MsMpEng.exe	0x1f0aaed0000	0x1f0ab0cffff	VadS	PAGE_EXECUTE_READWRITE	512	1	Disabled	N/A	
-L74: 3284	MsMpEng.exe	0x1f0abaa0000	0x1f0abaa0fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
+L5: 3284	MsMpEng.exe	0x1f0a21d0000	0x1f0a22dcfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
+L10: 3284	MsMpEng.exe	0x1f0a20b0000	0x1f0a21bcfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
+L15: 3284	MsMpEng.exe	0x1f0a22f0000	0x1f0a23fcfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
+L20: 3284	MsMpEng.exe	0x1f0aa640000	0x1f0aa642fff	VadS	PAGE_EXECUTE_READWRITE	3	1	Disabled	Function prologue	
+L25: 3284	MsMpEng.exe	0x1f0aa570000	0x1f0aa570fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
+L30: 3284	MsMpEng.exe	0x1f0aa560000	0x1f0aa560fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
+L35: 3284	MsMpEng.exe	0x1f0aa5b0000	0x1f0aa5b1fff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	Function prologue	
+L40: 3284	MsMpEng.exe	0x1f0aa650000	0x1f0aa650fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
+L45: 3284	MsMpEng.exe	0x1f0aa750000	0x1f0aa751fff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	Function prologue	
+L50: 3284	MsMpEng.exe	0x1f0aa7f0000	0x1f0aa7f0fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
+L55: 3284	MsMpEng.exe	0x1f0aa830000	0x1f0aa83dfff	VadS	PAGE_EXECUTE_READWRITE	14	1	Disabled	Function prologue	
+L60: 3284	MsMpEng.exe	0x1f0aadd0000	0x1f0aaecffff	VadS	PAGE_EXECUTE_READWRITE	256	1	Disabled	N/A	
+L65: 3284	MsMpEng.exe	0x1f0aaed0000	0x1f0ab0cffff	VadS	PAGE_EXECUTE_READWRITE	512	1	Disabled	N/A	
+L70: 3284	MsMpEng.exe	0x1f0abaa0000	0x1f0abaa0fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
 
 --- malware_malfind.txt ---
 L5: 3284	MsMpEng.exe	0x1f0a21d0000	0x1f0a22dcfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
@@ -1064,80 +1064,80 @@ L65: 3284	MsMpEng.exe	0x1f0aaed0000	0x1f0ab0cffff	VadS	PAGE_EXECUTE_READWRITE	51
 L70: 3284	MsMpEng.exe	0x1f0abaa0000	0x1f0abaa0fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
 
 --- ldrmodules.txt ---
-L2115: 3284	MsMpEng.exe	0x1f08ac70000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
-L2116: 3284	MsMpEng.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
-L2117: 3284	MsMpEng.exe	0x7fffedb90000	True	True	True	\Windows\System32\urlmon.dll
-L2118: 3284	MsMpEng.exe	0x7fffe7da0000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpSvc.dll
-L2119: 3284	MsMpEng.exe	0x7fffe1fb0000	True	True	True	\Windows\System32\WofUtil.dll
-L2120: 3284	MsMpEng.exe	0x7fffb86d0000	True	True	True	\Windows\System32\wscapi.dll
-L2121: 3284	MsMpEng.exe	0x7ff763030000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MsMpEng.exe
-L2122: 3284	MsMpEng.exe	0x7fffe7a10000	True	True	True	\Windows\System32\mpr.dll
-L2123: 3284	MsMpEng.exe	0x7fffe41a0000	True	True	True	\ProgramData\Microsoft\Windows Defender\Definition Updates\{C93783BA-4389-41B8-8237-FFC7DD9455D5}\mpengine.dll
-L2124: 3284	MsMpEng.exe	0x7fffe7b70000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpClient.dll
-L2125: 3284	MsMpEng.exe	0x7fffea8f0000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpCommu.dll
-L2126: 3284	MsMpEng.exe	0x7fffe9270000	True	True	True	\Windows\System32\tdh.dll
-L2127: 3284	MsMpEng.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
-L2128: 3284	MsMpEng.exe	0x7fffea770000	True	True	True	\Windows\System32\wscproxystub.dll
-L2129: 3284	MsMpEng.exe	0x7fffe9910000	True	True	True	\Windows\System32\xmllite.dll
-L2130: 3284	MsMpEng.exe	0x7fffea7b0000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpRtp.dll
-L2131: 3284	MsMpEng.exe	0x7fffec420000	True	True	True	\Windows\System32\FWPUCLNT.DLL
-L2132: 3284	MsMpEng.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
-L2133: 3284	MsMpEng.exe	0x7fffeabf0000	True	True	True	\Windows\System32\fltLib.dll
-L2134: 3284	MsMpEng.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
-L2135: 3284	MsMpEng.exe	0x7fffec750000	True	True	True	\Windows\System32\taskschd.dll
-L2136: 3284	MsMpEng.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
-L2137: 3284	MsMpEng.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
-L2138: 3284	MsMpEng.exe	0x7ffff48f0000	True	True	True	\Windows\System32\FirewallAPI.dll
-L2139: 3284	MsMpEng.exe	0x7ffff3c50000	True	True	True	\Windows\System32\secur32.dll
-L2140: 3284	MsMpEng.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
-L2141: 3284	MsMpEng.exe	0x7ffff1550000	True	True	True	\Windows\System32\netprofm.dll
-L2142: 3284	MsMpEng.exe	0x7ffff4860000	True	True	True	\Windows\System32\fwbase.dll
-L2143: 3284	MsMpEng.exe	0x7ffff3c60000	True	True	True	\Windows\System32\wtsapi32.dll
-L2144: 3284	MsMpEng.exe	0x7ffff4a40000	True	True	True	\Windows\System32\slc.dll
-L2145: 3284	MsMpEng.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
-L2146: 3284	MsMpEng.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
-L2147: 3284	MsMpEng.exe	0x7ffff5030000	True	True	True	\Windows\System32\rsaenh.dll
-L2148: 3284	MsMpEng.exe	0x7ffff51f0000	True	True	True	\Windows\System32\ntmarta.dll
-L2149: 3284	MsMpEng.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
-L2150: 3284	MsMpEng.exe	0x7ffff56b0000	True	True	True	\Windows\System32\gpapi.dll
-L2151: 3284	MsMpEng.exe	0x7ffff5930000	True	True	True	\Windows\System32\cryptsp.dll
-L2152: 3284	MsMpEng.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
-L2153: 3284	MsMpEng.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
-L2154: 3284	MsMpEng.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
-L2155: 3284	MsMpEng.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
-L2156: 3284	MsMpEng.exe	0x7ffff5f30000	True	True	True	\Windows\System32\dpapi.dll
-L2157: 3284	MsMpEng.exe	0x7ffff5f00000	True	True	True	\Windows\System32\devobj.dll
-L2158: 3284	MsMpEng.exe	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
-L2159: 3284	MsMpEng.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
-L2160: 3284	MsMpEng.exe	0x7ffff60f0000	True	True	True	\Windows\System32\winsta.dll
-L2161: 3284	MsMpEng.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
-L2162: 3284	MsMpEng.exe	0x7ffff64b0000	True	True	True	\Windows\System32\wintrust.dll
-L2163: 3284	MsMpEng.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
-L2164: 3284	MsMpEng.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
-L2165: 3284	MsMpEng.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
-L2166: 3284	MsMpEng.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
-L2167: 3284	MsMpEng.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
-L2168: 3284	MsMpEng.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
-L2169: 3284	MsMpEng.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
-L2170: 3284	MsMpEng.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
-L2171: 3284	MsMpEng.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
-L2172: 3284	MsMpEng.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
-L2173: 3284	MsMpEng.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
-L2174: 3284	MsMpEng.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
-L2175: 3284	MsMpEng.exe	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
-L2176: 3284	MsMpEng.exe	0x7ffff81c0000	True	True	True	\Windows\System32\setupapi.dll
-L2177: 3284	MsMpEng.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
-L2178: 3284	MsMpEng.exe	0x7ffff86d0000	True	True	True	\Windows\System32\imagehlp.dll
-L2179: 3284	MsMpEng.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
-L2180: 3284	MsMpEng.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
-L2181: 3284	MsMpEng.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
-L2182: 3284	MsMpEng.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
-L2183: 3284	MsMpEng.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
-L2184: 3284	MsMpEng.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
-L2185: 3284	MsMpEng.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
-L2186: 3284	MsMpEng.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
-L2187: 3284	MsMpEng.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
-L2188: 3284	MsMpEng.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L2113: 3284	MsMpEng.exe	0x1f08ac70000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L2114: 3284	MsMpEng.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L2115: 3284	MsMpEng.exe	0x7fffedb90000	True	True	True	\Windows\System32\urlmon.dll
+L2116: 3284	MsMpEng.exe	0x7fffe7da0000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpSvc.dll
+L2117: 3284	MsMpEng.exe	0x7fffe1fb0000	True	True	True	\Windows\System32\WofUtil.dll
+L2118: 3284	MsMpEng.exe	0x7fffb86d0000	True	True	True	\Windows\System32\wscapi.dll
+L2119: 3284	MsMpEng.exe	0x7ff763030000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MsMpEng.exe
+L2120: 3284	MsMpEng.exe	0x7fffe7a10000	True	True	True	\Windows\System32\mpr.dll
+L2121: 3284	MsMpEng.exe	0x7fffe41a0000	True	True	True	\ProgramData\Microsoft\Windows Defender\Definition Updates\{C93783BA-4389-41B8-8237-FFC7DD9455D5}\mpengine.dll
+L2122: 3284	MsMpEng.exe	0x7fffe7b70000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpClient.dll
+L2123: 3284	MsMpEng.exe	0x7fffea8f0000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpCommu.dll
+L2124: 3284	MsMpEng.exe	0x7fffe9270000	True	True	True	\Windows\System32\tdh.dll
+L2125: 3284	MsMpEng.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L2126: 3284	MsMpEng.exe	0x7fffea770000	True	True	True	\Windows\System32\wscproxystub.dll
+L2127: 3284	MsMpEng.exe	0x7fffe9910000	True	True	True	\Windows\System32\xmllite.dll
+L2128: 3284	MsMpEng.exe	0x7fffea7b0000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpRtp.dll
+L2129: 3284	MsMpEng.exe	0x7fffec420000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L2130: 3284	MsMpEng.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L2131: 3284	MsMpEng.exe	0x7fffeabf0000	True	True	True	\Windows\System32\fltLib.dll
+L2132: 3284	MsMpEng.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L2133: 3284	MsMpEng.exe	0x7fffec750000	True	True	True	\Windows\System32\taskschd.dll
+L2134: 3284	MsMpEng.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L2135: 3284	MsMpEng.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L2136: 3284	MsMpEng.exe	0x7ffff48f0000	True	True	True	\Windows\System32\FirewallAPI.dll
+L2137: 3284	MsMpEng.exe	0x7ffff3c50000	True	True	True	\Windows\System32\secur32.dll
+L2138: 3284	MsMpEng.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L2139: 3284	MsMpEng.exe	0x7ffff1550000	True	True	True	\Windows\System32\netprofm.dll
+L2140: 3284	MsMpEng.exe	0x7ffff4860000	True	True	True	\Windows\System32\fwbase.dll
+L2141: 3284	MsMpEng.exe	0x7ffff3c60000	True	True	True	\Windows\System32\wtsapi32.dll
+L2142: 3284	MsMpEng.exe	0x7ffff4a40000	True	True	True	\Windows\System32\slc.dll
+L2143: 3284	MsMpEng.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L2144: 3284	MsMpEng.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2145: 3284	MsMpEng.exe	0x7ffff5030000	True	True	True	\Windows\System32\rsaenh.dll
+L2146: 3284	MsMpEng.exe	0x7ffff51f0000	True	True	True	\Windows\System32\ntmarta.dll
+L2147: 3284	MsMpEng.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L2148: 3284	MsMpEng.exe	0x7ffff56b0000	True	True	True	\Windows\System32\gpapi.dll
+L2149: 3284	MsMpEng.exe	0x7ffff5930000	True	True	True	\Windows\System32\cryptsp.dll
+L2150: 3284	MsMpEng.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L2151: 3284	MsMpEng.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L2152: 3284	MsMpEng.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2153: 3284	MsMpEng.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L2154: 3284	MsMpEng.exe	0x7ffff5f30000	True	True	True	\Windows\System32\dpapi.dll
+L2155: 3284	MsMpEng.exe	0x7ffff5f00000	True	True	True	\Windows\System32\devobj.dll
+L2156: 3284	MsMpEng.exe	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
+L2157: 3284	MsMpEng.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L2158: 3284	MsMpEng.exe	0x7ffff60f0000	True	True	True	\Windows\System32\winsta.dll
+L2159: 3284	MsMpEng.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L2160: 3284	MsMpEng.exe	0x7ffff64b0000	True	True	True	\Windows\System32\wintrust.dll
+L2161: 3284	MsMpEng.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L2162: 3284	MsMpEng.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L2163: 3284	MsMpEng.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2164: 3284	MsMpEng.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L2165: 3284	MsMpEng.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2166: 3284	MsMpEng.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2167: 3284	MsMpEng.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2168: 3284	MsMpEng.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2169: 3284	MsMpEng.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2170: 3284	MsMpEng.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L2171: 3284	MsMpEng.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2172: 3284	MsMpEng.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2173: 3284	MsMpEng.exe	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
+L2174: 3284	MsMpEng.exe	0x7ffff81c0000	True	True	True	\Windows\System32\setupapi.dll
+L2175: 3284	MsMpEng.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2176: 3284	MsMpEng.exe	0x7ffff86d0000	True	True	True	\Windows\System32\imagehlp.dll
+L2177: 3284	MsMpEng.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L2178: 3284	MsMpEng.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L2179: 3284	MsMpEng.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L2180: 3284	MsMpEng.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2181: 3284	MsMpEng.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2182: 3284	MsMpEng.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L2183: 3284	MsMpEng.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2184: 3284	MsMpEng.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L2185: 3284	MsMpEng.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L2186: 3284	MsMpEng.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
 
 --- malware_ldrmodules.txt ---
 L2113: 3284	MsMpEng.exe	0x1f08ac70000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui

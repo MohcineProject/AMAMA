@@ -1,0 +1,162 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cyber-agent.local/schemas/module_scan_result.schema.json",
+  "title": "ModuleScanResult",
+  "description": "Module → Orchestrator: a module's initial broad-scan output, emitted unprompted at case start.",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "case_id",
+    "module",
+    "scan_started_at",
+    "scan_completed_at",
+    "summary",
+    "counts",
+    "findings",
+    "artifacts"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": { "type": "string", "const": "1.0" },
+    "case_id": { "type": "string", "minLength": 1 },
+    "module": { "type": "string", "enum": ["ram", "disk", "network"] },
+    "scan_started_at":   { "type": "string", "format": "date-time" },
+    "scan_completed_at": { "type": "string", "format": "date-time" },
+    "summary": { "type": "string", "minLength": 1 },
+    "counts": {
+      "type": "object",
+      "required": ["confirmed", "inconclusive", "rejected"],
+      "additionalProperties": false,
+      "properties": {
+        "confirmed":    { "type": "integer", "minimum": 0 },
+        "inconclusive": { "type": "integer", "minimum": 0 },
+        "rejected":     { "type": "integer", "minimum": 0 }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "verdict",
+          "primary_entity",
+          "related_entities",
+          "justification",
+          "evidence"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Convention: <module>-<chunk_or_subscan>-f<index> (e.g., ram-c001-f001)."
+          },
+          "verdict": {
+            "type": "string",
+            "enum": ["CONFIRMED", "INCONCLUSIVE", "REJECTED"]
+          },
+          "severity": {
+            "oneOf": [
+              { "type": "null" },
+              { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] }
+            ]
+          },
+          "mitre": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$" },
+            "default": []
+          },
+          "primary_entity": {
+            "type": "object",
+            "required": ["type", "value"],
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "ip", "domain", "url",
+                  "hash_md5", "hash_sha1", "hash_sha256",
+                  "file_path", "image_name",
+                  "pid", "registry_key", "mutex", "user_sid"
+                ]
+              },
+              "value": { "type": "string", "minLength": 1 }
+            }
+          },
+          "related_entities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type", "value", "relationship"],
+              "additionalProperties": false,
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "ip", "domain", "url",
+                    "hash_md5", "hash_sha1", "hash_sha256",
+                    "file_path", "image_name",
+                    "pid", "registry_key", "mutex", "user_sid"
+                  ]
+                },
+                "value": { "type": "string", "minLength": 1 },
+                "relationship": { "type": "string", "minLength": 1 }
+              }
+            }
+          },
+          "justification": { "type": "string", "minLength": 1 },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["source_file", "line", "content", "verbatim"],
+              "additionalProperties": false,
+              "properties": {
+                "source_file": { "type": "string", "minLength": 1 },
+                "line": { "type": "integer", "minimum": 1 },
+                "content": { "type": "string" },
+                "verbatim": { "type": "boolean" },
+                "timestamp": {
+                  "oneOf": [
+                    { "type": "null" },
+                    { "type": "string", "format": "date-time" }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "verdict": { "const": "CONFIRMED" } } },
+            "then": {
+              "properties": {
+                "severity": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] }
+              },
+              "required": ["severity"]
+            },
+            "else": {
+              "properties": { "severity": { "type": "null" } }
+            }
+          }
+        ]
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "required": ["human_report"],
+      "additionalProperties": true,
+      "properties": {
+        "human_report": {
+          "type": "string",
+          "description": "Path (relative to module repo root) to the module's primary human-readable audit-trail file."
+        },
+        "per_chunk": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}
