@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-31T14:51:58Z
+Chunk: chunk_005.txt
+Summary: Rule-based fallback — LLM unavailable
+
+[PROCESS]
+pid: 5356
+ppid: 516
+image: FileCoAuth.exe
+cmdline: \"C:\\Users\\kali\\AppData\\Local\\Microsoft\\OneDrive\\26.070.0414.0001\\FileCoAuth.exe\" -Embedding
+severity: LOW
+reasons: Unusual path: C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe
+

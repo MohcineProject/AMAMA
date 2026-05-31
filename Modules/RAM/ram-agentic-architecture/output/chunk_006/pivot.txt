@@ -1,0 +1,427 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-05-31T14:51:58Z
+
+=== PID 2736 (SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir=\"C:\\Users\\kali\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)\" --lang=en-US --mojo-named-platform-channel-pipe=5452.4512.18236964100010556028 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4", ppid=5452) ===
+Cmdline: "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-
+
+--- pslist.txt ---
+L90: 2736	5452	msedgewebview2	0x990ef76df080	50	-	1	False	2026-05-13 19:15:55.000000 UTC	N/A	Disabled
+L91: 1316	2736	msedgewebview2	0x990ef76da080	10	-	1	False	2026-05-13 19:15:57.000000 UTC	N/A	Disabled
+L93: 5408	2736	msedgewebview2	0x990ef76d80c0	20	-	1	False	2026-05-13 19:15:58.000000 UTC	N/A	Disabled
+L94: 5156	2736	msedgewebview2	0x990ef7036080	16	-	1	False	2026-05-13 19:15:58.000000 UTC	N/A	Disabled
+L95: 6224	2736	msedgewebview2	0x990ef7f52080	11	-	1	False	2026-05-13 19:15:59.000000 UTC	N/A	Disabled
+L96: 6296	2736	msedgewebview2	0x990ef8446080	19	-	1	False	2026-05-13 19:15:59.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L90: 2736	msedgewebview2	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --embedded-browser-webview=1 --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)" --lang=en-US --mojo-named-platform-channel-pipe=5452.4512.18236964100010556028 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4
+
+--- privileges.txt ---
+L2980: 2736	msedgewebview2	2	SeCreateTokenPrivilege		Create a token object
+L2981: 2736	msedgewebview2	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2982: 2736	msedgewebview2	4	SeLockMemoryPrivilege		Lock pages in memory
+L2983: 2736	msedgewebview2	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2984: 2736	msedgewebview2	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2985: 2736	msedgewebview2	7	SeTcbPrivilege		Act as part of the operating system
+L2986: 2736	msedgewebview2	8	SeSecurityPrivilege		Manage auditing and security log
+L2987: 2736	msedgewebview2	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2988: 2736	msedgewebview2	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2989: 2736	msedgewebview2	11	SeSystemProfilePrivilege		Profile system performance
+L2990: 2736	msedgewebview2	12	SeSystemtimePrivilege		Change the system time
+L2991: 2736	msedgewebview2	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2992: 2736	msedgewebview2	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2993: 2736	msedgewebview2	15	SeCreatePagefilePrivilege		Create a pagefile
+L2994: 2736	msedgewebview2	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2995: 2736	msedgewebview2	17	SeBackupPrivilege		Backup files and directories
+L2996: 2736	msedgewebview2	18	SeRestorePrivilege		Restore files and directories
+L2997: 2736	msedgewebview2	19	SeShutdownPrivilege		Shut down the system
+L2998: 2736	msedgewebview2	20	SeDebugPrivilege		Debug programs
+L2999: 2736	msedgewebview2	21	SeAuditPrivilege		Generate security audits
+L3000: 2736	msedgewebview2	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3001: 2736	msedgewebview2	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3002: 2736	msedgewebview2	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3003: 2736	msedgewebview2	25	SeUndockPrivilege		Remove computer from docking station
+L3004: 2736	msedgewebview2	26	SeSyncAgentPrivilege		Synch directory service data
+L3005: 2736	msedgewebview2	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3006: 2736	msedgewebview2	28	SeManageVolumePrivilege		Manage the files on a volume
+L3007: 2736	msedgewebview2	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3008: 2736	msedgewebview2	30	SeCreateGlobalPrivilege		Create global objects
+L3009: 2736	msedgewebview2	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3010: 2736	msedgewebview2	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3011: 2736	msedgewebview2	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3012: 2736	msedgewebview2	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L3013: 2736	msedgewebview2	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3014: 2736	msedgewebview2	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L3991: 2736	msedgewebview2	0x7ff7021c0000	0x48c000	msedgewebview2.exe	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	-1	2026-05-13 19:15:56.000000 UTC	Disabled
+L3992: 2736	msedgewebview2	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:15:56.000000 UTC	Disabled
+L3993: 2736	msedgewebview2	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:15:56.000000 UTC	Disabled
+L3994: 2736	msedgewebview2	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:15:56.000000 UTC	Disabled
+L3995: 2736	msedgewebview2	0x7fffe2a30000	0x4bd000	msedge_elf.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge_elf.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L3996: 2736	msedgewebview2	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L3997: 2736	msedgewebview2	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L3998: 2736	msedgewebview2	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L3999: 2736	msedgewebview2	0x7ffff6540000	0xa5000	bcryptprimitives.dll	C:\WINDOWS\System32\bcryptprimitives.dll	-1	2026-05-13 19:15:56.000000 UTC	Disabled
+L4000: 2736	msedgewebview2	0x7fffe8ac0000	0xb000	version.dll	C:\WINDOWS\SYSTEM32\version.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L4001: 2736	msedgewebview2	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-1	2026-05-13 19:15:56.000000 UTC	Disabled
+L4002: 2736	msedgewebview2	0x7ffff9820000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L4003: 2736	msedgewebview2	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:15:56.000000 UTC	Disabled
+L4004: 2736	msedgewebview2	0x7ffff51f0000	0x36000	ntmarta.dll	C:\WINDOWS\system32\ntmarta.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L4005: 2736	msedgewebview2	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-1	2026-05-13 19:15:56.000000 UTC	Disabled
+L4006: 2736	msedgewebview2	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2026-05-13 19:15:56.000000 UTC	Disabled
+L4007: 2736	msedgewebview2	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L4008: 2736	msedgewebview2	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L4009: 2736	msedgewebview2	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-1	2026-05-13 19:15:56.000000 UTC	Disabled
+L4010: 2736	msedgewebview2	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	-1	2026-05-13 19:15:56.000000 UTC	Disabled
+L4011: 2736	msedgewebview2	0x7fffe66b0000	0x47000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L4012: 2736	msedgewebview2	0x7fffe87c0000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L4013: 2736	msedgewebview2	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L4014: 2736	msedgewebview2	0x7fffe02d0000	0x5d000	capauthz.dll	C:\WINDOWS\SYSTEM32\capauthz.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L4015: 2736	msedgewebview2	0x7fffbf540000	0x13630000	msedge.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4016: 2736	msedgewebview2	0x7ffff3b60000	0x35000	WINMM.dll	C:\WINDOWS\SYSTEM32\WINMM.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4017: 2736	msedgewebview2	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	-1	2026-05-13 19:15:57.000000 UTC	Disabled
+L4018: 2736	msedgewebview2	0x7ffff3ba0000	0x9f000	apphelp.dll	C:\WINDOWS\system32\apphelp.dll	-1	2026-05-13 19:15:57.000000 UTC	Disabled
+L4019: 2736	msedgewebview2	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-1	2026-05-13 19:15:57.000000 UTC	Disabled
+L4020: 2736	msedgewebview2	0x7ffff0350000	0x19000	Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	C:\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4021: 2736	msedgewebview2	0x7ffff4b00000	0xf000	DiagnosticDataSettings.dll	C:\WINDOWS\SYSTEM32\DiagnosticDataSettings.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4022: 2736	msedgewebview2	0x7ffff4a90000	0x30000	coreprivacysettingsstore.dll	C:\WINDOWS\SYSTEM32\coreprivacysettingsstore.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4023: 2736	msedgewebview2	0x7ffff56f0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4024: 2736	msedgewebview2	0x7ffff56b0000	0x30000	gpapi.dll	C:\WINDOWS\SYSTEM32\gpapi.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4025: 2736	msedgewebview2	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2026-05-13 19:15:57.000000 UTC	Disabled
+L4026: 2736	msedgewebview2	0x7ffff8e80000	0x67000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4027: 2736	msedgewebview2	0x7ffff6d60000	0x864000	Windows.Storage.dll	C:\WINDOWS\System32\Windows.Storage.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4028: 2736	msedgewebview2	0x7fffec800000	0x1b000	wkscli.dll	C:\WINDOWS\SYSTEM32\wkscli.dll	-1	2026-05-13 19:15:57.000000 UTC	Disabled
+L4029: 2736	msedgewebview2	0x7fffec4b0000	0x34000	netjoin.dll	C:\WINDOWS\SYSTEM32\netjoin.dll	-1	2026-05-13 19:15:57.000000 UTC	Disabled
+L4030: 2736	msedgewebview2	0x7ffff59b0000	0x2d000	JoinUtil.dll	C:\WINDOWS\SYSTEM32\JoinUtil.dll	-1	2026-05-13 19:15:57.000000 UTC	Disabled
+L4031: 2736	msedgewebview2	0x7ffff49f0000	0xd000	netutils.dll	C:\WINDOWS\SYSTEM32\netutils.dll	-1	2026-05-13 19:15:57.000000 UTC	Disabled
+L4032: 2736	msedgewebview2	0x7ffff7df0000	0x15d000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	-1	2026-05-13 19:15:57.000000 UTC	Disabled
+L4033: 2736	msedgewebview2	0x7ffff61c0000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4034: 2736	msedgewebview2	0x7ffff61a0000	0x14000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4035: 2736	msedgewebview2	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-1	2026-05-13 19:15:57.000000 UTC	Disabled
+L4036: 2736	msedgewebview2	0x7ffff23f0000	0x267000	DWrite.dll	C:\WINDOWS\SYSTEM32\DWrite.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4037: 2736	msedgewebview2	0x7ffff7810000	0x74000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4038: 2736	msedgewebview2	0x7fffd6640000	0xb4000	COMCTL32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.26100.8037_none_87ebc5097a2f9e52\COMCTL32.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4039: 2736	msedgewebview2	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4040: 2736	msedgewebview2	0x7ffff5f30000	0xa000	DPAPI.dll	C:\WINDOWS\SYSTEM32\DPAPI.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4041: 2736	msedgewebview2	0x7ffff5920000	0xc000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4042: 2736	msedgewebview2	0x7ffff1550000	0x6f000	netprofm.dll	C:\WINDOWS\System32\netprofm.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4043: 2736	msedgewebview2	0x7fffedd70000	0x244000	twinapi.appcore.dll	C:\WINDOWS\SYSTEM32\twinapi.appcore.dll	6	2026-05-13 19:15:57.000000 UTC	Disabled
+L4044: 2736	msedgewebview2	0x7fffeb7e0000	0x19000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4045: 2736	msedgewebview2	0x7ffff4a00000	0x33000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4046: 2736	msedgewebview2	0x7ffff8700000	0xa000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4047: 2736	msedgewebview2	0x7ffff0470000	0x1d000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4048: 2736	msedgewebview2	0x7fffee670000	0x23000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4049: 2736	msedgewebview2	0x7ffff4b20000	0x12a000	DNSAPI.dll	C:\WINDOWS\SYSTEM32\DNSAPI.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4050: 2736	msedgewebview2	0x7fffeb690000	0x148000	textinputframework.dll	C:\WINDOWS\SYSTEM32\textinputframework.dll	-1	2026-05-13 19:15:58.000000 UTC	Disabled
+L4051: 2736	msedgewebview2	0x7ffff8710000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4052: 2736	msedgewebview2	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4053: 2736	msedgewebview2	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4054: 2736	msedgewebview2	0x7ffff1960000	0x4c000	wevtapi.dll	C:\WINDOWS\SYSTEM32\wevtapi.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4055: 2736	msedgewebview2	0x7fffefa40000	0x156000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4056: 2736	msedgewebview2	0x7ffff3c60000	0x29000	WTSAPI32.dll	C:\WINDOWS\SYSTEM32\WTSAPI32.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4057: 2736	msedgewebview2	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4058: 2736	msedgewebview2	0x7ffff5e80000	0x57000	cfgmgr32.dll	C:\WINDOWS\SYSTEM32\cfgmgr32.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4059: 2736	msedgewebview2	0x7ffff60f0000	0x63000	WINSTA.dll	C:\WINDOWS\SYSTEM32\WINSTA.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4060: 2736	msedgewebview2	0x7fffee5a0000	0xbf000	mscms.dll	C:\WINDOWS\SYSTEM32\mscms.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4061: 2736	msedgewebview2	0x7fffee2a0000	0x127000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4062: 2736	msedgewebview2	0x7fffbef70000	0x5c5000	oneauth.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4063: 2736	msedgewebview2	0x7ffff3c50000	0xd000	Secur32.dll	C:\WINDOWS\SYSTEM32\Secur32.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4064: 2736	msedgewebview2	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-13 19:15:58.000000 UTC	Disabled
+L4065: 2736	msedgewebview2	0x7fffedfc0000	0x14f000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4066: 2736	msedgewebview2	0x7ffff49b0000	0x30000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4067: 2736	msedgewebview2	0x7ffff39c0000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-13 19:15:58.000000 UTC	Disabled
+L4068: 2736	msedgewebview2	0x7fffe03b0000	0x138000	Windows.Security.Authentication.Web.Core.dll	C:\Windows\System32\Windows.Security.Authentication.Web.Core.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4069: 2736	msedgewebview2	0x7ffff5990000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4070: 2736	msedgewebview2	0x7ffff5930000	0x1b000	CRYPTSP.dll	C:\WINDOWS\SYSTEM32\CRYPTSP.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4071: 2736	msedgewebview2	0x7ffff5030000	0x39000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4072: 2736	msedgewebview2	0x7fffed8c0000	0x2c4000	iertutil.dll	C:\Windows\System32\iertutil.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4073: 2736	msedgewebview2	0x7fffed890000	0x29000	srvcli.dll	C:\WINDOWS\SYSTEM32\srvcli.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4074: 2736	msedgewebview2	0x7fffeb830000	0x1e3000	InputHost.dll	C:\Windows\System32\InputHost.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4075: 2736	msedgewebview2	0x7ffff3700000	0x127000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4076: 2736	msedgewebview2	0x7ffff3fe0000	0x2e000	dwmapi.dll	C:\WINDOWS\SYSTEM32\dwmapi.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4077: 2736	msedgewebview2	0x7fffdc910000	0x5a000	dataexchange.dll	C:\WINDOWS\system32\dataexchange.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4078: 2736	msedgewebview2	0x7fffe3ee0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4079: 2736	msedgewebview2	0x7fffdcc80000	0x4f000	vaultcli.dll	C:\Windows\System32\vaultcli.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4080: 2736	msedgewebview2	0x7fffe9de0000	0x9c000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4081: 2736	msedgewebview2	0x7fffe6b10000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4082: 2736	msedgewebview2	0x7fffdca00000	0x76000	OLEACC.dll	C:\WINDOWS\SYSTEM32\OLEACC.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4083: 2736	msedgewebview2	0x7fffeb410000	0xa3000	directmanipulation.dll	C:\WINDOWS\system32\directmanipulation.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4084: 2736	msedgewebview2	0x7ffff2f10000	0x220000	dcomp.dll	C:\WINDOWS\system32\dcomp.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4085: 2736	msedgewebview2	0x7ffff23d0000	0x19000	Microsoft.Internal.WarpPal.dll	C:\WINDOWS\SYSTEM32\Microsoft.Internal.WarpPal.dll	6	2026-05-13 19:15:59.000000 UTC	Disabled
+L4086: 2736	msedgewebview2	0x7fffeffd0000	0xb000	webview2_integration.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\webview2_integration.dll	-1	2026-05-13 19:15:59.000000 UTC	Disabled
+L4087: 2736	msedgewebview2	0x7fffeffb0000	0x1e000	VCRUNTIME140.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\VCRUNTIME140.dll	-1	2026-05-13 19:15:59.000000 UTC	Disabled
+L4088: 2736	msedgewebview2	0x7fffeabe0000	0xb000	VCRUNTIME140_1.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\VCRUNTIME140_1.dll	-1	2026-05-13 19:15:59.000000 UTC	Disabled
+L4089: 2736	msedgewebview2	0x7fffba5f0000	0xa6000	MicrosoftAccountWAMExtension.dll	C:\Windows\System32\MicrosoftAccountWAMExtension.dll	6	2026-05-13 19:16:00.000000 UTC	Disabled
+L4090: 2736	msedgewebview2	0x7fffe55a0000	0xd6000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2026-05-13 19:16:14.000000 UTC	Disabled
+L4091: 2736	msedgewebview2	0x7fffe6740000	0x177000	Windows.System.Launcher.dll	C:\Windows\System32\Windows.System.Launcher.dll	6	2026-05-13 19:16:14.000000 UTC	Disabled
+L4092: 2736	msedgewebview2	0x7fffd6500000	0x6e000	CryptoWinRT.dll	C:\Windows\System32\CryptoWinRT.dll	6	2026-05-13 19:16:14.000000 UTC	Disabled
+L4093: 2736	msedgewebview2	0x7fffb8290000	0x3f8000	telclient.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\telclient.dll	6	2026-05-13 19:16:14.000000 UTC	Disabled
+L4094: 2736	msedgewebview2	0x7fffe2060000	0x467000	ffmpeg.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\ffmpeg.dll	6	2026-05-13 19:16:14.000000 UTC	Disabled
+L4095: 2736	msedgewebview2	0x7fffe5820000	0x21a000	MFPlat.DLL	C:\WINDOWS\SYSTEM32\MFPlat.DLL	-1	2026-05-13 19:16:14.000000 UTC	Disabled
+L4096: 2736	msedgewebview2	0x7fffea450000	0x3c000	RTWorkQ.DLL	C:\WINDOWS\SYSTEM32\RTWorkQ.DLL	-1	2026-05-13 19:16:14.000000 UTC	Disabled
+L4097: 2736	msedgewebview2	0x7fffb7f40000	0x348000	oneds.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneds.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4098: 2736	msedgewebview2	0x7ffff81c0000	0x487000	SETUPAPI.dll	C:\WINDOWS\System32\SETUPAPI.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4099: 2736	msedgewebview2	0x7ffff5f00000	0x2d000	DEVOBJ.dll	C:\WINDOWS\SYSTEM32\DEVOBJ.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4100: 2736	msedgewebview2	0x7ffff64b0000	0x81000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4101: 2736	msedgewebview2	0x7ffff5b40000	0x30000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4102: 2736	msedgewebview2	0x7ffff5af0000	0x3f000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4103: 2736	msedgewebview2	0x7fffd4410000	0x114000	PCPKsp.dll	C:\WINDOWS\system32\PCPKsp.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4104: 2736	msedgewebview2	0x7fffed300000	0x60000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4105: 2736	msedgewebview2	0x7ffff1530000	0x1a000	tbs.dll	C:\WINDOWS\SYSTEM32\tbs.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4106: 2736	msedgewebview2	0x7fffeb2c0000	0x8b000	ncryptprov.dll	C:\WINDOWS\system32\ncryptprov.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
+L4107: 2736	msedgewebview2	0x7fffb0b10000	0x1c000	Windows.System.UserProfile.DiagnosticsSettings.dll	C:\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll	6	2026-05-13 19:16:27.000000 UTC	Disabled
+L4108: 2736	msedgewebview2	0x7fffb6fd0000	0x13000	Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient.dll	C:\Windows\System32\Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient.dll	6	2026-05-13 19:16:58.000000 UTC	Disabled
+
+--- envars.txt ---
+L2538: 2736	msedgewebview2	0x164e5104fc0	ALLUSERSPROFILE	C:\ProgramData
+L2539: 2736	msedgewebview2	0x164e5104fc0	APPDATA	C:\Users\kali\AppData\Roaming
+L2540: 2736	msedgewebview2	0x164e5104fc0	CommonProgramFiles	C:\Program Files\Common Files
+L2541: 2736	msedgewebview2	0x164e5104fc0	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
+L2542: 2736	msedgewebview2	0x164e5104fc0	CommonProgramW6432	C:\Program Files\Common Files
+L2543: 2736	msedgewebview2	0x164e5104fc0	COMPONENT_INSTALLER_DIR	C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView
+L2544: 2736	msedgewebview2	0x164e5104fc0	COMPUTERNAME	CLEANWINDOWS11
+L2545: 2736	msedgewebview2	0x164e5104fc0	ComSpec	C:\WINDOWS\system32\cmd.exe
+L2546: 2736	msedgewebview2	0x164e5104fc0	DriverData	C:\Windows\System32\Drivers\DriverData
+L2547: 2736	msedgewebview2	0x164e5104fc0	EDGE_BROWSER_PID	2736
+L2548: 2736	msedgewebview2	0x164e5104fc0	EDGE_CRASHPAD_PIPE_NAME	\\.\pipe\LOCAL\crashpad_2736_RNXAXAQSMPUSWWSC
+L2549: 2736	msedgewebview2	0x164e5104fc0	EDGE_METRICS_CLIENT_ID_HASH	4787722218027699431
+L2550: 2736	msedgewebview2	0x164e5104fc0	EDGE_METRICS_SESSION_ID	15
+L2551: 2736	msedgewebview2	0x164e5104fc0	EDGE_USER_DATA_DIR	C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView
+L2552: 2736	msedgewebview2	0x164e5104fc0	EDGE_WEBVIEW_PREFETCH_HOSTED_APP	/pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4
+L2553: 2736	msedgewebview2	0x164e5104fc0	HOMEDRIVE	C:
+L2554: 2736	msedgewebview2	0x164e5104fc0	HOMEPATH	\Users\kali
+L2555: 2736	msedgewebview2	0x164e5104fc0	IS_EDGE_WEBVIEW	1
+L2556: 2736	msedgewebview2	0x164e5104fc0	LOCALAPPDATA	C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\AC
+L2557: 2736	msedgewebview2	0x164e5104fc0	LOGONSERVER	\\CLEANWINDOWS11
+L2558: 2736	msedgewebview2	0x164e5104fc0	NUMBER_OF_PROCESSORS	4
+L2559: 2736	msedgewebview2	0x164e5104fc0	OneDrive	C:\Users\kali\OneDrive
+L2560: 2736	msedgewebview2	0x164e5104fc0	OS	Windows_NT
+L2561: 2736	msedgewebview2	0x164e5104fc0	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\kali\AppData\Local\Microsoft\WindowsApps
+L2562: 2736	msedgewebview2	0x164e5104fc0	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+L2563: 2736	msedgewebview2	0x164e5104fc0	PROCESSOR_ARCHITECTURE	AMD64
+L2564: 2736	msedgewebview2	0x164e5104fc0	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+L2565: 2736	msedgewebview2	0x164e5104fc0	PROCESSOR_LEVEL	6
+L2566: 2736	msedgewebview2	0x164e5104fc0	PROCESSOR_REVISION	ba03
+L2567: 2736	msedgewebview2	0x164e5104fc0	ProgramData	C:\ProgramData
+L2568: 2736	msedgewebview2	0x164e5104fc0	ProgramFiles	C:\Program Files
+L2569: 2736	msedgewebview2	0x164e5104fc0	ProgramFiles(x86)	C:\Program Files (x86)
+L2570: 2736	msedgewebview2	0x164e5104fc0	ProgramW6432	C:\Program Files
+L2571: 2736	msedgewebview2	0x164e5104fc0	PSModulePath	%ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+L2572: 2736	msedgewebview2	0x164e5104fc0	PUBLIC	C:\Users\Public
+L2573: 2736	msedgewebview2	0x164e5104fc0	SystemDrive	C:
+L2574: 2736	msedgewebview2	0x164e5104fc0	SystemRoot	C:\WINDOWS
+L2575: 2736	msedgewebview2	0x164e5104fc0	TEMP	C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\AC\Temp
+L2576: 2736	msedgewebview2	0x164e5104fc0	TMP	C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\AC\Temp
+L2577: 2736	msedgewebview2	0x164e5104fc0	USERDOMAIN	CLEANWINDOWS11
+L2578: 2736	msedgewebview2	0x164e5104fc0	USERDOMAIN_ROAMINGPROFILE	CLEANWINDOWS11
+L2579: 2736	msedgewebview2	0x164e5104fc0	USERNAME	kali
+L2580: 2736	msedgewebview2	0x164e5104fc0	USERPROFILE	C:\Users\kali
+L2581: 2736	msedgewebview2	0x164e5104fc0	WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS	--disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --edge-webview-foreground-boost-opt-in --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)"  --enable-features=msEdgeFluentOverlayScrollbar
+L2582: 2736	msedgewebview2	0x164e5104fc0	WEBVIEW2_DEFAULT_BACKGROUND_COLOR	00000000
+L2583: 2736	msedgewebview2	0x164e5104fc0	windir	C:\WINDOWS
+L2592: 1316	msedgewebview2	0x1e9e4105150	EDGE_BROWSER_PID	2736
+L2671: 5408	msedgewebview2	0x16d1a1053d0	EDGE_BROWSER_PID	2736
+L2717: 5156	msedgewebview2	0x2db821053d0	EDGE_BROWSER_PID	2736
+L2755: 6224	msedgewebview2	0x27e3d1047b0	EDGE_BROWSER_PID	2736
+L2766: 6296	msedgewebview2	0x1d9821047b0	EDGE_BROWSER_PID	2736
+
+--- pstree.txt ---
+L19: **** 2736	5452	msedgewebview2	0x990ef76df080	50	-	1	False	2026-05-13 19:15:55.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --embedded-browser-webview=1 --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)" --lang=en-US --mojo-named-platform-channel-pipe=5452.4512.18236964100010556028 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+L20: ***** 5408	2736	msedgewebview2	0x990ef76d80c0	20	-	1	False	2026-05-13 19:15:58.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --noerrdialogs --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)" --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView" --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --embedded-browser-webview=1 --always-read-main-dll --metrics-shmem-handle=2000,i,2796503607954006550,7881468431849739085,524288 --field-trial-handle=1912,i,15016839961483282244,3200972703935356644,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --pseudonymization-salt-handle=1960,i,16517456362682977935,3646890307924161426,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2188 /prefetch:11 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+L21: ***** 1316	2736	msedgewebview2	0x990ef76da080	10	-	1	False	2026-05-13 19:15:57.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --type=crashpad-handler --user-data-dir=C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView /prefetch:4 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4 --monitor-self-annotation=ptype=crashpad-handler --database=C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView\Crashpad --annotation=IsOfficialBuild=1 --annotation=channel= --annotation=chromium-version=148.0.7778.97 "--annotation=exe=C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --annotation=plat=Win64 "--annotation=prod=Edge WebView2" --annotation=ver=148.0.3967.54 --initial-client-data=0x16c,0x170,0x174,0x148,0x1ac,0x7fffe2eb8d58,0x7fffe2eb8d64,0x7fffe2eb8d70	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+L22: ***** 5156	2736	msedgewebview2	0x990ef7036080	16	-	1	False	2026-05-13 19:15:58.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --type=gpu-process --noerrdialogs --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)" --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView" --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --embedded-browser-webview=1 --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --always-read-main-dll --metrics-shmem-handle=1724,i,1123250688042138396,11186692251948621168,262144 --field-trial-handle=1912,i,15016839961483282244,3200972703935356644,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --pseudonymization-salt-handle=1960,i,16517456362682977935,3646890307924161426,4 --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=1904 /prefetch:2 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+L23: ***** 6224	2736	msedgewebview2	0x990ef7f52080	11	-	1	False	2026-05-13 19:15:59.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --noerrdialogs --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)" --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView" --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --embedded-browser-webview=1 --always-read-main-dll --metrics-shmem-handle=2432,i,11096029474545773889,1744380128420761216,524288 --field-trial-handle=1912,i,15016839961483282244,3200972703935356644,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --pseudonymization-salt-handle=1960,i,16517456362682977935,3646890307924161426,4 --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=2168 /prefetch:13 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+L24: ***** 6296	2736	msedgewebview2	0x990ef8446080	19	-	1	False	2026-05-13 19:15:59.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --type=renderer --noerrdialogs --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)" --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView" --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --embedded-browser-webview=1 --video-capture-use-gpu-memory-buffer --lang=en-US --js-flags=--expose-gc --device-scale-factor=1.25 --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1778699635263330 --launch-time-ticks=124365286 --always-read-main-dll --metrics-shmem-handle=3564,i,2620661827974317532,10777052563004960882,2097152 --field-trial-handle=1912,i,15016839961483282244,3200972703935356644,262144 --enable-features=msEdgeFluentOverlayScrollbar --disable-features=msSmartScreenProtection --variations-seed-version --pseudonymization-salt-handle=1960,i,16517456362682977935,3646890307924161426,4 --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3640 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4 /prefetch:1	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+
+--- psscan.txt ---
+L87: 5156	2736	msedgewebview2	0x990ef7036080	16	-	1	False	2026-05-13 19:15:58.000000 UTC	N/A	Disabled
+L94: 5408	2736	msedgewebview2	0x990ef76d80c0	20	-	1	False	2026-05-13 19:15:58.000000 UTC	N/A	Disabled
+L95: 1316	2736	msedgewebview2	0x990ef76da080	10	-	1	False	2026-05-13 19:15:57.000000 UTC	N/A	Disabled
+L97: 2736	5452	msedgewebview2	0x990ef76df080	50	-	1	False	2026-05-13 19:15:55.000000 UTC	N/A	Disabled
+L125: 6224	2736	msedgewebview2	0x990ef7f52080	11	-	1	False	2026-05-13 19:15:59.000000 UTC	N/A	Disabled
+L131: 6296	2736	msedgewebview2	0x990ef8446080	19	-	1	False	2026-05-13 19:15:59.000000 UTC	N/A	Disabled
+
+--- threads.txt ---
+L1010: 0x990ef6224080	2736	5620	0xe08e859a9330	-	0x7ff7022df6e0	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	2026-05-13 19:15:55.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1011: 0x990ef76db080	2736	6060	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffe2da2d90	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge_elf.dll	2026-05-13 19:15:56.000000 UTC	2026-05-13 19:15:59.000000 UTC
+L1012: 0x990ef69d4080	2736	5320	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1013: 0x990ef70230c0	2736	1512	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7022887f0	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L1014: 0x990ef7e43080	2736	5228	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1015: 0x990ef76f2080	2736	5232	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1016: 0x990ef76e3240	2736	5084	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1017: 0x990ef76f7080	2736	1096	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1018: 0x990ef76f3080	2736	5152	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1019: 0x990ef76f4080	2736	5272	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1020: 0x990ef76f5080	2736	5256	0xe08e81985c60	-	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1021: 0x990ef76f6080	2736	5284	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1022: 0x990ef7744080	2736	5252	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1023: 0x990ef76e4080	2736	5264	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1024: 0x990ef739c080	2736	5360	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L1025: 0x990ef4fd1080	2736	3028	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L1026: 0x990efa03f080	2736	2476	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:42.000000 UTC
+L1027: 0x990ef4fd6080	2736	1912	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L1028: 0x990ef4fd7080	2736	2016	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L1029: 0x990ef73aa080	2736	1204	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L1030: 0x990ef7d87080	2736	1208	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1031: 0x990ef77f9080	2736	1200	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1032: 0x990ef78bd080	2736	1180	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1033: 0x990ef7d8a080	2736	1176	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1034: 0x990ef7d89080	2736	1216	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1035: 0x990ef7d8e080	2736	2532	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1036: 0x990ef7851080	2736	996	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1037: 0x990ef7b61080	2736	2764	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1038: 0x990ef4fd0080	2736	1212	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L1039: 0x990ef6854080	2736	508	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1040: 0x990ef7f5e080	2736	1196	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1041: 0x990ef8191080	2736	5344	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1042: 0x990ef8190080	2736	5468	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1043: 0x990ef818a080	2736	5424	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1044: 0x990ef84e9080	2736	5448	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1045: 0x990ef84e8080	2736	5444	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1046: 0x990ef84e6080	2736	2812	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1047: 0x990ef84e5080	2736	2264	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1048: 0x990ef84e4080	2736	2088	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1049: 0x990ef84e2080	2736	5380	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1050: 0x990ef84e1080	2736	6148	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1051: 0x990ef8311080	2736	6172	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:15:59.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1052: 0x990ef8310080	2736	6176	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:15:59.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1053: 0x990ef830f080	2736	6180	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:15:59.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1054: 0x990ef8445080	2736	6276	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffeb469d30	\Windows\System32\directmanipulation.dll	2026-05-13 19:15:59.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1055: 0x990ef600a080	2736	7628	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:16:14.000000 UTC	1600-08-22 23:57:35.000000 UTC
+L1056: 0x990ef78eb0c0	2736	7844	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:16:15.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1057: 0x990efa0340c0	2736	3976	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffb805b930	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneds.dll	2026-05-13 19:16:58.000000 UTC	1600-08-22 23:57:42.000000 UTC
+L1058: 0x990ef7850040	2736	7676	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:24:59.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1059: 0x990ef4bee080	2736	3748	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:24:59.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L1060: 0x990ef79dc040	2736	2436	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+
+--- thrdscan.txt ---
+L378: 0x990ef4bee080	2736	3748	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:24:59.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L454: 0x990ef4fd0080	2736	1212	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L455: 0x990ef4fd1080	2736	3028	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L460: 0x990ef4fd6080	2736	1912	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L461: 0x990ef4fd7080	2736	2016	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L467: 0x990ef600a080	2736	7628	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:16:14.000000 UTC	1600-08-22 23:57:35.000000 UTC
+L558: 0x990ef6224080	2736	5620	0xe08e859a9330	-	0x7ff7022df6e0	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	2026-05-13 19:15:55.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L676: 0x990ef6854080	2736	508	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L731: 0x990ef69d4080	2736	5320	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L895: 0x990ef70230c0	2736	1512	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7022887f0	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L951: 0x990ef739c080	2736	5360	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L954: 0x990ef73aa080	2736	1204	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L1003: 0x990ef76db080	2736	6060	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffe2da2d90	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge_elf.dll	2026-05-13 19:15:56.000000 UTC	2026-05-13 19:15:59.000000 UTC
+L1007: 0x990ef76e3240	2736	5084	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1008: 0x990ef76e4080	2736	5264	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1017: 0x990ef76f2080	2736	5232	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1018: 0x990ef76f3080	2736	5152	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1019: 0x990ef76f4080	2736	5272	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1020: 0x990ef76f5080	2736	5256	0xe08e81985c60	-	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1021: 0x990ef76f6080	2736	5284	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1022: 0x990ef76f7080	2736	1096	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1025: 0x990ef7744080	2736	5252	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1081: 0x990ef77f9080	2736	1200	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1088: 0x990ef7850040	2736	7676	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:24:59.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1089: 0x990ef7851080	2736	996	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1108: 0x990ef78bd080	2736	1180	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1129: 0x990ef78eb0c0	2736	7844	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:16:15.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1162: 0x990ef79dc040	2736	2436	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:57.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1207: 0x990ef7b61080	2736	2764	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1281: 0x990ef7d87080	2736	1208	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1283: 0x990ef7d89080	2736	1216	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1284: 0x990ef7d8a080	2736	1176	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1287: 0x990ef7d8e080	2736	2532	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1307: 0x990ef7e43080	2736	5228	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:15:57.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1361: 0x990ef7f5e080	2736	1196	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1448: 0x990ef818a080	2736	5424	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1449: 0x990ef8190080	2736	5468	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1450: 0x990ef8191080	2736	5344	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1478: 0x990ef830f080	2736	6180	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:15:59.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1479: 0x990ef8310080	2736	6176	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:15:59.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1480: 0x990ef8311080	2736	6172	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:15:59.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1485: 0x990ef8445080	2736	6276	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffeb469d30	\Windows\System32\directmanipulation.dll	2026-05-13 19:15:59.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1490: 0x990ef84e1080	2736	6148	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1491: 0x990ef84e2080	2736	5380	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1493: 0x990ef84e4080	2736	2088	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1494: 0x990ef84e5080	2736	2264	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1495: 0x990ef84e6080	2736	2812	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1497: 0x990ef84e8080	2736	5444	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1498: 0x990ef84e9080	2736	5448	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1623: 0x990efa0340c0	2736	3976	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffb805b930	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneds.dll	2026-05-13 19:16:58.000000 UTC	1600-08-22 23:57:42.000000 UTC
+L1631: 0x990efa03f080	2736	2476	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:15:58.000000 UTC	1600-08-22 23:57:42.000000 UTC
+
+--- ldrmodules.txt ---
+L4249: 2736	msedgewebview2	0x164e4ff0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
+L4250: 2736	msedgewebview2	0x164e8000000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L4251: 2736	msedgewebview2	0x164eaa80000	False	False	False	\Windows\System32\en-US\kernel32.dll.mui
+L4252: 2736	msedgewebview2	0x164f3780000	False	False	False	\Windows\System32\oleaccrc.dll
+L4253: 2736	msedgewebview2	0x164f37a0000	False	False	False	\Windows\System32\en-US\Windows.Security.Authentication.Web.Core.dll.mui
+L4254: 2736	msedgewebview2	0x164f3900000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
+L4255: 2736	msedgewebview2	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L4256: 2736	msedgewebview2	0x7fffec4b0000	True	True	True	\Windows\System32\netjoin.dll
+L4257: 2736	msedgewebview2	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L4258: 2736	msedgewebview2	0x7fffbf540000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll
+L4259: 2736	msedgewebview2	0x7ff7021c0000	True	False	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+L4260: 2736	msedgewebview2	0x7fffb7f40000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneds.dll
+L4261: 2736	msedgewebview2	0x7fffb0b10000	True	True	True	\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll
+L4262: 2736	msedgewebview2	0x7fffb6fd0000	True	True	True	\Windows\System32\Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient.dll
+L4263: 2736	msedgewebview2	0x7fffba5f0000	True	True	True	\Windows\System32\MicrosoftAccountWAMExtension.dll
+L4264: 2736	msedgewebview2	0x7fffb8290000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\telclient.dll
+L4265: 2736	msedgewebview2	0x7fffbef70000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll
+L4266: 2736	msedgewebview2	0x7fffe02d0000	True	True	True	\Windows\System32\capauthz.dll
+L4267: 2736	msedgewebview2	0x7fffdc910000	True	True	True	\Windows\System32\DataExchange.dll
+L4268: 2736	msedgewebview2	0x7fffd6500000	True	True	True	\Windows\System32\CryptoWinRT.dll
+L4269: 2736	msedgewebview2	0x7fffd4410000	True	True	True	\Windows\System32\PCPKsp.dll
+L4270: 2736	msedgewebview2	0x7fffd6640000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.26100.8037_none_87ebc5097a2f9e52\comctl32.dll
+L4271: 2736	msedgewebview2	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
+L4272: 2736	msedgewebview2	0x7fffdca00000	True	True	True	\Windows\System32\oleacc.dll
+L4273: 2736	msedgewebview2	0x7fffe2a30000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge_elf.dll
+L4274: 2736	msedgewebview2	0x7fffe03b0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L4275: 2736	msedgewebview2	0x7fffe2060000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\ffmpeg.dll
+L4276: 2736	msedgewebview2	0x7fffe55a0000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L4277: 2736	msedgewebview2	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L4278: 2736	msedgewebview2	0x7fffe5820000	True	True	True	\Windows\System32\mfplat.dll
+L4279: 2736	msedgewebview2	0x7fffeabe0000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\vcruntime140_1.dll
+L4280: 2736	msedgewebview2	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L4281: 2736	msedgewebview2	0x7fffe6b10000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L4282: 2736	msedgewebview2	0x7fffe6740000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L4283: 2736	msedgewebview2	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L4284: 2736	msedgewebview2	0x7fffe9de0000	True	True	True	\Windows\System32\Windows.Web.dll
+L4285: 2736	msedgewebview2	0x7fffea450000	True	True	True	\Windows\System32\RTWorkQ.dll
+L4286: 2736	msedgewebview2	0x7fffeb690000	True	True	True	\Windows\System32\TextInputFramework.dll
+L4287: 2736	msedgewebview2	0x7fffeb410000	True	True	True	\Windows\System32\directmanipulation.dll
+L4288: 2736	msedgewebview2	0x7fffeb2c0000	True	True	True	\Windows\System32\ncryptprov.dll
+L4289: 2736	msedgewebview2	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L4290: 2736	msedgewebview2	0x7fffeb830000	True	True	True	\Windows\System32\InputHost.dll
+L4291: 2736	msedgewebview2	0x7ffff0350000	True	True	True	\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll
+L4292: 2736	msedgewebview2	0x7fffee5a0000	True	True	True	\Windows\System32\mscms.dll
+L4293: 2736	msedgewebview2	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L4294: 2736	msedgewebview2	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L4295: 2736	msedgewebview2	0x7fffec800000	True	True	True	\Windows\System32\wkscli.dll
+L4296: 2736	msedgewebview2	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L4297: 2736	msedgewebview2	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L4298: 2736	msedgewebview2	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L4299: 2736	msedgewebview2	0x7fffedfc0000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L4300: 2736	msedgewebview2	0x7fffefa40000	True	True	True	\Windows\System32\Windows.UI.dll
+L4301: 2736	msedgewebview2	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L4302: 2736	msedgewebview2	0x7fffeffd0000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\webview2_integration.dll
+L4303: 2736	msedgewebview2	0x7fffeffb0000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\vcruntime140.dll
+L4304: 2736	msedgewebview2	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L4305: 2736	msedgewebview2	0x7ffff23f0000	True	True	True	\Windows\System32\DWrite.dll
+L4306: 2736	msedgewebview2	0x7ffff1550000	True	True	True	\Windows\System32\netprofm.dll
+L4307: 2736	msedgewebview2	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L4308: 2736	msedgewebview2	0x7ffff1530000	True	True	True	\Windows\System32\tbs.dll
+L4309: 2736	msedgewebview2	0x7ffff1960000	True	True	True	\Windows\System32\wevtapi.dll
+L4310: 2736	msedgewebview2	0x7ffff23d0000	True	True	True	\Windows\System32\Microsoft.Internal.WarpPal.dll
+L4311: 2736	msedgewebview2	0x7ffff3700000	True	True	True	\Windows\System32\CoreMessaging.dll
+L4312: 2736	msedgewebview2	0x7ffff2f10000	True	True	True	\Windows\System32\dcomp.dll
+L4313: 2736	msedgewebview2	0x7ffff3ba0000	True	True	True	\Windows\System32\apphelp.dll
+L4314: 2736	msedgewebview2	0x7ffff3b60000	True	True	True	\Windows\System32\winmm.dll
+L4315: 2736	msedgewebview2	0x7ffff3c60000	True	True	True	\Windows\System32\wtsapi32.dll
+L4316: 2736	msedgewebview2	0x7ffff3c50000	True	True	True	\Windows\System32\secur32.dll
+L4317: 2736	msedgewebview2	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L4318: 2736	msedgewebview2	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L4319: 2736	msedgewebview2	0x7ffff4a90000	True	True	True	\Windows\System32\CorePrivacySettingsStore.dll
+L4320: 2736	msedgewebview2	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L4321: 2736	msedgewebview2	0x7ffff3fe0000	True	True	True	\Windows\System32\dwmapi.dll
+L4322: 2736	msedgewebview2	0x7ffff49b0000	True	True	True	\Windows\System32\profext.dll
+L4323: 2736	msedgewebview2	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+
+=== END OF PIVOT REPORT ===

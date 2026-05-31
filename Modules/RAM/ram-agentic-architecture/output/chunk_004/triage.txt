@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-31T14:51:58Z
+Chunk: chunk_004.txt
+Summary: Rule-based fallback — LLM unavailable
+
+[PROCESS]
+pid: 7996
+ppid: 4968
+image: OneDrive.exe
+cmdline: \"C:\\Users\\kali\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\" /background
+severity: LOW
+reasons: Unusual path: C:\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe
+

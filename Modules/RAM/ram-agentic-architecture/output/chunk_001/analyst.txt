@@ -1,0 +1,40 @@
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-31T14:51:57Z
+Summary: LLM validation failed — all findings are inconclusive. Manual review required.
+Counts: confirmed=0  inconclusive=3  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      2380
+PPID:     4240
+Image:    cmd.exe
+Cmdline:  C:\\WINDOWS\\system32\\cmd.exe /c \"\"C:\\Users\\kali\\AppData\\Local\\Temp\\EMwLtc9FBmME.bat\" \"
+
+Justification:
+  LLM unavailable — cannot validate. Agent 1 reasons: Keyword in cmdline: cmd.exe /c
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      3144
+PPID:     896
+Image:    MpDefenderCore
+Cmdline:  \"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\MpDefenderCoreService.exe\"
+
+Justification:
+  LLM unavailable — cannot validate. Agent 1 reasons: Unusual path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpDefenderCoreService.exe
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      3284
+PPID:     896
+Image:    MsMpEng.exe
+Cmdline:  \"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\MsMpEng.exe\"
+
+Justification:
+  LLM unavailable — cannot validate. Agent 1 reasons: Unusual path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MsMpEng.exe
+----------------------------------------------------------------
+

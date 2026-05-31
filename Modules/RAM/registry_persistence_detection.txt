@@ -1,0 +1,121 @@
+===============================================================
+ Registry Persistence Detection with Volatility3
+ Quick Reference Guide
+===============================================================
+
+GOAL: Find malware that auto-starts by adding itself to registry
+      Run keys (the most common persistence technique on Windows).
+
+---------------------------------------------------------------
+STEP 1 — List all registry hives in memory
+---------------------------------------------------------------
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.registry.hivelist
+
+  Why: confirms which hives are loaded (SYSTEM, SOFTWARE, NTUSER.DAT
+       per user). NTUSER.DAT is user-specific — one per account.
+
+---------------------------------------------------------------
+STEP 2 — Query the Run keys (most common persistence locations)
+---------------------------------------------------------------
+
+# User-level (runs when a specific user logs in) — HKCU
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.registry.printkey \
+  --key "Software\Microsoft\Windows\CurrentVersion\Run"
+
+# Machine-level (runs for ALL users at boot) — HKLM
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.registry.printkey \
+  --key "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"
+
+# One-shot variants (execute once then delete themselves)
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.registry.printkey \
+  --key "Software\Microsoft\Windows\CurrentVersion\RunOnce"
+
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.registry.printkey \
+  --key "SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce"
+
+---------------------------------------------------------------
+STEP 3 — Check Winlogon (used by advanced malware)
+---------------------------------------------------------------
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.registry.printkey \
+  --key "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
+
+  What to look for: Shell and Userinit values. Legitimate values:
+    Shell    = explorer.exe
+    Userinit = C:\WINDOWS\system32\userinit.exe,
+  Any extra executable appended here is malicious.
+
+---------------------------------------------------------------
+STEP 4 — Check scheduled tasks
+---------------------------------------------------------------
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.registry.scheduled_tasks
+
+  Note: plugin name uses underscore (scheduled_tasks), NOT
+        scheduledtasks — the latter does not exist in Volatility3.
+
+---------------------------------------------------------------
+STEP 5 — Save output for review
+---------------------------------------------------------------
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.registry.printkey \
+  --key "Software\Microsoft\Windows\CurrentVersion\Run" \
+  > registry_run_key.txt 2>&1
+
+---------------------------------------------------------------
+WHAT TO LOOK FOR IN OUTPUT
+---------------------------------------------------------------
+Columns returned by printkey:
+  Last Write Time | Hive Offset | Type | Key | Name | Data | Volatile
+
+Red flags:
+  - Data pointing to AppData\Roaming, AppData\Local\Temp, or any
+    user-writable directory (not C:\Windows or C:\Program Files)
+  - Suspicious or random-looking value Names
+  - C2 URLs used as value Names (as found in this case)
+  - Unknown executables with no publisher path
+  - Volatile = True (key only exists in memory, not on disk)
+
+---------------------------------------------------------------
+REAL EXAMPLE FROM THIS INVESTIGATION (evil_windows.elf)
+---------------------------------------------------------------
+Last Write:  2026-05-13 19:25:43 UTC
+Hive:        \??\C:\Users\kali\ntuser.dat   (HKCU)
+Key:         Software\Microsoft\Windows\CurrentVersion\Run
+Name:        https://uu888.jp.net            <-- C2 URL used as key name
+Data:        "C:\Users\kali\AppData\Roaming\SubDir\Client.exe"
+
+Findings:
+  - Client.exe running from AppData\Roaming\SubDir\ (non-standard path)
+  - C2 server URL (uu888.jp.net) embedded as the registry value name
+  - Written at 19:25:43 UTC, seconds before the malware executed
+  - User-level persistence: survives reboot, triggers on kali login
+
+---------------------------------------------------------------
+OTHER PERSISTENCE KEYS WORTH CHECKING (advanced)
+---------------------------------------------------------------
+  SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\<exe>
+      (Debugger value hijack — runs attacker's binary instead of target)
+
+  SOFTWARE\Classes\*\shellex\ContextMenuHandlers\
+      (COM hijack via shell extensions)
+
+  SYSTEM\CurrentControlSet\Services\<name>
+      (Malicious service — use windows.svcscan instead)
+
+  SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom\
+      (Shim database persistence)
+===============================================================

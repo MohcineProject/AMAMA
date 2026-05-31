@@ -1,0 +1,429 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-05-31T14:51:58Z
+
+=== PID 7996 (OneDrive.exe, ppid=4968) ===
+Cmdline: \"C:\\Users\\kali\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\" /background
+
+--- pslist.txt ---
+L103: 7996	4968	OneDrive.exe	0x990ef6b6a080	24	-	1	False	2026-05-13 19:16:26.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L103: 7996	OneDrive.exe	"C:\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe" /background
+
+--- privileges.txt ---
+L3435: 7996	OneDrive.exe	2	SeCreateTokenPrivilege		Create a token object
+L3436: 7996	OneDrive.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3437: 7996	OneDrive.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3438: 7996	OneDrive.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3439: 7996	OneDrive.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3440: 7996	OneDrive.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3441: 7996	OneDrive.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L3442: 7996	OneDrive.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3443: 7996	OneDrive.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3444: 7996	OneDrive.exe	11	SeSystemProfilePrivilege		Profile system performance
+L3445: 7996	OneDrive.exe	12	SeSystemtimePrivilege		Change the system time
+L3446: 7996	OneDrive.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3447: 7996	OneDrive.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3448: 7996	OneDrive.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L3449: 7996	OneDrive.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3450: 7996	OneDrive.exe	17	SeBackupPrivilege		Backup files and directories
+L3451: 7996	OneDrive.exe	18	SeRestorePrivilege		Restore files and directories
+L3452: 7996	OneDrive.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L3453: 7996	OneDrive.exe	20	SeDebugPrivilege		Debug programs
+L3454: 7996	OneDrive.exe	21	SeAuditPrivilege		Generate security audits
+L3455: 7996	OneDrive.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3456: 7996	OneDrive.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3457: 7996	OneDrive.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3458: 7996	OneDrive.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3459: 7996	OneDrive.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3460: 7996	OneDrive.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3461: 7996	OneDrive.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L3462: 7996	OneDrive.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3463: 7996	OneDrive.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L3464: 7996	OneDrive.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3465: 7996	OneDrive.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3466: 7996	OneDrive.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3467: 7996	OneDrive.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3468: 7996	OneDrive.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3469: 7996	OneDrive.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L4615: 7996	OneDrive.exe	0x7ff68a860000	0x48b000	OneDrive.exe	C:\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe	-1	2026-05-13 19:16:28.000000 UTC	Disabled
+L4616: 7996	OneDrive.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:16:28.000000 UTC	Disabled
+L4617: 7996	OneDrive.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:16:28.000000 UTC	Disabled
+L4618: 7996	OneDrive.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:16:28.000000 UTC	Disabled
+L4619: 7996	OneDrive.exe	0x7ffff3ba0000	0x9f000	apphelp.dll	C:\WINDOWS\SYSTEM32\apphelp.dll	-1	2026-05-13 19:16:28.000000 UTC	Disabled
+L4620: 7996	OneDrive.exe	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4621: 7996	OneDrive.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4622: 7996	OneDrive.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4623: 7996	OneDrive.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4624: 7996	OneDrive.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4625: 7996	OneDrive.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4626: 7996	OneDrive.exe	0x7ffff9820000	0xbb000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4627: 7996	OneDrive.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4628: 7996	OneDrive.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4629: 7996	OneDrive.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4630: 7996	OneDrive.exe	0x7ffff8710000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4631: 7996	OneDrive.exe	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4632: 7996	OneDrive.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4633: 7996	OneDrive.exe	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4634: 7996	OneDrive.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4635: 7996	OneDrive.exe	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4636: 7996	OneDrive.exe	0x7ffff8e80000	0x67000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4637: 7996	OneDrive.exe	0x7ffff6d60000	0x864000	Windows.Storage.dll	C:\WINDOWS\System32\Windows.Storage.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4638: 7996	OneDrive.exe	0x7ffff3c50000	0xd000	Secur32.dll	C:\WINDOWS\SYSTEM32\Secur32.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4639: 7996	OneDrive.exe	0x7fffe8fe0000	0x288000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4640: 7996	OneDrive.exe	0x7fffe8ac0000	0xb000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4641: 7996	OneDrive.exe	0x7ffff56f0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4642: 7996	OneDrive.exe	0x7ffff3c60000	0x29000	WTSAPI32.dll	C:\WINDOWS\SYSTEM32\WTSAPI32.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4643: 7996	OneDrive.exe	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4644: 7996	OneDrive.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4645: 7996	OneDrive.exe	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4646: 7996	OneDrive.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4647: 7996	OneDrive.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:16:28.000000 UTC	Disabled
+L4648: 7996	OneDrive.exe	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4649: 7996	OneDrive.exe	0x7fffb75a0000	0x111000	ucrtbase.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\ucrtbase.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4650: 7996	OneDrive.exe	0x7fffb7540000	0x51000	FileSyncRNWin32Lib.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncRNWin32Lib.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4651: 7996	OneDrive.exe	0x7fffb74b0000	0x88000	MSVCP140.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\MSVCP140.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4652: 7996	OneDrive.exe	0x7fffea780000	0xb000	VCRUNTIME140_1.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\VCRUNTIME140_1.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4653: 7996	OneDrive.exe	0x7fffba420000	0x1e000	VCRUNTIME140.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\VCRUNTIME140.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4654: 7996	OneDrive.exe	0x7fffb7400000	0xb0000	LoggingPlatform.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\LoggingPlatform.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4655: 7996	OneDrive.exe	0x7ffff7810000	0x74000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4656: 7996	OneDrive.exe	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-13 19:16:28.000000 UTC	Disabled
+L4657: 7996	OneDrive.exe	0x7ffff5920000	0xc000	CRYPTBASE.DLL	C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4658: 7996	OneDrive.exe	0x7ffff5930000	0x1b000	CRYPTSP.dll	C:\WINDOWS\SYSTEM32\CRYPTSP.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4659: 7996	OneDrive.exe	0x7ffff5030000	0x39000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4660: 7996	OneDrive.exe	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4661: 7996	OneDrive.exe	0x7fffb71a0000	0x25b000	OneDriveTelemetryStable.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\OneDriveTelemetryStable.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4662: 7996	OneDrive.exe	0x7ffff4a00000	0x33000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	-1	2026-05-13 19:16:28.000000 UTC	Disabled
+L4663: 7996	OneDrive.exe	0x7fffb7090000	0x104000	FileSyncTelemetryExtensions.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncTelemetryExtensions.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4664: 7996	OneDrive.exe	0x7ffff8700000	0xa000	NSI.dll	C:\WINDOWS\System32\NSI.dll	-1	2026-05-13 19:16:28.000000 UTC	Disabled
+L4665: 7996	OneDrive.exe	0x7fffee670000	0x23000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	-1	2026-05-13 19:16:28.000000 UTC	Disabled
+L4666: 7996	OneDrive.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4667: 7996	OneDrive.exe	0x7fffdf890000	0xbb000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4668: 7996	OneDrive.exe	0x7fffedd70000	0x244000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4669: 7996	OneDrive.exe	0x7ffff1550000	0x6f000	netprofm.dll	C:\WINDOWS\System32\netprofm.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4670: 7996	OneDrive.exe	0x7fffeb7e0000	0x19000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4671: 7996	OneDrive.exe	0x7fffb6fd0000	0x13000	Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient.dll	C:\Windows\System32\Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4672: 7996	OneDrive.exe	0x7fffb6420000	0xb8f000	FileSyncClient.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncClient.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4673: 7996	OneDrive.exe	0x7ffff64b0000	0x81000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4674: 7996	OneDrive.exe	0x7fffb6130000	0x84000	FileSyncHost.DLL	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncHost.DLL	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4675: 7996	OneDrive.exe	0x7fffb61c0000	0xb5000	UpdateRingSettings.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\UpdateRingSettings.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4676: 7996	OneDrive.exe	0x7fffb6100000	0x2c000	WebView2Loader.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\WebView2Loader.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4677: 7996	OneDrive.exe	0x7fffb6fb0000	0x14000	MSVCP140_ATOMIC_WAIT.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\MSVCP140_ATOMIC_WAIT.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4678: 7996	OneDrive.exe	0x7fffb5df0000	0x1d8000	gdiplus.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.26100.8036_none_6ef439583dc61568\gdiplus.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4679: 7996	OneDrive.exe	0x7fffb5fd0000	0x12a000	LogUploader.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\LogUploader.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4680: 7996	OneDrive.exe	0x7fffe5300000	0x293000	COMCTL32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\COMCTL32.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4681: 7996	OneDrive.exe	0x7fffb5c40000	0x99000	FileSyncCxP.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncCxP.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4682: 7996	OneDrive.exe	0x7fffb5c10000	0x23000	FileSyncEvents.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncEvents.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4683: 7996	OneDrive.exe	0x7fffdfe30000	0x29000	CRYPTXML.dll	C:\WINDOWS\SYSTEM32\CRYPTXML.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4684: 7996	OneDrive.exe	0x7fffb5ce0000	0x10d000	FileSyncFS.DLL	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFS.DLL	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4685: 7996	OneDrive.exe	0x7ffff3fe0000	0x2e000	dwmapi.dll	C:\WINDOWS\SYSTEM32\dwmapi.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4686: 7996	OneDrive.exe	0x7fffb55e0000	0x630000	FileSyncSessions.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncSessions.dll	6	2026-05-13 19:16:28.000000 UTC	Disabled
+L4687: 7996	OneDrive.exe	0x7ffff4200000	0xef000	wer.dll	C:\WINDOWS\SYSTEM32\wer.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4688: 7996	OneDrive.exe	0x7fffee2a0000	0x127000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4689: 7996	OneDrive.exe	0x7fffb4950000	0xc90000	SyncEngine.DLL	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\SyncEngine.DLL	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4690: 7996	OneDrive.exe	0x7fffdd240000	0x420000	UIAutomationCore.DLL	C:\WINDOWS\SYSTEM32\UIAutomationCore.DLL	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4691: 7996	OneDrive.exe	0x7fffb4790000	0xaa000	FileSyncSqlite3.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncSqlite3.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4692: 7996	OneDrive.exe	0x7fffe9910000	0x43000	XmlLite.dll	C:\WINDOWS\SYSTEM32\XmlLite.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4693: 7996	OneDrive.exe	0x7fffedb90000	0x1dd000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4694: 7996	OneDrive.exe	0x7fffb4840000	0x10b000	Telemetry.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Telemetry.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4695: 7996	OneDrive.exe	0x7ffff5b40000	0x30000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4696: 7996	OneDrive.exe	0x7fffb4770000	0x1c000	credui.dll	C:\WINDOWS\SYSTEM32\credui.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4697: 7996	OneDrive.exe	0x7ffff1bd0000	0x103000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4698: 7996	OneDrive.exe	0x7fffb45f0000	0x176000	adal.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\adal.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4699: 7996	OneDrive.exe	0x7fffb4500000	0xe3000	WnsClientApi.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\WnsClientApi.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4700: 7996	OneDrive.exe	0x7fffb44b0000	0x44000	RstrtMgr.DLL	C:\WINDOWS\SYSTEM32\RstrtMgr.DLL	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4701: 7996	OneDrive.exe	0x7fffed8c0000	0x2c4000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4702: 7996	OneDrive.exe	0x7fffed890000	0x29000	srvcli.dll	C:\WINDOWS\SYSTEM32\srvcli.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4703: 7996	OneDrive.exe	0x7ffff49f0000	0xd000	netutils.dll	C:\WINDOWS\SYSTEM32\netutils.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4704: 7996	OneDrive.exe	0x7fffdfbb0000	0x163000	webservices.dll	C:\WINDOWS\SYSTEM32\webservices.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4705: 7996	OneDrive.exe	0x7ffff5af0000	0x3f000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4706: 7996	OneDrive.exe	0x7fffb86d0000	0x46000	Wscapi.dll	C:\WINDOWS\SYSTEM32\Wscapi.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4707: 7996	OneDrive.exe	0x7ffff5990000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4708: 7996	OneDrive.exe	0x7ffff60f0000	0x63000	WINSTA.dll	C:\WINDOWS\SYSTEM32\WINSTA.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4709: 7996	OneDrive.exe	0x7fffb6390000	0x8f000	FileSyncCxPImpl.DLL	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncCxPImpl.DLL	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4710: 7996	OneDrive.exe	0x7fffe3540000	0xd000	atlthunk.dll	C:\WINDOWS\SYSTEM32\atlthunk.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4711: 7996	OneDrive.exe	0x7ffff7df0000	0x15d000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4712: 7996	OneDrive.exe	0x7fffb62b0000	0xd6000	FileSyncFSNtfs.DLL	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSNtfs.DLL	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4713: 7996	OneDrive.exe	0x7fffb4270000	0x92000	FileSyncFSNtfsWB.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSNtfsWB.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4714: 7996	OneDrive.exe	0x7fffb4230000	0x3a000	FileSyncFSDbfsWB.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSDbfsWB.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4715: 7996	OneDrive.exe	0x7fffb6280000	0x29000	FileSyncFSCache.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSCache.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4716: 7996	OneDrive.exe	0x7fffb4170000	0xb6000	FileSyncFALWB.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFALWB.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4717: 7996	OneDrive.exe	0x7fffdc8d0000	0x32000	cldapi.dll	C:\WINDOWS\SYSTEM32\cldapi.dll	-1	2026-05-13 19:16:29.000000 UTC	Disabled
+L4718: 7996	OneDrive.exe	0x7fffeabf0000	0xc000	FLTLIB.DLL	C:\WINDOWS\SYSTEM32\FLTLIB.DLL	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4719: 7996	OneDrive.exe	0x7ffff1d10000	0x22d000	WindowsCodecs.dll	C:\WINDOWS\SYSTEM32\WindowsCodecs.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4720: 7996	OneDrive.exe	0x19c31de0000	0x3c4000	FileSync.Resources.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSync.Resources.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4721: 7996	OneDrive.exe	0x7fffb4460000	0x44000	mlang.dll	C:\WINDOWS\system32\mlang.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4722: 7996	OneDrive.exe	0x19c321b0000	0x55000	FileSync.LocalizedResources.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSync.LocalizedResources.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4723: 7996	OneDrive.exe	0x7fffeca30000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-13 19:16:29.000000 UTC	Disabled
+L4724: 7996	OneDrive.exe	0x7fffb3e40000	0x32b000	FileSyncViews.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncViews.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L4725: 7996	OneDrive.exe	0x7fffb37b0000	0x685000	Qt5Gui.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Gui.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L4726: 7996	OneDrive.exe	0x7fffb3440000	0x36a000	Qt5Qml.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Qml.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L4727: 7996	OneDrive.exe	0x7fffb2a60000	0x3ff000	Qt5Quick.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Quick.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L4728: 7996	OneDrive.exe	0x7fffb2510000	0x548000	Qt5Widgets.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Widgets.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L4729: 7996	OneDrive.exe	0x7fffb43e0000	0x3d000	Qt5WinExtras.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5WinExtras.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L4730: 7996	OneDrive.exe	0x7fffb2e60000	0x5d1000	Qt5Core.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Core.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L4731: 7996	OneDrive.exe	0x7fffb1eb0000	0x654000	libcrypto-3-x64.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\libcrypto-3-x64.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L4732: 7996	OneDrive.exe	0x7ffff2ca0000	0x263000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L4733: 7996	OneDrive.exe	0x7ffff3e70000	0x13e000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L4734: 7996	OneDrive.exe	0x7fffb1d60000	0x144000	Qt5Network.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Network.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+
+--- envars.txt ---
+L3002: 7996	OneDrive.exe	0x19c2f4f79c0	ALLUSERSPROFILE	C:\ProgramData
+L3003: 7996	OneDrive.exe	0x19c2f4f79c0	APPDATA	C:\Users\kali\AppData\Roaming
+L3004: 7996	OneDrive.exe	0x19c2f4f79c0	CommonProgramFiles	C:\Program Files\Common Files
+L3005: 7996	OneDrive.exe	0x19c2f4f79c0	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
+L3006: 7996	OneDrive.exe	0x19c2f4f79c0	CommonProgramW6432	C:\Program Files\Common Files
+L3007: 7996	OneDrive.exe	0x19c2f4f79c0	COMPUTERNAME	CLEANWINDOWS11
+L3008: 7996	OneDrive.exe	0x19c2f4f79c0	ComSpec	C:\WINDOWS\system32\cmd.exe
+L3009: 7996	OneDrive.exe	0x19c2f4f79c0	DriverData	C:\Windows\System32\Drivers\DriverData
+L3010: 7996	OneDrive.exe	0x19c2f4f79c0	EFC_4968_1262719628	1
+L3011: 7996	OneDrive.exe	0x19c2f4f79c0	EFC_4968_1592913036	1
+L3012: 7996	OneDrive.exe	0x19c2f4f79c0	EFC_4968_2283032206	1
+L3013: 7996	OneDrive.exe	0x19c2f4f79c0	EFC_4968_2775293581	1
+L3014: 7996	OneDrive.exe	0x19c2f4f79c0	EFC_4968_3789132940	1
+L3015: 7996	OneDrive.exe	0x19c2f4f79c0	FPS_BROWSER_APP_PROFILE_STRING	Internet Explorer
+L3016: 7996	OneDrive.exe	0x19c2f4f79c0	FPS_BROWSER_USER_PROFILE_STRING	Default
+L3017: 7996	OneDrive.exe	0x19c2f4f79c0	HOMEDRIVE	C:
+L3018: 7996	OneDrive.exe	0x19c2f4f79c0	HOMEPATH	\Users\kali
+L3019: 7996	OneDrive.exe	0x19c2f4f79c0	LOCALAPPDATA	C:\Users\kali\AppData\Local
+L3020: 7996	OneDrive.exe	0x19c2f4f79c0	LOGONSERVER	\\CLEANWINDOWS11
+L3021: 7996	OneDrive.exe	0x19c2f4f79c0	NUMBER_OF_PROCESSORS	4
+L3022: 7996	OneDrive.exe	0x19c2f4f79c0	OneDrive	C:\Users\kali\OneDrive
+L3023: 7996	OneDrive.exe	0x19c2f4f79c0	OS	Windows_NT
+L3024: 7996	OneDrive.exe	0x19c2f4f79c0	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\kali\AppData\Local\Microsoft\WindowsApps;
+L3025: 7996	OneDrive.exe	0x19c2f4f79c0	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+L3026: 7996	OneDrive.exe	0x19c2f4f79c0	PROCESSOR_ARCHITECTURE	AMD64
+L3027: 7996	OneDrive.exe	0x19c2f4f79c0	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+L3028: 7996	OneDrive.exe	0x19c2f4f79c0	PROCESSOR_LEVEL	6
+L3029: 7996	OneDrive.exe	0x19c2f4f79c0	PROCESSOR_REVISION	ba03
+L3030: 7996	OneDrive.exe	0x19c2f4f79c0	ProgramData	C:\ProgramData
+L3031: 7996	OneDrive.exe	0x19c2f4f79c0	ProgramFiles	C:\Program Files
+L3032: 7996	OneDrive.exe	0x19c2f4f79c0	ProgramFiles(x86)	C:\Program Files (x86)
+L3033: 7996	OneDrive.exe	0x19c2f4f79c0	ProgramW6432	C:\Program Files
+L3034: 7996	OneDrive.exe	0x19c2f4f79c0	PSModulePath	C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+L3035: 7996	OneDrive.exe	0x19c2f4f79c0	PUBLIC	C:\Users\Public
+L3036: 7996	OneDrive.exe	0x19c2f4f79c0	SESSIONNAME	Console
+L3037: 7996	OneDrive.exe	0x19c2f4f79c0	SystemDrive	C:
+L3038: 7996	OneDrive.exe	0x19c2f4f79c0	SystemRoot	C:\WINDOWS
+L3039: 7996	OneDrive.exe	0x19c2f4f79c0	TEMP	C:\Users\kali\AppData\Local\Temp
+L3040: 7996	OneDrive.exe	0x19c2f4f79c0	TMP	C:\Users\kali\AppData\Local\Temp
+L3041: 7996	OneDrive.exe	0x19c2f4f79c0	USERDOMAIN	CLEANWINDOWS11
+L3042: 7996	OneDrive.exe	0x19c2f4f79c0	USERDOMAIN_ROAMINGPROFILE	CLEANWINDOWS11
+L3043: 7996	OneDrive.exe	0x19c2f4f79c0	USERNAME	kali
+L3044: 7996	OneDrive.exe	0x19c2f4f79c0	USERPROFILE	C:\Users\kali
+L3045: 7996	OneDrive.exe	0x19c2f4f79c0	windir	C:\WINDOWS
+L3046: 7996	OneDrive.exe	0x19c2f4f79c0	__COMPAT_LAYER	PerProcessSystemDPIForceOff
+
+--- pstree.txt ---
+L132: *** 7996	4968	OneDrive.exe	0x990ef6b6a080	24	-	1	False	2026-05-13 19:16:26.000000 UTC	N/A	\Device\HarddiskVolume4\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe	"C:\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe" /background	C:\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe
+
+--- psscan.txt ---
+L68: 7996	4968	OneDrive.exe	0x990ef6b6a080	24	-	1	False	2026-05-13 19:16:26.000000 UTC	N/A	Disabled
+
+--- threads.txt ---
+L1206: 0x990ef7e7a080	7996	8000	0xe08e859c4270	-	0x7ff68a8da330	\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe	2026-05-13 19:16:26.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1207: 0x990ef67f4040	7996	8132	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:16:28.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1208: 0x990ef76c9080	7996	8152	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:16:28.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1209: 0x990ef76ef080	7996	7140	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffb4a22510	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\SyncEngine.dll	2026-05-13 19:16:30.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1210: 0x990ef7e66080	7996	4272	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffb4a22510	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\SyncEngine.dll	2026-05-13 19:16:30.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1211: 0x990ef7a8f080	7996	7148	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:30.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1212: 0x990efa19b080	7996	3880	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:30.000000 UTC	1600-08-22 23:57:42.000000 UTC
+L1213: 0x990ef4f4a080	7996	4724	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L1214: 0x990ef796f080	7996	5912	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1215: 0x990ef7cca080	7996	5908	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1216: 0x990ef743f080	7996	5028	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1217: 0x990ef7440080	7996	3228	0xe08e87cdf1f0	-	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1218: 0x990ef85f9080	7996	2376	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1219: 0x990ef6193080	7996	4092	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1220: 0x990ef6192080	7996	2768	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1221: 0x990ef28c8080	7996	5340	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffeeed6ea0	\Windows\System32\Windows.UI.Xaml.dll	2026-05-13 19:16:32.000000 UTC	1600-08-22 23:57:30.000000 UTC
+L1222: 0x990ef6197080	7996	7196	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:16:33.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1223: 0x990ef6196080	7996	6964	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:33.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1224: 0x990ef28c4080	7996	7224	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:33.000000 UTC	1600-08-22 23:57:30.000000 UTC
+L1225: 0x990ef28c3080	7996	4516	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:34.000000 UTC	1600-08-22 23:57:30.000000 UTC
+L1226: 0x990ef6810080	7996	5108	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffeb469d30	\Windows\System32\directmanipulation.dll	2026-05-13 19:16:34.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1227: 0x990ef823b080	7996	7520	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:41.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1228: 0x990ef76c8080	7996	7560	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:41.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1229: 0x990ef8cec080	7996	1676	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:21:41.000000 UTC	2026-05-13 19:23:09.000000 UTC
+L1230: 0x990ef039b080	7996	3916	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:22:28.000000 UTC	1600-08-22 23:57:26.000000 UTC
+
+--- thrdscan.txt ---
+L170: 0x990ef039b080	7996	3916	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:22:28.000000 UTC	1600-08-22 23:57:26.000000 UTC
+L227: 0x990ef28c3080	7996	4516	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:34.000000 UTC	1600-08-22 23:57:30.000000 UTC
+L228: 0x990ef28c4080	7996	7224	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:33.000000 UTC	1600-08-22 23:57:30.000000 UTC
+L230: 0x990ef28c8080	7996	5340	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffeeed6ea0	\Windows\System32\Windows.UI.Xaml.dll	2026-05-13 19:16:32.000000 UTC	1600-08-22 23:57:30.000000 UTC
+L446: 0x990ef4f4a080	7996	4724	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L537: 0x990ef6192080	7996	2768	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L538: 0x990ef6193080	7996	4092	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L540: 0x990ef6196080	7996	6964	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:33.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L541: 0x990ef6197080	7996	7196	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:16:33.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L647: 0x990ef67f4040	7996	8132	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:16:28.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L652: 0x990ef6810080	7996	5108	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffeb469d30	\Windows\System32\directmanipulation.dll	2026-05-13 19:16:34.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L979: 0x990ef743f080	7996	5028	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L980: 0x990ef7440080	7996	3228	0xe08e87cdf1f0	-	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L989: 0x990ef76c8080	7996	7560	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:41.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L990: 0x990ef76c9080	7996	8152	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:16:28.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1014: 0x990ef76ef080	7996	7140	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffb4a22510	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\SyncEngine.dll	2026-05-13 19:16:30.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1150: 0x990ef796f080	7996	5912	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1187: 0x990ef7a8f080	7996	7148	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:30.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1257: 0x990ef7cca080	7996	5908	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1318: 0x990ef7e66080	7996	4272	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffb4a22510	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\SyncEngine.dll	2026-05-13 19:16:30.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1326: 0x990ef7e7a080	7996	8000	0xe08e859c4270	-	0x7ff68a8da330	\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe	2026-05-13 19:16:26.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1455: 0x990ef823b080	7996	7520	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:41.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1518: 0x990ef85f9080	7996	2376	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:31.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1599: 0x990ef8cec080	7996	1676	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:21:41.000000 UTC	2026-05-13 19:23:09.000000 UTC
+L1666: 0x990efa19b080	7996	3880	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:16:30.000000 UTC	1600-08-22 23:57:42.000000 UTC
+
+--- ldrmodules.txt ---
+L4895: 7996	OneDrive.exe	0x19c00250000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L4896: 7996	OneDrive.exe	0x19c00280000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L4897: 7996	OneDrive.exe	0x19c31720000	False	False	False	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSync.LocalizedResources.dll
+L4898: 7996	OneDrive.exe	0x19c31de0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSync.Resources.dll
+L4899: 7996	OneDrive.exe	0x19c321b0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSync.LocalizedResources.dll
+L4900: 7996	OneDrive.exe	0x19c32270000	False	False	False	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\en\FileSync.LocalizedResources.dll.mui
+L4901: 7996	OneDrive.exe	0x19c32b80000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L4902: 7996	OneDrive.exe	0x19c32b90000	False	False	False	\Windows\System32\msxml6r.dll
+L4903: 7996	OneDrive.exe	0x19c32bc0000	False	False	False	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\en\FileSync.LocalizedResources.dll.mui
+L4904: 7996	OneDrive.exe	0x19c32c80000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L4905: 7996	OneDrive.exe	0x19c32ee0000	False	False	False	\Windows\System32\en-US\kernel32.dll.mui
+L4906: 7996	OneDrive.exe	0x19c33140000	False	False	False	\Windows\SystemResources\wininet.dll.mun
+L4907: 7996	OneDrive.exe	0x19c38da0000	False	False	False	\Windows\System32\en-US\Windows.Security.Authentication.Web.Core.dll.mui
+L4908: 7996	OneDrive.exe	0x19c38c60000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L4909: 7996	OneDrive.exe	0x19c394c0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\msvcp140_app.dll
+L4910: 7996	OneDrive.exe	0x19c390e0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L4911: 7996	OneDrive.exe	0x19c38ed0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L4912: 7996	OneDrive.exe	0x19c38ea0000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
+L4913: 7996	OneDrive.exe	0x19c39010000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L4914: 7996	OneDrive.exe	0x19c39410000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.19h1.dll
+L4915: 7996	OneDrive.exe	0x19c39500000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\vcruntime140_app.dll
+L4916: 7996	OneDrive.exe	0x19c39520000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\vcruntime140_1_app.dll
+L4917: 7996	OneDrive.exe	0x19c39540000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.Xaml.winmd
+L4918: 7996	OneDrive.exe	0x19c39750000	True	True	True	\Windows\System32\icuin.dll
+L4919: 7996	OneDrive.exe	0x19c39760000	True	True	True	\Windows\System32\icuuc.dll
+L4920: 7996	OneDrive.exe	0x7ffff3ba0000	True	True	True	\Windows\System32\apphelp.dll
+L4921: 7996	OneDrive.exe	0x7fffb7540000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncRNWin32Lib.dll
+L4922: 7996	OneDrive.exe	0x7fffb44b0000	True	True	True	\Windows\System32\RstrtMgr.dll
+L4923: 7996	OneDrive.exe	0x7fffb1eb0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\libcrypto-3-x64.dll
+L4924: 7996	OneDrive.exe	0x7fffb1270000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\ReactNativePicker.dll
+L4925: 7996	OneDrive.exe	0x7fffb0eb0000	True	True	True	\Windows\System32\Windows.Services.TargetedContent.dll
+L4926: 7996	OneDrive.exe	0x7ff68a860000	True	False	True	\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe
+L4927: 7996	OneDrive.exe	0x7fffb0690000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\hermes.dll
+L4928: 7996	OneDrive.exe	0x7fffb1110000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\ReactNativeVideoCPP.dll
+L4929: 7996	OneDrive.exe	0x7fffb0fa0000	True	True	True	\Windows\System32\Wpc.dll
+L4930: 7996	OneDrive.exe	0x7fffb1150000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\RNSVG.dll
+L4931: 7996	OneDrive.exe	0x7fffb12f0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Microsoft.ReactNative.dll
+L4932: 7996	OneDrive.exe	0x7fffb12b0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\CheckboxWindows.dll
+L4933: 7996	OneDrive.exe	0x7fffb1c20000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\libssl-3-x64.dll
+L4934: 7996	OneDrive.exe	0x7fffb15f0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Microsoft.UI.Xaml.dll
+L4935: 7996	OneDrive.exe	0x7fffb1d60000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Network.dll
+L4936: 7996	OneDrive.exe	0x7fffb3e40000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncViews.dll
+L4937: 7996	OneDrive.exe	0x7fffb2a60000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Quick.dll
+L4938: 7996	OneDrive.exe	0x7fffb2510000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Widgets.dll
+L4939: 7996	OneDrive.exe	0x7fffb3440000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Qml.dll
+L4940: 7996	OneDrive.exe	0x7fffb2e60000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Core.dll
+L4941: 7996	OneDrive.exe	0x7fffb37b0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5Gui.dll
+L4942: 7996	OneDrive.exe	0x7fffb4270000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSNtfsWB.dll
+L4943: 7996	OneDrive.exe	0x7fffb4230000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSDbfsWB.dll
+L4944: 7996	OneDrive.exe	0x7fffb4170000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFALWB.dll
+L4945: 7996	OneDrive.exe	0x7fffb43e0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5WinExtras.dll
+L4946: 7996	OneDrive.exe	0x7fffb4370000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Qt5QmlModels.dll
+L4947: 7996	OneDrive.exe	0x7fffb4330000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuthLib64.dll
+L4948: 7996	OneDrive.exe	0x7fffb4460000	True	True	True	\Windows\System32\mlang.dll
+L4949: 7996	OneDrive.exe	0x7fffb5df0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.26100.8036_none_6ef439583dc61568\GdiPlus.dll
+L4950: 7996	OneDrive.exe	0x7fffb4950000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\SyncEngine.dll
+L4951: 7996	OneDrive.exe	0x7fffb45f0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\adal.dll
+L4952: 7996	OneDrive.exe	0x7fffb4500000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\WnsClientApi.dll
+L4953: 7996	OneDrive.exe	0x7fffb4790000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncSqlite3.dll
+L4954: 7996	OneDrive.exe	0x7fffb4770000	True	True	True	\Windows\System32\credui.dll
+L4955: 7996	OneDrive.exe	0x7fffb4840000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Telemetry.dll
+L4956: 7996	OneDrive.exe	0x7fffb5c10000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncEvents.dll
+L4957: 7996	OneDrive.exe	0x7fffb55e0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncSessions.dll
+L4958: 7996	OneDrive.exe	0x7fffb5c40000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncCxP.dll
+L4959: 7996	OneDrive.exe	0x7fffb5ce0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFS.dll
+L4960: 7996	OneDrive.exe	0x7fffb6420000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncClient.dll
+L4961: 7996	OneDrive.exe	0x7fffb61c0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\UpdateRingSettings.dll
+L4962: 7996	OneDrive.exe	0x7fffb6100000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\WebView2Loader.dll
+L4963: 7996	OneDrive.exe	0x7fffb5fd0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\LogUploader.dll
+L4964: 7996	OneDrive.exe	0x7fffb6130000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncHost.dll
+L4965: 7996	OneDrive.exe	0x7fffb62b0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSNtfs.dll
+L4966: 7996	OneDrive.exe	0x7fffb6280000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSCache.dll
+L4967: 7996	OneDrive.exe	0x7fffb6390000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncCxPImpl.dll
+L4968: 7996	OneDrive.exe	0x7fffb7090000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncTelemetryExtensions.dll
+L4969: 7996	OneDrive.exe	0x7fffb6fd0000	True	True	True	\Windows\System32\Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient.dll
+L4970: 7996	OneDrive.exe	0x7fffb6fb0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\msvcp140_atomic_wait.dll
+L4971: 7996	OneDrive.exe	0x7fffb7400000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\LoggingPlatform.dll
+L4972: 7996	OneDrive.exe	0x7fffb71a0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\OneDriveTelemetryStable.dll
+L4973: 7996	OneDrive.exe	0x7fffb74b0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\msvcp140.dll
+L4974: 7996	OneDrive.exe	0x7fffea780000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\vcruntime140_1.dll
+L4975: 7996	OneDrive.exe	0x7fffe3540000	True	True	True	\Windows\System32\atlthunk.dll
+L4976: 7996	OneDrive.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L4977: 7996	OneDrive.exe	0x7fffdc8d0000	True	True	True	\Windows\System32\cldapi.dll
+L4978: 7996	OneDrive.exe	0x7fffba420000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\vcruntime140.dll
+L4979: 7996	OneDrive.exe	0x7fffb8690000	True	True	True	\Windows\System32\mssprxy.dll
+L4980: 7996	OneDrive.exe	0x7fffb75a0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\ucrtbase.dll
+L4981: 7996	OneDrive.exe	0x7fffb86d0000	True	True	True	\Windows\System32\wscapi.dll
+L4982: 7996	OneDrive.exe	0x7fffd6c10000	True	True	True	\Windows\System32\rometadata.dll
+L4983: 7996	OneDrive.exe	0x7fffba5f0000	True	True	True	\Windows\System32\MicrosoftAccountWAMExtension.dll
+L4984: 7996	OneDrive.exe	0x7fffda5f0000	True	True	True	\Windows\System32\ntshrui.dll
+L4985: 7996	OneDrive.exe	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
+L4986: 7996	OneDrive.exe	0x7fffdc910000	True	True	True	\Windows\System32\DataExchange.dll
+L4987: 7996	OneDrive.exe	0x7fffdcad0000	True	True	True	\Windows\System32\cscapi.dll
+L4988: 7996	OneDrive.exe	0x7fffdd240000	True	True	True	\Windows\System32\UIAutomationCore.dll
+L4989: 7996	OneDrive.exe	0x7fffdd000000	True	True	True	\Windows\System32\msxml6.dll
+L4990: 7996	OneDrive.exe	0x7fffde5c0000	True	True	True	\Windows\System32\wpnapps.dll
+L4991: 7996	OneDrive.exe	0x7fffdfe60000	True	True	True	\Windows\System32\UiaManager.dll
+L4992: 7996	OneDrive.exe	0x7fffdfe30000	True	True	True	\Windows\System32\cryptxml.dll
+L4993: 7996	OneDrive.exe	0x7fffdfbb0000	True	True	True	\Windows\System32\webservices.dll
+L4994: 7996	OneDrive.exe	0x7fffe03b0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L4995: 7996	OneDrive.exe	0x7fffe0000000	True	True	True	\Windows\System32\FamilySafetyExt.dll
+L4996: 7996	OneDrive.exe	0x7fffe1e10000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\msvcp140_1.dll
+L4997: 7996	OneDrive.exe	0x7fffe16b0000	True	True	True	\Windows\System32\wlidprov.dll
+L4998: 7996	OneDrive.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L4999: 7996	OneDrive.exe	0x7fffe6a60000	True	True	True	\Windows\System32\netapi32.dll
+L5000: 7996	OneDrive.exe	0x7fffe5300000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll
+L5001: 7996	OneDrive.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L5002: 7996	OneDrive.exe	0x7fffe3fb0000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L5003: 7996	OneDrive.exe	0x7fffe6740000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L5004: 7996	OneDrive.exe	0x7fffe6570000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L5005: 7996	OneDrive.exe	0x7fffe72e0000	True	True	True	\Windows\System32\icu.dll
+L5006: 7996	OneDrive.exe	0x7fffe6b10000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L5007: 7996	OneDrive.exe	0x7fffe6aa0000	True	True	True	\Windows\System32\edputil.dll
+L5008: 7996	OneDrive.exe	0x7fffe6ce0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L5009: 7996	OneDrive.exe	0x7fffe7a10000	True	True	True	\Windows\System32\mpr.dll
+L5010: 7996	OneDrive.exe	0x7fffe7590000	True	True	True	\Windows\System32\StructuredQuery.dll
+L5011: 7996	OneDrive.exe	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L5012: 7996	OneDrive.exe	0x7fffe9910000	True	True	True	\Windows\System32\xmllite.dll
+L5013: 7996	OneDrive.exe	0x7fffe8fe0000	True	True	True	\Windows\System32\wininet.dll
+L5014: 7996	OneDrive.exe	0x7fffe9de0000	True	True	True	\Windows\System32\Windows.Web.dll
+
+--- malware_ldrmodules.txt ---
+L4893: 7996	OneDrive.exe	0x19c00250000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L4894: 7996	OneDrive.exe	0x19c00280000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L4895: 7996	OneDrive.exe	0x19c31720000	False	False	False	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSync.LocalizedResources.dll
+L4896: 7996	OneDrive.exe	0x19c31de0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSync.Resources.dll
+L4897: 7996	OneDrive.exe	0x19c321b0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSync.LocalizedResources.dll
+L4898: 7996	OneDrive.exe	0x19c32270000	False	False	False	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\en\FileSync.LocalizedResources.dll.mui
+L4899: 7996	OneDrive.exe	0x19c32b80000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L4900: 7996	OneDrive.exe	0x19c32b90000	False	False	False	\Windows\System32\msxml6r.dll
+L4901: 7996	OneDrive.exe	0x19c32bc0000	False	False	False	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\en\FileSync.LocalizedResources.dll.mui
+L4902: 7996	OneDrive.exe	0x19c32c80000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L4903: 7996	OneDrive.exe	0x19c32ee0000	False	False	False	\Windows\System32\en-US\kernel32.dll.mui
+L4904: 7996	OneDrive.exe	0x19c33140000	False	False	False	\Windows\SystemResources\wininet.dll.mun
+L4905: 7996	OneDrive.exe	0x19c38da0000	False	False	False	\Windows\System32\en-US\Windows.Security.Authentication.Web.Core.dll.mui
+L4906: 7996	OneDrive.exe	0x19c38c60000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L4907: 7996	OneDrive.exe	0x19c394c0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\msvcp140_app.dll
+L4908: 7996	OneDrive.exe	0x19c390e0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L4909: 7996	OneDrive.exe	0x19c38ed0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L4910: 7996	OneDrive.exe	0x19c38ea0000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
+L4911: 7996	OneDrive.exe	0x19c39010000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L4912: 7996	OneDrive.exe	0x19c39410000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.19h1.dll
+L4913: 7996	OneDrive.exe	0x19c39500000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\vcruntime140_app.dll
+L4914: 7996	OneDrive.exe	0x19c39520000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\vcruntime140_1_app.dll
+L4915: 7996	OneDrive.exe	0x19c39540000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.Xaml.winmd
+L4916: 7996	OneDrive.exe	0x19c39750000	True	True	True	\Windows\System32\icuin.dll
+L4917: 7996	OneDrive.exe	0x19c39760000	True	True	True	\Windows\System32\icuuc.dll
+L4918: 7996	OneDrive.exe	0x7ffff3ba0000	True	True	True	\Windows\System32\apphelp.dll
+
+=== END OF PIVOT REPORT ===

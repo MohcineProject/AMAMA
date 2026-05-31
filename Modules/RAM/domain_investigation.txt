@@ -1,0 +1,168 @@
+===============================================================
+ Browser Domain Investigation with Volatility3
+ Quick Reference Guide
+===============================================================
+
+GOAL: Recover URLs and visited domains from a browser's process
+      memory without needing access to the disk History file.
+
+NOTE: This technique works on any Chromium-based browser
+      (Edge, Chrome, Brave, etc.). Adapt the process name
+      accordingly (msedge.exe, chrome.exe, brave.exe...).
+
+---------------------------------------------------------------
+STEP 1 — Find the browser PID
+---------------------------------------------------------------
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.pslist | grep -i "msedge\|chrome\|brave\|firefox"
+
+  The main browser process is the one with the most threads
+  and the earliest start time. Child processes (renderers,
+  GPU, network) share the same parent PID.
+
+  Example output:
+    248   5556  msedge.exe   61 threads  <-- main process (use this)
+    1716  248   msedge.exe   18 threads  <-- renderer (child)
+    1880  248   msedge.exe   22 threads  <-- renderer (child)
+
+---------------------------------------------------------------
+STEP 2 — Scan process memory for URLs
+---------------------------------------------------------------
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.vadregexscan \
+  --pid <main_browser_pid> \
+  --pattern "https?://[a-zA-Z0-9./?=&_%:@#~-]{10,}" \
+  > edge_urls.txt 2>&1
+
+  Output columns: PID | Process | Address | MatchedString | Hexdump
+  The URL is in column 4.
+
+  Expected output size: thousands to tens of thousands of lines.
+  Runtime: 5-15 minutes depending on image size.
+
+---------------------------------------------------------------
+STEP 3 — Extract and rank domains by visit frequency
+---------------------------------------------------------------
+awk -F'\t' '{print $4}' edge_urls.txt \
+  | grep -oE 'https?://([a-zA-Z0-9.-]+)' \
+  | sed 's|https\?://||; s/^www\.//' \
+  | sort | uniq -c | sort -rn | head -40
+
+  This gives you a ranked list of domains by number of URL
+  hits — higher count = more page activity on that domain.
+
+  Interpretation:
+    - Very high counts (500+): actively browsed with full page load
+    - Medium counts (50-200): visited or pre-loaded by browser
+    - Low counts (1-10): may be redirects, tracking pixels, or
+      Edge's built-in top-sites suggestions
+
+---------------------------------------------------------------
+STEP 4 — Extract all unique URLs for a specific domain
+---------------------------------------------------------------
+awk -F'\t' '{print $4}' edge_urls.txt \
+  | grep -i "targetdomain.com" \
+  | sort -u
+
+  Useful for drilling into what specific pages were visited,
+  what session IDs are present, and what actions were taken
+  (search queries, product pages, account pages, etc.).
+
+---------------------------------------------------------------
+STEP 5 — Filter out noise (PKI / CDN / certificate URLs)
+---------------------------------------------------------------
+awk -F'\t' '{print $4}' edge_urls.txt \
+  | sort -u \
+  | grep -Ev "crl\.|ocsp\.|cacerts\.|pki\.|digicert|geotrust|\
+comodo|amazontrust|caissuers|pkiops|aax-eu|ssl-images|\
+edgeassetservice|azureedge|assets\.msn|ntp\.msn"
+
+  These patterns filter certificate revocation lists (CRLs),
+  OCSP responders, and CDN asset URLs that are automatically
+  loaded by the browser — not user-initiated visits.
+
+---------------------------------------------------------------
+STEP 6 — Look for suspicious domains
+---------------------------------------------------------------
+
+# Flag domains with unusual TLDs or patterns
+awk -F'\t' '{print $4}' edge_urls.txt \
+  | grep -oE 'https?://([a-zA-Z0-9.-]+)' \
+  | sed 's|https\?://||; s/^www\.//' \
+  | sort -u \
+  | grep -E "\.(icu|xyz|top|tk|pw|cc|cn|ru|su)(/|$)"
+
+# Find potential C2 / DGA domains (long random subdomains)
+awk -F'\t' '{print $4}' edge_urls.txt \
+  | grep -oE 'https?://[a-zA-Z0-9.-]+' \
+  | grep -E "//[a-z0-9]{10,}\." \
+  | sort -u
+
+# Find search queries typed by the user
+awk -F'\t' '{print $4}' edge_urls.txt \
+  | grep -iE "search\?q=|query=|q=" \
+  | grep -oE "(q|query)=[^&]+" \
+  | sort -u
+
+---------------------------------------------------------------
+STEP 7 — (Better) Extract the History SQLite file from memory
+---------------------------------------------------------------
+This gives the complete, structured browser history with
+timestamps — but requires two slow plugins (see TODO list).
+
+# Step A: Find the History file in memory
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.filescan \
+  | grep -i "Edge.*History\|Chrome.*History"
+
+# Step B: Dump it using its physical offset
+python3 /home/MyTools/volatility/volatility3/vol.py -q \
+  -f <memory.dump> \
+  windows.dumpfiles \
+  --physaddr <offset_from_filescan> \
+  -o /tmp/edge_history/
+
+# Step C: Query the SQLite database
+sqlite3 /tmp/edge_history/file.<offset>.dat \
+  "SELECT url, title, visit_count, last_visit_time FROM urls ORDER BY last_visit_time DESC LIMIT 50;"
+
+  Note: Chromium timestamps are microseconds since 1601-01-01.
+  Convert with: date -d @$(( (timestamp/1000000) - 11644473600 ))
+
+---------------------------------------------------------------
+REAL EXAMPLE FROM THIS INVESTIGATION (clean_windows11_RAM.elf)
+---------------------------------------------------------------
+Browser:   msedge.exe  PID 248
+Command:
+  windows.vadregexscan --pid 248 --pattern "https?://..."
+
+Top domains found:
+  1212 hits  amazon.de      -- actively browsed (confirmed)
+   327 hits  google.com     -- actively browsed (confirmed)
+    59 hits  google.ch      -- Swiss Google (locale indicator)
+    32 hits  baidu.com      -- Chinese search engine (unexplained)
+   192 hits  4399.com       -- Chinese gaming platform (suspicious)
+
+Notable URLs recovered:
+  https://www.amazon.de/-/en/b/?node=3167641&...   (product category)
+  https://fls-eu.amazon.de/1/batch/... (session ID: 259-3060969-6783800)
+  http://code.caihong.com/mg445y/544rsmfw/33i7wud5.html?sak87=csa001
+      ^-- suspicious dropper-style URL, warrants further investigation
+
+---------------------------------------------------------------
+LIMITATIONS
+---------------------------------------------------------------
+  - vadregexscan only finds URLs still resident in process memory
+    at capture time. Older history may have been paged out.
+  - High-frequency domains are reliable indicators of active
+    browsing; low-frequency hits may be noise.
+  - For Notepad / text editors: vadregexscan matches too broadly
+    (catches DLL strings). Use windows.memmap --pid <pid> to dump
+    the process heap, then run strings on the output for better
+    results.
+  - For private/incognito sessions: URLs are still in memory
+    (incognito only prevents disk writes, not RAM).
+===============================================================
