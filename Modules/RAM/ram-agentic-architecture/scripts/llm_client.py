@@ -26,7 +26,24 @@ def _make_ssl_context(verify: bool = True) -> ssl.SSLContext:
 
 def load_llm_config(path: str) -> Dict[str, Any]:
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
-        return json.load(f)
+        cfg = json.load(f)
+
+    # Resolve which provider config to actually use:
+    # 1. Try primary provider key (api_key field, then env var)
+    # 2. Iterate fallback_providers in order; use first with a key present
+    primary_key = cfg.get("api_key") or os.environ.get(cfg.get("api_key_env", ""), "")
+    if primary_key:
+        return cfg
+
+    for fb in cfg.get("fallback_providers", []):
+        fb_key = fb.get("api_key") or os.environ.get(fb.get("api_key_env", ""), "")
+        if fb_key:
+            merged = {**cfg, **fb}
+            merged.pop("fallback_providers", None)
+            return merged
+
+    # No key found anywhere — return primary config and let downstream raise
+    return cfg
 
 
 def _headers_from_config(config: Dict[str, Any]) -> Dict[str, str]:

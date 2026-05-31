@@ -1,11 +1,27 @@
 {
-  "provider": "openai-compatible",
-  "api_base": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
-  "model": "gemini-2.5-flash",
-  "api_key": "YOUR_GOOGLE_API_KEY_HERE",
-  "api_key_env": "GOOGLE_API_KEY",
+  "provider": "anthropic",
+  "api_base": "https://api.anthropic.com/v1/messages",
+  "model": "claude-opus-4-6",
+  "api_key": "",
+  "api_key_env": "ANTHROPIC_API_KEY",
+  "fallback_providers": [
+    {
+      "provider": "openrouter",
+      "api_base": "https://openrouter.ai/api/v1/chat/completions",
+      "model": "anthropic/claude-opus-4",
+      "api_key": "",
+      "api_key_env": "OPENROUTER_API_KEY"
+    },
+    {
+      "provider": "openai-compatible",
+      "api_base": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+      "model": "gemini-2.5-flash",
+      "api_key": "",
+      "api_key_env": "GOOGLE_API_KEY"
+    }
+  ],
   "temperature": 0.2,
-  "max_tokens": 32768,
+  "max_tokens": 30000,
   "max_retries": 5,
   "verify_ssl": true
 }

@@ -1,0 +1,16 @@
+{
+  "contract_version": "1.0",
+  "query_id": "aaaaaaaa-0002-0002-0002-000000000002",
+  "responding_module": "ram",
+  "entity": {
+    "type": "pid",
+    "value": "999999"
+  },
+  "verdict": "NOT_FOUND",
+  "severity": null,
+  "mitre": [],
+  "justification": "No matching lines found for pid='999999' in any RAM artifact file.",
+  "evidence": [],
+  "related_entities": [],
+  "cost": { "llm_calls": 0, "tokens_in": 0, "tokens_out": 0 }
+}

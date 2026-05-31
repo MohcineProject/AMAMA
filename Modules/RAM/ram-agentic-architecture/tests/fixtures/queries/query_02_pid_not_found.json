@@ -1,0 +1,21 @@
+{
+  "contract_version": "1.0",
+  "query_id": "aaaaaaaa-0002-0002-0002-000000000002",
+  "round": 1,
+  "case_id": "test-case-001",
+  "target_module": "ram",
+  "entity": {
+    "type": "pid",
+    "value": "999999"
+  },
+  "context": {
+    "source_module": "orchestrator",
+    "source_finding_id": "test-f002",
+    "reason": "Check if PID 999999 appears anywhere in RAM artifacts"
+  },
+  "scope": {
+    "max_evidence_lines": 50,
+    "include_related_entities": true,
+    "time_window": null
+  }
+}

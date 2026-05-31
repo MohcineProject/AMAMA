@@ -1,0 +1,295 @@
+{
+  "contract_version": "1.0",
+  "case_id": "local-test",
+  "module": "ram",
+  "scan_started_at": "2026-05-31T18:26:03Z",
+  "scan_completed_at": "2026-05-31T18:26:07Z",
+  "summary": "9 chunk(s) processed. 0 CONFIRMED, 9 INCONCLUSIVE, 0 REJECTED.",
+  "counts": {
+    "confirmed": 0,
+    "inconclusive": 9,
+    "rejected": 0
+  },
+  "findings": [
+    {
+      "finding_id": "ram-chunk_001-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "2380"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "cmd.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "4240",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\\\WINDOWS\\\\system32\\\\cmd.exe",
+          "relationship": "referenced_path"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\\\Users\\\\kali\\\\AppData\\\\Local\\\\Temp\\\\EMwLtc9FBmME.bat\\",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "LLM unavailable \u2014 cannot validate. Agent 1 reasons: Keyword in cmdline: cmd.exe /c",
+      "evidence": []
+    },
+    {
+      "finding_id": "ram-chunk_001-f002",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "3144"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "MpDefenderCore",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "896",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\\\ProgramData\\\\Microsoft\\\\Windows",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "LLM unavailable \u2014 cannot validate. Agent 1 reasons: Unusual path: C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\MpDefenderCoreService.exe",
+      "evidence": []
+    },
+    {
+      "finding_id": "ram-chunk_001-f003",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "3284"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "MsMpEng.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "896",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\\\ProgramData\\\\Microsoft\\\\Windows",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "LLM unavailable \u2014 cannot validate. Agent 1 reasons: Unusual path: C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\MsMpEng.exe",
+      "evidence": []
+    },
+    {
+      "finding_id": "ram-chunk_004-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "7996"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "OneDrive.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "4968",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\\\Users\\\\kali\\\\AppData\\\\Local\\\\Microsoft\\\\OneDrive\\\\OneDrive.exe\\",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "LLM unavailable \u2014 cannot validate. Agent 1 reasons: Unusual path: C:\\Users\\kali\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe",
+      "evidence": []
+    },
+    {
+      "finding_id": "ram-chunk_005-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "5356"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "FileCoAuth.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "516",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\\\Users\\\\kali\\\\AppData\\\\Local\\\\Microsoft\\\\OneDrive\\\\26.070.0414.0001\\\\FileCoAuth.exe\\",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "LLM unavailable \u2014 cannot validate. Agent 1 reasons: Unusual path: C:\\Users\\kali\\AppData\\Local\\Microsoft\\OneDrive\\26.070.0414.0001\\FileCoAuth.exe",
+      "evidence": []
+    },
+    {
+      "finding_id": "ram-chunk_006-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "2736"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir=\\\"C:\\\\Users\\\\kali\\\\AppData\\\\Local\\\\Packages\\\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\\\LocalState\\\\EBWebView\\\" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent=\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)\\\" --lang=en-US --mojo-named-platform-channel-pipe=5452.4512.18236964100010556028 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4\"",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "5452",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\\\Program",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "LLM unavailable \u2014 cannot validate. Agent 1 reasons: Unusual path: SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir=\\\"C:\\\\Users\\\\kali\\\\AppData\\\\Local\\\\Packages\\\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\\\LocalState\\\\EBWebView\\\" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent=\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)\\\" --lang=en-US --mojo-named-platform-channel-pipe=5452.4512.18236964100010556028 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4\"",
+      "evidence": []
+    },
+    {
+      "finding_id": "ram-chunk_007-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "376"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "Client.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "7980",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\\\Users\\\\kali\\\\AppData\\\\Roaming\\\\SubDir\\\\Client.exe\\",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "LLM unavailable \u2014 cannot validate. Agent 1 reasons: Unusual path: C:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe",
+      "evidence": []
+    },
+    {
+      "finding_id": "ram-chunk_008-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "4420"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir=\\\"C:\\\\Users\\\\kali\\\\AppData\\\\Local\\\\Packages\\\\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\\\\LocalState\\\\EBWebView\\\" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1\"",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "5652",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\\\Program",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "LLM unavailable \u2014 cannot validate. Agent 1 reasons: Unusual path: Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir=\\\"C:\\\\Users\\\\kali\\\\AppData\\\\Local\\\\Packages\\\\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\\\\LocalState\\\\EBWebView\\\" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1\"",
+      "evidence": []
+    },
+    {
+      "finding_id": "ram-chunk_009-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "7772"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "NisSrv.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "896",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\\\ProgramData\\\\Microsoft\\\\Windows",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "LLM unavailable \u2014 cannot validate. Agent 1 reasons: Unusual path: C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\NisSrv.exe",
+      "evidence": []
+    }
+  ],
+  "artifacts": {
+    "human_report": "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/aggregated_analyst.txt",
+    "per_chunk": [
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_001/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_002/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_003/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_004/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_005/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_006/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_007/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_008/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_009/analyst.txt"
+    ]
+  }
+}

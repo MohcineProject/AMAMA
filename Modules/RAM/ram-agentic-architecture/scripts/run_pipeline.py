@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pipeline orchestrator — runs all 4 stages over every input chunk.
+Pipeline orchestrator — runs all stages over every input chunk.
 
 Flow per chunk:
   triage_agent.py  →  output/chunk_N/triage.txt
@@ -9,7 +9,7 @@ Flow per chunk:
 
 Then:
   Aggregate all analyst.txt → output/aggregated_analyst.txt
-  report_agent.py  →  output/report.md
+  scan_result_emitter       → output/scan_result.json
 """
 import argparse
 import glob
@@ -17,6 +17,7 @@ import json
 import os
 import subprocess
 import sys
+from datetime import datetime, timezone
 
 _SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 _REPO_DIR = os.path.dirname(_SCRIPTS_DIR)
@@ -24,6 +25,10 @@ _REPO_DIR = os.path.dirname(_SCRIPTS_DIR)
 
 def _run(cmd: list) -> None:
     subprocess.check_call(cmd)
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def main() -> None:
@@ -44,9 +49,9 @@ def main() -> None:
         help="Root output directory (default: agentic-architecture/output/)",
     )
     parser.add_argument(
-        "--use-llm",
-        action="store_true",
-        help="Enable LLM for all stages (triage, analyst, report)",
+        "--case-id",
+        default="local-test",
+        help="Case identifier passed to scan_result.json (default: local-test)",
     )
     parser.add_argument(
         "--no-llm",
@@ -76,7 +81,9 @@ def main() -> None:
         sys.exit(1)
     print(f"[pipeline] Found {len(chunks)} chunk(s) in {input_dir}", file=sys.stderr)
 
+    started_at = _now_iso()
     analyst_files: list = []
+    per_chunk_paths: list = []
 
     # --- Per-chunk loop ---
     for idx, chunk_path in enumerate(chunks, start=1):
@@ -130,6 +137,7 @@ def main() -> None:
         _run(analyst_cmd)
 
         analyst_files.append((idx, chunk_name, analyst_path))
+        per_chunk_paths.append(analyst_path)
 
     # --- Aggregate all analyst.txt files ---
     aggregated_path = os.path.join(out_dir, "aggregated_analyst.txt")
@@ -145,25 +153,26 @@ def main() -> None:
                 agg.write(f"(analyst.txt not found for {chunk_name})\n")
             agg.write("\n")
 
-    # --- Stage 4: Report Writer (Agent 3) ---
-    report_path = os.path.join(out_dir, "report.md")
-    print(f"[pipeline] Stage 4 — report_agent.py → {report_path}", file=sys.stderr)
-    report_cmd = [
-        sys.executable,
-        os.path.join(_SCRIPTS_DIR, "report_agent.py"),
-        "--analyst", aggregated_path,
-        "--out",     report_path,
-    ]
-    if args.use_llm and not args.no_llm:
-        report_cmd.extend(["--use-llm", "--llm-config", args.llm_config])
-    _run(report_cmd)
+    # --- Emit scan_result.json ---
+    scan_result_path = os.path.join(out_dir, "scan_result.json")
+    print(f"[pipeline] Emitting scan_result.json → {scan_result_path}", file=sys.stderr)
+    sys.path.insert(0, _SCRIPTS_DIR)
+    from scan_result_emitter import emit_scan_result
+    emit_scan_result(
+        aggregated_path=aggregated_path,
+        case_id=args.case_id,
+        out_path=scan_result_path,
+        per_chunk_paths=per_chunk_paths,
+        started_at=started_at,
+    )
 
     # --- Summary ---
     print("\n[pipeline] Pipeline complete.", file=sys.stderr)
+    print(f"  Case ID          : {args.case_id}", file=sys.stderr)
     print(f"  Chunks processed : {len(chunks)}", file=sys.stderr)
     print(f"  Output root      : {out_dir}", file=sys.stderr)
     print(f"  Aggregated TXT   : {aggregated_path}", file=sys.stderr)
-    print(f"  Final report     : {report_path}", file=sys.stderr)
+    print(f"  Scan result JSON : {scan_result_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,55 @@
+{
+  "contract_version": "1.0",
+  "query_id": "aaaaaaaa-0003-0003-0003-000000000003",
+  "responding_module": "ram",
+  "entity": {
+    "type": "image_name",
+    "value": "svchost.exe"
+  },
+  "verdict": "INCONCLUSIVE",
+  "severity": null,
+  "mitre": [],
+  "justification": "The pslist evidence shows approximately 50 svchost.exe instances, all with PPID 896 (expected services.exe parent), running in session 0 or 1, which is structurally normal. However, the retrieved evidence contains only pslist.txt lines \u2014 no netscan.txt data linking any specific svchost.exe PID to the reported 185.220.101.44:4444 connection, and no malfind.txt or hollowprocesses.txt entries showing injection or hollowing markers. Without corroborating network or code-injection artifacts, the specific PID responsible for the outbound C2 connection cannot be identified, and compromise cannot be confirmed or ruled out from this evidence alone.",
+  "evidence": [
+    {
+      "source_file": "pslist.txt",
+      "line": 14,
+      "content": "516\t896\tsvchost.exe\t0x990ef4cd8080\t14\t-\t0\tFalse\t2026-05-13 19:14:41.000000 UTC\tN/A\tDisabled",
+      "verbatim": true,
+      "timestamp": "2026-05-13 19:14:41.000000 UTC"
+    },
+    {
+      "source_file": "pslist.txt",
+      "line": 17,
+      "content": "456\t896\tsvchost.exe\t0x990ef4eb7080\t13\t-\t0\tFalse\t2026-05-13 19:14:41.000000 UTC\tN/A\tDisabled",
+      "verbatim": true,
+      "timestamp": "2026-05-13 19:14:41.000000 UTC"
+    },
+    {
+      "source_file": "pslist.txt",
+      "line": 71,
+      "content": "4312\t896\tsvchost.exe\t0x990ef779b080\t5\t-\t1\tFalse\t2026-05-13 19:15:35.000000 UTC\tN/A\tDisabled",
+      "verbatim": true,
+      "timestamp": "2026-05-13 19:15:35.000000 UTC"
+    },
+    {
+      "source_file": "pslist.txt",
+      "line": 72,
+      "content": "4340\t896\tsvchost.exe\t0x990ef4979080\t3\t-\t1\tFalse\t2026-05-13 19:15:35.000000 UTC\tN/A\tDisabled",
+      "verbatim": true,
+      "timestamp": "2026-05-13 19:15:35.000000 UTC"
+    }
+  ],
+  "related_entities": [
+    {
+      "type": "PID",
+      "value": "896",
+      "relationship": "parent_process_of_all_svchost_instances"
+    }
+  ],
+  "cost": {
+    "llm_calls": 1,
+    "tokens_in": 0,
+    "tokens_out": 0
+  }
+}

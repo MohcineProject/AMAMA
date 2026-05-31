@@ -1,0 +1,79 @@
+=== EntityQuery ===
+{
+  "contract_version": "1.0",
+  "query_id": "aaaaaaaa-0004-0004-0004-000000000004",
+  "round": 2,
+  "case_id": "test-case-001",
+  "target_module": "ram",
+  "entity": {
+    "type": "image_name",
+    "value": "lsass.exe"
+  },
+  "context": {
+    "source_module": "disk",
+    "source_finding_id": "disk-chunk001-f002",
+    "reason": "procdump.exe was found executed from C:\\Users\\Public \u2014 check if lsass.exe shows credential dumping indicators in RAM (e.g. SeDebugPrivilege, anomalous handles, unexpected child processes)"
+  },
+  "scope": {
+    "max_evidence_lines": 50,
+    "include_related_entities": true,
+    "time_window": null
+  }
+}
+
+=== Retrieved Evidence (4 lines) ===
+[pslist.txt L13] 916	752	lsass.exe	0x990ef4c5c080	9	-	0	False	2026-05-13 19:14:38.000000 UTC	N/A	Disabled
+[pstree.txt L124] * 916	752	lsass.exe	0x990ef4c5c080	9	-	0	False	2026-05-13 19:14:38.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\lsass.exe	C:\WINDOWS\system32\lsass.exe	C:\WINDOWS\system32\lsass.exe
+[cmdline.txt L13] 916	lsass.exe	C:\WINDOWS\system32\lsass.exe
+[psscan.txt L26] 916	752	lsass.exe	0x990ef4c5c080	9	-	0	False	2026-05-13 19:14:38.000000 UTC	N/A	Disabled
+
+=== EntityFindings ===
+{
+  "contract_version": "1.0",
+  "query_id": "aaaaaaaa-0004-0004-0004-000000000004",
+  "responding_module": "ram",
+  "entity": {
+    "type": "image_name",
+    "value": "lsass.exe"
+  },
+  "verdict": "INCONCLUSIVE",
+  "severity": null,
+  "mitre": [],
+  "justification": "LLM unavailable \u2014 manual review required. (no-llm mode \u2014 manual review required)",
+  "evidence": [
+    {
+      "source_file": "pslist.txt",
+      "line": 13,
+      "content": "916\t752\tlsass.exe\t0x990ef4c5c080\t9\t-\t0\tFalse\t2026-05-13 19:14:38.000000 UTC\tN/A\tDisabled",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "pstree.txt",
+      "line": 124,
+      "content": "* 916\t752\tlsass.exe\t0x990ef4c5c080\t9\t-\t0\tFalse\t2026-05-13 19:14:38.000000 UTC\tN/A\t\\Device\\HarddiskVolume4\\Windows\\System32\\lsass.exe\tC:\\WINDOWS\\system32\\lsass.exe\tC:\\WINDOWS\\system32\\lsass.exe",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "cmdline.txt",
+      "line": 13,
+      "content": "916\tlsass.exe\tC:\\WINDOWS\\system32\\lsass.exe",
+      "verbatim": true,
+      "timestamp": null
+    },
+    {
+      "source_file": "psscan.txt",
+      "line": 26,
+      "content": "916\t752\tlsass.exe\t0x990ef4c5c080\t9\t-\t0\tFalse\t2026-05-13 19:14:38.000000 UTC\tN/A\tDisabled",
+      "verbatim": true,
+      "timestamp": null
+    }
+  ],
+  "related_entities": [],
+  "cost": {
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0
+  }
+}

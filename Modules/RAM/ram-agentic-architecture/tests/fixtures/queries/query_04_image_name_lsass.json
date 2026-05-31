@@ -1,0 +1,21 @@
+{
+  "contract_version": "1.0",
+  "query_id": "aaaaaaaa-0004-0004-0004-000000000004",
+  "round": 2,
+  "case_id": "test-case-001",
+  "target_module": "ram",
+  "entity": {
+    "type": "image_name",
+    "value": "lsass.exe"
+  },
+  "context": {
+    "source_module": "disk",
+    "source_finding_id": "disk-chunk001-f002",
+    "reason": "procdump.exe was found executed from C:\\Users\\Public — check if lsass.exe shows credential dumping indicators in RAM (e.g. SeDebugPrivilege, anomalous handles, unexpected child processes)"
+  },
+  "scope": {
+    "max_evidence_lines": 50,
+    "include_related_entities": true,
+    "time_window": null
+  }
+}

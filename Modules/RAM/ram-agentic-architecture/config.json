@@ -72,6 +72,9 @@
     "-enc",
     "-encodedcommand"
   ],
+  "network_files": ["netscan.txt", "netstat.txt", "cmdline.txt", "envars.txt"],
+  "registry_files": ["registry_printkey.txt"],
+  "sid_files": ["getsids.txt", "privileges.txt", "sessions.txt"],
   "suspicious_dirs": [
     "\\users\\",
     "\\appdata\\",

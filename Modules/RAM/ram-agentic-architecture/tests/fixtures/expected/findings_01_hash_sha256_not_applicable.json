@@ -1,0 +1,16 @@
+{
+  "contract_version": "1.0",
+  "query_id": "aaaaaaaa-0001-0001-0001-000000000001",
+  "responding_module": "ram",
+  "entity": {
+    "type": "hash_sha256",
+    "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "verdict": "NOT_APPLICABLE",
+  "severity": null,
+  "mitre": [],
+  "justification": "RAM module does not handle entity type 'hash_sha256'. File hashes are not present in memory artifacts.",
+  "evidence": [],
+  "related_entities": [],
+  "cost": { "llm_calls": 0, "tokens_in": 0, "tokens_out": 0 }
+}

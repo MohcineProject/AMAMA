@@ -1,0 +1,54 @@
+=== CHUNK 1: chunk_001.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-31T10:00:00Z
+Summary: Confirmed C2 callback from powershell; process injection detected.
+Counts: confirmed=1  inconclusive=1  rejected=2
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      1234
+PPID:     500
+Image:    powershell.exe
+Cmdline:  powershell -enc VwByAGkAdABlAC0ASABvAHMAdAAgACIASGVsbG8iAA==
+Severity: CRITICAL
+MITRE:    T1059.001 — PowerShell Execution, T1105 — Ingress Tool Transfer
+
+Justification:
+  Encoded PowerShell with download-cradle pattern detected (IEX + DownloadString).
+  Established C2 connection to 185.220.101.44:4444. Process injected into
+  child svchost. Strong corroboration across cmdline, network, and malfind.
+
+Key Evidence:
+  - L42: 1234  2  powershell.exe  "powershell -enc VwByAGkAdABlACIASGVsbG8iAA=="
+  - L156: 1234 ESTABLISHED 192.168.1.100:54321 185.220.101.44:4444
+  - L89: 1234 RWX region: 0x00400000-0x00410000 MZ shellcode pattern
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      5678
+PPID:     1234
+Image:    cmd.exe
+Cmdline:  cmd /c whoami > C:\Users\Public\out.txt
+Severity: MEDIUM
+MITRE:    T1057 — Process Discovery
+
+Justification:
+  cmd.exe spawned by the suspicious powershell.exe (PID 1234). Command line
+  suggests reconnaissance (whoami). However, the output file was not found in
+  pivot evidence, so full confirmation is not possible.
+
+Key Evidence:
+  - L201: 5678  1234  cmd.exe  "cmd /c whoami > C:\Users\Public\out.txt"
+----------------------------------------------------------------
+
+=== CHUNK 2: chunk_002.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-31T10:01:00Z
+Summary: No high-severity findings.
+Counts: confirmed=0  inconclusive=0  rejected=5
+================================================================
+

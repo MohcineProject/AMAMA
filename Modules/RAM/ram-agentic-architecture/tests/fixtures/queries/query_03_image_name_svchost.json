@@ -1,0 +1,21 @@
+{
+  "contract_version": "1.0",
+  "query_id": "aaaaaaaa-0003-0003-0003-000000000003",
+  "round": 2,
+  "case_id": "test-case-001",
+  "target_module": "ram",
+  "entity": {
+    "type": "image_name",
+    "value": "svchost.exe"
+  },
+  "context": {
+    "source_module": "network",
+    "source_finding_id": "net-c001-f003",
+    "reason": "Outbound connection to 185.220.101.44:4444 observed — confirm which svchost.exe instance is responsible and whether it shows injection or hollowing markers"
+  },
+  "scope": {
+    "max_evidence_lines": 50,
+    "include_related_entities": true,
+    "time_window": null
+  }
+}
