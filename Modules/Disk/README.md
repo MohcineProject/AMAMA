@@ -37,6 +37,34 @@ This script (idempotent — safe to re-run):
 
 ## Quick Start
 
+### One-command end-to-end (recommended for testing)
+
+```bash
+sudo .venv/bin/python run_e2e.py --case-id my_case --out results/
+```
+
+Runs all four stages in sequence — mount → collect → pipeline → scan — with fast collection mode and no LLM calls (dry run) by default. Produces `results/scan_result.json`.
+
+To enable the full AI pipeline (requires `ANTHROPIC_API_KEY`):
+
+```bash
+sudo .venv/bin/python run_e2e.py --case-id my_case --out results/ --llm
+```
+
+All parameters are optional:
+
+| Flag | Default | Description |
+|---|---|---|
+| `--case-id` | timestamp (e.g. `case-20260602-143201`) | Case identifier |
+| `--out` | `results/` | Output directory for `scan_result.json` |
+| `--image-dir` | `Disk_image/` | Directory containing the forensic image |
+| `--no-llm` / `--llm` | `--no-llm` | Dry-run or live LLM calls |
+| `--fast` / `--full` | `--fast` | Fast MFT triage or full parse with PE entropy |
+
+---
+
+### Step-by-step (manual control)
+
 ### Step 1 — Mount the disk image
 
 ```bash
@@ -159,3 +187,14 @@ Expected output without .NET:
 ```
 Mode: PYTHON-FALLBACK
 ```
+
+---
+
+## Known Issues
+
+- **Shimcache on Windows Server 2012 R2** — ~~fixed~~. The Python fallback now supports both `CACH` (Win10/11) and `\x80\x00\x00\x00` (Win8/Server 2012/2012 R2) magic. Both formats share the same 128-byte header and per-entry layout.
+- **Amcache record count discrepancy** — partially mitigated. `_amcache_python()` now deduplicates by (path, hash), reducing noise. The remaining gap versus Zimmerman (which filters to unassociated files only) requires a `ProgramId`-based filter that needs verification against the actual hive — deferred.
+- **`python -m disk.scan` / `python -m disk.query`** — not yet implemented. Entry points remain `python scripts/scan.py` and `python scripts/query.py`.
+- **`eventlog_security.txt` may be missing** — if collecting from an image without a re-mount, regenerate by re-running the `zevtx` collector after mounting.
+- **APT package name** — SIFT uses `libewf-tools` (from its PPA), not `ewf-tools`. The `install.sh` script handles this automatically.
+- **sudo PATH** — on SIFT, `sudo -E PATH=...` does not override `PATH` (secure_path in sudoers). Always invoke via the full venv path: `sudo .venv/bin/python`.
