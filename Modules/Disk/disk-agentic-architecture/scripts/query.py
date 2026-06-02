@@ -248,6 +248,8 @@ def _call_llm(query: dict, evidence: list[dict], base: Path, llm_cfg: dict) -> d
     except Exception as exc:
         return _fallback_inconclusive(query, evidence,
                                       f"LLM call failed: {exc}")
+    from llm_client import get_last_usage
+    call_usage = get_last_usage()
 
     # Try to extract JSON from LLM response
     try:
@@ -267,7 +269,9 @@ def _call_llm(query: dict, evidence: list[dict], base: Path, llm_cfg: dict) -> d
     findings.setdefault("entity", entity)
     findings.setdefault("evidence", evidence)
     findings.setdefault("related_entities", [])
-    findings.setdefault("cost", {"llm_calls": 1, "tokens_in": 0, "tokens_out": 0})
+    findings["cost"] = {"llm_calls": 1,
+                         "tokens_in": call_usage["tokens_in"],
+                         "tokens_out": call_usage["tokens_out"]}
     findings.setdefault("mitre", [])
     # severity must be null for non-CONFIRMED
     if findings.get("verdict") != "CONFIRMED":

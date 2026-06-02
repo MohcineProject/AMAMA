@@ -8,9 +8,21 @@ from __future__ import annotations
 import argparse
 import contextlib
 import datetime as _dt
+import functools
 import json
 import os
+import subprocess
 from typing import Any, Iterable, Iterator, Optional
+
+
+@functools.lru_cache(maxsize=None)
+def dotnet_available() -> bool:
+    """Return True if the dotnet runtime is on PATH and responds to --version."""
+    try:
+        r = subprocess.run(["dotnet", "--version"], capture_output=True, timeout=5)
+        return r.returncode == 0
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        return False
 
 
 # 100-nanosecond intervals between 1601-01-01 (Windows epoch) and 1970-01-01 (Unix).

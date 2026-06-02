@@ -88,25 +88,39 @@ def _parse_evidence_lines(evidence_text: str) -> list[dict]:
     """
     Parse `Key Evidence:` lines into evidence dicts.
 
-    Lines look like:
+    Preferred format (emitted by agent2_pivot.md):
+        - [artifact_filename.txt L1234]: type=file path=...
+
+    Legacy format (older analyst.txt files without source prefix):
         - L1234: type=file path=...
-        - L5678: type=eventlog ...
+        - type=eventlog ...
     """
+    # Matches [filename L<N>]: content
+    _PREFIXED = re.compile(r"^\[([^\]]+)\s+L(\d+)\]:\s*(.*)", re.IGNORECASE)
+    # Matches legacy L<N>: content
+    _LEGACY_LINENO = re.compile(r"^L(\d+):\s*(.*)")
+
     items = []
     for raw in evidence_text.splitlines():
         raw = raw.strip().lstrip("- ").strip()
         if not raw:
             continue
-        # Try to extract line number from leading L<N>: prefix
-        m = re.match(r"^L(\d+):\s*(.*)", raw)
+        m = _PREFIXED.match(raw)
         if m:
-            line_no = int(m.group(1))
-            content = m.group(2)
+            source_file = m.group(1).strip()
+            line_no = int(m.group(2))
+            content = m.group(3)
         else:
-            line_no = 1
-            content = raw
+            m2 = _LEGACY_LINENO.match(raw)
+            if m2:
+                line_no = int(m2.group(1))
+                content = m2.group(2)
+            else:
+                line_no = 1
+                content = raw
+            source_file = "analyst.txt"
         items.append({
-            "source_file": "analyst.txt",
+            "source_file": source_file,
             "line": line_no,
             "content": content,
             "verbatim": True,

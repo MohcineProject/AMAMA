@@ -696,6 +696,26 @@ def discover_browsers(ntfs_mount: str) -> Dict[str, Optional[str]]:
 
 _SYSTEM_USER_DIRS = {"Public", "Default", "Default User", "All Users"}
 
+# Patterns for non-human user directories that Windows places under Users/
+# on various configurations (server roles, .NET framework, service accounts).
+_SYSTEM_USER_PATTERNS = (
+    ".NET",          # .NET v4.5, .NET v4.5 Classic, etc.
+    "NetworkService",
+    "LocalService",
+    "systemprofile",
+    "MSSQL",
+    "IIS",
+)
+
+
+def _is_system_user_dir(name: str) -> bool:
+    if name in _SYSTEM_USER_DIRS:
+        return True
+    for pat in _SYSTEM_USER_PATTERNS:
+        if name.startswith(pat):
+            return True
+    return False
+
 
 def _discover_username(ntfs_mount: str, browsers: Dict[str, Optional[str]]) -> Optional[str]:
     """Derive the primary Windows username from browser paths or Users/ directory."""
@@ -713,11 +733,11 @@ def _discover_username(ntfs_mount: str, browsers: Dict[str, Optional[str]]) -> O
             except ValueError:
                 pass
 
-    # Fallback: list Users/ and skip system accounts
+    # Fallback: list Users/ and skip system/service accounts
     try:
         candidates = [
             d for d in os.listdir(users_root)
-            if os.path.isdir(os.path.join(users_root, d)) and d not in _SYSTEM_USER_DIRS
+            if os.path.isdir(os.path.join(users_root, d)) and not _is_system_user_dir(d)
         ]
         if candidates:
             if len(candidates) > 1:

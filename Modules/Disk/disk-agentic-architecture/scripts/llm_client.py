@@ -8,6 +8,15 @@ import urllib.request
 from typing import Any, Dict, List
 
 
+# Tracks usage from the most recent call_chat() invocation.
+_last_call_usage: dict = {"tokens_in": 0, "tokens_out": 0}
+
+
+def get_last_usage() -> dict:
+    """Return token counts from the most recent call_chat() call."""
+    return dict(_last_call_usage)
+
+
 def _make_ssl_context(verify: bool = True) -> ssl.SSLContext:
     """
     Contexte SSL robuste : TLS 1.2+, vérification des certificats via le store système.
@@ -114,6 +123,9 @@ def _call_anthropic(messages: List[Dict[str, str]], config: Dict[str, Any]) -> s
     content_blocks = parsed.get("content", [])
     if not content_blocks:
         raise RuntimeError(f"Anthropic response missing content: {str(parsed)[:200]}")
+    usage = parsed.get("usage", {})
+    _last_call_usage["tokens_in"] = int(usage.get("input_tokens", 0))
+    _last_call_usage["tokens_out"] = int(usage.get("output_tokens", 0))
     return content_blocks[0].get("text", "")
 
 
@@ -192,6 +204,9 @@ def call_chat(messages: List[Dict[str, str]], config: Dict[str, Any]) -> str:
         content = message.get("content", "")
         if not content:
             raise RuntimeError("LLM response missing content")
+        usage = parsed.get("usage", {})
+        _last_call_usage["tokens_in"] = int(usage.get("prompt_tokens", 0))
+        _last_call_usage["tokens_out"] = int(usage.get("completion_tokens", 0))
     else:
         raise RuntimeError(f"Unsupported provider: {provider}")
         

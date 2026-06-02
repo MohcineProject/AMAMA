@@ -405,8 +405,9 @@ def run_from_config(config: dict, out_dir: str) -> dict:
     section = config.get("eventlog") or {}
     evtx_dir = section.get("evtx_dir")
     if not evtx_dir or not os.path.isdir(evtx_dir):
-        return {"error": f"eventlog.evtx_dir not found: {evtx_dir!r}",
-                "output_files": [], "record_count": 0}
+        print(f"[eventlog_collector] evtx_dir not found: {evtx_dir!r} — skipping",
+              file=__import__("sys").stderr)
+        return {"output_files": [], "record_count": 0}
 
     max_recs = config.get("max_records")
     allow_set = set(config.get("high_signal_event_ids") or [])

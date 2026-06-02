@@ -122,8 +122,8 @@ Justification:
   <2–4 sentences. Cite specific evidence. Explain what ties the evidence to the verdict.>
 
 Key Evidence:
-  - <verbatim line from pivot input>
-  - <verbatim line>
+  - [artifact_filename.txt L<lineno>]: <verbatim line from pivot input>
+  - [artifact_filename.txt L<lineno>]: <verbatim line>
 ----------------------------------------------------------------
 
 [INCONCLUSIVE]
@@ -136,12 +136,13 @@ Justification:
   <Explain what evidence exists, what's missing, and why CONFIRMED can't be reached.>
 
 Key Evidence:
-  - <verbatim line>
+  - [artifact_filename.txt L<lineno>]: <verbatim line>
 ----------------------------------------------------------------
 ```
 
 ### Rules
 - Cite **verbatim** lines from the pivot input in Key Evidence — do not paraphrase.
+- Each Key Evidence line **must** be prefixed with `[artifact_filename.txt L<lineno>]` where `artifact_filename.txt` is the exact filename from the `--- filename (N hits) ---` section header the line came from, and `<lineno>` is the `L<N>` number that precedes the line in the pivot input.
 - MITRE is optional — fill in only when the evidence cleanly maps to a known ATT&CK technique. Leave blank rather than guess.
 - Trim very long evidence lines to the suspicious portion.
 - Target < 20 KB total output — trim redundant Key Evidence lines once the point is made.

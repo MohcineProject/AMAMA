@@ -163,8 +163,10 @@ def run_from_config(config: dict, out_dir: str) -> dict:
     limit = config.get("max_records")
 
     if not prefetch_dir or not os.path.isdir(prefetch_dir):
-        return {"error": f"execution.prefetch_dir not found: {prefetch_dir!r}",
-                "output_files": [], "record_count": 0}
+        # Prefetch is disabled on Windows Server SKUs — skip silently
+        print(f"[execution_collector] prefetch_dir not found: {prefetch_dir!r} "
+              f"— skipping (Prefetch disabled on server SKUs)", file=__import__("sys").stderr)
+        return {"output_files": [], "record_count": 0}
 
     out_path = os.path.join(out_dir, "prefetch_records.txt")
     n = _c.write_records_to_file(collect_prefetch(prefetch_dir), out_path, limit=limit)

@@ -12,6 +12,7 @@ Output files:
 from __future__ import annotations
 
 import csv
+import datetime
 import io
 import os
 import subprocess
@@ -101,6 +102,196 @@ def _row_to_find_evil(row: dict) -> dict:
     }
 
 
+def _reg_open_key(reg, path: str):
+    """Open a registry key by backslash-separated path; return None if not found."""
+    try:
+        return reg.open(path)
+    except Exception:
+        return None
+
+
+def _reg_ts(key) -> str:
+    """Return ISO8601 UTC timestamp from a python-registry key, or empty string."""
+    try:
+        ts = key.timestamp()
+        if ts.tzinfo is None:
+            ts = ts.replace(tzinfo=datetime.timezone.utc)
+        return _c.to_iso8601(ts)
+    except Exception:
+        return ""
+
+
+def _reg_val(key, name: str) -> str:
+    """Read a single named value; return empty string on any error."""
+    try:
+        return str(key.value(name).value() or "")
+    except Exception:
+        return ""
+
+
+def _collect_python_fallback(config: dict) -> tuple[list, list]:
+    """Fallback: parse key autorun/misc registry locations using python-registry."""
+    try:
+        from Registry import Registry  # python-registry
+    except ImportError:
+        print("[zimm_reg] python-registry not installed; cannot parse registry hives",
+              file=sys.stderr)
+        return [], []
+
+    print("[zimm_reg] Using python-registry fallback — coverage lower than RECmd/DFIRBatch",
+          file=sys.stderr)
+
+    hive_dir = (config.get("registry") or {}).get("hive_dir") or ""
+    zimm = config.get("zimmerman_tools") or {}
+    ntuser_search = zimm.get("ntuser_search_dirs") or []
+    ntuser_fname = zimm.get("user_hive_filename") or "NTUSER.DAT"
+
+    autoruns: list[dict] = []
+    misc: list[dict] = []
+
+    def _make_rec(key_path: str, val_name: str, val_data: str,
+                  category: str, desc: str, hive_name: str, ts: str) -> dict:
+        return {
+            "type": "registry",
+            "key": key_path,
+            "value": val_name or None,
+            "data": val_data or None,
+            "modified": ts or None,
+            "category": category,
+            "description": desc or None,
+            "artifact_source": hive_name,
+        }
+
+    def _parse_run_key(reg, key_path: str, hive_name: str, category: str) -> None:
+        key = _reg_open_key(reg, key_path)
+        if key is None:
+            return
+        ts = _reg_ts(key)
+        for val in key.values():
+            try:
+                data = str(val.value() or "")
+                autoruns.append(_make_rec(key_path, val.name(), data, category,
+                                          "Autorun entry", hive_name, ts))
+            except Exception:
+                pass
+
+    def _parse_services(reg, key_path: str, hive_name: str) -> None:
+        key = _reg_open_key(reg, key_path)
+        if key is None:
+            return
+        for svc in key.subkeys():
+            try:
+                ts = _reg_ts(svc)
+                image_path = _reg_val(svc, "ImagePath")
+                start = _reg_val(svc, "Start")
+                svc_type = _reg_val(svc, "Type")
+                if not image_path:
+                    continue
+                autoruns.append(_make_rec(
+                    f"{key_path}\\{svc.name()}", "ImagePath", image_path,
+                    "services", f"Start={start} Type={svc_type}", hive_name, ts))
+            except Exception:
+                pass
+
+    def _parse_winlogon(reg, hive_name: str) -> None:
+        key = _reg_open_key(reg,
+            r"Microsoft\Windows NT\CurrentVersion\Winlogon")
+        if key is None:
+            return
+        ts = _reg_ts(key)
+        for vname in ("Userinit", "Shell", "AppSetup"):
+            data = _reg_val(key, vname)
+            if data:
+                autoruns.append(_make_rec(
+                    r"Microsoft\Windows NT\CurrentVersion\Winlogon",
+                    vname, data, "autoruns", "Winlogon entry", hive_name, ts))
+
+    def _parse_uninstall(reg, hive_name: str) -> None:
+        key = _reg_open_key(reg, r"Microsoft\Windows\CurrentVersion\Uninstall")
+        if key is None:
+            return
+        for app in key.subkeys():
+            try:
+                ts = _reg_ts(app)
+                name = _reg_val(app, "DisplayName")
+                ver = _reg_val(app, "DisplayVersion")
+                pub = _reg_val(app, "Publisher")
+                install_loc = _reg_val(app, "InstallLocation")
+                if not name:
+                    continue
+                misc.append(_make_rec(
+                    rf"Microsoft\Windows\CurrentVersion\Uninstall\{app.name()}",
+                    "DisplayName", name,
+                    "installed programs", f"version={ver} publisher={pub} location={install_loc}",
+                    hive_name, ts))
+            except Exception:
+                pass
+
+    def _parse_os_info(reg, hive_name: str) -> None:
+        key = _reg_open_key(reg, r"Microsoft\Windows NT\CurrentVersion")
+        if key is None:
+            return
+        ts = _reg_ts(key)
+        for vname in ("ProductName", "CurrentBuildNumber", "ReleaseId",
+                      "DisplayVersion", "CurrentVersion", "InstallDate"):
+            data = _reg_val(key, vname)
+            if data:
+                misc.append(_make_rec(
+                    r"Microsoft\Windows NT\CurrentVersion",
+                    vname, data, "system info", "OS version info", hive_name, ts))
+
+    # ── SOFTWARE hive ──────────────────────────────────────────────────────────
+    software_hive = os.path.join(hive_dir, "SOFTWARE")
+    if os.path.isfile(software_hive):
+        try:
+            reg = Registry.Registry(software_hive)
+            _parse_run_key(reg, r"Microsoft\Windows\CurrentVersion\Run",
+                           "SOFTWARE", "autoruns")
+            _parse_run_key(reg, r"Microsoft\Windows\CurrentVersion\RunOnce",
+                           "SOFTWARE", "autoruns")
+            _parse_run_key(reg, r"Wow6432Node\Microsoft\Windows\CurrentVersion\Run",
+                           "SOFTWARE", "autoruns")
+            _parse_winlogon(reg, "SOFTWARE")
+            _parse_os_info(reg, "SOFTWARE")
+            _parse_uninstall(reg, "SOFTWARE")
+        except Exception as e:
+            print(f"[zimm_reg] SOFTWARE hive error: {e}", file=sys.stderr)
+
+    # ── SYSTEM hive ────────────────────────────────────────────────────────────
+    system_hive = os.path.join(hive_dir, "SYSTEM")
+    if os.path.isfile(system_hive):
+        try:
+            reg = Registry.Registry(system_hive)
+            # CurrentControlSet resolves to ControlSet001 in raw hive access
+            for ccs in ("ControlSet001", "ControlSet002"):
+                _parse_services(reg, rf"{ccs}\Services", "SYSTEM")
+        except Exception as e:
+            print(f"[zimm_reg] SYSTEM hive error: {e}", file=sys.stderr)
+
+    # ── NTUSER.DAT hives (per user) ────────────────────────────────────────────
+    for search_root in ntuser_search:
+        if not search_root or not os.path.isdir(search_root):
+            continue
+        try:
+            for user_dir in os.listdir(search_root):
+                ntuser = os.path.join(search_root, user_dir, ntuser_fname)
+                if not os.path.isfile(ntuser):
+                    continue
+                try:
+                    reg = Registry.Registry(ntuser)
+                    label = f"NTUSER.DAT({user_dir})"
+                    _parse_run_key(reg, r"Software\Microsoft\Windows\CurrentVersion\Run",
+                                   label, "autoruns")
+                    _parse_run_key(reg, r"Software\Microsoft\Windows\CurrentVersion\RunOnce",
+                                   label, "autoruns")
+                except Exception as e:
+                    print(f"[zimm_reg] {ntuser} error: {e}", file=sys.stderr)
+        except Exception as e:
+            print(f"[zimm_reg] listing {search_root}: {e}", file=sys.stderr)
+
+    return autoruns, misc
+
+
 def collect(config: dict) -> tuple[Iterator[dict], Iterator[dict]]:
     """Yield (autorun_records, misc_records) from RECmd DFIRBatch output."""
     zimm = config.get("zimmerman_tools") or {}
@@ -109,9 +300,12 @@ def collect(config: dict) -> tuple[Iterator[dict], Iterator[dict]]:
     batch_file = zimm.get("regedit_batch") or os.path.join(
         base_dir, "RECmd/BatchExamples/DFIRBatch.reb")
 
-    if not os.path.isfile(tool_dll):
-        print(f"[zimm_reg] RECmd not found: {tool_dll}", file=sys.stderr)
-        return iter([]), iter([])
+    if not os.path.isfile(tool_dll) or not _c.dotnet_available():
+        reason = "DLL not found" if not os.path.isfile(tool_dll) else "dotnet unavailable"
+        print(f"[zimm_reg] RECmd not available ({reason}) — using python-registry fallback",
+              file=sys.stderr)
+        autoruns, misc = _collect_python_fallback(config)
+        return iter(autoruns), iter(misc)
     if not os.path.isfile(batch_file):
         print(f"[zimm_reg] DFIRBatch.reb not found: {batch_file}", file=sys.stderr)
         return iter([]), iter([])

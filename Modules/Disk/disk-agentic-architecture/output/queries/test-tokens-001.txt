@@ -1,0 +1,111 @@
+=== EntityQuery ===
+{
+  "query_id": "test-tokens-001",
+  "target_module": "disk",
+  "entity": {
+    "type": "image_name",
+    "value": "cmd.exe"
+  },
+  "context": {
+    "reason": "Token count verification test"
+  },
+  "scope": {
+    "max_evidence_lines": 10
+  }
+}
+
+=== Retrieved Evidence (6 lines) ===
+[registry_shimcache.txt L15] type=execution path=C:\WINDOWS\SysWOW64\cmd.exe last_modified="2020-10-09 20:47:45" executed=No controlset=1 artifact_source=shimcache
+[registry_shimcache.txt L345] type=execution path=C:\Windows\system32\cmd.exe last_modified="2020-10-09 20:47:15" executed=Yes controlset=1 artifact_source=shimcache
+[prefetch_records.txt L24] type=execution path=CMD.EXE last_run=2020-11-14T13:42:08Z run_count=4 previous_runs=2020-11-14T12:43:09Z;2020-11-14T04:55:13Z;2020-11-11T08:14:34Z;1601-01-01T00:00:00Z;1601-01-01T00:00:00Z;1601-01-01T00:00:00Z;1601-01-01T00:00:00Z artifact_source=prefetch source_file=CMD.EXE-0BD30981.pf
+[registry_autoruns.txt L38] type=registry key="System\\ROOT\\ControlSet001\\Control\\Session Manager\\AppCompatCache" value=AppCompatCache data=C:\WINDOWS\SysWOW64\cmd.exe modified="2020-11-11 08:13:00.4835065" category="Program Execution" description=AppCompatCache artifact_source=SYSTEM
+[registry_autoruns.txt L368] type=registry key="System\\ROOT\\ControlSet001\\Control\\Session Manager\\AppCompatCache" value=AppCompatCache data=C:\Windows\system32\cmd.exe modified="2020-11-11 08:13:00.4835065" category="Program Execution" description=AppCompatCache artifact_source=SYSTEM
+[registry_autoruns.txt L583] type=registry key=System\ROOT\ControlSet001\Services\bam\State\UserSettings\S-1-5-21-528816539-567677750-276746561-1002 value=\Device\HarddiskVolume3\Windows\System32\cmd.exe data="Program: \\Device\\HarddiskVolume3\\Windows\\System32\\cmd.exe" modified="2020-11-16 02:49:02.7400222" category="Program Execution" description="Background Activity Moderator (BAM)" artifact_source=SYSTEM
+
+=== EntityFindings ===
+{
+  "contract_version": "1.0",
+  "query_id": "test-tokens-001",
+  "responding_module": "disk",
+  "entity": {
+    "type": "image_name",
+    "value": "cmd.exe"
+  },
+  "verdict": "CONFIRMED",
+  "severity": "MEDIUM",
+  "mitre": [
+    "T1059.003"
+  ],
+  "justification": "Multiple independent artifact types confirm cmd.exe execution on this host. A prefetch record (CMD.EXE-0BD30981.pf) shows 4 executions with the most recent at 2020-11-14T13:42:08Z, providing high-confidence execution evidence. This is corroborated by a shimcache entry for C:\\Windows\\system32\\cmd.exe with executed=Yes, and a Background Activity Moderator (BAM) registry entry for \\Device\\HarddiskVolume3\\Windows\\System32\\cmd.exe last modified 2020-11-16 02:49:02, together constituting multiple independent signals across artifact types confirming execution.",
+  "evidence": [
+    {
+      "source_file": "prefetch_records.txt",
+      "line": 24,
+      "content": "type=execution path=CMD.EXE last_run=2020-11-14T13:42:08Z run_count=4 previous_runs=2020-11-14T12:43:09Z;2020-11-14T04:55:13Z;2020-11-11T08:14:34Z;1601-01-01T00:00:00Z;1601-01-01T00:00:00Z;1601-01-01T00:00:00Z;1601-01-01T00:00:00Z artifact_source=prefetch source_file=CMD.EXE-0BD30981.pf",
+      "verbatim": true,
+      "timestamp": "2020-11-14T13:42:08Z"
+    },
+    {
+      "source_file": "registry_shimcache.txt",
+      "line": 345,
+      "content": "type=execution path=C:\\Windows\\system32\\cmd.exe last_modified=\"2020-10-09 20:47:15\" executed=Yes controlset=1 artifact_source=shimcache",
+      "verbatim": true,
+      "timestamp": "2020-10-09T20:47:15Z"
+    },
+    {
+      "source_file": "registry_autoruns.txt",
+      "line": 583,
+      "content": "type=registry key=System\\ROOT\\ControlSet001\\Services\\bam\\State\\UserSettings\\S-1-5-21-528816539-567677750-276746561-1002 value=\\Device\\HarddiskVolume3\\Windows\\System32\\cmd.exe data=\"Program: \\\\Device\\\\HarddiskVolume3\\\\Windows\\\\System32\\\\cmd.exe\" modified=\"2020-11-16 02:49:02.7400222\" category=\"Program Execution\" description=\"Background Activity Moderator (BAM)\" artifact_source=SYSTEM",
+      "verbatim": true,
+      "timestamp": "2020-11-16T02:49:02Z"
+    },
+    {
+      "source_file": "registry_shimcache.txt",
+      "line": 15,
+      "content": "type=execution path=C:\\WINDOWS\\SysWOW64\\cmd.exe last_modified=\"2020-10-09 20:47:45\" executed=No controlset=1 artifact_source=shimcache",
+      "verbatim": true,
+      "timestamp": "2020-10-09T20:47:45Z"
+    },
+    {
+      "source_file": "registry_autoruns.txt",
+      "line": 38,
+      "content": "type=registry key=\"System\\\\ROOT\\\\ControlSet001\\\\Control\\\\Session Manager\\\\AppCompatCache\" value=AppCompatCache data=C:\\WINDOWS\\SysWOW64\\cmd.exe modified=\"2020-11-11 08:13:00.4835065\" category=\"Program Execution\" description=AppCompatCache artifact_source=SYSTEM",
+      "verbatim": true,
+      "timestamp": "2020-11-11T08:13:00Z"
+    },
+    {
+      "source_file": "registry_autoruns.txt",
+      "line": 368,
+      "content": "type=registry key=\"System\\\\ROOT\\\\ControlSet001\\\\Control\\\\Session Manager\\\\AppCompatCache\" value=AppCompatCache data=C:\\Windows\\system32\\cmd.exe modified=\"2020-11-11 08:13:00.4835065\" category=\"Program Execution\" description=AppCompatCache artifact_source=SYSTEM",
+      "verbatim": true,
+      "timestamp": "2020-11-11T08:13:00Z"
+    }
+  ],
+  "related_entities": [
+    {
+      "type": "file_path",
+      "value": "C:\\Windows\\system32\\cmd.exe",
+      "relationship": "executed_path"
+    },
+    {
+      "type": "file_path",
+      "value": "C:\\WINDOWS\\SysWOW64\\cmd.exe",
+      "relationship": "executed_path"
+    },
+    {
+      "type": "file_path",
+      "value": "\\Device\\HarddiskVolume3\\Windows\\System32\\cmd.exe",
+      "relationship": "bam_recorded_path"
+    },
+    {
+      "type": "user_sid",
+      "value": "S-1-5-21-528816539-567677750-276746561-1002",
+      "relationship": "executing_user"
+    }
+  ],
+  "cost": {
+    "llm_calls": 1,
+    "tokens_in": 1842,
+    "tokens_out": 1436
+  }
+}

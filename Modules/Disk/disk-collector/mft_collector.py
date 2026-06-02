@@ -346,7 +346,11 @@ def collect_builtin(mft_path: str, config: dict) -> Iterator[dict]:
     suspicious_paths = [p.lower() for p in config.get("suspicious_paths") or []]
     volume_root = (config.get("mft") or {}).get("volume_root") if isinstance(config.get("mft"), dict) \
         else config.get("volume_root")
-    do_pe_analysis = bool(volume_root and os.path.isdir(volume_root))
+    # fast mode: skip PE analysis (file reads from mounted volume) to reduce wall time.
+    # The path-filter (mft_write_only_suspicious) still applies as normal.
+    do_pe_analysis = bool(
+        volume_root and os.path.isdir(volume_root) and not config.get("mft_fast_mode")
+    )
 
     print(f"[mft_collector] parsing {mft_path} ...", file=sys.stderr)
     entries: Dict[int, dict] = {}

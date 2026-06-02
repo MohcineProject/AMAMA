@@ -91,14 +91,20 @@ def _csv_to_records(csv_path: str, allow_set: set,
 def run_from_config(config: dict, out_dir: str) -> dict:
     base_dir = (config.get("zimmerman_tools") or {}).get("base_dir", "/opt/zimmermantools")
     evtx_dll = os.path.join(base_dir, _EVTX_DLL)
-    if not os.path.isfile(evtx_dll):
-        return {"error": f"EvtxECmd DLL not found: {evtx_dll}",
-                "output_files": [], "record_count": 0}
+    if not os.path.isfile(evtx_dll) or not _c.dotnet_available():
+        reason = "DLL not found" if not os.path.isfile(evtx_dll) else "dotnet unavailable"
+        print(f"[zimm_evtx] Falling back to python-evtx ({reason})", file=sys.stderr)
+        if __package__ in (None, ""):
+            import eventlog_collector as _evt  # type: ignore
+        else:
+            from . import eventlog_collector as _evt  # type: ignore
+        return _evt.run_from_config(config, out_dir)
 
     evtx_dir = (config.get("eventlog") or {}).get("evtx_dir")
     if not evtx_dir or not os.path.isdir(evtx_dir):
-        return {"error": f"eventlog.evtx_dir not found: {evtx_dir!r}",
-                "output_files": [], "record_count": 0}
+        print(f"[zimm_evtx] evtx_dir not found: {evtx_dir!r} — skipping event log collection",
+              file=sys.stderr)
+        return {"output_files": [], "record_count": 0}
 
     maps_dir = os.path.join(base_dir, "EvtxeCmd", "Maps")
     allow_set = set(int(x) for x in (config.get("high_signal_event_ids") or []))

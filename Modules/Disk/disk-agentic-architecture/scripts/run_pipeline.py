@@ -100,11 +100,39 @@ def main() -> None:
     ap.add_argument("--artifact-dir", default=str(ARTIFACT_DIR))
     ap.add_argument("--from-stage", type=int, default=1, choices=[1, 2, 3, 4])
     ap.add_argument("--no-llm", action="store_true")
+    ap.add_argument("--collector-config", default=None,
+                    help="If set, run disk_collector.py before pipeline stages. "
+                         "Pass the path to config.json used by the collector.")
+    mode_group = ap.add_mutually_exclusive_group()
+    mode_group.add_argument(
+        "--fast", dest="collector_mode", action="store_const", const="fast", default="fast",
+        help="Collector fast mode: MFT suspicious-paths only + skip PE analysis (default)",
+    )
+    mode_group.add_argument(
+        "--full", dest="collector_mode", action="store_const", const="full",
+        help="Collector full mode: complete MFT parse with PE analysis",
+    )
+    ap.add_argument("--workers", type=int, default=4,
+                    help="Parallel workers for each collector phase (default: 4)")
     args = ap.parse_args()
 
     base = args.base_dir
     artifacts = args.artifact_dir
     py = sys.executable
+
+    # Optional: run disk_collector.py before pipeline stages
+    if args.collector_config and args.from_stage == 1:
+        collector_script = str(Path(base).parent / "disk-collector" / "disk_collector.py")
+        if not os.path.isfile(collector_script):
+            sys.exit(f"[pipeline] disk_collector.py not found: {collector_script}")
+        print(f"\n[pipeline] Running disk collector ({args.collector_mode} mode)...", flush=True)
+        _run("Collection phase", [
+            py, collector_script,
+            "--config", args.collector_config,
+            "--out-dir", artifacts,
+            f"--{args.collector_mode}",
+            "--workers", str(args.workers),
+        ])
 
     # Load config for merge step
     cfg_path = os.path.join(base, "config.json")
