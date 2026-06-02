@@ -25,7 +25,9 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VENV_DIR="$SCRIPT_DIR/.venv"
 ZIMM_DIR="/opt/zimmermantools"
 ZIMM_DLL_CHECK="$ZIMM_DIR/RECmd/RECmd.dll"
-ZIMM_URL="https://f001.backblazeb2.com/file/EricZimmermanTools/linux/All_6.0.zip"
+# Individual net9 zips — the old All_6.0.zip bundle no longer exists on Backblaze.
+ZIMM_BASE_URL="https://download.ericzimmermanstools.com/net9"
+ZIMM_TOOLS=("AppCompatCacheParser" "AmcacheParser" "RECmd" "EvtxECmd")
 
 INSTALL_DOTNET=true
 INSTALL_ZIMMERMAN=true
@@ -139,36 +141,38 @@ if [[ "$INSTALL_ZIMMERMAN" == "true" ]]; then
         if ! command -v dotnet &>/dev/null; then
             echo "      WARNING: dotnet not available — skipping Zimmerman tools."
         else
-            TMP_ZIP="$(mktemp /tmp/zimmerman-XXXXXX.zip)"
-            echo "      Downloading from Eric Zimmerman's server ..."
-            if wget -q "$ZIMM_URL" -O "$TMP_ZIP"; then
-                mkdir -p "$ZIMM_DIR"
-                unzip -q -o "$TMP_ZIP" -d "$ZIMM_DIR"
-                rm -f "$TMP_ZIP"
-
-                # Verify key DLLs
-                MISSING=()
-                for dll in \
-                    "RECmd/RECmd.dll" \
-                    "EvtxeCmd/EvtxECmd.dll" \
-                    "AppCompatCacheParser.dll" \
-                    "AmcacheParser.dll"; do
-                    [[ -f "$ZIMM_DIR/$dll" ]] || MISSING+=("$dll")
-                done
-
-                if [[ ${#MISSING[@]} -eq 0 ]]; then
-                    echo "      Zimmerman tools: OK"
+            mkdir -p "$ZIMM_DIR"
+            DOWNLOAD_FAILED=()
+            echo "      Downloading individual tools from $ZIMM_BASE_URL ..."
+            for tool in "${ZIMM_TOOLS[@]}"; do
+                TMP_ZIP="$(mktemp /tmp/zimmerman-XXXXXX.zip)"
+                if wget -q "${ZIMM_BASE_URL}/${tool}.zip" -O "$TMP_ZIP"; then
+                    unzip -q -o "$TMP_ZIP" -d "$ZIMM_DIR"
+                    echo "        $tool: OK"
                 else
-                    echo "      WARNING: Some Zimmerman DLLs missing after install:"
-                    for m in "${MISSING[@]}"; do echo "        $ZIMM_DIR/$m"; done
-                    echo "      Python fallbacks will be used for those collectors."
+                    echo "        $tool: FAILED"
+                    DOWNLOAD_FAILED+=("$tool")
                 fi
-            else
-                echo "      WARNING: Could not download Zimmerman tools from:"
-                echo "        $ZIMM_URL"
-                echo "      Manual install: https://ericzimmerman.github.io/#!index.md"
-                echo "      Python fallbacks will be used."
                 rm -f "$TMP_ZIP"
+            done
+
+            # Verify key DLLs
+            MISSING=()
+            for dll in \
+                "RECmd/RECmd.dll" \
+                "EvtxeCmd/EvtxECmd.dll" \
+                "AppCompatCacheParser.dll" \
+                "AmcacheParser.dll"; do
+                [[ -f "$ZIMM_DIR/$dll" ]] || MISSING+=("$dll")
+            done
+
+            if [[ ${#MISSING[@]} -eq 0 ]]; then
+                echo "      Zimmerman tools: OK"
+            else
+                echo "      WARNING: Some Zimmerman DLLs missing after install:"
+                for m in "${MISSING[@]}"; do echo "        $ZIMM_DIR/$m"; done
+                echo "      Manual install: https://ericzimmerman.github.io/#!index.md"
+                echo "      Python fallbacks will be used for those collectors."
             fi
         fi
     fi
