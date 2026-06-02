@@ -1,8 +1,9 @@
+# Required — Python-only fallback path (always install via install.sh):
 pefile>=2023.2.7
 python-registry>=1.3.0
 python-evtx>=0.7.4
 analyzeMFT>=2.0.4
 
-# Optional / platform-conditional. Wrap imports in try/except in collectors.
+# Platform-conditional (Linux only). Wrap imports in try/except in collectors.
 libscca-python>=20240427 ; platform_system != "Windows"
 pytsk3>=20231007 ; platform_system != "Windows"
