@@ -278,11 +278,5 @@ This traceability is enforced at the prompt level — triage agents must cite so
 
 | Item | Status |
 |---|---|
-| Shimcache Win Server 2012 R2 (magic `\x80\x00\x00\x00`) | **Fixed** — Python fallback now accepts `\x80\x00\x00\x00` (Win8/2012/2012R2) in addition to `CACH` (Win10+); both use the same 128-byte header and entry layout |
-| Python shimcache fallback broken for all formats | **Fixed** — magic check was comparing 4 bytes against 5-byte literal `b"CACHE"`; corrected to `b"CACH"` |
-| Amcache discrepancy (Zimmerman 36 vs Python 637) | **Partially mitigated** — deduplication by (path, hash) added to `_amcache_python()`; remaining count difference is likely Zimmerman filtering to unassociated files only (needs hive investigation to fully align) |
-| `related_entities` in scan.py output | Not yet implemented |
-| `tokens_in/tokens_out` in query.py output | **Fixed** — `llm_client.py` now captures `usage.input_tokens`/`output_tokens` from the Anthropic response; `query.py` always overwrites `cost` with measured values |
-| `evidence[].source_file` attribution | **Fixed** — agent2 prompt updated to emit `[filename L<N>]` prefixes; `scan.py` parses them; legacy files fall back to `"analyst.txt"` |
 | `python -m disk.scan` package invocation | Not yet implemented; entry points remain `python scripts/scan.py` / `python scripts/query.py` |
-| SQLECmd / LECmd integration | Available in Zimmerman install but not yet wired into collectors |
+|Future improvement:  SQLECmd / LECmd integration | Available in Zimmerman install but not yet wired into collectors |
