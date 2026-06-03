@@ -5,6 +5,8 @@ Entry point 1 — INITIAL scan mode.
 Wraps the existing disk DFIR pipeline and emits a ModuleScanResult JSON
 so the orchestrator can consume disk findings in the typed-envelope format.
 
+
+TODO: CLI to be cleaned afterwards, only exist for test purposes
 Usage:
     python scripts/scan.py --case-id <id> --out <output_dir>
                            [--base-dir <dir>] [--artifact-dir <dir>]
@@ -14,10 +16,15 @@ Usage:
     --out             Directory where scan_result.json will be written.
     --run-pipeline    If set, run_pipeline.py is invoked first before parsing.
     --no-llm          Pass through to run_pipeline.py to skip LLM stages.
+
+Library entry points:
+  - ``build_scan_result()`` — sync
+  - ``build_scan_result_async()`` — async wrapper (used by ``DiskModule.scan()``)
 """
 
 import argparse
 import json
+import asyncio
 import os
 import re
 import subprocess
@@ -217,7 +224,95 @@ def _parse_triage_combined(text: str) -> list[dict]:
         findings.append(finding)
     return findings
 
+def _run_pipeline(base: Path, artifact_dir: str | None, no_llm: bool) -> None:
+    py = sys.executable
+    cmd = [py, str(SCRIPT_DIR / "run_pipeline.py"), "--base-dir", str(base)]
+    if artifact_dir:
+        cmd += ["--artifact-dir", artifact_dir]
+    if no_llm:
+        cmd.append("--no-llm")
+    result = subprocess.run(cmd, check=False)
+    if result.returncode != 0:
+        raise RuntimeError(f"run_pipeline.py exited with code {result.returncode}")
 
+
+def build_scan_result(
+    case_id: str,
+    base_dir: Path | None = None,
+    *,
+    no_llm: bool = False,
+    artifact_dir: str | None = None,
+) -> dict:
+    """Run the disk pipeline and return a ModuleScanResult dict."""
+    base = Path(base_dir or BASE_DIR).resolve()
+    started_at = _now_iso()
+
+    _run_pipeline(base, artifact_dir, no_llm)
+
+    completed_at = _now_iso()
+
+    # Prefer analyst.txt (Agent 2 validated); fall back to triage_combined.txt
+    analyst_path = base / "output" / "analyst.txt"
+    combined_path = base / "output" / "triage_combined.txt"
+    legacy_triage = base / "output" / "triage.txt"
+
+    findings: list[dict] = []
+    used_source = "none"
+
+    if analyst_path.exists():
+        text = analyst_path.read_text(encoding="utf-8", errors="ignore")
+        findings = _parse_analyst(text)
+        used_source = "analyst.txt"
+    elif combined_path.exists():
+        text = combined_path.read_text(encoding="utf-8", errors="ignore")
+        findings = _parse_triage_combined(text)
+        used_source = "triage_combined.txt"
+    elif legacy_triage.exists():
+        text = legacy_triage.read_text(encoding="utf-8", errors="ignore")
+        findings = _parse_triage_combined(text)
+        used_source = "triage.txt (legacy)"
+
+    confirmed   = sum(1 for f in findings if f["verdict"] == "CONFIRMED")
+    inconclusive = sum(1 for f in findings if f["verdict"] == "INCONCLUSIVE")
+    rejected    = sum(1 for f in findings if f["verdict"] == "REJECTED")
+
+    return {
+        "contract_version": "1.0",
+        "case_id": case_id,
+        "module": "disk",
+        "scan_started_at": started_at,
+        "scan_completed_at": completed_at,
+        "summary": (
+            f"{len(findings)} finding(s) from disk artifacts "
+            f"(source: {used_source}). "
+            f"{confirmed} CONFIRMED, {inconclusive} INCONCLUSIVE, {rejected} REJECTED."
+        ),
+        "counts": {
+            "confirmed": confirmed,
+            "inconclusive": inconclusive,
+            "rejected": rejected,
+        },
+        "findings": findings,
+    }
+
+
+async def build_scan_result_async(
+    case_id: str,
+    base_dir: Path | None = None,
+    *,
+    no_llm: bool = False,
+    artifact_dir: str | None = None,
+) -> dict:
+    """Async wrapper — runs pipeline + parsing in a thread pool."""
+    return await asyncio.to_thread(
+        build_scan_result,
+        case_id,
+        base_dir,
+        no_llm=no_llm,
+        artifact_dir=artifact_dir,
+    )
+
+# TODO: clean CLI after tests ended
 def _validate(data: dict, schema_name: str) -> list[str]:
     """Validate data against a local schema. Returns list of error strings."""
     try:

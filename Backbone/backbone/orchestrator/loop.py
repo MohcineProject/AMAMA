@@ -36,7 +36,7 @@ class InvestigationLoop:
 
         graph = CaseGraph(case_id=case_id)
         orchestrator = OrchestratorAgent()
-        modules = load_modules(config)
+        modules = load_modules(config, config_dir=path.parent if path.exists() else Path.cwd())
 
         return cls(
             case_id=case_id,

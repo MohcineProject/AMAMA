@@ -1,5 +1,7 @@
 """Tests for module registry and BaseForensicModule."""
 
+from pathlib import Path
+
 import pytest
 
 from backbone.registry import import_module_class, load_modules
@@ -31,3 +33,42 @@ def test_load_modules_from_config():
 def test_import_module_class_rejects_non_subclass():
     with pytest.raises(TypeError):
         import_module_class("backbone.case_graph.CaseGraph")
+
+
+def test_load_modules_with_path_inserts_sys_path(tmp_path):
+    marker = tmp_path / "pkg_marker"
+    marker.mkdir()
+    config = {
+        "modules": [
+            {
+                "class": "backbone.dev.stub_module.StubModule",
+                "path": str(marker),
+            }
+        ]
+    }
+    load_modules(config, config_dir=tmp_path)
+    assert str(marker.resolve()) in __import__("sys").path
+
+
+_DISK_MODULE_ROOT = (
+    Path(__file__).resolve().parents[2] / "Modules" / "Disk" / "disk-agentic-architecture"
+)
+
+
+@pytest.mark.skipif(
+    not (_DISK_MODULE_ROOT / "disk_module.py").is_file(),
+    reason="disk module not present in workspace",
+)
+def test_load_disk_module_via_registry_path():
+    repo_root = Path(__file__).resolve().parents[2]
+    config = {
+        "modules": [
+            {
+                "class": "disk_module.DiskModule",
+                "path": str(_DISK_MODULE_ROOT),
+                "kwargs": {"use_llm": False},
+            }
+        ]
+    }
+    registry = load_modules(config, config_dir=repo_root)
+    assert registry["disk"].module_id == "disk"

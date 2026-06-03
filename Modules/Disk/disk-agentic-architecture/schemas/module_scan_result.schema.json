@@ -12,14 +12,13 @@
     "scan_completed_at",
     "summary",
     "counts",
-    "findings",
-    "artifacts"
+    "findings"
   ],
   "additionalProperties": false,
   "properties": {
     "contract_version": { "type": "string", "const": "1.0" },
     "case_id": { "type": "string", "minLength": 1 },
-    "module": { "type": "string", "enum": ["ram", "disk", "network"] },
+    "module": { "type": "string", "pattern": "^[a-z][a-z0-9_]{0,31}$" },
     "scan_started_at":   { "type": "string", "format": "date-time" },
     "scan_completed_at": { "type": "string", "format": "date-time" },
     "summary": { "type": "string", "minLength": 1 },
@@ -141,21 +140,6 @@
             }
           }
         ]
-      }
-    },
-    "artifacts": {
-      "type": "object",
-      "required": ["human_report"],
-      "additionalProperties": true,
-      "properties": {
-        "human_report": {
-          "type": "string",
-          "description": "Path (relative to module repo root) to the module's primary human-readable audit-trail file."
-        },
-        "per_chunk": {
-          "type": "array",
-          "items": { "type": "string" }
-        }
       }
     }
   }

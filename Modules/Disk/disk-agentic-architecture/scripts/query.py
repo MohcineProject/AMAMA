@@ -8,25 +8,21 @@ Answers a single EntityQuery from the orchestrator using the 4-stage flow:
   Stage 3: triviality / whitelist check
   Stage 4: scoped LLM interpreter (agentQ_focused.md)
 
-Usage:
-    python scripts/query.py --query <entity_query.json>
-                            --out   <entity_findings.json>
-                            [--base-dir <dir>] [--artifact-dir <dir>]
-                            [--no-llm]
+Library entry points:
+  - ``answer_entity_query()`` — sync
+  - ``answer_entity_query_async()`` — async wrapper (used by ``DiskModule.query()``)
 """
 
-import argparse
+import asyncio
 import json
 import os
 import re
 import sys
-import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 BASE_DIR = SCRIPT_DIR.parent
-SCHEMA_DIR = BASE_DIR / "schemas"
 
 # ---------------------------------------------------------------------------
 # Entity types this module handles (Stage 1 dispatch)
@@ -318,23 +314,6 @@ def _fallback_inconclusive(query: dict, evidence: list, reason: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Schema validation
-# ---------------------------------------------------------------------------
-
-def _validate(data: dict, schema_name: str) -> list[str]:
-    try:
-        import jsonschema
-    except ImportError:
-        return []
-    schema_path = SCHEMA_DIR / schema_name
-    if not schema_path.exists():
-        return [f"Schema not found: {schema_path}"]
-    with open(schema_path, "r", encoding="utf-8") as f:
-        schema = json.load(f)
-    return [e.message for e in jsonschema.Draft7Validator(schema).iter_errors(data)]
-
-
-# ---------------------------------------------------------------------------
 # Audit trail
 # ---------------------------------------------------------------------------
 
@@ -357,41 +336,23 @@ def _write_audit(base: Path, query_id: str, query: dict, evidence: list,
 
 
 # ---------------------------------------------------------------------------
-# Main
+# Public API
 # ---------------------------------------------------------------------------
 
-def main() -> None:
-    ap = argparse.ArgumentParser(description="Disk module — QUERY mode (pivot-back)")
-    ap.add_argument("--query", required=True, help="Path to EntityQuery JSON file")
-    ap.add_argument("--out",   required=True, help="Path to write EntityFindings JSON")
-    ap.add_argument("--base-dir", default=str(BASE_DIR))
-    ap.add_argument("--artifact-dir", default=None)
-    ap.add_argument("--no-llm", action="store_true",
-                    help="Skip LLM stage (return INCONCLUSIVE with raw evidence)")
-    args = ap.parse_args()
-
-    base = Path(args.base_dir).resolve()
+def _answer_entity_query(
+    query: dict,
+    base_dir: Path | None = None,
+    *,
+    artifact_dir: str | None = None,
+    use_llm: bool = True,
+    write_audit: bool = True,
+) -> dict:
+    """Answer a single EntityQuery (sync); returns EntityFindings-shaped dict."""
+    base = Path(base_dir or BASE_DIR).resolve()
     cfg = _load_config(base)
-    artifact_dir_str = args.artifact_dir or cfg.get("artifact_dir") or str(BASE_DIR.parent / "Disk_Artifacts")
-    artifact_dir = Path(artifact_dir_str).resolve()
+    artifact_dir_str = artifact_dir or cfg.get("artifact_dir") or str(BASE_DIR.parent / "Disk_Artifacts")
+    artifact_dir_path = Path(artifact_dir_str).resolve()
     whitelist = _load_whitelist(cfg)
-
-    # Load and validate the EntityQuery
-    with open(args.query, "r", encoding="utf-8") as f:
-        query = json.load(f)
-
-    errs = _validate(query, "entity_query.schema.json")
-    if errs:
-        # Invalid query → NOT_APPLICABLE per spec
-        query.setdefault("query_id", str(uuid.uuid4()))
-        query.setdefault("entity", {"type": "image_name", "value": "unknown"})
-        findings = _make_findings(
-            query, verdict="NOT_APPLICABLE",
-            justification=f"Invalid EntityQuery: {'; '.join(errs[:3])}",
-            evidence=[], related_entities=[], cost=_ZERO_COST,
-        )
-        _write_output(args.out, findings, query["query_id"], base, query, [], None, None)
-        return
 
     entity = query["entity"]
     entity_type = entity["type"]
@@ -404,8 +365,9 @@ def main() -> None:
             justification=f"Query is for module '{query.get('target_module')}', not 'disk'.",
             evidence=[], related_entities=[], cost=_ZERO_COST,
         )
-        _write_output(args.out, findings, query["query_id"], base, query, [], None, None)
-        return
+        if write_audit:
+            _write_audit(base, query["query_id"], query, [], None, None, findings)
+        return findings
 
     # --- Stage 1: type dispatch ---
     if entity_type in NOT_APPLICABLE_TYPES or entity_type not in SUPPORTED_TYPES:
@@ -417,12 +379,13 @@ def main() -> None:
             ),
             evidence=[], related_entities=[], cost=_ZERO_COST,
         )
-        _write_output(args.out, findings, query["query_id"], base, query, [], None, None)
-        return
+        if write_audit:
+            _write_audit(base, query["query_id"], query, [], None, None, findings)
+        return findings
 
     # --- Stage 2: deterministic retrieval ---
     max_ev = int(query.get("scope", {}).get("max_evidence_lines") or 50)
-    evidence = _retrieve_evidence(artifact_dir, entity_type, value, max_lines=max_ev)
+    evidence = _retrieve_evidence(artifact_dir_path, entity_type, value, max_lines=max_ev)
 
     if not evidence:
         findings = _make_findings(
@@ -433,8 +396,9 @@ def main() -> None:
             ),
             evidence=[], related_entities=[], cost=_ZERO_COST,
         )
-        _write_output(args.out, findings, query["query_id"], base, query, [], None, None)
-        return
+        if write_audit:
+            _write_audit(base, query["query_id"], query, [], None, None, findings)
+        return findings
 
     # --- Stage 3: triviality check ---
     if _is_trivially_benign(entity_type, value, evidence, whitelist):
@@ -447,17 +411,19 @@ def main() -> None:
             ),
             evidence=match_evidence, related_entities=[], cost=_ZERO_COST,
         )
-        _write_output(args.out, findings, query["query_id"], base, query, evidence, None, None)
-        return
+        if write_audit:
+            _write_audit(base, query["query_id"], query, evidence, None, None, findings)
+        return findings
 
     # --- Stage 4: LLM interpreter ---
-    if args.no_llm:
+    if not use_llm:
         findings = _fallback_inconclusive(
             query, evidence,
             "no-llm mode — manual review required"
         )
-        _write_output(args.out, findings, query["query_id"], base, query, evidence, None, None)
-        return
+        if write_audit:
+            _write_audit(base, query["query_id"], query, evidence, None, None, findings)
+        return findings
 
     llm_cfg_path = base / "llm_config.json"
     if not llm_cfg_path.exists():
@@ -465,38 +431,34 @@ def main() -> None:
             query, evidence,
             f"llm_config.json not found at {llm_cfg_path}"
         )
-        _write_output(args.out, findings, query["query_id"], base, query, evidence, None, None)
-        return
+        if write_audit:
+            _write_audit(base, query["query_id"], query, evidence, None, None, findings)
+        return findings
 
     with open(llm_cfg_path, "r", encoding="utf-8") as f:
         llm_cfg = json.load(f)
 
     findings = _call_llm(query, evidence, base, llm_cfg)
 
-    errs = _validate(findings, "entity_findings.schema.json")
-    if errs:
-        print(f"[query] WARN: EntityFindings validation errors ({len(errs)}):", flush=True)
-        for e in errs[:5]:
-            print(f"  - {e}", flush=True)
-
-    _write_output(args.out, findings, query["query_id"], base, query, evidence, None, None)
+    if write_audit:
+        _write_audit(base, query["query_id"], query, evidence, None, None, findings)
+    return findings
 
 
-def _write_output(out_path: str, findings: dict, query_id: str, base: Path,
-                  query: dict, evidence: list,
-                  llm_prompt: str | None, llm_raw: str | None) -> None:
-    """Validate, write findings JSON, and write audit block."""
-    errs = _validate(findings, "entity_findings.schema.json")
-    if errs:
-        print(f"[query] WARN: schema validation errors: {errs[:3]}", flush=True)
-
-    Path(out_path).parent.mkdir(parents=True, exist_ok=True)
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(findings, f, indent=2)
-    print(f"[query] Written → {out_path} (verdict={findings.get('verdict')})", flush=True)
-
-    _write_audit(base, query_id, query, evidence, llm_prompt, llm_raw, findings)
-
-
-if __name__ == "__main__":
-    main()
+async def answer_entity_query_async(
+    query: dict,
+    base_dir: Path | None = None,
+    *,
+    artifact_dir: str | None = None,
+    use_llm: bool = True,
+    write_audit: bool = True,
+) -> dict:
+    """Async wrapper — runs the 4-stage query flow in a thread pool."""
+    return await asyncio.to_thread(
+        _answer_entity_query,
+        query,
+        base_dir,
+        artifact_dir=artifact_dir,
+        use_llm=use_llm,
+        write_audit=write_audit,
+    )
