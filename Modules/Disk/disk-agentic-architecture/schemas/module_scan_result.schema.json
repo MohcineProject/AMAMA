@@ -136,7 +136,14 @@
               "required": ["severity"]
             },
             "else": {
-              "properties": { "severity": { "type": "null" } }
+              "properties": {
+                "severity": {
+                  "oneOf": [
+                    { "type": "null" },
+                    { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] }
+                  ]
+                }
+              }
             }
           }
         ]

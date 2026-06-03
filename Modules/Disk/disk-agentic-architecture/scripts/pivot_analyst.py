@@ -81,32 +81,17 @@ def parse_pivot(text: str) -> dict[int, str]:
       ...
       --- artifact.txt (N hits) ---
       L<n>: <verbatim line>
+
+    Each finding uses two ==== separators (opening + closing header), so
+    we split on the opening-separator+FINDING-header pattern to capture
+    all evidence lines up to the next finding.
     """
     result: dict[int, str] = {}
-    # Find the opening separator of each finding block
-    sep_re = re.compile(r"^={40,}$", re.MULTILINE)
-    finding_re = re.compile(r"^=== FINDING (\d+):", re.MULTILINE)
-
-    sep_positions = [m.start() for m in sep_re.finditer(text)]
-
-    for i, sep_start in enumerate(sep_positions):
-        # The line after this separator should contain "=== FINDING N:"
-        after_sep = text[sep_start:]
-        fm = finding_re.match(after_sep.lstrip("=\n"))
-        if fm is None:
-            # Try looking in the 3 lines after the separator
-            lines_after = after_sep.split("\n", 4)
-            for ln in lines_after[1:4]:
-                fm2 = re.match(r"=== FINDING (\d+):", ln)
-                if fm2:
-                    idx = int(fm2.group(1))
-                    # Block runs from sep_start to next separator (or EOF)
-                    end = sep_positions[i + 1] if i + 1 < len(sep_positions) else len(text)
-                    # But the closing separator is also part of the next block's opener
-                    # Find the NEXT opening separator after this block's content
-                    block = text[sep_start:end].strip()
-                    result[idx] = block
-                    break
+    parts = re.split(r"(?=={40,}\n=== FINDING \d+:)", text)
+    for part in parts:
+        m = re.search(r"=== FINDING (\d+):", part)
+        if m:
+            result[int(m.group(1))] = part.strip()
     return result
 
 
@@ -174,6 +159,10 @@ def main() -> None:
     ap.add_argument("--base-dir", default=None)
     ap.add_argument("--no-llm", action="store_true", help="Dry-run: print first finding prompt")
     ap.add_argument("--finding", type=int, default=None, help="Only analyse finding N")
+    ap.add_argument("--from-finding", type=int, default=None,
+                    help="Resume from finding N (append to existing analyst.txt)")
+    ap.add_argument("--delay", type=float, default=None,
+                    help="Seconds to sleep between API calls (overrides llm_config request_delay_seconds)")
     args = ap.parse_args()
 
     base = _resolve_base(args.base_dir)
@@ -209,6 +198,12 @@ def main() -> None:
         if not findings:
             sys.exit(f"[pivot_analyst] Finding {args.finding} not found.")
 
+    if args.from_finding:
+        findings = [(i, b) for i, b in findings if i >= args.from_finding]
+        if not findings:
+            sys.exit(f"[pivot_analyst] No findings >= {args.from_finding}.")
+        print(f"[pivot_analyst] Resuming from finding {args.from_finding} ({len(findings)} remaining)", flush=True)
+
     if args.no_llm:
         idx, block = findings[0]
         ev = evidence.get(idx, "")
@@ -219,12 +214,24 @@ def main() -> None:
     with open(llm_cfg_path, "r", encoding="utf-8") as f:
         llm_cfg = json.load(f)
 
+    # Inter-request delay: CLI --delay > llm_config request_delay_seconds > default 10s
+    inter_delay: float = (
+        args.delay
+        if args.delay is not None
+        else float(llm_cfg.get("request_delay_seconds", 10.0))
+    )
+
     (base / "logs").mkdir(parents=True, exist_ok=True)
 
     per_finding_responses: list[tuple[int, str]] = []
-    for idx, finding_block in findings:
+    for call_idx, (idx, finding_block) in enumerate(findings):
         ev = evidence.get(idx, "")
         user_msg = _build_user_message(idx, finding_block, ev)
+
+        if call_idx > 0 and inter_delay > 0:
+            import time as _time
+            print(f"[pivot_analyst] Waiting {inter_delay:.0f}s before next call …", flush=True)
+            _time.sleep(inter_delay)
 
         print(f"[pivot_analyst] Analysing finding {idx}/{findings[-1][0]} …", flush=True)
         t0 = datetime.now(timezone.utc)
@@ -235,9 +242,19 @@ def main() -> None:
         per_finding_responses.append((idx, resp))
 
     generated = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    report = _assemble_report(per_finding_responses, generated)
 
-    _write_text(output_path, report)
+    # Append mode: when resuming, prepend existing analyst.txt content
+    if args.from_finding and output_path.exists():
+        existing = _load_text(output_path)
+        new_section = "\n".join(
+            f"--- Finding {i} ---\n{r.strip()}\n" for i, r in per_finding_responses
+        )
+        report = existing.rstrip() + "\n\n" + new_section
+        _write_text(output_path, report)
+    else:
+        report = _assemble_report(per_finding_responses, generated)
+        _write_text(output_path, report)
+
     print(f"[pivot_analyst] Written → {output_path}", flush=True)
 
 

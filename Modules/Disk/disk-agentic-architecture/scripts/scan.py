@@ -141,7 +141,7 @@ def _parse_analyst(text: str, finding_offset: int = 0) -> list[dict]:
     """
     findings = []
     # Split text on block start markers
-    chunks = re.split(r"(?=\[(?:CONFIRMED|INCONCLUSIVE)\])", text)
+    chunks = re.split(r"(?=\[(?:CONFIRMED|INCONCLUSIVE|REJECTED)\])", text)
 
     idx = finding_offset
     for chunk in chunks:
@@ -151,6 +151,8 @@ def _parse_analyst(text: str, finding_offset: int = 0) -> list[dict]:
             verdict = "CONFIRMED"
         elif chunk.startswith("[INCONCLUSIVE]"):
             verdict = "INCONCLUSIVE"
+        elif chunk.startswith("[REJECTED]"):
+            verdict = "REJECTED"
         else:
             continue
 
@@ -171,6 +173,20 @@ def _parse_analyst(text: str, finding_offset: int = 0) -> list[dict]:
             severity = "MEDIUM"  # safe fallback
         mitre = _extract_mitre(_field("MITRE"))
 
+        if verdict == "REJECTED":
+            finding = {
+                "finding_id": f"disk-scan-f{idx:03d}",
+                "verdict": "REJECTED",
+                "severity": None,
+                "mitre": [],
+                "primary_entity": {"type": _infer_entity_type(key), "value": key},
+                "related_entities": [],
+                "justification": _field("Legitimate explanation") or _field("Justification") or f"Rejected: {key}",
+                "evidence": [],
+            }
+            findings.append(finding)
+            continue
+
         # Extract justification block
         just_m = re.search(r"Justification:\s*\n(.*?)(?:\n\s*Key Evidence:|\n-{40}|\Z)",
                             chunk, re.DOTALL | re.IGNORECASE)
@@ -187,7 +203,7 @@ def _parse_analyst(text: str, finding_offset: int = 0) -> list[dict]:
         finding = {
             "finding_id": f"disk-scan-f{idx:03d}",
             "verdict": verdict,
-            "severity": severity if verdict == "CONFIRMED" else None,
+            "severity": severity,  # preserved for CONFIRMED and INCONCLUSIVE (from Agent 1 via prompt)
             "mitre": mitre,
             "primary_entity": {"type": entity_type, "value": key},
             "related_entities": [],

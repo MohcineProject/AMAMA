@@ -5,6 +5,7 @@
   "api_key_env": "ANTHROPIC_API_KEY",
   "temperature": 0.2,
   "max_tokens": 8192,
-  "max_retries": 5,
+  "max_retries": 10,
+  "request_delay_seconds": 12,
   "verify_ssl": true
 }

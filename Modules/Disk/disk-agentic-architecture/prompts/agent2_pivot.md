@@ -45,9 +45,15 @@ L<lineno>: <verbatim line>
 
 ---
 
+## Empty evidence rule
+
+If the evidence block is `(no matching lines in any artifact file)`, **skip the lens walkthrough entirely**. Do not enumerate lenses as N/A. Go directly to the verdict block and explain in one or two sentences why the finding cannot be confirmed without pivot evidence.
+
+---
+
 ## Reasoning lenses
 
-Walk these nine lenses over the pivot evidence for every finding:
+Walk these nine lenses over the pivot evidence for every finding **that has at least one evidence line**:
 
 ### 1. TIMESTAMP INTEGRITY
 - Do $STANDARD_INFORMATION (si_created/si_modified) and $FILE_NAME (fn_created/fn_modified) timestamps agree within 2 seconds?
@@ -100,16 +106,9 @@ Walk these nine lenses over the pivot evidence for every finding:
 
 ## Output format
 
-One block per finding. REJECTED findings appear only in the counts header, not in the body.
+Emit **exactly one verdict block** per call — no report header, no preamble, no trailing prose, no markdown fencing. The caller assembles the multi-finding report; your job is to output a single block.
 
 ```
-================================================================
-DISK FORENSICS — PIVOT REPORT
-Generated: <ISO-8601 timestamp>
-Summary: <2–4 sentences — overall assessment of incident scope and severity>
-Counts: confirmed=<N>  inconclusive=<M>  rejected=<K>
-================================================================
-
 [CONFIRMED]
 ----------------------------------------------------------------
 Finding:    <N>
@@ -125,12 +124,15 @@ Key Evidence:
   - [artifact_filename.txt L<lineno>]: <verbatim line from pivot input>
   - [artifact_filename.txt L<lineno>]: <verbatim line>
 ----------------------------------------------------------------
+```
 
+```
 [INCONCLUSIVE]
 ----------------------------------------------------------------
 Finding:    <N>
 Type:       <type>
 Key:        <key>
+Severity:   <LOW|MEDIUM|HIGH|CRITICAL>  ← copy from Agent 1 severity
 
 Justification:
   <Explain what evidence exists, what's missing, and why CONFIRMED can't be reached.>
@@ -140,10 +142,24 @@ Key Evidence:
 ----------------------------------------------------------------
 ```
 
+```
+[REJECTED]
+----------------------------------------------------------------
+Finding:    <N>
+Type:       <type>
+Key:        <key>
+
+Legitimate explanation:
+  <One or two sentences naming the benign explanation for this artifact.>
+----------------------------------------------------------------
+```
+
 ### Rules
+- Use exactly `[CONFIRMED]`, `[INCONCLUSIVE]`, or `[REJECTED]` as the opening marker. No other formats, no dashes, no free-text rejection prose.
 - Cite **verbatim** lines from the pivot input in Key Evidence — do not paraphrase.
 - Each Key Evidence line **must** be prefixed with `[artifact_filename.txt L<lineno>]` where `artifact_filename.txt` is the exact filename from the `--- filename (N hits) ---` section header the line came from, and `<lineno>` is the `L<N>` number that precedes the line in the pivot input.
+- **Never generate `--- artifact.txt (N hits) ---` style lines yourself.** Those are input format only. If evidence is absent, write `(no pivot evidence available)` in the Key Evidence field — do not mimic the artifact-file evidence format.
 - MITRE is optional — fill in only when the evidence cleanly maps to a known ATT&CK technique. Leave blank rather than guess.
 - Trim very long evidence lines to the suspicious portion.
 - Target < 20 KB total output — trim redundant Key Evidence lines once the point is made.
-- Output only the report text — no preamble, no trailing prose, no markdown fencing.
+- Output only the verdict block text — no preamble, no "Let me walk the lenses…", no trailing summary, no markdown fencing.
