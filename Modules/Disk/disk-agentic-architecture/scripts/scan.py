@@ -32,9 +32,12 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-BASE_DIR = SCRIPT_DIR.parent
-SCHEMA_DIR = BASE_DIR / "schemas"
+SCRIPT_DIR   = Path(__file__).resolve().parent
+BASE_DIR     = SCRIPT_DIR.parent
+_DISK_DIR    = BASE_DIR.parent
+_MODULES_DIR = _DISK_DIR.parent
+_PROJECT_DIR = _MODULES_DIR.parent
+SCHEMA_DIR   = _PROJECT_DIR / "Backbone" / "schemas"
 
 _ENTITY_TYPE_REGISTRY = re.compile(
     r"^hk(lm|cu|u|cr|cc)\\", re.IGNORECASE
@@ -171,6 +174,8 @@ def _parse_analyst(text: str, finding_offset: int = 0) -> list[dict]:
         severity = _SEVERITY_MAP.get(severity_raw)
         if verdict == "CONFIRMED" and severity is None:
             severity = "MEDIUM"  # safe fallback
+        elif verdict != "CONFIRMED":
+            severity = None  # Backbone schema enforces null for non-CONFIRMED
         mitre = _extract_mitre(_field("MITRE"))
 
         if verdict == "REJECTED":
@@ -286,25 +291,30 @@ def build_scan_result(
     combined_path = base / "output" / "triage_combined.txt"
     legacy_triage = base / "output" / "triage.txt"
 
-    findings: list[dict] = []
+    all_findings: list[dict] = []
     used_source = "none"
+    human_report = "output/analyst.txt"
 
     if analyst_path.exists():
         text = analyst_path.read_text(encoding="utf-8", errors="ignore")
-        findings = _parse_analyst(text)
+        all_findings = _parse_analyst(text)
         used_source = "analyst.txt"
+        human_report = str(analyst_path.relative_to(base))
     elif combined_path.exists():
         text = combined_path.read_text(encoding="utf-8", errors="ignore")
-        findings = _parse_triage_combined(text)
+        all_findings = _parse_triage_combined(text)
         used_source = "triage_combined.txt"
+        human_report = str(combined_path.relative_to(base))
     elif legacy_triage.exists():
         text = legacy_triage.read_text(encoding="utf-8", errors="ignore")
-        findings = _parse_triage_combined(text)
+        all_findings = _parse_triage_combined(text)
         used_source = "triage.txt (legacy)"
+        human_report = str(legacy_triage.relative_to(base))
 
-    confirmed   = sum(1 for f in findings if f["verdict"] == "CONFIRMED")
-    inconclusive = sum(1 for f in findings if f["verdict"] == "INCONCLUSIVE")
-    rejected    = sum(1 for f in findings if f["verdict"] == "REJECTED")
+    confirmed    = sum(1 for f in all_findings if f["verdict"] == "CONFIRMED")
+    inconclusive = sum(1 for f in all_findings if f["verdict"] == "INCONCLUSIVE")
+    rejected     = sum(1 for f in all_findings if f["verdict"] == "REJECTED")
+    findings     = [f for f in all_findings if f["verdict"] != "REJECTED"]
 
     return {
         "contract_version": "1.0",
@@ -313,7 +323,7 @@ def build_scan_result(
         "scan_started_at": started_at,
         "scan_completed_at": completed_at,
         "summary": (
-            f"{len(findings)} finding(s) from disk artifacts "
+            f"{confirmed + inconclusive} finding(s) from disk artifacts "
             f"(source: {used_source}). "
             f"{confirmed} CONFIRMED, {inconclusive} INCONCLUSIVE, {rejected} REJECTED."
         ),
@@ -323,6 +333,7 @@ def build_scan_result(
             "rejected": rejected,
         },
         "findings": findings,
+        "artifacts": {"human_report": human_report},
     }
 
 
@@ -395,27 +406,33 @@ def main() -> None:
     combined_path = base / "output" / "triage_combined.txt"
     legacy_triage = base / "output" / "triage.txt"
 
-    findings: list[dict] = []
+    all_findings: list[dict] = []
     used_source = "none"
+    human_report = "output/analyst.txt"
 
     if analyst_path.exists():
         text = analyst_path.read_text(encoding="utf-8", errors="ignore")
-        findings = _parse_analyst(text)
+        all_findings = _parse_analyst(text)
         used_source = "analyst.txt"
+        human_report = str(analyst_path.relative_to(base))
     elif combined_path.exists():
         text = combined_path.read_text(encoding="utf-8", errors="ignore")
-        findings = _parse_triage_combined(text)
+        all_findings = _parse_triage_combined(text)
         used_source = "triage_combined.txt"
+        human_report = str(combined_path.relative_to(base))
     elif legacy_triage.exists():
         text = legacy_triage.read_text(encoding="utf-8", errors="ignore")
-        findings = _parse_triage_combined(text)
+        all_findings = _parse_triage_combined(text)
         used_source = "triage.txt (legacy)"
+        human_report = str(legacy_triage.relative_to(base))
 
-    print(f"[scan] Parsed {len(findings)} finding(s) from {used_source}", flush=True)
+    confirmed    = sum(1 for f in all_findings if f["verdict"] == "CONFIRMED")
+    inconclusive = sum(1 for f in all_findings if f["verdict"] == "INCONCLUSIVE")
+    rejected     = sum(1 for f in all_findings if f["verdict"] == "REJECTED")
+    findings     = [f for f in all_findings if f["verdict"] != "REJECTED"]
 
-    confirmed   = sum(1 for f in findings if f["verdict"] == "CONFIRMED")
-    inconclusive = sum(1 for f in findings if f["verdict"] == "INCONCLUSIVE")
-    rejected    = sum(1 for f in findings if f["verdict"] == "REJECTED")
+    print(f"[scan] Parsed {len(all_findings)} finding(s) from {used_source} "
+          f"({confirmed} CONFIRMED, {inconclusive} INCONCLUSIVE, {rejected} REJECTED)", flush=True)
 
     scan_result = {
         "contract_version": "1.0",
@@ -424,7 +441,7 @@ def main() -> None:
         "scan_started_at": started_at,
         "scan_completed_at": completed_at,
         "summary": (
-            f"{len(findings)} finding(s) from disk artifacts "
+            f"{confirmed + inconclusive} finding(s) from disk artifacts "
             f"(source: {used_source}). "
             f"{confirmed} CONFIRMED, {inconclusive} INCONCLUSIVE, {rejected} REJECTED."
         ),
@@ -434,11 +451,7 @@ def main() -> None:
             "rejected": rejected,
         },
         "findings": findings,
-        "artifacts": {
-            "human_report": str(analyst_path.relative_to(base) if analyst_path.exists()
-                                else (combined_path.relative_to(base) if combined_path.exists()
-                                      else "output/analyst.txt")),
-        },
+        "artifacts": {"human_report": human_report},
     }
 
     errors = _validate(scan_result, "module_scan_result.schema.json")

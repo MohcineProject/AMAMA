@@ -242,7 +242,7 @@ python scripts/query.py \
 
 ## Schema Contracts
 
-Schema files live at `disk-agentic-architecture/schemas/` — direct copies of the Backbone `COMPLETE_ARCHITECTURE/schemas/`, not symlinks, so the module is portable.
+Schema files live at `Backbone/schemas/` (project root), shared with the RAM module. `scan.py` resolves the path at runtime by walking up from `__file__` to the project root.
 
 - `module_scan_result.schema.json` — output of `scan.py`
 - `entity_findings.schema.json` — output of `query.py`

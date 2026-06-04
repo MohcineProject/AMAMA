@@ -149,7 +149,7 @@ Two CLI entry points expose the module to the Backbone orchestrator:
 
 - **`scripts/query.py`** (QUERY mode) — answers an `EntityQuery` from the orchestrator: looks up a specific entity (file path, hash, IP, domain, registry key, etc.) across all artifact files, optionally interprets the evidence with an LLM, and returns an `EntityFindings` JSON.
 
-Schema contracts (local copies in `disk-agentic-architecture/schemas/`):
+Schema contracts (shared from `Backbone/schemas/` — same files used by the RAM module):
 - `module_scan_result.schema.json`
 - `entity_findings.schema.json`
 - `entity_query.schema.json`
