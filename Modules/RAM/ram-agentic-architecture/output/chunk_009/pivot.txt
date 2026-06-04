@@ -1,385 +1,433 @@
 === PIVOT EVIDENCE REPORT ===
-Generated: 2026-05-31T20:09:02Z
+Generated: 2026-06-04T21:20:37Z
 
-=== PID 7772 (NisSrv.exe, ppid=896) ===
-Cmdline: \"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\NisSrv.exe\"
+=== PID 4644 (MicrosoftEdgeUpdate.exe, ppid=2168) ===
+Cmdline: "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c
 
 --- pslist.txt ---
-L100: 7772	896	NisSrv.exe	0x990ef60a7080	5	-	0	False	2026-05-13 19:16:15.000000 UTC	N/A	Disabled
+L76: 4644	2168	MicrosoftEdgeU	0x990ef7880080	4	-	0	True	2026-05-13 19:15:37.000000 UTC	N/A	Disabled
 
 --- cmdline.txt ---
-L100: 7772	NisSrv.exe	"C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe"
+L76: 4644	MicrosoftEdgeU	"C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c
 
 --- privileges.txt ---
-L3330: 7772	NisSrv.exe	2	SeCreateTokenPrivilege		Create a token object
-L3331: 7772	NisSrv.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
-L3332: 7772	NisSrv.exe	4	SeLockMemoryPrivilege		Lock pages in memory
-L3333: 7772	NisSrv.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
-L3334: 7772	NisSrv.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
-L3335: 7772	NisSrv.exe	7	SeTcbPrivilege		Act as part of the operating system
-L3336: 7772	NisSrv.exe	8	SeSecurityPrivilege		Manage auditing and security log
-L3337: 7772	NisSrv.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
-L3338: 7772	NisSrv.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
-L3339: 7772	NisSrv.exe	11	SeSystemProfilePrivilege		Profile system performance
-L3340: 7772	NisSrv.exe	12	SeSystemtimePrivilege	Present	Change the system time
-L3341: 7772	NisSrv.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
-L3342: 7772	NisSrv.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
-L3343: 7772	NisSrv.exe	15	SeCreatePagefilePrivilege		Create a pagefile
-L3344: 7772	NisSrv.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
-L3345: 7772	NisSrv.exe	17	SeBackupPrivilege		Backup files and directories
-L3346: 7772	NisSrv.exe	18	SeRestorePrivilege		Restore files and directories
-L3347: 7772	NisSrv.exe	19	SeShutdownPrivilege	Present	Shut down the system
-L3348: 7772	NisSrv.exe	20	SeDebugPrivilege		Debug programs
-L3349: 7772	NisSrv.exe	21	SeAuditPrivilege	Present	Generate security audits
-L3350: 7772	NisSrv.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
-L3351: 7772	NisSrv.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
-L3352: 7772	NisSrv.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
-L3353: 7772	NisSrv.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
-L3354: 7772	NisSrv.exe	26	SeSyncAgentPrivilege		Synch directory service data
-L3355: 7772	NisSrv.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
-L3356: 7772	NisSrv.exe	28	SeManageVolumePrivilege		Manage the files on a volume
-L3357: 7772	NisSrv.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
-L3358: 7772	NisSrv.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
-L3359: 7772	NisSrv.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
-L3360: 7772	NisSrv.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
-L3361: 7772	NisSrv.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
-L3362: 7772	NisSrv.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
-L3363: 7772	NisSrv.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
-L3364: 7772	NisSrv.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+L2490: 4644	MicrosoftEdgeU	2	SeCreateTokenPrivilege		Create a token object
+L2491: 4644	MicrosoftEdgeU	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L2492: 4644	MicrosoftEdgeU	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L2493: 4644	MicrosoftEdgeU	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L2494: 4644	MicrosoftEdgeU	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2495: 4644	MicrosoftEdgeU	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L2496: 4644	MicrosoftEdgeU	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L2497: 4644	MicrosoftEdgeU	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L2498: 4644	MicrosoftEdgeU	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L2499: 4644	MicrosoftEdgeU	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L2500: 4644	MicrosoftEdgeU	12	SeSystemtimePrivilege	Present	Change the system time
+L2501: 4644	MicrosoftEdgeU	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L2502: 4644	MicrosoftEdgeU	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L2503: 4644	MicrosoftEdgeU	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L2504: 4644	MicrosoftEdgeU	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L2505: 4644	MicrosoftEdgeU	17	SeBackupPrivilege	Present	Backup files and directories
+L2506: 4644	MicrosoftEdgeU	18	SeRestorePrivilege	Present	Restore files and directories
+L2507: 4644	MicrosoftEdgeU	19	SeShutdownPrivilege	Present	Shut down the system
+L2508: 4644	MicrosoftEdgeU	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L2509: 4644	MicrosoftEdgeU	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L2510: 4644	MicrosoftEdgeU	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L2511: 4644	MicrosoftEdgeU	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2512: 4644	MicrosoftEdgeU	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2513: 4644	MicrosoftEdgeU	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2514: 4644	MicrosoftEdgeU	26	SeSyncAgentPrivilege		Synch directory service data
+L2515: 4644	MicrosoftEdgeU	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2516: 4644	MicrosoftEdgeU	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L2517: 4644	MicrosoftEdgeU	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L2518: 4644	MicrosoftEdgeU	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L2519: 4644	MicrosoftEdgeU	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2520: 4644	MicrosoftEdgeU	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2521: 4644	MicrosoftEdgeU	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L2522: 4644	MicrosoftEdgeU	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L2523: 4644	MicrosoftEdgeU	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L2524: 4644	MicrosoftEdgeU	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
 
 --- dlllist.txt ---
-L4479: 7772	NisSrv.exe	0x7ff68d240000	0x44f000	NisSrv.exe	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	-1	2026-05-13 19:16:15.000000 UTC	Disabled
-L4480: 7772	NisSrv.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:16:15.000000 UTC	Disabled
-L4481: 7772	NisSrv.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\SYSTEM32\KERNEL32.DLL	-1	2026-05-13 19:16:15.000000 UTC	Disabled
-L4482: 7772	NisSrv.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\SYSTEM32\KERNELBASE.dll	-1	2026-05-13 19:16:15.000000 UTC	Disabled
-L4483: 7772	NisSrv.exe	0x7fffe7b70000	0x1bc000	MpClient.dll	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpClient.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4484: 7772	NisSrv.exe	0x7ffff9820000	0xbb000	ADVAPI32.dll	C:\WINDOWS\SYSTEM32\ADVAPI32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4485: 7772	NisSrv.exe	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\SYSTEM32\USER32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4486: 7772	NisSrv.exe	0x7ffff56f0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4487: 7772	NisSrv.exe	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\SYSTEM32\CRYPT32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4488: 7772	NisSrv.exe	0x7ffff64b0000	0x81000	WINTRUST.dll	C:\WINDOWS\SYSTEM32\WINTRUST.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4489: 7772	NisSrv.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\SYSTEM32\msvcrt.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4490: 7772	NisSrv.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\SYSTEM32\RPCRT4.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4491: 7772	NisSrv.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\SYSTEM32\sechost.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4492: 7772	NisSrv.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\SYSTEM32\ucrtbase.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4493: 7772	NisSrv.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\SYSTEM32\win32u.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4494: 7772	NisSrv.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\SYSTEM32\GDI32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4495: 7772	NisSrv.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\SYSTEM32\gdi32full.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4496: 7772	NisSrv.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\SYSTEM32\msvcp_win.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4497: 7772	NisSrv.exe	0x7ffff5990000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4498: 7772	NisSrv.exe	0x7fffe8ac0000	0xb000	version.dll	C:\WINDOWS\system32\version.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4499: 7772	NisSrv.exe	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\SYSTEM32\ole32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4500: 7772	NisSrv.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\SYSTEM32\combase.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4501: 7772	NisSrv.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4502: 7772	NisSrv.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll	-1	2026-05-13 19:16:15.000000 UTC	Disabled
-L4503: 7772	NisSrv.exe	0x7fffee2a0000	0x127000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4504: 7772	NisSrv.exe	0x7ffff4a00000	0x33000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4505: 7772	NisSrv.exe	0x7ffff8700000	0xa000	NSI.dll	C:\WINDOWS\SYSTEM32\NSI.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4506: 7772	NisSrv.exe	0x7ffff0470000	0x1d000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4507: 7772	NisSrv.exe	0x7fffee670000	0x23000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4508: 7772	NisSrv.exe	0x7ffff8710000	0x75f000	SHELL32.dll	C:\WINDOWS\SYSTEM32\SHELL32.dll	6	2026-05-13 19:16:15.000000 UTC	Disabled
-L4509: 7772	NisSrv.exe	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	6	2026-05-13 19:16:16.000000 UTC	Disabled
-L4510: 7772	NisSrv.exe	0x7ffff6d60000	0x864000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	6	2026-05-13 19:16:16.000000 UTC	Disabled
-L4511: 7772	NisSrv.exe	0x7ffff9630000	0xf7000	SHCORE.dll	C:\WINDOWS\SYSTEM32\SHCORE.dll	6	2026-05-13 19:16:16.000000 UTC	Disabled
-L4512: 7772	NisSrv.exe	0x7ffff8e80000	0x67000	shlwapi.dll	C:\WINDOWS\SYSTEM32\shlwapi.dll	6	2026-05-13 19:16:16.000000 UTC	Disabled
+L2735: 4644	MicrosoftEdgeU	0x880000	0x35000	MicrosoftEdgeUpdate.exe	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	-1	2026-05-13 19:15:38.000000 UTC	Disabled
+L2736: 4644	MicrosoftEdgeU	0x7ffff9a60000	0x267000	-	-	-1	2026-05-13 19:15:38.000000 UTC	Disabled
+L2737: 4644	MicrosoftEdgeU	0x7ffff99c0000	0x55000	wow64.dll	C:\WINDOWS\System32\wow64.dll	-1	2026-05-13 19:15:38.000000 UTC	Disabled
+L2738: 4644	MicrosoftEdgeU	0x7ffff92c0000	0xb000	wow64base.dll	C:\WINDOWS\System32\wow64base.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2739: 4644	MicrosoftEdgeU	0x7ffff9060000	0x89000	wow64win.dll	C:\WINDOWS\System32\wow64win.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2740: 4644	MicrosoftEdgeU	0x7ffff98e0000	0x19000	wow64con.dll	C:\WINDOWS\System32\wow64con.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2741: 4644	MicrosoftEdgeU	0x77a10000	0xa000	wow64cpu.dll	C:\WINDOWS\System32\wow64cpu.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2742: 4644	MicrosoftEdgeU	0x880000	0x35000	MicrosoftEdgeUpdate.exe	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	-	2191-11-19 12:07:24.000000 UTC	Disabled
+L2743: 4644	MicrosoftEdgeU	0x77a20000	0x1bf000	-	-	-	-	Disabled
+L2744: 4644	MicrosoftEdgeU	0x760b0000	0xf0000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L2745: 4644	MicrosoftEdgeU	0x75cd0000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-	1697-05-01 08:55:49.000000 UTC	Disabled
+L2746: 4644	MicrosoftEdgeU	0x75b10000	0x151000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-	3884-09-25 11:27:43.000000 UTC	Disabled
+L2747: 4644	MicrosoftEdgeU	0x75950000	0x85000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L2748: 4644	MicrosoftEdgeU	0x77710000	0x110000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L2749: 4644	MicrosoftEdgeU	0x76740000	0x22000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L2750: 4644	MicrosoftEdgeU	0x753d0000	0x1a000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L2751: 4644	MicrosoftEdgeU	0x75550000	0xeb000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L2752: 4644	MicrosoftEdgeU	0x76780000	0x1c9000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L2753: 4644	MicrosoftEdgeU	0x756b0000	0x292000	combase.dll	C:\WINDOWS\System32\combase.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L2754: 4644	MicrosoftEdgeU	0x77580000	0xbc000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L2755: 4644	MicrosoftEdgeU	0x74d90000	0x636000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	-	-	Disabled
+L2756: 4644	MicrosoftEdgeU	0x75450000	0xf9000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	-	-	Disabled
+L2757: 4644	MicrosoftEdgeU	0x76db0000	0x6e4000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	-	-	Disabled
+L2758: 4644	MicrosoftEdgeU	0x76a70000	0x85000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	-	1601-01-01 00:03:20.000000 UTC	Disabled
+L2759: 4644	MicrosoftEdgeU	0x77640000	0xc7000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-	-	Disabled
+L2760: 4644	MicrosoftEdgeU	0x76ca0000	0x83000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-	N/A	Disabled
+L2761: 4644	MicrosoftEdgeU	0x759e0000	0xd2000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	-	-	Disabled
+L2762: 4644	MicrosoftEdgeU	0x75c70000	0x52000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	-	-	Disabled
+L2763: 4644	MicrosoftEdgeU	0x74b50000	0x23d000	msedgeupdate.dll	C:\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll	-	-	Disabled
+L2764: 4644	MicrosoftEdgeU	0x74b40000	0x8000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	-	-	Disabled
+L2765: 4644	MicrosoftEdgeU	0x74b20000	0x15000	NETAPI32.dll	C:\WINDOWS\SYSTEM32\NETAPI32.dll	-	-	Disabled
+L2766: 4644	MicrosoftEdgeU	0x74af0000	0x1f000	WTSAPI32.dll	C:\WINDOWS\SYSTEM32\WTSAPI32.dll	-	-	Disabled
+L2767: 4644	MicrosoftEdgeU	0x75fa0000	0x109000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	-	-	Disabled
+L2768: 4644	MicrosoftEdgeU	0x74ac0000	0x2b000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	-	2496-11-15 15:30:18.000000 UTC	Disabled
+L2769: 4644	MicrosoftEdgeU	0x74ab0000	0xb000	NETUTILS.DLL	C:\WINDOWS\SYSTEM32\NETUTILS.DLL	-	-	Disabled
+L2770: 4644	MicrosoftEdgeU	0x74a90000	0x13000	WKSCLI.DLL	C:\WINDOWS\SYSTEM32\WKSCLI.DLL	-	1601-01-01 00:03:16.000000 UTC	Disabled
+L2771: 4644	MicrosoftEdgeU	0x74a70000	0x1d000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	-	-	Disabled
+L2772: 4644	MicrosoftEdgeU	0x74920000	0x145000	DSREG.DLL	C:\WINDOWS\SYSTEM32\DSREG.DLL	-	-	Disabled
+L2773: 4644	MicrosoftEdgeU	0x748f0000	0x28000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	-	-	Disabled
+L2774: 4644	MicrosoftEdgeU	0x748d0000	0x15000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-	-	Disabled
+L2775: 4644	MicrosoftEdgeU	0x76d30000	0x74000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-	-	Disabled
+L2776: 4644	MicrosoftEdgeU	0x74870000	0x4e000	WINSTA.dll	C:\WINDOWS\SYSTEM32\WINSTA.dll	-	1430-10-19 03:05:19.000000 UTC	Disabled
+L2777: 4644	MicrosoftEdgeU	0x77830000	0x86000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-	-	Disabled
+L2778: 4644	MicrosoftEdgeU	0x747e0000	0x82000	taskschd.dll	C:\Windows\System32\taskschd.dll	-	-	Disabled
+L2779: 4644	MicrosoftEdgeU	0x77960000	0x9f000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-	-	Disabled
+L2780: 4644	MicrosoftEdgeU	0x74720000	0xae000	apphelp.dll	C:\WINDOWS\system32\apphelp.dll	-	-	Disabled
+L2781: 4644	MicrosoftEdgeU	0x74710000	0xa000	CRYPTBASE.DLL	C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL	-	N/A	Disabled
+L2782: 4644	MicrosoftEdgeU	0x746f0000	0xe000	atlthunk.dll	C:\WINDOWS\SYSTEM32\atlthunk.dll	-	N/A	Disabled
 
 --- envars.txt ---
-L2869: 7772	NisSrv.exe	0x1d523104c30	ALLUSERSPROFILE	C:\ProgramData
-L2870: 7772	NisSrv.exe	0x1d523104c30	APPDATA	C:\WINDOWS\ServiceProfiles\LocalService\AppData\Roaming
-L2871: 7772	NisSrv.exe	0x1d523104c30	CommonProgramFiles	C:\Program Files\Common Files
-L2872: 7772	NisSrv.exe	0x1d523104c30	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
-L2873: 7772	NisSrv.exe	0x1d523104c30	CommonProgramW6432	C:\Program Files\Common Files
-L2874: 7772	NisSrv.exe	0x1d523104c30	COMPUTERNAME	CLEANWINDOWS11
-L2875: 7772	NisSrv.exe	0x1d523104c30	ComSpec	C:\WINDOWS\system32\cmd.exe
-L2876: 7772	NisSrv.exe	0x1d523104c30	DriverData	C:\Windows\System32\Drivers\DriverData
-L2877: 7772	NisSrv.exe	0x1d523104c30	LOCALAPPDATA	C:\WINDOWS\ServiceProfiles\LocalService\AppData\Local
-L2878: 7772	NisSrv.exe	0x1d523104c30	NUMBER_OF_PROCESSORS	4
-L2879: 7772	NisSrv.exe	0x1d523104c30	OS	Windows_NT
-L2880: 7772	NisSrv.exe	0x1d523104c30	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\ServiceProfiles\LocalService\AppData\Local\Microsoft\WindowsApps
-L2881: 7772	NisSrv.exe	0x1d523104c30	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
-L2882: 7772	NisSrv.exe	0x1d523104c30	PROCESSOR_ARCHITECTURE	AMD64
-L2883: 7772	NisSrv.exe	0x1d523104c30	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
-L2884: 7772	NisSrv.exe	0x1d523104c30	PROCESSOR_LEVEL	6
-L2885: 7772	NisSrv.exe	0x1d523104c30	PROCESSOR_REVISION	ba03
-L2886: 7772	NisSrv.exe	0x1d523104c30	ProgramData	C:\ProgramData
-L2887: 7772	NisSrv.exe	0x1d523104c30	ProgramFiles	C:\Program Files
-L2888: 7772	NisSrv.exe	0x1d523104c30	ProgramFiles(x86)	C:\Program Files (x86)
-L2889: 7772	NisSrv.exe	0x1d523104c30	ProgramW6432	C:\Program Files
-L2890: 7772	NisSrv.exe	0x1d523104c30	PSModulePath	%ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
-L2891: 7772	NisSrv.exe	0x1d523104c30	PUBLIC	C:\Users\Public
-L2892: 7772	NisSrv.exe	0x1d523104c30	SystemDrive	C:
-L2893: 7772	NisSrv.exe	0x1d523104c30	SystemRoot	C:\WINDOWS
-L2894: 7772	NisSrv.exe	0x1d523104c30	TEMP	C:\WINDOWS\SERVIC~1\LOCALS~1\AppData\Local\Temp
-L2895: 7772	NisSrv.exe	0x1d523104c30	TMP	C:\WINDOWS\SERVIC~1\LOCALS~1\AppData\Local\Temp
-L2896: 7772	NisSrv.exe	0x1d523104c30	USERDOMAIN	NT AUTHORITY
-L2897: 7772	NisSrv.exe	0x1d523104c30	USERNAME	LOCAL SERVICE
-L2898: 7772	NisSrv.exe	0x1d523104c30	USERPROFILE	C:\WINDOWS\ServiceProfiles\LocalService
-L2899: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
-L2900: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
-L2901: 7772	NisSrv.exe	0x1d523104c30	les\LocalServic	les\LocalService
-L2902: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
-L2903: 7772	NisSrv.exe	0x1d523104c30	OMAIN	NT AUTHORITY
-L2904: 7772	NisSrv.exe	0x1d523104c30	USERNAME	LOCAL SERVICE
-L2905: 7772	NisSrv.exe	0x1d523104c30	USERPROFILE	C:\WINDOWS\ServiceProfiles\LocalService
-L2906: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
-L2907: 7772	NisSrv.exe	0x1d523104c30	SERPROFILE	C:\WINDOWS\ServiceProfiles\LocalService
-L2908: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
-L2909: 7772	NisSrv.exe	0x1d523104c30	NAME	LOCAL SERVICE
-L2910: 7772	NisSrv.exe	0x1d523104c30	USERPROFILE	C:\WINDOWS\ServiceProfiles\LocalService
-L2911: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
-L2912: 7772	NisSrv.exe	0x1d523104c30	iles\LocalServic	iles\LocalService
-L2913: 7772	NisSrv.exe	0x1d523104c30	windir	C:\WINDOWS
+L2111: 4644	MicrosoftEdgeU	0x7e7340	ALLUSERSPROFILE	C:\ProgramData
+L2112: 4644	MicrosoftEdgeU	0x7e7340	APPDATA	C:\WINDOWS\system32\config\systemprofile\AppData\Roaming
+L2113: 4644	MicrosoftEdgeU	0x7e7340	CommonProgramFiles	C:\Program Files\Common Files
+L2114: 4644	MicrosoftEdgeU	0x7e7340	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
+L2115: 4644	MicrosoftEdgeU	0x7e7340	CommonProgramW6432	C:\Program Files\Common Files
+L2116: 4644	MicrosoftEdgeU	0x7e7340	COMPUTERNAME	CLEANWINDOWS11
+L2117: 4644	MicrosoftEdgeU	0x7e7340	ComSpec	C:\WINDOWS\system32\cmd.exe
+L2118: 4644	MicrosoftEdgeU	0x7e7340	DriverData	C:\Windows\System32\Drivers\DriverData
+L2119: 4644	MicrosoftEdgeU	0x7e7340	LOCALAPPDATA	C:\WINDOWS\system32\config\systemprofile\AppData\Local
+L2120: 4644	MicrosoftEdgeU	0x7e7340	NUMBER_OF_PROCESSORS	4
+L2121: 4644	MicrosoftEdgeU	0x7e7340	OS	Windows_NT
+L2122: 4644	MicrosoftEdgeU	0x7e7340	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;
+L2123: 4644	MicrosoftEdgeU	0x7e7340	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+L2124: 4644	MicrosoftEdgeU	0x7e7340	PROCESSOR_ARCHITECTURE	AMD64
+L2125: 4644	MicrosoftEdgeU	0x7e7340	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+L2126: 4644	MicrosoftEdgeU	0x7e7340	PROCESSOR_LEVEL	6
+L2127: 4644	MicrosoftEdgeU	0x7e7340	PROCESSOR_REVISION	ba03
+L2128: 4644	MicrosoftEdgeU	0x7e7340	ProgramData	C:\ProgramData
+L2129: 4644	MicrosoftEdgeU	0x7e7340	ProgramFiles	C:\Program Files
+L2130: 4644	MicrosoftEdgeU	0x7e7340	ProgramFiles(x86)	C:\Program Files (x86)
+L2131: 4644	MicrosoftEdgeU	0x7e7340	ProgramW6432	C:\Program Files
+L2132: 4644	MicrosoftEdgeU	0x7e7340	PSModulePath	C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+L2133: 4644	MicrosoftEdgeU	0x7e7340	PUBLIC	C:\Users\Public
+L2134: 4644	MicrosoftEdgeU	0x7e7340	SystemDrive	C:
+L2135: 4644	MicrosoftEdgeU	0x7e7340	SystemRoot	C:\WINDOWS
+L2136: 4644	MicrosoftEdgeU	0x7e7340	TEMP	C:\WINDOWS\TEMP
+L2137: 4644	MicrosoftEdgeU	0x7e7340	TMP	C:\WINDOWS\TEMP
+L2138: 4644	MicrosoftEdgeU	0x7e7340	USERDOMAIN	WORKGROUP
+L2139: 4644	MicrosoftEdgeU	0x7e7340	USERNAME	CLEANWINDOWS11$
+L2140: 4644	MicrosoftEdgeU	0x7e7340	USERPROFILE	C:\WINDOWS\system32\config\systemprofile
+L2141: 4644	MicrosoftEdgeU	0x7e7340	windir	C:\WINDOWS
 
 --- pstree.txt ---
-L53: ** 7772	896	NisSrv.exe	0x990ef60a7080	5	-	0	False	2026-05-13 19:16:15.000000 UTC	N/A	\Device\HarddiskVolume4\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	"C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe"	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe
+L61: *** 4644	2168	MicrosoftEdgeU	0x990ef7880080	4	-	0	True	2026-05-13 19:15:37.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	"C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
 
 --- psscan.txt ---
-L40: 7772	896	NisSrv.exe	0x990ef60a7080	5	-	0	False	2026-05-13 19:16:15.000000 UTC	N/A	Disabled
+L106: 4644	2168	MicrosoftEdgeU	0x990ef7880080	4	-	0	True	2026-05-13 19:15:37.000000 UTC	N/A	Disabled
 
 --- threads.txt ---
-L1180: 0x990ef4be10c0	7772	7776	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff68d25d760	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	2026-05-13 19:16:15.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L1181: 0x990ef609d040	7772	7828	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:16:15.000000 UTC	2026-05-13 19:18:29.000000 UTC
-L1182: 0x990ef67a2080	7772	7832	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff94d7600	\Windows\System32\sechost.dll	2026-05-13 19:16:15.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1183: 0x990ef69dc080	7772	1664	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:21:15.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1184: 0x990efa9af080	7772	7144	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:15.000000 UTC	1600-08-22 23:57:43.000000 UTC
-L1185: 0x990ef6817040	7772	6432	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:16.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L831: 0x990ef78ac080	4644	4648	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x88b880	\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	2026-05-13 19:15:37.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L832: 0x990ef61ce080	4644	5004	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x77a76290	\Windows\SysWOW64\ntdll.dll	2026-05-13 19:15:44.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L833: 0x990ef7ae9080	4644	1500	0xe08e81988d20	-	0x74bdd8d0	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll	2026-05-13 19:15:46.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L834: 0x990ef7bb5080	4644	4660	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x74c24270	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll	2026-05-13 19:15:46.000000 UTC	1600-08-22 23:57:38.000000 UTC
 
 --- thrdscan.txt ---
-L371: 0x990ef4be10c0	7772	7776	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff68d25d760	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	2026-05-13 19:16:15.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L514: 0x990ef609d040	7772	7828	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:16:15.000000 UTC	2026-05-13 19:18:29.000000 UTC
-L636: 0x990ef67a2080	7772	7832	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff94d7600	\Windows\System32\sechost.dll	2026-05-13 19:16:15.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L659: 0x990ef6817040	7772	6432	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:16.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L736: 0x990ef69dc080	7772	1664	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:21:15.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1736: 0x990efa9af080	7772	7144	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:15.000000 UTC	1600-08-22 23:57:43.000000 UTC
+L549: 0x990ef61ce080	4644	5004	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x77a76290	\Windows\SysWOW64\ntdll.dll	2026-05-13 19:15:44.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1101: 0x990ef78ac080	4644	4648	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x88b880	\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	2026-05-13 19:15:37.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1194: 0x990ef7ae9080	4644	1500	0xe08e81988d20	-	0x74bdd8d0	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll	2026-05-13 19:15:46.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1223: 0x990ef7bb5080	4644	4660	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x74c24270	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll	2026-05-13 19:15:46.000000 UTC	1600-08-22 23:57:38.000000 UTC
 
 --- ldrmodules.txt ---
-L4755: 7772	NisSrv.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
-L4756: 7772	NisSrv.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
-L4757: 7772	NisSrv.exe	0x7ff68d240000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe
-L4758: 7772	NisSrv.exe	0x7fffe7b70000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpClient.dll
-L4759: 7772	NisSrv.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
-L4760: 7772	NisSrv.exe	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
-L4761: 7772	NisSrv.exe	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
-L4762: 7772	NisSrv.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
-L4763: 7772	NisSrv.exe	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
-L4764: 7772	NisSrv.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
-L4765: 7772	NisSrv.exe	0x7ffff64b0000	True	True	True	\Windows\System32\wintrust.dll
-L4766: 7772	NisSrv.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
-L4767: 7772	NisSrv.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
-L4768: 7772	NisSrv.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
-L4769: 7772	NisSrv.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
-L4770: 7772	NisSrv.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
-L4771: 7772	NisSrv.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
-L4772: 7772	NisSrv.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
-L4773: 7772	NisSrv.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
-L4774: 7772	NisSrv.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
-L4775: 7772	NisSrv.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
-L4776: 7772	NisSrv.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
-L4777: 7772	NisSrv.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
-L4778: 7772	NisSrv.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
-L4779: 7772	NisSrv.exe	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
-L4780: 7772	NisSrv.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
-L4781: 7772	NisSrv.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
-L4782: 7772	NisSrv.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
-L4783: 7772	NisSrv.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
-L4784: 7772	NisSrv.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
-L4785: 7772	NisSrv.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
-L4786: 7772	NisSrv.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
-L4787: 7772	NisSrv.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
-L4788: 7772	NisSrv.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L2865: 4644	MicrosoftEdgeU	0x880000	True	False	True	\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
+L2866: 4644	MicrosoftEdgeU	0x75cd0000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L2867: 4644	MicrosoftEdgeU	0x74ac0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L2868: 4644	MicrosoftEdgeU	0x746f0000	True	True	True	\Windows\SysWOW64\atlthunk.dll
+L2869: 4644	MicrosoftEdgeU	0x747e0000	True	True	True	\Windows\SysWOW64\taskschd.dll
+L2870: 4644	MicrosoftEdgeU	0x74710000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L2871: 4644	MicrosoftEdgeU	0x74720000	True	True	True	\Windows\SysWOW64\apphelp.dll
+L2872: 4644	MicrosoftEdgeU	0x74920000	True	True	True	\Windows\SysWOW64\dsreg.dll
+L2873: 4644	MicrosoftEdgeU	0x748d0000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L2874: 4644	MicrosoftEdgeU	0x74870000	True	True	True	\Windows\SysWOW64\winsta.dll
+L2875: 4644	MicrosoftEdgeU	0x748f0000	True	True	True	\Windows\SysWOW64\userenv.dll
+L2876: 4644	MicrosoftEdgeU	0x74a90000	True	True	True	\Windows\SysWOW64\wkscli.dll
+L2877: 4644	MicrosoftEdgeU	0x74a70000	True	True	True	\Windows\SysWOW64\profapi.dll
+L2878: 4644	MicrosoftEdgeU	0x74ab0000	True	True	True	\Windows\SysWOW64\netutils.dll
+L2879: 4644	MicrosoftEdgeU	0x753d0000	True	True	True	\Windows\SysWOW64\win32u.dll
+L2880: 4644	MicrosoftEdgeU	0x74b20000	True	True	True	\Windows\SysWOW64\netapi32.dll
+L2881: 4644	MicrosoftEdgeU	0x74af0000	True	True	True	\Windows\SysWOW64\wtsapi32.dll
+L2882: 4644	MicrosoftEdgeU	0x74b50000	True	True	True	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll
+L2883: 4644	MicrosoftEdgeU	0x74b40000	True	True	True	\Windows\SysWOW64\version.dll
+L2884: 4644	MicrosoftEdgeU	0x74d90000	True	True	True	\Windows\SysWOW64\shell32.dll
+L2885: 4644	MicrosoftEdgeU	0x75950000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L2886: 4644	MicrosoftEdgeU	0x75550000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L2887: 4644	MicrosoftEdgeU	0x75450000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L2888: 4644	MicrosoftEdgeU	0x756b0000	True	True	True	\Windows\SysWOW64\combase.dll
+L2889: 4644	MicrosoftEdgeU	0x75b10000	True	True	True	\Windows\SysWOW64\ole32.dll
+L2890: 4644	MicrosoftEdgeU	0x759e0000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L2891: 4644	MicrosoftEdgeU	0x75c70000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L2892: 4644	MicrosoftEdgeU	0x77710000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L2893: 4644	MicrosoftEdgeU	0x76780000	True	True	True	\Windows\SysWOW64\user32.dll
+L2894: 4644	MicrosoftEdgeU	0x760b0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L2895: 4644	MicrosoftEdgeU	0x75fa0000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L2896: 4644	MicrosoftEdgeU	0x76740000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L2897: 4644	MicrosoftEdgeU	0x76db0000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L2898: 4644	MicrosoftEdgeU	0x76ca0000	True	True	True	\Windows\SysWOW64\sechost.dll
+L2899: 4644	MicrosoftEdgeU	0x76a70000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L2900: 4644	MicrosoftEdgeU	0x76d30000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L2901: 4644	MicrosoftEdgeU	0x77580000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L2902: 4644	MicrosoftEdgeU	0x77640000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L2903: 4644	MicrosoftEdgeU	0x77a20000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L2904: 4644	MicrosoftEdgeU	0x77960000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L2905: 4644	MicrosoftEdgeU	0x77830000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L2906: 4644	MicrosoftEdgeU	0x77a10000	True	True	True	\Windows\System32\wow64cpu.dll
+L2907: 4644	MicrosoftEdgeU	0x7ffff99c0000	True	True	True	\Windows\System32\wow64.dll
+L2908: 4644	MicrosoftEdgeU	0x7ffff92c0000	True	True	True	\Windows\System32\wow64base.dll
+L2909: 4644	MicrosoftEdgeU	0x7ffff9060000	True	True	True	\Windows\System32\wow64win.dll
+L2910: 4644	MicrosoftEdgeU	0x7ffff98e0000	True	True	True	\Windows\System32\wow64con.dll
+L2911: 4644	MicrosoftEdgeU	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
 
 --- malware_ldrmodules.txt ---
-L4755: 7772	NisSrv.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
-L4756: 7772	NisSrv.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
-L4757: 7772	NisSrv.exe	0x7ff68d240000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe
-L4758: 7772	NisSrv.exe	0x7fffe7b70000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpClient.dll
-L4759: 7772	NisSrv.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
-L4760: 7772	NisSrv.exe	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
-L4761: 7772	NisSrv.exe	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
-L4762: 7772	NisSrv.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
-L4763: 7772	NisSrv.exe	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
-L4764: 7772	NisSrv.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
-L4765: 7772	NisSrv.exe	0x7ffff64b0000	True	True	True	\Windows\System32\wintrust.dll
-L4766: 7772	NisSrv.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
-L4767: 7772	NisSrv.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
-L4768: 7772	NisSrv.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
-L4769: 7772	NisSrv.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
-L4770: 7772	NisSrv.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
-L4771: 7772	NisSrv.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
-L4772: 7772	NisSrv.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
-L4773: 7772	NisSrv.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
-L4774: 7772	NisSrv.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
-L4775: 7772	NisSrv.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
-L4776: 7772	NisSrv.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
-L4777: 7772	NisSrv.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
-L4778: 7772	NisSrv.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
-L4779: 7772	NisSrv.exe	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
-L4780: 7772	NisSrv.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
-L4781: 7772	NisSrv.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
-L4782: 7772	NisSrv.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
-L4783: 7772	NisSrv.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
-L4784: 7772	NisSrv.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
-L4785: 7772	NisSrv.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
-L4786: 7772	NisSrv.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
-L4787: 7772	NisSrv.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
-L4788: 7772	NisSrv.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L2865: 4644	MicrosoftEdgeU	0x880000	True	False	True	\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
+L2866: 4644	MicrosoftEdgeU	0x75cd0000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L2867: 4644	MicrosoftEdgeU	0x74ac0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L2868: 4644	MicrosoftEdgeU	0x746f0000	True	True	True	\Windows\SysWOW64\atlthunk.dll
+L2869: 4644	MicrosoftEdgeU	0x747e0000	True	True	True	\Windows\SysWOW64\taskschd.dll
+L2870: 4644	MicrosoftEdgeU	0x74710000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L2871: 4644	MicrosoftEdgeU	0x74720000	True	True	True	\Windows\SysWOW64\apphelp.dll
+L2872: 4644	MicrosoftEdgeU	0x74920000	True	True	True	\Windows\SysWOW64\dsreg.dll
+L2873: 4644	MicrosoftEdgeU	0x748d0000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L2874: 4644	MicrosoftEdgeU	0x74870000	True	True	True	\Windows\SysWOW64\winsta.dll
+L2875: 4644	MicrosoftEdgeU	0x748f0000	True	True	True	\Windows\SysWOW64\userenv.dll
+L2876: 4644	MicrosoftEdgeU	0x74a90000	True	True	True	\Windows\SysWOW64\wkscli.dll
+L2877: 4644	MicrosoftEdgeU	0x74a70000	True	True	True	\Windows\SysWOW64\profapi.dll
+L2878: 4644	MicrosoftEdgeU	0x74ab0000	True	True	True	\Windows\SysWOW64\netutils.dll
+L2879: 4644	MicrosoftEdgeU	0x753d0000	True	True	True	\Windows\SysWOW64\win32u.dll
+L2880: 4644	MicrosoftEdgeU	0x74b20000	True	True	True	\Windows\SysWOW64\netapi32.dll
+L2881: 4644	MicrosoftEdgeU	0x74af0000	True	True	True	\Windows\SysWOW64\wtsapi32.dll
+L2882: 4644	MicrosoftEdgeU	0x74b50000	True	True	True	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll
+L2883: 4644	MicrosoftEdgeU	0x74b40000	True	True	True	\Windows\SysWOW64\version.dll
+L2884: 4644	MicrosoftEdgeU	0x74d90000	True	True	True	\Windows\SysWOW64\shell32.dll
+L2885: 4644	MicrosoftEdgeU	0x75950000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L2886: 4644	MicrosoftEdgeU	0x75550000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L2887: 4644	MicrosoftEdgeU	0x75450000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L2888: 4644	MicrosoftEdgeU	0x756b0000	True	True	True	\Windows\SysWOW64\combase.dll
+L2889: 4644	MicrosoftEdgeU	0x75b10000	True	True	True	\Windows\SysWOW64\ole32.dll
+L2890: 4644	MicrosoftEdgeU	0x759e0000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L2891: 4644	MicrosoftEdgeU	0x75c70000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L2892: 4644	MicrosoftEdgeU	0x77710000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L2893: 4644	MicrosoftEdgeU	0x76780000	True	True	True	\Windows\SysWOW64\user32.dll
+L2894: 4644	MicrosoftEdgeU	0x760b0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L2895: 4644	MicrosoftEdgeU	0x75fa0000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L2896: 4644	MicrosoftEdgeU	0x76740000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L2897: 4644	MicrosoftEdgeU	0x76db0000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L2898: 4644	MicrosoftEdgeU	0x76ca0000	True	True	True	\Windows\SysWOW64\sechost.dll
+L2899: 4644	MicrosoftEdgeU	0x76a70000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L2900: 4644	MicrosoftEdgeU	0x76d30000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L2901: 4644	MicrosoftEdgeU	0x77580000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L2902: 4644	MicrosoftEdgeU	0x77640000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L2903: 4644	MicrosoftEdgeU	0x77a20000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L2904: 4644	MicrosoftEdgeU	0x77960000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L2905: 4644	MicrosoftEdgeU	0x77830000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L2906: 4644	MicrosoftEdgeU	0x77a10000	True	True	True	\Windows\System32\wow64cpu.dll
+L2907: 4644	MicrosoftEdgeU	0x7ffff99c0000	True	True	True	\Windows\System32\wow64.dll
+L2908: 4644	MicrosoftEdgeU	0x7ffff92c0000	True	True	True	\Windows\System32\wow64base.dll
+L2909: 4644	MicrosoftEdgeU	0x7ffff9060000	True	True	True	\Windows\System32\wow64win.dll
+L2910: 4644	MicrosoftEdgeU	0x7ffff98e0000	True	True	True	\Windows\System32\wow64con.dll
+L2911: 4644	MicrosoftEdgeU	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
 
 --- vadwalk.txt ---
-L12266: 7772	NisSrv.exe	0x990ef4a79ac0	0x0	0x990ef4a7a7e0	0x990ef4a7a380	0x7df5a5910000	0x7ff5a590ffff	Vad 
-L12267: 7772	NisSrv.exe	0x990ef4a7a7e0	0x990ef4a79ac0	0x990ef4a781c0	0x990ef4a7db20	0x1d522c00000	0x1d522c0ffff	Vad 
-L12268: 7772	NisSrv.exe	0x990ef4a781c0	0x990ef4a7a7e0	0x990ef87b5de0	0x990ef4a7c5e0	0x1d522b20000	0x1d522b49fff	Vad 
-L12269: 7772	NisSrv.exe	0x990ef87b5de0	0x990ef4a781c0	0x990ef4d62970	0x990ef4d63e10	0x6cd2720000	0x6cd279ffff	VadS
-L12270: 7772	NisSrv.exe	0x990ef4d62970	0x990ef87b5de0	0x990ef4d635a0	0x990ef4d63140	0x7ffed000	0x7ffedfff	VadS
-L12271: 7772	NisSrv.exe	0x990ef4d635a0	0x990ef4d62970	0x0	0x0	0x7ffe0000	0x7ffe0fff	VadS
-L12272: 7772	NisSrv.exe	0x990ef4d63140	0x990ef4d62970	0x0	0x990efa358e20	0x6cd2620000	0x6cd269ffff	VadS
-L12273: 7772	NisSrv.exe	0x990efa358e20	0x990ef4d63140	0x0	0x0	0x6cd26a0000	0x6cd271ffff	VadS
-L12274: 7772	NisSrv.exe	0x990ef4d63e10	0x990ef87b5de0	0x990ef4d63730	0x990ef4d63f50	0x6cd2b00000	0x6cd2b7ffff	VadS
-L12275: 7772	NisSrv.exe	0x990ef4d63730	0x990ef4d63e10	0x0	0x990efa355f90	0x6cd2800000	0x6cd29fffff	VadS
-L12276: 7772	NisSrv.exe	0x990efa355f90	0x990ef4d63730	0x0	0x0	0x6cd2a00000	0x6cd2a7ffff	VadS
-L12277: 7772	NisSrv.exe	0x990ef4d63f50	0x990ef4d63e10	0x0	0x990ef4a7b3c0	0x1d522b00000	0x1d522b0ffff	VadS
-L12278: 7772	NisSrv.exe	0x990ef4a7b3c0	0x990ef4d63f50	0x0	0x0	0x1d522b10000	0x1d522b11fff	Vad 
-L12279: 7772	NisSrv.exe	0x990ef4a7c5e0	0x990ef4a781c0	0x990ef4a79520	0x990ef4a7b280	0x1d522b90000	0x1d522ba0fff	Vad 
-L12280: 7772	NisSrv.exe	0x990ef4a79520	0x990ef4a7c5e0	0x990ef4a77a40	0x990ef4a7aa60	0x1d522b60000	0x1d522b60fff	Vad 
-L12281: 7772	NisSrv.exe	0x990ef4a77a40	0x990ef4a79520	0x0	0x0	0x1d522b50000	0x1d522b53fff	Vad 
-L12282: 7772	NisSrv.exe	0x990ef4a7aa60	0x990ef4a79520	0x0	0x0	0x1d522b70000	0x1d522b80fff	Vad 
-L12283: 7772	NisSrv.exe	0x990ef4a7b280	0x990ef4a7c5e0	0x990ef4a7a9c0	0x990ef4a7a2e0	0x1d522bd0000	0x1d522bd8fff	Vad 
-L12284: 7772	NisSrv.exe	0x990ef4a7a9c0	0x990ef4a7b280	0x990ef4a7ace0	0x0	0x1d522bc0000	0x1d522bc8fff	Vad 
-L12285: 7772	NisSrv.exe	0x990ef4a7ace0	0x990ef4a7a9c0	0x0	0x0	0x1d522bb0000	0x1d522bb2fff	Vad 
-L12286: 7772	NisSrv.exe	0x990ef4a7a2e0	0x990ef4a7b280	0x990ef4a7b960	0x0	0x1d522bf0000	0x1d522bf3fff	Vad 
-L12287: 7772	NisSrv.exe	0x990ef4a7b960	0x990ef4a7a2e0	0x0	0x0	0x1d522be0000	0x1d522be3fff	Vad 
-L12288: 7772	NisSrv.exe	0x990ef4a7db20	0x990ef4a7a7e0	0x990ef4a7b6e0	0x990ef4d64950	0x1d522d50000	0x1d522f4ffff	Vad 
-L12289: 7772	NisSrv.exe	0x990ef4a7b6e0	0x990ef4a7db20	0x990ef4a7bdc0	0x990ef4a7b0a0	0x1d522d00000	0x1d522d10fff	Vad 
-L12290: 7772	NisSrv.exe	0x990ef4a7bdc0	0x990ef4a7b6e0	0x990ef4a7b460	0x0	0x1d522c20000	0x1d522cf2fff	Vad 
-L12291: 7772	NisSrv.exe	0x990ef4a7b460	0x990ef4a7bdc0	0x0	0x0	0x1d522c10000	0x1d522c12fff	Vad 
-L12292: 7772	NisSrv.exe	0x990ef4a7b0a0	0x990ef4a7b6e0	0x990ef4a7c4a0	0x0	0x1d522d40000	0x1d522d40fff	Vad 
-L12293: 7772	NisSrv.exe	0x990ef4a7c4a0	0x990ef4a7b0a0	0x0	0x0	0x1d522d20000	0x1d522d30fff	Vad 
-L12294: 7772	NisSrv.exe	0x990ef4d64950	0x990ef4a7db20	0x990ef4d63dc0	0x990ef4a7ee80	0x1d523000000	0x1d523ffffff	VadS
-L12295: 7772	NisSrv.exe	0x990ef4d63dc0	0x990ef4d64950	0x990ef4a7d3a0	0x990ef4a7fce0	0x1d522f60000	0x1d522f79fff	VadS
-L12296: 7772	NisSrv.exe	0x990ef4a7d3a0	0x990ef4d63dc0	0x0	0x0	0x1d522f50000	0x1d522f57fff	Vad 
-L12297: 7772	NisSrv.exe	0x990ef4a7fce0	0x990ef4d63dc0	0x0	0x990ef4a823a0	0x1d522f80000	0x1d522f80fff	Vad 
-L12298: 7772	NisSrv.exe	0x990ef4a823a0	0x990ef4a7fce0	0x0	0x0	0x1d522f90000	0x1d522f90fff	Vad 
-L12299: 7772	NisSrv.exe	0x990ef4a7ee80	0x990ef4d64950	0x990ef4a7ea20	0x990ef4d63fa0	0x1d524190000	0x1d524250fff	Vad 
-L12300: 7772	NisSrv.exe	0x990ef4a7ea20	0x990ef4a7ee80	0x0	0x0	0x1d524000000	0x1d524180fff	Vad 
-L12301: 7772	NisSrv.exe	0x990ef4d63fa0	0x990ef4a7ee80	0x990ef4a83980	0x0	0x7df4a58f0000	0x7df5a590ffff	VadS
-L12302: 7772	NisSrv.exe	0x990ef4a83980	0x990ef4d63fa0	0x0	0x0	0x1d524260000	0x1d52459afff	Vad 
-L12303: 7772	NisSrv.exe	0x990ef4a7a380	0x990ef4a79ac0	0x990ef4a7f100	0x990ef4a7aba0	0x7ffff65f0000	0x7ffff69e3fff	Vad 
-L12304: 7772	NisSrv.exe	0x990ef4a7f100	0x990ef4a7a380	0x990ef4a756a0	0x990ef4a7c680	0x7fffe8ac0000	0x7fffe8acdfff	Vad 
-L12305: 7772	NisSrv.exe	0x990ef4a756a0	0x990ef4a7f100	0x990ef4d64180	0x990ef4a7a560	0x7ff68d240000	0x7ff68d68efff	Vad 
-L12306: 7772	NisSrv.exe	0x990ef4d64180	0x990ef4a756a0	0x990ef4a7bf00	0x990ef4a7a060	0x7ff5bdcc0000	0x7ff5bfcc0fff	VadS
-L12307: 7772	NisSrv.exe	0x990ef4a7bf00	0x990ef4d64180	0x0	0x0	0x7ff5bdbc0000	0x7ff5bdcbffff	Vad 
-L12308: 7772	NisSrv.exe	0x990ef4a7a060	0x990ef4d64180	0x0	0x0	0x7ff5bfcd0000	0x7ff5bfcd0fff	Vad 
-L12309: 7772	NisSrv.exe	0x990ef4a7a560	0x990ef4a756a0	0x0	0x0	0x7fffe7b70000	0x7fffe7d2bfff	Vad 
-L12310: 7772	NisSrv.exe	0x990ef4a7c680	0x990ef4a7f100	0x990ef4a80c80	0x990ef4a7ba00	0x7ffff56f0000	0x7ffff5724fff	Vad 
-L12311: 7772	NisSrv.exe	0x990ef4a80c80	0x990ef4a7c680	0x990ef4a7fec0	0x990ef4a7d8a0	0x7ffff4a00000	0x7ffff4a35fff	Vad 
-L12312: 7772	NisSrv.exe	0x990ef4a7fec0	0x990ef4a80c80	0x990ef4a7fc40	0x990ef4a80a00	0x7fffee670000	0x7fffee695fff	Vad 
-L12313: 7772	NisSrv.exe	0x990ef4a7fc40	0x990ef4a7fec0	0x0	0x0	0x7fffee2a0000	0x7fffee3c9fff	Vad 
-L12314: 7772	NisSrv.exe	0x990ef4a80a00	0x990ef4a7fec0	0x0	0x0	0x7ffff0470000	0x7ffff048ffff	Vad 
-L12315: 7772	NisSrv.exe	0x990ef4a7d8a0	0x990ef4a80c80	0x0	0x0	0x7ffff50d0000	0x7ffff50edfff	Vad 
-L12316: 7772	NisSrv.exe	0x990ef4a7ba00	0x990ef4a7c680	0x990ef4a7ec00	0x990ef4a7e200	0x7ffff64b0000	0x7ffff6533fff	Vad 
-L12317: 7772	NisSrv.exe	0x990ef4a7ec00	0x990ef4a7ba00	0x0	0x990ef4a7f7e0	0x7ffff5990000	0x7ffff59a5fff	Vad 
-L12318: 7772	NisSrv.exe	0x990ef4a7f7e0	0x990ef4a7ec00	0x0	0x0	0x7ffff6340000	0x7ffff64acfff	Vad 
-L12319: 7772	NisSrv.exe	0x990ef4a7e200	0x990ef4a7ba00	0x0	0x0	0x7ffff6540000	0x7ffff65e7fff	Vad 
-L12320: 7772	NisSrv.exe	0x990ef4a7aba0	0x990ef4a7a380	0x990ef4a7c7c0	0x990ef4a7b320	0x7ffff7c20000	0x7ffff7de7fff	Vad 
-L12321: 7772	NisSrv.exe	0x990ef4a7c7c0	0x990ef4a7aba0	0x990ef4a7b1e0	0x990ef4a7b8c0	0x7ffff75d0000	0x7ffff7675fff	Vad 
-L12322: 7772	NisSrv.exe	0x990ef4a7b1e0	0x990ef4a7c7c0	0x990ef4a7aec0	0x990ef4a7ac40	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 
-L12323: 7772	NisSrv.exe	0x990ef4a7aec0	0x990ef4a7b1e0	0x0	0x0	0x7ffff69f0000	0x7ffff6a19fff	Vad 
-L12324: 7772	NisSrv.exe	0x990ef4a7ac40	0x990ef4a7b1e0	0x0	0x990ef4a80b40	0x7ffff6c30000	0x7ffff6d5dfff	Vad 
-L12325: 7772	NisSrv.exe	0x990ef4a80b40	0x990ef4a7ac40	0x0	0x0	0x7ffff6d60000	0x7ffff75c6fff	Vad 
-L12326: 7772	NisSrv.exe	0x990ef4a7b8c0	0x990ef4a7c7c0	0x0	0x990ef4a7e2a0	0x7ffff7680000	0x7ffff77f9fff	Vad 
-L12327: 7772	NisSrv.exe	0x990ef4a7e2a0	0x990ef4a7b8c0	0x0	0x0	0x7ffff7890000	0x7ffff7c14fff	Vad 
-L12328: 7772	NisSrv.exe	0x990ef4a7b320	0x990ef4a7aba0	0x990ef4a7a920	0x990ef4a7be60	0x7ffff9560000	0x7ffff962bfff	Vad 
-L12329: 7772	NisSrv.exe	0x990ef4a7a920	0x990ef4a7b320	0x990ef4a7f6a0	0x990ef4a7b780	0x7ffff90f0000	0x7ffff911dfff	Vad 
-L12330: 7772	NisSrv.exe	0x990ef4a7f6a0	0x990ef4a7a920	0x990ef4a7bc80	0x990ef4a80820	0x7ffff8700000	0x7ffff870cfff	Vad 
-L12331: 7772	NisSrv.exe	0x990ef4a7bc80	0x990ef4a7f6a0	0x0	0x0	0x7ffff8050000	0x7ffff816afff	Vad 
-L12332: 7772	NisSrv.exe	0x990ef4a80820	0x990ef4a7f6a0	0x0	0x990ef4a80f00	0x7ffff8710000	0x7ffff8e71fff	Vad 
-L12333: 7772	NisSrv.exe	0x990ef4a80f00	0x990ef4a80820	0x0	0x0	0x7ffff8e80000	0x7ffff8ee9fff	Vad 
-L12334: 7772	NisSrv.exe	0x990ef4a7b780	0x990ef4a7a920	0x990ef4a7cae0	0x0	0x7ffff94b0000	0x7ffff9559fff	Vad 
-L12335: 7772	NisSrv.exe	0x990ef4a7cae0	0x990ef4a7b780	0x0	0x0	0x7ffff9120000	0x7ffff92b7fff	Vad 
-L12336: 7772	NisSrv.exe	0x990ef4a7be60	0x990ef4a7b320	0x990ef4a7a420	0x990ef4a757e0	0x7ffff9820000	0x7ffff98ddfff	Vad 
-L12337: 7772	NisSrv.exe	0x990ef4a7a420	0x990ef4a7be60	0x990ef4a7fba0	0x0	0x7ffff9770000	0x7ffff981bfff	Vad 
-L12338: 7772	NisSrv.exe	0x990ef4a7fba0	0x990ef4a7a420	0x0	0x0	0x7ffff9630000	0x7ffff9729fff	Vad 
-L12339: 7772	NisSrv.exe	0x990ef4a757e0	0x990ef4a7be60	0x0	0x0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 
+L8272: 4644	MicrosoftEdgeU	0x990ef77b1c30	0x0	0x990ef63335c0	0x990ef7895b00	0x3450000	0x345ffff	VadF
+L8273: 4644	MicrosoftEdgeU	0x990ef63335c0	0x990ef77b1c30	0x990ef77aca00	0x990ef78a0780	0x880000	0x8b4fff	Vad 
+L8274: 4644	MicrosoftEdgeU	0x990ef77aca00	0x990ef63335c0	0x990ef788dcc0	0x990ef7892a40	0x400000	0x5fffff	VadS
+L8275: 4644	MicrosoftEdgeU	0x990ef788dcc0	0x990ef77aca00	0x990ef7888d60	0x990ef7892180	0x350000	0x352fff	Vad 
+L8276: 4644	MicrosoftEdgeU	0x990ef7888d60	0x990ef788dcc0	0x990ef7893580	0x990ef77ae2b0	0x2d0000	0x2f9fff	Vad 
+L8277: 4644	MicrosoftEdgeU	0x990ef7893580	0x990ef7888d60	0x990ef77af430	0x990ef7894c00	0x2b0000	0x2b2fff	Vad 
+L8278: 4644	MicrosoftEdgeU	0x990ef77af430	0x990ef7893580	0x0	0x0	0x2a0000	0x2affff	VadS
+L8279: 4644	MicrosoftEdgeU	0x990ef7894c00	0x990ef7893580	0x0	0x0	0x2c0000	0x2c1fff	Vad 
+L8280: 4644	MicrosoftEdgeU	0x990ef77ae2b0	0x990ef7888d60	0x0	0x990ef788f7a0	0x300000	0x33ffff	VadS
+L8281: 4644	MicrosoftEdgeU	0x990ef788f7a0	0x990ef77ae2b0	0x0	0x0	0x340000	0x343fff	Vad 
+L8282: 4644	MicrosoftEdgeU	0x990ef7892180	0x990ef788dcc0	0x990ef788d9a0	0x990ef78915a0	0x3b0000	0x3b2fff	Vad 
+L8283: 4644	MicrosoftEdgeU	0x990ef788d9a0	0x990ef7892180	0x990ef77af660	0x990ef788eb20	0x370000	0x380fff	Vad 
+L8284: 4644	MicrosoftEdgeU	0x990ef77af660	0x990ef788d9a0	0x0	0x0	0x360000	0x361fff	VadS
+L8285: 4644	MicrosoftEdgeU	0x990ef788eb20	0x990ef788d9a0	0x0	0x0	0x390000	0x3a0fff	Vad 
+L8286: 4644	MicrosoftEdgeU	0x990ef78915a0	0x990ef7892180	0x990ef78922c0	0x990ef7890880	0x3d0000	0x3d8fff	Vad 
+L8287: 4644	MicrosoftEdgeU	0x990ef78922c0	0x990ef78915a0	0x0	0x0	0x3c0000	0x3c8fff	Vad 
+L8288: 4644	MicrosoftEdgeU	0x990ef7890880	0x990ef78915a0	0x0	0x990ef7890920	0x3e0000	0x3e3fff	Vad 
+L8289: 4644	MicrosoftEdgeU	0x990ef7890920	0x990ef7890880	0x0	0x0	0x3f0000	0x3f3fff	Vad 
+L8290: 4644	MicrosoftEdgeU	0x990ef7892a40	0x990ef77aca00	0x990ef7893b20	0x990ef77af890	0x790000	0x793fff	Vad 
+L8291: 4644	MicrosoftEdgeU	0x990ef7893b20	0x990ef7892a40	0x990ef77af570	0x990ef7894340	0x740000	0x750fff	Vad 
+L8292: 4644	MicrosoftEdgeU	0x990ef77af570	0x990ef7893b20	0x990ef77ad220	0x990ef78936c0	0x700000	0x719fff	VadS
+L8293: 4644	MicrosoftEdgeU	0x990ef77ad220	0x990ef77af570	0x0	0x0	0x600000	0x6fffff	VadS
+L8294: 4644	MicrosoftEdgeU	0x990ef78936c0	0x990ef77af570	0x0	0x0	0x720000	0x730fff	Vad 
+L8295: 4644	MicrosoftEdgeU	0x990ef7894340	0x990ef7893b20	0x990ef7894d40	0x990ef7893bc0	0x770000	0x778fff	Vad 
+L8296: 4644	MicrosoftEdgeU	0x990ef7894d40	0x990ef7894340	0x0	0x0	0x760000	0x768fff	Vad 
+L8297: 4644	MicrosoftEdgeU	0x990ef7893bc0	0x990ef7894340	0x0	0x0	0x780000	0x783fff	Vad 
+L8298: 4644	MicrosoftEdgeU	0x990ef77af890	0x990ef7892a40	0x990ef7897540	0x990ef78952e0	0x7e0000	0x7effff	VadF
+L8299: 4644	MicrosoftEdgeU	0x990ef7897540	0x990ef77af890	0x990ef77af390	0x990ef7895240	0x7b0000	0x7bffff	Vad 
+L8300: 4644	MicrosoftEdgeU	0x990ef77af390	0x990ef7897540	0x0	0x0	0x7a0000	0x7adfff	VadS
+L8301: 4644	MicrosoftEdgeU	0x990ef7895240	0x990ef7897540	0x0	0x990ef77af750	0x7c0000	0x7c2fff	Vad 
+L8302: 4644	MicrosoftEdgeU	0x990ef77af750	0x990ef7895240	0x0	0x0	0x7d0000	0x7dffff	VadS
+L8303: 4644	MicrosoftEdgeU	0x990ef78952e0	0x990ef77af890	0x990ef78965a0	0x990ef789fb00	0x810000	0x820fff	Vad 
+L8304: 4644	MicrosoftEdgeU	0x990ef78965a0	0x990ef78952e0	0x0	0x0	0x7f0000	0x800fff	Vad 
+L8305: 4644	MicrosoftEdgeU	0x990ef789fb00	0x990ef78952e0	0x0	0x0	0x870000	0x877fff	Vad 
+L8306: 4644	MicrosoftEdgeU	0x990ef78a0780	0x990ef63335c0	0x990ef77aee40	0x990ef77aff20	0x2e40000	0x303ffff	Vad 
+L8307: 4644	MicrosoftEdgeU	0x990ef77aee40	0x990ef78a0780	0x990ef7893d00	0x990ef7897040	0x2960000	0x2a5ffff	VadF
+L8308: 4644	MicrosoftEdgeU	0x990ef7893d00	0x990ef77aee40	0x990ef7888860	0x990ef77b3c60	0x2940000	0x2940fff	Vad 
+L8309: 4644	MicrosoftEdgeU	0x990ef7888860	0x990ef7893d00	0x0	0x0	0x8c0000	0x28bffff	Vad 
+L8310: 4644	MicrosoftEdgeU	0x990ef77b3c60	0x990ef7893d00	0x0	0x0	0x2950000	0x2950fff	VadS
+L8311: 4644	MicrosoftEdgeU	0x990ef7897040	0x990ef77aee40	0x0	0x0	0x2a60000	0x2b32fff	Vad 
+L8312: 4644	MicrosoftEdgeU	0x990ef77aff20	0x990ef78a0780	0x990ef77b4020	0x990ef77b58d0	0x3200000	0x320ffff	VadF
+L8313: 4644	MicrosoftEdgeU	0x990ef77b4020	0x990ef77aff20	0x990ef789fd80	0x990ef789ae20	0x31d0000	0x31d0fff	VadS
+L8314: 4644	MicrosoftEdgeU	0x990ef789fd80	0x990ef77b4020	0x0	0x0	0x3040000	0x31c0fff	Vad 
+L8315: 4644	MicrosoftEdgeU	0x990ef789ae20	0x990ef77b4020	0x0	0x990ef788d0e0	0x31e0000	0x31e6fff	Vad 
+L8316: 4644	MicrosoftEdgeU	0x990ef788d0e0	0x990ef789ae20	0x0	0x0	0x31f0000	0x31f0fff	Vad 
+L8317: 4644	MicrosoftEdgeU	0x990ef77b58d0	0x990ef77aff20	0x990ef78a0aa0	0x990ef77b52e0	0x32e0000	0x331ffff	VadS
+L8318: 4644	MicrosoftEdgeU	0x990ef78a0aa0	0x990ef77b58d0	0x0	0x0	0x3210000	0x32d0fff	Vad 
+L8319: 4644	MicrosoftEdgeU	0x990ef77b52e0	0x990ef77b58d0	0x0	0x990ef7895880	0x3320000	0x341ffff	VadS
+L8320: 4644	MicrosoftEdgeU	0x990ef7895880	0x990ef77b52e0	0x0	0x0	0x3420000	0x3420fff	Vad 
+L8321: 4644	MicrosoftEdgeU	0x990ef7895b00	0x990ef77b1c30	0x990ef789d760	0x990ef78861a0	0x75cd0000	0x75f9afff	Vad 
+L8322: 4644	MicrosoftEdgeU	0x990ef789d760	0x990ef7895b00	0x990ef7b1c640	0x990ef789aa60	0x74ac0000	0x74aedfff	Vad 
+L8323: 4644	MicrosoftEdgeU	0x990ef7b1c640	0x990ef789d760	0x990ef77b4ac0	0x990ef7b04cc0	0x746f0000	0x74700fff	Vad 
+L8324: 4644	MicrosoftEdgeU	0x990ef77b4ac0	0x990ef7b1c640	0x990ef77b4a20	0x990ef77b76d0	0x37e0000	0x38dffff	VadS
+L8325: 4644	MicrosoftEdgeU	0x990ef77b4a20	0x990ef77b4ac0	0x990ef711e1c0	0x0	0x37a0000	0x37dffff	VadS
+L8326: 4644	MicrosoftEdgeU	0x990ef711e1c0	0x990ef77b4a20	0x0	0x0	0x3460000	0x379afff	Vad 
+L8327: 4644	MicrosoftEdgeU	0x990ef77b76d0	0x990ef77b4ac0	0x990ef77b7e00	0x0	0x3920000	0x3a1ffff	VadS
+L8328: 4644	MicrosoftEdgeU	0x990ef77b7e00	0x990ef77b76d0	0x0	0x0	0x38e0000	0x391ffff	VadS
+L8329: 4644	MicrosoftEdgeU	0x990ef7b04cc0	0x990ef7b1c640	0x990ef7b1a980	0x990ef789f060	0x747e0000	0x74864fff	Vad 
+L8330: 4644	MicrosoftEdgeU	0x990ef7b1a980	0x990ef7b04cc0	0x0	0x990ef7b128c0	0x74710000	0x7471cfff	Vad 
+L8331: 4644	MicrosoftEdgeU	0x990ef7b128c0	0x990ef7b1a980	0x0	0x0	0x74720000	0x747d0fff	Vad 
+L8332: 4644	MicrosoftEdgeU	0x990ef789f060	0x990ef7b04cc0	0x990ef7890420	0x990ef6b9b010	0x74920000	0x74a67fff	Vad 
+L8333: 4644	MicrosoftEdgeU	0x990ef7890420	0x990ef789f060	0x990ef7892e00	0x990ef78a33e0	0x748d0000	0x748e7fff	Vad 
+L8334: 4644	MicrosoftEdgeU	0x990ef7892e00	0x990ef7890420	0x0	0x0	0x74870000	0x748c0fff	Vad 
+L8335: 4644	MicrosoftEdgeU	0x990ef78a33e0	0x990ef7890420	0x0	0x0	0x748f0000	0x7491afff	Vad 
+L8336: 4644	MicrosoftEdgeU	0x990ef6b9b010	0x990ef789f060	0x990ef7115980	0x990ef789cae0	0x74a90000	0x74aa5fff	Vad 
+L8337: 4644	MicrosoftEdgeU	0x990ef7115980	0x990ef6b9b010	0x0	0x0	0x74a70000	0x74a8ffff	Vad 
+L8338: 4644	MicrosoftEdgeU	0x990ef789cae0	0x990ef6b9b010	0x0	0x0	0x74ab0000	0x74abdfff	Vad 
+L8339: 4644	MicrosoftEdgeU	0x990ef789aa60	0x990ef789d760	0x990ef789a740	0x990ef7898120	0x753d0000	0x753ecfff	Vad 
+L8340: 4644	MicrosoftEdgeU	0x990ef789a740	0x990ef789aa60	0x990ef789d800	0x990ef789b140	0x74b20000	0x74b37fff	Vad 
+L8341: 4644	MicrosoftEdgeU	0x990ef789d800	0x990ef789a740	0x0	0x0	0x74af0000	0x74b11fff	Vad 
+L8342: 4644	MicrosoftEdgeU	0x990ef789b140	0x990ef789a740	0x990ef789a380	0x990ef78a3160	0x74b50000	0x74d8cfff	Vad 
+L8343: 4644	MicrosoftEdgeU	0x990ef789a380	0x990ef789b140	0x0	0x0	0x74b40000	0x74b4afff	Vad 
+L8344: 4644	MicrosoftEdgeU	0x990ef78a3160	0x990ef789b140	0x0	0x0	0x74d90000	0x753c8fff	Vad 
+L8345: 4644	MicrosoftEdgeU	0x990ef7898120	0x990ef789aa60	0x990ef789b460	0x990ef7899160	0x75950000	0x759d7fff	Vad 
+L8346: 4644	MicrosoftEdgeU	0x990ef789b460	0x990ef7898120	0x990ef78a2c60	0x990ef789a560	0x75550000	0x7563dfff	Vad 
+L8347: 4644	MicrosoftEdgeU	0x990ef78a2c60	0x990ef789b460	0x0	0x0	0x75450000	0x7554bfff	Vad 
+L8348: 4644	MicrosoftEdgeU	0x990ef789a560	0x990ef789b460	0x0	0x0	0x756b0000	0x75944fff	Vad 
+L8349: 4644	MicrosoftEdgeU	0x990ef7899160	0x990ef7898120	0x990ef78910a0	0x990ef7899700	0x75b10000	0x75c63fff	Vad 
+L8350: 4644	MicrosoftEdgeU	0x990ef78910a0	0x990ef7899160	0x0	0x0	0x759e0000	0x75ab4fff	Vad 
+L8351: 4644	MicrosoftEdgeU	0x990ef7899700	0x990ef7899160	0x0	0x0	0x75c70000	0x75cc4fff	Vad 
+L8352: 4644	MicrosoftEdgeU	0x990ef78861a0	0x990ef7895b00	0x990ef7898ee0	0x990ef491b7d0	0x7f160000	0x7f160fff	Vad 
+L8353: 4644	MicrosoftEdgeU	0x990ef7898ee0	0x990ef78861a0	0x990ef789b3c0	0x990ef48f1450	0x77710000	0x77822fff	Vad 
+L8354: 4644	MicrosoftEdgeU	0x990ef789b3c0	0x990ef7898ee0	0x990ef78968c0	0x990ef78a4d80	0x76780000	0x7694bfff	Vad 
+L8355: 4644	MicrosoftEdgeU	0x990ef78968c0	0x990ef789b3c0	0x990ef789dbc0	0x990ef7899980	0x760b0000	0x761a2fff	Vad 
+L8356: 4644	MicrosoftEdgeU	0x990ef789dbc0	0x990ef78968c0	0x0	0x0	0x75fa0000	0x760abfff	Vad 
+L8357: 4644	MicrosoftEdgeU	0x990ef7899980	0x990ef78968c0	0x0	0x0	0x76740000	0x76764fff	Vad 
+L8358: 4644	MicrosoftEdgeU	0x990ef78a4d80	0x990ef789b3c0	0x990ef78a4b00	0x990ef789baa0	0x76db0000	0x77496fff	Vad 
+L8359: 4644	MicrosoftEdgeU	0x990ef78a4b00	0x990ef78a4d80	0x990ef78a58c0	0x990ef789c680	0x76ca0000	0x76d25fff	Vad 
+L8360: 4644	MicrosoftEdgeU	0x990ef78a58c0	0x990ef78a4b00	0x0	0x0	0x76a70000	0x76af7fff	Vad 
+L8361: 4644	MicrosoftEdgeU	0x990ef789c680	0x990ef78a4b00	0x0	0x0	0x76d30000	0x76da6fff	Vad 
+L8362: 4644	MicrosoftEdgeU	0x990ef789baa0	0x990ef78a4d80	0x0	0x990ef78a4920	0x77580000	0x7763efff	Vad 
+L8363: 4644	MicrosoftEdgeU	0x990ef78a4920	0x990ef789baa0	0x0	0x0	0x77640000	0x77709fff	Vad 
+L8364: 4644	MicrosoftEdgeU	0x990ef48f1450	0x990ef7898ee0	0x990ef7b05300	0x990ef77ae760	0x77a20000	0x77be1fff	Vad 
+L8365: 4644	MicrosoftEdgeU	0x990ef7b05300	0x990ef48f1450	0x990ef788b2e0	0x990ef78925e0	0x77960000	0x77a01fff	Vad 
+L8366: 4644	MicrosoftEdgeU	0x990ef788b2e0	0x990ef7b05300	0x0	0x0	0x77830000	0x778b8fff	Vad 
+L8367: 4644	MicrosoftEdgeU	0x990ef78925e0	0x990ef7b05300	0x0	0x0	0x77a10000	0x77a1cfff	Vad 
+L8368: 4644	MicrosoftEdgeU	0x990ef77ae760	0x990ef48f1450	0x990ef7895d80	0x990ef77aec60	0x7f130000	0x7f140fff	VadS
+L8369: 4644	MicrosoftEdgeU	0x990ef7895d80	0x990ef77ae760	0x0	0x0	0x7f030000	0x7f12ffff	Vad 
+L8370: 4644	MicrosoftEdgeU	0x990ef77aec60	0x990ef77ae760	0x0	0x0	0x7f150000	0x7f151fff	VadS
+L8371: 4644	MicrosoftEdgeU	0x990ef491b7d0	0x990ef78861a0	0x990ef77ac640	0x990ef7891a00	0x7df5a5910000	0x7ff5a590ffff	Vad 
+L8372: 4644	MicrosoftEdgeU	0x990ef77ac640	0x990ef491b7d0	0x990ef77ac6e0	0x990ef77abec0	0x7ffed000	0x7ffedfff	VadS
+L8373: 4644	MicrosoftEdgeU	0x990ef77ac6e0	0x990ef77ac640	0x0	0x0	0x7ffe0000	0x7ffe0fff	VadS
+L8374: 4644	MicrosoftEdgeU	0x990ef77abec0	0x990ef77ac640	0x0	0x0	0x7fff0000	0xffffffff	VadS
+L8375: 4644	MicrosoftEdgeU	0x990ef7891a00	0x990ef491b7d0	0x990ef78918c0	0x990ef48f1d10	0x7ffff99c0000	0x7ffff9a17fff	Vad 
+L8376: 4644	MicrosoftEdgeU	0x990ef78918c0	0x990ef7891a00	0x990ef7891aa0	0x990ef7890b00	0x7ffff92c0000	0x7ffff92cdfff	Vad 
+L8377: 4644	MicrosoftEdgeU	0x990ef7891aa0	0x990ef78918c0	0x0	0x0	0x7ffff9060000	0x7ffff90ebfff	Vad 
+L8378: 4644	MicrosoftEdgeU	0x990ef7890b00	0x990ef78918c0	0x0	0x0	0x7ffff98e0000	0x7ffff98fbfff	Vad 
+L8379: 4644	MicrosoftEdgeU	0x990ef48f1d10	0x990ef7891a00	0x0	0x0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 
 
 --- vadinfo.txt ---
-L12266: 7772	NisSrv.exe	0xffff990ef4a79ac0	0x7df5a5910000	0x7ff5a590ffff	Vad 	PAGE_NOACCESS	29	0	0x0	N/A	Disabled
-L12267: 7772	NisSrv.exe	0xffff990ef4a7a7e0	0x1d522c00000	0x1d522c0ffff	Vad 	PAGE_READWRITE	0	0	0xffff990ef4a79ac0	N/A	Disabled
-L12268: 7772	NisSrv.exe	0xffff990ef4a781c0	0x1d522b20000	0x1d522b49fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7a7e0	N/A	Disabled
-L12269: 7772	NisSrv.exe	0xffff990ef87b5de0	0x6cd2720000	0x6cd279ffff	VadS	PAGE_READWRITE	19	1	0xffff990ef4a781c0	N/A	Disabled
-L12270: 7772	NisSrv.exe	0xffff990ef4d62970	0x7ffed000	0x7ffedfff	VadS	PAGE_READONLY	1	1	0xffff990ef87b5de0	N/A	Disabled
-L12271: 7772	NisSrv.exe	0xffff990ef4d635a0	0x7ffe0000	0x7ffe0fff	VadS	PAGE_READONLY	1	1	0xffff990ef4d62970	N/A	Disabled
-L12272: 7772	NisSrv.exe	0xffff990ef4d63140	0x6cd2620000	0x6cd269ffff	VadS	PAGE_READWRITE	19	1	0xffff990ef4d62970	N/A	Disabled
-L12273: 7772	NisSrv.exe	0xffff990efa358e20	0x6cd26a0000	0x6cd271ffff	VadS	PAGE_READWRITE	19	1	0xffff990ef4d63140	N/A	Disabled
-L12274: 7772	NisSrv.exe	0xffff990ef4d63e10	0x6cd2b00000	0x6cd2b7ffff	VadS	PAGE_READWRITE	19	1	0xffff990ef87b5de0	N/A	Disabled
-L12275: 7772	NisSrv.exe	0xffff990ef4d63730	0x6cd2800000	0x6cd29fffff	VadS	PAGE_READWRITE	11	1	0xffff990ef4d63e10	N/A	Disabled
-L12276: 7772	NisSrv.exe	0xffff990efa355f90	0x6cd2a00000	0x6cd2a7ffff	VadS	PAGE_READWRITE	19	1	0xffff990ef4d63730	N/A	Disabled
-L12277: 7772	NisSrv.exe	0xffff990ef4d63f50	0x1d522b00000	0x1d522b0ffff	VadS	PAGE_READWRITE	6	1	0xffff990ef4d63e10	N/A	Disabled
-L12278: 7772	NisSrv.exe	0xffff990ef4a7b3c0	0x1d522b10000	0x1d522b11fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef4d63f50	N/A	Disabled
-L12279: 7772	NisSrv.exe	0xffff990ef4a7c5e0	0x1d522b90000	0x1d522ba0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a781c0	\Windows\System32\C_437.NLS	Disabled
-L12280: 7772	NisSrv.exe	0xffff990ef4a79520	0x1d522b60000	0x1d522b60fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7c5e0	N/A	Disabled
-L12281: 7772	NisSrv.exe	0xffff990ef4a77a40	0x1d522b50000	0x1d522b53fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a79520	N/A	Disabled
-L12282: 7772	NisSrv.exe	0xffff990ef4a7aa60	0x1d522b70000	0x1d522b80fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a79520	\Windows\System32\C_1252.NLS	Disabled
-L12283: 7772	NisSrv.exe	0xffff990ef4a7b280	0x1d522bd0000	0x1d522bd8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7c5e0	N/A	Disabled
-L12284: 7772	NisSrv.exe	0xffff990ef4a7a9c0	0x1d522bc0000	0x1d522bc8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7b280	N/A	Disabled
-L12285: 7772	NisSrv.exe	0xffff990ef4a7ace0	0x1d522bb0000	0x1d522bb2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7a9c0	\Windows\System32\l_intl.nls	Disabled
-L12286: 7772	NisSrv.exe	0xffff990ef4a7a2e0	0x1d522bf0000	0x1d522bf3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7b280	N/A	Disabled
-L12287: 7772	NisSrv.exe	0xffff990ef4a7b960	0x1d522be0000	0x1d522be3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7a2e0	N/A	Disabled
-L12288: 7772	NisSrv.exe	0xffff990ef4a7db20	0x1d522d50000	0x1d522f4ffff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7a7e0	N/A	Disabled
-L12289: 7772	NisSrv.exe	0xffff990ef4a7b6e0	0x1d522d00000	0x1d522d10fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7db20	\Windows\System32\C_1252.NLS	Disabled
-L12290: 7772	NisSrv.exe	0xffff990ef4a7bdc0	0x1d522c20000	0x1d522cf2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7b6e0	\Windows\System32\locale.nls	Disabled
-L12291: 7772	NisSrv.exe	0xffff990ef4a7b460	0x1d522c10000	0x1d522c12fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7bdc0	\Windows\System32\l_intl.nls	Disabled
-L12292: 7772	NisSrv.exe	0xffff990ef4a7b0a0	0x1d522d40000	0x1d522d40fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7b6e0	N/A	Disabled
-L12293: 7772	NisSrv.exe	0xffff990ef4a7c4a0	0x1d522d20000	0x1d522d30fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7b0a0	\Windows\System32\C_437.NLS	Disabled
-L12294: 7772	NisSrv.exe	0xffff990ef4d64950	0x1d523000000	0x1d523ffffff	VadS	PAGE_READWRITE	391	1	0xffff990ef4a7db20	N/A	Disabled
-L12295: 7772	NisSrv.exe	0xffff990ef4d63dc0	0x1d522f60000	0x1d522f79fff	VadS	PAGE_READWRITE	1	1	0xffff990ef4d64950	N/A	Disabled
-L12296: 7772	NisSrv.exe	0xffff990ef4a7d3a0	0x1d522f50000	0x1d522f57fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d63dc0	N/A	Disabled
-L12297: 7772	NisSrv.exe	0xffff990ef4a7fce0	0x1d522f80000	0x1d522f80fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef4d63dc0	N/A	Disabled
-L12298: 7772	NisSrv.exe	0xffff990ef4a823a0	0x1d522f90000	0x1d522f90fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef4a7fce0	\Windows\ServiceProfiles\LocalService\AppData\Local\Microsoft\Windows\Safety\network\local\sinkholeCache	Disabled
-L12299: 7772	NisSrv.exe	0xffff990ef4a7ee80	0x1d524190000	0x1d524250fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d64950	N/A	Disabled
-L12300: 7772	NisSrv.exe	0xffff990ef4a7ea20	0x1d524000000	0x1d524180fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a7ee80	N/A	Disabled
-L12301: 7772	NisSrv.exe	0xffff990ef4d63fa0	0x7df4a58f0000	0x7df5a590ffff	VadS	PAGE_READWRITE	2	1	0xffff990ef4a7ee80	N/A	Disabled
-L12302: 7772	NisSrv.exe	0xffff990ef4a83980	0x1d524260000	0x1d52459afff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d63fa0	\Windows\Globalization\Sorting\SortDefault.nls	Disabled
-L12303: 7772	NisSrv.exe	0xffff990ef4a7a380	0x7ffff65f0000	0x7ffff69e3fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef4a79ac0	\Windows\System32\KernelBase.dll	Disabled
-L12304: 7772	NisSrv.exe	0xffff990ef4a7f100	0x7fffe8ac0000	0x7fffe8acdfff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a7a380	\Windows\System32\version.dll	Disabled
-L12305: 7772	NisSrv.exe	0xffff990ef4a756a0	0x7ff68d240000	0x7ff68d68efff	Vad 	PAGE_EXECUTE_WRITECOPY	184	0	0xffff990ef4a7f100	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	Disabled
-L12306: 7772	NisSrv.exe	0xffff990ef4d64180	0x7ff5bdcc0000	0x7ff5bfcc0fff	VadS	PAGE_READWRITE	2	1	0xffff990ef4a756a0	N/A	Disabled
-L12307: 7772	NisSrv.exe	0xffff990ef4a7bf00	0x7ff5bdbc0000	0x7ff5bdcbffff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d64180	N/A	Disabled
-L12308: 7772	NisSrv.exe	0xffff990ef4a7a060	0x7ff5bfcd0000	0x7ff5bfcd0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d64180	N/A	Disabled
-L12309: 7772	NisSrv.exe	0xffff990ef4a7a560	0x7fffe7b70000	0x7fffe7d2bfff	Vad 	PAGE_EXECUTE_WRITECOPY	16	0	0xffff990ef4a756a0	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpClient.dll	Disabled
-L12310: 7772	NisSrv.exe	0xffff990ef4a7c680	0x7ffff56f0000	0x7ffff5724fff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef4a7f100	\Windows\System32\userenv.dll	Disabled
-L12311: 7772	NisSrv.exe	0xffff990ef4a80c80	0x7ffff4a00000	0x7ffff4a35fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef4a7c680	\Windows\System32\IPHLPAPI.DLL	Disabled
-L12312: 7772	NisSrv.exe	0xffff990ef4a7fec0	0x7fffee670000	0x7fffee695fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef4a80c80	\Windows\System32\dhcpcsvc.dll	Disabled
-L12313: 7772	NisSrv.exe	0xffff990ef4a7fc40	0x7fffee2a0000	0x7fffee3c9fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef4a7fec0	\Windows\System32\winhttp.dll	Disabled
-L12314: 7772	NisSrv.exe	0xffff990ef4a80a00	0x7ffff0470000	0x7ffff048ffff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef4a7fec0	\Windows\System32\dhcpcsvc6.dll	Disabled
-L12315: 7772	NisSrv.exe	0xffff990ef4a7d8a0	0x7ffff50d0000	0x7ffff50edfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef4a80c80	\Windows\System32\kernel.appcore.dll	Disabled
-L12316: 7772	NisSrv.exe	0xffff990ef4a7ba00	0x7ffff64b0000	0x7ffff6533fff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef4a7c680	\Windows\System32\wintrust.dll	Disabled
-L12317: 7772	NisSrv.exe	0xffff990ef4a7ec00	0x7ffff5990000	0x7ffff59a5fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a7ba00	\Windows\System32\msasn1.dll	Disabled
-L12318: 7772	NisSrv.exe	0xffff990ef4a7f7e0	0x7ffff6340000	0x7ffff64acfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef4a7ec00	\Windows\System32\WinTypes.dll	Disabled
-L12319: 7772	NisSrv.exe	0xffff990ef4a7e200	0x7ffff6540000	0x7ffff65e7fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a7ba00	\Windows\System32\bcryptprimitives.dll	Disabled
-L12320: 7772	NisSrv.exe	0xffff990ef4a7aba0	0x7ffff7c20000	0x7ffff7de7fff	Vad 	PAGE_EXECUTE_WRITECOPY	8	0	0xffff990ef4a7a380	\Windows\System32\user32.dll	Disabled
-L12321: 7772	NisSrv.exe	0xffff990ef4a7c7c0	0x7ffff75d0000	0x7ffff7675fff	Vad 	PAGE_EXECUTE_WRITECOPY	15	0	0xffff990ef4a7aba0	\Windows\System32\msvcp_win.dll	Disabled
-L12322: 7772	NisSrv.exe	0xffff990ef4a7b1e0	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef4a7c7c0	\Windows\System32\ucrtbase.dll	Disabled
-L12323: 7772	NisSrv.exe	0xffff990ef4a7aec0	0x7ffff69f0000	0x7ffff6a19fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a7b1e0	\Windows\System32\win32u.dll	Disabled
-L12324: 7772	NisSrv.exe	0xffff990ef4a7ac40	0x7ffff6c30000	0x7ffff6d5dfff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef4a7b1e0	\Windows\System32\gdi32full.dll	Disabled
-L12325: 7772	NisSrv.exe	0xffff990ef4a80b40	0x7ffff6d60000	0x7ffff75c6fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef4a7ac40	\Windows\System32\windows.storage.dll	Disabled
-L12326: 7772	NisSrv.exe	0xffff990ef4a7b8c0	0x7ffff7680000	0x7ffff77f9fff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef4a7c7c0	\Windows\System32\crypt32.dll	Disabled
-L12327: 7772	NisSrv.exe	0xffff990ef4a7e2a0	0x7ffff7890000	0x7ffff7c14fff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef4a7b8c0	\Windows\System32\combase.dll	Disabled
-L12328: 7772	NisSrv.exe	0xffff990ef4a7b320	0x7ffff9560000	0x7ffff962bfff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef4a7aba0	\Windows\System32\kernel32.dll	Disabled
-L12329: 7772	NisSrv.exe	0xffff990ef4a7a920	0x7ffff90f0000	0x7ffff911dfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef4a7b320	\Windows\System32\gdi32.dll	Disabled
-L12330: 7772	NisSrv.exe	0xffff990ef4a7f6a0	0x7ffff8700000	0x7ffff870cfff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a7a920	\Windows\System32\nsi.dll	Disabled
-L12331: 7772	NisSrv.exe	0xffff990ef4a7bc80	0x7ffff8050000	0x7ffff816afff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef4a7f6a0	\Windows\System32\rpcrt4.dll	Disabled
-L12332: 7772	NisSrv.exe	0xffff990ef4a80820	0x7ffff8710000	0x7ffff8e71fff	Vad 	PAGE_EXECUTE_WRITECOPY	18	0	0xffff990ef4a7f6a0	\Windows\System32\shell32.dll	Disabled
-L12333: 7772	NisSrv.exe	0xffff990ef4a80f00	0x7ffff8e80000	0x7ffff8ee9fff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef4a80820	\Windows\System32\shlwapi.dll	Disabled
-L12334: 7772	NisSrv.exe	0xffff990ef4a7b780	0x7ffff94b0000	0x7ffff9559fff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef4a7a920	\Windows\System32\sechost.dll	Disabled
-L12335: 7772	NisSrv.exe	0xffff990ef4a7cae0	0x7ffff9120000	0x7ffff92b7fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef4a7b780	\Windows\System32\ole32.dll	Disabled
-L12336: 7772	NisSrv.exe	0xffff990ef4a7be60	0x7ffff9820000	0x7ffff98ddfff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef4a7b320	\Windows\System32\advapi32.dll	Disabled
-L12337: 7772	NisSrv.exe	0xffff990ef4a7a420	0x7ffff9770000	0x7ffff981bfff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef4a7be60	\Windows\System32\msvcrt.dll	Disabled
-L12338: 7772	NisSrv.exe	0xffff990ef4a7fba0	0x7ffff9630000	0x7ffff9729fff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef4a7a420	\Windows\System32\SHCore.dll	Disabled
-L12339: 7772	NisSrv.exe	0xffff990ef4a757e0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef4a7be60	\Windows\System32\ntdll.dll	Disabled
-
---- malware_pebmasquerade.txt ---
-L100: 7772	NisSrv.exe	\Device\HarddiskVolume4\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe	False	False
-
---- sessions.txt ---
-L73: 0	-	7772	NisSrv.exe	NT AUTHORITY/LOCAL SERVICE	2026-05-13 19:16:15.000000 UTC
+L8272: 4644	MicrosoftEdgeU	0xffff990ef77b1c30	0x3450000	0x345ffff	VadF	PAGE_READWRITE	3	1	0x0	N/A	Disabled
+L8273: 4644	MicrosoftEdgeU	0xffff990ef63335c0	0x880000	0x8b4fff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef77b1c30	\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	Disabled
+L8274: 4644	MicrosoftEdgeU	0xffff990ef77aca00	0x400000	0x5fffff	VadS	PAGE_READWRITE	18	1	0xffff990ef63335c0	N/A	Disabled
+L8275: 4644	MicrosoftEdgeU	0xffff990ef788dcc0	0x350000	0x352fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77aca00	N/A	Disabled
+L8276: 4644	MicrosoftEdgeU	0xffff990ef7888d60	0x2d0000	0x2f9fff	Vad 	PAGE_READONLY	0	0	0xffff990ef788dcc0	N/A	Disabled
+L8277: 4644	MicrosoftEdgeU	0xffff990ef7893580	0x2b0000	0x2b2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7888d60	\Windows\System32\l_intl.nls	Disabled
+L8278: 4644	MicrosoftEdgeU	0xffff990ef77af430	0x2a0000	0x2affff	VadS	PAGE_READWRITE	2	1	0xffff990ef7893580	N/A	Disabled
+L8279: 4644	MicrosoftEdgeU	0xffff990ef7894c00	0x2c0000	0x2c1fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef7893580	N/A	Disabled
+L8280: 4644	MicrosoftEdgeU	0xffff990ef77ae2b0	0x300000	0x33ffff	VadS	PAGE_READWRITE	11	1	0xffff990ef7888d60	N/A	Disabled
+L8281: 4644	MicrosoftEdgeU	0xffff990ef788f7a0	0x340000	0x343fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77ae2b0	N/A	Disabled
+L8282: 4644	MicrosoftEdgeU	0xffff990ef7892180	0x3b0000	0x3b2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef788dcc0	\Windows\System32\l_intl.nls	Disabled
+L8283: 4644	MicrosoftEdgeU	0xffff990ef788d9a0	0x370000	0x380fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7892180	\Windows\System32\C_1252.NLS	Disabled
+L8284: 4644	MicrosoftEdgeU	0xffff990ef77af660	0x360000	0x361fff	VadS	PAGE_READWRITE	2	1	0xffff990ef788d9a0	N/A	Disabled
+L8285: 4644	MicrosoftEdgeU	0xffff990ef788eb20	0x390000	0x3a0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef788d9a0	\Windows\System32\C_437.NLS	Disabled
+L8286: 4644	MicrosoftEdgeU	0xffff990ef78915a0	0x3d0000	0x3d8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7892180	N/A	Disabled
+L8287: 4644	MicrosoftEdgeU	0xffff990ef78922c0	0x3c0000	0x3c8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef78915a0	N/A	Disabled
+L8288: 4644	MicrosoftEdgeU	0xffff990ef7890880	0x3e0000	0x3e3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef78915a0	N/A	Disabled
+L8289: 4644	MicrosoftEdgeU	0xffff990ef7890920	0x3f0000	0x3f3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7890880	N/A	Disabled
+L8290: 4644	MicrosoftEdgeU	0xffff990ef7892a40	0x790000	0x793fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77aca00	N/A	Disabled
+L8291: 4644	MicrosoftEdgeU	0xffff990ef7893b20	0x740000	0x750fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7892a40	\Windows\System32\C_437.NLS	Disabled
+L8292: 4644	MicrosoftEdgeU	0xffff990ef77af570	0x700000	0x719fff	VadS	PAGE_READWRITE	1	1	0xffff990ef7893b20	N/A	Disabled
+L8293: 4644	MicrosoftEdgeU	0xffff990ef77ad220	0x600000	0x6fffff	VadS	PAGE_READWRITE	8	1	0xffff990ef77af570	N/A	Disabled
+L8294: 4644	MicrosoftEdgeU	0xffff990ef78936c0	0x720000	0x730fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77af570	\Windows\System32\C_1252.NLS	Disabled
+L8295: 4644	MicrosoftEdgeU	0xffff990ef7894340	0x770000	0x778fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7893b20	N/A	Disabled
+L8296: 4644	MicrosoftEdgeU	0xffff990ef7894d40	0x760000	0x768fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7894340	N/A	Disabled
+L8297: 4644	MicrosoftEdgeU	0xffff990ef7893bc0	0x780000	0x783fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7894340	N/A	Disabled
+L8298: 4644	MicrosoftEdgeU	0xffff990ef77af890	0x7e0000	0x7effff	VadF	PAGE_READWRITE	15	1	0xffff990ef7892a40	N/A	Disabled
+L8299: 4644	MicrosoftEdgeU	0xffff990ef7897540	0x7b0000	0x7bffff	Vad 	PAGE_READWRITE	0	0	0xffff990ef77af890	N/A	Disabled
+L8300: 4644	MicrosoftEdgeU	0xffff990ef77af390	0x7a0000	0x7adfff	VadS	PAGE_READWRITE	2	1	0xffff990ef7897540	N/A	Disabled
+L8301: 4644	MicrosoftEdgeU	0xffff990ef7895240	0x7c0000	0x7c2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7897540	\Windows\System32\l_intl.nls	Disabled
+L8302: 4644	MicrosoftEdgeU	0xffff990ef77af750	0x7d0000	0x7dffff	VadS	PAGE_READWRITE	1	1	0xffff990ef7895240	N/A	Disabled
+L8303: 4644	MicrosoftEdgeU	0xffff990ef78952e0	0x810000	0x820fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77af890	\Windows\System32\C_437.NLS	Disabled
+L8304: 4644	MicrosoftEdgeU	0xffff990ef78965a0	0x7f0000	0x800fff	Vad 	PAGE_READONLY	0	0	0xffff990ef78952e0	\Windows\System32\C_1252.NLS	Disabled
+L8305: 4644	MicrosoftEdgeU	0xffff990ef789fb00	0x870000	0x877fff	Vad 	PAGE_READONLY	0	0	0xffff990ef78952e0	N/A	Disabled
+L8306: 4644	MicrosoftEdgeU	0xffff990ef78a0780	0x2e40000	0x303ffff	Vad 	PAGE_READONLY	0	0	0xffff990ef63335c0	N/A	Disabled
+L8307: 4644	MicrosoftEdgeU	0xffff990ef77aee40	0x2960000	0x2a5ffff	VadF	PAGE_READWRITE	84	1	0xffff990ef78a0780	N/A	Disabled
+L8308: 4644	MicrosoftEdgeU	0xffff990ef7893d00	0x2940000	0x2940fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef77aee40	N/A	Disabled
+L8309: 4644	MicrosoftEdgeU	0xffff990ef7888860	0x8c0000	0x28bffff	Vad 	PAGE_NOACCESS	2	0	0xffff990ef7893d00	N/A	Disabled
+L8310: 4644	MicrosoftEdgeU	0xffff990ef77b3c60	0x2950000	0x2950fff	VadS	PAGE_READWRITE	1	1	0xffff990ef7893d00	N/A	Disabled
+L8311: 4644	MicrosoftEdgeU	0xffff990ef7897040	0x2a60000	0x2b32fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77aee40	\Windows\System32\locale.nls	Disabled
+L8312: 4644	MicrosoftEdgeU	0xffff990ef77aff20	0x3200000	0x320ffff	VadF	PAGE_READWRITE	1	1	0xffff990ef78a0780	N/A	Disabled
+L8313: 4644	MicrosoftEdgeU	0xffff990ef77b4020	0x31d0000	0x31d0fff	VadS	PAGE_READWRITE	1	1	0xffff990ef77aff20	N/A	Disabled
+L8314: 4644	MicrosoftEdgeU	0xffff990ef789fd80	0x3040000	0x31c0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77b4020	N/A	Disabled
+L8315: 4644	MicrosoftEdgeU	0xffff990ef789ae20	0x31e0000	0x31e6fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77b4020	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdateres_en.dll	Disabled
+L8316: 4644	MicrosoftEdgeU	0xffff990ef788d0e0	0x31f0000	0x31f0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef789ae20	N/A	Disabled
+L8317: 4644	MicrosoftEdgeU	0xffff990ef77b58d0	0x32e0000	0x331ffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77aff20	N/A	Disabled
+L8318: 4644	MicrosoftEdgeU	0xffff990ef78a0aa0	0x3210000	0x32d0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77b58d0	N/A	Disabled
+L8319: 4644	MicrosoftEdgeU	0xffff990ef77b52e0	0x3320000	0x341ffff	VadS	PAGE_READWRITE	3	1	0xffff990ef77b58d0	N/A	Disabled
+L8320: 4644	MicrosoftEdgeU	0xffff990ef7895880	0x3420000	0x3420fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77b52e0	N/A	Disabled
+L8321: 4644	MicrosoftEdgeU	0xffff990ef7895b00	0x75cd0000	0x75f9afff	Vad 	PAGE_EXECUTE_WRITECOPY	12	0	0xffff990ef77b1c30	\Windows\SysWOW64\KernelBase.dll	Disabled
+L8322: 4644	MicrosoftEdgeU	0xffff990ef789d760	0x74ac0000	0x74aedfff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef7895b00	\Windows\SysWOW64\sspicli.dll	Disabled
+L8323: 4644	MicrosoftEdgeU	0xffff990ef7b1c640	0x746f0000	0x74700fff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef789d760	\Windows\SysWOW64\atlthunk.dll	Disabled
+L8324: 4644	MicrosoftEdgeU	0xffff990ef77b4ac0	0x37e0000	0x38dffff	VadS	PAGE_READWRITE	3	1	0xffff990ef7b1c640	N/A	Disabled
+L8325: 4644	MicrosoftEdgeU	0xffff990ef77b4a20	0x37a0000	0x37dffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77b4ac0	N/A	Disabled
+L8326: 4644	MicrosoftEdgeU	0xffff990ef711e1c0	0x3460000	0x379afff	Vad 	PAGE_READONLY	0	0	0xffff990ef77b4a20	\Windows\Globalization\Sorting\SortDefault.nls	Disabled
+L8327: 4644	MicrosoftEdgeU	0xffff990ef77b76d0	0x3920000	0x3a1ffff	VadS	PAGE_READWRITE	3	1	0xffff990ef77b4ac0	N/A	Disabled
+L8328: 4644	MicrosoftEdgeU	0xffff990ef77b7e00	0x38e0000	0x391ffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77b76d0	N/A	Disabled
+L8329: 4644	MicrosoftEdgeU	0xffff990ef7b04cc0	0x747e0000	0x74864fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef7b1c640	\Windows\SysWOW64\taskschd.dll	Disabled
+L8330: 4644	MicrosoftEdgeU	0xffff990ef7b1a980	0x74710000	0x7471cfff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef7b04cc0	\Windows\SysWOW64\cryptbase.dll	Disabled
+L8331: 4644	MicrosoftEdgeU	0xffff990ef7b128c0	0x74720000	0x747d0fff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef7b1a980	\Windows\SysWOW64\apphelp.dll	Disabled
+L8332: 4644	MicrosoftEdgeU	0xffff990ef789f060	0x74920000	0x74a67fff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef7b04cc0	\Windows\SysWOW64\dsreg.dll	Disabled
+L8333: 4644	MicrosoftEdgeU	0xffff990ef7890420	0x748d0000	0x748e7fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef789f060	\Windows\SysWOW64\kernel.appcore.dll	Disabled
+L8334: 4644	MicrosoftEdgeU	0xffff990ef7892e00	0x74870000	0x748c0fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef7890420	\Windows\SysWOW64\winsta.dll	Disabled
+L8335: 4644	MicrosoftEdgeU	0xffff990ef78a33e0	0x748f0000	0x7491afff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef7890420	\Windows\SysWOW64\userenv.dll	Disabled
+L8336: 4644	MicrosoftEdgeU	0xffff990ef6b9b010	0x74a90000	0x74aa5fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef789f060	\Windows\SysWOW64\wkscli.dll	Disabled
+L8337: 4644	MicrosoftEdgeU	0xffff990ef7115980	0x74a70000	0x74a8ffff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef6b9b010	\Windows\SysWOW64\profapi.dll	Disabled
+L8338: 4644	MicrosoftEdgeU	0xffff990ef789cae0	0x74ab0000	0x74abdfff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef6b9b010	\Windows\SysWOW64\netutils.dll	Disabled
+L8339: 4644	MicrosoftEdgeU	0xffff990ef789aa60	0x753d0000	0x753ecfff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef789d760	\Windows\SysWOW64\win32u.dll	Disabled
+L8340: 4644	MicrosoftEdgeU	0xffff990ef789a740	0x74b20000	0x74b37fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef789aa60	\Windows\SysWOW64\netapi32.dll	Disabled
+L8341: 4644	MicrosoftEdgeU	0xffff990ef789d800	0x74af0000	0x74b11fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef789a740	\Windows\SysWOW64\wtsapi32.dll	Disabled
+L8342: 4644	MicrosoftEdgeU	0xffff990ef789b140	0x74b50000	0x74d8cfff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef789a740	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll	Disabled
+L8343: 4644	MicrosoftEdgeU	0xffff990ef789a380	0x74b40000	0x74b4afff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef789b140	\Windows\SysWOW64\version.dll	Disabled
 
 === END OF PIVOT REPORT ===

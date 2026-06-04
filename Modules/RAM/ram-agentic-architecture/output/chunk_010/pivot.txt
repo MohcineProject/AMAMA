@@ -1,0 +1,423 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-04T21:21:05Z
+
+=== PID 4796 (SearchProtocolHost.exe, ppid=5220) ===
+Cmdline: "C:\WINDOWS\System32\SearchProtocolHost.exe" Global\UsGthrFltPipeMssGthrPipe2_ Global\UsGthrCtrlFltPipeMssGthrPipe2 1 -2147483646 "Software\Microsoft\Windows Search" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT; MS Search 4.0 Robot)" "C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc" "DownLevelDaemon"
+
+--- pslist.txt ---
+L131: 4796	5220	SearchProtocol	0x990ef7d97080	7	-	0	False	2026-05-13 19:25:26.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L131: 4796	SearchProtocol	"C:\WINDOWS\System32\SearchProtocolHost.exe" Global\UsGthrFltPipeMssGthrPipe2_ Global\UsGthrCtrlFltPipeMssGthrPipe2 1 -2147483646 "Software\Microsoft\Windows Search" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT; MS Search 4.0 Robot)" "C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc" "DownLevelDaemon" 
+
+--- privileges.txt ---
+L4415: 4796	SearchProtocol	2	SeCreateTokenPrivilege		Create a token object
+L4416: 4796	SearchProtocol	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4417: 4796	SearchProtocol	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L4418: 4796	SearchProtocol	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4419: 4796	SearchProtocol	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4420: 4796	SearchProtocol	7	SeTcbPrivilege	Default	Act as part of the operating system
+L4421: 4796	SearchProtocol	8	SeSecurityPrivilege		Manage auditing and security log
+L4422: 4796	SearchProtocol	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4423: 4796	SearchProtocol	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4424: 4796	SearchProtocol	11	SeSystemProfilePrivilege	Default	Profile system performance
+L4425: 4796	SearchProtocol	12	SeSystemtimePrivilege		Change the system time
+L4426: 4796	SearchProtocol	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L4427: 4796	SearchProtocol	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L4428: 4796	SearchProtocol	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L4429: 4796	SearchProtocol	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L4430: 4796	SearchProtocol	17	SeBackupPrivilege		Backup files and directories
+L4431: 4796	SearchProtocol	18	SeRestorePrivilege		Restore files and directories
+L4432: 4796	SearchProtocol	19	SeShutdownPrivilege		Shut down the system
+L4433: 4796	SearchProtocol	20	SeDebugPrivilege	Default	Debug programs
+L4434: 4796	SearchProtocol	21	SeAuditPrivilege	Default	Generate security audits
+L4435: 4796	SearchProtocol	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4436: 4796	SearchProtocol	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4437: 4796	SearchProtocol	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4438: 4796	SearchProtocol	25	SeUndockPrivilege		Remove computer from docking station
+L4439: 4796	SearchProtocol	26	SeSyncAgentPrivilege		Synch directory service data
+L4440: 4796	SearchProtocol	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4441: 4796	SearchProtocol	28	SeManageVolumePrivilege		Manage the files on a volume
+L4442: 4796	SearchProtocol	29	SeImpersonatePrivilege	Default	Impersonate a client after authentication
+L4443: 4796	SearchProtocol	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4444: 4796	SearchProtocol	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4445: 4796	SearchProtocol	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4446: 4796	SearchProtocol	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L4447: 4796	SearchProtocol	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L4448: 4796	SearchProtocol	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L4449: 4796	SearchProtocol	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L6130: 4796	SearchProtocol	0x7ff712d20000	0xb7000	SearchProtocolHost.exe	C:\WINDOWS\System32\SearchProtocolHost.exe	-1	2026-05-13 19:25:26.000000 UTC	Disabled
+L6131: 4796	SearchProtocol	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:25:26.000000 UTC	Disabled
+L6132: 4796	SearchProtocol	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:25:26.000000 UTC	Disabled
+L6133: 4796	SearchProtocol	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:25:26.000000 UTC	Disabled
+L6134: 4796	SearchProtocol	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6135: 4796	SearchProtocol	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6136: 4796	SearchProtocol	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6137: 4796	SearchProtocol	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6138: 4796	SearchProtocol	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6139: 4796	SearchProtocol	0x7fffe72e0000	0x29e000	icu.dll	C:\WINDOWS\System32\icu.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6140: 4796	SearchProtocol	0x7ffff9730000	0x31000	imm32.dll	C:\WINDOWS\System32\imm32.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6141: 4796	SearchProtocol	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6142: 4796	SearchProtocol	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6143: 4796	SearchProtocol	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6144: 4796	SearchProtocol	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6145: 4796	SearchProtocol	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6146: 4796	SearchProtocol	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6147: 4796	SearchProtocol	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:25:26.000000 UTC	Disabled
+L6148: 4796	SearchProtocol	0x7ffff9820000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6149: 4796	SearchProtocol	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6150: 4796	SearchProtocol	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6151: 4796	SearchProtocol	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6152: 4796	SearchProtocol	0x7fffb8690000	0x30000	mssprxy.dll	C:\WINDOWS\system32\mssprxy.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6153: 4796	SearchProtocol	0x7fffed540000	0x3d000	mssph.dll	C:\WINDOWS\system32\mssph.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6154: 4796	SearchProtocol	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6155: 4796	SearchProtocol	0x7ffff4ca0000	0x50000	AUTHZ.dll	C:\WINDOWS\system32\AUTHZ.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6156: 4796	SearchProtocol	0x7ffff51f0000	0x36000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6157: 4796	SearchProtocol	0x7ffff6d60000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6158: 4796	SearchProtocol	0x7ffff8e80000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6159: 4796	SearchProtocol	0x7ffff1bd0000	0x103000	propsys.dll	C:\WINDOWS\system32\propsys.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6160: 4796	SearchProtocol	0x7ffff5e80000	0x57000	CFGMGR32.dll	C:\WINDOWS\System32\CFGMGR32.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6161: 4796	SearchProtocol	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\System32\profapi.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6162: 4796	SearchProtocol	0x7fffda5f0000	0xa6000	ntshrui.dll	C:\WINDOWS\SYSTEM32\ntshrui.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6163: 4796	SearchProtocol	0x7fffed890000	0x29000	srvcli.dll	C:\WINDOWS\System32\srvcli.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6164: 4796	SearchProtocol	0x7fffdcad0000	0x13000	cscapi.dll	C:\WINDOWS\System32\cscapi.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6165: 4796	SearchProtocol	0x7fffe6aa0000	0x29000	edputil.dll	C:\WINDOWS\System32\edputil.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6166: 4796	SearchProtocol	0x7fffe3840000	0xbf000	Windows.FileExplorer.Common.dll	C:\Windows\System32\Windows.FileExplorer.Common.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6167: 4796	SearchProtocol	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6168: 4796	SearchProtocol	0x7fffdc8d0000	0x32000	cldapi.dll	C:\Windows\System32\cldapi.dll	-1	2026-05-13 19:25:26.000000 UTC	Disabled
+L6169: 4796	SearchProtocol	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\System32\SspiCli.dll	6	2026-05-13 19:25:26.000000 UTC	Disabled
+L6170: 4796	SearchProtocol	0x7fffe6b10000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-13 19:25:32.000000 UTC	Disabled
+L6171: 4796	SearchProtocol	0x7ffff8710000	0x75f000	shell32.dll	C:\WINDOWS\System32\shell32.dll	6	2026-05-13 19:25:32.000000 UTC	Disabled
+
+--- envars.txt ---
+L3943: 4796	SearchProtocol	0x28f0eb078f0	ALLUSERSPROFILE	C:\ProgramData
+L3944: 4796	SearchProtocol	0x28f0eb078f0	APPDATA	C:\WINDOWS\system32\config\systemprofile\AppData\Roaming
+L3945: 4796	SearchProtocol	0x28f0eb078f0	CommonProgramFiles	C:\Program Files\Common Files
+L3946: 4796	SearchProtocol	0x28f0eb078f0	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
+L3947: 4796	SearchProtocol	0x28f0eb078f0	CommonProgramW6432	C:\Program Files\Common Files
+L3948: 4796	SearchProtocol	0x28f0eb078f0	COMPUTERNAME	CLEANWINDOWS11
+L3949: 4796	SearchProtocol	0x28f0eb078f0	ComSpec	C:\WINDOWS\system32\cmd.exe
+L3950: 4796	SearchProtocol	0x28f0eb078f0	DriverData	C:\Windows\System32\Drivers\DriverData
+L3951: 4796	SearchProtocol	0x28f0eb078f0	LOCALAPPDATA	C:\WINDOWS\system32\config\systemprofile\AppData\Local
+L3952: 4796	SearchProtocol	0x28f0eb078f0	NUMBER_OF_PROCESSORS	4
+L3953: 4796	SearchProtocol	0x28f0eb078f0	OS	Windows_NT
+L3954: 4796	SearchProtocol	0x28f0eb078f0	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\WINDOWS\system32
+L3955: 4796	SearchProtocol	0x28f0eb078f0	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+L3956: 4796	SearchProtocol	0x28f0eb078f0	PROCESSOR_ARCHITECTURE	AMD64
+L3957: 4796	SearchProtocol	0x28f0eb078f0	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+L3958: 4796	SearchProtocol	0x28f0eb078f0	PROCESSOR_LEVEL	6
+L3959: 4796	SearchProtocol	0x28f0eb078f0	PROCESSOR_REVISION	ba03
+L3960: 4796	SearchProtocol	0x28f0eb078f0	ProgramData	C:\ProgramData
+L3961: 4796	SearchProtocol	0x28f0eb078f0	ProgramFiles	C:\Program Files
+L3962: 4796	SearchProtocol	0x28f0eb078f0	ProgramFiles(x86)	C:\Program Files (x86)
+L3963: 4796	SearchProtocol	0x28f0eb078f0	ProgramW6432	C:\Program Files
+L3964: 4796	SearchProtocol	0x28f0eb078f0	PSModulePath	%ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+L3965: 4796	SearchProtocol	0x28f0eb078f0	PUBLIC	C:\Users\Public
+L3966: 4796	SearchProtocol	0x28f0eb078f0	SystemDrive	C:
+L3967: 4796	SearchProtocol	0x28f0eb078f0	SystemRoot	C:\WINDOWS
+L3968: 4796	SearchProtocol	0x28f0eb078f0	TEMP	C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc
+L3969: 4796	SearchProtocol	0x28f0eb078f0	TMP	C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc
+L3970: 4796	SearchProtocol	0x28f0eb078f0	USERDOMAIN	WORKGROUP
+L3971: 4796	SearchProtocol	0x28f0eb078f0	USERNAME	CLEANWINDOWS11$
+L3972: 4796	SearchProtocol	0x28f0eb078f0	USERPROFILE	C:\WINDOWS\system32\config\systemprofile
+L3973: 4796	SearchProtocol	0x28f0eb078f0	windir	C:\WINDOWS
+
+--- pstree.txt ---
+L58: *** 4796	5220	SearchProtocol	0x990ef7d97080	7	-	0	False	2026-05-13 19:25:26.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\SearchProtocolHost.exe	"C:\WINDOWS\System32\SearchProtocolHost.exe" Global\UsGthrFltPipeMssGthrPipe2_ Global\UsGthrCtrlFltPipeMssGthrPipe2 1 -2147483646 "Software\Microsoft\Windows Search" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT; MS Search 4.0 Robot)" "C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc" "DownLevelDaemon" 	C:\WINDOWS\System32\SearchProtocolHost.exe
+
+--- psscan.txt ---
+L121: 4796	5220	SearchProtocol	0x990ef7d97080	7	-	0	False	2026-05-13 19:25:26.000000 UTC	N/A	Disabled
+
+--- threads.txt ---
+L1721: 0x990ef4f4e080	4796	4328	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff712d238b0	\Windows\System32\SearchProtocolHost.exe	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L1722: 0x990ef78be080	4796	8084	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff712d4b2d0	\Windows\System32\SearchProtocolHost.exe	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1723: 0x990ef6626080	4796	8052	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff712d48140	\Windows\System32\SearchProtocolHost.exe	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1724: 0x990ef28c5080	4796	5700	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:30.000000 UTC
+L1725: 0x990ef6850040	4796	4364	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1726: 0x990efa98a080	4796	1740	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:43.000000 UTC
+L1727: 0x990ef60590c0	4796	7016	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:35.000000 UTC
+
+--- thrdscan.txt ---
+L229: 0x990ef28c5080	4796	5700	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:30.000000 UTC
+L448: 0x990ef4f4e080	4796	4328	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff712d238b0	\Windows\System32\SearchProtocolHost.exe	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L493: 0x990ef60590c0	4796	7016	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:35.000000 UTC
+L608: 0x990ef6626080	4796	8052	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff712d48140	\Windows\System32\SearchProtocolHost.exe	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L674: 0x990ef6850040	4796	4364	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1109: 0x990ef78be080	4796	8084	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff712d4b2d0	\Windows\System32\SearchProtocolHost.exe	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1732: 0x990efa98a080	4796	1740	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:26.000000 UTC	1600-08-22 23:57:43.000000 UTC
+
+--- ldrmodules.txt ---
+L6418: 4796	SearchProtocol	0x7ff712d20000	True	False	True	\Windows\System32\SearchProtocolHost.exe
+L6419: 4796	SearchProtocol	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6420: 4796	SearchProtocol	0x7fffe72e0000	True	True	True	\Windows\System32\icu.dll
+L6421: 4796	SearchProtocol	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6422: 4796	SearchProtocol	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6423: 4796	SearchProtocol	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6424: 4796	SearchProtocol	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6425: 4796	SearchProtocol	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6426: 4796	SearchProtocol	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6427: 4796	SearchProtocol	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6428: 4796	SearchProtocol	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6429: 4796	SearchProtocol	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6430: 4796	SearchProtocol	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6431: 4796	SearchProtocol	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6432: 4796	SearchProtocol	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L6433: 4796	SearchProtocol	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L6434: 4796	SearchProtocol	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L6435: 4796	SearchProtocol	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6436: 4796	SearchProtocol	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L6437: 4796	SearchProtocol	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6438: 4796	SearchProtocol	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6439: 4796	SearchProtocol	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6440: 4796	SearchProtocol	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L6441: 4796	SearchProtocol	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6442: 4796	SearchProtocol	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L6418: 4796	SearchProtocol	0x7ff712d20000	True	False	True	\Windows\System32\SearchProtocolHost.exe
+L6419: 4796	SearchProtocol	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6420: 4796	SearchProtocol	0x7fffe72e0000	True	True	True	\Windows\System32\icu.dll
+L6421: 4796	SearchProtocol	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6422: 4796	SearchProtocol	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6423: 4796	SearchProtocol	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6424: 4796	SearchProtocol	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6425: 4796	SearchProtocol	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6426: 4796	SearchProtocol	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6427: 4796	SearchProtocol	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6428: 4796	SearchProtocol	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6429: 4796	SearchProtocol	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6430: 4796	SearchProtocol	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6431: 4796	SearchProtocol	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6432: 4796	SearchProtocol	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L6433: 4796	SearchProtocol	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L6434: 4796	SearchProtocol	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L6435: 4796	SearchProtocol	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6436: 4796	SearchProtocol	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L6437: 4796	SearchProtocol	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6438: 4796	SearchProtocol	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6439: 4796	SearchProtocol	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6440: 4796	SearchProtocol	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L6441: 4796	SearchProtocol	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6442: 4796	SearchProtocol	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- vadwalk.txt ---
+L16238: 4796	SearchProtocol	0x990ef0106ac0	0x0	0x990ef0105e40	0x990ef0103b40	0x28f0e990000	0x28f0e992fff	Vad 
+L16239: 4796	SearchProtocol	0x990ef0105e40	0x990ef0106ac0	0x990ef77b35d0	0x990ef0106c00	0x28f0e8d0000	0x28f0e8e0fff	Vad 
+L16240: 4796	SearchProtocol	0x990ef77b35d0	0x990ef0105e40	0x990ef77b6d20	0x990ef77acaf0	0xf0af900000	0xf0af97ffff	VadS
+L16241: 4796	SearchProtocol	0x990ef77b6d20	0x990ef77b35d0	0x990ef77b4cf0	0x990ef77b3b70	0xf0af600000	0xf0af7fffff	VadS
+L16242: 4796	SearchProtocol	0x990ef77b4cf0	0x990ef77b6d20	0x990ef77b49d0	0x990ef77b60f0	0x7ffed000	0x7ffedfff	VadS
+L16243: 4796	SearchProtocol	0x990ef77b49d0	0x990ef77b4cf0	0x0	0x0	0x7ffe0000	0x7ffe0fff	VadS
+L16244: 4796	SearchProtocol	0x990ef77b60f0	0x990ef77b4cf0	0x0	0x0	0xf0af470000	0xf0af4effff	VadS
+L16245: 4796	SearchProtocol	0x990ef77b3b70	0x990ef77b6d20	0x0	0x0	0xf0af880000	0xf0af8fffff	VadS
+L16246: 4796	SearchProtocol	0x990ef77acaf0	0x990ef77b35d0	0x990ef77b5880	0x990ef01022e0	0x28f0e850000	0x28f0e85ffff	VadS
+L16247: 4796	SearchProtocol	0x990ef77b5880	0x990ef77acaf0	0x990ef77b44d0	0x990ef77aae80	0xf0afa00000	0xf0afa7ffff	VadS
+L16248: 4796	SearchProtocol	0x990ef77b44d0	0x990ef77b5880	0x0	0x0	0xf0af980000	0xf0af9fffff	VadS
+L16249: 4796	SearchProtocol	0x990ef77aae80	0x990ef77b5880	0x990ef77b56f0	0x0	0xf0afb00000	0xf0afb7ffff	VadS
+L16250: 4796	SearchProtocol	0x990ef77b56f0	0x990ef77aae80	0x0	0x0	0xf0afa80000	0xf0afafffff	VadS
+L16251: 4796	SearchProtocol	0x990ef01022e0	0x990ef77acaf0	0x990ef0107100	0x990ef01045e0	0x28f0e870000	0x28f0e899fff	Vad 
+L16252: 4796	SearchProtocol	0x990ef0107100	0x990ef01022e0	0x0	0x0	0x28f0e860000	0x28f0e861fff	Vad 
+L16253: 4796	SearchProtocol	0x990ef01045e0	0x990ef01022e0	0x990ef01030a0	0x990ef77ab970	0x28f0e8b0000	0x28f0e8b0fff	Vad 
+L16254: 4796	SearchProtocol	0x990ef01030a0	0x990ef01045e0	0x0	0x0	0x28f0e8a0000	0x28f0e8a3fff	Vad 
+L16255: 4796	SearchProtocol	0x990ef77ab970	0x990ef01045e0	0x0	0x0	0x28f0e8c0000	0x28f0e8c1fff	VadS
+L16256: 4796	SearchProtocol	0x990ef0106c00	0x990ef0105e40	0x990ef0104a40	0x990ef0105440	0x28f0e950000	0x28f0e953fff	Vad 
+L16257: 4796	SearchProtocol	0x990ef0104a40	0x990ef0106c00	0x990ef01054e0	0x990ef0104c20	0x28f0e920000	0x28f0e928fff	Vad 
+L16258: 4796	SearchProtocol	0x990ef01054e0	0x990ef0104a40	0x990ef0105760	0x0	0x28f0e910000	0x28f0e912fff	Vad 
+L16259: 4796	SearchProtocol	0x990ef0105760	0x990ef01054e0	0x0	0x0	0x28f0e8f0000	0x28f0e900fff	Vad 
+L16260: 4796	SearchProtocol	0x990ef0104c20	0x990ef0104a40	0x990ef0105ee0	0x0	0x28f0e940000	0x28f0e943fff	Vad 
+L16261: 4796	SearchProtocol	0x990ef0105ee0	0x990ef0104c20	0x0	0x0	0x28f0e930000	0x28f0e938fff	Vad 
+L16262: 4796	SearchProtocol	0x990ef0105440	0x990ef0106c00	0x990ef77ac140	0x0	0x28f0e980000	0x28f0e98ffff	Vad 
+L16263: 4796	SearchProtocol	0x990ef77ac140	0x990ef0105440	0x0	0x0	0x28f0e960000	0x28f0e979fff	VadS
+L16264: 4796	SearchProtocol	0x990ef0103b40	0x990ef0106ac0	0x990ef77b29a0	0x990ef0105940	0x7ff712d20000	0x7ff712dd9fff	Vad 
+L16265: 4796	SearchProtocol	0x990ef77b29a0	0x990ef0103b40	0x990ef77aceb0	0x990ef010a580	0x28f0eef0000	0x28f0ef09fff	VadS
+L16266: 4796	SearchProtocol	0x990ef77aceb0	0x990ef77b29a0	0x990ef0106020	0x990ef0105a80	0x28f0eb00000	0x28f0ebfffff	VadF
+L16267: 4796	SearchProtocol	0x990ef0106020	0x990ef77aceb0	0x990ef01056c0	0x990ef01097c0	0x28f0eac0000	0x28f0eac7fff	Vad 
+L16268: 4796	SearchProtocol	0x990ef01056c0	0x990ef0106020	0x990ef01058a0	0x990ef01068e0	0x28f0ea80000	0x28f0ea90fff	Vad 
+L16269: 4796	SearchProtocol	0x990ef01058a0	0x990ef01056c0	0x0	0x0	0x28f0e9a0000	0x28f0ea72fff	Vad 
+L16270: 4796	SearchProtocol	0x990ef01068e0	0x990ef01056c0	0x0	0x0	0x28f0eaa0000	0x28f0eab0fff	Vad 
+L16271: 4796	SearchProtocol	0x990ef01097c0	0x990ef0106020	0x990ef77afd90	0x990ef77b18c0	0x28f0eae0000	0x28f0eae0fff	Vad 
+L16272: 4796	SearchProtocol	0x990ef77afd90	0x990ef01097c0	0x0	0x0	0x28f0ead0000	0x28f0ead0fff	VadS
+L16273: 4796	SearchProtocol	0x990ef77b18c0	0x990ef01097c0	0x0	0x0	0x28f0eaf0000	0x28f0eafffff	VadF
+L16274: 4796	SearchProtocol	0x990ef0105a80	0x990ef77aceb0	0x990ef01049a0	0x990ef77b1b40	0x28f0ee00000	0x28f0eec0fff	Vad 
+L16275: 4796	SearchProtocol	0x990ef01049a0	0x990ef0105a80	0x0	0x0	0x28f0ec00000	0x28f0edfffff	Vad 
+L16276: 4796	SearchProtocol	0x990ef77b1b40	0x990ef0105a80	0x0	0x0	0x28f0eed0000	0x28f0eee9fff	VadS
+L16277: 4796	SearchProtocol	0x990ef010a580	0x990ef77b29a0	0x990ef77b0bf0	0x990ef0102420	0x28f0f4a0000	0x28f0f4ebfff	Vad 
+L16278: 4796	SearchProtocol	0x990ef77b0bf0	0x990ef010a580	0x990ef77b57e0	0x990ef0109040	0x28f0ef80000	0x28f0ef8ffff	VadF
+L16279: 4796	SearchProtocol	0x990ef77b57e0	0x990ef77b0bf0	0x990ef01086e0	0x990ef01038c0	0x28f0ef40000	0x28f0ef40fff	VadS
+L16280: 4796	SearchProtocol	0x990ef01086e0	0x990ef77b57e0	0x990ef0109360	0x990ef01083c0	0x28f0ef20000	0x28f0ef2ffff	Vad 
+L16281: 4796	SearchProtocol	0x990ef0109360	0x990ef01086e0	0x0	0x0	0x28f0ef10000	0x28f0ef10fff	Vad 
+L16282: 4796	SearchProtocol	0x990ef01083c0	0x990ef01086e0	0x0	0x0	0x28f0ef30000	0x28f0ef3ffff	Vad 
+L16283: 4796	SearchProtocol	0x990ef01038c0	0x990ef77b57e0	0x990ef0102a60	0x990ef01080a0	0x28f0ef60000	0x28f0ef66fff	Vad 
+L16284: 4796	SearchProtocol	0x990ef0102a60	0x990ef01038c0	0x0	0x0	0x28f0ef50000	0x28f0ef53fff	Vad 
+L16285: 4796	SearchProtocol	0x990ef01080a0	0x990ef01038c0	0x0	0x0	0x28f0ef70000	0x28f0ef70fff	Vad 
+L16286: 4796	SearchProtocol	0x990ef0109040	0x990ef77b0bf0	0x990ef01095e0	0x990ef010b8e0	0x28f0f480000	0x28f0f480fff	Vad 
+L16287: 4796	SearchProtocol	0x990ef01095e0	0x990ef0109040	0x990ef0106160	0x990ef0103e60	0x28f0f120000	0x28f0f45afff	Vad 
+L16288: 4796	SearchProtocol	0x990ef0106160	0x990ef01095e0	0x0	0x0	0x28f0ef90000	0x28f0f110fff	Vad 
+L16289: 4796	SearchProtocol	0x990ef0103e60	0x990ef01095e0	0x0	0x0	0x28f0f460000	0x28f0f470fff	Vad 
+L16290: 4796	SearchProtocol	0x990ef010b8e0	0x990ef0109040	0x0	0x0	0x28f0f490000	0x28f0f493fff	Vad 
+L16291: 4796	SearchProtocol	0x990ef0102420	0x990ef010a580	0x990ef010d820	0x990ef77ac690	0x7df5a5910000	0x7ff5a590ffff	Vad 
+L16292: 4796	SearchProtocol	0x990ef010d820	0x990ef0102420	0x990ef010b0c0	0x990ef0103dc0	0x28f0f5b0000	0x28f0f5c0fff	Vad 
+L16293: 4796	SearchProtocol	0x990ef010b0c0	0x990ef010d820	0x990ef010b840	0x0	0x28f0f500000	0x28f0f5a1fff	Vad 
+L16294: 4796	SearchProtocol	0x990ef010b840	0x990ef010b0c0	0x0	0x0	0x28f0f4f0000	0x28f0f4f3fff	Vad 
+L16295: 4796	SearchProtocol	0x990ef0103dc0	0x990ef010d820	0x990ef010c9c0	0x990ef77acf50	0x28f0f5e0000	0x28f0f646fff	Vad 
+L16296: 4796	SearchProtocol	0x990ef010c9c0	0x990ef0103dc0	0x0	0x0	0x28f0f5d0000	0x28f0f5d7fff	Vad 
+L16297: 4796	SearchProtocol	0x990ef77acf50	0x990ef0103dc0	0x0	0x0	0x7df4a58f0000	0x7df5a590ffff	VadS
+L16298: 4796	SearchProtocol	0x990ef77ac690	0x990ef0102420	0x990ef0106200	0x990ef0102f60	0x7ff5bbeb0000	0x7ff5bdeb0fff	VadS
+L16299: 4796	SearchProtocol	0x990ef0106200	0x990ef77ac690	0x0	0x0	0x7ff5bbdb0000	0x7ff5bbeaffff	Vad 
+L16300: 4796	SearchProtocol	0x990ef0102f60	0x990ef77ac690	0x0	0x0	0x7ff5bdec0000	0x7ff5bdec0fff	Vad 
+L16301: 4796	SearchProtocol	0x990ef0105940	0x990ef0103b40	0x990ef0107380	0x990ef01053a0	0x7ffff65f0000	0x7ffff69e3fff	Vad 
+L16302: 4796	SearchProtocol	0x990ef0107380	0x990ef0105940	0x990ef010ec20	0x990ef0109b80	0x7ffff1bd0000	0x7ffff1cd5fff	Vad 
+L16303: 4796	SearchProtocol	0x990ef010ec20	0x990ef0107380	0x990ef010cf60	0x990ef0107060	0x7fffe6aa0000	0x7fffe6acbfff	Vad 
+L16304: 4796	SearchProtocol	0x990ef010cf60	0x990ef010ec20	0x990ef010c1a0	0x990ef010fc60	0x7fffdcad0000	0x7fffdcae5fff	Vad 
+L16305: 4796	SearchProtocol	0x990ef010c1a0	0x990ef010cf60	0x990ef0108b40	0x990ef010f260	0x7fffda5f0000	0x7fffda698fff	Vad 
+L16306: 4796	SearchProtocol	0x990ef0108b40	0x990ef010c1a0	0x0	0x0	0x7fffb8690000	0x7fffb86c2fff	Vad 
+L16307: 4796	SearchProtocol	0x990ef010f260	0x990ef010c1a0	0x0	0x0	0x7fffdc8d0000	0x7fffdc904fff	Vad 
+L16308: 4796	SearchProtocol	0x990ef010fc60	0x990ef010cf60	0x0	0x0	0x7fffe3840000	0x7fffe3901fff	Vad 
+L16309: 4796	SearchProtocol	0x990ef0107060	0x990ef010ec20	0x990ef0141940	0x990ef010c6a0	0x7fffe72e0000	0x7fffe7580fff	Vad 
+L16310: 4796	SearchProtocol	0x990ef0141940	0x990ef0107060	0x0	0x0	0x7fffe6b10000	0x7fffe6bd6fff	Vad 
+L16311: 4796	SearchProtocol	0x990ef010c6a0	0x990ef0107060	0x990ef0107560	0x0	0x7fffed890000	0x7fffed8bbfff	Vad 
+L16312: 4796	SearchProtocol	0x990ef0107560	0x990ef010c6a0	0x0	0x0	0x7fffed540000	0x7fffed57ffff	Vad 
+L16313: 4796	SearchProtocol	0x990ef0109b80	0x990ef0107380	0x990ef01063e0	0x990ef010f6c0	0x7ffff5e80000	0x7ffff5ed9fff	Vad 
+L16314: 4796	SearchProtocol	0x990ef01063e0	0x990ef0109b80	0x990ef0107920	0x990ef0108dc0	0x7ffff50d0000	0x7ffff50edfff	Vad 
+L16315: 4796	SearchProtocol	0x990ef0107920	0x990ef01063e0	0x0	0x0	0x7ffff4ca0000	0x7ffff4cf2fff	Vad 
+L16316: 4796	SearchProtocol	0x990ef0108dc0	0x990ef01063e0	0x0	0x990ef0110840	0x7ffff51f0000	0x7ffff5228fff	Vad 
+L16317: 4796	SearchProtocol	0x990ef0110840	0x990ef0108dc0	0x0	0x0	0x7ffff5370000	0x7ffff53bbfff	Vad 
+L16318: 4796	SearchProtocol	0x990ef010f6c0	0x990ef0109b80	0x990ef010cb00	0x990ef0105580	0x7ffff6340000	0x7ffff64acfff	Vad 
+L16319: 4796	SearchProtocol	0x990ef010cb00	0x990ef010f6c0	0x0	0x0	0x7ffff6260000	0x7ffff628bfff	Vad 
+L16320: 4796	SearchProtocol	0x990ef0105580	0x990ef010f6c0	0x0	0x0	0x7ffff6540000	0x7ffff65e7fff	Vad 
+L16321: 4796	SearchProtocol	0x990ef01053a0	0x990ef0105940	0x990ef0105080	0x990ef0105da0	0x7ffff8050000	0x7ffff816afff	Vad 
+L16322: 4796	SearchProtocol	0x990ef0105080	0x990ef01053a0	0x990ef0105120	0x990ef01059e0	0x7ffff75d0000	0x7ffff7675fff	Vad 
+L16323: 4796	SearchProtocol	0x990ef0105120	0x990ef0105080	0x990ef0106980	0x990ef0104cc0	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 
+L16324: 4796	SearchProtocol	0x990ef0106980	0x990ef0105120	0x0	0x0	0x7ffff69f0000	0x7ffff6a19fff	Vad 
+L16325: 4796	SearchProtocol	0x990ef0104cc0	0x990ef0105120	0x0	0x990ef0108140	0x7ffff6c30000	0x7ffff6d5dfff	Vad 
+L16326: 4796	SearchProtocol	0x990ef0108140	0x990ef0104cc0	0x0	0x0	0x7ffff6d60000	0x7ffff75c6fff	Vad 
+L16327: 4796	SearchProtocol	0x990ef01059e0	0x990ef0105080	0x0	0x990ef0105300	0x7ffff7890000	0x7ffff7c14fff	Vad 
+L16328: 4796	SearchProtocol	0x990ef0105300	0x990ef01059e0	0x0	0x0	0x7ffff7c20000	0x7ffff7de7fff	Vad 
+L16329: 4796	SearchProtocol	0x990ef0105da0	0x990ef01053a0	0x990ef0106de0	0x990ef01060c0	0x7ffff9560000	0x7ffff962bfff	Vad 
+L16330: 4796	SearchProtocol	0x990ef0106de0	0x990ef0105da0	0x990ef0108280	0x990ef0109220	0x7ffff90f0000	0x7ffff911dfff	Vad 
+L16331: 4796	SearchProtocol	0x990ef0108280	0x990ef0106de0	0x990ef0141e40	0x990ef0104f40	0x7ffff8e80000	0x7ffff8ee9fff	Vad 
+L16332: 4796	SearchProtocol	0x990ef0141e40	0x990ef0108280	0x0	0x0	0x7ffff8710000	0x7ffff8e71fff	Vad 
+L16333: 4796	SearchProtocol	0x990ef0104f40	0x990ef0108280	0x0	0x0	0x7ffff8f00000	0x7ffff8fd9fff	Vad 
+L16334: 4796	SearchProtocol	0x990ef0109220	0x990ef0106de0	0x990ef0107740	0x0	0x7ffff94b0000	0x7ffff9559fff	Vad 
+L16335: 4796	SearchProtocol	0x990ef0107740	0x990ef0109220	0x0	0x0	0x7ffff9120000	0x7ffff92b7fff	Vad 
+L16336: 4796	SearchProtocol	0x990ef01060c0	0x990ef0105da0	0x990ef0105d00	0x990ef01076a0	0x7ffff9770000	0x7ffff981bfff	Vad 
+L16337: 4796	SearchProtocol	0x990ef0105d00	0x990ef01060c0	0x990ef01085a0	0x0	0x7ffff9730000	0x7ffff9763fff	Vad 
+L16338: 4796	SearchProtocol	0x990ef01085a0	0x990ef0105d00	0x0	0x0	0x7ffff9630000	0x7ffff9729fff	Vad 
+L16339: 4796	SearchProtocol	0x990ef01076a0	0x990ef01060c0	0x990ef01051c0	0x990ef0104900	0x7ffff9900000	0x7ffff99b0fff	Vad 
+L16340: 4796	SearchProtocol	0x990ef01051c0	0x990ef01076a0	0x0	0x0	0x7ffff9820000	0x7ffff98ddfff	Vad 
+L16341: 4796	SearchProtocol	0x990ef0104900	0x990ef01076a0	0x0	0x0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 
+
+--- vadinfo.txt ---
+L16238: 4796	SearchProtocol	0xffff990ef0106ac0	0x28f0e990000	0x28f0e992fff	Vad 	PAGE_READONLY	0	0	0x0	\Windows\System32\l_intl.nls	Disabled
+L16239: 4796	SearchProtocol	0xffff990ef0105e40	0x28f0e8d0000	0x28f0e8e0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0106ac0	\Windows\System32\C_1252.NLS	Disabled
+L16240: 4796	SearchProtocol	0xffff990ef77b35d0	0xf0af900000	0xf0af97ffff	VadS	PAGE_READWRITE	17	1	0xffff990ef0105e40	N/A	Disabled
+L16241: 4796	SearchProtocol	0xffff990ef77b6d20	0xf0af600000	0xf0af7fffff	VadS	PAGE_READWRITE	15	1	0xffff990ef77b35d0	N/A	Disabled
+L16242: 4796	SearchProtocol	0xffff990ef77b4cf0	0x7ffed000	0x7ffedfff	VadS	PAGE_READONLY	1	1	0xffff990ef77b6d20	N/A	Disabled
+L16243: 4796	SearchProtocol	0xffff990ef77b49d0	0x7ffe0000	0x7ffe0fff	VadS	PAGE_READONLY	1	1	0xffff990ef77b4cf0	N/A	Disabled
+L16244: 4796	SearchProtocol	0xffff990ef77b60f0	0xf0af470000	0xf0af4effff	VadS	PAGE_READWRITE	13	1	0xffff990ef77b4cf0	N/A	Disabled
+L16245: 4796	SearchProtocol	0xffff990ef77b3b70	0xf0af880000	0xf0af8fffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77b6d20	N/A	Disabled
+L16246: 4796	SearchProtocol	0xffff990ef77acaf0	0x28f0e850000	0x28f0e85ffff	VadS	PAGE_READWRITE	6	1	0xffff990ef77b35d0	N/A	Disabled
+L16247: 4796	SearchProtocol	0xffff990ef77b5880	0xf0afa00000	0xf0afa7ffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77acaf0	N/A	Disabled
+L16248: 4796	SearchProtocol	0xffff990ef77b44d0	0xf0af980000	0xf0af9fffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77b5880	N/A	Disabled
+L16249: 4796	SearchProtocol	0xffff990ef77aae80	0xf0afb00000	0xf0afb7ffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77b5880	N/A	Disabled
+L16250: 4796	SearchProtocol	0xffff990ef77b56f0	0xf0afa80000	0xf0afafffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77aae80	N/A	Disabled
+L16251: 4796	SearchProtocol	0xffff990ef01022e0	0x28f0e870000	0x28f0e899fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77acaf0	N/A	Disabled
+L16252: 4796	SearchProtocol	0xffff990ef0107100	0x28f0e860000	0x28f0e861fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef01022e0	N/A	Disabled
+L16253: 4796	SearchProtocol	0xffff990ef01045e0	0x28f0e8b0000	0x28f0e8b0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01022e0	N/A	Disabled
+L16254: 4796	SearchProtocol	0xffff990ef01030a0	0x28f0e8a0000	0x28f0e8a3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01045e0	N/A	Disabled
+L16255: 4796	SearchProtocol	0xffff990ef77ab970	0x28f0e8c0000	0x28f0e8c1fff	VadS	PAGE_READWRITE	2	1	0xffff990ef01045e0	N/A	Disabled
+L16256: 4796	SearchProtocol	0xffff990ef0106c00	0x28f0e950000	0x28f0e953fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0105e40	N/A	Disabled
+L16257: 4796	SearchProtocol	0xffff990ef0104a40	0x28f0e920000	0x28f0e928fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0106c00	N/A	Disabled
+L16258: 4796	SearchProtocol	0xffff990ef01054e0	0x28f0e910000	0x28f0e912fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0104a40	\Windows\System32\l_intl.nls	Disabled
+L16259: 4796	SearchProtocol	0xffff990ef0105760	0x28f0e8f0000	0x28f0e900fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01054e0	\Windows\System32\C_437.NLS	Disabled
+L16260: 4796	SearchProtocol	0xffff990ef0104c20	0x28f0e940000	0x28f0e943fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0104a40	N/A	Disabled
+L16261: 4796	SearchProtocol	0xffff990ef0105ee0	0x28f0e930000	0x28f0e938fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0104c20	N/A	Disabled
+L16262: 4796	SearchProtocol	0xffff990ef0105440	0x28f0e980000	0x28f0e98ffff	Vad 	PAGE_READWRITE	0	0	0xffff990ef0106c00	N/A	Disabled
+L16263: 4796	SearchProtocol	0xffff990ef77ac140	0x28f0e960000	0x28f0e979fff	VadS	PAGE_READWRITE	2	1	0xffff990ef0105440	N/A	Disabled
+L16264: 4796	SearchProtocol	0xffff990ef0103b40	0x7ff712d20000	0x7ff712dd9fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef0106ac0	\Windows\System32\SearchProtocolHost.exe	Disabled
+L16265: 4796	SearchProtocol	0xffff990ef77b29a0	0x28f0eef0000	0x28f0ef09fff	VadS	PAGE_READWRITE	1	1	0xffff990ef0103b40	N/A	Disabled
+L16266: 4796	SearchProtocol	0xffff990ef77aceb0	0x28f0eb00000	0x28f0ebfffff	VadF	PAGE_READWRITE	196	1	0xffff990ef77b29a0	N/A	Disabled
+L16267: 4796	SearchProtocol	0xffff990ef0106020	0x28f0eac0000	0x28f0eac7fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77aceb0	N/A	Disabled
+L16268: 4796	SearchProtocol	0xffff990ef01056c0	0x28f0ea80000	0x28f0ea90fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0106020	\Windows\System32\C_1252.NLS	Disabled
+L16269: 4796	SearchProtocol	0xffff990ef01058a0	0x28f0e9a0000	0x28f0ea72fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01056c0	\Windows\System32\locale.nls	Disabled
+L16270: 4796	SearchProtocol	0xffff990ef01068e0	0x28f0eaa0000	0x28f0eab0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01056c0	\Windows\System32\C_437.NLS	Disabled
+L16271: 4796	SearchProtocol	0xffff990ef01097c0	0x28f0eae0000	0x28f0eae0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0106020	N/A	Disabled
+L16272: 4796	SearchProtocol	0xffff990ef77afd90	0x28f0ead0000	0x28f0ead0fff	VadS	PAGE_READWRITE	1	1	0xffff990ef01097c0	N/A	Disabled
+L16273: 4796	SearchProtocol	0xffff990ef77b18c0	0x28f0eaf0000	0x28f0eafffff	VadF	PAGE_READWRITE	7	1	0xffff990ef01097c0	N/A	Disabled
+L16274: 4796	SearchProtocol	0xffff990ef0105a80	0x28f0ee00000	0x28f0eec0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77aceb0	N/A	Disabled
+L16275: 4796	SearchProtocol	0xffff990ef01049a0	0x28f0ec00000	0x28f0edfffff	Vad 	PAGE_READONLY	0	0	0xffff990ef0105a80	N/A	Disabled
+L16276: 4796	SearchProtocol	0xffff990ef77b1b40	0x28f0eed0000	0x28f0eee9fff	VadS	PAGE_READWRITE	1	1	0xffff990ef0105a80	N/A	Disabled
+L16277: 4796	SearchProtocol	0xffff990ef010a580	0x28f0f4a0000	0x28f0f4ebfff	Vad 	PAGE_READONLY	0	0	0xffff990ef77b29a0	\ProgramData\Microsoft\Windows\Caches\{6AF0698E-D558-4F6E-9B3C-3716689AF493}.2.ver0x0000000000000001.db	Disabled
+L16278: 4796	SearchProtocol	0xffff990ef77b0bf0	0x28f0ef80000	0x28f0ef8ffff	VadF	PAGE_READWRITE	2	1	0xffff990ef010a580	N/A	Disabled
+L16279: 4796	SearchProtocol	0xffff990ef77b57e0	0x28f0ef40000	0x28f0ef40fff	VadS	PAGE_READWRITE	1	1	0xffff990ef77b0bf0	N/A	Disabled
+L16280: 4796	SearchProtocol	0xffff990ef01086e0	0x28f0ef20000	0x28f0ef2ffff	Vad 	PAGE_READWRITE	0	0	0xffff990ef77b57e0	N/A	Disabled
+L16281: 4796	SearchProtocol	0xffff990ef0109360	0x28f0ef10000	0x28f0ef10fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01086e0	N/A	Disabled
+L16282: 4796	SearchProtocol	0xffff990ef01083c0	0x28f0ef30000	0x28f0ef3ffff	Vad 	PAGE_READWRITE	0	0	0xffff990ef01086e0	N/A	Disabled
+L16283: 4796	SearchProtocol	0xffff990ef01038c0	0x28f0ef60000	0x28f0ef66fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77b57e0	\Windows\System32\winnlsres.dll	Disabled
+L16284: 4796	SearchProtocol	0xffff990ef0102a60	0x28f0ef50000	0x28f0ef53fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01038c0	\ProgramData\Microsoft\Windows\Caches\cversions.2.db	Disabled
+L16285: 4796	SearchProtocol	0xffff990ef01080a0	0x28f0ef70000	0x28f0ef70fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef01038c0	N/A	Disabled
+L16286: 4796	SearchProtocol	0xffff990ef0109040	0x28f0f480000	0x28f0f480fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef77b0bf0	N/A	Disabled
+L16287: 4796	SearchProtocol	0xffff990ef01095e0	0x28f0f120000	0x28f0f45afff	Vad 	PAGE_READONLY	0	0	0xffff990ef0109040	\Windows\Globalization\Sorting\SortDefault.nls	Disabled
+L16288: 4796	SearchProtocol	0xffff990ef0106160	0x28f0ef90000	0x28f0f110fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01095e0	N/A	Disabled
+L16289: 4796	SearchProtocol	0xffff990ef0103e60	0x28f0f460000	0x28f0f470fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01095e0	\Windows\System32\en-US\winnlsres.dll.mui	Disabled
+L16290: 4796	SearchProtocol	0xffff990ef010b8e0	0x28f0f490000	0x28f0f493fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0109040	\ProgramData\Microsoft\Windows\Caches\cversions.2.db	Disabled
+L16291: 4796	SearchProtocol	0xffff990ef0102420	0x7df5a5910000	0x7ff5a590ffff	Vad 	PAGE_NOACCESS	4	0	0xffff990ef010a580	N/A	Disabled
+L16292: 4796	SearchProtocol	0xffff990ef010d820	0x28f0f5b0000	0x28f0f5c0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0102420	\Windows\System32\en-US\propsys.dll.mui	Disabled
+L16293: 4796	SearchProtocol	0xffff990ef010b0c0	0x28f0f500000	0x28f0f5a1fff	Vad 	PAGE_READONLY	0	0	0xffff990ef010d820	\ProgramData\Microsoft\Windows\Caches\{DDF571F2-BE98-426D-8288-1A9A39C3FDA2}.2.ver0x0000000000000001.db	Disabled
+L16294: 4796	SearchProtocol	0xffff990ef010b840	0x28f0f4f0000	0x28f0f4f3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef010b0c0	\ProgramData\Microsoft\Windows\Caches\cversions.2.db	Disabled
+L16295: 4796	SearchProtocol	0xffff990ef0103dc0	0x28f0f5e0000	0x28f0f646fff	Vad 	PAGE_READONLY	0	0	0xffff990ef010d820	\Windows\System32\en-US\shell32.dll.mui	Disabled
+L16296: 4796	SearchProtocol	0xffff990ef010c9c0	0x28f0f5d0000	0x28f0f5d7fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0103dc0	\Windows\System32\en-US\windows.storage.dll.mui	Disabled
+L16297: 4796	SearchProtocol	0xffff990ef77acf50	0x7df4a58f0000	0x7df5a590ffff	VadS	PAGE_READWRITE	0	1	0xffff990ef0103dc0	N/A	Disabled
+L16298: 4796	SearchProtocol	0xffff990ef77ac690	0x7ff5bbeb0000	0x7ff5bdeb0fff	VadS	PAGE_READWRITE	1	1	0xffff990ef0102420	N/A	Disabled
+L16299: 4796	SearchProtocol	0xffff990ef0106200	0x7ff5bbdb0000	0x7ff5bbeaffff	Vad 	PAGE_READONLY	0	0	0xffff990ef77ac690	N/A	Disabled
+L16300: 4796	SearchProtocol	0xffff990ef0102f60	0x7ff5bdec0000	0x7ff5bdec0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77ac690	N/A	Disabled
+L16301: 4796	SearchProtocol	0xffff990ef0105940	0x7ffff65f0000	0x7ffff69e3fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef0103b40	\Windows\System32\KernelBase.dll	Disabled
+L16302: 4796	SearchProtocol	0xffff990ef0107380	0x7ffff1bd0000	0x7ffff1cd5fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef0105940	\Windows\System32\propsys.dll	Disabled
+L16303: 4796	SearchProtocol	0xffff990ef010ec20	0x7fffe6aa0000	0x7fffe6acbfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef0107380	\Windows\System32\edputil.dll	Disabled
+L16304: 4796	SearchProtocol	0xffff990ef010cf60	0x7fffdcad0000	0x7fffdcae5fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef010ec20	\Windows\System32\cscapi.dll	Disabled
+L16305: 4796	SearchProtocol	0xffff990ef010c1a0	0x7fffda5f0000	0x7fffda698fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef010cf60	\Windows\System32\ntshrui.dll	Disabled
+L16306: 4796	SearchProtocol	0xffff990ef0108b40	0x7fffb8690000	0x7fffb86c2fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef010c1a0	\Windows\System32\mssprxy.dll	Disabled
+L16307: 4796	SearchProtocol	0xffff990ef010f260	0x7fffdc8d0000	0x7fffdc904fff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef010c1a0	\Windows\System32\cldapi.dll	Disabled
+L16308: 4796	SearchProtocol	0xffff990ef010fc60	0x7fffe3840000	0x7fffe3901fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef010cf60	\Windows\System32\Windows.FileExplorer.Common.dll	Disabled
+L16309: 4796	SearchProtocol	0xffff990ef0107060	0x7fffe72e0000	0x7fffe7580fff	Vad 	PAGE_EXECUTE_WRITECOPY	13	0	0xffff990ef010ec20	\Windows\System32\icu.dll	Disabled
+L16310: 4796	SearchProtocol	0xffff990ef0141940	0x7fffe6b10000	0x7fffe6bd6fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef0107060	\Windows\System32\Windows.StateRepositoryPS.dll	Disabled
+L16311: 4796	SearchProtocol	0xffff990ef010c6a0	0x7fffed890000	0x7fffed8bbfff	Vad 	PAGE_EXECUTE_WRITECOPY	11	0	0xffff990ef0107060	\Windows\System32\srvcli.dll	Disabled
+L16312: 4796	SearchProtocol	0xffff990ef0107560	0x7fffed540000	0x7fffed57ffff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef010c6a0	\Windows\System32\mssph.dll	Disabled
+L16313: 4796	SearchProtocol	0xffff990ef0109b80	0x7ffff5e80000	0x7ffff5ed9fff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef0107380	\Windows\System32\cfgmgr32.dll	Disabled
+L16314: 4796	SearchProtocol	0xffff990ef01063e0	0x7ffff50d0000	0x7ffff50edfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef0109b80	\Windows\System32\kernel.appcore.dll	Disabled
+L16315: 4796	SearchProtocol	0xffff990ef0107920	0x7ffff4ca0000	0x7ffff4cf2fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef01063e0	\Windows\System32\authz.dll	Disabled
+L16316: 4796	SearchProtocol	0xffff990ef0108dc0	0x7ffff51f0000	0x7ffff5228fff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef01063e0	\Windows\System32\ntmarta.dll	Disabled
+L16317: 4796	SearchProtocol	0xffff990ef0110840	0x7ffff5370000	0x7ffff53bbfff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef0108dc0	\Windows\System32\sspicli.dll	Disabled
+L16318: 4796	SearchProtocol	0xffff990ef010f6c0	0x7ffff6340000	0x7ffff64acfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef0109b80	\Windows\System32\WinTypes.dll	Disabled
+L16319: 4796	SearchProtocol	0xffff990ef010cb00	0x7ffff6260000	0x7ffff628bfff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef010f6c0	\Windows\System32\profapi.dll	Disabled
+L16320: 4796	SearchProtocol	0xffff990ef0105580	0x7ffff6540000	0x7ffff65e7fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef010f6c0	\Windows\System32\bcryptprimitives.dll	Disabled
+L16321: 4796	SearchProtocol	0xffff990ef01053a0	0x7ffff8050000	0x7ffff816afff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef0105940	\Windows\System32\rpcrt4.dll	Disabled
+L16322: 4796	SearchProtocol	0xffff990ef0105080	0x7ffff75d0000	0x7ffff7675fff	Vad 	PAGE_EXECUTE_WRITECOPY	15	0	0xffff990ef01053a0	\Windows\System32\msvcp_win.dll	Disabled
+L16323: 4796	SearchProtocol	0xffff990ef0105120	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef0105080	\Windows\System32\ucrtbase.dll	Disabled
+L16324: 4796	SearchProtocol	0xffff990ef0106980	0x7ffff69f0000	0x7ffff6a19fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef0105120	\Windows\System32\win32u.dll	Disabled
+L16325: 4796	SearchProtocol	0xffff990ef0104cc0	0x7ffff6c30000	0x7ffff6d5dfff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef0105120	\Windows\System32\gdi32full.dll	Disabled
+L16326: 4796	SearchProtocol	0xffff990ef0108140	0x7ffff6d60000	0x7ffff75c6fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef0104cc0	\Windows\System32\windows.storage.dll	Disabled
+L16327: 4796	SearchProtocol	0xffff990ef01059e0	0x7ffff7890000	0x7ffff7c14fff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef0105080	\Windows\System32\combase.dll	Disabled
+L16328: 4796	SearchProtocol	0xffff990ef0105300	0x7ffff7c20000	0x7ffff7de7fff	Vad 	PAGE_EXECUTE_WRITECOPY	8	0	0xffff990ef01059e0	\Windows\System32\user32.dll	Disabled
+L16329: 4796	SearchProtocol	0xffff990ef0105da0	0x7ffff9560000	0x7ffff962bfff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef01053a0	\Windows\System32\kernel32.dll	Disabled
+L16330: 4796	SearchProtocol	0xffff990ef0106de0	0x7ffff90f0000	0x7ffff911dfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef0105da0	\Windows\System32\gdi32.dll	Disabled
+L16331: 4796	SearchProtocol	0xffff990ef0108280	0x7ffff8e80000	0x7ffff8ee9fff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef0106de0	\Windows\System32\shlwapi.dll	Disabled
+L16332: 4796	SearchProtocol	0xffff990ef0141e40	0x7ffff8710000	0x7ffff8e71fff	Vad 	PAGE_EXECUTE_WRITECOPY	18	0	0xffff990ef0108280	\Windows\System32\shell32.dll	Disabled
+L16333: 4796	SearchProtocol	0xffff990ef0104f40	0x7ffff8f00000	0x7ffff8fd9fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef0108280	\Windows\System32\oleaut32.dll	Disabled
+L16334: 4796	SearchProtocol	0xffff990ef0109220	0x7ffff94b0000	0x7ffff9559fff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef0106de0	\Windows\System32\sechost.dll	Disabled
+L16335: 4796	SearchProtocol	0xffff990ef0107740	0x7ffff9120000	0x7ffff92b7fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef0109220	\Windows\System32\ole32.dll	Disabled
+L16336: 4796	SearchProtocol	0xffff990ef01060c0	0x7ffff9770000	0x7ffff981bfff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef0105da0	\Windows\System32\msvcrt.dll	Disabled
+L16337: 4796	SearchProtocol	0xffff990ef0105d00	0x7ffff9730000	0x7ffff9763fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef01060c0	\Windows\System32\imm32.dll	Disabled
+L16338: 4796	SearchProtocol	0xffff990ef01085a0	0x7ffff9630000	0x7ffff9729fff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef0105d00	\Windows\System32\SHCore.dll	Disabled
+L16339: 4796	SearchProtocol	0xffff990ef01076a0	0x7ffff9900000	0x7ffff99b0fff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef01060c0	\Windows\System32\clbcatq.dll	Disabled
+L16340: 4796	SearchProtocol	0xffff990ef01051c0	0x7ffff9820000	0x7ffff98ddfff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef01076a0	\Windows\System32\advapi32.dll	Disabled
+L16341: 4796	SearchProtocol	0xffff990ef0104900	0x7ffff9a60000	0x7ffff9cc9fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef01076a0	\Windows\System32\ntdll.dll	Disabled
+
+--- malware_pebmasquerade.txt ---
+L131: 4796	SearchProtocol	\Device\HarddiskVolume4\Windows\System32\SearchProtocolHost.exe	C:\WINDOWS\System32\SearchProtocolHost.exe	False	False
+
+--- sessions.txt ---
+L87: 0	-	4796	SearchProtocol	WORKGROUP/CLEANWINDOWS11$	2026-05-13 19:25:26.000000 UTC
+
+=== END OF PIVOT REPORT ===

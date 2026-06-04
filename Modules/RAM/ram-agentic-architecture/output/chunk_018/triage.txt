@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_018.txt
+Summary: taskhostw.exe holds SeImpersonatePrivilege and has an unknown parent (PID 2168 not present in process list); RuntimeBroker instances with unknown parent PID 516 are likely a kernel artefact but noted.
+
+[PROCESS]
+pid: 6420
+ppid: 2168
+image: taskhostw.exe
+cmdline: taskhostw.exe $(Arg0)
+severity: MEDIUM
+reasons: orphaned_process: parent PID 2168 not present anywhere in the process list | privilege_anomaly: SeImpersonatePrivilege enabled on taskhostw.exe — potential token impersonation abuse | cmdline_anomaly: unexpanded argument placeholder '$(Arg0)' in command line is atypical for legitimate scheduled-task invocation
+

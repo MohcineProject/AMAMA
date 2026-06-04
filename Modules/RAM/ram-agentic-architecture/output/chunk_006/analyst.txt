@@ -1,18 +1,28 @@
 ================================================================
-FIND_EVIL — PIVOT REPORT
-Generated: 2026-05-31T20:09:01Z
-Summary: LLM validation failed — all findings are inconclusive. Manual review required.
-Counts: confirmed=0  inconclusive=1  rejected=0
+PIVOT REPORT
+Generated: 2026-05-13T19:45:00Z
+Summary: A single suspicious process was submitted for validation. The orphaned-parent signal for sihost.exe (PID 4276) is the sole finding. After reviewing all available artefact evidence, the process presents no corroborating indicators of compromise beyond the missing parent PID. The privilege set, executable path, and child processes are all consistent with a legitimate Windows Shell Infrastructure Host session. One finding was rejected.
+Counts: confirmed=0  inconclusive=0  rejected=1
 ================================================================
 
-[INCONCLUSIVE]
-----------------------------------------------------------------
-PID:      2736
-PPID:     5452
-Image:    SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir=\"C:\\Users\\kali\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)\" --lang=en-US --mojo-named-platform-channel-pipe=5452.4512.18236964100010556028 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4"
-Cmdline:  "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-
+(No CONFIRMED or INCONCLUSIVE findings to report.)
 
-Justification:
-  LLM unavailable — cannot validate. Agent 1 reasons: Unusual path: SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir=\"C:\\Users\\kali\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 148.0.3967.54)\" --lang=en-US --mojo-named-platform-channel-pipe=5452.4512.18236964100010556028 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4"
-----------------------------------------------------------------
+================================================================
+REJECTION NOTES (for Agent 3 visibility)
+================================================================
 
+PID 4276 — sihost.exe — REJECTED
+
+Agent 1 flagged this process solely on the basis of an orphaned parent: PPID 1924 is not present in the process list. This is a well-known benign artefact in Windows memory forensics. sihost.exe (Shell Infrastructure Host) is a standard Windows component that is launched early in the interactive logon sequence, typically by svchost.exe or winlogon.exe. Its parent frequently exits or is not captured in a pslist snapshot, leaving the PPID dangling. This is not an indicator of malice.
+
+All remaining evidence is consistent with legitimate behaviour:
+
+- Executable path is canonical: C:\WINDOWS\system32\sihost.exe (L2357, dlllist.txt). No user-writable or anomalous path.
+- Command line is minimal and expected: "sihost.exe" with no arguments (L70, cmdline.txt).
+- Child processes ShellHost.exe (PID 5112) and CrossDeviceRes (PID 5144, truncated EPROCESS name — likely CrossDeviceResumeApp.exe or similar) are both standard Windows shell-session components parented to sihost.exe, exactly as expected.
+- The privilege set (L2280–L2314, privileges.txt) is the full default token privilege list for a standard interactive user session. Notably, the high-sensitivity privileges (SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege, etc.) are all listed as present in the token but **not enabled** — only SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege, and SeDelegateSessionUserImpersonatePrivilege carry Present/Enabled/Default flags. This is the normal unelevated interactive-user token profile; no privilege is anomalously enabled.
+- No malfind sections, no suspicious DLL paths, no network connections, and no registry persistence entries were present in the evidence block.
+
+The orphaned-parent signal alone, with zero corroborating evidence, does not meet the threshold for CONFIRMED or INCONCLUSIVE. This finding is rejected as a benign forensic artefact.
+
+================================================================

@@ -12,7 +12,8 @@
     "scan_completed_at",
     "summary",
     "counts",
-    "findings"
+    "findings",
+    "artifacts"
   ],
   "additionalProperties": false,
   "properties": {
@@ -140,6 +141,21 @@
             }
           }
         ]
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "required": ["human_report"],
+      "additionalProperties": true,
+      "properties": {
+        "human_report": {
+          "type": "string",
+          "description": "Path to the module's primary human-readable audit-trail file."
+        },
+        "per_chunk": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
       }
     }
   }

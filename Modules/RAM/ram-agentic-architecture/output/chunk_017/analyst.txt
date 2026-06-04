@@ -1,0 +1,29 @@
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-13T20:00:00Z
+Summary: Three Agent 1 leads were reviewed. PID 5964 (svchost.exe) presents a genuinely anomalous profile — no command line, no threads, a full SYSTEM-level privilege set with SeTcbPrivilege and SeImpersonatePrivilege actively enabled, an orphaned parent, and a short-lived existence — warranting a CONFIRMED verdict pending further artefact collection. PIDs 5712 and 5684 show normal binaries, normal privilege footprints, and clean DLL load paths; their sole anomaly is an orphaned parent PID (896/516 absent from the live list), which is consistent with a snapshot taken after services.exe or svchost.exe had already exited or been reaped rather than with active malice.
+Counts: confirmed=1  inconclusive=0  rejected=2
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      5964
+PPID:     896
+Image:    svchost.exe
+Cmdline:  - (no command line recorded)
+Severity: HIGH
+MITRE:    T1134 — Access Token Manipulation / T1036.005 — Masquerading: Match Legitimate Name or Location
+
+Justification:
+  PID 5964 presents a convergence of anomalies that, taken together, are not consistent with any legitimate svchost instance. The process has zero threads (column 5 = 0) and no recorded command line — every legitimate svchost carries a -k <ServiceGroup> argument and hosts at least one thread. Despite this apparent emptiness, the token carries an unusually rich set of actively-enabled high-risk privileges: SeTcbPrivilege (Present,Enabled,Default), SeImpersonatePrivilege (Present,Enabled,Default), SeAssignPrimaryTokenPrivilege (Present), SeBackupPrivilege (Present), SeRestorePrivilege (Present), and SeCreateGlobalPrivilege (Present,Enabled,Default) — a privilege set consistent with a SYSTEM-level token that has been injected or stolen rather than legitimately assigned to a service host. The process lived for exactly four minutes and then exited cleanly, which is consistent with a short-lived post-exploitation tool (e.g. a token-impersonation or lateral-movement helper) rather than a persistent service. The parent PID 896 is absent from the process list; while orphaned parents can be benign, combined with the other signals it removes the one anchor that could have legitimised this instance. The pstree entry does confirm the binary path as \Device\HarddiskVolume4\Windows\System32\svchost.exe and malware_pebmasquerade shows no PE header mismatch, so the binary on disk appears genuine — the most likely interpretation is process hollowing or token theft using the legitimate svchost image, or a short-lived injected thread that ran under a stolen SYSTEM token.
+
+Key Evidence:
+  - L89 (pslist): 5964	896	svchost.exe	0x990ef7e92080	0	-	0	False	2026-05-13 19:15:51.000000 UTC	2026-05-13 19:19:51.000000 UTC	Disabled
+  - L89 (cmdline): 5964	svchost.exe	-
+  - L2950 (privileges): 5964	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L2972 (privileges): 5964	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L2946 (privileges): 5964	svchost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+  - L97 (pstree): ** 5964	896	svchost.exe	0x990ef7e92080	0	-	0	False	2026-05-13 19:15:51.000000 UTC	2026-05-13 19:19:51.000000 UTC	\Device\HarddiskVolume4\Windows\System32\svchost.exe	-	-
+----------------------------------------------------------------
+
+================================================================

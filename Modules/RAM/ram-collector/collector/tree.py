@@ -83,11 +83,16 @@ def build_dfs_order(
             root_pids.append(pid)
     root_pids.sort()
 
-    # Warn if there are unexpectedly many roots (may indicate bad parent data)
+    # Warn if there are unexpectedly many roots.
+    # Common causes: (a) exclusion rules removed parent processes from the
+    # record set, making their children appear as roots; (b) short-lived parent
+    # processes that had already exited before the memory capture. This is
+    # expected behaviour — not a data collection failure.
     if len(root_pids) > 20:
         log.warning(
-            "%d root processes found — many orphans may indicate vol3_runner "
-            "failed to collect all process base data (PPID links broken).",
+            "%d root processes found (orphaned roots). Likely caused by "
+            "exclusion rules removing known-benign parents from the record set. "
+            "Review excluded processes if parent-child context is needed.",
             len(root_pids)
         )
 

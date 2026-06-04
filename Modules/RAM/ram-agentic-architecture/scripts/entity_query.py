@@ -25,8 +25,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-BASE_DIR = SCRIPT_DIR.parent
-SCHEMA_DIR = BASE_DIR / "schemas"
+BASE_DIR = SCRIPT_DIR.parent       # ram-agentic-architecture/
+_MODULE_DIR = BASE_DIR.parent      # Modules/RAM/
+_MODULES_DIR = _MODULE_DIR.parent  # Modules/
+_PROJECT_DIR = _MODULES_DIR.parent # project root
+SCHEMA_DIR = _PROJECT_DIR / "Backbone" / "schemas"
 
 # ---------------------------------------------------------------------------
 # Entity type sets (Stage 1 dispatch)

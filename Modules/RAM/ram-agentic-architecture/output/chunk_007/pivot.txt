@@ -1,435 +1,750 @@
 === PIVOT EVIDENCE REPORT ===
-Generated: 2026-05-31T20:09:01Z
+Generated: 2026-06-04T21:19:29Z
 
-=== PID 376 (Client.exe, ppid=7980) ===
-Cmdline: \"C:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe\"
+=== PID 4312 (svchost.exe, ppid=896) ===
+Cmdline: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc
 
 --- pslist.txt ---
-L137: 376	7980	Client.exe	0x990ef4b38080	9	-	1	False	2026-05-13 19:26:53.000000 UTC	N/A	Disabled
+L71: 4312	896	svchost.exe	0x990ef779b080	5	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	Disabled
 
 --- cmdline.txt ---
-L137: 376	Client.exe	"C:\Users\kali\AppData\Roaming\SubDir\Client.exe" 
+L71: 4312	svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc
 
 --- privileges.txt ---
-L4625: 376	Client.exe	2	SeCreateTokenPrivilege		Create a token object
-L4626: 376	Client.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
-L4627: 376	Client.exe	4	SeLockMemoryPrivilege		Lock pages in memory
-L4628: 376	Client.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
-L4629: 376	Client.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
-L4630: 376	Client.exe	7	SeTcbPrivilege		Act as part of the operating system
-L4631: 376	Client.exe	8	SeSecurityPrivilege		Manage auditing and security log
-L4632: 376	Client.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
-L4633: 376	Client.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
-L4634: 376	Client.exe	11	SeSystemProfilePrivilege		Profile system performance
-L4635: 376	Client.exe	12	SeSystemtimePrivilege		Change the system time
-L4636: 376	Client.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
-L4637: 376	Client.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
-L4638: 376	Client.exe	15	SeCreatePagefilePrivilege		Create a pagefile
-L4639: 376	Client.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
-L4640: 376	Client.exe	17	SeBackupPrivilege		Backup files and directories
-L4641: 376	Client.exe	18	SeRestorePrivilege		Restore files and directories
-L4642: 376	Client.exe	19	SeShutdownPrivilege	Present	Shut down the system
-L4643: 376	Client.exe	20	SeDebugPrivilege		Debug programs
-L4644: 376	Client.exe	21	SeAuditPrivilege		Generate security audits
-L4645: 376	Client.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
-L4646: 376	Client.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
-L4647: 376	Client.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
-L4648: 376	Client.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
-L4649: 376	Client.exe	26	SeSyncAgentPrivilege		Synch directory service data
-L4650: 376	Client.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
-L4651: 376	Client.exe	28	SeManageVolumePrivilege		Manage the files on a volume
-L4652: 376	Client.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
-L4653: 376	Client.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
-L4654: 376	Client.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
-L4655: 376	Client.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
-L4656: 376	Client.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
-L4657: 376	Client.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
-L4658: 376	Client.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
-L4659: 376	Client.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+L2315: 4312	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L2316: 4312	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2317: 4312	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2318: 4312	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2319: 4312	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2320: 4312	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2321: 4312	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2322: 4312	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2323: 4312	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2324: 4312	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2325: 4312	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L2326: 4312	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2327: 4312	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2328: 4312	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2329: 4312	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2330: 4312	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L2331: 4312	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L2332: 4312	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2333: 4312	svchost.exe	20	SeDebugPrivilege		Debug programs
+L2334: 4312	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L2335: 4312	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2336: 4312	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2337: 4312	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2338: 4312	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2339: 4312	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2340: 4312	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2341: 4312	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2342: 4312	svchost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2343: 4312	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2344: 4312	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2345: 4312	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2346: 4312	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2347: 4312	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2348: 4312	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2349: 4312	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
 
 --- dlllist.txt ---
-L6308: 376	Client.exe	0xb50000	0x324000	Client.exe	C:\Users\kali\AppData\Roaming\SubDir\Client.exe	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6309: 376	Client.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6310: 376	Client.exe	0x7fffad750000	0x6d000	MSCOREE.DLL	C:\WINDOWS\SYSTEM32\MSCOREE.DLL	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6311: 376	Client.exe	0x7ffff9560000	0xc9000	KERNEL32.dll	C:\WINDOWS\System32\KERNEL32.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6312: 376	Client.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6313: 376	Client.exe	0x7ffff9820000	0xbb000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6314: 376	Client.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6315: 376	Client.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6316: 376	Client.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6317: 376	Client.exe	0x7fffad3c0000	0x9b000	mscoreei.dll	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6318: 376	Client.exe	0x7ffff8e80000	0x67000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6319: 376	Client.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6320: 376	Client.exe	0x7ffff6d60000	0x864000	Windows.Storage.dll	C:\WINDOWS\System32\Windows.Storage.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6321: 376	Client.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6322: 376	Client.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6323: 376	Client.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6324: 376	Client.exe	0x7fffe8ac0000	0xb000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6325: 376	Client.exe	0x7fffab910000	0x9a4000	clr.dll	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6326: 376	Client.exe	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6327: 376	Client.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6328: 376	Client.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6329: 376	Client.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6330: 376	Client.exe	0x7fffe0530000	0xc000	VCRUNTIME140_1_CLR0400.dll	C:\WINDOWS\SYSTEM32\VCRUNTIME140_1_CLR0400.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6331: 376	Client.exe	0x7fffde1f0000	0x1b000	VCRUNTIME140_CLR0400.dll	C:\WINDOWS\SYSTEM32\VCRUNTIME140_CLR0400.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6332: 376	Client.exe	0x7fffad110000	0xce000	ucrtbase_clr0400.dll	C:\WINDOWS\SYSTEM32\ucrtbase_clr0400.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6333: 376	Client.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6334: 376	Client.exe	0x7fffaa300000	0x160f000	mscorlib.ni.dll	C:\WINDOWS\assembly\NativeImages_v4.0.30319_64\mscorlib\50abde036072b0b49b01ecf91d35cf89\mscorlib.ni.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6335: 376	Client.exe	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6336: 376	Client.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6337: 376	Client.exe	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6338: 376	Client.exe	0x7fffacda0000	0x12f000	clrjit.dll	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6339: 376	Client.exe	0x7ffff5930000	0x1b000	CRYPTSP.dll	C:\WINDOWS\SYSTEM32\CRYPTSP.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6340: 376	Client.exe	0x7ffff5030000	0x39000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6341: 376	Client.exe	0x7ffff5920000	0xc000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6342: 376	Client.exe	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
-L6343: 376	Client.exe	0x7ffff8710000	0x75f000	shell32.dll	C:\WINDOWS\System32\shell32.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6344: 376	Client.exe	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6345: 376	Client.exe	0x7ffff9630000	0xf7000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6346: 376	Client.exe	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
-L6347: 376	Client.exe	0x7ffff7800000	0x8000	psapi.dll	C:\WINDOWS\System32\psapi.dll	6	2026-05-13 19:26:54.000000 UTC	Disabled
-L6348: 376	Client.exe	0x7fffe5300000	0x293000	comctl32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll	6	2026-05-13 19:26:54.000000 UTC	Disabled
-L6349: 376	Client.exe	0x7ffff7df0000	0x15d000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2026-05-13 19:26:55.000000 UTC	Disabled
-L6350: 376	Client.exe	0x7ffff7680000	0x177000	crypt32.dll	C:\WINDOWS\System32\crypt32.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6351: 376	Client.exe	0x7ffff5990000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6352: 376	Client.exe	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6353: 376	Client.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6354: 376	Client.exe	0x7ffff5e80000	0x57000	CFGMGR32.dll	C:\WINDOWS\SYSTEM32\CFGMGR32.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6355: 376	Client.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6356: 376	Client.exe	0x7ffff1bd0000	0x103000	propsys.dll	C:\WINDOWS\system32\propsys.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6357: 376	Client.exe	0x7ffff1d10000	0x22d000	WindowsCodecs.dll	C:\WINDOWS\SYSTEM32\WindowsCodecs.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6358: 376	Client.exe	0x7fffefba0000	0x114000	MrmCoreR.dll	C:\WINDOWS\SYSTEM32\MrmCoreR.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6359: 376	Client.exe	0x7fffed8c0000	0x2c4000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6360: 376	Client.exe	0x7fffed890000	0x29000	srvcli.dll	C:\WINDOWS\SYSTEM32\srvcli.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6361: 376	Client.exe	0x7ffff49f0000	0xd000	netutils.dll	C:\WINDOWS\SYSTEM32\netutils.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6362: 376	Client.exe	0x7fffe3b60000	0x6f000	thumbcache.dll	C:\Windows\System32\thumbcache.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
-L6363: 376	Client.exe	0x7ffff39c0000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L2471: 4312	svchost.exe	0x7ff7d0000000	0x13000	svchost.exe	C:\WINDOWS\system32\svchost.exe	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2472: 4312	svchost.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2473: 4312	svchost.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2474: 4312	svchost.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2475: 4312	svchost.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2476: 4312	svchost.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2477: 4312	svchost.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2478: 4312	svchost.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2479: 4312	svchost.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2480: 4312	svchost.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2481: 4312	svchost.exe	0x7ffff7c20000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2482: 4312	svchost.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2483: 4312	svchost.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2484: 4312	svchost.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2485: 4312	svchost.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2486: 4312	svchost.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2487: 4312	svchost.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2488: 4312	svchost.exe	0x7fffe14c0000	0xb2000	cdpusersvc.dll	c:\windows\system32\cdpusersvc.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2489: 4312	svchost.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2490: 4312	svchost.exe	0x7ffff61c0000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2491: 4312	svchost.exe	0x7ffff5e80000	0x57000	cfgmgr32.dll	C:\WINDOWS\SYSTEM32\cfgmgr32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2492: 4312	svchost.exe	0x7fffe0f10000	0x5a4000	cdp.dll	c:\windows\system32\cdp.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2493: 4312	svchost.exe	0x7ffff61a0000	0x14000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2494: 4312	svchost.exe	0x7fffed8c0000	0x2c4000	iertutil.dll	c:\windows\system32\iertutil.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2495: 4312	svchost.exe	0x7ffff9820000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2496: 4312	svchost.exe	0x7fffed890000	0x29000	srvcli.dll	c:\windows\system32\srvcli.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2497: 4312	svchost.exe	0x7ffff49f0000	0xd000	netutils.dll	c:\windows\system32\netutils.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2498: 4312	svchost.exe	0x7ffff39c0000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2499: 4312	svchost.exe	0x7fffe9f20000	0x8000	gamestreamingext.dll	C:\WINDOWS\SYSTEM32\gamestreamingext.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2500: 4312	svchost.exe	0x7ffff6230000	0x2a000	bcrypt.dll	c:\windows\system32\bcrypt.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2501: 4312	svchost.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2502: 4312	svchost.exe	0x7fffe3ee0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2503: 4312	svchost.exe	0x7fffe03b0000	0x138000	Windows.Security.Authentication.Web.Core.dll	C:\Windows\System32\Windows.Security.Authentication.Web.Core.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2504: 4312	svchost.exe	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2505: 4312	svchost.exe	0x7fffea0a0000	0x17000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2506: 4312	svchost.exe	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\System32\SspiCli.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2507: 4312	svchost.exe	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2508: 4312	svchost.exe	0x7ffff5990000	0x13000	MSASN1.dll	C:\WINDOWS\System32\MSASN1.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2509: 4312	svchost.exe	0x7ffff5b40000	0x30000	ncrypt.dll	c:\windows\system32\ncrypt.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2510: 4312	svchost.exe	0x7ffff5af0000	0x3f000	NTASN1.dll	c:\windows\system32\NTASN1.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2511: 4312	svchost.exe	0x7fffeb2c0000	0x8b000	ncryptprov.dll	C:\WINDOWS\system32\ncryptprov.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2512: 4312	svchost.exe	0x7ffff5920000	0xc000	CRYPTBASE.dll	C:\WINDOWS\system32\CRYPTBASE.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2513: 4312	svchost.exe	0x7ffff9630000	0xf7000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2514: 4312	svchost.exe	0x7fffdcc80000	0x4f000	vaultcli.dll	C:\Windows\System32\vaultcli.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2515: 4312	svchost.exe	0x7fffdf890000	0xbb000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2516: 4312	svchost.exe	0x7fffedd70000	0x244000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2517: 4312	svchost.exe	0x7fffeb7e0000	0x19000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2518: 4312	svchost.exe	0x7fffee2a0000	0x127000	WINHTTP.dll	c:\windows\system32\WINHTTP.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2519: 4312	svchost.exe	0x7ffff7810000	0x74000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2520: 4312	svchost.exe	0x7ffff5640000	0x6b000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2521: 4312	svchost.exe	0x7ffff4a00000	0x33000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2522: 4312	svchost.exe	0x7ffff4030000	0xe000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2523: 4312	svchost.exe	0x7ffff8700000	0xa000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2524: 4312	svchost.exe	0x7ffff0470000	0x1d000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2525: 4312	svchost.exe	0x7fffee670000	0x23000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2526: 4312	svchost.exe	0x7fffe5ba0000	0x10f000	winsqlite3.dll	c:\windows\system32\winsqlite3.dll	6	2026-05-13 19:15:46.000000 UTC	Disabled
+L2527: 4312	svchost.exe	0x7fffeb630000	0x37000	Windows.Devices.Radios.dll	C:\Windows\System32\Windows.Devices.Radios.dll	6	2026-05-13 19:15:52.000000 UTC	Disabled
+L2528: 4312	svchost.exe	0x7fffed300000	0x60000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L2529: 4312	svchost.exe	0x7fffd6580000	0x73000	CapabilityAccessManagerClient.dll	C:\Windows\System32\CapabilityAccessManagerClient.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
 
 --- envars.txt ---
-L4078: 376	Client.exe	0x12f7ac0	ALLUSERSPROFILE	C:\ProgramData
-L4079: 376	Client.exe	0x12f7ac0	APPDATA	C:\Users\kali\AppData\Roaming
-L4080: 376	Client.exe	0x12f7ac0	CommonProgramFiles	C:\Program Files\Common Files
-L4081: 376	Client.exe	0x12f7ac0	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
-L4082: 376	Client.exe	0x12f7ac0	CommonProgramW6432	C:\Program Files\Common Files
-L4083: 376	Client.exe	0x12f7ac0	COMPUTERNAME	CLEANWINDOWS11
-L4084: 376	Client.exe	0x12f7ac0	ComSpec	C:\WINDOWS\system32\cmd.exe
-L4085: 376	Client.exe	0x12f7ac0	DriverData	C:\Windows\System32\Drivers\DriverData
-L4086: 376	Client.exe	0x12f7ac0	EFC_4968_1262719628	1
-L4087: 376	Client.exe	0x12f7ac0	EFC_4968_1592913036	1
-L4088: 376	Client.exe	0x12f7ac0	EFC_4968_2283032206	1
-L4089: 376	Client.exe	0x12f7ac0	EFC_4968_2775293581	1
-L4090: 376	Client.exe	0x12f7ac0	EFC_4968_3789132940	1
-L4091: 376	Client.exe	0x12f7ac0	HOMEDRIVE	C:
-L4092: 376	Client.exe	0x12f7ac0	HOMEPATH	\Users\kali
-L4093: 376	Client.exe	0x12f7ac0	LOCALAPPDATA	C:\Users\kali\AppData\Local
-L4094: 376	Client.exe	0x12f7ac0	LOGONSERVER	\\CLEANWINDOWS11
-L4095: 376	Client.exe	0x12f7ac0	NUMBER_OF_PROCESSORS	4
-L4096: 376	Client.exe	0x12f7ac0	OneDrive	C:\Users\kali\OneDrive
-L4097: 376	Client.exe	0x12f7ac0	OS	Windows_NT
-L4098: 376	Client.exe	0x12f7ac0	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\kali\AppData\Local\Microsoft\WindowsApps;
-L4099: 376	Client.exe	0x12f7ac0	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
-L4100: 376	Client.exe	0x12f7ac0	PROCESSOR_ARCHITECTURE	AMD64
-L4101: 376	Client.exe	0x12f7ac0	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
-L4102: 376	Client.exe	0x12f7ac0	PROCESSOR_LEVEL	6
-L4103: 376	Client.exe	0x12f7ac0	PROCESSOR_REVISION	ba03
-L4104: 376	Client.exe	0x12f7ac0	ProgramData	C:\ProgramData
-L4105: 376	Client.exe	0x12f7ac0	ProgramFiles	C:\Program Files
-L4106: 376	Client.exe	0x12f7ac0	ProgramFiles(x86)	C:\Program Files (x86)
-L4107: 376	Client.exe	0x12f7ac0	ProgramW6432	C:\Program Files
-L4108: 376	Client.exe	0x12f7ac0	PROMPT	$P$G
-L4109: 376	Client.exe	0x12f7ac0	PSModulePath	C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
-L4110: 376	Client.exe	0x12f7ac0	PUBLIC	C:\Users\Public
-L4111: 376	Client.exe	0x12f7ac0	SESSIONNAME	Console
-L4112: 376	Client.exe	0x12f7ac0	SystemDrive	C:
-L4113: 376	Client.exe	0x12f7ac0	SystemRoot	C:\WINDOWS
-L4114: 376	Client.exe	0x12f7ac0	TEMP	C:\Users\kali\AppData\Local\Temp
-L4115: 376	Client.exe	0x12f7ac0	TMP	C:\Users\kali\AppData\Local\Temp
-L4116: 376	Client.exe	0x12f7ac0	USERDOMAIN	CLEANWINDOWS11
-L4117: 376	Client.exe	0x12f7ac0	USERDOMAIN_ROAMINGPROFILE	CLEANWINDOWS11
-L4118: 376	Client.exe	0x12f7ac0	USERNAME	kali
-L4119: 376	Client.exe	0x12f7ac0	USERPROFILE	C:\Users\kali
-L4120: 376	Client.exe	0x12f7ac0	windir	C:\WINDOWS
+L1934: 4312	svchost.exe	0x2b0f6104c20	ALLUSERSPROFILE	C:\ProgramData
+L1935: 4312	svchost.exe	0x2b0f6104c20	APPDATA	C:\Users\kali\AppData\Roaming
+L1936: 4312	svchost.exe	0x2b0f6104c20	CommonProgramFiles	C:\Program Files\Common Files
+L1937: 4312	svchost.exe	0x2b0f6104c20	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
+L1938: 4312	svchost.exe	0x2b0f6104c20	CommonProgramW6432	C:\Program Files\Common Files
+L1939: 4312	svchost.exe	0x2b0f6104c20	COMPUTERNAME	CLEANWINDOWS11
+L1940: 4312	svchost.exe	0x2b0f6104c20	ComSpec	C:\WINDOWS\system32\cmd.exe
+L1941: 4312	svchost.exe	0x2b0f6104c20	DriverData	C:\Windows\System32\Drivers\DriverData
+L1942: 4312	svchost.exe	0x2b0f6104c20	HOMEDRIVE	C:
+L1943: 4312	svchost.exe	0x2b0f6104c20	HOMEPATH	\Users\kali
+L1944: 4312	svchost.exe	0x2b0f6104c20	LOCALAPPDATA	C:\Users\kali\AppData\Local
+L1945: 4312	svchost.exe	0x2b0f6104c20	LOGONSERVER	\\CLEANWINDOWS11
+L1946: 4312	svchost.exe	0x2b0f6104c20	NUMBER_OF_PROCESSORS	4
+L1947: 4312	svchost.exe	0x2b0f6104c20	OneDrive	C:\Users\kali\OneDrive
+L1948: 4312	svchost.exe	0x2b0f6104c20	OS	Windows_NT
+L1949: 4312	svchost.exe	0x2b0f6104c20	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\kali\AppData\Local\Microsoft\WindowsApps
+L1950: 4312	svchost.exe	0x2b0f6104c20	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+L1951: 4312	svchost.exe	0x2b0f6104c20	PROCESSOR_ARCHITECTURE	AMD64
+L1952: 4312	svchost.exe	0x2b0f6104c20	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+L1953: 4312	svchost.exe	0x2b0f6104c20	PROCESSOR_LEVEL	6
+L1954: 4312	svchost.exe	0x2b0f6104c20	PROCESSOR_REVISION	ba03
+L1955: 4312	svchost.exe	0x2b0f6104c20	ProgramData	C:\ProgramData
+L1956: 4312	svchost.exe	0x2b0f6104c20	ProgramFiles	C:\Program Files
+L1957: 4312	svchost.exe	0x2b0f6104c20	ProgramFiles(x86)	C:\Program Files (x86)
+L1958: 4312	svchost.exe	0x2b0f6104c20	ProgramW6432	C:\Program Files
+L1959: 4312	svchost.exe	0x2b0f6104c20	PSModulePath	%ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+L1960: 4312	svchost.exe	0x2b0f6104c20	PUBLIC	C:\Users\Public
+L1961: 4312	svchost.exe	0x2b0f6104c20	SystemDrive	C:
+L1962: 4312	svchost.exe	0x2b0f6104c20	SystemRoot	C:\WINDOWS
+L1963: 4312	svchost.exe	0x2b0f6104c20	TEMP	C:\Users\kali\AppData\Local\Temp
+L1964: 4312	svchost.exe	0x2b0f6104c20	TMP	C:\Users\kali\AppData\Local\Temp
+L1965: 4312	svchost.exe	0x2b0f6104c20	USERDOMAIN	CLEANWINDOWS11
+L1966: 4312	svchost.exe	0x2b0f6104c20	USERDOMAIN_ROAMINGPROFILE	CLEANWINDOWS11
+L1967: 4312	svchost.exe	0x2b0f6104c20	USERNAME	kali
+L1968: 4312	svchost.exe	0x2b0f6104c20	USERPROFILE	C:\Users\kali
+L1969: 4312	svchost.exe	0x2b0f6104c20	windir	C:\WINDOWS
 
 --- pstree.txt ---
-L137: 376	7980	Client.exe	0x990ef4b38080	9	-	1	False	2026-05-13 19:26:53.000000 UTC	N/A	\Device\HarddiskVolume4\Users\kali\AppData\Roaming\SubDir\Client.exe	"C:\Users\kali\AppData\Roaming\SubDir\Client.exe" 	C:\Users\kali\AppData\Roaming\SubDir\Client.exe
+L81: ** 4312	896	svchost.exe	0x990ef779b080	5	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc	C:\WINDOWS\system32\svchost.exe
 
 --- psscan.txt ---
-L25: 376	7980	Client.exe	0x990ef4b38080	9	-	1	False	2026-05-13 19:26:53.000000 UTC	N/A	Disabled
+L99: 4312	896	svchost.exe	0x990ef779b080	5	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	Disabled
 
 --- threads.txt ---
-L1755: 0x990ef7d2c080	376	4884	0x7ffff9aec460	\Windows\System32\ntdll.dll	0xe6e47e	\Users\kali\AppData\Roaming\SubDir\Client.exe	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1756: 0x990ef8cce080	376	7184	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:40.000000 UTC
-L1757: 0x990ef8ce5080	376	4432	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:40.000000 UTC
-L1758: 0x990ef823a080	376	5792	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1759: 0x990efa05b080	376	4284	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffaba78830	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:42.000000 UTC
-L1760: 0x990ef8cc50c0	376	6880	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffaba85f10	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:40.000000 UTC
-L1761: 0x990ef7bb4080	376	4216	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:27:00.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1762: 0x990ef862d0c0	376	2756	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:27:00.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1763: 0x990ef67eb080	376	3888	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffaba85f10	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll	2026-05-13 19:27:01.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L796: 0x990ef779c080	4312	4316	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7d0004fe0	\Windows\System32\svchost.exe	2026-05-13 19:15:35.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L797: 0x990ef77cc080	4312	4440	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:15:36.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L798: 0x990ef77d2080	4312	4468	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:15:36.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L799: 0x990ef78bf080	4312	4740	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:15:38.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L800: 0x990ef6cbb040	4312	7624	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:06.000000 UTC	1600-08-22 23:57:37.000000 UTC
 
 --- thrdscan.txt ---
-L645: 0x990ef67eb080	376	3888	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffaba85f10	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll	2026-05-13 19:27:01.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1222: 0x990ef7bb4080	376	4216	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:27:00.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1271: 0x990ef7d2c080	376	4884	0x7ffff9aec460	\Windows\System32\ntdll.dll	0xe6e47e	\Users\kali\AppData\Roaming\SubDir\Client.exe	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1454: 0x990ef823a080	376	5792	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1537: 0x990ef862d0c0	376	2756	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:27:00.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1579: 0x990ef8cc50c0	376	6880	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffaba85f10	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:40.000000 UTC
-L1583: 0x990ef8cce080	376	7184	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:40.000000 UTC
-L1593: 0x990ef8ce5080	376	4432	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:40.000000 UTC
-L1638: 0x990efa05b080	376	4284	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffaba78830	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll	2026-05-13 19:26:53.000000 UTC	1600-08-22 23:57:42.000000 UTC
-
---- malfind.txt ---
-L75: 376	Client.exe	0x7ff4bd570000	0x7ff4bd60ffff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	N/A	
-L80: 376	Client.exe	0x7ff4bd560000	0x7ff4bd56ffff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	N/A	
-
---- malware_malfind.txt ---
-L75: 376	Client.exe	0x7ff4bd570000	0x7ff4bd60ffff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	N/A	
-L80: 376	Client.exe	0x7ff4bd560000	0x7ff4bd56ffff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	N/A	
+L779: 0x990ef6cbb040	4312	7624	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:06.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L1043: 0x990ef779c080	4312	4316	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7d0004fe0	\Windows\System32\svchost.exe	2026-05-13 19:15:35.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1061: 0x990ef77cc080	4312	4440	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:15:36.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1065: 0x990ef77d2080	4312	4468	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:15:36.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1110: 0x990ef78bf080	4312	4740	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:15:38.000000 UTC	1600-08-22 23:57:38.000000 UTC
 
 --- ldrmodules.txt ---
-L6581: 376	Client.exe	0xb50000	True	False	True	\Users\kali\AppData\Roaming\SubDir\Client.exe
-L6582: 376	Client.exe	0x1b00000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll
-L6583: 376	Client.exe	0x1c4f0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.XML.dll
-L6584: 376	Client.exe	0x30f0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
-L6585: 376	Client.exe	0x3120000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
-L6586: 376	Client.exe	0x1bc20000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll
-L6587: 376	Client.exe	0x1bb80000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll
-L6588: 376	Client.exe	0x1bc00000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
-L6589: 376	Client.exe	0x1bef0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll
-L6590: 376	Client.exe	0x1d160000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll
-L6591: 376	Client.exe	0x1c820000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll
-L6592: 376	Client.exe	0x1d5e0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Security\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Security.dll
-L6593: 376	Client.exe	0x1d8a0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Data.SqlXml\v4.0_4.0.0.0__b77a5c561934e089\System.Data.SqlXml.dll
-L6594: 376	Client.exe	0x1d6e0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll
-L6595: 376	Client.exe	0x1dc00000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.ServiceModel\v4.0_4.0.0.0__b77a5c561934e089\System.ServiceModel.dll
-L6596: 376	Client.exe	0x7fffab910000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
-L6597: 376	Client.exe	0x7fffaa300000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\NativeImages\mscorlib.ni.dll
-L6598: 376	Client.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
-L6599: 376	Client.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
-L6600: 376	Client.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
-L6601: 376	Client.exe	0x7fffad750000	True	True	True	\Windows\System32\mscoree.dll
-L6602: 376	Client.exe	0x7fffad110000	True	True	True	\Windows\System32\ucrtbase_clr0400.dll
-L6603: 376	Client.exe	0x7fffacda0000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll
-L6604: 376	Client.exe	0x7fffad3c0000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll
-L6605: 376	Client.exe	0x7fffe0530000	True	True	True	\Windows\System32\vcruntime140_1_clr0400.dll
-L6606: 376	Client.exe	0x7fffde1f0000	True	True	True	\Windows\System32\vcruntime140_clr0400.dll
-L6607: 376	Client.exe	0x7fffe5300000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll
-L6608: 376	Client.exe	0x7fffe3b60000	True	True	True	\Windows\System32\thumbcache.dll
-L6609: 376	Client.exe	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
-L6610: 376	Client.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
-L6611: 376	Client.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
-L6612: 376	Client.exe	0x7fffefba0000	True	True	True	\Windows\System32\MrmCoreR.dll
-L6613: 376	Client.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
-L6614: 376	Client.exe	0x7ffff1d10000	True	True	True	\Windows\System32\WindowsCodecs.dll
-L6615: 376	Client.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
-L6616: 376	Client.exe	0x7ffff5030000	True	True	True	\Windows\System32\rsaenh.dll
-L6617: 376	Client.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
-L6618: 376	Client.exe	0x7ffff5930000	True	True	True	\Windows\System32\cryptsp.dll
-L6619: 376	Client.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
-L6620: 376	Client.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
-L6621: 376	Client.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
-L6622: 376	Client.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
-L6623: 376	Client.exe	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
-L6624: 376	Client.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
-L6625: 376	Client.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
-L6626: 376	Client.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
-L6627: 376	Client.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
-L6628: 376	Client.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
-L6629: 376	Client.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
-L6630: 376	Client.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
-L6631: 376	Client.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
-L6632: 376	Client.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
-L6633: 376	Client.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
-L6634: 376	Client.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
-L6635: 376	Client.exe	0x7ffff7800000	True	True	True	\Windows\System32\psapi.dll
-L6636: 376	Client.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
-L6637: 376	Client.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
-L6638: 376	Client.exe	0x7ffff7df0000	True	True	True	\Windows\System32\msctf.dll
-L6639: 376	Client.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
-L6640: 376	Client.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
-L6641: 376	Client.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
-L6642: 376	Client.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
-L6643: 376	Client.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
-L6644: 376	Client.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
-L6645: 376	Client.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
-L6646: 376	Client.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
-L6647: 376	Client.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
-L6648: 376	Client.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
-L6649: 376	Client.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
-L6650: 376	Client.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L2586: 4312	svchost.exe	0x2b0f5f80000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2587: 4312	svchost.exe	0x2b0f87a0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L2588: 4312	svchost.exe	0x2b0f87e0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2589: 4312	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2590: 4312	svchost.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L2591: 4312	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2592: 4312	svchost.exe	0x7fffe03b0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L2593: 4312	svchost.exe	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
+L2594: 4312	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2595: 4312	svchost.exe	0x7fffd6580000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L2596: 4312	svchost.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L2597: 4312	svchost.exe	0x7fffe0f10000	True	True	True	\Windows\System32\cdp.dll
+L2598: 4312	svchost.exe	0x7fffe14c0000	True	True	True	\Windows\System32\cdpusersvc.dll
+L2599: 4312	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2600: 4312	svchost.exe	0x7fffe9f20000	True	True	True	\Windows\System32\gamestreamingext.dll
+L2601: 4312	svchost.exe	0x7fffe5ba0000	True	True	True	\Windows\System32\winsqlite3.dll
+L2602: 4312	svchost.exe	0x7fffeb630000	True	True	True	\Windows\System32\Windows.Devices.Radios.dll
+L2603: 4312	svchost.exe	0x7fffeb2c0000	True	True	True	\Windows\System32\ncryptprov.dll
+L2604: 4312	svchost.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L2605: 4312	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2606: 4312	svchost.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L2607: 4312	svchost.exe	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L2608: 4312	svchost.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L2609: 4312	svchost.exe	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L2610: 4312	svchost.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L2611: 4312	svchost.exe	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L2612: 4312	svchost.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L2613: 4312	svchost.exe	0x7ffff4030000	True	True	True	\Windows\System32\winnsi.dll
+L2614: 4312	svchost.exe	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2615: 4312	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2616: 4312	svchost.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L2617: 4312	svchost.exe	0x7ffff5b40000	True	True	True	\Windows\System32\ncrypt.dll
+L2618: 4312	svchost.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L2619: 4312	svchost.exe	0x7ffff5640000	True	True	True	\Windows\System32\mswsock.dll
+L2620: 4312	svchost.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L2621: 4312	svchost.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L2622: 4312	svchost.exe	0x7ffff5af0000	True	True	True	\Windows\System32\ntasn1.dll
+L2623: 4312	svchost.exe	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
+L2624: 4312	svchost.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L2625: 4312	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2626: 4312	svchost.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L2627: 4312	svchost.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L2628: 4312	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2629: 4312	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2630: 4312	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2631: 4312	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2632: 4312	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2633: 4312	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2634: 4312	svchost.exe	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
+L2635: 4312	svchost.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L2636: 4312	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2637: 4312	svchost.exe	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
+L2638: 4312	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2639: 4312	svchost.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L2640: 4312	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2641: 4312	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2642: 4312	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2643: 4312	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2644: 4312	svchost.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L2645: 4312	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L2646: 4312	svchost.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L2647: 4312	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
 
 --- malware_ldrmodules.txt ---
-L6581: 376	Client.exe	0xb50000	True	False	True	\Users\kali\AppData\Roaming\SubDir\Client.exe
-L6582: 376	Client.exe	0x1b00000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll
-L6583: 376	Client.exe	0x1c4f0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.XML.dll
-L6584: 376	Client.exe	0x30f0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
-L6585: 376	Client.exe	0x3120000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
-L6586: 376	Client.exe	0x1bc20000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll
-L6587: 376	Client.exe	0x1bb80000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll
-L6588: 376	Client.exe	0x1bc00000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
-L6589: 376	Client.exe	0x1bef0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll
-L6590: 376	Client.exe	0x1d160000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll
-L6591: 376	Client.exe	0x1c820000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll
-L6592: 376	Client.exe	0x1d5e0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Security\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Security.dll
-L6593: 376	Client.exe	0x1d8a0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Data.SqlXml\v4.0_4.0.0.0__b77a5c561934e089\System.Data.SqlXml.dll
-L6594: 376	Client.exe	0x1d6e0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll
-L6595: 376	Client.exe	0x1dc00000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.ServiceModel\v4.0_4.0.0.0__b77a5c561934e089\System.ServiceModel.dll
-L6596: 376	Client.exe	0x7fffab910000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
-L6597: 376	Client.exe	0x7fffaa300000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\NativeImages\mscorlib.ni.dll
-L6598: 376	Client.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
-L6599: 376	Client.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
-L6600: 376	Client.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
-L6601: 376	Client.exe	0x7fffad750000	True	True	True	\Windows\System32\mscoree.dll
-L6602: 376	Client.exe	0x7fffad110000	True	True	True	\Windows\System32\ucrtbase_clr0400.dll
-L6603: 376	Client.exe	0x7fffacda0000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll
-L6604: 376	Client.exe	0x7fffad3c0000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll
-L6605: 376	Client.exe	0x7fffe0530000	True	True	True	\Windows\System32\vcruntime140_1_clr0400.dll
-L6606: 376	Client.exe	0x7fffde1f0000	True	True	True	\Windows\System32\vcruntime140_clr0400.dll
-L6607: 376	Client.exe	0x7fffe5300000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll
-L6608: 376	Client.exe	0x7fffe3b60000	True	True	True	\Windows\System32\thumbcache.dll
-L6609: 376	Client.exe	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
-L6610: 376	Client.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
-L6611: 376	Client.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
-L6612: 376	Client.exe	0x7fffefba0000	True	True	True	\Windows\System32\MrmCoreR.dll
-L6613: 376	Client.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
-L6614: 376	Client.exe	0x7ffff1d10000	True	True	True	\Windows\System32\WindowsCodecs.dll
-L6615: 376	Client.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
-L6616: 376	Client.exe	0x7ffff5030000	True	True	True	\Windows\System32\rsaenh.dll
-L6617: 376	Client.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
-L6618: 376	Client.exe	0x7ffff5930000	True	True	True	\Windows\System32\cryptsp.dll
-L6619: 376	Client.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
-L6620: 376	Client.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
-L6621: 376	Client.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
-L6622: 376	Client.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
-L6623: 376	Client.exe	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
-L6624: 376	Client.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
-L6625: 376	Client.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
-L6626: 376	Client.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
-L6627: 376	Client.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
-L6628: 376	Client.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
-L6629: 376	Client.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
-L6630: 376	Client.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
-L6631: 376	Client.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
-L6632: 376	Client.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
-L6633: 376	Client.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
-L6634: 376	Client.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
-L6635: 376	Client.exe	0x7ffff7800000	True	True	True	\Windows\System32\psapi.dll
-L6636: 376	Client.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
-L6637: 376	Client.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
-L6638: 376	Client.exe	0x7ffff7df0000	True	True	True	\Windows\System32\msctf.dll
-L6639: 376	Client.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
-L6640: 376	Client.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
-L6641: 376	Client.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
-L6642: 376	Client.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
-L6643: 376	Client.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
-L6644: 376	Client.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
-L6645: 376	Client.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
-L6646: 376	Client.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
-L6647: 376	Client.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
-L6648: 376	Client.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
-L6649: 376	Client.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
-L6650: 376	Client.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L2586: 4312	svchost.exe	0x2b0f5f80000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2587: 4312	svchost.exe	0x2b0f87a0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L2588: 4312	svchost.exe	0x2b0f87e0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2589: 4312	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2590: 4312	svchost.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L2591: 4312	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2592: 4312	svchost.exe	0x7fffe03b0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L2593: 4312	svchost.exe	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
+L2594: 4312	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2595: 4312	svchost.exe	0x7fffd6580000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L2596: 4312	svchost.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L2597: 4312	svchost.exe	0x7fffe0f10000	True	True	True	\Windows\System32\cdp.dll
+L2598: 4312	svchost.exe	0x7fffe14c0000	True	True	True	\Windows\System32\cdpusersvc.dll
+L2599: 4312	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2600: 4312	svchost.exe	0x7fffe9f20000	True	True	True	\Windows\System32\gamestreamingext.dll
+L2601: 4312	svchost.exe	0x7fffe5ba0000	True	True	True	\Windows\System32\winsqlite3.dll
+L2602: 4312	svchost.exe	0x7fffeb630000	True	True	True	\Windows\System32\Windows.Devices.Radios.dll
+L2603: 4312	svchost.exe	0x7fffeb2c0000	True	True	True	\Windows\System32\ncryptprov.dll
+L2604: 4312	svchost.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L2605: 4312	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2606: 4312	svchost.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L2607: 4312	svchost.exe	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L2608: 4312	svchost.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L2609: 4312	svchost.exe	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L2610: 4312	svchost.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L2611: 4312	svchost.exe	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L2612: 4312	svchost.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L2613: 4312	svchost.exe	0x7ffff4030000	True	True	True	\Windows\System32\winnsi.dll
+L2614: 4312	svchost.exe	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2615: 4312	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2616: 4312	svchost.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L2617: 4312	svchost.exe	0x7ffff5b40000	True	True	True	\Windows\System32\ncrypt.dll
+L2618: 4312	svchost.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L2619: 4312	svchost.exe	0x7ffff5640000	True	True	True	\Windows\System32\mswsock.dll
+L2620: 4312	svchost.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L2621: 4312	svchost.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L2622: 4312	svchost.exe	0x7ffff5af0000	True	True	True	\Windows\System32\ntasn1.dll
+L2623: 4312	svchost.exe	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
+L2624: 4312	svchost.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L2625: 4312	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2626: 4312	svchost.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L2627: 4312	svchost.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L2628: 4312	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2629: 4312	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2630: 4312	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2631: 4312	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2632: 4312	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2633: 4312	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2634: 4312	svchost.exe	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
+L2635: 4312	svchost.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L2636: 4312	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2637: 4312	svchost.exe	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
+L2638: 4312	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2639: 4312	svchost.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L2640: 4312	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2641: 4312	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2642: 4312	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2643: 4312	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2644: 4312	svchost.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L2645: 4312	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L2646: 4312	svchost.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L2647: 4312	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
 
 --- vadwalk.txt ---
-L16632: 376	Client.exe	0x990efa34da70	0x0	0x990efa34f6e0	0x990ef0118180	0x7ffe0000	0x7ffe0fff	VadS
-L16633: 376	Client.exe	0x990efa34f6e0	0x990efa34da70	0x990ef010bca0	0x990ef0138480	0x1b30000	0x1b3ffff	VadF
-L16634: 376	Client.exe	0x990ef010bca0	0x990efa34f6e0	0x990ef01026a0	0x990efa34f730	0x14d0000	0x14e0fff	Vad 
-L16635: 376	Client.exe	0x990ef01026a0	0x990ef010bca0	0x990ef01416c0	0x990ef010a300	0x1220000	0x1230fff	Vad 
-L16636: 376	Client.exe	0x990ef01416c0	0x990ef01026a0	0x990ef013ec40	0x990efa34e3d0	0xfe0000	0xfe2fff	Vad 
-L16637: 376	Client.exe	0x990ef013ec40	0x990ef01416c0	0x990ef0109860	0x990efa34de80	0xea0000	0xec9fff	Vad 
-L16638: 376	Client.exe	0x990ef0109860	0x990ef013ec40	0x990ef0140860	0x990ef010a800	0xe80000	0xe81fff	Vad 
-L16639: 376	Client.exe	0x990ef0140860	0x990ef0109860	0x0	0x0	0xb50000	0xe73fff	Vad 
-L16640: 376	Client.exe	0x990ef010a800	0x990ef0109860	0x0	0x0	0xe90000	0xe9ffff	Vad 
-L16641: 376	Client.exe	0x990efa34de80	0x990ef013ec40	0x0	0x990ef0141b20	0xed0000	0xfcffff	VadS
-L16642: 376	Client.exe	0x990ef0141b20	0x990efa34de80	0x0	0x0	0xfd0000	0xfd3fff	Vad 
-L16643: 376	Client.exe	0x990efa34e3d0	0x990ef01416c0	0x990efa34e380	0x990ef0102240	0x1000000	0x11fffff	VadS
-L16644: 376	Client.exe	0x990efa34e380	0x990efa34e3d0	0x0	0x0	0xff0000	0xff1fff	VadS
-L16645: 376	Client.exe	0x990ef0102240	0x990efa34e3d0	0x0	0x0	0x1200000	0x1210fff	Vad 
-L16646: 376	Client.exe	0x990ef010a300	0x990ef01026a0	0x990ef0108460	0x990efa34db60	0x12b0000	0x12b2fff	Vad 
-L16647: 376	Client.exe	0x990ef0108460	0x990ef010a300	0x990ef0102d80	0x990efa34d160	0x1270000	0x1273fff	Vad 
-L16648: 376	Client.exe	0x990ef0102d80	0x990ef0108460	0x990ef0103640	0x990ef0106660	0x1250000	0x1258fff	Vad 
-L16649: 376	Client.exe	0x990ef0103640	0x990ef0102d80	0x0	0x0	0x1240000	0x1242fff	Vad 
-L16650: 376	Client.exe	0x990ef0106660	0x990ef0102d80	0x0	0x0	0x1260000	0x1268fff	Vad 
-L16651: 376	Client.exe	0x990efa34d160	0x990ef0108460	0x990ef01094a0	0x0	0x1290000	0x12a9fff	VadS
-L16652: 376	Client.exe	0x990ef01094a0	0x990efa34d160	0x0	0x0	0x1280000	0x1283fff	Vad 
-L16653: 376	Client.exe	0x990efa34db60	0x990ef010a300	0x990ef010a260	0x990ef010a4e0	0x12f0000	0x13effff	VadF
-L16654: 376	Client.exe	0x990ef010a260	0x990efa34db60	0x0	0x990ef012bf00	0x12c0000	0x12d0fff	Vad 
-L16655: 376	Client.exe	0x990ef012bf00	0x990ef010a260	0x0	0x0	0x12e0000	0x12e7fff	Vad 
-L16656: 376	Client.exe	0x990ef010a4e0	0x990efa34db60	0x0	0x0	0x13f0000	0x14c2fff	Vad 
-L16657: 376	Client.exe	0x990efa34f730	0x990ef010bca0	0x990efa34f410	0x990efa350c20	0x1aa0000	0x1aaffff	VadS
-L16658: 376	Client.exe	0x990efa34f410	0x990efa34f730	0x990efa34f4b0	0x990efa34ef60	0x1670000	0x176ffff	VadS
-L16659: 376	Client.exe	0x990efa34f4b0	0x990efa34f410	0x990efa34e100	0x990ef012fc40	0x1620000	0x1639fff	VadS
-L16660: 376	Client.exe	0x990efa34e100	0x990efa34f4b0	0x990efa34d5c0	0x990efa34e290	0x1510000	0x151ffff	VadF
-L16661: 376	Client.exe	0x990efa34d5c0	0x990efa34e100	0x0	0x0	0x14f0000	0x1509fff	VadS
-L16662: 376	Client.exe	0x990efa34e290	0x990efa34e100	0x0	0x0	0x1520000	0x161ffff	VadS
-L16663: 376	Client.exe	0x990ef012fc40	0x990efa34f4b0	0x990ef012dda0	0x990efa34f190	0x1650000	0x165ffff	Vad 
-L16664: 376	Client.exe	0x990ef012dda0	0x990ef012fc40	0x0	0x0	0x1640000	0x1640fff	Vad 
-L16665: 376	Client.exe	0x990efa34f190	0x990ef012fc40	0x0	0x0	0x1660000	0x166ffff	VadF
-L16666: 376	Client.exe	0x990efa34ef60	0x990efa34f410	0x990ef012c5e0	0x990efa34e600	0x1a80000	0x1a80fff	VadS
-L16667: 376	Client.exe	0x990ef012c5e0	0x990efa34ef60	0x990efa34e790	0x990efa34f230	0x1870000	0x1a6ffff	Vad 
-L16668: 376	Client.exe	0x990efa34e790	0x990ef012c5e0	0x0	0x0	0x1770000	0x186ffff	VadS
-L16669: 376	Client.exe	0x990efa34f230	0x990ef012c5e0	0x0	0x0	0x1a70000	0x1a7ffff	VadS
-L16670: 376	Client.exe	0x990efa34e600	0x990efa34ef60	0x0	0x0	0x1a90000	0x1a90fff	VadS
-L16671: 376	Client.exe	0x990efa350c20	0x990efa34f730	0x990ef013df20	0x990ef0141580	0x1ae0000	0x1aeffff	VadF
-L16672: 376	Client.exe	0x990ef013df20	0x990efa350c20	0x990ef013a8c0	0x990ef01024c0	0x1ac0000	0x1ac1fff	Vad 
-L16673: 376	Client.exe	0x990ef013a8c0	0x990ef013df20	0x0	0x0	0x1ab0000	0x1ab0fff	Vad 
-L16674: 376	Client.exe	0x990ef01024c0	0x990ef013df20	0x0	0x0	0x1ad0000	0x1ad5fff	Vad 
-L16675: 376	Client.exe	0x990ef0141580	0x990efa350c20	0x990ef013e740	0x990efa34ece0	0x1b00000	0x1b09fff	Vad 
-L16676: 376	Client.exe	0x990ef013e740	0x990ef0141580	0x0	0x0	0x1af0000	0x1af1fff	Vad 
-L16677: 376	Client.exe	0x990efa34ece0	0x990ef0141580	0x990efa359be0	0x0	0x1b20000	0x1b2ffff	VadF
-L16678: 376	Client.exe	0x990efa359be0	0x990efa34ece0	0x0	0x0	0x1b10000	0x1b10fff	VadS
-L16679: 376	Client.exe	0x990ef0138480	0x990efa34f6e0	0x990efa34ea10	0x990ef013b7c0	0x1c4f0000	0x1c773fff	Vad 
-L16680: 376	Client.exe	0x990efa34ea10	0x990ef0138480	0x990efa35c7a0	0x990ef01373a0	0x31b0000	0x32affff	VadS
-L16681: 376	Client.exe	0x990efa35c7a0	0x990efa34ea10	0x990ef012eb60	0x990ef01396a0	0x3100000	0x3119fff	VadS
-L16682: 376	Client.exe	0x990ef012eb60	0x990efa35c7a0	0x990ef012d120	0x990ef0103d20	0x1cd0000	0x30d0fff	Vad 
-L16683: 376	Client.exe	0x990ef012d120	0x990ef012eb60	0x0	0x0	0x1b40000	0x1cc0fff	Vad 
-L16684: 376	Client.exe	0x990ef0103d20	0x990ef012eb60	0x990efa35b850	0x0	0x30f0000	0x30f4fff	Vad 
-L16685: 376	Client.exe	0x990efa35b850	0x990ef0103d20	0x0	0x0	0x30e0000	0x30e0fff	VadS
-L16686: 376	Client.exe	0x990ef01396a0	0x990efa35c7a0	0x990ef0139d80	0x990efa34f3c0	0x3140000	0x3140fff	Vad 
-L16687: 376	Client.exe	0x990ef0139d80	0x990ef01396a0	0x990ef0139920	0x0	0x3130000	0x3130fff	Vad 
-L16688: 376	Client.exe	0x990ef0139920	0x990ef0139d80	0x0	0x0	0x3120000	0x3129fff	Vad 
-L16689: 376	Client.exe	0x990efa34f3c0	0x990ef01396a0	0x990ef01027e0	0x990efa34ec90	0x3170000	0x317ffff	VadF
-L16690: 376	Client.exe	0x990ef01027e0	0x990efa34f3c0	0x990ef01065c0	0x0	0x3160000	0x3160fff	Vad 
-L16691: 376	Client.exe	0x990ef01065c0	0x990ef01027e0	0x0	0x0	0x3150000	0x3153fff	Vad 
-L16692: 376	Client.exe	0x990efa34ec90	0x990efa34f3c0	0x990ef0141440	0x0	0x31a0000	0x31affff	VadF
-L16693: 376	Client.exe	0x990ef0141440	0x990efa34ec90	0x0	0x0	0x3180000	0x3198fff	Vad 
-L16694: 376	Client.exe	0x990ef01373a0	0x990efa34ea10	0x990efa34f640	0x990ef0134560	0x1bc20000	0x1bcb1fff	Vad 
-L16695: 376	Client.exe	0x990efa34f640	0x990ef01373a0	0x990efa34ebf0	0x990ef0139100	0x1b740000	0x1b83ffff	VadS
-L16696: 376	Client.exe	0x990efa34ebf0	0x990efa34f640	0x990efa34ea60	0x990efa34f5a0	0x1b2b0000	0x1b62ffff	VadS
-L16697: 376	Client.exe	0x990efa34ea60	0x990efa34ebf0	0x0	0x0	0x32b0000	0x1b2affff	VadS
-L16698: 376	Client.exe	0x990efa34f5a0	0x990efa34ebf0	0x0	0x0	0x1b630000	0x1b737fff	VadS
-L16699: 376	Client.exe	0x990ef0139100	0x990efa34f640	0x990ef0132300	0x990ef0107880	0x1bb80000	0x1bbe5fff	Vad 
-L16700: 376	Client.exe	0x990ef0132300	0x990ef0139100	0x0	0x0	0x1b840000	0x1bb7afff	Vad 
-L16701: 376	Client.exe	0x990ef0107880	0x990ef0139100	0x0	0x990ef0107d80	0x1bbf0000	0x1bbf3fff	Vad 
-L16702: 376	Client.exe	0x990ef0107d80	0x990ef0107880	0x0	0x0	0x1bc00000	0x1bc10fff	Vad 
-L16703: 376	Client.exe	0x990ef0134560	0x990ef01373a0	0x990efa35b080	0x990efa35bbc0	0x1bef0000	0x1c251fff	Vad 
-L16704: 376	Client.exe	0x990efa35b080	0x990ef0134560	0x990efa355900	0x990efa35af90	0x1bdc0000	0x1bebffff	VadS
-L16705: 376	Client.exe	0x990efa355900	0x990efa35b080	0x0	0x0	0x1bcc0000	0x1bdbffff	VadS
-L16706: 376	Client.exe	0x990efa35af90	0x990efa35b080	0x990ef0109f40	0x990efa35b940	0x1bed0000	0x1bedefff	VadS
-L16707: 376	Client.exe	0x990ef0109f40	0x990efa35af90	0x0	0x0	0x1bec0000	0x1bec2fff	Vad 
-L16708: 376	Client.exe	0x990efa35b940	0x990efa35af90	0x0	0x0	0x1bee0000	0x1bee0fff	VadS
-L16709: 376	Client.exe	0x990efa35bbc0	0x990ef0134560	0x990ef0140e00	0x990efa3463b0	0x1c3b0000	0x1c4affff	VadS
-L16710: 376	Client.exe	0x990ef0140e00	0x990efa35bbc0	0x0	0x0	0x1c260000	0x1c3a1fff	Vad 
-L16711: 376	Client.exe	0x990efa3463b0	0x990efa35bbc0	0x990ef010eea0	0x990efa35b8f0	0x1c4d0000	0x1c4dffff	VadS
-L16712: 376	Client.exe	0x990ef010eea0	0x990efa3463b0	0x0	0x0	0x1c4b0000	0x1c4c0fff	Vad 
-L16713: 376	Client.exe	0x990efa35b8f0	0x990efa3463b0	0x0	0x0	0x1c4e0000	0x1c4eefff	VadS
-L16714: 376	Client.exe	0x990ef013b7c0	0x990ef0138480	0x990efa347e40	0x990ef010ef40	0x1d160000	0x1d2dbfff	Vad 
-L16715: 376	Client.exe	0x990efa347e40	0x990ef013b7c0	0x990efa35b7b0	0x990efa35b3f0	0x1cde0000	0x1cfdffff	VadS
-L16716: 376	Client.exe	0x990efa35b7b0	0x990efa347e40	0x990ef0108e60	0x990ef010de60	0x1c7d0000	0x1c7fafff	VadS
-L16717: 376	Client.exe	0x990ef0108e60	0x990efa35b7b0	0x0	0x0	0x1c780000	0x1c7cbfff	Vad 
-L16718: 376	Client.exe	0x990ef010de60	0x990efa35b7b0	0x990efa35b440	0x990ef0137da0	0x1c810000	0x1c813fff	Vad 
-L16719: 376	Client.exe	0x990efa35b440	0x990ef010de60	0x0	0x0	0x1c800000	0x1c807fff	VadS
-L16720: 376	Client.exe	0x990ef0137da0	0x990ef010de60	0x0	0x0	0x1c820000	0x1cdd9fff	Vad 
-L16721: 376	Client.exe	0x990efa35b3f0	0x990efa347e40	0x990ef0107a60	0x990efa346040	0x1d090000	0x1d0dafff	VadS
-L16722: 376	Client.exe	0x990ef0107a60	0x990efa35b3f0	0x0	0x0	0x1cfe0000	0x1d081fff	Vad 
-L16723: 376	Client.exe	0x990efa346040	0x990efa35b3f0	0x990efa346a90	0x990efa3462c0	0x1d0f0000	0x1d0fffff	VadS
-L16724: 376	Client.exe	0x990efa346a90	0x990efa346040	0x0	0x0	0x1d0e0000	0x1d0effff	VadS
-L16725: 376	Client.exe	0x990efa3462c0	0x990efa346040	0x0	0x0	0x1d100000	0x1d10ffff	VadS
-L16726: 376	Client.exe	0x990ef010ef40	0x990ef013b7c0	0x990ef010d280	0x990ef010eb80	0x1d5e0000	0x1d62ffff	Vad 
-L16727: 376	Client.exe	0x990ef010d280	0x990ef010ef40	0x990efa35b120	0x990efa35b170	0x1d3e0000	0x1d4dffff	Vad 
-L16728: 376	Client.exe	0x990efa35b120	0x990ef010d280	0x0	0x0	0x1d2e0000	0x1d3dffff	VadS
-L16729: 376	Client.exe	0x990efa35b170	0x990ef010d280	0x0	0x0	0x1d4e0000	0x1d5dffff	VadS
-L16730: 376	Client.exe	0x990ef010eb80	0x990ef010ef40	0x990ef010f4e0	0x990ef0110700	0x1d8a0000	0x1d951fff	Vad 
-L16731: 376	Client.exe	0x990ef010f4e0	0x990ef010eb80	0x0	0x0	0x1d6e0000	0x1d7dffff	Vad 
+L7678: 4312	svchost.exe	0x990ef71275e0	0x0	0x990ef71265a0	0x990ef7127ea0	0x7df5a5910000	0x7ff5a590ffff	Vad 
+L7679: 4312	svchost.exe	0x990ef71265a0	0x990ef71275e0	0x990ef77ada90	0x990ef712a2e0	0x2b0f5a30000	0x2b0f5a40fff	Vad 
+L7680: 4312	svchost.exe	0x990ef77ada90	0x990ef71265a0	0x990ef77a9300	0x990ef7125600	0xebb2b00000	0xebb2b7ffff	VadS
+L7681: 4312	svchost.exe	0x990ef77a9300	0x990ef77ada90	0x990ef77a8180	0x990ef77a9620	0xebb2400000	0xebb25fffff	VadS
+L7682: 4312	svchost.exe	0x990ef77a8180	0x990ef77a9300	0x990ef77a8810	0x990ef77a8db0	0x7ffed000	0x7ffedfff	VadS
+L7683: 4312	svchost.exe	0x990ef77a8810	0x990ef77a8180	0x0	0x0	0x7ffe0000	0x7ffe0fff	VadS
+L7684: 4312	svchost.exe	0x990ef77a8db0	0x990ef77a8180	0x0	0x990ef77afca0	0xebb22e0000	0xebb235ffff	VadS
+L7685: 4312	svchost.exe	0x990ef77afca0	0x990ef77a8db0	0x0	0x0	0xebb2360000	0xebb23dffff	VadS
+L7686: 4312	svchost.exe	0x990ef77a9620	0x990ef77a9300	0x0	0x990ef77a9d50	0xebb2900000	0xebb297ffff	VadS
+L7687: 4312	svchost.exe	0x990ef77a9d50	0x990ef77a9620	0x0	0x0	0xebb2980000	0xebb29fffff	VadS
+L7688: 4312	svchost.exe	0x990ef7125600	0x990ef77ada90	0x990ef77a9440	0x990ef77a8950	0x2b0f59b0000	0x2b0f59d9fff	Vad 
+L7689: 4312	svchost.exe	0x990ef77a9440	0x990ef7125600	0x0	0x990ef71263c0	0x2b0f5990000	0x2b0f599ffff	VadS
+L7690: 4312	svchost.exe	0x990ef71263c0	0x990ef77a9440	0x0	0x0	0x2b0f59a0000	0x2b0f59a1fff	Vad 
+L7691: 4312	svchost.exe	0x990ef77a8950	0x990ef7125600	0x990ef7125d80	0x990ef7125b00	0x2b0f5a00000	0x2b0f5a01fff	VadS
+L7692: 4312	svchost.exe	0x990ef7125d80	0x990ef77a8950	0x0	0x990ef71268c0	0x2b0f59e0000	0x2b0f59e3fff	Vad 
+L7693: 4312	svchost.exe	0x990ef71268c0	0x990ef7125d80	0x0	0x0	0x2b0f59f0000	0x2b0f59f0fff	Vad 
+L7694: 4312	svchost.exe	0x990ef7125b00	0x990ef77a8950	0x0	0x0	0x2b0f5a10000	0x2b0f5a20fff	Vad 
+L7695: 4312	svchost.exe	0x990ef712a2e0	0x990ef71265a0	0x990ef7129a20	0x990ef77a8540	0x2b0f5de0000	0x2b0f5de7fff	Vad 
+L7696: 4312	svchost.exe	0x990ef7129a20	0x990ef712a2e0	0x990ef7126e60	0x990ef7127e00	0x2b0f5ac0000	0x2b0f5b92fff	Vad 
+L7697: 4312	svchost.exe	0x990ef7126e60	0x990ef7129a20	0x990ef7126280	0x990ef7127400	0x2b0f5a80000	0x2b0f5a83fff	Vad 
+L7698: 4312	svchost.exe	0x990ef7126280	0x990ef7126e60	0x990ef7125880	0x990ef7127040	0x2b0f5a60000	0x2b0f5a68fff	Vad 
+L7699: 4312	svchost.exe	0x990ef7125880	0x990ef7126280	0x0	0x0	0x2b0f5a50000	0x2b0f5a52fff	Vad 
+L7700: 4312	svchost.exe	0x990ef7127040	0x990ef7126280	0x0	0x0	0x2b0f5a70000	0x2b0f5a78fff	Vad 
+L7701: 4312	svchost.exe	0x990ef7127400	0x990ef7126e60	0x990ef7126640	0x990ef71290c0	0x2b0f5aa0000	0x2b0f5aaffff	Vad 
+L7702: 4312	svchost.exe	0x990ef7126640	0x990ef7127400	0x0	0x0	0x2b0f5a90000	0x2b0f5a93fff	Vad 
+L7703: 4312	svchost.exe	0x990ef71290c0	0x990ef7127400	0x0	0x0	0x2b0f5ab0000	0x2b0f5ab2fff	Vad 
+L7704: 4312	svchost.exe	0x990ef7127e00	0x990ef7129a20	0x990ef7129980	0x990ef712b280	0x2b0f5bc0000	0x2b0f5bd0fff	Vad 
+L7705: 4312	svchost.exe	0x990ef7129980	0x990ef7127e00	0x0	0x0	0x2b0f5ba0000	0x2b0f5bb0fff	Vad 
+L7706: 4312	svchost.exe	0x990ef712b280	0x990ef7127e00	0x0	0x0	0x2b0f5be0000	0x2b0f5ddffff	Vad 
+L7707: 4312	svchost.exe	0x990ef77a8540	0x990ef712a2e0	0x990ef71035a0	0x990ef7b09360	0x2b0f6000000	0x2b0f6ffffff	VadS
+L7708: 4312	svchost.exe	0x990ef71035a0	0x990ef77a8540	0x990ef712dda0	0x990ef77acaa0	0x2b0f5fb0000	0x2b0f5fb0fff	Vad 
+L7709: 4312	svchost.exe	0x990ef712dda0	0x990ef71035a0	0x990ef712d120	0x990ef77a9170	0x2b0f5f80000	0x2b0f5f80fff	Vad 
+L7710: 4312	svchost.exe	0x990ef712d120	0x990ef712dda0	0x0	0x0	0x2b0f5df0000	0x2b0f5f70fff	Vad 
+L7711: 4312	svchost.exe	0x990ef77a9170	0x990ef712dda0	0x0	0x0	0x2b0f5f90000	0x2b0f5fa9fff	VadS
+L7712: 4312	svchost.exe	0x990ef77acaa0	0x990ef71035a0	0x990ef77aca50	0x990ef710b520	0x2b0f5fe0000	0x2b0f5fe0fff	VadS
+L7713: 4312	svchost.exe	0x990ef77aca50	0x990ef77acaa0	0x0	0x0	0x2b0f5fd0000	0x2b0f5fd0fff	VadS
+L7714: 4312	svchost.exe	0x990ef710b520	0x990ef77acaa0	0x0	0x0	0x2b0f5ff0000	0x2b0f5ff0fff	Vad 
+L7715: 4312	svchost.exe	0x990ef7b09360	0x990ef77a8540	0x990ef7896140	0x990ef7129020	0x2b0f87c0000	0x2b0f87c0fff	Vad 
+L7716: 4312	svchost.exe	0x990ef7896140	0x990ef7b09360	0x990ef7116600	0x990ef7892540	0x2b0f87a0000	0x2b0f87a9fff	Vad 
+L7717: 4312	svchost.exe	0x990ef7116600	0x990ef7896140	0x990ef712cb80	0x990ef788c280	0x2b0f8410000	0x2b0f874afff	Vad 
+L7718: 4312	svchost.exe	0x990ef712cb80	0x990ef7116600	0x0	0x0	0x2b0f7000000	0x2b0f8400fff	Vad 
+L7719: 4312	svchost.exe	0x990ef788c280	0x990ef7116600	0x0	0x0	0x2b0f8750000	0x2b0f8797fff	Vad 
+L7720: 4312	svchost.exe	0x990ef7892540	0x990ef7896140	0x0	0x0	0x2b0f87b0000	0x2b0f87b0fff	Vad 
+L7721: 4312	svchost.exe	0x990ef7129020	0x990ef7b09360	0x990ef7b1f160	0x990ef77a8b30	0x7df4a37d0000	0x7df4a38cffff	Vad 
+L7722: 4312	svchost.exe	0x990ef7b1f160	0x990ef7129020	0x0	0x990ef89b9760	0x2b0f87d0000	0x2b0f87d7fff	Vad 
+L7723: 4312	svchost.exe	0x990ef89b9760	0x990ef7b1f160	0x0	0x0	0x2b0f87e0000	0x2b0f8931fff	Vad 
+L7724: 4312	svchost.exe	0x990ef77a8b30	0x990ef7129020	0x990ef77a91c0	0x990ef71252e0	0x7df5a38f0000	0x7df5a58f0fff	VadS
+L7725: 4312	svchost.exe	0x990ef77a91c0	0x990ef77a8b30	0x0	0x0	0x7df4a38d0000	0x7df5a38effff	VadS
+L7726: 4312	svchost.exe	0x990ef71252e0	0x990ef77a8b30	0x0	0x0	0x7df5a5900000	0x7df5a5900fff	Vad 
+L7727: 4312	svchost.exe	0x990ef7127ea0	0x990ef71275e0	0x990ef7114800	0x990ef7127b80	0x7ffff50d0000	0x7ffff50edfff	Vad 
+L7728: 4312	svchost.exe	0x990ef7114800	0x990ef7127ea0	0x990ef7887460	0x990ef711a700	0x7fffed890000	0x7fffed8bbfff	Vad 
+L7729: 4312	svchost.exe	0x990ef7887460	0x990ef7114800	0x990ef78882c0	0x990ef788cb40	0x7fffe3ee0000	0x7fffe3facfff	Vad 
+L7730: 4312	svchost.exe	0x990ef78882c0	0x990ef7887460	0x990ef7893440	0x990ef71404a0	0x7fffe03b0000	0x7fffe04eafff	Vad 
+L7731: 4312	svchost.exe	0x990ef7893440	0x990ef78882c0	0x990ef7126dc0	0x990ef7b02a60	0x7fffdcc80000	0x7fffdccd1fff	Vad 
+L7732: 4312	svchost.exe	0x990ef7126dc0	0x990ef7893440	0x0	0x990ef89b6600	0x7ff7d0000000	0x7ff7d0015fff	Vad 
+L7733: 4312	svchost.exe	0x990ef89b6600	0x990ef7126dc0	0x0	0x0	0x7fffd6580000	0x7fffd65f5fff	Vad 
+L7734: 4312	svchost.exe	0x990ef7b02a60	0x990ef7893440	0x0	0x0	0x7fffdf890000	0x7fffdf94dfff	Vad 
+L7735: 4312	svchost.exe	0x990ef71404a0	0x990ef78882c0	0x0	0x990ef713c300	0x7fffe0f10000	0x7fffe14b6fff	Vad 
+L7736: 4312	svchost.exe	0x990ef713c300	0x990ef71404a0	0x0	0x0	0x7fffe14c0000	0x7fffe1574fff	Vad 
+L7737: 4312	svchost.exe	0x990ef788cb40	0x990ef7887460	0x990ef71245c0	0x990ef7893120	0x7fffea0a0000	0x7fffea0b9fff	Vad 
+L7738: 4312	svchost.exe	0x990ef71245c0	0x990ef788cb40	0x990ef7b1b1a0	0x0	0x7fffe9f20000	0x7fffe9f2afff	Vad 
+L7739: 4312	svchost.exe	0x990ef7b1b1a0	0x990ef71245c0	0x0	0x0	0x7fffe5ba0000	0x7fffe5cb1fff	Vad 
+L7740: 4312	svchost.exe	0x990ef7893120	0x990ef788cb40	0x990ef788dea0	0x990ef7b054e0	0x7fffeb630000	0x7fffeb669fff	Vad 
+L7741: 4312	svchost.exe	0x990ef788dea0	0x990ef7893120	0x0	0x0	0x7fffeb2c0000	0x7fffeb34dfff	Vad 
+L7742: 4312	svchost.exe	0x990ef7b054e0	0x990ef7893120	0x0	0x990ef89b4c60	0x7fffeb7e0000	0x7fffeb7fbfff	Vad 
+L7743: 4312	svchost.exe	0x990ef89b4c60	0x990ef7b054e0	0x0	0x0	0x7fffed300000	0x7fffed362fff	Vad 
+L7744: 4312	svchost.exe	0x990ef711a700	0x990ef7114800	0x990ef7b02240	0x990ef7114260	0x7ffff39c0000	0x7ffff3a76fff	Vad 
+L7745: 4312	svchost.exe	0x990ef7b02240	0x990ef711a700	0x990ef7113860	0x990ef7b09540	0x7fffedd70000	0x7fffedfb6fff	Vad 
+L7746: 4312	svchost.exe	0x990ef7113860	0x990ef7b02240	0x0	0x0	0x7fffed8c0000	0x7fffedb86fff	Vad 
+L7747: 4312	svchost.exe	0x990ef7b09540	0x990ef7b02240	0x990ef7b09400	0x990ef7b08e60	0x7fffee670000	0x7fffee695fff	Vad 
+L7748: 4312	svchost.exe	0x990ef7b09400	0x990ef7b09540	0x0	0x0	0x7fffee2a0000	0x7fffee3c9fff	Vad 
+L7749: 4312	svchost.exe	0x990ef7b08e60	0x990ef7b09540	0x0	0x0	0x7ffff0470000	0x7ffff048ffff	Vad 
+L7750: 4312	svchost.exe	0x990ef7114260	0x990ef711a700	0x990ef7b07880	0x990ef7b07a60	0x7ffff49f0000	0x7ffff49fffff	Vad 
+L7751: 4312	svchost.exe	0x990ef7b07880	0x990ef7114260	0x0	0x0	0x7ffff4030000	0x7ffff4040fff	Vad 
+L7752: 4312	svchost.exe	0x990ef7b07a60	0x990ef7114260	0x0	0x0	0x7ffff4a00000	0x7ffff4a35fff	Vad 
+L7753: 4312	svchost.exe	0x990ef7127b80	0x990ef7127ea0	0x990ef713eb00	0x990ef7129660	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 
+L7754: 4312	svchost.exe	0x990ef713eb00	0x990ef7127b80	0x990ef788f020	0x990ef7126c80	0x7ffff61c0000	0x7ffff6220fff	Vad 
+L7755: 4312	svchost.exe	0x990ef788f020	0x990ef713eb00	0x990ef788dd60	0x990ef71405e0	0x7ffff5b40000	0x7ffff5b72fff	Vad 
+L7756: 4312	svchost.exe	0x990ef788dd60	0x990ef788f020	0x990ef7b08820	0x990ef788dc20	0x7ffff5990000	0x7ffff59a5fff	Vad 
+L7757: 4312	svchost.exe	0x990ef7b08820	0x990ef788dd60	0x990ef788ec60	0x990ef788dae0	0x7ffff5640000	0x7ffff56adfff	Vad 
+L7758: 4312	svchost.exe	0x990ef788ec60	0x990ef7b08820	0x0	0x0	0x7ffff5370000	0x7ffff53bbfff	Vad 
+L7759: 4312	svchost.exe	0x990ef788dae0	0x990ef7b08820	0x0	0x0	0x7ffff5920000	0x7ffff592efff	Vad 
+L7760: 4312	svchost.exe	0x990ef788dc20	0x990ef788dd60	0x0	0x0	0x7ffff5af0000	0x7ffff5b31fff	Vad 
+L7761: 4312	svchost.exe	0x990ef71405e0	0x990ef788f020	0x0	0x990ef7140040	0x7ffff5e80000	0x7ffff5ed9fff	Vad 
+L7762: 4312	svchost.exe	0x990ef7140040	0x990ef71405e0	0x0	0x0	0x7ffff61a0000	0x7ffff61b6fff	Vad 
+L7763: 4312	svchost.exe	0x990ef7126c80	0x990ef713eb00	0x990ef7888040	0x990ef7127a40	0x7ffff65f0000	0x7ffff69e3fff	Vad 
+L7764: 4312	svchost.exe	0x990ef7888040	0x990ef7126c80	0x990ef7123760	0x990ef7128bc0	0x7ffff6340000	0x7ffff64acfff	Vad 
+L7765: 4312	svchost.exe	0x990ef7123760	0x990ef7888040	0x0	0x0	0x7ffff6230000	0x7ffff625cfff	Vad 
+L7766: 4312	svchost.exe	0x990ef7128bc0	0x990ef7888040	0x0	0x0	0x7ffff6540000	0x7ffff65e7fff	Vad 
+L7767: 4312	svchost.exe	0x990ef7127a40	0x990ef7126c80	0x0	0x0	0x7ffff69f0000	0x7ffff6a19fff	Vad 
+L7768: 4312	svchost.exe	0x990ef7129660	0x990ef7127b80	0x990ef7128620	0x990ef7127d60	0x7ffff90f0000	0x7ffff911dfff	Vad 
+L7769: 4312	svchost.exe	0x990ef7128620	0x990ef7129660	0x990ef7129340	0x990ef7b09220	0x7ffff7c20000	0x7ffff7de7fff	Vad 
+L7770: 4312	svchost.exe	0x990ef7129340	0x990ef7128620	0x990ef7128c60	0x990ef7b092c0	0x7ffff75d0000	0x7ffff7675fff	Vad 
+L7771: 4312	svchost.exe	0x990ef7128c60	0x990ef7129340	0x0	0x0	0x7ffff6c30000	0x7ffff6d5dfff	Vad 
+L7772: 4312	svchost.exe	0x990ef7b092c0	0x990ef7129340	0x990ef7890060	0x990ef7128760	0x7ffff7810000	0x7ffff7886fff	Vad 
+L7773: 4312	svchost.exe	0x990ef7890060	0x990ef7b092c0	0x0	0x0	0x7ffff7680000	0x7ffff77f9fff	Vad 
+L7774: 4312	svchost.exe	0x990ef7128760	0x990ef7b092c0	0x0	0x0	0x7ffff7890000	0x7ffff7c14fff	Vad 
+L7775: 4312	svchost.exe	0x990ef7b09220	0x990ef7128620	0x990ef71292a0	0x990ef7140180	0x7ffff8700000	0x7ffff870cfff	Vad 
+L7776: 4312	svchost.exe	0x990ef71292a0	0x990ef7b09220	0x0	0x0	0x7ffff8050000	0x7ffff816afff	Vad 
+L7777: 4312	svchost.exe	0x990ef7140180	0x990ef7b09220	0x0	0x0	0x7ffff8f00000	0x7ffff8fd9fff	Vad 
+L7778: 4312	svchost.exe	0x990ef7127d60	0x990ef7129660	0x990ef71259c0	0x990ef7102240	0x7ffff9770000	0x7ffff981bfff	Vad 
+L7779: 4312	svchost.exe	0x990ef71259c0	0x990ef7127d60	0x990ef712e700	0x990ef712a6a0	0x7ffff9560000	0x7ffff962bfff	Vad 
+L7780: 4312	svchost.exe	0x990ef712e700	0x990ef71259c0	0x0	0x0	0x7ffff94b0000	0x7ffff9559fff	Vad 
+L7781: 4312	svchost.exe	0x990ef712a6a0	0x990ef71259c0	0x990ef788e9e0	0x0	0x7ffff9730000	0x7ffff9763fff	Vad 
+L7782: 4312	svchost.exe	0x990ef788e9e0	0x990ef712a6a0	0x0	0x0	0x7ffff9630000	0x7ffff9729fff	Vad 
+L7783: 4312	svchost.exe	0x990ef7102240	0x990ef7127d60	0x990ef7112f00	0x990ef71257e0	0x7ffff9900000	0x7ffff99b0fff	Vad 
+L7784: 4312	svchost.exe	0x990ef7112f00	0x990ef7102240	0x0	0x0	0x7ffff9820000	0x7ffff98ddfff	Vad 
+L7785: 4312	svchost.exe	0x990ef71257e0	0x990ef7102240	0x0	0x0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 
+
+--- vadinfo.txt ---
+L7678: 4312	svchost.exe	0xffff990ef71275e0	0x7df5a5910000	0x7ff5a590ffff	Vad 	PAGE_NOACCESS	1	0	0x0	N/A	Disabled
+L7679: 4312	svchost.exe	0xffff990ef71265a0	0x2b0f5a30000	0x2b0f5a40fff	Vad 	PAGE_READONLY	0	0	0xffff990ef71275e0	\Windows\System32\C_437.NLS	Disabled
+L7680: 4312	svchost.exe	0xffff990ef77ada90	0xebb2b00000	0xebb2b7ffff	VadS	PAGE_READWRITE	11	1	0xffff990ef71265a0	N/A	Disabled
+L7681: 4312	svchost.exe	0xffff990ef77a9300	0xebb2400000	0xebb25fffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77ada90	N/A	Disabled
+L7682: 4312	svchost.exe	0xffff990ef77a8180	0x7ffed000	0x7ffedfff	VadS	PAGE_READONLY	1	1	0xffff990ef77a9300	N/A	Disabled
+L7683: 4312	svchost.exe	0xffff990ef77a8810	0x7ffe0000	0x7ffe0fff	VadS	PAGE_READONLY	1	1	0xffff990ef77a8180	N/A	Disabled
+L7684: 4312	svchost.exe	0xffff990ef77a8db0	0xebb22e0000	0xebb235ffff	VadS	PAGE_READWRITE	12	1	0xffff990ef77a8180	N/A	Disabled
+L7685: 4312	svchost.exe	0xffff990ef77afca0	0xebb2360000	0xebb23dffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77a8db0	N/A	Disabled
+L7686: 4312	svchost.exe	0xffff990ef77a9620	0xebb2900000	0xebb297ffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77a9300	N/A	Disabled
+L7687: 4312	svchost.exe	0xffff990ef77a9d50	0xebb2980000	0xebb29fffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77a9620	N/A	Disabled
+L7688: 4312	svchost.exe	0xffff990ef7125600	0x2b0f59b0000	0x2b0f59d9fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77ada90	N/A	Disabled
+L7689: 4312	svchost.exe	0xffff990ef77a9440	0x2b0f5990000	0x2b0f599ffff	VadS	PAGE_READWRITE	9	1	0xffff990ef7125600	N/A	Disabled
+L7690: 4312	svchost.exe	0xffff990ef71263c0	0x2b0f59a0000	0x2b0f59a1fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef77a9440	N/A	Disabled
+L7691: 4312	svchost.exe	0xffff990ef77a8950	0x2b0f5a00000	0x2b0f5a01fff	VadS	PAGE_READWRITE	2	1	0xffff990ef7125600	N/A	Disabled
+L7692: 4312	svchost.exe	0xffff990ef7125d80	0x2b0f59e0000	0x2b0f59e3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77a8950	N/A	Disabled
+L7693: 4312	svchost.exe	0xffff990ef71268c0	0x2b0f59f0000	0x2b0f59f0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7125d80	N/A	Disabled
+L7694: 4312	svchost.exe	0xffff990ef7125b00	0x2b0f5a10000	0x2b0f5a20fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77a8950	\Windows\System32\C_1252.NLS	Disabled
+L7695: 4312	svchost.exe	0xffff990ef712a2e0	0x2b0f5de0000	0x2b0f5de7fff	Vad 	PAGE_READONLY	0	0	0xffff990ef71265a0	N/A	Disabled
+L7696: 4312	svchost.exe	0xffff990ef7129a20	0x2b0f5ac0000	0x2b0f5b92fff	Vad 	PAGE_READONLY	0	0	0xffff990ef712a2e0	\Windows\System32\locale.nls	Disabled
+L7697: 4312	svchost.exe	0xffff990ef7126e60	0x2b0f5a80000	0x2b0f5a83fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7129a20	N/A	Disabled
+L7698: 4312	svchost.exe	0xffff990ef7126280	0x2b0f5a60000	0x2b0f5a68fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7126e60	N/A	Disabled
+L7699: 4312	svchost.exe	0xffff990ef7125880	0x2b0f5a50000	0x2b0f5a52fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7126280	\Windows\System32\l_intl.nls	Disabled
+L7700: 4312	svchost.exe	0xffff990ef7127040	0x2b0f5a70000	0x2b0f5a78fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7126280	N/A	Disabled
+L7701: 4312	svchost.exe	0xffff990ef7127400	0x2b0f5aa0000	0x2b0f5aaffff	Vad 	PAGE_READWRITE	0	0	0xffff990ef7126e60	N/A	Disabled
+
+=== PID 4340 (svchost.exe, ppid=896) ===
+Cmdline: C:\WINDOWS\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s webthreatdefusersvc
+
+--- pslist.txt ---
+L72: 4340	896	svchost.exe	0x990ef4979080	3	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L72: 4340	svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s webthreatdefusersvc
+
+--- privileges.txt ---
+L2350: 4340	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L2351: 4340	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2352: 4340	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2353: 4340	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2354: 4340	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2355: 4340	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2356: 4340	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2357: 4340	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2358: 4340	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2359: 4340	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2360: 4340	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L2361: 4340	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2362: 4340	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2363: 4340	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2364: 4340	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2365: 4340	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L2366: 4340	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L2367: 4340	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2368: 4340	svchost.exe	20	SeDebugPrivilege		Debug programs
+L2369: 4340	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L2370: 4340	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2371: 4340	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2372: 4340	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2373: 4340	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2374: 4340	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2375: 4340	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2376: 4340	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2377: 4340	svchost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2378: 4340	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2379: 4340	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2380: 4340	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2381: 4340	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2382: 4340	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2383: 4340	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2384: 4340	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L2530: 4340	svchost.exe	0x7ff7d0000000	0x13000	svchost.exe	C:\WINDOWS\system32\svchost.exe	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2531: 4340	svchost.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2532: 4340	svchost.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2533: 4340	svchost.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2534: 4340	svchost.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2535: 4340	svchost.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2536: 4340	svchost.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2537: 4340	svchost.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2538: 4340	svchost.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2539: 4340	svchost.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2540: 4340	svchost.exe	0x7ffff7c20000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2541: 4340	svchost.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2542: 4340	svchost.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2543: 4340	svchost.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2544: 4340	svchost.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2545: 4340	svchost.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2546: 4340	svchost.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2547: 4340	svchost.exe	0x7fffe0e80000	0x49000	webthreatdefusersvc.dll	c:\windows\system32\webthreatdefusersvc.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2548: 4340	svchost.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2549: 4340	svchost.exe	0x7fffe0d30000	0x27000	ThreatResponseEngine.dll	C:\Windows\System32\ThreatResponseEngine.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2550: 4340	svchost.exe	0x7fffed300000	0x60000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2551: 4340	svchost.exe	0x7fffe3ee0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2552: 4340	svchost.exe	0x7fffea0a0000	0x17000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+
+--- envars.txt ---
+L1970: 4340	svchost.exe	0x1659c104c20	ALLUSERSPROFILE	C:\ProgramData
+L1971: 4340	svchost.exe	0x1659c104c20	APPDATA	C:\Users\kali\AppData\Roaming
+L1972: 4340	svchost.exe	0x1659c104c20	CommonProgramFiles	C:\Program Files\Common Files
+L1973: 4340	svchost.exe	0x1659c104c20	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
+L1974: 4340	svchost.exe	0x1659c104c20	CommonProgramW6432	C:\Program Files\Common Files
+L1975: 4340	svchost.exe	0x1659c104c20	COMPUTERNAME	CLEANWINDOWS11
+L1976: 4340	svchost.exe	0x1659c104c20	ComSpec	C:\WINDOWS\system32\cmd.exe
+L1977: 4340	svchost.exe	0x1659c104c20	DriverData	C:\Windows\System32\Drivers\DriverData
+L1978: 4340	svchost.exe	0x1659c104c20	HOMEDRIVE	C:
+L1979: 4340	svchost.exe	0x1659c104c20	HOMEPATH	\Users\kali
+L1980: 4340	svchost.exe	0x1659c104c20	LOCALAPPDATA	C:\Users\kali\AppData\Local
+L1981: 4340	svchost.exe	0x1659c104c20	LOGONSERVER	\\CLEANWINDOWS11
+L1982: 4340	svchost.exe	0x1659c104c20	NUMBER_OF_PROCESSORS	4
+L1983: 4340	svchost.exe	0x1659c104c20	OneDrive	C:\Users\kali\OneDrive
+L1984: 4340	svchost.exe	0x1659c104c20	OS	Windows_NT
+L1985: 4340	svchost.exe	0x1659c104c20	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\kali\AppData\Local\Microsoft\WindowsApps
+L1986: 4340	svchost.exe	0x1659c104c20	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+L1987: 4340	svchost.exe	0x1659c104c20	PROCESSOR_ARCHITECTURE	AMD64
+L1988: 4340	svchost.exe	0x1659c104c20	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+L1989: 4340	svchost.exe	0x1659c104c20	PROCESSOR_LEVEL	6
+L1990: 4340	svchost.exe	0x1659c104c20	PROCESSOR_REVISION	ba03
+L1991: 4340	svchost.exe	0x1659c104c20	ProgramData	C:\ProgramData
+L1992: 4340	svchost.exe	0x1659c104c20	ProgramFiles	C:\Program Files
+L1993: 4340	svchost.exe	0x1659c104c20	ProgramFiles(x86)	C:\Program Files (x86)
+L1994: 4340	svchost.exe	0x1659c104c20	ProgramW6432	C:\Program Files
+L1995: 4340	svchost.exe	0x1659c104c20	PSModulePath	%ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+L1996: 4340	svchost.exe	0x1659c104c20	PUBLIC	C:\Users\Public
+L1997: 4340	svchost.exe	0x1659c104c20	SystemDrive	C:
+L1998: 4340	svchost.exe	0x1659c104c20	SystemRoot	C:\WINDOWS
+L1999: 4340	svchost.exe	0x1659c104c20	TEMP	C:\Users\kali\AppData\Local\Temp
+L2000: 4340	svchost.exe	0x1659c104c20	TMP	C:\Users\kali\AppData\Local\Temp
+L2001: 4340	svchost.exe	0x1659c104c20	USERDOMAIN	CLEANWINDOWS11
+L2002: 4340	svchost.exe	0x1659c104c20	USERDOMAIN_ROAMINGPROFILE	CLEANWINDOWS11
+L2003: 4340	svchost.exe	0x1659c104c20	USERNAME	kali
+L2004: 4340	svchost.exe	0x1659c104c20	USERPROFILE	C:\Users\kali
+L2005: 4340	svchost.exe	0x1659c104c20	windir	C:\WINDOWS
+
+--- pstree.txt ---
+L84: ** 4340	896	svchost.exe	0x990ef4979080	3	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s webthreatdefusersvc	C:\WINDOWS\system32\svchost.exe
+
+--- psscan.txt ---
+L23: 4340	896	svchost.exe	0x990ef4979080	3	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	Disabled
+
+--- threads.txt ---
+L801: 0x990ef77a1080	4340	4344	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7d0004fe0	\Windows\System32\svchost.exe	2026-05-13 19:15:35.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L802: 0x990ef77c0080	4340	4404	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:15:36.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L803: 0x990ef40e3100	4340	6732	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:06.000000 UTC	1600-08-22 23:57:32.000000 UTC
+
+--- thrdscan.txt ---
+L244: 0x990ef40e3100	4340	6732	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:06.000000 UTC	1600-08-22 23:57:32.000000 UTC
+L1046: 0x990ef77a1080	4340	4344	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7d0004fe0	\Windows\System32\svchost.exe	2026-05-13 19:15:35.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1055: 0x990ef77c0080	4340	4404	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:15:36.000000 UTC	1600-08-22 23:57:38.000000 UTC
+
+--- ldrmodules.txt ---
+L2648: 4340	svchost.exe	0x1659bed0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2649: 4340	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2650: 4340	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2651: 4340	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2652: 4340	svchost.exe	0x7fffe0d30000	True	True	True	\Windows\System32\ThreatResponseEngine.dll
+L2653: 4340	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2654: 4340	svchost.exe	0x7fffe0e80000	True	True	True	\Windows\System32\webthreatdefusersvc.dll
+L2655: 4340	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2656: 4340	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2657: 4340	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2658: 4340	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2659: 4340	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2660: 4340	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2661: 4340	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2662: 4340	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2663: 4340	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2664: 4340	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2665: 4340	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2666: 4340	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2667: 4340	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2668: 4340	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2669: 4340	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2670: 4340	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L2671: 4340	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_ldrmodules.txt ---
+L2648: 4340	svchost.exe	0x1659bed0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2649: 4340	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2650: 4340	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2651: 4340	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2652: 4340	svchost.exe	0x7fffe0d30000	True	True	True	\Windows\System32\ThreatResponseEngine.dll
+L2653: 4340	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2654: 4340	svchost.exe	0x7fffe0e80000	True	True	True	\Windows\System32\webthreatdefusersvc.dll
+L2655: 4340	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2656: 4340	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2657: 4340	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2658: 4340	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2659: 4340	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2660: 4340	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2661: 4340	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2662: 4340	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2663: 4340	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2664: 4340	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2665: 4340	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2666: 4340	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2667: 4340	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2668: 4340	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2669: 4340	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2670: 4340	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L2671: 4340	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- vadwalk.txt ---
+L7786: 4340	svchost.exe	0x990ef77a8cc0	0x0	0x990ef713a780	0x990ef713cb20	0x1659c000000	0x1659cffffff	VadS
+L7787: 4340	svchost.exe	0x990ef713a780	0x990ef77a8cc0	0x990ef77a9da0	0x990ef713bf40	0x1659b980000	0x1659b990fff	Vad 
+L7788: 4340	svchost.exe	0x990ef77a9da0	0x990ef713a780	0x990ef77a8770	0x990ef7137440	0x2c0d300000	0x2c0d37ffff	VadS
+L7789: 4340	svchost.exe	0x990ef77a8770	0x990ef77a9da0	0x990ef77a8d10	0x990ef77a8bd0	0x2c0ce10000	0x2c0ce8ffff	VadS
+L7790: 4340	svchost.exe	0x990ef77a8d10	0x990ef77a8770	0x990ef77a8900	0x0	0x7ffed000	0x7ffedfff	VadS
+L7791: 4340	svchost.exe	0x990ef77a8900	0x990ef77a8d10	0x0	0x0	0x7ffe0000	0x7ffe0fff	VadS
+L7792: 4340	svchost.exe	0x990ef77a8bd0	0x990ef77a8770	0x990ef77ac410	0x0	0x2c0d000000	0x2c0d1fffff	VadS
+L7793: 4340	svchost.exe	0x990ef77ac410	0x990ef77a8bd0	0x0	0x0	0x2c0ce90000	0x2c0cf0ffff	VadS
+L7794: 4340	svchost.exe	0x990ef7137440	0x990ef77a9da0	0x990ef77a8270	0x990ef77a8e50	0x1659b900000	0x1659b929fff	Vad 
+L7795: 4340	svchost.exe	0x990ef77a8270	0x990ef7137440	0x0	0x990ef7139d80	0x1659b8e0000	0x1659b8effff	VadS
+L7796: 4340	svchost.exe	0x990ef7139d80	0x990ef77a8270	0x0	0x0	0x1659b8f0000	0x1659b8f1fff	Vad 
+L7797: 4340	svchost.exe	0x990ef77a8e50	0x990ef7137440	0x990ef71392e0	0x990ef713a960	0x1659b950000	0x1659b951fff	VadS
+L7798: 4340	svchost.exe	0x990ef71392e0	0x990ef77a8e50	0x0	0x990ef713adc0	0x1659b930000	0x1659b933fff	Vad 
+L7799: 4340	svchost.exe	0x990ef713adc0	0x990ef71392e0	0x0	0x0	0x1659b940000	0x1659b940fff	Vad 
+L7800: 4340	svchost.exe	0x990ef713a960	0x990ef77a8e50	0x0	0x0	0x1659b960000	0x1659b970fff	Vad 
+L7801: 4340	svchost.exe	0x990ef713bf40	0x990ef713a780	0x990ef7139ec0	0x990ef77a9bc0	0x1659ba10000	0x1659bae2fff	Vad 
+L7802: 4340	svchost.exe	0x990ef7139ec0	0x990ef713bf40	0x990ef713abe0	0x990ef713bae0	0x1659b9d0000	0x1659b9d3fff	Vad 
+L7803: 4340	svchost.exe	0x990ef713abe0	0x990ef7139ec0	0x990ef7139380	0x990ef7139920	0x1659b9b0000	0x1659b9b8fff	Vad 
+L7804: 4340	svchost.exe	0x990ef7139380	0x990ef713abe0	0x0	0x0	0x1659b9a0000	0x1659b9a2fff	Vad 
+L7805: 4340	svchost.exe	0x990ef7139920	0x990ef713abe0	0x0	0x0	0x1659b9c0000	0x1659b9c8fff	Vad 
+L7806: 4340	svchost.exe	0x990ef713bae0	0x990ef7139ec0	0x990ef7139560	0x990ef713d7a0	0x1659b9f0000	0x1659b9fffff	Vad 
+L7807: 4340	svchost.exe	0x990ef7139560	0x990ef713bae0	0x0	0x0	0x1659b9e0000	0x1659b9e3fff	Vad 
+L7808: 4340	svchost.exe	0x990ef713d7a0	0x990ef713bae0	0x0	0x0	0x1659ba00000	0x1659ba02fff	Vad 
+L7809: 4340	svchost.exe	0x990ef77a9bc0	0x990ef713bf40	0x990ef615f720	0x990ef77a95d0	0x1659bef0000	0x1659bf09fff	VadS
+L7810: 4340	svchost.exe	0x990ef615f720	0x990ef77a9bc0	0x990ef713c940	0x990ef71051c0	0x1659bd30000	0x1659bd37fff	Vad 
+L7811: 4340	svchost.exe	0x990ef713c940	0x990ef615f720	0x990ef713bc20	0x990ef615e1e0	0x1659bb10000	0x1659bb20fff	Vad 
+L7812: 4340	svchost.exe	0x990ef713bc20	0x990ef713c940	0x0	0x0	0x1659baf0000	0x1659bb00fff	Vad 
+L7813: 4340	svchost.exe	0x990ef615e1e0	0x990ef713c940	0x0	0x0	0x1659bb30000	0x1659bd2ffff	Vad 
+L7814: 4340	svchost.exe	0x990ef71051c0	0x990ef615f720	0x990ef7102ce0	0x990ef7116060	0x1659bed0000	0x1659bed0fff	Vad 
+L7815: 4340	svchost.exe	0x990ef7102ce0	0x990ef71051c0	0x0	0x0	0x1659bd40000	0x1659bec0fff	Vad 
+L7816: 4340	svchost.exe	0x990ef7116060	0x990ef71051c0	0x0	0x0	0x1659bee0000	0x1659bee0fff	Vad 
+L7817: 4340	svchost.exe	0x990ef77a95d0	0x990ef77a9bc0	0x990ef77a9800	0x990ef6ba15f0	0x1659bf20000	0x1659bf20fff	VadS
+L7818: 4340	svchost.exe	0x990ef77a9800	0x990ef77a95d0	0x0	0x0	0x1659bf10000	0x1659bf10fff	VadS
+L7819: 4340	svchost.exe	0x990ef6ba15f0	0x990ef77a95d0	0x990ef711fb60	0x0	0x1659bf50000	0x1659bf97fff	Vad 
+L7820: 4340	svchost.exe	0x990ef711fb60	0x990ef6ba15f0	0x0	0x0	0x1659bf30000	0x1659bf30fff	Vad 
+L7821: 4340	svchost.exe	0x990ef713cb20	0x990ef77a8cc0	0x990ef7137ee0	0x990ef7139420	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 
+L7822: 4340	svchost.exe	0x990ef7137ee0	0x990ef713cb20	0x990ef713d0c0	0x990ef713faa0	0x7df5a5910000	0x7ff5a590ffff	Vad 
+L7823: 4340	svchost.exe	0x990ef713d0c0	0x990ef7137ee0	0x990ef71143a0	0x990ef77a8f40	0x7df4a37d0000	0x7df4a38cffff	Vad 
+L7824: 4340	svchost.exe	0x990ef71143a0	0x990ef713d0c0	0x990ef7103aa0	0x0	0x1659e410000	0x1659e74afff	Vad 
+L7825: 4340	svchost.exe	0x990ef7103aa0	0x990ef71143a0	0x0	0x0	0x1659d000000	0x1659e400fff	Vad 
+L7826: 4340	svchost.exe	0x990ef77a8f40	0x990ef713d0c0	0x990ef77a8590	0x990ef71387a0	0x7df5a38f0000	0x7df5a58f0fff	VadS
+L7827: 4340	svchost.exe	0x990ef77a8590	0x990ef77a8f40	0x0	0x0	0x7df4a38d0000	0x7df5a38effff	VadS
+L7828: 4340	svchost.exe	0x990ef71387a0	0x990ef77a8f40	0x0	0x0	0x7df5a5900000	0x7df5a5900fff	Vad 
+L7829: 4340	svchost.exe	0x990ef713faa0	0x990ef7137ee0	0x990ef710a760	0x990ef7139b00	0x7ffff50d0000	0x7ffff50edfff	Vad 
+L7830: 4340	svchost.exe	0x990ef710a760	0x990ef713faa0	0x990ef71248e0	0x990ef7126140	0x7fffe3ee0000	0x7fffe3facfff	Vad 
+L7831: 4340	svchost.exe	0x990ef71248e0	0x990ef710a760	0x990ef71356e0	0x990ef7110c00	0x7fffe0d30000	0x7fffe0d59fff	Vad 
+L7832: 4340	svchost.exe	0x990ef71356e0	0x990ef71248e0	0x0	0x0	0x7ff7d0000000	0x7ff7d0015fff	Vad 
+L7833: 4340	svchost.exe	0x990ef7110c00	0x990ef71248e0	0x0	0x0	0x7fffe0e80000	0x7fffe0ecbfff	Vad 
+L7834: 4340	svchost.exe	0x990ef7126140	0x990ef710a760	0x990ef788c8c0	0x0	0x7fffed300000	0x7fffed362fff	Vad 
+L7835: 4340	svchost.exe	0x990ef788c8c0	0x990ef7126140	0x0	0x0	0x7fffea0a0000	0x7fffea0b9fff	Vad 
+L7836: 4340	svchost.exe	0x990ef7139b00	0x990ef713faa0	0x990ef713e740	0x990ef7141da0	0x7ffff65f0000	0x7ffff69e3fff	Vad 
+L7837: 4340	svchost.exe	0x990ef713e740	0x990ef7139b00	0x0	0x0	0x7ffff6540000	0x7ffff65e7fff	Vad 
+L7838: 4340	svchost.exe	0x990ef7141da0	0x990ef7139b00	0x0	0x0	0x7ffff69f0000	0x7ffff6a19fff	Vad 
+L7839: 4340	svchost.exe	0x990ef7139420	0x990ef713cb20	0x990ef713e240	0x990ef713f0a0	0x7ffff9560000	0x7ffff962bfff	Vad 
+L7840: 4340	svchost.exe	0x990ef713e240	0x990ef7139420	0x990ef7104180	0x990ef71414e0	0x7ffff7c20000	0x7ffff7de7fff	Vad 
+L7841: 4340	svchost.exe	0x990ef7104180	0x990ef713e240	0x990ef71419e0	0x990ef71400e0	0x7ffff75d0000	0x7ffff7675fff	Vad 
+L7842: 4340	svchost.exe	0x990ef71419e0	0x990ef7104180	0x0	0x0	0x7ffff6c30000	0x7ffff6d5dfff	Vad 
+L7843: 4340	svchost.exe	0x990ef71400e0	0x990ef7104180	0x0	0x0	0x7ffff7890000	0x7ffff7c14fff	Vad 
+L7844: 4340	svchost.exe	0x990ef71414e0	0x990ef713e240	0x990ef713f960	0x990ef7106480	0x7ffff90f0000	0x7ffff911dfff	Vad 
+L7845: 4340	svchost.exe	0x990ef713f960	0x990ef71414e0	0x0	0x0	0x7ffff8050000	0x7ffff816afff	Vad 
+L7846: 4340	svchost.exe	0x990ef7106480	0x990ef71414e0	0x0	0x0	0x7ffff94b0000	0x7ffff9559fff	Vad 
+L7847: 4340	svchost.exe	0x990ef713f0a0	0x990ef7139420	0x990ef7102f60	0x990ef7136ea0	0x7ffff9770000	0x7ffff981bfff	Vad 
+L7848: 4340	svchost.exe	0x990ef7102f60	0x990ef713f0a0	0x0	0x0	0x7ffff9730000	0x7ffff9763fff	Vad 
+L7849: 4340	svchost.exe	0x990ef7136ea0	0x990ef713f0a0	0x990ef71150c0	0x0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 
+L7850: 4340	svchost.exe	0x990ef71150c0	0x990ef7136ea0	0x0	0x0	0x7ffff9900000	0x7ffff99b0fff	Vad 
+
+--- vadinfo.txt ---
+L7786: 4340	svchost.exe	0xffff990ef77a8cc0	0x1659c000000	0x1659cffffff	VadS	PAGE_READWRITE	110	1	0x0	N/A	Disabled
+L7787: 4340	svchost.exe	0xffff990ef713a780	0x1659b980000	0x1659b990fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77a8cc0	\Windows\System32\C_437.NLS	Disabled
+L7788: 4340	svchost.exe	0xffff990ef77a9da0	0x2c0d300000	0x2c0d37ffff	VadS	PAGE_READWRITE	11	1	0xffff990ef713a780	N/A	Disabled
+L7789: 4340	svchost.exe	0xffff990ef77a8770	0x2c0ce10000	0x2c0ce8ffff	VadS	PAGE_READWRITE	12	1	0xffff990ef77a9da0	N/A	Disabled
+L7790: 4340	svchost.exe	0xffff990ef77a8d10	0x7ffed000	0x7ffedfff	VadS	PAGE_READONLY	1	1	0xffff990ef77a8770	N/A	Disabled
+L7791: 4340	svchost.exe	0xffff990ef77a8900	0x7ffe0000	0x7ffe0fff	VadS	PAGE_READONLY	1	1	0xffff990ef77a8d10	N/A	Disabled
+L7792: 4340	svchost.exe	0xffff990ef77a8bd0	0x2c0d000000	0x2c0d1fffff	VadS	PAGE_READWRITE	7	1	0xffff990ef77a8770	N/A	Disabled
+L7793: 4340	svchost.exe	0xffff990ef77ac410	0x2c0ce90000	0x2c0cf0ffff	VadS	PAGE_READWRITE	11	1	0xffff990ef77a8bd0	N/A	Disabled
+L7794: 4340	svchost.exe	0xffff990ef7137440	0x1659b900000	0x1659b929fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77a9da0	N/A	Disabled
+L7795: 4340	svchost.exe	0xffff990ef77a8270	0x1659b8e0000	0x1659b8effff	VadS	PAGE_READWRITE	6	1	0xffff990ef7137440	N/A	Disabled
+L7796: 4340	svchost.exe	0xffff990ef7139d80	0x1659b8f0000	0x1659b8f1fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef77a8270	N/A	Disabled
+L7797: 4340	svchost.exe	0xffff990ef77a8e50	0x1659b950000	0x1659b951fff	VadS	PAGE_READWRITE	2	1	0xffff990ef7137440	N/A	Disabled
+L7798: 4340	svchost.exe	0xffff990ef71392e0	0x1659b930000	0x1659b933fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77a8e50	N/A	Disabled
+L7799: 4340	svchost.exe	0xffff990ef713adc0	0x1659b940000	0x1659b940fff	Vad 	PAGE_READONLY	0	0	0xffff990ef71392e0	N/A	Disabled
+L7800: 4340	svchost.exe	0xffff990ef713a960	0x1659b960000	0x1659b970fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77a8e50	\Windows\System32\C_1252.NLS	Disabled
+L7801: 4340	svchost.exe	0xffff990ef713bf40	0x1659ba10000	0x1659bae2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef713a780	\Windows\System32\locale.nls	Disabled
+L7802: 4340	svchost.exe	0xffff990ef7139ec0	0x1659b9d0000	0x1659b9d3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef713bf40	N/A	Disabled
+L7803: 4340	svchost.exe	0xffff990ef713abe0	0x1659b9b0000	0x1659b9b8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef7139ec0	N/A	Disabled
+L7804: 4340	svchost.exe	0xffff990ef7139380	0x1659b9a0000	0x1659b9a2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef713abe0	\Windows\System32\l_intl.nls	Disabled
+L7805: 4340	svchost.exe	0xffff990ef7139920	0x1659b9c0000	0x1659b9c8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef713abe0	N/A	Disabled
+L7806: 4340	svchost.exe	0xffff990ef713bae0	0x1659b9f0000	0x1659b9fffff	Vad 	PAGE_READWRITE	0	0	0xffff990ef7139ec0	N/A	Disabled
+L7807: 4340	svchost.exe	0xffff990ef7139560	0x1659b9e0000	0x1659b9e3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef713bae0	N/A	Disabled
+L7808: 4340	svchost.exe	0xffff990ef713d7a0	0x1659ba00000	0x1659ba02fff	Vad 	PAGE_READONLY	0	0	0xffff990ef713bae0	\Windows\System32\l_intl.nls	Disabled
+L7809: 4340	svchost.exe	0xffff990ef77a9bc0	0x1659bef0000	0x1659bf09fff	VadS	PAGE_READWRITE	1	1	0xffff990ef713bf40	N/A	Disabled
+L7810: 4340	svchost.exe	0xffff990ef615f720	0x1659bd30000	0x1659bd37fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77a9bc0	N/A	Disabled
+L7811: 4340	svchost.exe	0xffff990ef713c940	0x1659bb10000	0x1659bb20fff	Vad 	PAGE_READONLY	0	0	0xffff990ef615f720	\Windows\System32\C_437.NLS	Disabled
+L7812: 4340	svchost.exe	0xffff990ef713bc20	0x1659baf0000	0x1659bb00fff	Vad 	PAGE_READONLY	0	0	0xffff990ef713c940	\Windows\System32\C_1252.NLS	Disabled
+L7813: 4340	svchost.exe	0xffff990ef615e1e0	0x1659bb30000	0x1659bd2ffff	Vad 	PAGE_READONLY	0	0	0xffff990ef713c940	N/A	Disabled
+L7814: 4340	svchost.exe	0xffff990ef71051c0	0x1659bed0000	0x1659bed0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef615f720	\Windows\System32\en-US\svchost.exe.mui	Disabled
+L7815: 4340	svchost.exe	0xffff990ef7102ce0	0x1659bd40000	0x1659bec0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef71051c0	N/A	Disabled
+L7816: 4340	svchost.exe	0xffff990ef7116060	0x1659bee0000	0x1659bee0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef71051c0	N/A	Disabled
+L7817: 4340	svchost.exe	0xffff990ef77a95d0	0x1659bf20000	0x1659bf20fff	VadS	PAGE_READWRITE	1	1	0xffff990ef77a9bc0	N/A	Disabled
+L7818: 4340	svchost.exe	0xffff990ef77a9800	0x1659bf10000	0x1659bf10fff	VadS	PAGE_READWRITE	1	1	0xffff990ef77a95d0	N/A	Disabled
+L7819: 4340	svchost.exe	0xffff990ef6ba15f0	0x1659bf50000	0x1659bf97fff	Vad 	PAGE_WRITECOPY	72	0	0xffff990ef77a95d0	N/A	Disabled
+L7820: 4340	svchost.exe	0xffff990ef711fb60	0x1659bf30000	0x1659bf30fff	Vad 	PAGE_READONLY	0	0	0xffff990ef6ba15f0	N/A	Disabled
+L7821: 4340	svchost.exe	0xffff990ef713cb20	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef77a8cc0	\Windows\System32\ucrtbase.dll	Disabled
+L7822: 4340	svchost.exe	0xffff990ef7137ee0	0x7df5a5910000	0x7ff5a590ffff	Vad 	PAGE_NOACCESS	1	0	0xffff990ef713cb20	N/A	Disabled
+L7823: 4340	svchost.exe	0xffff990ef713d0c0	0x7df4a37d0000	0x7df4a38cffff	Vad 	PAGE_READONLY	0	0	0xffff990ef7137ee0	N/A	Disabled
+L7824: 4340	svchost.exe	0xffff990ef71143a0	0x1659e410000	0x1659e74afff	Vad 	PAGE_READONLY	0	0	0xffff990ef713d0c0	\Windows\Globalization\Sorting\SortDefault.nls	Disabled
+L7825: 4340	svchost.exe	0xffff990ef7103aa0	0x1659d000000	0x1659e400fff	Vad 	PAGE_READONLY	0	0	0xffff990ef71143a0	N/A	Disabled
+L7826: 4340	svchost.exe	0xffff990ef77a8f40	0x7df5a38f0000	0x7df5a58f0fff	VadS	PAGE_READWRITE	2	1	0xffff990ef713d0c0	N/A	Disabled
+L7827: 4340	svchost.exe	0xffff990ef77a8590	0x7df4a38d0000	0x7df5a38effff	VadS	PAGE_READWRITE	2	1	0xffff990ef77a8f40	N/A	Disabled
+L7828: 4340	svchost.exe	0xffff990ef71387a0	0x7df5a5900000	0x7df5a5900fff	Vad 	PAGE_READONLY	0	0	0xffff990ef77a8f40	N/A	Disabled
+L7829: 4340	svchost.exe	0xffff990ef713faa0	0x7ffff50d0000	0x7ffff50edfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef7137ee0	\Windows\System32\kernel.appcore.dll	Disabled
+L7830: 4340	svchost.exe	0xffff990ef710a760	0x7fffe3ee0000	0x7fffe3facfff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef713faa0	\Windows\System32\OneCoreCommonProxyStub.dll	Disabled
+L7831: 4340	svchost.exe	0xffff990ef71248e0	0x7fffe0d30000	0x7fffe0d59fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef710a760	\Windows\System32\ThreatResponseEngine.dll	Disabled
+L7832: 4340	svchost.exe	0xffff990ef71356e0	0x7ff7d0000000	0x7ff7d0015fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef71248e0	\Windows\System32\svchost.exe	Disabled
+L7833: 4340	svchost.exe	0xffff990ef7110c00	0x7fffe0e80000	0x7fffe0ecbfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef71248e0	\Windows\System32\webthreatdefusersvc.dll	Disabled
+L7834: 4340	svchost.exe	0xffff990ef7126140	0x7fffed300000	0x7fffed362fff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef710a760	\Windows\System32\UserMgrProxy.dll	Disabled
+L7835: 4340	svchost.exe	0xffff990ef788c8c0	0x7fffea0a0000	0x7fffea0b9fff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef7126140	\Windows\System32\usermgrcli.dll	Disabled
+L7836: 4340	svchost.exe	0xffff990ef7139b00	0x7ffff65f0000	0x7ffff69e3fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef713faa0	\Windows\System32\KernelBase.dll	Disabled
+L7837: 4340	svchost.exe	0xffff990ef713e740	0x7ffff6540000	0x7ffff65e7fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef7139b00	\Windows\System32\bcryptprimitives.dll	Disabled
+L7838: 4340	svchost.exe	0xffff990ef7141da0	0x7ffff69f0000	0x7ffff6a19fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef7139b00	\Windows\System32\win32u.dll	Disabled
+L7839: 4340	svchost.exe	0xffff990ef7139420	0x7ffff9560000	0x7ffff962bfff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef713cb20	\Windows\System32\kernel32.dll	Disabled
+L7840: 4340	svchost.exe	0xffff990ef713e240	0x7ffff7c20000	0x7ffff7de7fff	Vad 	PAGE_EXECUTE_WRITECOPY	8	0	0xffff990ef7139420	\Windows\System32\user32.dll	Disabled
+L7841: 4340	svchost.exe	0xffff990ef7104180	0x7ffff75d0000	0x7ffff7675fff	Vad 	PAGE_EXECUTE_WRITECOPY	15	0	0xffff990ef713e240	\Windows\System32\msvcp_win.dll	Disabled
+L7842: 4340	svchost.exe	0xffff990ef71419e0	0x7ffff6c30000	0x7ffff6d5dfff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef7104180	\Windows\System32\gdi32full.dll	Disabled
+L7843: 4340	svchost.exe	0xffff990ef71400e0	0x7ffff7890000	0x7ffff7c14fff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef7104180	\Windows\System32\combase.dll	Disabled
+L7844: 4340	svchost.exe	0xffff990ef71414e0	0x7ffff90f0000	0x7ffff911dfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef713e240	\Windows\System32\gdi32.dll	Disabled
+L7845: 4340	svchost.exe	0xffff990ef713f960	0x7ffff8050000	0x7ffff816afff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef71414e0	\Windows\System32\rpcrt4.dll	Disabled
+L7846: 4340	svchost.exe	0xffff990ef7106480	0x7ffff94b0000	0x7ffff9559fff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef71414e0	\Windows\System32\sechost.dll	Disabled
+L7847: 4340	svchost.exe	0xffff990ef713f0a0	0x7ffff9770000	0x7ffff981bfff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef7139420	\Windows\System32\msvcrt.dll	Disabled
+L7848: 4340	svchost.exe	0xffff990ef7102f60	0x7ffff9730000	0x7ffff9763fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef713f0a0	\Windows\System32\imm32.dll	Disabled
+L7849: 4340	svchost.exe	0xffff990ef7136ea0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef713f0a0	\Windows\System32\ntdll.dll	Disabled
+L7850: 4340	svchost.exe	0xffff990ef71150c0	0x7ffff9900000	0x7ffff99b0fff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef7136ea0	\Windows\System32\clbcatq.dll	Disabled
+
+--- malware_pebmasquerade.txt ---
+L72: 4340	svchost.exe	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe	False	False
+
+--- sessions.txt ---
+L96: 1	-	4340	svchost.exe	CLEANWINDOWS11/kali	2026-05-13 19:15:35.000000 UTC
 
 === END OF PIVOT REPORT ===

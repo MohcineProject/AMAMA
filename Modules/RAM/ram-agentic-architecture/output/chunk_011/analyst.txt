@@ -1,0 +1,63 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 4948 — userinit.exe**
+
+Agent 1 flags: orphaned parent (PPID 824 unknown), missing cmdline.
+
+Evidence analysis:
+- `pslist.txt` L78: PPID 824 is listed as unknown/not in process list. This is notable but has a benign explanation: `winlogon.exe` (the legitimate parent of `userinit.exe`) typically exits after launching `userinit.exe`, so the parent PID may simply no longer be present in the live process list at capture time. This is standard Windows behavior.
+- `pstree.txt` L129: Full path is `\Device\HarddiskVolume4\Windows\System32\userinit.exe` — legitimate system path.
+- `pstree.txt` L130: `explorer.exe` (PID 4968) is a child of `userinit.exe` — this is exactly the expected behavior. `userinit.exe` launches `explorer.exe` and then exits (which it did: ExitTime 19:16:28).
+- `cmdline.txt` L78: cmdline is `-` (not recorded). This is common for `userinit.exe` because it exits quickly; the cmdline may not have been captured. Not inherently suspicious.
+- Privileges: The privilege set is enormous — nearly every privilege in the token. However, this is the standard token inherited from `winlogon.exe`/SYSTEM context. Most are not enabled (only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeCreateGlobalPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are Present/Enabled). This matches a standard user logon token with the full privilege set present but mostly disabled.
+- No malfind, no suspicious DLLs, no network connections, no registry persistence evidence.
+- The process already exited (ExitTime recorded), which is normal for `userinit.exe`.
+
+**Verdict: REJECTED** — The orphaned parent is explained by `winlogon.exe` having exited before the memory capture (standard behavior). The path is legitimate System32. The child `explorer.exe` is exactly what `userinit.exe` should spawn. No corroborating malicious evidence.
+
+---
+
+**PID 7996 — OneDrive.exe**
+
+Agent 1 flags: path_user_writable (AppData\Local\Microsoft\OneDrive).
+
+Evidence analysis:
+- `cmdline.txt` L103: `"C:\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe" /background` — This is the standard, expected installation path and invocation for Microsoft OneDrive. OneDrive installs per-user in `AppData\Local\Microsoft\OneDrive\` by design. The `/background` flag is the standard silent startup argument.
+- Parent is PID 4968 (`explorer.exe`) — correct for a user-launched application.
+- `dlllist.txt` shows only System32 DLLs in the 3 shown lines (ntdll.dll, KERNEL32.DLL from System32). No suspicious DLL paths visible.
+- Privilege set is identical in structure to PID 4948 — standard user token, most privileges not enabled.
+- No malfind, no network connections, no registry anomalies in evidence.
+- The `path_user_writable` signal is a known false-positive pattern for OneDrive, which by Microsoft's design installs to the user's AppData directory.
+
+**Verdict: REJECTED** — AppData installation is by design for OneDrive. Standard cmdline, legitimate parent, System32 DLLs only in evidence. No corroborating malicious signals.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-13T19:45:00Z
+Summary: Both Agent 1 findings reviewed against Volatility artifact evidence. Neither finding is supported by corroborating malicious evidence. PID 4948 (userinit.exe) exhibits standard post-logon behavior with an expected-absent parent and a legitimate System32 path; PID 7996 (OneDrive.exe) follows Microsoft's documented per-user installation pattern. No confirmed or inconclusive findings remain.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+Both Agent 1 leads were REJECTED:
+
+  PID 4948 (userinit.exe): The orphaned parent (PPID 824 absent from process list) is
+  explained by winlogon.exe having exited before memory capture — standard Windows logon
+  behavior. The full executable path resolves to \Device\HarddiskVolume4\Windows\System32\
+  userinit.exe (legitimate). The process spawned explorer.exe (PID 4968) and then exited,
+  exactly as designed. Missing cmdline is consistent with rapid process exit. No malfind,
+  no suspicious DLLs, no network connections, no registry persistence evidence present.
+
+  PID 7996 (OneDrive.exe): AppData\Local\Microsoft\OneDrive\ is Microsoft's documented
+  per-user installation path for OneDrive — the path_user_writable signal is a known
+  false-positive for this binary. Cmdline uses the standard /background startup flag,
+  parent is explorer.exe (PID 4968), and the three DLL entries shown all resolve to
+  System32. No malfind, no suspicious DLL paths, no network or registry anomalies in
+  evidence.
+
+================================================================

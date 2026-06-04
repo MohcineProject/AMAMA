@@ -1,0 +1,79 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 6420 — taskhostw.exe**
+
+Agent 1 flags: orphaned parent, SeImpersonatePrivilege enabled, unexpanded `$(Arg0)` cmdline.
+
+**Orphaned parent:** PPID 2168 not in process list. This is a real signal but has a benign explanation — the parent (likely `svchost.exe` hosting the Task Scheduler) may have exited after spawning taskhostw, which is normal. Not definitive on its own.
+
+**Cmdline `$(Arg0)`:** This is actually the *normal* command line for `taskhostw.exe` when invoked by the Task Scheduler for tasks that take arguments. The `$(Arg0)` placeholder is a standard Task Scheduler token. Not malicious.
+
+**Privilege footprint:** This is the most interesting signal. The process has an enormous privilege set — `SeDebugPrivilege`, `SeLoadDriverPrivilege`, `SeBackupPrivilege`, `SeRestorePrivilege`, `SeTakeOwnershipPrivilege`, `SeImpersonatePrivilege` (Enabled), `SeSystemEnvironmentPrivilege`, etc. — all marked `Present`. Many are not `Enabled` (only `SeChangeNotifyPrivilege`, `SeImpersonatePrivilege`, `SeCreateGlobalPrivilege`, and `SeDelegateSessionUserImpersonatePrivilege` are `Present,Enabled`). This privilege set is consistent with a **LOCAL SYSTEM** token, which `taskhostw.exe` legitimately holds when running SYSTEM-context scheduled tasks. The breadth of `Present` privileges is normal for SYSTEM; the key question is what's *Enabled*. `SeImpersonatePrivilege` being enabled is normal for SYSTEM-context processes.
+
+**DLL list:** All three shown DLLs load from `C:\WINDOWS\system32\` — no user-writable paths, no suspicious DLLs. Only 22 DLLs total shown, all from System32.
+
+**No malfind, no netscan, no registry, no handles evidence provided.**
+
+**Assessment:** The privilege set is consistent with a SYSTEM-context scheduled task. The cmdline is normal. The orphaned parent is explainable. No corroborating evidence of malice (no suspicious DLLs, no malfind hits, no network connections, no registry persistence). The only genuine anomaly is the orphaned parent, which is weak in isolation. → **INCONCLUSIVE** (orphaned parent is a real but weak signal; everything else is benign; insufficient corroboration to confirm).
+
+Actually, re-examining: the privilege set for a SYSTEM token on taskhostw is entirely expected. The `$(Arg0)` cmdline is normal. The orphaned parent is the only real anomaly, and it's weak. I'll mark this **INCONCLUSIVE** — the orphaned parent warrants noting but there's no corroborating malicious evidence.
+
+---
+
+Now writing the report.
+
+================================================================
+PIVOT REPORT — FIND_EVIL
+Generated: 2026-05-13T20:00:00Z
+Summary: Only one process was submitted for validation. PID 6420
+(taskhostw.exe) presents a mildly anomalous process-tree position
+(orphaned parent) but all other observable artefacts — DLL load
+paths, command-line syntax, and privilege set — are consistent with
+a legitimate SYSTEM-context scheduled task. No corroborating
+evidence of malice was found across any artefact type. Incident
+scope cannot be assessed from a single inconclusive finding.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      6420
+PPID:     2168
+Image:    taskhostw.exe
+Cmdline:  taskhostw.exe $(Arg0)
+Severity: N/A
+MITRE:
+
+Justification:
+  Three signals were raised by Agent 1; none individually or
+  collectively reaches the threshold for CONFIRMED. The unexpanded
+  '$(Arg0)' argument is the standard Task Scheduler token passed to
+  taskhostw.exe for parameterised tasks and is not anomalous. The
+  privilege set — while broad — is entirely consistent with a
+  LOCAL SYSTEM token: the only privileges actually Enabled at the
+  time of capture are SeChangeNotifyPrivilege, SeImpersonatePrivilege,
+  SeCreateGlobalPrivilege, and SeDelegateSessionUserImpersonatePrivilege,
+  all of which are default-enabled for SYSTEM-context processes; the
+  remaining ~30 privileges are Present but not Enabled, which is the
+  normal posture for a SYSTEM token before any privilege adjustment.
+  The sole genuine anomaly is the orphaned parent (PPID 2168 absent
+  from pslist), which is a real but weak signal: the Task Scheduler
+  service host (svchost.exe) routinely exits or is recycled after
+  spawning taskhostw, leaving the child orphaned in a snapshot. No
+  corroborating evidence exists — DLLs load exclusively from
+  C:\WINDOWS\system32\, no malfind sections were provided, no
+  network connections, no registry persistence, and no suspicious
+  handles — so the finding cannot be confirmed.
+
+Key Evidence:
+  - L104: 6420	2168	taskhostw.exe	0x990ef79b3080	5	-	1	False	2026-05-13 19:16:45.000000 UTC	N/A	Disabled
+  - L104: 6420	taskhostw.exe	taskhostw.exe $(Arg0)
+  - L3488: 6420	taskhostw.exe	20	SeDebugPrivilege	Present	Debug programs
+  - L3497: 6420	taskhostw.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L4822: 6420	taskhostw.exe	0x7ff6ca0f0000	0x1a000	taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+  - L4823: 6420	taskhostw.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================

@@ -32,6 +32,7 @@ import argparse
 import glob
 import logging
 import os
+import shutil
 import subprocess
 import sys
 import threading
@@ -148,6 +149,10 @@ def main() -> None:
     input_dir = Path(args.input_dir)
     out_dir = Path(args.out_dir)
 
+    # Clean artifacts and chunks from any previous run before starting fresh.
+    for d in (artifacts_dir, input_dir):
+        if d.exists():
+            shutil.rmtree(d)
     for d in (artifacts_dir, input_dir, out_dir):
         d.mkdir(parents=True, exist_ok=True)
 

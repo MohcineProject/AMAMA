@@ -1,0 +1,28 @@
+================================================================
+TRIAGE FINDINGS TO VALIDATE — PIVOT REPORT
+Generated: 2026-05-13T19:45:00Z
+Summary: A single process was submitted for validation. The sole finding is StartMenuExperienceHost.exe (PID 5432), flagged by Agent 1 primarily because its parent PID 516 does not appear in the process list. All other evidence — path, command line, DLL provenance, and privilege posture — is consistent with the legitimate Windows Start Menu UWP host. The orphaned-parent signal is a common artefact of memory acquisition timing or process exit before snapshot, not an indicator of malice. No confirmed malicious activity is present in this submission.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTED FINDINGS — SUMMARY
+================================================================
+
+PID 5432 — StartMenuExperienceHost.exe — REJECTED
+
+Agent 1's primary signal was orphaned_parent: PPID 516 is absent from the process list. This is a well-known benign artefact: the parent process (typically svchost.exe or a session manager component) may have exited before the memory snapshot was taken, or may have been excluded from the pslist output due to acquisition timing. An orphaned PPID alone, with no corroborating anomaly, does not constitute a meaningful indicator of compromise.
+
+All remaining evidence is affirmatively benign:
+  - The executable path resolves to the canonical Windows SystemApps location for the Start Menu UWP package, matching the expected Microsoft package identity suffix in the -ServerName argument.
+  - The command line is the standard UWP FullTrustApp activation pattern; no encoded arguments, no download cradles, no LOLBin abuse.
+  - All three sampled DLL entries load from C:\WINDOWS\SYSTEM32\ or the same SystemApps directory — no user-writable paths, no random-named DLLs.
+  - The privilege list is the standard full-token set carried by most interactive-session processes on Windows 10/11; the only *enabled* privileges are SeShutdownPrivilege, SeChangeNotifyPrivilege (Default+Enabled), SeUndockPrivilege, SeCreateGlobalPrivilege (Default), SeIncreaseWorkingSetPrivilege, and SeTimeZonePrivilege — all routine for a user-session UWP host. No high-risk privilege (SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege) is in the Present or Enabled state.
+  - Agent 1 itself noted the EPROCESS name truncation artefact and explicitly cleared the name as non-suspicious.
+  - No malfind, netscan, handles, or registry evidence was submitted for this PID, and Agent 1's own notes confirm no network connections and no suspicious DLLs were found.
+
+Legitimate behaviour: standard Windows Start Menu Experience Host UWP process, launched at session start (CreateTime 2026-05-13 19:15:48 UTC), loading only System32 DLLs, with no anomalous privileges enabled, no suspicious command-line arguments, and no corroborating artefacts across any other evidence type. Orphaned PPID is the sole signal and is insufficient on its own.
+
+================================================================

@@ -1,29 +1,13 @@
 === TRIAGE REPORT ===
-Generated: 2026-05-31T20:02:59Z
+Generated: 2026-05-13T19:30:00Z
 Chunk: chunk_001.txt
-Summary: Rule-based fallback — LLM unavailable
+Summary: AggregatorHost.exe holds an unusual combination of high-risk privileges (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege) and loads a non-standard DLL (UpdateReboot.dll) from System32; parent PID 2600 is not present in the process list.
 
 [PROCESS]
-pid: 2380
-ppid: 4240
-image: cmd.exe
-cmdline: C:\\WINDOWS\\system32\\cmd.exe /c \"\"C:\\Users\\kali\\AppData\\Local\\Temp\\EMwLtc9FBmME.bat\" \"
+pid: 1708
+ppid: 2600
+image: AggregatorHost.exe
+cmdline: AggregatorHost.exe
 severity: MEDIUM
-reasons: Keyword in cmdline: cmd.exe /c
-
-[PROCESS]
-pid: 3144
-ppid: 896
-image: MpDefenderCore
-cmdline: \"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\MpDefenderCoreService.exe\"
-severity: LOW
-reasons: Unusual path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpDefenderCoreService.exe
-
-[PROCESS]
-pid: 3284
-ppid: 896
-image: MsMpEng.exe
-cmdline: \"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\MsMpEng.exe\"
-severity: LOW
-reasons: Unusual path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MsMpEng.exe
+reasons: orphaned_process: parent PID 2600 not present anywhere in the process list | high_risk_privileges: SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege all enabled simultaneously for a non-core system process | suspicious_dll: C:\WINDOWS\SYSTEM32\UpdateReboot.dll loaded — non-standard DLL not part of the expected AggregatorHost module set
 

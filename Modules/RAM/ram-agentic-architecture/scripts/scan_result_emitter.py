@@ -19,8 +19,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 _SCRIPTS_DIR = Path(__file__).resolve().parent
-_REPO_DIR = _SCRIPTS_DIR.parent
-_SCHEMA_DIR = _REPO_DIR / "schemas"
+_REPO_DIR = _SCRIPTS_DIR.parent    # ram-agentic-architecture/
+_MODULE_DIR = _REPO_DIR.parent     # Modules/RAM/
+_MODULES_DIR = _MODULE_DIR.parent  # Modules/
+_PROJECT_DIR = _MODULES_DIR.parent # project root
+_SCHEMA_DIR = _PROJECT_DIR / "Backbone" / "schemas"
 
 
 def _now_iso() -> str:
@@ -187,17 +190,49 @@ def _extract_related_entities(block: Dict[str, Any]) -> List[Dict[str, str]]:
     return entities
 
 
-def _build_evidence_items(block: Dict[str, Any]) -> List[Dict[str, Any]]:
+def _build_pivot_index(pivot_path: str) -> Dict[tuple, str]:
     """
-    Convert key_evidence entries to EntityFindings-compatible evidence dicts.
-    source_file is unknown at this level (not stored in aggregated TXT), so
-    we leave it as an empty string — the orchestrator treats this as RAM memory
-    evidence.
+    Parse pivot.txt and return {(line_number, content): source_filename} for
+    one PID section. Called once per chunk; the caller selects the right PID
+    slice before looking up evidence items.
+
+    Returns a flat dict covering all PIDs in the file — key collisions across
+    PIDs are unlikely given that line numbers differ per artifact file.
+    """
+    index: Dict[tuple, str] = {}
+    if not os.path.exists(pivot_path):
+        return index
+
+    current_file = ""
+    with open(pivot_path, "r", encoding="utf-8", errors="ignore") as f:
+        for raw_line in f:
+            line = raw_line.rstrip()
+            if line.startswith("--- ") and line.endswith(" ---"):
+                current_file = line[4:-4].strip()
+            elif current_file and line and not line.startswith("===") \
+                    and not line.startswith("Cmdline:"):
+                m = re.match(r"^L(\d+):\s+(.+)$", line)
+                if m:
+                    key = (int(m.group(1)), m.group(2).strip())
+                    index.setdefault(key, current_file)
+    return index
+
+
+def _build_evidence_items(
+    block: Dict[str, Any],
+    pivot_index: Optional[Dict[tuple, str]] = None,
+) -> List[Dict[str, Any]]:
+    """Convert key_evidence entries to schema-compatible evidence dicts.
+
+    pivot_index (built from the chunk's pivot.txt) is used to back-populate
+    source_file. Falls back to an empty string when the lookup misses.
     """
     items = []
     for ev in block.get("key_evidence", []):
+        key = (ev["line_number"], ev["content"].strip())
+        source_file = (pivot_index or {}).get(key, "")
         items.append({
-            "source_file": "",
+            "source_file": source_file,
             "line": ev["line_number"],
             "content": ev["content"],
             "verbatim": True,
@@ -231,6 +266,14 @@ def emit_scan_result(
 
     blocks = _parse_blocks(text)
 
+    # Build pivot indexes keyed by chunk_label for source_file resolution
+    pivot_indexes: Dict[str, Dict[tuple, str]] = {}
+    if per_chunk_paths:
+        for analyst_path in per_chunk_paths:
+            chunk_label = Path(analyst_path).parent.name  # e.g. "chunk_001"
+            pivot_path = str(Path(analyst_path).parent / "pivot.txt")
+            pivot_indexes[chunk_label] = _build_pivot_index(pivot_path)
+
     # Count by verdict
     counts: Dict[str, int] = {"confirmed": 0, "inconclusive": 0, "rejected": 0}
     for b in blocks:
@@ -261,6 +304,7 @@ def emit_scan_result(
         chunk_counters[chunk_label] = chunk_counters.get(chunk_label, 0) + 1
         finding_id = f"ram-{chunk_label}-f{chunk_counters[chunk_label]:03d}"
 
+        pivot_index = pivot_indexes.get(chunk_label, {})
         finding: Dict[str, Any] = {
             "finding_id": finding_id,
             "verdict": block["verdict"],
@@ -269,7 +313,7 @@ def emit_scan_result(
             "primary_entity": {"type": "pid", "value": block["pid"] or "unknown"},
             "related_entities": _extract_related_entities(block),
             "justification": block["justification"] or f"{block['verdict']} — see analyst.txt",
-            "evidence": _build_evidence_items(block),
+            "evidence": _build_evidence_items(block, pivot_index),
         }
         findings.append(finding)
 

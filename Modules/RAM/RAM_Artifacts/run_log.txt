@@ -241,3 +241,33 @@ Image: /home/sansforensics/Documents/Claude_Projects/evil_windows.elf
 [DONE ] windows.malware.malfind                            ( 219.9s) → malware_malfind.txt
 [DONE ] windows.malware.hollowprocesses                    ( 185.3s) → malware_hollowprocesses.txt
 === Group complete 2026-05-31T20:08:59Z: 15/15 succeeded ===
+
+=== Plugin group started 2026-06-04T21:10:44Z (9 plugins) ===
+[DONE ] windows.cmdline.CmdLine                            (   6.0s) → cmdline.txt
+[DONE ] windows.pstree.PsTree                              (   6.4s) → pstree.txt
+[DONE ] windows.privileges.Privs                           (   5.1s) → privileges.txt
+[DONE ] windows.dlllist.DllList                            (  43.5s) → dlllist.txt
+[DONE ] windows.netstat.NetStat                            (   3.0s) → netstat.txt
+[DONE ] windows.getsids.GetSIDs                            (  10.8s) → getsids.txt
+[DONE ] windows.netscan.NetScan                            (  81.3s) → netscan.txt
+[DONE ] windows.psscan.PsScan                              (  93.1s) → psscan.txt
+[DONE ] windows.handles.Handles                            ( 121.7s) → handles.txt
+=== Group complete 2026-06-04T21:12:51Z: 9/9 succeeded ===
+
+=== Plugin group started 2026-06-04T21:12:51Z (15 plugins) ===
+[DONE ] windows.modules                                    (   4.2s) → modules.txt
+[DONE ] windows.pslist                                     (   5.4s) → pslist.txt
+[DONE ] windows.svcscan                                    (  36.8s) → svcscan.txt
+[DONE ] windows.driverscan                                 (  37.9s) → driverscan.txt
+[DONE ] windows.sessions                                   (   2.4s) → sessions.txt
+[DONE ] windows.shimcachemem                               (   2.6s) → shimcachemem.txt
+[DONE ] windows.ldrmodules                                 (  71.0s) → ldrmodules.txt
+[DONE ] windows.malware.psxview                            (  57.5s) → malware_psxview.txt
+[DONE ] windows.malware.ldrmodules                         (  35.9s) → malware_ldrmodules.txt
+[DONE ] windows.malware.pebmasquerade                      (   2.2s) → malware_pebmasquerade.txt
+[DONE ] windows.registry.printkey                          (   6.9s) → registry_printkey.txt
+[DONE ] windows.registry.hivelist                          (   1.6s) → registry_hivelist.txt
+[DONE ] windows.malfind                                    ( 158.1s) → malfind.txt
+[DONE ] windows.malware.malfind                            ( 135.4s) → malware_malfind.txt
+[DONE ] windows.malware.hollowprocesses                    ( 123.6s) → malware_hollowprocesses.txt
+=== Group complete 2026-06-04T21:16:36Z: 15/15 succeeded ===

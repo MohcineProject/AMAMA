@@ -1,0 +1,57 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5368 — svchost.exe (ppid=896)**
+
+Agent 1 flags: orphaned parent (PPID 896 not in process list), parent mismatch (should be services.exe).
+
+Reasoning:
+- The orphaned-parent signal is real but weak in isolation. PPID 896 being absent from pslist can happen legitimately when the parent process (services.exe) has exited or when the memory snapshot was taken at a point where the parent's EPROCESS was already paged/freed. This is a known artifact of memory forensics, not necessarily malicious.
+- The command line `C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup` is entirely legitimate. `UnistackSvcGroup` is a real Windows service group (hosts CDPUserSvc, OneSyncSvc, etc.). The path is canonical System32.
+- The privilege set is very large (35 entries listed), but almost all are *not* enabled — only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege` (Enabled,Default), `SeUndockPrivilege`, `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are marked Present/Enabled. This is consistent with a standard user-session svchost token. The dangerous privileges (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) are listed but **not** marked Present or Enabled — they are simply enumerated as possible privileges, which is normal for a full token privilege dump.
+- DLLs shown are all from System32 — no user-writable path DLLs visible in the 3 shown lines.
+- No malfind, netscan, handles, or registry evidence provided.
+- No corroborating signals across artefact types.
+
+Verdict: **REJECTED** — orphaned parent is a common memory forensics artifact; cmdline, path, and DLL set are all legitimate. No corroborating evidence of malice.
+
+---
+
+**PID 5356 — FileCoAuth.exe (ppid=516)**
+
+Agent 1 flags: orphaned parent (PPID 516 not in process list), path in user-writable AppData.
+
+Reasoning:
+- `FileCoAuth.exe` is a legitimate Microsoft OneDrive component (File Co-Authoring). It is expected to live in `C:\Users\<user>\AppData\Local\Microsoft\OneDrive\<version>\`. The `-Embedding` flag is a standard COM activation argument (out-of-process COM server activation). This is entirely normal OneDrive behavior.
+- The orphaned parent (PPID 516) is the same artifact as above — parent may have exited.
+- The AppData path is flagged as user-writable, which is technically true, but this is the *canonical* install location for OneDrive per-user. It is not a suspicious drop location in this context.
+- Privilege set: same pattern as PID 5368 — large list, but dangerous privileges (SeDebugPrivilege, SeTcbPrivilege, etc.) are **not** marked Present or Enabled.
+- DLLs shown are from the OneDrive path and System32 — no anomalous DLLs in the 3 shown lines.
+- No malfind, netscan, handles, or registry evidence provided.
+- No corroborating signals.
+
+Verdict: **REJECTED** — FileCoAuth.exe in the OneDrive versioned AppData path with `-Embedding` is standard OneDrive COM behavior. Orphaned parent is a memory artifact. No corroborating evidence of malice.
+
+---
+
+Both findings are REJECTED. Counts: confirmed=0, inconclusive=0, rejected=2.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-13T19:45:00Z
+Summary: Both Agent 1 leads examined in this batch resolve to benign, well-understood Windows behaviors. PID 5368 is a legitimate svchost.exe instance hosting the UnistackSvcGroup service group from a canonical System32 path; PID 5356 is a legitimate OneDrive co-authoring COM server activated via the standard -Embedding mechanism. Neither process shows corroborating malicious signals across any artefact type. No confirmed or inconclusive findings are present in this batch.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report for this batch.
+
+REJECTED findings (count=2):
+
+  PID 5368 (svchost.exe): Orphaned parent is a common memory-forensics artifact caused by the parent process (services.exe) having exited before snapshot time. The command line "C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup" is canonical; UnistackSvcGroup is a legitimate Windows service group. All DLLs visible in the evidence are from System32. The dangerous privileges listed (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) are enumerated but carry no Present/Enabled marker, consistent with a standard user-session token dump. No malfind, netscan, or registry evidence was provided to corroborate the flag.
+
+  PID 5356 (FileCoAuth.exe): FileCoAuth.exe is a known Microsoft OneDrive co-authoring component; its canonical install location is exactly the per-user AppData\Local\Microsoft\OneDrive\<version>\ path flagged by Agent 1. The -Embedding argument is a standard Windows COM out-of-process server activation flag, not an attacker-controlled argument. Orphaned parent (PPID 516) is again a memory-snapshot artifact. Dangerous privileges are listed but not enabled. No malfind, netscan, or registry evidence was provided to corroborate the flag.
+
+================================================================

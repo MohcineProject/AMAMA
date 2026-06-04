@@ -1,0 +1,332 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-04T21:25:35Z
+
+=== PID 6420 (taskhostw.exe, ppid=2168) ===
+Cmdline: taskhostw.exe $(Arg0)
+
+--- pslist.txt ---
+L104: 6420	2168	taskhostw.exe	0x990ef79b3080	5	-	1	False	2026-05-13 19:16:45.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L104: 6420	taskhostw.exe	taskhostw.exe $(Arg0)
+
+--- privileges.txt ---
+L3470: 6420	taskhostw.exe	2	SeCreateTokenPrivilege		Create a token object
+L3471: 6420	taskhostw.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3472: 6420	taskhostw.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3473: 6420	taskhostw.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L3474: 6420	taskhostw.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3475: 6420	taskhostw.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3476: 6420	taskhostw.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L3477: 6420	taskhostw.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L3478: 6420	taskhostw.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L3479: 6420	taskhostw.exe	11	SeSystemProfilePrivilege	Present	Profile system performance
+L3480: 6420	taskhostw.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L3481: 6420	taskhostw.exe	13	SeProfileSingleProcessPrivilege	Present	Profile a single process
+L3482: 6420	taskhostw.exe	14	SeIncreaseBasePriorityPrivilege	Present	Increase scheduling priority
+L3483: 6420	taskhostw.exe	15	SeCreatePagefilePrivilege	Present	Create a pagefile
+L3484: 6420	taskhostw.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3485: 6420	taskhostw.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L3486: 6420	taskhostw.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L3487: 6420	taskhostw.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L3488: 6420	taskhostw.exe	20	SeDebugPrivilege	Present	Debug programs
+L3489: 6420	taskhostw.exe	21	SeAuditPrivilege		Generate security audits
+L3490: 6420	taskhostw.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L3491: 6420	taskhostw.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3492: 6420	taskhostw.exe	24	SeRemoteShutdownPrivilege	Present	Force shutdown from a remote system
+L3493: 6420	taskhostw.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3494: 6420	taskhostw.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3495: 6420	taskhostw.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3496: 6420	taskhostw.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L3497: 6420	taskhostw.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L3498: 6420	taskhostw.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L3499: 6420	taskhostw.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3500: 6420	taskhostw.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3501: 6420	taskhostw.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3502: 6420	taskhostw.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3503: 6420	taskhostw.exe	35	SeCreateSymbolicLinkPrivilege	Present	Required to create a symbolic link
+L3504: 6420	taskhostw.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L4822: 6420	taskhostw.exe	0x7ff6ca0f0000	0x1a000	taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+L4823: 6420	taskhostw.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+L4824: 6420	taskhostw.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+L4825: 6420	taskhostw.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+L4826: 6420	taskhostw.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4827: 6420	taskhostw.exe	0x7ffff9730000	0x31000	imm32.dll	C:\WINDOWS\System32\imm32.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4828: 6420	taskhostw.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4829: 6420	taskhostw.exe	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4830: 6420	taskhostw.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4831: 6420	taskhostw.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4832: 6420	taskhostw.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4833: 6420	taskhostw.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4834: 6420	taskhostw.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4835: 6420	taskhostw.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4836: 6420	taskhostw.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4837: 6420	taskhostw.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+L4838: 6420	taskhostw.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4839: 6420	taskhostw.exe	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4840: 6420	taskhostw.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4841: 6420	taskhostw.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4842: 6420	taskhostw.exe	0x7fffe00c0000	0x5e000	WiFiCloudStore.dll	C:\Windows\System32\WiFiCloudStore.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4843: 6420	taskhostw.exe	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+
+--- envars.txt ---
+L3047: 6420	taskhostw.exe	0x20183b378b0	ALLUSERSPROFILE	C:\ProgramData
+L3048: 6420	taskhostw.exe	0x20183b378b0	APPDATA	C:\Users\kali\AppData\Roaming
+L3049: 6420	taskhostw.exe	0x20183b378b0	CommonProgramFiles	C:\Program Files\Common Files
+L3050: 6420	taskhostw.exe	0x20183b378b0	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
+L3051: 6420	taskhostw.exe	0x20183b378b0	CommonProgramW6432	C:\Program Files\Common Files
+L3052: 6420	taskhostw.exe	0x20183b378b0	COMPUTERNAME	CLEANWINDOWS11
+L3053: 6420	taskhostw.exe	0x20183b378b0	ComSpec	C:\WINDOWS\system32\cmd.exe
+L3054: 6420	taskhostw.exe	0x20183b378b0	DriverData	C:\Windows\System32\Drivers\DriverData
+L3055: 6420	taskhostw.exe	0x20183b378b0	HOMEDRIVE	C:
+L3056: 6420	taskhostw.exe	0x20183b378b0	HOMEPATH	\Users\kali
+L3057: 6420	taskhostw.exe	0x20183b378b0	LOCALAPPDATA	C:\Users\kali\AppData\Local
+L3058: 6420	taskhostw.exe	0x20183b378b0	LOGONSERVER	\\CLEANWINDOWS11
+L3059: 6420	taskhostw.exe	0x20183b378b0	NUMBER_OF_PROCESSORS	4
+L3060: 6420	taskhostw.exe	0x20183b378b0	OneDrive	C:\Users\kali\OneDrive
+L3061: 6420	taskhostw.exe	0x20183b378b0	OS	Windows_NT
+L3062: 6420	taskhostw.exe	0x20183b378b0	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\kali\AppData\Local\Microsoft\WindowsApps
+L3063: 6420	taskhostw.exe	0x20183b378b0	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+L3064: 6420	taskhostw.exe	0x20183b378b0	PROCESSOR_ARCHITECTURE	AMD64
+L3065: 6420	taskhostw.exe	0x20183b378b0	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+L3066: 6420	taskhostw.exe	0x20183b378b0	PROCESSOR_LEVEL	6
+L3067: 6420	taskhostw.exe	0x20183b378b0	PROCESSOR_REVISION	ba03
+L3068: 6420	taskhostw.exe	0x20183b378b0	ProgramData	C:\ProgramData
+L3069: 6420	taskhostw.exe	0x20183b378b0	ProgramFiles	C:\Program Files
+L3070: 6420	taskhostw.exe	0x20183b378b0	ProgramFiles(x86)	C:\Program Files (x86)
+L3071: 6420	taskhostw.exe	0x20183b378b0	ProgramW6432	C:\Program Files
+L3072: 6420	taskhostw.exe	0x20183b378b0	PSModulePath	%ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+L3073: 6420	taskhostw.exe	0x20183b378b0	PUBLIC	C:\Users\Public
+L3074: 6420	taskhostw.exe	0x20183b378b0	SystemDrive	C:
+L3075: 6420	taskhostw.exe	0x20183b378b0	SystemRoot	C:\WINDOWS
+L3076: 6420	taskhostw.exe	0x20183b378b0	TEMP	C:\Users\kali\AppData\Local\Temp
+L3077: 6420	taskhostw.exe	0x20183b378b0	TMP	C:\Users\kali\AppData\Local\Temp
+L3078: 6420	taskhostw.exe	0x20183b378b0	USERDOMAIN	CLEANWINDOWS11
+L3079: 6420	taskhostw.exe	0x20183b378b0	USERDOMAIN_ROAMINGPROFILE	CLEANWINDOWS11
+L3080: 6420	taskhostw.exe	0x20183b378b0	USERNAME	kali
+L3081: 6420	taskhostw.exe	0x20183b378b0	USERPROFILE	C:\Users\kali
+L3082: 6420	taskhostw.exe	0x20183b378b0	windir	C:\WINDOWS
+
+--- pstree.txt ---
+L62: *** 6420	2168	taskhostw.exe	0x990ef79b3080	5	-	1	False	2026-05-13 19:16:45.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\taskhostw.exe	taskhostw.exe $(Arg0)	C:\WINDOWS\system32\taskhostw.exe
+
+--- psscan.txt ---
+L109: 6420	2168	taskhostw.exe	0x990ef79b3080	5	-	1	False	2026-05-13 19:16:45.000000 UTC	N/A	Disabled
+
+--- threads.txt ---
+L1231: 0x990ef77e4080	6420	6472	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff6ca0f8250	\Windows\System32\taskhostw.exe	2026-05-13 19:16:45.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1232: 0x990ef63d40c0	6420	3892	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff6ca0f3870	\Windows\System32\taskhostw.exe	2026-05-13 19:16:45.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1233: 0x990ef79ee080	6420	1404	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff6ca0f6ad0	\Windows\System32\taskhostw.exe	2026-05-13 19:16:45.000000 UTC	2026-05-13 19:16:45.000000 UTC
+L1234: 0x990ef8070080	6420	1412	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9639b40	\Windows\System32\SHCore.dll	2026-05-13 19:16:45.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1235: 0x990ef70c3040	6420	4788	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:45.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L1236: 0x990ef8678080	6420	6804	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:45.000000 UTC	1600-08-22 23:57:39.000000 UTC
+
+--- thrdscan.txt ---
+L578: 0x990ef63d40c0	6420	3892	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff6ca0f3870	\Windows\System32\taskhostw.exe	2026-05-13 19:16:45.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L925: 0x990ef70c3040	6420	4788	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:45.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L1074: 0x990ef77e4080	6420	6472	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff6ca0f8250	\Windows\System32\taskhostw.exe	2026-05-13 19:16:45.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1176: 0x990ef79ee080	6420	1404	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff6ca0f6ad0	\Windows\System32\taskhostw.exe	2026-05-13 19:16:45.000000 UTC	2026-05-13 19:16:45.000000 UTC
+L1397: 0x990ef8070080	6420	1412	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9639b40	\Windows\System32\SHCore.dll	2026-05-13 19:16:45.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1547: 0x990ef8678080	6420	6804	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:45.000000 UTC	1600-08-22 23:57:39.000000 UTC
+
+--- ldrmodules.txt ---
+L5118: 6420	taskhostw.exe	0x20183d80000	False	False	False	\Windows\System32\en-US\taskhostw.exe.mui
+L5119: 6420	taskhostw.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L5120: 6420	taskhostw.exe	0x7ff6ca0f0000	True	False	True	\Windows\System32\taskhostw.exe
+L5121: 6420	taskhostw.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5122: 6420	taskhostw.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L5123: 6420	taskhostw.exe	0x7fffe00c0000	True	True	True	\Windows\System32\WiFiCloudStore.dll
+L5124: 6420	taskhostw.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5125: 6420	taskhostw.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L5126: 6420	taskhostw.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L5127: 6420	taskhostw.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5128: 6420	taskhostw.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L5129: 6420	taskhostw.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5130: 6420	taskhostw.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L5131: 6420	taskhostw.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L5132: 6420	taskhostw.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L5133: 6420	taskhostw.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L5134: 6420	taskhostw.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L5135: 6420	taskhostw.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L5136: 6420	taskhostw.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L5137: 6420	taskhostw.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L5138: 6420	taskhostw.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L5139: 6420	taskhostw.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L5140: 6420	taskhostw.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_ldrmodules.txt ---
+L5118: 6420	taskhostw.exe	0x20183d80000	False	False	False	\Windows\System32\en-US\taskhostw.exe.mui
+L5119: 6420	taskhostw.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L5120: 6420	taskhostw.exe	0x7ff6ca0f0000	True	False	True	\Windows\System32\taskhostw.exe
+L5121: 6420	taskhostw.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5122: 6420	taskhostw.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L5123: 6420	taskhostw.exe	0x7fffe00c0000	True	True	True	\Windows\System32\WiFiCloudStore.dll
+L5124: 6420	taskhostw.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5125: 6420	taskhostw.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L5126: 6420	taskhostw.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L5127: 6420	taskhostw.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5128: 6420	taskhostw.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L5129: 6420	taskhostw.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5130: 6420	taskhostw.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L5131: 6420	taskhostw.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L5132: 6420	taskhostw.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L5133: 6420	taskhostw.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L5134: 6420	taskhostw.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L5135: 6420	taskhostw.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L5136: 6420	taskhostw.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L5137: 6420	taskhostw.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L5138: 6420	taskhostw.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L5139: 6420	taskhostw.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L5140: 6420	taskhostw.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- vadwalk.txt ---
+L12943: 6420	taskhostw.exe	0x990ef4a6ab60	0x0	0x990ef4a69bc0	0x990ef4a6a7a0	0x7df5a5910000	0x7ff5a590ffff	Vad 
+L12944: 6420	taskhostw.exe	0x990ef4a69bc0	0x990ef4a6ab60	0x990ef4a6aa20	0x990ef4a6ac00	0x20183ad0000	0x20183ad3fff	Vad 
+L12945: 6420	taskhostw.exe	0x990ef4a6aa20	0x990ef4a69bc0	0x990ef4d5e550	0x990ef4d5c250	0x201839f0000	0x201839f1fff	Vad 
+L12946: 6420	taskhostw.exe	0x990ef4d5e550	0x990ef4a6aa20	0x990ef4d5b3f0	0x990ef4d60850	0xaf97980000	0xaf979fffff	VadS
+L12947: 6420	taskhostw.exe	0x990ef4d5b3f0	0x990ef4d5e550	0x990ef4d58970	0x990efa34b4a0	0xaf97800000	0xaf9787ffff	VadS
+L12948: 6420	taskhostw.exe	0x990ef4d58970	0x990ef4d5b3f0	0x990ef4d586f0	0x990ef4d59820	0x7ffed000	0x7ffedfff	VadS
+L12949: 6420	taskhostw.exe	0x990ef4d586f0	0x990ef4d58970	0x0	0x0	0x7ffe0000	0x7ffe0fff	VadS
+L12950: 6420	taskhostw.exe	0x990ef4d59820	0x990ef4d58970	0x0	0x0	0xaf97600000	0xaf977fffff	VadS
+L12951: 6420	taskhostw.exe	0x990efa34b4a0	0x990ef4d5b3f0	0x0	0x990efa34aaa0	0xaf97880000	0xaf978fffff	VadS
+L12952: 6420	taskhostw.exe	0x990efa34aaa0	0x990efa34b4a0	0x0	0x0	0xaf97900000	0xaf9797ffff	VadS
+L12953: 6420	taskhostw.exe	0x990ef4d60850	0x990ef4d5e550	0x0	0x990ef4d5e690	0xaf97b00000	0xaf97b7ffff	VadS
+L12954: 6420	taskhostw.exe	0x990ef4d5e690	0x990ef4d60850	0x0	0x0	0x201839e0000	0x201839effff	VadS
+L12955: 6420	taskhostw.exe	0x990ef4d5c250	0x990ef4a6aa20	0x990ef4a6aac0	0x990ef4a68d60	0x20183a50000	0x20183a51fff	VadS
+L12956: 6420	taskhostw.exe	0x990ef4a6aac0	0x990ef4d5c250	0x990ef4a6ad40	0x990ef4a691c0	0x20183a30000	0x20183a33fff	Vad 
+L12957: 6420	taskhostw.exe	0x990ef4a6ad40	0x990ef4a6aac0	0x0	0x0	0x20183a00000	0x20183a29fff	Vad 
+L12958: 6420	taskhostw.exe	0x990ef4a691c0	0x990ef4a6aac0	0x0	0x0	0x20183a40000	0x20183a40fff	Vad 
+L12959: 6420	taskhostw.exe	0x990ef4a68d60	0x990ef4d5c250	0x990ef4a68e00	0x990ef4a6a660	0x20183aa0000	0x20183aa2fff	Vad 
+L12960: 6420	taskhostw.exe	0x990ef4a68e00	0x990ef4a68d60	0x990ef4a69620	0x0	0x20183a80000	0x20183a90fff	Vad 
+L12961: 6420	taskhostw.exe	0x990ef4a69620	0x990ef4a68e00	0x0	0x0	0x20183a60000	0x20183a70fff	Vad 
+L12962: 6420	taskhostw.exe	0x990ef4a6a660	0x990ef4a68d60	0x990ef4a6a020	0x0	0x20183ac0000	0x20183ac8fff	Vad 
+L12963: 6420	taskhostw.exe	0x990ef4a6a020	0x990ef4a6a660	0x0	0x0	0x20183ab0000	0x20183ab8fff	Vad 
+L12964: 6420	taskhostw.exe	0x990ef4a6ac00	0x990ef4a69bc0	0x990ef4a6a980	0x990ef4d5dc40	0x20183d80000	0x20183d80fff	Vad 
+L12965: 6420	taskhostw.exe	0x990ef4a6a980	0x990ef4a6ac00	0x990ef4a68b80	0x990ef4d5dab0	0x20183d10000	0x20183d20fff	Vad 
+L12966: 6420	taskhostw.exe	0x990ef4a68b80	0x990ef4a6a980	0x990ef4d5e0a0	0x990ef4d5d920	0x20183b10000	0x20183b1ffff	Vad 
+L12967: 6420	taskhostw.exe	0x990ef4d5e0a0	0x990ef4a68b80	0x990ef4a69a80	0x0	0x20183af0000	0x20183b09fff	VadS
+L12968: 6420	taskhostw.exe	0x990ef4a69a80	0x990ef4d5e0a0	0x0	0x0	0x20183ae0000	0x20183ae3fff	Vad 
+L12969: 6420	taskhostw.exe	0x990ef4d5d920	0x990ef4a68b80	0x990ef4a6b100	0x990ef4a6a2a0	0x20183b30000	0x20183c2ffff	VadF
+L12970: 6420	taskhostw.exe	0x990ef4a6b100	0x990ef4d5d920	0x0	0x0	0x20183b20000	0x20183b22fff	Vad 
+L12971: 6420	taskhostw.exe	0x990ef4a6a2a0	0x990ef4d5d920	0x0	0x0	0x20183c30000	0x20183d02fff	Vad 
+L12972: 6420	taskhostw.exe	0x990ef4d5dab0	0x990ef4a6a980	0x990ef4a698a0	0x990ef4a699e0	0x20183d50000	0x20183d69fff	VadS
+L12973: 6420	taskhostw.exe	0x990ef4a698a0	0x990ef4d5dab0	0x0	0x0	0x20183d30000	0x20183d40fff	Vad 
+L12974: 6420	taskhostw.exe	0x990ef4a699e0	0x990ef4d5dab0	0x0	0x0	0x20183d70000	0x20183d77fff	Vad 
+L12975: 6420	taskhostw.exe	0x990ef4d5dc40	0x990ef4a6ac00	0x990ef4d60350	0x990ef4d5fa40	0x20183eb0000	0x20183ebffff	VadF
+L12976: 6420	taskhostw.exe	0x990ef4d60350	0x990ef4d5dc40	0x990ef4a6caa0	0x990ef4a6bd80	0x20183da0000	0x20183db9fff	VadS
+L12977: 6420	taskhostw.exe	0x990ef4a6caa0	0x990ef4d60350	0x0	0x0	0x20183d90000	0x20183d95fff	Vad 
+L12978: 6420	taskhostw.exe	0x990ef4a6bd80	0x990ef4d60350	0x990ef4a6d720	0x990ef4d5dec0	0x20183dd0000	0x20183dd0fff	Vad 
+L12979: 6420	taskhostw.exe	0x990ef4a6d720	0x990ef4a6bd80	0x0	0x0	0x20183dc0000	0x20183dc0fff	Vad 
+L12980: 6420	taskhostw.exe	0x990ef4d5dec0	0x990ef4a6bd80	0x0	0x0	0x20183e30000	0x20183e3ffff	VadF
+L12981: 6420	taskhostw.exe	0x990ef4d5fa40	0x990ef4d5dc40	0x990ef4a69e40	0x990ef4d5dce0	0x201857a0000	0x201857affff	VadF
+L12982: 6420	taskhostw.exe	0x990ef4a69e40	0x990ef4d5fa40	0x990ef4a6a700	0x990ef4a6a200	0x201840c0000	0x20184240fff	Vad 
+L12983: 6420	taskhostw.exe	0x990ef4a6a700	0x990ef4a69e40	0x0	0x0	0x20183ec0000	0x201840bffff	Vad 
+L12984: 6420	taskhostw.exe	0x990ef4a6a200	0x990ef4a69e40	0x0	0x0	0x20184250000	0x20185650fff	Vad 
+L12985: 6420	taskhostw.exe	0x990ef4d5dce0	0x990ef4d5fa40	0x990ef4a6be20	0x0	0x7df4a58f0000	0x7df5a590ffff	VadS
+L12986: 6420	taskhostw.exe	0x990ef4a6be20	0x990ef4d5dce0	0x0	0x0	0x201857b0000	0x201858f1fff	Vad 
+L12987: 6420	taskhostw.exe	0x990ef4a6a7a0	0x990ef4a6ab60	0x990ef4a6a840	0x990ef4a69b20	0x7ffff69f0000	0x7ffff6a19fff	Vad 
+L12988: 6420	taskhostw.exe	0x990ef4a6a840	0x990ef4a6a7a0	0x990ef4d5e500	0x990ef4a696c0	0x7ff6ca0f0000	0x7ff6ca10cfff	Vad 
+L12989: 6420	taskhostw.exe	0x990ef4d5e500	0x990ef4a6a840	0x990ef4a69940	0x990ef4a69120	0x7ff5d19a0000	0x7ff5d39a0fff	VadS
+L12990: 6420	taskhostw.exe	0x990ef4a69940	0x990ef4d5e500	0x0	0x0	0x7ff5d18a0000	0x7ff5d199ffff	Vad 
+L12991: 6420	taskhostw.exe	0x990ef4a69120	0x990ef4d5e500	0x0	0x0	0x7ff5d39b0000	0x7ff5d39b0fff	Vad 
+L12992: 6420	taskhostw.exe	0x990ef4a696c0	0x990ef4a6a840	0x990ef4a6aca0	0x990ef4a68a40	0x7ffff6540000	0x7ffff65e7fff	Vad 
+L12993: 6420	taskhostw.exe	0x990ef4a6aca0	0x990ef4a696c0	0x990ef4a6b2e0	0x990ef4a68ae0	0x7ffff3d40000	0x7ffff3decfff	Vad 
+L12994: 6420	taskhostw.exe	0x990ef4a6b2e0	0x990ef4a6aca0	0x0	0x0	0x7fffe00c0000	0x7fffe0120fff	Vad 
+L12995: 6420	taskhostw.exe	0x990ef4a68ae0	0x990ef4a6aca0	0x0	0x0	0x7ffff50d0000	0x7ffff50edfff	Vad 
+L12996: 6420	taskhostw.exe	0x990ef4a68a40	0x990ef4a696c0	0x0	0x0	0x7ffff65f0000	0x7ffff69e3fff	Vad 
+L12997: 6420	taskhostw.exe	0x990ef4a69b20	0x990ef4a6a7a0	0x990ef4a6a0c0	0x990ef4a69c60	0x7ffff7c20000	0x7ffff7de7fff	Vad 
+L12998: 6420	taskhostw.exe	0x990ef4a6a0c0	0x990ef4a69b20	0x990ef4a6a340	0x990ef4a6a5c0	0x7ffff75d0000	0x7ffff7675fff	Vad 
+L12999: 6420	taskhostw.exe	0x990ef4a6a340	0x990ef4a6a0c0	0x990ef4a689a0	0x0	0x7ffff6c30000	0x7ffff6d5dfff	Vad 
+L13000: 6420	taskhostw.exe	0x990ef4a689a0	0x990ef4a6a340	0x0	0x0	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 
+L13001: 6420	taskhostw.exe	0x990ef4a6a5c0	0x990ef4a6a0c0	0x0	0x0	0x7ffff7890000	0x7ffff7c14fff	Vad 
+L13002: 6420	taskhostw.exe	0x990ef4a69c60	0x990ef4a69b20	0x990ef4a69260	0x990ef4a6af20	0x7ffff9560000	0x7ffff962bfff	Vad 
+L13003: 6420	taskhostw.exe	0x990ef4a69260	0x990ef4a69c60	0x990ef4a69ee0	0x990ef4a68ea0	0x7ffff90f0000	0x7ffff911dfff	Vad 
+L13004: 6420	taskhostw.exe	0x990ef4a69ee0	0x990ef4a69260	0x0	0x990ef4a6c320	0x7ffff8050000	0x7ffff816afff	Vad 
+L13005: 6420	taskhostw.exe	0x990ef4a6c320	0x990ef4a69ee0	0x0	0x0	0x7ffff8f00000	0x7ffff8fd9fff	Vad 
+L13006: 6420	taskhostw.exe	0x990ef4a68ea0	0x990ef4a69260	0x0	0x0	0x7ffff94b0000	0x7ffff9559fff	Vad 
+L13007: 6420	taskhostw.exe	0x990ef4a6af20	0x990ef4a69c60	0x990ef4a6a160	0x990ef4a68cc0	0x7ffff9770000	0x7ffff981bfff	Vad 
+L13008: 6420	taskhostw.exe	0x990ef4a6a160	0x990ef4a6af20	0x990ef4a6f980	0x0	0x7ffff9730000	0x7ffff9763fff	Vad 
+L13009: 6420	taskhostw.exe	0x990ef4a6f980	0x990ef4a6a160	0x0	0x0	0x7ffff9630000	0x7ffff9729fff	Vad 
+L13010: 6420	taskhostw.exe	0x990ef4a68cc0	0x990ef4a6af20	0x990ef4a6c780	0x0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 
+L13011: 6420	taskhostw.exe	0x990ef4a6c780	0x990ef4a68cc0	0x0	0x0	0x7ffff9900000	0x7ffff99b0fff	Vad 
+
+--- vadinfo.txt ---
+L12943: 6420	taskhostw.exe	0xffff990ef4a6ab60	0x7df5a5910000	0x7ff5a590ffff	Vad 	PAGE_NOACCESS	2	0	0x0	N/A	Disabled
+L12944: 6420	taskhostw.exe	0xffff990ef4a69bc0	0x20183ad0000	0x20183ad3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a6ab60	N/A	Disabled
+L12945: 6420	taskhostw.exe	0xffff990ef4a6aa20	0x201839f0000	0x201839f1fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef4a69bc0	N/A	Disabled
+L12946: 6420	taskhostw.exe	0xffff990ef4d5e550	0xaf97980000	0xaf979fffff	VadS	PAGE_READWRITE	11	1	0xffff990ef4a6aa20	N/A	Disabled
+L12947: 6420	taskhostw.exe	0xffff990ef4d5b3f0	0xaf97800000	0xaf9787ffff	VadS	PAGE_READWRITE	11	1	0xffff990ef4d5e550	N/A	Disabled
+L12948: 6420	taskhostw.exe	0xffff990ef4d58970	0x7ffed000	0x7ffedfff	VadS	PAGE_READONLY	1	1	0xffff990ef4d5b3f0	N/A	Disabled
+L12949: 6420	taskhostw.exe	0xffff990ef4d586f0	0x7ffe0000	0x7ffe0fff	VadS	PAGE_READONLY	1	1	0xffff990ef4d58970	N/A	Disabled
+L12950: 6420	taskhostw.exe	0xffff990ef4d59820	0xaf97600000	0xaf977fffff	VadS	PAGE_READWRITE	11	1	0xffff990ef4d58970	N/A	Disabled
+L12951: 6420	taskhostw.exe	0xffff990efa34b4a0	0xaf97880000	0xaf978fffff	VadS	PAGE_READWRITE	11	1	0xffff990ef4d5b3f0	N/A	Disabled
+L12952: 6420	taskhostw.exe	0xffff990efa34aaa0	0xaf97900000	0xaf9797ffff	VadS	PAGE_READWRITE	11	1	0xffff990efa34b4a0	N/A	Disabled
+L12953: 6420	taskhostw.exe	0xffff990ef4d60850	0xaf97b00000	0xaf97b7ffff	VadS	PAGE_READWRITE	11	1	0xffff990ef4d5e550	N/A	Disabled
+L12954: 6420	taskhostw.exe	0xffff990ef4d5e690	0x201839e0000	0x201839effff	VadS	PAGE_READWRITE	6	1	0xffff990ef4d60850	N/A	Disabled
+L12955: 6420	taskhostw.exe	0xffff990ef4d5c250	0x20183a50000	0x20183a51fff	VadS	PAGE_READWRITE	2	1	0xffff990ef4a6aa20	N/A	Disabled
+L12956: 6420	taskhostw.exe	0xffff990ef4a6aac0	0x20183a30000	0x20183a33fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d5c250	N/A	Disabled
+L12957: 6420	taskhostw.exe	0xffff990ef4a6ad40	0x20183a00000	0x20183a29fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a6aac0	N/A	Disabled
+L12958: 6420	taskhostw.exe	0xffff990ef4a691c0	0x20183a40000	0x20183a40fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a6aac0	N/A	Disabled
+L12959: 6420	taskhostw.exe	0xffff990ef4a68d60	0x20183aa0000	0x20183aa2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d5c250	\Windows\System32\l_intl.nls	Disabled
+L12960: 6420	taskhostw.exe	0xffff990ef4a68e00	0x20183a80000	0x20183a90fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a68d60	\Windows\System32\C_437.NLS	Disabled
+L12961: 6420	taskhostw.exe	0xffff990ef4a69620	0x20183a60000	0x20183a70fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a68e00	\Windows\System32\C_1252.NLS	Disabled
+L12962: 6420	taskhostw.exe	0xffff990ef4a6a660	0x20183ac0000	0x20183ac8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a68d60	N/A	Disabled
+L12963: 6420	taskhostw.exe	0xffff990ef4a6a020	0x20183ab0000	0x20183ab8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a6a660	N/A	Disabled
+L12964: 6420	taskhostw.exe	0xffff990ef4a6ac00	0x20183d80000	0x20183d80fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a69bc0	\Windows\System32\en-US\taskhostw.exe.mui	Disabled
+L12965: 6420	taskhostw.exe	0xffff990ef4a6a980	0x20183d10000	0x20183d20fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a6ac00	\Windows\System32\C_1252.NLS	Disabled
+L12966: 6420	taskhostw.exe	0xffff990ef4a68b80	0x20183b10000	0x20183b1ffff	Vad 	PAGE_READWRITE	0	0	0xffff990ef4a6a980	N/A	Disabled
+L12967: 6420	taskhostw.exe	0xffff990ef4d5e0a0	0x20183af0000	0x20183b09fff	VadS	PAGE_READWRITE	2	1	0xffff990ef4a68b80	N/A	Disabled
+L12968: 6420	taskhostw.exe	0xffff990ef4a69a80	0x20183ae0000	0x20183ae3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d5e0a0	N/A	Disabled
+L12969: 6420	taskhostw.exe	0xffff990ef4d5d920	0x20183b30000	0x20183c2ffff	VadF	PAGE_READWRITE	54	1	0xffff990ef4a68b80	N/A	Disabled
+L12970: 6420	taskhostw.exe	0xffff990ef4a6b100	0x20183b20000	0x20183b22fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d5d920	\Windows\System32\l_intl.nls	Disabled
+L12971: 6420	taskhostw.exe	0xffff990ef4a6a2a0	0x20183c30000	0x20183d02fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d5d920	\Windows\System32\locale.nls	Disabled
+L12972: 6420	taskhostw.exe	0xffff990ef4d5dab0	0x20183d50000	0x20183d69fff	VadS	PAGE_READWRITE	1	1	0xffff990ef4a6a980	N/A	Disabled
+L12973: 6420	taskhostw.exe	0xffff990ef4a698a0	0x20183d30000	0x20183d40fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d5dab0	\Windows\System32\C_437.NLS	Disabled
+L12974: 6420	taskhostw.exe	0xffff990ef4a699e0	0x20183d70000	0x20183d77fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d5dab0	N/A	Disabled
+L12975: 6420	taskhostw.exe	0xffff990ef4d5dc40	0x20183eb0000	0x20183ebffff	VadF	PAGE_READWRITE	7	1	0xffff990ef4a6ac00	N/A	Disabled
+L12976: 6420	taskhostw.exe	0xffff990ef4d60350	0x20183da0000	0x20183db9fff	VadS	PAGE_READWRITE	1	1	0xffff990ef4d5dc40	N/A	Disabled
+L12977: 6420	taskhostw.exe	0xffff990ef4a6caa0	0x20183d90000	0x20183d95fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d60350	N/A	Disabled
+L12978: 6420	taskhostw.exe	0xffff990ef4a6bd80	0x20183dd0000	0x20183dd0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d60350	N/A	Disabled
+L12979: 6420	taskhostw.exe	0xffff990ef4a6d720	0x20183dc0000	0x20183dc0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a6bd80	N/A	Disabled
+L12980: 6420	taskhostw.exe	0xffff990ef4d5dec0	0x20183e30000	0x20183e3ffff	VadF	PAGE_READWRITE	2	1	0xffff990ef4a6bd80	N/A	Disabled
+L12981: 6420	taskhostw.exe	0xffff990ef4d5fa40	0x201857a0000	0x201857affff	VadF	PAGE_READWRITE	2	1	0xffff990ef4d5dc40	N/A	Disabled
+L12982: 6420	taskhostw.exe	0xffff990ef4a69e40	0x201840c0000	0x20184240fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d5fa40	N/A	Disabled
+L12983: 6420	taskhostw.exe	0xffff990ef4a6a700	0x20183ec0000	0x201840bffff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a69e40	N/A	Disabled
+L12984: 6420	taskhostw.exe	0xffff990ef4a6a200	0x20184250000	0x20185650fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4a69e40	N/A	Disabled
+L12985: 6420	taskhostw.exe	0xffff990ef4d5dce0	0x7df4a58f0000	0x7df5a590ffff	VadS	PAGE_READWRITE	0	1	0xffff990ef4d5fa40	N/A	Disabled
+L12986: 6420	taskhostw.exe	0xffff990ef4a6be20	0x201857b0000	0x201858f1fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d5dce0	N/A	Disabled
+L12987: 6420	taskhostw.exe	0xffff990ef4a6a7a0	0x7ffff69f0000	0x7ffff6a19fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a6ab60	\Windows\System32\win32u.dll	Disabled
+L12988: 6420	taskhostw.exe	0xffff990ef4a6a840	0x7ff6ca0f0000	0x7ff6ca10cfff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef4a6a7a0	\Windows\System32\taskhostw.exe	Disabled
+L12989: 6420	taskhostw.exe	0xffff990ef4d5e500	0x7ff5d19a0000	0x7ff5d39a0fff	VadS	PAGE_READWRITE	1	1	0xffff990ef4a6a840	N/A	Disabled
+L12990: 6420	taskhostw.exe	0xffff990ef4a69940	0x7ff5d18a0000	0x7ff5d199ffff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d5e500	N/A	Disabled
+L12991: 6420	taskhostw.exe	0xffff990ef4a69120	0x7ff5d39b0000	0x7ff5d39b0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef4d5e500	N/A	Disabled
+L12992: 6420	taskhostw.exe	0xffff990ef4a696c0	0x7ffff6540000	0x7ffff65e7fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef4a6a840	\Windows\System32\bcryptprimitives.dll	Disabled
+L12993: 6420	taskhostw.exe	0xffff990ef4a6aca0	0x7ffff3d40000	0x7ffff3decfff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef4a696c0	\Windows\System32\uxtheme.dll	Disabled
+L12994: 6420	taskhostw.exe	0xffff990ef4a6b2e0	0x7fffe00c0000	0x7fffe0120fff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef4a6aca0	\Windows\System32\WiFiCloudStore.dll	Disabled
+L12995: 6420	taskhostw.exe	0xffff990ef4a68ae0	0x7ffff50d0000	0x7ffff50edfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef4a6aca0	\Windows\System32\kernel.appcore.dll	Disabled
+L12996: 6420	taskhostw.exe	0xffff990ef4a68a40	0x7ffff65f0000	0x7ffff69e3fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef4a696c0	\Windows\System32\KernelBase.dll	Disabled
+L12997: 6420	taskhostw.exe	0xffff990ef4a69b20	0x7ffff7c20000	0x7ffff7de7fff	Vad 	PAGE_EXECUTE_WRITECOPY	8	0	0xffff990ef4a6a7a0	\Windows\System32\user32.dll	Disabled
+L12998: 6420	taskhostw.exe	0xffff990ef4a6a0c0	0x7ffff75d0000	0x7ffff7675fff	Vad 	PAGE_EXECUTE_WRITECOPY	15	0	0xffff990ef4a69b20	\Windows\System32\msvcp_win.dll	Disabled
+L12999: 6420	taskhostw.exe	0xffff990ef4a6a340	0x7ffff6c30000	0x7ffff6d5dfff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef4a6a0c0	\Windows\System32\gdi32full.dll	Disabled
+L13000: 6420	taskhostw.exe	0xffff990ef4a689a0	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef4a6a340	\Windows\System32\ucrtbase.dll	Disabled
+L13001: 6420	taskhostw.exe	0xffff990ef4a6a5c0	0x7ffff7890000	0x7ffff7c14fff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef4a6a0c0	\Windows\System32\combase.dll	Disabled
+L13002: 6420	taskhostw.exe	0xffff990ef4a69c60	0x7ffff9560000	0x7ffff962bfff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef4a69b20	\Windows\System32\kernel32.dll	Disabled
+L13003: 6420	taskhostw.exe	0xffff990ef4a69260	0x7ffff90f0000	0x7ffff911dfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef4a69c60	\Windows\System32\gdi32.dll	Disabled
+L13004: 6420	taskhostw.exe	0xffff990ef4a69ee0	0x7ffff8050000	0x7ffff816afff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef4a69260	\Windows\System32\rpcrt4.dll	Disabled
+L13005: 6420	taskhostw.exe	0xffff990ef4a6c320	0x7ffff8f00000	0x7ffff8fd9fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef4a69ee0	\Windows\System32\oleaut32.dll	Disabled
+L13006: 6420	taskhostw.exe	0xffff990ef4a68ea0	0x7ffff94b0000	0x7ffff9559fff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef4a69260	\Windows\System32\sechost.dll	Disabled
+L13007: 6420	taskhostw.exe	0xffff990ef4a6af20	0x7ffff9770000	0x7ffff981bfff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef4a69c60	\Windows\System32\msvcrt.dll	Disabled
+L13008: 6420	taskhostw.exe	0xffff990ef4a6a160	0x7ffff9730000	0x7ffff9763fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef4a6af20	\Windows\System32\imm32.dll	Disabled
+L13009: 6420	taskhostw.exe	0xffff990ef4a6f980	0x7ffff9630000	0x7ffff9729fff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef4a6a160	\Windows\System32\SHCore.dll	Disabled
+L13010: 6420	taskhostw.exe	0xffff990ef4a68cc0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef4a6af20	\Windows\System32\ntdll.dll	Disabled
+L13011: 6420	taskhostw.exe	0xffff990ef4a6c780	0x7ffff9900000	0x7ffff99b0fff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef4a68cc0	\Windows\System32\clbcatq.dll	Disabled
+
+--- malware_pebmasquerade.txt ---
+L104: 6420	taskhostw.exe	\Device\HarddiskVolume4\Windows\System32\taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	False	False
+
+--- sessions.txt ---
+L118: 1	-	6420	taskhostw.exe	CLEANWINDOWS11/kali	2026-05-13 19:16:45.000000 UTC
+
+=== END OF PIVOT REPORT ===

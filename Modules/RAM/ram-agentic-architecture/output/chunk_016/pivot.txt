@@ -1,0 +1,429 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-04T21:24:31Z
+
+=== PID 5652 (Widgets.exe, ppid=516) ===
+Cmdline: "C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe" -ServerName:Microsoft.Windows.DashboardServer
+
+--- pslist.txt ---
+L86: 5652	516	Widgets.exe	0x990ef7e1c080	14	-	1	False	2026-05-13 19:15:50.000000 UTC	N/A	Disabled
+L119: 4420	5652	msedgewebview2	0x990ef8066080	56	-	1	False	2026-05-13 19:20:52.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L86: 5652	Widgets.exe	"C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe" -ServerName:Microsoft.Windows.DashboardServer
+L119: 4420	msedgewebview2	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --embedded-browser-webview=1 --webview-exe-name=Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1
+
+--- privileges.txt ---
+L2840: 5652	Widgets.exe	2	SeCreateTokenPrivilege		Create a token object
+L2841: 5652	Widgets.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2842: 5652	Widgets.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2843: 5652	Widgets.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2844: 5652	Widgets.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2845: 5652	Widgets.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2846: 5652	Widgets.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2847: 5652	Widgets.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2848: 5652	Widgets.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2849: 5652	Widgets.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2850: 5652	Widgets.exe	12	SeSystemtimePrivilege		Change the system time
+L2851: 5652	Widgets.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2852: 5652	Widgets.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2853: 5652	Widgets.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2854: 5652	Widgets.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2855: 5652	Widgets.exe	17	SeBackupPrivilege		Backup files and directories
+L2856: 5652	Widgets.exe	18	SeRestorePrivilege		Restore files and directories
+L2857: 5652	Widgets.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2858: 5652	Widgets.exe	20	SeDebugPrivilege		Debug programs
+L2859: 5652	Widgets.exe	21	SeAuditPrivilege		Generate security audits
+L2860: 5652	Widgets.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2861: 5652	Widgets.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2862: 5652	Widgets.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2863: 5652	Widgets.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2864: 5652	Widgets.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2865: 5652	Widgets.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2866: 5652	Widgets.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2867: 5652	Widgets.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2868: 5652	Widgets.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2869: 5652	Widgets.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2870: 5652	Widgets.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2871: 5652	Widgets.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2872: 5652	Widgets.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2873: 5652	Widgets.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2874: 5652	Widgets.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L3724: 5652	Widgets.exe	0x7ff779b40000	0x2d2000	Widgets.exe	C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe	-1	2026-05-13 19:15:51.000000 UTC	Disabled
+L3725: 5652	Widgets.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:15:51.000000 UTC	Disabled
+L3726: 5652	Widgets.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:15:51.000000 UTC	Disabled
+L3727: 5652	Widgets.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:15:51.000000 UTC	Disabled
+L3728: 5652	Widgets.exe	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3729: 5652	Widgets.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3730: 5652	Widgets.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3731: 5652	Widgets.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3732: 5652	Widgets.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3733: 5652	Widgets.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3734: 5652	Widgets.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3735: 5652	Widgets.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3736: 5652	Widgets.exe	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3737: 5652	Widgets.exe	0x7fffd6f20000	0x8c000	MSVCP140_APP.dll	C:\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\MSVCP140_APP.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3738: 5652	Widgets.exe	0x7fffd6ed0000	0x4a000	CONCRT140_APP.dll	C:\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\CONCRT140_APP.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3739: 5652	Widgets.exe	0x7fffe0070000	0x1d000	VCRUNTIME140_APP.dll	C:\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\VCRUNTIME140_APP.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3740: 5652	Widgets.exe	0x7fffd6ea0000	0x2d000	WebView2Loader.dll	C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\WebView2Loader.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3741: 5652	Widgets.exe	0x7fffe39f0000	0xc000	VCRUNTIME140_1_APP.dll	C:\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\VCRUNTIME140_1_APP.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3742: 5652	Widgets.exe	0x7fffe6a60000	0x1a000	NETAPI32.dll	C:\WINDOWS\SYSTEM32\NETAPI32.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3743: 5652	Widgets.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3744: 5652	Widgets.exe	0x7ffff3140000	0x173000	DSREG.DLL	C:\WINDOWS\SYSTEM32\DSREG.DLL	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3745: 5652	Widgets.exe	0x7ffff56f0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3746: 5652	Widgets.exe	0x7fffec800000	0x1b000	WKSCLI.DLL	C:\WINDOWS\SYSTEM32\WKSCLI.DLL	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3747: 5652	Widgets.exe	0x7ffff49f0000	0xd000	NETUTILS.DLL	C:\WINDOWS\SYSTEM32\NETUTILS.DLL	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3748: 5652	Widgets.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3749: 5652	Widgets.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3750: 5652	Widgets.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:15:51.000000 UTC	Disabled
+L3751: 5652	Widgets.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3752: 5652	Widgets.exe	0x7fffe9de0000	0x9c000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3753: 5652	Widgets.exe	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3754: 5652	Widgets.exe	0x7ffff9820000	0xbb000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3755: 5652	Widgets.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:15:51.000000 UTC	Disabled
+L3756: 5652	Widgets.exe	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3757: 5652	Widgets.exe	0x7ffff8710000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3758: 5652	Widgets.exe	0x7fffe87c0000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3759: 5652	Widgets.exe	0x7fffd6d30000	0x143000	ShellCommonCommonProxyStub.dll	C:\Windows\System32\ShellCommonCommonProxyStub.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3760: 5652	Widgets.exe	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3761: 5652	Widgets.exe	0x7ffff6d60000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3762: 5652	Widgets.exe	0x7ffff8e80000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3763: 5652	Widgets.exe	0x7fffe55a0000	0xd6000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3764: 5652	Widgets.exe	0x7fffec8c0000	0x16a000	AppXDeploymentClient.dll	C:\Windows\System32\AppXDeploymentClient.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3765: 5652	Widgets.exe	0x7ffff86d0000	0x20000	imagehlp.dll	C:\WINDOWS\System32\imagehlp.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3766: 5652	Widgets.exe	0x7fffe6b10000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3767: 5652	Widgets.exe	0x7fffe66b0000	0x47000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3768: 5652	Widgets.exe	0x7fffe2ef0000	0x647000	windowsudk.shellcommon.dll	C:\WINDOWS\system32\windowsudk.shellcommon.dll	6	2026-05-13 19:15:51.000000 UTC	Disabled
+L3769: 5652	Widgets.exe	0x7fffd5d80000	0xe000	Windows.ApplicationModel.Background.TimeBroker.dll	C:\Windows\System32\Windows.ApplicationModel.Background.TimeBroker.dll	6	2026-05-13 19:15:52.000000 UTC	Disabled
+L3770: 5652	Widgets.exe	0x7fffd6bb0000	0x58000	BiWinrt.dll	C:\Windows\System32\BiWinrt.dll	6	2026-05-13 19:15:52.000000 UTC	Disabled
+L3771: 5652	Widgets.exe	0x7fffeca30000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-13 19:15:52.000000 UTC	Disabled
+L3772: 5652	Widgets.exe	0x7fffd5ce0000	0x25000	Windows.ApplicationModel.Background.SystemEventsBroker.dll	C:\Windows\System32\Windows.ApplicationModel.Background.SystemEventsBroker.dll	6	2026-05-13 19:15:52.000000 UTC	Disabled
+L3773: 5652	Widgets.exe	0x7fffd4680000	0x52000	Windows.Energy.dll	C:\Windows\System32\Windows.Energy.dll	6	2026-05-13 19:15:53.000000 UTC	Disabled
+L3774: 5652	Widgets.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:15:53.000000 UTC	Disabled
+L3775: 5652	Widgets.exe	0x7fffdf890000	0xbb000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2026-05-13 19:15:53.000000 UTC	Disabled
+L3776: 5652	Widgets.exe	0x7fffedd70000	0x244000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2026-05-13 19:15:53.000000 UTC	Disabled
+L3777: 5652	Widgets.exe	0x7fffeb7e0000	0x19000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2026-05-13 19:15:53.000000 UTC	Disabled
+L3778: 5652	Widgets.exe	0x7ffff4a00000	0x33000	IPHLPAPI.DLL	C:\Windows\System32\IPHLPAPI.DLL	6	2026-05-13 19:15:54.000000 UTC	Disabled
+L3779: 5652	Widgets.exe	0x7ffff8700000	0xa000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2026-05-13 19:15:54.000000 UTC	Disabled
+L3780: 5652	Widgets.exe	0x7fffd6090000	0x13000	dusmapi.dll	C:\Windows\System32\dusmapi.dll	6	2026-05-13 19:15:55.000000 UTC	Disabled
+L3781: 5652	Widgets.exe	0x7fffe3550000	0x21000	PCShellCommonProxyStub.dll	C:\Windows\System32\PCShellCommonProxyStub.dll	6	2026-05-13 19:15:56.000000 UTC	Disabled
+L3782: 5652	Widgets.exe	0x7fffae1a0000	0x252000	Microsoft.Windows.Widgets.dll	C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Microsoft.Windows.Widgets.dll	6	2026-05-13 19:20:51.000000 UTC	Disabled
+L3783: 5652	Widgets.exe	0x7fffd6c10000	0x39000	rometadata.dll	C:\WINDOWS\SYSTEM32\rometadata.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3784: 5652	Widgets.exe	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-13 19:20:52.000000 UTC	Disabled
+L3785: 5652	Widgets.exe	0x7fffd72c0000	0x65000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3786: 5652	Widgets.exe	0x7ffff5e80000	0x57000	CFGMGR32.dll	C:\WINDOWS\SYSTEM32\CFGMGR32.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3787: 5652	Widgets.exe	0x7ffff1bd0000	0x103000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3788: 5652	Widgets.exe	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3789: 5652	Widgets.exe	0x7fffe7590000	0xc0000	StructuredQuery.dll	C:\WINDOWS\System32\StructuredQuery.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3790: 5652	Widgets.exe	0x7fffe72e0000	0x29e000	icu.dll	C:\WINDOWS\System32\icu.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3791: 5652	Widgets.exe	0x7fffe86a0000	0x117000	SystemSettings.DataModel.dll	C:\Windows\System32\SystemSettings.DataModel.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3792: 5652	Widgets.exe	0x7fffe6740000	0x177000	Windows.System.Launcher.dll	C:\Windows\System32\Windows.System.Launcher.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3793: 5652	Widgets.exe	0x7ffff4a40000	0x2d000	slc.dll	C:\WINDOWS\SYSTEM32\slc.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3794: 5652	Widgets.exe	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3795: 5652	Widgets.exe	0x7fffe6570000	0x137000	Windows.Storage.Search.dll	C:\WINDOWS\system32\Windows.Storage.Search.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3796: 5652	Widgets.exe	0x7fffe6aa0000	0x29000	edputil.dll	C:\WINDOWS\SYSTEM32\edputil.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3797: 5652	Widgets.exe	0x7ffff3700000	0x127000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2026-05-13 19:20:52.000000 UTC	Disabled
+L3798: 5652	Widgets.exe	0x7fffd9180000	0x54000	Windows.UI.Accessibility.dll	C:\Windows\System32\Windows.UI.Accessibility.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3799: 5652	Widgets.exe	0x7ffff61c0000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3800: 5652	Widgets.exe	0x7ffff61a0000	0x14000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3801: 5652	Widgets.exe	0x7ffff7df0000	0x15d000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3802: 5652	Widgets.exe	0x7fffefa40000	0x156000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3803: 5652	Widgets.exe	0x7ffff5920000	0xc000	CRYPTBASE.DLL	C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3804: 5652	Widgets.exe	0x7fffedfc0000	0x14f000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3805: 5652	Widgets.exe	0x7fffdc7e0000	0x7c000	NInput.dll	C:\Windows\System32\NInput.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3806: 5652	Widgets.exe	0x7ffff2f10000	0x220000	dcomp.dll	C:\Windows\System32\dcomp.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3807: 5652	Widgets.exe	0x7ffff23d0000	0x19000	Microsoft.Internal.WarpPal.dll	C:\Windows\System32\Microsoft.Internal.WarpPal.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3808: 5652	Widgets.exe	0x7fffe3a20000	0x116000	FlightSettings.dll	C:\Windows\System32\FlightSettings.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3809: 5652	Widgets.exe	0x7fffeaab0000	0x81000	wosc.dll	C:\Windows\System32\wosc.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3810: 5652	Widgets.exe	0x7fffed300000	0x60000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3811: 5652	Widgets.exe	0x7fffd2b70000	0x897000	EmbeddedBrowserWebView.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\EBWebView\x64\EmbeddedBrowserWebView.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3812: 5652	Widgets.exe	0x7ffff39c0000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3813: 5652	Widgets.exe	0x7fffe3ee0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3814: 5652	Widgets.exe	0x7fffe8ac0000	0xb000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3815: 5652	Widgets.exe	0x7fffd6580000	0x73000	CapabilityAccessManagerClient.dll	C:\Windows\System32\CapabilityAccessManagerClient.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3816: 5652	Widgets.exe	0x7fffeb690000	0x148000	textinputframework.dll	C:\WINDOWS\SYSTEM32\textinputframework.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3817: 5652	Widgets.exe	0x7fffe03b0000	0x138000	Windows.Security.Authentication.Web.Core.dll	C:\Windows\System32\Windows.Security.Authentication.Web.Core.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3818: 5652	Widgets.exe	0x7fffe02d0000	0x5d000	capauthz.dll	C:\WINDOWS\SYSTEM32\capauthz.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3819: 5652	Widgets.exe	0x7fffed8c0000	0x2c4000	iertutil.dll	C:\Windows\System32\iertutil.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3820: 5652	Widgets.exe	0x7fffed890000	0x29000	srvcli.dll	C:\Windows\System32\srvcli.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3821: 5652	Widgets.exe	0x7ffff51f0000	0x36000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3822: 5652	Widgets.exe	0x7fffdcc80000	0x4f000	vaultcli.dll	C:\Windows\System32\vaultcli.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L3823: 5652	Widgets.exe	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
+L3824: 5652	Widgets.exe	0x7ffff5f30000	0xa000	DPAPI.dll	C:\WINDOWS\System32\DPAPI.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
+L3825: 5652	Widgets.exe	0x7ffff3ba0000	0x9f000	apphelp.dll	C:\WINDOWS\system32\apphelp.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
+L3826: 5652	Widgets.exe	0x7ffff5a00000	0x68000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	6	2026-05-13 19:20:54.000000 UTC	Disabled
+L3827: 5652	Widgets.exe	0x7fffe3a00000	0x16000	threadpoolwinrt.dll	C:\Windows\System32\threadpoolwinrt.dll	6	2026-05-13 19:20:56.000000 UTC	Disabled
+L3828: 5652	Widgets.exe	0x7ffff6040000	0xa2000	sxs.dll	C:\WINDOWS\SYSTEM32\sxs.dll	6	2026-05-13 19:20:56.000000 UTC	Disabled
+L3829: 5652	Widgets.exe	0x7ffff0350000	0x19000	Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	C:\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	6	2026-05-13 19:20:56.000000 UTC	Disabled
+L3830: 5652	Widgets.exe	0x7ffff4b00000	0xf000	DiagnosticDataSettings.dll	C:\Windows\System32\DiagnosticDataSettings.dll	6	2026-05-13 19:20:56.000000 UTC	Disabled
+L3831: 5652	Widgets.exe	0x7fffb8b80000	0x34000	WinRtTracing.dll	C:\Windows\System32\WinRtTracing.dll	6	2026-05-13 19:20:56.000000 UTC	Disabled
+L3832: 5652	Widgets.exe	0x7fffaf7b0000	0x73000	Geolocation.dll	C:\Windows\System32\Geolocation.dll	6	2026-05-13 19:20:56.000000 UTC	Disabled
+L3833: 5652	Widgets.exe	0x7fffea0a0000	0x17000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2026-05-13 19:20:56.000000 UTC	Disabled
+L3834: 5652	Widgets.exe	0x7fffefba0000	0x114000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2026-05-13 19:20:56.000000 UTC	Disabled
+L3835: 5652	Widgets.exe	0x7fffef9b0000	0x34000	bcp47mrm.dll	C:\Windows\System32\bcp47mrm.dll	6	2026-05-13 19:20:56.000000 UTC	Disabled
+L3836: 5652	Widgets.exe	0x7fffeac50000	0xd000	LocationFrameworkPS.dll	C:\Windows\System32\LocationFrameworkPS.dll	6	2026-05-13 19:20:57.000000 UTC	Disabled
+L3837: 5652	Widgets.exe	0x7fffd6500000	0x6e000	CryptoWinRT.dll	C:\Windows\System32\CryptoWinRT.dll	6	2026-05-13 19:20:57.000000 UTC	Disabled
+
+--- envars.txt ---
+L2430: 5652	Widgets.exe	0x2c19f104c20	ALLUSERSPROFILE	C:\ProgramData
+L2431: 5652	Widgets.exe	0x2c19f104c20	APPDATA	C:\Users\kali\AppData\Roaming
+L2432: 5652	Widgets.exe	0x2c19f104c20	CommonProgramFiles	C:\Program Files\Common Files
+L2433: 5652	Widgets.exe	0x2c19f104c20	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
+L2434: 5652	Widgets.exe	0x2c19f104c20	CommonProgramW6432	C:\Program Files\Common Files
+L2435: 5652	Widgets.exe	0x2c19f104c20	COMPUTERNAME	CLEANWINDOWS11
+L2436: 5652	Widgets.exe	0x2c19f104c20	ComSpec	C:\WINDOWS\system32\cmd.exe
+L2437: 5652	Widgets.exe	0x2c19f104c20	DriverData	C:\Windows\System32\Drivers\DriverData
+L2438: 5652	Widgets.exe	0x2c19f104c20	HOMEDRIVE	C:
+L2439: 5652	Widgets.exe	0x2c19f104c20	HOMEPATH	\Users\kali
+L2440: 5652	Widgets.exe	0x2c19f104c20	LOCALAPPDATA	C:\Users\kali\AppData\Local
+L2441: 5652	Widgets.exe	0x2c19f104c20	LOGONSERVER	\\CLEANWINDOWS11
+L2442: 5652	Widgets.exe	0x2c19f104c20	NUMBER_OF_PROCESSORS	4
+L2443: 5652	Widgets.exe	0x2c19f104c20	OneDrive	C:\Users\kali\OneDrive
+L2444: 5652	Widgets.exe	0x2c19f104c20	OS	Windows_NT
+L2445: 5652	Widgets.exe	0x2c19f104c20	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\kali\AppData\Local\Microsoft\WindowsApps
+L2446: 5652	Widgets.exe	0x2c19f104c20	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+L2447: 5652	Widgets.exe	0x2c19f104c20	PROCESSOR_ARCHITECTURE	AMD64
+L2448: 5652	Widgets.exe	0x2c19f104c20	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+L2449: 5652	Widgets.exe	0x2c19f104c20	PROCESSOR_LEVEL	6
+L2450: 5652	Widgets.exe	0x2c19f104c20	PROCESSOR_REVISION	ba03
+L2451: 5652	Widgets.exe	0x2c19f104c20	ProgramData	C:\ProgramData
+L2452: 5652	Widgets.exe	0x2c19f104c20	ProgramFiles	C:\Program Files
+L2453: 5652	Widgets.exe	0x2c19f104c20	ProgramFiles(x86)	C:\Program Files (x86)
+L2454: 5652	Widgets.exe	0x2c19f104c20	ProgramW6432	C:\Program Files
+L2455: 5652	Widgets.exe	0x2c19f104c20	PSModulePath	%ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+L2456: 5652	Widgets.exe	0x2c19f104c20	PUBLIC	C:\Users\Public
+L2457: 5652	Widgets.exe	0x2c19f104c20	SystemDrive	C:
+L2458: 5652	Widgets.exe	0x2c19f104c20	SystemRoot	C:\WINDOWS
+L2459: 5652	Widgets.exe	0x2c19f104c20	TEMP	C:\Users\kali\AppData\Local\Temp
+L2460: 5652	Widgets.exe	0x2c19f104c20	TMP	C:\Users\kali\AppData\Local\Temp
+L2461: 5652	Widgets.exe	0x2c19f104c20	USERDOMAIN	CLEANWINDOWS11
+L2462: 5652	Widgets.exe	0x2c19f104c20	USERDOMAIN_ROAMINGPROFILE	CLEANWINDOWS11
+L2463: 5652	Widgets.exe	0x2c19f104c20	USERNAME	kali
+L2464: 5652	Widgets.exe	0x2c19f104c20	USERPROFILE	C:\Users\kali
+L2465: 5652	Widgets.exe	0x2c19f104c20	windir	C:\WINDOWS
+
+--- pstree.txt ---
+L26: *** 5652	516	Widgets.exe	0x990ef7e1c080	14	-	1	False	2026-05-13 19:15:50.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe	"C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe" -ServerName:Microsoft.Windows.DashboardServer	C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe
+L27: **** 4420	5652	msedgewebview2	0x990ef8066080	56	-	1	False	2026-05-13 19:20:52.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --embedded-browser-webview=1 --webview-exe-name=Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+
+--- psscan.txt ---
+L122: 5652	516	Widgets.exe	0x990ef7e1c080	14	-	1	False	2026-05-13 19:15:50.000000 UTC	N/A	Disabled
+L128: 4420	5652	msedgewebview2	0x990ef8066080	56	-	1	False	2026-05-13 19:20:52.000000 UTC	N/A	Disabled
+
+--- threads.txt ---
+L984: 0x990ef7e8d080	5652	5656	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff779b53ed0	\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe	2026-05-13 19:15:50.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L985: 0x990ef7e15080	5652	5880	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:15:51.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L986: 0x990ef8061080	5652	5916	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:15:51.000000 UTC	2026-05-13 19:20:52.000000 UTC
+L987: 0x990ef4be5080	5652	3032	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:51.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L988: 0x990ef7cc4080	5652	6428	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L989: 0x990ef6fbb080	5652	6968	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L990: 0x990ef7971080	5652	1868	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L991: 0x990ef47ef080	5652	7596	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L992: 0x990ef47ee080	5652	4880	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L993: 0x990ef73ae080	5652	6960	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:20:52.000000 UTC	2026-05-13 19:20:53.000000 UTC
+L994: 0x990ef73ad080	5652	6452	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L995: 0x990ef775d080	5652	7660	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffd2db6200	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\EBWebView\x64\EmbeddedBrowserWebView.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L996: 0x990ef6818080	5652	4156	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L997: 0x990ef8149080	5652	2556	0xe08e859ba5b0	-	0x7fffefbe7ce0	\Windows\System32\MrmCoreR.dll	2026-05-13 19:20:56.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L998: 0x990ef6717080	5652	2292	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:51.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L999: 0x990ef4ebc040	5652	560	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:52.000000 UTC	1600-08-22 23:57:34.000000 UTC
+
+--- thrdscan.txt ---
+L309: 0x990ef47ee080	5652	4880	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L310: 0x990ef47ef080	5652	7596	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L373: 0x990ef4be5080	5652	3032	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:51.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L434: 0x990ef4ebc040	5652	560	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:52.000000 UTC	1600-08-22 23:57:34.000000 UTC
+L619: 0x990ef6717080	5652	2292	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:51.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L660: 0x990ef6818080	5652	4156	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L880: 0x990ef6fbb080	5652	6968	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L956: 0x990ef73ad080	5652	6452	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L957: 0x990ef73ae080	5652	6960	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:20:52.000000 UTC	2026-05-13 19:20:53.000000 UTC
+L1036: 0x990ef775d080	5652	7660	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffd2db6200	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\EBWebView\x64\EmbeddedBrowserWebView.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1151: 0x990ef7971080	5652	1868	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1252: 0x990ef7cc4080	5652	6428	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1296: 0x990ef7e15080	5652	5880	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:15:51.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1332: 0x990ef7e8d080	5652	5656	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff779b53ed0	\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe	2026-05-13 19:15:50.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1386: 0x990ef8061080	5652	5916	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff6ae3780	\Windows\System32\ucrtbase.dll	2026-05-13 19:15:51.000000 UTC	2026-05-13 19:20:52.000000 UTC
+L1441: 0x990ef8149080	5652	2556	0xe08e859ba5b0	-	0x7fffefbe7ce0	\Windows\System32\MrmCoreR.dll	2026-05-13 19:20:56.000000 UTC	1600-08-22 23:57:39.000000 UTC
+
+--- ldrmodules.txt ---
+L3956: 5652	Widgets.exe	0x2c19e8c0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L3957: 5652	Widgets.exe	0x2c19ede0000	False	False	False	\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Microsoft.Windows.Widgets.winmd
+L3958: 5652	Widgets.exe	0x2c19edf0000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L3959: 5652	Widgets.exe	0x2c19ef30000	False	False	False	\Windows\System32\WinMetadata\Windows.Storage.winmd
+L3960: 5652	Widgets.exe	0x2c19ef60000	False	False	False	\Windows\System32\en-US\combase.dll.mui
+L3961: 5652	Widgets.exe	0x2c19ef70000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L3962: 5652	Widgets.exe	0x2c19efb0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L3963: 5652	Widgets.exe	0x2c1a2b80000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
+L3964: 5652	Widgets.exe	0x2c1a1d10000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L3965: 5652	Widgets.exe	0x2c1a2c10000	False	False	False	\Windows\System32\WinMetadata\Windows.Security.winmd
+L3966: 5652	Widgets.exe	0x7ffff3140000	True	True	True	\Windows\System32\dsreg.dll
+L3967: 5652	Widgets.exe	0x7fffe6a60000	True	True	True	\Windows\System32\netapi32.dll
+L3968: 5652	Widgets.exe	0x7fffd6ed0000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\concrt140_app.dll
+L3969: 5652	Widgets.exe	0x7fffd5d80000	True	True	True	\Windows\System32\Windows.ApplicationModel.Background.TimeBroker.dll
+L3970: 5652	Widgets.exe	0x7fffae1a0000	True	True	True	\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Microsoft.Windows.Widgets.dll
+L3971: 5652	Widgets.exe	0x7ff779b40000	True	False	True	\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe
+L3972: 5652	Widgets.exe	0x7fffd2b70000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\EBWebView\x64\EmbeddedBrowserWebView.dll
+L3973: 5652	Widgets.exe	0x7fffb8b80000	True	True	True	\Windows\System32\WinRtTracing.dll
+L3974: 5652	Widgets.exe	0x7fffaf7b0000	True	True	True	\Windows\System32\Geolocation.dll
+L3975: 5652	Widgets.exe	0x7fffd4680000	True	True	True	\Windows\System32\Windows.Energy.dll
+L3976: 5652	Widgets.exe	0x7fffd5ce0000	True	True	True	\Windows\System32\Windows.ApplicationModel.Background.SystemEventsBroker.dll
+L3977: 5652	Widgets.exe	0x7fffd6bb0000	True	True	True	\Windows\System32\biwinrt.dll
+L3978: 5652	Widgets.exe	0x7fffd6500000	True	True	True	\Windows\System32\CryptoWinRT.dll
+L3979: 5652	Widgets.exe	0x7fffd6090000	True	True	True	\Windows\System32\dusmapi.dll
+L3980: 5652	Widgets.exe	0x7fffd6580000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L3981: 5652	Widgets.exe	0x7fffd6d30000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L3982: 5652	Widgets.exe	0x7fffd6c10000	True	True	True	\Windows\System32\rometadata.dll
+L3983: 5652	Widgets.exe	0x7fffd6ea0000	True	True	True	\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\WebView2Loader.dll
+L3984: 5652	Widgets.exe	0x7fffe39f0000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\vcruntime140_1_app.dll
+L3985: 5652	Widgets.exe	0x7fffe0070000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\vcruntime140_app.dll
+L3986: 5652	Widgets.exe	0x7fffdc7e0000	True	True	True	\Windows\System32\ninput.dll
+L3987: 5652	Widgets.exe	0x7fffd72c0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L3988: 5652	Widgets.exe	0x7fffd6f20000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\msvcp140_app.dll
+L3989: 5652	Widgets.exe	0x7fffd9180000	True	True	True	\Windows\System32\Windows.UI.Accessibility.dll
+L3990: 5652	Widgets.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L3991: 5652	Widgets.exe	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
+L3992: 5652	Widgets.exe	0x7fffe2ef0000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L3993: 5652	Widgets.exe	0x7fffe03b0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L3994: 5652	Widgets.exe	0x7fffe02d0000	True	True	True	\Windows\System32\capauthz.dll
+L3995: 5652	Widgets.exe	0x7fffe3550000	True	True	True	\Windows\System32\PCShellCommonProxyStub.dll
+L3996: 5652	Widgets.exe	0x7fffe55a0000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L3997: 5652	Widgets.exe	0x7fffe3a20000	True	True	True	\Windows\System32\FlightSettings.dll
+L3998: 5652	Widgets.exe	0x7fffe3a00000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L3999: 5652	Widgets.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L4000: 5652	Widgets.exe	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L4001: 5652	Widgets.exe	0x7fffe6570000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L4002: 5652	Widgets.exe	0x7fffe6740000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L4003: 5652	Widgets.exe	0x7fffec8c0000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L4004: 5652	Widgets.exe	0x7fffe9de0000	True	True	True	\Windows\System32\Windows.Web.dll
+L4005: 5652	Widgets.exe	0x7fffe7590000	True	True	True	\Windows\System32\StructuredQuery.dll
+L4006: 5652	Widgets.exe	0x7fffe6b10000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L4007: 5652	Widgets.exe	0x7fffe6aa0000	True	True	True	\Windows\System32\edputil.dll
+L4008: 5652	Widgets.exe	0x7fffe72e0000	True	True	True	\Windows\System32\icu.dll
+L4009: 5652	Widgets.exe	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L4010: 5652	Widgets.exe	0x7fffe86a0000	True	True	True	\Windows\System32\SystemSettings.DataModel.dll
+L4011: 5652	Widgets.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L4012: 5652	Widgets.exe	0x7fffeb690000	True	True	True	\Windows\System32\TextInputFramework.dll
+L4013: 5652	Widgets.exe	0x7fffeaab0000	True	True	True	\Windows\System32\wosc.dll
+L4014: 5652	Widgets.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L4015: 5652	Widgets.exe	0x7fffeac50000	True	True	True	\Windows\System32\LocationFrameworkPS.dll
+L4016: 5652	Widgets.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L4017: 5652	Widgets.exe	0x7fffec800000	True	True	True	\Windows\System32\wkscli.dll
+L4018: 5652	Widgets.exe	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L4019: 5652	Widgets.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L4020: 5652	Widgets.exe	0x7fffeca30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L4021: 5652	Widgets.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L4022: 5652	Widgets.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L4023: 5652	Widgets.exe	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
+L4024: 5652	Widgets.exe	0x7fffefa40000	True	True	True	\Windows\System32\Windows.UI.dll
+L4025: 5652	Widgets.exe	0x7fffedfc0000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L4026: 5652	Widgets.exe	0x7fffef9b0000	True	True	True	\Windows\System32\BCP47mrm.dll
+L4027: 5652	Widgets.exe	0x7ffff0350000	True	True	True	\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll
+L4028: 5652	Widgets.exe	0x7fffefba0000	True	True	True	\Windows\System32\MrmCoreR.dll
+L4029: 5652	Widgets.exe	0x7ffff23d0000	True	True	True	\Windows\System32\Microsoft.Internal.WarpPal.dll
+L4030: 5652	Widgets.exe	0x7ffff2f10000	True	True	True	\Windows\System32\dcomp.dll
+L4031: 5652	Widgets.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L4032: 5652	Widgets.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L4033: 5652	Widgets.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L4034: 5652	Widgets.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L4035: 5652	Widgets.exe	0x7ffff3700000	True	True	True	\Windows\System32\CoreMessaging.dll
+L4036: 5652	Widgets.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L4037: 5652	Widgets.exe	0x7ffff3ba0000	True	True	True	\Windows\System32\apphelp.dll
+L4038: 5652	Widgets.exe	0x7ffff4a40000	True	True	True	\Windows\System32\slc.dll
+L4039: 5652	Widgets.exe	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L4040: 5652	Widgets.exe	0x7ffff4b00000	True	True	True	\Windows\System32\DiagnosticDataSettings.dll
+L4041: 5652	Widgets.exe	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
+L4042: 5652	Widgets.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L4043: 5652	Widgets.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L4044: 5652	Widgets.exe	0x7ffff51f0000	True	True	True	\Windows\System32\ntmarta.dll
+L4045: 5652	Widgets.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L4046: 5652	Widgets.exe	0x7ffff5a00000	True	True	True	\Windows\System32\wldp.dll
+L4047: 5652	Widgets.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L4048: 5652	Widgets.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L4049: 5652	Widgets.exe	0x7ffff5f30000	True	True	True	\Windows\System32\dpapi.dll
+L4050: 5652	Widgets.exe	0x7ffff6040000	True	True	True	\Windows\System32\sxs.dll
+L4051: 5652	Widgets.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L4052: 5652	Widgets.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L4053: 5652	Widgets.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L4054: 5652	Widgets.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L4055: 5652	Widgets.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L4056: 5652	Widgets.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L4057: 5652	Widgets.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L4058: 5652	Widgets.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L4059: 5652	Widgets.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L4060: 5652	Widgets.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L4061: 5652	Widgets.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L4062: 5652	Widgets.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L4063: 5652	Widgets.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L4064: 5652	Widgets.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L4065: 5652	Widgets.exe	0x7ffff86d0000	True	True	True	\Windows\System32\imagehlp.dll
+L4066: 5652	Widgets.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L4067: 5652	Widgets.exe	0x7ffff7df0000	True	True	True	\Windows\System32\msctf.dll
+L4068: 5652	Widgets.exe	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
+L4069: 5652	Widgets.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L4070: 5652	Widgets.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L4071: 5652	Widgets.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L4072: 5652	Widgets.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L4073: 5652	Widgets.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L4074: 5652	Widgets.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L4075: 5652	Widgets.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+
+--- malware_ldrmodules.txt ---
+L3956: 5652	Widgets.exe	0x2c19e8c0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L3957: 5652	Widgets.exe	0x2c19ede0000	False	False	False	\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Microsoft.Windows.Widgets.winmd
+L3958: 5652	Widgets.exe	0x2c19edf0000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L3959: 5652	Widgets.exe	0x2c19ef30000	False	False	False	\Windows\System32\WinMetadata\Windows.Storage.winmd
+L3960: 5652	Widgets.exe	0x2c19ef60000	False	False	False	\Windows\System32\en-US\combase.dll.mui
+L3961: 5652	Widgets.exe	0x2c19ef70000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L3962: 5652	Widgets.exe	0x2c19efb0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L3963: 5652	Widgets.exe	0x2c1a2b80000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
+L3964: 5652	Widgets.exe	0x2c1a1d10000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L3965: 5652	Widgets.exe	0x2c1a2c10000	False	False	False	\Windows\System32\WinMetadata\Windows.Security.winmd
+L3966: 5652	Widgets.exe	0x7ffff3140000	True	True	True	\Windows\System32\dsreg.dll
+L3967: 5652	Widgets.exe	0x7fffe6a60000	True	True	True	\Windows\System32\netapi32.dll
+L3968: 5652	Widgets.exe	0x7fffd6ed0000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\concrt140_app.dll
+L3969: 5652	Widgets.exe	0x7fffd5d80000	True	True	True	\Windows\System32\Windows.ApplicationModel.Background.TimeBroker.dll
+L3970: 5652	Widgets.exe	0x7fffae1a0000	True	True	True	\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Microsoft.Windows.Widgets.dll
+L3971: 5652	Widgets.exe	0x7ff779b40000	True	False	True	\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe
+L3972: 5652	Widgets.exe	0x7fffd2b70000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\EBWebView\x64\EmbeddedBrowserWebView.dll
+L3973: 5652	Widgets.exe	0x7fffb8b80000	True	True	True	\Windows\System32\WinRtTracing.dll
+L3974: 5652	Widgets.exe	0x7fffaf7b0000	True	True	True	\Windows\System32\Geolocation.dll
+L3975: 5652	Widgets.exe	0x7fffd4680000	True	True	True	\Windows\System32\Windows.Energy.dll
+L3976: 5652	Widgets.exe	0x7fffd5ce0000	True	True	True	\Windows\System32\Windows.ApplicationModel.Background.SystemEventsBroker.dll
+L3977: 5652	Widgets.exe	0x7fffd6bb0000	True	True	True	\Windows\System32\biwinrt.dll
+L3978: 5652	Widgets.exe	0x7fffd6500000	True	True	True	\Windows\System32\CryptoWinRT.dll
+L3979: 5652	Widgets.exe	0x7fffd6090000	True	True	True	\Windows\System32\dusmapi.dll
+L3980: 5652	Widgets.exe	0x7fffd6580000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L3981: 5652	Widgets.exe	0x7fffd6d30000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L3982: 5652	Widgets.exe	0x7fffd6c10000	True	True	True	\Windows\System32\rometadata.dll
+L3983: 5652	Widgets.exe	0x7fffd6ea0000	True	True	True	\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\WebView2Loader.dll
+L3984: 5652	Widgets.exe	0x7fffe39f0000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\vcruntime140_1_app.dll
+L3985: 5652	Widgets.exe	0x7fffe0070000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\vcruntime140_app.dll
+L3986: 5652	Widgets.exe	0x7fffdc7e0000	True	True	True	\Windows\System32\ninput.dll
+L3987: 5652	Widgets.exe	0x7fffd72c0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L3988: 5652	Widgets.exe	0x7fffd6f20000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe\msvcp140_app.dll
+L3989: 5652	Widgets.exe	0x7fffd9180000	True	True	True	\Windows\System32\Windows.UI.Accessibility.dll
+L3990: 5652	Widgets.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L3991: 5652	Widgets.exe	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
+L3992: 5652	Widgets.exe	0x7fffe2ef0000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L3993: 5652	Widgets.exe	0x7fffe03b0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L3994: 5652	Widgets.exe	0x7fffe02d0000	True	True	True	\Windows\System32\capauthz.dll
+L3995: 5652	Widgets.exe	0x7fffe3550000	True	True	True	\Windows\System32\PCShellCommonProxyStub.dll
+L3996: 5652	Widgets.exe	0x7fffe55a0000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L3997: 5652	Widgets.exe	0x7fffe3a20000	True	True	True	\Windows\System32\FlightSettings.dll
+L3998: 5652	Widgets.exe	0x7fffe3a00000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L3999: 5652	Widgets.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L4000: 5652	Widgets.exe	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L4001: 5652	Widgets.exe	0x7fffe6570000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L4002: 5652	Widgets.exe	0x7fffe6740000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L4003: 5652	Widgets.exe	0x7fffec8c0000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L4004: 5652	Widgets.exe	0x7fffe9de0000	True	True	True	\Windows\System32\Windows.Web.dll
+L4005: 5652	Widgets.exe	0x7fffe7590000	True	True	True	\Windows\System32\StructuredQuery.dll
+L4006: 5652	Widgets.exe	0x7fffe6b10000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L4007: 5652	Widgets.exe	0x7fffe6aa0000	True	True	True	\Windows\System32\edputil.dll
+L4008: 5652	Widgets.exe	0x7fffe72e0000	True	True	True	\Windows\System32\icu.dll
+L4009: 5652	Widgets.exe	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L4010: 5652	Widgets.exe	0x7fffe86a0000	True	True	True	\Windows\System32\SystemSettings.DataModel.dll
+
+=== END OF PIVOT REPORT ===

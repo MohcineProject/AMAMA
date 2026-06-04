@@ -1,427 +1,835 @@
 === PIVOT EVIDENCE REPORT ===
-Generated: 2026-05-31T20:09:02Z
+Generated: 2026-06-04T21:19:57Z
 
-=== PID 4420 (Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir=\"C:\\Users\\kali\\AppData\\Local\\Packages\\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1", ppid=5652) ===
-Cmdline: "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-
+=== PID 4384 (svchost.exe, ppid=896) ===
+Cmdline: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService
 
 --- pslist.txt ---
-L119: 4420	5652	msedgewebview2	0x990ef8066080	56	-	1	False	2026-05-13 19:20:52.000000 UTC	N/A	Disabled
-L120: 1292	4420	msedgewebview2	0x990ef602c080	10	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	Disabled
-L121: 6080	4420	msedgewebview2	0x990ef6bb6080	15	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	Disabled
-L122: 1920	4420	msedgewebview2	0x990ef6bb4080	18	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	Disabled
-L123: 2724	4420	msedgewebview2	0x990efa161080	10	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	Disabled
-L124: 7932	4420	msedgewebview2	0x990ef77a5080	18	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	Disabled
+L73: 4384	896	svchost.exe	0x990ef77bd080	7	-	1	False	2026-05-13 19:15:36.000000 UTC	N/A	Disabled
 
 --- cmdline.txt ---
-L119: 4420	msedgewebview2	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --embedded-browser-webview=1 --webview-exe-name=Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1
+L73: 4384	svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService
 
 --- privileges.txt ---
-L3995: 4420	msedgewebview2	2	SeCreateTokenPrivilege		Create a token object
-L3996: 4420	msedgewebview2	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
-L3997: 4420	msedgewebview2	4	SeLockMemoryPrivilege		Lock pages in memory
-L3998: 4420	msedgewebview2	5	SeIncreaseQuotaPrivilege		Increase quotas
-L3999: 4420	msedgewebview2	6	SeMachineAccountPrivilege		Add workstations to the domain
-L4000: 4420	msedgewebview2	7	SeTcbPrivilege		Act as part of the operating system
-L4001: 4420	msedgewebview2	8	SeSecurityPrivilege		Manage auditing and security log
-L4002: 4420	msedgewebview2	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
-L4003: 4420	msedgewebview2	10	SeLoadDriverPrivilege		Load and unload device drivers
-L4004: 4420	msedgewebview2	11	SeSystemProfilePrivilege		Profile system performance
-L4005: 4420	msedgewebview2	12	SeSystemtimePrivilege		Change the system time
-L4006: 4420	msedgewebview2	13	SeProfileSingleProcessPrivilege		Profile a single process
-L4007: 4420	msedgewebview2	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
-L4008: 4420	msedgewebview2	15	SeCreatePagefilePrivilege		Create a pagefile
-L4009: 4420	msedgewebview2	16	SeCreatePermanentPrivilege		Create permanent shared objects
-L4010: 4420	msedgewebview2	17	SeBackupPrivilege		Backup files and directories
-L4011: 4420	msedgewebview2	18	SeRestorePrivilege		Restore files and directories
-L4012: 4420	msedgewebview2	19	SeShutdownPrivilege	Present	Shut down the system
-L4013: 4420	msedgewebview2	20	SeDebugPrivilege		Debug programs
-L4014: 4420	msedgewebview2	21	SeAuditPrivilege		Generate security audits
-L4015: 4420	msedgewebview2	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
-L4016: 4420	msedgewebview2	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
-L4017: 4420	msedgewebview2	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
-L4018: 4420	msedgewebview2	25	SeUndockPrivilege	Present	Remove computer from docking station
-L4019: 4420	msedgewebview2	26	SeSyncAgentPrivilege		Synch directory service data
-L4020: 4420	msedgewebview2	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
-L4021: 4420	msedgewebview2	28	SeManageVolumePrivilege		Manage the files on a volume
-L4022: 4420	msedgewebview2	29	SeImpersonatePrivilege		Impersonate a client after authentication
-L4023: 4420	msedgewebview2	30	SeCreateGlobalPrivilege	Default	Create global objects
-L4024: 4420	msedgewebview2	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
-L4025: 4420	msedgewebview2	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
-L4026: 4420	msedgewebview2	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
-L4027: 4420	msedgewebview2	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
-L4028: 4420	msedgewebview2	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
-L4029: 4420	msedgewebview2	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+L2385: 4384	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L2386: 4384	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2387: 4384	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2388: 4384	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2389: 4384	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2390: 4384	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2391: 4384	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2392: 4384	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2393: 4384	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2394: 4384	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2395: 4384	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L2396: 4384	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2397: 4384	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2398: 4384	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2399: 4384	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2400: 4384	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L2401: 4384	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L2402: 4384	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2403: 4384	svchost.exe	20	SeDebugPrivilege		Debug programs
+L2404: 4384	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L2405: 4384	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2406: 4384	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2407: 4384	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2408: 4384	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2409: 4384	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2410: 4384	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2411: 4384	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2412: 4384	svchost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2413: 4384	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2414: 4384	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2415: 4384	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2416: 4384	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2417: 4384	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2418: 4384	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2419: 4384	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
 
 --- dlllist.txt ---
-L5539: 4420	msedgewebview2	0x7ff7021c0000	0x48c000	msedgewebview2.exe	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5540: 4420	msedgewebview2	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5541: 4420	msedgewebview2	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5542: 4420	msedgewebview2	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5543: 4420	msedgewebview2	0x7fffe2a30000	0x4bd000	msedge_elf.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge_elf.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5544: 4420	msedgewebview2	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5545: 4420	msedgewebview2	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5546: 4420	msedgewebview2	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5547: 4420	msedgewebview2	0x7ffff6540000	0xa5000	bcryptprimitives.dll	C:\WINDOWS\System32\bcryptprimitives.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5548: 4420	msedgewebview2	0x7fffe8ac0000	0xb000	version.dll	C:\WINDOWS\SYSTEM32\version.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5549: 4420	msedgewebview2	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5550: 4420	msedgewebview2	0x7ffff9820000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5551: 4420	msedgewebview2	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5552: 4420	msedgewebview2	0x7ffff51f0000	0x36000	ntmarta.dll	C:\WINDOWS\system32\ntmarta.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5553: 4420	msedgewebview2	0x7fffe66b0000	0x47000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5554: 4420	msedgewebview2	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5555: 4420	msedgewebview2	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5556: 4420	msedgewebview2	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5557: 4420	msedgewebview2	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5558: 4420	msedgewebview2	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5559: 4420	msedgewebview2	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5560: 4420	msedgewebview2	0x7fffe87c0000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5561: 4420	msedgewebview2	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5562: 4420	msedgewebview2	0x7fffe02d0000	0x5d000	capauthz.dll	C:\WINDOWS\SYSTEM32\capauthz.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5563: 4420	msedgewebview2	0x7ffff3ba0000	0x9f000	apphelp.dll	C:\WINDOWS\system32\apphelp.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5564: 4420	msedgewebview2	0x7fffbf540000	0x13630000	msedge.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5565: 4420	msedgewebview2	0x7ffff3b60000	0x35000	WINMM.dll	C:\WINDOWS\SYSTEM32\WINMM.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5566: 4420	msedgewebview2	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5567: 4420	msedgewebview2	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5568: 4420	msedgewebview2	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5569: 4420	msedgewebview2	0x7ffff0350000	0x19000	Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	C:\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5570: 4420	msedgewebview2	0x7ffff4b00000	0xf000	DiagnosticDataSettings.dll	C:\Windows\System32\DiagnosticDataSettings.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5571: 4420	msedgewebview2	0x7ffff4a90000	0x30000	coreprivacysettingsstore.dll	C:\WINDOWS\SYSTEM32\coreprivacysettingsstore.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5572: 4420	msedgewebview2	0x7ffff56f0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5573: 4420	msedgewebview2	0x7ffff56b0000	0x30000	gpapi.dll	C:\WINDOWS\SYSTEM32\gpapi.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5574: 4420	msedgewebview2	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5575: 4420	msedgewebview2	0x7ffff8e80000	0x67000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5576: 4420	msedgewebview2	0x7ffff6d60000	0x864000	Windows.Storage.dll	C:\WINDOWS\System32\Windows.Storage.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5577: 4420	msedgewebview2	0x7fffec800000	0x1b000	wkscli.dll	C:\WINDOWS\SYSTEM32\wkscli.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5578: 4420	msedgewebview2	0x7ffff49f0000	0xd000	netutils.dll	C:\WINDOWS\SYSTEM32\netutils.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5579: 4420	msedgewebview2	0x7ffff8710000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5580: 4420	msedgewebview2	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5581: 4420	msedgewebview2	0x7fffe6740000	0x177000	Windows.System.Launcher.dll	C:\Windows\System32\Windows.System.Launcher.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5582: 4420	msedgewebview2	0x7ffff7df0000	0x15d000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5583: 4420	msedgewebview2	0x7fffe55a0000	0xd6000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5584: 4420	msedgewebview2	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5585: 4420	msedgewebview2	0x7ffff61c0000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5586: 4420	msedgewebview2	0x7ffff61a0000	0x14000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5587: 4420	msedgewebview2	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5588: 4420	msedgewebview2	0x7ffff23f0000	0x267000	DWrite.dll	C:\WINDOWS\SYSTEM32\DWrite.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5589: 4420	msedgewebview2	0x7fffd6500000	0x6e000	CryptoWinRT.dll	C:\Windows\System32\CryptoWinRT.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5590: 4420	msedgewebview2	0x7ffff7810000	0x74000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5591: 4420	msedgewebview2	0x7fffe5300000	0x293000	COMCTL32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\COMCTL32.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5592: 4420	msedgewebview2	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5593: 4420	msedgewebview2	0x7ffff5f30000	0xa000	DPAPI.dll	C:\WINDOWS\SYSTEM32\DPAPI.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5594: 4420	msedgewebview2	0x7fffe6b10000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5595: 4420	msedgewebview2	0x7ffff5920000	0xc000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5596: 4420	msedgewebview2	0x7fffd3410000	0x22000	nlansp_c.dll	C:\WINDOWS\system32\nlansp_c.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5597: 4420	msedgewebview2	0x7fffedd70000	0x244000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5598: 4420	msedgewebview2	0x7ffff4a00000	0x33000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5599: 4420	msedgewebview2	0x7ffff8700000	0xa000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5600: 4420	msedgewebview2	0x7ffff0470000	0x1d000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5601: 4420	msedgewebview2	0x7fffee670000	0x23000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5602: 4420	msedgewebview2	0x7ffff4b20000	0x12a000	DNSAPI.dll	C:\WINDOWS\SYSTEM32\DNSAPI.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5603: 4420	msedgewebview2	0x7fffeb690000	0x148000	textinputframework.dll	C:\WINDOWS\SYSTEM32\textinputframework.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5604: 4420	msedgewebview2	0x7fffefa40000	0x156000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5605: 4420	msedgewebview2	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5606: 4420	msedgewebview2	0x7ffff3c60000	0x29000	WTSAPI32.dll	C:\WINDOWS\SYSTEM32\WTSAPI32.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5607: 4420	msedgewebview2	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5608: 4420	msedgewebview2	0x7ffff60f0000	0x63000	WINSTA.dll	C:\WINDOWS\SYSTEM32\WINSTA.dll	-1	2026-05-13 19:20:53.000000 UTC	Disabled
-L5609: 4420	msedgewebview2	0x7ffff5e80000	0x57000	cfgmgr32.dll	C:\WINDOWS\SYSTEM32\cfgmgr32.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5610: 4420	msedgewebview2	0x7fffee5a0000	0xbf000	mscms.dll	C:\WINDOWS\SYSTEM32\mscms.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5611: 4420	msedgewebview2	0x7fffee2a0000	0x127000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5612: 4420	msedgewebview2	0x7fffbef70000	0x5c5000	oneauth.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5613: 4420	msedgewebview2	0x7ffff3c50000	0xd000	Secur32.dll	C:\WINDOWS\SYSTEM32\Secur32.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5614: 4420	msedgewebview2	0x7fffedfc0000	0x14f000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5615: 4420	msedgewebview2	0x7ffff39c0000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5616: 4420	msedgewebview2	0x7ffff5990000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5617: 4420	msedgewebview2	0x7ffff3fe0000	0x2e000	dwmapi.dll	C:\WINDOWS\SYSTEM32\dwmapi.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5618: 4420	msedgewebview2	0x7fffeb830000	0x1e3000	InputHost.dll	C:\Windows\System32\InputHost.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5619: 4420	msedgewebview2	0x7ffff3700000	0x127000	CoreMessaging.dll	C:\Windows\System32\CoreMessaging.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5620: 4420	msedgewebview2	0x7fffdc910000	0x5a000	dataexchange.dll	C:\WINDOWS\system32\dataexchange.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5621: 4420	msedgewebview2	0x7ffff5930000	0x1b000	CRYPTSP.dll	C:\WINDOWS\SYSTEM32\CRYPTSP.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5622: 4420	msedgewebview2	0x7ffff5030000	0x39000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5623: 4420	msedgewebview2	0x7fffe03b0000	0x138000	Windows.Security.Authentication.Web.Core.dll	C:\Windows\System32\Windows.Security.Authentication.Web.Core.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5624: 4420	msedgewebview2	0x7fffed8c0000	0x2c4000	iertutil.dll	C:\Windows\System32\iertutil.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5625: 4420	msedgewebview2	0x7fffed890000	0x29000	srvcli.dll	C:\Windows\System32\srvcli.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5626: 4420	msedgewebview2	0x7fffdca00000	0x76000	OLEACC.dll	C:\WINDOWS\SYSTEM32\OLEACC.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5627: 4420	msedgewebview2	0x7fffeb410000	0xa3000	directmanipulation.dll	C:\WINDOWS\system32\directmanipulation.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5628: 4420	msedgewebview2	0x7fffe3ee0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5629: 4420	msedgewebview2	0x7fffdcc80000	0x4f000	vaultcli.dll	C:\Windows\System32\vaultcli.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5630: 4420	msedgewebview2	0x7fffe9de0000	0x9c000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2026-05-13 19:20:53.000000 UTC	Disabled
-L5631: 4420	msedgewebview2	0x7ffff2f10000	0x220000	dcomp.dll	C:\WINDOWS\system32\dcomp.dll	6	2026-05-13 19:20:54.000000 UTC	Disabled
-L5632: 4420	msedgewebview2	0x7ffff23d0000	0x19000	Microsoft.Internal.WarpPal.dll	C:\WINDOWS\SYSTEM32\Microsoft.Internal.WarpPal.dll	6	2026-05-13 19:20:54.000000 UTC	Disabled
-L5633: 4420	msedgewebview2	0x7fffeffd0000	0xb000	webview2_integration.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\webview2_integration.dll	-1	2026-05-13 19:20:54.000000 UTC	Disabled
-L5634: 4420	msedgewebview2	0x7fffb8c70000	0x1e000	VCRUNTIME140.dll	C:\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe\VCRUNTIME140.dll	-1	2026-05-13 19:20:54.000000 UTC	Disabled
-L5635: 4420	msedgewebview2	0x7ffff06c0000	0xc000	VCRUNTIME140_1.dll	C:\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe\VCRUNTIME140_1.dll	-1	2026-05-13 19:20:54.000000 UTC	Disabled
-L5636: 4420	msedgewebview2	0x7fffba5f0000	0xa6000	MicrosoftAccountWAMExtension.dll	C:\Windows\System32\MicrosoftAccountWAMExtension.dll	6	2026-05-13 19:20:54.000000 UTC	Disabled
-L5637: 4420	msedgewebview2	0x7fffb8290000	0x3f8000	telclient.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\telclient.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5638: 4420	msedgewebview2	0x7fffb7f40000	0x348000	oneds.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneds.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5639: 4420	msedgewebview2	0x7fffe2060000	0x467000	ffmpeg.dll	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\ffmpeg.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5640: 4420	msedgewebview2	0x7ffff1550000	0x6f000	netprofm.dll	C:\WINDOWS\System32\netprofm.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5641: 4420	msedgewebview2	0x7fffe5820000	0x21a000	MFPlat.DLL	C:\WINDOWS\SYSTEM32\MFPlat.DLL	-1	2026-05-13 19:20:58.000000 UTC	Disabled
-L5642: 4420	msedgewebview2	0x7fffea450000	0x3c000	RTWorkQ.DLL	C:\WINDOWS\SYSTEM32\RTWorkQ.DLL	-1	2026-05-13 19:20:58.000000 UTC	Disabled
-L5643: 4420	msedgewebview2	0x7fffeb7e0000	0x19000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5644: 4420	msedgewebview2	0x7ffff81c0000	0x487000	SETUPAPI.dll	C:\WINDOWS\System32\SETUPAPI.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5645: 4420	msedgewebview2	0x7ffff5f00000	0x2d000	DEVOBJ.dll	C:\WINDOWS\SYSTEM32\DEVOBJ.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5646: 4420	msedgewebview2	0x7ffff64b0000	0x81000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5647: 4420	msedgewebview2	0x7fffed300000	0x60000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5648: 4420	msedgewebview2	0x7ffff5b40000	0x30000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5649: 4420	msedgewebview2	0x7ffff5af0000	0x3f000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5650: 4420	msedgewebview2	0x7fffd4410000	0x114000	PCPKsp.dll	C:\WINDOWS\system32\PCPKsp.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5651: 4420	msedgewebview2	0x7ffff1530000	0x1a000	tbs.dll	C:\WINDOWS\SYSTEM32\tbs.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5652: 4420	msedgewebview2	0x7fffea0a0000	0x17000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5653: 4420	msedgewebview2	0x7fffeb2c0000	0x8b000	ncryptprov.dll	C:\WINDOWS\system32\ncryptprov.dll	6	2026-05-13 19:20:58.000000 UTC	Disabled
-L5654: 4420	msedgewebview2	0x7ffff1960000	0x4c000	wevtapi.dll	C:\WINDOWS\SYSTEM32\wevtapi.dll	6	2026-05-13 19:21:18.000000 UTC	Disabled
-L5655: 4420	msedgewebview2	0x7fffb0b10000	0x1c000	Windows.System.UserProfile.DiagnosticsSettings.dll	C:\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll	6	2026-05-13 19:21:23.000000 UTC	Disabled
-L5656: 4420	msedgewebview2	0x7fffb6fd0000	0x13000	Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient.dll	C:\Windows\System32\Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient.dll	6	2026-05-13 19:21:53.000000 UTC	Disabled
+L2553: 4384	svchost.exe	0x7ff7d0000000	0x13000	svchost.exe	C:\WINDOWS\system32\svchost.exe	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2554: 4384	svchost.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2555: 4384	svchost.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2556: 4384	svchost.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2557: 4384	svchost.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2558: 4384	svchost.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2559: 4384	svchost.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2560: 4384	svchost.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2561: 4384	svchost.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2562: 4384	svchost.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2563: 4384	svchost.exe	0x7ffff7c20000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2564: 4384	svchost.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2565: 4384	svchost.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2566: 4384	svchost.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2567: 4384	svchost.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2568: 4384	svchost.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2569: 4384	svchost.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2570: 4384	svchost.exe	0x7fffe0d00000	0x1e000	wpnuserservice.dll	c:\windows\system32\wpnuserservice.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2571: 4384	svchost.exe	0x7fffed8c0000	0x2c4000	iertutil.dll	c:\windows\system32\iertutil.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2572: 4384	svchost.exe	0x7ffff9820000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2573: 4384	svchost.exe	0x7ffff49f0000	0xd000	netutils.dll	c:\windows\system32\netutils.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2574: 4384	svchost.exe	0x7fffed890000	0x29000	srvcli.dll	c:\windows\system32\srvcli.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2575: 4384	svchost.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2576: 4384	svchost.exe	0x7fffe83b0000	0x194000	wpncore.dll	C:\WINDOWS\System32\wpncore.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2577: 4384	svchost.exe	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2578: 4384	svchost.exe	0x7fffe0b20000	0x148000	NotificationController.dll	C:\Windows\System32\NotificationController.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2579: 4384	svchost.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2580: 4384	svchost.exe	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2581: 4384	svchost.exe	0x7ffff4400000	0x36000	RMCLIENT.dll	C:\Windows\System32\RMCLIENT.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2582: 4384	svchost.exe	0x7ffff61c0000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2583: 4384	svchost.exe	0x7ffff61a0000	0x14000	UMPDC.dll	C:\Windows\System32\UMPDC.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2584: 4384	svchost.exe	0x7fffea0a0000	0x17000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2585: 4384	svchost.exe	0x7fffeca30000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2586: 4384	svchost.exe	0x7fffe0a80000	0x9b000	QuietHours.dll	C:\Windows\System32\QuietHours.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2587: 4384	svchost.exe	0x7ffff6d60000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2588: 4384	svchost.exe	0x7ffff8e80000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2589: 4384	svchost.exe	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\System32\profapi.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2590: 4384	svchost.exe	0x7ffff60f0000	0x63000	winsta.dll	C:\WINDOWS\SYSTEM32\winsta.dll	-1	2026-05-13 19:15:37.000000 UTC	Disabled
+L2591: 4384	svchost.exe	0x7ffff39c0000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2592: 4384	svchost.exe	0x7fffe5ba0000	0x10f000	winsqlite3.dll	C:\WINDOWS\System32\winsqlite3.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2593: 4384	svchost.exe	0x7fffedd70000	0x244000	twinapi.appcore.dll	C:\WINDOWS\SYSTEM32\twinapi.appcore.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2594: 4384	svchost.exe	0x7fffe0a20000	0x5d000	execmodelclient.dll	C:\Windows\System32\execmodelclient.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2595: 4384	svchost.exe	0x7fffe3ee0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2596: 4384	svchost.exe	0x7fffe0370000	0x14000	execmodelproxy.dll	C:\WINDOWS\system32\execmodelproxy.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2597: 4384	svchost.exe	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2598: 4384	svchost.exe	0x7ffff7df0000	0x15d000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2599: 4384	svchost.exe	0x7ffff3c60000	0x29000	wtsapi32.dll	C:\WINDOWS\SYSTEM32\wtsapi32.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2600: 4384	svchost.exe	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2601: 4384	svchost.exe	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\System32\SspiCli.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2602: 4384	svchost.exe	0x7fffdf890000	0xbb000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2603: 4384	svchost.exe	0x7fffdf710000	0x9d000	TileDataRepository.dll	C:\Windows\System32\TileDataRepository.dll	6	2026-05-13 19:15:40.000000 UTC	Disabled
+L2604: 4384	svchost.exe	0x7fffe8ad0000	0x502000	Windows.StateRepository.dll	C:\Windows\System32\Windows.StateRepository.dll	6	2026-05-13 19:15:40.000000 UTC	Disabled
+L2605: 4384	svchost.exe	0x7fffe89f0000	0xc7000	StateRepository.Core.dll	C:\Windows\System32\StateRepository.Core.dll	6	2026-05-13 19:15:40.000000 UTC	Disabled
+L2606: 4384	svchost.exe	0x7ffff56f0000	0x32000	USERENV.dll	C:\Windows\System32\USERENV.dll	6	2026-05-13 19:15:40.000000 UTC	Disabled
+L2607: 4384	svchost.exe	0x7fffeb7e0000	0x19000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2026-05-13 19:15:40.000000 UTC	Disabled
+L2608: 4384	svchost.exe	0x7fffe6b10000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-13 19:15:41.000000 UTC	Disabled
+L2609: 4384	svchost.exe	0x7fffe66b0000	0x47000	Windows.StateRepositoryClient.dll	C:\Windows\System32\Windows.StateRepositoryClient.dll	6	2026-05-13 19:15:41.000000 UTC	Disabled
+L2610: 4384	svchost.exe	0x7fffdf150000	0xaa000	appresolver.dll	C:\Windows\System32\appresolver.dll	6	2026-05-13 19:15:41.000000 UTC	Disabled
+L2611: 4384	svchost.exe	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-13 19:15:41.000000 UTC	Disabled
+L2612: 4384	svchost.exe	0x7ffff1bd0000	0x103000	propsys.dll	C:\WINDOWS\system32\propsys.dll	6	2026-05-13 19:15:41.000000 UTC	Disabled
+L2613: 4384	svchost.exe	0x7fffefe30000	0x5e000	Bcp47Langs.dll	C:\Windows\System32\Bcp47Langs.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2614: 4384	svchost.exe	0x7fffe3a00000	0x16000	threadpoolwinrt.dll	C:\Windows\System32\threadpoolwinrt.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2615: 4384	svchost.exe	0x7fffde5c0000	0x158000	wpnapps.dll	C:\Windows\System32\wpnapps.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2616: 4384	svchost.exe	0x7fffde380000	0x65000	wpnclient.dll	C:\Windows\System32\wpnclient.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2617: 4384	svchost.exe	0x7fffe19e0000	0x2d1000	Windows.CloudStore.dll	C:\Windows\System32\Windows.CloudStore.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2618: 4384	svchost.exe	0x7fffdd670000	0x19b000	ContentDeliveryManager.Utilities.dll	C:\Windows\System32\ContentDeliveryManager.Utilities.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2619: 4384	svchost.exe	0x7fffdcfb0000	0x49000	AppExtension.dll	C:\Windows\System32\AppExtension.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2620: 4384	svchost.exe	0x7fffdcce0000	0xf6000	Windows.CloudStore.Schema.Shell.dll	C:\Windows\System32\Windows.CloudStore.Schema.Shell.dll	6	2026-05-13 19:15:43.000000 UTC	Disabled
+L2621: 4384	svchost.exe	0x7fffe87c0000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2026-05-13 19:15:44.000000 UTC	Disabled
+L2622: 4384	svchost.exe	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\system32\bcrypt.dll	-1	2026-05-13 19:15:44.000000 UTC	Disabled
+L2623: 4384	svchost.exe	0x7fffdd000000	0x23d000	msxml6.dll	C:\Windows\System32\msxml6.dll	6	2026-05-13 19:15:44.000000 UTC	Disabled
+L2624: 4384	svchost.exe	0x7ffff5920000	0xc000	CRYPTBASE.DLL	C:\WINDOWS\System32\CRYPTBASE.DLL	6	2026-05-13 19:15:44.000000 UTC	Disabled
+L2625: 4384	svchost.exe	0x7ffff51f0000	0x36000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2026-05-13 19:15:44.000000 UTC	Disabled
+L2626: 4384	svchost.exe	0x7ffff8710000	0x75f000	shell32.dll	C:\WINDOWS\System32\shell32.dll	6	2026-05-13 19:15:44.000000 UTC	Disabled
+L2627: 4384	svchost.exe	0x7fffe1de0000	0x2c000	IDStore.dll	C:\WINDOWS\System32\IDStore.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2628: 4384	svchost.exe	0x7fffdcba0000	0xd4000	twinapi.dll	C:\WINDOWS\system32\twinapi.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2629: 4384	svchost.exe	0x7fffe9910000	0x43000	XmlLite.dll	C:\WINDOWS\system32\XmlLite.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2630: 4384	svchost.exe	0x7ffff4ad0000	0x2b000	SAMLIB.dll	C:\WINDOWS\System32\SAMLIB.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2631: 4384	svchost.exe	0x7fffe16b0000	0xa2000	wlidprov.dll	C:\WINDOWS\System32\wlidprov.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2632: 4384	svchost.exe	0x7fffe0f10000	0x5a4000	cdp.dll	C:\Windows\System32\cdp.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2633: 4384	svchost.exe	0x7fffda810000	0x67000	NotificationControllerPS.dll	C:\Windows\System32\NotificationControllerPS.dll	6	2026-05-13 19:15:46.000000 UTC	Disabled
+L2634: 4384	svchost.exe	0x7fffd6d30000	0x143000	ShellCommonCommonProxyStub.dll	C:\Windows\System32\ShellCommonCommonProxyStub.dll	6	2026-05-13 19:15:54.000000 UTC	Disabled
+L2635: 4384	svchost.exe	0x7fffd6580000	0x73000	CapabilityAccessManagerClient.dll	C:\Windows\System32\CapabilityAccessManagerClient.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L2636: 4384	svchost.exe	0x7fffed300000	0x60000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L2637: 4384	svchost.exe	0x7fffedb90000	0x1dd000	urlmon.dll	C:\Windows\System32\urlmon.dll	6	2026-05-13 19:21:42.000000 UTC	Disabled
 
 --- envars.txt ---
-L3537: 4420	msedgewebview2	0x20882104c20	ALLUSERSPROFILE	C:\ProgramData
-L3538: 4420	msedgewebview2	0x20882104c20	APPDATA	C:\Users\kali\AppData\Roaming
-L3539: 4420	msedgewebview2	0x20882104c20	CommonProgramFiles	C:\Program Files\Common Files
-L3540: 4420	msedgewebview2	0x20882104c20	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
-L3541: 4420	msedgewebview2	0x20882104c20	CommonProgramW6432	C:\Program Files\Common Files
-L3542: 4420	msedgewebview2	0x20882104c20	COMPONENT_INSTALLER_DIR	C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView
-L3543: 4420	msedgewebview2	0x20882104c20	COMPUTERNAME	CLEANWINDOWS11
-L3544: 4420	msedgewebview2	0x20882104c20	ComSpec	C:\WINDOWS\system32\cmd.exe
-L3545: 4420	msedgewebview2	0x20882104c20	DriverData	C:\Windows\System32\Drivers\DriverData
-L3546: 4420	msedgewebview2	0x20882104c20	EDGE_BROWSER_PID	4420
-L3547: 4420	msedgewebview2	0x20882104c20	EDGE_CRASHPAD_PIPE_NAME	\\.\pipe\crashpad_4420_CDEHCVPSEEEABVLE
-L3548: 4420	msedgewebview2	0x20882104c20	EDGE_METRICS_CLIENT_ID_HASH	4787722218027699431
-L3549: 4420	msedgewebview2	0x20882104c20	EDGE_METRICS_SESSION_ID	7
-L3550: 4420	msedgewebview2	0x20882104c20	EDGE_USER_DATA_DIR	C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView
-L3551: 4420	msedgewebview2	0x20882104c20	EDGE_WEBVIEW_PREFETCH_HOSTED_APP	/pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1
-L3552: 4420	msedgewebview2	0x20882104c20	HOMEDRIVE	C:
-L3553: 4420	msedgewebview2	0x20882104c20	HOMEPATH	\Users\kali
-L3554: 4420	msedgewebview2	0x20882104c20	IS_EDGE_WEBVIEW	1
-L3555: 4420	msedgewebview2	0x20882104c20	LOCALAPPDATA	C:\Users\kali\AppData\Local
-L3556: 4420	msedgewebview2	0x20882104c20	LOGONSERVER	\\CLEANWINDOWS11
-L3557: 4420	msedgewebview2	0x20882104c20	NUMBER_OF_PROCESSORS	4
-L3558: 4420	msedgewebview2	0x20882104c20	OneDrive	C:\Users\kali\OneDrive
-L3559: 4420	msedgewebview2	0x20882104c20	OS	Windows_NT
-L3560: 4420	msedgewebview2	0x20882104c20	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\kali\AppData\Local\Microsoft\WindowsApps
-L3561: 4420	msedgewebview2	0x20882104c20	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
-L3562: 4420	msedgewebview2	0x20882104c20	PROCESSOR_ARCHITECTURE	AMD64
-L3563: 4420	msedgewebview2	0x20882104c20	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
-L3564: 4420	msedgewebview2	0x20882104c20	PROCESSOR_LEVEL	6
-L3565: 4420	msedgewebview2	0x20882104c20	PROCESSOR_REVISION	ba03
-L3566: 4420	msedgewebview2	0x20882104c20	ProgramData	C:\ProgramData
-L3567: 4420	msedgewebview2	0x20882104c20	ProgramFiles	C:\Program Files
-L3568: 4420	msedgewebview2	0x20882104c20	ProgramFiles(x86)	C:\Program Files (x86)
-L3569: 4420	msedgewebview2	0x20882104c20	ProgramW6432	C:\Program Files
-L3570: 4420	msedgewebview2	0x20882104c20	PSModulePath	%ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
-L3571: 4420	msedgewebview2	0x20882104c20	PUBLIC	C:\Users\Public
-L3572: 4420	msedgewebview2	0x20882104c20	SystemDrive	C:
-L3573: 4420	msedgewebview2	0x20882104c20	SystemRoot	C:\WINDOWS
-L3574: 4420	msedgewebview2	0x20882104c20	TEMP	C:\Users\kali\AppData\Local\Temp
-L3575: 4420	msedgewebview2	0x20882104c20	TMP	C:\Users\kali\AppData\Local\Temp
-L3576: 4420	msedgewebview2	0x20882104c20	USERDOMAIN	CLEANWINDOWS11
-L3577: 4420	msedgewebview2	0x20882104c20	USERDOMAIN_ROAMINGPROFILE	CLEANWINDOWS11
-L3578: 4420	msedgewebview2	0x20882104c20	USERNAME	kali
-L3579: 4420	msedgewebview2	0x20882104c20	USERPROFILE	C:\Users\kali
-L3580: 4420	msedgewebview2	0x20882104c20	windir	C:\WINDOWS
-L3589: 1292	msedgewebview2	0x21505104da0	EDGE_BROWSER_PID	4420
-L3630: 6080	msedgewebview2	0x24e08105040	EDGE_BROWSER_PID	4420
-L3674: 1920	msedgewebview2	0x1edf3105040	EDGE_BROWSER_PID	4420
-L3710: 2724	msedgewebview2	0x25a2a1047d0	EDGE_BROWSER_PID	4420
-L3721: 7932	msedgewebview2	0x1ae7e1047d0	EDGE_BROWSER_PID	4420
+L2006: 4384	svchost.exe	0x2046e104c20	ALLUSERSPROFILE	C:\ProgramData
+L2007: 4384	svchost.exe	0x2046e104c20	APPDATA	C:\Users\kali\AppData\Roaming
+L2008: 4384	svchost.exe	0x2046e104c20	CommonProgramFiles	C:\Program Files\Common Files
+L2009: 4384	svchost.exe	0x2046e104c20	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
+L2010: 4384	svchost.exe	0x2046e104c20	CommonProgramW6432	C:\Program Files\Common Files
+L2011: 4384	svchost.exe	0x2046e104c20	COMPUTERNAME	CLEANWINDOWS11
+L2012: 4384	svchost.exe	0x2046e104c20	ComSpec	C:\WINDOWS\system32\cmd.exe
+L2013: 4384	svchost.exe	0x2046e104c20	DriverData	C:\Windows\System32\Drivers\DriverData
+L2014: 4384	svchost.exe	0x2046e104c20	HOMEDRIVE	C:
+L2015: 4384	svchost.exe	0x2046e104c20	HOMEPATH	\Users\kali
+L2016: 4384	svchost.exe	0x2046e104c20	LOCALAPPDATA	C:\Users\kali\AppData\Local
+L2017: 4384	svchost.exe	0x2046e104c20	LOGONSERVER	\\CLEANWINDOWS11
+L2018: 4384	svchost.exe	0x2046e104c20	NUMBER_OF_PROCESSORS	4
+L2019: 4384	svchost.exe	0x2046e104c20	OneDrive	C:\Users\kali\OneDrive
+L2020: 4384	svchost.exe	0x2046e104c20	OS	Windows_NT
+L2021: 4384	svchost.exe	0x2046e104c20	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\kali\AppData\Local\Microsoft\WindowsApps
+L2022: 4384	svchost.exe	0x2046e104c20	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+L2023: 4384	svchost.exe	0x2046e104c20	PROCESSOR_ARCHITECTURE	AMD64
+L2024: 4384	svchost.exe	0x2046e104c20	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+L2025: 4384	svchost.exe	0x2046e104c20	PROCESSOR_LEVEL	6
+L2026: 4384	svchost.exe	0x2046e104c20	PROCESSOR_REVISION	ba03
+L2027: 4384	svchost.exe	0x2046e104c20	ProgramData	C:\ProgramData
+L2028: 4384	svchost.exe	0x2046e104c20	ProgramFiles	C:\Program Files
+L2029: 4384	svchost.exe	0x2046e104c20	ProgramFiles(x86)	C:\Program Files (x86)
+L2030: 4384	svchost.exe	0x2046e104c20	ProgramW6432	C:\Program Files
+L2031: 4384	svchost.exe	0x2046e104c20	PSModulePath	%ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+L2032: 4384	svchost.exe	0x2046e104c20	PUBLIC	C:\Users\Public
+L2033: 4384	svchost.exe	0x2046e104c20	SystemDrive	C:
+L2034: 4384	svchost.exe	0x2046e104c20	SystemRoot	C:\WINDOWS
+L2035: 4384	svchost.exe	0x2046e104c20	TEMP	C:\Users\kali\AppData\Local\Temp
+L2036: 4384	svchost.exe	0x2046e104c20	TMP	C:\Users\kali\AppData\Local\Temp
+L2037: 4384	svchost.exe	0x2046e104c20	USERDOMAIN	CLEANWINDOWS11
+L2038: 4384	svchost.exe	0x2046e104c20	USERDOMAIN_ROAMINGPROFILE	CLEANWINDOWS11
+L2039: 4384	svchost.exe	0x2046e104c20	USERNAME	kali
+L2040: 4384	svchost.exe	0x2046e104c20	USERPROFILE	C:\Users\kali
+L2041: 4384	svchost.exe	0x2046e104c20	windir	C:\WINDOWS
 
 --- pstree.txt ---
-L27: **** 4420	5652	msedgewebview2	0x990ef8066080	56	-	1	False	2026-05-13 19:20:52.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --embedded-browser-webview=1 --webview-exe-name=Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
-L28: ***** 6080	4420	msedgewebview2	0x990ef6bb6080	15	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --type=gpu-process --noerrdialogs --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView" --webview-exe-name=Widgets.exe --webview-exe-version=525.31002.10.0 --embedded-browser-webview=1 --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --always-read-main-dll --metrics-shmem-handle=1884,i,8308210261877135449,7675457527423129436,262144 --field-trial-handle=2080,i,5639513865184215654,14064888523816221752,262144 --variations-seed-version --pseudonymization-salt-handle=2084,i,17444543916869014882,7724715780785657287,4 --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=2008 /prefetch:2 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
-L29: ***** 1920	4420	msedgewebview2	0x990ef6bb4080	18	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --noerrdialogs --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView" --webview-exe-name=Widgets.exe --webview-exe-version=525.31002.10.0 --embedded-browser-webview=1 --always-read-main-dll --metrics-shmem-handle=2148,i,9208354781261088889,9119112554080827356,524288 --field-trial-handle=2080,i,5639513865184215654,14064888523816221752,262144 --variations-seed-version --pseudonymization-salt-handle=2084,i,17444543916869014882,7724715780785657287,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2204 /prefetch:11 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
-L30: ***** 2724	4420	msedgewebview2	0x990efa161080	10	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --noerrdialogs --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView" --webview-exe-name=Widgets.exe --webview-exe-version=525.31002.10.0 --embedded-browser-webview=1 --always-read-main-dll --metrics-shmem-handle=2448,i,1246732711859577044,10488738428611021974,524288 --field-trial-handle=2080,i,5639513865184215654,14064888523816221752,262144 --variations-seed-version --pseudonymization-salt-handle=2084,i,17444543916869014882,7724715780785657287,4 --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=2460 /prefetch:13 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
-L31: ***** 1292	4420	msedgewebview2	0x990ef602c080	10	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --type=crashpad-handler --user-data-dir=C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView /prefetch:4 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1 --monitor-self-annotation=ptype=crashpad-handler --database=C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView\Crashpad --annotation=IsOfficialBuild=1 --annotation=channel= --annotation=chromium-version=148.0.7778.97 "--annotation=exe=C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --annotation=plat=Win64 "--annotation=prod=Edge WebView2" --annotation=ver=148.0.3967.54 --initial-client-data=0x180,0x184,0x188,0x15c,0x190,0x7fffe2eb8d58,0x7fffe2eb8d64,0x7fffe2eb8d70	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
-L32: ***** 7932	4420	msedgewebview2	0x990ef77a5080	18	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe" --type=renderer --noerrdialogs --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\LocalState\EBWebView" --webview-exe-name=Widgets.exe --webview-exe-version=525.31002.10.0 --embedded-browser-webview=1 --video-capture-use-gpu-memory-buffer --lang=en-US --js-flags=--expose-gc --device-scale-factor=1.25 --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1778699635263330 --launch-time-ticks=418639868 --always-read-main-dll --metrics-shmem-handle=3620,i,18279641365247112119,1600353499910510005,2097152 --field-trial-handle=2080,i,5639513865184215654,14064888523816221752,262144 --variations-seed-version --pseudonymization-salt-handle=2084,i,17444543916869014882,7724715780785657287,4 --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3720 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1 /prefetch:1	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
+L91: ** 4384	896	svchost.exe	0x990ef77bd080	7	-	1	False	2026-05-13 19:15:36.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService	C:\WINDOWS\system32\svchost.exe
 
 --- psscan.txt ---
-L33: 1292	4420	msedgewebview2	0x990ef602c080	10	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	Disabled
-L70: 1920	4420	msedgewebview2	0x990ef6bb4080	18	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	Disabled
-L71: 6080	4420	msedgewebview2	0x990ef6bb6080	15	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	Disabled
-L100: 7932	4420	msedgewebview2	0x990ef77a5080	18	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	Disabled
-L128: 4420	5652	msedgewebview2	0x990ef8066080	56	-	1	False	2026-05-13 19:20:52.000000 UTC	N/A	Disabled
-L138: 2724	4420	msedgewebview2	0x990efa161080	10	-	1	False	2026-05-13 19:20:53.000000 UTC	N/A	Disabled
+L102: 4384	896	svchost.exe	0x990ef77bd080	7	-	1	False	2026-05-13 19:15:36.000000 UTC	N/A	Disabled
 
 --- threads.txt ---
-L1539: 0x990ef78f6080	4420	5080	0xe08e83a6aed0	-	0x7ff7022df6e0	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1540: 0x990ef77bb080	4420	872	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffe2da2d90	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge_elf.dll	2026-05-13 19:20:53.000000 UTC	2026-05-13 19:20:53.000000 UTC
-L1541: 0x990ef796d080	4420	5312	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1542: 0x990ef796c080	4420	4732	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7022887f0	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1543: 0x990ef7cc1080	4420	3048	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1544: 0x990ef7af4080	4420	7364	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1545: 0x990ef7af0080	4420	1828	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1546: 0x990ef6082080	4420	6540	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:35.000000 UTC
-L1547: 0x990ef6081080	4420	7340	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:35.000000 UTC
-L1548: 0x990ef6080080	4420	4144	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:35.000000 UTC
-L1549: 0x990ef4c71080	4420	3796	0xe08e87cec390	-	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L1550: 0x990ef4c70080	4420	4936	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L1551: 0x990ef4c6f080	4420	2320	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L1552: 0x990ef69a1080	4420	4224	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1553: 0x990ef69a0080	4420	2776	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1554: 0x990ef8083080	4420	4640	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1555: 0x990ef8081080	4420	4712	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1556: 0x990ef79e1080	4420	6072	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1557: 0x990ef79e0080	4420	3404	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1558: 0x990ef79df080	4420	4004	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1559: 0x990ef28b7080	4420	1304	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:30.000000 UTC
-L1560: 0x990ef28b6080	4420	1752	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:30.000000 UTC
-L1561: 0x990ef6933080	4420	3120	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1562: 0x990ef6932080	4420	4120	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1563: 0x990ef8155080	4420	1448	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1564: 0x990ef8154080	4420	2956	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1565: 0x990ef4cda080	4420	1572	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L1566: 0x990ef4cd9080	4420	580	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L1567: 0x990ef73b4080	4420	6500	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L1568: 0x990ef80c5080	4420	5580	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1569: 0x990ef8103080	4420	1820	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1570: 0x990ef6f0f080	4420	2392	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L1571: 0x990ef609b0c0	4420	4452	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:35.000000 UTC
-L1572: 0x990ef7e570c0	4420	2352	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1573: 0x990ef67aa080	4420	1660	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1574: 0x990ef67a9080	4420	2848	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1575: 0x990ef7a87080	4420	3876	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1576: 0x990ef7a86080	4420	7884	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1577: 0x990ef7a85080	4420	2064	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1578: 0x990ef7e62080	4420	2888	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1579: 0x990ef7e61080	4420	2384	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1580: 0x990ef7e60080	4420	2704	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1581: 0x990efa163080	4420	2316	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:42.000000 UTC
-L1582: 0x990ef61cb080	4420	3752	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1583: 0x990ef6859080	4420	2672	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1584: 0x990ef6858080	4420	3728	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1585: 0x990ef7bb2080	4420	2892	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc2984d60	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1586: 0x990ef7d30080	4420	7544	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffeb469d30	\Windows\System32\directmanipulation.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1587: 0x990ef6bdb080	4420	8156	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc2984d60	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:54.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L1588: 0x990ef6bda080	4420	5160	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc2984d60	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:54.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L1589: 0x990ef6bd9080	4420	6044	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc2984d60	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:54.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L1590: 0x990ef69da0c0	4420	6408	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:58.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L1591: 0x990ef807d080	4420	7572	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffb805b930	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneds.dll	2026-05-13 19:21:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1592: 0x990ef70a90c0	4420	5976	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:23:23.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L1593: 0x990efadd3080	4420	1848	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:53.000000 UTC	1600-08-22 23:57:44.000000 UTC
-L1594: 0x990ef6ea6080	4420	2712	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:54.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L1595: 0x990ef8f7e080	4420	6716	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:54.000000 UTC	1600-08-22 23:57:40.000000 UTC
+L804: 0x990ef77be080	4384	4388	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7d0004fe0	\Windows\System32\svchost.exe	2026-05-13 19:15:36.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L805: 0x990ef77e6040	4384	4504	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:15:36.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L806: 0x990ef6392240	4384	7000	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:07.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L807: 0x990ef6a77080	4384	6624	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:37.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L808: 0x990efadd4080	4384	8060	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:21:42.000000 UTC	1600-08-22 23:57:44.000000 UTC
+L809: 0x990ef253b080	4384	4208	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:36.000000 UTC	1600-08-22 23:57:29.000000 UTC
+L810: 0x990ef01d4080	4384	4304	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:36.000000 UTC	1600-08-22 23:57:26.000000 UTC
 
 --- thrdscan.txt ---
-L225: 0x990ef28b6080	4420	1752	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:30.000000 UTC
-L226: 0x990ef28b7080	4420	1304	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:30.000000 UTC
-L390: 0x990ef4c6f080	4420	2320	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L391: 0x990ef4c70080	4420	4936	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L392: 0x990ef4c71080	4420	3796	0xe08e87cec390	-	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L404: 0x990ef4cd9080	4420	580	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L405: 0x990ef4cda080	4420	1572	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:33.000000 UTC
-L496: 0x990ef6080080	4420	4144	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:35.000000 UTC
-L497: 0x990ef6081080	4420	7340	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:35.000000 UTC
-L498: 0x990ef6082080	4420	6540	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:35.000000 UTC
-L512: 0x990ef609b0c0	4420	4452	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:35.000000 UTC
-L546: 0x990ef61cb080	4420	3752	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L643: 0x990ef67a9080	4420	2848	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L644: 0x990ef67aa080	4420	1660	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L679: 0x990ef6858080	4420	3728	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L680: 0x990ef6859080	4420	2672	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffbf07f430	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L705: 0x990ef6932080	4420	4120	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L706: 0x990ef6933080	4420	3120	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L724: 0x990ef69a0080	4420	2776	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L725: 0x990ef69a1080	4420	4224	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L734: 0x990ef69da0c0	4420	6408	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:58.000000 UTC	1600-08-22 23:57:36.000000 UTC
-L766: 0x990ef6bd9080	4420	6044	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc2984d60	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:54.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L767: 0x990ef6bda080	4420	5160	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc2984d60	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:54.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L768: 0x990ef6bdb080	4420	8156	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc2984d60	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:54.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L840: 0x990ef6ea6080	4420	2712	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:54.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L852: 0x990ef6f0f080	4420	2392	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L904: 0x990ef70a90c0	4420	5976	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:23:23.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L962: 0x990ef73b4080	4420	6500	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:37.000000 UTC
-L1051: 0x990ef77bb080	4420	872	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffe2da2d90	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge_elf.dll	2026-05-13 19:20:53.000000 UTC	2026-05-13 19:20:53.000000 UTC
-L1138: 0x990ef78f6080	4420	5080	0xe08e83a6aed0	-	0x7ff7022df6e0	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	2026-05-13 19:20:52.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1147: 0x990ef796c080	4420	4732	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7022887f0	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1148: 0x990ef796d080	4420	5312	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1164: 0x990ef79df080	4420	4004	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1165: 0x990ef79e0080	4420	3404	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1166: 0x990ef79e1080	4420	6072	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1179: 0x990ef7a85080	4420	2064	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1180: 0x990ef7a86080	4420	7884	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1181: 0x990ef7a87080	4420	3876	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1197: 0x990ef7af0080	4420	1828	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1199: 0x990ef7af4080	4420	7364	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1220: 0x990ef7bb2080	4420	2892	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc2984d60	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1249: 0x990ef7cc1080	4420	3048	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1275: 0x990ef7d30080	4420	7544	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffeb469d30	\Windows\System32\directmanipulation.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:38.000000 UTC
-L1308: 0x990ef7e570c0	4420	2352	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1313: 0x990ef7e60080	4420	2704	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1314: 0x990ef7e61080	4420	2384	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1315: 0x990ef7e62080	4420	2888	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1405: 0x990ef807d080	4420	7572	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffb805b930	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneds.dll	2026-05-13 19:21:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1409: 0x990ef8081080	4420	4712	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1411: 0x990ef8083080	4420	4640	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1417: 0x990ef80c5080	4420	5580	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1423: 0x990ef8103080	4420	1820	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1446: 0x990ef8154080	4420	2956	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1447: 0x990ef8155080	4420	1448	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:39.000000 UTC
-L1620: 0x990ef8f7e080	4420	6716	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:54.000000 UTC	1600-08-22 23:57:40.000000 UTC
-L1654: 0x990efa163080	4420	2316	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffc082c670	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll	2026-05-13 19:20:53.000000 UTC	1600-08-22 23:57:42.000000 UTC
-L1776: 0x990efadd3080	4420	1848	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:53.000000 UTC	1600-08-22 23:57:44.000000 UTC
+L144: 0x990ef01d4080	4384	4304	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:36.000000 UTC	1600-08-22 23:57:26.000000 UTC
+L196: 0x990ef253b080	4384	4208	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:36.000000 UTC	1600-08-22 23:57:29.000000 UTC
+L576: 0x990ef6392240	4384	7000	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:07.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L746: 0x990ef6a77080	4384	6624	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:20:37.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L1053: 0x990ef77be080	4384	4388	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7d0004fe0	\Windows\System32\svchost.exe	2026-05-13 19:15:36.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1075: 0x990ef77e6040	4384	4504	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:15:36.000000 UTC	1600-08-22 23:57:38.000000 UTC
+L1777: 0x990efadd4080	4384	8060	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:21:42.000000 UTC	1600-08-22 23:57:44.000000 UTC
 
 --- ldrmodules.txt ---
-L5802: 4420	msedgewebview2	0x20887780000	False	False	False	\Windows\System32\en-US\kernel32.dll.mui
-L5803: 4420	msedgewebview2	0x20881b70000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
-L5804: 4420	msedgewebview2	0x208896f0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
-L5805: 4420	msedgewebview2	0x2088a2e0000	False	False	False	\Windows\System32\oleaccrc.dll
-L5806: 4420	msedgewebview2	0x2088a800000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
-L5807: 4420	msedgewebview2	0x2088a5e0000	False	False	False	\Windows\System32\en-US\Windows.Security.Authentication.Web.Core.dll.mui
-L5808: 4420	msedgewebview2	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
-L5809: 4420	msedgewebview2	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
-L5810: 4420	msedgewebview2	0x7fffd3410000	True	True	True	\Windows\System32\nlansp_c.dll
-L5811: 4420	msedgewebview2	0x7fffb7f40000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneds.dll
-L5812: 4420	msedgewebview2	0x7ff7021c0000	True	False	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedgewebview2.exe
-L5813: 4420	msedgewebview2	0x7fffb0b10000	True	True	True	\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll
-L5814: 4420	msedgewebview2	0x7fffb6fd0000	True	True	True	\Windows\System32\Windows.System.Diagnostics.Telemetry.PlatformTelemetryClient.dll
-L5815: 4420	msedgewebview2	0x7fffb8c70000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe\vcruntime140.dll
-L5816: 4420	msedgewebview2	0x7fffb8290000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\telclient.dll
-L5817: 4420	msedgewebview2	0x7fffbef70000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\oneauth.dll
-L5818: 4420	msedgewebview2	0x7fffba5f0000	True	True	True	\Windows\System32\MicrosoftAccountWAMExtension.dll
-L5819: 4420	msedgewebview2	0x7fffbf540000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge.dll
-L5820: 4420	msedgewebview2	0x7fffe02d0000	True	True	True	\Windows\System32\capauthz.dll
-L5821: 4420	msedgewebview2	0x7fffdc910000	True	True	True	\Windows\System32\DataExchange.dll
-L5822: 4420	msedgewebview2	0x7fffd6500000	True	True	True	\Windows\System32\CryptoWinRT.dll
-L5823: 4420	msedgewebview2	0x7fffd4410000	True	True	True	\Windows\System32\PCPKsp.dll
-L5824: 4420	msedgewebview2	0x7fffdca00000	True	True	True	\Windows\System32\oleacc.dll
-L5825: 4420	msedgewebview2	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
-L5826: 4420	msedgewebview2	0x7fffe2a30000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\msedge_elf.dll
-L5827: 4420	msedgewebview2	0x7fffe03b0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
-L5828: 4420	msedgewebview2	0x7fffe2060000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\ffmpeg.dll
-L5829: 4420	msedgewebview2	0x7fffe5300000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll
-L5830: 4420	msedgewebview2	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
-L5831: 4420	msedgewebview2	0x7fffe55a0000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
-L5832: 4420	msedgewebview2	0x7fffe5820000	True	True	True	\Windows\System32\mfplat.dll
-L5833: 4420	msedgewebview2	0x7ffff0350000	True	True	True	\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll
-L5834: 4420	msedgewebview2	0x7fffeb830000	True	True	True	\Windows\System32\InputHost.dll
-L5835: 4420	msedgewebview2	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
-L5836: 4420	msedgewebview2	0x7fffe6b10000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
-L5837: 4420	msedgewebview2	0x7fffe6740000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
-L5838: 4420	msedgewebview2	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
-L5839: 4420	msedgewebview2	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
-L5840: 4420	msedgewebview2	0x7fffe9de0000	True	True	True	\Windows\System32\Windows.Web.dll
-L5841: 4420	msedgewebview2	0x7fffeb410000	True	True	True	\Windows\System32\directmanipulation.dll
-L5842: 4420	msedgewebview2	0x7fffea450000	True	True	True	\Windows\System32\RTWorkQ.dll
-L5843: 4420	msedgewebview2	0x7fffeb2c0000	True	True	True	\Windows\System32\ncryptprov.dll
-L5844: 4420	msedgewebview2	0x7fffeb690000	True	True	True	\Windows\System32\TextInputFramework.dll
-L5845: 4420	msedgewebview2	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
-L5846: 4420	msedgewebview2	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
-L5847: 4420	msedgewebview2	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
-L5848: 4420	msedgewebview2	0x7fffec800000	True	True	True	\Windows\System32\wkscli.dll
-L5849: 4420	msedgewebview2	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
-L5850: 4420	msedgewebview2	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
-L5851: 4420	msedgewebview2	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
-L5852: 4420	msedgewebview2	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
-L5853: 4420	msedgewebview2	0x7fffedfc0000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
-L5854: 4420	msedgewebview2	0x7fffee5a0000	True	True	True	\Windows\System32\mscms.dll
-L5855: 4420	msedgewebview2	0x7fffefa40000	True	True	True	\Windows\System32\Windows.UI.dll
-L5856: 4420	msedgewebview2	0x7fffeffd0000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.54\webview2_integration.dll
-L5857: 4420	msedgewebview2	0x7ffff23f0000	True	True	True	\Windows\System32\DWrite.dll
-L5858: 4420	msedgewebview2	0x7ffff1550000	True	True	True	\Windows\System32\netprofm.dll
-L5859: 4420	msedgewebview2	0x7ffff06c0000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe\vcruntime140_1.dll
-L5860: 4420	msedgewebview2	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
-L5861: 4420	msedgewebview2	0x7ffff1530000	True	True	True	\Windows\System32\tbs.dll
-L5862: 4420	msedgewebview2	0x7ffff23d0000	True	True	True	\Windows\System32\Microsoft.Internal.WarpPal.dll
-L5863: 4420	msedgewebview2	0x7ffff1960000	True	True	True	\Windows\System32\wevtapi.dll
-L5864: 4420	msedgewebview2	0x7ffff3b60000	True	True	True	\Windows\System32\winmm.dll
-L5865: 4420	msedgewebview2	0x7ffff3700000	True	True	True	\Windows\System32\CoreMessaging.dll
-L5866: 4420	msedgewebview2	0x7ffff2f10000	True	True	True	\Windows\System32\dcomp.dll
+L2672: 4384	svchost.exe	0x204707b0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2673: 4384	svchost.exe	0x20470d70000	False	False	False	\Windows\System32\en-US\NotificationController.dll.mui
+L2674: 4384	svchost.exe	0x20470cf0000	False	False	False	\Windows\System32\en-US\QuietHours.dll.mui
+L2675: 4384	svchost.exe	0x20470b80000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2676: 4384	svchost.exe	0x20470d60000	False	False	False	\Windows\System32\msxml6r.dll
+L2677: 4384	svchost.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L2678: 4384	svchost.exe	0x7fffe0d00000	True	True	True	\Windows\System32\WpnUserService.dll
+L2679: 4384	svchost.exe	0x7fffde5c0000	True	True	True	\Windows\System32\wpnapps.dll
+L2680: 4384	svchost.exe	0x7fffdcfb0000	True	True	True	\Windows\System32\AppExtension.dll
+L2681: 4384	svchost.exe	0x7fffd6d30000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L2682: 4384	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2683: 4384	svchost.exe	0x7fffd6580000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L2684: 4384	svchost.exe	0x7fffdcba0000	True	True	True	\Windows\System32\twinapi.dll
+L2685: 4384	svchost.exe	0x7fffda810000	True	True	True	\Windows\System32\NotificationControllerPS.dll
+L2686: 4384	svchost.exe	0x7fffdcce0000	True	True	True	\Windows\System32\Windows.CloudStore.Schema.Shell.dll
+L2687: 4384	svchost.exe	0x7fffdd670000	True	True	True	\Windows\System32\ContentDeliveryManager.Utilities.dll
+L2688: 4384	svchost.exe	0x7fffdd000000	True	True	True	\Windows\System32\msxml6.dll
+L2689: 4384	svchost.exe	0x7fffde380000	True	True	True	\Windows\System32\wpnclient.dll
+L2690: 4384	svchost.exe	0x7fffe0370000	True	True	True	\Windows\System32\execmodelproxy.dll
+L2691: 4384	svchost.exe	0x7fffdf710000	True	True	True	\Windows\System32\TileDataRepository.dll
+L2692: 4384	svchost.exe	0x7fffdf150000	True	True	True	\Windows\System32\AppResolver.dll
+L2693: 4384	svchost.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L2694: 4384	svchost.exe	0x7fffe0a80000	True	True	True	\Windows\System32\QuietHours.dll
+L2695: 4384	svchost.exe	0x7fffe0a20000	True	True	True	\Windows\System32\ExecModelClient.dll
+L2696: 4384	svchost.exe	0x7fffe0b20000	True	True	True	\Windows\System32\NotificationController.dll
+L2697: 4384	svchost.exe	0x7fffe83b0000	True	True	True	\Windows\System32\wpncore.dll
+L2698: 4384	svchost.exe	0x7fffe5ba0000	True	True	True	\Windows\System32\winsqlite3.dll
+L2699: 4384	svchost.exe	0x7fffe19e0000	True	True	True	\Windows\System32\Windows.CloudStore.dll
+L2700: 4384	svchost.exe	0x7fffe16b0000	True	True	True	\Windows\System32\wlidprov.dll
+L2701: 4384	svchost.exe	0x7fffe0f10000	True	True	True	\Windows\System32\cdp.dll
+L2702: 4384	svchost.exe	0x7fffe3a00000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L2703: 4384	svchost.exe	0x7fffe1de0000	True	True	True	\Windows\System32\IDStore.dll
+L2704: 4384	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2705: 4384	svchost.exe	0x7fffe6b10000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L2706: 4384	svchost.exe	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L2707: 4384	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2708: 4384	svchost.exe	0x7fffe89f0000	True	True	True	\Windows\System32\StateRepository.Core.dll
+L2709: 4384	svchost.exe	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L2710: 4384	svchost.exe	0x7fffe8ad0000	True	True	True	\Windows\System32\Windows.StateRepository.dll
+L2711: 4384	svchost.exe	0x7fffe9910000	True	True	True	\Windows\System32\xmllite.dll
+L2712: 4384	svchost.exe	0x7fffeca30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L2713: 4384	svchost.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L2714: 4384	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2715: 4384	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2716: 4384	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2717: 4384	svchost.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L2718: 4384	svchost.exe	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L2719: 4384	svchost.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L2720: 4384	svchost.exe	0x7fffedb90000	True	True	True	\Windows\System32\urlmon.dll
+L2721: 4384	svchost.exe	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
+L2722: 4384	svchost.exe	0x7fffefe30000	True	True	True	\Windows\System32\BCP47Langs.dll
+L2723: 4384	svchost.exe	0x7ffff4400000	True	True	True	\Windows\System32\rmclient.dll
+L2724: 4384	svchost.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L2725: 4384	svchost.exe	0x7ffff3c60000	True	True	True	\Windows\System32\wtsapi32.dll
+L2726: 4384	svchost.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L2727: 4384	svchost.exe	0x7ffff4ad0000	True	True	True	\Windows\System32\samlib.dll
+L2728: 4384	svchost.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L2729: 4384	svchost.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L2730: 4384	svchost.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L2731: 4384	svchost.exe	0x7ffff51f0000	True	True	True	\Windows\System32\ntmarta.dll
+L2732: 4384	svchost.exe	0x7ffff60f0000	True	True	True	\Windows\System32\winsta.dll
+L2733: 4384	svchost.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L2734: 4384	svchost.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L2735: 4384	svchost.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L2736: 4384	svchost.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L2737: 4384	svchost.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L2738: 4384	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2739: 4384	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2740: 4384	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2741: 4384	svchost.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L2742: 4384	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2743: 4384	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2744: 4384	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2745: 4384	svchost.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L2746: 4384	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2747: 4384	svchost.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L2748: 4384	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2749: 4384	svchost.exe	0x7ffff7df0000	True	True	True	\Windows\System32\msctf.dll
+L2750: 4384	svchost.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L2751: 4384	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2752: 4384	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2753: 4384	svchost.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L2754: 4384	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2755: 4384	svchost.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L2756: 4384	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2757: 4384	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2758: 4384	svchost.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L2759: 4384	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L2760: 4384	svchost.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L2761: 4384	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L2672: 4384	svchost.exe	0x204707b0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2673: 4384	svchost.exe	0x20470d70000	False	False	False	\Windows\System32\en-US\NotificationController.dll.mui
+L2674: 4384	svchost.exe	0x20470cf0000	False	False	False	\Windows\System32\en-US\QuietHours.dll.mui
+L2675: 4384	svchost.exe	0x20470b80000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2676: 4384	svchost.exe	0x20470d60000	False	False	False	\Windows\System32\msxml6r.dll
+L2677: 4384	svchost.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L2678: 4384	svchost.exe	0x7fffe0d00000	True	True	True	\Windows\System32\WpnUserService.dll
+L2679: 4384	svchost.exe	0x7fffde5c0000	True	True	True	\Windows\System32\wpnapps.dll
+L2680: 4384	svchost.exe	0x7fffdcfb0000	True	True	True	\Windows\System32\AppExtension.dll
+L2681: 4384	svchost.exe	0x7fffd6d30000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L2682: 4384	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2683: 4384	svchost.exe	0x7fffd6580000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L2684: 4384	svchost.exe	0x7fffdcba0000	True	True	True	\Windows\System32\twinapi.dll
+L2685: 4384	svchost.exe	0x7fffda810000	True	True	True	\Windows\System32\NotificationControllerPS.dll
+L2686: 4384	svchost.exe	0x7fffdcce0000	True	True	True	\Windows\System32\Windows.CloudStore.Schema.Shell.dll
+L2687: 4384	svchost.exe	0x7fffdd670000	True	True	True	\Windows\System32\ContentDeliveryManager.Utilities.dll
+L2688: 4384	svchost.exe	0x7fffdd000000	True	True	True	\Windows\System32\msxml6.dll
+L2689: 4384	svchost.exe	0x7fffde380000	True	True	True	\Windows\System32\wpnclient.dll
+L2690: 4384	svchost.exe	0x7fffe0370000	True	True	True	\Windows\System32\execmodelproxy.dll
+L2691: 4384	svchost.exe	0x7fffdf710000	True	True	True	\Windows\System32\TileDataRepository.dll
+L2692: 4384	svchost.exe	0x7fffdf150000	True	True	True	\Windows\System32\AppResolver.dll
+L2693: 4384	svchost.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L2694: 4384	svchost.exe	0x7fffe0a80000	True	True	True	\Windows\System32\QuietHours.dll
+L2695: 4384	svchost.exe	0x7fffe0a20000	True	True	True	\Windows\System32\ExecModelClient.dll
+L2696: 4384	svchost.exe	0x7fffe0b20000	True	True	True	\Windows\System32\NotificationController.dll
+L2697: 4384	svchost.exe	0x7fffe83b0000	True	True	True	\Windows\System32\wpncore.dll
+L2698: 4384	svchost.exe	0x7fffe5ba0000	True	True	True	\Windows\System32\winsqlite3.dll
+L2699: 4384	svchost.exe	0x7fffe19e0000	True	True	True	\Windows\System32\Windows.CloudStore.dll
+L2700: 4384	svchost.exe	0x7fffe16b0000	True	True	True	\Windows\System32\wlidprov.dll
+L2701: 4384	svchost.exe	0x7fffe0f10000	True	True	True	\Windows\System32\cdp.dll
+L2702: 4384	svchost.exe	0x7fffe3a00000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L2703: 4384	svchost.exe	0x7fffe1de0000	True	True	True	\Windows\System32\IDStore.dll
+L2704: 4384	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2705: 4384	svchost.exe	0x7fffe6b10000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L2706: 4384	svchost.exe	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L2707: 4384	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2708: 4384	svchost.exe	0x7fffe89f0000	True	True	True	\Windows\System32\StateRepository.Core.dll
+L2709: 4384	svchost.exe	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L2710: 4384	svchost.exe	0x7fffe8ad0000	True	True	True	\Windows\System32\Windows.StateRepository.dll
+L2711: 4384	svchost.exe	0x7fffe9910000	True	True	True	\Windows\System32\xmllite.dll
+L2712: 4384	svchost.exe	0x7fffeca30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L2713: 4384	svchost.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L2714: 4384	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2715: 4384	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2716: 4384	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2717: 4384	svchost.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L2718: 4384	svchost.exe	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L2719: 4384	svchost.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L2720: 4384	svchost.exe	0x7fffedb90000	True	True	True	\Windows\System32\urlmon.dll
+L2721: 4384	svchost.exe	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
+L2722: 4384	svchost.exe	0x7fffefe30000	True	True	True	\Windows\System32\BCP47Langs.dll
+L2723: 4384	svchost.exe	0x7ffff4400000	True	True	True	\Windows\System32\rmclient.dll
+L2724: 4384	svchost.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L2725: 4384	svchost.exe	0x7ffff3c60000	True	True	True	\Windows\System32\wtsapi32.dll
+L2726: 4384	svchost.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L2727: 4384	svchost.exe	0x7ffff4ad0000	True	True	True	\Windows\System32\samlib.dll
+L2728: 4384	svchost.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L2729: 4384	svchost.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L2730: 4384	svchost.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L2731: 4384	svchost.exe	0x7ffff51f0000	True	True	True	\Windows\System32\ntmarta.dll
+L2732: 4384	svchost.exe	0x7ffff60f0000	True	True	True	\Windows\System32\winsta.dll
+L2733: 4384	svchost.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L2734: 4384	svchost.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L2735: 4384	svchost.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L2736: 4384	svchost.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L2737: 4384	svchost.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L2738: 4384	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2739: 4384	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2740: 4384	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2741: 4384	svchost.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L2742: 4384	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2743: 4384	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2744: 4384	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2745: 4384	svchost.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L2746: 4384	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2747: 4384	svchost.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L2748: 4384	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2749: 4384	svchost.exe	0x7ffff7df0000	True	True	True	\Windows\System32\msctf.dll
+L2750: 4384	svchost.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L2751: 4384	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2752: 4384	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2753: 4384	svchost.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L2754: 4384	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2755: 4384	svchost.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L2756: 4384	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2757: 4384	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2758: 4384	svchost.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L2759: 4384	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L2760: 4384	svchost.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L2761: 4384	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- vadwalk.txt ---
+L7851: 4384	svchost.exe	0x990ef710b340	0x0	0x990ef77aa5c0	0x990ef7127220	0x7df5a5910000	0x7ff5a590ffff	Vad 
+L7852: 4384	svchost.exe	0x990ef77aa5c0	0x990ef710b340	0x990ef71108e0	0x990ef67dda90	0x2046e000000	0x2046effffff	VadS
+L7853: 4384	svchost.exe	0x990ef71108e0	0x990ef77aa5c0	0x990ef77ab240	0x990ef710eae0	0x2046de50000	0x2046de60fff	Vad 
+L7854: 4384	svchost.exe	0x990ef77ab240	0x990ef71108e0	0x990ef77a8a90	0x990ef710de60	0xe125e80000	0xe125efffff	VadS
+L7855: 4384	svchost.exe	0x990ef77a8a90	0x990ef77ab240	0x990ef46f55f0	0x990efadd7240	0xe125a00000	0xe125bfffff	VadS
+L7856: 4384	svchost.exe	0x990ef46f55f0	0x990ef77a8a90	0x990ef46f5230	0x990ef77a9210	0x7ffed000	0x7ffedfff	VadS
+L7857: 4384	svchost.exe	0x990ef46f5230	0x990ef46f55f0	0x0	0x0	0x7ffe0000	0x7ffe0fff	VadS
+L7858: 4384	svchost.exe	0x990ef77a9210	0x990ef46f55f0	0x0	0x990ef87a7ce0	0xe125890000	0xe12590ffff	VadS
+L7859: 4384	svchost.exe	0x990ef87a7ce0	0x990ef77a9210	0x0	0x0	0xe125910000	0xe12598ffff	VadS
+L7860: 4384	svchost.exe	0x990efadd7240	0x990ef77a8a90	0x990ef60b8270	0x990ef87b7b90	0xe125c80000	0xe125cfffff	VadS
+L7861: 4384	svchost.exe	0x990ef60b8270	0x990efadd7240	0x0	0x0	0xe125c00000	0xe125c7ffff	VadS
+L7862: 4384	svchost.exe	0x990ef87b7b90	0x990efadd7240	0x0	0x990ef87b7aa0	0xe125d80000	0xe125dfffff	VadS
+L7863: 4384	svchost.exe	0x990ef87b7aa0	0x990ef87b7b90	0x0	0x0	0xe125e00000	0xe125e7ffff	VadS
+L7864: 4384	svchost.exe	0x990ef710de60	0x990ef77ab240	0x990ef7112500	0x990ef77a8f90	0x2046de00000	0x2046de03fff	Vad 
+L7865: 4384	svchost.exe	0x990ef7112500	0x990ef710de60	0x990ef77aa430	0x990ef710ba20	0x2046ddc0000	0x2046ddc1fff	Vad 
+L7866: 4384	svchost.exe	0x990ef77aa430	0x990ef7112500	0x0	0x0	0x2046ddb0000	0x2046ddbffff	VadS
+L7867: 4384	svchost.exe	0x990ef710ba20	0x990ef7112500	0x0	0x0	0x2046ddd0000	0x2046ddf9fff	Vad 
+L7868: 4384	svchost.exe	0x990ef77a8f90	0x990ef710de60	0x990ef71105c0	0x990ef710f260	0x2046de20000	0x2046de21fff	VadS
+L7869: 4384	svchost.exe	0x990ef71105c0	0x990ef77a8f90	0x0	0x0	0x2046de10000	0x2046de10fff	Vad 
+L7870: 4384	svchost.exe	0x990ef710f260	0x990ef77a8f90	0x0	0x0	0x2046de30000	0x2046de40fff	Vad 
+L7871: 4384	svchost.exe	0x990ef710eae0	0x990ef71108e0	0x990ef710ecc0	0x990ef7112c80	0x2046dea0000	0x2046dea3fff	Vad 
+L7872: 4384	svchost.exe	0x990ef710ecc0	0x990ef710eae0	0x990ef710ef40	0x990ef71107a0	0x2046de80000	0x2046de88fff	Vad 
+L7873: 4384	svchost.exe	0x990ef710ef40	0x990ef710ecc0	0x0	0x0	0x2046de70000	0x2046de72fff	Vad 
+L7874: 4384	svchost.exe	0x990ef71107a0	0x990ef710ecc0	0x0	0x0	0x2046de90000	0x2046de98fff	Vad 
+L7875: 4384	svchost.exe	0x990ef7112c80	0x990ef710eae0	0x990ef71135e0	0x990ef71126e0	0x2046dee0000	0x2046dfb2fff	Vad 
+L7876: 4384	svchost.exe	0x990ef71135e0	0x990ef7112c80	0x990ef7111ce0	0x990ef7113220	0x2046dec0000	0x2046decffff	Vad 
+L7877: 4384	svchost.exe	0x990ef7111ce0	0x990ef71135e0	0x0	0x0	0x2046deb0000	0x2046deb3fff	Vad 
+L7878: 4384	svchost.exe	0x990ef7113220	0x990ef71135e0	0x0	0x0	0x2046ded0000	0x2046ded2fff	Vad 
+L7879: 4384	svchost.exe	0x990ef71126e0	0x990ef7112c80	0x0	0x990ef7114ee0	0x2046dfc0000	0x2046dfd0fff	Vad 
+L7880: 4384	svchost.exe	0x990ef7114ee0	0x990ef71126e0	0x0	0x0	0x2046dfe0000	0x2046dff0fff	Vad 
+L7881: 4384	svchost.exe	0x990ef67dda90	0x990ef77aa5c0	0x990ef77a9c60	0x990ef7899e80	0x20470b60000	0x20470b60fff	Vad 
+L7882: 4384	svchost.exe	0x990ef77a9c60	0x990ef67dda90	0x990ef71225e0	0x990ef77ab600	0x204707c0000	0x204707d9fff	VadS
+L7883: 4384	svchost.exe	0x990ef71225e0	0x990ef77a9c60	0x990ef711ee40	0x990ef71209c0	0x2046f3a0000	0x204707a0fff	Vad 
+L7884: 4384	svchost.exe	0x990ef711ee40	0x990ef71225e0	0x990ef711fca0	0x990ef7120f60	0x2046f200000	0x2046f207fff	Vad 
+L7885: 4384	svchost.exe	0x990ef711fca0	0x990ef711ee40	0x0	0x0	0x2046f000000	0x2046f1fffff	Vad 
+L7886: 4384	svchost.exe	0x990ef7120f60	0x990ef711ee40	0x0	0x0	0x2046f210000	0x2046f390fff	Vad 
+L7887: 4384	svchost.exe	0x990ef71209c0	0x990ef71225e0	0x0	0x0	0x204707b0000	0x204707b0fff	Vad 
+L7888: 4384	svchost.exe	0x990ef77ab600	0x990ef77a9c60	0x990ef71270e0	0x990ef77ab880	0x20470b40000	0x20470b40fff	VadS
+L7889: 4384	svchost.exe	0x990ef71270e0	0x990ef77ab600	0x990ef7125740	0x990ef7129ca0	0x20470b20000	0x20470b20fff	Vad 
+L7890: 4384	svchost.exe	0x990ef7125740	0x990ef71270e0	0x0	0x0	0x204707e0000	0x20470b1afff	Vad 
+L7891: 4384	svchost.exe	0x990ef7129ca0	0x990ef71270e0	0x0	0x0	0x20470b30000	0x20470b30fff	Vad 
+L7892: 4384	svchost.exe	0x990ef77ab880	0x990ef77ab600	0x0	0x0	0x20470b50000	0x20470b50fff	VadS
+L7893: 4384	svchost.exe	0x990ef7899e80	0x990ef67dda90	0x990ef81dba60	0x990ef7111880	0x20470d70000	0x20470d71fff	Vad 
+L7894: 4384	svchost.exe	0x990ef81dba60	0x990ef7899e80	0x990ef788b240	0x990ef789fce0	0x20470cf0000	0x20470cf1fff	Vad 
+L7895: 4384	svchost.exe	0x990ef788b240	0x990ef81dba60	0x990ef788a160	0x0	0x20470b80000	0x20470cd1fff	Vad 
+L7896: 4384	svchost.exe	0x990ef788a160	0x990ef788b240	0x0	0x0	0x20470b70000	0x20470b77fff	Vad 
+
+=== PID 4532 (smartscreen.ex, ppid=516) ===
+Cmdline: C:\Windows\System32\smartscreen.exe -Embedding
+
+--- pslist.txt ---
+L129: 4532	516	smartscreen.ex	0x990efa03e080	8	-	1	False	2026-05-13 19:25:04.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L129: 4532	smartscreen.ex	C:\Windows\System32\smartscreen.exe -Embedding
+
+--- privileges.txt ---
+L4345: 4532	smartscreen.ex	2	SeCreateTokenPrivilege		Create a token object
+L4346: 4532	smartscreen.ex	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4347: 4532	smartscreen.ex	4	SeLockMemoryPrivilege		Lock pages in memory
+L4348: 4532	smartscreen.ex	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4349: 4532	smartscreen.ex	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4350: 4532	smartscreen.ex	7	SeTcbPrivilege		Act as part of the operating system
+L4351: 4532	smartscreen.ex	8	SeSecurityPrivilege		Manage auditing and security log
+L4352: 4532	smartscreen.ex	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4353: 4532	smartscreen.ex	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4354: 4532	smartscreen.ex	11	SeSystemProfilePrivilege		Profile system performance
+L4355: 4532	smartscreen.ex	12	SeSystemtimePrivilege		Change the system time
+L4356: 4532	smartscreen.ex	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4357: 4532	smartscreen.ex	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4358: 4532	smartscreen.ex	15	SeCreatePagefilePrivilege		Create a pagefile
+L4359: 4532	smartscreen.ex	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4360: 4532	smartscreen.ex	17	SeBackupPrivilege		Backup files and directories
+L4361: 4532	smartscreen.ex	18	SeRestorePrivilege		Restore files and directories
+L4362: 4532	smartscreen.ex	19	SeShutdownPrivilege	Present	Shut down the system
+L4363: 4532	smartscreen.ex	20	SeDebugPrivilege		Debug programs
+L4364: 4532	smartscreen.ex	21	SeAuditPrivilege		Generate security audits
+L4365: 4532	smartscreen.ex	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4366: 4532	smartscreen.ex	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4367: 4532	smartscreen.ex	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4368: 4532	smartscreen.ex	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4369: 4532	smartscreen.ex	26	SeSyncAgentPrivilege		Synch directory service data
+L4370: 4532	smartscreen.ex	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4371: 4532	smartscreen.ex	28	SeManageVolumePrivilege		Manage the files on a volume
+L4372: 4532	smartscreen.ex	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4373: 4532	smartscreen.ex	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4374: 4532	smartscreen.ex	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4375: 4532	smartscreen.ex	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4376: 4532	smartscreen.ex	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4377: 4532	smartscreen.ex	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4378: 4532	smartscreen.ex	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4379: 4532	smartscreen.ex	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L6034: 4532	smartscreen.ex	0x7ff7ae600000	0x96000	smartscreen.exe	C:\Windows\System32\smartscreen.exe	-1	2026-05-13 19:25:04.000000 UTC	Disabled
+L6035: 4532	smartscreen.ex	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:25:04.000000 UTC	Disabled
+L6036: 4532	smartscreen.ex	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:25:04.000000 UTC	Disabled
+L6037: 4532	smartscreen.ex	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:25:04.000000 UTC	Disabled
+L6038: 4532	smartscreen.ex	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6039: 4532	smartscreen.ex	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6040: 4532	smartscreen.ex	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6041: 4532	smartscreen.ex	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6042: 4532	smartscreen.ex	0x7ffff7c20000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6043: 4532	smartscreen.ex	0x7fffb7950000	0x5b9000	SmartScreen.DLL	C:\Windows\System32\SmartScreen.DLL	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6044: 4532	smartscreen.ex	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6045: 4532	smartscreen.ex	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6046: 4532	smartscreen.ex	0x7ffff9820000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6047: 4532	smartscreen.ex	0x7fffee2a0000	0x127000	WINHTTP.dll	C:\Windows\System32\WINHTTP.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6048: 4532	smartscreen.ex	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6049: 4532	smartscreen.ex	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6050: 4532	smartscreen.ex	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6051: 4532	smartscreen.ex	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6052: 4532	smartscreen.ex	0x7ffff7810000	0x74000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6053: 4532	smartscreen.ex	0x7ffff5930000	0x1b000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6054: 4532	smartscreen.ex	0x7ffff8710000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6055: 4532	smartscreen.ex	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6056: 4532	smartscreen.ex	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6057: 4532	smartscreen.ex	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6058: 4532	smartscreen.ex	0x7ffff4b20000	0x12a000	DNSAPI.dll	C:\Windows\System32\DNSAPI.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6059: 4532	smartscreen.ex	0x7ffff64b0000	0x81000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6060: 4532	smartscreen.ex	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6061: 4532	smartscreen.ex	0x7ffff4a00000	0x33000	IPHLPAPI.DLL	C:\Windows\System32\IPHLPAPI.DLL	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6062: 4532	smartscreen.ex	0x7ffff8700000	0xa000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6063: 4532	smartscreen.ex	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6064: 4532	smartscreen.ex	0x7ffff5990000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6065: 4532	smartscreen.ex	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6066: 4532	smartscreen.ex	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:25:04.000000 UTC	Disabled
+L6067: 4532	smartscreen.ex	0x7fffea0c0000	0xb000	WTDSENSOR.dll	C:\Windows\System32\WTDSENSOR.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6068: 4532	smartscreen.ex	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6069: 4532	smartscreen.ex	0x7fffb7f10000	0x1e000	smartscreenps.dll	C:\Windows\System32\smartscreenps.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6070: 4532	smartscreen.ex	0x7fffdc860000	0x32000	Windows.Management.Workplace.dll	C:\Windows\System32\Windows.Management.Workplace.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+L6071: 4532	smartscreen.ex	0x7ffff39c0000	0xb4000	policymanager.dll	C:\Windows\System32\policymanager.dll	6	2026-05-13 19:25:04.000000 UTC	Disabled
+
+--- envars.txt ---
+L3865: 4532	smartscreen.ex	0x200cc104c20	ALLUSERSPROFILE	C:\ProgramData
+L3866: 4532	smartscreen.ex	0x200cc104c20	APPDATA	C:\Users\kali\AppData\Roaming
+L3867: 4532	smartscreen.ex	0x200cc104c20	CommonProgramFiles	C:\Program Files\Common Files
+L3868: 4532	smartscreen.ex	0x200cc104c20	CommonProgramFiles(x86)	C:\Program Files (x86)\Common Files
+L3869: 4532	smartscreen.ex	0x200cc104c20	CommonProgramW6432	C:\Program Files\Common Files
+L3870: 4532	smartscreen.ex	0x200cc104c20	COMPUTERNAME	CLEANWINDOWS11
+L3871: 4532	smartscreen.ex	0x200cc104c20	ComSpec	C:\WINDOWS\system32\cmd.exe
+L3872: 4532	smartscreen.ex	0x200cc104c20	DriverData	C:\Windows\System32\Drivers\DriverData
+L3873: 4532	smartscreen.ex	0x200cc104c20	HOMEDRIVE	C:
+L3874: 4532	smartscreen.ex	0x200cc104c20	HOMEPATH	\Users\kali
+L3875: 4532	smartscreen.ex	0x200cc104c20	LOCALAPPDATA	C:\Users\kali\AppData\Local
+L3876: 4532	smartscreen.ex	0x200cc104c20	LOGONSERVER	\\CLEANWINDOWS11
+L3877: 4532	smartscreen.ex	0x200cc104c20	NUMBER_OF_PROCESSORS	4
+L3878: 4532	smartscreen.ex	0x200cc104c20	OneDrive	C:\Users\kali\OneDrive
+L3879: 4532	smartscreen.ex	0x200cc104c20	OS	Windows_NT
+L3880: 4532	smartscreen.ex	0x200cc104c20	Path	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\kali\AppData\Local\Microsoft\WindowsApps
+L3881: 4532	smartscreen.ex	0x200cc104c20	PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+L3882: 4532	smartscreen.ex	0x200cc104c20	PROCESSOR_ARCHITECTURE	AMD64
+L3883: 4532	smartscreen.ex	0x200cc104c20	PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+L3884: 4532	smartscreen.ex	0x200cc104c20	PROCESSOR_LEVEL	6
+L3885: 4532	smartscreen.ex	0x200cc104c20	PROCESSOR_REVISION	ba03
+L3886: 4532	smartscreen.ex	0x200cc104c20	ProgramData	C:\ProgramData
+L3887: 4532	smartscreen.ex	0x200cc104c20	ProgramFiles	C:\Program Files
+L3888: 4532	smartscreen.ex	0x200cc104c20	ProgramFiles(x86)	C:\Program Files (x86)
+L3889: 4532	smartscreen.ex	0x200cc104c20	ProgramW6432	C:\Program Files
+L3890: 4532	smartscreen.ex	0x200cc104c20	PSModulePath	%ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+L3891: 4532	smartscreen.ex	0x200cc104c20	PUBLIC	C:\Users\Public
+L3892: 4532	smartscreen.ex	0x200cc104c20	SystemDrive	C:
+L3893: 4532	smartscreen.ex	0x200cc104c20	SystemRoot	C:\WINDOWS
+L3894: 4532	smartscreen.ex	0x200cc104c20	TEMP	C:\Users\kali\AppData\Local\Temp
+L3895: 4532	smartscreen.ex	0x200cc104c20	TMP	C:\Users\kali\AppData\Local\Temp
+L3896: 4532	smartscreen.ex	0x200cc104c20	USERDOMAIN	CLEANWINDOWS11
+L3897: 4532	smartscreen.ex	0x200cc104c20	USERDOMAIN_ROAMINGPROFILE	CLEANWINDOWS11
+L3898: 4532	smartscreen.ex	0x200cc104c20	USERNAME	kali
+L3899: 4532	smartscreen.ex	0x200cc104c20	USERPROFILE	C:\Users\kali
+L3900: 4532	smartscreen.ex	0x200cc104c20	windir	C:\WINDOWS
+
+--- pstree.txt ---
+L34: *** 4532	516	smartscreen.ex	0x990efa03e080	8	-	1	False	2026-05-13 19:25:04.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\smartscreen.exe	C:\Windows\System32\smartscreen.exe -Embedding	C:\Windows\System32\smartscreen.exe
+
+--- psscan.txt ---
+L135: 4532	516	smartscreen.ex	0x990efa03e080	8	-	1	False	2026-05-13 19:25:04.000000 UTC	N/A	Disabled
+
+--- threads.txt ---
+L1708: 0x990efa9b1080	4532	8056	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7ae61cc90	\Windows\System32\smartscreen.exe	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:43.000000 UTC
+L1709: 0x990ef7f9e080	4532	4448	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1710: 0x990ef70c5080	4532	4868	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffb7ce9680	\Windows\System32\smartscreen.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L1711: 0x990ef4318040	4532	4864	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:32.000000 UTC
+L1712: 0x990ef4c78080	4532	7392	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L1713: 0x990ef6225080	4532	5556	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L1714: 0x990ef602d080	4532	4496	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:35.000000 UTC
+L1715: 0x990ef6e8a080	4532	4716	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:26.000000 UTC	1600-08-22 23:57:37.000000 UTC
+
+--- thrdscan.txt ---
+L266: 0x990ef4318040	4532	4864	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:32.000000 UTC
+L396: 0x990ef4c78080	4532	7392	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff79a3e80	\Windows\System32\combase.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:33.000000 UTC
+L488: 0x990ef602d080	4532	4496	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:35.000000 UTC
+L559: 0x990ef6225080	4532	5556	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:36.000000 UTC
+L821: 0x990ef6e8a080	4532	4716	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:26:26.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L927: 0x990ef70c5080	4532	4868	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7fffb7ce9680	\Windows\System32\smartscreen.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:37.000000 UTC
+L1372: 0x990ef7f9e080	4532	4448	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ffff9ad5b10	\Windows\System32\ntdll.dll	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:39.000000 UTC
+L1737: 0x990efa9b1080	4532	8056	0x7ffff9aec460	\Windows\System32\ntdll.dll	0x7ff7ae61cc90	\Windows\System32\smartscreen.exe	2026-05-13 19:25:04.000000 UTC	1600-08-22 23:57:43.000000 UTC
+
+--- ldrmodules.txt ---
+L6320: 4532	smartscreen.ex	0x200cba20000	False	False	False	\Windows\System32\en-US\smartscreen.exe.mui
+L6321: 4532	smartscreen.ex	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6322: 4532	smartscreen.ex	0x7ffff4b20000	True	True	True	\Windows\System32\dnsapi.dll
+L6323: 4532	smartscreen.ex	0x7fffea0c0000	True	True	True	\Windows\System32\wtdsensor.dll
+L6324: 4532	smartscreen.ex	0x7fffb7950000	True	True	True	\Windows\System32\smartscreen.dll
+L6325: 4532	smartscreen.ex	0x7ff7ae600000	True	False	True	\Windows\System32\smartscreen.exe
+L6326: 4532	smartscreen.ex	0x7fffb7f10000	True	True	True	\Windows\System32\smartscreenps.dll
+L6327: 4532	smartscreen.ex	0x7fffdc860000	True	True	True	\Windows\System32\Windows.Management.Workplace.dll
+L6328: 4532	smartscreen.ex	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L6329: 4532	smartscreen.ex	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L6330: 4532	smartscreen.ex	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L6331: 4532	smartscreen.ex	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L6332: 4532	smartscreen.ex	0x7ffff5930000	True	True	True	\Windows\System32\cryptsp.dll
+L6333: 4532	smartscreen.ex	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6334: 4532	smartscreen.ex	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L6335: 4532	smartscreen.ex	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6336: 4532	smartscreen.ex	0x7ffff64b0000	True	True	True	\Windows\System32\wintrust.dll
+L6337: 4532	smartscreen.ex	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6338: 4532	smartscreen.ex	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6339: 4532	smartscreen.ex	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6340: 4532	smartscreen.ex	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6341: 4532	smartscreen.ex	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L6342: 4532	smartscreen.ex	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6343: 4532	smartscreen.ex	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6344: 4532	smartscreen.ex	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6345: 4532	smartscreen.ex	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
+L6346: 4532	smartscreen.ex	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L6347: 4532	smartscreen.ex	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6348: 4532	smartscreen.ex	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
+L6349: 4532	smartscreen.ex	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L6350: 4532	smartscreen.ex	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6351: 4532	smartscreen.ex	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6352: 4532	smartscreen.ex	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L6353: 4532	smartscreen.ex	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6354: 4532	smartscreen.ex	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6355: 4532	smartscreen.ex	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6356: 4532	smartscreen.ex	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6357: 4532	smartscreen.ex	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L6358: 4532	smartscreen.ex	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_ldrmodules.txt ---
+L6320: 4532	smartscreen.ex	0x200cba20000	False	False	False	\Windows\System32\en-US\smartscreen.exe.mui
+L6321: 4532	smartscreen.ex	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6322: 4532	smartscreen.ex	0x7ffff4b20000	True	True	True	\Windows\System32\dnsapi.dll
+L6323: 4532	smartscreen.ex	0x7fffea0c0000	True	True	True	\Windows\System32\wtdsensor.dll
+L6324: 4532	smartscreen.ex	0x7fffb7950000	True	True	True	\Windows\System32\smartscreen.dll
+L6325: 4532	smartscreen.ex	0x7ff7ae600000	True	False	True	\Windows\System32\smartscreen.exe
+L6326: 4532	smartscreen.ex	0x7fffb7f10000	True	True	True	\Windows\System32\smartscreenps.dll
+L6327: 4532	smartscreen.ex	0x7fffdc860000	True	True	True	\Windows\System32\Windows.Management.Workplace.dll
+L6328: 4532	smartscreen.ex	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L6329: 4532	smartscreen.ex	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L6330: 4532	smartscreen.ex	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L6331: 4532	smartscreen.ex	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L6332: 4532	smartscreen.ex	0x7ffff5930000	True	True	True	\Windows\System32\cryptsp.dll
+L6333: 4532	smartscreen.ex	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6334: 4532	smartscreen.ex	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L6335: 4532	smartscreen.ex	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6336: 4532	smartscreen.ex	0x7ffff64b0000	True	True	True	\Windows\System32\wintrust.dll
+L6337: 4532	smartscreen.ex	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6338: 4532	smartscreen.ex	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6339: 4532	smartscreen.ex	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6340: 4532	smartscreen.ex	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6341: 4532	smartscreen.ex	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L6342: 4532	smartscreen.ex	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6343: 4532	smartscreen.ex	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6344: 4532	smartscreen.ex	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6345: 4532	smartscreen.ex	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
+L6346: 4532	smartscreen.ex	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L6347: 4532	smartscreen.ex	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6348: 4532	smartscreen.ex	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
+L6349: 4532	smartscreen.ex	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L6350: 4532	smartscreen.ex	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6351: 4532	smartscreen.ex	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6352: 4532	smartscreen.ex	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L6353: 4532	smartscreen.ex	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6354: 4532	smartscreen.ex	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6355: 4532	smartscreen.ex	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6356: 4532	smartscreen.ex	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6357: 4532	smartscreen.ex	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L6358: 4532	smartscreen.ex	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- vadwalk.txt ---
+L16017: 4532	smartscreen.ex	0x990ef87a77e0	0x0	0x990ef011eda0	0x990ef011f660	0x200cc000000	0x200ccffffff	VadS
+L16018: 4532	smartscreen.ex	0x990ef011eda0	0x990ef87a77e0	0x990ef87a94f0	0x990ef011d9a0	0x200cb190000	0x200cb192fff	Vad 
+L16019: 4532	smartscreen.ex	0x990ef87a94f0	0x990ef011eda0	0x990ef87a85f0	0x990ef011b240	0xd840680000	0xd8406fffff	VadS
+L16020: 4532	smartscreen.ex	0x990ef87a85f0	0x990ef87a94f0	0x990ef87a8050	0x990ef87a9220	0xd840400000	0xd84047ffff	VadS
+L16021: 4532	smartscreen.ex	0x990ef87a8050	0x990ef87a85f0	0x990ef87a7790	0x990ef87a83c0	0x7ffed000	0x7ffedfff	VadS
+L16022: 4532	smartscreen.ex	0x990ef87a7790	0x990ef87a8050	0x0	0x0	0x7ffe0000	0x7ffe0fff	VadS
+L16023: 4532	smartscreen.ex	0x990ef87a83c0	0x990ef87a8050	0x990ef87a7e20	0x0	0xd840200000	0xd8403fffff	VadS
+L16024: 4532	smartscreen.ex	0x990ef87a7e20	0x990ef87a83c0	0x0	0x0	0xd840160000	0xd8401dffff	VadS
+L16025: 4532	smartscreen.ex	0x990ef87a9220	0x990ef87a85f0	0x990efa345b40	0x990ef87a8e60	0xd840580000	0xd8405fffff	VadS
+L16026: 4532	smartscreen.ex	0x990efa345b40	0x990ef87a9220	0x0	0x0	0xd840480000	0xd8404fffff	VadS
+L16027: 4532	smartscreen.ex	0x990ef87a8e60	0x990ef87a9220	0x0	0x0	0xd840600000	0xd84067ffff	VadS
+L16028: 4532	smartscreen.ex	0x990ef011b240	0x990ef87a94f0	0x990ef87a8870	0x990ef011e4e0	0x200cb100000	0x200cb129fff	Vad 
+L16029: 4532	smartscreen.ex	0x990ef87a8870	0x990ef011b240	0x990ef87a8a00	0x990ef011f840	0x200cb0e0000	0x200cb0effff	VadS
+L16030: 4532	smartscreen.ex	0x990ef87a8a00	0x990ef87a8870	0x0	0x990ef87a91d0	0xd840700000	0xd84077ffff	VadS
+L16031: 4532	smartscreen.ex	0x990ef87a91d0	0x990ef87a8a00	0x0	0x0	0xd840780000	0xd8407fffff	VadS
+L16032: 4532	smartscreen.ex	0x990ef011f840	0x990ef87a8870	0x0	0x0	0x200cb0f0000	0x200cb0f1fff	Vad 
+L16033: 4532	smartscreen.ex	0x990ef011e4e0	0x990ef011b240	0x990ef011f200	0x990ef011f8e0	0x200cb150000	0x200cb160fff	Vad 
+L16034: 4532	smartscreen.ex	0x990ef011f200	0x990ef011e4e0	0x0	0x990ef87a7920	0x200cb130000	0x200cb133fff	Vad 
+L16035: 4532	smartscreen.ex	0x990ef87a7920	0x990ef011f200	0x0	0x0	0x200cb140000	0x200cb141fff	VadS
+L16036: 4532	smartscreen.ex	0x990ef011f8e0	0x990ef011e4e0	0x0	0x0	0x200cb170000	0x200cb180fff	Vad 
+L16037: 4532	smartscreen.ex	0x990ef011d9a0	0x990ef011eda0	0x990ef011ee40	0x990ef01210a0	0x200cb2e0000	0x200cb2f0fff	Vad 
+L16038: 4532	smartscreen.ex	0x990ef011ee40	0x990ef011d9a0	0x990ef011f480	0x990ef011e120	0x200cb1d0000	0x200cb1d3fff	Vad 
+L16039: 4532	smartscreen.ex	0x990ef011f480	0x990ef011ee40	0x990ef011e260	0x990ef011f2a0	0x200cb1b0000	0x200cb1b8fff	Vad 
+L16040: 4532	smartscreen.ex	0x990ef011e260	0x990ef011f480	0x0	0x0	0x200cb1a0000	0x200cb1a8fff	Vad 
+L16041: 4532	smartscreen.ex	0x990ef011f2a0	0x990ef011f480	0x0	0x0	0x200cb1c0000	0x200cb1c3fff	Vad 
+L16042: 4532	smartscreen.ex	0x990ef011e120	0x990ef011ee40	0x990ef011f340	0x990ef011dea0	0x200cb1f0000	0x200cb1f2fff	Vad 
+L16043: 4532	smartscreen.ex	0x990ef011f340	0x990ef011e120	0x0	0x0	0x200cb1e0000	0x200cb1effff	Vad 
+L16044: 4532	smartscreen.ex	0x990ef011dea0	0x990ef011e120	0x0	0x0	0x200cb200000	0x200cb2d2fff	Vad 
+L16045: 4532	smartscreen.ex	0x990ef01210a0	0x990ef011d9a0	0x990ef87a9450	0x990ef0120ec0	0x200cb680000	0x200cb87ffff	Vad 
+L16046: 4532	smartscreen.ex	0x990ef87a9450	0x990ef01210a0	0x990ef011e940	0x990ef0120240	0x200cb320000	0x200cb339fff	VadS
+L16047: 4532	smartscreen.ex	0x990ef011e940	0x990ef87a9450	0x0	0x0	0x200cb300000	0x200cb310fff	Vad 
+L16048: 4532	smartscreen.ex	0x990ef0120240	0x990ef87a9450	0x0	0x0	0x200cb340000	0x200cb67afff	Vad 
+L16049: 4532	smartscreen.ex	0x990ef0120ec0	0x990ef01210a0	0x990ef01202e0	0x990ef0120ce0	0x200cba30000	0x200cba30fff	Vad 
+L16050: 4532	smartscreen.ex	0x990ef01202e0	0x990ef0120ec0	0x990ef01206a0	0x990ef01220e0	0x200cb890000	0x200cba10fff	Vad 
+L16051: 4532	smartscreen.ex	0x990ef01206a0	0x990ef01202e0	0x0	0x0	0x200cb880000	0x200cb887fff	Vad 
+L16052: 4532	smartscreen.ex	0x990ef01220e0	0x990ef01202e0	0x0	0x0	0x200cba20000	0x200cba23fff	Vad 
+L16053: 4532	smartscreen.ex	0x990ef0120ce0	0x990ef0120ec0	0x0	0x0	0x200cba40000	0x200cba40fff	Vad 
+L16054: 4532	smartscreen.ex	0x990ef011f660	0x990ef87a77e0	0x990ef011e9e0	0x990ef011fde0	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 
+L16055: 4532	smartscreen.ex	0x990ef011e9e0	0x990ef011f660	0x990ef011d540	0x990ef011e300	0x7ffff4b20000	0x7ffff4c4cfff	Vad 
+L16056: 4532	smartscreen.ex	0x990ef011d540	0x990ef011e9e0	0x990ef87a7560	0x990ef0120920	0x7df5a5910000	0x7ff5a590ffff	Vad 
+L16057: 4532	smartscreen.ex	0x990ef87a7560	0x990ef011d540	0x990ef011ec60	0x990ef011d900	0x7df5a38f0000	0x7df5a58f0fff	VadS
+L16058: 4532	smartscreen.ex	0x990ef011ec60	0x990ef87a7560	0x990ef0120380	0x990ef87a7d30	0x7df4a37d0000	0x7df4a38cffff	Vad 
+L16059: 4532	smartscreen.ex	0x990ef0120380	0x990ef011ec60	0x0	0x0	0x200cd000000	0x200ce400fff	Vad 
+L16060: 4532	smartscreen.ex	0x990ef87a7d30	0x990ef011ec60	0x0	0x0	0x7df4a38d0000	0x7df5a38effff	VadS
+L16061: 4532	smartscreen.ex	0x990ef011d900	0x990ef87a7560	0x0	0x0	0x7df5a5900000	0x7df5a5900fff	Vad 
+L16062: 4532	smartscreen.ex	0x990ef0120920	0x990ef011d540	0x990ef011e760	0x990ef0120f60	0x7fffea0c0000	0x7fffea0cdfff	Vad 
+L16063: 4532	smartscreen.ex	0x990ef011e760	0x990ef0120920	0x990ef011b1a0	0x990ef01218c0	0x7fffb7950000	0x7fffb7f08fff	Vad 
+L16064: 4532	smartscreen.ex	0x990ef011b1a0	0x990ef011e760	0x0	0x0	0x7ff7ae600000	0x7ff7ae698fff	Vad 
+L16065: 4532	smartscreen.ex	0x990ef01218c0	0x990ef011e760	0x0	0x990ef0121500	0x7fffb7f10000	0x7fffb7f30fff	Vad 
+L16066: 4532	smartscreen.ex	0x990ef0121500	0x990ef01218c0	0x0	0x0	0x7fffdc860000	0x7fffdc894fff	Vad 
+L16067: 4532	smartscreen.ex	0x990ef0120f60	0x990ef0120920	0x990ef011df40	0x990ef0121d20	0x7ffff39c0000	0x7ffff3a76fff	Vad 
+L16068: 4532	smartscreen.ex	0x990ef011df40	0x990ef0120f60	0x0	0x0	0x7fffee2a0000	0x7fffee3c9fff	Vad 
+L16069: 4532	smartscreen.ex	0x990ef0121d20	0x990ef0120f60	0x0	0x0	0x7ffff4a00000	0x7ffff4a35fff	Vad 
+L16070: 4532	smartscreen.ex	0x990ef011e300	0x990ef011e9e0	0x990ef011e800	0x990ef011dcc0	0x7ffff6340000	0x7ffff64acfff	Vad 
+L16071: 4532	smartscreen.ex	0x990ef011e800	0x990ef011e300	0x990ef01225e0	0x990ef0122900	0x7ffff5930000	0x7ffff594dfff	Vad 
+L16072: 4532	smartscreen.ex	0x990ef01225e0	0x990ef011e800	0x0	0x0	0x7ffff50d0000	0x7ffff50edfff	Vad 
+L16073: 4532	smartscreen.ex	0x990ef0122900	0x990ef011e800	0x0	0x0	0x7ffff5990000	0x7ffff59a5fff	Vad 
+L16074: 4532	smartscreen.ex	0x990ef011dcc0	0x990ef011e300	0x990ef011dc20	0x990ef011da40	0x7ffff65f0000	0x7ffff69e3fff	Vad 
+L16075: 4532	smartscreen.ex	0x990ef011dc20	0x990ef011dcc0	0x0	0x990ef0120560	0x7ffff64b0000	0x7ffff6533fff	Vad 
+L16076: 4532	smartscreen.ex	0x990ef0120560	0x990ef011dc20	0x0	0x0	0x7ffff6540000	0x7ffff65e7fff	Vad 
+L16077: 4532	smartscreen.ex	0x990ef011da40	0x990ef011dcc0	0x0	0x0	0x7ffff69f0000	0x7ffff6a19fff	Vad 
+L16078: 4532	smartscreen.ex	0x990ef011fde0	0x990ef011f660	0x990ef011f5c0	0x990ef011eb20	0x7ffff90f0000	0x7ffff911dfff	Vad 
+L16079: 4532	smartscreen.ex	0x990ef011f5c0	0x990ef011fde0	0x990ef011e3a0	0x990ef011ea80	0x7ffff7c20000	0x7ffff7de7fff	Vad 
+L16080: 4532	smartscreen.ex	0x990ef011e3a0	0x990ef011f5c0	0x990ef011fd40	0x990ef011e580	0x7ffff7680000	0x7ffff77f9fff	Vad 
+L16081: 4532	smartscreen.ex	0x990ef011fd40	0x990ef011e3a0	0x0	0x990ef011de00	0x7ffff6c30000	0x7ffff6d5dfff	Vad 
+L16082: 4532	smartscreen.ex	0x990ef011de00	0x990ef011fd40	0x0	0x0	0x7ffff75d0000	0x7ffff7675fff	Vad 
+L16083: 4532	smartscreen.ex	0x990ef011e580	0x990ef011e3a0	0x990ef011fac0	0x0	0x7ffff7890000	0x7ffff7c14fff	Vad 
+L16084: 4532	smartscreen.ex	0x990ef011fac0	0x990ef011e580	0x0	0x0	0x7ffff7810000	0x7ffff7886fff	Vad 
+L16085: 4532	smartscreen.ex	0x990ef011ea80	0x990ef011f5c0	0x990ef011e620	0x990ef011ed00	0x7ffff8710000	0x7ffff8e71fff	Vad 
+L16086: 4532	smartscreen.ex	0x990ef011e620	0x990ef011ea80	0x0	0x990ef01216e0	0x7ffff8050000	0x7ffff816afff	Vad 
+L16087: 4532	smartscreen.ex	0x990ef01216e0	0x990ef011e620	0x0	0x0	0x7ffff8700000	0x7ffff870cfff	Vad 
+L16088: 4532	smartscreen.ex	0x990ef011ed00	0x990ef011ea80	0x0	0x0	0x7ffff8f00000	0x7ffff8fd9fff	Vad 
+L16089: 4532	smartscreen.ex	0x990ef011eb20	0x990ef011fde0	0x990ef0120060	0x990ef011e080	0x7ffff9560000	0x7ffff962bfff	Vad 
+L16090: 4532	smartscreen.ex	0x990ef0120060	0x990ef011eb20	0x990ef011f980	0x0	0x7ffff94b0000	0x7ffff9559fff	Vad 
+L16091: 4532	smartscreen.ex	0x990ef011f980	0x990ef0120060	0x0	0x0	0x7ffff9120000	0x7ffff92b7fff	Vad 
+L16092: 4532	smartscreen.ex	0x990ef011e080	0x990ef011eb20	0x990ef01204c0	0x990ef011d7c0	0x7ffff9820000	0x7ffff98ddfff	Vad 
+L16093: 4532	smartscreen.ex	0x990ef01204c0	0x990ef011e080	0x990ef011ebc0	0x990ef011dd60	0x7ffff9730000	0x7ffff9763fff	Vad 
+L16094: 4532	smartscreen.ex	0x990ef011ebc0	0x990ef01204c0	0x0	0x0	0x7ffff9630000	0x7ffff9729fff	Vad 
+L16095: 4532	smartscreen.ex	0x990ef011dd60	0x990ef01204c0	0x0	0x0	0x7ffff9770000	0x7ffff981bfff	Vad 
+L16096: 4532	smartscreen.ex	0x990ef011d7c0	0x990ef011e080	0x990ef0121780	0x0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 
+L16097: 4532	smartscreen.ex	0x990ef0121780	0x990ef011d7c0	0x0	0x0	0x7ffff9900000	0x7ffff99b0fff	Vad 
+
+--- vadinfo.txt ---
+L16017: 4532	smartscreen.ex	0xffff990ef87a77e0	0x200cc000000	0x200ccffffff	VadS	PAGE_READWRITE	118	1	0x0	N/A	Disabled
+L16018: 4532	smartscreen.ex	0xffff990ef011eda0	0x200cb190000	0x200cb192fff	Vad 	PAGE_READONLY	0	0	0xffff990ef87a77e0	\Windows\System32\l_intl.nls	Disabled
+L16019: 4532	smartscreen.ex	0xffff990ef87a94f0	0xd840680000	0xd8406fffff	VadS	PAGE_READWRITE	5	1	0xffff990ef011eda0	N/A	Disabled
+L16020: 4532	smartscreen.ex	0xffff990ef87a85f0	0xd840400000	0xd84047ffff	VadS	PAGE_READWRITE	7	1	0xffff990ef87a94f0	N/A	Disabled
+L16021: 4532	smartscreen.ex	0xffff990ef87a8050	0x7ffed000	0x7ffedfff	VadS	PAGE_READONLY	1	1	0xffff990ef87a85f0	N/A	Disabled
+L16022: 4532	smartscreen.ex	0xffff990ef87a7790	0x7ffe0000	0x7ffe0fff	VadS	PAGE_READONLY	1	1	0xffff990ef87a8050	N/A	Disabled
+L16023: 4532	smartscreen.ex	0xffff990ef87a83c0	0xd840200000	0xd8403fffff	VadS	PAGE_READWRITE	17	1	0xffff990ef87a8050	N/A	Disabled
+L16024: 4532	smartscreen.ex	0xffff990ef87a7e20	0xd840160000	0xd8401dffff	VadS	PAGE_READWRITE	8	1	0xffff990ef87a83c0	N/A	Disabled
+L16025: 4532	smartscreen.ex	0xffff990ef87a9220	0xd840580000	0xd8405fffff	VadS	PAGE_READWRITE	5	1	0xffff990ef87a85f0	N/A	Disabled
+L16026: 4532	smartscreen.ex	0xffff990efa345b40	0xd840480000	0xd8404fffff	VadS	PAGE_READWRITE	10	1	0xffff990ef87a9220	N/A	Disabled
+L16027: 4532	smartscreen.ex	0xffff990ef87a8e60	0xd840600000	0xd84067ffff	VadS	PAGE_READWRITE	10	1	0xffff990ef87a9220	N/A	Disabled
+L16028: 4532	smartscreen.ex	0xffff990ef011b240	0x200cb100000	0x200cb129fff	Vad 	PAGE_READONLY	0	0	0xffff990ef87a94f0	N/A	Disabled
+L16029: 4532	smartscreen.ex	0xffff990ef87a8870	0x200cb0e0000	0x200cb0effff	VadS	PAGE_READWRITE	6	1	0xffff990ef011b240	N/A	Disabled
+L16030: 4532	smartscreen.ex	0xffff990ef87a8a00	0xd840700000	0xd84077ffff	VadS	PAGE_READWRITE	10	1	0xffff990ef87a8870	N/A	Disabled
+L16031: 4532	smartscreen.ex	0xffff990ef87a91d0	0xd840780000	0xd8407fffff	VadS	PAGE_READWRITE	8	1	0xffff990ef87a8a00	N/A	Disabled
+L16032: 4532	smartscreen.ex	0xffff990ef011f840	0x200cb0f0000	0x200cb0f1fff	Vad 	PAGE_READWRITE	0	0	0xffff990ef87a8870	N/A	Disabled
+L16033: 4532	smartscreen.ex	0xffff990ef011e4e0	0x200cb150000	0x200cb160fff	Vad 	PAGE_READONLY	0	0	0xffff990ef011b240	\Windows\System32\C_1252.NLS	Disabled
+L16034: 4532	smartscreen.ex	0xffff990ef011f200	0x200cb130000	0x200cb133fff	Vad 	PAGE_READONLY	0	0	0xffff990ef011e4e0	N/A	Disabled
+L16035: 4532	smartscreen.ex	0xffff990ef87a7920	0x200cb140000	0x200cb141fff	VadS	PAGE_READWRITE	2	1	0xffff990ef011f200	N/A	Disabled
+L16036: 4532	smartscreen.ex	0xffff990ef011f8e0	0x200cb170000	0x200cb180fff	Vad 	PAGE_READONLY	0	0	0xffff990ef011e4e0	\Windows\System32\C_437.NLS	Disabled
+L16037: 4532	smartscreen.ex	0xffff990ef011d9a0	0x200cb2e0000	0x200cb2f0fff	Vad 	PAGE_READONLY	0	0	0xffff990ef011eda0	\Windows\System32\C_1252.NLS	Disabled
+L16038: 4532	smartscreen.ex	0xffff990ef011ee40	0x200cb1d0000	0x200cb1d3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef011d9a0	N/A	Disabled
+L16039: 4532	smartscreen.ex	0xffff990ef011f480	0x200cb1b0000	0x200cb1b8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef011ee40	N/A	Disabled
+L16040: 4532	smartscreen.ex	0xffff990ef011e260	0x200cb1a0000	0x200cb1a8fff	Vad 	PAGE_READONLY	0	0	0xffff990ef011f480	N/A	Disabled
+L16041: 4532	smartscreen.ex	0xffff990ef011f2a0	0x200cb1c0000	0x200cb1c3fff	Vad 	PAGE_READONLY	0	0	0xffff990ef011f480	N/A	Disabled
+L16042: 4532	smartscreen.ex	0xffff990ef011e120	0x200cb1f0000	0x200cb1f2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef011ee40	\Windows\System32\l_intl.nls	Disabled
+L16043: 4532	smartscreen.ex	0xffff990ef011f340	0x200cb1e0000	0x200cb1effff	Vad 	PAGE_READWRITE	0	0	0xffff990ef011e120	N/A	Disabled
+L16044: 4532	smartscreen.ex	0xffff990ef011dea0	0x200cb200000	0x200cb2d2fff	Vad 	PAGE_READONLY	0	0	0xffff990ef011e120	\Windows\System32\locale.nls	Disabled
+L16045: 4532	smartscreen.ex	0xffff990ef01210a0	0x200cb680000	0x200cb87ffff	Vad 	PAGE_READONLY	0	0	0xffff990ef011d9a0	N/A	Disabled
+L16046: 4532	smartscreen.ex	0xffff990ef87a9450	0x200cb320000	0x200cb339fff	VadS	PAGE_READWRITE	1	1	0xffff990ef01210a0	N/A	Disabled
+L16047: 4532	smartscreen.ex	0xffff990ef011e940	0x200cb300000	0x200cb310fff	Vad 	PAGE_READONLY	0	0	0xffff990ef87a9450	\Windows\System32\C_437.NLS	Disabled
+L16048: 4532	smartscreen.ex	0xffff990ef0120240	0x200cb340000	0x200cb67afff	Vad 	PAGE_READONLY	0	0	0xffff990ef87a9450	\Windows\Globalization\Sorting\SortDefault.nls	Disabled
+L16049: 4532	smartscreen.ex	0xffff990ef0120ec0	0x200cba30000	0x200cba30fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01210a0	N/A	Disabled
+L16050: 4532	smartscreen.ex	0xffff990ef01202e0	0x200cb890000	0x200cba10fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0120ec0	N/A	Disabled
+L16051: 4532	smartscreen.ex	0xffff990ef01206a0	0x200cb880000	0x200cb887fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01202e0	N/A	Disabled
+L16052: 4532	smartscreen.ex	0xffff990ef01220e0	0x200cba20000	0x200cba23fff	Vad 	PAGE_READONLY	0	0	0xffff990ef01202e0	\Windows\System32\en-US\smartscreen.exe.mui	Disabled
+L16053: 4532	smartscreen.ex	0xffff990ef0120ce0	0x200cba40000	0x200cba40fff	Vad 	PAGE_READONLY	0	0	0xffff990ef0120ec0	N/A	Disabled
+L16054: 4532	smartscreen.ex	0xffff990ef011f660	0x7ffff6ae0000	0x7ffff6c2dfff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef87a77e0	\Windows\System32\ucrtbase.dll	Disabled
+L16055: 4532	smartscreen.ex	0xffff990ef011e9e0	0x7ffff4b20000	0x7ffff4c4cfff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef011f660	\Windows\System32\dnsapi.dll	Disabled
+L16056: 4532	smartscreen.ex	0xffff990ef011d540	0x7df5a5910000	0x7ff5a590ffff	Vad 	PAGE_NOACCESS	3	0	0xffff990ef011e9e0	N/A	Disabled
+L16057: 4532	smartscreen.ex	0xffff990ef87a7560	0x7df5a38f0000	0x7df5a58f0fff	VadS	PAGE_READWRITE	2	1	0xffff990ef011d540	N/A	Disabled
+L16058: 4532	smartscreen.ex	0xffff990ef011ec60	0x7df4a37d0000	0x7df4a38cffff	Vad 	PAGE_READONLY	0	0	0xffff990ef87a7560	N/A	Disabled
+L16059: 4532	smartscreen.ex	0xffff990ef0120380	0x200cd000000	0x200ce400fff	Vad 	PAGE_READONLY	0	0	0xffff990ef011ec60	N/A	Disabled
+L16060: 4532	smartscreen.ex	0xffff990ef87a7d30	0x7df4a38d0000	0x7df5a38effff	VadS	PAGE_READWRITE	2	1	0xffff990ef011ec60	N/A	Disabled
+L16061: 4532	smartscreen.ex	0xffff990ef011d900	0x7df5a5900000	0x7df5a5900fff	Vad 	PAGE_READONLY	0	0	0xffff990ef87a7560	N/A	Disabled
+L16062: 4532	smartscreen.ex	0xffff990ef0120920	0x7fffea0c0000	0x7fffea0cdfff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef011d540	\Windows\System32\wtdsensor.dll	Disabled
+L16063: 4532	smartscreen.ex	0xffff990ef011e760	0x7fffb7950000	0x7fffb7f08fff	Vad 	PAGE_EXECUTE_WRITECOPY	164	0	0xffff990ef0120920	\Windows\System32\smartscreen.dll	Disabled
+L16064: 4532	smartscreen.ex	0xffff990ef011b1a0	0x7ff7ae600000	0x7ff7ae698fff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef011e760	\Windows\System32\smartscreen.exe	Disabled
+L16065: 4532	smartscreen.ex	0xffff990ef01218c0	0x7fffb7f10000	0x7fffb7f30fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef011e760	\Windows\System32\smartscreenps.dll	Disabled
+L16066: 4532	smartscreen.ex	0xffff990ef0121500	0x7fffdc860000	0x7fffdc894fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef01218c0	\Windows\System32\Windows.Management.Workplace.dll	Disabled
+L16067: 4532	smartscreen.ex	0xffff990ef0120f60	0x7ffff39c0000	0x7ffff3a76fff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef0120920	\Windows\System32\policymanager.dll	Disabled
+L16068: 4532	smartscreen.ex	0xffff990ef011df40	0x7fffee2a0000	0x7fffee3c9fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef0120f60	\Windows\System32\winhttp.dll	Disabled
+L16069: 4532	smartscreen.ex	0xffff990ef0121d20	0x7ffff4a00000	0x7ffff4a35fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef0120f60	\Windows\System32\IPHLPAPI.DLL	Disabled
+L16070: 4532	smartscreen.ex	0xffff990ef011e300	0x7ffff6340000	0x7ffff64acfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef011e9e0	\Windows\System32\WinTypes.dll	Disabled
+L16071: 4532	smartscreen.ex	0xffff990ef011e800	0x7ffff5930000	0x7ffff594dfff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef011e300	\Windows\System32\cryptsp.dll	Disabled
+L16072: 4532	smartscreen.ex	0xffff990ef01225e0	0x7ffff50d0000	0x7ffff50edfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef011e800	\Windows\System32\kernel.appcore.dll	Disabled
+L16073: 4532	smartscreen.ex	0xffff990ef0122900	0x7ffff5990000	0x7ffff59a5fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef011e800	\Windows\System32\msasn1.dll	Disabled
+L16074: 4532	smartscreen.ex	0xffff990ef011dcc0	0x7ffff65f0000	0x7ffff69e3fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef011e300	\Windows\System32\KernelBase.dll	Disabled
+L16075: 4532	smartscreen.ex	0xffff990ef011dc20	0x7ffff64b0000	0x7ffff6533fff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef011dcc0	\Windows\System32\wintrust.dll	Disabled
+L16076: 4532	smartscreen.ex	0xffff990ef0120560	0x7ffff6540000	0x7ffff65e7fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef011dc20	\Windows\System32\bcryptprimitives.dll	Disabled
+L16077: 4532	smartscreen.ex	0xffff990ef011da40	0x7ffff69f0000	0x7ffff6a19fff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef011dcc0	\Windows\System32\win32u.dll	Disabled
+L16078: 4532	smartscreen.ex	0xffff990ef011fde0	0x7ffff90f0000	0x7ffff911dfff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef011f660	\Windows\System32\gdi32.dll	Disabled
+L16079: 4532	smartscreen.ex	0xffff990ef011f5c0	0x7ffff7c20000	0x7ffff7de7fff	Vad 	PAGE_EXECUTE_WRITECOPY	8	0	0xffff990ef011fde0	\Windows\System32\user32.dll	Disabled
+L16080: 4532	smartscreen.ex	0xffff990ef011e3a0	0x7ffff7680000	0x7ffff77f9fff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef011f5c0	\Windows\System32\crypt32.dll	Disabled
+L16081: 4532	smartscreen.ex	0xffff990ef011fd40	0x7ffff6c30000	0x7ffff6d5dfff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef011e3a0	\Windows\System32\gdi32full.dll	Disabled
+L16082: 4532	smartscreen.ex	0xffff990ef011de00	0x7ffff75d0000	0x7ffff7675fff	Vad 	PAGE_EXECUTE_WRITECOPY	15	0	0xffff990ef011fd40	\Windows\System32\msvcp_win.dll	Disabled
+L16083: 4532	smartscreen.ex	0xffff990ef011e580	0x7ffff7890000	0x7ffff7c14fff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef011e3a0	\Windows\System32\combase.dll	Disabled
+L16084: 4532	smartscreen.ex	0xffff990ef011fac0	0x7ffff7810000	0x7ffff7886fff	Vad 	PAGE_EXECUTE_WRITECOPY	4	0	0xffff990ef011e580	\Windows\System32\ws2_32.dll	Disabled
+L16085: 4532	smartscreen.ex	0xffff990ef011ea80	0x7ffff8710000	0x7ffff8e71fff	Vad 	PAGE_EXECUTE_WRITECOPY	18	0	0xffff990ef011f5c0	\Windows\System32\shell32.dll	Disabled
+L16086: 4532	smartscreen.ex	0xffff990ef011e620	0x7ffff8050000	0x7ffff816afff	Vad 	PAGE_EXECUTE_WRITECOPY	5	0	0xffff990ef011ea80	\Windows\System32\rpcrt4.dll	Disabled
+L16087: 4532	smartscreen.ex	0xffff990ef01216e0	0x7ffff8700000	0x7ffff870cfff	Vad 	PAGE_EXECUTE_WRITECOPY	2	0	0xffff990ef011e620	\Windows\System32\nsi.dll	Disabled
+L16088: 4532	smartscreen.ex	0xffff990ef011ed00	0x7ffff8f00000	0x7ffff8fd9fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef011ea80	\Windows\System32\oleaut32.dll	Disabled
+L16089: 4532	smartscreen.ex	0xffff990ef011eb20	0x7ffff9560000	0x7ffff962bfff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef011fde0	\Windows\System32\kernel32.dll	Disabled
+L16090: 4532	smartscreen.ex	0xffff990ef0120060	0x7ffff94b0000	0x7ffff9559fff	Vad 	PAGE_EXECUTE_WRITECOPY	7	0	0xffff990ef011eb20	\Windows\System32\sechost.dll	Disabled
+L16091: 4532	smartscreen.ex	0xffff990ef011f980	0x7ffff9120000	0x7ffff92b7fff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef0120060	\Windows\System32\ole32.dll	Disabled
+L16092: 4532	smartscreen.ex	0xffff990ef011e080	0x7ffff9820000	0x7ffff98ddfff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef011eb20	\Windows\System32\advapi32.dll	Disabled
+L16093: 4532	smartscreen.ex	0xffff990ef01204c0	0x7ffff9730000	0x7ffff9763fff	Vad 	PAGE_EXECUTE_WRITECOPY	3	0	0xffff990ef011e080	\Windows\System32\imm32.dll	Disabled
+L16094: 4532	smartscreen.ex	0xffff990ef011ebc0	0x7ffff9630000	0x7ffff9729fff	Vad 	PAGE_EXECUTE_WRITECOPY	10	0	0xffff990ef01204c0	\Windows\System32\SHCore.dll	Disabled
+L16095: 4532	smartscreen.ex	0xffff990ef011dd60	0x7ffff9770000	0x7ffff981bfff	Vad 	PAGE_EXECUTE_WRITECOPY	6	0	0xffff990ef01204c0	\Windows\System32\msvcrt.dll	Disabled
+L16096: 4532	smartscreen.ex	0xffff990ef011d7c0	0x7ffff9a60000	0x7ffff9cc9fff	Vad 	PAGE_EXECUTE_WRITECOPY	14	0	0xffff990ef011e080	\Windows\System32\ntdll.dll	Disabled
+L16097: 4532	smartscreen.ex	0xffff990ef0121780	0x7ffff9900000	0x7ffff99b0fff	Vad 	PAGE_EXECUTE_WRITECOPY	9	0	0xffff990ef011d7c0	\Windows\System32\clbcatq.dll	Disabled
+
+--- malware_pebmasquerade.txt ---
+L129: 4532	smartscreen.ex	\Device\HarddiskVolume4\Windows\System32\smartscreen.exe	C:\Windows\System32\smartscreen.exe	False	False
+
+--- sessions.txt ---
+L131: 1	-	4532	smartscreen.ex	CLEANWINDOWS11/kali	2026-05-13 19:25:04.000000 UTC
 
 === END OF PIVOT REPORT ===

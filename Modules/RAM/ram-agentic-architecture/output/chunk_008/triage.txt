@@ -1,13 +1,21 @@
 === TRIAGE REPORT ===
-Generated: 2026-05-31T20:09:01Z
+Generated: 2026-05-13T19:30:00Z
 Chunk: chunk_008.txt
-Summary: Rule-based fallback — LLM unavailable
+Summary: Both processes show orphaned PPIDs (parent PIDs not present in the process list); all other signals are benign — truncated name on smartscreen.ex is a known EPROCESS kernel artefact, not a typosquat.
 
 [PROCESS]
-pid: 4420
-ppid: 5652
-image: Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir=\"C:\\Users\\kali\\AppData\\Local\\Packages\\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1"
-cmdline: "\"C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe\" --embedded-browser-webview=1 --webview-exe-
+pid: 4384
+ppid: 896
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService
 severity: LOW
-reasons: Unusual path: Widgets.exe --webview-exe-version=525.31002.10.0 --user-data-dir=\"C:\\Users\\kali\\AppData\\Local\\Packages\\MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy\\LocalState\\EBWebView\" --noerrdialogs --disk-cache-size=52428800 --edge-webview-is-background --lang=en-US --mojo-named-platform-channel-pipe=5652.7660.18204376067844443590 /pfhostedapp:dd53d2c1a300d186692b3bd2e41d2786b1c9a9b1"
+reasons: orphaned_parent: PPID 896 (listed as 'unknown') is not present anywhere in the process list — expected parent for svchost.exe is services.exe
+
+[PROCESS]
+pid: 4532
+ppid: 516
+image: smartscreen.ex
+cmdline: C:\Windows\System32\smartscreen.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 516 (listed as 'unknown') is not present anywhere in the process list | note: truncated name 'smartscreen.ex' is a kernel EPROCESS artefact (14-char limit); Path and Cmd confirm legitimate C:\Windows\System32\smartscreen.exe — not a typosquat
 

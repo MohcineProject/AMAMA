@@ -1,0 +1,48 @@
+I'll work through each finding systematically, applying the reasoning framework to the evidence provided.
+
+---
+
+**PID 4796 — SearchProtocolHost.exe**
+
+*Agent 1 signal:* orphaned parent (PPID 5220 not in process list; should be under SearchIndexer.exe).
+
+*Reasoning:*
+
+1. **Command-line plausibility:** The cmdline is textbook-legitimate for SearchProtocolHost.exe — the named pipe arguments (`Global\UsGthrFltPipeMssGthrPipe2_`, `Global\UsGthrCtrlFltPipeMssGthrPipe2`), the MS Search user-agent string, the `ProgramData\Microsoft\Search\Data\Temp\usgthrsvc` path, and the `DownLevelDaemon` flag are all standard Windows Search infrastructure arguments. No LOLBin abuse, no encoded content, no download cradle.
+
+2. **DLL provenance:** The three DLL lines shown are all from `C:\WINDOWS\System32\` — legitimate system paths. No user-writable path DLLs visible.
+
+3. **Privilege footprint:** This is where it gets interesting. The process holds a very large privilege set including `SeTcbPrivilege` (Default), `SeDebugPrivilege` (Default), `SeImpersonatePrivilege` (Default), `SeCreateGlobalPrivilege` (Default), and many others. However, the key word here is "Default" — these are *present but not enabled*. None of the dangerous privileges (`SeTcbPrivilege`, `SeDebugPrivilege`, `SeLoadDriverPrivilege`, `SeCreateTokenPrivilege`) show `Present,Enabled` — only `SeChangeNotifyPrivilege` shows `Present,Enabled,Default`, which is entirely normal. The large privilege set with "Default" status is consistent with a SYSTEM-context process token, which SearchProtocolHost.exe legitimately runs under. This is not anomalous.
+
+4. **Orphaned parent:** PPID 5220 is not in the process list. This is the sole Agent 1 signal. Orphaned parents are common in memory forensics — the parent (SearchIndexer.exe) may have exited after spawning the child, or the PPID slot was reused. SearchProtocolHost.exe is designed to be long-running after being spawned; the parent exiting is a known legitimate scenario.
+
+5. **No malfind, no netscan, no registry, no handles evidence** presented — the grep block is thin.
+
+*Verdict:* The only signal is the orphaned parent. The cmdline is completely standard, DLLs are from System32, and the privilege set (while large) shows only `SeChangeNotifyPrivilege` actually enabled — consistent with a SYSTEM token where most privileges are present-but-not-enabled. This is a well-known benign pattern in Windows Search. **REJECTED.**
+
+---
+
+Now producing the formal report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-13T19:45:00Z
+Summary: Only one finding was submitted for validation. That finding — SearchProtocolHost.exe (PID 4796) — presents a single weak signal (orphaned parent) with no corroborating evidence of malice across command-line, DLL provenance, enabled privileges, network activity, or code injection artefacts. The evidence is consistent with normal Windows Search infrastructure behaviour. No confirmed or inconclusive malicious activity was identified in this submission.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+REJECTED findings (count: 1):
+  PID 4796 — SearchProtocolHost.exe
+  Reason: Sole signal was orphaned parent (PPID 5220 absent from process list).
+  Cmdline is textbook-legitimate Windows Search infrastructure (standard named-pipe
+  arguments, MS Search user-agent, ProgramData search temp path, DownLevelDaemon flag).
+  All visible DLLs load from C:\WINDOWS\System32\. Privilege set is large but consistent
+  with a SYSTEM-context token; the only *enabled* privilege is SeChangeNotifyPrivilege,
+  which is normal. Orphaned parent alone — with no malfind hits, no suspicious DLLs,
+  no network connections, and a fully plausible cmdline — does not meet the confirmation
+  threshold. Parent exit after spawning a long-running search worker is a documented
+  legitimate scenario.
+
+================================================================
