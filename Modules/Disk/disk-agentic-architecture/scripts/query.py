@@ -21,8 +21,29 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-BASE_DIR = SCRIPT_DIR.parent
+SCRIPT_DIR   = Path(__file__).resolve().parent
+BASE_DIR     = SCRIPT_DIR.parent
+_DISK_DIR    = BASE_DIR.parent
+_MODULES_DIR = _DISK_DIR.parent
+_PROJECT_DIR = _MODULES_DIR.parent
+SCHEMA_DIR   = _PROJECT_DIR / "Backbone" / "schemas"
+
+# ---------------------------------------------------------------------------
+# Schema validation (best-effort — logs warnings, never blocks a response)
+# ---------------------------------------------------------------------------
+
+def _validate(data: dict, schema_name: str) -> list[str]:
+    try:
+        import jsonschema
+    except ImportError:
+        return []
+    schema_path = SCHEMA_DIR / schema_name
+    if not schema_path.exists():
+        return [f"Schema not found: {schema_path}"]
+    with open(schema_path, "r", encoding="utf-8") as f:
+        schema = json.load(f)
+    return [e.message for e in jsonschema.Draft7Validator(schema).iter_errors(data)]
+
 
 # ---------------------------------------------------------------------------
 # Entity types this module handles (Stage 1 dispatch)
@@ -358,9 +379,21 @@ def _answer_entity_query(
     artifact_dir_path = Path(artifact_dir_str).resolve()
     whitelist = _load_whitelist(cfg)
 
+    # Validate input against schema (best-effort)
+    in_errs = _validate(query, "entity_query.schema.json")
+    if in_errs:
+        print(f"[query] WARN: input schema validation errors ({len(in_errs)}): {in_errs[:3]}", flush=True)
+
     entity = query["entity"]
     entity_type = entity["type"]
     value = entity["value"]
+
+    def _emit(findings: dict) -> dict:
+        """Validate output and return findings."""
+        out_errs = _validate(findings, "entity_findings.schema.json")
+        if out_errs:
+            print(f"[query] WARN: output schema validation errors ({len(out_errs)}): {out_errs[:3]}", flush=True)
+        return findings
 
     # Reject unknown target_module
     if query.get("target_module", "disk") != "disk":
@@ -371,7 +404,7 @@ def _answer_entity_query(
         )
         if write_audit:
             _write_audit(base, query["query_id"], query, [], None, None, findings)
-        return findings
+        return _emit(findings)
 
     # --- Stage 1: type dispatch ---
     if entity_type in NOT_APPLICABLE_TYPES or entity_type not in SUPPORTED_TYPES:
@@ -385,7 +418,7 @@ def _answer_entity_query(
         )
         if write_audit:
             _write_audit(base, query["query_id"], query, [], None, None, findings)
-        return findings
+        return _emit(findings)
 
     # --- Stage 2: deterministic retrieval ---
     max_ev = int(query.get("scope", {}).get("max_evidence_lines") or 50)
@@ -402,7 +435,7 @@ def _answer_entity_query(
         )
         if write_audit:
             _write_audit(base, query["query_id"], query, [], None, None, findings)
-        return findings
+        return _emit(findings)
 
     # --- Stage 3: triviality check ---
     if _is_trivially_benign(entity_type, value, evidence, whitelist):
@@ -417,7 +450,7 @@ def _answer_entity_query(
         )
         if write_audit:
             _write_audit(base, query["query_id"], query, evidence, None, None, findings)
-        return findings
+        return _emit(findings)
 
     # --- Stage 4: LLM interpreter ---
     if not use_llm:
@@ -427,7 +460,7 @@ def _answer_entity_query(
         )
         if write_audit:
             _write_audit(base, query["query_id"], query, evidence, None, None, findings)
-        return findings
+        return _emit(findings)
 
     llm_cfg_path = base / "llm_config.json"
     if not llm_cfg_path.exists():
@@ -437,7 +470,7 @@ def _answer_entity_query(
         )
         if write_audit:
             _write_audit(base, query["query_id"], query, evidence, None, None, findings)
-        return findings
+        return _emit(findings)
 
     with open(llm_cfg_path, "r", encoding="utf-8") as f:
         llm_cfg = json.load(f)
@@ -446,7 +479,7 @@ def _answer_entity_query(
 
     if write_audit:
         _write_audit(base, query["query_id"], query, evidence, None, None, findings)
-    return findings
+    return _emit(findings)
 
 
 async def answer_entity_query_async(
