@@ -15,6 +15,7 @@ from backbone.case_graph import CaseGraph
 from backbone.contracts.base_model import BaseForensicModule
 from backbone.orchestrator.agent import OrchestratorAgent
 from backbone.registry import load_modules
+from backbone.report import ReportAgent
 
 
 @dataclass
@@ -24,6 +25,7 @@ class InvestigationLoop:
     graph: CaseGraph
     orchestrator: OrchestratorAgent
     modules: dict[str, BaseForensicModule] = field(default_factory=dict)
+    report_agent: ReportAgent = field(default_factory=ReportAgent)
 
     @classmethod
     def from_config(cls, config_path: str, *, case_id: str) -> InvestigationLoop:
@@ -44,6 +46,7 @@ class InvestigationLoop:
             graph=graph,
             orchestrator=orchestrator,
             modules=modules,
+            report_agent=ReportAgent(),
         )
 
     async def run_initial_scans(self) -> None:
@@ -133,11 +136,15 @@ class InvestigationLoop:
             encoding="utf-8",
         )
 
+        report_path = output_dir / "incident_report.md"
+        self.report_agent.build(self.graph, report_path)
+
         module_ids = list(self.modules.keys())
         entity_count = self.graph.summary_for_agent()["entity_count"]
         print(
             f"[backbone] case={self.case_id} modules={module_ids} "
-            f"entities={entity_count} termination={self.graph.termination_reason}"
+            f"entities={entity_count} termination={self.graph.termination_reason} "
+            f"report={report_path}"
         )
 
         return self.graph
