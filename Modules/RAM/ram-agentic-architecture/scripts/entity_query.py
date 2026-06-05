@@ -16,6 +16,7 @@ Usage:
 """
 
 import argparse
+import asyncio
 import json
 import os
 import re
@@ -355,14 +356,10 @@ def _write_audit(
 # Output helper
 # ---------------------------------------------------------------------------
 
-def _write_output(
-    out_path: str,
-    findings: dict,
-    query_id: str,
-    base: Path,
-    query: dict,
-    evidence: list,
-) -> None:
+def _write_output(out_path: str, findings: dict) -> None:
+    # Validate and write the EntityFindings JSON. The human-readable audit
+    # trail is written separately by answer_entity_query() (which has the full
+    # retrieved evidence in hand), so it is not repeated here.
     errs = _validate(findings, "entity_findings.schema.json")
     if errs:
         print(f"[entity_query] WARN: schema validation errors: {errs[:3]}", flush=True)
@@ -374,7 +371,172 @@ def _write_output(
         f"[entity_query] Written → {out_path} (verdict={findings.get('verdict')})",
         flush=True,
     )
-    _write_audit(base, query_id, query, evidence, findings)
+
+
+# ---------------------------------------------------------------------------
+# Public API — library entry points (reused by both the CLI and ram_module.py)
+# ---------------------------------------------------------------------------
+
+def answer_entity_query(
+    query: dict,
+    base_dir: Path | None = None,
+    *,
+    artifact_dir: str | None = None,
+    use_llm: bool = True,
+    write_audit: bool = True,
+) -> dict:
+    """
+    Answer a single EntityQuery (synchronous) and return an EntityFindings dict.
+
+    This holds the full 4-stage flow (dispatch → retrieve → triviality → LLM)
+    that previously lived in main(); the CLI now simply loads/validates the
+    query JSON and delegates here. No findings JSON file is written — the caller
+    decides what to do with the returned dict — but the human-readable audit
+    trail is written when ``write_audit`` is set.
+    """
+    base = Path(base_dir or BASE_DIR).resolve()
+    cfg = _load_config(base)
+
+    # Resolve artifact directory: explicit arg → config → default RAM_Artifacts/
+    artifact_dir_str = (
+        artifact_dir
+        or cfg.get("grep_input_dir")
+        or str(BASE_DIR.parent / "RAM_Artifacts")
+    )
+    # Resolve relative paths relative to base
+    artifact_dir_path = Path(artifact_dir_str)
+    if not artifact_dir_path.is_absolute():
+        artifact_dir_path = (base / artifact_dir_str).resolve()
+
+    whitelist = _load_whitelist(base)
+
+    entity = query["entity"]
+    entity_type = entity["type"]
+    value = entity["value"]
+
+    def _emit(findings: dict, evidence: list) -> dict:
+        """Write the audit trail (optional) and return the findings."""
+        if write_audit:
+            _write_audit(base, query["query_id"], query, evidence, findings)
+        return findings
+
+    # Reject queries not targeting this module
+    if query.get("target_module", "ram") != "ram":
+        findings = _make_findings(
+            query, verdict="NOT_APPLICABLE",
+            justification=f"Query is for module '{query.get('target_module')}', not 'ram'.",
+            evidence=[], related_entities=[], cost=_ZERO_COST,
+        )
+        return _emit(findings, [])
+
+    # --- Stage 1: type dispatch ---
+    if entity_type in NOT_APPLICABLE_TYPES:
+        findings = _make_findings(
+            query, verdict="NOT_APPLICABLE",
+            justification=(
+                f"RAM module does not handle entity type '{entity_type}'. "
+                f"File hashes are not present in memory artifacts."
+            ),
+            evidence=[], related_entities=[], cost=_ZERO_COST,
+        )
+        return _emit(findings, [])
+
+    if entity_type not in SUPPORTED_TYPES and entity_type not in CONDITIONAL_TYPES:
+        findings = _make_findings(
+            query, verdict="NOT_APPLICABLE",
+            justification=(
+                f"RAM module does not handle entity type '{entity_type}'. "
+                f"Supported: {', '.join(sorted(SUPPORTED_TYPES))}."
+            ),
+            evidence=[], related_entities=[], cost=_ZERO_COST,
+        )
+        return _emit(findings, [])
+
+    # mutex is only supported if handles.txt exists
+    if entity_type == "mutex":
+        handles_file = artifact_dir_path / "handles.txt"
+        if not handles_file.exists():
+            findings = _make_findings(
+                query, verdict="NOT_APPLICABLE",
+                justification="handles.txt not found in RAM artifacts — mutex lookup unavailable.",
+                evidence=[], related_entities=[], cost=_ZERO_COST,
+            )
+            return _emit(findings, [])
+
+    # --- Stage 2: deterministic retrieval ---
+    max_ev = int(query.get("scope", {}).get("max_evidence_lines") or 50)
+    evidence = _retrieve_evidence(artifact_dir_path, entity_type, value, cfg, max_lines=max_ev)
+
+    if not evidence:
+        findings = _make_findings(
+            query, verdict="NOT_FOUND",
+            justification=(
+                f"No matching lines found for {entity_type}='{value}' "
+                f"in any RAM artifact file."
+            ),
+            evidence=[], related_entities=[], cost=_ZERO_COST,
+        )
+        return _emit(findings, [])
+
+    # --- Stage 3: triviality check ---
+    if _is_trivially_benign(entity_type, value, evidence, whitelist):
+        findings = _make_findings(
+            query, verdict="REJECTED",
+            justification=(
+                f"'{value}' matches the trusted-path whitelist and no suspicious "
+                f"indicators were found in the retrieved evidence."
+            ),
+            evidence=evidence[:5], related_entities=[], cost=_ZERO_COST,
+        )
+        return _emit(findings, evidence)
+
+    # --- Stage 4: LLM interpreter ---
+    if not use_llm:
+        findings = _fallback_inconclusive(
+            query, evidence, "no-llm mode — manual review required"
+        )
+        return _emit(findings, evidence)
+
+    llm_cfg_path = base / "llm_config.json"
+    if not llm_cfg_path.exists():
+        findings = _fallback_inconclusive(
+            query, evidence,
+            f"llm_config.json not found at {llm_cfg_path}"
+        )
+        return _emit(findings, evidence)
+
+    sys.path.insert(0, str(SCRIPT_DIR))
+    from llm_client import load_llm_config
+    llm_cfg = load_llm_config(str(llm_cfg_path))
+
+    findings = _call_llm(query, evidence, base, llm_cfg)
+
+    errs = _validate(findings, "entity_findings.schema.json")
+    if errs:
+        print(f"[entity_query] WARN: EntityFindings validation errors ({len(errs)}):", flush=True)
+        for e in errs[:5]:
+            print(f"  - {e}", flush=True)
+
+    return _emit(findings, evidence)
+
+
+async def answer_entity_query_async(
+    query: dict,
+    base_dir: Path | None = None,
+    *,
+    artifact_dir: str | None = None,
+    use_llm: bool = True,
+    write_audit: bool = True,
+) -> dict:
+    """Async wrapper — runs the 4-stage query flow in a thread pool."""
+    return await asyncio.to_thread(
+        answer_entity_query,
+        query,
+        base_dir,
+        artifact_dir=artifact_dir,
+        use_llm=use_llm,
+        write_audit=write_audit,
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -392,19 +554,6 @@ def main() -> None:
     args = ap.parse_args()
 
     base = Path(args.base_dir).resolve()
-    cfg = _load_config(base)
-
-    artifact_dir_str = (
-        args.artifact_dir
-        or cfg.get("grep_input_dir")
-        or str(BASE_DIR.parent / "RAM_Artifacts")
-    )
-    # Resolve relative paths relative to base
-    artifact_dir = Path(artifact_dir_str)
-    if not artifact_dir.is_absolute():
-        artifact_dir = (base / artifact_dir_str).resolve()
-
-    whitelist = _load_whitelist(base)
 
     # Load and validate the EntityQuery
     with open(args.query, "r", encoding="utf-8") as f:
@@ -419,119 +568,18 @@ def main() -> None:
             justification=f"Invalid EntityQuery: {'; '.join(errs[:3])}",
             evidence=[], related_entities=[], cost=_ZERO_COST,
         )
-        _write_output(args.out, findings, query["query_id"], base, query, [])
+        _write_output(args.out, findings)
         return
 
-    entity = query["entity"]
-    entity_type = entity["type"]
-    value = entity["value"]
-
-    # Reject queries not targeting this module
-    if query.get("target_module", "ram") != "ram":
-        findings = _make_findings(
-            query, verdict="NOT_APPLICABLE",
-            justification=f"Query is for module '{query.get('target_module')}', not 'ram'.",
-            evidence=[], related_entities=[], cost=_ZERO_COST,
-        )
-        _write_output(args.out, findings, query["query_id"], base, query, [])
-        return
-
-    # --- Stage 1: type dispatch ---
-    if entity_type in NOT_APPLICABLE_TYPES:
-        findings = _make_findings(
-            query, verdict="NOT_APPLICABLE",
-            justification=(
-                f"RAM module does not handle entity type '{entity_type}'. "
-                f"File hashes are not present in memory artifacts."
-            ),
-            evidence=[], related_entities=[], cost=_ZERO_COST,
-        )
-        _write_output(args.out, findings, query["query_id"], base, query, [])
-        return
-
-    if entity_type not in SUPPORTED_TYPES and entity_type not in CONDITIONAL_TYPES:
-        findings = _make_findings(
-            query, verdict="NOT_APPLICABLE",
-            justification=(
-                f"RAM module does not handle entity type '{entity_type}'. "
-                f"Supported: {', '.join(sorted(SUPPORTED_TYPES))}."
-            ),
-            evidence=[], related_entities=[], cost=_ZERO_COST,
-        )
-        _write_output(args.out, findings, query["query_id"], base, query, [])
-        return
-
-    # mutex is only supported if handles.txt exists
-    if entity_type == "mutex":
-        handles_file = artifact_dir / "handles.txt"
-        if not handles_file.exists():
-            findings = _make_findings(
-                query, verdict="NOT_APPLICABLE",
-                justification="handles.txt not found in RAM artifacts — mutex lookup unavailable.",
-                evidence=[], related_entities=[], cost=_ZERO_COST,
-            )
-            _write_output(args.out, findings, query["query_id"], base, query, [])
-            return
-
-    # --- Stage 2: deterministic retrieval ---
-    max_ev = int(query.get("scope", {}).get("max_evidence_lines") or 50)
-    evidence = _retrieve_evidence(artifact_dir, entity_type, value, cfg, max_lines=max_ev)
-
-    if not evidence:
-        findings = _make_findings(
-            query, verdict="NOT_FOUND",
-            justification=(
-                f"No matching lines found for {entity_type}='{value}' "
-                f"in any RAM artifact file."
-            ),
-            evidence=[], related_entities=[], cost=_ZERO_COST,
-        )
-        _write_output(args.out, findings, query["query_id"], base, query, [])
-        return
-
-    # --- Stage 3: triviality check ---
-    if _is_trivially_benign(entity_type, value, evidence, whitelist):
-        findings = _make_findings(
-            query, verdict="REJECTED",
-            justification=(
-                f"'{value}' matches the trusted-path whitelist and no suspicious "
-                f"indicators were found in the retrieved evidence."
-            ),
-            evidence=evidence[:5], related_entities=[], cost=_ZERO_COST,
-        )
-        _write_output(args.out, findings, query["query_id"], base, query, evidence)
-        return
-
-    # --- Stage 4: LLM interpreter ---
-    if args.no_llm:
-        findings = _fallback_inconclusive(
-            query, evidence, "no-llm mode — manual review required"
-        )
-        _write_output(args.out, findings, query["query_id"], base, query, evidence)
-        return
-
-    llm_cfg_path = base / "llm_config.json"
-    if not llm_cfg_path.exists():
-        findings = _fallback_inconclusive(
-            query, evidence,
-            f"llm_config.json not found at {llm_cfg_path}"
-        )
-        _write_output(args.out, findings, query["query_id"], base, query, evidence)
-        return
-
-    sys.path.insert(0, str(SCRIPT_DIR))
-    from llm_client import load_llm_config
-    llm_cfg = load_llm_config(str(llm_cfg_path))
-
-    findings = _call_llm(query, evidence, base, llm_cfg)
-
-    errs = _validate(findings, "entity_findings.schema.json")
-    if errs:
-        print(f"[entity_query] WARN: EntityFindings validation errors ({len(errs)}):", flush=True)
-        for e in errs[:5]:
-            print(f"  - {e}", flush=True)
-
-    _write_output(args.out, findings, query["query_id"], base, query, evidence)
+    # Delegate the full 4-stage flow to the shared library function.
+    findings = answer_entity_query(
+        query,
+        base,
+        artifact_dir=args.artifact_dir,
+        use_llm=not args.no_llm,
+        write_audit=True,
+    )
+    _write_output(args.out, findings)
 
 
 if __name__ == "__main__":

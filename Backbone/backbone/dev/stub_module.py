@@ -23,6 +23,7 @@ class StubModule(BaseForensicModule):
             "summary": "Stub scan — no findings",
             "counts": {"confirmed": 0, "inconclusive": 0, "rejected": 0},
             "findings": [],
+            "artifacts": {"human_report": ""},
         }
         return self.validate_scan_result(result)
 

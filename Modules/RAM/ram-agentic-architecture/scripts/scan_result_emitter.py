@@ -10,9 +10,12 @@ Public API:
     emit_scan_result(aggregated_path, case_id, out_path, per_chunk_paths=None)
 """
 
+import asyncio
+import glob
 import json
 import os
 import re
+import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -230,7 +233,9 @@ def _build_evidence_items(
     items = []
     for ev in block.get("key_evidence", []):
         key = (ev["line_number"], ev["content"].strip())
-        source_file = (pivot_index or {}).get(key, "")
+        # Backbone's schema requires a non-empty source_file (minLength: 1);
+        # fall back to the aggregated report when the pivot lookup misses.
+        source_file = (pivot_index or {}).get(key, "") or "aggregated_analyst.txt"
         items.append({
             "source_file": source_file,
             "line": ev["line_number"],
@@ -356,6 +361,134 @@ def emit_scan_result(
         flush=True,
     )
     return result
+
+
+# ---------------------------------------------------------------------------
+# Full-pipeline scan
+# ---------------------------------------------------------------------------
+
+# Modules/RAM/full_pipeline.py — the end-to-end extract → collect → analyse run.
+_FULL_PIPELINE = _MODULE_DIR / "full_pipeline.py"
+
+
+def _run_full_pipeline(
+    image: str,
+    case_id: str,
+    out_dir: Path,
+    *,
+    mode: str = "fast",
+    no_llm: bool = False,
+    vol_path: Optional[str] = None,
+    artifact_dir: Optional[str] = None,
+) -> None:
+    """Invoke full_pipeline.py (the complete RAM pipeline) as a subprocess."""
+    cmd = [
+        sys.executable, str(_FULL_PIPELINE),
+        "--image", str(image),
+        "--case-id", case_id,
+        "--out-dir", str(out_dir),
+        "--full" if mode == "full" else "--fast",
+    ]
+    if no_llm:
+        cmd.append("--no-llm")
+    if vol_path:
+        cmd += ["--vol-path", str(vol_path)]
+    if artifact_dir:
+        cmd += ["--artifacts-dir", str(artifact_dir)]
+
+    print(f"[emitter] Running full pipeline: {' '.join(cmd)}", flush=True)
+    result = subprocess.run(cmd, check=False)
+    if result.returncode != 0:
+        print(f"[emitter] WARN: full_pipeline.py exited {result.returncode}", flush=True)
+
+
+def _empty_scan_result(case_id: str, started_at: str, out_dir: Path) -> Dict[str, Any]:
+    """A valid, empty ModuleScanResult used when no analyst output is present."""
+    return {
+        "contract_version": "1.0",
+        "case_id": case_id,
+        "module": "ram",
+        "scan_started_at": started_at,
+        "scan_completed_at": _now_iso(),
+        "summary": "0 chunk(s) processed. 0 CONFIRMED, 0 INCONCLUSIVE, 0 REJECTED.",
+        "counts": {"confirmed": 0, "inconclusive": 0, "rejected": 0},
+        "findings": [],
+        "artifacts": {"human_report": str(out_dir / "aggregated_analyst.txt")},
+    }
+
+
+def build_scan_result(
+    case_id: str,
+    base_dir: Optional[Path] = None,
+    *,
+    image: Optional[str] = None,
+    vol_path: Optional[str] = None,
+    mode: str = "fast",
+    no_llm: bool = False,
+    artifact_dir: Optional[str] = None,
+) -> Dict[str, Any]:
+    """
+    Produce a ModuleScanResult dict for the orchestrator.
+
+    When ``image`` is supplied the complete pipeline (extract → collect →
+    analyse → emit) runs first; the result is then (re)emitted from the
+    aggregated analyst output via emit_scan_result() so the returned dict always
+    matches Backbone's schema. With no image, it re-emits from any existing
+    aggregated_analyst.txt — handy for offline / orchestrator-connectivity runs.
+    """
+    base = Path(base_dir or _REPO_DIR).resolve()
+    out_dir = base / "output"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    aggregated_path = out_dir / "aggregated_analyst.txt"
+    scan_result_path = out_dir / "scan_result.json"
+    started_at = _now_iso()
+
+    # Run the complete pipeline when a memory image is configured.
+    if image:
+        _run_full_pipeline(
+            image, case_id, out_dir,
+            mode=mode, no_llm=no_llm, vol_path=vol_path, artifact_dir=artifact_dir,
+        )
+
+    # Re-emit from the aggregated analyst output (reuses emit_scan_result).
+    if aggregated_path.exists():
+        per_chunk = sorted(glob.glob(str(out_dir / "chunk_*" / "analyst.txt")))
+        return emit_scan_result(
+            aggregated_path=str(aggregated_path),
+            case_id=case_id,
+            out_path=str(scan_result_path),
+            per_chunk_paths=per_chunk or None,
+            started_at=started_at,
+        )
+
+    # No analyst output yet — emit a valid, empty ModuleScanResult.
+    result = _empty_scan_result(case_id, started_at, out_dir)
+    with open(scan_result_path, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2)
+    return result
+
+
+async def build_scan_result_async(
+    case_id: str,
+    base_dir: Optional[Path] = None,
+    *,
+    image: Optional[str] = None,
+    vol_path: Optional[str] = None,
+    mode: str = "fast",
+    no_llm: bool = False,
+    artifact_dir: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Async wrapper — runs the full pipeline + emit in a thread pool."""
+    return await asyncio.to_thread(
+        build_scan_result,
+        case_id,
+        base_dir,
+        image=image,
+        vol_path=vol_path,
+        mode=mode,
+        no_llm=no_llm,
+        artifact_dir=artifact_dir,
+    )
 
 
 def _validate(data: Dict[str, Any], schema_name: str) -> None:

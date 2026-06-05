@@ -72,3 +72,28 @@ def test_load_disk_module_via_registry_path():
     }
     registry = load_modules(config, config_dir=repo_root)
     assert registry["disk"].module_id == "disk"
+
+
+_RAM_MODULE_ROOT = (
+    Path(__file__).resolve().parents[2] / "Modules" / "RAM" / "ram-agentic-architecture"
+)
+
+
+@pytest.mark.skipif(
+    not (_RAM_MODULE_ROOT / "ram_module.py").is_file(),
+    reason="ram module not present in workspace",
+)
+def test_load_ram_module_via_registry_path():
+    repo_root = Path(__file__).resolve().parents[2]
+    config = {
+        "modules": [
+            {
+                "class": "ram_module.RamModule",
+                "path": str(_RAM_MODULE_ROOT),
+                "kwargs": {"use_llm": False},
+            }
+        ]
+    }
+    registry = load_modules(config, config_dir=repo_root)
+    assert registry["ram"].module_id == "ram"
+    assert "pid" in registry["ram"].supported_entity_types

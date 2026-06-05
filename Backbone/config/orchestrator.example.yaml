@@ -21,6 +21,17 @@ case:
 #       use_llm: true
 #       artifact_dir: ../../Modules/Disk/Disk_Artifacts
 #
+# Example (ram module):
+# modules:
+#   - class: ram_module.RamModule
+#     path: ../../Modules/RAM/ram-agentic-architecture
+#     kwargs:
+#       use_llm: true
+#       scan_mode: fast               # 'fast' (24 plugins) or 'full' (~65 plugins)
+#       ram_image: ../../Modules/RAM/INPUT/memory.elf   # omit to re-emit last run
+#       vol_path: /opt/volatility3/vol.py               # overrides VOL3_PATH env
+#       artifact_dir: ../../Modules/RAM/RAM_Artifacts
+#
 modules: []
 
 threat_intel:
