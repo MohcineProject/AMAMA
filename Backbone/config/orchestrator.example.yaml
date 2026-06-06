@@ -1,28 +1,30 @@
 # Example orchestrator configuration.
 # Copy to orchestrator.yaml and adjust paths.
 
-case:
+#case:
   max_rounds: 5
   max_queries_per_round: 30
   output_dir: "./output"
 
-modules:
-  - class: ram_module.RamModule
-    path: ../../Modules/RAM/ram-agentic-architecture
-    kwargs:
-      use_llm: true
-      scan_mode: fast
-      ram_image: /home/sansforensics/Documents/AMAMA-05-juin/Modules/RAM/RAM_image/Rocba-Memory.raw
-      vol_path: /home/MyTools/volatility/volatility3/vol.py
-      artifact_dir: /home/sansforensics/Documents/AMAMA-05-juin/Modules/RAM/RAM_Artifacts
+#modules:
+#  - class: ram_module.RamModule
+#    path: ../../Modules/RAM/ram-agentic-architecture
+#    kwargs:
+#      use_llm: true
+#      scan_mode: fast
+#      ram_image: /home/sansforensics/Documents/AMAMA-05-juin/Modules/RAM/RAM_image/Rocba-Memory.raw
+#      vol_path: /home/MyTools/volatility/volatility3/vol.py
+#      artifact_dir: /home/sansforensics/Documents/AMAMA-05-juin/Modules/RAM/RAM_Artifacts
+#
+#  - class: disk_module.DiskModule
+#    path: ../../Modules/Disk/disk-agentic-architecture
+#    kwargs:
+#      use_llm: true
+#      image_dir: /home/sansforensics/Documents/AMAMA-05-juin/Modules/Disk/Disk_image   # mount+collect from here (omit to reuse existing artifacts)
+#      collect_mode: fast            # 'fast' (default) or 'full' (adds PE analysis)
+#      artifact_dir: /home/sansforensics/Documents/AMAMA-05-juin/Modules/Disk/Disk_Artifacts
+#
+#  - class: backbone.threat_intel.ThreatIntelAgent   # no `path:` — it's in the backbone package
+#    kwargs: {}                                       # reads VT_API_KEY from the environment
 
-  - class: disk_module.DiskModule
-    path: ../../Modules/Disk/disk-agentic-architecture
-    kwargs:
-      use_llm: true
-      artifact_dir: /home/sansforensics/Documents/AMAMA-05-juin/Modules/Disk/Disk_Artifacts
-
-  - class: backbone.threat_intel.ThreatIntelAgent
-    kwargs: {}                                       # reads VT_API_KEY from the environment
-
-report: {}
+#report: {}

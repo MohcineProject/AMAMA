@@ -39,6 +39,14 @@ _MODULES_DIR = _DISK_DIR.parent
 _PROJECT_DIR = _MODULES_DIR.parent
 SCHEMA_DIR   = _PROJECT_DIR / "Backbone" / "schemas"
 
+# Mounter/collector live under Modules/Disk/ (a.k.a. _DISK_DIR). The MOUNT
+# config.json written by mount_image.py is a DIFFERENT file from the analysis
+# config.json inside disk-agentic-architecture/ — do not conflate the two.
+_MOUNT_SCRIPT     = _DISK_DIR / "disk-image-mounter" / "mount_image.py"
+_COLLECT_SCRIPT   = _DISK_DIR / "disk-collector" / "disk_collector.py"
+_MOUNT_CONFIG     = _DISK_DIR / "config.json"
+_DEFAULT_ARTIFACTS = _DISK_DIR / "Disk_Artifacts"
+
 _ENTITY_TYPE_REGISTRY = re.compile(
     r"^hk(lm|cu|u|cr|cc)\\", re.IGNORECASE
 )
@@ -271,16 +279,99 @@ def _run_pipeline(base: Path, artifact_dir: str | None, no_llm: bool) -> None:
         raise RuntimeError(f"run_pipeline.py exited with code {result.returncode}")
 
 
+def _sudo_prefix() -> list[str]:
+    """Non-interactive sudo prefix when not already root (mounting needs root).
+
+    Returns an empty list when already root to avoid double-sudo (so both
+    ``python3 -m backbone run …`` and ``sudo -E python3 -m backbone run …`` work).
+    """
+    return [] if os.geteuid() == 0 else ["sudo", "-n"]
+
+
+def _collect_from_image(image_dir: Path, artifact_dir: str | None, mode: str) -> bool:
+    """Mount the disk image and collect Windows artifacts into ``artifact_dir``.
+
+    Symmetric to RAM's image-driven extraction (scan_result_emitter._run_full_pipeline).
+    Mounting/collection require root, so each subprocess is prefixed with ``sudo -n``
+    unless already root. Best-effort: on failure we log a WARN and return False so the
+    caller falls back to any existing artifacts and the orchestrator still completes.
+    The image is ALWAYS unmounted in the ``finally`` block.
+
+    Returns True if mount+collect both succeeded.
+    """
+    py = sys.executable
+    sudo = _sudo_prefix()
+    out_dir = artifact_dir or str(_DEFAULT_ARTIFACTS)
+    mode_flag = "--full" if mode == "full" else "--fast"
+
+    print(f"[scan] Auto-collecting disk artifacts from image dir: {image_dir}", flush=True)
+    print(f"[scan] mode={mode_flag.lstrip('-')} out-dir={out_dir} "
+          f"{'(via sudo -n)' if sudo else '(already root)'}", flush=True)
+
+    try:
+        # Stage 1: mount image → MOUNT config.json (auto-detects E01/dd/raw/vmdk/vhd).
+        mount_cmd = sudo + [
+            py, str(_MOUNT_SCRIPT),
+            "--image-dir", str(image_dir),
+            "--out-config", str(_MOUNT_CONFIG),
+        ]
+        print(f"[scan] Mounting image: {' '.join(mount_cmd)}", flush=True)
+        rc = subprocess.run(mount_cmd, check=False).returncode
+        if rc != 0:
+            print(f"[scan] WARN: mount_image.py exited {rc} — falling back to "
+                  f"existing artifacts in {out_dir}", flush=True)
+            return False
+
+        # Stage 2: collect Windows artifacts → artifact_dir.
+        collect_cmd = sudo + [
+            py, str(_COLLECT_SCRIPT),
+            "--config", str(_MOUNT_CONFIG),
+            mode_flag,
+            "--out-dir", out_dir,
+            "--workers", "4",
+            "--summary-out", str(Path(out_dir) / "collector_summary.json"),
+        ]
+        print(f"[scan] Collecting artifacts: {' '.join(collect_cmd)}", flush=True)
+        rc = subprocess.run(collect_cmd, check=False).returncode
+        if rc != 0:
+            print(f"[scan] WARN: disk_collector.py exited {rc} — falling back to "
+                  f"existing artifacts in {out_dir}", flush=True)
+            return False
+
+        print(f"[scan] Disk collection complete → {out_dir}", flush=True)
+        return True
+    except Exception as exc:  # never let collection failure abort the orchestrator
+        print(f"[scan] WARN: disk collection raised {exc!r} — falling back to "
+              f"existing artifacts in {out_dir}", flush=True)
+        return False
+    finally:
+        # Always unmount, even on failure/partial mount.
+        umount_cmd = sudo + [py, str(_MOUNT_SCRIPT), "--umount"]
+        print(f"[scan] Unmounting image: {' '.join(umount_cmd)}", flush=True)
+        subprocess.run(umount_cmd, check=False)
+
+
 def build_scan_result(
     case_id: str,
     base_dir: Path | None = None,
     *,
     no_llm: bool = False,
     artifact_dir: str | None = None,
+    image_dir: str | None = None,
+    collect_mode: str = "fast",
 ) -> dict:
-    """Run the disk pipeline and return a ModuleScanResult dict."""
+    """Run the disk pipeline and return a ModuleScanResult dict.
+
+    When ``image_dir`` is supplied, the raw disk image is mounted and Windows
+    artifacts are collected into ``artifact_dir`` first (symmetric to RAM's
+    image-driven extraction). When unset, the existing ``Disk_Artifacts`` are used.
+    """
     base = Path(base_dir or BASE_DIR).resolve()
     started_at = _now_iso()
+
+    # Auto-collect from the raw image when configured (mirrors RAM's `if image:` gate).
+    if image_dir:
+        _collect_from_image(Path(image_dir).resolve(), artifact_dir, collect_mode)
 
     _run_pipeline(base, artifact_dir, no_llm)
 
@@ -343,14 +434,18 @@ async def build_scan_result_async(
     *,
     no_llm: bool = False,
     artifact_dir: str | None = None,
+    image_dir: str | None = None,
+    collect_mode: str = "fast",
 ) -> dict:
-    """Async wrapper — runs pipeline + parsing in a thread pool."""
+    """Async wrapper — runs (optional) collection + pipeline + parsing in a thread pool."""
     return await asyncio.to_thread(
         build_scan_result,
         case_id,
         base_dir,
         no_llm=no_llm,
         artifact_dir=artifact_dir,
+        image_dir=image_dir,
+        collect_mode=collect_mode,
     )
 
 # TODO: clean CLI after tests ended

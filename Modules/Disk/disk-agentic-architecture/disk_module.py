@@ -37,6 +37,8 @@ class DiskModule(BaseForensicModule):
         base_dir: str | Path | None = None,
         artifact_dir: str | Path | None = None,
         use_llm: bool = True,
+        image_dir: str | Path | None = None,
+        collect_mode: str = "fast",
     ) -> None:
         # Module package root (config.json, prompts/, output/ live here)
         self.base_dir = Path(base_dir or _PKG_DIR).resolve()
@@ -45,6 +47,13 @@ class DiskModule(BaseForensicModule):
             str(Path(artifact_dir).resolve()) if artifact_dir else None
         )
         self.use_llm = use_llm
+        # Raw disk image dir to mount+collect from before analysis; when unset,
+        # the existing Disk_Artifacts are used (symmetric to RAM's `ram_image`).
+        self.image_dir = (
+            str(Path(image_dir).resolve()) if image_dir else None
+        )
+        # Collection depth: 'fast' (default) or 'full' (adds PE analysis).
+        self.collect_mode = collect_mode
 
     async def scan(self, case_id: str) -> ModuleScanResult:
         """Run pipeline + parse output; return validated ModuleScanResult."""
@@ -53,6 +62,8 @@ class DiskModule(BaseForensicModule):
             self.base_dir,
             no_llm=not self.use_llm,
             artifact_dir=self.artifact_dir,
+            image_dir=self.image_dir,
+            collect_mode=self.collect_mode,
         )
         return self.validate_scan_result(result)
 
