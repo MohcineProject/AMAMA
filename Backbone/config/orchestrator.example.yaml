@@ -6,37 +6,23 @@ case:
   max_queries_per_round: 30
   output_dir: "./output"
 
-# In-process modules: each must inherit BaseForensicModule.
-# ``path`` is the module root added to sys.path before import (relative to this config file, or use absolute path).
-#
-# Example (dev stub — no path needed, lives inside backbone package):
-# modules:
-#   - class: backbone.dev.stub_module.StubModule
-#
-# Example (disk module):
-# modules:
-#   - class: disk_module.DiskModule
-#     path: ../../Modules/Disk/disk-agentic-architecture
-#     kwargs:
-#       use_llm: true
-#       artifact_dir: ../../Modules/Disk/Disk_Artifacts
-#
-# Example (ram module):
-# modules:
-#   - class: ram_module.RamModule
-#     path: ../../Modules/RAM/ram-agentic-architecture
-#     kwargs:
-#       use_llm: true
-#       scan_mode: fast               # 'fast' (24 plugins) or 'full' (~65 plugins)
-#       ram_image: ../../Modules/RAM/INPUT/memory.elf   # omit to re-emit last run
-#       vol_path: /opt/volatility3/vol.py               # overrides VOL3_PATH env
-#       artifact_dir: ../../Modules/RAM/RAM_Artifacts
-#
-modules: []
+modules:
+  - class: ram_module.RamModule
+    path: ../../Modules/RAM/ram-agentic-architecture
+    kwargs:
+      use_llm: true
+      scan_mode: fast
+      ram_image: /home/sansforensics/Documents/AMAMA-05-juin/Modules/RAM/RAM_image/Rocba-Memory.raw
+      vol_path: /home/MyTools/volatility/volatility3/vol.py
+      artifact_dir: /home/sansforensics/Documents/AMAMA-05-juin/Modules/RAM/RAM_Artifacts
 
-threat_intel:
-  enabled: true
-  # batch_size: 50
+  - class: disk_module.DiskModule
+    path: ../../Modules/Disk/disk-agentic-architecture
+    kwargs:
+      use_llm: true
+      artifact_dir: /home/sansforensics/Documents/AMAMA-05-juin/Modules/Disk/Disk_Artifacts
 
-report:
-  # use_llm: false
+  - class: backbone.threat_intel.ThreatIntelAgent
+    kwargs: {}                                       # reads VT_API_KEY from the environment
+
+report: {}
