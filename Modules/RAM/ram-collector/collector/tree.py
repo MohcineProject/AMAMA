@@ -90,9 +90,10 @@ def build_dfs_order(
     # expected behaviour — not a data collection failure.
     if len(root_pids) > 20:
         log.warning(
-            "%d root processes found (orphaned roots). Likely caused by "
-            "exclusion rules removing known-benign parents from the record set. "
-            "Review excluded processes if parent-child context is needed.",
+            "%d root processes found (orphaned roots) — this is expected, not a "
+            "collection failure. Caused by exclusion rules removing known-benign "
+            "parents from the record set. Review excluded processes only if "
+            "parent-child context is needed.",
             len(root_pids)
         )
 

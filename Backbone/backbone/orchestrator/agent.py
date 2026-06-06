@@ -53,12 +53,17 @@ class OrchestratorAgent:
 
         response = self._client.messages.create(
             model=_MODEL,
-            max_tokens=1024,
+            max_tokens=4096,
             system=_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": user_msg}],
         )
         text = re.sub(r"^```(?:json)?\s*|\s*```$", "", response.content[0].text.strip())
-        return json.loads(text)
+        if not text.strip():
+            return []
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError:
+            return []
 
     def _candidates(self, graph: CaseGraph) -> list[dict[str, Any]]:
         """Entities that still need routing: INCONCLUSIVE or NOT_FOUND, never CONFIRMED."""

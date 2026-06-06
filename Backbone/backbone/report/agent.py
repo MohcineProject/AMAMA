@@ -76,7 +76,7 @@ class ReportAgent:
         serialized = self._serialize_for_report(graph)
         response = self._client.messages.create(
             model=_MODEL,
-            max_tokens=2048,
+            max_tokens=16000,
             system=_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": serialized}],
         )

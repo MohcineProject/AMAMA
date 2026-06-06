@@ -111,30 +111,33 @@ class InvestigationLoop:
 
         asyncio.run(self.run_initial_scans())
 
-        for round_num in range(1, max_rounds + 1):
-            decisions = self.orchestrator.review(self.graph, self.modules)
-            queries = [d for d in decisions if d.get("action") == "query"]
+        try:
+            for round_num in range(1, max_rounds + 1):
+                decisions = self.orchestrator.review(self.graph, self.modules)
+                queries = [d for d in decisions if d.get("action") == "query"]
 
-            if not queries:
-                self.graph.termination_reason = "convergence"
-                break
+                if not queries:
+                    self.graph.termination_reason = "convergence"
+                    break
 
-            new_entities = asyncio.run(self._dispatch_round(decisions, round_num))
-            self.graph.rounds.append(
-                {
-                    "round": round_num,
-                    "queries_dispatched": len(queries),
-                    "new_entities_added": new_entities,
-                }
+                new_entities = asyncio.run(self._dispatch_round(decisions, round_num))
+                self.graph.rounds.append(
+                    {
+                        "round": round_num,
+                        "queries_dispatched": len(queries),
+                        "new_entities_added": new_entities,
+                    }
+                )
+            else:
+                self.graph.termination_reason = "max_rounds_reached"
+        finally:
+            # Always persist the graph — even if a routing round raised — so a
+            # crash after a long scan phase never discards the scan results.
+            state_path = output_dir / "case_state.json"
+            state_path.write_text(
+                json.dumps(self.graph.to_dict(), indent=2, default=list),
+                encoding="utf-8",
             )
-        else:
-            self.graph.termination_reason = "max_rounds_reached"
-
-        state_path = output_dir / "case_state.json"
-        state_path.write_text(
-            json.dumps(self.graph.to_dict(), indent=2, default=list),
-            encoding="utf-8",
-        )
 
         report_path = output_dir / "incident_report.md"
         self.report_agent.build(self.graph, report_path)

@@ -388,6 +388,9 @@ def _run_full_pipeline(
         "--case-id", case_id,
         "--out-dir", str(out_dir),
         "--full" if mode == "full" else "--fast",
+        # build_scan_result() re-emits scan_result.json from the aggregated
+        # output below, so suppress the pipeline's own emit to avoid a duplicate.
+        "--no-emit",
     ]
     if no_llm:
         cmd.append("--no-llm")

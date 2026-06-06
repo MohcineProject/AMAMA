@@ -34,6 +34,10 @@ log = logging.getLogger(__name__)
 VOL3_PATH = os.environ.get("VOL3_PATH", "/home/MyTools/volatility/volatility3/vol.py")
 PYTHON = os.environ.get("VOL3_PYTHON", "python3")
 
+# Images whose kernel symbol-table (ISF) cache has already been warmed this
+# process. See _warmup_symbols() for why this matters.
+_warmed_images: set[str] = set()
+
 
 # ---------------------------------------------------------------------------
 # Plugin tiers
@@ -53,7 +57,9 @@ MANDATORY_PLUGINS: dict[str, str] = {
 
 FAST_EXTENDED_PLUGINS: dict[str, str] = {
     "windows.pslist":                  "pslist.txt",
-    "windows.malfind":                 "malfind.txt",
+    # NOTE: classic windows.malfind dropped — windows.malware.malfind below is
+    # the maintained, equivalent variant. Running both doubled the (image-size
+    # dependent) memory scan cost for no extra coverage.
     "windows.ldrmodules":              "ldrmodules.txt",
     "windows.modules":                 "modules.txt",
     "windows.svcscan":                 "svcscan.txt",
@@ -176,6 +182,37 @@ def _run_one_plugin(
     return plugin, elapsed, proc.returncode == 0
 
 
+def _warmup_symbols(image_path: str, vol_path: str, timeout: int = 600) -> None:
+    """Build the kernel symbol-table (ISF) cache once, single-threaded.
+
+    Volatility resolves (and on first contact with a new image, *constructs*)
+    the kernel ISF symbol cache lazily. When several `vol.py` processes start
+    against a cold cache simultaneously (our 4-worker pool), they race it and
+    some bail out with "Unsatisfied requirement: kernel.symbol_table_name" —
+    even though the image is fine. Running one fast plugin (windows.info) by
+    itself first writes the cache to disk, so the subsequent parallel pool finds
+    it warm. ~10s; best-effort (a failure here is non-fatal — the pool still
+    runs, just without the guarantee).
+    """
+    if image_path in _warmed_images:
+        return
+    _warmed_images.add(image_path)
+    cmd = [PYTHON, vol_path, "-q", "-f", image_path, "windows.info"]
+    t0 = time.monotonic()
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, check=False)
+        elapsed = time.monotonic() - t0
+        if proc.returncode == 0:
+            log.info("[extractor] symbol warm-up (windows.info) ok in %.1f s", elapsed)
+        else:
+            log.warning(
+                "[extractor] symbol warm-up exited %d (%.1f s); stderr: %s",
+                proc.returncode, elapsed, (proc.stderr or "")[-200:].strip(),
+            )
+    except subprocess.TimeoutExpired:
+        log.warning("[extractor] symbol warm-up timed out after %d s", timeout)
+
+
 def run_plugin_group(
     image_path: str,
     artifacts_dir: Path,
@@ -194,6 +231,10 @@ def run_plugin_group(
     artifacts_dir = Path(artifacts_dir)
     artifacts_dir.mkdir(parents=True, exist_ok=True)
     log_path = log_file or (artifacts_dir / "run_log.txt")
+
+    # Warm the symbol cache once (single-threaded) before launching the pool,
+    # so concurrent vol.py workers don't race a cold ISF cache.
+    _warmup_symbols(image_path, vol_path)
 
     started = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     _append_log(log_path, f"\n=== Plugin group started {started} ({len(plugins)} plugins) ===\n")

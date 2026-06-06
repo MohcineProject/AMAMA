@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
+import contextlib
+import fcntl
 import json
 import os
 import ssl
+import tempfile
 import time
 import urllib.error
 import urllib.request
@@ -10,6 +13,35 @@ from typing import Any, Dict, List
 
 # Tracks usage from the most recent call_chat() invocation.
 _last_call_usage: dict = {"tokens_in": 0, "tokens_out": 0}
+
+
+@contextlib.contextmanager
+def _api_lock():
+    """Cross-process mutex so RAM and Disk never call the LLM API simultaneously.
+
+    Both modules run as separate OS subprocesses, so an in-process lock would do
+    nothing. They share a single lockfile (overridable via AMAMA_API_LOCK) and
+    acquire an exclusive flock around the one HTTP request — held only for the
+    request itself, released before any 429 backoff sleep so a module that is
+    waiting out a rate limit does not block the other. Degrades to a no-op if the
+    lockfile can't be created, so standalone runs are unaffected.
+    """
+    lock_path = os.environ.get("AMAMA_API_LOCK") or os.path.join(
+        tempfile.gettempdir(), "amama_anthropic_api.lock"
+    )
+    try:
+        fd = os.open(lock_path, os.O_CREAT | os.O_RDWR, 0o666)
+    except OSError:
+        yield
+        return
+    try:
+        fcntl.flock(fd, fcntl.LOCK_EX)
+        yield
+    finally:
+        try:
+            fcntl.flock(fd, fcntl.LOCK_UN)
+        finally:
+            os.close(fd)
 
 
 def get_last_usage() -> dict:
@@ -105,8 +137,9 @@ def _call_anthropic(messages: List[Dict[str, str]], config: Dict[str, Any]) -> s
     for attempt in range(1, max_attempts + 1):
         req = urllib.request.Request(api_base, data=data, headers=headers, method="POST")
         try:
-            with urllib.request.urlopen(req, timeout=120, context=ssl_ctx) as resp:
-                raw = resp.read().decode("utf-8", errors="ignore")
+            with _api_lock():
+                with urllib.request.urlopen(req, timeout=120, context=ssl_ctx) as resp:
+                    raw = resp.read().decode("utf-8", errors="ignore")
             break
         except urllib.error.HTTPError as exc:
             body = exc.read().decode("utf-8", errors="ignore") if exc.fp else ""
@@ -181,8 +214,9 @@ def call_chat(messages: List[Dict[str, str]], config: Dict[str, Any]) -> str:
         for attempt in range(1, max_attempts + 1):
             req = urllib.request.Request(api_base, data=data, headers=_headers_from_config(config), method="POST")
             try:
-                with urllib.request.urlopen(req, timeout=120, context=ssl_ctx) as resp:
-                    raw = resp.read().decode("utf-8", errors="ignore")
+                with _api_lock():
+                    with urllib.request.urlopen(req, timeout=120, context=ssl_ctx) as resp:
+                        raw = resp.read().decode("utf-8", errors="ignore")
                 break
             except urllib.error.HTTPError as exc:
                 body = exc.read().decode("utf-8", errors="ignore") if exc.fp else ""

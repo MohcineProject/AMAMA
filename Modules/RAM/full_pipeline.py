@@ -112,6 +112,11 @@ def main() -> None:
         help="Rule-based fallback only — disables all LLM calls.",
     )
     parser.add_argument(
+        "--no-emit", action="store_true",
+        help="Skip the Phase 5 scan_result.json emit (the orchestrator wrapper "
+             "re-emits it, so this avoids a duplicate write).",
+    )
+    parser.add_argument(
         "--workers", type=int, default=4, metavar="N",
         help="Parallel Volatility workers per phase (default: 4).",
     )
@@ -304,15 +309,22 @@ def main() -> None:
             agg.write("\n")
 
     scan_result_path = str(out_dir / "scan_result.json")
-    sys.path.insert(0, _SCRIPTS_DIR)
-    from scan_result_emitter import emit_scan_result
-    emit_scan_result(
-        aggregated_path=aggregated_path,
-        case_id=args.case_id,
-        out_path=scan_result_path,
-        per_chunk_paths=[ap for _, _, ap in analyst_files],
-        started_at=started_at,
-    )
+    if args.no_emit:
+        print(
+            "[full_pipeline] --no-emit set; skipping scan_result.json "
+            "(orchestrator wrapper will emit it).",
+            file=sys.stderr,
+        )
+    else:
+        sys.path.insert(0, _SCRIPTS_DIR)
+        from scan_result_emitter import emit_scan_result
+        emit_scan_result(
+            aggregated_path=aggregated_path,
+            case_id=args.case_id,
+            out_path=scan_result_path,
+            per_chunk_paths=[ap for _, _, ap in analyst_files],
+            started_at=started_at,
+        )
 
     bg.join(timeout=5)
 
