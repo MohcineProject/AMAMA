@@ -291,7 +291,11 @@ def run_mandatory(
     if no_handles:
         plugins.pop("windows.handles.Handles", None)
     log.info("[extractor] Mandatory: %d plugins, workers=%d", len(plugins), workers)
-    return run_plugin_group(image_path, Path(artifacts_dir), plugins, vol_path, workers, timeout)
+    results = run_plugin_group(image_path, Path(artifacts_dir), plugins, vol_path, workers, timeout)
+    # Surface empty/failed mandatory artifacts so a silent evidence gap (e.g. an
+    # empty netscan.txt that quietly yields no network pivot) is visible. (REMARKS #13)
+    _warn_empty_mandatory_artifacts(Path(artifacts_dir), plugins)
+    return results
 
 
 def run_fast_extended(
@@ -330,6 +334,50 @@ def run_full_extended(
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
+def _count_data_rows(text: str) -> int:
+    """Number of data rows in a Volatility 3 TSV dump.
+
+    Format (see RAM_Artifacts/*.txt): a "Volatility 3 Framework …" banner line,
+    a blank line, a column-header row, a blank line, then data rows. We drop the
+    banner and the first remaining non-empty line (the column header); whatever
+    non-empty lines remain are data rows.
+    """
+    non_empty = [ln for ln in text.splitlines() if ln.strip()]
+    if non_empty and non_empty[0].startswith("Volatility 3 Framework"):
+        non_empty = non_empty[1:]
+    if not non_empty:
+        return 0
+    # First remaining line is the column header; the rest are data rows.
+    return len(non_empty) - 1
+
+
+def _warn_empty_mandatory_artifacts(artifacts_dir: Path, plugins: dict[str, str]) -> None:
+    """Log a named WARN for any mandatory artifact that is missing, failed, or
+    contains 0 data rows — so a downstream pivot against it does not silently
+    find nothing. (REMARKS #13)
+    """
+    for filename in plugins.values():
+        path = artifacts_dir / filename
+        if not path.exists():
+            log.warning(
+                "[extractor] WARN: %s missing — coverage reduced for pivots using it",
+                filename,
+            )
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        if text.lstrip().startswith("# ERROR"):
+            log.warning(
+                "[extractor] WARN: %s failed to extract — coverage reduced for pivots using it",
+                filename,
+            )
+            continue
+        if _count_data_rows(text) == 0:
+            log.warning(
+                "[extractor] WARN: %s is empty (0 rows) — coverage reduced for pivots using it",
+                filename,
+            )
+
 
 def _validate(image_path: str, vol_path: str) -> None:
     if not Path(image_path).exists():

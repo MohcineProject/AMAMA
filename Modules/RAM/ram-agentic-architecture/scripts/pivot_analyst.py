@@ -147,6 +147,23 @@ def _build_llm_context(
 # Fallback TXT output when LLM fails
 # ---------------------------------------------------------------------------
 
+def _build_empty_analyst_txt() -> str:
+    """Header-only analyst.txt for a clean chunk (triage flagged 0 processes).
+
+    Emitted instead of calling the LLM so a clean chunk costs zero API round-trips.
+    Mirrors the _build_fallback_analyst_txt header so the downstream emitter
+    (scan_result_emitter._parse_blocks) sees a valid report with no finding blocks.
+    """
+    return (
+        "================================================================\n"
+        "FIND_EVIL — PIVOT REPORT\n"
+        f"Generated: {now_iso()}\n"
+        "Summary: No suspicious processes flagged by triage — nothing to validate.\n"
+        "Counts: confirmed=0  inconclusive=0  rejected=0\n"
+        "================================================================\n"
+    )
+
+
 def _build_fallback_analyst_txt(triage_procs: Dict[str, Dict]) -> str:
     """Generate a valid analyst.txt when the LLM is unavailable."""
     n = len(triage_procs)
@@ -208,7 +225,15 @@ def main() -> None:
         file=sys.stderr,
     )
 
-    if args.no_llm:
+    if not triage_procs:
+        # Clean chunk: triage flagged nothing. Skip the LLM round-trip entirely
+        # and write a valid, empty (header-only) analyst.txt.
+        print(
+            "[pivot-analyst] 0 findings to validate — skipping LLM, writing empty analyst.txt.",
+            file=sys.stderr,
+        )
+        content = _build_empty_analyst_txt()
+    elif args.no_llm:
         print("[pivot-analyst] --no-llm set; writing fallback analyst.txt.", file=sys.stderr)
         content = _build_fallback_analyst_txt(triage_procs)
     else:

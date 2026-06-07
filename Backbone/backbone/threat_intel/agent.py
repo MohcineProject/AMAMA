@@ -48,6 +48,11 @@ class ThreatIntelAgent(BaseForensicModule):
             "summary": "TI module has no initial scan; enrichment happens on query.",
             "counts": {"confirmed": 0, "inconclusive": 0, "rejected": 0},
             "findings": [],
+            # TI produces no initial scan artifact, but the schema requires an
+            # artifacts.human_report string — enrichment is recorded per-query.
+            "artifacts": {
+                "human_report": "(threat-intel enriches on query; no initial scan artifact)"
+            },
         }
         return self.validate_scan_result(result)
 

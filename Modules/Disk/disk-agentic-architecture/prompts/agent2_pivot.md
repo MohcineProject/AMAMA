@@ -106,7 +106,7 @@ Walk these nine lenses over the pivot evidence for every finding **that has at l
 
 ## Output format
 
-Emit **exactly one verdict block** per call — no report header, no preamble, no trailing prose, no markdown fencing. The caller assembles the multi-finding report; your job is to output a single block.
+Emit **one verdict block per finding provided** — no report header, no preamble, no trailing prose, no markdown fencing. When the input contains several findings, output their verdict blocks **in the same order**, each block separated from the next by a single blank line. The caller assembles the multi-finding report; your job is to output only the verdict block(s).
 
 ```
 [CONFIRMED]
@@ -155,6 +155,7 @@ Legitimate explanation:
 ```
 
 ### Rules
+- Output exactly one verdict block per input finding. Do **not** merge findings, skip findings, or emit extra blocks. The `Finding: <N>` field of each block must match the `Agent 1 Finding #<N>` header it answers.
 - Use exactly `[CONFIRMED]`, `[INCONCLUSIVE]`, or `[REJECTED]` as the opening marker. No other formats, no dashes, no free-text rejection prose.
 - Cite **verbatim** lines from the pivot input in Key Evidence — do not paraphrase.
 - Each Key Evidence line **must** be prefixed with `[artifact_filename.txt L<lineno>]` where `artifact_filename.txt` is the exact filename from the `--- filename (N hits) ---` section header the line came from, and `<lineno>` is the `L<N>` number that precedes the line in the pivot input.

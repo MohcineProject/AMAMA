@@ -370,6 +370,46 @@ def emit_scan_result(
 # Modules/RAM/full_pipeline.py — the end-to-end extract → collect → analyse run.
 _FULL_PIPELINE = _MODULE_DIR / "full_pipeline.py"
 
+# Lines worth surfacing on the orchestrator's (interleaved) stream; everything
+# else goes only to ram.log. Keeps the parallel run.log readable.
+_RAM_RELAY_KEYWORDS = (
+    "Phase", "complete", "ERROR", "WARN", "Collector wrote",
+    "Scan result", "Pipeline", "[emitter]",
+)
+
+
+def _ram_relay(line: str) -> bool:
+    return any(kw in line for kw in _RAM_RELAY_KEYWORDS)
+
+
+def _run_logged(cmd: List[str], log_path: Path, relay, label: str) -> int:
+    """Run cmd, tee its combined stdout+stderr to log_path, and relay only the
+    lines for which relay(line) is True to this process's stdout.
+
+    Returns the subprocess return code. Used to keep the verbose per-chunk /
+    Volatility output out of the shared orchestrator stream (see REMARKS #9).
+    """
+    log_path = Path(log_path)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    print(f"[emitter] {label} detail → {log_path}", flush=True)
+    proc = subprocess.Popen(
+        cmd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        bufsize=1,
+    )
+    assert proc.stdout is not None
+    # buffering=1 → line-buffered, so the log file updates live (tailable).
+    with open(log_path, "w", encoding="utf-8", buffering=1) as logf:
+        for line in proc.stdout:
+            logf.write(line)
+            if relay(line):
+                sys.stdout.write(line)
+                sys.stdout.flush()
+    proc.wait()
+    return proc.returncode
+
 
 def _run_full_pipeline(
     image: str,
@@ -400,9 +440,9 @@ def _run_full_pipeline(
         cmd += ["--artifacts-dir", str(artifact_dir)]
 
     print(f"[emitter] Running full pipeline: {' '.join(cmd)}", flush=True)
-    result = subprocess.run(cmd, check=False)
-    if result.returncode != 0:
-        print(f"[emitter] WARN: full_pipeline.py exited {result.returncode}", flush=True)
+    rc = _run_logged(cmd, out_dir / "ram.log", _ram_relay, "RAM pipeline")
+    if rc != 0:
+        print(f"[emitter] WARN: full_pipeline.py exited {rc}", flush=True)
 
 
 def _empty_scan_result(case_id: str, started_at: str, out_dir: Path) -> Dict[str, Any]:

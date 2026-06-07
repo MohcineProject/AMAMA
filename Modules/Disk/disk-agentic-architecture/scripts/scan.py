@@ -267,6 +267,44 @@ def _parse_triage_combined(text: str) -> list[dict]:
         findings.append(finding)
     return findings
 
+# Lines worth surfacing on the orchestrator's (interleaved) stream; everything
+# else goes only to disk.log. Keeps the parallel run.log readable (REMARKS #9).
+# Matched by line prefix so we relay the high-level pipeline/analyst progress but
+# NOT pivot_search's verbose per-finding lines (which start with "[pivot] ").
+_DISK_RELAY_PREFIXES = ("[pipeline", "[pivot_analyst]")
+
+
+def _disk_relay(line: str) -> bool:
+    if any(kw in line for kw in ("ERROR", "WARN", "Traceback")):
+        return True
+    return line.lstrip().startswith(_DISK_RELAY_PREFIXES)
+
+
+def _run_logged(cmd: list[str], log_path: Path, relay, label: str) -> int:
+    """Run cmd, tee its combined stdout+stderr to log_path, and relay only the
+    lines for which relay(line) is True to this process's stdout. Returns rc."""
+    log_path = Path(log_path)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    print(f"[scan] {label} detail → {log_path}", flush=True)
+    proc = subprocess.Popen(
+        cmd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        bufsize=1,
+    )
+    assert proc.stdout is not None
+    # buffering=1 → line-buffered, so the log file updates live (tailable).
+    with open(log_path, "w", encoding="utf-8", buffering=1) as logf:
+        for line in proc.stdout:
+            logf.write(line)
+            if relay(line):
+                sys.stdout.write(line)
+                sys.stdout.flush()
+    proc.wait()
+    return proc.returncode
+
+
 def _run_pipeline(base: Path, artifact_dir: str | None, no_llm: bool) -> None:
     py = sys.executable
     cmd = [py, str(SCRIPT_DIR / "run_pipeline.py"), "--base-dir", str(base)]
@@ -274,9 +312,9 @@ def _run_pipeline(base: Path, artifact_dir: str | None, no_llm: bool) -> None:
         cmd += ["--artifact-dir", artifact_dir]
     if no_llm:
         cmd.append("--no-llm")
-    result = subprocess.run(cmd, check=False)
-    if result.returncode != 0:
-        raise RuntimeError(f"run_pipeline.py exited with code {result.returncode}")
+    rc = _run_logged(cmd, base / "output" / "disk.log", _disk_relay, "Disk pipeline")
+    if rc != 0:
+        raise RuntimeError(f"run_pipeline.py exited with code {rc}")
 
 
 def _sudo_prefix() -> list[str]:

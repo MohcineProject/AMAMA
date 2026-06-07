@@ -22,6 +22,12 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 BASE_DIR = SCRIPT_DIR.parent
 
+# How many Agent 1 findings to validate per LLM call. Each finding carries its
+# full pivot evidence already, so batching costs little quality but cuts the
+# number of calls (and the mandatory inter-call wait) ~3x. Overridable via the
+# `agent2_batch_size` key in llm_config.json.
+_BATCH_SIZE = 3
+
 
 def _resolve_base(override: str | None) -> Path:
     return Path(override).resolve() if override else BASE_DIR
@@ -123,18 +129,47 @@ def _build_user_message(idx: int, finding_block: str, evidence_block: str) -> st
     )
 
 
+def _chunked(seq: list, size: int) -> list[list]:
+    """Split seq into consecutive sub-lists of at most `size` items."""
+    size = max(1, size)
+    return [seq[i:i + size] for i in range(0, len(seq), size)]
+
+
+def _build_batch_user_message(batch: list[tuple[int, str, str]]) -> str:
+    """Concatenate several (idx, finding_block, evidence_block) items into one
+    user message. The prompt instructs the model to emit one verdict block per
+    finding, in order."""
+    n = len(batch)
+    header = (
+        f"You are given {n} Agent 1 finding(s) below. Emit one verdict block per "
+        f"finding, in order. Each block's `Finding:` field must match its "
+        f"`Agent 1 Finding #<N>` header.\n\n"
+        if n > 1
+        else ""
+    )
+    parts = [_build_user_message(idx, block, ev) for idx, block, ev in batch]
+    return header + ("\n" + "-" * 72 + "\n\n").join(parts)
+
+
 # ---------------------------------------------------------------------------
 # Assemble final report
 # ---------------------------------------------------------------------------
 
+def _batch_label(first_idx: int, last_idx: int) -> str:
+    """Human-readable section header for a batch response."""
+    if first_idx == last_idx:
+        return f"--- Finding {first_idx} ---"
+    return f"--- Findings {first_idx}–{last_idx} ---"
+
+
 def _assemble_report(
-    per_finding_responses: list[tuple[int, str]],
+    batch_responses: list[tuple[int, int, str]],
     generated: str,
 ) -> str:
     """
-    Concatenate individual Agent 2 responses into one analyst.txt.
-    Each response already has its own [CONFIRMED]/[INCONCLUSIVE] block.
-    Prepend a generation header.
+    Concatenate batched Agent 2 responses into one analyst.txt.
+    Each response already holds one or more [CONFIRMED]/[INCONCLUSIVE]/[REJECTED]
+    blocks. Prepend a generation header.
     """
     lines = [
         "================================================================",
@@ -143,8 +178,8 @@ def _assemble_report(
         "================================================================",
         "",
     ]
-    for idx, resp in per_finding_responses:
-        lines.append(f"--- Finding {idx} ---")
+    for first_idx, last_idx, resp in batch_responses:
+        lines.append(_batch_label(first_idx, last_idx))
         lines.append(resp.strip())
         lines.append("")
     return "\n".join(lines)
@@ -204,15 +239,21 @@ def main() -> None:
             sys.exit(f"[pivot_analyst] No findings >= {args.from_finding}.")
         print(f"[pivot_analyst] Resuming from finding {args.from_finding} ({len(findings)} remaining)", flush=True)
 
-    if args.no_llm:
-        idx, block = findings[0]
-        ev = evidence.get(idx, "")
-        print("\n=== DRY RUN — USER MESSAGE FOR FINDING 1 ===")
-        print(_build_user_message(idx, block, ev))
-        return
+    # Attach each finding's pivot evidence: (idx, finding_block, evidence_block)
+    items: list[tuple[int, str, str]] = [
+        (idx, block, evidence.get(idx, "")) for idx, block in findings
+    ]
 
     with open(llm_cfg_path, "r", encoding="utf-8") as f:
         llm_cfg = json.load(f)
+
+    batch_size = int(llm_cfg.get("agent2_batch_size", _BATCH_SIZE))
+    batches = _chunked(items, batch_size)
+
+    if args.no_llm:
+        print(f"\n=== DRY RUN — USER MESSAGE FOR BATCH 1 ({len(batches[0])} finding(s)) ===")
+        print(_build_batch_user_message(batches[0]))
+        return
 
     # Inter-request delay: CLI --delay > llm_config request_delay_seconds > default 10s
     inter_delay: float = (
@@ -223,36 +264,43 @@ def main() -> None:
 
     (base / "logs").mkdir(parents=True, exist_ok=True)
 
-    per_finding_responses: list[tuple[int, str]] = []
-    for call_idx, (idx, finding_block) in enumerate(findings):
-        ev = evidence.get(idx, "")
-        user_msg = _build_user_message(idx, finding_block, ev)
+    last_idx_overall = items[-1][0]
+    print(
+        f"[pivot_analyst] {len(items)} finding(s) in {len(batches)} batch(es) "
+        f"of up to {batch_size}", flush=True,
+    )
+
+    batch_responses: list[tuple[int, int, str]] = []
+    for call_idx, batch in enumerate(batches):
+        first_idx, last_idx = batch[0][0], batch[-1][0]
+        user_msg = _build_batch_user_message(batch)
 
         if call_idx > 0 and inter_delay > 0:
             import time as _time
             print(f"[pivot_analyst] Waiting {inter_delay:.0f}s before next call …", flush=True)
             _time.sleep(inter_delay)
 
-        print(f"[pivot_analyst] Analysing finding {idx}/{findings[-1][0]} …", flush=True)
+        rng = f"{first_idx}" if first_idx == last_idx else f"{first_idx}–{last_idx}"
+        print(f"[pivot_analyst] Analysing finding(s) {rng}/{last_idx_overall} …", flush=True)
         t0 = datetime.now(timezone.utc)
         resp = _call_agent2(system_prompt, user_msg, llm_cfg)
         elapsed = (datetime.now(timezone.utc) - t0).total_seconds()
         print(f"[pivot_analyst]   → {len(resp):,} chars in {elapsed:.1f}s", flush=True)
 
-        per_finding_responses.append((idx, resp))
+        batch_responses.append((first_idx, last_idx, resp))
 
     generated = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    # Append mode: when resuming, prepend existing analyst.txt content
+    # Append mode: when resuming, append to existing analyst.txt content
     if args.from_finding and output_path.exists():
         existing = _load_text(output_path)
         new_section = "\n".join(
-            f"--- Finding {i} ---\n{r.strip()}\n" for i, r in per_finding_responses
+            f"{_batch_label(f, l)}\n{r.strip()}\n" for f, l, r in batch_responses
         )
         report = existing.rstrip() + "\n\n" + new_section
         _write_text(output_path, report)
     else:
-        report = _assemble_report(per_finding_responses, generated)
+        report = _assemble_report(batch_responses, generated)
         _write_text(output_path, report)
 
     print(f"[pivot_analyst] Written → {output_path}", flush=True)
