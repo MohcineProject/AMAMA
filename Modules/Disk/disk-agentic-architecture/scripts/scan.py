@@ -397,12 +397,18 @@ def build_scan_result(
     artifact_dir: str | None = None,
     image_dir: str | None = None,
     collect_mode: str = "fast",
+    reuse_analysis: bool = False,
 ) -> dict:
     """Run the disk pipeline and return a ModuleScanResult dict.
 
     When ``image_dir`` is supplied, the raw disk image is mounted and Windows
     artifacts are collected into ``artifact_dir`` first (symmetric to RAM's
     image-driven extraction). When unset, the existing ``Disk_Artifacts`` are used.
+
+    When ``reuse_analysis`` is True and a prior ``output/analyst.txt`` exists, the
+    triage→pivot→analyst LLM pipeline is skipped entirely and the result is
+    re-emitted from that existing analyst output (symmetric to RAM reusing
+    ``aggregated_analyst.txt`` when no ``ram_image`` is set) — zero LLM cost.
     """
     base = Path(base_dir or BASE_DIR).resolve()
     started_at = _now_iso()
@@ -411,7 +417,18 @@ def build_scan_result(
     if image_dir:
         _collect_from_image(Path(image_dir).resolve(), artifact_dir, collect_mode)
 
-    _run_pipeline(base, artifact_dir, no_llm)
+    # Reuse existing analyst output when requested (skip the costly LLM pipeline).
+    _reuse = reuse_analysis and (base / "output" / "analyst.txt").exists()
+    if reuse_analysis and not _reuse:
+        print(
+            "[scan] WARN: reuse_analysis set but output/analyst.txt missing — "
+            "running the full pipeline instead.",
+            flush=True,
+        )
+    if not _reuse:
+        _run_pipeline(base, artifact_dir, no_llm)
+    else:
+        print("[scan] Reusing existing output/analyst.txt (LLM pipeline skipped).", flush=True)
 
     completed_at = _now_iso()
 
@@ -474,6 +491,7 @@ async def build_scan_result_async(
     artifact_dir: str | None = None,
     image_dir: str | None = None,
     collect_mode: str = "fast",
+    reuse_analysis: bool = False,
 ) -> dict:
     """Async wrapper — runs (optional) collection + pipeline + parsing in a thread pool."""
     return await asyncio.to_thread(
@@ -484,6 +502,7 @@ async def build_scan_result_async(
         artifact_dir=artifact_dir,
         image_dir=image_dir,
         collect_mode=collect_mode,
+        reuse_analysis=reuse_analysis,
     )
 
 # TODO: clean CLI after tests ended

@@ -54,10 +54,19 @@ class InvestigationLoop:
         if not self.modules:
             return
 
+        module_ids = list(self.modules.keys())
         results = await asyncio.gather(
-            *[module.scan(self.case_id) for module in self.modules.values()]
+            *[module.scan(self.case_id) for module in self.modules.values()],
+            return_exceptions=True,
         )
-        for result in results:
+        for mid, result in zip(module_ids, results):
+            if isinstance(result, BaseException):
+                print(
+                    f"[backbone] WARN: module {mid!r} scan failed, skipping: "
+                    f"{type(result).__name__}: {result}",
+                    flush=True,
+                )
+                continue
             self.graph.ingest_scan_result(result)
 
     async def _dispatch_round(self, decisions: list[dict[str, Any]], round_num: int) -> int:
@@ -90,8 +99,15 @@ class InvestigationLoop:
             tasks.append(self.modules[mid].query(query))
 
         if tasks:
-            findings_list = await asyncio.gather(*tasks)
+            findings_list = await asyncio.gather(*tasks, return_exceptions=True)
             for findings in findings_list:
+                if isinstance(findings, BaseException):
+                    print(
+                        f"[backbone] WARN: a module query failed, skipping: "
+                        f"{type(findings).__name__}: {findings}",
+                        flush=True,
+                    )
+                    continue
                 self.graph.ingest_findings(findings)
 
         return len(self.graph.nodes) - entities_before

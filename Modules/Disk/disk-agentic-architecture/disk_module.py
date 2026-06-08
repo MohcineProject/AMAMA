@@ -39,6 +39,7 @@ class DiskModule(BaseForensicModule):
         use_llm: bool = True,
         image_dir: str | Path | None = None,
         collect_mode: str = "fast",
+        reuse_analysis: bool = False,
     ) -> None:
         # Module package root (config.json, prompts/, output/ live here)
         self.base_dir = Path(base_dir or _PKG_DIR).resolve()
@@ -54,6 +55,8 @@ class DiskModule(BaseForensicModule):
         )
         # Collection depth: 'fast' (default) or 'full' (adds PE analysis).
         self.collect_mode = collect_mode
+        # Reuse existing output/analyst.txt and skip the LLM pipeline (zero-cost re-run).
+        self.reuse_analysis = reuse_analysis
 
     async def scan(self, case_id: str) -> ModuleScanResult:
         """Run pipeline + parse output; return validated ModuleScanResult."""
@@ -64,6 +67,7 @@ class DiskModule(BaseForensicModule):
             artifact_dir=self.artifact_dir,
             image_dir=self.image_dir,
             collect_mode=self.collect_mode,
+            reuse_analysis=self.reuse_analysis,
         )
         return self.validate_scan_result(result)
 
