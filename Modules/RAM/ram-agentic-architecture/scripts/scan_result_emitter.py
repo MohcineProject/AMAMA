@@ -15,6 +15,7 @@ import glob
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -376,7 +377,57 @@ def emit_scan_result(
         f"(confirmed={confirmed}, inconclusive={inconclusive})",
         flush=True,
     )
+    _copy_ram_artifacts(aggregated_path, out_path, per_chunk_paths)
     return result
+
+
+def _copy_ram_artifacts(
+    aggregated_path: str,
+    out_path: str,
+    per_chunk_paths: Optional[List[str]],
+) -> None:
+    """Copy RAM pipeline artifacts into the centralized audit directory."""
+    try:
+        audit_root = os.environ.get("AMAMA_AUDIT_DIR", "")
+        if not audit_root:
+            return
+        ram_dir = Path(audit_root) / "ram"
+        if not ram_dir.exists():
+            return
+        base = Path(aggregated_path).parent.parent  # ram-agentic-architecture/
+
+        # 01_chunks — preprocessed memory text chunks fed to triage_agent
+        chunks_src = base / "INPUT"
+        chunks_dst = ram_dir / "01_chunks"
+        chunks_dst.mkdir(exist_ok=True)
+        if chunks_src.exists():
+            for f in sorted(chunks_src.glob("chunk_*.txt")):
+                shutil.copy2(f, chunks_dst / f.name)
+
+        # 02_per_chunk_analysis — triage.txt, pivot.txt, analyst.txt per chunk
+        if per_chunk_paths:
+            pca_dst = ram_dir / "02_per_chunk_analysis"
+            for analyst_path_str in per_chunk_paths:
+                chunk_dir = Path(analyst_path_str).parent
+                dst = pca_dst / chunk_dir.name
+                dst.mkdir(parents=True, exist_ok=True)
+                for fname in ("triage.txt", "pivot.txt", "analyst.txt"):
+                    src = chunk_dir / fname
+                    if src.exists():
+                        shutil.copy2(src, dst / fname)
+
+        # aggregated_analyst.txt
+        agg_src = Path(aggregated_path)
+        if agg_src.exists():
+            shutil.copy2(agg_src, ram_dir / "aggregated_analyst.txt")
+
+        # scan_result.json (written just before this call)
+        sr_src = Path(out_path)
+        if sr_src.exists():
+            shutil.copy2(sr_src, ram_dir / "scan_result.json")
+
+    except Exception:
+        pass
 
 
 # ---------------------------------------------------------------------------

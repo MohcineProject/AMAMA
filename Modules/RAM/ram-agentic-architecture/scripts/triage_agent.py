@@ -15,7 +15,7 @@ import re
 import sys
 from typing import Any, Dict, List, Optional, Tuple
 
-from llm_client import call_chat, extract_json, load_llm_config
+from llm_client import call_chat, extract_json, load_llm_config, get_last_call_meta, get_last_usage, write_agent_call
 from utils import is_whitelisted_path, load_json, load_whitelist, now_iso
 
 # Unusual parent→child spawn pairs
@@ -423,6 +423,22 @@ def main() -> None:
             )
             n = len(result.get("suspicious_processes", []))
             print(f"[triage] LLM complete — {n} suspicious processes flagged.", file=sys.stderr)
+            _meta = get_last_call_meta()
+            _usage = get_last_usage()
+            _chunk_stem = os.path.splitext(chunk_name)[0]
+            try:
+                _model = load_llm_config(args.llm_config).get("model", "unknown")
+            except Exception:
+                _model = "unknown"
+            write_agent_call("ram", {
+                "call_id": _meta["call_id"], "timestamp": _meta["timestamp"],
+                "agent_name": "ram/triage_agent", "model": _model,
+                "tokens_in": _usage["tokens_in"], "tokens_out": _usage["tokens_out"],
+                "latency_ms": _meta["latency_ms"],
+                "input_files": [f"01_chunks/{_chunk_stem}.txt"],
+                "output_files": [f"02_per_chunk_analysis/{_chunk_stem}/triage.txt"],
+                "query_id": None, "entity": None, "verdict": None, "error": None,
+            })
         except Exception as exc:
             print(f"[triage] LLM failed ({exc}), falling back to rules.", file=sys.stderr)
 

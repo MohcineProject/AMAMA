@@ -85,7 +85,8 @@ def _call_agent1(system_prompt: str, triage_input: str, llm_cfg: dict) -> str:
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": triage_input},
     ]
-    return call_chat(messages, llm_cfg)
+    result = call_chat(messages, llm_cfg)
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -145,6 +146,21 @@ def main() -> None:
     response = _call_agent1(system_prompt, triage_input, llm_cfg)
     elapsed = (datetime.now(timezone.utc) - t0).total_seconds()
     print(f"[triage_agent/{args.mode}] Response in {elapsed:.1f}s — {len(response):,} chars", flush=True)
+    sys.path.insert(0, str(SCRIPT_DIR))
+    from llm_client import get_last_call_meta, get_last_usage, write_agent_call
+    _meta = get_last_call_meta()
+    _usage = get_last_usage()
+    _input_key = f"TRIAGE_INPUT_{args.mode.upper()}.txt"
+    _output_key = mode_cfg["output_default"].replace("output/", "")
+    write_agent_call("disk", {
+        "call_id": _meta["call_id"], "timestamp": _meta["timestamp"],
+        "agent_name": f"disk/triage_agent/{args.mode}", "model": llm_cfg.get("model", "unknown"),
+        "tokens_in": _usage["tokens_in"], "tokens_out": _usage["tokens_out"],
+        "latency_ms": _meta["latency_ms"],
+        "input_files": [f"01_preprocess/{_input_key}"],
+        "output_files": [f"02_triage/{_output_key}"],
+        "query_id": None, "entity": None, "verdict": None, "error": None,
+    })
 
     # Inject finding prefix into [FINDING] blocks so downstream can trace origin
     prefixed = response.replace("[FINDING]\n", f"[FINDING]\ntriage_source: {args.mode}\n")

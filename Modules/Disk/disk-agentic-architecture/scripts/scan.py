@@ -27,6 +27,7 @@ import json
 import asyncio
 import os
 import re
+import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -479,7 +480,7 @@ def build_scan_result(
     rejected     = sum(1 for f in all_findings if f["verdict"] == "REJECTED")
     findings     = [f for f in all_findings if f["verdict"] != "REJECTED"]
 
-    return {
+    result = {
         "contract_version": "1.0",
         "case_id": case_id,
         "module": "disk",
@@ -498,6 +499,58 @@ def build_scan_result(
         "findings": findings,
         "artifacts": {"human_report": human_report},
     }
+    _copy_disk_artifacts(base, result)
+    return result
+
+
+def _copy_disk_artifacts(base: Path, scan_result: dict) -> None:
+    """Copy Disk pipeline artifacts into the centralized audit directory."""
+    try:
+        audit_root = os.environ.get("AMAMA_AUDIT_DIR", "")
+        if not audit_root:
+            return
+        disk_dir = Path(audit_root) / "disk"
+        if not disk_dir.exists():
+            return
+        out = base / "output"
+
+        # 01_preprocess — TRIAGE_INPUT_*.txt (LLM inputs)
+        pre_dst = disk_dir / "01_preprocess"
+        pre_dst.mkdir(exist_ok=True)
+        for f in sorted(out.glob("TRIAGE_INPUT_*.txt")):
+            shutil.copy2(f, pre_dst / f.name)
+
+        # 02_triage — triage_*.txt and triage_combined.txt (Agent 1 outputs)
+        triage_dst = disk_dir / "02_triage"
+        triage_dst.mkdir(exist_ok=True)
+        for f in sorted(out.glob("triage_*.txt")):
+            shutil.copy2(f, triage_dst / f.name)
+
+        # 03_pivot — pivot.txt (grep evidence)
+        pivot_src = out / "pivot.txt"
+        if pivot_src.exists():
+            pivot_dst = disk_dir / "03_pivot"
+            pivot_dst.mkdir(exist_ok=True)
+            shutil.copy2(pivot_src, pivot_dst / "pivot.txt")
+
+        # 04_analyst — analyst.txt (Agent 2 output)
+        analyst_src = out / "analyst.txt"
+        if analyst_src.exists():
+            analyst_dst = disk_dir / "04_analyst"
+            analyst_dst.mkdir(exist_ok=True)
+            shutil.copy2(analyst_src, analyst_dst / "analyst.txt")
+
+        # mft_audit.jsonl — filtered MFT entries
+        mft_src = base / "audit" / "mft_filtered.jsonl"
+        if mft_src.exists():
+            shutil.copy2(mft_src, disk_dir / "mft_audit.jsonl")
+
+        # scan_result.json — serialize the result dict directly
+        with open(disk_dir / "scan_result.json", "w", encoding="utf-8") as fh:
+            json.dump(scan_result, fh, indent=2)
+
+    except Exception:
+        pass
 
 
 async def build_scan_result_async(

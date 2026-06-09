@@ -9,10 +9,12 @@ import time
 import urllib.error
 import urllib.request
 from typing import Any, Dict, List
+import datetime
+import uuid as _uuid_mod
 
-
-# Tracks usage from the most recent call_chat() invocation.
+# Tracks usage and call metadata from the most recent call_chat() invocation.
 _last_call_usage: dict = {"tokens_in": 0, "tokens_out": 0}
+_last_call_meta: dict = {"call_id": "", "timestamp": "", "latency_ms": 0}
 
 
 @contextlib.contextmanager
@@ -47,6 +49,26 @@ def _api_lock():
 def get_last_usage() -> dict:
     """Return token counts from the most recent call_chat() call."""
     return dict(_last_call_usage)
+
+
+def get_last_call_meta() -> dict:
+    """Return call_id, timestamp, and latency_ms from the most recent call_chat()."""
+    return dict(_last_call_meta)
+
+
+def write_agent_call(subdir: str, record: dict) -> None:
+    """Append one JSON line to {AMAMA_AUDIT_DIR}/{subdir}/agent_calls.jsonl. No-op when unset."""
+    try:
+        audit_root = os.environ.get("AMAMA_AUDIT_DIR", "")
+        if not audit_root:
+            return
+        audit_path = os.path.join(audit_root, subdir, "agent_calls.jsonl")
+        if not os.path.isdir(os.path.join(audit_root, subdir)):
+            return
+        with open(audit_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    except Exception:
+        pass
 
 
 def _make_ssl_context(verify: bool = True) -> ssl.SSLContext:
@@ -185,6 +207,12 @@ def _parse_retry_after(body: str) -> float:
 
 
 def call_chat(messages: List[Dict[str, str]], config: Dict[str, Any]) -> str:
+    _t0 = time.time()
+    _call_id = str(_uuid_mod.uuid4())
+    _ts = datetime.datetime.utcnow().isoformat() + "Z"
+    _last_call_meta["call_id"] = _call_id
+    _last_call_meta["timestamp"] = _ts
+    _last_call_meta["latency_ms"] = 0
     provider = str(config.get("provider", "openrouter")).lower()
     api_base = config.get("api_base")
     if not api_base:
@@ -243,22 +271,25 @@ def call_chat(messages: List[Dict[str, str]], config: Dict[str, Any]) -> str:
         _last_call_usage["tokens_out"] = int(usage.get("completion_tokens", 0))
     else:
         raise RuntimeError(f"Unsupported provider: {provider}")
-        
+
+    _last_call_meta["latency_ms"] = int((time.time() - _t0) * 1000)
+
     # LOG TRACE
     try:
-        import datetime
         trace_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'logs', 'llm_trace.json')
         trace_data = []
         if os.path.exists(trace_path):
             with open(trace_path, 'r', encoding='utf-8') as f:
                 try: trace_data = json.load(f)
                 except json.JSONDecodeError: pass
-        
+
         trace_data.append({
             "timestamp": datetime.datetime.utcnow().isoformat() + "Z",
             "model": config.get("model", "unknown"),
             "input_messages": messages,
-            "raw_response": content
+            "raw_response": content,
+            "tokens_in": _last_call_usage["tokens_in"],
+            "tokens_out": _last_call_usage["tokens_out"],
         })
         
         with open(trace_path, 'w', encoding='utf-8') as f:

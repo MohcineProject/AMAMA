@@ -3,9 +3,13 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from uuid import uuid4
 
 import anthropic
 
@@ -34,6 +38,35 @@ class OrchestratorAgent:
         self.usage["tokens_in"] += int(getattr(usage, "input_tokens", 0) or 0)
         self.usage["tokens_out"] += int(getattr(usage, "output_tokens", 0) or 0)
 
+    def _append_audit(self, response: Any, latency_ms: int) -> None:
+        try:
+            audit_root = os.environ.get("AMAMA_AUDIT_DIR", "")
+            if not audit_root:
+                return
+            audit_path = Path(audit_root) / "backbone" / "orchestrator_calls.jsonl"
+            if not audit_path.parent.exists():
+                return
+            usage = getattr(response, "usage", None)
+            record = {
+                "call_id": str(uuid4()),
+                "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "agent_name": "backbone/orchestrator",
+                "model": self.model,
+                "tokens_in": int(getattr(usage, "input_tokens", 0) or 0),
+                "tokens_out": int(getattr(usage, "output_tokens", 0) or 0),
+                "latency_ms": latency_ms,
+                "input_files": ["backbone/case_state.json"],
+                "output_files": [],
+                "query_id": None,
+                "entity": None,
+                "verdict": None,
+                "error": None,
+            }
+            with open(audit_path, "a", encoding="utf-8") as f:
+                f.write(json.dumps(record, ensure_ascii=False) + "\n")
+        except Exception:
+            pass
+
     def review(
         self,
         graph: CaseGraph,
@@ -61,13 +94,16 @@ class OrchestratorAgent:
             separators=(",", ":"),
         )
 
+        _t0 = time.monotonic()
         response = self._client.messages.create(
             model=_MODEL,
             max_tokens=4096,
             system=_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": user_msg}],
         )
+        _latency_ms = int((time.monotonic() - _t0) * 1000)
         self._record_usage(response)
+        self._append_audit(response, _latency_ms)
         text = re.sub(r"^```(?:json)?\s*|\s*```$", "", response.content[0].text.strip())
         if not text.strip():
             return []

@@ -286,6 +286,19 @@ def main() -> None:
         resp = _call_agent2(system_prompt, user_msg, llm_cfg)
         elapsed = (datetime.now(timezone.utc) - t0).total_seconds()
         print(f"[pivot_analyst]   → {len(resp):,} chars in {elapsed:.1f}s", flush=True)
+        sys.path.insert(0, str(SCRIPT_DIR))
+        from llm_client import get_last_call_meta, get_last_usage, write_agent_call
+        _meta = get_last_call_meta()
+        _usage = get_last_usage()
+        write_agent_call("disk", {
+            "call_id": _meta["call_id"], "timestamp": _meta["timestamp"],
+            "agent_name": "disk/pivot_analyst", "model": llm_cfg.get("model", "unknown"),
+            "tokens_in": _usage["tokens_in"], "tokens_out": _usage["tokens_out"],
+            "latency_ms": _meta["latency_ms"],
+            "input_files": ["02_triage/triage_combined.txt", "03_pivot/pivot.txt"],
+            "output_files": ["04_analyst/analyst.txt"],
+            "query_id": None, "entity": None, "verdict": None, "error": None,
+        })
 
         batch_responses.append((first_idx, last_idx, resp))
 

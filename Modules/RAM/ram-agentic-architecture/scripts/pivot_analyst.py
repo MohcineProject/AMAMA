@@ -11,7 +11,7 @@ import os
 import sys
 from typing import Any, Dict, List, Tuple
 
-from llm_client import call_chat, load_llm_config
+from llm_client import call_chat, load_llm_config, get_last_call_meta, get_last_usage, write_agent_call
 from utils import now_iso
 
 _SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -254,6 +254,20 @@ def main() -> None:
             # Agent 2 outputs TXT directly — save raw response as-is
             content = raw_response.strip()
             print("[pivot-analyst] LLM validation complete.", file=sys.stderr)
+            _meta = get_last_call_meta()
+            _usage = get_last_usage()
+            _chunk_stem = os.path.splitext(os.path.basename(args.triage))[0].replace("_triage", "").replace("triage_", "")
+            _chunk_dir = os.path.basename(os.path.dirname(args.triage))
+            write_agent_call("ram", {
+                "call_id": _meta["call_id"], "timestamp": _meta["timestamp"],
+                "agent_name": "ram/pivot_analyst", "model": llm_config.get("model", "unknown"),
+                "tokens_in": _usage["tokens_in"], "tokens_out": _usage["tokens_out"],
+                "latency_ms": _meta["latency_ms"],
+                "input_files": [f"02_per_chunk_analysis/{_chunk_dir}/triage.txt",
+                                f"02_per_chunk_analysis/{_chunk_dir}/pivot.txt"],
+                "output_files": [f"02_per_chunk_analysis/{_chunk_dir}/analyst.txt"],
+                "query_id": None, "entity": None, "verdict": None, "error": None,
+            })
 
         except Exception as exc:
             print(

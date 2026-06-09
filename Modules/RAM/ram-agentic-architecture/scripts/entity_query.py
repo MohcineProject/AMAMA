@@ -239,8 +239,22 @@ def _call_llm(query: dict, evidence: list[dict], base: Path, llm_cfg: dict) -> d
     except Exception as exc:
         return _fallback_inconclusive(query, evidence, f"LLM call failed: {exc}")
 
+    from llm_client import extract_json, get_last_call_meta, get_last_usage, write_agent_call
+    _meta = get_last_call_meta()
+    _usage = get_last_usage()
+    _src_files = list(dict.fromkeys(e["source_file"] for e in evidence))
+    write_agent_call("ram", {
+        "call_id": _meta["call_id"], "timestamp": _meta["timestamp"],
+        "agent_name": "ram/entity_query", "model": llm_cfg.get("model", "unknown"),
+        "tokens_in": _usage["tokens_in"], "tokens_out": _usage["tokens_out"],
+        "latency_ms": _meta["latency_ms"],
+        "input_files": _src_files,
+        "output_files": [f"output/queries/{query['query_id']}.txt"],
+        "query_id": query.get("query_id"), "entity": query.get("entity"),
+        "verdict": None, "error": None,
+    })
+
     try:
-        from llm_client import extract_json
         findings = extract_json(raw)
     except Exception:
         findings = None

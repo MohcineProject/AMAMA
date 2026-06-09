@@ -3,8 +3,11 @@
 from __future__ import annotations
 
 import asyncio
+import json
 import os
+import time
 from datetime import datetime, timezone
+from pathlib import Path
 from uuid import uuid4
 
 from backbone.contracts.base_model import BaseForensicModule
@@ -113,26 +116,63 @@ class ThreatIntelAgent(BaseForensicModule):
     # Internal helpers
     # ------------------------------------------------------------------
 
+    def _append_ti_audit(
+        self, entity: Entity, query_id: str, verdict: str, latency_ms: int, error: str | None = None
+    ) -> None:
+        try:
+            audit_root = os.environ.get("AMAMA_AUDIT_DIR", "")
+            if not audit_root:
+                return
+            audit_path = Path(audit_root) / "threat_intel" / "queries.jsonl"
+            if not audit_path.parent.exists():
+                return
+            record = {
+                "call_id": str(uuid4()),
+                "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "agent_name": "threat_intel/vt_lookup",
+                "model": "virustotal-api",
+                "tokens_in": 0,
+                "tokens_out": 0,
+                "latency_ms": latency_ms,
+                "input_files": [],
+                "output_files": [],
+                "query_id": query_id,
+                "entity": entity,
+                "verdict": verdict,
+                "error": error,
+            }
+            with open(audit_path, "a", encoding="utf-8") as f:
+                f.write(json.dumps(record, ensure_ascii=False) + "\n")
+        except Exception:
+            pass
+
     async def _do_lookup(self, entity: Entity, query_id: str) -> EntityFindings:
         entity_type = entity["type"]
         entity_value = entity["value"]
 
         if self._vt is None:
-            return self.validate_findings(
+            result = self.validate_findings(
                 self._not_found(entity, query_id, "VT_API_KEY not configured")
             )
+            self._append_ti_audit(entity, query_id, result["verdict"], 0, "VT_API_KEY not configured")
+            return result
 
+        _t0 = time.monotonic()
         try:
             attrs = await self._vt.lookup(entity_type, entity_value)
         except RuntimeError as exc:
-            return self.validate_findings(
-                self._not_found(entity, query_id, str(exc))
-            )
+            _latency_ms = int((time.monotonic() - _t0) * 1000)
+            result = self.validate_findings(self._not_found(entity, query_id, str(exc)))
+            self._append_ti_audit(entity, query_id, result["verdict"], _latency_ms, str(exc))
+            return result
         except Exception as exc:  # network errors, timeouts
-            return self.validate_findings(
-                self._not_found(entity, query_id, f"VirusTotal lookup failed: {exc}")
-            )
+            _latency_ms = int((time.monotonic() - _t0) * 1000)
+            msg = f"VirusTotal lookup failed: {exc}"
+            result = self.validate_findings(self._not_found(entity, query_id, msg))
+            self._append_ti_audit(entity, query_id, result["verdict"], _latency_ms, msg)
+            return result
 
+        _latency_ms = int((time.monotonic() - _t0) * 1000)
         raw_attrs: dict = attrs if attrs is not None else {}
 
         # Fetch related entities only when we'll likely confirm the IOC
@@ -146,7 +186,9 @@ class ThreatIntelAgent(BaseForensicModule):
                 related = []
 
         findings = self._vt.normalize(entity, raw_attrs, query_id, related=related)
-        return self.validate_findings(findings)
+        result = self.validate_findings(findings)
+        self._append_ti_audit(entity, query_id, result["verdict"], _latency_ms)
+        return result
 
     @staticmethod
     def _not_found(entity: Entity, query_id: str, reason: str) -> EntityFindings:

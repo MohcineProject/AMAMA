@@ -5,6 +5,8 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
+import os
+import shutil
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -14,6 +16,9 @@ from uuid import uuid4
 import yaml
 
 from backbone.case_graph import CaseGraph
+
+# Repo root is 3 levels above this file: backbone/orchestrator/loop.py → backbone/ → Backbone/ → repo root
+_REPO_ROOT = Path(__file__).resolve().parents[3]
 from backbone.contracts.base_model import BaseForensicModule
 from backbone.orchestrator.agent import OrchestratorAgent
 from backbone.registry import load_modules
@@ -217,6 +222,13 @@ class InvestigationLoop:
 
         output_dir.mkdir(parents=True, exist_ok=True)
 
+        run_id = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
+        audit_dir = _REPO_ROOT / "auditing" / self.case_id / run_id
+        for sub in ("backbone", "ram", "disk", "threat_intel"):
+            (audit_dir / sub).mkdir(parents=True, exist_ok=True)
+        os.environ["AMAMA_AUDIT_DIR"] = str(audit_dir.resolve())
+        run_started_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
         asyncio.run(self.run_initial_scans())
 
         # Deterministic enrichment: pull TI context for CONFIRMED IOCs before the
@@ -264,6 +276,8 @@ class InvestigationLoop:
         # Authoritative re-write now that report usage is known (summary #7).
         self._write_case_state(output_dir)
 
+        self._finalize_audit(audit_dir, output_dir, run_id, run_started_at)
+
         module_ids = list(self.modules.keys())
         entity_count = self.graph.summary_for_agent()["entity_count"]
         print(
@@ -273,3 +287,110 @@ class InvestigationLoop:
         )
 
         return self.graph
+
+    def _finalize_audit(
+        self,
+        audit_dir: Path,
+        output_dir: Path,
+        run_id: str,
+        run_started_at: str,
+    ) -> None:
+        """Copy backbone outputs into the audit dir and write run_summary.json."""
+        try:
+            bb_dir = audit_dir / "backbone"
+
+            for fname in ("case_state.json", "incident_report.md"):
+                src = output_dir / fname
+                if src.exists():
+                    shutil.copy2(src, bb_dir / fname)
+
+            self._write_run_summary(audit_dir, run_id, run_started_at)
+        except Exception:
+            pass
+
+    def _write_run_summary(
+        self,
+        audit_dir: Path,
+        run_id: str,
+        run_started_at: str,
+    ) -> None:
+        """Write run_summary.json — the single entry-point for an audit run."""
+        try:
+            cost = self._cost()
+
+            # Build execution_sequence from initial scans + routing rounds
+            seq: list[dict[str, Any]] = []
+            step = 1
+            for mid, scan_result in self.graph.initial_scans.items():
+                seq.append({
+                    "step": step,
+                    "phase": "initial_scan",
+                    "module": mid,
+                    "started_at": scan_result.get("scan_started_at", ""),
+                    "completed_at": scan_result.get("scan_completed_at", ""),
+                })
+                step += 1
+            for round_info in self.graph.rounds:
+                entry: dict[str, Any] = {"step": step}
+                entry.update(round_info)
+                seq.append(entry)
+                step += 1
+            # Report is always the last step
+            seq.append({
+                "step": step,
+                "phase": "report",
+                "completed_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            })
+
+            summary: dict[str, Any] = {
+                "schema_version": "1.0",
+                "case_id": self.case_id,
+                "run_id": run_id,
+                "run_started_at": run_started_at,
+                "run_completed_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "termination_reason": self.graph.termination_reason,
+                "provenance": self._provenance(),
+                "cost_summary": {
+                    "total": cost["total"],
+                    "by_component": {
+                        "backbone/orchestrator": cost["orchestrator"],
+                        "backbone/report": cost["report"],
+                        "modules": cost["modules"],
+                    },
+                },
+                "execution_sequence": seq,
+                "audit_files": {
+                    "backbone_orchestrator": "backbone/orchestrator_calls.jsonl",
+                    "backbone_report": "backbone/report_call.jsonl",
+                    "threat_intel_queries": "threat_intel/queries.jsonl",
+                    "ram_agent_calls": "ram/agent_calls.jsonl",
+                    "disk_agent_calls": "disk/agent_calls.jsonl",
+                },
+                "module_artifacts": {
+                    "ram": {
+                        "chunks": "ram/01_chunks/",
+                        "per_chunk_analysis": "ram/02_per_chunk_analysis/",
+                        "aggregated_analyst": "ram/aggregated_analyst.txt",
+                        "scan_result": "ram/scan_result.json",
+                    },
+                    "disk": {
+                        "preprocess_inputs": "disk/01_preprocess/",
+                        "triage_outputs": "disk/02_triage/",
+                        "pivot_evidence": "disk/03_pivot/pivot.txt",
+                        "analyst_output": "disk/04_analyst/analyst.txt",
+                        "mft_audit": "disk/mft_audit.jsonl",
+                        "scan_result": "disk/scan_result.json",
+                    },
+                },
+                "backbone_outputs": {
+                    "case_state": "backbone/case_state.json",
+                    "incident_report": "backbone/incident_report.md",
+                },
+            }
+
+            (audit_dir / "run_summary.json").write_text(
+                json.dumps(summary, indent=2, default=list),
+                encoding="utf-8",
+            )
+        except Exception:
+            pass
