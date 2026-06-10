@@ -272,7 +272,17 @@ class InvestigationLoop:
             self._write_case_state(output_dir)
 
         report_path = output_dir / "incident_report.md"
-        self.report_agent.build(self.graph, report_path)
+        pre_report_cost = self._cost()
+        pipeline_meta = {
+            "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "orchestrator_model": self.orchestrator.model,
+            "report_model": self.report_agent.model,
+            "routing_rounds": len(self.graph.rounds),
+            "termination_reason": self.graph.termination_reason,
+            "modules_scanned": list(self.graph.initial_scans.keys()),
+            "pre_report_cost": pre_report_cost,
+        }
+        self.report_agent.build(self.graph, report_path, pipeline_meta=pipeline_meta)
         # Authoritative re-write now that report usage is known (summary #7).
         self._write_case_state(output_dir)
 

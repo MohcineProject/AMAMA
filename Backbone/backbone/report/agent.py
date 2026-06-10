@@ -34,7 +34,9 @@ class ReportAgent:
         self.system_prompt = _SYSTEM_PROMPT
         self.usage = {"llm_calls": 0, "tokens_in": 0, "tokens_out": 0}
 
-    def _serialize_for_report(self, graph: CaseGraph) -> str:
+    def _serialize_for_report(
+        self, graph: CaseGraph, *, pipeline_meta: dict | None = None
+    ) -> str:
         """Produce a JSON payload with full finding details for the LLM."""
         entities: list[dict[str, Any]] = []
         for node in graph.nodes.values():
@@ -96,8 +98,10 @@ class ReportAgent:
 
         payload: dict[str, Any] = {
             "case_id": graph.case_id,
+            "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "termination_reason": graph.termination_reason,
             "modules_scanned": modules_scanned,
+            "host_profile": graph.host_profile,
             "summary": {
                 "modules_scanned_count": len(modules_scanned),
                 "total_reportable_entities": len(entities),
@@ -107,10 +111,14 @@ class ReportAgent:
             },
             "entities": entities,
         }
+        if pipeline_meta:
+            payload["pipeline_meta"] = pipeline_meta
         return json.dumps(payload, indent=2, default=list)
 
-    def build(self, graph: CaseGraph, out_path: Path) -> Path:
-        serialized = self._serialize_for_report(graph)
+    def build(
+        self, graph: CaseGraph, out_path: Path, pipeline_meta: dict | None = None
+    ) -> Path:
+        serialized = self._serialize_for_report(graph, pipeline_meta=pipeline_meta)
         _t0 = time.monotonic()
         response = self._client.messages.create(
             model=_MODEL,

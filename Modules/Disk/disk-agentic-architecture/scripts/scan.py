@@ -113,6 +113,74 @@ def _infer_entity_type(key: str) -> str:
     return "image_name"
 
 
+def _extract_host_profile(artifact_dir: str | None) -> dict:
+    """Best-effort host profile from registry_misc.txt (disk artifacts).
+
+    Parses ComputerName, OS version, network domain, SAM user accounts, and
+    last-used Winlogon account. Returns an empty dict if the file is absent or
+    unparseable — callers must handle missing fields gracefully.
+    """
+    reg_file = Path(artifact_dir or _DEFAULT_ARTIFACTS) / "registry_misc.txt"
+    if not reg_file.exists():
+        return {}
+
+    profile: dict = {}
+    try:
+        text = reg_file.read_text(encoding="utf-8", errors="ignore")
+
+        # Hostname from SYSTEM\\ControlSet001\\Control\\ComputerName\\ComputerName
+        m = re.search(
+            r"ComputerName\\ComputerName\s+value=ComputerName\s+data=(\S+)", text
+        )
+        if m:
+            profile["hostname"] = m.group(1)
+
+        # OS info: ProductName, DisplayVersion, CurrentBuildNumber (current build,
+        # artifact_source=SOFTWARE distinguishes it from the historical "Source OS" entry)
+        for line in text.splitlines():
+            if 'description="System Info (Current)"' not in line:
+                continue
+            if "artifact_source=SOFTWARE" not in line:
+                continue
+            if "value=ProductName" in line and "os" not in profile:
+                m = re.search(r'data="([^"]+)"', line)
+                if m:
+                    profile["os"] = m.group(1)
+            elif "value=DisplayVersion" in line and "os_version" not in profile:
+                m = re.search(r"data=(\S+)", line)
+                if m:
+                    profile["os_version"] = m.group(1).strip('"')
+            elif "value=CurrentBuildNumber" in line and "os_build" not in profile:
+                m = re.search(r"data=(\d+)", line)
+                if m:
+                    profile["os_build"] = m.group(1)
+
+        # Network domain from DHCP lease
+        m = re.search(r"value=DhcpDomain\s+data=(\S+)", text)
+        if m:
+            profile["network_domain"] = m.group(1)
+
+        # SAM user accounts
+        users = [
+            {"username": u, "rid": int(rid)}
+            for u, rid in re.findall(
+                r'data="Username:\s+(\S+)\s+Id:\s+(\d+)\s+ValidUserId:\s+True"', text
+            )
+        ]
+        if users:
+            profile["user_accounts"] = users
+
+        # Last interactive account (Winlogon)
+        m = re.search(r"value=LastUsedUsername\s+data=(\S+)", text)
+        if m:
+            profile["last_used_account"] = m.group(1)
+
+    except Exception:
+        pass
+
+    return profile
+
+
 def _parse_evidence_lines(evidence_text: str) -> list[dict]:
     """
     Parse `Key Evidence:` lines into evidence dicts.
@@ -499,6 +567,9 @@ def build_scan_result(
         "findings": findings,
         "artifacts": {"human_report": human_report},
     }
+    host_profile = _extract_host_profile(artifact_dir)
+    if host_profile:
+        result["host_profile"] = host_profile
     _copy_disk_artifacts(base, result)
     return result
 

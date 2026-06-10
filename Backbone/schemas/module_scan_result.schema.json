@@ -157,6 +157,30 @@
           "items": { "type": "string" }
         }
       }
+    },
+    "host_profile": {
+      "type": "object",
+      "description": "Optional best-effort host context extracted from artifacts (e.g. registry hives). Modules may omit it; the orchestrator keeps the first non-empty profile.",
+      "additionalProperties": true,
+      "properties": {
+        "hostname":          { "type": "string" },
+        "os":                { "type": "string" },
+        "os_version":        { "type": "string" },
+        "os_build":          { "type": "string" },
+        "network_domain":    { "type": "string" },
+        "last_used_account": { "type": "string" },
+        "user_accounts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["username", "rid"],
+            "properties": {
+              "username": { "type": "string" },
+              "rid":      { "type": "integer" }
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -44,6 +44,7 @@ class CaseGraph:
     initial_scans: dict[str, ModuleScanResult] = field(default_factory=dict)
     rounds: list[dict[str, Any]] = field(default_factory=list)
     termination_reason: str | None = None
+    host_profile: dict[str, Any] = field(default_factory=dict)
 
     def get_or_create_node(
         self,
@@ -67,6 +68,8 @@ class CaseGraph:
         """Seed graph from a module's initial broad scan. Returns new entity count."""
         module = result["module"]
         self.initial_scans[module] = result
+        if result.get("host_profile") and not self.host_profile:
+            self.host_profile = result["host_profile"]
         added = 0
 
         for finding in result.get("findings", []):
@@ -148,6 +151,7 @@ class CaseGraph:
             "modules_scanned": list(self.initial_scans.keys()),
             "termination_reason": self.termination_reason,
             "rounds": self.rounds,
+            "host_profile": self.host_profile,
             "nodes": {
                 f"{t}:{v}": {
                     "type": n.type,
