@@ -40,3 +40,4 @@
 - Use a determinstic approach by using rules like Sigma/YARA/custom rules or an open source EDR engine, and also heuristics and statistics
 - Use graph to make correlations
 - Use a determinstic script to check if the evidences does exists in the files.
+- Investiguer le whitelisting -> voir que tous nos choix sont justifiables et pertinents. Etendre le whitelist si besoin -> Ecrire dans les limitations l'idée de rajouter un check de hash pour avoir un whitelist basé sur l'integrité plutot que sur une logique basée sur le nom, la filiation... 
