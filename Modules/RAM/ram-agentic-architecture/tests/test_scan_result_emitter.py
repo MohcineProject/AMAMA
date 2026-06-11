@@ -14,10 +14,16 @@ from pathlib import Path
 REPO_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_DIR / "scripts"))
 
-from scan_result_emitter import emit_scan_result
+from scan_result_emitter import (
+    _DEFAULT_ARTIFACTS,
+    _has_volatility_artifacts,
+    _resolve_artifacts_dir,
+    emit_scan_result,
+)
 
 FIXTURE = Path(__file__).parent / "fixtures" / "aggregated_analyst_sample.txt"
 REAL_OUTPUT = REPO_DIR / "output" / "aggregated_analyst.txt"
+RAM_ARTIFACTS = REPO_DIR.parent / "RAM_Artifacts"
 
 
 def _run_emitter(source: Path, case_id: str = "test-case-001") -> dict:
@@ -155,3 +161,26 @@ class TestScanResultEmitterRealOutput:
         confirmed = self.result["counts"]["confirmed"]
         inconclusive = self.result["counts"]["inconclusive"]
         assert len(self.result["findings"]) == confirmed + inconclusive
+
+
+class TestArtifactResolution:
+    """Helpers for artifacts-only scan mode (symmetric to disk)."""
+
+    def test_resolve_default_artifacts_dir(self):
+        base = REPO_DIR
+        assert _resolve_artifacts_dir(None, base) == _DEFAULT_ARTIFACTS.resolve()
+
+    def test_resolve_relative_artifact_dir(self):
+        base = REPO_DIR
+        resolved = _resolve_artifacts_dir("RAM_Artifacts", base)
+        assert resolved == RAM_ARTIFACTS.resolve()
+
+    def test_has_volatility_artifacts_on_default_tree(self):
+        if not RAM_ARTIFACTS.exists():
+            import pytest
+            pytest.skip("RAM_Artifacts not present in repo")
+        assert _has_volatility_artifacts(RAM_ARTIFACTS)
+
+    def test_has_volatility_artifacts_empty_dir(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            assert not _has_volatility_artifacts(Path(tmp))

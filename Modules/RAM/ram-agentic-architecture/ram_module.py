@@ -52,19 +52,24 @@ class RamModule(BaseForensicModule):
         ram_image: str | Path | None = None,
         vol_path: str | Path | None = None,
         scan_mode: str = "fast",
+        reuse_analysis: bool = False,
     ) -> None:
         # Module package root (config.json, prompts/, output/ live here)
         self.base_dir = Path(base_dir or _PKG_DIR).resolve()
-        # Override config.json artifact_dir when set by orchestrator YAML
+        # Volatility plugin output directory. When ram_image is unset, scan()
+        # runs collector + analyse on these pre-collected artifacts (like disk
+        # reusing Disk_Artifacts when image_dir is omitted).
         self.artifact_dir = (
             str(Path(artifact_dir).resolve()) if artifact_dir else None
         )
         self.use_llm = use_llm
-        # Memory image to analyse; when unset, scan() re-emits the last run's
-        # aggregated output instead of re-running Volatility extraction.
+        # Memory image for a fresh Volatility extraction. When unset, scan()
+        # uses pre-collected artifacts in artifact_dir (or RAM_Artifacts/).
         self.ram_image = str(Path(ram_image).resolve()) if ram_image else None
         self.vol_path = str(Path(vol_path).resolve()) if vol_path else None
         self.scan_mode = scan_mode
+        # Skip analyse when output/aggregated_analyst.txt already exists.
+        self.reuse_analysis = reuse_analysis
 
     async def scan(self, case_id: str) -> ModuleScanResult:
         """Run the full RAM pipeline + emit; return validated ModuleScanResult."""
@@ -76,6 +81,7 @@ class RamModule(BaseForensicModule):
             mode=self.scan_mode,
             no_llm=not self.use_llm,
             artifact_dir=self.artifact_dir,
+            reuse_analysis=self.reuse_analysis,
         )
         return self.validate_scan_result(result)
 

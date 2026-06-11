@@ -8,6 +8,8 @@ module_scan_result.schema.json.
 
 Public API:
     emit_scan_result(aggregated_path, case_id, out_path, per_chunk_paths=None)
+    build_scan_result(case_id, ...) — orchestrator entry
+    build_scan_result_async(...) — async wrapper for RamModule.scan()
 """
 
 import asyncio
@@ -436,6 +438,13 @@ def _copy_ram_artifacts(
 
 # Modules/RAM/full_pipeline.py — the end-to-end extract → collect → analyse run.
 _FULL_PIPELINE = _MODULE_DIR / "full_pipeline.py"
+_COLLECTOR_DIR = _MODULE_DIR / "ram-collector"
+_DEFAULT_ARTIFACTS = _MODULE_DIR / "RAM_Artifacts"
+_DEFAULT_INPUT_DIR = _MODULE_DIR / "INPUT"
+
+# Volatility plugin outputs that indicate a usable artifact tree (collector needs
+# at least pslist; we accept any of these markers for a positive preflight).
+_ARTIFACT_MARKERS = ("pslist.txt", "pstree.txt", "cmdline.txt")
 
 # Lines worth surfacing on the orchestrator's (interleaved) stream; everything
 # else goes only to ram.log. Keeps the parallel run.log readable.
@@ -476,6 +485,89 @@ def _run_logged(cmd: List[str], log_path: Path, relay, label: str) -> int:
                 sys.stdout.flush()
     proc.wait()
     return proc.returncode
+
+
+def _resolve_artifacts_dir(artifact_dir: Optional[str], base: Path) -> Path:
+    """Resolve Volatility artifact root (symmetric to disk ``artifact_dir``)."""
+    if artifact_dir:
+        p = Path(artifact_dir)
+        if not p.is_absolute():
+            # Relative paths are under Modules/RAM/ (e.g. RAM_Artifacts/).
+            p = (_MODULE_DIR / p).resolve()
+        else:
+            p = p.expanduser().resolve()
+        return p
+    return _DEFAULT_ARTIFACTS.resolve()
+
+
+def _has_volatility_artifacts(artifacts_dir: Path) -> bool:
+    """True when pre-collected Volatility plugin outputs are present."""
+    return any(
+        (artifacts_dir / name).is_file() and (artifacts_dir / name).stat().st_size > 0
+        for name in _ARTIFACT_MARKERS
+    )
+
+
+def _run_from_precollected_artifacts(
+    case_id: str,
+    base: Path,
+    *,
+    artifacts_dir: Path,
+    input_dir: Path,
+    out_dir: Path,
+    no_llm: bool,
+) -> None:
+    """Run collector → analyse on existing Volatility TSVs (no memory image).
+
+    Symmetric to disk ``build_scan_result`` when ``image_dir`` is omitted:
+    skip extraction, run triage → grep → analyst on artifacts already in
+    ``artifacts_dir``.
+    """
+    if str(_COLLECTOR_DIR) not in sys.path:
+        sys.path.insert(0, str(_COLLECTOR_DIR))
+    from collector import run_collector  # type: ignore[import-untyped]
+
+    print(
+        f"[emitter] Analysing pre-collected Volatility artifacts in {artifacts_dir}",
+        flush=True,
+    )
+    input_dir.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    n_chunks = run_collector(
+        folder_path=str(artifacts_dir),
+        output_dir=str(input_dir),
+        include_handles=True,
+        force=True,
+    )
+    if n_chunks == 0:
+        raise RuntimeError(
+            f"Collector produced no chunks from {artifacts_dir}. "
+            "Ensure Volatility outputs (e.g. pslist.txt) are present."
+        )
+    print(f"[emitter] Collector wrote {n_chunks} chunk(s) → {input_dir}", flush=True)
+
+    cmd = [
+        sys.executable,
+        str(_SCRIPTS_DIR / "run_pipeline.py"),
+        "--case-id",
+        case_id,
+        "--out",
+        str(out_dir),
+        "--config",
+        str(base / "config.json"),
+        "--llm-config",
+        str(base / "llm_config.json"),
+        "--artifact-dir",
+        str(artifacts_dir),
+    ]
+    if no_llm:
+        cmd.append("--no-llm")
+
+    print(f"[emitter] Running analysis pipeline: {' '.join(cmd)}", flush=True)
+    rc = subprocess.run(cmd, cwd=str(base)).returncode
+    if rc != 0:
+        raise RuntimeError(f"run_pipeline.py exited with code {rc}")
 
 
 def _run_full_pipeline(
@@ -536,15 +628,20 @@ def build_scan_result(
     mode: str = "fast",
     no_llm: bool = False,
     artifact_dir: Optional[str] = None,
+    reuse_analysis: bool = False,
 ) -> Dict[str, Any]:
     """
     Produce a ModuleScanResult dict for the orchestrator.
 
-    When ``image`` is supplied the complete pipeline (extract → collect →
-    analyse → emit) runs first; the result is then (re)emitted from the
-    aggregated analyst output via emit_scan_result() so the returned dict always
-    matches Backbone's schema. With no image, it re-emits from any existing
-    aggregated_analyst.txt — handy for offline / orchestrator-connectivity runs.
+    Scan modes (symmetric to disk ``image_dir`` / ``artifact_dir``):
+
+    - ``image`` set — full Volatility extract → collect → analyse (``full_pipeline``).
+    - ``image`` omitted, pre-collected Volatility TSVs in ``artifact_dir`` (or
+      default ``RAM_Artifacts/``) — collector → analyse only; no re-extraction.
+    - ``reuse_analysis`` True and ``aggregated_analyst.txt`` exists — skip analyse
+      (zero LLM cost), re-emit prior output.
+    - Otherwise, if ``aggregated_analyst.txt`` exists — re-emit without re-running
+      analyse (offline / connectivity convenience).
     """
     base = Path(base_dir or _REPO_DIR).resolve()
     out_dir = base / "output"
@@ -552,12 +649,40 @@ def build_scan_result(
     aggregated_path = out_dir / "aggregated_analyst.txt"
     scan_result_path = out_dir / "scan_result.json"
     started_at = _now_iso()
+    artifacts_path = _resolve_artifacts_dir(artifact_dir, base)
+    input_dir = _DEFAULT_INPUT_DIR
 
-    # Run the complete pipeline when a memory image is configured.
+    _reuse = reuse_analysis and aggregated_path.exists()
+    if reuse_analysis and not _reuse:
+        print(
+            "[emitter] WARN: reuse_analysis set but output/aggregated_analyst.txt "
+            "missing — running analyse from artifacts or emitting empty.",
+            flush=True,
+        )
+
     if image:
         _run_full_pipeline(
-            image, case_id, out_dir,
-            mode=mode, no_llm=no_llm, vol_path=vol_path, artifact_dir=artifact_dir,
+            image,
+            case_id,
+            out_dir,
+            mode=mode,
+            no_llm=no_llm,
+            vol_path=vol_path,
+            artifact_dir=str(artifacts_path),
+        )
+    elif _reuse:
+        print(
+            "[emitter] Reusing existing aggregated_analyst.txt (analyse skipped).",
+            flush=True,
+        )
+    elif _has_volatility_artifacts(artifacts_path):
+        _run_from_precollected_artifacts(
+            case_id,
+            base,
+            artifacts_dir=artifacts_path,
+            input_dir=input_dir,
+            out_dir=out_dir,
+            no_llm=no_llm,
         )
 
     # Re-emit from the aggregated analyst output (reuses emit_scan_result).
@@ -587,8 +712,9 @@ async def build_scan_result_async(
     mode: str = "fast",
     no_llm: bool = False,
     artifact_dir: Optional[str] = None,
+    reuse_analysis: bool = False,
 ) -> Dict[str, Any]:
-    """Async wrapper — runs the full pipeline + emit in a thread pool."""
+    """Async wrapper — runs the scan pipeline + emit in a thread pool."""
     return await asyncio.to_thread(
         build_scan_result,
         case_id,
@@ -598,6 +724,7 @@ async def build_scan_result_async(
         mode=mode,
         no_llm=no_llm,
         artifact_dir=artifact_dir,
+        reuse_analysis=reuse_analysis,
     )
 
 

@@ -58,6 +58,12 @@ def main() -> None:
         action="store_true",
         help="Disable LLM for all stages (rule-based fallback only)",
     )
+    parser.add_argument(
+        "--artifact-dir",
+        default=None,
+        metavar="DIR",
+        help="Volatility artifacts root for pivot_grep (default: config grep_input_dir).",
+    )
     args = parser.parse_args()
 
     with open(args.config, "r", encoding="utf-8") as f:
@@ -114,13 +120,16 @@ def main() -> None:
 
         # Stage 2: Grep Pivot (deterministic, no LLM)
         print(f"[pipeline]   Stage 2 — pivot_grep.py", file=sys.stderr)
-        _run([
+        pivot_cmd = [
             sys.executable,
             os.path.join(_SCRIPTS_DIR, "pivot_grep.py"),
             "--triage", triage_path,
             "--config", args.config,
             "--out",    pivot_path,
-        ])
+        ]
+        if args.artifact_dir:
+            pivot_cmd += ["--artifact-root", args.artifact_dir]
+        _run(pivot_cmd)
 
         # Stage 3: Pivot Analyst (Agent 2)
         print(f"[pipeline]   Stage 3 — pivot_analyst.py", file=sys.stderr)
