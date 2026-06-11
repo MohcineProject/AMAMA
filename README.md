@@ -115,4 +115,7 @@ The real backend just needs to expose the same endpoints. The fixtures in `backe
 
 ## License
 
-Hackathon project; no license specified yet.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+This project is licensed under the [MIT License](LICENSE).  
+Copyright (c) 2026 Abdallah Zerkani on behalf of AMAMA team.
