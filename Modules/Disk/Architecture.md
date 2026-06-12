@@ -7,7 +7,7 @@
 The Disk module is a three-layer pipeline. Each layer's output is the next layer's input:
 
 ```
-[E01/EWF Disk Image]
+[Disk Image  (E01/EWF, raw dd/img, VMDK/VHD)]
         │
         ▼  Layer 1 — disk-image-mounter/
 [config.json]  (mount points, partition offsets, artifact paths)
@@ -32,12 +32,12 @@ The Disk module is a three-layer pipeline. Each layer's output is the next layer
 
 ### What it does
 
-1. Mounts the EWF/E01 image via `ewfmount` FUSE at `/tmp/dfir_ewf`
+1. Detects the image format by extension and exposes a raw block device: EWF/E01 via `ewfmount` FUSE at `/tmp/dfir_ewf`, raw `dd`/`img`/`raw` via `losetup`, VMDK/VHD/VHDX via `qemu-nbd`
 2. Discovers the Windows NTFS partition using `mmls` (partition table) and `fsstat` (filesystem type detection)
 3. Handles bare-partition images (whole-device E01 with no partition table)
 4. Detects BitLocker-encrypted volumes and emits a clear error
 5. Mounts the NTFS volume read-only at `/tmp/dfir_ntfs` using the kernel `ntfs3` driver (falls back to `ntfs-3g` if needed)
-6. Extracts `$MFT` via `icat` to `/tmp/test_raw_mft`
+6. Extracts `$MFT` via `icat` to `<project root>/INPUT_DISK/raw_mft`
 7. Discovers the Windows username by scanning `Users/` (skips service accounts: `.NET*`, `NetworkService`, `LocalService`, `systemprofile`, `MSSQL*`, `IIS*`)
 8. Probes for `Amcache.hve` with both case variants (`AppCompat/` and `appcompat/`)
 9. Writes `config.json` — a complete, ready-to-use collector configuration
@@ -65,7 +65,7 @@ The Disk module is a three-layer pipeline. Each layer's output is the next layer
 | `zevtx` | `zimmerman_eventlog_collector.py` | `eventlog_security.txt`, `eventlog_system.txt`, `eventlog_application.txt`, `eventlog_other.txt` | EvtxECmd | `python-evtx` |
 | `zexecution` | `zimmerman_execution_collector.py` | `registry_shimcache.txt`, `amcache_records.txt` | AppCompatCacheParser + AmcacheParser | `python-registry` + binary struct |
 | `persistence` | `persistence_collector.py` | `scheduled_tasks.txt`, `wmi_subscriptions.txt` | — | pure Python (XML/WMI parsing) |
-| `browser` | `browser_collector.py` | `browser_history.txt` | SQLECmd | `python-evtx` |
+| `browser` | `browser_collector.py` | `browser_history.txt` | — | pure Python (`sqlite3`, read-only `immutable=1`) |
 
 All collectors share a uniform `KEY=VALUE` record format defined in `_common.py`. Every record begins with a `type=` field followed by artifact-specific fields, and a normalized ISO8601 UTC timestamp.
 
@@ -170,7 +170,9 @@ Single-artifact findings must never be CONFIRMED. The pipeline is biased toward 
 
 ## Orchestrator Integration
 
-Two CLI entry points connect the module to the Backbone orchestrator.
+The Backbone loads the module in-process: `disk_module.py` defines `DiskModule` (inherits `BaseForensicModule` from `Backbone/backbone/contracts/`), instantiated via `backbone.registry` from the `modules:` entry in `orchestrator.yaml`. `DiskModule.scan(case_id)` returns a validated `ModuleScanResult`; `DiskModule.query(EntityQuery)` returns validated `EntityFindings`. When launched by the Backbone, `AMAMA_AUDIT_DIR` is set and stage inputs/outputs plus every LLM call are copied under `auditing/{case_id}/{timestamp}/disk/`.
+
+The same two flows are also exposed as standalone CLI entry points for module-level runs without the Backbone.
 
 ### `scan.py` — INITIAL mode
 

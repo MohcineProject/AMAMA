@@ -17,8 +17,7 @@ RAM/
 ├── extractor.py                  ← Volatility runner: mandatory + extended plugins
 ├── full_pipeline.py              ← end-to-end entry point (recommended)
 │
-├── RAM_image/                    ← input
-│   └── evil_windows.elf
+├── RAM_image/                    ← input (place your memory image here)
 │
 ├── RAM_Artifacts/                ← Volatility 3 plugin outputs
 │   ├── pstree.txt, psscan.txt, cmdline.txt, dlllist.txt
@@ -43,43 +42,43 @@ RAM/
 │       ├── format_line.py        ← single-line process formatter
 │       └── chunker.py            ← token-aware, subtree-safe chunk writer
 │
-├── ram-agentic-architecture/
-│   ├── config.json               ← grep file lists, keyword lists, evidence caps
-│   ├── llm_config.json           ← provider + model + fallback chain
-│   ├── scripts/
-│   │   ├── run_pipeline.py       ← post-extraction pipeline runner
-│   │   ├── triage_agent.py       ← Agent 1: process triage
-│   │   ├── pivot_grep.py         ← Stage 2: deterministic grep
-│   │   ├── pivot_analyst.py      ← Agent 2: verdict assignment
-│   │   ├── scan_result_emitter.py← aggregated TXT → scan_result.json
-│   │   ├── entity_query.py       ← pivot-back: answers EntityQuery from orchestrator
-│   │   ├── llm_client.py         ← provider abstraction (Anthropic / OpenRouter / Gemini)
-│   │   └── utils.py
-│   ├── prompts/
-│   │   ├── agent1_triage.md
-│   │   ├── agent2_pivot.md
-│   │   └── agentQ_focused.md
-│   ├── schemas/                  ← JSON contracts (orchestrator ↔ module)
-│   │   ├── entity_query.schema.json
-│   │   ├── entity_findings.schema.json
-│   │   └── module_scan_result.schema.json
-│   ├── tests/
-│   │   ├── conftest.py
-│   │   ├── test_scan_result_emitter.py
-│   │   ├── test_entity_query.py
-│   │   └── test_pipeline_integration.py
-│   └── output/                   ← generated at runtime
-│       ├── chunk_001/
-│       │   ├── triage.txt
-│       │   ├── pivot.txt
-│       │   └── analyst.txt
-│       ├── ...
-│       ├── aggregated_analyst.txt
-│       ├── scan_result.json
-│       └── queries/              ← per-EntityQuery audit trails
-│
-└── COMPLETE_ARCHITECTURE/        ← orchestrator integration specs + schemas
+└── ram-agentic-architecture/
+    ├── ram_module.py             ← Backbone entry point (BaseForensicModule: scan()/query())
+    ├── config.json               ← grep file lists, keyword lists, evidence caps
+    ├── llm_config.json           ← provider + model + fallback chain
+    ├── ARCHITECTURE.md           ← flowchart view of the agentic pipeline
+    ├── run_test.py               ← quick smoke-test runner
+    ├── scripts/
+    │   ├── run_pipeline.py       ← post-extraction pipeline runner
+    │   ├── triage_agent.py       ← Agent 1: process triage
+    │   ├── pivot_grep.py         ← Stage 2: deterministic grep
+    │   ├── pivot_analyst.py      ← Agent 2: verdict assignment
+    │   ├── scan_result_emitter.py← aggregated TXT → scan_result.json
+    │   ├── entity_query.py       ← pivot-back: answers EntityQuery from orchestrator
+    │   ├── llm_client.py         ← provider abstraction (Anthropic / OpenRouter / Gemini)
+    │   ├── whitelist.txt         ← known-good paths/images for the whitelist check
+    │   └── utils.py
+    ├── prompts/
+    │   ├── agent1_triage.md
+    │   ├── agent2_pivot.md
+    │   └── agentQ_focused.md
+    ├── tests/
+    │   ├── conftest.py
+    │   ├── test_scan_result_emitter.py
+    │   ├── test_entity_query.py
+    │   └── test_pipeline_integration.py
+    └── output/                   ← generated at runtime
+        ├── chunk_001/
+        │   ├── triage.txt
+        │   ├── pivot.txt
+        │   └── analyst.txt
+        ├── ...
+        ├── aggregated_analyst.txt
+        ├── scan_result.json
+        └── queries/              ← per-EntityQuery audit trails
 ```
+
+The JSON contracts shared with the orchestrator (`entity_query`, `entity_findings`, `module_scan_result`) are not duplicated here — the canonical schemas live in `Backbone/schemas/` and are resolved at runtime.
 
 ---
 
@@ -139,6 +138,20 @@ Answers a single `EntityQuery` from the orchestrator. Uses a 4-stage flow: type 
 ### `scan_result_emitter.py`
 
 No LLM. Parses `aggregated_analyst.txt` with regex and emits `scan_result.json` matching the `ModuleScanResult` schema. Always produces output regardless of what the agents found.
+
+### `ram_module.py`
+
+Backbone entry point. `RamModule` inherits `BaseForensicModule` (from `Backbone/backbone/contracts/`) and wraps the pipeline behind the two contract methods: `scan(case_id)` → `ModuleScanResult` and `query(EntityQuery)` → `EntityFindings`. The orchestrator loads it in-process via `backbone.registry` from the `modules:` entry in `orchestrator.yaml`.
+
+---
+
+## Orchestrator Integration
+
+The Backbone never calls the scripts above directly — it instantiates `RamModule` and exchanges validated JSON envelopes:
+
+- **Schemas** — `entity_query`, `entity_findings`, `module_scan_result` are validated against the canonical copies in `Backbone/schemas/`.
+- **Auditing** — when launched by the Backbone, `AMAMA_AUDIT_DIR` is set and every LLM call plus the per-chunk inputs/outputs are copied under `auditing/{case_id}/{timestamp}/ram/`.
+- **Standalone use** — `full_pipeline.py` and `scripts/run_pipeline.py` remain usable without the Backbone for module-level runs and re-analysis.
 
 ---
 
@@ -351,10 +364,10 @@ Verdict options: `[CONFIRMED]`, `[INCONCLUSIVE]`, `[REJECTED]`.
 | Key | Description |
 |---|---|
 | `provider` | Primary: `anthropic`, `openrouter`, or `openai-compatible` |
-| `model` | Model ID (e.g. `claude-opus-4-6`) |
+| `model` | Model ID (e.g. `claude-sonnet-4-6`) |
 | `api_key_env` | Env var name for the API key |
 | `fallback_providers` | Ordered fallback list; first provider with a key is used |
-| `temperature` | 0.2 (low randomness) |
+| `temperature` | 0.15 (low randomness) |
 | `max_tokens` | 30 000 |
 | `max_retries` | 5 (429 backoff) |
 | `verify_ssl` | Set `false` for TLS-inspection proxies |
