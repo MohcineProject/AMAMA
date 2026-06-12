@@ -31,7 +31,9 @@ from typing import Optional
 
 log = logging.getLogger(__name__)
 
-VOL3_PATH = os.environ.get("VOL3_PATH", "/home/MyTools/volatility/volatility3/vol.py")
+# No built-in default: provide vol.py via the VOL3_PATH env var, the --vol-path
+# CLI flag, or the orchestrator's `vol_path` kwarg.
+VOL3_PATH = os.environ.get("VOL3_PATH")
 PYTHON = os.environ.get("VOL3_PYTHON", "python3")
 
 # Images whose kernel symbol-table (ISF) cache has already been warmed this
@@ -217,7 +219,7 @@ def run_plugin_group(
     image_path: str,
     artifacts_dir: Path,
     plugins: dict[str, str],
-    vol_path: str = VOL3_PATH,
+    vol_path: Optional[str] = VOL3_PATH,
     workers: int = 4,
     timeout: int = 3600,
     log_file: Optional[Path] = None,
@@ -277,7 +279,7 @@ def run_mandatory(
     artifacts_dir: Path,
     *,
     no_handles: bool = False,
-    vol_path: str = VOL3_PATH,
+    vol_path: Optional[str] = VOL3_PATH,
     workers: int = 4,
     timeout: int = 3600,
 ) -> dict[str, bool]:
@@ -302,7 +304,7 @@ def run_fast_extended(
     image_path: str,
     artifacts_dir: Path,
     *,
-    vol_path: str = VOL3_PATH,
+    vol_path: Optional[str] = VOL3_PATH,
     workers: int = 4,
     timeout: int = 3600,
 ) -> dict[str, bool]:
@@ -320,7 +322,7 @@ def run_full_extended(
     image_path: str,
     artifacts_dir: Path,
     *,
-    vol_path: str = VOL3_PATH,
+    vol_path: Optional[str] = VOL3_PATH,
     workers: int = 4,
     timeout: int = 3600,
 ) -> dict[str, bool]:
@@ -383,12 +385,17 @@ def _warn_empty_artifacts(artifacts_dir: Path, plugins: dict[str, str]) -> None:
             )
 
 
-def _validate(image_path: str, vol_path: str) -> None:
+def _validate(image_path: str, vol_path: Optional[str]) -> None:
     if not Path(image_path).exists():
         raise FileNotFoundError(f"Memory image not found: {image_path}")
-    if not Path(vol_path).exists():
+    if not vol_path or not Path(vol_path).exists():
+        problem = (
+            f"Volatility 3 not found at: {vol_path}"
+            if vol_path
+            else "Volatility 3 location not set"
+        )
         raise FileNotFoundError(
-            f"Volatility 3 not found at: {vol_path}\n\n"
+            f"{problem}\n\n"
             "To fix, choose one option:\n"
             "  CLI flag  : --vol-path /path/to/volatility3/vol.py\n"
             "  Env var   : export VOL3_PATH=/path/to/volatility3/vol.py\n\n"

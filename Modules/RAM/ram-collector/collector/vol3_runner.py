@@ -29,14 +29,33 @@ log = logging.getLogger(__name__)
 
 
 # ---------------------------------------------------------------------------
-# Local Vol3 install — overridable via env, but the project default matches
-# the path documented in the root CLAUDE.md.
+# Local Vol3 install — no built-in default: set the VOL3_PATH env var (vol.py
+# location) and optionally VOL3_PYTHON (interpreter, default python3).
 # ---------------------------------------------------------------------------
 
-VOL3_PATH = os.environ.get(
-    "VOL3_PATH", "/home/MyTools/volatility/volatility3/vol.py"
-)
+VOL3_PATH = os.environ.get("VOL3_PATH")
 PYTHON = os.environ.get("VOL3_PYTHON", "python3")
+
+
+def _require_vol3() -> str:
+    """Return the vol.py path, or raise with setup instructions."""
+    if VOL3_PATH and Path(VOL3_PATH).exists():
+        return VOL3_PATH
+    problem = (
+        f"Volatility 3 not found at: {VOL3_PATH}"
+        if VOL3_PATH
+        else "VOL3_PATH is not set"
+    )
+    raise FileNotFoundError(
+        f"{problem}\n\n"
+        "To fix:\n"
+        "  export VOL3_PATH=/path/to/volatility3/vol.py\n\n"
+        "vol.py lives in the root of your Volatility 3 install directory.\n"
+        "Example paths:\n"
+        "  /opt/volatility3/vol.py\n"
+        "  /home/<user>/tools/volatility3/vol.py\n"
+        "  /usr/local/volatility3/vol.py"
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -237,19 +256,7 @@ def _run_vol_plugin(image_path: str, plugin: str, timeout: int = 3600) -> Option
     Run `python vol.py -q -f image plugin` and return stdout. Returns None on
     failure (caller continues with empty rows for that plugin).
     """
-    if not Path(VOL3_PATH).exists():
-        raise FileNotFoundError(
-            f"Volatility 3 not found at: {VOL3_PATH}\n\n"
-            "To fix:\n"
-            "  export VOL3_PATH=/path/to/volatility3/vol.py\n\n"
-            "vol.py lives in the root of your Volatility 3 install directory.\n"
-            "Example paths:\n"
-            "  /opt/volatility3/vol.py\n"
-            "  /home/<user>/tools/volatility3/vol.py\n"
-            "  /usr/local/volatility3/vol.py"
-        )
-
-    cmd = [PYTHON, VOL3_PATH, "-q", "-f", image_path, plugin]
+    cmd = [PYTHON, _require_vol3(), "-q", "-f", image_path, plugin]
     log.info("Running plugin %s ...", plugin)
     t0 = time.monotonic()
     try:
@@ -434,17 +441,7 @@ def run_all_plugins(image_path: str, include_handles: bool = True) -> AllRawData
     image_path = str(Path(image_path).expanduser().resolve())
     if not Path(image_path).exists():
         raise FileNotFoundError(f"Memory image not found: {image_path}")
-    if not Path(VOL3_PATH).exists():
-        raise FileNotFoundError(
-            f"Volatility 3 not found at: {VOL3_PATH}\n\n"
-            "To fix:\n"
-            "  export VOL3_PATH=/path/to/volatility3/vol.py\n\n"
-            "vol.py lives in the root of your Volatility 3 install directory.\n"
-            "Example paths:\n"
-            "  /opt/volatility3/vol.py\n"
-            "  /home/<user>/tools/volatility3/vol.py\n"
-            "  /usr/local/volatility3/vol.py"
-        )
+    _require_vol3()
 
     raw = AllRawData()
 
@@ -675,4 +672,4 @@ def _parse_file_or_empty(path: Path, row_converter, label: str) -> list:
 
 def vol3_available() -> bool:
     """True if VOL3_PATH points at an existing vol.py file and python is on PATH."""
-    return Path(VOL3_PATH).exists() and shutil.which(PYTHON) is not None
+    return bool(VOL3_PATH) and Path(VOL3_PATH).exists() and shutil.which(PYTHON) is not None
