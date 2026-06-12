@@ -170,102 +170,16 @@ Vite proxies `/api/*` and `/health` to <http://localhost:8000>, so the frontend 
 
 ## Auditing system
 
-Every pipeline run automatically produces a self-contained audit tree under:
+Every pipeline run automatically produces a self-contained audit tree under `auditing/{case_id}/{YYYYMMDD-HHMMSS}/` (anchored to the repo root; one new timestamped folder per run). It captures the full agent communication and tool execution sequence:
 
-```
-AMAMA/auditing/{case_id}/{YYYYMMDD-HHMMSS}/
-```
+- **Structured logs** — every LLM call by every agent, and every threat intelligence lookup, appends one JSONL record (`agent_calls.jsonl`, `orchestrator_calls.jsonl`, `queries.jsonl`) with timestamp, model, exact token usage, latency, and links to the input/output files of that call. Sorting the records by timestamp replays the entire run.
+- **Agent-to-agent messages** — modules talk through the orchestrator's case graph; `case_state.json` records, per entity, who found it, who was asked about it, and what each agent answered, with every hop timestamped in the call logs.
+- **Full execution sequence & cost** — `run_summary.json` is the single entry-point: an ordered, timestamped list of every phase (scans, enrichment, routing rounds, report) plus per-component token counts and prompt/model provenance hashes.
+- **Iteration-over-iteration traces** — the tree shows how the agents' approach changed: Agent 2 (analyst) re-examines and can reject Agent 1 (triage) findings with a written justification, and the orchestrator's per-round query counts shrink down to `convergence`.
 
-The folder is always anchored to the repo root regardless of the working directory. A new timestamped subfolder is created on each run, so multiple runs of the same case accumulate side-by-side without overwriting each other.
+See [`auditing/README.md`](auditing/README.md) for the full directory layout, record schemas, and worked examples — including a triage finding rejected by the analyst, and a round-by-round convergence trace.
 
-### Directory structure
-
-```
-auditing/
-└── {case_id}/
-    └── {YYYYMMDD-HHMMSS}/
-        ├── run_summary.json               ← single entry-point for the whole run
-        │
-        ├── backbone/
-        │   ├── orchestrator_calls.jsonl   ← one record per orchestrator LLM call
-        │   ├── report_call.jsonl          ← one record for the report LLM call
-        │   ├── case_state.json            ← copy of the final case graph
-        │   └── incident_report.md         ← copy of the generated report
-        │
-        ├── threat_intel/
-        │   └── queries.jsonl              ← one record per VirusTotal lookup
-        │
-        ├── ram/
-        │   ├── agent_calls.jsonl          ← one record per RAM LLM call
-        │   ├── 01_chunks/                 ← memory text chunks fed to triage agent
-        │   ├── 02_per_chunk_analysis/     ← triage / pivot / analyst output per chunk
-        │   │   ├── chunk_001/
-        │   │   │   ├── triage.txt
-        │   │   │   ├── pivot.txt
-        │   │   │   └── analyst.txt
-        │   │   └── ...
-        │   ├── aggregated_analyst.txt
-        │   └── scan_result.json
-        │
-        └── disk/
-            ├── agent_calls.jsonl          ← one record per Disk LLM call
-            ├── 01_preprocess/             ← TRIAGE_INPUT_*.txt fed to triage agent
-            ├── 02_triage/                 ← triage_persistence/events/mft + combined
-            ├── 03_pivot/                  ← pivot.txt (grep evidence)
-            ├── 04_analyst/                ← analyst.txt (Agent 2 output)
-            ├── mft_audit.jsonl            ← filtered MFT entries
-            └── scan_result.json
-```
-
-`ram/01_chunks/` and the `agent_calls.jsonl` files for RAM and Disk are only populated when the full LLM pipeline runs (i.e. a live memory image / disk image is provided). When reusing cached analysis (`reuse_analysis: true` or no `ram_image`), the per-chunk artifacts are still copied but no new LLM call records are written.
-
-### `run_summary.json`
-
-The single entry-point for a run. Key fields:
-
-| Field | Description |
-|---|---|
-| `run_id` | Matches the timestamped folder name |
-| `termination_reason` | `convergence` or `max_rounds_reached` |
-| `execution_sequence` | Ordered list of every phase with timestamps — initial scans, TI enrichment, routing rounds, report |
-| `cost_summary` | Total and per-component token counts and LLM call counts |
-| `provenance` | Model ID and SHA-256 of the system prompt for orchestrator and report agents |
-| `audit_files` | Relative paths to all JSONL logs in this run |
-| `module_artifacts` | Relative paths to all copied pipeline artifacts |
-
-### `agent_calls.jsonl` record schema
-
-Every LLM call (across all agents) and every VirusTotal lookup appends one JSON line:
-
-```json
-{
-  "call_id":     "uuid-v4",
-  "timestamp":   "2026-06-09T08:00:30Z",
-  "agent_name":  "backbone/orchestrator",
-  "model":       "claude-haiku-4-5-20251001",
-  "tokens_in":   2248,
-  "tokens_out":  147,
-  "latency_ms":  3418,
-  "input_files": ["backbone/case_state.json"],
-  "output_files": [],
-  "query_id":    null,
-  "entity":      null,
-  "verdict":     null,
-  "error":       null
-}
-```
-
-`input_files` and `output_files` are paths relative to the run's root folder. For TI lookups, `model` is `"virustotal-api"` and tokens are `0`.
-
-### Traceability
-
-To trace a finding in `incident_report.md` back to its source:
-
-1. Find the entity value in `backbone/case_state.json` → note its `query_id`
-2. `grep <query_id>` in the relevant `agent_calls.jsonl` → get `input_files`
-3. The `input_files` paths resolve directly within the audit folder
-
-The `auditing/` folder is runtime output and is git-ignored.
+The audit trees are runtime output and are git-ignored (only the README is committed).
 
 ## License
 

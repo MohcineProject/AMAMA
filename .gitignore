@@ -60,4 +60,6 @@ cases/
 *.dmp
 
 # ---------- Audit output ----------
-auditing/
+# Runtime audit trees are never committed; only the documentation README is.
+auditing/*
+!auditing/README.md
