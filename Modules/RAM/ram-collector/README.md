@@ -22,88 +22,12 @@ plugin + offending header — it's a single-line fix per plugin.
 
 ---
 
-## Prerequisites
+## Prerequisites & setup
 
-| Requirement | Notes |
-|-------------|-------|
-| Python 3.10+ | Used by the collector itself |
-| Volatility 3 | Must be installed somewhere accessible (the collector shells out to `vol.py`) |
-| Memory image | Raw `.elf`, `.img`, `.vmem`, or any format Vol3 accepts |
-| `tiktoken` *(optional)* | Accurate token estimates for chunk sizing. Without it, a `char/4` approximation is used |
-
-The collector has **no mandatory runtime Python dependencies** — Vol3 is
-invoked via subprocess, not imported.
-
----
-
-## Installation
-
-### Step 1 — Locate your Volatility 3 install
-
-The collector shells out to `vol.py` directly. Find it:
-
-```bash
-which vol.py 2>/dev/null || find / -name "vol.py" -path "*/volatility3/*" 2>/dev/null | head -3
-```
-
-On the SIFT VM it lives at:
-
-```
-/home/MyTools/volatility/volatility3/vol.py
-```
-
-If your `vol.py` is elsewhere, point the collector at it in one of two ways:
-
-**Option A — environment variables (recommended, no code edits):**
-
-```bash
-export VOL3_PATH=/path/to/your/vol.py
-export VOL3_PYTHON=python3      # optional, default: python3
-```
-
-**Option B — edit the constants** at the top of `collector/vol3_runner.py`:
-
-```python
-VOL3_PATH = "/path/to/your/vol.py"
-PYTHON    = "python3"
-```
-
-### Step 2 — Activate a Python environment
-
-The collector must run in a Python environment that can also call `vol.py`.
-On the SIFT VM, Volatility ships with its own venv:
-
-```bash
-source /home/MyTools/volatility/volatility3/venv/bin/activate
-```
-
-A plain user virtualenv works equally well — the collector does **not** import
-Volatility, it shells out to it.
-
-### Step 3 — Install the collector package
-
-```bash
-# From the repo root (the folder containing pyproject.toml):
-pip install -e .
-```
-
-Verify the install:
-
-```bash
-python -m collector --help
-```
-
-### Step 4 *(optional)* — Install tiktoken for accurate token counts
-
-```bash
-pip install tiktoken
-# or, via the extras declared in pyproject.toml:
-pip install -e .[fast]
-```
-
-Without `tiktoken`, the chunker falls back to a `len(text) / 4` heuristic. That
-is fine for rough budgeting but will under- or over-shoot the real token count
-by up to ~20% depending on the data.
+Covered in [`../README.md`](../README.md) (Python 3.10+, Volatility 3 and how to
+point at `vol.py` via the `VOL3_PATH` env var, optional `tiktoken`). The
+collector has **no mandatory runtime Python dependencies** — Vol3 is invoked
+via subprocess, not imported.
 
 ---
 
@@ -177,7 +101,7 @@ files log a `WARNING` and contribute zero rows — the pipeline continues.
 ### Generating these TSV files manually
 
 ```bash
-VOL3="python3 /home/MyTools/volatility/volatility3/vol.py"
+VOL3="python3 /home/MyTools/volatility3/vol.py"
 IMAGE="/path/to/dump.elf"
 OUT="/path/to/analysis_folder"
 mkdir -p "$OUT"
@@ -348,12 +272,4 @@ too many instances is **kept** and sent to Agent 1 for triage.
 
 ## Troubleshooting
 
-| Symptom | Likely cause | Fix |
-|---------|--------------|-----|
-| `FileNotFoundError: vol.py not found` | Wrong `VOL3_PATH` | `export VOL3_PATH=...` or edit the constant in `collector/vol3_runner.py` |
-| `0 processes found` | `pstree` parse failed | Re-run with `--log-level DEBUG` and check the TSV column headers |
-| `No chunks written` | All processes excluded | Unlikely — inspect the DEBUG log for path-matching issues |
-| Chunks very large | Handles enabled on a big dump | Add `--no-handles` |
-| Token budget warnings | `tiktoken` not installed | `pip install tiktoken` (or `pip install -e .[fast]`) |
-| `FileExistsError` on output dir | Prior run left files in `--output-dir` | Add `--force` to overwrite |
-| Slow Vol3 run | Handles plugin on a large image | Use `--no-handles`, or pre-generate TSVs and use `--from-folder` |
+`FileNotFoundError: VOL3_PATH is not set` / `Volatility 3 not found at: …` — `export VOL3_PATH=/path/to/vol.py`.

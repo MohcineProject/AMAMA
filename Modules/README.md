@@ -1,6 +1,16 @@
-# Models
+# Modules
 
-Pluggable forensic modules live here. Each module **must inherit** `BaseForensicModule`:
+Pluggable forensic modules live here. Each module is a self-contained analysis capability that the Backbone orchestrator loads at startup, scans in parallel with the others, and queries during the investigation. The orchestrator knows nothing about any specific module: add a new one, declare it in the config, and it is fully integrated — initial scan, pivot queries, threat-intel enrichment, and the final report all include it with **zero orchestrator changes**.
+
+```
+Modules/
+├── RAM/    # memory forensics (Volatility 3) — see RAM/README.md
+└── Disk/   # disk forensics (MFT, registry, event logs, …) — see Disk/README.md
+```
+
+## The contract
+
+Each module **must inherit** `BaseForensicModule` (`Backbone/backbone/contracts/base_model.py`):
 
 ```python
 from backbone.contracts.base_model import BaseForensicModule
@@ -16,7 +26,7 @@ class DiskModule(BaseForensicModule):
         ...
 ```
 
-## Obligations
+### Obligations
 
 1. **Inherit** `BaseForensicModule` (`Backbone/backbone/contracts/base_model.py`).
 2. Set **`module_id`** and **`supported_entity_types`** on the class.
@@ -25,26 +35,27 @@ class DiskModule(BaseForensicModule):
 5. Use **`validate_scan_result()` / `validate_findings()`** (via base class helpers) before returning.
 6. Modules do **not** import from `backbone.orchestrator` — only contracts + your own code.
 
-## Register with Backbone
+The JSON wire formats are defined in `Backbone/schemas/` (`module_scan_result.schema.json`, `entity_query.schema.json`, `entity_findings.schema.json`); the full flow is described in `Backbone/ARCHITECTURE.md`.
+
+## Register with the Backbone
 
 In `Backbone/config/orchestrator.yaml`:
 
 ```yaml
 modules:
-  - class: models.disk.disk_module.DiskModule
-    kwargs:
-      artifact_dir: "../models/Disk/Disk_Artifacts"
+  - class: disk_module.DiskModule                        # importable class name
+    path: ../../Modules/Disk/disk-agentic-architecture   # put on sys.path (relative to the config file)
+    kwargs:                                              # passed to the constructor
+      use_llm: true
+      artifact_dir: /abs/path/to/Modules/Disk/Disk_Artifacts
 ```
 
-Backbone imports the class and calls `scan()` / `query()` directly — no CLI, no adapter layer.
+The Backbone imports the class, instantiates it with `kwargs`, and calls `scan()` / `query()` directly — no CLI, no adapter layer.
 
-## Expected layout
+## Adding a new module
 
-```
-models/
-├── ram/       # memory forensics (Volatility)
-├── disk/      # disk forensics (MFT, registry, …)
-└── network/   # network forensics (pcap, flows, DNS)
-```
+1. Create `Modules/<Name>/` with your analysis code.
+2. Write a class inheriting `BaseForensicModule` with a unique `module_id`, its `supported_entity_types`, and `scan()` / `query()`.
+3. Add an entry to `Backbone/config/orchestrator.yaml` (class + path + kwargs).
 
-See `COMPLETE_ARCHITECTURE/02_contracts.md` for the JSON wire format.
+That's it — on the next run the orchestrator scans your module in parallel with the others, routes an `EntityQuery` to it whenever an entity matches your `supported_entity_types`, and folds its findings into threat-intel enrichment and the final report.

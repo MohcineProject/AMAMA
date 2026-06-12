@@ -10,7 +10,7 @@ Central coordination layer for the multi-module forensic agent system.
 | **Threat Intel agent** | Enriches entities via external IOC sources (VirusTotal, etc.) |
 | **Report agent** | Produces the final incident report from case state |
 
-Forensic modules (RAM, disk, network) live under `../models/` and are loaded by class import path.
+Forensic modules (RAM, disk, …) live under `../Modules/` and are loaded by class import path.
 
 ## Layout
 
@@ -29,32 +29,15 @@ Backbone/
 └── tests/
 ```
 
-## Quick start
+## Setup
 
-```bash
-cd Backbone
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1   # Windows
-pip install -e ".[dev]"
-cp .env.example .env            # then fill in your API keys (see below)
-pytest -q
-python -m backbone run --case-id test-001
-```
+Installation, API keys (`ANTHROPIC_API_KEY`, `VT_API_KEY`) and the end-to-end run command are centralized in the [root README](../README.md).
 
-## API keys
-
-Copy `.env.example` to `.env` (git-ignored) and fill in the two keys before running tests:
-
-| Key | Used by | Where to get it |
-|-----|---------|-----------------|
-| `VT_API_KEY` | Threat Intel module — live IOC lookups against VirusTotal | [virustotal.com/gui/my-apikey](https://www.virustotal.com/gui/my-apikey) |
-| `ANTHROPIC_API_KEY` | Orchestrator agent — LLM routing decisions (Claude Haiku) | [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) |
-
-The 25 Threat Intel tests are fully mocked and run without any keys. The 3 non-LLM orchestrator tests also run without keys. The 4 `@pytest.mark.llm` orchestrator tests require `ANTHROPIC_API_KEY` and are skipped automatically when it is absent.
+For development: `pip install -e ".[dev]"` then `pytest -q`. The Threat Intel tests are fully mocked and run without keys; the `@pytest.mark.llm` orchestrator tests require `ANTHROPIC_API_KEY` and are skipped automatically when it is absent.
 
 ## Contracts
 
-All cross-component messages use the JSON schemas in `schemas/`. Every model under `../models/` **must inherit** `BaseForensicModule` from `backbone.contracts.base_model`.
+All cross-component messages use the JSON schemas in `schemas/`. Every module under `../Modules/` **must inherit** `BaseForensicModule` from `backbone.contracts.base_model`.
 
 **Full architecture (flow + file/class map):** [`ARCHITECTURE.md`](ARCHITECTURE.md)
 

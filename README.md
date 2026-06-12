@@ -1,117 +1,172 @@
-# AMAMA - Multi-Agent DFIR Triage
+# AMAMA — Multi-Agent DFIR Triage
 
-A lightweight multi-agent system for forensic triage of memory (RAM) images. Built around a deterministic-script + LLM-agent pipeline that keeps token usage low and reduces hallucinations by sandwiching reasoning agents between scripted, evidence-based steps.
-
-> Status: frontend + dummy backend wired end-to-end. The real DFIR pipeline (volatility runner + the three actual LLM agents) is plugged in separately.
+AMAMA takes a raw **memory image** and a raw **disk image** and produces an evidence-traceable `incident_report.md`. Two forensic modules — **RAM** (Volatility 3) and **Disk** (image mount + Windows artifact collection) — each run a deterministic-extraction + LLM-agent pipeline. The **Backbone orchestrator** runs them in parallel, enriches confirmed IOCs via **VirusTotal**, routes follow-up entity queries between modules, and writes the final report. Deterministic scripts sandwich the reasoning agents, keeping token usage low and every claim traceable to verbatim artifact evidence.
 
 ## Project layout
 
 ```
 AMAMA/
-  frontend/          React + TypeScript UI (Vite + Tailwind + shadcn/ui)
-  backend_dummy/     FastAPI mock backend serving fixture data + SSE stream
-  General_Architecturev2.pdf
+  Backbone/         orchestrator, threat-intel + report agents, contracts/schemas
+  Modules/
+    RAM/            memory forensics module (Volatility 3)
+    Disk/           disk forensics module (mount, MFT, registry, event logs, …)
+  frontend/         React + TypeScript UI (Vite + Tailwind + shadcn/ui)
+  backend_dummy/    FastAPI mock backend for frontend development
 ```
 
-## Pipeline
+Each part has its own README. `Modules/README.md` explains the module contract and how to plug in a new module — any module declared in the orchestrator config is fully integrated automatically.
 
-```mermaid
-flowchart LR
-  start([start UI]) --> collector[collector script]
-  collector --> agent1[agent1: triage LLM]
-  agent1 --> grep[grep script]
-  grep --> agent2[agent2: pivot LLM]
-  agent2 --> agent3[agent3: report LLM]
-  agent3 --> report([report UI])
-```
+---
 
-| Stage | Type | Output |
-|---|---|---|
-| `start` | UI | file summary + Launch button |
-| `collector` | script | image_info, plugins_run, high-level counts |
-| `agent1` | LLM | suspicious processes / services / paths / tasks |
-| `grep` | script | PID- and path-based pivots into deeper plugins |
-| `agent2` | LLM | per-subject verdicts with confidence + evidence refs |
-| `agent3` | LLM | 6-section incident narrative |
-| `report` | UI | renders agent3 output |
+## Getting started — fresh clone → incident report
 
-## Quick start
+Target environment: a clean **SIFT Workstation** (Ubuntu), this repo cloned, one RAM image and one disk image. Total run time: ~50 min (RAM Volatility + per-chunk LLM dominate on large images); disk mount+collect adds ~5–15 min and runs in parallel with RAM.
 
-You need **two terminals** running side-by-side.
-
-### 1. Dummy backend (FastAPI)
+### 0. Set a convenience variable
 
 ```bash
+export AMAMA=$(pwd)          # run this from the repo root (the dir containing Backbone/ and Modules/)
+ls "$AMAMA/Backbone" "$AMAMA/Modules"   # sanity check
+```
+
+### 1. System packages (disk mounting/parsing needs these)
+
+```bash
+sudo apt update
+sudo apt install -y ewf-tools sleuthkit fuse ntfs-3g qemu-utils parted python3-pip git
+```
+
+### 2. Install Volatility 3 (for the RAM module)
+
+```bash
+sudo mkdir -p /home/MyTools && cd /home/MyTools
+sudo git clone https://github.com/volatilityfoundation/volatility3.git
+cd volatility3 && sudo python3 -m pip install -e . --break-system-packages
+ls /home/MyTools/volatility3/vol.py      # note this path — you'll put it in the config
+```
+
+> First Volatility run downloads Windows symbol tables (needs internet). The pipeline warms the symbol cache once before parallel plugins, so this is handled.
+
+### 3. Install Python dependencies (system-wide so `sudo` also sees them)
+
+```bash
+# Backbone orchestrator (pulls anthropic, httpx, jsonschema, pyyaml)
+python3 -m pip install -e "$AMAMA/Backbone" --break-system-packages
+
+# RAM collector token accuracy (avoids oversized chunks)
+python3 -m pip install tiktoken --break-system-packages
+
+# Disk collector deps (registry/evtx/mft/pe parsers)
+sudo python3 -m pip install -r "$AMAMA/Modules/Disk/requirements.txt" --break-system-packages
+```
+
+> Disk collection runs under `sudo`, so its deps must be installed for **root's** python — hence the `sudo pip` on the disk requirements.
+
+### 4. API keys
+
+```bash
+export ANTHROPIC_API_KEY=<your-funded-anthropic-key>   # all LLM agents (RAM/disk/orchestrator/report)
+export VT_API_KEY=<your-virustotal-key>                # ThreatIntel (ti) module
+```
+
+> Put these in `~/.bashrc` if you want them to persist.
+
+### 5. Place your images
+
+```bash
+cp /path/to/your/memory.raw   "$AMAMA/Modules/RAM/RAM_image/"      # .raw / .lime / .elf / .vmem
+cp /path/to/your/disk.E01     "$AMAMA/Modules/Disk/Disk_image/"    # .E01 / .Ex01 / .dd / .raw / .img / .vmdk / .vhd / .vhdx
+```
+
+### 6. Point the config at YOUR paths
+
+Copy `Backbone/config/orchestrator.example.yaml` to `Backbone/config/orchestrator.yaml` and fill in your paths (replace every `<AMAMA>` with the absolute path from step 0 — `echo $AMAMA`; use **absolute** paths):
+
+```yaml
+case:
+  max_rounds: 5
+  max_queries_per_round: 30
+  output_dir: "./output"
+
+modules:
+  - class: ram_module.RamModule
+    path: ../../Modules/RAM/ram-agentic-architecture
+    kwargs:
+      use_llm: true
+      scan_mode: fast                                                    # 'fast' (default) or 'full'
+      ram_image: <AMAMA>/Modules/RAM/RAM_image/<your-memory-image>       # ← your RAM image
+      vol_path: /home/MyTools/volatility3/vol.py                         # ← your vol.py (step 2)
+      artifact_dir: <AMAMA>/Modules/RAM/RAM_Artifacts                    # ← created automatically
+
+  - class: disk_module.DiskModule
+    path: ../../Modules/Disk/disk-agentic-architecture
+    kwargs:
+      use_llm: true
+      image_dir: <AMAMA>/Modules/Disk/Disk_image                         # ← your disk image dir; auto mount+collect
+      collect_mode: fast                                                 # 'fast' (default) or 'full' (adds PE analysis)
+      artifact_dir: <AMAMA>/Modules/Disk/Disk_Artifacts                  # ← collected here automatically (omit image_dir to reuse pre-collected)
+
+  - class: backbone.threat_intel.ThreatIntelAgent   # no `path:` — it's in the backbone package
+    kwargs: {}                                       # reads VT_API_KEY from the environment
+
+report: {}
+```
+
+### 7. Run the orchestrator (end-to-end)
+
+```bash
+cd "$AMAMA/Backbone"          # IMPORTANT: run from Backbone/ (paths are relative to CWD)
+python3 -m backbone run --case-id my-case-001 --config config/orchestrator.yaml
+```
+
+This runs RAM (Volatility extraction → collector → per-chunk LLM triage/pivot/analyst) and disk (triage → pivot → analyst) in parallel, then the orchestrator routes follow-up queries between modules + VirusTotal, and writes the report. It prints a final `[backbone] case=… termination=… report=output/incident_report.md` line.
+
+### 8. Results
+
+```bash
+cat "$AMAMA/Backbone/output/incident_report.md"     # the narrative incident report
+less "$AMAMA/Backbone/output/case_state.json"       # full entity/verdict graph + routing history
+```
+
+Per-module pipeline logs are written to `Modules/RAM/ram-agentic-architecture/output/ram.log` and `Modules/Disk/disk-agentic-architecture/output/disk.log`, and every run produces a full audit tree under `auditing/` (see [Auditing system](#auditing-system)).
+
+---
+
+## Troubleshooting
+
+- **`Memory image not found`** → `ram_image` in the YAML doesn't match the file you copied in step 5.
+- **`Volatility 3 not found`** → fix `vol_path` in the YAML, or `export VOL3_PATH=/home/MyTools/volatility3/vol.py`.
+- **Disk: `No supported image found`** → the image isn't in `Modules/Disk/Disk_image/` or has an unsupported extension (`.e01/.ex01/.dd/.raw/.img/.vmdk/.vhd/.vhdx`).
+- **Disk collector import errors under sudo** → you installed the disk deps for your user but not root; re-run step 3's `sudo pip … requirements.txt`.
+- **Disk auto-collect didn't run / `[scan] WARN: … falling back to existing artifacts`** → mount/collect is best-effort: on a `sudo -n` failure (no passwordless sudo) or a mount error it logs a WARN and falls back to whatever is already in `Disk_Artifacts/`. Fix passwordless sudo (or run `sudo -E python3 -m backbone run …`), and check `image_dir` points at the dir containing your disk image.
+- **Re-run disk without re-collecting** (faster iteration) → remove the `image_dir:` line from the disk kwargs; the disk module reuses the existing `Disk_Artifacts/`.
+- **Re-run RAM without re-extracting** (faster iteration) → remove the `ram_image:` line from the YAML; the RAM module reuses the existing analysis.
+- **`HTTP 400 … reached your specified API usage limits`** → the Anthropic key is over budget; use a funded key.
+- **`HTTP 429` lines** → normal transient rate-limiting; the pipeline backs off and retries (RAM/disk also share a cross-process API lock so they don't hit the API simultaneously).
+- **Mount left over after a crash** → `sudo python3 Modules/Disk/disk-image-mounter/mount_image.py --umount`.
+
+---
+
+## Frontend (dev preview)
+
+The UI currently runs against the mock backend while the real pipeline is being wired in. Two terminals:
+
+```bash
+# Terminal 1 — mock backend
 cd backend_dummy
-python -m venv .venv
-
-# Windows (PowerShell)
-.\.venv\Scripts\Activate.ps1
-# macOS / Linux
-source .venv/bin/activate
-
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
-```
 
-Sanity check: <http://localhost:8000/health> -> `{"status":"ok",...}` and Swagger at <http://localhost:8000/docs>.
-
-### 2. Frontend (Vite)
-
-```bash
+# Terminal 2 — frontend
 cd frontend
 npm install
 npm run dev   # http://localhost:5173
 ```
 
-Vite proxies `/api/*` and `/health` to <http://localhost:8000>, so the frontend connects to the backend with no extra config.
+Vite proxies `/api/*` and `/health` to <http://localhost:8000>, so the frontend connects to the backend with no extra config. See `frontend/README.md` and `backend_dummy/README.md` for details.
 
-### 3. Try it
-
-1. Open <http://localhost:5173>.
-2. Type a working directory that exists on your machine (the backend reads it for real). Example: `/home/analyst/DFIR_agent`.
-3. The page validates the path and shows you any cases discovered under `<workdir>/cases/`. Pick one and click **Open case**.
-4. The System View shows the 7-step pipeline on the left. The Start stage lists files found in the case folder.
-5. Click **Launch analysis** -> watch each stage light up, progress, and produce a result. Final view is a 6-section incident report.
-
-To experiment without real case folders, just create the structure manually:
-
-```bash
-mkdir -p /home/analyst/DFIR_agent/cases/INCIDENT_2025_08_08
-echo dummy > /home/analyst/DFIR_agent/cases/INCIDENT_2025_08_08/memory.raw
-```
-
-## How the SSE pipeline works
-
-`POST /api/cases/analyze` registers a run and returns a `run_id`. Opening `GET /api/runs/<run_id>/events` starts the run (so it's naturally bound to the subscriber). Each stage emits:
-
-```
-{ "type": "stage_start",    "stage": "collector", "kind": "script" }
-{ "type": "stage_progress", "stage": "collector", "percent": 41, "message": "Plugin pslist..." }
-{ "type": "stage_result",   "stage": "collector", "data": { ... } }
-{ "type": "stage_complete", "stage": "collector" }
-```
-
-with `run_start` / `run_complete` bookends and an `error` event on failure. The dummy backend paces events with `asyncio.sleep` (~20s total) so the UI animates smoothly.
-
-## Architecture decisions
-
-- **Backend reads the real filesystem** for workspace validation, case listing, and case files. Only the analysis pipeline is faked. This lets analysts point at their actual case folders during development.
-- **SSE over WebSocket** because the pipeline is one-way (server -> client). One less moving part.
-- **shadcn/ui pattern** instead of a heavy component library: primitives are owned in `frontend/src/components/ui/` and can be tweaked freely.
-- **Stage results typed** in `frontend/src/api/stage-results.ts` and pydantic models in `backend_dummy/app/models.py`. These are the canonical contract; the real backend just needs to emit the same shapes.
-
-## Replacing the dummy backend
-
-The real backend just needs to expose the same endpoints. The fixtures in `backend_dummy/app/fixtures.py` describe the exact shapes each stage must produce. The frontend never assumes anything else.
-
-## Files of interest
-
-- `frontend/src/hooks/useAnalysisRun.ts` - the SSE state machine
-- `frontend/src/components/pipeline/PipelineStepper.tsx` - left stepper
-- `frontend/src/components/pipeline/stages/*` - per-stage panels
-- `backend_dummy/app/fixtures.py` - all the fake stage outputs
-- `backend_dummy/app/routes/runs.py` - the SSE event emitter
+---
 
 ## Auditing system
 
@@ -210,13 +265,7 @@ To trace a finding in `incident_report.md` back to its source:
 2. `grep <query_id>` in the relevant `agent_calls.jsonl` → get `input_files`
 3. The `input_files` paths resolve directly within the audit folder
 
-### `.gitignore`
-
-The `auditing/` folder is runtime output and should not be committed:
-
-```
-auditing/
-```
+The `auditing/` folder is runtime output and is git-ignored.
 
 ## License
 

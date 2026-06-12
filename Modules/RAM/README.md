@@ -8,13 +8,13 @@ See `Architecture.md` for how the components fit together internally.
 
 ## Prerequisites
 
-- **Python 3.9+**
-- **Volatility 3** — install from https://github.com/volatilityfoundation/volatility3
+- **Python 3.10+**
+- **Volatility 3** — install from https://github.com/volatilityfoundation/volatility3. The module shells out to `vol.py` (it does not import Volatility). There is no built-in default path: point it at your install with the `vol_path` kwarg in the orchestrator config or the `VOL3_PATH` environment variable (`VOL3_PYTHON` optionally selects the interpreter, default `python3`).
 - **Python packages**:
   ```bash
   pip install tiktoken          # accurate token counting for the chunker (recommended)
-  pip install requests          # required for LLM API calls
   ```
+  Without `tiktoken` the chunker falls back to a `len(text)/4` estimate. LLM API calls use the standard library — no extra package needed.
 - **LLM API key** (optional — the pipeline runs in rule-based mode without one):
   ```bash
   export ANTHROPIC_API_KEY="sk-ant-..."     # preferred
@@ -26,130 +26,38 @@ See `Architecture.md` for how the components fit together internally.
 
 ---
 
-## Quick Start (recommended)
+## How it runs
 
-Run the full end-to-end pipeline with a single command from the `RAM/` directory:
+The module is driven by the Backbone orchestrator, which loads `RamModule` (`ram-agentic-architecture/ram_module.py`) and calls its `scan()` / `query()` methods. Everything is configured from `Backbone/config/orchestrator.yaml`:
 
-```bash
-cd RAM/
-
-python full_pipeline.py \
-  --image RAM_image/evil_windows.elf \
-  --vol-path /path/to/volatility3/vol.py \
-  --case-id my-case-001
+```yaml
+modules:
+  - class: ram_module.RamModule
+    path: ../../Modules/RAM/ram-agentic-architecture
+    kwargs:
+      use_llm: true        # false → rule-based triage, all verdicts INCONCLUSIVE
+      scan_mode: fast      # 'fast' (default) or 'full' — see Extraction Modes
+      ram_image: /abs/path/to/Modules/RAM/RAM_image/memory.raw
+      vol_path: /abs/path/to/volatility3/vol.py
+      artifact_dir: /abs/path/to/Modules/RAM/RAM_Artifacts
 ```
 
-This does everything: extracts Volatility artifacts, collects process chunks, runs the three-stage analysis, and writes `scan_result.json`.
+A `scan()` then runs end-to-end: extracts Volatility artifacts into `RAM_Artifacts/`, builds process chunks (`ram-collector/` — see its README), and runs the three-stage analysis — triage → pivot grep → analyst — before emitting `scan_result.json`.
 
-### Dry run (no API key needed)
-
-```bash
-python full_pipeline.py \
-  --image RAM_image/evil_windows.elf \
-  --vol-path /path/to/volatility3/vol.py \
-  --case-id test \
-  --no-llm
-```
-
-`--no-llm` uses rule-based fallback for Agent 1 and marks all Agent 2 findings INCONCLUSIVE. Good for verifying the pipeline works before spending API tokens.
+Omit `ram_image` to skip re-extraction: the module re-emits the previous run's analysis (`aggregated_analyst.txt`) — useful for fast iteration on an already-processed image.
 
 ---
 
-## Volatility Path
+## Extraction Modes (`scan_mode`)
 
-`full_pipeline.py` needs to know where `vol.py` is. Provide it one of two ways:
-
-```bash
-# Option 1 — CLI flag (per-run)
-python full_pipeline.py --image dump.elf --vol-path /opt/volatility3/vol.py
-
-# Option 2 — environment variable (set once in your shell profile)
-export VOL3_PATH=/opt/volatility3/vol.py
-python full_pipeline.py --image dump.elf
-```
-
----
-
-## Extraction Modes
-
-`full_pipeline.py` supports two extraction modes that control which Volatility plugins are run:
+The `scan_mode` kwarg controls which Volatility plugins are run:
 
 | Mode | Plugins | Wall time (4 workers) | Use when |
 |---|---|---|---|
-| `--fast` (default) | 24 (mandatory + fast-extended) | ~5–10 min | Testing, most investigations |
-| `--full` | ~65 (all) | ~15–25 min | Full evidence sweep |
+| `fast` (default) | 24 (mandatory + fast-extended) | ~5–10 min | Testing, most investigations |
+| `full` | ~65 (all) | ~15–25 min | Full evidence sweep |
 
-Both modes cover all pivot-grep file lists. `--full` adds deeper kernel, VAD, and full registry plugins.
-
-```bash
-# Fast mode (default — no flag needed)
-python full_pipeline.py --image dump.elf --vol-path /path/to/vol.py
-
-# Full mode
-python full_pipeline.py --image dump.elf --vol-path /path/to/vol.py --full
-```
-
----
-
-## All `full_pipeline.py` Options
-
-```
---image PATH          Path to Windows memory image  [required]
---fast                Fast mode: 24 plugins (default)
---full                Full mode: ~65 plugins
---vol-path PATH       Path to vol.py (or set VOL3_PATH env var)
---no-handles          Skip handles plugin — faster collector start, empty handle fields in chunks
---no-llm              Rule-based fallback — no API calls
---workers N           Parallel Volatility workers (default: 4)
---case-id STR         Stamped in scan_result.json (default: local-test)
---artifacts-dir DIR   Volatility output directory (default: RAM_Artifacts/)
---input-dir DIR       Collector chunk directory (default: INPUT/)
---out-dir DIR         Pipeline output root (default: ram-agentic-architecture/output/)
---config PATH         config.json path
---llm-config PATH     llm_config.json path
---log-level           DEBUG | INFO | WARNING | ERROR (default: INFO)
-```
-
----
-
-## Partial Runs
-
-If you already have `RAM_Artifacts/` populated and only want to re-run the analysis:
-
-```bash
-# Re-run the full analysis pipeline (reads from RAM_Artifacts/ and INPUT/)
-cd RAM/
-python ram-agentic-architecture/scripts/run_pipeline.py \
-  --case-id my-case-001
-
-# With no LLM:
-python ram-agentic-architecture/scripts/run_pipeline.py \
-  --case-id my-case-001 \
-  --no-llm
-```
-
-If you also want to re-run the collector (to regenerate chunks from existing artifacts):
-
-```bash
-cd RAM/
-python -m ram-collector/collector \
-  --from-folder RAM_Artifacts/ \
-  --output-dir INPUT/ \
-  --force
-```
-
-Or to run the collector directly from a RAM image (this also populates the mandatory artifacts):
-
-```bash
-python full_pipeline.py --image dump.elf --vol-path /path/to/vol.py
-# ... the above is easier, but if you want collector-only:
-cd RAM/ram-collector
-python -m collector \
-  --image ../RAM_image/evil_windows.elf \
-  --output-dir ../INPUT/ \
-  --no-handles \
-  --force
-```
+Both modes cover all pivot-grep file lists. `full` adds deeper kernel, VAD, and full registry plugins.
 
 ---
 
@@ -207,16 +115,9 @@ All evidence citations trace back to exact line numbers in the original Volatili
 
 ---
 
-## Orchestrator Queries (entity_query.py)
+## Orchestrator Queries
 
-When the orchestrator sends an `EntityQuery` JSON to investigate a specific entity:
-
-```bash
-cd RAM/ram-agentic-architecture
-python scripts/entity_query.py \
-  --query /path/to/entity_query.json \
-  --out   /path/to/entity_findings.json
-```
+When the orchestrator pivots on an entity, it calls `RamModule.query()` with an `EntityQuery` and gets back an `EntityFindings` document.
 
 Supported entity types: `pid`, `image_name`, `file_path`, `ip`, `domain`, `url`, `registry_key`, `user_sid`, `mutex`. Returns `NOT_APPLICABLE` for `hash_*` (RAM carries no file hashes) and for `mutex` if `handles.txt` was not collected.
 
@@ -231,13 +132,13 @@ Edit `ram-agentic-architecture/llm_config.json`. The primary provider is Anthrop
 ```json
 {
   "provider": "anthropic",
-  "model": "claude-opus-4-6",
+  "model": "claude-sonnet-4-6",
   "api_key_env": "ANTHROPIC_API_KEY",
   "fallback_providers": [
     { "provider": "openrouter", "model": "anthropic/claude-opus-4", "api_key_env": "OPENROUTER_API_KEY" },
     { "provider": "openai-compatible", "model": "gemini-2.5-flash", "api_key_env": "GOOGLE_API_KEY" }
   ],
-  "temperature": 0.2,
+  "temperature": 0.15,
   "max_tokens": 30000,
   "max_retries": 5
 }
@@ -248,7 +149,7 @@ Edit `ram-agentic-architecture/llm_config.json`. The primary provider is Anthrop
 ## Running the Tests
 
 ```bash
-cd RAM/ram-agentic-architecture
+cd Modules/RAM/ram-agentic-architecture
 python -m pytest tests/ -v
 ```
 
@@ -259,31 +160,3 @@ All 56 tests run without an API key (`--no-llm` mode is used internally):
 | `test_scan_result_emitter.py` | TXT → JSON conversion (23 tests) |
 | `test_entity_query.py` | All entity type dispatch paths (20 tests) |
 | `test_pipeline_integration.py` | End-to-end pipeline with `--no-llm` (13 tests) |
-
----
-
-## Troubleshooting
-
-**`FileNotFoundError: Volatility 3 not found at …`**  
-Set `--vol-path /path/to/vol.py` or `export VOL3_PATH=/path/to/vol.py`.
-
-**`No chunks found in INPUT/`**  
-`INPUT/` is empty — run `full_pipeline.py` first, or populate it with the collector manually.
-
-**`scan_result.json` has 0 CONFIRMED with `--no-llm`**  
-Expected. Without an LLM, Agent 2 marks all findings INCONCLUSIVE. Add an API key and re-run without `--no-llm`.
-
-**Agent 2 marks everything INCONCLUSIVE (with LLM enabled)**  
-LLM call likely failed — check `llm_config.json` credentials and network. Re-running `run_pipeline.py` only re-runs the analysis without re-extracting.
-
-**`tiktoken not installed` warning**  
-The chunker falls back to character/4 estimation. Install `tiktoken` for accurate chunk boundaries: `pip install tiktoken`.
-
-**SSL errors**  
-Set `"verify_ssl": false` in `llm_config.json` for TLS-inspection proxy environments.
-
-**`handles.txt` / `getsids.txt` missing**  
-These are optional. `handles.txt` is skipped when `--no-handles` is used. If absent, mutex entity queries return `NOT_APPLICABLE`. Re-run with `--full` (no `--no-handles`) to collect them.
-
-**Many "orphan" warnings from the collector**  
-`34 root processes found — many orphans may indicate vol3_runner failed to collect all process base data`. This is normal for some dumps where PPID links are broken by DKOM. The collector handles it gracefully.
