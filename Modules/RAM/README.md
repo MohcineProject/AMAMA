@@ -44,7 +44,7 @@ modules:
 
 A `scan()` then runs end-to-end: extracts Volatility artifacts into `RAM_Artifacts/`, builds process chunks (`ram-collector/` — see its README), and runs the three-stage analysis — triage → pivot grep → analyst — before emitting `scan_result.json`.
 
-Omit `ram_image` to skip re-extraction: the module re-emits the previous run's analysis (`aggregated_analyst.txt`) — useful for fast iteration on an already-processed image.
+Omit `ram_image` to skip Volatility extraction and analyse the pre-collected artifacts already in `artifact_dir` (mirroring the disk module's `image_dir`). Add `reuse_analysis: true` to also skip the analysis and re-emit the previous run's `aggregated_analyst.txt` — a zero-cost re-run.
 
 ---
 
@@ -153,10 +153,10 @@ cd Modules/RAM/ram-agentic-architecture
 python -m pytest tests/ -v
 ```
 
-All 56 tests run without an API key (`--no-llm` mode is used internally):
+All 60 tests run without an API key (`--no-llm` mode is used internally):
 
 | Test file | What it covers |
 |---|---|
-| `test_scan_result_emitter.py` | TXT → JSON conversion (23 tests) |
+| `test_scan_result_emitter.py` | TXT → JSON conversion (27 tests) |
 | `test_entity_query.py` | All entity type dispatch paths (20 tests) |
 | `test_pipeline_integration.py` | End-to-end pipeline with `--no-llm` (13 tests) |

@@ -140,7 +140,7 @@ Per-module pipeline logs are written to `Modules/RAM/ram-agentic-architecture/ou
 - **Disk collector import errors under sudo** → you installed the disk deps for your user but not root; re-run step 3's `sudo pip … requirements.txt`.
 - **Disk auto-collect didn't run / `[scan] WARN: … falling back to existing artifacts`** → mount/collect is best-effort: on a `sudo -n` failure (no passwordless sudo) or a mount error it logs a WARN and falls back to whatever is already in `Disk_Artifacts/`. Fix passwordless sudo (or run `sudo -E python3 -m backbone run …`), and check `image_dir` points at the dir containing your disk image.
 - **Re-run disk without re-collecting** (faster iteration) → remove the `image_dir:` line from the disk kwargs; the disk module reuses the existing `Disk_Artifacts/`.
-- **Re-run RAM without re-extracting** (faster iteration) → remove the `ram_image:` line from the YAML; the RAM module reuses the existing analysis.
+- **Re-run RAM without re-extracting** (faster iteration) → remove the `ram_image:` line from the YAML; the RAM module re-analyses the existing `RAM_Artifacts/`. Add `reuse_analysis: true` to its kwargs to also skip the LLM analysis and reuse the previous verdicts.
 - **`HTTP 400 … reached your specified API usage limits`** → the Anthropic key is over budget; use a funded key.
 - **`HTTP 429` lines** → normal transient rate-limiting; the pipeline backs off and retries (RAM/disk also share a cross-process API lock so they don't hit the API simultaneously).
 - **Mount left over after a crash** → `sudo python3 Modules/Disk/disk-image-mounter/mount_image.py --umount`.
