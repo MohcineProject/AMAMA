@@ -294,7 +294,7 @@ def run_mandatory(
     results = run_plugin_group(image_path, Path(artifacts_dir), plugins, vol_path, workers, timeout)
     # Surface empty/failed mandatory artifacts so a silent evidence gap (e.g. an
     # empty netscan.txt that quietly yields no network pivot) is visible. (REMARKS #13)
-    _warn_empty_mandatory_artifacts(Path(artifacts_dir), plugins)
+    _warn_empty_artifacts(Path(artifacts_dir), plugins)
     return results
 
 
@@ -309,9 +309,11 @@ def run_fast_extended(
     """Run the 15 high-value fast-extended plugins (blocking, parallel)."""
     _validate(image_path, vol_path)
     log.info("[extractor] Fast-extended: %d plugins, workers=%d", len(FAST_EXTENDED_PLUGINS), workers)
-    return run_plugin_group(
+    results = run_plugin_group(
         image_path, Path(artifacts_dir), FAST_EXTENDED_PLUGINS, vol_path, workers, timeout
     )
+    _warn_empty_artifacts(Path(artifacts_dir), FAST_EXTENDED_PLUGINS)
+    return results
 
 
 def run_full_extended(
@@ -326,9 +328,11 @@ def run_full_extended(
     _validate(image_path, vol_path)
     all_extended = {**FAST_EXTENDED_PLUGINS, **FULL_EXTENDED_PLUGINS}
     log.info("[extractor] Full-extended: %d plugins, workers=%d", len(all_extended), workers)
-    return run_plugin_group(
+    results = run_plugin_group(
         image_path, Path(artifacts_dir), all_extended, vol_path, workers, timeout
     )
+    _warn_empty_artifacts(Path(artifacts_dir), all_extended)
+    return results
 
 
 # ---------------------------------------------------------------------------
@@ -352,10 +356,10 @@ def _count_data_rows(text: str) -> int:
     return len(non_empty) - 1
 
 
-def _warn_empty_mandatory_artifacts(artifacts_dir: Path, plugins: dict[str, str]) -> None:
-    """Log a named WARN for any mandatory artifact that is missing, failed, or
-    contains 0 data rows — so a downstream pivot against it does not silently
-    find nothing. (REMARKS #13)
+def _warn_empty_artifacts(artifacts_dir: Path, plugins: dict[str, str]) -> None:
+    """Log a named WARN for any artifact that is missing, failed, or contains 0 data
+    rows — so a downstream pivot against it does not silently find nothing.
+    Runs for every plugin tier (mandatory, fast-extended, full-extended). (REMARKS #13)
     """
     for filename in plugins.values():
         path = artifacts_dir / filename

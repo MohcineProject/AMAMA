@@ -28,6 +28,16 @@ _MODULES_DIR = _MODULE_DIR.parent  # Modules/
 _PROJECT_DIR = _MODULES_DIR.parent # project root
 _SCHEMA_DIR = _PROJECT_DIR / "Backbone" / "schemas"
 
+# Shared entity-type normaliser (one source of truth — summary #11). Import it
+# robustly; fall back to a no-op if the Backbone package is unavailable so the
+# emitter never breaks on an import error.
+sys.path.insert(0, str(_PROJECT_DIR / "Backbone"))
+try:
+    from backbone.contracts.normalize import normalize_entity_type as _normalize_entity_type
+except Exception:  # pragma: no cover - defensive
+    def _normalize_entity_type(value: str, declared: Optional[str] = None) -> str:
+        return declared if declared is not None else "image_name"
+
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -160,10 +170,16 @@ def _extract_related_entities(block: Dict[str, Any]) -> List[Dict[str, str]]:
     seen = set()
 
     def add(etype: str, value: str, relationship: str) -> None:
-        key = (etype, value.strip())
-        if key not in seen and value.strip():
+        v = value.strip()
+        if not v:
+            return
+        # Correct the heuristic type from the value's shape (summary #11) so a
+        # mislabelled related entity never enters the graph/report.
+        etype = _normalize_entity_type(v, etype)
+        key = (etype, v)
+        if key not in seen:
             seen.add(key)
-            entities.append({"type": etype, "value": value.strip(),
+            entities.append({"type": etype, "value": v,
                              "relationship": relationship})
 
     if block.get("image"):

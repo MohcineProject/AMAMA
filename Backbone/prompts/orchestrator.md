@@ -40,11 +40,19 @@ Do not wrap the array in any enclosing object. Do not emit markdown fences (no `
 
 ## Rules
 
-- Only route an entity to a module whose `available_modules` list includes that entity's `type`
-  (e.g. a `pid` goes to `ram`, a `file_path`/`hash_*` to `disk`, an `ip`/`url`/`hash_*`/`domain`
-  to `ti`).
+- **Route by the declared `type` field only.** Decide routing from each candidate's `type` — never
+  re-interpret the type from the appearance of its `value`. A `file_path` whose value happens to
+  resemble an IP (e.g. `172.16.5.26 (...)`) is still a `file_path` and must be routed as one.
+- **Hard type filter — never violate it.** Only route an entity to a module whose
+  `available_modules` list includes that entity's `type`. A `pid` is **not** an IOC: never send a
+  `pid` (or `image_name`, `registry_key`, `mutex`, `user_sid`, `file_path`) to `ti`. Routing an
+  entity to a module that does not support its type is wasted effort and will be dropped.
+- **Exhaustive IOC enrichment.** Treat every `ip`, `url`, `domain`, `hash_md5`, `hash_sha1`, and
+  `hash_sha256` candidate as an indicator of compromise: if `ti` supports that type and `ti` is
+  **not** already in the entity's `queried_modules`, you **must** emit a query routing it to `ti`.
+  Do not skip any IOC — incomplete IOC coverage is a failure.
 - Never re-query a module already present in that entity's `queried_modules`.
 - Do not invent entities — every `entity` you emit must come from the `candidates` list.
-- Prefer the module that handles each entity type best, and prefer cross-module pivots that can
-  corroborate or refute an `INCONCLUSIVE` verdict.
+- Prefer cross-module pivots that can corroborate or refute an `INCONCLUSIVE` verdict (e.g. a
+  `file_path`/`hash_*` from `ram` confirmed against `disk`).
 - Keep each `reason` to a single concise sentence for the audit trail.

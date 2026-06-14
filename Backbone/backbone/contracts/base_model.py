@@ -5,12 +5,28 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import ClassVar
 
+from backbone.contracts.normalize import normalize_entity
 from backbone.contracts.types import EntityFindings, EntityQuery, ModuleScanResult
 from backbone.contracts.validate import (
     load_schema,
     validate_findings,
     validate_scan_result,
 )
+
+
+def _normalize_findings_entity_types(findings: EntityFindings) -> None:
+    """Correct shape/type mismatches on the primary + related entities (summary #11).
+
+    Defense-in-depth choke point for the query path: even if a module emits an
+    in-enum-but-wrong type, it is normalised (and logged) before it reaches the graph.
+    """
+    primary = findings.get("entity")
+    if isinstance(primary, dict):
+        normalize_entity(primary)
+    related = findings.get("related_entities")
+    if isinstance(related, list):
+        for rel in related:
+            normalize_entity(rel)
 
 
 def _drop_invalid_related_entities(findings: EntityFindings) -> None:
@@ -78,6 +94,7 @@ class BaseForensicModule(ABC):
         return result
 
     def validate_findings(self, findings: EntityFindings) -> EntityFindings:
+        _normalize_findings_entity_types(findings)
         _drop_invalid_related_entities(findings)
         validate_findings(findings)
         return findings

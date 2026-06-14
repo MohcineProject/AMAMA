@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
@@ -16,6 +18,13 @@ from backbone.contracts.base_model import BaseForensicModule
 from backbone.orchestrator.agent import OrchestratorAgent
 from backbone.registry import load_modules
 from backbone.report import ReportAgent
+
+# IOC types that are deterministically routed to ThreatIntel for enrichment even
+# once CONFIRMED — so the report can carry VT threat score, geolocation, domain
+# age, etc. (the orchestrator LLM never routes CONFIRMED entities).
+_ENRICHABLE_IOC_TYPES = frozenset(
+    {"ip", "domain", "hash_md5", "hash_sha1", "hash_sha256"}
+)
 
 
 @dataclass
@@ -83,6 +92,16 @@ class InvestigationLoop:
             entity = decision.get("entity", {})
             if (entity.get("type"), entity.get("value")) not in self.graph.nodes:
                 continue  # LLM invented an entity not in the graph — skip
+            # Deterministic type guard (summary #3): drop a query the target module
+            # can't answer (e.g. a pid routed to `ti`) instead of paying for a
+            # NOT_APPLICABLE round-trip. The module advertises supported_entity_types.
+            if not self.modules[mid].supports_entity_type(entity.get("type", "")):
+                print(
+                    f"[backbone] skip: {mid} does not support entity type "
+                    f"{entity.get('type')!r} — query dropped",
+                    flush=True,
+                )
+                continue
             query = {
                 "contract_version": "1.0",
                 "query_id": str(uuid4()),
@@ -112,6 +131,79 @@ class InvestigationLoop:
 
         return len(self.graph.nodes) - entities_before
 
+    def _confirmed_ioc_enrichment_decisions(self) -> list[dict[str, Any]]:
+        """Build TI-enrichment queries for CONFIRMED ip/domain/hash entities.
+
+        The orchestrator LLM only routes still-open (INCONCLUSIVE/NOT_FOUND) entities,
+        so a CONFIRMED IOC never reaches `ti`. This deterministic pass routes every
+        CONFIRMED `ip`/`domain`/`hash_*` entity to `ti` (when supported and not already
+        queried) purely to enrich the report with threat-intel context — it does not
+        re-adjudicate the verdict.
+        """
+        ti = self.modules.get("ti")
+        if ti is None:
+            return []
+        decisions: list[dict[str, Any]] = []
+        for node in self.graph.nodes.values():
+            if node.type not in _ENRICHABLE_IOC_TYPES:
+                continue
+            if "ti" in node.queried_modules:
+                continue
+            if not ti.supports_entity_type(node.type):
+                continue
+            if "CONFIRMED" not in {f.get("verdict") for f in node.findings}:
+                continue
+            decisions.append(
+                {
+                    "action": "query",
+                    "target_module": "ti",
+                    "entity": {"type": node.type, "value": node.value},
+                    "reason": "enrich confirmed IOC with threat-intel context",
+                }
+            )
+        return decisions
+
+    def _provenance(self) -> dict[str, Any]:
+        """Model + prompt-hash provenance so a run can be reproduced/audited (summary #7)."""
+        def _hash(text: str) -> str:
+            return "sha256:" + hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+        return {
+            "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "orchestrator": {
+                "model": self.orchestrator.model,
+                "prompt_sha256": _hash(self.orchestrator.system_prompt),
+            },
+            "report": {
+                "model": self.report_agent.model,
+                "prompt_sha256": _hash(self.report_agent.system_prompt),
+            },
+        }
+
+    def _cost(self) -> dict[str, Any]:
+        """Aggregate token/call usage across modules, orchestrator and report (summary #7)."""
+        modules = self.graph.aggregate_module_cost()
+        orchestrator = dict(self.orchestrator.usage)
+        report = dict(self.report_agent.usage)
+        keys = ("llm_calls", "tokens_in", "tokens_out")
+        total = {k: modules[k] + orchestrator[k] + report[k] for k in keys}
+        return {
+            "modules": modules,
+            "orchestrator": orchestrator,
+            "report": report,
+            "total": total,
+        }
+
+    def _write_case_state(self, output_dir: Path) -> None:
+        """Persist case_state.json with provenance + cost folded in (summary #7)."""
+        state = self.graph.to_dict()
+        state["provenance"] = self._provenance()
+        state["cost"] = self._cost()
+        (output_dir / "case_state.json").write_text(
+            json.dumps(state, indent=2, default=list),
+            encoding="utf-8",
+        )
+
     def run(self) -> CaseGraph:
         """
         Full investigation pipeline:
@@ -126,6 +218,21 @@ class InvestigationLoop:
         output_dir.mkdir(parents=True, exist_ok=True)
 
         asyncio.run(self.run_initial_scans())
+
+        # Deterministic enrichment: pull TI context for CONFIRMED IOCs before the
+        # routing rounds so the report carries threat score / geolocation / domain
+        # age, and any new related entities are still available for LLM pivots.
+        enrichment = self._confirmed_ioc_enrichment_decisions()
+        if enrichment:
+            added = asyncio.run(self._dispatch_round(enrichment, round_num=0))
+            self.graph.rounds.append(
+                {
+                    "round": 0,
+                    "phase": "confirmed_ioc_enrichment",
+                    "queries_dispatched": len(enrichment),
+                    "new_entities_added": added,
+                }
+            )
 
         try:
             for round_num in range(1, max_rounds + 1):
@@ -148,15 +255,14 @@ class InvestigationLoop:
                 self.graph.termination_reason = "max_rounds_reached"
         finally:
             # Always persist the graph — even if a routing round raised — so a
-            # crash after a long scan phase never discards the scan results.
-            state_path = output_dir / "case_state.json"
-            state_path.write_text(
-                json.dumps(self.graph.to_dict(), indent=2, default=list),
-                encoding="utf-8",
-            )
+            # crash after a long scan phase never discards the scan results. This
+            # baseline write captures module + orchestrator cost (report runs next).
+            self._write_case_state(output_dir)
 
         report_path = output_dir / "incident_report.md"
         self.report_agent.build(self.graph, report_path)
+        # Authoritative re-write now that report usage is known (summary #7).
+        self._write_case_state(output_dir)
 
         module_ids = list(self.modules.keys())
         entity_count = self.graph.summary_for_agent()["entity_count"]

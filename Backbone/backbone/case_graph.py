@@ -125,6 +125,22 @@ class CaseGraph:
             "hot_entities": hot[:limit],
         }
 
+    def aggregate_module_cost(self) -> dict[str, int]:
+        """Sum the ``cost`` blocks present on module query findings (summary #7).
+
+        Each EntityFindings carries a ``cost`` dict (llm_calls / tokens_in / tokens_out);
+        Disk populates real token counts via get_last_usage(), RAM currently emits zeros.
+        Scan-phase findings have no cost block and contribute nothing.
+        """
+        total = {"llm_calls": 0, "tokens_in": 0, "tokens_out": 0}
+        for node in self.nodes.values():
+            for f in node.findings:
+                cost = f.get("cost")
+                if isinstance(cost, dict):
+                    for k in total:
+                        total[k] += int(cost.get(k, 0) or 0)
+        return total
+
     def to_dict(self) -> dict[str, Any]:
         return {
             "case_id": self.case_id,

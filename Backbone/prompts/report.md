@@ -11,6 +11,14 @@ A single JSON object representing the fully-investigated case graph. Its fields 
 - `case_id` — unique identifier for this investigation
 - `termination_reason` — `"convergence"` (loop closed naturally) or `"max_rounds_reached"`
 - `modules_scanned` — list of forensic module IDs that ran
+- `summary` — **authoritative, pre-computed counts. Use these numbers verbatim; never recount,
+  re-derive, or estimate any total yourself.** Fields:
+  - `modules_scanned_count` — how many modules ran (this is the only correct module count; do not
+    state any other number)
+  - `total_reportable_entities` — entities with a CONFIRMED or INCONCLUSIVE finding
+  - `confirmed_entities` — entities with at least one CONFIRMED finding
+  - `inconclusive_entities` — entities that are only INCONCLUSIVE
+  - `confirmed_severity_breakdown` — counts of CONFIRMED findings per severity tier
 - `entities[]` — entities with at least one CONFIRMED or INCONCLUSIVE finding; each contains:
   - `type` — entity type (e.g. `file_path`, `pid`, `ip`, `hash_sha256`)
   - `value` — entity value verbatim
@@ -18,13 +26,23 @@ A single JSON object representing the fully-investigated case graph. Its fields 
   - `queried_modules[]` — all modules that investigated it
   - `findings[]` — one entry per module verdict; each contains:
     - `module` — the module that produced this finding
-    - `verdict` — `CONFIRMED` or `INCONCLUSIVE`
-    - `severity` — `LOW` / `MEDIUM` / `HIGH` / `CRITICAL` (null if INCONCLUSIVE)
+    - `verdict` — `CONFIRMED` or `INCONCLUSIVE` (or, for `ti` enrichment findings only, `NOT_FOUND`)
+    - `severity` — `LOW` / `MEDIUM` / `HIGH` / `CRITICAL` (null if not CONFIRMED)
     - `justification` — the module LLM's reasoning for the verdict
     - `mitre[]` — MITRE ATT&CK technique IDs (may be empty)
     - `evidence[]` — verbatim lines from forensic artefacts: `source_file`, `content`
 
-Only CONFIRMED and INCONCLUSIVE findings appear in the input. REJECTED and NOT_FOUND results are filtered out upstream.
+Findings come from forensic modules (`ram`, `disk`) and from the threat-intel module (`ti`).
+Only CONFIRMED and INCONCLUSIVE findings from forensic modules appear; REJECTED results are
+filtered out upstream.
+
+**ThreatIntel (`ti`) enrichment findings** attached to a reportable IOC may carry a `NOT_FOUND`
+verdict (VirusTotal had no malicious detections) yet still contain valuable context in their
+`evidence` (`source_file: "virustotal"`): detection ratio / threat score, threat label,
+geolocation (`country`, `AS`, `ASN`), registrar and domain creation date, sandbox verdicts. Treat a
+`ti` `NOT_FOUND` as "not flagged malicious by VT" — **not** as exoneration of a verdict another
+module already CONFIRMED. Fold any useful VT context into the Detailed Investigation Notes and the
+Indicators of Compromise table (e.g. annotate a confirmed IP with its country/ASN and VT score).
 
 ## Output
 
@@ -34,10 +52,12 @@ A single Markdown document with exactly **5 sections** in the order below. Under
 
 ### 1. Executive Summary
 
-2–3 sentences for management:
-- **Severity headline** — the highest `CONFIRMED` severity tier present (or state that all findings are inconclusive).
-- **Scope** — number of confirmed entities; whether activity spans one or multiple modules.
-- **Confidence** — approximate ratio of CONFIRMED vs INCONCLUSIVE findings.
+2–3 sentences for management. Take every count from the `summary` block verbatim:
+- **Severity headline** — the highest tier with a non-zero count in `confirmed_severity_breakdown`
+  (or state that all findings are inconclusive when `confirmed_entities` is 0).
+- **Scope** — `confirmed_entities` confirmed of `total_reportable_entities` total; investigated by
+  `modules_scanned_count` modules (`modules_scanned`). Do not state any other module count.
+- **Confidence** — the ratio of `confirmed_entities` to `inconclusive_entities`.
 
 ---
 

@@ -39,6 +39,15 @@ _MODULES_DIR = _DISK_DIR.parent
 _PROJECT_DIR = _MODULES_DIR.parent
 SCHEMA_DIR   = _PROJECT_DIR / "Backbone" / "schemas"
 
+# Deterministic entity-type normaliser lives in the Backbone package (one source
+# of truth — summary #11). Import it robustly; fall back to local inference if the
+# package is unavailable so the scan never breaks on an import error.
+sys.path.insert(0, str(_PROJECT_DIR / "Backbone"))
+try:
+    from backbone.contracts.normalize import normalize_entity_type as _normalize_entity_type
+except Exception:  # pragma: no cover - defensive
+    _normalize_entity_type = None
+
 # Mounter/collector live under Modules/Disk/ (a.k.a. _DISK_DIR). The MOUNT
 # config.json written by mount_image.py is a DIFFERENT file from the analysis
 # config.json inside disk-agentic-architecture/ — do not conflate the two.
@@ -69,7 +78,15 @@ def _now_iso() -> str:
 
 
 def _infer_entity_type(key: str) -> str:
-    """Infer entity.type from the finding's Key field."""
+    """Infer entity.type from the finding's Key field.
+
+    Delegates to the shared Backbone normaliser (summary #11) so the type is
+    derived from the value's shape with the correct rule ordering (e.g. a bare
+    ``SDELETE.EXE`` resolves to image_name, not domain). Falls back to the legacy
+    local inference if the package could not be imported.
+    """
+    if _normalize_entity_type is not None:
+        return _normalize_entity_type(key.strip())
     k = key.strip()
     if _ENTITY_TYPE_REGISTRY.match(k):
         return "registry_key"

@@ -23,6 +23,16 @@ class OrchestratorAgent:
 
     def __init__(self) -> None:
         self._client = anthropic.Anthropic()
+        # Reproducibility provenance + running cost (summary #7).
+        self.model = _MODEL
+        self.system_prompt = _SYSTEM_PROMPT
+        self.usage = {"llm_calls": 0, "tokens_in": 0, "tokens_out": 0}
+
+    def _record_usage(self, response: Any) -> None:
+        usage = getattr(response, "usage", None)
+        self.usage["llm_calls"] += 1
+        self.usage["tokens_in"] += int(getattr(usage, "input_tokens", 0) or 0)
+        self.usage["tokens_out"] += int(getattr(usage, "output_tokens", 0) or 0)
 
     def review(
         self,
@@ -57,6 +67,7 @@ class OrchestratorAgent:
             system=_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": user_msg}],
         )
+        self._record_usage(response)
         text = re.sub(r"^```(?:json)?\s*|\s*```$", "", response.content[0].text.strip())
         if not text.strip():
             return []
