@@ -16,6 +16,25 @@ AMAMA/
 
 Each part has its own README. `Modules/README.md` explains the module contract and how to plug in a new module — any module declared in the orchestrator config is fully integrated automatically.
 
+## Documentation map
+
+Every part of the repo documents itself; this is the index.
+
+| Doc | What it covers |
+|---|---|
+| [`Architecture.pdf`](Architecture.pdf) | High-level system diagram (single-page overview) |
+| [`Backbone/README.md`](Backbone/README.md) | Orchestrator / Threat-Intel / Report layer — what lives where |
+| [`Backbone/ARCHITECTURE.md`](Backbone/ARCHITECTURE.md) | Full orchestration flow, design rationale, contracts, case graph, file/class map |
+| [`Modules/README.md`](Modules/README.md) | The module contract and how to plug in a new module |
+| [`Modules/RAM/README.md`](Modules/RAM/README.md) | RAM module user guide (Volatility 3 pipeline) |
+| [`Modules/RAM/Architecture.md`](Modules/RAM/Architecture.md) | RAM module internals: extraction → collection → analysis |
+| [`Modules/RAM/ram-collector/README.md`](Modules/RAM/ram-collector/README.md) | The artifact-to-chunk collector |
+| [`Modules/Disk/README.md`](Modules/Disk/README.md) | Disk module user guide (mount → collect → agentic pipeline) |
+| [`Modules/Disk/Architecture.md`](Modules/Disk/Architecture.md) | Disk module internals: the three layers + entry points |
+| [`auditing/README.md`](auditing/README.md) | Audit-tree layout, record schemas, worked examples |
+| [`frontend/README.md`](frontend/README.md) | React + TypeScript UI |
+| [`backend_dummy/README.md`](backend_dummy/README.md) | FastAPI mock backend for frontend development |
+
 ---
 
 ## Getting started — fresh clone → incident report

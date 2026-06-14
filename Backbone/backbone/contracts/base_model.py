@@ -1,4 +1,4 @@
-"""Base class every forensic module under ../models/ must inherit."""
+"""Base class every forensic module under ../Modules/ must inherit."""
 
 from __future__ import annotations
 

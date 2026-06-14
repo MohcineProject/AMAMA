@@ -2,7 +2,7 @@
 
 How the orchestration layer works, step by step, with links to the code for each part.
 
-For how to build a pluggable model see [`../models/README.md`](../models/README.md).
+For how to build a pluggable module see [`../Modules/README.md`](../Modules/README.md).
 
 ---
 
@@ -24,6 +24,32 @@ For how to build a pluggable model see [`../models/README.md`](../models/README.
 ```
 
 **Batch model:** each module finishes its full scan before the orchestrator reviews all results. Follow-up pivots use `EntityQuery` → `EntityFindings` in later loop rounds.
+
+---
+
+## Design rationale
+
+**Threat Intel is a separate peer, not part of the orchestrator.** The orchestrator owns
+routing and loop control — deciding which entity to ask which module about next, tracking
+which entities have been seen, and terminating the loop. Threat Intel owns the external
+IOC side: wrapping providers (VirusTotal, etc.) behind a uniform interface, normalizing
+their responses into the same `EntityFindings` shape the modules emit (so a VT lookup is
+structurally identical to a RAM/disk response), and caching lookups within a case. Keeping
+that weight out of the orchestrator keeps the routing logic easy to reason about and lets
+TI be mocked in orchestrator tests.
+
+**Responsibility matrix:**
+
+| Concern | Owner |
+|---|---|
+| Run forensic tools / read artifact files | The respective module |
+| Interpret evidence for a specific entity | The respective module (scoped LLM) |
+| Decide which module to query next, track seen entities, terminate the loop | Orchestrator |
+| Query external IOC providers + cache within a case | Threat Intel |
+| Write the final incident report | Orchestrator |
+
+Modules never talk to each other or know other modules exist — everything goes through the
+orchestrator. The orchestrator never reads artifact files or calls external APIs directly.
 
 ---
 
@@ -136,7 +162,7 @@ modules:
 
 ### 3b — Inside each forensic module
 
-Each model under [`../models/`](../models/) **must inherit** [`BaseForensicModule`](backbone/contracts/base_model.py):
+Each module under [`../Modules/`](../Modules/) **must inherit** [`BaseForensicModule`](backbone/contracts/base_model.py):
 
 | Method | Returns | Schema |
 |--------|---------|--------|
@@ -149,7 +175,7 @@ Each model under [`../models/`](../models/) **must inherit** [`BaseForensicModul
 Collector → Triage Agent → Pivot Agent → scan() bundles ScanFinding[]
 ```
 
-Reference disk implementation: [`../models/Disk/`](../models/Disk/).
+Reference disk implementation: [`../Modules/Disk/`](../Modules/Disk/).
 
 **Test stub:**
 

@@ -46,7 +46,6 @@ RAM/
     ├── ram_module.py             ← Backbone entry point (BaseForensicModule: scan()/query())
     ├── config.json               ← grep file lists, keyword lists, evidence caps
     ├── llm_config.json           ← provider + model + fallback chain
-    ├── ARCHITECTURE.md           ← flowchart view of the agentic pipeline
     ├── run_test.py               ← quick smoke-test runner
     ├── scripts/
     │   ├── run_pipeline.py       ← post-extraction pipeline runner
