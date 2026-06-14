@@ -10,8 +10,6 @@ AMAMA/
   Modules/
     RAM/            memory forensics module (Volatility 3)
     Disk/           disk forensics module (mount, MFT, registry, event logs, …)
-  frontend/         React + TypeScript UI (Vite + Tailwind + shadcn/ui)
-  backend_dummy/    FastAPI mock backend for frontend development
 ```
 
 Each part has its own README. `Modules/README.md` explains the module contract and how to plug in a new module — any module declared in the orchestrator config is fully integrated automatically.
@@ -32,8 +30,6 @@ Every part of the repo documents itself; this is the index.
 | [`Modules/Disk/README.md`](Modules/Disk/README.md) | Disk module user guide (mount → collect → agentic pipeline) |
 | [`Modules/Disk/Architecture.md`](Modules/Disk/Architecture.md) | Disk module internals: the three layers + entry points |
 | [`auditing/README.md`](auditing/README.md) | Audit-tree layout, record schemas, worked examples |
-| [`frontend/README.md`](frontend/README.md) | React + TypeScript UI |
-| [`backend_dummy/README.md`](backend_dummy/README.md) | FastAPI mock backend for frontend development |
 
 ---
 
@@ -163,27 +159,6 @@ Per-module pipeline logs are written to `Modules/RAM/ram-agentic-architecture/ou
 - **`HTTP 400 … reached your specified API usage limits`** → the Anthropic key is over budget; use a funded key.
 - **`HTTP 429` lines** → normal transient rate-limiting; the pipeline backs off and retries (RAM/disk also share a cross-process API lock so they don't hit the API simultaneously).
 - **Mount left over after a crash** → `sudo python3 Modules/Disk/disk-image-mounter/mount_image.py --umount`.
-
----
-
-## Frontend (dev preview)
-
-The UI currently runs against the mock backend while the real pipeline is being wired in. Two terminals:
-
-```bash
-# Terminal 1 — mock backend
-cd backend_dummy
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
-
-# Terminal 2 — frontend
-cd frontend
-npm install
-npm run dev   # http://localhost:5173
-```
-
-Vite proxies `/api/*` and `/health` to <http://localhost:8000>, so the frontend connects to the backend with no extra config. See `frontend/README.md` and `backend_dummy/README.md` for details.
 
 ---
 

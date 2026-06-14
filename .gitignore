@@ -8,32 +8,12 @@ desktop.ini
 .idea/
 *.iml
 
-# ---------- Node / Frontend ----------
-node_modules/
-dist/
-dist-ssr/
-build/
-.vite/
-*.local
-.eslintcache
-.parcel-cache/
-.next/
-.turbo/
-*.tsbuildinfo
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
 # Env
 .env
 .env.local
 .env.*.local
 
-# ---------- Python / Backend ----------
+# ---------- Python ----------
 __pycache__/
 *.py[cod]
 *$py.class
