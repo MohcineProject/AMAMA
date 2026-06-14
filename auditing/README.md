@@ -28,8 +28,10 @@ auditing/
         ├── backbone/
         │   ├── orchestrator_calls.jsonl   ← one record per orchestrator LLM call
         │   ├── report_call.jsonl          ← one record for the report LLM call
+        │   ├── traceability.json          ← finding → tool-execution index (see Traceability)
         │   ├── case_state.json            ← copy of the final case graph
-        │   └── incident_report.md         ← copy of the generated report
+        │   └── incident_report.md         ← copy of the generated report (ends with the
+        │                                     same index as § 7 "Evidence Traceability Index")
         │
         ├── threat_intel/
         │   └── queries.jsonl              ← one record per VirusTotal lookup
@@ -211,10 +213,115 @@ Reading the trace: round 0 enriched all 8 confirmed IOCs via VirusTotal; with th
 
 ## Traceability
 
-To trace a finding in `incident_report.md` back to its source:
+> **Goal of this section:** let *anyone* — including someone who has never seen this repo — take any
+> claim in the incident report and find the exact agent/tool execution that produced it, with no
+> guesswork. If you only read one section, read this one.
 
-1. Find the entity value in `backbone/case_state.json` → note its `query_id`
-2. `grep <query_id>` in the relevant `agent_calls.jsonl` → get `input_files`
-3. The `input_files` paths resolve directly within the audit folder
+### The three IDs you need to know
 
-Provenance fields in `run_summary.json` (model IDs + SHA-256 of each system prompt) pin down exactly which agent configuration produced the run.
+Everything hangs off three identifiers. You don't need to understand the pipeline to use them:
+
+| ID | What it is | Where it lives |
+|---|---|---|
+| `finding_id` | A label for one conclusion a forensic module reached, e.g. `disk-scan-f001`, `ram-chunk_041-f001`. | module `scan_result.json` and the index |
+| `query_id` | A label for one external lookup the system requested (e.g. a VirusTotal check). | `threat_intel/queries.jsonl` and the index |
+| `call_id` | A label for **one actual execution of an agent/tool** — the thing you ultimately want to land on. Every line in a `*_calls.jsonl` / `queries.jsonl` log has one. | every JSONL call log |
+
+The report cites findings by **entity** (a `type` + `value`, e.g. `ip: 52.249.198.56`). The
+**traceability index** turns that entity into the IDs above, and the IDs lead you to the log line for
+the exact execution.
+
+### The one file that ties it together: `backbone/traceability.json`
+
+`traceability.json` is generated **by code, never by the language model**, directly from the logs in
+this run — so it cannot hallucinate. The same content is also printed at the bottom of
+`incident_report.md` as **§ 7 "Evidence Traceability Index"**, so you can trace either from the
+human-readable report or from the JSON. It is organised by entity (`"type:value"`), the *exact*
+string the report uses, so the lookup is a plain text match.
+
+Each finding entry contains:
+
+```jsonc
+"ip:52.249.198.56": {
+  "type": "ip", "value": "52.249.198.56",
+  "findings": [{
+    "finding_id": "disk-scan-f012",          // the conclusion's label
+    "module": "disk", "verdict": "CONFIRMED", "severity": "CRITICAL",
+    "evidence": [                            // the raw forensic lines the module quoted
+      { "source_file": "eventlog_security.txt", "line": 19, "content": "type=event id=4672 …" },
+      …                                       // EVERY evidence line is here, with full content
+    ],
+    "produced_by": {                         // the tool execution that produced this finding
+      "agent_name": "disk/pivot_analyst",
+      "call_ids": ["57183b3d-…", "bb0cae37-…"],   // grep these in the log below
+      "artifact": "disk/04_analyst/analyst.txt",
+      "log_file": "disk/agent_calls.jsonl"
+    }
+  }]
+}
+```
+
+### Trace any finding in three steps
+
+1. **Pick a claim** in `incident_report.md` and note the entity it is about — e.g. the report says
+   `**pid**: 17316 (svchost.exe) — ram → CONFIRMED (HIGH): … process hollowing …`. The entity is
+   `pid:17316`.
+2. **Look that entity up** in `backbone/traceability.json` (or find the matching row in the report's
+   § 7 table). Read off its `finding_id`/`query_id`, its `evidence` (`source_file:line`), and the
+   `call_id` under `produced_by`.
+3. **Open the execution.** `grep` that `call_id` in the `log_file` named in `produced_by`. That JSON
+   line is the agent call itself, with its `timestamp`, token usage, and the `input_files` it read
+   and `output_files` it wrote — all paths relative to this run folder, so you can open them directly.
+
+Concretely, for `pid:17316` (copy-paste from the run folder):
+
+```bash
+# step 2 → step 3: from the entity to the exact execution
+grep 572ed567-a9a5-4a21-9ec1-2aabc8b83d44 ram/agent_calls.jsonl
+# → {"call_id":"572ed567-…","agent_name":"ram/pivot_analyst",
+#    "output_files":["02_per_chunk_analysis/chunk_041/analyst.txt"],
+#    "timestamp":"2026-06-13T14:05:59Z","tokens_in":5139, …}
+
+cat ram/02_per_chunk_analysis/chunk_041/analyst.txt   # the agent's actual reasoning/output
+```
+
+That is the full chain: **report claim → entity → finding_id → call_id → the agent execution and the
+files it read/wrote.** No repo knowledge required.
+
+### Two things that often trip people up
+
+- **"(+N more)" in the report's § 7 table is display-only.** To keep the table readable, the evidence
+  column shows the first `source_file:line` and a count of the rest. **The complete list — every
+  evidence line *with its verbatim content* — is in `backbone/traceability.json`** under that
+  finding's `evidence` array. Nothing is truncated there.
+- **Disk findings list a set of `call_ids`, not one.** That is intentional and honest: the disk
+  analyst stage writes a single shared `04_analyst/analyst.txt` across several chunked calls, so a
+  disk finding cannot be pinned to one line without inventing a link. The index gives you the exact
+  candidate set (all of them produced that one `analyst.txt`). RAM and threat-intel findings resolve
+  **1:1** to a single `call_id`.
+
+### How the index resolves each finding to a `call_id` (reference)
+
+- **RAM** — the `finding_id` embeds the chunk (`ram-chunk_041-f001` → `chunk_041`); the producing
+  call is the single `ram/pivot_analyst` record whose `output_files` ends with
+  `02_per_chunk_analysis/chunk_041/analyst.txt`.
+- **ThreatIntel** — the enrichment carries a `query_id` matching exactly one
+  `threat_intel/queries.jsonl` record (the VirusTotal lookup *is* the execution).
+- **Disk** — resolves to the candidate call set of `disk/pivot_analyst` calls writing
+  `04_analyst/analyst.txt` (see note above).
+
+### Regenerating / verifying the index yourself
+
+The index is written automatically at the end of every run. To (re)build it for any existing audit
+folder — including this committed example — run:
+
+```bash
+cd Backbone && python -m backbone.report.traceability <audit_dir>
+```
+
+This (re)writes `backbone/traceability.json` and refreshes § 7 of `incident_report.md`. It only
+*reads* the call logs and scan results, so it is safe to re-run.
+
+Finally, the `provenance` fields in `run_summary.json` (model IDs + SHA-256 of each agent's system
+prompt) pin down exactly which agent configuration produced the run, so the whole report is
+reproducible, not just traceable.

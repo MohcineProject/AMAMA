@@ -309,6 +309,18 @@ class InvestigationLoop:
         try:
             bb_dir = audit_dir / "backbone"
 
+            # Deterministic finding -> tool-execution traceability (no LLM): build the
+            # index from the audit artifacts now present, write traceability.json, and
+            # append Section 7 to the report *before* it is copied so the audit copy
+            # carries it. Best-effort — never let this break a completed run.
+            try:
+                from backbone.report.traceability import append_section, write_index
+
+                section_md = write_index(audit_dir)
+                append_section(output_dir / "incident_report.md", section_md)
+            except Exception:
+                pass
+
             for fname in ("case_state.json", "incident_report.md"):
                 src = output_dir / fname
                 if src.exists():
@@ -372,6 +384,7 @@ class InvestigationLoop:
                 "audit_files": {
                     "backbone_orchestrator": "backbone/orchestrator_calls.jsonl",
                     "backbone_report": "backbone/report_call.jsonl",
+                    "backbone_traceability": "backbone/traceability.json",
                     "threat_intel_queries": "threat_intel/queries.jsonl",
                     "ram_agent_calls": "ram/agent_calls.jsonl",
                     "disk_agent_calls": "disk/agent_calls.jsonl",
