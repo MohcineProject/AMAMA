@@ -1,6 +1,8 @@
 # AMAMA — Multi-Agent DFIR Triage
 
-AMAMA takes a raw **memory image** and a raw **disk image** and produces an evidence-traceable `incident_report.md`. Two forensic modules — **RAM** (Volatility 3) and **Disk** (image mount + Windows artifact collection) — each run a deterministic-extraction + LLM-agent pipeline. The **Backbone orchestrator** runs them in parallel, enriches confirmed IOCs via **VirusTotal**, routes follow-up entity queries between modules, and writes the final report. Deterministic scripts sandwich the reasoning agents, keeping token usage low and every claim traceable to verbatim artifact evidence.
+AMAMA is designed as a **modular DFIR workbench**: the Backbone orchestrator coordinates the investigation, and forensic capabilities plug into it as modules. A module only needs to expose a small contract (`scan`, `query`) and be listed in `Backbone/config/orchestrator.yaml`; Backbone then knows how to run it, add its findings to a case graph, and ask follow-up questions, either to the same module or to another one for cross-module investigation. Today, the built-in modules are **RAM**, **Disk**, and **Threat Intel**, but the same contract is meant for future modules too.
+
+In a typical run, with the current setup, AMAMA takes a raw **memory image** and a raw **disk image** and produces an evidence-traceable `incident_report.md`. RAM and Disk run in parallel and follow the same internal architecture: each module first uses deterministic extraction scripts to extract artifacts from the images (for example, Volatility in the RAM module) before handing focused evidence to LLM agents. This avoids sending huge raw inputs to the model while still preserving deep forensic context. Backbone merges their findings into one case graph, enriches confirmed IOCs using the Threat Intel module, which calls the VirusTotal API, routes cross-module follow-up queries, and writes the final report. The goal is to keep the system extensible while making every conclusion traceable back to verbatim artifact evidence. See [`Modules/README.md`](Modules/README.md) for the plug-in contract.
 
 ## Project layout
 
@@ -12,7 +14,7 @@ AMAMA/
     Disk/           disk forensics module (mount, MFT, registry, event logs, …)
 ```
 
-Each part has its own README. `Modules/README.md` explains the module contract and how to plug in a new module — any module declared in the orchestrator config is fully integrated automatically.
+Each part has its own README. `Modules/README.md` explains the module contract and how to plug in a new module — **any module declared in the orchestrator config is fully integrated automatically**.
 
 ## Documentation map
 
@@ -26,16 +28,22 @@ Every part of the repo documents itself; this is the index.
 | [`Modules/README.md`](Modules/README.md) | The module contract and how to plug in a new module |
 | [`Modules/RAM/README.md`](Modules/RAM/README.md) | RAM module user guide (Volatility 3 pipeline) |
 | [`Modules/RAM/Architecture.md`](Modules/RAM/Architecture.md) | RAM module internals: extraction → collection → analysis |
-| [`Modules/RAM/ram-collector/README.md`](Modules/RAM/ram-collector/README.md) | The artifact-to-chunk collector |
+| [`Modules/RAM/ram-collector/README.md`](Modules/RAM/ram-collector/README.md) | The artifact-to-chunk collector, the internal tool used by the RAM module to extract data from the RAM image efficiently |
 | [`Modules/Disk/README.md`](Modules/Disk/README.md) | Disk module user guide (mount → collect → agentic pipeline) |
-| [`Modules/Disk/Architecture.md`](Modules/Disk/Architecture.md) | Disk module internals: the three layers + entry points |
+| [`Modules/Disk/Architecture.md`](Modules/Disk/Architecture.md) | Disk module internals |
 | [`auditing/README.md`](auditing/README.md) | Audit-tree layout, record schemas, worked examples |
 
 ---
 
 ## Getting started — fresh clone → incident report
 
-Target environment: a clean **SIFT Workstation** (Ubuntu), this repo cloned, one RAM image and one disk image. Total run time: ~50 min (RAM Volatility + per-chunk LLM dominate on large images); disk mount+collect adds ~5–15 min and runs in parallel with RAM.
+Target environment: a clean **SIFT Workstation** (Ubuntu), this repo cloned, one RAM image, and one disk image (**currently, only Windows images are supported**). Total run time: ~50 min; disk mount+collect adds ~5–15 min and runs in parallel with RAM.
+
+Input format requirements:
+
+- **RAM image** — provide one Windows memory dump file. Common extensions are `.raw`, `.lime`, `.elf`, `.vmem`, and `.mem`; the extension is only a convention, because Volatility detects the memory format from the file contents.
+- **Disk image** — provide one Windows disk image file inside `Modules/Disk/Disk_image/`. Supported extensions are `.E01`, `.Ex01`, `.dd`, `.raw`, `.img`, `.vmdk`, `.vhd`, and `.vhdx`. The disk module expects an NTFS Windows partition and the folder should contain exactly one image file.
+- **Artifacts-only reruns** — if you already collected artifacts, you can omit `ram_image` to reuse `RAM_Artifacts/`, or omit `image_dir` to reuse `Disk_Artifacts/`.
 
 ### 0. Set a convenience variable
 
@@ -60,7 +68,7 @@ cd volatility3 && sudo python3 -m pip install -e . --break-system-packages
 ls /home/MyTools/volatility3/vol.py      # note this path — you'll put it in the config
 ```
 
-> First Volatility run downloads Windows symbol tables (needs internet). The pipeline warms the symbol cache once before parallel plugins, so this is handled.
+> The first Volatility run downloads Windows symbol tables (internet access required). The RAM module handles this by running one warm-up Volatility plugin first, which creates or downloads the cache before the parallel plugin workers start.
 
 ### 3. Install Python dependencies (system-wide so `sudo` also sees them)
 
@@ -89,8 +97,8 @@ export VT_API_KEY=<your-virustotal-key>                # ThreatIntel (ti) module
 ### 5. Place your images
 
 ```bash
-cp /path/to/your/memory.raw   "$AMAMA/Modules/RAM/RAM_image/"      # .raw / .lime / .elf / .vmem
-cp /path/to/your/disk.E01     "$AMAMA/Modules/Disk/Disk_image/"    # .E01 / .Ex01 / .dd / .raw / .img / .vmdk / .vhd / .vhdx
+cp /path/to/your/memory.raw   "$AMAMA/Modules/RAM/RAM_image/"      # RAM: .raw / .lime / .elf / .vmem / .mem
+cp /path/to/your/disk.E01     "$AMAMA/Modules/Disk/Disk_image/"    # Disk: .E01 / .Ex01 / .dd / .raw / .img / .vmdk / .vhd / .vhdx
 ```
 
 ### 6. Point the config at YOUR paths
@@ -134,7 +142,18 @@ cd "$AMAMA/Backbone"          # IMPORTANT: run from Backbone/ (paths are relativ
 python3 -m backbone run --case-id my-case-001 --config config/orchestrator.yaml
 ```
 
-This runs RAM (Volatility extraction → collector → per-chunk LLM triage/pivot/analyst) and disk (triage → pivot → analyst) in parallel, then the orchestrator routes follow-up queries between modules + VirusTotal, and writes the report. It prints a final `[backbone] case=… termination=… report=output/incident_report.md` line.
+That command starts one full investigation named `my-case-001`:
+
+1. **Backbone loads the config** and starts every configured module for that case.
+2. **RAM and Disk scan in parallel.**
+   - RAM extracts Volatility artifacts from the memory image, turns them into smaller chunks, then runs LLM-assisted triage and analyst validation on those chunks.
+   - Disk mounts and collects Windows artifacts from the disk image, then runs its triage and analyst flow.
+3. **Backbone merges both outputs into one case graph** containing entities, verdicts, evidence lines, and relationships found by the modules.
+4. **Backbone routes follow-up questions** between modules when one module finds an entity another module can investigate better.
+5. **Threat Intel enriches confirmed IOCs** through VirusTotal when configured.
+6. **The report agent writes the final incident report** to `output/incident_report.md`.
+
+When the run finishes, the CLI prints a summary line like `[backbone] case=… termination=… report=output/incident_report.md`.
 
 ### 8. Results
 

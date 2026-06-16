@@ -7,7 +7,7 @@ Central coordination layer for the multi-module forensic agent system.
 | Component | Role |
 |-----------|------|
 | **Orchestrator agent** | Reviews module findings (batch), maintains the case graph, issues follow-up `EntityQuery` messages |
-| **Threat Intel agent** | Enriches entities via external IOC sources (VirusTotal, etc.) |
+| **Threat Intel agent** | Enriches entities via external IOC sources (VirusTotal) |
 | **Report agent** | Produces the final incident report from case state |
 
 Forensic modules (RAM, disk, …) live under `../Modules/` and are loaded by class import path.

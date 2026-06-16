@@ -11,10 +11,13 @@ See `Architecture.md` for how the components fit together internally.
 - **Python 3.10+**
 - **Volatility 3** — install from https://github.com/volatilityfoundation/volatility3. The module shells out to `vol.py` (it does not import Volatility). There is no built-in default path: point it at your install with the `vol_path` kwarg in the orchestrator config or the `VOL3_PATH` environment variable (`VOL3_PYTHON` optionally selects the interpreter, default `python3`).
 - **Python packages**:
+  After Volatility extracts the raw artifacts, the RAM collector turns the process tree into smaller `chunk_NNN.txt` files before they are sent to the LLM. This chunking step lives in `ram-collector/collector/chunker.py`: it packs whole process subtrees into each chunk so a parent process and all its descendants stay together.
+
+  `tiktoken` is recommended for this step because it lets the chunker count tokens accurately against the LLM budget:
   ```bash
-  pip install tiktoken          # accurate token counting for the chunker (recommended)
+  pip install tiktoken
   ```
-  Without `tiktoken` the chunker falls back to a `len(text)/4` estimate. LLM API calls use the standard library — no extra package needed.
+  Without `tiktoken`, the chunker falls back to a rough `len(text)/4` estimate. LLM API calls use the standard library — no extra package needed.
 - **LLM API key** (optional — the pipeline runs in rule-based mode without one):
   ```bash
   export ANTHROPIC_API_KEY="sk-ant-..."     # preferred
@@ -57,7 +60,13 @@ The `scan_mode` kwarg controls which Volatility plugins are run:
 | `fast` (default) | 24 (mandatory + fast-extended) | ~5–10 min | Testing, most investigations |
 | `full` | ~65 (all) | ~15–25 min | Full evidence sweep |
 
-Both modes cover all pivot-grep file lists. `full` adds deeper kernel, VAD, and full registry plugins.
+Volatility extraction happens in `extractor.py` and is split into three plugin tiers:
+
+- **Mandatory (9 plugins)** — always run first. These produce the core TSV files the collector and pivot grep depend on (`pslist`, `psscan`, `cmdline`, `dlllist`, etc.).
+- **Fast-extended (15 plugins)** — added in `fast` mode. These cover every Volatility artifact file that the pivot-grep stage searches, so Agent 2 has enough context without running the entire plugin catalog.
+- **Full-extended (~40 more)** — added only in `full` mode. These deepen kernel, VAD, registry, and malware coverage for a broader sweep at the cost of longer wall time.
+
+So `fast` is the default balance: everything needed for the triage → pivot → analyst pipeline. Use `full` when you want maximum Volatility coverage and can afford the extra runtime.
 
 ---
 
@@ -75,6 +84,40 @@ output/
 ├── aggregated_analyst.txt   ← full audit trail (all chunks concatenated)
 └── scan_result.json         ← machine-readable output for the orchestrator
 ```
+
+Each chunk directory mirrors one per-chunk analysis pass:
+
+- **`triage.txt`** — output of Agent 1 (`triage_agent.py`). The LLM (or rule-based fallback) reads one collector chunk and flags suspicious processes with severity and short reason tags. DLL paths under known-good Windows locations are filtered out before triage (see [Whitelisting](#whitelisting)). This is the “what looks worth investigating?” step.
+- **`pivot.txt`** — output of the **pivot grep** stage (`pivot_grep.py`). See [Pivot grep](#pivot-grep) below.
+- **`analyst.txt`** — output of Agent 2 (`pivot_analyst.py`). It reads Agent 1’s reasons plus the grep evidence in `pivot.txt` and decides whether each finding is **CONFIRMED**, **INCONCLUSIVE**, or **REJECTED**.
+
+`aggregated_analyst.txt` concatenates every chunk’s `analyst.txt` into one audit trail. `scan_result.json` is the structured summary the Backbone orchestrator ingests.
+
+### Pivot grep
+
+Pivot grep is the **middle stage** between triage and analyst. It does **not** call an LLM.
+
+Agent 1 only says *which PIDs look suspicious*; the Volatility TSV files in `RAM_Artifacts/` can be huge (hundreds of thousands of lines). Sending all of that to Agent 2 would be slow, expensive, and noisy. Pivot grep instead:
+
+1. Reads the suspicious PIDs from `triage.txt`.
+2. Searches a configured list of artifact files (`config.json` → `pid_files`, e.g. `cmdline.txt`, `dlllist.txt`, `handles.txt`) under `RAM_Artifacts/`.
+3. Matches each PID with a **word-boundary regex** so `4` does not false-match `4242`.
+4. Copies the **verbatim matching lines** into `pivot.txt`, with caps (default: 120 lines per file, 400 per PID) so Agent 2 gets focused evidence, not the full dump.
+
+Example `pivot.txt` shape:
+
+```
+=== PID 3412 (powershell.exe, ppid=1234) ===
+Cmdline: powershell.exe -enc ...
+
+--- cmdline.txt ---
+3412	powershell.exe	-enc ...
+
+--- dlllist.txt ---
+...
+```
+
+That is why `scan_mode: fast` still matters for pivot grep: the **fast-extended** Volatility plugins populate the artifact files this stage searches. Agent 2 then judges whether Agent 1’s suspicion is supported by real cross-artifact evidence.
 
 ### Verdicts
 

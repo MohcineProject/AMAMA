@@ -50,7 +50,7 @@ modules:
       artifact_dir: /abs/path/to/Modules/Disk/Disk_Artifacts
 ```
 
-The Backbone imports the class, instantiates it with `kwargs`, and calls `scan()` / `query()` directly — no CLI, no adapter layer.
+The Backbone imports the class, instantiates it with `kwargs`, and calls `scan()` / `query()` directly.
 
 ## Adding a new module
 
