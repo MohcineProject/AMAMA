@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_009.txt
+Summary: Multiple processes with unknown/missing parents (PID 616, 764 not present in process list); MsMpEng.exe holds an unusually broad high-risk privilege set for a security process whose parent is unresolvable.
+
+[PROCESS]
+pid: 2404
+ppid: 616
+image: MsMpEng.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_process: parent PID 616 not present anywhere in the process list | privilege_stack: holds SeAssignPrimaryTokenPrivilege, SeTcbPrivilege, SeTakeOwnershipPrivilege, SeLoadDriverPrivilege, SeDebugPrivilege, SeImpersonatePrivilege simultaneously — unusually broad even for Windows Defender engine | signal_stack: orphaned parent combined with full high-risk privilege set warrants pivot confirmation
+
+[PROCESS]
+pid: 2904
+ppid: 764
+image: dllhost.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 764 not present anywhere in the process list | dll_path_anomaly: non-whitelisted DLL list includes a bare '-' entry (missing/unresolvable DLL path) alongside system32 DLLs — possible unlinked or injected module
+

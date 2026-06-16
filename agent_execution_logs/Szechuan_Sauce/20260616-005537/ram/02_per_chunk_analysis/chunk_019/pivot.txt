@@ -1,0 +1,207 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:18:25Z
+
+=== PID 7380 (RuntimeBroker., ppid=764) ===
+
+--- pslist.txt ---
+L92: 7380	764	RuntimeBroker.	0xbe8e774562c0	7	-	2	False	2020-09-19 05:09:19.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L92: 7380	RuntimeBroker.	-
+
+--- privileges.txt ---
+L2945: 7380	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+L2946: 7380	RuntimeBroker.	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2947: 7380	RuntimeBroker.	4	SeLockMemoryPrivilege		Lock pages in memory
+L2948: 7380	RuntimeBroker.	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2949: 7380	RuntimeBroker.	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2950: 7380	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+L2951: 7380	RuntimeBroker.	8	SeSecurityPrivilege		Manage auditing and security log
+L2952: 7380	RuntimeBroker.	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2953: 7380	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2954: 7380	RuntimeBroker.	11	SeSystemProfilePrivilege		Profile system performance
+L2955: 7380	RuntimeBroker.	12	SeSystemtimePrivilege		Change the system time
+L2956: 7380	RuntimeBroker.	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2957: 7380	RuntimeBroker.	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2958: 7380	RuntimeBroker.	15	SeCreatePagefilePrivilege		Create a pagefile
+L2959: 7380	RuntimeBroker.	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2960: 7380	RuntimeBroker.	17	SeBackupPrivilege		Backup files and directories
+L2961: 7380	RuntimeBroker.	18	SeRestorePrivilege		Restore files and directories
+L2962: 7380	RuntimeBroker.	19	SeShutdownPrivilege	Present	Shut down the system
+L2963: 7380	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+L2964: 7380	RuntimeBroker.	21	SeAuditPrivilege		Generate security audits
+L2965: 7380	RuntimeBroker.	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2966: 7380	RuntimeBroker.	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2967: 7380	RuntimeBroker.	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2968: 7380	RuntimeBroker.	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2969: 7380	RuntimeBroker.	26	SeSyncAgentPrivilege		Synch directory service data
+L2970: 7380	RuntimeBroker.	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2971: 7380	RuntimeBroker.	28	SeManageVolumePrivilege		Manage the files on a volume
+L2972: 7380	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2973: 7380	RuntimeBroker.	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2974: 7380	RuntimeBroker.	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2975: 7380	RuntimeBroker.	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2976: 7380	RuntimeBroker.	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2977: 7380	RuntimeBroker.	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2978: 7380	RuntimeBroker.	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2979: 7380	RuntimeBroker.	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L1396: 7380	RuntimeBroker.	0x404789480009	0x47c74848	-	-	-13108	1380-01-08 09:27:52.000000 UTC	Disabled
+
+--- pstree.txt ---
+L31: *** 7380	764	RuntimeBroker.	0xbe8e774562c0	7	-	2	False	2020-09-19 05:09:19.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	-	-
+
+--- psscan.txt ---
+L137: 7380	764	RuntimeBroker.	0xbe8e774562c0	7	-	2	False	2020-09-19 05:09:19.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L300: 7380	RuntimeBroker.	0x1f4a9860000	False	False	False	\Windows\System32\en-US\mpr.dll.mui
+L301: 7380	RuntimeBroker.	0x7ffd62460000	False	False	False	\Windows\System32\mpr.dll
+L302: 7380	RuntimeBroker.	0x7ffd71650000	False	False	False	\Windows\System32\netutils.dll
+L303: 7380	RuntimeBroker.	0x7ffd73ee0000	False	False	False	\Windows\System32\user32.dll
+L304: 7380	RuntimeBroker.	0x7ffd74330000	False	False	False	\Windows\System32\SHCore.dll
+L305: 7380	RuntimeBroker.	0x7ffd74100000	False	False	False	\Windows\System32\msvcrt.dll
+L306: 7380	RuntimeBroker.	0x7ffd749d0000	False	False	False	\Windows\System32\ntdll.dll
+L307: 7380	RuntimeBroker.	0x7ffd74850000	False	False	False	\Windows\System32\shlwapi.dll
+
+--- malware_ldrmodules.txt ---
+L300: 7380	RuntimeBroker.	0x1f4a9860000	False	False	False	\Windows\System32\en-US\mpr.dll.mui
+L301: 7380	RuntimeBroker.	0x7ffd62460000	False	False	False	\Windows\System32\mpr.dll
+L302: 7380	RuntimeBroker.	0x7ffd71650000	False	False	False	\Windows\System32\netutils.dll
+L303: 7380	RuntimeBroker.	0x7ffd73ee0000	False	False	False	\Windows\System32\user32.dll
+L304: 7380	RuntimeBroker.	0x7ffd74330000	False	False	False	\Windows\System32\SHCore.dll
+L305: 7380	RuntimeBroker.	0x7ffd74100000	False	False	False	\Windows\System32\msvcrt.dll
+L306: 7380	RuntimeBroker.	0x7ffd749d0000	False	False	False	\Windows\System32\ntdll.dll
+L307: 7380	RuntimeBroker.	0x7ffd74850000	False	False	False	\Windows\System32\shlwapi.dll
+
+--- malware_pebmasquerade.txt ---
+L92: 7380	RuntimeBroker.	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	-	False	False
+
+--- sessions.txt ---
+L91: 2	-	7380	RuntimeBroker.	-	2020-09-19 05:09:19.000000 UTC
+
+=== PID 7508 (RuntimeBroker., ppid=764) ===
+
+--- pslist.txt ---
+L72: 7508	764	RuntimeBroker.	0xbe8e74fac080	4	-	2	False	2020-09-19 05:08:22.000000 UTC	N/A	Disabled
+L74: 4272	7508	MicrosoftEdgeS	0xbe8e78a7d080	9	-	2	False	2020-09-19 05:08:22.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L72: 7508	RuntimeBroker.	-
+
+--- privileges.txt ---
+L2315: 7508	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+L2316: 7508	RuntimeBroker.	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2317: 7508	RuntimeBroker.	4	SeLockMemoryPrivilege		Lock pages in memory
+L2318: 7508	RuntimeBroker.	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2319: 7508	RuntimeBroker.	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2320: 7508	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+L2321: 7508	RuntimeBroker.	8	SeSecurityPrivilege		Manage auditing and security log
+L2322: 7508	RuntimeBroker.	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2323: 7508	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2324: 7508	RuntimeBroker.	11	SeSystemProfilePrivilege		Profile system performance
+L2325: 7508	RuntimeBroker.	12	SeSystemtimePrivilege		Change the system time
+L2326: 7508	RuntimeBroker.	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2327: 7508	RuntimeBroker.	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2328: 7508	RuntimeBroker.	15	SeCreatePagefilePrivilege		Create a pagefile
+L2329: 7508	RuntimeBroker.	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2330: 7508	RuntimeBroker.	17	SeBackupPrivilege		Backup files and directories
+L2331: 7508	RuntimeBroker.	18	SeRestorePrivilege		Restore files and directories
+L2332: 7508	RuntimeBroker.	19	SeShutdownPrivilege	Present	Shut down the system
+L2333: 7508	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+L2334: 7508	RuntimeBroker.	21	SeAuditPrivilege		Generate security audits
+L2335: 7508	RuntimeBroker.	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2336: 7508	RuntimeBroker.	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2337: 7508	RuntimeBroker.	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2338: 7508	RuntimeBroker.	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2339: 7508	RuntimeBroker.	26	SeSyncAgentPrivilege		Synch directory service data
+L2340: 7508	RuntimeBroker.	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2341: 7508	RuntimeBroker.	28	SeManageVolumePrivilege		Manage the files on a volume
+L2342: 7508	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2343: 7508	RuntimeBroker.	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2344: 7508	RuntimeBroker.	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2345: 7508	RuntimeBroker.	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2346: 7508	RuntimeBroker.	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2347: 7508	RuntimeBroker.	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2348: 7508	RuntimeBroker.	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2349: 7508	RuntimeBroker.	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L29: *** 7508	764	RuntimeBroker.	0xbe8e74fac080	4	-	2	False	2020-09-19 05:08:22.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	-	-
+L30: **** 4272	7508	MicrosoftEdgeS	0xbe8e78a7d080	9	-	2	False	2020-09-19 05:08:22.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\MicrosoftEdgeSH.exe	-	-
+
+--- psscan.txt ---
+L89: 7508	764	RuntimeBroker.	0xbe8e74fac080	4	-	2	False	2020-09-19 05:08:22.000000 UTC	N/A	Disabled
+L153: 4272	7508	MicrosoftEdgeS	0xbe8e78a7d080	9	-	2	False	2020-09-19 05:08:22.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L170: 7508	RuntimeBroker.	0x7ffd749d0000	False	False	False	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L170: 7508	RuntimeBroker.	0x7ffd749d0000	False	False	False	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L72: 7508	RuntimeBroker.	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	-	False	False
+
+--- sessions.txt ---
+L72: 2	-	7508	RuntimeBroker.	-	2020-09-19 05:08:22.000000 UTC
+
+=== PID 4272 (MicrosoftEdgeS, ppid=7508) ===
+
+--- pslist.txt ---
+L74: 4272	7508	MicrosoftEdgeS	0xbe8e78a7d080	9	-	2	False	2020-09-19 05:08:22.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L74: 4272	MicrosoftEdgeS	-
+
+--- privileges.txt ---
+L2385: 4272	MicrosoftEdgeS	2	SeCreateTokenPrivilege		Create a token object
+L2386: 4272	MicrosoftEdgeS	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2387: 4272	MicrosoftEdgeS	4	SeLockMemoryPrivilege		Lock pages in memory
+L2388: 4272	MicrosoftEdgeS	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2389: 4272	MicrosoftEdgeS	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2390: 4272	MicrosoftEdgeS	7	SeTcbPrivilege		Act as part of the operating system
+L2391: 4272	MicrosoftEdgeS	8	SeSecurityPrivilege		Manage auditing and security log
+L2392: 4272	MicrosoftEdgeS	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2393: 4272	MicrosoftEdgeS	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2394: 4272	MicrosoftEdgeS	11	SeSystemProfilePrivilege		Profile system performance
+L2395: 4272	MicrosoftEdgeS	12	SeSystemtimePrivilege		Change the system time
+L2396: 4272	MicrosoftEdgeS	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2397: 4272	MicrosoftEdgeS	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2398: 4272	MicrosoftEdgeS	15	SeCreatePagefilePrivilege		Create a pagefile
+L2399: 4272	MicrosoftEdgeS	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2400: 4272	MicrosoftEdgeS	17	SeBackupPrivilege		Backup files and directories
+L2401: 4272	MicrosoftEdgeS	18	SeRestorePrivilege		Restore files and directories
+L2402: 4272	MicrosoftEdgeS	19	SeShutdownPrivilege		Shut down the system
+L2403: 4272	MicrosoftEdgeS	20	SeDebugPrivilege		Debug programs
+L2404: 4272	MicrosoftEdgeS	21	SeAuditPrivilege		Generate security audits
+L2405: 4272	MicrosoftEdgeS	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2406: 4272	MicrosoftEdgeS	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2407: 4272	MicrosoftEdgeS	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2408: 4272	MicrosoftEdgeS	25	SeUndockPrivilege		Remove computer from docking station
+L2409: 4272	MicrosoftEdgeS	26	SeSyncAgentPrivilege		Synch directory service data
+L2410: 4272	MicrosoftEdgeS	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2411: 4272	MicrosoftEdgeS	28	SeManageVolumePrivilege		Manage the files on a volume
+L2412: 4272	MicrosoftEdgeS	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2413: 4272	MicrosoftEdgeS	30	SeCreateGlobalPrivilege		Create global objects
+L2414: 4272	MicrosoftEdgeS	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2415: 4272	MicrosoftEdgeS	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2416: 4272	MicrosoftEdgeS	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2417: 4272	MicrosoftEdgeS	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L2418: 4272	MicrosoftEdgeS	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2419: 4272	MicrosoftEdgeS	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L30: **** 4272	7508	MicrosoftEdgeS	0xbe8e78a7d080	9	-	2	False	2020-09-19 05:08:22.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\MicrosoftEdgeSH.exe	-	-
+
+--- psscan.txt ---
+L153: 4272	7508	MicrosoftEdgeS	0xbe8e78a7d080	9	-	2	False	2020-09-19 05:08:22.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L74: 4272	MicrosoftEdgeS	\Device\HarddiskVolume3\Windows\System32\MicrosoftEdgeSH.exe	-	False	False
+
+--- sessions.txt ---
+L74: 2	-	4272	MicrosoftEdgeS	-	2020-09-19 05:08:22.000000 UTC
+
+=== END OF PIVOT REPORT ===

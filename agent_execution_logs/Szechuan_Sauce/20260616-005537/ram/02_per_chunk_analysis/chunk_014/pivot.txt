@@ -1,0 +1,85 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:15:24Z
+
+=== PID 4092 (svchost.exe, ppid=616) ===
+
+--- pslist.txt ---
+L46: 4092	616	svchost.exe	0xbe8e77ee2080	4	-	0	False	2020-09-19 01:31:39.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L46: 4092	svchost.exe	-
+
+--- privileges.txt ---
+L1440: 4092	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L1441: 4092	svchost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L1442: 4092	svchost.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L1443: 4092	svchost.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L1444: 4092	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1445: 4092	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L1446: 4092	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L1447: 4092	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L1448: 4092	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L1449: 4092	svchost.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L1450: 4092	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L1451: 4092	svchost.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L1452: 4092	svchost.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L1453: 4092	svchost.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L1454: 4092	svchost.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L1455: 4092	svchost.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L1456: 4092	svchost.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L1457: 4092	svchost.exe	19	SeShutdownPrivilege	Present,Enabled	Shut down the system
+L1458: 4092	svchost.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L1459: 4092	svchost.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L1460: 4092	svchost.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L1461: 4092	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1462: 4092	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1463: 4092	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L1464: 4092	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L1465: 4092	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1466: 4092	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L1467: 4092	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L1468: 4092	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L1469: 4092	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1470: 4092	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1471: 4092	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L1472: 4092	svchost.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L1473: 4092	svchost.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L1474: 4092	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L73: ** 4092	616	svchost.exe	0xbe8e77ee2080	4	-	0	False	2020-09-19 01:31:39.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L144: 4092	616	svchost.exe	0xbe8e77ee2080	4	-	0	False	2020-09-19 01:31:39.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L46: 4092	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L45: 0	-	4092	svchost.exe	-	2020-09-19 01:31:39.000000 UTC
+
+=== PID 4096 (, ppid=2079404032) ===
+
+--- pslist.txt ---
+L60: 4096	1070858240		0xbe8e7607f080	4096	-	-	False	1601-01-01 00:00:53.000000 UTC	1601-01-01 00:01:25.000000 UTC	Disabled
+L88: 4096	2079404032		0xbe8e78a40080	4096	-	-	False	1601-01-01 00:00:35.000000 UTC	1601-01-01 00:02:34.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L60: 4096		-
+L88: 4096		-
+
+--- dlllist.txt ---
+L371: 1148	svchost.exe	0xe0391f2	0x1008	-	-	4096	N/A	Disabled
+
+--- pstree.txt ---
+L95: 4096	2079404032		0xbe8e78a40080	4096	-	-	False	1601-01-01 00:00:35.000000 UTC	1601-01-01 00:02:34.000000 UTC	-	-	-
+
+--- malware_pebmasquerade.txt ---
+L60: 4096		-	-	False	False
+L88: 4096		-	-	False	False
+
+--- sessions.txt ---
+L98: -	-	4096		-	1601-01-01 00:00:53.000000 UTC
+L99: -	-	4096		-	1601-01-01 00:00:35.000000 UTC
+
+=== END OF PIVOT REPORT ===

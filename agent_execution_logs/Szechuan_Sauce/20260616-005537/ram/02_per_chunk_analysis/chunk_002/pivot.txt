@@ -1,0 +1,74 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:07:14Z
+
+=== PID 1136 (svchost.exe, ppid=616) ===
+
+--- pslist.txt ---
+L21: 1136	616	svchost.exe	0xbe8e757e42c0	4	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L21: 1136	svchost.exe	-
+
+--- privileges.txt ---
+L565: 1136	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L566: 1136	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L567: 1136	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L568: 1136	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L569: 1136	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L570: 1136	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L571: 1136	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L572: 1136	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L573: 1136	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L574: 1136	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L575: 1136	svchost.exe	12	SeSystemtimePrivilege	Present,Enabled	Change the system time
+L576: 1136	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L577: 1136	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L578: 1136	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L579: 1136	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L580: 1136	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L581: 1136	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L582: 1136	svchost.exe	19	SeShutdownPrivilege		Shut down the system
+L583: 1136	svchost.exe	20	SeDebugPrivilege		Debug programs
+L584: 1136	svchost.exe	21	SeAuditPrivilege	Present	Generate security audits
+L585: 1136	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L586: 1136	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L587: 1136	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L588: 1136	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L589: 1136	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L590: 1136	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L591: 1136	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L592: 1136	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L593: 1136	svchost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L594: 1136	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L595: 1136	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L596: 1136	svchost.exe	33	SeIncreaseWorkingSetPrivilege		Allocate more memory for user applications
+L597: 1136	svchost.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L598: 1136	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L599: 1136	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L74: ** 1136	616	svchost.exe	0xbe8e757e42c0	4	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L100: 1136	616	svchost.exe	0xbe8e757e42c0	4	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L49: 0xbe8e758278b0	UDPv4	0.0.0.0	0	*	0		1136	svchost.exe	2020-09-19 01:24:08.000000 UTC
+L50: 0xbe8e758278b0	UDPv6	::	0	*	0		1136	svchost.exe	2020-09-19 01:24:08.000000 UTC
+L51: 0xbe8e75828530	UDPv4	0.0.0.0	0	*	0		1136	svchost.exe	2020-09-19 01:24:08.000000 UTC
+L99: 0xbe8e78151440	UDPv4	0.0.0.0	0	*	0		1136	svchost.exe	2020-09-19 03:13:28.000000 UTC
+L100: 0xbe8e78151440	UDPv6	::	0	*	0		1136	svchost.exe	2020-09-19 03:13:28.000000 UTC
+L104: 0xbe8e781539c0	UDPv4	0.0.0.0	0	*	0		1136	svchost.exe	2020-09-19 03:13:28.000000 UTC
+
+--- netstat.txt ---
+L52: 0xbe8e78151440	UDPv4	0.0.0.0	0	*	0		1136	svchost.exe	2020-09-19 03:13:28.000000 UTC
+L53: 0xbe8e78151440	UDPv6	::	0	*	0		1136	svchost.exe	2020-09-19 03:13:28.000000 UTC
+L54: 0xbe8e781539c0	UDPv4	0.0.0.0	0	*	0		1136	svchost.exe	2020-09-19 03:13:28.000000 UTC
+
+--- malware_pebmasquerade.txt ---
+L21: 1136	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L21: 0	-	1136	svchost.exe	-	2020-09-19 01:24:08.000000 UTC
+
+=== END OF PIVOT REPORT ===

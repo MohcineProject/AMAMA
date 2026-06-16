@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_010.txt
+Summary: dllhost.exe holds high-risk privileges (SeDebugPrivilege, SeImpersonatePrivilege) with an unresolved parent PID; dllhost.exe and ShellExperienc both show orphaned parent PIDs not present in the process list.
+
+[PROCESS]
+pid: 2952
+ppid: 616
+image: dllhost.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_parent: PPID 616 does not appear anywhere in the process list | high_risk_privileges: SeDebugPrivilege and SeImpersonatePrivilege both enabled — unusual for a standard dllhost.exe instance | signal_stack: orphaned parent + dual high-risk privileges converge on same process
+
+[PROCESS]
+pid: 2964
+ppid: 764
+image: ShellExperienc
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 764 does not appear anywhere in the process list | note: truncated name 'ShellExperienc' is consistent with EPROCESS 14-char limit for 'ShellExperienceHost.exe' — not a typosquat signal on its own; flagged solely for unresolved parent
+

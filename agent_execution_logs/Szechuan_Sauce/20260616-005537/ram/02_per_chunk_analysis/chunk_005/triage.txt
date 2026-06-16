@@ -1,0 +1,45 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_005.txt
+Summary: All five svchost.exe instances share an unknown parent PID 616 (not present in process list), indicating either a hidden/unlinked services.exe or DKOM manipulation; two instances additionally hold SeTcbPrivilege which is atypical for standard svchost.
+
+[PROCESS]
+pid: 1192
+ppid: 616
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: parent_mismatch: parent PID 616 is listed as 'unknown' — not present in process list; legitimate svchost.exe must descend from services.exe | orphaned_parent: PID 616 absent from snapshot, possible DKOM-hidden services.exe or rogue launcher | privilege: SeImpersonatePrivilege enabled — warrants confirmation of legitimacy given orphaned parent
+
+[PROCESS]
+pid: 1408
+ppid: 616
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: parent_mismatch: parent PID 616 is listed as 'unknown' — not present in process list; legitimate svchost.exe must descend from services.exe | orphaned_parent: PID 616 absent from snapshot, possible DKOM-hidden services.exe or rogue launcher | privilege: SeImpersonatePrivilege enabled — warrants confirmation of legitimacy given orphaned parent
+
+[PROCESS]
+pid: 1576
+ppid: 616
+image: svchost.exe
+cmdline: 
+severity: HIGH
+reasons: parent_mismatch: parent PID 616 is listed as 'unknown' — not present in process list; legitimate svchost.exe must descend from services.exe | orphaned_parent: PID 616 absent from snapshot, possible DKOM-hidden services.exe or rogue launcher | privilege: SeTcbPrivilege enabled — grants act-as-part-of-OS capability, highly unusual for a standard svchost instance | privilege: SeImpersonatePrivilege also enabled — signal stacking with SeTcbPrivilege and orphaned parent raises severity
+
+[PROCESS]
+pid: 1608
+ppid: 616
+image: svchost.exe
+cmdline: 
+severity: HIGH
+reasons: parent_mismatch: parent PID 616 is listed as 'unknown' — not present in process list; legitimate svchost.exe must descend from services.exe | orphaned_parent: PID 616 absent from snapshot, possible DKOM-hidden services.exe or rogue launcher | privilege: SeTcbPrivilege enabled — grants act-as-part-of-OS capability, highly unusual for a standard svchost instance | privilege: SeImpersonatePrivilege also enabled — signal stacking with SeTcbPrivilege and orphaned parent raises severity | late_start: started at 2020-09-19 01:28:10 UTC, approximately 4 minutes after the other svchost cluster — anomalous timing relative to peers sharing same unknown parent
+
+[PROCESS]
+pid: 2060
+ppid: 616
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: parent_mismatch: parent PID 616 is listed as 'unknown' — not present in process list; legitimate svchost.exe must descend from services.exe | orphaned_parent: PID 616 absent from snapshot, possible DKOM-hidden services.exe or rogue launcher | privilege: SeImpersonatePrivilege enabled — warrants confirmation of legitimacy given orphaned parent
+

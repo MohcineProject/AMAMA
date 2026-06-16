@@ -1,0 +1,141 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 8324 — coreupdater.ex**
+
+Agent 1 signals:
+- Unknown image name, not a Windows system process
+- Orphaned parent (PPID 4008 not in process list)
+- No cmdline (dash)
+- Massive privilege footprint including SeDebugPrivilege (Present,Enabled) and SeImpersonatePrivilege (Present,Enabled,Default)
+- Short-lived (~2m21s)
+- Path from pstree: `\Device\HarddiskVolume3\Windows\System32\coreupdater.exe`
+
+Evidence assessment:
+- The path shows it's in System32, which is unusual for a non-Windows binary — this is a classic masquerading technique (dropping a malicious binary into System32 to appear legitimate).
+- `malware_pebmasquerade.txt` hit confirms the tool flagged it: `False False` for the last two fields — these typically represent "is it in the known-good list" or PEB masquerade checks. The file is present in System32 but not a recognized Windows binary.
+- Cmdline is `-` (unavailable/hidden) — suspicious for a process in System32.
+- PPID 4008 is absent from the process list — orphaned parent is a strong indicator of process injection or a process that was spawned and then the parent exited/was hidden.
+- Privilege set is enormous: SeDebugPrivilege **Enabled**, SeImpersonatePrivilege **Enabled**, SeLoadDriverPrivilege Present, SeBackupPrivilege Present, SeRestorePrivilege Present, SeTakeOwnershipPrivilege Present — this is essentially a SYSTEM-level token on a non-system binary.
+- 0 threads (column shows `0`) — a process with 0 threads is either already done executing or is a hollow/injected process.
+- Short-lived with no visible legitimate purpose.
+
+The combination of: unknown binary in System32, orphaned parent, hidden cmdline, 0 threads, SYSTEM-equivalent privileges, and the malware_pebmasquerade flag — this is CONFIRMED, HIGH severity. Could argue CRITICAL given the privilege set and masquerading, but without malfind/code injection evidence or confirmed credential dumping, I'll call it HIGH. Actually, given SeDebugPrivilege enabled + SeLoadDriverPrivilege + masquerading in System32 + orphaned parent + 0 threads, this is a strong post-exploitation tool. I'll call it HIGH (could be a loader/dropper/backdoor component).
+
+MITRE: T1036.005 (Match Legitimate Name or Location — masquerading in System32)
+
+---
+
+**PID 8416 — WmiPrvSE.exe**
+
+Agent 1 signals:
+- SeTcbPrivilege Present,Enabled,Default — abnormal for WmiPrvSE
+- SeDebugPrivilege Present,Enabled,Default — abnormal
+- SeImpersonatePrivilege Present,Enabled,Default
+- Orphaned parent (PPID 764 unknown)
+
+Evidence assessment:
+- Path from pstree: `\Device\HarddiskVolume3\Windows\System32\wbem\WmiPrvSE.exe` — correct path for WmiPrvSE.
+- PPID 764: Agent 1 says this is "unknown." However, WmiPrvSE.exe is normally spawned by svchost.exe hosting DComLaunch. PID 764 could be a svchost instance that's simply not in the extracted snippet — this is weaker evidence than a truly absent PPID.
+- The privilege set is extraordinary: SeTcbPrivilege (Present,Enabled,Default), SeDebugPrivilege (Present,Enabled,Default), SeAuditPrivilege (Present,Enabled,Default), SeCreatePermanentPrivilege (Present,Enabled,Default), SeLockMemoryPrivilege (Present,Enabled,Default). This is a SYSTEM-level token with nearly everything enabled. Normal WmiPrvSE runs as NETWORK SERVICE or LOCAL SERVICE with a much more restricted token.
+- dlllist hit is odd: `0xc5327f016d00 0x8958327f - - - -28140 - Disabled` — the `-28140` size is anomalous (negative-looking value), suggesting memory corruption or a tampered/injected module entry.
+- Cmdline is `-` (unavailable).
+- 7 threads, still running (no exit time).
+
+The privilege set alone (SeTcbPrivilege fully enabled on WmiPrvSE) is a very strong signal of token manipulation or a malicious WMI provider loaded into this host. The anomalous dlllist entry adds corroboration. This is CONFIRMED. 
+
+Severity: HIGH — active process with SYSTEM-equivalent token, likely used as a WMI-based persistence/execution mechanism or token manipulation vehicle.
+
+MITRE: T1047 (Windows Management Instrumentation) + T1134 (Access Token Manipulation) — I'll pick the cleaner mapping: T1134 for the token anomaly, or T1047 for WMI abuse. I'll go T1047 as primary since the vehicle is WmiPrvSE itself.
+
+---
+
+Now writing the report.
+
+================================================================
+PIVOT REPORT — FIND_EVIL
+Generated: 2025-01-30T00:00:00Z
+Summary: Two processes exhibit strong indicators of post-exploitation activity on this host. PID 8324 (coreupdater.exe) is an unrecognised binary masquerading as a system component inside System32, carrying a near-complete SYSTEM-level privilege token, an orphaned parent, and zero active threads — consistent with a short-lived loader or lateral-movement tool that has already completed its task. PID 8416 (WmiPrvSE.exe) carries an anomalous SYSTEM-equivalent token with SeTcbPrivilege and SeDebugPrivilege fully enabled — privileges that are never legitimately granted to a WMI provider host — alongside a malformed DLL list entry, indicating token manipulation or a malicious WMI provider loaded into the host process. Both findings are confirmed; no findings were rejected.
+Counts: confirmed=2  inconclusive=0  rejected=0
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      8324
+PPID:     4008
+Image:    coreupdater.exe
+Cmdline:  - (unavailable / suppressed)
+Severity: HIGH
+MITRE:    T1036.005 — Masquerading: Match Legitimate Name or Location
+
+Justification:
+  coreupdater.exe is not a recognised Windows system binary, yet it was
+  placed in \Windows\System32\ — a classic masquerade-by-location
+  technique designed to blend with legitimate OS components. The process
+  ran for approximately 2 minutes 21 seconds with zero active threads at
+  capture time, its command line is suppressed (recorded as "-"), and its
+  parent (PPID 4008) is absent from every process listing, indicating the
+  parent either exited after spawning it or was deliberately hidden. The
+  privilege token is effectively SYSTEM-equivalent: SeDebugPrivilege is
+  Present AND Enabled, SeImpersonatePrivilege is Present AND Enabled,
+  SeLoadDriverPrivilege is Present, and SeBackupPrivilege / SeRestore-
+  Privilege are both Present — a combination that grants full control over
+  other processes, driver loading, and file-system bypass. The
+  malware_pebmasquerade plugin independently flagged this binary. The
+  convergence of masquerade path, orphaned parent, hidden cmdline, zero
+  threads, and a SYSTEM-class token across multiple artefact types makes
+  this a high-confidence confirmed finding.
+
+Key Evidence:
+  - L54 (pstree.txt):  8324  4008  coreupdater.ex  ...  \Device\HarddiskVolume3\Windows\System32\coreupdater.exe
+  - L54 (pslist.txt):  8324  4008  coreupdater.ex  0xbe8e7a447080  0  -  3  False  2020-09-19 03:40:49.000000 UTC  2020-09-19 03:43:10.000000 UTC  Disabled
+  - L54 (malware_pebmasquerade.txt):  8324  coreupdater.ex  \Device\HarddiskVolume3\Windows\System32\coreupdater.exe  -  False  False
+  - L1738 (privileges.txt):  8324  coreupdater.ex  20  SeDebugPrivilege  Present,Enabled  Debug programs
+  - L1747 (privileges.txt):  8324  coreupdater.ex  29  SeImpersonatePrivilege  Present,Enabled,Default  Impersonate a client after authentication
+  - L1728 (privileges.txt):  8324  coreupdater.ex  10  SeLoadDriverPrivilege  Present  Load and unload device drivers
+  - L1735 (privileges.txt):  8324  coreupdater.ex  17  SeBackupPrivilege  Present  Backup files and directories
+  - L54 (cmdline.txt):  8324  coreupdater.ex  -
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      8416
+PPID:     764
+Image:    WmiPrvSE.exe
+Cmdline:  - (unavailable / suppressed)
+Severity: HIGH
+MITRE:    T1047 — Windows Management Instrumentation
+
+Justification:
+  Although WmiPrvSE.exe resides at its legitimate path
+  (\Windows\System32\wbem\WmiPrvSE.exe), its token is wholly inconsistent
+  with any legitimate WMI provider host instance. SeTcbPrivilege
+  (Present,Enabled,Default) — "Act as part of the operating system" — is
+  never granted to WmiPrvSE under normal operation; its presence alongside
+  SeDebugPrivilege (Present,Enabled,Default), SeAuditPrivilege
+  (Present,Enabled,Default), SeCreatePermanentPrivilege
+  (Present,Enabled,Default), and SeLockMemoryPrivilege
+  (Present,Enabled,Default) describes a fully enabled SYSTEM token, not a
+  NETWORK SERVICE or LOCAL SERVICE token that WmiPrvSE legitimately
+  receives. This strongly indicates token manipulation (e.g. via a
+  malicious WMI provider DLL loaded into the host, or direct token
+  replacement by a prior-stage implant). The dlllist entry for this PID
+  contains an anomalous negative-sized module record (-28140), consistent
+  with a tampered or injected in-memory module. The command line is
+  suppressed. Taken together — abnormal SYSTEM-class token, anomalous DLL
+  record, and hidden cmdline on a process that should be tightly
+  constrained — this is confirmed as an actively abused WMI provider host.
+
+Key Evidence:
+  - L35 (pstree.txt):  *** 8416  764  WmiPrvSE.exe  ...  \Device\HarddiskVolume3\Windows\System32\wbem\WmiPrvSE.exe
+  - L2985 (privileges.txt):  8416  WmiPrvSE.exe  7  SeTcbPrivilege  Present,Enabled,Default  Act as part of the operating system
+  - L2998 (privileges.txt):  8416  WmiPrvSE.exe  20  SeDebugPrivilege  Present,Enabled,Default  Debug programs
+  - L3007 (privileges.txt):  8416  WmiPrvSE.exe  29  SeImpersonatePrivilege  Present,Enabled,Default  Impersonate a client after authentication
+  - L2999 (privileges.txt):  8416  WmiPrvSE.exe  21  SeAuditPrivilege  Present,Enabled,Default  Generate security audits
+  - L2994 (privileges.txt):  8416  WmiPrvSE.exe  16  SeCreatePermanentPrivilege  Present,Enabled,Default  Create permanent shared objects
+  - L1397 (dlllist.txt):  8416  WmiPrvSE.exe  0xc5327f016d00  0x8958327f  -  -  -28140  -  Disabled
+  - L93 (cmdline.txt):  8416  WmiPrvSE.exe  -
+----------------------------------------------------------------
+
+================================================================

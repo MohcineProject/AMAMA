@@ -1,0 +1,183 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:16:06Z
+
+=== PID 5664 (SecurityHealth, ppid=616) ===
+
+--- pslist.txt ---
+L48: 5664	616	SecurityHealth	0xbe8e79004280	14	-	0	False	2020-09-19 03:16:17.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L48: 5664	SecurityHealth	-
+
+--- privileges.txt ---
+L1510: 5664	SecurityHealth	2	SeCreateTokenPrivilege		Create a token object
+L1511: 5664	SecurityHealth	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L1512: 5664	SecurityHealth	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L1513: 5664	SecurityHealth	5	SeIncreaseQuotaPrivilege		Increase quotas
+L1514: 5664	SecurityHealth	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1515: 5664	SecurityHealth	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L1516: 5664	SecurityHealth	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L1517: 5664	SecurityHealth	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L1518: 5664	SecurityHealth	10	SeLoadDriverPrivilege		Load and unload device drivers
+L1519: 5664	SecurityHealth	11	SeSystemProfilePrivilege	Default	Profile system performance
+L1520: 5664	SecurityHealth	12	SeSystemtimePrivilege		Change the system time
+L1521: 5664	SecurityHealth	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L1522: 5664	SecurityHealth	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L1523: 5664	SecurityHealth	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L1524: 5664	SecurityHealth	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L1525: 5664	SecurityHealth	17	SeBackupPrivilege	Present	Backup files and directories
+L1526: 5664	SecurityHealth	18	SeRestorePrivilege	Present	Restore files and directories
+L1527: 5664	SecurityHealth	19	SeShutdownPrivilege	Present	Shut down the system
+L1528: 5664	SecurityHealth	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L1529: 5664	SecurityHealth	21	SeAuditPrivilege	Default	Generate security audits
+L1530: 5664	SecurityHealth	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L1531: 5664	SecurityHealth	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1532: 5664	SecurityHealth	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1533: 5664	SecurityHealth	25	SeUndockPrivilege		Remove computer from docking station
+L1534: 5664	SecurityHealth	26	SeSyncAgentPrivilege		Synch directory service data
+L1535: 5664	SecurityHealth	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1536: 5664	SecurityHealth	28	SeManageVolumePrivilege		Manage the files on a volume
+L1537: 5664	SecurityHealth	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L1538: 5664	SecurityHealth	30	SeCreateGlobalPrivilege	Default	Create global objects
+L1539: 5664	SecurityHealth	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1540: 5664	SecurityHealth	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1541: 5664	SecurityHealth	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L1542: 5664	SecurityHealth	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L1543: 5664	SecurityHealth	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L1544: 5664	SecurityHealth	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L49: ** 5664	616	SecurityHealth	0xbe8e79004280	14	-	0	False	2020-09-19 03:16:17.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\SecurityHealthService.exe	-	-
+
+--- psscan.txt ---
+L161: 5664	616	SecurityHealth	0xbe8e79004280	14	-	0	False	2020-09-19 03:16:17.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L48: 5664	SecurityHealth	\Device\HarddiskVolume3\Windows\System32\SecurityHealthService.exe	-	False	False
+
+--- sessions.txt ---
+L46: 0	-	5664	SecurityHealth	-	2020-09-19 03:16:17.000000 UTC
+
+=== PID 4984 (WUDFHost.exe, ppid=616) ===
+
+--- pslist.txt ---
+L97: 4984	616	WUDFHost.exe	0xbe8e74515080	6	-	0	False	2020-09-19 05:08:59.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L97: 4984	WUDFHost.exe	-
+
+--- privileges.txt ---
+L3120: 4984	WUDFHost.exe	2	SeCreateTokenPrivilege		Create a token object
+L3121: 4984	WUDFHost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L3122: 4984	WUDFHost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3123: 4984	WUDFHost.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L3124: 4984	WUDFHost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3125: 4984	WUDFHost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3126: 4984	WUDFHost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L3127: 4984	WUDFHost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3128: 4984	WUDFHost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3129: 4984	WUDFHost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L3130: 4984	WUDFHost.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L3131: 4984	WUDFHost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3132: 4984	WUDFHost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3133: 4984	WUDFHost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L3134: 4984	WUDFHost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3135: 4984	WUDFHost.exe	17	SeBackupPrivilege		Backup files and directories
+L3136: 4984	WUDFHost.exe	18	SeRestorePrivilege		Restore files and directories
+L3137: 4984	WUDFHost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L3138: 4984	WUDFHost.exe	20	SeDebugPrivilege		Debug programs
+L3139: 4984	WUDFHost.exe	21	SeAuditPrivilege	Present	Generate security audits
+L3140: 4984	WUDFHost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3141: 4984	WUDFHost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3142: 4984	WUDFHost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3143: 4984	WUDFHost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3144: 4984	WUDFHost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3145: 4984	WUDFHost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3146: 4984	WUDFHost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L3147: 4984	WUDFHost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L3148: 4984	WUDFHost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L3149: 4984	WUDFHost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3150: 4984	WUDFHost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3151: 4984	WUDFHost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3152: 4984	WUDFHost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3153: 4984	WUDFHost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3154: 4984	WUDFHost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L76: ** 4984	616	WUDFHost.exe	0xbe8e74515080	6	-	0	False	2020-09-19 05:08:59.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\WUDFHost.exe	-	-
+
+--- psscan.txt ---
+L85: 4984	616	WUDFHost.exe	0xbe8e74515080	6	-	0	False	2020-09-19 05:08:59.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L97: 4984	WUDFHost.exe	\Device\HarddiskVolume3\Windows\System32\WUDFHost.exe	-	False	False
+
+--- sessions.txt ---
+L49: 0	-	4984	WUDFHost.exe	-	2020-09-19 05:08:59.000000 UTC
+
+=== PID 4868 (backgroundTask, ppid=764) ===
+
+--- pslist.txt ---
+L90: 4868	764	backgroundTask	0xbe8e78b27080	12	-	2	False	2020-09-19 05:10:08.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L90: 4868	backgroundTask	-
+
+--- privileges.txt ---
+L2875: 4868	backgroundTask	2	SeCreateTokenPrivilege		Create a token object
+L2876: 4868	backgroundTask	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2877: 4868	backgroundTask	4	SeLockMemoryPrivilege		Lock pages in memory
+L2878: 4868	backgroundTask	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2879: 4868	backgroundTask	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2880: 4868	backgroundTask	7	SeTcbPrivilege		Act as part of the operating system
+L2881: 4868	backgroundTask	8	SeSecurityPrivilege		Manage auditing and security log
+L2882: 4868	backgroundTask	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2883: 4868	backgroundTask	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2884: 4868	backgroundTask	11	SeSystemProfilePrivilege		Profile system performance
+L2885: 4868	backgroundTask	12	SeSystemtimePrivilege		Change the system time
+L2886: 4868	backgroundTask	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2887: 4868	backgroundTask	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2888: 4868	backgroundTask	15	SeCreatePagefilePrivilege		Create a pagefile
+L2889: 4868	backgroundTask	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2890: 4868	backgroundTask	17	SeBackupPrivilege		Backup files and directories
+L2891: 4868	backgroundTask	18	SeRestorePrivilege		Restore files and directories
+L2892: 4868	backgroundTask	19	SeShutdownPrivilege		Shut down the system
+L2893: 4868	backgroundTask	20	SeDebugPrivilege		Debug programs
+L2894: 4868	backgroundTask	21	SeAuditPrivilege		Generate security audits
+L2895: 4868	backgroundTask	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2896: 4868	backgroundTask	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2897: 4868	backgroundTask	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2898: 4868	backgroundTask	25	SeUndockPrivilege		Remove computer from docking station
+L2899: 4868	backgroundTask	26	SeSyncAgentPrivilege		Synch directory service data
+L2900: 4868	backgroundTask	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2901: 4868	backgroundTask	28	SeManageVolumePrivilege		Manage the files on a volume
+L2902: 4868	backgroundTask	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2903: 4868	backgroundTask	30	SeCreateGlobalPrivilege		Create global objects
+L2904: 4868	backgroundTask	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2905: 4868	backgroundTask	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2906: 4868	backgroundTask	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2907: 4868	backgroundTask	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L2908: 4868	backgroundTask	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2909: 4868	backgroundTask	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L16: *** 4868	764	backgroundTask	0xbe8e78b27080	12	-	2	False	2020-09-19 05:10:08.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\backgroundTaskHost.exe	-	-
+
+--- psscan.txt ---
+L18: 4868	764	backgroundTask	0x7fb8304f9080	12	-	2	False	2020-09-19 05:10:08.000000 UTC	N/A	Disabled
+L21: 4868	764	backgroundTask	0x7fb834bc9080	12	-	2	False	2020-09-19 05:10:08.000000 UTC	N/A	Disabled
+L35: 4868	764	backgroundTask	0x7fc4304f9080	12	-	2	False	2020-09-19 05:10:08.000000 UTC	N/A	Disabled
+L38: 4868	764	backgroundTask	0x7fc434bc9080	12	-	2	False	2020-09-19 05:10:08.000000 UTC	N/A	Disabled
+L52: 4868	764	backgroundTask	0x7fca304f9080	12	-	2	False	2020-09-19 05:10:08.000000 UTC	N/A	Disabled
+L55: 4868	764	backgroundTask	0x7fca34bc9080	12	-	2	False	2020-09-19 05:10:08.000000 UTC	N/A	Disabled
+L71: 4868	764	backgroundTask	0x7ffa304f9080	12	-	2	False	2020-09-19 05:10:08.000000 UTC	N/A	Disabled
+L74: 4868	764	backgroundTask	0x7ffa34bc9080	12	-	2	False	2020-09-19 05:10:08.000000 UTC	N/A	Disabled
+L154: 4868	764	backgroundTask	0xbe8e78b27080	12	-	2	False	2020-09-19 05:10:08.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L90: 4868	backgroundTask	\Device\HarddiskVolume3\Windows\System32\backgroundTaskHost.exe	-	False	False
+
+--- sessions.txt ---
+L89: 2	-	4868	backgroundTask	-	2020-09-19 05:10:08.000000 UTC
+
+=== END OF PIVOT REPORT ===

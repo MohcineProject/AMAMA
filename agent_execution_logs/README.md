@@ -17,6 +17,7 @@ metric-based assessment of those findings.
 | 2 | Clean Windows 11 (RAM only) | ram · ti | `Windows_11_c/20260615-083921/` |
 | 3 | NimPlantv2 process-injection (RAM only) | ram · ti | `daniyyell_dataset_4/20260614-225130/` |
 | 4 | QuasarRAT infection (RAM only) | ram · ti | `Windows_11_VM_e/20260615-080536/` |
+| 5 | Stolen Szechuan Sauce — Case001 (RAM only) | ram · ti | `Szechuan_Sauce/` |
 
 Runs are keyed by `{case_id}/{YYYYMMDD-HHMMSS}/` so re-runs of the same case accumulate
 side-by-side without overwriting. (The ROCBA tree is stored directly under its case folder.)

@@ -1,0 +1,129 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:19:43Z
+
+=== PID 8324 (coreupdater.ex, ppid=4008) ===
+
+--- pslist.txt ---
+L54: 8324	4008	coreupdater.ex	0xbe8e7a447080	0	-	3	False	2020-09-19 03:40:49.000000 UTC	2020-09-19 03:43:10.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L54: 8324	coreupdater.ex	-
+
+--- privileges.txt ---
+L1720: 8324	coreupdater.ex	2	SeCreateTokenPrivilege		Create a token object
+L1721: 8324	coreupdater.ex	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L1722: 8324	coreupdater.ex	4	SeLockMemoryPrivilege		Lock pages in memory
+L1723: 8324	coreupdater.ex	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L1724: 8324	coreupdater.ex	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1725: 8324	coreupdater.ex	7	SeTcbPrivilege		Act as part of the operating system
+L1726: 8324	coreupdater.ex	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L1727: 8324	coreupdater.ex	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L1728: 8324	coreupdater.ex	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L1729: 8324	coreupdater.ex	11	SeSystemProfilePrivilege	Present	Profile system performance
+L1730: 8324	coreupdater.ex	12	SeSystemtimePrivilege	Present	Change the system time
+L1731: 8324	coreupdater.ex	13	SeProfileSingleProcessPrivilege	Present	Profile a single process
+L1732: 8324	coreupdater.ex	14	SeIncreaseBasePriorityPrivilege	Present	Increase scheduling priority
+L1733: 8324	coreupdater.ex	15	SeCreatePagefilePrivilege	Present	Create a pagefile
+L1734: 8324	coreupdater.ex	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L1735: 8324	coreupdater.ex	17	SeBackupPrivilege	Present	Backup files and directories
+L1736: 8324	coreupdater.ex	18	SeRestorePrivilege	Present	Restore files and directories
+L1737: 8324	coreupdater.ex	19	SeShutdownPrivilege	Present	Shut down the system
+L1738: 8324	coreupdater.ex	20	SeDebugPrivilege	Present,Enabled	Debug programs
+L1739: 8324	coreupdater.ex	21	SeAuditPrivilege		Generate security audits
+L1740: 8324	coreupdater.ex	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L1741: 8324	coreupdater.ex	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1742: 8324	coreupdater.ex	24	SeRemoteShutdownPrivilege	Present	Force shutdown from a remote system
+L1743: 8324	coreupdater.ex	25	SeUndockPrivilege	Present	Remove computer from docking station
+L1744: 8324	coreupdater.ex	26	SeSyncAgentPrivilege		Synch directory service data
+L1745: 8324	coreupdater.ex	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1746: 8324	coreupdater.ex	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L1747: 8324	coreupdater.ex	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L1748: 8324	coreupdater.ex	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L1749: 8324	coreupdater.ex	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1750: 8324	coreupdater.ex	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1751: 8324	coreupdater.ex	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L1752: 8324	coreupdater.ex	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L1753: 8324	coreupdater.ex	35	SeCreateSymbolicLinkPrivilege	Present	Required to create a symbolic link
+L1754: 8324	coreupdater.ex	36	SeDelegateSessionUserImpersonatePrivilege	Present	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L94: 8324	4008	coreupdater.ex	0xbe8e7a447080	0	-	3	False	2020-09-19 03:40:49.000000 UTC	2020-09-19 03:43:10.000000 UTC	\Device\HarddiskVolume3\Windows\System32\coreupdater.exe	-	-
+
+--- psscan.txt ---
+L171: 8324	4008	coreupdater.ex	0xbe8e7a447080	0	-	3	False	2020-09-19 03:40:49.000000 UTC	2020-09-19 03:43:10.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L54: 8324	coreupdater.ex	\Device\HarddiskVolume3\Windows\System32\coreupdater.exe	-	False	False
+
+--- sessions.txt ---
+L97: 3	-	8324	coreupdater.ex	-	2020-09-19 03:40:49.000000 UTC
+
+=== PID 8416 (WmiPrvSE.exe, ppid=764) ===
+
+--- pslist.txt ---
+L93: 8416	764	WmiPrvSE.exe	0xbe8e77e582c0	7	-	0	False	2020-09-19 05:09:13.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L93: 8416	WmiPrvSE.exe	-
+
+--- privileges.txt ---
+L2980: 8416	WmiPrvSE.exe	2	SeCreateTokenPrivilege		Create a token object
+L2981: 8416	WmiPrvSE.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L2982: 8416	WmiPrvSE.exe	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L2983: 8416	WmiPrvSE.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L2984: 8416	WmiPrvSE.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2985: 8416	WmiPrvSE.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L2986: 8416	WmiPrvSE.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L2987: 8416	WmiPrvSE.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L2988: 8416	WmiPrvSE.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L2989: 8416	WmiPrvSE.exe	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L2990: 8416	WmiPrvSE.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L2991: 8416	WmiPrvSE.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L2992: 8416	WmiPrvSE.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L2993: 8416	WmiPrvSE.exe	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L2994: 8416	WmiPrvSE.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L2995: 8416	WmiPrvSE.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L2996: 8416	WmiPrvSE.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L2997: 8416	WmiPrvSE.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2998: 8416	WmiPrvSE.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L2999: 8416	WmiPrvSE.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L3000: 8416	WmiPrvSE.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L3001: 8416	WmiPrvSE.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3002: 8416	WmiPrvSE.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3003: 8416	WmiPrvSE.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3004: 8416	WmiPrvSE.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3005: 8416	WmiPrvSE.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3006: 8416	WmiPrvSE.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L3007: 8416	WmiPrvSE.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L3008: 8416	WmiPrvSE.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L3009: 8416	WmiPrvSE.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3010: 8416	WmiPrvSE.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3011: 8416	WmiPrvSE.exe	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L3012: 8416	WmiPrvSE.exe	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L3013: 8416	WmiPrvSE.exe	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L3014: 8416	WmiPrvSE.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L1397: 8416	WmiPrvSE.exe	0xc5327f016d00	0x8958327f	-	-	-28140	-	Disabled
+
+--- pstree.txt ---
+L35: *** 8416	764	WmiPrvSE.exe	0xbe8e77e582c0	7	-	0	False	2020-09-19 05:09:13.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\wbem\WmiPrvSE.exe	-	-
+
+--- psscan.txt ---
+L10: 8416	764	WmiPrvSE.exe	0x7fb804ec12c0	7	-	0	False	2020-09-19 05:09:13.000000 UTC	N/A	Disabled
+L16: 8416	764	WmiPrvSE.exe	0x7fb82a0102c0	7	-	0	False	2020-09-19 05:09:13.000000 UTC	N/A	Disabled
+L27: 8416	764	WmiPrvSE.exe	0x7fc404ec12c0	7	-	0	False	2020-09-19 05:09:13.000000 UTC	N/A	Disabled
+L33: 8416	764	WmiPrvSE.exe	0x7fc42a0102c0	7	-	0	False	2020-09-19 05:09:13.000000 UTC	N/A	Disabled
+L44: 8416	764	WmiPrvSE.exe	0x7fca04ec12c0	7	-	0	False	2020-09-19 05:09:13.000000 UTC	N/A	Disabled
+L50: 8416	764	WmiPrvSE.exe	0x7fca2a0102c0	7	-	0	False	2020-09-19 05:09:13.000000 UTC	N/A	Disabled
+L63: 8416	764	WmiPrvSE.exe	0x7ffa04ec12c0	7	-	0	False	2020-09-19 05:09:13.000000 UTC	N/A	Disabled
+L69: 8416	764	WmiPrvSE.exe	0x7ffa2a0102c0	7	-	0	False	2020-09-19 05:09:13.000000 UTC	N/A	Disabled
+L143: 8416	764	WmiPrvSE.exe	0xbe8e77e582c0	7	-	0	False	2020-09-19 05:09:13.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L93: 8416	WmiPrvSE.exe	\Device\HarddiskVolume3\Windows\System32\wbem\WmiPrvSE.exe	-	False	False
+
+--- sessions.txt ---
+L48: 0	-	8416	WmiPrvSE.exe	-	2020-09-19 05:09:13.000000 UTC
+
+=== END OF PIVOT REPORT ===

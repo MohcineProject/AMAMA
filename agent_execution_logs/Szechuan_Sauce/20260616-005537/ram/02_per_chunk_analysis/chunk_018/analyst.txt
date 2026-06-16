@@ -1,0 +1,56 @@
+I'll work through each PID systematically, applying the reasoning framework to the evidence provided.
+
+---
+
+**PID 6756 — taskhostw.exe**
+
+Agent 1 flags: orphaned PPID 448, missing cmdline.
+
+Evidence review:
+- `pslist.txt` / `pstree.txt`: Binary path is `\Device\HarddiskVolume3\Windows\System32\taskhostw.exe` — legitimate system path.
+- `cmdline.txt`: `-` (no cmdline recorded). `taskhostw.exe` normally runs with arguments like `taskhostw.exe $(Arg0)` for task hosting, but missing cmdline in Volatility can be a memory-parsing artifact, not necessarily malicious.
+- `ldrmodules.txt`: Only one entry shown — `\Windows\System32\taskhostw.exe` — no suspicious DLLs from user-writable paths.
+- `privileges.txt`: The privilege set is enormous — nearly every privilege in the token is listed, but almost none are `Present` or `Enabled`. Only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeCreateGlobalPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are Present/Enabled/Default. This is a standard Windows token with a large privilege list but minimal enabled privileges — consistent with a SYSTEM-context process that hasn't elevated specific privileges. `SeDebugPrivilege` is listed but **not** Present or Enabled.
+- Orphaned PPID: PPID 448 not in process list. This is common for short-lived parent processes (e.g., `svchost.exe` hosting the Task Scheduler service that spawned `taskhostw.exe` and then exited or was captured differently). This is a known benign artifact in memory forensics.
+- No malfind, no netscan, no suspicious DLL paths, no registry persistence evidence.
+
+Verdict: **REJECTED** — The binary is in System32, the privilege set shows no enabled dangerous privileges, the ldrmodules entry is clean, and the orphaned PPID is a common benign artifact. No corroborating evidence of malice.
+
+---
+
+**PID 7172 — browser_broker.exe**
+
+Agent 1 flags: orphaned PPID 764, DLL list anomaly (process image in DLL list, bare `-` entry).
+
+Evidence review:
+- `cmdline.txt`: `C:\Windows\system32\browser_broker.exe -Embedding` — this is the standard COM activation argument for `browser_broker.exe`, which is a legitimate Windows Edge/IE broker process launched via COM `-Embedding`.
+- Binary path: `C:\Windows\system32\browser_broker.exe` — legitimate system path.
+- `dlllist.txt` L1082: `0x7ffd749d0000 | 0x1f4000 | - | -` — a DLL entry with no name/path. This is a known Volatility parsing artifact for memory-mapped regions that don't have a backing file name resolvable in the VAD/PEB, not necessarily a malicious injection. The size (0x1f4000 = ~2MB) is plausible for a system DLL.
+- L1081: The process image itself appearing in `dlllist` is normal — Volatility lists the main module as the first entry.
+- L1083: `KERNEL32.DLL` from `C:\Windows\System32\` — clean.
+- `privileges.txt`: Same pattern as PID 6756 — large token with nearly all privileges not Present/Enabled. Standard Windows token structure.
+- Orphaned PPID 764: `browser_broker.exe` is typically spawned by `svchost.exe` (hosting DCOM/COM surrogate services) or by the browser process. PPID 764 not being in the list is again a common artifact.
+- No malfind, no netscan, no suspicious paths, no registry persistence evidence.
+
+Verdict: **REJECTED** — Standard COM `-Embedding` invocation from System32, legitimate privilege token, DLL anomalies are Volatility parsing artifacts, and orphaned PPID is a common benign condition for COM-activated processes.
+
+---
+
+Now producing the formal report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: Both Agent 1 findings examined in this batch are assessed as benign. PID 6756 (taskhostw.exe) and PID 7172 (browser_broker.exe) both reside in System32, carry standard Windows privilege tokens with no dangerous privileges enabled, and show no suspicious DLL paths, network connections, malfind hits, or registry persistence. The orphaned-PPID and missing-cmdline signals are well-known Volatility artifacts for short-lived or COM-activated parent processes. No confirmed malicious activity is present in this triage batch.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report for this batch.
+
+All two Agent 1 leads were REJECTED:
+
+  - PID 6756 (taskhostw.exe): Binary in System32; privilege token large but no dangerous privileges enabled; single clean ldrmodules entry; orphaned PPID is a common artifact of the Task Scheduler svchost host exiting after spawning the process; missing cmdline is a known Volatility memory-parsing gap for this binary class. No corroborating malicious signal across any artefact type.
+
+  - PID 7172 (browser_broker.exe): Standard COM -Embedding invocation from System32; privilege token matches system-context norm with no enabled dangerous privileges; the bare '-' DLL entry is a Volatility VAD-resolution artifact, not evidence of injection; KERNEL32.DLL loads from System32; orphaned PPID is expected for COM-activated broker processes whose DCOM host may not appear in the captured process list. No corroborating malicious signal across any artefact type.
+
+================================================================

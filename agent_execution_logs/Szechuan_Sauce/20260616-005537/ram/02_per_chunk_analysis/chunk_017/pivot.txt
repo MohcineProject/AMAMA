@@ -1,0 +1,127 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:17:14Z
+
+=== PID 6456 (winlogon.exe, ppid=4084) ===
+
+--- pslist.txt ---
+L50: 6456	4084	winlogon.exe	0xbe8e773ef080	5	-	2	False	2020-09-19 03:17:00.000000 UTC	N/A	Disabled
+L51: 1768	6456	dwm.exe	0xbe8e78cab080	15	-	2	False	2020-09-19 03:17:01.000000 UTC	N/A	Disabled
+L52: 4808	6456	fontdrvhost.ex	0xbe8e75cb4080	5	-	2	False	2020-09-19 03:17:01.000000 UTC	N/A	Disabled
+L58: 5204	6456	userinit.exe	0xbe8e79130080	0	-	2	False	2020-09-19 05:08:16.000000 UTC	2020-09-19 05:08:42.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L50: 6456	winlogon.exe	-
+
+--- privileges.txt ---
+L1580: 6456	winlogon.exe	2	SeCreateTokenPrivilege		Create a token object
+L1581: 6456	winlogon.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L1582: 6456	winlogon.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L1583: 6456	winlogon.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L1584: 6456	winlogon.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1585: 6456	winlogon.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L1586: 6456	winlogon.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L1587: 6456	winlogon.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L1588: 6456	winlogon.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L1589: 6456	winlogon.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L1590: 6456	winlogon.exe	12	SeSystemtimePrivilege		Change the system time
+L1591: 6456	winlogon.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L1592: 6456	winlogon.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L1593: 6456	winlogon.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L1594: 6456	winlogon.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L1595: 6456	winlogon.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L1596: 6456	winlogon.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L1597: 6456	winlogon.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L1598: 6456	winlogon.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L1599: 6456	winlogon.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L1600: 6456	winlogon.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L1601: 6456	winlogon.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1602: 6456	winlogon.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1603: 6456	winlogon.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L1604: 6456	winlogon.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L1605: 6456	winlogon.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1606: 6456	winlogon.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L1607: 6456	winlogon.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L1608: 6456	winlogon.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L1609: 6456	winlogon.exe	31	SeTrustedCredManAccessPrivilege	Present	Access Credential Manager as a trusted caller
+L1610: 6456	winlogon.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1611: 6456	winlogon.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L1612: 6456	winlogon.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L1613: 6456	winlogon.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L1614: 6456	winlogon.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L83: 6456	4084	winlogon.exe	0xbe8e773ef080	5	-	2	False	2020-09-19 03:17:00.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\winlogon.exe	-	-
+L84: * 1768	6456	dwm.exe	0xbe8e78cab080	15	-	2	False	2020-09-19 03:17:01.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\dwm.exe	"dwm.exe"	C:\Windows\system32\dwm.exe
+L85: * 5204	6456	userinit.exe	0xbe8e79130080	0	-	2	False	2020-09-19 05:08:16.000000 UTC	2020-09-19 05:08:42.000000 UTC	\Device\HarddiskVolume3\Windows\System32\userinit.exe	-	-
+L93: * 4808	6456	fontdrvhost.ex	0xbe8e75cb4080	5	-	2	False	2020-09-19 03:17:01.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\fontdrvhost.exe	-	-
+
+--- psscan.txt ---
+L113: 4808	6456	fontdrvhost.ex	0xbe8e75cb4080	5	-	2	False	2020-09-19 03:17:01.000000 UTC	N/A	Disabled
+L136: 6456	4084	winlogon.exe	0xbe8e773ef080	5	-	2	False	2020-09-19 03:17:00.000000 UTC	N/A	Disabled
+L155: 1768	6456	dwm.exe	0xbe8e78cab080	15	-	2	False	2020-09-19 03:17:01.000000 UTC	N/A	Disabled
+L165: 5204	6456	userinit.exe	0xbe8e79130080	0	-	2	False	2020-09-19 05:08:16.000000 UTC	2020-09-19 05:08:42.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L50: 6456	winlogon.exe	\Device\HarddiskVolume3\Windows\System32\winlogon.exe	-	False	False
+
+--- sessions.txt ---
+L54: 2	-	6456	winlogon.exe	-	2020-09-19 03:17:00.000000 UTC
+
+=== PID 4808 (fontdrvhost.ex, ppid=6456) ===
+
+--- pslist.txt ---
+L52: 4808	6456	fontdrvhost.ex	0xbe8e75cb4080	5	-	2	False	2020-09-19 03:17:01.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L52: 4808	fontdrvhost.ex	-
+
+--- privileges.txt ---
+L1650: 4808	fontdrvhost.ex	2	SeCreateTokenPrivilege		Create a token object
+L1651: 4808	fontdrvhost.ex	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L1652: 4808	fontdrvhost.ex	4	SeLockMemoryPrivilege		Lock pages in memory
+L1653: 4808	fontdrvhost.ex	5	SeIncreaseQuotaPrivilege		Increase quotas
+L1654: 4808	fontdrvhost.ex	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1655: 4808	fontdrvhost.ex	7	SeTcbPrivilege		Act as part of the operating system
+L1656: 4808	fontdrvhost.ex	8	SeSecurityPrivilege		Manage auditing and security log
+L1657: 4808	fontdrvhost.ex	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L1658: 4808	fontdrvhost.ex	10	SeLoadDriverPrivilege		Load and unload device drivers
+L1659: 4808	fontdrvhost.ex	11	SeSystemProfilePrivilege		Profile system performance
+L1660: 4808	fontdrvhost.ex	12	SeSystemtimePrivilege		Change the system time
+L1661: 4808	fontdrvhost.ex	13	SeProfileSingleProcessPrivilege		Profile a single process
+L1662: 4808	fontdrvhost.ex	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L1663: 4808	fontdrvhost.ex	15	SeCreatePagefilePrivilege		Create a pagefile
+L1664: 4808	fontdrvhost.ex	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L1665: 4808	fontdrvhost.ex	17	SeBackupPrivilege		Backup files and directories
+L1666: 4808	fontdrvhost.ex	18	SeRestorePrivilege		Restore files and directories
+L1667: 4808	fontdrvhost.ex	19	SeShutdownPrivilege		Shut down the system
+L1668: 4808	fontdrvhost.ex	20	SeDebugPrivilege		Debug programs
+L1669: 4808	fontdrvhost.ex	21	SeAuditPrivilege		Generate security audits
+L1670: 4808	fontdrvhost.ex	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L1671: 4808	fontdrvhost.ex	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1672: 4808	fontdrvhost.ex	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1673: 4808	fontdrvhost.ex	25	SeUndockPrivilege		Remove computer from docking station
+L1674: 4808	fontdrvhost.ex	26	SeSyncAgentPrivilege		Synch directory service data
+L1675: 4808	fontdrvhost.ex	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1676: 4808	fontdrvhost.ex	28	SeManageVolumePrivilege		Manage the files on a volume
+L1677: 4808	fontdrvhost.ex	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L1678: 4808	fontdrvhost.ex	30	SeCreateGlobalPrivilege		Create global objects
+L1679: 4808	fontdrvhost.ex	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1680: 4808	fontdrvhost.ex	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1681: 4808	fontdrvhost.ex	33	SeIncreaseWorkingSetPrivilege	Present,Enabled	Allocate more memory for user applications
+L1682: 4808	fontdrvhost.ex	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L1683: 4808	fontdrvhost.ex	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L1684: 4808	fontdrvhost.ex	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L93: * 4808	6456	fontdrvhost.ex	0xbe8e75cb4080	5	-	2	False	2020-09-19 03:17:01.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\fontdrvhost.exe	-	-
+
+--- psscan.txt ---
+L113: 4808	6456	fontdrvhost.ex	0xbe8e75cb4080	5	-	2	False	2020-09-19 03:17:01.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L52: 4808	fontdrvhost.ex	\Device\HarddiskVolume3\Windows\System32\fontdrvhost.exe	-	False	False
+
+--- sessions.txt ---
+L56: 2	-	4808	fontdrvhost.ex	-	2020-09-19 03:17:01.000000 UTC
+
+=== END OF PIVOT REPORT ===

@@ -1,0 +1,85 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 2952 — dllhost.exe**
+
+Agent 1 flags: orphaned parent (PPID 616 absent from process list), SeDebugPrivilege + SeImpersonatePrivilege both enabled.
+
+Evidence review:
+
+1. **Orphaned parent**: PPID 616 is not in the process list. This is a real signal — legitimate dllhost.exe instances are spawned by svchost.exe or COM Surrogate infrastructure. An orphaned parent can indicate the parent was killed after spawning, or PID reuse, but it's still anomalous.
+
+2. **Privilege footprint**: The privilege set is enormous. Not just SeDebugPrivilege and SeImpersonatePrivilege — this process has `SeAssignPrimaryTokenPrivilege` (Present), `SeIncreaseQuotaPrivilege` (Present), `SeTcbPrivilege` (Default), `SeDebugPrivilege` (Present, Enabled, Default), `SeAuditPrivilege` (Present, Enabled, Default), `SeImpersonatePrivilege` (Present, Enabled, Default), `SeCreateGlobalPrivilege` (Present, Enabled, Default). This is essentially a SYSTEM-level token. A standard dllhost.exe running as a user or even a service account would not hold SeTcbPrivilege or SeAssignPrimaryTokenPrivilege. This privilege set is consistent with SYSTEM context — but dllhost.exe running as SYSTEM with an orphaned parent and no command line is suspicious.
+
+3. **Cmdline**: The cmdline is `-` (empty/unavailable). Legitimate COM Surrogate dllhost.exe instances always have `/Processid:{CLSID}` arguments. The absence of a command line is a strong red flag — it may indicate process hollowing or a process that was injected into.
+
+4. **Path**: pstree shows `\Device\HarddiskVolume3\Windows\System32\dllhost.exe` — the path is legitimate System32. So no path anomaly.
+
+5. **ldrmodules**: Only one hit — `bcrypt.dll` flagged as `False False False` (not in any of the three module lists — InLoad, InMem, InInit). This is a ldrmodules anomaly: a DLL that doesn't appear in the standard loader lists is suspicious (could indicate manual mapping or injection). However, bcrypt.dll is a legitimate Windows DLL. The False/False/False flag in ldrmodules can sometimes occur for legitimate DLLs loaded via direct mapping rather than the standard loader. Still, combined with other signals, it's worth noting.
+
+6. **No malfind, no netscan, no registry hits**: No code injection markers, no network connections, no persistence registry entries in the evidence provided.
+
+**Assessment**: The combination of (a) missing command line where one is always expected, (b) SYSTEM-level privilege token on a dllhost.exe with (c) orphaned parent, and (d) a ldrmodules anomaly on bcrypt.dll is concerning. However, there's no malfind evidence, no network connections, no DLLs from suspicious paths. The SYSTEM token could explain the privilege set if this is a legitimate COM Surrogate running under SYSTEM. The missing cmdline is the most concerning signal. I'll mark this **INCONCLUSIVE** — there are real anomalies (missing cmdline, orphaned parent, SYSTEM-level privileges) but no smoking gun (no malfind, no suspicious DLL paths, no network, no registry persistence). The evidence is not sufficient to CONFIRM without more artefacts.
+
+---
+
+**PID 2964 — ShellExperienceHost.exe**
+
+Agent 1 flags: orphaned parent (PPID 764 absent), name truncation noted as benign.
+
+Evidence review:
+
+1. **Name**: pstree confirms full path `\Device\HarddiskVolume3\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe` — legitimate Windows system app path. Name truncation is confirmed benign per the known data artefact rule.
+
+2. **Orphaned parent**: PPID 764 not in process list. ShellExperienceHost.exe is normally a child of explorer.exe or sihost.exe. An orphaned parent here could simply mean the parent exited (common for shell infrastructure processes that get re-parented or whose parent exits). This is a weak signal on its own.
+
+3. **Cmdline**: `-` (empty). ShellExperienceHost.exe typically runs without explicit command-line arguments, so this is less suspicious than for dllhost.exe.
+
+4. **Privileges**: All privileges show no `Present` or `Enabled` flags except `SeChangeNotifyPrivilege` (Present, Enabled, Default) and `SeIncreaseWorkingSetPrivilege` (Present). This is a normal, minimal user-context privilege set. No elevated privileges at all.
+
+5. **malware_pebmasquerade.txt**: The hit shows `False False` — meaning the PE masquerade check did not flag it. The path matches the legitimate Windows SystemApps location.
+
+6. **Session 2**: Running in session 2, which is a user session — consistent with ShellExperienceHost.exe behavior.
+
+7. **No malfind, no netscan, no suspicious DLLs**: Nothing else flagged.
+
+**Assessment**: The only real signal is the orphaned parent. The path is legitimate, privileges are minimal and normal, no masquerade detected, session is appropriate. This is a **REJECTED** finding. The orphaned parent alone, with no other corroborating evidence, is insufficient — ShellExperienceHost.exe's parent (likely sihost.exe or explorer.exe at PID 764) may have simply exited or been restarted. All other indicators are clean.
+
+---
+
+**Counts**: confirmed=0, inconclusive=1, rejected=1
+
+Now writing the report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: Two Agent 1 leads were reviewed. One process (dllhost.exe, PID 2952) presents a convergence of anomalies — absent command line, SYSTEM-level privilege token, and an orphaned parent — that cannot be explained away but also cannot be confirmed as malicious without additional artefacts such as malfind output, network connections, or handle evidence. The second process (ShellExperienceHost.exe, PID 2964) is assessed as benign: its only flag was an orphaned parent, and all other indicators are clean and consistent with legitimate Windows shell infrastructure.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      2952
+PPID:     616
+Image:    dllhost.exe
+Cmdline:  - (no command line recovered)
+Severity: N/A
+MITRE:    T1055 — Process Injection (candidate; not confirmed)
+
+Justification:
+  Three independent anomalies converge on this process: (1) the command line is entirely absent, which is abnormal for dllhost.exe — legitimate COM Surrogate instances always carry a `/Processid:{CLSID}` argument; (2) the parent PID 616 does not appear anywhere in the process list, indicating either a killed parent or PID reuse after a suspicious spawn; and (3) the privilege token is SYSTEM-class, with SeAssignPrimaryTokenPrivilege, SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege all Present or Enabled — a set that is normal for SYSTEM-context services but anomalous for a dllhost.exe with no recoverable command line and no visible legitimate parent. Additionally, ldrmodules shows bcrypt.dll with all three loader-list flags False, which can indicate manual DLL mapping rather than standard loader linkage. However, no malfind sections, no network connections, no suspicious DLL load paths, and no registry persistence entries were present in the extracted evidence, preventing a CONFIRMED verdict under the conservative bias rule.
+
+Key Evidence:
+  - L37: 2952	616	dllhost.exe	0xbe8e7600a280	10	-	0	False	2020-09-19 01:24:11.000000 UTC	N/A	Disabled
+  - L37: 2952	dllhost.exe	-
+  - L1130: 2952	dllhost.exe	7	SeTcbPrivilege	Default	Act as part of the operating system
+  - L1143: 2952	dllhost.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L1152: 2952	dllhost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L1126: 2952	dllhost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+  - L43: 2952	dllhost.exe	0x7ffd72770000	False	False	False	\Windows\System32\bcrypt.dll
+  - L44: ** 2952	616	dllhost.exe	0xbe8e7600a280	10	-	0	False	2020-09-19 01:24:11.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\dllhost.exe	-	-
+----------------------------------------------------------------
+
+================================================================

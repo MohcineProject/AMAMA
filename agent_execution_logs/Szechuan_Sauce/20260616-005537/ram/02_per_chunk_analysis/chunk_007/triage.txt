@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2025-01-30T00:00:00Z
+Chunk: chunk_007.txt
+Summary: Both processes have an unknown/missing parent (PID 616 not present in process list); spoolsv.exe additionally holds high-risk privileges and has a suspicious non-whitelisted DLL list entry.
+
+[PROCESS]
+pid: 2188
+ppid: 616
+image: spoolsv.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_process: parent PID 616 (unknown) not present anywhere in the process list | privilege_anomaly: holds SeAssignPrimaryTokenPrivilege, SeTcbPrivilege, SeImpersonatePrivilege — high-risk privilege set for a print spooler process | dll_anomaly: non-whitelisted DLL list includes bare '-' entry (possible unresolved/hidden module reference)
+
+[PROCESS]
+pid: 2208
+ppid: 616
+image: svchost.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 616 (unknown) not present anywhere in the process list — svchost.exe should descend from services.exe | parent_mismatch: svchost.exe parent is PID 616 (unknown), expected services.exe
+

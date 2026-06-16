@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_017.txt
+Summary: winlogon.exe has an unknown/orphaned parent and holds an unusual combination of high-risk privileges; fontdrvhost.ex parented under winlogon.exe is consistent with normal Windows behaviour and the truncated name is a kernel artefact — both are low-confidence flags worth confirming.
+
+[PROCESS]
+pid: 6456
+ppid: 4084
+image: winlogon.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_parent: PPID 4084 listed as 'unknown' — parent process not present in process list | privilege_stack: holds SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege simultaneously — unusual combination for a standard winlogon instance | missing_path_and_cmdline: no image path or command line recorded in snapshot
+
+[PROCESS]
+pid: 4808
+ppid: 6456
+image: fontdrvhost.ex
+cmdline: 
+severity: LOW
+reasons: parent_mismatch: fontdrvhost.exe normally parents under wininit.exe or dwm.exe, not winlogon.exe (PID 6456) | missing_path_and_cmdline: no image path or command line recorded — cannot confirm legitimate binary on disk | note: truncated name 'fontdrvhost.ex' is a 14-char EPROCESS kernel artefact, not itself an IOC
+

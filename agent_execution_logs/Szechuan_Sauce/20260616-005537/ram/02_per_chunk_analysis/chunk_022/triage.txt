@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_022.txt
+Summary: Suspicious coreupdater process with high-risk privileges and orphaned parent; WmiPrvSE holding SeTcbPrivilege and SeDebugPrivilege warrants review.
+
+[PROCESS]
+pid: 8324
+ppid: 4008
+image: coreupdater.ex
+cmdline: 
+severity: HIGH
+reasons: unknown_image: 'coreupdater.ex' is not a recognized Windows system process; name resembles a masquerading updater binary | orphaned_parent: PPID 4008 is not present anywhere in the process list | no_path: image path is absent — file backing inaccessible or hidden | privilege_anomaly: holds SeDebugPrivilege and SeImpersonatePrivilege — high-risk combination for a non-system process | short_lived: process ran for ~2m21s (03:40:49–03:43:10 UTC) with no visible legitimate purpose
+
+[PROCESS]
+pid: 8416
+ppid: 764
+image: WmiPrvSE.exe
+cmdline: 
+severity: MEDIUM
+reasons: privilege_anomaly: WmiPrvSE.exe holds SeTcbPrivilege — this privilege is not normally granted to WMI provider host instances and may indicate token manipulation or a malicious WMI provider | privilege_anomaly: also holds SeDebugPrivilege and SeImpersonatePrivilege alongside SeTcbPrivilege — stacked high-risk privileges on a provider host is abnormal | orphaned_parent: PPID 764 is listed as unknown — expected parent is DComLaunch (svchost.exe hosting DComLaunch)
+

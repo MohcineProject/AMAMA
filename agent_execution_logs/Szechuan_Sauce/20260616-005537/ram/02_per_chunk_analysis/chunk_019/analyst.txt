@@ -1,0 +1,21 @@
+================================================================
+PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: Three Agent 1 findings cover two RuntimeBroker.exe instances (PIDs 7380 and 7508) and one MicrosoftEdgeSH.exe instance (PID 4272). All three processes resolve to legitimate System32 binaries confirmed by pstree path data. The orphaned-parent signal (PPID 764 absent from pslist) is a common artefact of memory snapshot timing rather than evidence of masquerading. No malfind hits, no suspicious DLL paths, no encoded command lines, and no registry persistence indicators are present for any of the three PIDs. All findings are rejected.
+Counts: confirmed=0  inconclusive=0  rejected=3
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+--- REJECTED FINDINGS SUMMARY (for Agent 3 accounting) ---
+
+PID 7380 — RuntimeBroker.exe (PPID 764): REJECTED
+  The name truncation to "RuntimeBroker." is fully explained by the 14-character EPROCESS field; pstree confirms the full path \Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe. PPID 764 is absent from pslist, but this is a well-known artefact of live-memory snapshot timing (the parent — almost certainly svchost.exe hosting DcomLaunch — had already exited or was not captured in the active list slice). The privilege table shows the full default token inherited at process creation; none of the listed privileges are marked Present or Enabled beyond the standard set (SeShutdownPrivilege Present, SeChangeNotifyPrivilege Present/Enabled/Default, SeUndockPrivilege Present, SeCreateGlobalPrivilege Default, SeIncreaseWorkingSetPrivilege Present, SeTimeZonePrivilege Present), which is the normal unprivileged user token. No cmdline anomaly, no DLL anomaly, no malfind hit, no network connection, no registry persistence indicator.
+
+PID 7508 — RuntimeBroker.exe (PPID 764): REJECTED
+  Same binary path confirmed by pstree (\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe). The "unusual spawn chain" signal — RuntimeBroker parenting MicrosoftEdgeSH.exe — is consistent with documented Windows behaviour: RuntimeBroker.exe acts as a broker for UWP/AppContainer processes and can legitimately parent Edge content-process helpers on Windows 10. PPID 764 absence is the same snapshot-timing artefact as PID 7380. Privilege footprint is identical to PID 7380 (same standard enabled set, no elevated privileges active). No cmdline anomaly, no DLL anomaly, no malfind hit.
+
+PID 4272 — MicrosoftEdgeSH.exe (PPID 7508): REJECTED
+  pstree and malware_pebmasquerade.txt both confirm the full path \Device\HarddiskVolume3\Windows\System32\MicrosoftEdgeSH.exe; the masquerade check returns False/False (no PEB masquerade detected). The parent RuntimeBroker.exe (PID 7508) is itself a legitimate System32 binary acting in its broker role. Privilege footprint is a standard user token with only SeChangeNotifyPrivilege and SeIncreaseWorkingSetPrivilege enabled — appropriate for a sandboxed Edge helper. No cmdline anomaly, no DLL anomaly, no malfind hit, no network connection.
+
+================================================================

@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_019.txt
+Summary: All three processes have orphaned or unknown parent PID 764; RuntimeBroker instances parenting each other and a MicrosoftEdge process is an unusual spawn chain worth confirming.
+
+[PROCESS]
+pid: 7380
+ppid: 764
+image: RuntimeBroker.
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 764 (unknown) not present in process list | name_note: 'RuntimeBroker.' is consistent with EPROCESS 14-char truncation of 'RuntimeBroker.exe' — verify via Path/Cmd if available
+
+[PROCESS]
+pid: 7508
+ppid: 764
+image: RuntimeBroker.
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 764 (unknown) not present in process list | unusual_spawn_chain: RuntimeBroker.exe (PID 7508) is itself the parent of MicrosoftEdgeS (PID 4272) — RuntimeBroker should not parent Edge content processes directly
+
+[PROCESS]
+pid: 4272
+ppid: 7508
+image: MicrosoftEdgeS
+cmdline: 
+severity: LOW
+reasons: unusual_spawn_chain: parent is RuntimeBroker. (PID 7508) rather than expected MicrosoftEdge manager or svchost lineage | name_note: 'MicrosoftEdgeS' is consistent with EPROCESS 14-char truncation of 'MicrosoftEdgeSH.exe' or similar — verify full name via Path/Cmd
+

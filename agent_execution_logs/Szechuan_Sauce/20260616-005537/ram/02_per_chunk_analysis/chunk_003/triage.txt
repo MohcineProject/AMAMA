@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_003.txt
+Summary: svchost.exe with orphaned/unknown parent and stacked high-risk privileges; ctfmon.exe with anomalous parent (svchost.exe instead of expected explorer.exe/winlogon.exe lineage).
+
+[PROCESS]
+pid: 1148
+ppid: 616
+image: svchost.exe
+cmdline: 
+severity: HIGH
+reasons: orphaned_parent: PPID 616 listed as 'unknown' — parent process not present in process list | privilege_stack: holds SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege simultaneously — atypical for a standard svchost.exe instance | missing_cmdline: no command line recorded, legitimate svchost.exe always runs with -k <group> arguments
+
+[PROCESS]
+pid: 3344
+ppid: 1148
+image: ctfmon.exe
+cmdline: 
+severity: MEDIUM
+reasons: parent_mismatch: ctfmon.exe spawned by svchost.exe (PID 1148) — expected parent is typically explorer.exe or winlogon.exe lineage, not svchost.exe | parent_is_suspicious: direct child of already-flagged anomalous svchost.exe (PID 1148) with unknown parent and stacked privileges
+

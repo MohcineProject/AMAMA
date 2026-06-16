@@ -1,0 +1,146 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:13:20Z
+
+=== PID 3388 (svchost.exe, ppid=616) ===
+Cmdline: C:\Windows\system32\svchost.exe -k ClipboardSvcGroup -p
+
+--- pslist.txt ---
+L63: 3388	616	svchost.exe	0xbe8e791ef080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L63: 3388	svchost.exe	C:\Windows\system32\svchost.exe -k ClipboardSvcGroup -p
+
+--- privileges.txt ---
+L2000: 3388	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L2001: 3388	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2002: 3388	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2003: 3388	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2004: 3388	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2005: 3388	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2006: 3388	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2007: 3388	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2008: 3388	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2009: 3388	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2010: 3388	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L2011: 3388	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2012: 3388	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2013: 3388	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2014: 3388	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2015: 3388	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L2016: 3388	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L2017: 3388	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2018: 3388	svchost.exe	20	SeDebugPrivilege		Debug programs
+L2019: 3388	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L2020: 3388	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2021: 3388	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2022: 3388	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2023: 3388	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2024: 3388	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2025: 3388	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2026: 3388	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2027: 3388	svchost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2028: 3388	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2029: 3388	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2030: 3388	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2031: 3388	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2032: 3388	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2033: 3388	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2034: 3388	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L966: 3388	svchost.exe	0x7ff727f10000	0x11000	svchost.exe	C:\Windows\system32\svchost.exe	-1	2020-09-19 05:08:19.000000 UTC	Disabled
+L967: 3388	svchost.exe	0x7ffd749d0000	0x1f4000	-	-	-1	2020-09-19 05:08:19.000000 UTC	Disabled
+L968: 3388	svchost.exe	0x48f2850fc085	0xfff44be8	-	-	18655	-	Disabled
+
+--- pstree.txt ---
+L55: ** 3388	616	svchost.exe	0xbe8e791ef080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k ClipboardSvcGroup -p	C:\Windows\system32\svchost.exe
+
+--- psscan.txt ---
+L5: 3388	616	svchost.exe	0x7f8318124080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L6: 3388	616	svchost.exe	0x7f9518124080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L7: 3388	616	svchost.exe	0x7fb800128080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L20: 3388	616	svchost.exe	0x7fb8339d1080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L24: 3388	616	svchost.exe	0x7fc400128080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L37: 3388	616	svchost.exe	0x7fc4339d1080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L41: 3388	616	svchost.exe	0x7fca00128080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L54: 3388	616	svchost.exe	0x7fca339d1080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L58: 3388	616	svchost.exe	0x7fe318124080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L59: 3388	616	svchost.exe	0x7fef18124080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L60: 3388	616	svchost.exe	0x7ffa00128080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L73: 3388	616	svchost.exe	0x7ffa339d1080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+L166: 3388	616	svchost.exe	0xbe8e791ef080	6	-	2	False	2020-09-19 05:08:19.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L144: 3388	svchost.exe	0x7ffd6f5e0000	False	False	False	\Windows\System32\CoreMessaging.dll
+L145: 3388	svchost.exe	0x7ffd6f280000	False	False	False	\Windows\System32\CoreUIComponents.dll
+L146: 3388	svchost.exe	0x7ffd73780000	False	False	False	\Windows\System32\combase.dll
+
+--- malware_ldrmodules.txt ---
+L144: 3388	svchost.exe	0x7ffd6f5e0000	False	False	False	\Windows\System32\CoreMessaging.dll
+L145: 3388	svchost.exe	0x7ffd6f280000	False	False	False	\Windows\System32\CoreUIComponents.dll
+L146: 3388	svchost.exe	0x7ffd73780000	False	False	False	\Windows\System32\combase.dll
+
+--- malware_pebmasquerade.txt ---
+L63: 3388	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe	False	False
+
+--- sessions.txt ---
+L63: 2	-	3388	svchost.exe	C137/ricksanchez	2020-09-19 05:08:19.000000 UTC
+
+=== PID 3496 (Microsoft.Phot, ppid=764) ===
+
+--- pslist.txt ---
+L95: 3496	764	Microsoft.Phot	0xbe8e7734b2c0	14	-	2	False	2020-09-19 05:09:08.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L95: 3496	Microsoft.Phot	-
+
+--- privileges.txt ---
+L3050: 3496	Microsoft.Phot	2	SeCreateTokenPrivilege		Create a token object
+L3051: 3496	Microsoft.Phot	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3052: 3496	Microsoft.Phot	4	SeLockMemoryPrivilege		Lock pages in memory
+L3053: 3496	Microsoft.Phot	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3054: 3496	Microsoft.Phot	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3055: 3496	Microsoft.Phot	7	SeTcbPrivilege		Act as part of the operating system
+L3056: 3496	Microsoft.Phot	8	SeSecurityPrivilege		Manage auditing and security log
+L3057: 3496	Microsoft.Phot	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3058: 3496	Microsoft.Phot	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3059: 3496	Microsoft.Phot	11	SeSystemProfilePrivilege		Profile system performance
+L3060: 3496	Microsoft.Phot	12	SeSystemtimePrivilege		Change the system time
+L3061: 3496	Microsoft.Phot	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3062: 3496	Microsoft.Phot	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3063: 3496	Microsoft.Phot	15	SeCreatePagefilePrivilege		Create a pagefile
+L3064: 3496	Microsoft.Phot	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3065: 3496	Microsoft.Phot	17	SeBackupPrivilege		Backup files and directories
+L3066: 3496	Microsoft.Phot	18	SeRestorePrivilege		Restore files and directories
+L3067: 3496	Microsoft.Phot	19	SeShutdownPrivilege		Shut down the system
+L3068: 3496	Microsoft.Phot	20	SeDebugPrivilege		Debug programs
+L3069: 3496	Microsoft.Phot	21	SeAuditPrivilege		Generate security audits
+L3070: 3496	Microsoft.Phot	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3071: 3496	Microsoft.Phot	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3072: 3496	Microsoft.Phot	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3073: 3496	Microsoft.Phot	25	SeUndockPrivilege		Remove computer from docking station
+L3074: 3496	Microsoft.Phot	26	SeSyncAgentPrivilege		Synch directory service data
+L3075: 3496	Microsoft.Phot	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3076: 3496	Microsoft.Phot	28	SeManageVolumePrivilege		Manage the files on a volume
+L3077: 3496	Microsoft.Phot	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3078: 3496	Microsoft.Phot	30	SeCreateGlobalPrivilege		Create global objects
+L3079: 3496	Microsoft.Phot	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3080: 3496	Microsoft.Phot	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3081: 3496	Microsoft.Phot	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3082: 3496	Microsoft.Phot	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L3083: 3496	Microsoft.Phot	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3084: 3496	Microsoft.Phot	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L23: *** 3496	764	Microsoft.Phot	0xbe8e7734b2c0	14	-	2	False	2020-09-19 05:09:08.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20070.10002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe	-	-
+
+--- psscan.txt ---
+L134: 3496	764	Microsoft.Phot	0xbe8e7734b2c0	14	-	2	False	2020-09-19 05:09:08.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L95: 3496	Microsoft.Phot	\Device\HarddiskVolume3\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20070.10002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe	-	False	False
+
+--- sessions.txt ---
+L93: 2	-	3496	Microsoft.Phot	-	2020-09-19 05:09:08.000000 UTC
+
+=== END OF PIVOT REPORT ===

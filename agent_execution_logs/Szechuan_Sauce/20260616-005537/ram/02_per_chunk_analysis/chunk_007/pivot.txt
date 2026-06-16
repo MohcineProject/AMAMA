@@ -1,0 +1,173 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:10:15Z
+
+=== PID 2188 (spoolsv.exe, ppid=616) ===
+
+--- pslist.txt ---
+L31: 2188	616	spoolsv.exe	0xbe8e75c2c200	10	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L31: 2188	spoolsv.exe	-
+
+--- privileges.txt ---
+L915: 2188	spoolsv.exe	2	SeCreateTokenPrivilege		Create a token object
+L916: 2188	spoolsv.exe	3	SeAssignPrimaryTokenPrivilege	Present,Enabled	Replace a process-level token
+L917: 2188	spoolsv.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L918: 2188	spoolsv.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L919: 2188	spoolsv.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L920: 2188	spoolsv.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L921: 2188	spoolsv.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L922: 2188	spoolsv.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L923: 2188	spoolsv.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L924: 2188	spoolsv.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L925: 2188	spoolsv.exe	12	SeSystemtimePrivilege		Change the system time
+L926: 2188	spoolsv.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L927: 2188	spoolsv.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L928: 2188	spoolsv.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L929: 2188	spoolsv.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L930: 2188	spoolsv.exe	17	SeBackupPrivilege		Backup files and directories
+L931: 2188	spoolsv.exe	18	SeRestorePrivilege		Restore files and directories
+L932: 2188	spoolsv.exe	19	SeShutdownPrivilege		Shut down the system
+L933: 2188	spoolsv.exe	20	SeDebugPrivilege	Default	Debug programs
+L934: 2188	spoolsv.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L935: 2188	spoolsv.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L936: 2188	spoolsv.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L937: 2188	spoolsv.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L938: 2188	spoolsv.exe	25	SeUndockPrivilege		Remove computer from docking station
+L939: 2188	spoolsv.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L940: 2188	spoolsv.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L941: 2188	spoolsv.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L942: 2188	spoolsv.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L943: 2188	spoolsv.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L944: 2188	spoolsv.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L945: 2188	spoolsv.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L946: 2188	spoolsv.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L947: 2188	spoolsv.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L948: 2188	spoolsv.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L949: 2188	spoolsv.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L379: 2188	spoolsv.exe	0x7ff656ec0000	0xc9000	spoolsv.exe	C:\Windows\System32\spoolsv.exe	-1	2020-09-19 01:24:09.000000 UTC	Disabled
+L380: 2188	spoolsv.exe	0x7ffd749d0000	0x1f4000	-	-	-1	2020-09-19 01:24:09.000000 UTC	Disabled
+L381: 2188	spoolsv.exe	0x7ffd732a0000	0xbd000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2020-09-19 01:24:09.000000 UTC	Disabled
+L382: 2188	spoolsv.exe	0x7ffd72120000	0x2c7000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2020-09-19 01:24:09.000000 UTC	Disabled
+L383: 2188	spoolsv.exe	0x7ffd73ee0000	0x1a0000	USER32.dll	C:\Windows\System32\USER32.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L384: 2188	spoolsv.exe	0x7ffd727a0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L385: 2188	spoolsv.exe	0x7ffd72ae0000	0x2a000	GDI32.dll	C:\Windows\System32\GDI32.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L386: 2188	spoolsv.exe	0x7ffd72930000	0x109000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L387: 2188	spoolsv.exe	0x7ffd723f0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L388: 2188	spoolsv.exe	0x7ffd725f0000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L389: 2188	spoolsv.exe	0x7ffd74100000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L390: 2188	spoolsv.exe	0x7ffd72a40000	0x9b000	sechost.dll	C:\Windows\System32\sechost.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L391: 2188	spoolsv.exe	0x7ffd73ae0000	0x123000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L392: 2188	spoolsv.exe	0x7ffd73d80000	0xaa000	advapi32.dll	C:\Windows\System32\advapi32.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L393: 2188	spoolsv.exe	0x7ffd72770000	0x27000	bcrypt.dll	C:\Windows\System32\bcrypt.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L394: 2188	spoolsv.exe	0x7ffd71580000	0xca000	DNSAPI.dll	C:\Windows\System32\DNSAPI.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L395: 2188	spoolsv.exe	0x7ffd71540000	0x3b000	ꧽ뉃앺䴾쾧쨡擭嫋	쾧쨡擭嫋耀	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L396: 2188	spoolsv.exe	0x7ffd73430000	0x9000	-	-	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L397: 2188	spoolsv.exe	0x7ffd73780000	0x354000		⁀滐ɣ	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L398: 2188	spoolsv.exe	0x7ffd700d0000	0x13000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L399: 2188	spoolsv.exe	0x7ffd726f0000	0x7f000	bcryptPrimitives.dll	C:\Windows\System32\bcryptPrimitives.dll	-1	2020-09-19 01:24:09.000000 UTC	Disabled
+L400: 2188	spoolsv.exe	0x7ffd72010000	0x31000	ኀ潨翽	툰滑ɣ	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L401: 2188	spoolsv.exe	0x7ffd71f90000	0x4b000	技泮ɛ		6	2020-09-19 01:24:09.000000 UTC	Disabled
+L402: 2188	spoolsv.exe	0x7ffd71ec0000	0x12000		껰潧翽	6	1600-12-31 23:01:50.000000 UTC	Disabled
+L403: 2188	spoolsv.exe	0x7ffd73c70000	0x6b000	ꋰ潅翽	蠐潀翽	6	2020-09-19 01:24:09.000000 UTC	Disabled
+L404: 2188	spoolsv.exe	0x0	0x0			0	N/A	Disabled
+
+--- pstree.txt ---
+L46: ** 2188	616	spoolsv.exe	0xbe8e75c2c200	10	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\spoolsv.exe		
+
+--- psscan.txt ---
+L110: 2188	616	spoolsv.exe	0xbe8e75c2c200	10	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L55: 0xbe8e759a01a0	TCPv4	0.0.0.0	49669	0.0.0.0	0	LISTENING	2188	spoolsv.exe	2020-09-19 01:24:09.000000 UTC
+L56: 0xbe8e759a01a0	TCPv6	::	49669	::	0	LISTENING	2188	spoolsv.exe	2020-09-19 01:24:09.000000 UTC
+L60: 0xbe8e759a1d30	TCPv4	0.0.0.0	49669	0.0.0.0	0	LISTENING	2188	spoolsv.exe	2020-09-19 01:24:09.000000 UTC
+
+--- netstat.txt ---
+L46: 0xbe8e759a01a0	TCPv4	0.0.0.0	49669	0.0.0.0	0	LISTENING	2188	spoolsv.exe	2020-09-19 01:24:09.000000 UTC
+L47: 0xbe8e759a01a0	TCPv6	::	49669	::	0	LISTENING	2188	spoolsv.exe	2020-09-19 01:24:09.000000 UTC
+L48: 0xbe8e759a1d30	TCPv4	0.0.0.0	49669	0.0.0.0	0	LISTENING	2188	spoolsv.exe	2020-09-19 01:24:09.000000 UTC
+
+--- malware_malfind.txt ---
+L5: 2188	spoolsv.exe	0x1840000	0x1863fff	VadS	PAGE_EXECUTE_READWRITE	36	1	Disabled	MZ header	
+
+--- ldrmodules.txt ---
+L36: 2188	spoolsv.exe	0x1840000	False	False	False	N/A
+L37: 2188	spoolsv.exe	0x7ff656ec0000	True	False	True	牥瑡䅥摮敓摮瑓瑡䕳敶瑮䅳乳敥敤⡤潣獮⁴汣獡⁳瑳㩤戺獡捩獟牴
+L38: 2188	spoolsv.exe	0x7ffd732a0000	True	True	True	\Windows\System32\kernel32.dll
+
+--- malware_ldrmodules.txt ---
+L36: 2188	spoolsv.exe	0x1840000	False	False	False	N/A
+L37: 2188	spoolsv.exe	0x7ff656ec0000	True	False	True	牥瑡䅥摮敓摮瑓瑡䕳敶瑮䅳乳敥敤⡤潣獮⁴汣獡⁳瑳㩤戺獡捩獟牴
+L38: 2188	spoolsv.exe	0x7ffd732a0000	True	True	True	\Windows\System32\kernel32.dll
+
+--- malware_pebmasquerade.txt ---
+L31: 2188	spoolsv.exe	\Device\HarddiskVolume3\Windows\System32\spoolsv.exe	-	False	False
+
+--- sessions.txt ---
+L30: 0	-	2188	spoolsv.exe	-	2020-09-19 01:24:09.000000 UTC
+
+=== PID 2208 (svchost.exe, ppid=616) ===
+
+--- pslist.txt ---
+L42: 2208	616	svchost.exe	0xbe8e7654f240	1	-	0	False	2020-09-19 01:26:11.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L42: 2208	svchost.exe	-
+
+--- privileges.txt ---
+L1300: 2208	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L1301: 2208	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L1302: 2208	svchost.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L1303: 2208	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L1304: 2208	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1305: 2208	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L1306: 2208	svchost.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L1307: 2208	svchost.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L1308: 2208	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L1309: 2208	svchost.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L1310: 2208	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L1311: 2208	svchost.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L1312: 2208	svchost.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L1313: 2208	svchost.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L1314: 2208	svchost.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L1315: 2208	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L1316: 2208	svchost.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L1317: 2208	svchost.exe	19	SeShutdownPrivilege		Shut down the system
+L1318: 2208	svchost.exe	20	SeDebugPrivilege	Default	Debug programs
+L1319: 2208	svchost.exe	21	SeAuditPrivilege	Default	Generate security audits
+L1320: 2208	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L1321: 2208	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1322: 2208	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1323: 2208	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L1324: 2208	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L1325: 2208	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1326: 2208	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L1327: 2208	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L1328: 2208	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L1329: 2208	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1330: 2208	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1331: 2208	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L1332: 2208	svchost.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L1333: 2208	svchost.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L1334: 2208	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L48: ** 2208	616	svchost.exe	0xbe8e7654f240	1	-	0	False	2020-09-19 01:26:11.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L9: 2208	616	svchost.exe	0x7fb801b49240	1	-	0	False	2020-09-19 01:26:11.000000 UTC	N/A	Disabled
+L26: 2208	616	svchost.exe	0x7fc401b49240	1	-	0	False	2020-09-19 01:26:11.000000 UTC	N/A	Disabled
+L43: 2208	616	svchost.exe	0x7fca01b49240	1	-	0	False	2020-09-19 01:26:11.000000 UTC	N/A	Disabled
+L62: 2208	616	svchost.exe	0x7ffa01b49240	1	-	0	False	2020-09-19 01:26:11.000000 UTC	N/A	Disabled
+L129: 2208	616	svchost.exe	0xbe8e7654f240	1	-	0	False	2020-09-19 01:26:11.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L42: 2208	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L41: 0	-	2208	svchost.exe	-	2020-09-19 01:26:11.000000 UTC
+
+=== END OF PIVOT REPORT ===

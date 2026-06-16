@@ -1,0 +1,289 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:09:00Z
+
+=== PID 1192 (svchost.exe, ppid=616) ===
+
+--- pslist.txt ---
+L29: 1192	616	svchost.exe	0xbe8e75aef300	6	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L29: 1192	svchost.exe	-
+
+--- privileges.txt ---
+L845: 1192	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L846: 1192	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L847: 1192	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L848: 1192	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L849: 1192	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L850: 1192	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L851: 1192	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L852: 1192	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L853: 1192	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L854: 1192	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L855: 1192	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L856: 1192	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L857: 1192	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L858: 1192	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L859: 1192	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L860: 1192	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L861: 1192	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L862: 1192	svchost.exe	19	SeShutdownPrivilege		Shut down the system
+L863: 1192	svchost.exe	20	SeDebugPrivilege		Debug programs
+L864: 1192	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L865: 1192	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L866: 1192	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L867: 1192	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L868: 1192	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L869: 1192	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L870: 1192	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L871: 1192	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L872: 1192	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L873: 1192	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L874: 1192	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L875: 1192	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L876: 1192	svchost.exe	33	SeIncreaseWorkingSetPrivilege		Allocate more memory for user applications
+L877: 1192	svchost.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L878: 1192	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L879: 1192	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L51: ** 1192	616	svchost.exe	0xbe8e75aef300	6	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L108: 1192	616	svchost.exe	0xbe8e75aef300	6	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L29: 1192	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L28: 0	-	1192	svchost.exe	-	2020-09-19 01:24:09.000000 UTC
+
+=== PID 1408 (svchost.exe, ppid=616) ===
+
+--- pslist.txt ---
+L23: 1408	616	svchost.exe	0xbe8e758bd300	14	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L23: 1408	svchost.exe	-
+
+--- privileges.txt ---
+L635: 1408	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L636: 1408	svchost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L637: 1408	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L638: 1408	svchost.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L639: 1408	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L640: 1408	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L641: 1408	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L642: 1408	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L643: 1408	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L644: 1408	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L645: 1408	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L646: 1408	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L647: 1408	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L648: 1408	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L649: 1408	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L650: 1408	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L651: 1408	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L652: 1408	svchost.exe	19	SeShutdownPrivilege		Shut down the system
+L653: 1408	svchost.exe	20	SeDebugPrivilege		Debug programs
+L654: 1408	svchost.exe	21	SeAuditPrivilege	Present,Enabled	Generate security audits
+L655: 1408	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L656: 1408	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L657: 1408	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L658: 1408	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L659: 1408	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L660: 1408	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L661: 1408	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L662: 1408	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L663: 1408	svchost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L664: 1408	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L665: 1408	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L666: 1408	svchost.exe	33	SeIncreaseWorkingSetPrivilege		Allocate more memory for user applications
+L667: 1408	svchost.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L668: 1408	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L669: 1408	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L12: ** 1408	616	svchost.exe	0xbe8e758bd300	14	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L103: 1408	616	svchost.exe	0xbe8e758bd300	14	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L23: 1408	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L23: 0	-	1408	svchost.exe	-	2020-09-19 01:24:08.000000 UTC
+
+=== PID 1576 (svchost.exe, ppid=616) ===
+
+--- pslist.txt ---
+L24: 1576	616	svchost.exe	0xbe8e75998240	14	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L24: 1576	svchost.exe	-
+
+--- privileges.txt ---
+L670: 1576	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L671: 1576	svchost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L672: 1576	svchost.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L673: 1576	svchost.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L674: 1576	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L675: 1576	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L676: 1576	svchost.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L677: 1576	svchost.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L678: 1576	svchost.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L679: 1576	svchost.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L680: 1576	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L681: 1576	svchost.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L682: 1576	svchost.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L683: 1576	svchost.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L684: 1576	svchost.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L685: 1576	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L686: 1576	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L687: 1576	svchost.exe	19	SeShutdownPrivilege		Shut down the system
+L688: 1576	svchost.exe	20	SeDebugPrivilege	Default	Debug programs
+L689: 1576	svchost.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L690: 1576	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L691: 1576	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L692: 1576	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L693: 1576	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L694: 1576	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L695: 1576	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L696: 1576	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L697: 1576	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L698: 1576	svchost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L699: 1576	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L700: 1576	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L701: 1576	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L702: 1576	svchost.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L703: 1576	svchost.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L704: 1576	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L50: ** 1576	616	svchost.exe	0xbe8e75998240	14	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L104: 1576	616	svchost.exe	0xbe8e75998240	14	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L24: 1576	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L24: 0	-	1576	svchost.exe	-	2020-09-19 01:24:09.000000 UTC
+
+=== PID 1608 (svchost.exe, ppid=616) ===
+
+--- pslist.txt ---
+L45: 1608	616	svchost.exe	0xbe8e711952c0	3	-	0	False	2020-09-19 01:28:10.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L45: 1608	svchost.exe	-
+
+--- privileges.txt ---
+L1405: 1608	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L1406: 1608	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L1407: 1608	svchost.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L1408: 1608	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L1409: 1608	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1410: 1608	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L1411: 1608	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L1412: 1608	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L1413: 1608	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L1414: 1608	svchost.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L1415: 1608	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L1416: 1608	svchost.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L1417: 1608	svchost.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L1418: 1608	svchost.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L1419: 1608	svchost.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L1420: 1608	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L1421: 1608	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L1422: 1608	svchost.exe	19	SeShutdownPrivilege		Shut down the system
+L1423: 1608	svchost.exe	20	SeDebugPrivilege	Default	Debug programs
+L1424: 1608	svchost.exe	21	SeAuditPrivilege	Default	Generate security audits
+L1425: 1608	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L1426: 1608	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1427: 1608	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1428: 1608	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L1429: 1608	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L1430: 1608	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1431: 1608	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L1432: 1608	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L1433: 1608	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L1434: 1608	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1435: 1608	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1436: 1608	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L1437: 1608	svchost.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L1438: 1608	svchost.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L1439: 1608	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L65: ** 1608	616	svchost.exe	0xbe8e711952c0	3	-	0	False	2020-09-19 01:28:10.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L81: 1608	616	svchost.exe	0xbe8e711952c0	3	-	0	False	2020-09-19 01:28:10.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L45: 1608	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L44: 0	-	1608	svchost.exe	-	2020-09-19 01:28:10.000000 UTC
+
+=== PID 2060 (svchost.exe, ppid=616) ===
+
+--- pslist.txt ---
+L30: 2060	616	svchost.exe	0xbe8e75bbc2c0	6	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L30: 2060	svchost.exe	-
+
+--- privileges.txt ---
+L880: 2060	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L881: 2060	svchost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L882: 2060	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L883: 2060	svchost.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L884: 2060	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L885: 2060	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L886: 2060	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L887: 2060	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L888: 2060	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L889: 2060	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L890: 2060	svchost.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L891: 2060	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L892: 2060	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L893: 2060	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L894: 2060	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L895: 2060	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L896: 2060	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L897: 2060	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L898: 2060	svchost.exe	20	SeDebugPrivilege		Debug programs
+L899: 2060	svchost.exe	21	SeAuditPrivilege	Present	Generate security audits
+L900: 2060	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L901: 2060	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L902: 2060	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L903: 2060	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L904: 2060	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L905: 2060	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L906: 2060	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L907: 2060	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L908: 2060	svchost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L909: 2060	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L910: 2060	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L911: 2060	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L912: 2060	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L913: 2060	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L914: 2060	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L45: ** 2060	616	svchost.exe	0xbe8e75bbc2c0	6	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L109: 2060	616	svchost.exe	0xbe8e75bbc2c0	6	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L30: 2060	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L29: 0	-	2060	svchost.exe	-	2020-09-19 01:24:09.000000 UTC
+
+=== END OF PIVOT REPORT ===

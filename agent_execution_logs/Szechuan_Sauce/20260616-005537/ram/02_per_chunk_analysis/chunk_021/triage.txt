@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-01-30T00:00:00Z
+Chunk: chunk_021.txt
+Summary: RuntimeBroker.exe with unknown/missing parent PID 764; non-whitelisted DLL entry lists the executable itself and a bare dash, which is anomalous.
+
+[PROCESS]
+pid: 8128
+ppid: 764
+image: RuntimeBroker.exe
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_process: parent PID 764 does not appear anywhere in the process list (listed as 'unknown') | anomalous_dll_entry: non-whitelisted DLL list contains the process image path itself ('C:\Windows\System32\RuntimeBroker.exe') and a bare dash ('-'), which is structurally abnormal and may indicate a parsing artefact or tampered module list
+

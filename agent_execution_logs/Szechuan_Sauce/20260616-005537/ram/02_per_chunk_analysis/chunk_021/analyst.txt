@@ -1,0 +1,78 @@
+I'll analyze each finding systematically before rendering verdicts.
+
+---
+
+**PID 8128 — RuntimeBroker.exe analysis:**
+
+**Orphaned parent (PPID 764):** RuntimeBroker.exe legitimately runs under `svchost.exe` (which hosts the DcomLaunch service, typically PID in the 700s range). PPID 764 not appearing in pslist could mean the parent exited after spawning it, or it's a PID reuse artifact. This is a weak signal alone.
+
+**DLL list anomaly:** Only 3 DLL entries. Entry L1079 shows a DLL with name `-` and path `-` at `0x7ffd749d0000` — this is suspicious but could be a Volatility parsing artifact for a memory-mapped region. Entry L1080 is far more alarming: base address `0x6bf5fb7fff0c` is not page-aligned (not a multiple of 0x1000), size `0x6886903` (~103 MB) is enormous and implausible for a legitimate DLL, and the load count `4253` is wildly abnormal. This looks like a corrupted/smeared EPROCESS structure or a tampered module list entry — possibly injected code masquerading as a module entry, or memory corruption.
+
+**Privilege footprint:** The privileges list shows nearly the *entire* Windows privilege set assigned to this process. Legitimate RuntimeBroker.exe runs as a standard user (typically the logged-in user) with a very limited privilege set — `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are typical. Having `SeCreateTokenPrivilege`, `SeTcbPrivilege`, `SeDebugPrivilege`, `SeLoadDriverPrivilege`, `SeImpersonatePrivilege`, `SeBackupPrivilege`, `SeRestorePrivilege`, etc. assigned (even if not enabled) is deeply anomalous. This token looks like a SYSTEM-level or elevated token, not a user-context RuntimeBroker token.
+
+**Cmdline:** `-Embedding` is the legitimate COM activation argument for RuntimeBroker. This part is normal.
+
+**Overall:** The cmdline is clean, but the privilege token is wildly inconsistent with legitimate RuntimeBroker behavior, the DLL list has a structurally impossible entry (non-aligned base, 103 MB size, load count 4253), and only 3 DLL entries total (a real RuntimeBroker loads many system DLLs). The combination of a near-complete privilege set on a user-context broker process plus a malformed module list entry is strong evidence of token manipulation and/or process hollowing/injection. This is CONFIRMED.
+
+MITRE mapping: The impossible DLL entry + full privilege set points toward process hollowing (T1055.012) or token impersonation (T1134). The privilege set anomaly maps cleanly to T1134 (Access Token Manipulation).
+
+Severity: The process has `SeDebugPrivilege`, `SeImpersonatePrivilege`, `SeLoadDriverPrivilege`, `SeTcbPrivilege` — even if not all enabled, the token itself represents a SYSTEM-equivalent capability. This is HIGH at minimum. Given `SeTcbPrivilege` and `SeCreateTokenPrivilege` being present (which allow arbitrary token creation and acting as OS), this is effectively a CRITICAL-capability process.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: A single process — RuntimeBroker.exe (PID 8128) — exhibits a combination of anomalies that are individually suspicious and collectively near-definitive: a SYSTEM-equivalent privilege token on a process that should run in user context, a structurally impossible DLL module list entry (non-page-aligned base address, ~103 MB size, load count 4253), and a severely truncated DLL list inconsistent with a healthy RuntimeBroker instance. The evidence is consistent with process hollowing or token manipulation targeting a trusted Windows broker process. One finding was reviewed; zero were rejected.
+Counts: confirmed=1  inconclusive=0  rejected=0
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      8128
+PPID:     764 (not present in pslist — parent exited or PID reused)
+Image:    RuntimeBroker.exe
+Cmdline:  C:\Windows\System32\RuntimeBroker.exe -Embedding
+Severity: CRITICAL
+MITRE:    T1134 — Access Token Manipulation / T1055.012 — Process Hollowing
+
+Justification:
+  Legitimate RuntimeBroker.exe runs in the context of the logged-in
+  user with a minimal privilege set (SeChangeNotifyPrivilege,
+  SeUndockPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege
+  are typical). PID 8128 instead carries a near-complete Windows
+  privilege assignment — including SeCreateTokenPrivilege,
+  SeTcbPrivilege, SeDebugPrivilege, SeLoadDriverPrivilege,
+  SeImpersonatePrivilege, SeBackupPrivilege, and SeRestorePrivilege —
+  which is consistent only with a SYSTEM-level or manipulated token,
+  not a user-context broker process. This alone is a strong indicator
+  of token manipulation (T1134). Compounding this, the DLL module list
+  contains only three entries: the executable itself, one unnamed/
+  unparseable entry (name and path both '-'), and a third entry with a
+  non-page-aligned base address (0x6bf5fb7fff0c), an implausible size
+  of ~103 MB (0x6886903 bytes), and a load count of 4253 — all
+  structurally impossible for a legitimate loaded module and consistent
+  with injected shellcode or a smeared/tampered InMemoryOrderModuleList
+  (T1055.012). A healthy RuntimeBroker instance loads dozens of system
+  DLLs from System32; the near-empty list here indicates the legitimate
+  module list has been replaced or the process image has been hollowed.
+  The benign-looking cmdline ('-Embedding' is the standard COM
+  activation argument) is consistent with an attacker preserving the
+  legitimate invocation to avoid cmdline-based detection while
+  manipulating the process internals.
+
+Key Evidence:
+  - L2180: 8128	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+  - L2193: 8128	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+  - L2183: 8128	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+  - L2202: 8128	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+  - L2175: 8128	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+  - L1079: 8128	RuntimeBroker.	0x7ffd749d0000	0x1f4000	-	-	-1	2020-09-19 05:08:21.000000 UTC	Disabled
+  - L1080: 8128	RuntimeBroker.	0x6bf5fb7fff0c	0x6886903	-	-	4253	-	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+[INCONCLUSIVE]
+  (none)
+================================================================

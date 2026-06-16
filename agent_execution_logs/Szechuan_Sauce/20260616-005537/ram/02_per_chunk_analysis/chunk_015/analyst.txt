@@ -1,0 +1,54 @@
+================================================================
+PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: Three Agent 1 leads were reviewed. All three processes resolve to legitimate Windows system binaries executing from System32 with plausible privilege sets and no corroborating malicious indicators (no suspicious DLLs, no malfind hits, no anomalous command lines, no network connections, no registry persistence artefacts). The orphaned-parent signal is a common artefact of memory acquisition timing and PID reuse rather than an indicator of malice. No confirmed malicious activity was identified in this triage batch.
+Counts: confirmed=0  inconclusive=0  rejected=3
+================================================================
+
+[No CONFIRMED or INCONCLUSIVE findings to report.]
+
+================================================================
+REJECTION NOTES (for Agent 3 transparency)
+================================================================
+
+PID 5664 — SecurityHealth — REJECTED
+  The pstree.txt path field resolves the truncated EPROCESS name unambiguously to
+  \Device\HarddiskVolume3\Windows\System32\SecurityHealthService.exe, a legitimate
+  Windows Defender / Security Center service. The name_truncation signal is therefore
+  a known data artefact (14-char EPROCESS field) and not a typosquat. The orphaned
+  parent (PPID 616) is consistent with svchost.exe or services.exe having exited or
+  been reused before the memory snapshot — a routine acquisition artefact, not
+  evidence of injection. The privilege stack (SeTcbPrivilege, SeDebugPrivilege,
+  SeImpersonatePrivilege all Present/Enabled) is elevated but fully consistent with
+  a SYSTEM-context Windows service; SecurityHealthService runs as SYSTEM and
+  legitimately holds this token. The malware_pebmasquerade check returned False/False
+  (no PEB masquerade detected). No malfind hits, no suspicious DLLs, no network
+  connections, and no command-line anomalies were present in the evidence. All signals
+  have benign explanations; no corroborating cross-artefact evidence of malice exists.
+
+PID 4984 — WUDFHost.exe — REJECTED
+  The pstree.txt path field confirms \Device\HarddiskVolume3\Windows\System32\WUDFHost.exe,
+  the legitimate Windows User-Mode Driver Framework host. SeImpersonatePrivilege
+  Present/Enabled is expected and documented for WUDFHost, which must impersonate
+  device-context clients. SeTcbPrivilege is NOT present/enabled for this process
+  (column is blank at L3125), distinguishing it cleanly from PID 5664. The orphaned
+  PPID 616 is the same acquisition-timing artefact noted above. The malware_pebmasquerade
+  check returned False/False. No malfind hits, no suspicious DLLs, no network
+  connections, and no command-line anomalies were present. The privilege set is
+  narrower than a full SYSTEM token and consistent with a LocalService/NetworkService
+  driver-host context. No corroborating evidence of malice.
+
+PID 4868 — backgroundTask (backgroundTaskHost.exe) — REJECTED
+  The pstree.txt path field resolves the truncated name to
+  \Device\HarddiskVolume3\Windows\System32\backgroundTaskHost.exe, a legitimate
+  Windows Runtime background task host. The name_truncation signal is a known
+  14-char EPROCESS artefact; the full path confirms System32 provenance, not a
+  user-writable location. The orphaned PPID 764 (likely svchost.exe hosting the
+  Task Scheduler or COM Surrogate) is again consistent with acquisition timing.
+  The privilege set is minimal — only SeChangeNotifyPrivilege and
+  SeIncreaseWorkingSetPrivilege are Present; no elevated privileges (SeTcb,
+  SeDebug, SeImpersonate) are enabled. Session 2 is consistent with a user-session
+  background task. No malfind hits, no suspicious DLLs, no network connections,
+  and no command-line anomalies were present. No corroborating evidence of malice.
+
+================================================================

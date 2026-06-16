@@ -1,0 +1,246 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:10:55Z
+
+=== PID 2248 (svchost.exe, ppid=616) ===
+
+--- pslist.txt ---
+L32: 2248	616	svchost.exe	0xbe8e75c43240	9	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L32: 2248	svchost.exe	-
+
+--- privileges.txt ---
+L950: 2248	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L951: 2248	svchost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L952: 2248	svchost.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L953: 2248	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L954: 2248	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L955: 2248	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L956: 2248	svchost.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L957: 2248	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L958: 2248	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L959: 2248	svchost.exe	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L960: 2248	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L961: 2248	svchost.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L962: 2248	svchost.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L963: 2248	svchost.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L964: 2248	svchost.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L965: 2248	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L966: 2248	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L967: 2248	svchost.exe	19	SeShutdownPrivilege		Shut down the system
+L968: 2248	svchost.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L969: 2248	svchost.exe	21	SeAuditPrivilege	Default	Generate security audits
+L970: 2248	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L971: 2248	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L972: 2248	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L973: 2248	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L974: 2248	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L975: 2248	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L976: 2248	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L977: 2248	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L978: 2248	svchost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L979: 2248	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L980: 2248	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L981: 2248	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L982: 2248	svchost.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L983: 2248	svchost.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L984: 2248	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L64: ** 2248	616	svchost.exe	0xbe8e75c43240	9	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L111: 2248	616	svchost.exe	0xbe8e75c43240	9	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L39: 2248	svchost.exe	0x7ffd6a9b0000	False	False	False	\Windows\System32\policymanager.dll
+L40: 2248	svchost.exe	0x7ffd749d0000	False	False	False	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L39: 2248	svchost.exe	0x7ffd6a9b0000	False	False	False	\Windows\System32\policymanager.dll
+L40: 2248	svchost.exe	0x7ffd749d0000	False	False	False	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L32: 2248	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L31: 0	-	2248	svchost.exe	-	2020-09-19 01:24:09.000000 UTC
+
+=== PID 2364 (vmtoolsd.exe, ppid=616) ===
+
+--- pslist.txt ---
+L33: 2364	616	vmtoolsd.exe	0xbe8e74364280	9	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L33: 2364	vmtoolsd.exe	-
+
+--- privileges.txt ---
+L985: 2364	vmtoolsd.exe	2	SeCreateTokenPrivilege		Create a token object
+L986: 2364	vmtoolsd.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L987: 2364	vmtoolsd.exe	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L988: 2364	vmtoolsd.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L989: 2364	vmtoolsd.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L990: 2364	vmtoolsd.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L991: 2364	vmtoolsd.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L992: 2364	vmtoolsd.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L993: 2364	vmtoolsd.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L994: 2364	vmtoolsd.exe	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L995: 2364	vmtoolsd.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L996: 2364	vmtoolsd.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L997: 2364	vmtoolsd.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L998: 2364	vmtoolsd.exe	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L999: 2364	vmtoolsd.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L1000: 2364	vmtoolsd.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L1001: 2364	vmtoolsd.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L1002: 2364	vmtoolsd.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L1003: 2364	vmtoolsd.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L1004: 2364	vmtoolsd.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L1005: 2364	vmtoolsd.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L1006: 2364	vmtoolsd.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1007: 2364	vmtoolsd.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1008: 2364	vmtoolsd.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L1009: 2364	vmtoolsd.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L1010: 2364	vmtoolsd.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1011: 2364	vmtoolsd.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L1012: 2364	vmtoolsd.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L1013: 2364	vmtoolsd.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L1014: 2364	vmtoolsd.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1015: 2364	vmtoolsd.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1016: 2364	vmtoolsd.exe	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L1017: 2364	vmtoolsd.exe	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L1018: 2364	vmtoolsd.exe	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L1019: 2364	vmtoolsd.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L53: ** 2364	616	vmtoolsd.exe	0xbe8e74364280	9	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\VMware\VMware Tools\vmtoolsd.exe	-	-
+
+--- psscan.txt ---
+L83: 2364	616	vmtoolsd.exe	0xbe8e74364280	9	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L41: 2364	vmtoolsd.exe	0x7ffd71540000	False	False	False	\Windows\System32\IPHLPAPI.DLL
+
+--- malware_ldrmodules.txt ---
+L41: 2364	vmtoolsd.exe	0x7ffd71540000	False	False	False	\Windows\System32\IPHLPAPI.DLL
+
+--- malware_pebmasquerade.txt ---
+L33: 2364	vmtoolsd.exe	\Device\HarddiskVolume3\Program Files\VMware\VMware Tools\vmtoolsd.exe	-	False	False
+
+--- sessions.txt ---
+L32: 0	-	2364	vmtoolsd.exe	C137/DESKTOP-SDN1RPT$	2020-09-19 01:24:09.000000 UTC
+
+=== PID 2372 (VGAuthService., ppid=616) ===
+
+--- pslist.txt ---
+L34: 2372	616	VGAuthService.	0xbe8e75cdd300	2	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L34: 2372	VGAuthService.	-
+
+--- privileges.txt ---
+L1020: 2372	VGAuthService.	2	SeCreateTokenPrivilege		Create a token object
+L1021: 2372	VGAuthService.	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L1022: 2372	VGAuthService.	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L1023: 2372	VGAuthService.	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L1024: 2372	VGAuthService.	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1025: 2372	VGAuthService.	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L1026: 2372	VGAuthService.	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L1027: 2372	VGAuthService.	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L1028: 2372	VGAuthService.	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L1029: 2372	VGAuthService.	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L1030: 2372	VGAuthService.	12	SeSystemtimePrivilege	Present	Change the system time
+L1031: 2372	VGAuthService.	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L1032: 2372	VGAuthService.	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L1033: 2372	VGAuthService.	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L1034: 2372	VGAuthService.	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L1035: 2372	VGAuthService.	17	SeBackupPrivilege	Present	Backup files and directories
+L1036: 2372	VGAuthService.	18	SeRestorePrivilege	Present	Restore files and directories
+L1037: 2372	VGAuthService.	19	SeShutdownPrivilege	Present	Shut down the system
+L1038: 2372	VGAuthService.	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L1039: 2372	VGAuthService.	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L1040: 2372	VGAuthService.	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L1041: 2372	VGAuthService.	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1042: 2372	VGAuthService.	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1043: 2372	VGAuthService.	25	SeUndockPrivilege	Present	Remove computer from docking station
+L1044: 2372	VGAuthService.	26	SeSyncAgentPrivilege		Synch directory service data
+L1045: 2372	VGAuthService.	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1046: 2372	VGAuthService.	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L1047: 2372	VGAuthService.	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L1048: 2372	VGAuthService.	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L1049: 2372	VGAuthService.	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1050: 2372	VGAuthService.	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1051: 2372	VGAuthService.	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L1052: 2372	VGAuthService.	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L1053: 2372	VGAuthService.	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L1054: 2372	VGAuthService.	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L61: ** 2372	616	VGAuthService.	0xbe8e75cdd300	2	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe	-	-
+
+--- psscan.txt ---
+L114: 2372	616	VGAuthService.	0xbe8e75cdd300	2	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L34: 2372	VGAuthService.	\Device\HarddiskVolume3\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe	-	False	False
+
+--- sessions.txt ---
+L33: 0	-	2372	VGAuthService.	-	2020-09-19 01:24:09.000000 UTC
+
+=== PID 2396 (wlms.exe, ppid=616) ===
+
+--- pslist.txt ---
+L35: 2396	616	wlms.exe	0xbe8e75cde080	2	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L35: 2396	wlms.exe	-
+
+--- privileges.txt ---
+L1055: 2396	wlms.exe	2	SeCreateTokenPrivilege		Create a token object
+L1056: 2396	wlms.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L1057: 2396	wlms.exe	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L1058: 2396	wlms.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L1059: 2396	wlms.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1060: 2396	wlms.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L1061: 2396	wlms.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L1062: 2396	wlms.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L1063: 2396	wlms.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L1064: 2396	wlms.exe	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L1065: 2396	wlms.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L1066: 2396	wlms.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L1067: 2396	wlms.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L1068: 2396	wlms.exe	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L1069: 2396	wlms.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L1070: 2396	wlms.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L1071: 2396	wlms.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L1072: 2396	wlms.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L1073: 2396	wlms.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L1074: 2396	wlms.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L1075: 2396	wlms.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L1076: 2396	wlms.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1077: 2396	wlms.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1078: 2396	wlms.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L1079: 2396	wlms.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L1080: 2396	wlms.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1081: 2396	wlms.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L1082: 2396	wlms.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L1083: 2396	wlms.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L1084: 2396	wlms.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1085: 2396	wlms.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1086: 2396	wlms.exe	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L1087: 2396	wlms.exe	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L1088: 2396	wlms.exe	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L1089: 2396	wlms.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L68: ** 2396	616	wlms.exe	0xbe8e75cde080	2	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\wlms\wlms.exe	-	-
+
+--- psscan.txt ---
+L115: 2396	616	wlms.exe	0xbe8e75cde080	2	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L35: 2396	wlms.exe	\Device\HarddiskVolume3\Windows\System32\wlms\wlms.exe	-	False	False
+
+--- sessions.txt ---
+L34: 0	-	2396	wlms.exe	-	2020-09-19 01:24:09.000000 UTC
+
+=== END OF PIVOT REPORT ===

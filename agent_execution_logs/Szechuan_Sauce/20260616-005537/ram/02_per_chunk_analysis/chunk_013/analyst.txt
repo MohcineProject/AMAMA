@@ -1,0 +1,86 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 3708 — SearchIndexer.**
+
+Agent 1 flags: orphaned parent (PPID 616 not in pslist), SeTcbPrivilege enabled, SeImpersonatePrivilege enabled, psscan-only children.
+
+Let me reason through each signal:
+
+**Orphaned parent (PPID 616):** PPID 616 is not in pslist. However, this is a common benign condition — services.exe (which is the legitimate parent of SearchIndexer.exe) may have been PID 616 and simply exited or the PID was reused. SearchIndexer.exe is a long-running service that survives its parent. This alone is weak.
+
+**Privilege footprint:** The privilege set is enormous — SeTcbPrivilege (Present,Enabled,Default), SeAssignPrimaryTokenPrivilege (Present), SeImpersonatePrivilege (Present,Enabled,Default), SeDebugPrivilege (Default), SeManageVolumePrivilege (Present), SeCreatePermanentPrivilege (Default). This is a SYSTEM-level token — essentially the full LocalSystem privilege set. For SearchIndexer.exe, which runs as SYSTEM, this is actually normal. SearchIndexer.exe runs under LocalSystem and legitimately holds this full token. The presence of SeTcbPrivilege is unusual for SearchIndexer specifically — it's not typically in the SearchIndexer token — but the rest of the set is consistent with LocalSystem. However, SeTcbPrivilege being Present,Enabled,Default is a meaningful anomaly.
+
+**Cmdline:** The cmdline shows `-` which means it was not captured / unavailable. This is a mild anomaly — legitimate SearchIndexer.exe typically shows a cmdline like `C:\Windows\system32\SearchIndexer.exe /Embedding`. Missing cmdline could indicate process hollowing or simply a Volatility parsing issue.
+
+**Path:** pstree shows `\Device\HarddiskVolume3\Windows\System32\SearchIndexer.exe` — this is the correct legitimate path.
+
+**psscan-only children:** PID 8984 (SearchFilterHo) appears twice in psscan with different EPROCESS addresses (0x7fb829528080 and 0x7fc429528080) — this is suspicious. Two different EPROCESS structures for the same PID/process is a DKOM indicator. SearchFilterHost.exe is a legitimate child of SearchIndexer.exe, but having two EPROCESS entries for the same PID at different addresses is anomalous and could indicate process hiding/manipulation.
+
+**No malfind, no netscan, no DLL evidence provided.**
+
+Overall: The path is legitimate, the privilege set is largely consistent with SYSTEM (though SeTcbPrivilege is slightly unusual for this specific binary), the missing cmdline is a mild flag, and the duplicate EPROCESS entries for child PID 8984 are the most concrete anomaly. However, the evidence is thin — no injection markers, no suspicious DLLs, no network connections, no registry persistence. The duplicate psscan entries for the child could be a memory artifact or DKOM. I'll mark this **INCONCLUSIVE** — there are genuine anomalies (missing cmdline, SeTcbPrivilege enabled, duplicate child EPROCESS) but insufficient evidence to confirm malice.
+
+---
+
+Now writing the report:
+
+```
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: One process was submitted for validation. PID 3708
+(SearchIndexer.exe) presents several anomalies — a missing
+command line, SeTcbPrivilege enabled on a binary that does not
+normally hold it, and duplicate EPROCESS structures for its child
+process (PID 8984) suggesting possible DKOM activity — but the
+evidence is insufficient to confirm malicious intent without
+corroborating artefacts such as injection markers, suspicious
+DLLs, or network connections. The finding is marked INCONCLUSIVE
+pending deeper memory analysis.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      3708
+PPID:     616
+Image:    SearchIndexer.exe
+Cmdline:  - (not captured)
+Severity: N/A
+MITRE:
+
+Justification:
+  Four signals were evaluated. (1) The orphaned parent (PPID 616
+  absent from pslist) is weak in isolation — SearchIndexer.exe
+  runs as a long-lived SYSTEM service and its parent (typically
+  services.exe) may legitimately have exited or had its PID
+  recycled. (2) The privilege token is the full LocalSystem set,
+  which is normal for a SYSTEM-context service; however,
+  SeTcbPrivilege (Present,Enabled,Default) is atypical for
+  SearchIndexer.exe specifically and warrants scrutiny. (3) The
+  command line field returned "-" (not captured), whereas a
+  legitimate SearchIndexer.exe normally shows
+  "SearchIndexer.exe /Embedding" — a missing cmdline can indicate
+  process hollowing or a Volatility parsing gap. (4) The most
+  concrete anomaly is PID 8984 (SearchFilterHost) appearing twice
+  in psscan at two distinct EPROCESS addresses
+  (0x7fb829528080 and 0x7fc429528080) while absent from pslist —
+  duplicate EPROCESS structures for the same PID are a known DKOM
+  indicator. The executable path resolves to the legitimate
+  System32 location, and no malfind sections, suspicious DLLs,
+  or network connections were provided, so confirmation is not
+  possible from the available evidence alone.
+
+Key Evidence:
+  - L44 (pslist): 3708  616  SearchIndexer.  0xbe8e762f3240  19  -  0  False  2020-09-19 01:26:11.000000 UTC  N/A  Disabled
+  - L44 (cmdline): 3708  SearchIndexer.  -
+  - L1375 (privileges): 3708  SearchIndexer.  7  SeTcbPrivilege  Present,Enabled,Default  Act as part of the operating system
+  - L1397 (privileges): 3708  SearchIndexer.  29  SeImpersonatePrivilege  Present,Enabled,Default  Impersonate a client after authentication
+  - L1388 (privileges): 3708  SearchIndexer.  20  SeDebugPrivilege  Default  Debug programs
+  - L15 (psscan): 8984  3708  SearchFilterHo  0x7fb829528080  1  -  0  False  2020-09-19 05:08:18.000000 UTC  N/A  Disabled
+  - L32 (psscan): 8984  3708  SearchFilterHo  0x7fc429528080  1  -  0  False  2020-09-19 05:08:18.000000 UTC  N/A  Disabled
+  - L69 (pstree): ** 3708  616  SearchIndexer.  0xbe8e762f3240  19  -  0  False  2020-09-19 01:26:11.000000 UTC  N/A  \Device\HarddiskVolume3\Windows\System32\SearchIndexer.exe  -  -
+----------------------------------------------------------------
+```

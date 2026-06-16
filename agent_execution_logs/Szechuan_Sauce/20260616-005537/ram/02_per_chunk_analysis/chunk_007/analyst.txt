@@ -1,0 +1,32 @@
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Two processes were submitted for validation. Both share the same orphaned parent PID (616) and exhibit a full SYSTEM-level privilege token, which is consistent with a memory snapshot taken after the legitimate parent (services.exe) had already exited or whose EPROCESS block was not captured — a known artefact of live-memory acquisition timing rather than a definitive indicator of compromise. Neither process produced command-line evidence, malfind hits, suspicious DLL paths, network connections, registry persistence, or code-injection markers. One inconclusive finding is raised for spoolsv.exe due to an unresolved DLL entry; the svchost.exe finding is rejected.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      2188
+PPID:     616
+Image:    spoolsv.exe
+Cmdline:  - (not recovered)
+MITRE:
+
+Justification:
+  Agent 1 flagged three signals: orphaned parent, high-risk privilege set, and an unresolved DLL entry. The orphaned-parent signal is weak in isolation — PID 616 is absent from the snapshot but this is a common artefact when services.exe exits or its EPROCESS block falls outside the captured pages; it does not by itself indicate process hollowing or injection. The privilege set (SeTcbPrivilege Present/Enabled, SeAssignPrimaryTokenPrivilege Present/Enabled, SeImpersonatePrivilege Present/Enabled/Default) is genuinely elevated for a print spooler, but spoolsv.exe runs as SYSTEM and inherits the full SYSTEM token, so the token content alone is not conclusive. The one signal that cannot be fully dismissed is the bare '-' DLL entry at 0x7ffd749d0000 (0x1f4000 bytes): this is a mapped region with no resolved name or path, which could represent a manually mapped PE, a reflectively loaded module, or simply a memory-mapped file that Volatility failed to resolve. Without malfind output, network connections, or a recovered command line for this PID, there is insufficient evidence to confirm malice, but the unresolved module prevents a clean rejection.
+
+Key Evidence:
+  - L380: 2188	spoolsv.exe	0x7ffd749d0000	0x1f4000	-	-	-1	2020-09-19 01:24:09.000000 UTC	Disabled
+  - L916: 2188	spoolsv.exe	3	SeAssignPrimaryTokenPrivilege	Present,Enabled	Replace a process-level token
+  - L920: 2188	spoolsv.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L942: 2188	spoolsv.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L31: 2188	616	spoolsv.exe	0xbe8e75c2c200	10	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED FINDINGS (count: 1)
+
+PID 2208 — svchost.exe (ppid=616): REJECTED.
+Agent 1's signals were orphaned parent and parent mismatch. The orphaned-parent artefact is the same as for PID 2188 and carries the same low weight in isolation. The pstree entry confirms the binary path as \Device\HarddiskVolume3\Windows\System32\svchost.exe — a legitimate system location. The privilege token is a standard SYSTEM token (SeTcbPrivilege, SeImpersonatePrivilege enabled) consistent with a service-host process running under SYSTEM. No command line anomaly, no suspicious DLL, no malfind hit, no network connection, and no registry persistence evidence was present in the grep output. The duplicate psscan entries at different physical addresses (0x7fb801b49240, 0x7fc401b49240) are consistent with normal EPROCESS pool scanning returning multiple hits for the same logical process and do not indicate process duplication or hollowing. No corroborating evidence of malice exists; this is standard svchost behaviour.

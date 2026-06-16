@@ -1,0 +1,90 @@
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Two Agent 1 findings were reviewed. PID 4092 (svchost.exe) presents a highly anomalous privilege footprint and an orphaned parent, but several mitigating factors reduce confidence below CONFIRMED. PID 4096 exhibits multiple DKOM-consistent artefacts (epoch timestamps, implausible PPIDs, no image name, duplicate PID entries) that strongly suggest rootkit-level manipulation, though the absence of malfind or network evidence limits full confirmation.
+Counts: confirmed=0  inconclusive=2  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      4092
+PPID:     616
+Image:    svchost.exe
+Cmdline:  - (no command line recovered)
+Severity: (INCONCLUSIVE — no tier assigned)
+MITRE:    T1036.005 — Match Legitimate Name or Location
+
+Justification:
+  PID 4092 is listed as svchost.exe residing at the canonical path
+  \Device\HarddiskVolume3\Windows\System32\svchost.exe, and the
+  malware_pebmasquerade check returns False/False (no PEB name
+  mismatch, no path mismatch), which argues against a simple
+  masquerade. However, three anomalies remain unexplained: (1) the
+  parent PID 616 does not appear anywhere in pslist or psscan,
+  making this process effectively orphaned; (2) the command line
+  field is empty ("-"), which is abnormal for any svchost instance
+  — legitimate svchost.exe is always launched with at least "-k
+  <ServiceGroupName>"; and (3) the privilege set is extraordinarily
+  broad for a svchost instance, with SeTcbPrivilege,
+  SeDebugPrivilege, and SeImpersonatePrivilege all simultaneously
+  Present/Enabled/Default, a combination consistent with a SYSTEM-
+  level token that has been crafted or inherited through token
+  manipulation rather than a standard service launch. The absence
+  of malfind hits, network connections, or suspicious DLL paths
+  prevents a CONFIRMED verdict, but the missing cmdline and orphaned
+  parent are genuine red flags that cannot be explained away by
+  normal system behaviour. This finding warrants memory acquisition
+  and DLL enumeration before it can be cleared.
+
+Key Evidence:
+  - L46: 4092	616	svchost.exe	0xbe8e77ee2080	4	-	0	False	2020-09-19 01:31:39.000000 UTC	N/A	Disabled
+  - L46: 4092	svchost.exe	-
+  - L73: ** 4092	616	svchost.exe	0xbe8e77ee2080	4	-	0	False	2020-09-19 01:31:39.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+  - L1445: 4092	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L1458: 4092	svchost.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L1467: 4092	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L46: 4092	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      4096
+PPID:     2079404032 (also seen with PPID 1070858240)
+Image:    (none)
+Cmdline:  - (no command line recovered)
+Severity: (INCONCLUSIVE — no tier assigned)
+MITRE:    T1014 — Rootkit
+
+Justification:
+  PID 4096 appears twice in pslist with two different parent PIDs
+  (1070858240 and 2079404032) and two different EPROCESS addresses
+  (0xbe8e7607f080 and 0xbe8e78a40080), which is structurally
+  impossible for a single legitimate process and is consistent with
+  Direct Kernel Object Manipulation (DKOM) — either a rootkit
+  duplicating or corrupting EPROCESS entries, or PID reuse artefacts
+  from a pool-scanning collision. Both entries carry epoch-zero
+  timestamps (1601-01-01), indicating the CreateTime and ExitTime
+  fields were never properly initialised or were deliberately zeroed.
+  Both PPIDs are implausibly large values absent from any process
+  list, ruling out normal parent-child inheritance. The image name
+  is absent in both entries, and no command line, DLL list, or
+  malfind data is attributable to these EPROCESS structures
+  themselves. The single dlllist.txt hit (L371) references PID 4096
+  as a session/VAD field within svchost.exe PID 1148's entry rather
+  than as a standalone loaded module, and does not constitute
+  evidence of code execution from PID 4096. The absence of network
+  connections, malfind regions, or any recoverable image prevents
+  CONFIRMED, but the structural corruption is real and should not
+  be dismissed as a benign artefact.
+
+Key Evidence:
+  - L60: 4096	1070858240		0xbe8e7607f080	4096	-	-	False	1601-01-01 00:00:53.000000 UTC	1601-01-01 00:01:25.000000 UTC	Disabled
+  - L88: 4096	2079404032		0xbe8e78a40080	4096	-	-	False	1601-01-01 00:00:35.000000 UTC	1601-01-01 00:02:34.000000 UTC	Disabled
+  - L60: 4096		-
+  - L88: 4096		-
+  - L95: 4096	2079404032		0xbe8e78a40080	4096	-	-	False	1601-01-01 00:00:35.000000 UTC	1601-01-01 00:02:34.000000 UTC	-	-	-
+  - L98: -	-	4096		-	1601-01-01 00:00:53.000000 UTC
+  - L99: -	-	4096		-	1601-01-01 00:00:35.000000 UTC
+----------------------------------------------------------------
+
+================================================================

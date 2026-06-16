@@ -24,6 +24,7 @@ effort per source.
 | 2 | Clean Windows 11 | RAM only | Self-built (fresh Win11 VM) | `Windows_11_c/` |
 | 3 | NimPlantv2 process-injection | RAM only | Public, daniyyell Memory-Forensics dataset | `daniyyell_dataset_4/` |
 | 4 | QuasarRAT infection | RAM only | Self-built (same Win11 VM plus live malware) | `Windows_11_VM_e/` |
+| 5 | Stolen Szechuan Sauce (Case001) | RAM only | Public, DFIR Madness "Case001" (Windows 10 desktop memory) | `Szechuan_Sauce/` |
 
 (The Logs column gives the per-case subfolder inside agent_execution_logs/.)
 
@@ -138,3 +139,38 @@ install signature, flagging it as a **.NET implant** (`MSCOREE.DLL`) under a SYS
 token. 6 entities CONFIRMED (1 CRITICAL, 5 HIGH), 6 INCONCLUSIVE, with a timeline and MITRE
 mapping. Gaps (family attribution, Run-key persistence, C2 network) are discussed in the accuracy
 report.
+
+---
+
+## 5. Stolen Szechuan Sauce — Case001 (RAM only)
+
+**Source and provenance.** Public training case from DFIR Madness, "Case001 — The Stolen Szechuan
+Sauce", a paired-host intrusion scenario (a Windows Server 2012 R2 domain controller `DC01` and a
+Windows 10 workstation `DESKTOP-SDN1RPT`) with disk, memory, pagefile, autoruns, and PCAP evidence
+for each. We analysed the **Windows 10 desktop memory image** (`DESKTOP-SDN1RPT-memory`) with the
+RAM module only.
+Case: <https://dfirmadness.com/the-stolen-szechuan-sauce/>
+Answers (ground truth): <https://dfirmadness.com/answers-to-szechuan-case-001/>
+
+**Expected content / ground truth (from the published answers).** On 19 September 2020, an attacker
+at **`194.61.24.102`** brute-forced RDP (Hydra) into the internet-exposed domain controller as
+`Administrator`, then used Internet Explorer to download a **Metasploit Meterpreter** payload
+(`coreupdate.exe`) over HTTP. The malware was installed persistently **as an auto-start Windows
+service running as Local System and via the registry**, with the on-disk beacon at
+**`C:\Windows\System32\coreupdater.exe`**. The attacker moved laterally over **RDP from the DC to
+`DESKTOP-SDN1RPT`** and deployed the same malware there, then exfiltrated data (`secret.zip` from
+the DC, `loot.zip` from the desktop), accessed `Szechuan Sauce.txt`, and time-stomped
+`Beth_Secret.txt`. A second malicious IP, **`203.78.103.109`**, was also involved.
+
+**What the agent found (summary).** From memory alone, AMAMA confirmed the case's signature
+implant: **`coreupdater.exe` (PID 8324) masquerading as a system binary in `\Windows\System32\`**
+with a SYSTEM-class token, independently flagged by the `malware_pebmasquerade` plugin — a direct
+match to the persistent Meterpreter service binary in the ground truth. It additionally confirmed a
+cluster of in-memory post-exploitation activity consistent with Meterpreter process migration:
+process hollowing of `csrss.exe` (PID 424, shellcode command line + PEB masquerade), a hollow
+`svchost.exe` (PID 1148, no `-k` argument, SYSTEM token), a tampered `RuntimeBroker.exe` (PID 8128,
+impossible module-list entry), and an abused `WmiPrvSE.exe` (PID 8416, fully enabled SYSTEM token).
+**5 entities CONFIRMED (2 CRITICAL, 3 HIGH), 16 INCONCLUSIVE**, with a MITRE mapping (T1055.012,
+T1134, T1036.005, T1047) and a partial timeline. As a RAM-only run, it did not name the payload as
+Meterpreter, surface the attacker/C2 IPs, or reconstruct the RDP entry, persistence mechanism, or
+data exfiltration; these are treated in the accuracy report.

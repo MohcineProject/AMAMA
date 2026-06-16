@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_011.txt
+Summary: Two processes have unknown/missing parents (PIDs not present in process list); svchost.exe parent PID 616 is unresolved and Microsoft.Phot parent PID 764 is unresolved — orphaned process signals worth confirming.
+
+[PROCESS]
+pid: 3388
+ppid: 616
+image: svchost.exe
+cmdline: C:\Windows\system32\svchost.exe -k ClipboardSvcGroup -p
+severity: LOW
+reasons: orphaned_process: parent PID 616 does not appear anywhere in the process list | non-whitelisted_dll_entry: DLL list contains raw image path 'C:\Windows\system32\svchost.exe' and a bare '-' token, which is anomalous formatting worth confirming
+
+[PROCESS]
+pid: 3496
+ppid: 764
+image: Microsoft.Phot
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 764 does not appear anywhere in the process list | truncated_image_name: 'Microsoft.Phot' — likely EPROCESS 14-char truncation of 'Microsoft.Photos.exe' or similar UWP app, but no Path or Cmd available to confirm; pivot analyst should verify full image name
+

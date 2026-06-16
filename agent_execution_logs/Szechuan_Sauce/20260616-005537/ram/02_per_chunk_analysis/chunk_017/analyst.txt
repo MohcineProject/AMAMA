@@ -1,0 +1,32 @@
+================================================================
+PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Two processes were reviewed. PID 6456 (winlogon.exe) presents a genuinely anomalous profile — orphaned parent, missing command line, and an unusually broad set of enabled privileges — but the evidence is insufficient to confirm active malice without DLL, malfind, or network corroboration. PID 4808 (fontdrvhost.exe) resolves cleanly to a legitimate system binary at the expected System32 path with no enabled dangerous privileges and no masquerade indicators; the parent-chain anomaly is inherited from PID 6456 and does not independently indict this process.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      6456
+PPID:     4084
+Image:    winlogon.exe
+Cmdline:  - (not recorded)
+Severity: N/A
+MITRE:    T1055 (Process Injection) / T1134 (Access Token Manipulation) — possible but unconfirmed
+
+Justification:
+  Three independent signals converge on PID 6456 without any one of them being individually conclusive. First, PPID 4084 is absent from the process list, making this winlogon.exe an orphan; legitimate winlogon instances are children of smss.exe, so an unknown parent is structurally anomalous. Second, the command-line field is a bare dash, meaning no path or arguments were captured in the snapshot — this prevents confirming the binary is the genuine Windows\System32\winlogon.exe rather than a masquerade. Third, the privilege set is far broader than a standard winlogon token: SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege are all simultaneously Present/Enabled/Default, a combination consistent with token manipulation or a process running under a crafted token. However, no DLL evidence, no malfind sections, no network connections, and no registry persistence artefacts were provided for this PID, and winlogon legitimately holds a rich privilege set at SYSTEM level. Without at least one of those corroborating artefact types, CONFIRMED is not warranted; the anomalies are real enough to preclude REJECTED.
+
+Key Evidence:
+  - L50: 6456	4084	winlogon.exe	0xbe8e773ef080	5	-	2	False	2020-09-19 03:17:00.000000 UTC	N/A	Disabled
+  - L50: 6456	winlogon.exe	-
+  - L1585: 6456	winlogon.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L1598: 6456	winlogon.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L1607: 6456	winlogon.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED findings (count: 1)
+  PID 4808 (fontdrvhost.exe): pstree.txt confirms the full image path as \Device\HarddiskVolume3\Windows\System32\fontdrvhost.exe, and malware_pebmasquerade.txt returns False/False (no PE masquerade detected). The truncated EPROCESS name fontdrvhost.ex is the expected 14-character kernel artefact, not a typosquat. The privilege table shows no dangerous privileges enabled — only SeChangeNotifyPrivilege and SeIncreaseWorkingSetPrivilege are Present/Enabled, which is normal for a low-privilege font driver host. The parent anomaly (winlogon.exe rather than wininit.exe) is structurally inherited from the suspicious PID 6456 context and does not by itself indict this binary, which is demonstrably the legitimate System32 executable with no masquerade indicators.
+================================================================

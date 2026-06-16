@@ -1,0 +1,48 @@
+================================================================
+PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: Two processes warrant attention. PID 1148 (svchost.exe) presents a compelling cluster of anomalies — missing command-line arguments, an orphaned parent, and a near-complete SYSTEM-level privilege set with multiple dangerous privileges actively enabled — that together strongly indicate a masquerading or hollowed process. PID 3344 (ctfmon.exe) is a direct child of PID 1148 and shares the missing command-line anomaly, but its own privilege footprint is largely unpopulated and its binary path resolves to System32, making it inconclusive on its own merits. The incident scope appears limited to the Session 0 / Session 2 boundary but the privilege stack on PID 1148 represents a serious attacker capability.
+Counts: confirmed=1  inconclusive=1  rejected=0
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      1148
+PPID:     616
+Image:    svchost.exe
+Cmdline:  - (no command line recorded)
+Severity: HIGH
+MITRE:    T1036.005 — Match Legitimate Name or Location (Masquerading)
+
+Justification:
+  Three independent signals converge on PID 1148. First, the command-line field is absent ("-") — every legitimate svchost.exe instance carries a "-k <ServiceGroup>" argument; its absence is a reliable indicator of process hollowing or a masquerading binary. Second, the parent PID 616 is not present in the process list ("unknown"), which is consistent with a process that was injected or spawned outside the normal SCM (services.exe) lineage. Third, and most decisively, the privilege token is a near-complete SYSTEM-level set with SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeAssignPrimaryTokenPrivilege, SeLoadDriverPrivilege, and SeCreateTokenPrivilege all present and several actively enabled — a combination that is normal for the SYSTEM account itself but is not the expected token for any standard svchost service group. The pstree entry confirms the binary path resolves to System32, so the image on disk is legitimate, but the runtime behaviour (no -k flag, orphaned parent, SYSTEM-equivalent token) is consistent with a hollowed or impersonated svchost used as a post-exploitation host process.
+
+Key Evidence:
+  - L22: 1148	616	svchost.exe	0xbe8e75808240	17	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+  - L22: 1148	svchost.exe	-
+  - L605: 1148	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L618: 1148	svchost.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L627: 1148	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L601: 1148	svchost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+  - L608: 1148	svchost.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+  - L78: ** 1148	616	svchost.exe	0xbe8e75808240	17	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+----------------------------------------------------------------
+
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      3344
+PPID:     1148
+Image:    ctfmon.exe
+Cmdline:  - (no command line recorded)
+
+Justification:
+  Agent 1 flagged PID 3344 primarily because it is a child of the confirmed-suspicious PID 1148 and because ctfmon.exe is not normally spawned by svchost.exe. Both observations are valid contextual signals. However, the evidence for PID 3344 itself is weak: the binary path resolves cleanly to \Device\HarddiskVolume3\Windows\System32\ctfmon.exe (a legitimate Windows text-input framework binary), the privilege token has almost no enabled privileges (only SeShutdownPrivilege Present, SeChangeNotifyPrivilege Present/Enabled/Default, SeUndockPrivilege Present, SeIncreaseWorkingSetPrivilege Present, SeTimeZonePrivilege Present — a profile consistent with a low-privilege interactive user process), and the single ldrmodules hit shows CoreMessaging.dll from System32, which is a normal ctfmon dependency. The missing command line is a shared anomaly with its parent and is suspicious, but ctfmon.exe does not always emit a visible command line. The parent-chain contamination is real but insufficient on its own to confirm malice in the child without additional artefacts (malfind hits, network connections, suspicious DLLs, or handles). Marked INCONCLUSIVE pending further artefact review of this PID.
+
+Key Evidence:
+  - L75: 3344	ctfmon.exe	-
+  - L79: *** 3344	1148	ctfmon.exe	0xbe8e7712b080	10	-	2	False	2020-09-19 05:08:23.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\ctfmon.exe	-	-
+  - L2441: 3344	ctfmon.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+  - L171: 3344	ctfmon.exe	0x7ffd6f5e0000	False	False	False	\Windows\System32\CoreMessaging.dll
+----------------------------------------------------------------

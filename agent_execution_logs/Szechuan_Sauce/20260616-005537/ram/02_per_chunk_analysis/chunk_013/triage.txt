@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_013.txt
+Summary: SearchIndexer.exe (PID 3708) holds high-risk privileges SeTcbPrivilege and SeImpersonatePrivilege and has an unresolvable parent PID 616; child processes SearchProtocolHost and SearchFilterHost were discovered only via psscan (not pslist), suggesting possible process hiding.
+
+[PROCESS]
+pid: 3708
+ppid: 616
+image: SearchIndexer.
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_process: parent PID 616 not present in process list | privilege_anomaly: holds SeTcbPrivilege (act as part of OS) — atypical for SearchIndexer.exe | privilege_anomaly: holds SeImpersonatePrivilege — enables token impersonation abuse | psscan_only_children: PID 4884 (SearchProtocol) and PID 8984 (SearchFilterHo) discovered via psscan only, not pslist — possible DKOM/process hiding of child entries
+

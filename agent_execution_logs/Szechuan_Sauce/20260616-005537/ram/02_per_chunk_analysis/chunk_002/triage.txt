@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_002.txt
+Summary: svchost.exe with unknown/missing parent PID 616; SeImpersonatePrivilege enabled on a process whose parent cannot be verified as services.exe.
+
+[PROCESS]
+pid: 1136
+ppid: 616
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: parent_mismatch: svchost.exe parent PID 616 is listed as 'unknown' — expected parent is services.exe | orphaned_or_unresolved_parent: PID 616 does not resolve to a named process in the process list | privilege_concern: SeImpersonatePrivilege enabled on a svchost.exe with unverifiable parentage
+

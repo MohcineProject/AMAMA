@@ -1,0 +1,295 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:05:45Z
+
+=== PID 424 (csrss.exe, ppid=416) ===
+Cmdline: \ufffd\uc085\u880f\ued99\u0002\u8b48\u507f\u90eb\u8b49\u48d6\u4d8d\ue8b0\ua47c\uffff\u3345\u49e4\ud68b\u8b48\u8308\u0879\u4801\u4d8d\u41b0\u970f\u44c4\u6589\ue8a0\ua45e\uffff\u8b48\u4c08\u298b\u854d\u0fed\u9a84
+
+--- pslist.txt ---
+L8: 424	416	csrss.exe	0xbe8e74467140	10	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L8: 424	csrss.exe	�삅蠏譈偿郫證䣖䶍ꑼ￿㍅䧤횋譈茈ࡹ䠁䶍䆰霏䓄斉ꑞ￿譈䰈⦋蕍࿭骄
+
+--- privileges.txt ---
+L110: 424	csrss.exe	2	SeCreateTokenPrivilege	Present	Create a token object
+L111: 424	csrss.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L112: 424	csrss.exe	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L113: 424	csrss.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L114: 424	csrss.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L115: 424	csrss.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L116: 424	csrss.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L117: 424	csrss.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L118: 424	csrss.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L119: 424	csrss.exe	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L120: 424	csrss.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L121: 424	csrss.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L122: 424	csrss.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L123: 424	csrss.exe	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L124: 424	csrss.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L125: 424	csrss.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L126: 424	csrss.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L127: 424	csrss.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L128: 424	csrss.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L129: 424	csrss.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L130: 424	csrss.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L131: 424	csrss.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L132: 424	csrss.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L133: 424	csrss.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L134: 424	csrss.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L135: 424	csrss.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L136: 424	csrss.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L137: 424	csrss.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L138: 424	csrss.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L139: 424	csrss.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L140: 424	csrss.exe	32	SeRelabelPrivilege	Present	Modify the mandatory integrity level of an object
+L141: 424	csrss.exe	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L142: 424	csrss.exe	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L143: 424	csrss.exe	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L144: 424	csrss.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L9: 424	416	csrss.exe	0xbe8e74467140	10	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\csrss.exe	�삅蠏譈偿郫證䣖䶍ꑼ￿㍅䧤횋譈茈ࡹ䠁䶍䆰霏䓄斉ꑞ￿譈䰈⦋蕍࿭骄	䛶￿쎋譈㍈ㅼ譈⒜Ð
+
+--- psscan.txt ---
+L84: 424	416	csrss.exe	0xbe8e74467140	10	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L8: 424	csrss.exe	\Device\HarddiskVolume3\Windows\System32\csrss.exe	䛶￿쎋譈㍈ㅼ譈⒜Ð	True	True
+
+--- sessions.txt ---
+L8: 0	-	424	csrss.exe	-	2020-09-19 01:24:08.000000 UTC
+
+=== PID 508 (powershell.exe, ppid=1380) ===
+
+--- pslist.txt ---
+L82: 508	1380	powershell.exe	0xbe8e75a2a080	0	-	2	False	2020-09-19 05:08:37.000000 UTC	2020-09-19 05:08:43.000000 UTC	Disabled
+L85: 3316	508	powershell.exe	0xbe8e78dd1200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L82: 508	powershell.exe	-
+
+--- privileges.txt ---
+L2665: 508	powershell.exe	2	SeCreateTokenPrivilege		Create a token object
+L2666: 508	powershell.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2667: 508	powershell.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2668: 508	powershell.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2669: 508	powershell.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2670: 508	powershell.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2671: 508	powershell.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2672: 508	powershell.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2673: 508	powershell.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2674: 508	powershell.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2675: 508	powershell.exe	12	SeSystemtimePrivilege		Change the system time
+L2676: 508	powershell.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2677: 508	powershell.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2678: 508	powershell.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2679: 508	powershell.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2680: 508	powershell.exe	17	SeBackupPrivilege		Backup files and directories
+L2681: 508	powershell.exe	18	SeRestorePrivilege		Restore files and directories
+L2682: 508	powershell.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2683: 508	powershell.exe	20	SeDebugPrivilege		Debug programs
+L2684: 508	powershell.exe	21	SeAuditPrivilege		Generate security audits
+L2685: 508	powershell.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2686: 508	powershell.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2687: 508	powershell.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2688: 508	powershell.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2689: 508	powershell.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2690: 508	powershell.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2691: 508	powershell.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2692: 508	powershell.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2693: 508	powershell.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2694: 508	powershell.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2695: 508	powershell.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2696: 508	powershell.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2697: 508	powershell.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2698: 508	powershell.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2699: 508	powershell.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L96: 508	1380	powershell.exe	0xbe8e75a2a080	0	-	2	False	2020-09-19 05:08:37.000000 UTC	2020-09-19 05:08:43.000000 UTC	\Device\HarddiskVolume3\Windows\System32\WindowsPowerShell\v1.0\powershell.exe	-	-
+L97: * 3316	508	powershell.exe	0xbe8e78dd1200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\WindowsPowerShell\v1.0\powershell.exe		
+
+--- psscan.txt ---
+L17: 3316	508	powershell.exe	0x7fb82d799200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L19: 3316	508	powershell.exe	0x7fb831de0200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L34: 3316	508	powershell.exe	0x7fc42d799200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L36: 3316	508	powershell.exe	0x7fc431de0200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L51: 3316	508	powershell.exe	0x7fca2d799200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L53: 3316	508	powershell.exe	0x7fca31de0200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L70: 3316	508	powershell.exe	0x7ffa2d799200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L72: 3316	508	powershell.exe	0x7ffa31de0200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L105: 508	1380	powershell.exe	0xbe8e75a2a080	0	-	2	False	2020-09-19 05:08:37.000000 UTC	2020-09-19 05:08:43.000000 UTC	Disabled
+L158: 3316	508	powershell.exe	0xbe8e78dd1200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L82: 508	powershell.exe	\Device\HarddiskVolume3\Windows\System32\WindowsPowerShell\v1.0\powershell.exe	-	False	False
+
+--- sessions.txt ---
+L82: 2	-	508	powershell.exe	-	2020-09-19 05:08:37.000000 UTC
+
+=== PID 3316 (powershell.exe, ppid=508) ===
+
+--- pslist.txt ---
+L85: 3316	508	powershell.exe	0xbe8e78dd1200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L86: 728	3316	conhost.exe	0xbe8e789ec080	2	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L85: 3316	powershell.exe	-
+
+--- privileges.txt ---
+L2770: 3316	powershell.exe	2	SeCreateTokenPrivilege		Create a token object
+L2771: 3316	powershell.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2772: 3316	powershell.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2773: 3316	powershell.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2774: 3316	powershell.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2775: 3316	powershell.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2776: 3316	powershell.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2777: 3316	powershell.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2778: 3316	powershell.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2779: 3316	powershell.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2780: 3316	powershell.exe	12	SeSystemtimePrivilege		Change the system time
+L2781: 3316	powershell.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2782: 3316	powershell.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2783: 3316	powershell.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2784: 3316	powershell.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2785: 3316	powershell.exe	17	SeBackupPrivilege		Backup files and directories
+L2786: 3316	powershell.exe	18	SeRestorePrivilege		Restore files and directories
+L2787: 3316	powershell.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2788: 3316	powershell.exe	20	SeDebugPrivilege		Debug programs
+L2789: 3316	powershell.exe	21	SeAuditPrivilege		Generate security audits
+L2790: 3316	powershell.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2791: 3316	powershell.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2792: 3316	powershell.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2793: 3316	powershell.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2794: 3316	powershell.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2795: 3316	powershell.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2796: 3316	powershell.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2797: 3316	powershell.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2798: 3316	powershell.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2799: 3316	powershell.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2800: 3316	powershell.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2801: 3316	powershell.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2802: 3316	powershell.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2803: 3316	powershell.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2804: 3316	powershell.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L1248: 3316	powershell.exe	0x2e00740073	0x0	-	-	83	N/A	Disabled
+
+--- pstree.txt ---
+L97: * 3316	508	powershell.exe	0xbe8e78dd1200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\WindowsPowerShell\v1.0\powershell.exe		
+L98: ** 728	3316	conhost.exe	0xbe8e789ec080	2	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\conhost.exe	-	-
+
+--- psscan.txt ---
+L17: 3316	508	powershell.exe	0x7fb82d799200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L19: 3316	508	powershell.exe	0x7fb831de0200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L34: 3316	508	powershell.exe	0x7fc42d799200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L36: 3316	508	powershell.exe	0x7fc431de0200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L51: 3316	508	powershell.exe	0x7fca2d799200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L53: 3316	508	powershell.exe	0x7fca31de0200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L70: 3316	508	powershell.exe	0x7ffa2d799200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L72: 3316	508	powershell.exe	0x7ffa31de0200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L149: 728	3316	conhost.exe	0xbe8e789ec080	2	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+L158: 3316	508	powershell.exe	0xbe8e78dd1200	11	-	2	False	2020-09-19 05:08:43.000000 UTC	N/A	Disabled
+
+--- malware_malfind.txt ---
+L15: 3316	powershell.exe	0x7df4f5a80000	0x7df4f5a8ffff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	N/A	
+L20: 3316	powershell.exe	0x10c6c000000	0x10c6c06afff	VadS	PAGE_EXECUTE_READWRITE	107	1	Disabled	N/A	
+L25: 3316	powershell.exe	0x10c6bfc0000	0x10c6bff8fff	VadS	PAGE_EXECUTE_READWRITE	57	1	Disabled	N/A	
+L30: 3316	powershell.exe	0x10c6c070000	0x10c6c093fff	VadS	PAGE_EXECUTE_READWRITE	36	1	Disabled	MZ header	
+L35: 3316	powershell.exe	0x7df4f5a90000	0x7df4f5b2ffff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	N/A	
+
+--- ldrmodules.txt ---
+L180: 3316	powershell.exe	0x10c6c070000	False	False	False	N/A
+L181: 3316	powershell.exe	0x7ff7e1580000	False	False	False	\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+L182: 3316	powershell.exe	0x7ffd732a0000	False	False	False	\Windows\System32\kernel32.dll
+
+--- malware_ldrmodules.txt ---
+L180: 3316	powershell.exe	0x10c6c070000	False	False	False	N/A
+L181: 3316	powershell.exe	0x7ff7e1580000	False	False	False	\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+L182: 3316	powershell.exe	0x7ffd732a0000	False	False	False	\Windows\System32\kernel32.dll
+
+--- malware_pebmasquerade.txt ---
+L85: 3316	powershell.exe	\Device\HarddiskVolume3\Windows\System32\WindowsPowerShell\v1.0\powershell.exe	-	False	False
+
+--- sessions.txt ---
+L85: 2	-	3316	powershell.exe	-	2020-09-19 05:08:43.000000 UTC
+
+=== PID 500 (wininit.exe, ppid=416) ===
+
+--- pslist.txt ---
+L9: 500	416	wininit.exe	0xbe8e74519080	1	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+L10: 616	500	services.exe	0xbe8e74575080	7	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+L11: 656	500	lsass.exe	0xbe8e74fab080	11	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+L13: 784	500	fontdrvhost.ex	0xbe8e75611180	5	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L9: 500	wininit.exe	-
+
+--- privileges.txt ---
+L145: 500	wininit.exe	2	SeCreateTokenPrivilege		Create a token object
+L146: 500	wininit.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L147: 500	wininit.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L148: 500	wininit.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L149: 500	wininit.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L150: 500	wininit.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L151: 500	wininit.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L152: 500	wininit.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L153: 500	wininit.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L154: 500	wininit.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L155: 500	wininit.exe	12	SeSystemtimePrivilege		Change the system time
+L156: 500	wininit.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L157: 500	wininit.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L158: 500	wininit.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L159: 500	wininit.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L160: 500	wininit.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L161: 500	wininit.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L162: 500	wininit.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L163: 500	wininit.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L164: 500	wininit.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L165: 500	wininit.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L166: 500	wininit.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L167: 500	wininit.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L168: 500	wininit.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L169: 500	wininit.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L170: 500	wininit.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L171: 500	wininit.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L172: 500	wininit.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L173: 500	wininit.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L174: 500	wininit.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L175: 500	wininit.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L176: 500	wininit.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L177: 500	wininit.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L178: 500	wininit.exe	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L179: 500	wininit.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L10: 500	416	wininit.exe	0xbe8e74519080	1	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\wininit.exe	-	-
+L11: * 616	500	services.exe	0xbe8e74575080	7	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\services.exe	C:\Windows\system32\services.exe	C:\Windows\system32\services.exe
+L80: * 784	500	fontdrvhost.ex	0xbe8e75611180	5	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\fontdrvhost.exe	-	-
+L81: * 656	500	lsass.exe	0xbe8e74fab080	11	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\lsass.exe	C:\Windows\system32\lsass.exe	C:\Windows\system32\lsass.exe
+
+--- psscan.txt ---
+L86: 500	416	wininit.exe	0xbe8e74519080	1	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+L87: 616	500	services.exe	0xbe8e74575080	7	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+L88: 656	500	lsass.exe	0xbe8e74fab080	11	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+L91: 784	500	fontdrvhost.ex	0xbe8e75611180	5	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+L172: 616	500	services.exe	0xcf04846b2080	7	-	0	False	2020-09-19 01:24:08.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L30: 0xbe8e71cf5980	TCPv4	0.0.0.0	49665	0.0.0.0	0	LISTENING	500	wininit.exe	2020-09-19 01:24:08.000000 UTC
+L41: 0xbe8e71cf6e80	TCPv4	0.0.0.0	49665	0.0.0.0	0	LISTENING	500	wininit.exe	2020-09-19 01:24:08.000000 UTC
+L42: 0xbe8e71cf6e80	TCPv6	::	49665	::	0	LISTENING	500	wininit.exe	2020-09-19 01:24:08.000000 UTC
+
+--- netstat.txt ---
+L34: 0xbe8e71cf6e80	TCPv4	0.0.0.0	49665	0.0.0.0	0	LISTENING	500	wininit.exe	2020-09-19 01:24:08.000000 UTC
+L35: 0xbe8e71cf6e80	TCPv6	::	49665	::	0	LISTENING	500	wininit.exe	2020-09-19 01:24:08.000000 UTC
+L36: 0xbe8e71cf5980	TCPv4	0.0.0.0	49665	0.0.0.0	0	LISTENING	500	wininit.exe	2020-09-19 01:24:08.000000 UTC
+
+--- malware_pebmasquerade.txt ---
+L9: 500	wininit.exe	\Device\HarddiskVolume3\Windows\System32\wininit.exe	-	False	False
+
+--- sessions.txt ---
+L9: 0	-	500	wininit.exe	-	2020-09-19 01:24:08.000000 UTC
+
+=== END OF PIVOT REPORT ===

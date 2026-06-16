@@ -1,0 +1,21 @@
+I'll work through each finding systematically, applying the reasoning framework to the evidence provided.
+
+**PID 1172 analysis:**
+- PPID 616 listed as "unknown" — need to assess whether this is genuinely suspicious or an artifact of the memory capture (services.exe may have exited or its EPROCESS may not have been captured cleanly)
+- Command line `svchost.exe -k UnistackSvcGroup` is a completely legitimate service group (User Data Storage, User Data Access, etc.)
+- DLLs shown are from System32 only — no user-writable paths
+- Privileges: the list is very long but most are NOT enabled (no `Present` or `Enabled` marker). Only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege`, `SeCreateGlobalPrivilege` are Present/Enabled — this is a normal token for a SYSTEM-context svchost
+- The "orphaned parent" signal alone, with a legitimate cmdline, legitimate DLLs, and normal privilege footprint, is weak — services.exe (PID 616) may simply not appear in the pslist snapshot
+
+This is a REJECTED finding — the orphaned parent is a common artifact of memory capture timing, and all other signals are benign.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Only one process was submitted for validation. That process, svchost.exe (PID 1172), presents a legitimate command line, a clean DLL load list sourced entirely from System32, and a privilege token consistent with a normal SYSTEM-context service host. The sole Agent 1 signal — an unresolved parent PID — is a well-known memory-capture artifact and does not constitute evidence of malice. No confirmed or inconclusive findings were produced from this triage batch.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+================================================================
+END OF PIVOT REPORT
+================================================================

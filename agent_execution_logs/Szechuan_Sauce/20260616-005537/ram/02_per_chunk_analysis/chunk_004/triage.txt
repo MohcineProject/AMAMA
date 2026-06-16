@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-01-30T00:00:00Z
+Chunk: chunk_004.txt
+Summary: svchost.exe parent PID 616 is listed as unknown, which is a parent-child mismatch signal; all other fields appear benign.
+
+[PROCESS]
+pid: 1172
+ppid: 616
+image: svchost.exe
+cmdline: C:\Windows\system32\svchost.exe -k UnistackSvcGroup
+severity: LOW
+reasons: parent_mismatch: svchost.exe parent PID 616 is listed as 'unknown' — expected parent is services.exe; parent process not present in process list (orphaned or unresolved)
+

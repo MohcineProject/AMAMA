@@ -1,0 +1,140 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:11:34Z
+
+=== PID 2404 (MsMpEng.exe, ppid=616) ===
+
+--- pslist.txt ---
+L36: 2404	616	MsMpEng.exe	0xbe8e75ce0080	9	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L36: 2404	MsMpEng.exe	-
+
+--- privileges.txt ---
+L1090: 2404	MsMpEng.exe	2	SeCreateTokenPrivilege		Create a token object
+L1091: 2404	MsMpEng.exe	3	SeAssignPrimaryTokenPrivilege	Present,Enabled	Replace a process-level token
+L1092: 2404	MsMpEng.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L1093: 2404	MsMpEng.exe	5	SeIncreaseQuotaPrivilege	Present,Enabled	Increase quotas
+L1094: 2404	MsMpEng.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1095: 2404	MsMpEng.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L1096: 2404	MsMpEng.exe	8	SeSecurityPrivilege	Present,Enabled	Manage auditing and security log
+L1097: 2404	MsMpEng.exe	9	SeTakeOwnershipPrivilege	Present,Enabled	Take ownership of files/objects
+L1098: 2404	MsMpEng.exe	10	SeLoadDriverPrivilege	Present,Enabled	Load and unload device drivers
+L1099: 2404	MsMpEng.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L1100: 2404	MsMpEng.exe	12	SeSystemtimePrivilege		Change the system time
+L1101: 2404	MsMpEng.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L1102: 2404	MsMpEng.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L1103: 2404	MsMpEng.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L1104: 2404	MsMpEng.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L1105: 2404	MsMpEng.exe	17	SeBackupPrivilege	Present,Enabled	Backup files and directories
+L1106: 2404	MsMpEng.exe	18	SeRestorePrivilege	Present,Enabled	Restore files and directories
+L1107: 2404	MsMpEng.exe	19	SeShutdownPrivilege	Present,Enabled	Shut down the system
+L1108: 2404	MsMpEng.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L1109: 2404	MsMpEng.exe	21	SeAuditPrivilege	Default	Generate security audits
+L1110: 2404	MsMpEng.exe	22	SeSystemEnvironmentPrivilege	Present,Enabled	Edit firmware environment values
+L1111: 2404	MsMpEng.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1112: 2404	MsMpEng.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1113: 2404	MsMpEng.exe	25	SeUndockPrivilege		Remove computer from docking station
+L1114: 2404	MsMpEng.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L1115: 2404	MsMpEng.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1116: 2404	MsMpEng.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L1117: 2404	MsMpEng.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L1118: 2404	MsMpEng.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L1119: 2404	MsMpEng.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1120: 2404	MsMpEng.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1121: 2404	MsMpEng.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L1122: 2404	MsMpEng.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L1123: 2404	MsMpEng.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L1124: 2404	MsMpEng.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L70: ** 2404	616	MsMpEng.exe	0xbe8e75ce0080	9	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	\Device\HarddiskVolume3\ProgramData\Microsoft\Windows Defender\Platform\4.18.2009.2-0\MsMpEng.exe	-	-
+
+--- psscan.txt ---
+L116: 2404	616	MsMpEng.exe	0xbe8e75ce0080	9	-	0	False	2020-09-19 01:24:09.000000 UTC	N/A	Disabled
+
+--- malware_malfind.txt ---
+L10: 2404	MsMpEng.exe	0x25453170000	0x2545326ffff	VadS	PAGE_EXECUTE_READWRITE	256	1	Disabled	N/A	
+
+--- ldrmodules.txt ---
+L42: 2404	MsMpEng.exe	0x7ffd73780000	False	False	False	\Windows\System32\combase.dll
+
+--- malware_ldrmodules.txt ---
+L42: 2404	MsMpEng.exe	0x7ffd73780000	False	False	False	\Windows\System32\combase.dll
+
+--- malware_pebmasquerade.txt ---
+L36: 2404	MsMpEng.exe	\Device\HarddiskVolume3\ProgramData\Microsoft\Windows Defender\Platform\4.18.2009.2-0\MsMpEng.exe	-	False	False
+
+--- sessions.txt ---
+L35: 0	-	2404	MsMpEng.exe	-	2020-09-19 01:24:09.000000 UTC
+
+=== PID 2904 (dllhost.exe, ppid=764) ===
+
+--- pslist.txt ---
+L62: 2904	764	dllhost.exe	0xbe8e757e2080	8	-	2	False	2020-09-19 05:08:18.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L62: 2904	dllhost.exe	-
+
+--- privileges.txt ---
+L1965: 2904	dllhost.exe	2	SeCreateTokenPrivilege		Create a token object
+L1966: 2904	dllhost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L1967: 2904	dllhost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L1968: 2904	dllhost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L1969: 2904	dllhost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1970: 2904	dllhost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L1971: 2904	dllhost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L1972: 2904	dllhost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L1973: 2904	dllhost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L1974: 2904	dllhost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L1975: 2904	dllhost.exe	12	SeSystemtimePrivilege		Change the system time
+L1976: 2904	dllhost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L1977: 2904	dllhost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L1978: 2904	dllhost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L1979: 2904	dllhost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L1980: 2904	dllhost.exe	17	SeBackupPrivilege		Backup files and directories
+L1981: 2904	dllhost.exe	18	SeRestorePrivilege		Restore files and directories
+L1982: 2904	dllhost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L1983: 2904	dllhost.exe	20	SeDebugPrivilege		Debug programs
+L1984: 2904	dllhost.exe	21	SeAuditPrivilege		Generate security audits
+L1985: 2904	dllhost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L1986: 2904	dllhost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1987: 2904	dllhost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1988: 2904	dllhost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L1989: 2904	dllhost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L1990: 2904	dllhost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1991: 2904	dllhost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L1992: 2904	dllhost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L1993: 2904	dllhost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L1994: 2904	dllhost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1995: 2904	dllhost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1996: 2904	dllhost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L1997: 2904	dllhost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L1998: 2904	dllhost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L1999: 2904	dllhost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L955: 2904	dllhost.exe	0x7ff61f1c0000	0x9000	DllHost.exe	C:\Windows\system32\DllHost.exe	-1	2020-09-19 05:08:18.000000 UTC	Disabled
+L956: 2904	dllhost.exe	0x7ffd749d0000	0x1f4000	-	-	-1	2020-09-19 05:08:18.000000 UTC	Disabled
+L957: 2904	dllhost.exe	0x7ffd732a0000	0xbd000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2020-09-19 05:08:18.000000 UTC	Disabled
+L958: 2904	dllhost.exe	0x7ffd72120000	0x2c7000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2020-09-19 05:08:18.000000 UTC	Disabled
+L959: 2904	dllhost.exe	0x7ffd725f0000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2020-09-19 05:08:18.000000 UTC	Disabled
+L960: 2904	dllhost.exe	0x7ffd73780000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2020-09-19 05:08:18.000000 UTC	Disabled
+L961: 2904	dllhost.exe	0x7ffd73ae0000	0x123000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2020-09-19 05:08:18.000000 UTC	Disabled
+L962: 2904	dllhost.exe	0x7ffd700d0000	0x13000			6	2020-09-19 05:08:18.000000 UTC	Disabled
+L963: 2904	dllhost.exe	0x7ffd74100000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2020-09-19 05:08:18.000000 UTC	Disabled
+L964: 2904	dllhost.exe	0x7ffd726f0000	0x7f000	塐䥆䅃䡃E洡伲赾ǖ㌐đ	䉦炥퍳ȁ	-1	2020-09-19 05:08:18.000000 UTC	Disabled
+L965: 2904	dllhost.exe	0x5ff0000bd16	0x8b63b801	-	-	-192	3655-04-12 21:57:08.000000 UTC	Disabled
+
+--- pstree.txt ---
+L32: *** 2904	764	dllhost.exe	0xbe8e757e2080	8	-	2	False	2020-09-19 05:08:18.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\dllhost.exe	-	-
+
+--- psscan.txt ---
+L99: 2904	764	dllhost.exe	0xbe8e757e2080	8	-	2	False	2020-09-19 05:08:18.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L62: 2904	dllhost.exe	\Device\HarddiskVolume3\Windows\System32\dllhost.exe	-	False	False
+
+--- sessions.txt ---
+L62: 2	-	2904	dllhost.exe	-	2020-09-19 05:08:18.000000 UTC
+
+=== END OF PIVOT REPORT ===

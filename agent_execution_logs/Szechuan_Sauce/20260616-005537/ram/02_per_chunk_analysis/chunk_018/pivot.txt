@@ -1,0 +1,165 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-16T01:17:43Z
+
+=== PID 6756 (taskhostw.exe, ppid=448) ===
+
+--- pslist.txt ---
+L57: 6756	448	taskhostw.exe	0xbe8e790d7080	11	-	2	False	2020-09-19 05:08:16.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L57: 6756	taskhostw.exe	-
+
+--- privileges.txt ---
+L1825: 6756	taskhostw.exe	2	SeCreateTokenPrivilege		Create a token object
+L1826: 6756	taskhostw.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L1827: 6756	taskhostw.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L1828: 6756	taskhostw.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L1829: 6756	taskhostw.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1830: 6756	taskhostw.exe	7	SeTcbPrivilege		Act as part of the operating system
+L1831: 6756	taskhostw.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L1832: 6756	taskhostw.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L1833: 6756	taskhostw.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L1834: 6756	taskhostw.exe	11	SeSystemProfilePrivilege		Profile system performance
+L1835: 6756	taskhostw.exe	12	SeSystemtimePrivilege		Change the system time
+L1836: 6756	taskhostw.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L1837: 6756	taskhostw.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L1838: 6756	taskhostw.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L1839: 6756	taskhostw.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L1840: 6756	taskhostw.exe	17	SeBackupPrivilege		Backup files and directories
+L1841: 6756	taskhostw.exe	18	SeRestorePrivilege		Restore files and directories
+L1842: 6756	taskhostw.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L1843: 6756	taskhostw.exe	20	SeDebugPrivilege		Debug programs
+L1844: 6756	taskhostw.exe	21	SeAuditPrivilege		Generate security audits
+L1845: 6756	taskhostw.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L1846: 6756	taskhostw.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1847: 6756	taskhostw.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1848: 6756	taskhostw.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L1849: 6756	taskhostw.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L1850: 6756	taskhostw.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1851: 6756	taskhostw.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L1852: 6756	taskhostw.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L1853: 6756	taskhostw.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L1854: 6756	taskhostw.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1855: 6756	taskhostw.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1856: 6756	taskhostw.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L1857: 6756	taskhostw.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L1858: 6756	taskhostw.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L1859: 6756	taskhostw.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L58: *** 6756	448	taskhostw.exe	0xbe8e790d7080	11	-	2	False	2020-09-19 05:08:16.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\taskhostw.exe	-	-
+
+--- psscan.txt ---
+L164: 6756	448	taskhostw.exe	0xbe8e790d7080	11	-	2	False	2020-09-19 05:08:16.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L85: 6756	taskhostw.exe	0x7ff6c76e0000	False	False	False	\Windows\System32\taskhostw.exe
+
+--- malware_ldrmodules.txt ---
+L85: 6756	taskhostw.exe	0x7ff6c76e0000	False	False	False	\Windows\System32\taskhostw.exe
+
+--- malware_pebmasquerade.txt ---
+L57: 6756	taskhostw.exe	\Device\HarddiskVolume3\Windows\System32\taskhostw.exe	-	False	False
+
+--- sessions.txt ---
+L59: 2	-	6756	taskhostw.exe	-	2020-09-19 05:08:16.000000 UTC
+
+=== PID 7172 (browser_broker, ppid=764) ===
+Cmdline: C:\Windows\system32\browser_broker.exe -Embedding
+
+--- pslist.txt ---
+L71: 7172	764	browser_broker	0xbe8e7950b340	4	-	2	False	2020-09-19 05:08:21.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L71: 7172	browser_broker	C:\Windows\system32\browser_broker.exe -Embedding
+
+--- privileges.txt ---
+L2280: 7172	browser_broker	2	SeCreateTokenPrivilege		Create a token object
+L2281: 7172	browser_broker	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2282: 7172	browser_broker	4	SeLockMemoryPrivilege		Lock pages in memory
+L2283: 7172	browser_broker	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2284: 7172	browser_broker	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2285: 7172	browser_broker	7	SeTcbPrivilege		Act as part of the operating system
+L2286: 7172	browser_broker	8	SeSecurityPrivilege		Manage auditing and security log
+L2287: 7172	browser_broker	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2288: 7172	browser_broker	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2289: 7172	browser_broker	11	SeSystemProfilePrivilege		Profile system performance
+L2290: 7172	browser_broker	12	SeSystemtimePrivilege		Change the system time
+L2291: 7172	browser_broker	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2292: 7172	browser_broker	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2293: 7172	browser_broker	15	SeCreatePagefilePrivilege		Create a pagefile
+L2294: 7172	browser_broker	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2295: 7172	browser_broker	17	SeBackupPrivilege		Backup files and directories
+L2296: 7172	browser_broker	18	SeRestorePrivilege		Restore files and directories
+L2297: 7172	browser_broker	19	SeShutdownPrivilege	Present	Shut down the system
+L2298: 7172	browser_broker	20	SeDebugPrivilege		Debug programs
+L2299: 7172	browser_broker	21	SeAuditPrivilege		Generate security audits
+L2300: 7172	browser_broker	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2301: 7172	browser_broker	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2302: 7172	browser_broker	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2303: 7172	browser_broker	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2304: 7172	browser_broker	26	SeSyncAgentPrivilege		Synch directory service data
+L2305: 7172	browser_broker	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2306: 7172	browser_broker	28	SeManageVolumePrivilege		Manage the files on a volume
+L2307: 7172	browser_broker	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2308: 7172	browser_broker	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2309: 7172	browser_broker	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2310: 7172	browser_broker	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2311: 7172	browser_broker	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2312: 7172	browser_broker	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2313: 7172	browser_broker	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2314: 7172	browser_broker	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L1081: 7172	browser_broker	0x7ff609f10000	0xe000	browser_broker.exe	C:\Windows\system32\browser_broker.exe	-1	2020-09-19 05:08:21.000000 UTC	Disabled
+L1082: 7172	browser_broker	0x7ffd749d0000	0x1f4000	-	-	-1	2020-09-19 05:08:21.000000 UTC	Disabled
+L1083: 7172	browser_broker	0x7ffd732a0000	0xbd000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2020-09-19 05:08:21.000000 UTC	Disabled
+L1084: 7172	browser_broker	0x7ffd72120000	0x2c7000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2020-09-19 05:08:21.000000 UTC	Disabled
+L1085: 7172	browser_broker	0x7ffd725f0000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1086: 7172	browser_broker	0x7ffd73780000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1087: 7172	browser_broker	0x7ffd73ae0000	0x123000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1088: 7172	browser_broker	0x7ffd72a40000	0x9b000	sechost.dll	C:\Windows\System32\sechost.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1089: 7172	browser_broker	0x7ffd73ee0000	0x1a0000	user32.dll	C:\Windows\System32\user32.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1090: 7172	browser_broker	0x7ffd727a0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1091: 7172	browser_broker	0x7ffd72ae0000	0x2a000	GDI32.dll	C:\Windows\System32\GDI32.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1092: 7172	browser_broker	0x7ffd72930000	0x109000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1093: 7172	browser_broker	0x7ffd723f0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1094: 7172	browser_broker	0x7ffd72b10000	0x30000	-	-	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1095: 7172	browser_broker	0x7ffd700d0000	0x13000			6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1096: 7172	browser_broker	0x7ffd74100000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1097: 7172	browser_broker	0x7ffd726f0000	0x7f000			-1	2020-09-19 05:08:22.000000 UTC	Disabled
+L1098: 7172	browser_broker	0x7ffd6fc10000	0x9f000	uxtheme.dll	C:\Windows\system32\uxtheme.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1099: 7172	browser_broker	0x7ffd4ff70000	0x49000	荈ࡁ䠄䆋謈褈ъ草ࡂ䇅旅།຅Ի昀襄	Ј聁෸湴荈⣄쳃荁೹⥷譈ࡁ荈߀荈襈ࡁʉ荈ࡁ䠄䆋謈褈ъ草ࡂ䇅旅།຅Ի昀襄	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1100: 7172	browser_broker	0x7ffd74330000	0xae000	shcore.dll	C:\Windows\System32\shcore.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1101: 7172	browser_broker	0x7ffd68130000	0x2ae000	iertutil.dll	C:\Windows\SYSTEM32\iertutil.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1102: 7172	browser_broker	0x7ffd73d80000	0xaa000	advapi32.dll	C:\Windows\System32\advapi32.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1103: 7172	browser_broker	0x7ffd73e30000	0xa8000	clbcatq.dll	C:\Windows\System32\clbcatq.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1104: 7172	browser_broker	0x7ffd4fe60000	0xda000	ieproxy.dll	C:\Windows\System32\ieproxy.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1105: 7172	browser_broker	0x7ffd741a0000	0x129000	ole32.dll	C:\Windows\System32\ole32.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1106: 7172	browser_broker	0x7ffd50d90000	0x73000	edgeiso.dll	C:\Windows\SYSTEM32\edgeiso.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1107: 7172	browser_broker	0x7ffd73360000	0xcd000	OLEAUT32.dll	C:\Windows\System32\OLEAUT32.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1108: 7172	browser_broker	0x7ffd727d0000	0x60000	WINTRUST.dll	C:\Windows\System32\WINTRUST.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1109: 7172	browser_broker	0x7ffd71fe0000	0x2e000	USERENV.dll	C:\Windows\SYSTEM32\USERENV.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1110: 7172	browser_broker	0x7ffd72490000	0x15d000	CRYPT32.dll	C:\Windows\System32\CRYPT32.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1111: 7172	browser_broker	0x7ffd71c50000	0x12000	MSASN1.dll	C:\Windows\SYSTEM32\MSASN1.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+L1112: 7172	browser_broker	0x7ffd72060000	0x1f000	profapi.dll	C:\Windows\SYSTEM32\profapi.dll	6	2020-09-19 05:08:22.000000 UTC	Disabled
+
+--- pstree.txt ---
+L15: *** 7172	764	browser_broker	0xbe8e7950b340	4	-	2	False	2020-09-19 05:08:21.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\browser_broker.exe	C:\Windows\system32\browser_broker.exe -Embedding	C:\Windows\system32\browser_broker.exe
+
+--- psscan.txt ---
+L168: 7172	764	browser_broker	0xbe8e7950b340	4	-	2	False	2020-09-19 05:08:21.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L169: 7172	browser_broker	0x7ffd73780000	True	True	True	\Windows\System32\combase.dll
+
+--- malware_ldrmodules.txt ---
+L169: 7172	browser_broker	0x7ffd73780000	True	True	True	\Windows\System32\combase.dll
+
+--- malware_pebmasquerade.txt ---
+L71: 7172	browser_broker	\Device\HarddiskVolume3\Windows\System32\browser_broker.exe	C:\Windows\system32\browser_broker.exe	False	False
+
+--- sessions.txt ---
+L71: 2	-	7172	browser_broker	C137/ricksanchez	2020-09-19 05:08:21.000000 UTC
+
+=== END OF PIVOT REPORT ===

@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_014.txt
+Summary: svchost.exe with unknown parent and high-risk privilege stack; PID 4096 has no image name, anomalous 1601 epoch timestamps, and an orphaned PPID in the billions.
+
+[PROCESS]
+pid: 4092
+ppid: 616
+image: svchost.exe
+cmdline: 
+severity: HIGH
+reasons: parent_mismatch: parent PID 616 is listed as unknown — legitimate svchost.exe must descend from services.exe | privilege_anomaly: holds SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege simultaneously — atypical for a standard svchost instance | orphaned_parent: PID 616 does not appear anywhere in the process list
+
+[PROCESS]
+pid: 4096
+ppid: 2079404032
+image: 
+cmdline: 
+severity: MEDIUM
+reasons: missing_image_name: process has no executable name — possible EPROCESS unlinking or hollow/injected process artefact | anomalous_timestamps: CreateTime and ExitTime both fall in 1601-01-01 epoch (00:00:35 / 00:02:34 UTC) — indicates fabricated or corrupted EPROCESS timestamps | orphaned_parent: PPID 2079404032 is an implausibly large value not present anywhere in the process list, consistent with a rootkit-style DKOM manipulation
+

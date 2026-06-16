@@ -1,0 +1,37 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_001.txt
+Summary: Corrupt/shellcode-like path and command-line on csrss.exe; orphaned powershell.exe spawning a child powershell; parent-chain anomalies on multiple system processes.
+
+[PROCESS]
+pid: 424
+ppid: 416
+image: csrss.exe
+cmdline: \ufffd\uc085\u880f\ued99\u0002\u8b48\u507f\u90eb\u8b49\u48d6\u4d8d\ue8b0\ua47c\uffff\u3345\u49e4\ud68b\u8b48\u8308\u0879\u4801\u4d8d\u41b0\u970f\u44c4\u6589\ue8a0\ua45e\uffff\u8b48\u4c08\u298b\u854d\u0fed\u9a84
+severity: CRITICAL
+reasons: path: image path field contains garbled/non-ASCII data '䛶￿쎋譈㍈ㅼ譈⒜Ð' — likely memory corruption or process hollowing artefact | commandline: contains raw shellcode-like binary/Unicode escape sequences rather than a valid Windows command string | parent_mismatch: csrss.exe parent PID 416 is unknown/not present in process list (expected smss.exe) | identity: combination of corrupt path + shellcode commandline strongly suggests process hollowing or injected csrss.exe
+
+[PROCESS]
+pid: 508
+ppid: 1380
+image: powershell.exe
+cmdline: 
+severity: HIGH
+reasons: orphaned_process: parent PID 1380 is not present anywhere in the process list | spawn_chain: spawned a child powershell.exe (PID 3316) — powershell spawning powershell is a common staging/execution pattern | short_lived: process exited within ~6 seconds of creation (Start: 05:08:37, Exit: 05:08:43) while spawning a persistent child — consistent with a dropper/launcher stage | no_commandline: missing command-line arguments for powershell.exe prevents inspection but is itself anomalous
+
+[PROCESS]
+pid: 3316
+ppid: 508
+image: powershell.exe
+cmdline: 
+severity: MEDIUM
+reasons: spawn_chain: child of another powershell.exe (PID 508) whose parent is orphaned — inherits suspicious lineage | no_commandline: missing command-line arguments for powershell.exe prevents inspection of potential encoded/obfuscated invocation | persistence_candidate: parent (PID 508) exited immediately after spawning this process, leaving it running detached
+
+[PROCESS]
+pid: 500
+ppid: 416
+image: wininit.exe
+cmdline: 
+severity: LOW
+reasons: network: wininit.exe has an active LISTENING socket on TCPv4/TCPv6 port 49665 — wininit.exe does not normally open listening network sockets | parent_mismatch: parent PID 416 is unknown/not present in process list (expected smss.exe, though this may be a memory-dump artefact shared with csrss.exe PID 424)
+

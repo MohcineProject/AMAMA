@@ -1,0 +1,89 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 3388 — svchost.exe**
+
+Agent 1 reasons: orphaned parent (PPID 616 not in process list), anomalous DLL list formatting.
+
+Evidence analysis:
+
+1. **Orphaned parent**: PPID 616 not in pslist. However, svchost.exe instances can appear orphaned in memory captures if the parent (services.exe or another svchost) exited or if the snapshot timing caused a gap. This alone is weak.
+
+2. **Command line**: `C:\Windows\system32\svchost.exe -k ClipboardSvcGroup -p` — this is a completely legitimate svchost invocation. `-k ClipboardSvcGroup -p` is a real Windows service group. No anomaly here.
+
+3. **DLL list**: L967 shows a `-` entry (no path, no name) and L968 shows a suspicious entry: `0x48f2850fc085` with size `0xfff44be8` — that base address is enormous (not in typical user-mode range), the size is ~4GB which is clearly corrupt/garbage data, and the load count is 18655 which is nonsensical. This looks like a corrupt EPROCESS/VAD entry or memory artifact, not a real loaded DLL. The `-` entries are likely Volatility's way of showing entries it couldn't resolve — this can happen with legitimate processes too.
+
+4. **Privileges**: The privilege list is the full set of possible privileges, nearly all NOT enabled (only SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege are Present). This is actually the standard token for a SYSTEM-level svchost — having the full privilege set listed but mostly disabled is normal for SYSTEM tokens. No privileges are anomalously *enabled*.
+
+5. **No malfind, no network connections, no suspicious cmdline** — the evidence is thin.
+
+The DLL list anomaly (L968) looks like a memory parsing artifact rather than a real injected DLL — the address and size are physically impossible for a user-mode mapping. The orphaned parent and DLL formatting are both explainable as Volatility artifacts. The cmdline is clean. → **REJECTED**
+
+---
+
+**PID 3496 — Microsoft.Phot**
+
+Agent 1 reasons: orphaned parent (PPID 764 not in process list), truncated image name.
+
+Evidence analysis:
+
+1. **Truncated name**: `Microsoft.Phot` is clearly the 14-char truncation of `Microsoft.Photos.exe`. The pstree.txt (L23) confirms the full path: `\Device\HarddiskVolume3\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20070.10002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe` — this is the legitimate Windows Photos UWP app from the Microsoft Store.
+
+2. **malware_pebmasquerade.txt** (L95): Shows `False False` — meaning no PEB masquerading detected. The path matches the legitimate WindowsApps location.
+
+3. **Orphaned parent**: PPID 764 not in pslist. UWP apps are launched by `svchost.exe` hosting the `DcomLaunch` or `AppXSvc` service, which may have exited or not be captured. This is common for UWP processes.
+
+4. **Cmdline**: `-` — UWP apps often don't expose a command line through the standard mechanism Volatility uses.
+
+5. **Privileges**: Same full-set-but-mostly-disabled pattern as PID 3388. Standard for a UWP app running under a user token.
+
+6. **No malfind, no suspicious DLLs, no network connections** — the path is legitimate, the binary is legitimate, no masquerading detected.
+
+→ **REJECTED** — legitimate Microsoft Photos UWP application confirmed by full path in pstree.txt and negative PEB masquerade check.
+
+---
+
+**Summary**: Both findings are REJECTED. 0 confirmed, 0 inconclusive, 2 rejected.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Both Agent 1 leads were examined against the available Volatility artefacts. Neither finding produced evidence of malicious behaviour. PID 3388 presents a legitimate svchost invocation with a standard SYSTEM token and no enabled high-risk privileges; the anomalous DLL list entries are consistent with Volatility memory-parsing artefacts rather than injected code. PID 3496 is confirmed as the legitimate Microsoft Photos UWP application by its full executable path in pstree output and a negative PEB-masquerade check. No confirmed or inconclusive malicious activity was identified in this triage batch.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+================================================================
+REJECTED FINDINGS — SUMMARY (body omitted per format rules)
+================================================================
+
+PID 3388 (svchost.exe): REJECTED
+  The command line `C:\Windows\system32\svchost.exe -k ClipboardSvcGroup -p` is a
+  legitimate Windows service-group invocation. The orphaned-parent signal is weak in
+  isolation — svchost instances routinely survive their launching parent across a
+  memory snapshot. The privilege token lists the full Windows privilege set but with
+  almost all privileges absent/disabled, which is the normal SYSTEM-token layout for
+  a svchost. The two anomalous dlllist entries (L967: bare `-` row; L968: base address
+  0x48f2850fc085, size 0xfff44be8, load-count 18655) are physically impossible for a
+  valid user-mode mapping and are consistent with corrupt VAD/EPROCESS data that
+  Volatility failed to parse cleanly — not with an injected DLL. No malfind hits, no
+  network connections, and no suspicious cmdline arguments were present.
+
+PID 3496 (Microsoft.Phot): REJECTED
+  The 14-character EPROCESS truncation of `Microsoft.Phot` is explained by the known
+  kernel ImageFileName field limit (see framework note). The full executable path
+  recovered from pstree.txt —
+  `\Device\HarddiskVolume3\Program Files\WindowsApps\
+  Microsoft.Windows.Photos_2020.20070.10002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe`
+  — is the legitimate Microsoft Store Photos UWP application. The malware_pebmasquerade
+  check returned `False False`, confirming no PEB path spoofing. The absent command
+  line (`-`) is normal for UWP processes. The orphaned-parent signal (PPID 764 absent
+  from pslist) is expected for UWP apps whose host svchost instance may not be captured
+  or may have exited. No malfind hits, suspicious DLLs, or network artefacts were
+  present.
+
+================================================================

@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_018.txt
+Summary: taskhostw.exe with unknown/missing parent PID; browser_broker with unknown parent PID and non-whitelisted DLL list entry showing the executable itself as a loaded module.
+
+[PROCESS]
+pid: 6756
+ppid: 448
+image: taskhostw.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: PPID 448 not present in process list (unknown parent) | missing_cmdline: no command-line recorded for taskhostw.exe, which normally has arguments
+
+[PROCESS]
+pid: 7172
+ppid: 764
+image: browser_broker
+cmdline: C:\Windows\system32\browser_broker.exe -Embedding
+severity: LOW
+reasons: orphaned_process: PPID 764 not present in process list (unknown parent) | dll_anomaly: non-whitelisted DLL list includes the process image itself (C:\Windows\system32\browser_broker.exe) and a bare '-' entry, suggesting possible DLL list parsing irregularity worth confirming
+

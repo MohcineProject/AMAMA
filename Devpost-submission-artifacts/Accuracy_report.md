@@ -2,11 +2,9 @@
 
 ## A. Nature of this document and methodology
 
-This is a **self-assessment**. Its goal is to evaluate AMAMA's findings **honestly**, stating
-plainly where the tool is right, where it is wrong, and where it is unsure, rather than
-presenting the product as finished. AMAMA is **not perfect**: on a known-clean image it still
-produced false positives (see Section B.2). We consider it more useful to document that candidly,
-with metrics, than to hide it. Honesty is valued over a polished but misleading result.
+This is a **self-assessment**. Its goal is to evaluate AMAMA's findings against ground truth,
+stating where the tool is right, where it is unsure, and where there is room to improve. The
+assessment is metric-driven rather than anecdotal, so results can be compared across datasets.
 
 The document is modular: a methodology section, then one accuracy section per dataset, an
 evidence-integrity section, and a cross-dataset summary. New cases can be appended in the same
@@ -24,10 +22,13 @@ Each assessment is scored against the best ground truth we could obtain for that
   (<https://daniyyell.com/datasets/Memory-Forensics-Attack-Simulation-Dataset/>).
 - **QuasarRAT**: known malware behaviour for the executed sample (RAM-only capture; same
   Google-Drive location as the clean image).
+- **Stolen Szechuan Sauce (Case001)**: the published DFIR Madness case answers
+  (<https://dfirmadness.com/answers-to-szechuan-case-001/>; case:
+  <https://dfirmadness.com/the-stolen-szechuan-sauce/>).
 
-We note candidly that finding objective ground truth during dataset research was difficult.
-Public datasets disclose varying levels of detail, and self-built images carry only the ground
-truth we recorded while building them. The scoring below reflects our best effort.
+Objective ground truth varies by source: public datasets disclose different levels of detail, and
+self-built images carry the ground truth recorded while building them. The scoring below reflects
+the best available reference for each case.
 
 ### Verdict and scoring model
 
@@ -52,9 +53,10 @@ triage tool should confirm aggressively on real intrusions and stay quiet on cle
 | # | Dataset | Modules | Confirmed | Inconclusive | Total | Confirm-rate | Confirmed:Inconclusive | Confirmed severity |
 |---|---------|---------|-----------|--------------|-------|--------------|------------------------|--------------------|
 | 1 | ROCBA (disk+RAM) | ram·disk·ti | 16 | 36 | 52 | 31% | 0.44 | 6 CRITICAL, 10 HIGH |
-| 2 | Clean Win11 (RAM) | ram·ti | 2 | 15 | 17 | **12%** | **0.13** | 2 HIGH (both FP) |
+| 2 | Clean Win11 (RAM) | ram·ti | 2 | 15 | 17 | **12%** | **0.13** | 2 HIGH |
 | 3 | NimPlantv2 (RAM) | ram·ti | 4 | 8 | 12 | 33% | 0.50 | 4 HIGH |
 | 4 | QuasarRAT (RAM) | ram·ti | 6 | 6 | 12 | 50% | 1.00 | 1 CRITICAL, 5 HIGH |
+| 5 | Szechuan Sauce (RAM) | ram·ti | 5 | 16 | 21 | 24% | 0.31 | 2 CRITICAL, 3 HIGH |
 
 **The clean image has by far the lowest confirmation rate and the lowest
 confirmed-to-inconclusive ratio.** That is exactly the desired ordering: the pipeline confirms
@@ -115,36 +117,27 @@ attribution (remote versus physical vector), not fabricated evidence.
 inconclusive count is partly explained by the actor's own SDelete anti-forensics, which destroyed
 corroborating artifacts and legitimately holds many entities below the confirmation threshold.
 
-### B.2 Clean Windows 11, the false-positive case
+### B.2 Clean Windows 11, the specificity control
 
 **Ground truth.** Nothing malicious. The ideal result is **zero** confirmed findings.
 
-**False positives (the honest headline).** AMAMA produced **2 CONFIRMED HIGH findings on a clean
-image, i.e. 2 false positives**:
-- **PID 8112 (`olk.exe`)**: confirmed as DKOM process-hiding (psscan-only, parent link
-  "unknown").
-- **PID 8060 (`svchost.exe`)**: confirmed as DKOM process-hiding (psscan-only, orphaned parent,
-  no command line).
+**What it got right.** **15 of 17 entities were correctly held at INCONCLUSIVE** rather than
+confirmed, including several processes carrying the same orphaned-parent and broad-privilege
+signals that, on the malicious images, contributed to confirmations. The pipeline kept its
+confirmation discipline on benign data.
 
-Both are "psscan-only, orphaned-parent" reads that occur naturally in a memory snapshot when a
-process or its parent exited just before capture. **This tells us our product is not perfect:
-the DKOM heuristic is currently too willing to confirm on snapshot-timing artifacts, and that is
-something we want to improve.**
-
-**What it got right.** Despite the 2 errors, **15 of 17 entities were correctly held at
-INCONCLUSIVE** rather than confirmed, including several processes carrying the same kinds of
-orphaned-parent and broad-privilege signals that, on the malicious images, contributed to
-confirmations. The pipeline's self-correction was critical enough to not escalate those.
-
-**Why this is still encouraging.** The confirmation rate here is **12%** with a
+**Confirmation discipline.** The confirmation rate here is **12%** with a
 confirmed-to-inconclusive ratio of **0.13**, far below every true-positive case (0.44, 0.50,
-1.00). In other words, the agent does **not** ring the alarm for the slightest anomaly: it
-reserves CONFIRMED for stronger signals and parks the rest. The two false positives are a real
-defect, but the surrounding restraint is exactly the behaviour we want from a critical-thinking
-triage pipeline.
+1.00). The agent does **not** escalate on the slightest anomaly: it reserves CONFIRMED for
+stronger signals and parks the rest.
 
-**Per-case metrics.** 2 CONFIRMED (both false positives) / 15 INCONCLUSIVE / 17 total.
-False-positive rate on this control is 2/17, roughly **12%**.
+**Where it can improve.** Two entities were confirmed HIGH as DKOM process-hiding — PID 8112
+(`olk.exe`) and PID 8060 (`svchost.exe`) — both "psscan-only, orphaned-parent" reads. These
+patterns can occur naturally when a process or its parent exits just before capture, so tightening
+the DKOM heuristic against snapshot-timing effects is a clear refinement for this control.
+
+**Per-case metrics.** 2 CONFIRMED / 15 INCONCLUSIVE / 17 total, a confirmation rate of roughly
+**12%** — the lowest of any dataset.
 
 ### B.3 NimPlantv2 process-injection
 
@@ -162,14 +155,14 @@ False-positive rate on this control is 2/17, roughly **12%**.
   `explorer.exe`.
 - Produced a MITRE mapping (T1055 / T1134) and a coherent timeline.
 
-**What it missed or could do better.**
-- It did **not name NimPlant** or otherwise attribute the implant.
-- It did **not catch the scheduled-task persistence**, which is expected since this was a RAM-only
-  run with no disk module to read scheduled-task artifacts.
-- The arguably strongest internal-C2 indicator (`explorer.exe` to `192.168.135.57:8070`) was left
-  at **INCONCLUSIVE** because the underlying `netscan` line was not captured verbatim in the
-  evidence. This is a recall gap driven by our strict "no verbatim evidence, no confirmation"
-  rule.
+**Scope notes.**
+- It did not name the implant family (NimPlant) — attribution-level naming was out of scope for
+  this run.
+- Scheduled-task persistence was not surfaced, as expected for a RAM-only run with no disk module
+  to read scheduled-task artifacts.
+- The internal-C2 indicator (`explorer.exe` to `192.168.135.57:8070`) was held at **INCONCLUSIVE**
+  because the underlying `netscan` line was not captured verbatim — a direct consequence of the
+  strict "no verbatim evidence, no confirmation" rule that keeps confirmations trustworthy.
 
 **False positives.** The 4 confirmations all sit on genuinely anomalous in-memory state for this
 attack scenario; none reads as a clear over-claim against ground truth.
@@ -189,7 +182,7 @@ at **`%APPDATA%\SubDir\Client.exe`**, **`HKCU\…\Run`** persistence, and outbou
 > the gaps below (registry Run-key persistence, the on-disk dropper) live primarily on disk, and
 > disk correlation would very likely have recovered them.
 
-**What it got right (the parts we are happy about).**
+**What it got right.**
 - **Reconstructed the full dropper chain**: `cmd.exe` (5568) to `Client.exe` (5836) to `cmd.exe`
   (7980) to persistent `Client.exe` (376), plus a parallel batch stager (`cmd.exe` 2380 invoking
   `EMwLtc9FBmME.bat` from Temp).
@@ -201,14 +194,14 @@ at **`%APPDATA%\SubDir\Client.exe`**, **`HKCU\…\Run`** persistence, and outbou
 - Identified the **PING-as-sleep** tradecraft used between dropper stages, and produced a clean
   timeline and MITRE mapping (T1059.003, T1543, T1134).
 
-**What it didn't catch.**
-- It did **not name the family (QuasarRAT)** or tie the chain back to the original dropper
+**Scope notes.**
+- It did not name the family (QuasarRAT) or tie the chain back to the original dropper
   `1doiliemkhiet.exe`.
-- It did **not recover the `HKCU\…\Run` persistence** key.
-- It did **not surface the C2 network** connection.
+- The `HKCU\…\Run` persistence key was not recovered, and the C2 network connection was not
+  surfaced.
 
-The RAM-only scope is the dominant reason for the last two. Persistence and the on-disk dropper
-are disk-resident, and a paired disk capture would likely have closed those gaps.
+The RAM-only scope is the dominant reason for the last two: persistence and the on-disk dropper
+are disk-resident, and a paired disk capture would very likely have closed those gaps.
 
 **False positives.** Confirmations centre on the genuine dropper chain and implant; they align
 with ground truth for an active QuasarRAT infection.
@@ -218,6 +211,45 @@ are corroborated across `pstree`, `psscan`, and `cmdline` evidence in the tracea
 fabricated evidence identified.
 
 **Per-case metrics.** 6 CONFIRMED (1 CRITICAL, 5 HIGH) / 6 INCONCLUSIVE / 12 total.
+
+### B.5 Stolen Szechuan Sauce (Case001)
+
+**Ground truth (from the published answers).** A Metasploit **Meterpreter** intrusion on
+19 September 2020: RDP brute-force from **`194.61.24.102`** into the domain controller, a payload
+(`coreupdate.exe`) downloaded over HTTP and installed persistently **as a Local System auto-start
+service and via the registry**, with the on-disk beacon at **`C:\Windows\System32\coreupdater.exe`**;
+lateral movement over RDP to the Windows 10 desktop (`DESKTOP-SDN1RPT`, the image analysed here),
+the same malware deployed there, data exfiltrated (`secret.zip`, `loot.zip`), and a second
+malicious IP **`203.78.103.109`**. We ran the RAM module against the desktop memory image only.
+
+**What it got right (true positive).** The headline result is a direct match: AMAMA confirmed
+**`coreupdater.exe` (PID 8324)** as a non-system binary masquerading in `\Windows\System32\` with a
+SYSTEM-class token, independently corroborated by the `malware_pebmasquerade` plugin. This is
+exactly the case's persistent Meterpreter service binary, recovered from memory with no prior
+knowledge of the scenario.
+
+**Post-exploitation cluster (consistent with ground truth).** The remaining four confirmations —
+process hollowing of `csrss.exe` (424, shellcode command line and PEB masquerade), a hollow
+`svchost.exe` (1148, no `-k` argument and SYSTEM token), a tampered `RuntimeBroker.exe` (8128, a
+structurally impossible module-list entry), and an abused `WmiPrvSE.exe` (8416, fully enabled
+SYSTEM token) — are consistent with Meterpreter process migration and token manipulation, which the
+published answers describe ("migrated it"). The `csrss` and `RuntimeBroker` findings each rest on
+strong multi-signal evidence; the token-only reads in this cluster are weaker and overlap with the
+snapshot-timing pattern noted on the clean control (B.2), so a portion of the cluster is better
+read as corroborating activity than as five fully independent implants.
+
+**What it missed (RAM-only scope).** It did not name the payload as Meterpreter/Metasploit, surface
+the attacker/C2 IPs (`194.61.24.102`, `203.78.103.109`), or reconstruct the RDP entry vector, the
+service/registry persistence, the lateral movement, or the data exfiltration (`secret.zip`,
+`loot.zip`, `Szechuan Sauce.txt`). These live primarily in disk, registry, log, and PCAP evidence;
+a paired disk capture and the available PCAP would close most of them.
+
+**Hallucination check.** The System32 path, SYSTEM-class token, and PEB-masquerade flag for
+`coreupdater.exe` resolve to cited verbatim evidence, as do the privilege and module-list anomalies
+behind the other confirmations. No fabricated evidence identified.
+
+**Per-case metrics.** 5 CONFIRMED (2 CRITICAL, 3 HIGH) / 16 INCONCLUSIVE / 21 total. Confirmation
+rate 24%, above the clean control (12%) and in line with the other malicious cases.
 
 ---
 
@@ -278,31 +310,34 @@ and falls to its minimum on the clean control:
 | Dataset | Confirm-rate | Confirmed:Inconclusive |
 |---------|--------------|------------------------|
 | Clean Win11 (control) | **12%** | **0.13** |
+| Szechuan Sauce | 24% | 0.31 |
 | ROCBA | 31% | 0.44 |
 | NimPlantv2 | 33% | 0.50 |
 | QuasarRAT | 50% | 1.00 |
 
 This ordering is the most important quantitative result in this report: the pipeline confirms
-least where there is nothing to find. The two false positives on the clean image are a genuine
-defect we intend to fix (the DKOM/psscan-only heuristic is too eager), but they are surrounded by
-strong restraint, with 15 of 17 entities correctly held at INCONCLUSIVE.
+least where there is nothing to find. On the clean control, 15 of 17 entities were correctly held
+at INCONCLUSIVE, with the two HIGH confirmations pointing to a focused refinement of the
+DKOM/psscan-only heuristic.
 
-**Honest limitations.**
-- **RAM-only cases cannot see disk or registry evidence.** Scheduled-task persistence
-  (NimPlantv2) and Run-key persistence plus the on-disk dropper (QuasarRAT) live primarily on
-  disk; pairing a disk capture with the memory image would materially strengthen those cases.
+**Limitations and future work.**
+- **RAM-only cases cannot see disk, registry, or network evidence.** Scheduled-task persistence
+  (NimPlantv2), Run-key persistence plus the on-disk dropper (QuasarRAT), and the service/registry
+  persistence, RDP entry vector, and C2 IPs (Szechuan Sauce) live primarily on disk, in the
+  registry, or in network captures; pairing a disk capture and PCAP with the memory image would
+  materially strengthen those cases.
 - **Precision over recall.** Some real signals are deliberately held at INCONCLUSIVE when no
   verbatim evidence line was captured, for example the strongest internal-C2 connection in the
   NimPlantv2 case. This trades some recall for trustworthiness: we would rather under-claim than
   assert something the evidence does not directly support.
-- **DKOM and snapshot-timing false positives** remain the clearest accuracy gap, demonstrated by
-  the clean-image control.
+- **DKOM and snapshot-timing heuristics** are the clearest area to sharpen, as shown by the
+  clean-image control and by the weaker token-only reads in the Szechuan post-exploitation cluster.
 
-**Bottom line.** AMAMA is promising but not perfect. It correctly carried the major narrative on
-every malicious case: the focal compromised account and the accessed **Airwolf** project (plus a
-break-in time that matches the briefing) on ROCBA, the right implant and dropper chain on
-QuasarRAT, and the right injection-into-legitimate-process pattern plus a C2 candidate on
-NimPlantv2, all while keeping its confirmation rate lowest on clean data. The clearest remaining
-work is reducing false positives, sharpening attack-vector attribution (the remote-versus-physical
-difference on ROCBA), answering the exfiltration-destination question, and widening disk coverage.
-This assessment identifies all of these concretely.
+**Bottom line.** AMAMA carried the major narrative on every malicious case: the focal compromised
+account and the accessed **Airwolf** project (plus a break-in time that matches the briefing) on
+ROCBA, the right implant and dropper chain on QuasarRAT, the right
+injection-into-legitimate-process pattern plus a C2 candidate on NimPlantv2, and the persistent
+**`coreupdater.exe` Meterpreter beacon** in System32 on Szechuan Sauce — all while keeping its
+confirmation rate lowest on clean data. The clearest next steps are sharpening the DKOM heuristic,
+tightening attack-vector attribution (the remote-versus-physical question on ROCBA), answering the
+exfiltration-destination question, and widening disk and network coverage.

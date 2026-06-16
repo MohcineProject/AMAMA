@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-01-30T00:00:00Z
+Chunk: chunk_016.txt
+Summary: audiodg.exe has an unresolvable parent PID (orphaned process) and holds SeImpersonatePrivilege; weak stacked signals warrant low-severity review.
+
+[PROCESS]
+pid: 6276
+ppid: 1896
+image: audiodg.exe
+cmdline: C:\Windows\system32\AUDIODG.EXE 0x55c
+severity: LOW
+reasons: orphaned_process: parent PID 1896 does not appear anywhere in the process list (listed as 'unknown') | privilege_anomaly: SeImpersonatePrivilege enabled — unusual for an audio device graph isolation process and could indicate token impersonation abuse
+

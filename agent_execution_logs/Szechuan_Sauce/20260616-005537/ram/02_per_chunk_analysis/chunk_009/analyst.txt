@@ -1,0 +1,103 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 2404 — MsMpEng.exe**
+
+Agent 1 flags: orphaned parent (PPID 616 absent), broad privilege stack.
+
+**Orphaned parent analysis:** PPID 616 is absent from pslist/psscan. However, MsMpEng.exe is the Windows Defender engine. It is commonly launched by the Defender service host (WinDefend svchost), which can exit after spawning it, or the parent can be a short-lived service process. The orphaned parent alone is weak for a well-known AV binary.
+
+**Path:** `\Device\HarddiskVolume3\ProgramData\Microsoft\Windows Defender\Platform\4.18.2009.2-0\MsMpEng.exe` — this is the **legitimate, expected path** for Windows Defender's engine. The version string `4.18.2009.2-0` is a real Defender platform version from September 2020, consistent with the process CreateTime of 2020-09-19.
+
+**Privilege stack:** MsMpEng.exe runs as SYSTEM and legitimately holds a very broad privilege set. SeDebugPrivilege, SeLoadDriverPrivilege, SeTcbPrivilege, SeImpersonatePrivilege are all expected for the AV engine — it needs to inspect processes (SeDebug), load its kernel driver (SeLoadDriver), and impersonate for scanning. This is not anomalous for this binary.
+
+**Cmdline:** Shows `-` (unresolvable by Volatility), which is a known artifact for some system processes and not itself suspicious.
+
+**Malfind:** One RWX region at `0x25453170000`. This is notable. However, MsMpEng.exe is known to use RWX memory regions for its scanning engine (JIT-compiled detection logic, emulation engine). A single malfind hit on MsMpEng.exe is a very common false positive in forensic analysis of Windows Defender.
+
+**Overall:** The path is legitimate, the privileges are expected for SYSTEM-level AV, the malfind hit is a known false positive pattern for Defender, and the orphaned parent is explainable. No DLL anomalies, no network connections, no registry persistence, no encoded cmdline. I will **REJECT** this — the evidence points to legitimate Windows Defender behavior.
+
+---
+
+**PID 2904 — dllhost.exe**
+
+Agent 1 flags: orphaned parent (PPID 764 absent), bare `-` DLL entry.
+
+**Orphaned parent:** PPID 764 absent. dllhost.exe is a COM surrogate host, normally parented to svchost.exe. An orphaned parent is mildly suspicious but not uncommon if the parent service host exited.
+
+**Cmdline:** `-` — unresolvable. For dllhost.exe this is somewhat more concerning than for MsMpEng because legitimate dllhost invocations typically show `/Processid:{GUID}` arguments. However, Volatility sometimes fails to resolve cmdline for valid processes.
+
+**DLL anomaly:** `L956` shows a DLL at `0x7ffd749d0000` with name `-` and path `-`. This is a DLL that Volatility cannot resolve — it could be an unlinked/injected module, or it could be a memory-mapped file that Volatility can't name. This is the most suspicious signal here.
+
+**Privileges:** The privilege set is very minimal — only `SeChangeNotifyPrivilege` (Enabled), `SeShutdownPrivilege` (Present), `SeUndockPrivilege` (Present), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present), `SeCreateGlobalPrivilege` (Default). This is a **low-privilege user-context token**, consistent with a legitimate COM surrogate running under a standard user account. No high-risk privileges enabled.
+
+**No malfind hits, no network connections, no registry evidence.**
+
+**Overall:** The unresolvable DLL is the only real signal beyond the orphaned parent. The privilege set is benign. No cmdline, no malfind, no network. The unresolvable DLL entry in dlllist is a known Volatility artifact when a module is paged out or the VAD/PEB list is inconsistent — it doesn't confirm injection on its own. I'll mark this **INCONCLUSIVE** — the unresolvable DLL warrants noting but there's insufficient corroboration to confirm malice.
+
+---
+
+Now writing the report:
+
+```
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: Two Agent 1 leads were evaluated. PID 2404 (MsMpEng.exe) presents
+as legitimate Windows Defender engine running from its expected platform path
+with a privilege set consistent with SYSTEM-level AV operation; the single
+malfind hit is a well-documented false positive for this binary. PID 2904
+(dllhost.exe) carries one unresolvable DLL entry that cannot be explained
+away but lacks corroborating signals (no malfind, no network, no high-risk
+privileges, no suspicious cmdline) sufficient to confirm malice. No confirmed
+malicious findings in this triage batch.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      2904
+PPID:     764
+Image:    dllhost.exe
+Cmdline:  - (unresolvable)
+Severity: N/A
+MITRE:
+
+Justification:
+  dllhost.exe is a COM surrogate host whose parent PID 764 is absent from
+  the process list — a weak signal on its own, as COM surrogate parents can
+  exit after spawning. More notable is the unresolvable DLL entry (name and
+  path both '-') at 0x7ffd749d0000 in the dlllist output, which may indicate
+  an unlinked or injected module, but Volatility also produces this artifact
+  for legitimately paged-out or VAD-inconsistent modules. The privilege token
+  is low-privilege user-context (only SeChangeNotifyPrivilege enabled), there
+  are no malfind hits, no network connections, and no registry persistence
+  evidence — insufficient corroboration to confirm injection or malice, but
+  the unresolvable DLL warrants follow-up if additional memory artifacts
+  become available.
+
+Key Evidence:
+  - L956: 2904	dllhost.exe	0x7ffd749d0000	0x1f4000	-	-	-1	2020-09-19 05:08:18.000000 UTC	Disabled
+  - L62:  2904	dllhost.exe	-
+  - L62:  2904	764	dllhost.exe	0xbe8e757e2080	8	-	2	False	2020-09-19 05:08:18.000000 UTC	N/A	Disabled
+----------------------------------------------------------------
+
+================================================================
+REJECTED FINDINGS (1 total — omitted from body per protocol)
+
+PID 2404 (MsMpEng.exe): REJECTED. The executable path
+(\Device\HarddiskVolume3\ProgramData\Microsoft\Windows Defender\Platform\
+4.18.2009.2-0\MsMpEng.exe) is the legitimate, expected location for the
+Windows Defender engine on this platform version (4.18.2009.2-0, consistent
+with the September 2020 CreateTime). The broad privilege set — including
+SeDebugPrivilege, SeLoadDriverPrivilege, SeTcbPrivilege, and
+SeImpersonatePrivilege — is normal for MsMpEng.exe running as SYSTEM; the
+engine requires these to inspect processes, load its kernel driver, and
+perform emulation. The single malfind RWX region is a well-documented false
+positive for Defender's JIT-compiled scanning engine. The orphaned parent
+(PPID 616) is explainable by the Defender service host exiting after launch.
+No DLL anomalies, network connections, encoded cmdline, or registry
+persistence were present.
+================================================================
+```
