@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_007.txt
+Summary: All three processes share an orphaned parent (PID 828, unknown); armsvc.exe and its child AdobeARMHelper hold high-risk privilege combinations (SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege); AdobeARMHelper has zero-duration lifetime with no path or commandline recorded.
+
+[PROCESS]
+pid: 4472
+ppid: 828
+image: armsvc.exe
+cmdline: "C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe"
+severity: MEDIUM
+reasons: orphaned_parent: PPID 828 does not appear anywhere in the process list | privilege_combination: holds SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege simultaneously — unusually broad for an Adobe update helper service
+
+[PROCESS]
+pid: 22816
+ppid: 4472
+image: AdobeARMHelper
+cmdline: 
+severity: MEDIUM
+reasons: zero_duration_lifetime: CreateTime == ExitTime (2020-11-13 16:25:58 UTC) — process started and exited at the same recorded instant | missing_path_and_cmdline: no image path or command line recorded in memory snapshot | privilege_combination: holds SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege — same high-risk set as parent armsvc.exe
+
+[PROCESS]
+pid: 4508
+ppid: 828
+image: IntelCpHDCPSvc
+cmdline: C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe
+severity: LOW
+reasons: orphaned_parent: PPID 828 does not appear anywhere in the process list | privilege_combination: holds SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege — elevated for a hardware HDCP service
+

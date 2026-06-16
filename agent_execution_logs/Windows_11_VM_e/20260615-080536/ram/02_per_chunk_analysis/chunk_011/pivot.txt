@@ -1,0 +1,333 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:14:53Z
+
+=== PID 4384 (svchost.exe, ppid=896) ===
+Cmdline: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService
+
+--- pslist.txt ---
+L73: 4384	896	svchost.exe	0x990ef77bd080	7	-	1	False	2026-05-13 19:15:36.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L73: 4384	svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService
+
+--- privileges.txt ---
+L2385: 4384	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L2386: 4384	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2387: 4384	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2388: 4384	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2389: 4384	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2390: 4384	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2391: 4384	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2392: 4384	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2393: 4384	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2394: 4384	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2395: 4384	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L2396: 4384	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2397: 4384	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2398: 4384	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2399: 4384	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2400: 4384	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L2401: 4384	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L2402: 4384	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2403: 4384	svchost.exe	20	SeDebugPrivilege		Debug programs
+L2404: 4384	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L2405: 4384	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2406: 4384	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2407: 4384	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2408: 4384	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2409: 4384	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2410: 4384	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2411: 4384	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2412: 4384	svchost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2413: 4384	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2414: 4384	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2415: 4384	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2416: 4384	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2417: 4384	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2418: 4384	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2419: 4384	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L2553: 4384	svchost.exe	0x7ff7d0000000	0x13000	svchost.exe	C:\WINDOWS\system32\svchost.exe	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2554: 4384	svchost.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2555: 4384	svchost.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2556: 4384	svchost.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2557: 4384	svchost.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2558: 4384	svchost.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2559: 4384	svchost.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2560: 4384	svchost.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2561: 4384	svchost.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2562: 4384	svchost.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2563: 4384	svchost.exe	0x7ffff7c20000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2564: 4384	svchost.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2565: 4384	svchost.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2566: 4384	svchost.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2567: 4384	svchost.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2568: 4384	svchost.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2569: 4384	svchost.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2570: 4384	svchost.exe	0x7fffe0d00000	0x1e000	wpnuserservice.dll	c:\windows\system32\wpnuserservice.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2571: 4384	svchost.exe	0x7fffed8c0000	0x2c4000	iertutil.dll	c:\windows\system32\iertutil.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2572: 4384	svchost.exe	0x7ffff9820000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2573: 4384	svchost.exe	0x7ffff49f0000	0xd000	netutils.dll	c:\windows\system32\netutils.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2574: 4384	svchost.exe	0x7fffed890000	0x29000	srvcli.dll	c:\windows\system32\srvcli.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2575: 4384	svchost.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2576: 4384	svchost.exe	0x7fffe83b0000	0x194000	wpncore.dll	C:\WINDOWS\System32\wpncore.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2577: 4384	svchost.exe	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2578: 4384	svchost.exe	0x7fffe0b20000	0x148000	NotificationController.dll	C:\Windows\System32\NotificationController.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2579: 4384	svchost.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2580: 4384	svchost.exe	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2581: 4384	svchost.exe	0x7ffff4400000	0x36000	RMCLIENT.dll	C:\Windows\System32\RMCLIENT.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2582: 4384	svchost.exe	0x7ffff61c0000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2583: 4384	svchost.exe	0x7ffff61a0000	0x14000	UMPDC.dll	C:\Windows\System32\UMPDC.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2584: 4384	svchost.exe	0x7fffea0a0000	0x17000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2585: 4384	svchost.exe	0x7fffeca30000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2586: 4384	svchost.exe	0x7fffe0a80000	0x9b000	QuietHours.dll	C:\Windows\System32\QuietHours.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2587: 4384	svchost.exe	0x7ffff6d60000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2588: 4384	svchost.exe	0x7ffff8e80000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2589: 4384	svchost.exe	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\System32\profapi.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2590: 4384	svchost.exe	0x7ffff60f0000	0x63000	winsta.dll	C:\WINDOWS\SYSTEM32\winsta.dll	-1	2026-05-13 19:15:37.000000 UTC	Disabled
+L2591: 4384	svchost.exe	0x7ffff39c0000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2592: 4384	svchost.exe	0x7fffe5ba0000	0x10f000	winsqlite3.dll	C:\WINDOWS\System32\winsqlite3.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2593: 4384	svchost.exe	0x7fffedd70000	0x244000	twinapi.appcore.dll	C:\WINDOWS\SYSTEM32\twinapi.appcore.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2594: 4384	svchost.exe	0x7fffe0a20000	0x5d000	execmodelclient.dll	C:\Windows\System32\execmodelclient.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2595: 4384	svchost.exe	0x7fffe3ee0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2596: 4384	svchost.exe	0x7fffe0370000	0x14000	execmodelproxy.dll	C:\WINDOWS\system32\execmodelproxy.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2597: 4384	svchost.exe	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2598: 4384	svchost.exe	0x7ffff7df0000	0x15d000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2599: 4384	svchost.exe	0x7ffff3c60000	0x29000	wtsapi32.dll	C:\WINDOWS\SYSTEM32\wtsapi32.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2600: 4384	svchost.exe	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2601: 4384	svchost.exe	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\System32\SspiCli.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2602: 4384	svchost.exe	0x7fffdf890000	0xbb000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2026-05-13 19:15:39.000000 UTC	Disabled
+L2603: 4384	svchost.exe	0x7fffdf710000	0x9d000	TileDataRepository.dll	C:\Windows\System32\TileDataRepository.dll	6	2026-05-13 19:15:40.000000 UTC	Disabled
+L2604: 4384	svchost.exe	0x7fffe8ad0000	0x502000	Windows.StateRepository.dll	C:\Windows\System32\Windows.StateRepository.dll	6	2026-05-13 19:15:40.000000 UTC	Disabled
+L2605: 4384	svchost.exe	0x7fffe89f0000	0xc7000	StateRepository.Core.dll	C:\Windows\System32\StateRepository.Core.dll	6	2026-05-13 19:15:40.000000 UTC	Disabled
+L2606: 4384	svchost.exe	0x7ffff56f0000	0x32000	USERENV.dll	C:\Windows\System32\USERENV.dll	6	2026-05-13 19:15:40.000000 UTC	Disabled
+L2607: 4384	svchost.exe	0x7fffeb7e0000	0x19000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2026-05-13 19:15:40.000000 UTC	Disabled
+L2608: 4384	svchost.exe	0x7fffe6b10000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-13 19:15:41.000000 UTC	Disabled
+L2609: 4384	svchost.exe	0x7fffe66b0000	0x47000	Windows.StateRepositoryClient.dll	C:\Windows\System32\Windows.StateRepositoryClient.dll	6	2026-05-13 19:15:41.000000 UTC	Disabled
+L2610: 4384	svchost.exe	0x7fffdf150000	0xaa000	appresolver.dll	C:\Windows\System32\appresolver.dll	6	2026-05-13 19:15:41.000000 UTC	Disabled
+L2611: 4384	svchost.exe	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-13 19:15:41.000000 UTC	Disabled
+L2612: 4384	svchost.exe	0x7ffff1bd0000	0x103000	propsys.dll	C:\WINDOWS\system32\propsys.dll	6	2026-05-13 19:15:41.000000 UTC	Disabled
+L2613: 4384	svchost.exe	0x7fffefe30000	0x5e000	Bcp47Langs.dll	C:\Windows\System32\Bcp47Langs.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2614: 4384	svchost.exe	0x7fffe3a00000	0x16000	threadpoolwinrt.dll	C:\Windows\System32\threadpoolwinrt.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2615: 4384	svchost.exe	0x7fffde5c0000	0x158000	wpnapps.dll	C:\Windows\System32\wpnapps.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2616: 4384	svchost.exe	0x7fffde380000	0x65000	wpnclient.dll	C:\Windows\System32\wpnclient.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2617: 4384	svchost.exe	0x7fffe19e0000	0x2d1000	Windows.CloudStore.dll	C:\Windows\System32\Windows.CloudStore.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2618: 4384	svchost.exe	0x7fffdd670000	0x19b000	ContentDeliveryManager.Utilities.dll	C:\Windows\System32\ContentDeliveryManager.Utilities.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2619: 4384	svchost.exe	0x7fffdcfb0000	0x49000	AppExtension.dll	C:\Windows\System32\AppExtension.dll	6	2026-05-13 19:15:42.000000 UTC	Disabled
+L2620: 4384	svchost.exe	0x7fffdcce0000	0xf6000	Windows.CloudStore.Schema.Shell.dll	C:\Windows\System32\Windows.CloudStore.Schema.Shell.dll	6	2026-05-13 19:15:43.000000 UTC	Disabled
+L2621: 4384	svchost.exe	0x7fffe87c0000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2026-05-13 19:15:44.000000 UTC	Disabled
+L2622: 4384	svchost.exe	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\system32\bcrypt.dll	-1	2026-05-13 19:15:44.000000 UTC	Disabled
+L2623: 4384	svchost.exe	0x7fffdd000000	0x23d000	msxml6.dll	C:\Windows\System32\msxml6.dll	6	2026-05-13 19:15:44.000000 UTC	Disabled
+L2624: 4384	svchost.exe	0x7ffff5920000	0xc000	CRYPTBASE.DLL	C:\WINDOWS\System32\CRYPTBASE.DLL	6	2026-05-13 19:15:44.000000 UTC	Disabled
+L2625: 4384	svchost.exe	0x7ffff51f0000	0x36000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2026-05-13 19:15:44.000000 UTC	Disabled
+L2626: 4384	svchost.exe	0x7ffff8710000	0x75f000	shell32.dll	C:\WINDOWS\System32\shell32.dll	6	2026-05-13 19:15:44.000000 UTC	Disabled
+L2627: 4384	svchost.exe	0x7fffe1de0000	0x2c000	IDStore.dll	C:\WINDOWS\System32\IDStore.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2628: 4384	svchost.exe	0x7fffdcba0000	0xd4000	twinapi.dll	C:\WINDOWS\system32\twinapi.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2629: 4384	svchost.exe	0x7fffe9910000	0x43000	XmlLite.dll	C:\WINDOWS\system32\XmlLite.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2630: 4384	svchost.exe	0x7ffff4ad0000	0x2b000	SAMLIB.dll	C:\WINDOWS\System32\SAMLIB.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2631: 4384	svchost.exe	0x7fffe16b0000	0xa2000	wlidprov.dll	C:\WINDOWS\System32\wlidprov.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2632: 4384	svchost.exe	0x7fffe0f10000	0x5a4000	cdp.dll	C:\Windows\System32\cdp.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2633: 4384	svchost.exe	0x7fffda810000	0x67000	NotificationControllerPS.dll	C:\Windows\System32\NotificationControllerPS.dll	6	2026-05-13 19:15:46.000000 UTC	Disabled
+L2634: 4384	svchost.exe	0x7fffd6d30000	0x143000	ShellCommonCommonProxyStub.dll	C:\Windows\System32\ShellCommonCommonProxyStub.dll	6	2026-05-13 19:15:54.000000 UTC	Disabled
+L2635: 4384	svchost.exe	0x7fffd6580000	0x73000	CapabilityAccessManagerClient.dll	C:\Windows\System32\CapabilityAccessManagerClient.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L2636: 4384	svchost.exe	0x7fffed300000	0x60000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2026-05-13 19:16:30.000000 UTC	Disabled
+L2637: 4384	svchost.exe	0x7fffedb90000	0x1dd000	urlmon.dll	C:\Windows\System32\urlmon.dll	6	2026-05-13 19:21:42.000000 UTC	Disabled
+
+--- pstree.txt ---
+L91: ** 4384	896	svchost.exe	0x990ef77bd080	7	-	1	False	2026-05-13 19:15:36.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService	C:\WINDOWS\system32\svchost.exe
+
+--- psscan.txt ---
+L102: 4384	896	svchost.exe	0x990ef77bd080	7	-	1	False	2026-05-13 19:15:36.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L2672: 4384	svchost.exe	0x204707b0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2673: 4384	svchost.exe	0x20470d70000	False	False	False	\Windows\System32\en-US\NotificationController.dll.mui
+L2674: 4384	svchost.exe	0x20470cf0000	False	False	False	\Windows\System32\en-US\QuietHours.dll.mui
+L2675: 4384	svchost.exe	0x20470b80000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2676: 4384	svchost.exe	0x20470d60000	False	False	False	\Windows\System32\msxml6r.dll
+L2677: 4384	svchost.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L2678: 4384	svchost.exe	0x7fffe0d00000	True	True	True	\Windows\System32\WpnUserService.dll
+L2679: 4384	svchost.exe	0x7fffde5c0000	True	True	True	\Windows\System32\wpnapps.dll
+L2680: 4384	svchost.exe	0x7fffdcfb0000	True	True	True	\Windows\System32\AppExtension.dll
+L2681: 4384	svchost.exe	0x7fffd6d30000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L2682: 4384	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2683: 4384	svchost.exe	0x7fffd6580000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L2684: 4384	svchost.exe	0x7fffdcba0000	True	True	True	\Windows\System32\twinapi.dll
+L2685: 4384	svchost.exe	0x7fffda810000	True	True	True	\Windows\System32\NotificationControllerPS.dll
+L2686: 4384	svchost.exe	0x7fffdcce0000	True	True	True	\Windows\System32\Windows.CloudStore.Schema.Shell.dll
+L2687: 4384	svchost.exe	0x7fffdd670000	True	True	True	\Windows\System32\ContentDeliveryManager.Utilities.dll
+L2688: 4384	svchost.exe	0x7fffdd000000	True	True	True	\Windows\System32\msxml6.dll
+L2689: 4384	svchost.exe	0x7fffde380000	True	True	True	\Windows\System32\wpnclient.dll
+L2690: 4384	svchost.exe	0x7fffe0370000	True	True	True	\Windows\System32\execmodelproxy.dll
+L2691: 4384	svchost.exe	0x7fffdf710000	True	True	True	\Windows\System32\TileDataRepository.dll
+L2692: 4384	svchost.exe	0x7fffdf150000	True	True	True	\Windows\System32\AppResolver.dll
+L2693: 4384	svchost.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L2694: 4384	svchost.exe	0x7fffe0a80000	True	True	True	\Windows\System32\QuietHours.dll
+L2695: 4384	svchost.exe	0x7fffe0a20000	True	True	True	\Windows\System32\ExecModelClient.dll
+L2696: 4384	svchost.exe	0x7fffe0b20000	True	True	True	\Windows\System32\NotificationController.dll
+L2697: 4384	svchost.exe	0x7fffe83b0000	True	True	True	\Windows\System32\wpncore.dll
+L2698: 4384	svchost.exe	0x7fffe5ba0000	True	True	True	\Windows\System32\winsqlite3.dll
+L2699: 4384	svchost.exe	0x7fffe19e0000	True	True	True	\Windows\System32\Windows.CloudStore.dll
+L2700: 4384	svchost.exe	0x7fffe16b0000	True	True	True	\Windows\System32\wlidprov.dll
+L2701: 4384	svchost.exe	0x7fffe0f10000	True	True	True	\Windows\System32\cdp.dll
+L2702: 4384	svchost.exe	0x7fffe3a00000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L2703: 4384	svchost.exe	0x7fffe1de0000	True	True	True	\Windows\System32\IDStore.dll
+L2704: 4384	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2705: 4384	svchost.exe	0x7fffe6b10000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L2706: 4384	svchost.exe	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L2707: 4384	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2708: 4384	svchost.exe	0x7fffe89f0000	True	True	True	\Windows\System32\StateRepository.Core.dll
+L2709: 4384	svchost.exe	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L2710: 4384	svchost.exe	0x7fffe8ad0000	True	True	True	\Windows\System32\Windows.StateRepository.dll
+L2711: 4384	svchost.exe	0x7fffe9910000	True	True	True	\Windows\System32\xmllite.dll
+L2712: 4384	svchost.exe	0x7fffeca30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L2713: 4384	svchost.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L2714: 4384	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2715: 4384	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2716: 4384	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2717: 4384	svchost.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L2718: 4384	svchost.exe	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L2719: 4384	svchost.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L2720: 4384	svchost.exe	0x7fffedb90000	True	True	True	\Windows\System32\urlmon.dll
+L2721: 4384	svchost.exe	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
+L2722: 4384	svchost.exe	0x7fffefe30000	True	True	True	\Windows\System32\BCP47Langs.dll
+L2723: 4384	svchost.exe	0x7ffff4400000	True	True	True	\Windows\System32\rmclient.dll
+L2724: 4384	svchost.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L2725: 4384	svchost.exe	0x7ffff3c60000	True	True	True	\Windows\System32\wtsapi32.dll
+L2726: 4384	svchost.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L2727: 4384	svchost.exe	0x7ffff4ad0000	True	True	True	\Windows\System32\samlib.dll
+L2728: 4384	svchost.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L2729: 4384	svchost.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L2730: 4384	svchost.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L2731: 4384	svchost.exe	0x7ffff51f0000	True	True	True	\Windows\System32\ntmarta.dll
+L2732: 4384	svchost.exe	0x7ffff60f0000	True	True	True	\Windows\System32\winsta.dll
+L2733: 4384	svchost.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L2734: 4384	svchost.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L2735: 4384	svchost.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L2736: 4384	svchost.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L2737: 4384	svchost.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L2738: 4384	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2739: 4384	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2740: 4384	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2741: 4384	svchost.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L2742: 4384	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2743: 4384	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2744: 4384	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2745: 4384	svchost.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L2746: 4384	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2747: 4384	svchost.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L2748: 4384	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2749: 4384	svchost.exe	0x7ffff7df0000	True	True	True	\Windows\System32\msctf.dll
+L2750: 4384	svchost.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L2751: 4384	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2752: 4384	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2753: 4384	svchost.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L2754: 4384	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2755: 4384	svchost.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L2756: 4384	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2757: 4384	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2758: 4384	svchost.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L2759: 4384	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L2760: 4384	svchost.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L2761: 4384	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L2672: 4384	svchost.exe	0x204707b0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2673: 4384	svchost.exe	0x20470d70000	False	False	False	\Windows\System32\en-US\NotificationController.dll.mui
+L2674: 4384	svchost.exe	0x20470cf0000	False	False	False	\Windows\System32\en-US\QuietHours.dll.mui
+L2675: 4384	svchost.exe	0x20470b80000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2676: 4384	svchost.exe	0x20470d60000	False	False	False	\Windows\System32\msxml6r.dll
+L2677: 4384	svchost.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L2678: 4384	svchost.exe	0x7fffe0d00000	True	True	True	\Windows\System32\WpnUserService.dll
+L2679: 4384	svchost.exe	0x7fffde5c0000	True	True	True	\Windows\System32\wpnapps.dll
+L2680: 4384	svchost.exe	0x7fffdcfb0000	True	True	True	\Windows\System32\AppExtension.dll
+L2681: 4384	svchost.exe	0x7fffd6d30000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L2682: 4384	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2683: 4384	svchost.exe	0x7fffd6580000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L2684: 4384	svchost.exe	0x7fffdcba0000	True	True	True	\Windows\System32\twinapi.dll
+L2685: 4384	svchost.exe	0x7fffda810000	True	True	True	\Windows\System32\NotificationControllerPS.dll
+L2686: 4384	svchost.exe	0x7fffdcce0000	True	True	True	\Windows\System32\Windows.CloudStore.Schema.Shell.dll
+L2687: 4384	svchost.exe	0x7fffdd670000	True	True	True	\Windows\System32\ContentDeliveryManager.Utilities.dll
+L2688: 4384	svchost.exe	0x7fffdd000000	True	True	True	\Windows\System32\msxml6.dll
+L2689: 4384	svchost.exe	0x7fffde380000	True	True	True	\Windows\System32\wpnclient.dll
+L2690: 4384	svchost.exe	0x7fffe0370000	True	True	True	\Windows\System32\execmodelproxy.dll
+L2691: 4384	svchost.exe	0x7fffdf710000	True	True	True	\Windows\System32\TileDataRepository.dll
+L2692: 4384	svchost.exe	0x7fffdf150000	True	True	True	\Windows\System32\AppResolver.dll
+L2693: 4384	svchost.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L2694: 4384	svchost.exe	0x7fffe0a80000	True	True	True	\Windows\System32\QuietHours.dll
+L2695: 4384	svchost.exe	0x7fffe0a20000	True	True	True	\Windows\System32\ExecModelClient.dll
+L2696: 4384	svchost.exe	0x7fffe0b20000	True	True	True	\Windows\System32\NotificationController.dll
+L2697: 4384	svchost.exe	0x7fffe83b0000	True	True	True	\Windows\System32\wpncore.dll
+L2698: 4384	svchost.exe	0x7fffe5ba0000	True	True	True	\Windows\System32\winsqlite3.dll
+L2699: 4384	svchost.exe	0x7fffe19e0000	True	True	True	\Windows\System32\Windows.CloudStore.dll
+L2700: 4384	svchost.exe	0x7fffe16b0000	True	True	True	\Windows\System32\wlidprov.dll
+L2701: 4384	svchost.exe	0x7fffe0f10000	True	True	True	\Windows\System32\cdp.dll
+L2702: 4384	svchost.exe	0x7fffe3a00000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L2703: 4384	svchost.exe	0x7fffe1de0000	True	True	True	\Windows\System32\IDStore.dll
+L2704: 4384	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2705: 4384	svchost.exe	0x7fffe6b10000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L2706: 4384	svchost.exe	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L2707: 4384	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2708: 4384	svchost.exe	0x7fffe89f0000	True	True	True	\Windows\System32\StateRepository.Core.dll
+L2709: 4384	svchost.exe	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L2710: 4384	svchost.exe	0x7fffe8ad0000	True	True	True	\Windows\System32\Windows.StateRepository.dll
+L2711: 4384	svchost.exe	0x7fffe9910000	True	True	True	\Windows\System32\xmllite.dll
+L2712: 4384	svchost.exe	0x7fffeca30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L2713: 4384	svchost.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L2714: 4384	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2715: 4384	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2716: 4384	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2717: 4384	svchost.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L2718: 4384	svchost.exe	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L2719: 4384	svchost.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L2720: 4384	svchost.exe	0x7fffedb90000	True	True	True	\Windows\System32\urlmon.dll
+L2721: 4384	svchost.exe	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
+L2722: 4384	svchost.exe	0x7fffefe30000	True	True	True	\Windows\System32\BCP47Langs.dll
+L2723: 4384	svchost.exe	0x7ffff4400000	True	True	True	\Windows\System32\rmclient.dll
+L2724: 4384	svchost.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L2725: 4384	svchost.exe	0x7ffff3c60000	True	True	True	\Windows\System32\wtsapi32.dll
+L2726: 4384	svchost.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L2727: 4384	svchost.exe	0x7ffff4ad0000	True	True	True	\Windows\System32\samlib.dll
+L2728: 4384	svchost.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L2729: 4384	svchost.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L2730: 4384	svchost.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L2731: 4384	svchost.exe	0x7ffff51f0000	True	True	True	\Windows\System32\ntmarta.dll
+L2732: 4384	svchost.exe	0x7ffff60f0000	True	True	True	\Windows\System32\winsta.dll
+L2733: 4384	svchost.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L2734: 4384	svchost.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L2735: 4384	svchost.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L2736: 4384	svchost.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L2737: 4384	svchost.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L2738: 4384	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2739: 4384	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2740: 4384	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2741: 4384	svchost.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L2742: 4384	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2743: 4384	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2744: 4384	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2745: 4384	svchost.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L2746: 4384	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2747: 4384	svchost.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L2748: 4384	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2749: 4384	svchost.exe	0x7ffff7df0000	True	True	True	\Windows\System32\msctf.dll
+L2750: 4384	svchost.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L2751: 4384	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2752: 4384	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2753: 4384	svchost.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L2754: 4384	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2755: 4384	svchost.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L2756: 4384	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2757: 4384	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2758: 4384	svchost.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L2759: 4384	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L2760: 4384	svchost.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L2761: 4384	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L73: 4384	svchost.exe	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe	False	False
+
+--- sessions.txt ---
+L97: 1	-	4384	svchost.exe	CLEANWINDOWS11/kali	2026-05-13 19:15:36.000000 UTC
+
+=== END OF PIVOT REPORT ===

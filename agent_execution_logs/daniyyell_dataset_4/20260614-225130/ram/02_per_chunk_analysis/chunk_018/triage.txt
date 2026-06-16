@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:40:00Z
+Chunk: chunk_018.txt
+Summary: SkypeApp.exe has an orphaned parent PID (860) not present in the process list; all other signals appear benign.
+
+[PROCESS]
+pid: 6412
+ppid: 860
+image: SkypeApp.exe
+cmdline: "C:\Program Files\WindowsApps\Microsoft.SkypeApp_14.53.77.0_x64__kzf8qxf38zg5c\SkypeApp.exe" -ServerName:App.AppXffn3yxqvgawq9fpmnhy90fr3y01d1t5b.mca
+severity: LOW
+reasons: orphaned_parent: PPID 860 does not appear anywhere in the process list
+

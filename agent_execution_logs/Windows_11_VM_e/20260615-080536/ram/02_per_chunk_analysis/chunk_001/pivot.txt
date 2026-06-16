@@ -1,0 +1,156 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:10:36Z
+
+=== PID 1708 (AggregatorHost.exe, ppid=2600) ===
+Cmdline: AggregatorHost.exe
+
+--- pslist.txt ---
+L65: 1708	2600	AggregatorHost	0x990ef42c9080	3	-	0	False	2026-05-13 19:15:18.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L65: 1708	AggregatorHost	AggregatorHost.exe
+
+--- privileges.txt ---
+L2105: 1708	AggregatorHost	2	SeCreateTokenPrivilege		Create a token object
+L2106: 1708	AggregatorHost	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L2107: 1708	AggregatorHost	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L2108: 1708	AggregatorHost	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2109: 1708	AggregatorHost	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2110: 1708	AggregatorHost	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L2111: 1708	AggregatorHost	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L2112: 1708	AggregatorHost	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2113: 1708	AggregatorHost	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2114: 1708	AggregatorHost	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L2115: 1708	AggregatorHost	12	SeSystemtimePrivilege		Change the system time
+L2116: 1708	AggregatorHost	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L2117: 1708	AggregatorHost	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L2118: 1708	AggregatorHost	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L2119: 1708	AggregatorHost	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L2120: 1708	AggregatorHost	17	SeBackupPrivilege		Backup files and directories
+L2121: 1708	AggregatorHost	18	SeRestorePrivilege		Restore files and directories
+L2122: 1708	AggregatorHost	19	SeShutdownPrivilege		Shut down the system
+L2123: 1708	AggregatorHost	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L2124: 1708	AggregatorHost	21	SeAuditPrivilege	Default	Generate security audits
+L2125: 1708	AggregatorHost	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2126: 1708	AggregatorHost	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2127: 1708	AggregatorHost	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2128: 1708	AggregatorHost	25	SeUndockPrivilege		Remove computer from docking station
+L2129: 1708	AggregatorHost	26	SeSyncAgentPrivilege		Synch directory service data
+L2130: 1708	AggregatorHost	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2131: 1708	AggregatorHost	28	SeManageVolumePrivilege		Manage the files on a volume
+L2132: 1708	AggregatorHost	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L2133: 1708	AggregatorHost	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L2134: 1708	AggregatorHost	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2135: 1708	AggregatorHost	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2136: 1708	AggregatorHost	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L2137: 1708	AggregatorHost	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L2138: 1708	AggregatorHost	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L2139: 1708	AggregatorHost	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L2191: 1708	AggregatorHost	0x7ff7112b0000	0x4e000	AggregatorHost.exe	C:\WINDOWS\System32\AggregatorHost.exe	-1	2026-05-13 19:15:18.000000 UTC	Disabled
+L2192: 1708	AggregatorHost	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:15:18.000000 UTC	Disabled
+L2193: 1708	AggregatorHost	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:15:18.000000 UTC	Disabled
+L2194: 1708	AggregatorHost	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:15:18.000000 UTC	Disabled
+L2195: 1708	AggregatorHost	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2196: 1708	AggregatorHost	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2197: 1708	AggregatorHost	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-13 19:15:18.000000 UTC	Disabled
+L2198: 1708	AggregatorHost	0x7fffeb160000	0x28000	UpdateReboot.dll	C:\WINDOWS\SYSTEM32\UpdateReboot.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2199: 1708	AggregatorHost	0x7fffeb110000	0x42000	MpeCm.dll	C:\WINDOWS\SYSTEM32\MpeCm.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2200: 1708	AggregatorHost	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	-1	2026-05-13 19:15:18.000000 UTC	Disabled
+L2201: 1708	AggregatorHost	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-1	2026-05-13 19:15:18.000000 UTC	Disabled
+L2202: 1708	AggregatorHost	0x7fffeb0f0000	0x18000	DiagnosticDataQuery.dll	C:\WINDOWS\SYSTEM32\DiagnosticDataQuery.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2203: 1708	AggregatorHost	0x7fffeb0c0000	0x27000	MediaFoundationAggregator.dll	C:\WINDOWS\SYSTEM32\MediaFoundationAggregator.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2204: 1708	AggregatorHost	0x7fffeb080000	0x3d000	CodeIntegrityAggregator.dll	C:\WINDOWS\SYSTEM32\CodeIntegrityAggregator.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2205: 1708	AggregatorHost	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-13 19:15:18.000000 UTC	Disabled
+L2206: 1708	AggregatorHost	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:15:18.000000 UTC	Disabled
+L2207: 1708	AggregatorHost	0x7fffeb040000	0x2f000	MissionControlAggregator.dll	C:\WINDOWS\SYSTEM32\MissionControlAggregator.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2208: 1708	AggregatorHost	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2209: 1708	AggregatorHost	0x7fffeaff0000	0x4a000	wusys.dll	C:\WINDOWS\SYSTEM32\wusys.dll	-1	2026-05-13 19:15:18.000000 UTC	Disabled
+L2210: 1708	AggregatorHost	0x7ffff6540000	0xa5000	bcryptprimitives.dll	C:\WINDOWS\System32\bcryptprimitives.dll	-1	2026-05-13 19:15:18.000000 UTC	Disabled
+L2211: 1708	AggregatorHost	0x7fffea9f0000	0x6b000	uusbrain.dll	C:\WINDOWS\uus\packages\preview\AMD64\uusbrain.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2212: 1708	AggregatorHost	0x7fffeac00000	0x4a000	UusFailover.dll	C:\WINDOWS\uus\packages\preview\AMD64\UusFailover.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2213: 1708	AggregatorHost	0x7fffea980000	0x63000	UpdatePlatformAggregators.dll	C:\WINDOWS\uus\packages\preview\AMD64\UpdatePlatformAggregators.dll	6	2026-05-13 19:15:18.000000 UTC	Disabled
+L2214: 1708	AggregatorHost	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:15:21.000000 UTC	Disabled
+L2215: 1708	AggregatorHost	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:15:21.000000 UTC	Disabled
+L2216: 1708	AggregatorHost	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:15:21.000000 UTC	Disabled
+L2217: 1708	AggregatorHost	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:15:21.000000 UTC	Disabled
+L2218: 1708	AggregatorHost	0x7ffff5990000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-13 19:15:21.000000 UTC	Disabled
+
+--- pstree.txt ---
+L42: *** 1708	2600	AggregatorHost	0x990ef42c9080	3	-	0	False	2026-05-13 19:15:18.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\AggregatorHost.exe	AggregatorHost.exe	C:\WINDOWS\System32\AggregatorHost.exe
+
+--- psscan.txt ---
+L19: 1708	2600	AggregatorHost	0x990ef42c9080	3	-	0	False	2026-05-13 19:15:18.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L2294: 1708	AggregatorHost	0x193bf2b0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2295: 1708	AggregatorHost	0x193bf2a0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L2296: 1708	AggregatorHost	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2297: 1708	AggregatorHost	0x7fffeb0c0000	True	True	True	\Windows\System32\MediaFoundationAggregator.dll
+L2298: 1708	AggregatorHost	0x7fffea9f0000	True	True	True	\Windows\UUS\Packages\Preview\amd64\UusBrain.dll
+L2299: 1708	AggregatorHost	0x7ff7112b0000	True	False	True	\Windows\System32\AggregatorHost.exe
+L2300: 1708	AggregatorHost	0x7fffea980000	True	True	True	\Windows\UUS\Packages\Preview\amd64\UpdatePlatformAggregators.dll
+L2301: 1708	AggregatorHost	0x7fffeaff0000	True	True	True	\Windows\System32\wusys.dll
+L2302: 1708	AggregatorHost	0x7fffeac00000	True	True	True	\Windows\UUS\Packages\Preview\amd64\UusFailover.dll
+L2303: 1708	AggregatorHost	0x7fffeb040000	True	True	True	\Windows\System32\MissionControlAggregator.dll
+L2304: 1708	AggregatorHost	0x7fffeb080000	True	True	True	\Windows\System32\CodeIntegrityAggregator.dll
+L2305: 1708	AggregatorHost	0x7fffeb160000	True	True	True	\Windows\System32\UpdateReboot.dll
+L2306: 1708	AggregatorHost	0x7fffeb110000	True	True	True	\Windows\System32\MpeCm.dll
+L2307: 1708	AggregatorHost	0x7fffeb0f0000	True	True	True	\Windows\System32\diagnosticdataquery.dll
+L2308: 1708	AggregatorHost	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L2309: 1708	AggregatorHost	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2310: 1708	AggregatorHost	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L2311: 1708	AggregatorHost	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2312: 1708	AggregatorHost	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2313: 1708	AggregatorHost	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2314: 1708	AggregatorHost	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2315: 1708	AggregatorHost	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2316: 1708	AggregatorHost	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L2317: 1708	AggregatorHost	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2318: 1708	AggregatorHost	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L2319: 1708	AggregatorHost	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2320: 1708	AggregatorHost	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2321: 1708	AggregatorHost	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L2322: 1708	AggregatorHost	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L2323: 1708	AggregatorHost	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_ldrmodules.txt ---
+L2294: 1708	AggregatorHost	0x193bf2b0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2295: 1708	AggregatorHost	0x193bf2a0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L2296: 1708	AggregatorHost	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2297: 1708	AggregatorHost	0x7fffeb0c0000	True	True	True	\Windows\System32\MediaFoundationAggregator.dll
+L2298: 1708	AggregatorHost	0x7fffea9f0000	True	True	True	\Windows\UUS\Packages\Preview\amd64\UusBrain.dll
+L2299: 1708	AggregatorHost	0x7ff7112b0000	True	False	True	\Windows\System32\AggregatorHost.exe
+L2300: 1708	AggregatorHost	0x7fffea980000	True	True	True	\Windows\UUS\Packages\Preview\amd64\UpdatePlatformAggregators.dll
+L2301: 1708	AggregatorHost	0x7fffeaff0000	True	True	True	\Windows\System32\wusys.dll
+L2302: 1708	AggregatorHost	0x7fffeac00000	True	True	True	\Windows\UUS\Packages\Preview\amd64\UusFailover.dll
+L2303: 1708	AggregatorHost	0x7fffeb040000	True	True	True	\Windows\System32\MissionControlAggregator.dll
+L2304: 1708	AggregatorHost	0x7fffeb080000	True	True	True	\Windows\System32\CodeIntegrityAggregator.dll
+L2305: 1708	AggregatorHost	0x7fffeb160000	True	True	True	\Windows\System32\UpdateReboot.dll
+L2306: 1708	AggregatorHost	0x7fffeb110000	True	True	True	\Windows\System32\MpeCm.dll
+L2307: 1708	AggregatorHost	0x7fffeb0f0000	True	True	True	\Windows\System32\diagnosticdataquery.dll
+L2308: 1708	AggregatorHost	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L2309: 1708	AggregatorHost	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2310: 1708	AggregatorHost	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L2311: 1708	AggregatorHost	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2312: 1708	AggregatorHost	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2313: 1708	AggregatorHost	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2314: 1708	AggregatorHost	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2315: 1708	AggregatorHost	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2316: 1708	AggregatorHost	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L2317: 1708	AggregatorHost	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2318: 1708	AggregatorHost	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L2319: 1708	AggregatorHost	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2320: 1708	AggregatorHost	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2321: 1708	AggregatorHost	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L2322: 1708	AggregatorHost	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L2323: 1708	AggregatorHost	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_pebmasquerade.txt ---
+L65: 1708	AggregatorHost	\Device\HarddiskVolume4\Windows\System32\AggregatorHost.exe	C:\WINDOWS\System32\AggregatorHost.exe	False	False
+
+--- sessions.txt ---
+L60: 0	-	1708	AggregatorHost	WORKGROUP/CLEANWINDOWS11$	2026-05-13 19:15:18.000000 UTC
+
+=== END OF PIVOT REPORT ===

@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_051.txt
+Summary: Orphaned parent PIDs across all four processes; no strong IOCs detected. TabTip.exe non-whitelisted DLL list includes its own executable path, which is a minor artefact worth noting but not independently alarming.
+
+[PROCESS]
+pid: 27232
+ppid: 1908
+image: TabTip.exe
+cmdline: /QuitInfo:00000000000002DC;0000000000000300;
+severity: LOW
+reasons: orphaned_parent: PPID 1908 not present in process list | dll_list_artefact: non-whitelisted DLL entry includes own executable path C:\Program Files\Common Files\microsoft shared\ink\TabTip.exe (possible ldrmodules anomaly worth confirming)
+

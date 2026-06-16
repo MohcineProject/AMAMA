@@ -1,0 +1,425 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:42:59Z
+
+=== PID 6416 (OfficeClickToRun.exe, ppid=828) ===
+Cmdline: "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeClickToRun.exe" /service
+
+--- pslist.txt ---
+L1423: 6416	828	OfficeClickToR	0xb78cf98b0080	19	-	0	False	2020-11-14 14:17:34.000000 UTC	N/A	Disabled
+L1425: 16216	6416	AppVShNotify.e	0xb78d11391080	1	-	0	False	2020-11-14 14:17:48.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L1423: 6416	OfficeClickToR	"C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeClickToRun.exe" /service
+
+--- privileges.txt ---
+L49635: 6416	OfficeClickToR	2	SeCreateTokenPrivilege		Create a token object
+L49636: 6416	OfficeClickToR	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L49637: 6416	OfficeClickToR	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L49638: 6416	OfficeClickToR	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L49639: 6416	OfficeClickToR	6	SeMachineAccountPrivilege		Add workstations to the domain
+L49640: 6416	OfficeClickToR	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L49641: 6416	OfficeClickToR	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L49642: 6416	OfficeClickToR	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L49643: 6416	OfficeClickToR	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L49644: 6416	OfficeClickToR	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L49645: 6416	OfficeClickToR	12	SeSystemtimePrivilege	Present	Change the system time
+L49646: 6416	OfficeClickToR	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L49647: 6416	OfficeClickToR	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L49648: 6416	OfficeClickToR	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L49649: 6416	OfficeClickToR	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L49650: 6416	OfficeClickToR	17	SeBackupPrivilege	Present	Backup files and directories
+L49651: 6416	OfficeClickToR	18	SeRestorePrivilege	Present	Restore files and directories
+L49652: 6416	OfficeClickToR	19	SeShutdownPrivilege	Present	Shut down the system
+L49653: 6416	OfficeClickToR	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L49654: 6416	OfficeClickToR	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L49655: 6416	OfficeClickToR	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L49656: 6416	OfficeClickToR	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L49657: 6416	OfficeClickToR	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L49658: 6416	OfficeClickToR	25	SeUndockPrivilege	Present	Remove computer from docking station
+L49659: 6416	OfficeClickToR	26	SeSyncAgentPrivilege		Synch directory service data
+L49660: 6416	OfficeClickToR	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L49661: 6416	OfficeClickToR	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L49662: 6416	OfficeClickToR	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L49663: 6416	OfficeClickToR	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L49664: 6416	OfficeClickToR	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L49665: 6416	OfficeClickToR	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L49666: 6416	OfficeClickToR	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L49667: 6416	OfficeClickToR	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L49668: 6416	OfficeClickToR	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L49669: 6416	OfficeClickToR	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L11344: 6416	OfficeClickToR	0x7ff60cc50000	0x8aa000	OfficeClickToRun.exe	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeClickToRun.exe	-1	2020-11-14 14:17:34.000000 UTC	Disabled
+L11345: 6416	OfficeClickToR	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-14 14:17:34.000000 UTC	Disabled
+L11346: 6416	OfficeClickToR	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-14 14:17:34.000000 UTC	Disabled
+L11347: 6416	OfficeClickToR	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-14 14:17:34.000000 UTC	Disabled
+L11348: 6416	OfficeClickToR	0x7fff573a0000	0xac000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11349: 6416	OfficeClickToR	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11350: 6416	OfficeClickToR	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11351: 6416	OfficeClickToR	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11352: 6416	OfficeClickToR	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11353: 6416	OfficeClickToR	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11354: 6416	OfficeClickToR	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11355: 6416	OfficeClickToR	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11356: 6416	OfficeClickToR	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11357: 6416	OfficeClickToR	0x7fff57540000	0x1a0000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11358: 6416	OfficeClickToR	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11359: 6416	OfficeClickToR	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11360: 6416	OfficeClickToR	0x7fff57800000	0x6b000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11361: 6416	OfficeClickToR	0x7fff54400000	0x3b000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11362: 6416	OfficeClickToR	0x7fff55570000	0x60000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11363: 6416	OfficeClickToR	0x7fff569c0000	0x467000	SETUPAPI.dll	C:\WINDOWS\System32\SETUPAPI.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11364: 6416	OfficeClickToR	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11365: 6416	OfficeClickToR	0x7fff44880000	0x29000	Cabinet.dll	C:\WINDOWS\SYSTEM32\Cabinet.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11366: 6416	OfficeClickToR	0x7fff557e0000	0x27000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11367: 6416	OfficeClickToR	0x7fff4ce20000	0x14000	WTSAPI32.dll	C:\WINDOWS\SYSTEM32\WTSAPI32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11368: 6416	OfficeClickToR	0x7fff447a0000	0x18000	NETAPI32.dll	C:\WINDOWS\SYSTEM32\NETAPI32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11369: 6416	OfficeClickToR	0x7fff44760000	0x39000	RstrtMgr.DLL	C:\WINDOWS\SYSTEM32\RstrtMgr.DLL	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11370: 6416	OfficeClickToR	0x7fff55910000	0x55000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11371: 6416	OfficeClickToR	0x7fff56800000	0x12a000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11372: 6416	OfficeClickToR	0x7fff4e7b0000	0x17000	VCRUNTIME140.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\VCRUNTIME140.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11373: 6416	OfficeClickToR	0x7fff54a60000	0x27000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11374: 6416	OfficeClickToR	0x7fff4e700000	0x99000	MSVCP140.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\MSVCP140.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11375: 6416	OfficeClickToR	0x7fff4e7a0000	0xc000	VCRUNTIME140_1.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\VCRUNTIME140_1.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11376: 6416	OfficeClickToR	0x7fff4be60000	0x3a000	ApiClient.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\ApiClient.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11377: 6416	OfficeClickToR	0x7fff54510000	0xc000	NETUTILS.DLL	C:\WINDOWS\SYSTEM32\NETUTILS.DLL	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11378: 6416	OfficeClickToR	0x7fff541d0000	0x17000	WKSCLI.DLL	C:\WINDOWS\SYSTEM32\WKSCLI.DLL	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11379: 6416	OfficeClickToR	0x7fff55650000	0x15d000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11380: 6416	OfficeClickToR	0x7fff54be0000	0x12000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11381: 6416	OfficeClickToR	0x7fff54a20000	0x3b000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11382: 6416	OfficeClickToR	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2020-11-14 14:17:34.000000 UTC	Disabled
+L11383: 6416	OfficeClickToR	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-14 14:17:34.000000 UTC	Disabled
+L11384: 6416	OfficeClickToR	0x7fff56050000	0x741000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11385: 6416	OfficeClickToR	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2020-11-14 14:17:34.000000 UTC	Disabled
+L11386: 6416	OfficeClickToR	0x7fff3e130000	0x336000	msi.dll	C:\WINDOWS\SYSTEM32\msi.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11387: 6416	OfficeClickToR	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	-1	2020-11-14 14:17:34.000000 UTC	Disabled
+L11388: 6416	OfficeClickToR	0x7fff549f0000	0x2c000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	-1	2020-11-14 14:17:34.000000 UTC	Disabled
+L11389: 6416	OfficeClickToR	0x7fff3dab0000	0x29b000	Comctl32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\Comctl32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11390: 6416	OfficeClickToR	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	-1	2020-11-14 14:17:34.000000 UTC	Disabled
+L11391: 6416	OfficeClickToR	0x7fff55970000	0x30000	IMM32.dll	C:\WINDOWS\System32\IMM32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11392: 6416	OfficeClickToR	0x7fff4a5c0000	0xa000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11393: 6416	OfficeClickToR	0x7fff4a170000	0x36000	XmlLite.dll	C:\WINDOWS\SYSTEM32\XmlLite.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11394: 6416	OfficeClickToR	0x7fff3bee0000	0xc000	Secur32.dll	C:\WINDOWS\SYSTEM32\Secur32.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11395: 6416	OfficeClickToR	0x7fff54ea0000	0x3c000	SSPICLI.DLL	C:\WINDOWS\SYSTEM32\SSPICLI.DLL	-1	2020-11-14 14:17:34.000000 UTC	Disabled
+L11396: 6416	OfficeClickToR	0x7fff19680000	0x30e000	StreamServer.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\StreamServer.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11397: 6416	OfficeClickToR	0x7fff3a880000	0x85000	msdelta.dll	C:\WINDOWS\SYSTEM32\msdelta.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11398: 6416	OfficeClickToR	0x7fff54940000	0x18000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11399: 6416	OfficeClickToR	0x7fff18f00000	0x4d7000	repoman.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\repoman.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11400: 6416	OfficeClickToR	0x7fff2b580000	0x1b2000	MSIX.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\MSIX.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11401: 6416	OfficeClickToR	0x7fff540a0000	0x34000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11402: 6416	OfficeClickToR	0x7fff54960000	0xc000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	6	2020-11-14 14:17:34.000000 UTC	Disabled
+L11403: 6416	OfficeClickToR	0x7fff44800000	0x7c000	AppVIsvApi.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\AppVIsvApi.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11404: 6416	OfficeClickToR	0x7fff54ee0000	0x2e000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11405: 6416	OfficeClickToR	0x7fff3aad0000	0x141000	APPVPOLICY.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\APPVPOLICY.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11406: 6416	OfficeClickToR	0x7fff3aa20000	0xa6000	MSVCP120.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\MSVCP120.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11407: 6416	OfficeClickToR	0x7fff3a930000	0xef000	MSVCR120.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\MSVCR120.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11408: 6416	OfficeClickToR	0x7fff4a5d0000	0x19000	SAMCLI.DLL	C:\WINDOWS\SYSTEM32\SAMCLI.DLL	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11409: 6416	OfficeClickToR	0x7fff3a4a0000	0xf0000	AppVOrchestration.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\AppVOrchestration.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11410: 6416	OfficeClickToR	0x7fff447c0000	0x37000	AppVIsvStreamingManager.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\AppVIsvStreamingManager.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11411: 6416	OfficeClickToR	0x7fff3a360000	0x132000	APPVMANIFEST.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\APPVMANIFEST.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11412: 6416	OfficeClickToR	0x7fff3a2b0000	0xaa000	AppVCatalog.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\AppVCatalog.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11413: 6416	OfficeClickToR	0x7fff3a210000	0x98000	AppVIsvVirtualization.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\AppVIsvVirtualization.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11414: 6416	OfficeClickToR	0x7fff55d70000	0x8000	PSAPI.DLL	C:\WINDOWS\System32\PSAPI.DLL	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11415: 6416	OfficeClickToR	0x7fff39fd0000	0x233000	AppVIntegration.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\AppVIntegration.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11416: 6416	OfficeClickToR	0x7fff39d00000	0x186000	AppVIsvSubsystemController.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\AppVIsvSubsystemController.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11417: 6416	OfficeClickToR	0x7fff437d0000	0x4d000	APPVFILESYSTEMMETADATA.dll	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\APPVFILESYSTEMMETADATA.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11418: 6416	OfficeClickToR	0x7fff547d0000	0x5a000	WINSTA.dll	C:\WINDOWS\SYSTEM32\WINSTA.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11419: 6416	OfficeClickToR	0x7fff55d80000	0xa9000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11420: 6416	OfficeClickToR	0x7fff4fda0000	0x3e000	netprofm.dll	C:\WINDOWS\System32\netprofm.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11421: 6416	OfficeClickToR	0x7fff49480000	0x261000	msxml6.dll	C:\Windows\System32\msxml6.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11422: 6416	OfficeClickToR	0x7fff4a070000	0x10000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2020-11-14 14:17:35.000000 UTC	Disabled
+L11423: 6416	OfficeClickToR	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2020-11-14 14:17:37.000000 UTC	Disabled
+L11424: 6416	OfficeClickToR	0x7fff468c0000	0x2b0000	iertutil.dll	C:\Windows\System32\iertutil.dll	-1	2020-11-14 14:17:37.000000 UTC	Disabled
+L11425: 6416	OfficeClickToR	0x7fff529b0000	0x90000	apphelp.dll	C:\WINDOWS\system32\apphelp.dll	-1	2020-11-14 14:17:37.000000 UTC	Disabled
+L11426: 6416	OfficeClickToR	0x7fff57450000	0x8000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2020-11-14 14:17:39.000000 UTC	Disabled
+L11427: 6416	OfficeClickToR	0x7fff4b730000	0x1d000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	6	2020-11-14 14:17:39.000000 UTC	Disabled
+L11428: 6416	OfficeClickToR	0x7fff35950000	0xb9000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2020-11-14 14:17:39.000000 UTC	Disabled
+L11429: 6416	OfficeClickToR	0x7fff31cc0000	0x4da000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	-1	2020-11-14 14:17:39.000000 UTC	Disabled
+L11430: 6416	OfficeClickToR	0x7fff356b0000	0x17000	ondemandconnroutehelper.dll	C:\WINDOWS\SYSTEM32\ondemandconnroutehelper.dll	6	2020-11-14 14:17:39.000000 UTC	Disabled
+L11431: 6416	OfficeClickToR	0x7fff4fea0000	0x100000	winhttp.dll	C:\WINDOWS\SYSTEM32\winhttp.dll	6	2020-11-14 14:17:39.000000 UTC	Disabled
+L11432: 6416	OfficeClickToR	0x7fff54710000	0x6a000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	6	2020-11-14 14:17:39.000000 UTC	Disabled
+L11433: 6416	OfficeClickToR	0x7fff4fe90000	0xb000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	6	2020-11-14 14:17:39.000000 UTC	Disabled
+L11434: 6416	OfficeClickToR	0x7fff35bd0000	0xf4000	Windows.Security.Authentication.OnlineId.dll	C:\Windows\System32\Windows.Security.Authentication.OnlineId.dll	6	2020-11-14 14:17:39.000000 UTC	Disabled
+L11435: 6416	OfficeClickToR	0x7fff540e0000	0xa000	DPAPI.DLL	C:\WINDOWS\SYSTEM32\DPAPI.DLL	6	2020-11-14 14:17:39.000000 UTC	Disabled
+L11436: 6416	OfficeClickToR	0x7fff43ed0000	0x795000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2020-11-14 14:17:39.000000 UTC	Disabled
+L11437: 6416	OfficeClickToR	0x7fff54b90000	0x4b000	POWRPROF.DLL	C:\WINDOWS\SYSTEM32\POWRPROF.DLL	6	2020-11-14 14:17:42.000000 UTC	Disabled
+L11438: 6416	OfficeClickToR	0x7fff54a90000	0x12000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2020-11-14 14:17:42.000000 UTC	Disabled
+L11439: 6416	OfficeClickToR	0x7fff54440000	0xcb000	DNSAPI.dll	C:\WINDOWS\SYSTEM32\DNSAPI.dll	6	2020-11-14 14:17:44.000000 UTC	Disabled
+L11440: 6416	OfficeClickToR	0x7fff4c4a0000	0xa000	rasadhlp.dll	C:\Windows\System32\rasadhlp.dll	6	2020-11-14 14:17:44.000000 UTC	Disabled
+L11441: 6416	OfficeClickToR	0x7fff4a400000	0x7f000	fwpuclnt.dll	C:\WINDOWS\System32\fwpuclnt.dll	6	2020-11-14 14:17:44.000000 UTC	Disabled
+L11442: 6416	OfficeClickToR	0x7fff53fc0000	0x91000	schannel.DLL	C:\WINDOWS\system32\schannel.DLL	6	2020-11-14 14:17:44.000000 UTC	Disabled
+L11443: 6416	OfficeClickToR	0x7fff42fb0000	0x15000	mskeyprotect.dll	C:\WINDOWS\SYSTEM32\mskeyprotect.dll	6	2020-11-14 14:17:45.000000 UTC	Disabled
+L11444: 6416	OfficeClickToR	0x7fff36530000	0x31000	cryptnet.dll	C:\Windows\System32\cryptnet.dll	6	2020-11-14 14:17:45.000000 UTC	Disabled
+L11445: 6416	OfficeClickToR	0x7fff436b0000	0x26000	ncryptsslp.dll	C:\WINDOWS\system32\ncryptsslp.dll	6	2020-11-14 14:17:45.000000 UTC	Disabled
+L11446: 6416	OfficeClickToR	0x7fff54680000	0x8a000	msv1_0.DLL	C:\WINDOWS\system32\msv1_0.DLL	6	2020-11-14 14:17:48.000000 UTC	Disabled
+L11447: 6416	OfficeClickToR	0x7fff54660000	0x13000	NtlmShared.dll	C:\WINDOWS\SYSTEM32\NtlmShared.dll	6	2020-11-14 14:17:48.000000 UTC	Disabled
+L11448: 6416	OfficeClickToR	0x7fff54780000	0x15000	cryptdll.dll	C:\WINDOWS\SYSTEM32\cryptdll.dll	6	2020-11-14 14:17:48.000000 UTC	Disabled
+L11449: 6416	OfficeClickToR	0x7fff02b80000	0x26000	usoapi.dll	C:\Windows\System32\usoapi.dll	6	2020-11-14 14:17:57.000000 UTC	Disabled
+L11450: 6416	OfficeClickToR	0x7fff55ed0000	0x8000	Normaliz.dll	C:\WINDOWS\System32\Normaliz.dll	6	2020-11-14 14:18:35.000000 UTC	Disabled
+L11451: 6416	OfficeClickToR	0x7fff4ae80000	0x17000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	6	2020-11-14 14:18:35.000000 UTC	Disabled
+L11452: 6416	OfficeClickToR	0x7fff3ac20000	0x9d000	webio.dll	C:\WINDOWS\SYSTEM32\webio.dll	6	2020-11-14 14:18:35.000000 UTC	Disabled
+L11453: 6416	OfficeClickToR	0x7fff55cd0000	0x79000	coml2.dll	C:\WINDOWS\System32\coml2.dll	6	2020-11-14 15:17:35.000000 UTC	Disabled
+L11454: 6416	OfficeClickToR	0x7fff538f0000	0x23000	gpapi.dll	C:\WINDOWS\SYSTEM32\gpapi.dll	6	2020-11-14 15:17:35.000000 UTC	Disabled
+L11455: 6416	OfficeClickToR	0x7fff4fae0000	0x16000	BitsProxy.dll	C:\Windows\System32\BitsProxy.dll	6	2020-11-15 17:09:04.000000 UTC	Disabled
+L11456: 6416	OfficeClickToR	0x7fff36410000	0x7d000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2020-11-15 17:09:04.000000 UTC	Disabled
+L11457: 6416	OfficeClickToR	0x7fff55d50000	0x1d000	imagehlp.dll	C:\WINDOWS\System32\imagehlp.dll	6	2020-11-15 17:09:04.000000 UTC	Disabled
+L11458: 6416	OfficeClickToR	0x7fff48df0000	0x14000	DEVRTL.dll	C:\WINDOWS\SYSTEM32\DEVRTL.dll	6	2020-11-15 17:09:04.000000 UTC	Disabled
+
+--- pstree.txt ---
+L168: ** 6416	828	OfficeClickToR	0xb78cf98b0080	19	-	0	False	2020-11-14 14:17:34.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\Common Files\microsoft shared\ClickToRun\OfficeClickToRun.exe	"C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeClickToRun.exe" /service	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeClickToRun.exe
+L169: *** 16216	6416	AppVShNotify.e	0xb78d11391080	1	-	0	False	2020-11-14 14:17:48.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\Common Files\microsoft shared\ClickToRun\AppVShNotify.exe	"C:\Program Files\Common Files\Microsoft Shared\ClickToRun\AppVShNotify.exe"	C:\Program Files\Common Files\Microsoft Shared\ClickToRun\AppVShNotify.exe
+
+--- psscan.txt ---
+L153: 6416	828	OfficeClickToR	0xb78cf98b0080	19	-	0	False	2020-11-14 14:17:34.000000 UTC	N/A	Disabled
+L1822: 16216	6416	AppVShNotify.e	0xb78d11391080	1	-	0	False	2020-11-14 14:17:48.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L152: 0xb78cfecfb280	UDPv4	0.0.0.0	61106	*	0		6416	OfficeClickToR	2020-11-11 08:15:43.000000 UTC
+L348: 0xb78d0dd0da80	UDPv4	0.0.0.0	58960	*	0		6416	OfficeClickToR	2020-11-12 06:06:24.000000 UTC
+L349: 0xb78d0dd0da80	UDPv6	::	58960	*	0		6416	OfficeClickToR	2020-11-12 06:06:24.000000 UTC
+
+--- ldrmodules.txt ---
+L12043: 6416	OfficeClickToR	0x203a8f50000	False	False	False	\Windows\System32\msxml6r.dll
+L12044: 6416	OfficeClickToR	0x203a9080000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L12045: 6416	OfficeClickToR	0x203ab1b0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L12046: 6416	OfficeClickToR	0x203ab190000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L12047: 6416	OfficeClickToR	0x203ab1a0000	False	False	False	\Windows\System32\winnlsres.dll
+L12048: 6416	OfficeClickToR	0x203ab1c0000	False	False	False	\Windows\System32\en-US\winnlsres.dll.mui
+L12049: 6416	OfficeClickToR	0x7fff4e700000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\msvcp140.dll
+L12050: 6416	OfficeClickToR	0x7fff3a880000	True	True	True	\Windows\System32\msdelta.dll
+L12051: 6416	OfficeClickToR	0x7fff2b580000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\msix.dll
+L12052: 6416	OfficeClickToR	0x7ff60cc50000	True	False	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\OfficeClickToRun.exe
+L12053: 6416	OfficeClickToR	0x7fff18f00000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\RepoMan.dll
+L12054: 6416	OfficeClickToR	0x7fff02b80000	True	True	True	\Windows\System32\usoapi.dll
+L12055: 6416	OfficeClickToR	0x7fff19680000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\StreamServer.dll
+L12056: 6416	OfficeClickToR	0x7fff39d00000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVIsvSubsystemController.dll
+L12057: 6416	OfficeClickToR	0x7fff35950000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L12058: 6416	OfficeClickToR	0x7fff356b0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L12059: 6416	OfficeClickToR	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L12060: 6416	OfficeClickToR	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L12061: 6416	OfficeClickToR	0x7fff35bd0000	True	True	True	\Windows\System32\Windows.Security.Authentication.OnlineId.dll
+L12062: 6416	OfficeClickToR	0x7fff36530000	True	True	True	\Windows\System32\cryptnet.dll
+L12063: 6416	OfficeClickToR	0x7fff3a210000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVIsvVirtualization.dll
+L12064: 6416	OfficeClickToR	0x7fff39fd0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVIntegration.dll
+L12065: 6416	OfficeClickToR	0x7fff3a360000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVManifest.dll
+L12066: 6416	OfficeClickToR	0x7fff3a2b0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVCatalog.dll
+L12067: 6416	OfficeClickToR	0x7fff3a4a0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVOrchestration.dll
+L12068: 6416	OfficeClickToR	0x7fff44760000	True	True	True	\Windows\System32\RstrtMgr.dll
+L12069: 6416	OfficeClickToR	0x7fff3e130000	True	True	True	\Windows\System32\msi.dll
+L12070: 6416	OfficeClickToR	0x7fff3aad0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVPolicy.dll
+L12071: 6416	OfficeClickToR	0x7fff3aa20000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\msvcp120.dll
+L12072: 6416	OfficeClickToR	0x7fff3a930000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\msvcr120.dll
+L12073: 6416	OfficeClickToR	0x7fff3bee0000	True	True	True	\Windows\System32\secur32.dll
+L12074: 6416	OfficeClickToR	0x7fff3ac20000	True	True	True	\Windows\System32\webio.dll
+L12075: 6416	OfficeClickToR	0x7fff3dab0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\comctl32.dll
+L12076: 6416	OfficeClickToR	0x7fff437d0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVFileSystemMetadata.dll
+L12077: 6416	OfficeClickToR	0x7fff42fb0000	True	True	True	\Windows\System32\mskeyprotect.dll
+L12078: 6416	OfficeClickToR	0x7fff436b0000	True	True	True	\Windows\System32\ncryptsslp.dll
+L12079: 6416	OfficeClickToR	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L12080: 6416	OfficeClickToR	0x7fff4a070000	True	True	True	\Windows\System32\npmproxy.dll
+L12081: 6416	OfficeClickToR	0x7fff44880000	True	True	True	\Windows\System32\cabinet.dll
+L12082: 6416	OfficeClickToR	0x7fff447c0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVIsvStreamingManager.dll
+L12083: 6416	OfficeClickToR	0x7fff447a0000	True	True	True	\Windows\System32\netapi32.dll
+L12084: 6416	OfficeClickToR	0x7fff44800000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVIsvApi.dll
+L12085: 6416	OfficeClickToR	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L12086: 6416	OfficeClickToR	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L12087: 6416	OfficeClickToR	0x7fff49480000	True	True	True	\Windows\System32\msxml6.dll
+L12088: 6416	OfficeClickToR	0x7fff48df0000	True	True	True	\Windows\System32\devrtl.dll
+L12089: 6416	OfficeClickToR	0x7fff4a5d0000	True	True	True	\Windows\System32\samcli.dll
+L12090: 6416	OfficeClickToR	0x7fff4a400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L12091: 6416	OfficeClickToR	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L12092: 6416	OfficeClickToR	0x7fff4a5c0000	True	True	True	\Windows\System32\version.dll
+L12093: 6416	OfficeClickToR	0x7fff4be60000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\ApiClient.dll
+L12094: 6416	OfficeClickToR	0x7fff4b730000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L12095: 6416	OfficeClickToR	0x7fff4ae80000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L12096: 6416	OfficeClickToR	0x7fff4ce20000	True	True	True	\Windows\System32\wtsapi32.dll
+L12097: 6416	OfficeClickToR	0x7fff4c4a0000	True	True	True	\Windows\System32\rasadhlp.dll
+L12098: 6416	OfficeClickToR	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L12099: 6416	OfficeClickToR	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L12100: 6416	OfficeClickToR	0x7fff529b0000	True	True	True	\Windows\System32\apphelp.dll
+L12101: 6416	OfficeClickToR	0x7fff4fda0000	True	True	True	\Windows\System32\netprofm.dll
+L12102: 6416	OfficeClickToR	0x7fff4e7b0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\vcruntime140.dll
+L12103: 6416	OfficeClickToR	0x7fff4e7a0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\vcruntime140_1.dll
+L12104: 6416	OfficeClickToR	0x7fff4fae0000	True	True	True	\Windows\System32\BitsProxy.dll
+L12105: 6416	OfficeClickToR	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L12106: 6416	OfficeClickToR	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L12107: 6416	OfficeClickToR	0x7fff540a0000	True	True	True	\Windows\System32\rsaenh.dll
+L12108: 6416	OfficeClickToR	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L12109: 6416	OfficeClickToR	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L12110: 6416	OfficeClickToR	0x7fff53fc0000	True	True	True	\Windows\System32\schannel.dll
+L12111: 6416	OfficeClickToR	0x7fff538f0000	True	True	True	\Windows\System32\gpapi.dll
+L12112: 6416	OfficeClickToR	0x7fff540e0000	True	True	True	\Windows\System32\dpapi.dll
+L12113: 6416	OfficeClickToR	0x7fff541d0000	True	True	True	\Windows\System32\wkscli.dll
+L12114: 6416	OfficeClickToR	0x7fff54a60000	True	True	True	\Windows\System32\ncrypt.dll
+L12115: 6416	OfficeClickToR	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L12116: 6416	OfficeClickToR	0x7fff54680000	True	True	True	\Windows\System32\msv1_0.dll
+L12117: 6416	OfficeClickToR	0x7fff54510000	True	True	True	\Windows\System32\netutils.dll
+L12118: 6416	OfficeClickToR	0x7fff54440000	True	True	True	\Windows\System32\dnsapi.dll
+L12119: 6416	OfficeClickToR	0x7fff54660000	True	True	True	\Windows\System32\NtlmShared.dll
+L12120: 6416	OfficeClickToR	0x7fff54780000	True	True	True	\Windows\System32\cryptdll.dll
+L12121: 6416	OfficeClickToR	0x7fff54710000	True	True	True	\Windows\System32\mswsock.dll
+L12122: 6416	OfficeClickToR	0x7fff547d0000	True	True	True	\Windows\System32\winsta.dll
+L12123: 6416	OfficeClickToR	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L12124: 6416	OfficeClickToR	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L12125: 6416	OfficeClickToR	0x7fff54a20000	True	True	True	\Windows\System32\ntasn1.dll
+L12126: 6416	OfficeClickToR	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L12127: 6416	OfficeClickToR	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L12128: 6416	OfficeClickToR	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L12129: 6416	OfficeClickToR	0x7fff54be0000	True	True	True	\Windows\System32\msasn1.dll
+L12130: 6416	OfficeClickToR	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L12131: 6416	OfficeClickToR	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L12132: 6416	OfficeClickToR	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L12133: 6416	OfficeClickToR	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L12134: 6416	OfficeClickToR	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L12135: 6416	OfficeClickToR	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L12136: 6416	OfficeClickToR	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L12137: 6416	OfficeClickToR	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L12138: 6416	OfficeClickToR	0x7fff55570000	True	True	True	\Windows\System32\wintrust.dll
+L12139: 6416	OfficeClickToR	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L12140: 6416	OfficeClickToR	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L12141: 6416	OfficeClickToR	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L12142: 6416	OfficeClickToR	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L12143: 6416	OfficeClickToR	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L12144: 6416	OfficeClickToR	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L12145: 6416	OfficeClickToR	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L12146: 6416	OfficeClickToR	0x7fff55d70000	True	True	True	\Windows\System32\psapi.dll
+L12147: 6416	OfficeClickToR	0x7fff55cd0000	True	True	True	\Windows\System32\coml2.dll
+L12148: 6416	OfficeClickToR	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L12149: 6416	OfficeClickToR	0x7fff55d50000	True	True	True	\Windows\System32\imagehlp.dll
+L12150: 6416	OfficeClickToR	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L12151: 6416	OfficeClickToR	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L12152: 6416	OfficeClickToR	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L12153: 6416	OfficeClickToR	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L12154: 6416	OfficeClickToR	0x7fff55ed0000	True	True	True	\Windows\System32\normaliz.dll
+L12155: 6416	OfficeClickToR	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+L12156: 6416	OfficeClickToR	0x7fff56050000	True	True	True	\Windows\System32\shell32.dll
+L12157: 6416	OfficeClickToR	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L12158: 6416	OfficeClickToR	0x7fff569c0000	True	True	True	\Windows\System32\setupapi.dll
+L12159: 6416	OfficeClickToR	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L12160: 6416	OfficeClickToR	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L12161: 6416	OfficeClickToR	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L12162: 6416	OfficeClickToR	0x7fff57450000	True	True	True	\Windows\System32\nsi.dll
+
+--- malware_ldrmodules.txt ---
+L12043: 6416	OfficeClickToR	0x203a8f50000	False	False	False	\Windows\System32\msxml6r.dll
+L12044: 6416	OfficeClickToR	0x203a9080000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L12045: 6416	OfficeClickToR	0x203ab1b0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L12046: 6416	OfficeClickToR	0x203ab190000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L12047: 6416	OfficeClickToR	0x203ab1a0000	False	False	False	\Windows\System32\winnlsres.dll
+L12048: 6416	OfficeClickToR	0x203ab1c0000	False	False	False	\Windows\System32\en-US\winnlsres.dll.mui
+L12049: 6416	OfficeClickToR	0x7fff4e700000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\msvcp140.dll
+L12050: 6416	OfficeClickToR	0x7fff3a880000	True	True	True	\Windows\System32\msdelta.dll
+L12051: 6416	OfficeClickToR	0x7fff2b580000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\msix.dll
+L12052: 6416	OfficeClickToR	0x7ff60cc50000	True	False	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\OfficeClickToRun.exe
+L12053: 6416	OfficeClickToR	0x7fff18f00000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\RepoMan.dll
+L12054: 6416	OfficeClickToR	0x7fff02b80000	True	True	True	\Windows\System32\usoapi.dll
+L12055: 6416	OfficeClickToR	0x7fff19680000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\StreamServer.dll
+L12056: 6416	OfficeClickToR	0x7fff39d00000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVIsvSubsystemController.dll
+L12057: 6416	OfficeClickToR	0x7fff35950000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L12058: 6416	OfficeClickToR	0x7fff356b0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L12059: 6416	OfficeClickToR	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L12060: 6416	OfficeClickToR	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L12061: 6416	OfficeClickToR	0x7fff35bd0000	True	True	True	\Windows\System32\Windows.Security.Authentication.OnlineId.dll
+L12062: 6416	OfficeClickToR	0x7fff36530000	True	True	True	\Windows\System32\cryptnet.dll
+L12063: 6416	OfficeClickToR	0x7fff3a210000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVIsvVirtualization.dll
+L12064: 6416	OfficeClickToR	0x7fff39fd0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVIntegration.dll
+L12065: 6416	OfficeClickToR	0x7fff3a360000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVManifest.dll
+L12066: 6416	OfficeClickToR	0x7fff3a2b0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVCatalog.dll
+L12067: 6416	OfficeClickToR	0x7fff3a4a0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVOrchestration.dll
+L12068: 6416	OfficeClickToR	0x7fff44760000	True	True	True	\Windows\System32\RstrtMgr.dll
+L12069: 6416	OfficeClickToR	0x7fff3e130000	True	True	True	\Windows\System32\msi.dll
+L12070: 6416	OfficeClickToR	0x7fff3aad0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVPolicy.dll
+L12071: 6416	OfficeClickToR	0x7fff3aa20000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\msvcp120.dll
+L12072: 6416	OfficeClickToR	0x7fff3a930000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\msvcr120.dll
+L12073: 6416	OfficeClickToR	0x7fff3bee0000	True	True	True	\Windows\System32\secur32.dll
+L12074: 6416	OfficeClickToR	0x7fff3ac20000	True	True	True	\Windows\System32\webio.dll
+L12075: 6416	OfficeClickToR	0x7fff3dab0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\comctl32.dll
+L12076: 6416	OfficeClickToR	0x7fff437d0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVFileSystemMetadata.dll
+L12077: 6416	OfficeClickToR	0x7fff42fb0000	True	True	True	\Windows\System32\mskeyprotect.dll
+L12078: 6416	OfficeClickToR	0x7fff436b0000	True	True	True	\Windows\System32\ncryptsslp.dll
+L12079: 6416	OfficeClickToR	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L12080: 6416	OfficeClickToR	0x7fff4a070000	True	True	True	\Windows\System32\npmproxy.dll
+L12081: 6416	OfficeClickToR	0x7fff44880000	True	True	True	\Windows\System32\cabinet.dll
+L12082: 6416	OfficeClickToR	0x7fff447c0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVIsvStreamingManager.dll
+L12083: 6416	OfficeClickToR	0x7fff447a0000	True	True	True	\Windows\System32\netapi32.dll
+L12084: 6416	OfficeClickToR	0x7fff44800000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\AppVIsvApi.dll
+L12085: 6416	OfficeClickToR	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L12086: 6416	OfficeClickToR	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L12087: 6416	OfficeClickToR	0x7fff49480000	True	True	True	\Windows\System32\msxml6.dll
+L12088: 6416	OfficeClickToR	0x7fff48df0000	True	True	True	\Windows\System32\devrtl.dll
+L12089: 6416	OfficeClickToR	0x7fff4a5d0000	True	True	True	\Windows\System32\samcli.dll
+L12090: 6416	OfficeClickToR	0x7fff4a400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L12091: 6416	OfficeClickToR	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L12092: 6416	OfficeClickToR	0x7fff4a5c0000	True	True	True	\Windows\System32\version.dll
+L12093: 6416	OfficeClickToR	0x7fff4be60000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\ApiClient.dll
+L12094: 6416	OfficeClickToR	0x7fff4b730000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L12095: 6416	OfficeClickToR	0x7fff4ae80000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L12096: 6416	OfficeClickToR	0x7fff4ce20000	True	True	True	\Windows\System32\wtsapi32.dll
+L12097: 6416	OfficeClickToR	0x7fff4c4a0000	True	True	True	\Windows\System32\rasadhlp.dll
+L12098: 6416	OfficeClickToR	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L12099: 6416	OfficeClickToR	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L12100: 6416	OfficeClickToR	0x7fff529b0000	True	True	True	\Windows\System32\apphelp.dll
+L12101: 6416	OfficeClickToR	0x7fff4fda0000	True	True	True	\Windows\System32\netprofm.dll
+L12102: 6416	OfficeClickToR	0x7fff4e7b0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\vcruntime140.dll
+L12103: 6416	OfficeClickToR	0x7fff4e7a0000	True	True	True	\Program Files\Common Files\microsoft shared\ClickToRun\Updates\16.0.13328.20356\vcruntime140_1.dll
+L12104: 6416	OfficeClickToR	0x7fff4fae0000	True	True	True	\Windows\System32\BitsProxy.dll
+L12105: 6416	OfficeClickToR	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L12106: 6416	OfficeClickToR	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L12107: 6416	OfficeClickToR	0x7fff540a0000	True	True	True	\Windows\System32\rsaenh.dll
+L12108: 6416	OfficeClickToR	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L12109: 6416	OfficeClickToR	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L12110: 6416	OfficeClickToR	0x7fff53fc0000	True	True	True	\Windows\System32\schannel.dll
+L12111: 6416	OfficeClickToR	0x7fff538f0000	True	True	True	\Windows\System32\gpapi.dll
+L12112: 6416	OfficeClickToR	0x7fff540e0000	True	True	True	\Windows\System32\dpapi.dll
+L12113: 6416	OfficeClickToR	0x7fff541d0000	True	True	True	\Windows\System32\wkscli.dll
+L12114: 6416	OfficeClickToR	0x7fff54a60000	True	True	True	\Windows\System32\ncrypt.dll
+L12115: 6416	OfficeClickToR	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L12116: 6416	OfficeClickToR	0x7fff54680000	True	True	True	\Windows\System32\msv1_0.dll
+L12117: 6416	OfficeClickToR	0x7fff54510000	True	True	True	\Windows\System32\netutils.dll
+L12118: 6416	OfficeClickToR	0x7fff54440000	True	True	True	\Windows\System32\dnsapi.dll
+L12119: 6416	OfficeClickToR	0x7fff54660000	True	True	True	\Windows\System32\NtlmShared.dll
+L12120: 6416	OfficeClickToR	0x7fff54780000	True	True	True	\Windows\System32\cryptdll.dll
+L12121: 6416	OfficeClickToR	0x7fff54710000	True	True	True	\Windows\System32\mswsock.dll
+L12122: 6416	OfficeClickToR	0x7fff547d0000	True	True	True	\Windows\System32\winsta.dll
+L12123: 6416	OfficeClickToR	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L12124: 6416	OfficeClickToR	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L12125: 6416	OfficeClickToR	0x7fff54a20000	True	True	True	\Windows\System32\ntasn1.dll
+L12126: 6416	OfficeClickToR	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L12127: 6416	OfficeClickToR	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L12128: 6416	OfficeClickToR	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L12129: 6416	OfficeClickToR	0x7fff54be0000	True	True	True	\Windows\System32\msasn1.dll
+L12130: 6416	OfficeClickToR	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L12131: 6416	OfficeClickToR	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L12132: 6416	OfficeClickToR	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L12133: 6416	OfficeClickToR	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L12134: 6416	OfficeClickToR	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L12135: 6416	OfficeClickToR	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L12136: 6416	OfficeClickToR	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L12137: 6416	OfficeClickToR	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L12138: 6416	OfficeClickToR	0x7fff55570000	True	True	True	\Windows\System32\wintrust.dll
+L12139: 6416	OfficeClickToR	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L12140: 6416	OfficeClickToR	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L12141: 6416	OfficeClickToR	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L12142: 6416	OfficeClickToR	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L12143: 6416	OfficeClickToR	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L12144: 6416	OfficeClickToR	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L12145: 6416	OfficeClickToR	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L12146: 6416	OfficeClickToR	0x7fff55d70000	True	True	True	\Windows\System32\psapi.dll
+L12147: 6416	OfficeClickToR	0x7fff55cd0000	True	True	True	\Windows\System32\coml2.dll
+L12148: 6416	OfficeClickToR	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L12149: 6416	OfficeClickToR	0x7fff55d50000	True	True	True	\Windows\System32\imagehlp.dll
+L12150: 6416	OfficeClickToR	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L12151: 6416	OfficeClickToR	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L12152: 6416	OfficeClickToR	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L12153: 6416	OfficeClickToR	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L12154: 6416	OfficeClickToR	0x7fff55ed0000	True	True	True	\Windows\System32\normaliz.dll
+L12155: 6416	OfficeClickToR	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+L12156: 6416	OfficeClickToR	0x7fff56050000	True	True	True	\Windows\System32\shell32.dll
+L12157: 6416	OfficeClickToR	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L12158: 6416	OfficeClickToR	0x7fff569c0000	True	True	True	\Windows\System32\setupapi.dll
+L12159: 6416	OfficeClickToR	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L12160: 6416	OfficeClickToR	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L12161: 6416	OfficeClickToR	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L12162: 6416	OfficeClickToR	0x7fff57450000	True	True	True	\Windows\System32\nsi.dll
+
+=== END OF PIVOT REPORT ===

@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:25:00Z
+Chunk: chunk_019.txt
+Summary: Widgets.exe (PID 5652) has an orphaned parent (PID 516 unknown); all other processes are a normal msedgewebview2 process tree descending from it with expected paths and arguments.
+
+[PROCESS]
+pid: 5652
+ppid: 516
+image: Widgets.exe
+cmdline: "C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe" -ServerName:Microsoft.Windows.DashboardServer
+severity: LOW
+reasons: orphaned_parent: PPID 516 does not appear anywhere in the process list | non-whitelisted_dll_list_includes_own_exe_path: C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.31002.150.9_x64__cw5n1h2txyewy\Dashboard\Widgets.exe listed as a loaded module (possible artefact, but worth confirming)
+

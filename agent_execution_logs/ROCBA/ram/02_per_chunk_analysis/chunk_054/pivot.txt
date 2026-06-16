@@ -1,0 +1,427 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:14:22Z
+
+=== PID 30012 (WinStore.App.e, ppid=740) ===
+Cmdline: "C:\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.exe" -ServerName:App.AppXc75wvwned5vhz4xyxxecvgdjhdkgsdza.mca
+
+--- pslist.txt ---
+L2184: 30012	740	WinStore.App.e	0xb78d14fae080	20	-	1	False	2020-11-16 02:30:21.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L2184: 30012	WinStore.App.e	"C:\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.exe" -ServerName:App.AppXc75wvwned5vhz4xyxxecvgdjhdkgsdza.mca
+
+--- privileges.txt ---
+L76235: 30012	WinStore.App.e	2	SeCreateTokenPrivilege		Create a token object
+L76236: 30012	WinStore.App.e	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L76237: 30012	WinStore.App.e	4	SeLockMemoryPrivilege		Lock pages in memory
+L76238: 30012	WinStore.App.e	5	SeIncreaseQuotaPrivilege		Increase quotas
+L76239: 30012	WinStore.App.e	6	SeMachineAccountPrivilege		Add workstations to the domain
+L76240: 30012	WinStore.App.e	7	SeTcbPrivilege		Act as part of the operating system
+L76241: 30012	WinStore.App.e	8	SeSecurityPrivilege		Manage auditing and security log
+L76242: 30012	WinStore.App.e	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L76243: 30012	WinStore.App.e	10	SeLoadDriverPrivilege		Load and unload device drivers
+L76244: 30012	WinStore.App.e	11	SeSystemProfilePrivilege		Profile system performance
+L76245: 30012	WinStore.App.e	12	SeSystemtimePrivilege		Change the system time
+L76246: 30012	WinStore.App.e	13	SeProfileSingleProcessPrivilege		Profile a single process
+L76247: 30012	WinStore.App.e	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L76248: 30012	WinStore.App.e	15	SeCreatePagefilePrivilege		Create a pagefile
+L76249: 30012	WinStore.App.e	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L76250: 30012	WinStore.App.e	17	SeBackupPrivilege		Backup files and directories
+L76251: 30012	WinStore.App.e	18	SeRestorePrivilege		Restore files and directories
+L76252: 30012	WinStore.App.e	19	SeShutdownPrivilege		Shut down the system
+L76253: 30012	WinStore.App.e	20	SeDebugPrivilege		Debug programs
+L76254: 30012	WinStore.App.e	21	SeAuditPrivilege		Generate security audits
+L76255: 30012	WinStore.App.e	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L76256: 30012	WinStore.App.e	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L76257: 30012	WinStore.App.e	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L76258: 30012	WinStore.App.e	25	SeUndockPrivilege		Remove computer from docking station
+L76259: 30012	WinStore.App.e	26	SeSyncAgentPrivilege		Synch directory service data
+L76260: 30012	WinStore.App.e	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L76261: 30012	WinStore.App.e	28	SeManageVolumePrivilege		Manage the files on a volume
+L76262: 30012	WinStore.App.e	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L76263: 30012	WinStore.App.e	30	SeCreateGlobalPrivilege		Create global objects
+L76264: 30012	WinStore.App.e	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L76265: 30012	WinStore.App.e	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L76266: 30012	WinStore.App.e	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L76267: 30012	WinStore.App.e	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L76268: 30012	WinStore.App.e	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L76269: 30012	WinStore.App.e	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L12389: 30012	WinStore.App.e	0x7ff76c0c0000	0x8000	WinStore.App.exe	C:\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.exe	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+L12390: 30012	WinStore.App.e	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+L12391: 30012	WinStore.App.e	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+L12392: 30012	WinStore.App.e	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+L12393: 30012	WinStore.App.e	0x7fff529b0000	0x90000	apphelp.dll	C:\WINDOWS\SYSTEM32\apphelp.dll	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+L12394: 30012	WinStore.App.e	0x7ffefe3c0000	0x26e5000	WinStore.App.dll	C:\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12395: 30012	WinStore.App.e	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12396: 30012	WinStore.App.e	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12397: 30012	WinStore.App.e	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12398: 30012	WinStore.App.e	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12399: 30012	WinStore.App.e	0x7fff557e0000	0x27000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12400: 30012	WinStore.App.e	0x7fff57800000	0x6b000	ws2_32.dll	C:\WINDOWS\System32\ws2_32.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12401: 30012	WinStore.App.e	0x7fff21d60000	0xccd000	SharedLibrary.dll	C:\Program Files\WindowsApps\microsoft.net.native.framework.2.2_2.2.27912.0_x64__8wekyb3d8bbwe\SharedLibrary.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12402: 30012	WinStore.App.e	0x7fff56800000	0x12a000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12403: 30012	WinStore.App.e	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12404: 30012	WinStore.App.e	0x7fff55650000	0x15d000	crypt32.dll	C:\WINDOWS\System32\crypt32.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12405: 30012	WinStore.App.e	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12406: 30012	WinStore.App.e	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12407: 30012	WinStore.App.e	0x7fff22a30000	0x86000	mrt100_app.dll	C:\Program Files\WindowsApps\microsoft.net.native.runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe\mrt100_app.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12408: 30012	WinStore.App.e	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12409: 30012	WinStore.App.e	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12410: 30012	WinStore.App.e	0x7fff54a60000	0x27000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12411: 30012	WinStore.App.e	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12412: 30012	WinStore.App.e	0x7fff54400000	0x3b000	iphlpapi.dll	C:\WINDOWS\SYSTEM32\iphlpapi.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12413: 30012	WinStore.App.e	0x7fff57540000	0x1a0000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12414: 30012	WinStore.App.e	0x7fff55f80000	0xcd000	OleAut32.dll	C:\WINDOWS\System32\OleAut32.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12415: 30012	WinStore.App.e	0x7fff3ba90000	0xe000	dmprocessxmlfiltered.dll	C:\WINDOWS\SYSTEM32\dmprocessxmlfiltered.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12416: 30012	WinStore.App.e	0x7fff523a0000	0x156000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12417: 30012	WinStore.App.e	0x7fff55ed0000	0x8000	Normaliz.dll	C:\WINDOWS\System32\Normaliz.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12418: 30012	WinStore.App.e	0x7fff54ea0000	0x3c000	sspicli.dll	C:\WINDOWS\SYSTEM32\sspicli.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12419: 30012	WinStore.App.e	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12420: 30012	WinStore.App.e	0x7fff47ca0000	0x33000	DMCmnUtils.dll	C:\WINDOWS\SYSTEM32\DMCmnUtils.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12421: 30012	WinStore.App.e	0x7fff54940000	0x18000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12422: 30012	WinStore.App.e	0x7fff54140000	0x8a000	msvcp110_win.dll	C:\WINDOWS\SYSTEM32\msvcp110_win.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12423: 30012	WinStore.App.e	0x7fff4a170000	0x36000	XmlLite.dll	C:\WINDOWS\SYSTEM32\XmlLite.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12424: 30012	WinStore.App.e	0x7fff2a6d0000	0x19000	VCRUNTIME140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_APP.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12425: 30012	WinStore.App.e	0x7fff540e0000	0xa000	DPAPI.DLL	C:\WINDOWS\SYSTEM32\DPAPI.DLL	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12426: 30012	WinStore.App.e	0x7fff21d40000	0x9000	mrt100.dll	C:\WINDOWS\SYSTEM32\mrt100.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12427: 30012	WinStore.App.e	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+L12428: 30012	WinStore.App.e	0x7fff52e20000	0x2a000	rmclient.dll	C:\Windows\System32\rmclient.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12429: 30012	WinStore.App.e	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12430: 30012	WinStore.App.e	0x7fff54a20000	0x3b000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12431: 30012	WinStore.App.e	0x7fff4eb40000	0x208000	twinapi.appcore.dll	C:\WINDOWS\SYSTEM32\twinapi.appcore.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12432: 30012	WinStore.App.e	0x7fff455d0000	0x10c1000	Windows.UI.Xaml.dll	C:\Windows\System32\Windows.UI.Xaml.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12433: 30012	WinStore.App.e	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+L12434: 30012	WinStore.App.e	0x7fff468c0000	0x2b0000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+L12435: 30012	WinStore.App.e	0x7fff52500000	0xf2000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+L12436: 30012	WinStore.App.e	0x7fff47340000	0x5b000	Bcp47Langs.dll	C:\WINDOWS\SYSTEM32\Bcp47Langs.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12437: 30012	WinStore.App.e	0x7fff51cd0000	0x1e5000	dcomp.dll	C:\WINDOWS\SYSTEM32\dcomp.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12438: 30012	WinStore.App.e	0x7fff49ad0000	0x11000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12439: 30012	WinStore.App.e	0x7fff470b0000	0x14c000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12440: 30012	WinStore.App.e	0x7fff47000000	0xa3000	WindowManagementAPI.dll	C:\WINDOWS\SYSTEM32\WindowManagementAPI.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12441: 30012	WinStore.App.e	0x7fff46da0000	0xfc000	TextInputFramework.dll	C:\WINDOWS\SYSTEM32\TextInputFramework.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12442: 30012	WinStore.App.e	0x7fff46ea0000	0x152000	InputHost.dll	C:\WINDOWS\SYSTEM32\InputHost.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12443: 30012	WinStore.App.e	0x7fff52600000	0x35e000	CoreUIComponents.dll	C:\WINDOWS\SYSTEM32\CoreUIComponents.dll	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+L12444: 30012	WinStore.App.e	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+L12445: 30012	WinStore.App.e	0x7fff508e0000	0xf7000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12446: 30012	WinStore.App.e	0x7fff43ed0000	0x795000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12447: 30012	WinStore.App.e	0x7fff52a60000	0x9e000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12448: 30012	WinStore.App.e	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12449: 30012	WinStore.App.e	0x7fff53940000	0xf3000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12450: 30012	WinStore.App.e	0x7fff514a0000	0x264000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12451: 30012	WinStore.App.e	0x7fff493e0000	0x48000	WinStore.Preview.dll	C:\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.Preview.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12452: 30012	WinStore.App.e	0x7fff1eac0000	0x8d000	MSVCP140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\MSVCP140_APP.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12453: 30012	WinStore.App.e	0x7fff1ea60000	0x51000	vccorlib140_app.DLL	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.DLL	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12454: 30012	WinStore.App.e	0x7fff1ea50000	0xc000	VCRUNTIME140_1_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_1_APP.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12455: 30012	WinStore.App.e	0x7fff41730000	0x1447000	igd10iumd64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12456: 30012	WinStore.App.e	0x7fff4dc70000	0xe7000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12457: 30012	WinStore.App.e	0x7fff3f820000	0x1f01000	igc64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12458: 30012	WinStore.App.e	0x7fff3c6c0000	0x3b000	rometadata.dll	C:\WINDOWS\SYSTEM32\rometadata.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12459: 30012	WinStore.App.e	0x7fff3f7e0000	0x3b000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12460: 30012	WinStore.App.e	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12461: 30012	WinStore.App.e	0x7fff47200000	0xf4000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12462: 30012	WinStore.App.e	0x7fff51710000	0x5c0000	d2d1.dll	C:\WINDOWS\SYSTEM32\d2d1.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12463: 30012	WinStore.App.e	0x7fff30ed0000	0x40000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12464: 30012	WinStore.App.e	0x7fff42d30000	0x27f000	dwrite.dll	C:\WINDOWS\SYSTEM32\dwrite.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12465: 30012	WinStore.App.e	0x7fff45050000	0xac000	TextShaping.dll	C:\WINDOWS\SYSTEM32\TextShaping.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12466: 30012	WinStore.App.e	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12467: 30012	WinStore.App.e	0x7fff48500000	0x2d000	bcp47mrm.dll	C:\WINDOWS\SYSTEM32\bcp47mrm.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12468: 30012	WinStore.App.e	0x7fff43ac0000	0x26e000	Microsoft.UI.Xaml.dll	C:\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\Microsoft.UI.Xaml.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12469: 30012	WinStore.App.e	0x7fff576e0000	0x115000	msctf.dll	C:\WINDOWS\System32\msctf.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12470: 30012	WinStore.App.e	0x7fff47960000	0x1e000	Windows.Shell.ServiceHostBuilder.dll	C:\Windows\System32\Windows.Shell.ServiceHostBuilder.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12471: 30012	WinStore.App.e	0x7fff32710000	0x18000	execmodelproxy.dll	C:\WINDOWS\system32\execmodelproxy.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12472: 30012	WinStore.App.e	0x7fff328d0000	0xa1000	UiaManager.dll	C:\Windows\System32\UiaManager.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12473: 30012	WinStore.App.e	0x7fff26bf0000	0x109000	windows.ui.core.textinput.dll	C:\WINDOWS\SYSTEM32\windows.ui.core.textinput.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12474: 30012	WinStore.App.e	0x7fff46730000	0x139000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12475: 30012	WinStore.App.e	0x7fff29bb0000	0x3e000	DataExchange.dll	C:\WINDOWS\system32\DataExchange.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12476: 30012	WinStore.App.e	0x7fff54960000	0xc000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12477: 30012	WinStore.App.e	0x7fff4bcc0000	0x54000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12478: 30012	WinStore.App.e	0x7fff261e0000	0x61000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12479: 30012	WinStore.App.e	0x7fff42b80000	0x1a8000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12480: 30012	WinStore.App.e	0x7fff4e8a0000	0x8d000	Windows.Graphics.dll	C:\Windows\System32\Windows.Graphics.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12481: 30012	WinStore.App.e	0x7fff34bd0000	0x11d000	Windows.Security.Authentication.Web.Core.dll	C:\Windows\System32\Windows.Security.Authentication.Web.Core.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12482: 30012	WinStore.App.e	0x7fff4db50000	0x16000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12483: 30012	WinStore.App.e	0x7fff36410000	0x7d000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12484: 30012	WinStore.App.e	0x7fff32830000	0x51000	vaultcli.dll	C:\Windows\System32\vaultcli.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12485: 30012	WinStore.App.e	0x7fff36bb0000	0x146000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12486: 30012	WinStore.App.e	0x7fff35b00000	0xc3000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12487: 30012	WinStore.App.e	0x7fff49350000	0x8c000	MicrosoftAccountWAMExtension.dll	C:\Windows\System32\MicrosoftAccountWAMExtension.dll	6	2020-11-16 02:30:21.000000 UTC	Disabled
+L12488: 30012	WinStore.App.e	0x7fff1dd00000	0x235000	Windows.ApplicationModel.Store.dll	C:\Windows\System32\Windows.ApplicationModel.Store.dll	6	2020-11-16 02:30:22.000000 UTC	Disabled
+L12489: 30012	WinStore.App.e	0x7fff48b70000	0x153000	webservices.dll	C:\WINDOWS\SYSTEM32\webservices.dll	6	2020-11-16 02:30:22.000000 UTC	Disabled
+L12490: 30012	WinStore.App.e	0x7fff44880000	0x29000	Cabinet.dll	C:\WINDOWS\SYSTEM32\Cabinet.dll	6	2020-11-16 02:30:22.000000 UTC	Disabled
+L12491: 30012	WinStore.App.e	0x7fff4fea0000	0x100000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2020-11-16 02:30:22.000000 UTC	Disabled
+L12492: 30012	WinStore.App.e	0x7fff54ee0000	0x2e000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2020-11-16 02:30:22.000000 UTC	Disabled
+L12493: 30012	WinStore.App.e	0x7fff53d70000	0x29000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2020-11-16 02:30:22.000000 UTC	Disabled
+L12494: 30012	WinStore.App.e	0x7fff4b520000	0x20000	XblAuthTokenBrokerExt.dll	C:\Windows\System32\XblAuthTokenBrokerExt.dll	6	2020-11-16 02:30:22.000000 UTC	Disabled
+L12495: 30012	WinStore.App.e	0x7fff4b3b0000	0x1c000	XblAuthManagerProxy.dll	C:\Windows\System32\XblAuthManagerProxy.dll	6	2020-11-16 02:30:22.000000 UTC	Disabled
+L12496: 30012	WinStore.App.e	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\system32\windows.storage.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+L12497: 30012	WinStore.App.e	0x7fff549f0000	0x2c000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+L12498: 30012	WinStore.App.e	0x7fff55910000	0x55000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+L12499: 30012	WinStore.App.e	0x7fff1df40000	0x16000	Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	C:\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+L12500: 30012	WinStore.App.e	0x7fff47830000	0x30000	EditionUpgradeHelper.dll	C:\WINDOWS\system32\EditionUpgradeHelper.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+L12501: 30012	WinStore.App.e	0x7fff56050000	0x741000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+L12502: 30012	WinStore.App.e	0x7fff29ce0000	0x30000	CLIPC.dll	C:\WINDOWS\SYSTEM32\CLIPC.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+L12503: 30012	WinStore.App.e	0x7fff47810000	0x12000	Windows.Security.Integrity.dll	C:\Windows\System32\Windows.Security.Integrity.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+L12504: 30012	WinStore.App.e	0x7fff4e690000	0x15000	Windows.System.UserProfile.DiagnosticsSettings.dll	C:\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+L12505: 30012	WinStore.App.e	0x7fff3e650000	0x17a000	Windows.Web.Http.dll	C:\Windows\System32\Windows.Web.Http.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+L12506: 30012	WinStore.App.e	0x7fff31cc0000	0x4da000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	-1	2020-11-16 02:30:25.000000 UTC	Disabled
+L12507: 30012	WinStore.App.e	0x7fff35d40000	0x13000	TOKENBINDING.dll	C:\WINDOWS\SYSTEM32\TOKENBINDING.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+L12508: 30012	WinStore.App.e	0x7fff356b0000	0x17000	ondemandconnroutehelper.dll	C:\WINDOWS\SYSTEM32\ondemandconnroutehelper.dll	6	2020-11-16 02:30:25.000000 UTC	Disabled
+
+--- pstree.txt ---
+L123: *** 30012	740	WinStore.App.e	0xb78d14fae080	20	-	1	False	2020-11-16 02:30:21.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.exe	"C:\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.exe" -ServerName:App.AppXc75wvwned5vhz4xyxxecvgdjhdkgsdza.mca	C:\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.exe
+
+--- psscan.txt ---
+L2139: 30012	740	WinStore.App.e	0xb78d14fae080	20	-	1	False	2020-11-16 02:30:21.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L112: 0xb78cfa47eb20	TCPv4	192.168.1.5	61837	23.197.181.157	80	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L210: 0xb78d09f09010	TCPv4	192.168.1.5	61834	13.107.42.12	443	CLOSED	30012	WinStore.App.e	2020-11-16 02:30:25.000000 UTC
+L260: 0xb78d0cde8010	TCPv4	192.168.1.5	61831	23.46.190.35	443	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:25.000000 UTC
+L264: 0xb78d0cf59b40	TCPv4	192.168.1.5	61838	184.24.107.139	443	CLOSE_WAIT	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L353: 0xb78d0e4e78a0	TCPv4	192.168.1.5	61835	23.46.190.35	443	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:25.000000 UTC
+L358: 0xb78d0f50aa20	TCPv4	192.168.1.5	61841	23.197.181.157	80	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L363: 0xb78d0f953260	TCPv4	192.168.1.5	61839	72.21.91.29	80	CLOSE_WAIT	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L372: 0xb78d10611a20	TCPv4	192.168.1.5	61840	23.197.181.157	80	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L374: 0xb78d1068db00	TCPv4	192.168.1.5	61836	23.197.181.157	80	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L378: 0xb78d1070a510	TCPv4	192.168.1.5	61850	23.46.190.35	443	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:36.000000 UTC
+L409: 0xb78d1437b7c0	TCPv4	192.168.1.5	61832	23.46.190.35	443	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:25.000000 UTC
+L414: 0xb78d145547c0	TCPv4	192.168.1.5	61842	23.197.181.157	80	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L430: 0xb78d15040a20	TCPv4	192.168.1.5	61833	23.46.190.35	443	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:25.000000 UTC
+
+--- netstat.txt ---
+L5: 0xb78d0e4e78a0	TCPv4	192.168.1.5	61835	23.46.190.35	443	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:25.000000 UTC
+L21: 0xb78d10611a20	TCPv4	192.168.1.5	61840	23.197.181.157	80	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L24: 0xb78d0f50aa20	TCPv4	192.168.1.5	61841	23.197.181.157	80	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L28: 0xb78d1070a510	TCPv4	192.168.1.5	61850	23.46.190.35	443	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:36.000000 UTC
+L35: 0xb78d15040a20	TCPv4	192.168.1.5	61833	23.46.190.35	443	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:25.000000 UTC
+L38: 0xb78d1437b7c0	TCPv4	192.168.1.5	61832	23.46.190.35	443	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:25.000000 UTC
+L39: 0xb78d0cf59b40	TCPv4	192.168.1.5	61838	184.24.107.139	443	CLOSE_WAIT	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L48: 0xb78d0f953260	TCPv4	192.168.1.5	61839	72.21.91.29	80	CLOSE_WAIT	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L63: 0xb78d145547c0	TCPv4	192.168.1.5	61842	23.197.181.157	80	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L72: 0xb78d1068db00	TCPv4	192.168.1.5	61836	23.197.181.157	80	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:26.000000 UTC
+L73: 0xb78d0cde8010	TCPv4	192.168.1.5	61831	23.46.190.35	443	ESTABLISHED	30012	WinStore.App.e	2020-11-16 02:30:25.000000 UTC
+
+--- ldrmodules.txt ---
+L12884: 30012	WinStore.App.e	0x7ff76c0c0000	True	False	True	\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.exe
+L12885: 30012	WinStore.App.e	0x2516ba20000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L12886: 30012	WinStore.App.e	0x2516ef60000	False	False	False	\Windows\System32\en-US\DevDispItemProvider.dll.mui
+L12887: 30012	WinStore.App.e	0x2516ef70000	False	False	False	\Windows\System32\WinMetadata\Windows.Graphics.winmd
+L12888: 30012	WinStore.App.e	0x7fff529b0000	True	True	True	\Windows\System32\apphelp.dll
+L12889: 30012	WinStore.App.e	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L12890: 30012	WinStore.App.e	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L12891: 30012	WinStore.App.e	0x7fff2a6d0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_app.dll
+L12892: 30012	WinStore.App.e	0x7fff1ea50000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_1_app.dll
+L12893: 30012	WinStore.App.e	0x7fff1eac0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\msvcp140_app.dll
+L12894: 30012	WinStore.App.e	0x7fff1ea60000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.dll
+L12895: 30012	WinStore.App.e	0x7fff22a30000	True	True	True	\Program Files\WindowsApps\microsoft.net.native.runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe\mrt100_app.dll
+L12896: 30012	WinStore.App.e	0x7fff29bb0000	True	True	True	\Windows\System32\DataExchange.dll
+L12897: 30012	WinStore.App.e	0x7fff2cd60000	True	True	True	\Windows\System32\MbaeApiPublic.dll
+L12898: 30012	WinStore.App.e	0x7fff305c0000	True	True	True	\Windows\System32\wpnapps.dll
+L12899: 30012	WinStore.App.e	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L12900: 30012	WinStore.App.e	0x7fff31200000	True	True	True	\Windows\System32\PhotoMetadataHandler.dll
+L12901: 30012	WinStore.App.e	0x7fff31030000	True	True	True	\Windows\System32\wuceffects.dll
+L12902: 30012	WinStore.App.e	0x7fff31280000	True	True	True	\Windows\System32\twinapi.dll
+L12903: 30012	WinStore.App.e	0x7fff32710000	True	True	True	\Windows\System32\execmodelproxy.dll
+L12904: 30012	WinStore.App.e	0x7fff35b00000	True	True	True	\Windows\System32\Windows.Web.dll
+L12905: 30012	WinStore.App.e	0x7fff356b0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L12906: 30012	WinStore.App.e	0x7fff34bd0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L12907: 30012	WinStore.App.e	0x7fff35950000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L12908: 30012	WinStore.App.e	0x7fff35d40000	True	True	True	\Windows\System32\tokenbinding.dll
+L12909: 30012	WinStore.App.e	0x7fff36630000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L12910: 30012	WinStore.App.e	0x7fff36530000	True	True	True	\Windows\System32\cryptnet.dll
+L12911: 30012	WinStore.App.e	0x7fff3ac20000	True	True	True	\Windows\System32\webio.dll
+L12912: 30012	WinStore.App.e	0x7fff3ad00000	True	True	True	\Windows\System32\Windows.ApplicationModel.Background.SystemEventsBroker.dll
+L12913: 30012	WinStore.App.e	0x7fff3c6c0000	True	True	True	\Windows\System32\rometadata.dll
+L12914: 30012	WinStore.App.e	0x7fff3f6a0000	True	True	True	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L12915: 30012	WinStore.App.e	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L12916: 30012	WinStore.App.e	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L12917: 30012	WinStore.App.e	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L12918: 30012	WinStore.App.e	0x7fff42b80000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L12919: 30012	WinStore.App.e	0x7fff436b0000	True	True	True	\Windows\System32\ncryptsslp.dll
+L12920: 30012	WinStore.App.e	0x7fff42fb0000	True	True	True	\Windows\System32\mskeyprotect.dll
+L12921: 30012	WinStore.App.e	0x7fff43ac0000	True	True	True	\Program Files\WindowsApps\Microsoft.WindowsStore_12010.1001.3.0_x64__8wekyb3d8bbwe\Microsoft.UI.Xaml.dll
+L12922: 30012	WinStore.App.e	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L12923: 30012	WinStore.App.e	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L12924: 30012	WinStore.App.e	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L12925: 30012	WinStore.App.e	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L12926: 30012	WinStore.App.e	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L12927: 30012	WinStore.App.e	0x7fff44880000	True	True	True	\Windows\System32\cabinet.dll
+L12928: 30012	WinStore.App.e	0x7fff45300000	True	True	True	\Windows\System32\Windows.Gaming.Input.dll
+L12929: 30012	WinStore.App.e	0x7fff45100000	True	True	True	\Windows\System32\directmanipulation.dll
+L12930: 30012	WinStore.App.e	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L12931: 30012	WinStore.App.e	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L12932: 30012	WinStore.App.e	0x7fff46730000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L12933: 30012	WinStore.App.e	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L12934: 30012	WinStore.App.e	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L12935: 30012	WinStore.App.e	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L12936: 30012	WinStore.App.e	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L12937: 30012	WinStore.App.e	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L12938: 30012	WinStore.App.e	0x7fff47960000	True	True	True	\Windows\System32\Windows.Shell.ServiceHostBuilder.dll
+L12939: 30012	WinStore.App.e	0x7fff47810000	True	True	True	\Windows\System32\Windows.Security.Integrity.dll
+L12940: 30012	WinStore.App.e	0x7fff47430000	True	True	True	\Windows\System32\Windows.Networking.Proximity.dll
+L12941: 30012	WinStore.App.e	0x7fff47830000	True	True	True	\Windows\System32\EditionUpgradeHelper.dll
+L12942: 30012	WinStore.App.e	0x7fff47c10000	True	True	True	\Windows\System32\RTMediaFrame.dll
+L12943: 30012	WinStore.App.e	0x7fff47a50000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L12944: 30012	WinStore.App.e	0x7fff47ca0000	True	True	True	\Windows\System32\dmcmnutils.dll
+L12945: 30012	WinStore.App.e	0x7fff493e0000	True	True	True	\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.Preview.dll
+L12946: 30012	WinStore.App.e	0x7fff48ae0000	True	True	True	\Windows\System32\ProximityCommon.dll
+L12947: 30012	WinStore.App.e	0x7fff488a0000	True	True	True	\Windows\System32\DevDispItemProvider.dll
+L12948: 30012	WinStore.App.e	0x7fff48890000	True	True	True	\Windows\System32\DefaultDeviceManager.dll
+L12949: 30012	WinStore.App.e	0x7fff48ad0000	True	True	True	\Windows\System32\ProximityCommonPal.dll
+L12950: 30012	WinStore.App.e	0x7fff48b70000	True	True	True	\Windows\System32\webservices.dll
+L12951: 30012	WinStore.App.e	0x7fff49350000	True	True	True	\Windows\System32\MicrosoftAccountWAMExtension.dll
+L12952: 30012	WinStore.App.e	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L12953: 30012	WinStore.App.e	0x7fff49f20000	True	True	True	\Windows\System32\Windows.Media.Devices.dll
+L12954: 30012	WinStore.App.e	0x7fff4dc70000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L12955: 30012	WinStore.App.e	0x7fff4bcc0000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L12956: 30012	WinStore.App.e	0x7fff4b3b0000	True	True	True	\Windows\System32\XblAuthManagerProxy.dll
+L12957: 30012	WinStore.App.e	0x7fff4a400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L12958: 30012	WinStore.App.e	0x7fff4ae80000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L12959: 30012	WinStore.App.e	0x7fff4b730000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L12960: 30012	WinStore.App.e	0x7fff4b520000	True	True	True	\Windows\System32\XblAuthTokenBrokerExt.dll
+L12961: 30012	WinStore.App.e	0x7fff4ba50000	True	True	True	\Windows\System32\dsparse.dll
+L12962: 30012	WinStore.App.e	0x7fff4c780000	True	True	True	\Windows\System32\MMDevAPI.dll
+L12963: 30012	WinStore.App.e	0x7fff4c4a0000	True	True	True	\Windows\System32\rasadhlp.dll
+L12964: 30012	WinStore.App.e	0x7fff4bfe0000	True	True	True	\Windows\System32\DDORes.dll
+L12965: 30012	WinStore.App.e	0x7fff4c4b0000	True	True	True	\Windows\System32\ProximityRtapiPal.dll
+L12966: 30012	WinStore.App.e	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L12967: 30012	WinStore.App.e	0x7fff4db70000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L12968: 30012	WinStore.App.e	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L12969: 30012	WinStore.App.e	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L12970: 30012	WinStore.App.e	0x7fff4e690000	True	True	True	\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll
+L12971: 30012	WinStore.App.e	0x7fff4e5c0000	True	True	True	\Windows\System32\Windows.Devices.Enumeration.dll
+L12972: 30012	WinStore.App.e	0x7fff4e8a0000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L12973: 30012	WinStore.App.e	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L12974: 30012	WinStore.App.e	0x7fff4fe60000	True	True	True	\Windows\System32\mobilenetworking.dll
+L12975: 30012	WinStore.App.e	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L12976: 30012	WinStore.App.e	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L12977: 30012	WinStore.App.e	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+L12978: 30012	WinStore.App.e	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L12979: 30012	WinStore.App.e	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L12980: 30012	WinStore.App.e	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L12981: 30012	WinStore.App.e	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L12982: 30012	WinStore.App.e	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L12983: 30012	WinStore.App.e	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L12984: 30012	WinStore.App.e	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L12985: 30012	WinStore.App.e	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L12986: 30012	WinStore.App.e	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L12987: 30012	WinStore.App.e	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L12988: 30012	WinStore.App.e	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L12989: 30012	WinStore.App.e	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L12990: 30012	WinStore.App.e	0x7fff53c60000	True	True	True	\Windows\System32\fwbase.dll
+L12991: 30012	WinStore.App.e	0x7fff53bc0000	True	True	True	\Windows\System32\slc.dll
+L12992: 30012	WinStore.App.e	0x7fff53b90000	True	True	True	\Windows\System32\sppc.dll
+L12993: 30012	WinStore.App.e	0x7fff53c90000	True	True	True	\Windows\System32\FirewallAPI.dll
+L12994: 30012	WinStore.App.e	0x7fff540e0000	True	True	True	\Windows\System32\dpapi.dll
+L12995: 30012	WinStore.App.e	0x7fff53fc0000	True	True	True	\Windows\System32\schannel.dll
+L12996: 30012	WinStore.App.e	0x7fff53d70000	True	True	True	\Windows\System32\profext.dll
+L12997: 30012	WinStore.App.e	0x7fff540a0000	True	True	True	\Windows\System32\rsaenh.dll
+L12998: 30012	WinStore.App.e	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L12999: 30012	WinStore.App.e	0x7fff54a60000	True	True	True	\Windows\System32\ncrypt.dll
+L13000: 30012	WinStore.App.e	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L13001: 30012	WinStore.App.e	0x7fff54710000	True	True	True	\Windows\System32\mswsock.dll
+L13002: 30012	WinStore.App.e	0x7fff54440000	True	True	True	\Windows\System32\dnsapi.dll
+L13003: 30012	WinStore.App.e	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+
+--- malware_ldrmodules.txt ---
+L12884: 30012	WinStore.App.e	0x7ff76c0c0000	True	False	True	\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.exe
+L12885: 30012	WinStore.App.e	0x2516ba20000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L12886: 30012	WinStore.App.e	0x2516ef60000	False	False	False	\Windows\System32\en-US\DevDispItemProvider.dll.mui
+L12887: 30012	WinStore.App.e	0x2516ef70000	False	False	False	\Windows\System32\WinMetadata\Windows.Graphics.winmd
+L12888: 30012	WinStore.App.e	0x7fff529b0000	True	True	True	\Windows\System32\apphelp.dll
+L12889: 30012	WinStore.App.e	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L12890: 30012	WinStore.App.e	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L12891: 30012	WinStore.App.e	0x7fff2a6d0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_app.dll
+L12892: 30012	WinStore.App.e	0x7fff1ea50000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_1_app.dll
+L12893: 30012	WinStore.App.e	0x7fff1eac0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\msvcp140_app.dll
+L12894: 30012	WinStore.App.e	0x7fff1ea60000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.dll
+L12895: 30012	WinStore.App.e	0x7fff22a30000	True	True	True	\Program Files\WindowsApps\microsoft.net.native.runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe\mrt100_app.dll
+L12896: 30012	WinStore.App.e	0x7fff29bb0000	True	True	True	\Windows\System32\DataExchange.dll
+L12897: 30012	WinStore.App.e	0x7fff2cd60000	True	True	True	\Windows\System32\MbaeApiPublic.dll
+L12898: 30012	WinStore.App.e	0x7fff305c0000	True	True	True	\Windows\System32\wpnapps.dll
+L12899: 30012	WinStore.App.e	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L12900: 30012	WinStore.App.e	0x7fff31200000	True	True	True	\Windows\System32\PhotoMetadataHandler.dll
+L12901: 30012	WinStore.App.e	0x7fff31030000	True	True	True	\Windows\System32\wuceffects.dll
+L12902: 30012	WinStore.App.e	0x7fff31280000	True	True	True	\Windows\System32\twinapi.dll
+L12903: 30012	WinStore.App.e	0x7fff32710000	True	True	True	\Windows\System32\execmodelproxy.dll
+L12904: 30012	WinStore.App.e	0x7fff35b00000	True	True	True	\Windows\System32\Windows.Web.dll
+L12905: 30012	WinStore.App.e	0x7fff356b0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L12906: 30012	WinStore.App.e	0x7fff34bd0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L12907: 30012	WinStore.App.e	0x7fff35950000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L12908: 30012	WinStore.App.e	0x7fff35d40000	True	True	True	\Windows\System32\tokenbinding.dll
+L12909: 30012	WinStore.App.e	0x7fff36630000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L12910: 30012	WinStore.App.e	0x7fff36530000	True	True	True	\Windows\System32\cryptnet.dll
+L12911: 30012	WinStore.App.e	0x7fff3ac20000	True	True	True	\Windows\System32\webio.dll
+L12912: 30012	WinStore.App.e	0x7fff3ad00000	True	True	True	\Windows\System32\Windows.ApplicationModel.Background.SystemEventsBroker.dll
+L12913: 30012	WinStore.App.e	0x7fff3c6c0000	True	True	True	\Windows\System32\rometadata.dll
+L12914: 30012	WinStore.App.e	0x7fff3f6a0000	True	True	True	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L12915: 30012	WinStore.App.e	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L12916: 30012	WinStore.App.e	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L12917: 30012	WinStore.App.e	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L12918: 30012	WinStore.App.e	0x7fff42b80000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L12919: 30012	WinStore.App.e	0x7fff436b0000	True	True	True	\Windows\System32\ncryptsslp.dll
+L12920: 30012	WinStore.App.e	0x7fff42fb0000	True	True	True	\Windows\System32\mskeyprotect.dll
+L12921: 30012	WinStore.App.e	0x7fff43ac0000	True	True	True	\Program Files\WindowsApps\Microsoft.WindowsStore_12010.1001.3.0_x64__8wekyb3d8bbwe\Microsoft.UI.Xaml.dll
+L12922: 30012	WinStore.App.e	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L12923: 30012	WinStore.App.e	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L12924: 30012	WinStore.App.e	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L12925: 30012	WinStore.App.e	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L12926: 30012	WinStore.App.e	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L12927: 30012	WinStore.App.e	0x7fff44880000	True	True	True	\Windows\System32\cabinet.dll
+L12928: 30012	WinStore.App.e	0x7fff45300000	True	True	True	\Windows\System32\Windows.Gaming.Input.dll
+L12929: 30012	WinStore.App.e	0x7fff45100000	True	True	True	\Windows\System32\directmanipulation.dll
+L12930: 30012	WinStore.App.e	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L12931: 30012	WinStore.App.e	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L12932: 30012	WinStore.App.e	0x7fff46730000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L12933: 30012	WinStore.App.e	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L12934: 30012	WinStore.App.e	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L12935: 30012	WinStore.App.e	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L12936: 30012	WinStore.App.e	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L12937: 30012	WinStore.App.e	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L12938: 30012	WinStore.App.e	0x7fff47960000	True	True	True	\Windows\System32\Windows.Shell.ServiceHostBuilder.dll
+L12939: 30012	WinStore.App.e	0x7fff47810000	True	True	True	\Windows\System32\Windows.Security.Integrity.dll
+L12940: 30012	WinStore.App.e	0x7fff47430000	True	True	True	\Windows\System32\Windows.Networking.Proximity.dll
+L12941: 30012	WinStore.App.e	0x7fff47830000	True	True	True	\Windows\System32\EditionUpgradeHelper.dll
+L12942: 30012	WinStore.App.e	0x7fff47c10000	True	True	True	\Windows\System32\RTMediaFrame.dll
+L12943: 30012	WinStore.App.e	0x7fff47a50000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L12944: 30012	WinStore.App.e	0x7fff47ca0000	True	True	True	\Windows\System32\dmcmnutils.dll
+L12945: 30012	WinStore.App.e	0x7fff493e0000	True	True	True	\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.Preview.dll
+L12946: 30012	WinStore.App.e	0x7fff48ae0000	True	True	True	\Windows\System32\ProximityCommon.dll
+L12947: 30012	WinStore.App.e	0x7fff488a0000	True	True	True	\Windows\System32\DevDispItemProvider.dll
+L12948: 30012	WinStore.App.e	0x7fff48890000	True	True	True	\Windows\System32\DefaultDeviceManager.dll
+L12949: 30012	WinStore.App.e	0x7fff48ad0000	True	True	True	\Windows\System32\ProximityCommonPal.dll
+L12950: 30012	WinStore.App.e	0x7fff48b70000	True	True	True	\Windows\System32\webservices.dll
+L12951: 30012	WinStore.App.e	0x7fff49350000	True	True	True	\Windows\System32\MicrosoftAccountWAMExtension.dll
+L12952: 30012	WinStore.App.e	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L12953: 30012	WinStore.App.e	0x7fff49f20000	True	True	True	\Windows\System32\Windows.Media.Devices.dll
+L12954: 30012	WinStore.App.e	0x7fff4dc70000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L12955: 30012	WinStore.App.e	0x7fff4bcc0000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L12956: 30012	WinStore.App.e	0x7fff4b3b0000	True	True	True	\Windows\System32\XblAuthManagerProxy.dll
+L12957: 30012	WinStore.App.e	0x7fff4a400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L12958: 30012	WinStore.App.e	0x7fff4ae80000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L12959: 30012	WinStore.App.e	0x7fff4b730000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L12960: 30012	WinStore.App.e	0x7fff4b520000	True	True	True	\Windows\System32\XblAuthTokenBrokerExt.dll
+L12961: 30012	WinStore.App.e	0x7fff4ba50000	True	True	True	\Windows\System32\dsparse.dll
+L12962: 30012	WinStore.App.e	0x7fff4c780000	True	True	True	\Windows\System32\MMDevAPI.dll
+L12963: 30012	WinStore.App.e	0x7fff4c4a0000	True	True	True	\Windows\System32\rasadhlp.dll
+L12964: 30012	WinStore.App.e	0x7fff4bfe0000	True	True	True	\Windows\System32\DDORes.dll
+L12965: 30012	WinStore.App.e	0x7fff4c4b0000	True	True	True	\Windows\System32\ProximityRtapiPal.dll
+L12966: 30012	WinStore.App.e	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L12967: 30012	WinStore.App.e	0x7fff4db70000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L12968: 30012	WinStore.App.e	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L12969: 30012	WinStore.App.e	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L12970: 30012	WinStore.App.e	0x7fff4e690000	True	True	True	\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll
+L12971: 30012	WinStore.App.e	0x7fff4e5c0000	True	True	True	\Windows\System32\Windows.Devices.Enumeration.dll
+L12972: 30012	WinStore.App.e	0x7fff4e8a0000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L12973: 30012	WinStore.App.e	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L12974: 30012	WinStore.App.e	0x7fff4fe60000	True	True	True	\Windows\System32\mobilenetworking.dll
+L12975: 30012	WinStore.App.e	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L12976: 30012	WinStore.App.e	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L12977: 30012	WinStore.App.e	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+L12978: 30012	WinStore.App.e	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L12979: 30012	WinStore.App.e	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L12980: 30012	WinStore.App.e	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+
+=== END OF PIVOT REPORT ===

@@ -1,0 +1,299 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:19:04Z
+
+=== PID 5568 (cmd.exe, ppid=560) ===
+
+--- psscan.txt ---
+L114: 5568	560	cmd.exe	0x990ef7af3080	0	-	1	False	2026-05-13 19:26:26.000000 UTC	2026-05-13 19:26:36.000000 UTC	Disabled
+L134: 5608	5568	PING.EXE	0x990ef87e9080	0	-	1	False	2026-05-13 19:26:26.000000 UTC	2026-05-13 19:26:36.000000 UTC	Disabled
+L142: 5836	5568	Client.exe	0x990efa9d3080	0	-	1	False	2026-05-13 19:26:36.000000 UTC	2026-05-13 19:26:43.000000 UTC	Disabled
+
+=== PID 376 (Client.exe, ppid=7980) ===
+Cmdline: "C:\Users\kali\AppData\Roaming\SubDir\Client.exe"
+
+--- pslist.txt ---
+L137: 376	7980	Client.exe	0x990ef4b38080	9	-	1	False	2026-05-13 19:26:53.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L137: 376	Client.exe	"C:\Users\kali\AppData\Roaming\SubDir\Client.exe" 
+
+--- privileges.txt ---
+L4625: 376	Client.exe	2	SeCreateTokenPrivilege		Create a token object
+L4626: 376	Client.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4627: 376	Client.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L4628: 376	Client.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4629: 376	Client.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4630: 376	Client.exe	7	SeTcbPrivilege		Act as part of the operating system
+L4631: 376	Client.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4632: 376	Client.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4633: 376	Client.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4634: 376	Client.exe	11	SeSystemProfilePrivilege		Profile system performance
+L4635: 376	Client.exe	12	SeSystemtimePrivilege		Change the system time
+L4636: 376	Client.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4637: 376	Client.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4638: 376	Client.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L4639: 376	Client.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4640: 376	Client.exe	17	SeBackupPrivilege		Backup files and directories
+L4641: 376	Client.exe	18	SeRestorePrivilege		Restore files and directories
+L4642: 376	Client.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L4643: 376	Client.exe	20	SeDebugPrivilege		Debug programs
+L4644: 376	Client.exe	21	SeAuditPrivilege		Generate security audits
+L4645: 376	Client.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4646: 376	Client.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4647: 376	Client.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4648: 376	Client.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4649: 376	Client.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L4650: 376	Client.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4651: 376	Client.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L4652: 376	Client.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4653: 376	Client.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4654: 376	Client.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4655: 376	Client.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4656: 376	Client.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4657: 376	Client.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4658: 376	Client.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4659: 376	Client.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L6308: 376	Client.exe	0xb50000	0x324000	Client.exe	C:\Users\kali\AppData\Roaming\SubDir\Client.exe	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6309: 376	Client.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6310: 376	Client.exe	0x7fffad750000	0x6d000	MSCOREE.DLL	C:\WINDOWS\SYSTEM32\MSCOREE.DLL	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6311: 376	Client.exe	0x7ffff9560000	0xc9000	KERNEL32.dll	C:\WINDOWS\System32\KERNEL32.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6312: 376	Client.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6313: 376	Client.exe	0x7ffff9820000	0xbb000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6314: 376	Client.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6315: 376	Client.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6316: 376	Client.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6317: 376	Client.exe	0x7fffad3c0000	0x9b000	mscoreei.dll	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6318: 376	Client.exe	0x7ffff8e80000	0x67000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6319: 376	Client.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6320: 376	Client.exe	0x7ffff6d60000	0x864000	Windows.Storage.dll	C:\WINDOWS\System32\Windows.Storage.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6321: 376	Client.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6322: 376	Client.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6323: 376	Client.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6324: 376	Client.exe	0x7fffe8ac0000	0xb000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6325: 376	Client.exe	0x7fffab910000	0x9a4000	clr.dll	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6326: 376	Client.exe	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6327: 376	Client.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6328: 376	Client.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6329: 376	Client.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6330: 376	Client.exe	0x7fffe0530000	0xc000	VCRUNTIME140_1_CLR0400.dll	C:\WINDOWS\SYSTEM32\VCRUNTIME140_1_CLR0400.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6331: 376	Client.exe	0x7fffde1f0000	0x1b000	VCRUNTIME140_CLR0400.dll	C:\WINDOWS\SYSTEM32\VCRUNTIME140_CLR0400.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6332: 376	Client.exe	0x7fffad110000	0xce000	ucrtbase_clr0400.dll	C:\WINDOWS\SYSTEM32\ucrtbase_clr0400.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6333: 376	Client.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6334: 376	Client.exe	0x7fffaa300000	0x160f000	mscorlib.ni.dll	C:\WINDOWS\assembly\NativeImages_v4.0.30319_64\mscorlib\50abde036072b0b49b01ecf91d35cf89\mscorlib.ni.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6335: 376	Client.exe	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6336: 376	Client.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6337: 376	Client.exe	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6338: 376	Client.exe	0x7fffacda0000	0x12f000	clrjit.dll	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6339: 376	Client.exe	0x7ffff5930000	0x1b000	CRYPTSP.dll	C:\WINDOWS\SYSTEM32\CRYPTSP.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6340: 376	Client.exe	0x7ffff5030000	0x39000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6341: 376	Client.exe	0x7ffff5920000	0xc000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6342: 376	Client.exe	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+L6343: 376	Client.exe	0x7ffff8710000	0x75f000	shell32.dll	C:\WINDOWS\System32\shell32.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6344: 376	Client.exe	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6345: 376	Client.exe	0x7ffff9630000	0xf7000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6346: 376	Client.exe	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2026-05-13 19:26:53.000000 UTC	Disabled
+L6347: 376	Client.exe	0x7ffff7800000	0x8000	psapi.dll	C:\WINDOWS\System32\psapi.dll	6	2026-05-13 19:26:54.000000 UTC	Disabled
+L6348: 376	Client.exe	0x7fffe5300000	0x293000	comctl32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll	6	2026-05-13 19:26:54.000000 UTC	Disabled
+L6349: 376	Client.exe	0x7ffff7df0000	0x15d000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2026-05-13 19:26:55.000000 UTC	Disabled
+L6350: 376	Client.exe	0x7ffff7680000	0x177000	crypt32.dll	C:\WINDOWS\System32\crypt32.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6351: 376	Client.exe	0x7ffff5990000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6352: 376	Client.exe	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6353: 376	Client.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6354: 376	Client.exe	0x7ffff5e80000	0x57000	CFGMGR32.dll	C:\WINDOWS\SYSTEM32\CFGMGR32.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6355: 376	Client.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6356: 376	Client.exe	0x7ffff1bd0000	0x103000	propsys.dll	C:\WINDOWS\system32\propsys.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6357: 376	Client.exe	0x7ffff1d10000	0x22d000	WindowsCodecs.dll	C:\WINDOWS\SYSTEM32\WindowsCodecs.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6358: 376	Client.exe	0x7fffefba0000	0x114000	MrmCoreR.dll	C:\WINDOWS\SYSTEM32\MrmCoreR.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6359: 376	Client.exe	0x7fffed8c0000	0x2c4000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6360: 376	Client.exe	0x7fffed890000	0x29000	srvcli.dll	C:\WINDOWS\SYSTEM32\srvcli.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6361: 376	Client.exe	0x7ffff49f0000	0xd000	netutils.dll	C:\WINDOWS\SYSTEM32\netutils.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6362: 376	Client.exe	0x7fffe3b60000	0x6f000	thumbcache.dll	C:\Windows\System32\thumbcache.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+L6363: 376	Client.exe	0x7ffff39c0000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-13 19:27:00.000000 UTC	Disabled
+
+--- pstree.txt ---
+L137: 376	7980	Client.exe	0x990ef4b38080	9	-	1	False	2026-05-13 19:26:53.000000 UTC	N/A	\Device\HarddiskVolume4\Users\kali\AppData\Roaming\SubDir\Client.exe	"C:\Users\kali\AppData\Roaming\SubDir\Client.exe" 	C:\Users\kali\AppData\Roaming\SubDir\Client.exe
+
+--- psscan.txt ---
+L25: 376	7980	Client.exe	0x990ef4b38080	9	-	1	False	2026-05-13 19:26:53.000000 UTC	N/A	Disabled
+
+--- malware_malfind.txt ---
+L75: 376	Client.exe	0x7ff4bd570000	0x7ff4bd60ffff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	N/A	
+L80: 376	Client.exe	0x7ff4bd560000	0x7ff4bd56ffff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	N/A	
+
+--- ldrmodules.txt ---
+L6581: 376	Client.exe	0xb50000	True	False	True	\Users\kali\AppData\Roaming\SubDir\Client.exe
+L6582: 376	Client.exe	0x1b00000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll
+L6583: 376	Client.exe	0x1c4f0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.XML.dll
+L6584: 376	Client.exe	0x30f0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
+L6585: 376	Client.exe	0x3120000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L6586: 376	Client.exe	0x1bc20000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll
+L6587: 376	Client.exe	0x1bb80000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll
+L6588: 376	Client.exe	0x1bc00000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L6589: 376	Client.exe	0x1bef0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll
+L6590: 376	Client.exe	0x1d160000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll
+L6591: 376	Client.exe	0x1c820000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll
+L6592: 376	Client.exe	0x1d5e0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Security\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Security.dll
+L6593: 376	Client.exe	0x1d8a0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Data.SqlXml\v4.0_4.0.0.0__b77a5c561934e089\System.Data.SqlXml.dll
+L6594: 376	Client.exe	0x1d6e0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll
+L6595: 376	Client.exe	0x1dc00000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.ServiceModel\v4.0_4.0.0.0__b77a5c561934e089\System.ServiceModel.dll
+L6596: 376	Client.exe	0x7fffab910000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
+L6597: 376	Client.exe	0x7fffaa300000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\NativeImages\mscorlib.ni.dll
+L6598: 376	Client.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6599: 376	Client.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6600: 376	Client.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L6601: 376	Client.exe	0x7fffad750000	True	True	True	\Windows\System32\mscoree.dll
+L6602: 376	Client.exe	0x7fffad110000	True	True	True	\Windows\System32\ucrtbase_clr0400.dll
+L6603: 376	Client.exe	0x7fffacda0000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll
+L6604: 376	Client.exe	0x7fffad3c0000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll
+L6605: 376	Client.exe	0x7fffe0530000	True	True	True	\Windows\System32\vcruntime140_1_clr0400.dll
+L6606: 376	Client.exe	0x7fffde1f0000	True	True	True	\Windows\System32\vcruntime140_clr0400.dll
+L6607: 376	Client.exe	0x7fffe5300000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll
+L6608: 376	Client.exe	0x7fffe3b60000	True	True	True	\Windows\System32\thumbcache.dll
+L6609: 376	Client.exe	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
+L6610: 376	Client.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L6611: 376	Client.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L6612: 376	Client.exe	0x7fffefba0000	True	True	True	\Windows\System32\MrmCoreR.dll
+L6613: 376	Client.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L6614: 376	Client.exe	0x7ffff1d10000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L6615: 376	Client.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L6616: 376	Client.exe	0x7ffff5030000	True	True	True	\Windows\System32\rsaenh.dll
+L6617: 376	Client.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L6618: 376	Client.exe	0x7ffff5930000	True	True	True	\Windows\System32\cryptsp.dll
+L6619: 376	Client.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L6620: 376	Client.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L6621: 376	Client.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L6622: 376	Client.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L6623: 376	Client.exe	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
+L6624: 376	Client.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L6625: 376	Client.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L6626: 376	Client.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6627: 376	Client.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L6628: 376	Client.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6629: 376	Client.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L6630: 376	Client.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6631: 376	Client.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6632: 376	Client.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6633: 376	Client.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L6634: 376	Client.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6635: 376	Client.exe	0x7ffff7800000	True	True	True	\Windows\System32\psapi.dll
+L6636: 376	Client.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6637: 376	Client.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6638: 376	Client.exe	0x7ffff7df0000	True	True	True	\Windows\System32\msctf.dll
+L6639: 376	Client.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L6640: 376	Client.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6641: 376	Client.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L6642: 376	Client.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6643: 376	Client.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L6644: 376	Client.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6645: 376	Client.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6646: 376	Client.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6647: 376	Client.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6648: 376	Client.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6649: 376	Client.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L6650: 376	Client.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_ldrmodules.txt ---
+L6581: 376	Client.exe	0xb50000	True	False	True	\Users\kali\AppData\Roaming\SubDir\Client.exe
+L6582: 376	Client.exe	0x1b00000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll
+L6583: 376	Client.exe	0x1c4f0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.XML.dll
+L6584: 376	Client.exe	0x30f0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
+L6585: 376	Client.exe	0x3120000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L6586: 376	Client.exe	0x1bc20000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll
+L6587: 376	Client.exe	0x1bb80000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll
+L6588: 376	Client.exe	0x1bc00000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L6589: 376	Client.exe	0x1bef0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll
+L6590: 376	Client.exe	0x1d160000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll
+L6591: 376	Client.exe	0x1c820000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll
+L6592: 376	Client.exe	0x1d5e0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Security\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Security.dll
+L6593: 376	Client.exe	0x1d8a0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Data.SqlXml\v4.0_4.0.0.0__b77a5c561934e089\System.Data.SqlXml.dll
+L6594: 376	Client.exe	0x1d6e0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll
+L6595: 376	Client.exe	0x1dc00000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System.ServiceModel\v4.0_4.0.0.0__b77a5c561934e089\System.ServiceModel.dll
+L6596: 376	Client.exe	0x7fffab910000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
+L6597: 376	Client.exe	0x7fffaa300000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\NativeImages\mscorlib.ni.dll
+L6598: 376	Client.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6599: 376	Client.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6600: 376	Client.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L6601: 376	Client.exe	0x7fffad750000	True	True	True	\Windows\System32\mscoree.dll
+L6602: 376	Client.exe	0x7fffad110000	True	True	True	\Windows\System32\ucrtbase_clr0400.dll
+L6603: 376	Client.exe	0x7fffacda0000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll
+L6604: 376	Client.exe	0x7fffad3c0000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll
+L6605: 376	Client.exe	0x7fffe0530000	True	True	True	\Windows\System32\vcruntime140_1_clr0400.dll
+L6606: 376	Client.exe	0x7fffde1f0000	True	True	True	\Windows\System32\vcruntime140_clr0400.dll
+L6607: 376	Client.exe	0x7fffe5300000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll
+L6608: 376	Client.exe	0x7fffe3b60000	True	True	True	\Windows\System32\thumbcache.dll
+L6609: 376	Client.exe	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
+L6610: 376	Client.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L6611: 376	Client.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L6612: 376	Client.exe	0x7fffefba0000	True	True	True	\Windows\System32\MrmCoreR.dll
+L6613: 376	Client.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L6614: 376	Client.exe	0x7ffff1d10000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L6615: 376	Client.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L6616: 376	Client.exe	0x7ffff5030000	True	True	True	\Windows\System32\rsaenh.dll
+L6617: 376	Client.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L6618: 376	Client.exe	0x7ffff5930000	True	True	True	\Windows\System32\cryptsp.dll
+L6619: 376	Client.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L6620: 376	Client.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L6621: 376	Client.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L6622: 376	Client.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L6623: 376	Client.exe	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
+L6624: 376	Client.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L6625: 376	Client.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L6626: 376	Client.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6627: 376	Client.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L6628: 376	Client.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6629: 376	Client.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L6630: 376	Client.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6631: 376	Client.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6632: 376	Client.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6633: 376	Client.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L6634: 376	Client.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6635: 376	Client.exe	0x7ffff7800000	True	True	True	\Windows\System32\psapi.dll
+L6636: 376	Client.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6637: 376	Client.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6638: 376	Client.exe	0x7ffff7df0000	True	True	True	\Windows\System32\msctf.dll
+L6639: 376	Client.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L6640: 376	Client.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6641: 376	Client.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L6642: 376	Client.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6643: 376	Client.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L6644: 376	Client.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6645: 376	Client.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6646: 376	Client.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6647: 376	Client.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6648: 376	Client.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6649: 376	Client.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L6650: 376	Client.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_pebmasquerade.txt ---
+L137: 376	Client.exe	\Device\HarddiskVolume4\Users\kali\AppData\Roaming\SubDir\Client.exe	C:\Users\kali\AppData\Roaming\SubDir\Client.exe	False	False
+
+--- sessions.txt ---
+L136: 1	Console	376	Client.exe	CLEANWINDOWS11/kali	2026-05-13 19:26:53.000000 UTC
+
+=== PID 5836 (Client.exe, ppid=5568) ===
+
+--- psscan.txt ---
+L104: 7980	5836	cmd.exe	0x990ef77f8080	0	-	1	False	2026-05-13 19:26:43.000000 UTC	2026-05-13 19:26:53.000000 UTC	Disabled
+L142: 5836	5568	Client.exe	0x990efa9d3080	0	-	1	False	2026-05-13 19:26:36.000000 UTC	2026-05-13 19:26:43.000000 UTC	Disabled
+
+=== PID 7980 (cmd.exe, ppid=5836) ===
+
+--- pslist.txt ---
+L137: 376	7980	Client.exe	0x990ef4b38080	9	-	1	False	2026-05-13 19:26:53.000000 UTC	N/A	Disabled
+
+--- pstree.txt ---
+L137: 376	7980	Client.exe	0x990ef4b38080	9	-	1	False	2026-05-13 19:26:53.000000 UTC	N/A	\Device\HarddiskVolume4\Users\kali\AppData\Roaming\SubDir\Client.exe	"C:\Users\kali\AppData\Roaming\SubDir\Client.exe" 	C:\Users\kali\AppData\Roaming\SubDir\Client.exe
+
+--- psscan.txt ---
+L25: 376	7980	Client.exe	0x990ef4b38080	9	-	1	False	2026-05-13 19:26:53.000000 UTC	N/A	Disabled
+L104: 7980	5836	cmd.exe	0x990ef77f8080	0	-	1	False	2026-05-13 19:26:43.000000 UTC	2026-05-13 19:26:53.000000 UTC	Disabled
+L132: 7552	7980	PING.EXE	0x990ef8639080	0	-	1	False	2026-05-13 19:26:43.000000 UTC	2026-05-13 19:26:53.000000 UTC	Disabled
+
+=== PID 5608 (PING.EXE, ppid=5568) ===
+
+--- psscan.txt ---
+L134: 5608	5568	PING.EXE	0x990ef87e9080	0	-	1	False	2026-05-13 19:26:26.000000 UTC	2026-05-13 19:26:36.000000 UTC	Disabled
+
+=== END OF PIVOT REPORT ===

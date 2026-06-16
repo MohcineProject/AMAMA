@@ -1,0 +1,32 @@
+I need to carefully analyze this single finding before rendering a verdict.
+
+**Key observations:**
+
+1. **Timeline contradiction**: The `psscan.txt` entry shows PID 24920 with `CreateTime = 2020-11-16 02:29:42 UTC` and **`ExitTime = 2020-11-16 02:31:52 UTC`**. The process had already exited by 02:31:52 UTC.
+
+2. **Network scan timestamp**: The `netscan.txt` entry shows the ESTABLISHED connection timestamped at `2020-11-16 02:33:38 UTC` — that is **1 minute and 46 seconds after the process had already exited**.
+
+3. **This is a critical coherence failure**: A process that exited at 02:31:52 cannot have an ESTABLISHED TCP connection at 02:33:38. This is almost certainly a **stale socket / TIME_WAIT artefact** — Windows (and Volatility's netscan) can enumerate TCP connection objects that outlive the process that created them. The EPROCESS is gone (hence the exit time), but the TCP control block (`_TCP_ENDPOINT` object in the kernel pool) persists briefly. Volatility's `netscan` finds the orphaned socket object and attributes it to the last PID that owned it.
+
+4. **52.113.194.132:443**: This IP is in Microsoft's Azure/O365 infrastructure range. `SearchFilterHost.exe` is a legitimate Windows Search component that, in some configurations (particularly on systems with OneDrive or SharePoint integration), can legitimately contact Microsoft cloud endpoints. This is not inherently malicious.
+
+5. **Orphaned parent (PPID 11968)**: The parent not being in the active process list is consistent with normal Windows Search infrastructure — `SearchIndexer.exe` spawns `SearchFilterHost.exe` and can exit or be restarted independently. This is a weak signal on its own.
+
+6. **No corroborating evidence**: There is no `cmdline.txt` entry, no `malfind.txt` hit, no suspicious DLL, no privilege anomaly, no registry persistence — the grep block is essentially two lines, one of which contradicts the other on timing.
+
+7. **Name truncation**: Correctly noted as expected EPROCESS truncation, not a typosquat. Not a signal.
+
+**Verdict**: The timeline contradiction (process exited before the network timestamp) strongly suggests a stale socket artefact rather than active malicious behaviour. The destination IP is Microsoft infrastructure. There is zero corroborating evidence of malice. This should be **REJECTED**.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Single candidate process reviewed. PID 24920 (SearchFilterHost.exe) was flagged for an unexpected external network connection and an orphaned parent. Timeline analysis reveals the network scan timestamp post-dates the process exit time by nearly two minutes, indicating a stale kernel TCP object rather than active malicious activity. The destination IP belongs to Microsoft Azure infrastructure. No corroborating evidence of malice was found across any artefact type.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+================================================================
+END OF PIVOT REPORT
+================================================================

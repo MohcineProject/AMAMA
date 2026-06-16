@@ -1,0 +1,67 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T19:30:00Z
+Summary: Two Agent 1 leads were evaluated. PID 6420 (taskhostw.exe) presents a genuinely anomalous privilege footprint — a near-complete set of high-value privileges including SeDebugPrivilege, SeLoadDriverPrivilege, and SeImpersonatePrivilege enabled on what should be a standard user-session task host — combined with an orphaned parent and an unexpanded placeholder argument. PID 7044 (RuntimeBroker.exe) shows a legitimate binary, path, command line, and a minimal privilege set consistent with a standard user-context broker process; the orphaned parent is the sole signal and is insufficient to confirm malice. One finding is confirmed INCONCLUSIVE; one is rejected.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      6420
+PPID:     2168
+Image:    taskhostw.exe
+Cmdline:  taskhostw.exe $(Arg0)
+Severity: (none — INCONCLUSIVE)
+MITRE:    T1134 — Access Token Manipulation (candidate; not confirmed)
+
+Justification:
+  Three independent signals converge on this process without any single
+  one being individually conclusive. First, the parent PID 2168 is absent
+  from the process list, meaning the process cannot be anchored to a known
+  legitimate parent (e.g. svchost.exe hosting the Task Scheduler service).
+  Second, the command line retains the literal placeholder "$(Arg0)" rather
+  than an expanded task argument, which is atypical for a legitimately
+  scheduled taskhostw invocation and may indicate the process was launched
+  outside of the normal Task Scheduler code path. Third, and most
+  significant, the privilege set is extraordinarily broad for a user-session
+  task host: SeDebugPrivilege, SeLoadDriverPrivilege, SeBackupPrivilege,
+  SeRestorePrivilege, SeImpersonatePrivilege, SeTakeOwnershipPrivilege, and
+  SeSecurityPrivilege are all marked Present — a profile consistent with a
+  LOCAL SYSTEM or highly elevated token rather than a standard interactive
+  user token. However, the DLL evidence (three lines shown) points only to
+  System32 paths, no malfind data was provided, and no network connections
+  or registry persistence artefacts appear in the extracted evidence. The
+  privilege anomaly is real and warrants escalation, but without code-
+  injection markers, suspicious DLLs, network connections, or registry
+  persistence, a CONFIRMED verdict would exceed what the evidence supports.
+
+Key Evidence:
+  - L104: 6420	2168	taskhostw.exe	0x990ef79b3080	5	-	1	False	2026-05-13 19:16:45.000000 UTC	N/A	Disabled
+  - L104: 6420	taskhostw.exe	taskhostw.exe $(Arg0)
+  - L3488: 6420	taskhostw.exe	20	SeDebugPrivilege	Present	Debug programs
+  - L3478: 6420	taskhostw.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+  - L3497: 6420	taskhostw.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L3485: 6420	taskhostw.exe	17	SeBackupPrivilege	Present	Backup files and directories
+  - L3486: 6420	taskhostw.exe	18	SeRestorePrivilege	Present	Restore files and directories
+  - L3476: 6420	taskhostw.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+----------------------------------------------------------------
+
+================================================================
+REJECTED FINDINGS (count: 1)
+----------------------------------------------------------------
+PID 7044 — RuntimeBroker.exe — REJECTED
+
+  The sole Agent 1 signal is an orphaned parent (PPID 516 absent from the
+  process list). The binary path is the canonical System32 location
+  (C:\Windows\System32\RuntimeBroker.exe), the command line is the standard
+  COM activation invocation ("-Embedding"), and the privilege set is minimal
+  and consistent with a normal medium-integrity user-context process: no
+  SeDebugPrivilege, no SeImpersonatePrivilege, no SeLoadDriverPrivilege —
+  all absent. The EPROCESS name truncation to "RuntimeBroker." is a known
+  kernel artefact (14-char field) and not a typosquat signal. An orphaned
+  parent alone, with no supporting evidence from DLLs, privileges, cmdline,
+  malfind, or network artefacts, does not meet the threshold for even
+  INCONCLUSIVE; RuntimeBroker.exe instances routinely survive their parent
+  (svchost hosting DcomLaunch) across session transitions. Verdict: REJECTED
+  as standard legitimate behaviour.
+================================================================

@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:45:00Z
+Chunk: chunk_021.txt
+Summary: SearchApp.exe has an unresolvable parent PID (860 not present in process list); network connections to public IPs are expected for this process but orphaned parent warrants confirmation.
+
+[PROCESS]
+pid: 6804
+ppid: 860
+image: SearchApp.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 860 (listed as 'unknown') does not appear anywhere in the process list | network: established connections to public IPs 23.4.84.73:443 and 23.4.84.71:443 (Akamai CDN range — expected for SearchApp, but verify given orphaned parent)
+

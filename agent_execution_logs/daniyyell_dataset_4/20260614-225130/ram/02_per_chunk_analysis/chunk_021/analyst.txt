@@ -1,0 +1,59 @@
+================================================================
+PIVOT REPORT
+Generated: 2025-08-08T00:00:00Z
+Summary: A single process was submitted for validation. SearchApp.exe (PID 6804) presents an anomalous privilege footprint that is inconsistent with its expected user-context operation, though the network connections appear benign and the executable path is legitimate. The orphaned-parent signal is a known artefact of memory acquisition timing rather than a definitive indicator of injection or masquerading. Overall incident scope from this single finding is limited but the privilege anomaly warrants further investigation.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      6804
+PPID:     860
+Image:    SearchApp.exe
+Cmdline:  - (not captured)
+Severity: N/A
+MITRE:
+
+Justification:
+  The executable path resolves cleanly to the legitimate Windows Search
+  UWP package location
+  (\Device\HarddiskVolume3\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe),
+  and the two network connections to 23.4.84.73:443 and 23.4.84.71:443
+  are consistent with Akamai CDN endpoints that SearchApp.exe contacts
+  routinely for Bing/Windows Search telemetry. The orphaned-parent
+  signal (PPID 860 absent from the process list) is a common artefact
+  of memory-acquisition timing — the parent (typically sihost.exe or
+  RuntimeBroker.exe) may have exited before the snapshot was taken, and
+  pstree.txt confirms the process was alive and properly structured in
+  memory. These two Agent 1 signals are therefore individually weak and
+  do not compound into a confirmed finding.
+
+  However, the privilege token is deeply anomalous for a sandboxed UWP
+  application. SearchApp.exe is expected to run in an AppContainer with
+  a highly restricted token; instead, the token here contains the full
+  set of NT privileges — including SeDebugPrivilege, SeTcbPrivilege,
+  SeLoadDriverPrivilege, SeImpersonatePrivilege, SeBackupPrivilege,
+  SeRestorePrivilege, and SeCreateTokenPrivilege — none of which are
+  enabled (only SeChangeNotifyPrivilege and SeIncreaseWorkingSetPrivilege
+  show Present/Enabled), but their mere presence in the token indicates
+  it was created with a highly privileged base token, not an AppContainer
+  token. This is inconsistent with normal SearchApp.exe operation and
+  could indicate token manipulation or process-hollowing into the
+  SearchApp.exe image. The absence of a captured command line ("-") and
+  the lack of malfind, dlllist, or handles evidence in the extracted
+  artefacts means there is not enough corroborating data to confirm
+  malice — but not enough to dismiss it either.
+
+Key Evidence:
+  - L85: *** 6804	860	SearchApp.exe	0xbb0c9084a080	38	-	1	False	2025-08-07 19:36:42.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe	-	-
+  - L3160: 6804	SearchApp.exe	7	SeTcbPrivilege		Act as part of the operating system
+  - L3163: 6804	SearchApp.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+  - L3173: 6804	SearchApp.exe	20	SeDebugPrivilege		Debug programs
+  - L3182: 6804	SearchApp.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+  - L3155: 6804	SearchApp.exe	2	SeCreateTokenPrivilege		Create a token object
+  - L3176: 6804	SearchApp.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+  - L37: 0xbb0c8eaca290	TCPv4	192.168.135.59	49848	23.4.84.73	443	CLOSE_WAIT	6804	SearchApp.exe	2025-08-07 19:40:26.000000 UTC
+  - L95: 6804	SearchApp.exe	-
+----------------------------------------------------------------
+
+================================================================

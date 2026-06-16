@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_005.txt
+Summary: MsMpEng.exe has an unknown/missing parent PID and holds an unusually broad set of high-risk privileges; path is non-standard ProgramData versioned directory (legitimate for Defender but warrants confirmation given orphaned parent).
+
+[PROCESS]
+pid: 3284
+ppid: 896
+image: MsMpEng.exe
+cmdline: "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MsMpEng.exe"
+severity: LOW
+reasons: orphaned_parent: PPID 896 does not appear anywhere in the process list | privilege_breadth: holds SeAssignPrimaryTokenPrivilege, SeTcbPrivilege, SeTakeOwnershipPrivilege, SeLoadDriverPrivilege, SeDebugPrivilege, SeImpersonatePrivilege simultaneously — all five high-risk privilege classes enabled at once | path_note: running from C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\ rather than C:\Program Files\Windows Defender\ — legitimate for modern Defender platform updates but should be confirmed against known-good baseline
+

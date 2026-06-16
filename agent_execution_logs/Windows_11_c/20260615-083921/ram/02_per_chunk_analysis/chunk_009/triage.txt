@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:30:00Z
+Chunk: chunk_009.txt
+Summary: sihost.exe has an orphaned parent (PPID 1732 not present in process list); all other processes appear structurally normal.
+
+[PROCESS]
+pid: 5084
+ppid: 1732
+image: sihost.exe
+cmdline: sihost.exe
+severity: LOW
+reasons: orphaned_parent: PPID 1732 (unknown) not present anywhere in the process list
+

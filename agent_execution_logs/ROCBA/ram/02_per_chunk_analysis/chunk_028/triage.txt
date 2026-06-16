@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_028.txt
+Summary: Orphaned parent PID for RuntimeBroker.exe; all other signals appear benign.
+
+[PROCESS]
+pid: 9964
+ppid: 740
+image: RuntimeBroker.exe
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 740 (listed as 'unknown') not present in the process list — expected parent is svchost.exe | name_truncation_note: 'RuntimeBroker.' is a kernel EPROCESS 14-char truncation of 'RuntimeBroker.exe'; path and cmdline confirm legitimate image, not a typosquat | non-whitelisted_dlls: DLL list entries include the process image itself (C:\Windows\System32\RuntimeBroker.exe) and core System32 DLLs — no user-writable path DLLs detected; low concern
+

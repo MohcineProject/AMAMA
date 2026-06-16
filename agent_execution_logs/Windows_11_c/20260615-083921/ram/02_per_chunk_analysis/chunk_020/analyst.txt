@@ -1,0 +1,88 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 7472 — ctfmon.exe**
+
+Agent 1 flags: orphaned parent (PPID 2644 not in process list), unusual cmdline (`/QuitInfo:...`).
+
+**Cmdline plausibility:** The `/QuitInfo:` argument is actually a documented Windows mechanism — ctfmon.exe is the Text Input Processor (TIP) host, and it is launched by the Text Services Framework with handle-based arguments (window handles or event handles passed as hex values) when it is invoked as a COM server or when the TSF framework signals it to quit. This is not a user-visible invocation pattern but it is legitimate Windows behavior. It is not a download cradle, encoded payload, or LOLBin abuse.
+
+**Orphaned parent:** PPID 2644 not in pslist. This could mean the parent exited after spawning ctfmon (normal — explorer.exe or a TSF host can spawn ctfmon and then exit or be replaced). It is a weak signal in isolation.
+
+**Privileges:** The privilege list is enormous — nearly every privilege in the token, including `SeTcbPrivilege`, `SeDebugPrivilege`, `SeCreateTokenPrivilege`, `SeAssignPrimaryTokenPrivilege`, `SeLoadDriverPrivilege`, `SeImpersonatePrivilege`. However, critically, almost none of these are marked `Present` or `Enabled` — only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present) are actually in the token as enabled/present. The rest are listed but not Present/Enabled. This is consistent with a standard user token that Volatility enumerates all *possible* privileges for — the ones not marked Present are simply not held. This is normal Volatility output behavior.
+
+**DLL provenance:** The three shown DLLs are all from `C:\WINDOWS\system32\` — legitimate paths. No user-writable path DLLs visible.
+
+**No malfind, no netscan, no registry persistence, no handles evidence.**
+
+Overall: The `/QuitInfo` cmdline is unusual-looking but is a known legitimate TSF invocation pattern. The privilege list looks alarming but the vast majority are not Present/Enabled. The orphaned parent is a weak signal. No corroborating evidence of malice. → **REJECTED** (legitimate ctfmon TSF invocation, privilege list is Volatility enumeration artifact not actual held privileges).
+
+---
+
+**PID 7648 — audiodg.exe**
+
+Agent 1 flags: orphaned parent (PPID 2528 not in pslist), psscan_only (DKOM hiding), short-lived (~7 minutes).
+
+**psscan_only:** This is a meaningful signal — process visible in psscan but not pslist is the classic DKOM unlink indicator. However, I need to be careful: audiodg.exe is a legitimate Windows audio process that runs under the Audio Device Graph Isolation service. It is also known to sometimes appear only in psscan due to its protected/isolated nature. The process has 0 threads listed and 0 handles, which could indicate it has already exited (ExitTime is present: 2026-05-12 18:31:08 UTC). A process that has exited may drop off pslist while still appearing in psscan pool scanning — this is a known benign explanation.
+
+**Short-lived:** ~7 minutes is not inherently suspicious for audiodg.exe, which can start and stop with audio activity.
+
+**PPID 2528:** Not in pslist. If this is the Windows Audio service host (svchost.exe), it could have exited or been restarted. Without more evidence this is weak.
+
+**Zero threads, zero handles:** Consistent with an already-exited process being found via pool tag scanning. This is the most parsimonious explanation.
+
+**No cmdline evidence, no DLL evidence, no malfind, no netscan, no privileges evidence.** The grep block is essentially empty except for the single psscan line.
+
+The psscan-only appearance with ExitTime set is more consistent with a legitimately exited process found via pool scanning than active DKOM hiding. No corroborating evidence of malice whatsoever. → **REJECTED** (exited audiodg.exe found via pool scan; zero-thread/zero-handle state and ExitTime present are consistent with normal process termination artifact, not DKOM hiding).
+
+---
+
+Both findings rejected. Report follows.
+
+================================================================
+TRIAGE FINDINGS TO VALIDATE — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Agent 1 submitted two candidate findings for validation. PID 7472
+(ctfmon.exe) presents an unusual-looking command line and an orphaned parent,
+but the /QuitInfo argument is a documented Text Services Framework invocation
+pattern and the privilege list reflects Volatility enumeration of possible
+privileges rather than actually-held ones. PID 7648 (audiodg.exe) was flagged
+as psscan-only with an orphaned parent, but its zero-thread/zero-handle state
+and recorded ExitTime are consistent with a legitimately exited process
+recovered via pool-tag scanning rather than active DKOM manipulation. Neither
+finding is supported by corroborating evidence across multiple artefact types.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+Both Agent 1 leads were REJECTED:
+
+  PID 7472 (ctfmon.exe) — The /QuitInfo:... argument is a known Text Services
+  Framework (TSF) handle-passing mechanism used when ctfmon.exe is invoked as
+  a COM server by the TSF host; it is not a LOLBin abuse pattern or download
+  cradle. The privilege list in the grep output lists 35 entries but the vast
+  majority carry no Present/Enabled flag — Volatility enumerates all possible
+  privileges for a token; only SeShutdownPrivilege, SeChangeNotifyPrivilege,
+  SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege,
+  and SeTimeZonePrivilege are actually marked Present or Enabled, which is
+  consistent with a standard interactive user token. All visible DLLs load
+  from C:\WINDOWS\system32\. No malfind sections, no network connections, no
+  registry persistence, and no suspicious handle evidence were present in the
+  grep block. The orphaned-parent signal is weak in isolation and is explained
+  by the TSF host exiting after spawning ctfmon.
+
+  PID 7648 (audiodg.exe) — The process has an ExitTime recorded
+  (2026-05-12 18:31:08 UTC), zero threads, and zero handles. This state is
+  the expected artefact of a legitimately terminated process whose EPROCESS
+  block was recovered by psscan pool-tag scanning after it had already been
+  removed from the active process list by the kernel — not evidence of DKOM
+  unlinking by an attacker. audiodg.exe is a standard Windows Audio Device
+  Graph Isolation process; a ~7-minute lifetime is consistent with audio
+  subsystem activity. The grep block contains only the single psscan line with
+  no supporting cmdline, DLL, malfind, netscan, privileges, or registry
+  evidence. With no corroborating signals, the psscan-only appearance is
+  insufficient to confirm malice.
+
+================================================================

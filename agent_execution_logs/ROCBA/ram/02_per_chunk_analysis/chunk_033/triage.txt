@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_033.txt
+Summary: Both processes share an unknown parent PID 740 (orphaned PPID); HxTsr.exe is very short-lived (~3 seconds) which stacks as a secondary weak signal.
+
+[PROCESS]
+pid: 11540
+ppid: 740
+image: RuntimeBroker.exe
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_ppid: parent PID 740 does not appear anywhere in the process list | note: name shown as 'RuntimeBroker.' is expected EPROCESS 14-char truncation artefact; path and cmdline confirm legitimate image
+
+[PROCESS]
+pid: 11768
+ppid: 740
+image: HxTsr.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_ppid: parent PID 740 does not appear anywhere in the process list | very_short_lived: process exited ~3 seconds after creation (Start 2020-11-12 16:53:16 / Exit 2020-11-12 16:53:19), combined with orphaned PPID
+

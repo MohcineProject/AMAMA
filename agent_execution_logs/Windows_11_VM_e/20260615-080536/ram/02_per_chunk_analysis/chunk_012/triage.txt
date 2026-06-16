@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_012.txt
+Summary: MicrosoftEdgeUpdate.exe holds an unusual combination of high-risk privileges (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege) atypical for an updater process; smartscreen.exe and taskhostw.exe both show orphaned parent PIDs (PPID not present in process list), which warrants confirmation.
+
+[PROCESS]
+pid: 4644
+ppid: 2168
+image: MicrosoftEdgeUpdate.exe
+cmdline: "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c
+severity: HIGH
+reasons: privilege_anomaly: SeTcbPrivilege enabled on a user-space updater process — grants act-as-OS-level capability | privilege_anomaly: SeDebugPrivilege enabled — allows reading/writing arbitrary process memory including LSASS | privilege_anomaly: SeImpersonatePrivilege enabled — token impersonation capability atypical for an updater | orphaned_parent: PPID 2168 not present in process list | signal_stack: three high-risk privileges converging on a single non-system process
+
+[PROCESS]
+pid: 4532
+ppid: 516
+image: smartscreen.exe
+cmdline: C:\Windows\System32\smartscreen.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 516 not present in process list — expected parent is typically explorer.exe or a COM surrogate | name_artefact_confirmed_benign_path: EPROCESS truncation to 'smartscreen.ex' is expected; full path C:\Windows\System32\smartscreen.exe is legitimate, flagging only for orphaned PPID
+

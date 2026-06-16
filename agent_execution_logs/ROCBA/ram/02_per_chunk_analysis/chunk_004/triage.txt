@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_004.txt
+Summary: All processes share an unknown parent PID 740 which does not appear in the process list; dllhost.exe was discovered only via psscan (DKOM hiding signal). Remaining processes (HxTsr.exe instances, secd.exe) are short-lived or legitimately pathed and carry no additional signals beyond the orphaned-parent artefact.
+
+[PROCESS]
+pid: 1676
+ppid: 740
+image: dllhost.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_parent: PPID 740 not present in process list | psscan_only: process discovered exclusively via psscan (discovered_via=psscan), not visible in pslist — possible DKOM/rootkit hiding | missing_cmdline: no command line recorded, consistent with process hollowing or stealthy execution | short_lived: ExitTime (~8 seconds after CreateTime) in combination with psscan-only visibility
+

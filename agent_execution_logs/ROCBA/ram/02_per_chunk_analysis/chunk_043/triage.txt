@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-01-30T00:00:00Z
+Chunk: chunk_043.txt
+Summary: Orphaned parent PID on SearchApp.exe (PPID 740 not present in process list); all other signals appear benign.
+
+[PROCESS]
+pid: 19436
+ppid: 740
+image: SearchApp.exe
+cmdline: "C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe" -ServerName:CortanaUI.AppX8z9r6jm96hw4bsbneegw0kyxx296wr9t.mca
+severity: LOW
+reasons: orphaned_parent: PPID 740 (listed as 'unknown') is not present anywhere in the process list
+

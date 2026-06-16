@@ -1,0 +1,197 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-14T23:09:16Z
+
+=== PID 8336 (backgroundTask, ppid=860) ===
+
+--- pslist.txt ---
+L150: 8336	860	backgroundTask	0xbb0c8ed59080	0	-	1	False	2025-08-07 19:48:25.000000 UTC	2025-08-07 19:53:20.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L150: 8336	backgroundTask	-
+
+--- pstree.txt ---
+L84: *** 8336	860	backgroundTask	0xbb0c8ed59080	0	-	1	False	2025-08-07 19:48:25.000000 UTC	2025-08-07 19:53:20.000000 UTC	-	-	-
+
+--- psscan.txt ---
+L59: 8336	860	backgroundTask	0xbb0c8ed59080	0	-	1	False	2025-08-07 19:48:25.000000 UTC	2025-08-07 19:53:20.000000 UTC	Disabled
+
+--- netscan.txt ---
+L35: 0xbb0c8ea88010	TCPv4	192.168.135.59	49935	23.192.26.3	80	CLOSED	8336	backgroundTask	2025-08-07 19:47:09.000000 UTC
+L96: 0xbb0c9489fa20	TCPv4	192.168.135.59	49931	23.192.26.3	80	CLOSED	8336	backgroundTask	2025-08-07 19:47:09.000000 UTC
+
+--- malware_pebmasquerade.txt ---
+L150: 8336	backgroundTask	-	-	False	False
+
+--- sessions.txt ---
+L151: 1	-	8336	backgroundTask	-	2025-08-07 19:48:25.000000 UTC
+
+=== PID 8468 (NisSrv.exe, ppid=716) ===
+Cmdline: "C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\NisSrv.exe"
+
+--- pslist.txt ---
+L147: 8468	716	NisSrv.exe	0xbb0c8f4c4080	3	-	0	False	2025-08-07 19:47:21.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L147: 8468	NisSrv.exe	"C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\NisSrv.exe"
+
+--- privileges.txt ---
+L4975: 8468	NisSrv.exe	2	SeCreateTokenPrivilege		Create a token object
+L4976: 8468	NisSrv.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L4977: 8468	NisSrv.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L4978: 8468	NisSrv.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L4979: 8468	NisSrv.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4980: 8468	NisSrv.exe	7	SeTcbPrivilege		Act as part of the operating system
+L4981: 8468	NisSrv.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4982: 8468	NisSrv.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4983: 8468	NisSrv.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4984: 8468	NisSrv.exe	11	SeSystemProfilePrivilege		Profile system performance
+L4985: 8468	NisSrv.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L4986: 8468	NisSrv.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4987: 8468	NisSrv.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4988: 8468	NisSrv.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L4989: 8468	NisSrv.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4990: 8468	NisSrv.exe	17	SeBackupPrivilege		Backup files and directories
+L4991: 8468	NisSrv.exe	18	SeRestorePrivilege		Restore files and directories
+L4992: 8468	NisSrv.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L4993: 8468	NisSrv.exe	20	SeDebugPrivilege		Debug programs
+L4994: 8468	NisSrv.exe	21	SeAuditPrivilege	Present	Generate security audits
+L4995: 8468	NisSrv.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4996: 8468	NisSrv.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4997: 8468	NisSrv.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4998: 8468	NisSrv.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4999: 8468	NisSrv.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L5000: 8468	NisSrv.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5001: 8468	NisSrv.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L5002: 8468	NisSrv.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L5003: 8468	NisSrv.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L5004: 8468	NisSrv.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5005: 8468	NisSrv.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5006: 8468	NisSrv.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L5007: 8468	NisSrv.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L5008: 8468	NisSrv.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L5009: 8468	NisSrv.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L7027: 8468	NisSrv.exe	0x7ff7c3650000	0x457000	NisSrv.exe	C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\NisSrv.exe	-1	2025-08-07 19:47:21.000000 UTC	Disabled
+L7028: 8468	NisSrv.exe	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:47:21.000000 UTC	Disabled
+L7029: 8468	NisSrv.exe	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\SYSTEM32\KERNEL32.DLL	-1	2025-08-07 19:47:21.000000 UTC	Disabled
+L7030: 8468	NisSrv.exe	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\SYSTEM32\KERNELBASE.dll	-1	2025-08-07 19:47:21.000000 UTC	Disabled
+L7031: 8468	NisSrv.exe	0x7fff4e710000	0x1b9000	MpClient.dll	C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\MpClient.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7032: 8468	NisSrv.exe	0x7fff5eff0000	0xaf000	ADVAPI32.dll	C:\Windows\SYSTEM32\ADVAPI32.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7033: 8468	NisSrv.exe	0x7fff5d910000	0x19d000	USER32.dll	C:\Windows\SYSTEM32\USER32.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7034: 8468	NisSrv.exe	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\SYSTEM32\msvcrt.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7035: 8468	NisSrv.exe	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\SYSTEM32\sechost.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7036: 8468	NisSrv.exe	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\SYSTEM32\RPCRT4.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7037: 8468	NisSrv.exe	0x7fff5ccd0000	0x2e000	USERENV.dll	C:\Windows\SYSTEM32\USERENV.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7038: 8468	NisSrv.exe	0x7fff5cf50000	0x15e000	CRYPT32.dll	C:\Windows\SYSTEM32\CRYPT32.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7039: 8468	NisSrv.exe	0x7fff5d450000	0x67000	WINTRUST.dll	C:\Windows\SYSTEM32\WINTRUST.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7040: 8468	NisSrv.exe	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\SYSTEM32\win32u.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7041: 8468	NisSrv.exe	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\SYSTEM32\GDI32.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7042: 8468	NisSrv.exe	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\SYSTEM32\ucrtbase.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7043: 8468	NisSrv.exe	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\SYSTEM32\gdi32full.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7044: 8468	NisSrv.exe	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\SYSTEM32\msvcp_win.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7045: 8468	NisSrv.exe	0x7fff5c8e0000	0x12000	MSASN1.dll	C:\Windows\SYSTEM32\MSASN1.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7046: 8468	NisSrv.exe	0x7fff54880000	0xa000	version.dll	C:\Windows\system32\version.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7047: 8468	NisSrv.exe	0x7fff5e9a0000	0x12a000	ole32.dll	C:\Windows\SYSTEM32\ole32.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7048: 8468	NisSrv.exe	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\SYSTEM32\combase.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7049: 8468	NisSrv.exe	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7050: 8468	NisSrv.exe	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\SYSTEM32\bcryptPrimitives.dll	-1	2025-08-07 19:47:21.000000 UTC	Disabled
+L7051: 8468	NisSrv.exe	0x7fff55920000	0x10a000	WINHTTP.dll	C:\Windows\SYSTEM32\WINHTTP.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7052: 8468	NisSrv.exe	0x7fff5c1a0000	0x3c000	IPHLPAPI.DLL	C:\Windows\SYSTEM32\IPHLPAPI.DLL	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7053: 8468	NisSrv.exe	0x7fff5f140000	0x8000	NSI.dll	C:\Windows\SYSTEM32\NSI.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7054: 8468	NisSrv.exe	0x7fff56d50000	0x17000	dhcpcsvc6.DLL	C:\Windows\SYSTEM32\dhcpcsvc6.DLL	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7055: 8468	NisSrv.exe	0x7fff56d30000	0x1d000	dhcpcsvc.DLL	C:\Windows\SYSTEM32\dhcpcsvc.DLL	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7056: 8468	NisSrv.exe	0x7fff5dda0000	0x744000	SHELL32.dll	C:\Windows\SYSTEM32\SHELL32.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7057: 8468	NisSrv.exe	0x7fff5aeb0000	0x793000	windows.storage.dll	C:\Windows\SYSTEM32\windows.storage.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7058: 8468	NisSrv.exe	0x7fff5c750000	0x2e000	Wldp.dll	C:\Windows\SYSTEM32\Wldp.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7059: 8468	NisSrv.exe	0x7fff5e8f0000	0xad000	SHCORE.dll	C:\Windows\SYSTEM32\SHCORE.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7060: 8468	NisSrv.exe	0x7fff5f150000	0x55000	shlwapi.dll	C:\Windows\SYSTEM32\shlwapi.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L7061: 8468	NisSrv.exe	0x7fff5dc60000	0x6b000	WS2_32.dll	C:\Windows\SYSTEM32\WS2_32.dll	6	2025-08-07 19:47:22.000000 UTC	Disabled
+
+--- pstree.txt ---
+L65: ** 8468	716	NisSrv.exe	0xbb0c8f4c4080	3	-	0	False	2025-08-07 19:47:21.000000 UTC	N/A	\Device\HarddiskVolume3\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\NisSrv.exe	"C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\NisSrv.exe"	C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\NisSrv.exe
+
+--- psscan.txt ---
+L89: 8468	716	NisSrv.exe	0xbb0c8f4c4080	3	-	0	False	2025-08-07 19:47:21.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L7212: 8468	NisSrv.exe	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L7213: 8468	NisSrv.exe	0x7fff54880000	True	True	True	\Windows\System32\version.dll
+L7214: 8468	NisSrv.exe	0x7ff7c3650000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\NisSrv.exe
+L7215: 8468	NisSrv.exe	0x7fff4e710000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\MpClient.dll
+L7216: 8468	NisSrv.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7217: 8468	NisSrv.exe	0x7fff56d30000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L7218: 8468	NisSrv.exe	0x7fff55920000	True	True	True	\Windows\System32\winhttp.dll
+L7219: 8468	NisSrv.exe	0x7fff56d50000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L7220: 8468	NisSrv.exe	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L7221: 8468	NisSrv.exe	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L7222: 8468	NisSrv.exe	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L7223: 8468	NisSrv.exe	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L7224: 8468	NisSrv.exe	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L7225: 8468	NisSrv.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L7226: 8468	NisSrv.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L7227: 8468	NisSrv.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L7228: 8468	NisSrv.exe	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L7229: 8468	NisSrv.exe	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L7230: 8468	NisSrv.exe	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L7231: 8468	NisSrv.exe	0x7fff5d450000	True	True	True	\Windows\System32\wintrust.dll
+L7232: 8468	NisSrv.exe	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7233: 8468	NisSrv.exe	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L7234: 8468	NisSrv.exe	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L7235: 8468	NisSrv.exe	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L7236: 8468	NisSrv.exe	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L7237: 8468	NisSrv.exe	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L7238: 8468	NisSrv.exe	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L7239: 8468	NisSrv.exe	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L7240: 8468	NisSrv.exe	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L7241: 8468	NisSrv.exe	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L7242: 8468	NisSrv.exe	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L7243: 8468	NisSrv.exe	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L7244: 8468	NisSrv.exe	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L7245: 8468	NisSrv.exe	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L7246: 8468	NisSrv.exe	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L7212: 8468	NisSrv.exe	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L7213: 8468	NisSrv.exe	0x7fff54880000	True	True	True	\Windows\System32\version.dll
+L7214: 8468	NisSrv.exe	0x7ff7c3650000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\NisSrv.exe
+L7215: 8468	NisSrv.exe	0x7fff4e710000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\MpClient.dll
+L7216: 8468	NisSrv.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7217: 8468	NisSrv.exe	0x7fff56d30000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L7218: 8468	NisSrv.exe	0x7fff55920000	True	True	True	\Windows\System32\winhttp.dll
+L7219: 8468	NisSrv.exe	0x7fff56d50000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L7220: 8468	NisSrv.exe	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L7221: 8468	NisSrv.exe	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L7222: 8468	NisSrv.exe	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L7223: 8468	NisSrv.exe	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L7224: 8468	NisSrv.exe	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L7225: 8468	NisSrv.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L7226: 8468	NisSrv.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L7227: 8468	NisSrv.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L7228: 8468	NisSrv.exe	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L7229: 8468	NisSrv.exe	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L7230: 8468	NisSrv.exe	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L7231: 8468	NisSrv.exe	0x7fff5d450000	True	True	True	\Windows\System32\wintrust.dll
+L7232: 8468	NisSrv.exe	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7233: 8468	NisSrv.exe	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L7234: 8468	NisSrv.exe	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L7235: 8468	NisSrv.exe	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L7236: 8468	NisSrv.exe	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L7237: 8468	NisSrv.exe	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L7238: 8468	NisSrv.exe	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L7239: 8468	NisSrv.exe	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L7240: 8468	NisSrv.exe	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L7241: 8468	NisSrv.exe	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L7242: 8468	NisSrv.exe	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L7243: 8468	NisSrv.exe	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L7244: 8468	NisSrv.exe	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L7245: 8468	NisSrv.exe	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L7246: 8468	NisSrv.exe	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L147: 8468	NisSrv.exe	\Device\HarddiskVolume3\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\NisSrv.exe	C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\NisSrv.exe	False	False
+
+--- sessions.txt ---
+L98: 0	-	8468	NisSrv.exe	NT AUTHORITY/LOCAL SERVICE	2025-08-07 19:47:21.000000 UTC
+
+=== END OF PIVOT REPORT ===

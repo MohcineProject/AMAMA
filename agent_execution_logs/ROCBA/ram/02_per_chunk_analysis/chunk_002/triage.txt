@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_002.txt
+Summary: Unknown tool MRC.exe running from non-standard D:\Tools path with SeImpersonatePrivilege; winlogon.exe parent PID 740 not present in process list (orphaned).
+
+[PROCESS]
+pid: 29440
+ppid: 7464
+image: MRC.exe
+cmdline: "D:\Tools\MRC.exe"
+severity: MEDIUM
+reasons: path: executable running from non-standard location D:\Tools\MRC.exe (not Program Files, not Windows) | privilege: SeImpersonatePrivilege enabled on an unknown user-space binary from D:\Tools | unknown binary: MRC.exe is not a recognized Windows or common third-party component | dll: primary image loaded from D:\Tools\MRC.exe (non-whitelisted, non-standard drive/path)
+
+[PROCESS]
+pid: 896
+ppid: 740
+image: winlogon.exe
+cmdline: winlogon.exe
+severity: LOW
+reasons: orphaned_parent: parent PID 740 is listed as 'unknown' and does not appear anywhere in the process list (expected parent is smss.exe) | privilege: holds SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege — consistent with winlogon but worth confirming given missing parent
+

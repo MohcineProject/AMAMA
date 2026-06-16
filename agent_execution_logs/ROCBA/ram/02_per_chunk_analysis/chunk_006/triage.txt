@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_006.txt
+Summary: Token impersonation anomaly on dasHost.exe (confirmed by pre-computed structural anomaly); orphaned/unknown-parent processes across multiple PIDs; SearchFilterHo discovered only via psscan with unknown parent suggesting possible process hiding.
+
+[PROCESS]
+pid: 4176
+ppid: 2212
+image: dashost.exe
+cmdline: dashost.exe {de95c1ed-978c-4db8-87ad608b9d7365cc}
+severity: HIGH
+reasons: PRIVILEGE ANOMALY (pre-computed): dashost.exe holds both SYSTEM and user SIDs — possible token impersonation | SeImpersonatePrivilege enabled — consistent with token manipulation abuse | parent PID 2212 not present in process list — orphaned process
+
+[PROCESS]
+pid: 4420
+ppid: 11968
+image: SearchFilterHo
+cmdline: 
+severity: MEDIUM
+reasons: discovered_via=psscan only — process not visible in standard pslist, suggesting possible process hiding or DKOM manipulation | parent PID 11968 not present in process list — orphaned process | no image path or command line available — inaccessible or unlinked process backing
+
+[PROCESS]
+pid: 3360
+ppid: 828
+image: WUDFHost.exe
+cmdline: "C:\Windows\System32\WUDFHost.exe" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-3a643b10-05f1-4cc6-bd7e-6cb812cd7872 -SystemEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-74398ab9-d38c-49f7-89a9-735bf1ccb13a -IoCancelEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-ba617a5c-647c-4f22-b376-b4adcade1255 -NonStateChangingEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-83dcbf4f-b9cb-42df-8afc-200b2dbeff52 -LifetimeId:95b6c6da-2d27-47d0-8ac8-2438e39b6bb6 -DeviceGroupId:WudfDefaultDevicePoolPriorityHigh -HostArg:0
+severity: LOW
+reasons: SeImpersonatePrivilege enabled — warrants confirmation that parent context is legitimate | parent PID 828 not present in process list — orphaned process (expected parent would be svchost.exe under services.exe)
+

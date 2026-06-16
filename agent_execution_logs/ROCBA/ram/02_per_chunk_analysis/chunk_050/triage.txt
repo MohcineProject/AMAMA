@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_050.txt
+Summary: Orphaned parent PIDs across multiple processes; backgroundTask process with unknown parent detected only via psscan (hidden from pslist), very short-lived in suspicious context.
+
+[PROCESS]
+pid: 26768
+ppid: 740
+image: backgroundTask
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_parent: PPID 740 not present in process list (discovered_via=psscan only — process hidden from pslist walk) | psscan_only: process not visible in pslist, suggesting DKOM-based hiding or already-unlinked EPROCESS | short_lived: runtime ~61 seconds with no visible command-line or path | non_standard_name: 'backgroundTask' is not a recognised Windows system process name
+
+[PROCESS]
+pid: 26988
+ppid: 740
+image: TextInputHost.
+cmdline: "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInputHost.exe" -ServerName:InputApp.AppX9jnwykgrccxc8by3hsrsh07r423xzvav.mca
+severity: LOW
+reasons: orphaned_parent: PPID 740 not present in process list | name_truncation_note: 'TextInputHost.' is a kernel EPROCESS 14-char truncation of 'TextInputHost.exe' — path and cmdline confirm legitimate binary, flagging only due to orphaned parent
+

@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_015.txt
+Summary: Two svchost.exe instances with unknown/unresolved parents (PID 828 not present in process list); one svchost discovered only via psscan suggesting possible DKOM hiding.
+
+[PROCESS]
+pid: 7900
+ppid: 828
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_parent: parent PID 828 not present in process list (unknown) | psscan_only: process discovered via psscan (discovered_via=psscan) suggesting possible DKOM unlinking from active process list | missing_path_and_cmdline: no image path or command line recorded, reducing verifiability
+
+[PROCESS]
+pid: 8028
+ppid: 828
+image: svchost.exe
+cmdline: C:\WINDOWS\System32\svchost.exe -k UnistackSvcGroup
+severity: LOW
+reasons: orphaned_parent: parent PID 828 not present in process list (unknown); legitimate svchost.exe should parent to services.exe | non_whitelisted_dlls: DLL list includes entries from System32 paths but parent anomaly warrants pivot confirmation
+

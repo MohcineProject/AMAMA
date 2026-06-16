@@ -1,0 +1,333 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:22:13Z
+
+=== PID 6420 (taskhostw.exe, ppid=2168) ===
+Cmdline: taskhostw.exe $(Arg0)
+
+--- pslist.txt ---
+L104: 6420	2168	taskhostw.exe	0x990ef79b3080	5	-	1	False	2026-05-13 19:16:45.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L104: 6420	taskhostw.exe	taskhostw.exe $(Arg0)
+
+--- privileges.txt ---
+L3470: 6420	taskhostw.exe	2	SeCreateTokenPrivilege		Create a token object
+L3471: 6420	taskhostw.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3472: 6420	taskhostw.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3473: 6420	taskhostw.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L3474: 6420	taskhostw.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3475: 6420	taskhostw.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3476: 6420	taskhostw.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L3477: 6420	taskhostw.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L3478: 6420	taskhostw.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L3479: 6420	taskhostw.exe	11	SeSystemProfilePrivilege	Present	Profile system performance
+L3480: 6420	taskhostw.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L3481: 6420	taskhostw.exe	13	SeProfileSingleProcessPrivilege	Present	Profile a single process
+L3482: 6420	taskhostw.exe	14	SeIncreaseBasePriorityPrivilege	Present	Increase scheduling priority
+L3483: 6420	taskhostw.exe	15	SeCreatePagefilePrivilege	Present	Create a pagefile
+L3484: 6420	taskhostw.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3485: 6420	taskhostw.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L3486: 6420	taskhostw.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L3487: 6420	taskhostw.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L3488: 6420	taskhostw.exe	20	SeDebugPrivilege	Present	Debug programs
+L3489: 6420	taskhostw.exe	21	SeAuditPrivilege		Generate security audits
+L3490: 6420	taskhostw.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L3491: 6420	taskhostw.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3492: 6420	taskhostw.exe	24	SeRemoteShutdownPrivilege	Present	Force shutdown from a remote system
+L3493: 6420	taskhostw.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3494: 6420	taskhostw.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3495: 6420	taskhostw.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3496: 6420	taskhostw.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L3497: 6420	taskhostw.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L3498: 6420	taskhostw.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L3499: 6420	taskhostw.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3500: 6420	taskhostw.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3501: 6420	taskhostw.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3502: 6420	taskhostw.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3503: 6420	taskhostw.exe	35	SeCreateSymbolicLinkPrivilege	Present	Required to create a symbolic link
+L3504: 6420	taskhostw.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L4822: 6420	taskhostw.exe	0x7ff6ca0f0000	0x1a000	taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+L4823: 6420	taskhostw.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+L4824: 6420	taskhostw.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+L4825: 6420	taskhostw.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+L4826: 6420	taskhostw.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4827: 6420	taskhostw.exe	0x7ffff9730000	0x31000	imm32.dll	C:\WINDOWS\System32\imm32.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4828: 6420	taskhostw.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4829: 6420	taskhostw.exe	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4830: 6420	taskhostw.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4831: 6420	taskhostw.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4832: 6420	taskhostw.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4833: 6420	taskhostw.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4834: 6420	taskhostw.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4835: 6420	taskhostw.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4836: 6420	taskhostw.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4837: 6420	taskhostw.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:16:45.000000 UTC	Disabled
+L4838: 6420	taskhostw.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4839: 6420	taskhostw.exe	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4840: 6420	taskhostw.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4841: 6420	taskhostw.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4842: 6420	taskhostw.exe	0x7fffe00c0000	0x5e000	WiFiCloudStore.dll	C:\Windows\System32\WiFiCloudStore.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+L4843: 6420	taskhostw.exe	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-13 19:16:45.000000 UTC	Disabled
+
+--- pstree.txt ---
+L62: *** 6420	2168	taskhostw.exe	0x990ef79b3080	5	-	1	False	2026-05-13 19:16:45.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\taskhostw.exe	taskhostw.exe $(Arg0)	C:\WINDOWS\system32\taskhostw.exe
+
+--- psscan.txt ---
+L109: 6420	2168	taskhostw.exe	0x990ef79b3080	5	-	1	False	2026-05-13 19:16:45.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L5118: 6420	taskhostw.exe	0x20183d80000	False	False	False	\Windows\System32\en-US\taskhostw.exe.mui
+L5119: 6420	taskhostw.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L5120: 6420	taskhostw.exe	0x7ff6ca0f0000	True	False	True	\Windows\System32\taskhostw.exe
+L5121: 6420	taskhostw.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5122: 6420	taskhostw.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L5123: 6420	taskhostw.exe	0x7fffe00c0000	True	True	True	\Windows\System32\WiFiCloudStore.dll
+L5124: 6420	taskhostw.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5125: 6420	taskhostw.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L5126: 6420	taskhostw.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L5127: 6420	taskhostw.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5128: 6420	taskhostw.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L5129: 6420	taskhostw.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5130: 6420	taskhostw.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L5131: 6420	taskhostw.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L5132: 6420	taskhostw.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L5133: 6420	taskhostw.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L5134: 6420	taskhostw.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L5135: 6420	taskhostw.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L5136: 6420	taskhostw.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L5137: 6420	taskhostw.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L5138: 6420	taskhostw.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L5139: 6420	taskhostw.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L5140: 6420	taskhostw.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_ldrmodules.txt ---
+L5118: 6420	taskhostw.exe	0x20183d80000	False	False	False	\Windows\System32\en-US\taskhostw.exe.mui
+L5119: 6420	taskhostw.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L5120: 6420	taskhostw.exe	0x7ff6ca0f0000	True	False	True	\Windows\System32\taskhostw.exe
+L5121: 6420	taskhostw.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5122: 6420	taskhostw.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L5123: 6420	taskhostw.exe	0x7fffe00c0000	True	True	True	\Windows\System32\WiFiCloudStore.dll
+L5124: 6420	taskhostw.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5125: 6420	taskhostw.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L5126: 6420	taskhostw.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L5127: 6420	taskhostw.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5128: 6420	taskhostw.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L5129: 6420	taskhostw.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5130: 6420	taskhostw.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L5131: 6420	taskhostw.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L5132: 6420	taskhostw.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L5133: 6420	taskhostw.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L5134: 6420	taskhostw.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L5135: 6420	taskhostw.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L5136: 6420	taskhostw.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L5137: 6420	taskhostw.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L5138: 6420	taskhostw.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L5139: 6420	taskhostw.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L5140: 6420	taskhostw.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_pebmasquerade.txt ---
+L104: 6420	taskhostw.exe	\Device\HarddiskVolume4\Windows\System32\taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	False	False
+
+--- sessions.txt ---
+L118: 1	-	6420	taskhostw.exe	CLEANWINDOWS11/kali	2026-05-13 19:16:45.000000 UTC
+
+=== PID 7044 (RuntimeBroker., ppid=516) ===
+Cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- pslist.txt ---
+L127: 7044	516	RuntimeBroker.	0x990efacf0180	6	-	1	False	2026-05-13 19:21:43.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L127: 7044	RuntimeBroker.	C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- privileges.txt ---
+L4275: 7044	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+L4276: 7044	RuntimeBroker.	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4277: 7044	RuntimeBroker.	4	SeLockMemoryPrivilege		Lock pages in memory
+L4278: 7044	RuntimeBroker.	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4279: 7044	RuntimeBroker.	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4280: 7044	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+L4281: 7044	RuntimeBroker.	8	SeSecurityPrivilege		Manage auditing and security log
+L4282: 7044	RuntimeBroker.	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4283: 7044	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4284: 7044	RuntimeBroker.	11	SeSystemProfilePrivilege		Profile system performance
+L4285: 7044	RuntimeBroker.	12	SeSystemtimePrivilege		Change the system time
+L4286: 7044	RuntimeBroker.	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4287: 7044	RuntimeBroker.	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4288: 7044	RuntimeBroker.	15	SeCreatePagefilePrivilege		Create a pagefile
+L4289: 7044	RuntimeBroker.	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4290: 7044	RuntimeBroker.	17	SeBackupPrivilege		Backup files and directories
+L4291: 7044	RuntimeBroker.	18	SeRestorePrivilege		Restore files and directories
+L4292: 7044	RuntimeBroker.	19	SeShutdownPrivilege	Present	Shut down the system
+L4293: 7044	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+L4294: 7044	RuntimeBroker.	21	SeAuditPrivilege		Generate security audits
+L4295: 7044	RuntimeBroker.	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4296: 7044	RuntimeBroker.	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4297: 7044	RuntimeBroker.	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4298: 7044	RuntimeBroker.	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4299: 7044	RuntimeBroker.	26	SeSyncAgentPrivilege		Synch directory service data
+L4300: 7044	RuntimeBroker.	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4301: 7044	RuntimeBroker.	28	SeManageVolumePrivilege		Manage the files on a volume
+L4302: 7044	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4303: 7044	RuntimeBroker.	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4304: 7044	RuntimeBroker.	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4305: 7044	RuntimeBroker.	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4306: 7044	RuntimeBroker.	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4307: 7044	RuntimeBroker.	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4308: 7044	RuntimeBroker.	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4309: 7044	RuntimeBroker.	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5959: 7044	RuntimeBroker.	0x7ff7aab20000	0x1f000	RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	-1	2026-05-13 19:21:43.000000 UTC	Disabled
+L5960: 7044	RuntimeBroker.	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:21:43.000000 UTC	Disabled
+L5961: 7044	RuntimeBroker.	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:21:43.000000 UTC	Disabled
+L5962: 7044	RuntimeBroker.	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:21:43.000000 UTC	Disabled
+L5963: 7044	RuntimeBroker.	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5964: 7044	RuntimeBroker.	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5965: 7044	RuntimeBroker.	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5966: 7044	RuntimeBroker.	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5967: 7044	RuntimeBroker.	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5968: 7044	RuntimeBroker.	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5969: 7044	RuntimeBroker.	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:21:43.000000 UTC	Disabled
+L5970: 7044	RuntimeBroker.	0x7ffff61c0000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5971: 7044	RuntimeBroker.	0x7ffff61a0000	0x14000	UMPDC.dll	C:\Windows\System32\UMPDC.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5972: 7044	RuntimeBroker.	0x7ffff7c20000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5973: 7044	RuntimeBroker.	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5974: 7044	RuntimeBroker.	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5975: 7044	RuntimeBroker.	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5976: 7044	RuntimeBroker.	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5977: 7044	RuntimeBroker.	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5978: 7044	RuntimeBroker.	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5979: 7044	RuntimeBroker.	0x7ffff9630000	0xf7000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5980: 7044	RuntimeBroker.	0x7ffff6d60000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5981: 7044	RuntimeBroker.	0x7ffff9820000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5982: 7044	RuntimeBroker.	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5983: 7044	RuntimeBroker.	0x7ffff8710000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5984: 7044	RuntimeBroker.	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5985: 7044	RuntimeBroker.	0x7fffeca30000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5986: 7044	RuntimeBroker.	0x7ffff8e80000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5987: 7044	RuntimeBroker.	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5988: 7044	RuntimeBroker.	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5989: 7044	RuntimeBroker.	0x7ffff3ba0000	0x9f000	apphelp.dll	C:\WINDOWS\SYSTEM32\apphelp.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5990: 7044	RuntimeBroker.	0x7ffff1bd0000	0x103000	propsys.dll	C:\WINDOWS\system32\propsys.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5991: 7044	RuntimeBroker.	0x7ffff1d10000	0x22d000	windowscodecs.dll	C:\Windows\System32\windowscodecs.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5992: 7044	RuntimeBroker.	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\System32\profapi.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5993: 7044	RuntimeBroker.	0x7ffff5e80000	0x57000	CFGMGR32.dll	C:\WINDOWS\System32\CFGMGR32.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5994: 7044	RuntimeBroker.	0x7fffe7590000	0xc0000	StructuredQuery.dll	C:\WINDOWS\System32\StructuredQuery.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5995: 7044	RuntimeBroker.	0x7fffe72e0000	0x29e000	icu.dll	C:\WINDOWS\System32\icu.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5996: 7044	RuntimeBroker.	0x7fffe3910000	0xf000	LINKINFO.dll	C:\WINDOWS\System32\LINKINFO.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5997: 7044	RuntimeBroker.	0x7fffe66b0000	0x47000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5998: 7044	RuntimeBroker.	0x7fffe6aa0000	0x29000	edputil.dll	C:\WINDOWS\System32\edputil.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L5999: 7044	RuntimeBroker.	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L6000: 7044	RuntimeBroker.	0x7fffe87c0000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+L6001: 7044	RuntimeBroker.	0x7fffe3b50000	0xb000	IconCodecService.dll	C:\WINDOWS\system32\IconCodecService.dll	6	2026-05-13 19:21:43.000000 UTC	Disabled
+
+--- pstree.txt ---
+L15: *** 7044	516	RuntimeBroker.	0x990efacf0180	6	-	1	False	2026-05-13 19:21:43.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe -Embedding	C:\Windows\System32\RuntimeBroker.exe
+
+--- psscan.txt ---
+L143: 7044	516	RuntimeBroker.	0x990efacf0180	6	-	1	False	2026-05-13 19:21:43.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L6241: 7044	RuntimeBroker.	0x24caff50000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L6242: 7044	RuntimeBroker.	0x24caff80000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L6243: 7044	RuntimeBroker.	0x7ffff3ba0000	True	True	True	\Windows\System32\apphelp.dll
+L6244: 7044	RuntimeBroker.	0x7fffe3910000	True	True	True	\Windows\System32\linkinfo.dll
+L6245: 7044	RuntimeBroker.	0x7ff7aab20000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L6246: 7044	RuntimeBroker.	0x7fffe72e0000	True	True	True	\Windows\System32\icu.dll
+L6247: 7044	RuntimeBroker.	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L6248: 7044	RuntimeBroker.	0x7fffe3b50000	True	True	True	\Windows\System32\IconCodecService.dll
+L6249: 7044	RuntimeBroker.	0x7fffe6aa0000	True	True	True	\Windows\System32\edputil.dll
+L6250: 7044	RuntimeBroker.	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
+L6251: 7044	RuntimeBroker.	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L6252: 7044	RuntimeBroker.	0x7fffe7590000	True	True	True	\Windows\System32\StructuredQuery.dll
+L6253: 7044	RuntimeBroker.	0x7fffeca30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L6254: 7044	RuntimeBroker.	0x7ffff1d10000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L6255: 7044	RuntimeBroker.	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6256: 7044	RuntimeBroker.	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L6257: 7044	RuntimeBroker.	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6258: 7044	RuntimeBroker.	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L6259: 7044	RuntimeBroker.	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
+L6260: 7044	RuntimeBroker.	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L6261: 7044	RuntimeBroker.	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L6262: 7044	RuntimeBroker.	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6263: 7044	RuntimeBroker.	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L6264: 7044	RuntimeBroker.	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L6265: 7044	RuntimeBroker.	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6266: 7044	RuntimeBroker.	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6267: 7044	RuntimeBroker.	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6268: 7044	RuntimeBroker.	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6269: 7044	RuntimeBroker.	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L6270: 7044	RuntimeBroker.	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6271: 7044	RuntimeBroker.	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6272: 7044	RuntimeBroker.	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6273: 7044	RuntimeBroker.	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6274: 7044	RuntimeBroker.	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6275: 7044	RuntimeBroker.	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L6276: 7044	RuntimeBroker.	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L6277: 7044	RuntimeBroker.	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L6278: 7044	RuntimeBroker.	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6279: 7044	RuntimeBroker.	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L6280: 7044	RuntimeBroker.	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6281: 7044	RuntimeBroker.	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6282: 7044	RuntimeBroker.	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6283: 7044	RuntimeBroker.	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L6284: 7044	RuntimeBroker.	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6285: 7044	RuntimeBroker.	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L6241: 7044	RuntimeBroker.	0x24caff50000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L6242: 7044	RuntimeBroker.	0x24caff80000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L6243: 7044	RuntimeBroker.	0x7ffff3ba0000	True	True	True	\Windows\System32\apphelp.dll
+L6244: 7044	RuntimeBroker.	0x7fffe3910000	True	True	True	\Windows\System32\linkinfo.dll
+L6245: 7044	RuntimeBroker.	0x7ff7aab20000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L6246: 7044	RuntimeBroker.	0x7fffe72e0000	True	True	True	\Windows\System32\icu.dll
+L6247: 7044	RuntimeBroker.	0x7fffe66b0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L6248: 7044	RuntimeBroker.	0x7fffe3b50000	True	True	True	\Windows\System32\IconCodecService.dll
+L6249: 7044	RuntimeBroker.	0x7fffe6aa0000	True	True	True	\Windows\System32\edputil.dll
+L6250: 7044	RuntimeBroker.	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
+L6251: 7044	RuntimeBroker.	0x7fffe87c0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L6252: 7044	RuntimeBroker.	0x7fffe7590000	True	True	True	\Windows\System32\StructuredQuery.dll
+L6253: 7044	RuntimeBroker.	0x7fffeca30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L6254: 7044	RuntimeBroker.	0x7ffff1d10000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L6255: 7044	RuntimeBroker.	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6256: 7044	RuntimeBroker.	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L6257: 7044	RuntimeBroker.	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6258: 7044	RuntimeBroker.	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L6259: 7044	RuntimeBroker.	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
+L6260: 7044	RuntimeBroker.	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L6261: 7044	RuntimeBroker.	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L6262: 7044	RuntimeBroker.	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6263: 7044	RuntimeBroker.	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L6264: 7044	RuntimeBroker.	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L6265: 7044	RuntimeBroker.	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6266: 7044	RuntimeBroker.	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6267: 7044	RuntimeBroker.	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6268: 7044	RuntimeBroker.	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6269: 7044	RuntimeBroker.	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L6270: 7044	RuntimeBroker.	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6271: 7044	RuntimeBroker.	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6272: 7044	RuntimeBroker.	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6273: 7044	RuntimeBroker.	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6274: 7044	RuntimeBroker.	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6275: 7044	RuntimeBroker.	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L6276: 7044	RuntimeBroker.	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L6277: 7044	RuntimeBroker.	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L6278: 7044	RuntimeBroker.	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6279: 7044	RuntimeBroker.	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L6280: 7044	RuntimeBroker.	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6281: 7044	RuntimeBroker.	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6282: 7044	RuntimeBroker.	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6283: 7044	RuntimeBroker.	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L6284: 7044	RuntimeBroker.	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6285: 7044	RuntimeBroker.	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L127: 7044	RuntimeBroker.	\Device\HarddiskVolume4\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	False	False
+
+--- sessions.txt ---
+L130: 1	-	7044	RuntimeBroker.	CLEANWINDOWS11/kali	2026-05-13 19:21:43.000000 UTC
+
+=== END OF PIVOT REPORT ===

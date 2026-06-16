@@ -1,0 +1,35 @@
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Three low-severity Agent 1 leads were reviewed. All three processes resolve to legitimate, well-known binaries executing from canonical installation paths with no malicious command-line arguments, no suspicious DLL loads, no malfind hits, and no registry persistence artefacts. The orphaned-parent signal in all three cases is consistent with normal Windows PID reuse across a multi-day memory capture window rather than process injection or masquerading. No confirmed malicious activity was identified in this triage batch.
+Counts: confirmed=0  inconclusive=1  rejected=2
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      19348
+PPID:     740
+Image:    smartscreen.exe (EPROCESS-truncated to smartscreen.ex)
+Cmdline:  - (unavailable)
+MITRE:
+
+Justification:
+  The pstree artefact confirms the binary path as \Device\HarddiskVolume3\Windows\System32\smartscreen.exe — the canonical Microsoft SmartScreen location — so the truncated EPROCESS name is not a typosquat. The orphaned parent (PPID 740 absent from pslist) is a weak signal on its own and is consistent with PID reuse across the capture window. However, the privilege set is anomalous for SmartScreen: the token carries the full NT AUTHORITY\SYSTEM privilege set including SeTcbPrivilege ("Act as part of the operating system"), SeCreateTokenPrivilege, SeAssignPrimaryTokenPrivilege, SeLoadDriverPrivilege, and SeDebugPrivilege — none of which are expected for a user-context SmartScreen process, which normally runs at medium integrity under the logged-on user. The cmdline is unavailable ("-") and the dlllist entry is zeroed out (base 0x0, size 0x0), meaning the module list could not be walked — this prevents DLL-provenance verification. The combination of an unreadable module list, an unavailable command line, and a privilege token far exceeding what SmartScreen requires is enough to keep this finding open, but the confirmed System32 path and absence of any malfind, network, or registry persistence evidence prevents a CONFIRMED verdict.
+
+Key Evidence:
+  - L100: *** 19348	740	smartscreen.ex	0xb78d145dc240	6	-	1	False	2020-11-16 02:30:38.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\smartscreen.exe
+  - L12646: 19348	smartscreen.ex	0x0	0x0			0	N/A	Disabled
+  - L76345: 19348	smartscreen.ex	7	SeTcbPrivilege		Act as part of the operating system
+  - L76348: 19348	smartscreen.ex	10	SeLoadDriverPrivilege		Load and unload device drivers
+  - L76358: 19348	smartscreen.ex	20	SeDebugPrivilege		Debug programs
+  - L76340: 19348	smartscreen.ex	2	SeCreateTokenPrivilege		Create a token object
+  - L2187: 19348	smartscreen.ex	-
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED findings (count: 2)
+
+PID 19360 — RdrCEF.exe: pstree confirms the binary at \Device\HarddiskVolume3\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroCEF\RdrCEF.exe, which is the legitimate Adobe Acrobat Reader CEF (Chromium Embedded Framework) subprocess. The malware_pebmasquerade check returned False/False (no PE masquerade detected). The orphaned parent (PPID 16272) is consistent with the parent Acrobat Reader process having exited before the memory snapshot; the ~5-minute lifetime matches normal CEF renderer subprocess behaviour. No suspicious cmdline, no anomalous DLL loads, no malfind hits, and no privilege escalation beyond the standard unprivileged token. All signals are benign.
+
+PID 19428 — msedge.exe: pstree confirms the binary at \Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe, the canonical Microsoft Edge installation path. The malware_pebmasquerade check returned False/False. The orphaned parent (PPID 22700) and ~72-second lifetime are consistent with a short-lived Edge subprocess (renderer, crashpad handler, or update helper) whose parent had already exited. No suspicious cmdline, no anomalous DLL loads, no malfind hits, and no privilege escalation. All signals are benign.

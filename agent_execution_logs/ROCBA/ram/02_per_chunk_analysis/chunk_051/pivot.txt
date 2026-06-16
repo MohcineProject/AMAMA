@@ -1,0 +1,313 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:12:21Z
+
+=== PID 27232 (TabTip.exe, ppid=1908) ===
+Cmdline: /QuitInfo:00000000000002DC;0000000000000300;
+
+--- pslist.txt ---
+L1164: 27232	1908	TabTip.exe	0xb78d113cf140	12	-	1	False	2020-11-14 03:42:55.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L1164: 27232	TabTip.exe	/QuitInfo:00000000000002DC;0000000000000300;  
+
+--- privileges.txt ---
+L40570: 27232	TabTip.exe	2	SeCreateTokenPrivilege		Create a token object
+L40571: 27232	TabTip.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L40572: 27232	TabTip.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L40573: 27232	TabTip.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L40574: 27232	TabTip.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L40575: 27232	TabTip.exe	7	SeTcbPrivilege		Act as part of the operating system
+L40576: 27232	TabTip.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L40577: 27232	TabTip.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L40578: 27232	TabTip.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L40579: 27232	TabTip.exe	11	SeSystemProfilePrivilege		Profile system performance
+L40580: 27232	TabTip.exe	12	SeSystemtimePrivilege		Change the system time
+L40581: 27232	TabTip.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L40582: 27232	TabTip.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L40583: 27232	TabTip.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L40584: 27232	TabTip.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L40585: 27232	TabTip.exe	17	SeBackupPrivilege		Backup files and directories
+L40586: 27232	TabTip.exe	18	SeRestorePrivilege		Restore files and directories
+L40587: 27232	TabTip.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L40588: 27232	TabTip.exe	20	SeDebugPrivilege		Debug programs
+L40589: 27232	TabTip.exe	21	SeAuditPrivilege		Generate security audits
+L40590: 27232	TabTip.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L40591: 27232	TabTip.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L40592: 27232	TabTip.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L40593: 27232	TabTip.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L40594: 27232	TabTip.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L40595: 27232	TabTip.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L40596: 27232	TabTip.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L40597: 27232	TabTip.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L40598: 27232	TabTip.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L40599: 27232	TabTip.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L40600: 27232	TabTip.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L40601: 27232	TabTip.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L40602: 27232	TabTip.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L40603: 27232	TabTip.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L40604: 27232	TabTip.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L10321: 27232	TabTip.exe	0x7ff7e2f60000	0x6e000	TabTip.exe	C:\Program Files\Common Files\microsoft shared\ink\TabTip.exe	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10322: 27232	TabTip.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10323: 27232	TabTip.exe	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10324: 27232	TabTip.exe	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10325: 27232	TabTip.exe	0x7fff57540000	0x1a0000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10326: 27232	TabTip.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10327: 27232	TabTip.exe	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10328: 27232	TabTip.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10329: 27232	TabTip.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10330: 27232	TabTip.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10331: 27232	TabTip.exe	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10332: 27232	TabTip.exe	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10333: 27232	TabTip.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10334: 27232	TabTip.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10335: 27232	TabTip.exe	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10336: 27232	TabTip.exe	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10337: 27232	TabTip.exe	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10338: 27232	TabTip.exe	0x7fff52a60000	0x9e000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10339: 27232	TabTip.exe	0x7fff55d80000	0xa9000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10340: 27232	TabTip.exe	0x7fff56800000	0x12a000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10341: 27232	TabTip.exe	0x7fff379a0000	0x124000	tipskins.dll	C:\Program Files\Common Files\microsoft shared\ink\tipskins.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10342: 27232	TabTip.exe	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10343: 27232	TabTip.exe	0x7fff52c30000	0x2f000	dwmapi.dll	C:\WINDOWS\SYSTEM32\dwmapi.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10344: 27232	TabTip.exe	0x7fff31280000	0xa9000	twinapi.dll	C:\Windows\System32\twinapi.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10345: 27232	TabTip.exe	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10346: 27232	TabTip.exe	0x7fff55910000	0x55000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10347: 27232	TabTip.exe	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\system32\windows.storage.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10348: 27232	TabTip.exe	0x7fff549f0000	0x2c000	Wldp.dll	C:\WINDOWS\system32\Wldp.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10349: 27232	TabTip.exe	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10350: 27232	TabTip.exe	0x7fff54ee0000	0x2e000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10351: 27232	TabTip.exe	0x7fff538f0000	0x23000	gpapi.dll	C:\WINDOWS\SYSTEM32\gpapi.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10352: 27232	TabTip.exe	0x14b779c0000	0x10b000	TipRes.dll	C:\Program Files\Common Files\microsoft shared\ink\TipRes.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10353: 27232	TabTip.exe	0x7fff3d590000	0x4f2000	sapi_onecore.dll	C:\WINDOWS\System32\Speech_OneCore\Common\sapi_onecore.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10354: 27232	TabTip.exe	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10355: 27232	TabTip.exe	0x7fff4c810000	0x181000	AudioSes.DLL	C:\WINDOWS\SYSTEM32\AudioSes.DLL	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10356: 27232	TabTip.exe	0x7fff54140000	0x8a000	msvcp110_win.dll	C:\WINDOWS\SYSTEM32\msvcp110_win.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10357: 27232	TabTip.exe	0x7fff54b90000	0x4b000	POWRPROF.dll	C:\WINDOWS\SYSTEM32\POWRPROF.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10358: 27232	TabTip.exe	0x7fff54940000	0x18000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10359: 27232	TabTip.exe	0x7fff54ea0000	0x3c000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10360: 27232	TabTip.exe	0x7fff43100000	0x26000	winmmbase.dll	C:\WINDOWS\SYSTEM32\winmmbase.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10361: 27232	TabTip.exe	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10362: 27232	TabTip.exe	0x7fff4c780000	0x85000	MMDevAPI.DLL	C:\WINDOWS\SYSTEM32\MMDevAPI.DLL	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10363: 27232	TabTip.exe	0x7fff508e0000	0xf7000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10364: 27232	TabTip.exe	0x7fff54a90000	0x12000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10365: 27232	TabTip.exe	0x7fff4fea0000	0x100000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10366: 27232	TabTip.exe	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10367: 27232	TabTip.exe	0x7fff468c0000	0x2b0000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10368: 27232	TabTip.exe	0x7fff54dc0000	0x2c000	DEVOBJ.dll	C:\WINDOWS\SYSTEM32\DEVOBJ.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10369: 27232	TabTip.exe	0x7fff52500000	0xf2000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10370: 27232	TabTip.exe	0x7fff57800000	0x6b000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10371: 27232	TabTip.exe	0x7fff52600000	0x35e000	CoreUIComponents.dll	C:\WINDOWS\SYSTEM32\CoreUIComponents.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10372: 27232	TabTip.exe	0x7fff523a0000	0x156000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10373: 27232	TabTip.exe	0x7fff377f0000	0x1ae000	DUI70.dll	C:\WINDOWS\SYSTEM32\DUI70.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10374: 27232	TabTip.exe	0x7fff3dab0000	0x29b000	Comctl32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\Comctl32.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10375: 27232	TabTip.exe	0x7fff2dbf0000	0x95000	DUser.dll	C:\WINDOWS\SYSTEM32\DUser.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10376: 27232	TabTip.exe	0x7fff27000000	0x1a6000	gdiplus.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.630_none_fae7a41d761b04f0\gdiplus.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10377: 27232	TabTip.exe	0x7fff576e0000	0x115000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10378: 27232	TabTip.exe	0x7fff3bc90000	0xd000	atlthunk.dll	C:\WINDOWS\SYSTEM32\atlthunk.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10379: 27232	TabTip.exe	0x7fff547d0000	0x5a000	WINSTA.dll	C:\WINDOWS\SYSTEM32\WINSTA.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10380: 27232	TabTip.exe	0x7fff56050000	0x741000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10381: 27232	TabTip.exe	0x7fff50a20000	0xa0000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10382: 27232	TabTip.exe	0x7fff210c0000	0x3f3000	tabskb.dll	C:\Program Files\Common Files\microsoft shared\ink\tabskb.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10383: 27232	TabTip.exe	0x7fff29bf0000	0x66000	OLEACC.dll	C:\WINDOWS\SYSTEM32\OLEACC.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10384: 27232	TabTip.exe	0x7fff538e0000	0xd000	HID.DLL	C:\WINDOWS\SYSTEM32\HID.DLL	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10385: 27232	TabTip.exe	0x7fff310d0000	0x7c000	msTextPrediction.dll	C:\Windows\System32\msTextPrediction.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10386: 27232	TabTip.exe	0x7fff26bc0000	0x26000	IpsPlugin.dll	C:\Program Files\Common Files\Microsoft Shared\Ink\IpsPlugin.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10387: 27232	TabTip.exe	0x14b779a0000	0x8000	TipResX.dll	C:\Program Files\Common Files\microsoft shared\ink\TipResX.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10388: 27232	TabTip.exe	0x7fff42d30000	0x27f000	dwrite.dll	C:\WINDOWS\system32\dwrite.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10389: 27232	TabTip.exe	0x7fff46870000	0x47000	UIAnimation.dll	C:\WINDOWS\System32\UIAnimation.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10390: 27232	TabTip.exe	0x7fff53940000	0xf3000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10391: 27232	TabTip.exe	0x7fff514a0000	0x264000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10392: 27232	TabTip.exe	0x7fff41730000	0x1447000	igd10iumd64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10393: 27232	TabTip.exe	0x7fff557e0000	0x27000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-1	2020-11-14 03:42:55.000000 UTC	Disabled
+L10394: 27232	TabTip.exe	0x7fff54a60000	0x27000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10395: 27232	TabTip.exe	0x7fff54a20000	0x3b000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10396: 27232	TabTip.exe	0x7fff3f820000	0x1f01000	igc64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10397: 27232	TabTip.exe	0x7fff3f7e0000	0x3b000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10398: 27232	TabTip.exe	0x7fff51cd0000	0x1e5000	dcomp.dll	C:\WINDOWS\SYSTEM32\dcomp.dll	6	2020-11-14 03:42:55.000000 UTC	Disabled
+L10399: 27232	TabTip.exe	0x7ffeed5f0000	0xa8000	tiptsf.dll	C:\Program Files\Common Files\microsoft shared\ink\tiptsf.dll	6	2020-11-14 03:43:48.000000 UTC	Disabled
+
+--- pstree.txt ---
+L195: *** 27232	1908	TabTip.exe	0xb78d113cf140	12	-	1	False	2020-11-14 03:42:55.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\Common Files\microsoft shared\ink\TabTip.exe	/QuitInfo:00000000000002DC;0000000000000300;  	C:\Program Files\Common Files\microsoft shared\ink\TabTip.exe
+
+--- psscan.txt ---
+L1828: 27232	1908	TabTip.exe	0xb78d113cf140	12	-	1	False	2020-11-14 03:42:55.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L10970: 27232	TabTip.exe	0x14b75fa0000	False	False	False	\Program Files\Common Files\microsoft shared\ink\en-US\TabTip.exe.mui
+L10971: 27232	TabTip.exe	0x14b77990000	False	False	False	\Windows\System32\oleaccrc.dll
+L10972: 27232	TabTip.exe	0x14b77980000	False	False	False	\Program Files\Common Files\microsoft shared\ink\en-US\TipRes.dll.mui
+L10973: 27232	TabTip.exe	0x14b779a0000	True	False	True	\Program Files\Common Files\microsoft shared\ink\tipresx.dll
+L10974: 27232	TabTip.exe	0x14b779c0000	True	False	True	\Program Files\Common Files\microsoft shared\ink\TipRes.dll
+L10975: 27232	TabTip.exe	0x14b783d0000	False	False	False	\Program Files\Common Files\microsoft shared\ink\en-US\tipresx.dll.mui
+L10976: 27232	TabTip.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L10977: 27232	TabTip.exe	0x7fff4c780000	True	True	True	\Windows\System32\MMDevAPI.dll
+L10978: 27232	TabTip.exe	0x7fff379a0000	True	True	True	\Program Files\Common Files\microsoft shared\ink\tipskins.dll
+L10979: 27232	TabTip.exe	0x7fff27000000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.630_none_fae7a41d761b04f0\GdiPlus.dll
+L10980: 27232	TabTip.exe	0x7ff7e2f60000	True	False	True	\Program Files\Common Files\microsoft shared\ink\TabTip.exe
+L10981: 27232	TabTip.exe	0x7fff210c0000	True	True	True	\Program Files\Common Files\microsoft shared\ink\tabskb.dll
+L10982: 27232	TabTip.exe	0x7ffeed5f0000	True	True	True	\Program Files\Common Files\microsoft shared\ink\tiptsf.dll
+L10983: 27232	TabTip.exe	0x7fff26bc0000	True	True	True	\Program Files\Common Files\microsoft shared\ink\IpsPlugin.dll
+L10984: 27232	TabTip.exe	0x7fff2dbf0000	True	True	True	\Windows\System32\duser.dll
+L10985: 27232	TabTip.exe	0x7fff29bf0000	True	True	True	\Windows\System32\oleacc.dll
+L10986: 27232	TabTip.exe	0x7fff31280000	True	True	True	\Windows\System32\twinapi.dll
+L10987: 27232	TabTip.exe	0x7fff310d0000	True	True	True	\Windows\System32\msTextPrediction.dll
+L10988: 27232	TabTip.exe	0x7fff377f0000	True	True	True	\Windows\System32\dui70.dll
+L10989: 27232	TabTip.exe	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L10990: 27232	TabTip.exe	0x7fff3dab0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\comctl32.dll
+L10991: 27232	TabTip.exe	0x7fff3d590000	True	True	True	\Windows\System32\Speech_OneCore\common\sapi_onecore.dll
+L10992: 27232	TabTip.exe	0x7fff3bc90000	True	True	True	\Windows\System32\atlthunk.dll
+L10993: 27232	TabTip.exe	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L10994: 27232	TabTip.exe	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L10995: 27232	TabTip.exe	0x7fff43100000	True	True	True	\Windows\System32\winmmbase.dll
+L10996: 27232	TabTip.exe	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L10997: 27232	TabTip.exe	0x7fff46870000	True	True	True	\Windows\System32\UIAnimation.dll
+L10998: 27232	TabTip.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L10999: 27232	TabTip.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L11000: 27232	TabTip.exe	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L11001: 27232	TabTip.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L11002: 27232	TabTip.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L11003: 27232	TabTip.exe	0x7fff4c810000	True	True	True	\Windows\System32\AudioSes.dll
+L11004: 27232	TabTip.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L11005: 27232	TabTip.exe	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L11006: 27232	TabTip.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L11007: 27232	TabTip.exe	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L11008: 27232	TabTip.exe	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L11009: 27232	TabTip.exe	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L11010: 27232	TabTip.exe	0x7fff538f0000	True	True	True	\Windows\System32\gpapi.dll
+L11011: 27232	TabTip.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L11012: 27232	TabTip.exe	0x7fff52c30000	True	True	True	\Windows\System32\dwmapi.dll
+L11013: 27232	TabTip.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L11014: 27232	TabTip.exe	0x7fff538e0000	True	True	True	\Windows\System32\hid.dll
+L11015: 27232	TabTip.exe	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L11016: 27232	TabTip.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L11017: 27232	TabTip.exe	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L11018: 27232	TabTip.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L11019: 27232	TabTip.exe	0x7fff547d0000	True	True	True	\Windows\System32\winsta.dll
+L11020: 27232	TabTip.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L11021: 27232	TabTip.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L11022: 27232	TabTip.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L11023: 27232	TabTip.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L11024: 27232	TabTip.exe	0x7fff54a60000	True	True	True	\Windows\System32\ncrypt.dll
+L11025: 27232	TabTip.exe	0x7fff54a20000	True	True	True	\Windows\System32\ntasn1.dll
+L11026: 27232	TabTip.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L11027: 27232	TabTip.exe	0x7fff54dc0000	True	True	True	\Windows\System32\devobj.dll
+L11028: 27232	TabTip.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L11029: 27232	TabTip.exe	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L11030: 27232	TabTip.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L11031: 27232	TabTip.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L11032: 27232	TabTip.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L11033: 27232	TabTip.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L11034: 27232	TabTip.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L11035: 27232	TabTip.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L11036: 27232	TabTip.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L11037: 27232	TabTip.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L11038: 27232	TabTip.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L11039: 27232	TabTip.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L11040: 27232	TabTip.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L11041: 27232	TabTip.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L11042: 27232	TabTip.exe	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L11043: 27232	TabTip.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L11044: 27232	TabTip.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L11045: 27232	TabTip.exe	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+L11046: 27232	TabTip.exe	0x7fff56050000	True	True	True	\Windows\System32\shell32.dll
+L11047: 27232	TabTip.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L11048: 27232	TabTip.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L11049: 27232	TabTip.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L11050: 27232	TabTip.exe	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L11051: 27232	TabTip.exe	0x7fff576e0000	True	True	True	\Windows\System32\msctf.dll
+L11052: 27232	TabTip.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L10970: 27232	TabTip.exe	0x14b75fa0000	False	False	False	\Program Files\Common Files\microsoft shared\ink\en-US\TabTip.exe.mui
+L10971: 27232	TabTip.exe	0x14b77990000	False	False	False	\Windows\System32\oleaccrc.dll
+L10972: 27232	TabTip.exe	0x14b77980000	False	False	False	\Program Files\Common Files\microsoft shared\ink\en-US\TipRes.dll.mui
+L10973: 27232	TabTip.exe	0x14b779a0000	True	False	True	\Program Files\Common Files\microsoft shared\ink\tipresx.dll
+L10974: 27232	TabTip.exe	0x14b779c0000	True	False	True	\Program Files\Common Files\microsoft shared\ink\TipRes.dll
+L10975: 27232	TabTip.exe	0x14b783d0000	False	False	False	\Program Files\Common Files\microsoft shared\ink\en-US\tipresx.dll.mui
+L10976: 27232	TabTip.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L10977: 27232	TabTip.exe	0x7fff4c780000	True	True	True	\Windows\System32\MMDevAPI.dll
+L10978: 27232	TabTip.exe	0x7fff379a0000	True	True	True	\Program Files\Common Files\microsoft shared\ink\tipskins.dll
+L10979: 27232	TabTip.exe	0x7fff27000000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.630_none_fae7a41d761b04f0\GdiPlus.dll
+L10980: 27232	TabTip.exe	0x7ff7e2f60000	True	False	True	\Program Files\Common Files\microsoft shared\ink\TabTip.exe
+L10981: 27232	TabTip.exe	0x7fff210c0000	True	True	True	\Program Files\Common Files\microsoft shared\ink\tabskb.dll
+L10982: 27232	TabTip.exe	0x7ffeed5f0000	True	True	True	\Program Files\Common Files\microsoft shared\ink\tiptsf.dll
+L10983: 27232	TabTip.exe	0x7fff26bc0000	True	True	True	\Program Files\Common Files\microsoft shared\ink\IpsPlugin.dll
+L10984: 27232	TabTip.exe	0x7fff2dbf0000	True	True	True	\Windows\System32\duser.dll
+L10985: 27232	TabTip.exe	0x7fff29bf0000	True	True	True	\Windows\System32\oleacc.dll
+L10986: 27232	TabTip.exe	0x7fff31280000	True	True	True	\Windows\System32\twinapi.dll
+L10987: 27232	TabTip.exe	0x7fff310d0000	True	True	True	\Windows\System32\msTextPrediction.dll
+L10988: 27232	TabTip.exe	0x7fff377f0000	True	True	True	\Windows\System32\dui70.dll
+L10989: 27232	TabTip.exe	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L10990: 27232	TabTip.exe	0x7fff3dab0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\comctl32.dll
+L10991: 27232	TabTip.exe	0x7fff3d590000	True	True	True	\Windows\System32\Speech_OneCore\common\sapi_onecore.dll
+L10992: 27232	TabTip.exe	0x7fff3bc90000	True	True	True	\Windows\System32\atlthunk.dll
+L10993: 27232	TabTip.exe	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L10994: 27232	TabTip.exe	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L10995: 27232	TabTip.exe	0x7fff43100000	True	True	True	\Windows\System32\winmmbase.dll
+L10996: 27232	TabTip.exe	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L10997: 27232	TabTip.exe	0x7fff46870000	True	True	True	\Windows\System32\UIAnimation.dll
+L10998: 27232	TabTip.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L10999: 27232	TabTip.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L11000: 27232	TabTip.exe	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L11001: 27232	TabTip.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L11002: 27232	TabTip.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L11003: 27232	TabTip.exe	0x7fff4c810000	True	True	True	\Windows\System32\AudioSes.dll
+L11004: 27232	TabTip.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L11005: 27232	TabTip.exe	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L11006: 27232	TabTip.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L11007: 27232	TabTip.exe	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L11008: 27232	TabTip.exe	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L11009: 27232	TabTip.exe	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L11010: 27232	TabTip.exe	0x7fff538f0000	True	True	True	\Windows\System32\gpapi.dll
+L11011: 27232	TabTip.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L11012: 27232	TabTip.exe	0x7fff52c30000	True	True	True	\Windows\System32\dwmapi.dll
+L11013: 27232	TabTip.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L11014: 27232	TabTip.exe	0x7fff538e0000	True	True	True	\Windows\System32\hid.dll
+L11015: 27232	TabTip.exe	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L11016: 27232	TabTip.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L11017: 27232	TabTip.exe	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L11018: 27232	TabTip.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L11019: 27232	TabTip.exe	0x7fff547d0000	True	True	True	\Windows\System32\winsta.dll
+L11020: 27232	TabTip.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L11021: 27232	TabTip.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L11022: 27232	TabTip.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L11023: 27232	TabTip.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L11024: 27232	TabTip.exe	0x7fff54a60000	True	True	True	\Windows\System32\ncrypt.dll
+L11025: 27232	TabTip.exe	0x7fff54a20000	True	True	True	\Windows\System32\ntasn1.dll
+L11026: 27232	TabTip.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L11027: 27232	TabTip.exe	0x7fff54dc0000	True	True	True	\Windows\System32\devobj.dll
+L11028: 27232	TabTip.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L11029: 27232	TabTip.exe	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L11030: 27232	TabTip.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L11031: 27232	TabTip.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L11032: 27232	TabTip.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L11033: 27232	TabTip.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L11034: 27232	TabTip.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L11035: 27232	TabTip.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L11036: 27232	TabTip.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L11037: 27232	TabTip.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L11038: 27232	TabTip.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L11039: 27232	TabTip.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L11040: 27232	TabTip.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L11041: 27232	TabTip.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L11042: 27232	TabTip.exe	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L11043: 27232	TabTip.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L11044: 27232	TabTip.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L11045: 27232	TabTip.exe	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+L11046: 27232	TabTip.exe	0x7fff56050000	True	True	True	\Windows\System32\shell32.dll
+L11047: 27232	TabTip.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L11048: 27232	TabTip.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L11049: 27232	TabTip.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L11050: 27232	TabTip.exe	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L11051: 27232	TabTip.exe	0x7fff576e0000	True	True	True	\Windows\System32\msctf.dll
+L11052: 27232	TabTip.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L1164: 27232	TabTip.exe	\Device\HarddiskVolume3\Program Files\Common Files\microsoft shared\ink\TabTip.exe	C:\Program Files\Common Files\microsoft shared\ink\TabTip.exe	False	False
+
+--- sessions.txt ---
+L1182: 1	-	27232	TabTip.exe	SRL-FORGE/fredr	2020-11-14 03:42:55.000000 UTC
+
+=== END OF PIVOT REPORT ===

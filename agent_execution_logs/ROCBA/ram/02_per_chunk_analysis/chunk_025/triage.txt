@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_025.txt
+Summary: HxTsr.exe has an orphaned parent PID (740 not present in process list) and was extremely short-lived (~2 seconds); weak signals only, escalated for pivot confirmation.
+
+[PROCESS]
+pid: 9644
+ppid: 740
+image: HxTsr.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 740 (unknown) not present anywhere in the process list | very_short_lived: process exited ~2 seconds after creation (Start: 2020-11-14 13:03:39 UTC, Exit: 2020-11-14 13:03:41 UTC)
+

@@ -1,0 +1,270 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-14T23:08:45Z
+
+=== PID 8044 (ApplicationFra, ppid=860) ===
+Cmdline: C:\Windows\system32\ApplicationFrameHost.exe -Embedding
+
+--- pslist.txt ---
+L115: 8044	860	ApplicationFra	0xbb0c9378c300	3	-	1	False	2025-08-07 19:38:22.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L115: 8044	ApplicationFra	C:\Windows\system32\ApplicationFrameHost.exe -Embedding
+
+--- privileges.txt ---
+L3855: 8044	ApplicationFra	2	SeCreateTokenPrivilege		Create a token object
+L3856: 8044	ApplicationFra	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3857: 8044	ApplicationFra	4	SeLockMemoryPrivilege		Lock pages in memory
+L3858: 8044	ApplicationFra	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3859: 8044	ApplicationFra	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3860: 8044	ApplicationFra	7	SeTcbPrivilege		Act as part of the operating system
+L3861: 8044	ApplicationFra	8	SeSecurityPrivilege		Manage auditing and security log
+L3862: 8044	ApplicationFra	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3863: 8044	ApplicationFra	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3864: 8044	ApplicationFra	11	SeSystemProfilePrivilege		Profile system performance
+L3865: 8044	ApplicationFra	12	SeSystemtimePrivilege		Change the system time
+L3866: 8044	ApplicationFra	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3867: 8044	ApplicationFra	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3868: 8044	ApplicationFra	15	SeCreatePagefilePrivilege		Create a pagefile
+L3869: 8044	ApplicationFra	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3870: 8044	ApplicationFra	17	SeBackupPrivilege		Backup files and directories
+L3871: 8044	ApplicationFra	18	SeRestorePrivilege		Restore files and directories
+L3872: 8044	ApplicationFra	19	SeShutdownPrivilege	Present	Shut down the system
+L3873: 8044	ApplicationFra	20	SeDebugPrivilege		Debug programs
+L3874: 8044	ApplicationFra	21	SeAuditPrivilege		Generate security audits
+L3875: 8044	ApplicationFra	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3876: 8044	ApplicationFra	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3877: 8044	ApplicationFra	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3878: 8044	ApplicationFra	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3879: 8044	ApplicationFra	26	SeSyncAgentPrivilege		Synch directory service data
+L3880: 8044	ApplicationFra	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3881: 8044	ApplicationFra	28	SeManageVolumePrivilege		Manage the files on a volume
+L3882: 8044	ApplicationFra	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3883: 8044	ApplicationFra	30	SeCreateGlobalPrivilege	Default	Create global objects
+L3884: 8044	ApplicationFra	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3885: 8044	ApplicationFra	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3886: 8044	ApplicationFra	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3887: 8044	ApplicationFra	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3888: 8044	ApplicationFra	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3889: 8044	ApplicationFra	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5397: 8044	ApplicationFra	0x7ff6b0d60000	0x15000	ApplicationFrameHost.exe	C:\Windows\system32\ApplicationFrameHost.exe	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5398: 8044	ApplicationFra	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5399: 8044	ApplicationFra	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5400: 8044	ApplicationFra	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5401: 8044	ApplicationFra	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5402: 8044	ApplicationFra	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5403: 8044	ApplicationFra	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5404: 8044	ApplicationFra	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5405: 8044	ApplicationFra	0x7fff5b690000	0xf3000	dxgi.dll	C:\Windows\system32\dxgi.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5406: 8044	ApplicationFra	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5407: 8044	ApplicationFra	0x7fff5d7d0000	0x2c000	gdi32.dll	C:\Windows\System32\gdi32.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5408: 8044	ApplicationFra	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5409: 8044	ApplicationFra	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5410: 8044	ApplicationFra	0x7fff5d910000	0x19d000	USER32.dll	C:\Windows\System32\USER32.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5411: 8044	ApplicationFra	0x7fff5db50000	0x30000	IMM32.DLL	C:\Windows\System32\IMM32.DLL	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5412: 8044	ApplicationFra	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5413: 8044	ApplicationFra	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\System32\bcryptPrimitives.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5414: 8044	ApplicationFra	0x7fff5ead0000	0xa9000	clbcatq.dll	C:\Windows\System32\clbcatq.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5415: 8044	ApplicationFra	0x7fff41a90000	0xa9000	ApplicationFrame.dll	C:\Windows\System32\ApplicationFrame.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5416: 8044	ApplicationFra	0x7fff5e8f0000	0xad000	SHCORE.dll	C:\Windows\System32\SHCORE.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5417: 8044	ApplicationFra	0x7fff5f150000	0x55000	SHLWAPI.dll	C:\Windows\System32\SHLWAPI.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5418: 8044	ApplicationFra	0x7fff5dcd0000	0xcd000	OLEAUT32.dll	C:\Windows\System32\OLEAUT32.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5419: 8044	ApplicationFra	0x7fff58940000	0xf6000	PROPSYS.dll	C:\Windows\System32\PROPSYS.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5420: 8044	ApplicationFra	0x7fff579f0000	0x200000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5421: 8044	ApplicationFra	0x7fff5caa0000	0x2c000	DEVOBJ.dll	C:\Windows\System32\DEVOBJ.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5422: 8044	ApplicationFra	0x7fff5a7e0000	0x9e000	UxTheme.dll	C:\Windows\System32\UxTheme.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5423: 8044	ApplicationFra	0x7fff54800000	0x2d000	bcp47mrm.dll	C:\Windows\System32\bcp47mrm.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5424: 8044	ApplicationFra	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\System32\sechost.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5425: 8044	ApplicationFra	0x7fff5d570000	0x4e000	cfgmgr32.dll	C:\Windows\System32\cfgmgr32.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5426: 8044	ApplicationFra	0x7fff44ce0000	0xa9000	TWINAPI.dll	C:\Windows\System32\TWINAPI.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5427: 8044	ApplicationFra	0x7fff59190000	0x5c0000	d2d1.dll	C:\Windows\System32\d2d1.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5428: 8044	ApplicationFra	0x7fff58ac0000	0x263000	d3d11.dll	C:\Windows\System32\d3d11.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5429: 8044	ApplicationFra	0x7fff5aad0000	0x2f000	dwmapi.dll	C:\Windows\System32\dwmapi.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5430: 8044	ApplicationFra	0x7fff55e30000	0x7cb000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5431: 8044	ApplicationFra	0x7fff5e560000	0x114000	MSCTF.dll	C:\Windows\System32\MSCTF.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5432: 8044	ApplicationFra	0x7fff54f80000	0x6f6000	D3D10Warp.dll	C:\Windows\system32\D3D10Warp.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5433: 8044	ApplicationFra	0x7fff5eff0000	0xaf000	advapi32.dll	C:\Windows\System32\advapi32.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5434: 8044	ApplicationFra	0x7fff54d70000	0x3b000	dxcore.dll	C:\Windows\SYSTEM32\dxcore.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5435: 8044	ApplicationFra	0x7fff59a00000	0x1e3000	dcomp.dll	C:\Windows\System32\dcomp.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5436: 8044	ApplicationFra	0x7fff5a2d0000	0xf2000	CoreMessaging.dll	C:\Windows\System32\CoreMessaging.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5437: 8044	ApplicationFra	0x7fff5dc60000	0x6b000	WS2_32.dll	C:\Windows\System32\WS2_32.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5438: 8044	ApplicationFra	0x7fff3fdd0000	0x2f5000	UIAutomationCore.DLL	C:\Windows\system32\UIAutomationCore.DLL	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5439: 8044	ApplicationFra	0x7fff5dda0000	0x744000	SHELL32.dll	C:\Windows\System32\SHELL32.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5440: 8044	ApplicationFra	0x7fff5aeb0000	0x793000	windows.storage.dll	C:\Windows\SYSTEM32\windows.storage.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5441: 8044	ApplicationFra	0x7fff5c750000	0x2e000	Wldp.dll	C:\Windows\SYSTEM32\Wldp.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5442: 8044	ApplicationFra	0x7fff5cd10000	0x1f000	profapi.dll	C:\Windows\System32\profapi.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5443: 8044	ApplicationFra	0x7fff524f0000	0x11000	windows.staterepositorycore.dll	C:\Windows\SYSTEM32\windows.staterepositorycore.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5444: 8044	ApplicationFra	0x7fff49150000	0x146000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5445: 8044	ApplicationFra	0x7fff57830000	0x1b4000	windowscodecs.dll	C:\Windows\system32\windowscodecs.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5446: 8044	ApplicationFra	0x7fff5cf20000	0x27000	bcrypt.dll	C:\Windows\System32\bcrypt.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5447: 8044	ApplicationFra	0x7fff54db0000	0xf4000	mrmcorer.dll	C:\Windows\SYSTEM32\mrmcorer.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5448: 8044	ApplicationFra	0x7fff533d0000	0x2b1000	iertutil.dll	C:\Windows\SYSTEM32\iertutil.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5449: 8044	ApplicationFra	0x7fff54c20000	0x141000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5450: 8044	ApplicationFra	0x7fff57f00000	0xa1000	WindowManagementAPI.dll	C:\Windows\System32\WindowManagementAPI.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5451: 8044	ApplicationFra	0x7fff54b20000	0xfa000	TextInputFramework.dll	C:\Windows\System32\TextInputFramework.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5452: 8044	ApplicationFra	0x7fff549c0000	0x152000	InputHost.dll	C:\Windows\System32\InputHost.dll	6	2025-08-07 19:38:22.000000 UTC	Disabled
+L5453: 8044	ApplicationFra	0x7fff598a0000	0x154000	wintypes.dll	C:\Windows\SYSTEM32\wintypes.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5454: 8044	ApplicationFra	0x7fff59f70000	0x35e000	CoreUIComponents.dll	C:\Windows\System32\CoreUIComponents.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5455: 8044	ApplicationFra	0x7fff5bef0000	0x33000	ntmarta.dll	C:\Windows\SYSTEM32\ntmarta.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5456: 8044	ApplicationFra	0x7fff50a30000	0xac000	TextShaping.dll	C:\Windows\system32\TextShaping.dll	-1	2025-08-07 19:38:22.000000 UTC	Disabled
+L5457: 8044	ApplicationFra	0x7fff57490000	0x47000	UIAnimation.dll	C:\Windows\System32\UIAnimation.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L5458: 8044	ApplicationFra	0x7fff3f6f0000	0x3b000	rometadata.dll	C:\Windows\SYSTEM32\rometadata.dll	6	2025-08-07 19:41:35.000000 UTC	Disabled
+L5459: 8044	ApplicationFra	0x7fff4d1f0000	0x7f000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2025-08-07 19:41:43.000000 UTC	Disabled
+L5460: 8044	ApplicationFra	0x7fff56890000	0xa1000	ActXPrxy.dll	C:\Windows\System32\ActXPrxy.dll	6	2025-08-07 19:41:43.000000 UTC	Disabled
+
+--- pstree.txt ---
+L98: *** 8044	860	ApplicationFra	0xbb0c9378c300	3	-	1	False	2025-08-07 19:38:22.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\ApplicationFrameHost.exe	C:\Windows\system32\ApplicationFrameHost.exe -Embedding	C:\Windows\system32\ApplicationFrameHost.exe
+
+--- psscan.txt ---
+L143: 8044	860	ApplicationFra	0xbb0c9378c300	3	-	1	False	2025-08-07 19:38:22.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L5620: 8044	ApplicationFra	0x238556a0000	False	False	False	\Windows\System32\en-GB\ApplicationFrame.dll.mui
+L5621: 8044	ApplicationFra	0x238560a0000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L5622: 8044	ApplicationFra	0x23856070000	False	False	False	\Windows\System32\en-US\combase.dll.mui
+L5623: 8044	ApplicationFra	0x23856080000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L5624: 8044	ApplicationFra	0x238568a0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L5625: 8044	ApplicationFra	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L5626: 8044	ApplicationFra	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L5627: 8044	ApplicationFra	0x7fff54800000	True	True	True	\Windows\System32\BCP47mrm.dll
+L5628: 8044	ApplicationFra	0x7fff41a90000	True	True	True	\Windows\System32\ApplicationFrame.dll
+L5629: 8044	ApplicationFra	0x7ff6b0d60000	True	False	True	\Windows\System32\ApplicationFrameHost.exe
+L5630: 8044	ApplicationFra	0x7fff3fdd0000	True	True	True	\Windows\System32\UIAutomationCore.dll
+L5631: 8044	ApplicationFra	0x7fff3f6f0000	True	True	True	\Windows\System32\rometadata.dll
+L5632: 8044	ApplicationFra	0x7fff50a30000	True	True	True	\Windows\System32\TextShaping.dll
+L5633: 8044	ApplicationFra	0x7fff49150000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L5634: 8044	ApplicationFra	0x7fff44ce0000	True	True	True	\Windows\System32\twinapi.dll
+L5635: 8044	ApplicationFra	0x7fff4d1f0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L5636: 8044	ApplicationFra	0x7fff524f0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L5637: 8044	ApplicationFra	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L5638: 8044	ApplicationFra	0x7fff55e30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L5639: 8044	ApplicationFra	0x7fff54c20000	True	True	True	\Windows\System32\Windows.UI.dll
+L5640: 8044	ApplicationFra	0x7fff54b20000	True	True	True	\Windows\System32\TextInputFramework.dll
+L5641: 8044	ApplicationFra	0x7fff549c0000	True	True	True	\Windows\System32\InputHost.dll
+L5642: 8044	ApplicationFra	0x7fff54db0000	True	True	True	\Windows\System32\MrmCoreR.dll
+L5643: 8044	ApplicationFra	0x7fff54d70000	True	True	True	\Windows\System32\DXCore.dll
+L5644: 8044	ApplicationFra	0x7fff54f80000	True	True	True	\Windows\System32\d3d10warp.dll
+L5645: 8044	ApplicationFra	0x7fff579f0000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L5646: 8044	ApplicationFra	0x7fff57490000	True	True	True	\Windows\System32\UIAnimation.dll
+L5647: 8044	ApplicationFra	0x7fff56890000	True	True	True	\Windows\System32\actxprxy.dll
+L5648: 8044	ApplicationFra	0x7fff57830000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L5649: 8044	ApplicationFra	0x7fff57f00000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L5650: 8044	ApplicationFra	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5651: 8044	ApplicationFra	0x7fff59a00000	True	True	True	\Windows\System32\dcomp.dll
+L5652: 8044	ApplicationFra	0x7fff59190000	True	True	True	\Windows\System32\d2d1.dll
+L5653: 8044	ApplicationFra	0x7fff58ac0000	True	True	True	\Windows\System32\d3d11.dll
+L5654: 8044	ApplicationFra	0x7fff598a0000	True	True	True	\Windows\System32\WinTypes.dll
+L5655: 8044	ApplicationFra	0x7fff5a7e0000	True	True	True	\Windows\System32\uxtheme.dll
+L5656: 8044	ApplicationFra	0x7fff5a2d0000	True	True	True	\Windows\System32\CoreMessaging.dll
+L5657: 8044	ApplicationFra	0x7fff59f70000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L5658: 8044	ApplicationFra	0x7fff5aad0000	True	True	True	\Windows\System32\dwmapi.dll
+L5659: 8044	ApplicationFra	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L5660: 8044	ApplicationFra	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L5661: 8044	ApplicationFra	0x7fff5b690000	True	True	True	\Windows\System32\dxgi.dll
+L5662: 8044	ApplicationFra	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L5663: 8044	ApplicationFra	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L5664: 8044	ApplicationFra	0x7fff5caa0000	True	True	True	\Windows\System32\devobj.dll
+L5665: 8044	ApplicationFra	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L5666: 8044	ApplicationFra	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5667: 8044	ApplicationFra	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L5668: 8044	ApplicationFra	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L5669: 8044	ApplicationFra	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L5670: 8044	ApplicationFra	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L5671: 8044	ApplicationFra	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5672: 8044	ApplicationFra	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L5673: 8044	ApplicationFra	0x7fff5db50000	True	True	True	\Windows\System32\imm32.dll
+L5674: 8044	ApplicationFra	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L5675: 8044	ApplicationFra	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L5676: 8044	ApplicationFra	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L5677: 8044	ApplicationFra	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L5678: 8044	ApplicationFra	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L5679: 8044	ApplicationFra	0x7fff5e560000	True	True	True	\Windows\System32\msctf.dll
+L5680: 8044	ApplicationFra	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L5681: 8044	ApplicationFra	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L5682: 8044	ApplicationFra	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L5683: 8044	ApplicationFra	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L5684: 8044	ApplicationFra	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L5685: 8044	ApplicationFra	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L5686: 8044	ApplicationFra	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L5687: 8044	ApplicationFra	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L5688: 8044	ApplicationFra	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L5620: 8044	ApplicationFra	0x238556a0000	False	False	False	\Windows\System32\en-GB\ApplicationFrame.dll.mui
+L5621: 8044	ApplicationFra	0x238560a0000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L5622: 8044	ApplicationFra	0x23856070000	False	False	False	\Windows\System32\en-US\combase.dll.mui
+L5623: 8044	ApplicationFra	0x23856080000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L5624: 8044	ApplicationFra	0x238568a0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L5625: 8044	ApplicationFra	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L5626: 8044	ApplicationFra	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L5627: 8044	ApplicationFra	0x7fff54800000	True	True	True	\Windows\System32\BCP47mrm.dll
+L5628: 8044	ApplicationFra	0x7fff41a90000	True	True	True	\Windows\System32\ApplicationFrame.dll
+L5629: 8044	ApplicationFra	0x7ff6b0d60000	True	False	True	\Windows\System32\ApplicationFrameHost.exe
+L5630: 8044	ApplicationFra	0x7fff3fdd0000	True	True	True	\Windows\System32\UIAutomationCore.dll
+L5631: 8044	ApplicationFra	0x7fff3f6f0000	True	True	True	\Windows\System32\rometadata.dll
+L5632: 8044	ApplicationFra	0x7fff50a30000	True	True	True	\Windows\System32\TextShaping.dll
+L5633: 8044	ApplicationFra	0x7fff49150000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L5634: 8044	ApplicationFra	0x7fff44ce0000	True	True	True	\Windows\System32\twinapi.dll
+L5635: 8044	ApplicationFra	0x7fff4d1f0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L5636: 8044	ApplicationFra	0x7fff524f0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L5637: 8044	ApplicationFra	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L5638: 8044	ApplicationFra	0x7fff55e30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L5639: 8044	ApplicationFra	0x7fff54c20000	True	True	True	\Windows\System32\Windows.UI.dll
+L5640: 8044	ApplicationFra	0x7fff54b20000	True	True	True	\Windows\System32\TextInputFramework.dll
+L5641: 8044	ApplicationFra	0x7fff549c0000	True	True	True	\Windows\System32\InputHost.dll
+L5642: 8044	ApplicationFra	0x7fff54db0000	True	True	True	\Windows\System32\MrmCoreR.dll
+L5643: 8044	ApplicationFra	0x7fff54d70000	True	True	True	\Windows\System32\DXCore.dll
+L5644: 8044	ApplicationFra	0x7fff54f80000	True	True	True	\Windows\System32\d3d10warp.dll
+L5645: 8044	ApplicationFra	0x7fff579f0000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L5646: 8044	ApplicationFra	0x7fff57490000	True	True	True	\Windows\System32\UIAnimation.dll
+L5647: 8044	ApplicationFra	0x7fff56890000	True	True	True	\Windows\System32\actxprxy.dll
+L5648: 8044	ApplicationFra	0x7fff57830000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L5649: 8044	ApplicationFra	0x7fff57f00000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L5650: 8044	ApplicationFra	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5651: 8044	ApplicationFra	0x7fff59a00000	True	True	True	\Windows\System32\dcomp.dll
+L5652: 8044	ApplicationFra	0x7fff59190000	True	True	True	\Windows\System32\d2d1.dll
+L5653: 8044	ApplicationFra	0x7fff58ac0000	True	True	True	\Windows\System32\d3d11.dll
+L5654: 8044	ApplicationFra	0x7fff598a0000	True	True	True	\Windows\System32\WinTypes.dll
+L5655: 8044	ApplicationFra	0x7fff5a7e0000	True	True	True	\Windows\System32\uxtheme.dll
+L5656: 8044	ApplicationFra	0x7fff5a2d0000	True	True	True	\Windows\System32\CoreMessaging.dll
+L5657: 8044	ApplicationFra	0x7fff59f70000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L5658: 8044	ApplicationFra	0x7fff5aad0000	True	True	True	\Windows\System32\dwmapi.dll
+L5659: 8044	ApplicationFra	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L5660: 8044	ApplicationFra	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L5661: 8044	ApplicationFra	0x7fff5b690000	True	True	True	\Windows\System32\dxgi.dll
+L5662: 8044	ApplicationFra	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L5663: 8044	ApplicationFra	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L5664: 8044	ApplicationFra	0x7fff5caa0000	True	True	True	\Windows\System32\devobj.dll
+L5665: 8044	ApplicationFra	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L5666: 8044	ApplicationFra	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5667: 8044	ApplicationFra	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L5668: 8044	ApplicationFra	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L5669: 8044	ApplicationFra	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L5670: 8044	ApplicationFra	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L5671: 8044	ApplicationFra	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5672: 8044	ApplicationFra	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L5673: 8044	ApplicationFra	0x7fff5db50000	True	True	True	\Windows\System32\imm32.dll
+L5674: 8044	ApplicationFra	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L5675: 8044	ApplicationFra	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L5676: 8044	ApplicationFra	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L5677: 8044	ApplicationFra	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L5678: 8044	ApplicationFra	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L5679: 8044	ApplicationFra	0x7fff5e560000	True	True	True	\Windows\System32\msctf.dll
+L5680: 8044	ApplicationFra	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L5681: 8044	ApplicationFra	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L5682: 8044	ApplicationFra	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L5683: 8044	ApplicationFra	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L5684: 8044	ApplicationFra	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L5685: 8044	ApplicationFra	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L5686: 8044	ApplicationFra	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L5687: 8044	ApplicationFra	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L5688: 8044	ApplicationFra	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L115: 8044	ApplicationFra	\Device\HarddiskVolume3\Windows\System32\ApplicationFrameHost.exe	C:\Windows\system32\ApplicationFrameHost.exe	False	False
+
+--- sessions.txt ---
+L130: 1	-	8044	ApplicationFra	DESKTOP-RMH9G1A/Lab2	2025-08-07 19:38:22.000000 UTC
+
+=== END OF PIVOT REPORT ===

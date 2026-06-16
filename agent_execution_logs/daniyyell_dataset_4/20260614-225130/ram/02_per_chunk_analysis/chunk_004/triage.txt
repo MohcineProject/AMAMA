@@ -1,0 +1,5 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:45:00Z
+Chunk: chunk_004.txt
+Summary: No suspicious signals detected. ShellExperienceHost.exe runs from its expected SystemApps path with a normal command line; the truncated EPROCESS name is a known kernel artefact; the unlisted parent PID 860 is consistent with svchost/DcomLaunch hosting UWP activation and is not anomalous in isolation; no non-standard DLLs, network connections, or privilege signals are present.
+

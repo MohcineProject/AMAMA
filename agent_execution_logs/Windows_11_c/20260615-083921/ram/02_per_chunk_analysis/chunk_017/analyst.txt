@@ -1,0 +1,30 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 7064 — svchost.exe (ppid=888)**
+
+Agent 1 flagged: orphaned parent (PPID 888 not in process list).
+
+Evidence review:
+- Cmdline: `C:\WINDOWS\system32\svchost.exe -k UdkSvcGroup -s UdkUserSvc` — canonical path, legitimate per-user service group. UdkUserSvc is a real Windows service (User Data Access).
+- DLLs: All three shown are from System32 — svchost.exe, ntdll.dll, KERNEL32.DLL. No user-writable paths.
+- Privileges: The list is enormous (all 35 privileges listed), but critically, almost none are **enabled** — only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeCreateGlobalPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are marked Present/Enabled/Default. This is a normal token for a user-context svchost — the full privilege list is inherited from the token template but not enabled. `SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege` etc. are all **not** Present/Enabled.
+- Orphaned parent: PPID 888 not in pslist. This can happen legitimately when services.exe (or another parent) has exited after spawning the child, or due to PID reuse. For a per-user svchost (`UdkUserSvc`), the parent could be a session manager or services.exe that has since exited. This is a known benign scenario on Windows — per-user service host processes can outlive their spawning parent.
+- No malfind hits, no suspicious DLLs, no network connections, no registry persistence, no encoded cmdline.
+- The only signal is the orphaned parent, which Agent 1 itself rated LOW and noted path_ok, cmdline_ok, dlls_ok.
+
+**Verdict: REJECTED** — The orphaned parent is the sole signal, and it is a known benign artefact for per-user svchost instances. All other indicators (path, cmdline, DLLs, privilege enablement state) are clean.
+
+---
+
+**Report:**
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: A single Agent 1 finding was evaluated. The sole flagged process — a per-user svchost.exe instance hosting UdkUserSvc — presents no corroborating malicious indicators beyond an orphaned parent PID, which is a known benign artefact for per-user Windows service hosts. No confirmed or inconclusive findings were produced from this triage batch; the incident scope based on this evidence set is negligible.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report for this triage batch.)

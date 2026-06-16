@@ -1,0 +1,100 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 4644 — MicrosoftEdgeUpdate.exe**
+
+Agent 1 flags: SeTcbPrivilege enabled, SeDebugPrivilege enabled, SeImpersonatePrivilege enabled, orphaned parent (PPID 2168 not in process list), signal stack.
+
+Evidence review:
+
+1. **Privilege footprint**: The privileges list is extraordinary. This process holds nearly the *entire* Windows privilege set — SeTcbPrivilege (Present,Enabled,Default), SeDebugPrivilege (Present,Enabled,Default), SeImpersonatePrivilege (Present,Enabled,Default), SeAssignPrimaryTokenPrivilege (Present), SeLockMemoryPrivilege (Present,Enabled,Default), SeLoadDriverPrivilege (Present), SeBackupPrivilege (Present), SeRestorePrivilege (Present), SeAuditPrivilege (Present,Enabled,Default), SeCreatePermanentPrivilege (Present,Enabled,Default), SeCreateGlobalPrivilege (Present,Enabled,Default), SeDelegateSessionUserImpersonatePrivilege (Present,Enabled,Default), etc. This is essentially a SYSTEM-level token. A legitimate MicrosoftEdgeUpdate.exe running with `/c` (scheduled task check) runs as a service under LOCAL SYSTEM, which does carry a broad token — so this is not automatically disqualifying. However, the combination of SeTcbPrivilege *enabled* (not just present) is unusual even for SYSTEM services; most SYSTEM processes have it Present but not necessarily Enabled,Default.
+
+2. **Orphaned parent**: PPID 2168 is not in the process list. Legitimate EdgeUpdate can be launched by the EdgeUpdate service (svchost), Task Scheduler, or COM activation. An absent parent is suspicious but not conclusive — the parent may have exited after spawning the child.
+
+3. **Command line**: `"C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c` — the `/c` flag is the legitimate "check for updates" invocation. Path is the canonical installation path. This is entirely normal for the legitimate updater.
+
+4. **DLL list**: Only 3 shown — the main executable from its canonical path, an unnamed entry (could be ntdll before name resolution), and wow64.dll from System32. No suspicious DLLs from user-writable paths. The unnamed entry at `0x7ffff9a60000` with size `0x267000` matches ntdll.dll's typical size/address range and is likely a display artefact.
+
+5. **Session**: Session 0 (the `0` in pslist), which is consistent with a service running as SYSTEM. This actually *supports* the SYSTEM token explanation — services in session 0 running as LOCAL SYSTEM legitimately hold this broad privilege set.
+
+**Assessment**: The privilege set, while alarming at first glance, is consistent with a process running as LOCAL SYSTEM in session 0. MicrosoftEdgeUpdate runs as a service under SYSTEM. The `/c` flag is the standard update-check invocation. The canonical path, System32-only DLLs, and session 0 context all support legitimacy. The orphaned parent is the only remaining signal, and parent exit after spawning is common for scheduled-task-launched processes. No malfind hits, no suspicious DLLs, no network connections, no encoded cmdline. 
+
+However — SeTcbPrivilege being `Present,Enabled,Default` is genuinely unusual. Most SYSTEM processes have it Present but it's rarely Enabled,Default on a user-space updater. This is worth noting. But without corroborating evidence (no malfind, no suspicious DLLs, no network, no encoded cmdline), I cannot CONFIRM malice. The evidence is thin for a CONFIRMED verdict.
+
+→ **INCONCLUSIVE** — the privilege set is anomalous (SeTcbPrivilege enabled on an updater) but all other signals (path, cmdline, DLLs, session) are consistent with a legitimate SYSTEM-context service. The orphaned parent is weak in isolation.
+
+---
+
+**PID 4532 — smartscreen.exe**
+
+Agent 1 flags: orphaned parent (PPID 516 not in process list), name artefact confirmed benign (EPROCESS truncation to `smartscreen.ex` is expected).
+
+Evidence review:
+
+1. **Path**: `C:\Windows\System32\smartscreen.exe` — canonical path, legitimate binary.
+2. **Cmdline**: `-Embedding` — this is the standard COM activation flag used when smartscreen.exe is launched as an out-of-process COM server (e.g., by Explorer or a COM surrogate). Entirely normal.
+3. **Privileges**: Minimal — only SeShutdownPrivilege (Present), SeChangeNotifyPrivilege (Present,Enabled,Default), SeUndockPrivilege (Present), SeCreateGlobalPrivilege (Default), SeIncreaseWorkingSetPrivilege (Present), SeTimeZonePrivilege (Present). This is a standard medium-integrity user-context token. No elevated privileges at all. No SeDebugPrivilege, no SeTcbPrivilege.
+4. **DLLs**: Canonical System32 paths — smartscreen.exe, ntdll.dll, KERNEL32.DLL. No suspicious DLLs.
+5. **Orphaned parent**: PPID 516 not in process list. Smartscreen with `-Embedding` is typically launched by Explorer (PID varies) or a COM host. The parent having exited is plausible for COM activation patterns.
+6. **Session**: Session 1 (user session), consistent with a user-context COM activation.
+
+**Assessment**: Everything about this process is legitimate — canonical path, standard COM activation cmdline, minimal user-context privileges, System32-only DLLs. The orphaned parent is the sole signal and is weak given COM activation patterns. Agent 1 itself noted this was flagged only for the orphaned PPID and confirmed the name truncation as benign.
+
+→ **REJECTED** — standard smartscreen.exe COM activation (`-Embedding`) in user session 1, System32 path, minimal privileges, System32-only DLLs. Orphaned parent is consistent with COM host exit after activation. No malicious indicators present.
+
+---
+
+Now writing the report.
+
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T20:00:00Z
+Summary: Two Agent 1 leads were reviewed. Neither produced a CONFIRMED malicious verdict. PID 4644 (MicrosoftEdgeUpdate.exe) carries an anomalously broad privilege set including SeTcbPrivilege enabled, which is unusual for a user-space updater, but all other artefacts (canonical path, standard cmdline, System32-only DLLs, session 0 context) are consistent with a legitimate SYSTEM-context service; the finding is held INCONCLUSIVE pending further corroboration. PID 4532 (smartscreen.exe) is benign and rejected. No confirmed malicious activity was identified in this triage batch.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      4644
+PPID:     2168 (not present in process list)
+Image:    MicrosoftEdgeUpdate.exe
+Cmdline:  "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c
+Severity: (none — INCONCLUSIVE)
+MITRE:
+
+Justification:
+  The process runs in session 0 with a canonical installation path and the
+  standard `/c` (update-check) invocation, both consistent with the legitimate
+  Microsoft Edge Update service executing under LOCAL SYSTEM. The DLL set
+  visible in the evidence is limited to the main executable and System32
+  components (wow64.dll), with no user-writable-path or random-named DLLs.
+  However, the privilege token is extraordinarily broad — SeTcbPrivilege,
+  SeDebugPrivilege, SeAssignPrimaryTokenPrivilege, SeLoadDriverPrivilege,
+  SeBackupPrivilege, SeRestorePrivilege, SeAuditPrivilege, and
+  SeDelegateSessionUserImpersonatePrivilege are all Present and several are
+  Enabled,Default — a footprint more consistent with a raw SYSTEM token than
+  with a scoped service account. SeTcbPrivilege being Enabled,Default on a
+  user-space updater binary is the primary residual concern: while LOCAL SYSTEM
+  carries this privilege, it is rarely left enabled by default on a process
+  that has no kernel-level need for it. The orphaned parent (PPID 2168 absent)
+  is a weak secondary signal — Task Scheduler and COM activation routinely
+  produce orphaned parents — and does not independently confirm malice. Without
+  malfind hits, network connections, suspicious DLLs, or encoded cmdline
+  arguments, the evidence is insufficient to CONFIRM, but the privilege anomaly
+  is real enough to warrant retention as INCONCLUSIVE rather than outright
+  rejection. Corroboration from malfind output, handles, or network artefacts
+  for this PID would resolve the verdict.
+
+Key Evidence:
+  - L2495: 4644  MicrosoftEdgeU  7   SeTcbPrivilege  Present,Enabled,Default  Act as part of the operating system
+  - L2508: 4644  MicrosoftEdgeU  20  SeDebugPrivilege  Present,Enabled,Default  Debug programs
+  - L2517: 4644  MicrosoftEdgeU  29  SeImpersonatePrivilege  Present,Enabled,Default  Impersonate a client after authentication
+  - L2491: 4644  MicrosoftEdgeU  3   SeAssignPrimaryTokenPrivilege  Present  Replace a process-level token
+  - L2498: 4644  MicrosoftEdgeU  10  SeLoadDriverPrivilege  Present  Load and unload device drivers
+  - L2524: 4644  MicrosoftEdgeU  36  SeDelegateSessionUserImpersonatePrivilege  Present,Enabled,Default  Obtain an impersonation token for another user in the same session.
+  - L76:   4644  2168  MicrosoftEdgeU  0x990ef7880080  4  -  0  True  2026-05-13 19:15:37.000000 UTC  N/A  Disabled
+  - L2735: 4644  MicrosoftEdgeU  0x880000  0x35000  MicrosoftEdgeUpdate.exe  C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe  -1  2026-05-13 19:15:38.000000 UTC  Disabled
+----------------------------------------------------------------
+
+================================================================

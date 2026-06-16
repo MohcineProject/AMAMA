@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_020.txt
+Summary: All three processes share an unknown parent PID 828 (not present in process list); SecurityHealthService holds high-risk privileges (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege) warranting confirmation; SearchIndexer shows a truncated name consistent with kernel artefact but has an orphaned parent and notable privileges.
+
+[PROCESS]
+pid: 8620
+ppid: 828
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc
+severity: LOW
+reasons: orphaned_parent: PPID 828 is not present anywhere in the process list | path_ok: image path is C:\WINDOWS\system32\svchost.exe (legitimate), but parent resolution failure prevents full validation
+
+[PROCESS]
+pid: 8728
+ppid: 828
+image: SecurityHealth
+cmdline: C:\WINDOWS\system32\SecurityHealthService.exe
+severity: MEDIUM
+reasons: orphaned_parent: PPID 828 is not present anywhere in the process list | high_risk_privileges: holds SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege simultaneously | privilege_stacking: combination of SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege on a health-service process is atypical and warrants confirmation
+
+[PROCESS]
+pid: 8872
+ppid: 828
+image: SearchIndexer.
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 828 is not present anywhere in the process list | missing_path: no image path or command line recorded in snapshot — file backing unverifiable | high_risk_privileges: holds SeTcbPrivilege and SeImpersonatePrivilege | note: truncated name 'SearchIndexer.' is consistent with EPROCESS 14-char kernel artefact for SearchIndexer.exe; not treated as typosquat absent other path evidence
+

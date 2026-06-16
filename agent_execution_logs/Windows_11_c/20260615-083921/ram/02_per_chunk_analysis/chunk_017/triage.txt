@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:30:00.000000Z
+Chunk: chunk_017.txt
+Summary: svchost.exe with unknown/missing parent PID 888 — orphaned parent anomaly; all other signals are clean.
+
+[PROCESS]
+pid: 7064
+ppid: 888
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k UdkSvcGroup -s UdkUserSvc
+severity: LOW
+reasons: orphaned_parent: parent PID 888 does not appear anywhere in the process list — expected parent is services.exe | path_ok: image path is canonical C:\WINDOWS\system32\svchost.exe | cmdline_ok: -k UdkSvcGroup -s UdkUserSvc is a legitimate per-user svchost group; no LOLBin or obfuscation signals | dlls_ok: all listed DLLs resolve to standard System32 paths despite appearing in non-whitelisted list
+

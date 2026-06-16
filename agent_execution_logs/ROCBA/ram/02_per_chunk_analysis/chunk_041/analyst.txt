@@ -1,0 +1,72 @@
+I'll work through each signal carefully before rendering verdicts.
+
+---
+
+**PID 17316 — svchost.exe (ppid=828)**
+
+**Signal 1 — orphaned parent (PPID 828 not in pslist)**
+`pstree.txt` L220 shows `** 17316 828 svchost.exe` — the double-asterisk prefix in Volatility's pstree output means the parent (828) is not present in the active process list. This is a genuine orphan signal. Legitimate svchost.exe must be a child of `services.exe` (typically PID 748–900 range, but the specific PID matters less than the image name). PPID 828 being absent means either the parent exited (possible for short-lived processes, but svchost should have a persistent services.exe parent) or the process was injected/spawned by something that has since terminated or is hiding.
+
+**Signal 2 — missing cmdline**
+`cmdline.txt` L2179 shows `-` for the command line. Legitimate svchost.exe always has a `-k <ServiceGroupName>` argument. A missing/blank cmdline for svchost is a strong indicator of process hollowing or a fake svchost that was created without the standard invocation path.
+
+**Signal 3 — privilege set**
+The privilege set is enormous — this process holds `SeTcbPrivilege` (Present,Enabled,Default), `SeImpersonatePrivilege` (Present,Enabled,Default), `SeAssignPrimaryTokenPrivilege` (Present), `SeBackupPrivilege` (Present), `SeRestorePrivilege` (Present), `SeDebugPrivilege` (Default), `SeCreateGlobalPrivilege` (Present,Enabled,Default). This is a SYSTEM-level token. While some legitimate svchost instances run as SYSTEM, the combination with missing cmdline and orphaned parent is deeply suspicious. `SeTcbPrivilege` enabled+default is particularly unusual — this is the "act as part of the OS" privilege, typically held only by lsass.exe and a handful of core system processes.
+
+**Signal 4 — dlllist**
+`dlllist.txt` L12276 shows `0x1996511acb0 0x0 ... N/A Disabled` — the DLL list entry is essentially empty/disabled. A legitimate svchost.exe would have a full DLL list including ntdll.dll, kernel32.dll, and the hosted service DLLs. An empty/disabled DLL list strongly suggests process hollowing: the process structure exists in memory but the normal module list is absent or has been wiped.
+
+**Signal 5 — pstree path**
+`pstree.txt` does show the full path as `\Device\HarddiskVolume3\Windows\System32\svchost.exe` — so the binary path itself is legitimate. This rules out a path-based masquerade but does NOT rule out process hollowing (legitimate binary, hollowed out with malicious code).
+
+**Overall assessment:** Four independent signals all pointing the same direction — orphaned parent, missing cmdline, SYSTEM-level privilege set with SeTcb enabled, and empty DLL list. The path is legitimate, which is consistent with process hollowing (attacker creates a suspended svchost.exe from the real binary, then replaces its memory). This is `CONFIRMED` at `HIGH` severity. The absence of malfind data is noted but the other four signals are sufficient — malfind absence may simply mean the injected code doesn't have RWX regions detectable by that plugin, or the grep slice didn't include malfind hits.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: A single suspicious svchost.exe (PID 17316) was submitted for validation. The process exhibits four independent indicators of process hollowing: an orphaned parent (PPID 828 absent from the active process list), a missing command-line argument (legitimate svchost always carries a -k flag), an empty DLL list consistent with a hollowed process image, and a full SYSTEM-level privilege token with SeTcbPrivilege and SeImpersonatePrivilege both enabled. The binary path resolves to the legitimate System32 location, which is consistent with a hollow-process technique rather than a masquerade. The finding is confirmed at HIGH severity.
+Counts: confirmed=1  inconclusive=0  rejected=0
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      17316
+PPID:     828
+Image:    svchost.exe
+Cmdline:  - (no command line recorded)
+Severity: HIGH
+MITRE:    T1055.012 — Process Hollowing
+
+Justification:
+  Four independent artefact types converge on process hollowing. First,
+  pstree.txt marks this process with a double-asterisk orphan prefix,
+  meaning PPID 828 (the claimed parent) is absent from the active process
+  list; legitimate svchost.exe must descend from a live services.exe.
+  Second, cmdline.txt records a bare dash for the command line — every
+  legitimate svchost invocation carries a "-k <ServiceGroupName>" argument;
+  its absence indicates the process was not launched through the normal
+  service-hosting path. Third, dlllist.txt returns a single disabled/empty
+  entry (base 0x0, size 0, path N/A) where a real svchost would show
+  ntdll.dll, kernel32.dll, and one or more hosted-service DLLs — this is
+  the hallmark of a hollowed process whose PEB module list has been wiped
+  or was never populated. Fourth, the privilege token is a full SYSTEM-
+  class set with SeTcbPrivilege and SeImpersonatePrivilege both
+  Present,Enabled,Default, which is consistent with an attacker having
+  injected code that inherited or acquired a SYSTEM token. The binary path
+  in pstree resolves to the legitimate \Windows\System32\svchost.exe,
+  ruling out a simple masquerade and reinforcing the hollow-process
+  interpretation (real binary, replaced memory content).
+
+Key Evidence:
+  - L220: ** 17316	828	svchost.exe	0xb78cffa180c0	7	-	0	False	2020-11-16 02:29:37.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe
+  - L2179: 17316	svchost.exe	-
+  - L12276: 17316	svchost.exe	0x1996511acb0	0x0			0	N/A	Disabled
+  - L76100: 17316	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L76122: 17316	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L76113: 17316	svchost.exe	20	SeDebugPrivilege	Default	Debug programs
+  - L76096: 17316	svchost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+----------------------------------------------------------------
+
+================================================================

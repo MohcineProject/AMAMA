@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_047.txt
+Summary: SearchFilterHost process with an established external network connection to a public IP on port 443 is anomalous; all other processes show orphaned parents consistent with memory-snapshot artefacts or are short-lived exits with no additional signals.
+
+[PROCESS]
+pid: 24920
+ppid: 11968
+image: SearchFilterHo
+cmdline: 
+severity: MEDIUM
+reasons: unexpected_network: SearchFilterHost.exe (a local search indexing component) has an ESTABLISHED connection to public IP 52.113.194.132:443 from 192.168.1.5:61867 — this process should not make external network connections | orphaned_parent: PPID 11968 not present in the active process list (discovered via psscan only, suggesting parent already exited or was hidden) | name_truncation_noted: 'SearchFilterHo' is the expected 14-char EPROCESS truncation of SearchFilterHost.exe — not a typosquat, but path/cmd unavailable for confirmation
+

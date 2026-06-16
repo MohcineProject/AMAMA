@@ -1,0 +1,32 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T19:30:00Z
+Summary: A single process was submitted for validation. Widgets.exe (PID 5652) is a legitimate Microsoft Windows Widgets component launched from a signed WindowsApps package path with a well-formed COM server command line. The orphaned-parent signal is a known Volatility artefact for UWP/packaged processes whose host (RuntimeBroker or sibling COM surrogate) may not appear in the pslist snapshot. No malicious indicators were found across any artefact type. The incident scope from this submission is negligible.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTION DETAIL (for Agent 3 audit trail)
+================================================================
+
+PID 5652 — Widgets.exe — REJECTED
+
+Reason: Both Agent 1 signals are benign artefacts.
+
+1. orphaned_parent (PPID 516 absent from pslist):
+   UWP packaged applications are routinely launched via COM activation through RuntimeBroker.exe or a DcomLaunch surrogate. The activating host process may not be captured in a partial pslist snapshot, or may have already exited after handing off the child. PPID absence alone is not a reliable malice indicator for WindowsApps binaries. The command-line argument "-ServerName:Microsoft.Windows.DashboardServer" is the standard COM out-of-process server activation flag used by every packaged UWP app; it is not a suspicious argument.
+
+2. non-whitelisted_dll_list_includes_own_exe_path:
+   The dlllist entry at L3724 shows the process's own executable image mapped at its base address (0x7ff779b40000). Volatility's dlllist plugin enumerates the PEB loader list, which always includes the main executable module as the first entry. This is normal Windows loader behaviour, not a side-loading or injection artefact.
+
+3. Privilege footprint:
+   The privileges.txt block shows the full Windows privilege set in the "not present / not enabled" state for the vast majority of entries. Only SeShutdownPrivilege, SeChangeNotifyPrivilege (enabled, default), SeUndockPrivilege, SeCreateGlobalPrivilege (default), SeIncreaseWorkingSetPrivilege, and SeTimeZonePrivilege are marked Present or Enabled. This is a standard restricted user-context token. The dangerous privileges (SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege, etc.) are listed but carry no Present/Enabled flag — they are simply enumerated as part of the full privilege constant table, which Volatility always outputs regardless of whether the privilege is held. No privilege anomaly exists.
+
+4. Child process coherence:
+   PID 4420 (msedgewebview2) is a legitimate child of PID 5652, launched from the official Edge WebView2 installation path with "--webview-exe-name=Widgets.exe", consistent with the Widgets dashboard rendering its web content via the embedded WebView2 runtime. This parent-child relationship is expected and corroborates legitimacy.
+
+Conclusion: All Agent 1 signals resolve to known-benign patterns for a Microsoft-signed UWP packaged application. No malicious command-line arguments, no suspicious DLL paths, no enabled dangerous privileges, no malfind hits, no network connections, and no registry persistence artefacts were present in the evidence. REJECTED.
+
+================================================================

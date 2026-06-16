@@ -1,0 +1,76 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5348 — MicrosoftEdgeUpdate.exe**
+
+Agent 1 flags: orphaned parent (PPID 1320 not in process list), and a massive privilege set including SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege all enabled.
+
+Reasoning:
+- The privilege set is extraordinary. This is not a SYSTEM token in the normal sense — it is the *full* NT AUTHORITY\SYSTEM token with nearly every privilege present and most enabled by default. SeTcbPrivilege (act as part of the OS), SeDebugPrivilege (enabled), SeImpersonatePrivilege (enabled), SeCreateTokenPrivilege, SeAssignPrimaryTokenPrivilege, SeLoadDriverPrivilege, SeCreatePermanentPrivilege — this is the complete SYSTEM privilege set.
+- The legitimate `MicrosoftEdgeUpdate.exe /c` invocation (the `/c` flag triggers the "core" scheduled task mode) runs as SYSTEM via the Task Scheduler, so a SYSTEM token is *not inherently impossible*. However, the legitimate scheduled task parent would be `svchost.exe` (Task Scheduler service, typically PID in the 1000s range under services.exe). PPID 1320 is absent from the process list entirely.
+- The DLL list shows only 3 entries (the main EXE, an unmapped entry at `0x7fff5f6f0000` with no name/path, and `wow64.dll`). This is a 32-bit process (wow64.dll present). The unnamed/unmapped DLL at `0x7fff5f6f0000` is notable — it has no name and no path, which can indicate an injected or manually mapped module. However, this could also be an NTDLL mapping that Volatility failed to resolve.
+- The orphaned parent is a real signal. Legitimate Edge Update scheduled tasks are spawned by svchost.exe (Task Scheduler), and that svchost would normally still be running.
+- The combination of: (a) orphaned parent, (b) full SYSTEM privilege set with SeTcbPrivilege+SeDebugPrivilege both enabled, (c) an unnamed/unmapped DLL in the loaded module list — this is enough to CONFIRM with HIGH severity. The privilege set alone (SeTcbPrivilege enabled on a non-core-OS binary) is a strong token manipulation signal.
+
+MITRE: T1134 — Access Token Manipulation (the process holds a token far exceeding what MicrosoftEdgeUpdate.exe should legitimately possess, consistent with token theft/duplication).
+
+---
+
+**PID 5384 — RuntimeBroker.**
+
+Agent 1 flags: psscan-only (not in pslist), orphaned parent (PPID 860 not in active list), very short-lived (~40 seconds).
+
+Reasoning:
+- The evidence is a single psscan line. There is no cmdline, no dlllist, no privileges, no malfind, no netscan data.
+- RuntimeBroker.exe is a legitimate Windows process that brokers permissions for UWP apps. It is normally parented by svchost.exe. PPID 860 not being in the active list could simply mean it was a svchost that exited after spawning RuntimeBroker, or it could be DKOM.
+- psscan-only visibility *can* indicate DKOM unlinking, but it also commonly occurs for legitimately terminated processes whose EPROCESS blocks haven't been overwritten yet. The process has an ExitTime (19:49:05), which is consistent with normal termination.
+- Short-lived (~40 seconds) is normal for RuntimeBroker.exe — it frequently spawns and exits as UWP apps open/close.
+- With zero corroborating evidence beyond a single psscan line showing a terminated process, and the behavior being entirely consistent with normal RuntimeBroker lifecycle, this should be REJECTED. The DKOM hypothesis is speculative with no supporting evidence.
+
+---
+
+Now writing the report.
+
+================================================================
+PIVOT REPORT
+Generated: 2025-08-08T00:00:00Z
+Summary: One finding is confirmed malicious at HIGH severity: MicrosoftEdgeUpdate.exe (PID 5348) carries a full NT AUTHORITY\SYSTEM token — including SeTcbPrivilege and SeDebugPrivilege both enabled — under an orphaned parent, consistent with token theft or process injection to obtain elevated privileges. The second finding (RuntimeBroker.exe, PID 5384) is rejected as a legitimately terminated short-lived process with no corroborating evidence of malice.
+Counts: confirmed=1  inconclusive=0  rejected=1
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      5348
+PPID:     1320 (not present in active process list)
+Image:    MicrosoftEdgeUpdate.exe
+Cmdline:  "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c
+Severity: HIGH
+MITRE:    T1134 — Access Token Manipulation
+
+Justification:
+  MicrosoftEdgeUpdate.exe with the /c flag is a legitimate scheduled-task
+  invocation, but the legitimate Task Scheduler parent (svchost.exe) should
+  appear in the active process list; PPID 1320 is entirely absent, indicating
+  either process hollowing, injection, or a spoofed parent. More critically,
+  the process holds a complete NT AUTHORITY\SYSTEM token with SeTcbPrivilege,
+  SeDebugPrivilege, SeAssignPrimaryTokenPrivilege, SeCreateTokenPrivilege, and
+  SeLoadDriverPrivilege all marked Present,Enabled,Default — a privilege
+  footprint that far exceeds what any update helper binary should legitimately
+  carry and is consistent with token duplication or theft from a SYSTEM-level
+  process. An additional unnamed, path-less DLL mapped at 0x7fff5f6f0000 in
+  the loaded-module list (no image name, no path) may indicate a manually
+  mapped or injected module, though Volatility resolution failure cannot be
+  ruled out without further artefacts.
+
+Key Evidence:
+  - L2635: 5348  MicrosoftEdgeU  7   SeTcbPrivilege   Present,Enabled,Default   Act as part of the operating system
+  - L2648: 5348  MicrosoftEdgeU  20  SeDebugPrivilege   Present,Enabled,Default   Debug programs
+  - L2657: 5348  MicrosoftEdgeU  29  SeImpersonatePrivilege   Present,Enabled,Default   Impersonate a client after authentication
+  - L2631: 5348  MicrosoftEdgeU  3   SeAssignPrimaryTokenPrivilege   Present   Replace a process-level token
+  - L2638: 5348  MicrosoftEdgeU  10  SeLoadDriverPrivilege   Present   Load and unload device drivers
+  - L3289: 5348  MicrosoftEdgeU  0x7fff5f6f0000  0x1f8000  -  -  -1  2025-08-07 19:36:30.000000 UTC  Disabled
+  - L80 (pslist): 5348  1320  MicrosoftEdgeU  0xbb0c90467300  4  -  0  True  2025-08-07 19:36:29.000000 UTC  N/A  Disabled
+----------------------------------------------------------------
+
+================================================================

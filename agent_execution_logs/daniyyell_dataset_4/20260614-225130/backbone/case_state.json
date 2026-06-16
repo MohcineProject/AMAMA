@@ -1,0 +1,454 @@
+{
+  "case_id": "daniyyell_dataset_4",
+  "entity_count": 39,
+  "modules_scanned": [
+    "ram",
+    "ti"
+  ],
+  "termination_reason": "convergence",
+  "rounds": [],
+  "host_profile": {},
+  "nodes": {
+    "pid:684": {
+      "type": "pid",
+      "value": "684",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:svchost.exe": {
+      "type": "image_name",
+      "value": "svchost.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:716": {
+      "type": "pid",
+      "value": "716",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:2036": {
+      "type": "pid",
+      "value": "2036",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:MsMpEng.exe": {
+      "type": "image_name",
+      "value": "MsMpEng.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\ProgramData\\Microsoft\\Windows": {
+      "type": "file_path",
+      "value": "C:\\ProgramData\\Microsoft\\Windows",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\Windows\\SYSTEM32\\ntdll.dll": {
+      "type": "file_path",
+      "value": "C:\\Windows\\SYSTEM32\\ntdll.dll",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\Windows\\SYSTEM32\\KERNEL32.DLL": {
+      "type": "file_path",
+      "value": "C:\\Windows\\SYSTEM32\\KERNEL32.DLL",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:2972": {
+      "type": "pid",
+      "value": "2972",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:taskhostw.exe": {
+      "type": "image_name",
+      "value": "taskhostw.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:1320": {
+      "type": "pid",
+      "value": "1320",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "ip:150.171.27.10": {
+      "type": "ip",
+      "value": "150.171.27.10",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:4892": {
+      "type": "pid",
+      "value": "4892",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "pid:4580": {
+      "type": "pid",
+      "value": "4580",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "pid:5348": {
+      "type": "pid",
+      "value": "5348",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "image_name:MicrosoftEdgeUpdate.exe": {
+      "type": "image_name",
+      "value": "MicrosoftEdgeUpdate.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:1320 (not present in active process list)": {
+      "type": "pid",
+      "value": "1320 (not present in active process list)",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\Program": {
+      "type": "file_path",
+      "value": "C:\\Program",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:5684": {
+      "type": "pid",
+      "value": "5684",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:ctfmon.exe": {
+      "type": "image_name",
+      "value": "ctfmon.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:5592": {
+      "type": "pid",
+      "value": "5592",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\Windows\\system32\\ctfmon.exe": {
+      "type": "file_path",
+      "value": "C:\\Windows\\system32\\ctfmon.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:5832": {
+      "type": "pid",
+      "value": "5832",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:explorer.exe": {
+      "type": "image_name",
+      "value": "explorer.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:5788": {
+      "type": "pid",
+      "value": "5788",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\Windows\\Explorer.EXE": {
+      "type": "file_path",
+      "value": "C:\\Windows\\Explorer.EXE",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:6056": {
+      "type": "pid",
+      "value": "6056",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "image_name:RuntimeBroker.exe  (EPROCESS truncated to \"RuntimeBroker.\")": {
+      "type": "image_name",
+      "value": "RuntimeBroker.exe  (EPROCESS truncated to \"RuntimeBroker.\")",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:860 (not present in process list)": {
+      "type": "pid",
+      "value": "860 (not present in process list)",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:6804": {
+      "type": "pid",
+      "value": "6804",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:SearchApp.exe": {
+      "type": "image_name",
+      "value": "SearchApp.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:860": {
+      "type": "pid",
+      "value": "860",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "ip:23.4.84.73": {
+      "type": "ip",
+      "value": "23.4.84.73",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:8336": {
+      "type": "pid",
+      "value": "8336",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "image_name:backgroundTask": {
+      "type": "image_name",
+      "value": "backgroundTask",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "ip:23.192.26.3": {
+      "type": "ip",
+      "value": "23.192.26.3",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:8552": {
+      "type": "pid",
+      "value": "8552",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "image_name:audiodg.exe": {
+      "type": "image_name",
+      "value": "audiodg.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:2220": {
+      "type": "pid",
+      "value": "2220",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    }
+  },
+  "provenance": {
+    "generated_at": "2026-06-14T23:11:43Z",
+    "orchestrator": {
+      "model": "claude-haiku-4-5-20251001",
+      "prompt_sha256": "sha256:9cc0e62478a850ec4faa4bd855204679d9efaa46f8febfa4f40c51bca8b63280"
+    },
+    "report": {
+      "model": "claude-sonnet-4-6",
+      "prompt_sha256": "sha256:b14eb57fafd4a10b6927c7da1c2e73fd6c6569439dfb0d35a2a1531b73f70048"
+    }
+  },
+  "cost": {
+    "modules": {
+      "llm_calls": 0,
+      "tokens_in": 0,
+      "tokens_out": 0
+    },
+    "orchestrator": {
+      "llm_calls": 1,
+      "tokens_in": 1284,
+      "tokens_out": 9
+    },
+    "report": {
+      "llm_calls": 1,
+      "tokens_in": 14193,
+      "tokens_out": 3130
+    },
+    "total": {
+      "llm_calls": 2,
+      "tokens_in": 15477,
+      "tokens_out": 3139
+    }
+  }
+}

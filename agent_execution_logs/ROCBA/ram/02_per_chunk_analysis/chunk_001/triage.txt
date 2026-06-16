@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_001.txt
+Summary: csrss.exe with unknown parent PID (740 not present in process list) and unusually broad high-risk privilege set; msedge.exe with unknown parent PID (22700 not present in process list).
+
+[PROCESS]
+pid: 800
+ppid: 740
+image: csrss.exe
+cmdline: %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+severity: MEDIUM
+reasons: orphaned_parent: PPID 740 not present anywhere in the process list — expected parent is smss.exe | privilege_anomaly: holds SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege simultaneously — unusually broad for a single csrss.exe instance
+
+[PROCESS]
+pid: 584
+ppid: 22700
+image: msedge.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 22700 not present anywhere in the process list — no known parent for this browser instance
+

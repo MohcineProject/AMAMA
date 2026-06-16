@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_003.txt
+Summary: svchost.exe with orphaned parent holding high-risk privileges (SeTcbPrivilege, SeImpersonatePrivilege) and very short runtime; remaining processes show orphaned parents consistent with partial memory snapshot but no additional strong signals.
+
+[PROCESS]
+pid: 1004
+ppid: 828
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_parent: PPID 828 not present in process list | privilege_anomaly: holds SeTcbPrivilege and SeImpersonatePrivilege — high-risk combination for a svchost with no visible services.exe parent | short_lived: runtime ~6 seconds (08:18:17 to 08:18:23 UTC) paired with privilege and orphan signals | missing_cmdline: no command line recorded, atypical for a legitimate svchost instance
+

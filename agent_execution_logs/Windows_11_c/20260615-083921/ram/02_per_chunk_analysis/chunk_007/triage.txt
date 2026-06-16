@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:30:00Z
+Chunk: chunk_007.txt
+Summary: Both processes have orphaned PPIDs not present in the process list; taskhostw.exe parent PID 1524 and svchost.exe parent PID 888 are unknown/absent.
+
+[PROCESS]
+pid: 4104
+ppid: 1524
+image: taskhostw.exe
+cmdline: taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+severity: LOW
+reasons: orphaned_process: parent PID 1524 (unknown) is not present anywhere in the process list | path_ok: C:\WINDOWS\system32\taskhostw.exe is legitimate; no path anomaly detected | note: GUID argument {222A245B-E637-4AE9-A93F-A59CA119A75E} is consistent with scheduled-task host invocation but parent absence warrants confirmation
+
+[PROCESS]
+pid: 4324
+ppid: 888
+image: svchost.exe
+cmdline: C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup
+severity: LOW
+reasons: orphaned_process: parent PID 888 (unknown) is not present anywhere in the process list; legitimate svchost.exe should be parented by services.exe | path_ok: C:\WINDOWS\system32\svchost.exe is a legitimate path; no path anomaly detected | note: -k UnistackSvcGroup is a known legitimate service group, but missing services.exe parent warrants confirmation
+

@@ -1,0 +1,47 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 3712 — ctfmon.exe**
+
+Agent 1 reason: orphaned parent (PPID 2620 not in process list).
+
+Evidence review:
+- Cmdline: `/QuitInfo:000000000000017C;0000000000000328;` — this is the standard ctfmon.exe quit-info argument used when the CTF monitor is launched by the Windows Text Services Framework. It is not suspicious.
+- DLLs: `C:\WINDOWS\system32\ctfmon.exe`, `ntdll.dll`, `KERNEL32.DLL` — all from System32, entirely clean.
+- Privileges: The list is enormous (35 entries) but critically, almost none are **enabled** — only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present). This is the standard user-token privilege set — the vast majority of high-privilege entries (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, etc.) are listed but **not Present/Enabled**. Volatility's `privileges` plugin lists all *possible* privileges in the token, not just enabled ones. The enabled set is entirely consistent with a normal interactive user session.
+- Orphaned parent: PPID 2620 is absent from pslist. This is a common benign artefact — the parent process (likely `explorer.exe` or a session manager) exited after spawning ctfmon.exe. ctfmon.exe is designed to run independently after launch.
+- No malfind hits, no network connections, no suspicious DLLs, no suspicious paths.
+
+**Verdict: REJECTED** — Standard ctfmon.exe invocation from System32, normal user privilege set (high-privilege entries not enabled), orphaned parent is a routine artefact for this binary, DLLs entirely from System32.
+
+---
+
+Now writing the report. There is only one finding, and it is REJECTED.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-13T19:30:00Z
+Summary: Agent 1 submitted one candidate process for validation. After reviewing all available grep evidence, the single finding does not meet the confirmation threshold. The process is a standard Windows component running from its expected path with a normal user-token privilege set. No confirmed or inconclusive malicious activity was identified in this triage pass.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+REJECTED findings (1):
+
+  PID 3712 — ctfmon.exe
+  Reason for rejection: The orphaned-parent signal (PPID 2620 absent from pslist) is a routine
+  artefact for ctfmon.exe; the CTF monitor is intentionally long-lived and its launcher (typically
+  a session-manager or explorer.exe instance) may exit after spawning it. The command line
+  (/QuitInfo:...) is the standard Text Services Framework invocation. All loaded DLLs resolve to
+  C:\WINDOWS\system32\ with no user-writable paths. The privileges block lists 35 entries, but
+  inspection of the "Present/Enabled" column shows only the standard interactive-user set
+  (SeChangeNotifyPrivilege, SeShutdownPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege,
+  SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege); every high-privilege entry
+  (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, etc.) is listed but NOT enabled —
+  consistent with Volatility enumerating all token slots rather than only granted privileges.
+  No malfind hits, no network connections, and no suspicious artefacts were present in the
+  evidence block.
+
+================================================================

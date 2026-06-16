@@ -1,0 +1,81 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 29440 — MRC.exe**
+
+Agent 1 flags: non-standard path (D:\Tools), SeImpersonatePrivilege enabled, unknown binary, DLL from non-standard drive.
+
+Evidence analysis:
+
+1. **Command-line plausibility**: `"D:\Tools\MRC.exe"` — no arguments, launched from D:\Tools. Not a Windows component. "MRC" could stand for several things; one well-known meaning is "Microsoft Remote Connectivity" analyzer tool, or it could be a remote control/management tool. The path D:\Tools is a common location for sysadmin tools placed by an operator.
+
+2. **Privilege footprint**: This is the most striking signal. The process holds an enormous privilege set — SeDebugPrivilege (Present), SeImpersonatePrivilege (Present, Enabled, Default), SeLoadDriverPrivilege (Present), SeTcbPrivilege (not Present/Enabled — just listed), SeBackupPrivilege, SeRestorePrivilege, SeTakeOwnershipPrivilege, SeSecurityPrivilege, SeSystemEnvironmentPrivilege, SeManageVolumePrivilege, SeCreateGlobalPrivilege (Enabled), SeChangeNotifyPrivilege (Enabled). This is essentially a near-complete administrator/SYSTEM-level token. SeImpersonatePrivilege is Enabled by default, SeDebugPrivilege is Present. This is consistent with running as LOCAL SYSTEM or a high-privilege administrator account.
+
+3. **DLL provenance**: Only ntdll.dll and wow64.dll shown from System32 — no suspicious DLLs. The binary itself is at D:\Tools\MRC.exe. The wow64.dll load indicates this is a 32-bit process running under WOW64.
+
+4. **No malfind, no netscan, no registry persistence evidence** provided.
+
+5. **Parent**: PPID 7464 — not identified in the evidence. Unknown parent.
+
+6. **Assessment**: MRC.exe is a known legitimate remote support/management tool (e.g., "MRC" = "Mini Remote Control" by Techinline, or similar remote desktop/control software). Running from D:\Tools with a massive privilege set is suspicious in a forensic context, but the privilege set is consistent with a tool running under an administrator account (not necessarily SYSTEM — many of these privileges are "Present" but not "Enabled"). The absence of malfind hits, network connections, or suspicious DLLs weakens the malice case. However, the unknown parent (PPID 7464 not visible in pslist) and the non-standard path are genuine anomalies. The privilege set — particularly SeDebugPrivilege Present and SeImpersonatePrivilege Enabled — on an unrecognized binary from D:\Tools is a real concern. This could be a legitimate admin tool or a renamed/repurposed RAT. Without malfind, network, or registry evidence, I cannot CONFIRM malice, but the signals are too strong to REJECT.
+
+**Verdict: INCONCLUSIVE** — strong privilege anomaly and unknown binary from non-standard path, but no corroborating network/injection/persistence evidence in the provided data.
+
+Wait — let me reconsider. Agent 1 rated this MEDIUM. The question is whether the evidence is sufficient to CONFIRM. MRC.exe as "Mini Remote Control" is a legitimate remote administration tool. Running from D:\Tools under high privilege is consistent with an admin using it. But in a forensic context, a remote control tool running from D:\Tools with SeDebugPrivilege and SeImpersonatePrivilege enabled, with an unknown parent, is genuinely suspicious. The lack of malfind/network evidence means I can't confirm active malice, but I also can't confirm legitimacy. INCONCLUSIVE is the right call.
+
+---
+
+**PID 896 — winlogon.exe**
+
+Agent 1 flags: orphaned parent (PPID 740 not in process list), privilege set consistent with winlogon.
+
+Evidence analysis:
+
+1. **Parent**: PPID 740 is not visible in pslist. The expected parent of winlogon.exe is smss.exe. smss.exe typically exits after spawning winlogon, so it's common for winlogon's parent to appear as "unknown" in a memory dump because smss.exe has already terminated. This is a well-known forensic artifact — smss.exe spawns winlogon and then the smss instance that did so exits. The "orphaned parent" signal is therefore a known false positive for winlogon.exe.
+
+2. **Children**: fontdrvhost.ex (EPROCESS truncation of fontdrvhost.exe — legitimate), LogonUI.exe (legitimate, already exited), dwm.exe (legitimate), userinit.exe (legitimate, already exited). All children are exactly what winlogon.exe should spawn.
+
+3. **Cmdline**: `winlogon.exe` — standard, no arguments.
+
+4. **Privileges**: Exactly what winlogon.exe should have — SeTcbPrivilege Enabled, SeDebugPrivilege Enabled, SeImpersonatePrivilege Enabled. This is the normal winlogon token.
+
+5. **No suspicious DLLs, no malfind, no network evidence**.
+
+6. **Assessment**: This is a textbook legitimate winlogon.exe. The orphaned parent is expected behavior (smss.exe exits after spawning winlogon). The privilege set is normal. The children are all legitimate winlogon children. No anomalies.
+
+**Verdict: REJECTED** — standard winlogon.exe behavior; orphaned parent is expected because smss.exe exits post-spawn; privilege set and child processes are all normal.
+
+---
+
+Now writing the report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: Two Agent 1 leads were evaluated. One (winlogon.exe, PID 896) is a clean false positive driven by a well-understood forensic artifact — smss.exe exits after spawning winlogon, making the parent appear missing. The other (MRC.exe, PID 29440) presents a genuine anomaly: an unrecognized binary from a non-standard path running with a near-complete administrator privilege set including SeDebugPrivilege and SeImpersonatePrivilege enabled, with an unknown parent process. Insufficient corroborating evidence (no malfind hits, no network connections, no registry persistence) prevents confirmation of malice, but the finding warrants follow-up. No confirmed malicious processes were identified from this evidence set.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      29440
+PPID:     7464 (not present in pslist)
+Image:    MRC.exe
+Cmdline:  "D:\Tools\MRC.exe"
+Severity: N/A
+MITRE:
+
+Justification:
+  MRC.exe is not a recognized Windows component and runs from D:\Tools — a non-standard, non-Program-Files path on a secondary drive. The process holds a near-complete administrator-level privilege token: SeDebugPrivilege (Present), SeImpersonatePrivilege (Present, Enabled, Default), SeLoadDriverPrivilege (Present), SeBackupPrivilege (Present), SeRestorePrivilege (Present), and SeCreateGlobalPrivilege (Enabled), among others. This privilege footprint is consistent with execution as LOCAL SYSTEM or a high-privilege administrator account, which is unusual for an unrecognized binary from D:\Tools. The parent PID 7464 does not appear in pslist, adding a further anomaly. However, "MRC" is also the name of legitimate remote-control software (e.g., Mini Remote Control), and the DLL set shown is clean (ntdll.dll and wow64.dll from System32 only). No malfind hits, network connections, or registry persistence evidence were provided for this PID, preventing confirmation of malicious intent. The finding cannot be dismissed given the privilege anomaly and unknown parent, but cannot be confirmed without additional corroborating evidence.
+
+Key Evidence:
+  - L2188: 29440	7464	MRC.exe	0xb78d106d2080	20	-	1	True	2020-11-16 02:31:15.000000 UTC	N/A	Disabled
+  - L2188: 29440	MRC.exe	"D:\Tools\MRC.exe"
+  - L76393: 29440	MRC.exe	20	SeDebugPrivilege	Present	Debug programs
+  - L76402: 29440	MRC.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L76383: 29440	MRC.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+  - L12647: 29440	MRC.exe	0x400000	0x55000	MRC.exe	D:\Tools\MRC.exe	-1	2020-11-16 02:31:16.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================

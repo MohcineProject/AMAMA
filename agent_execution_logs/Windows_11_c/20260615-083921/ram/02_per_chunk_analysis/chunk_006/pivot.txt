@@ -1,0 +1,409 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:48:29Z
+
+=== PID 4040 (MicrosoftEdgeUpdate.exe, ppid=1524) ===
+Cmdline: "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c
+
+--- pslist.txt ---
+L81: 4040	1524	MicrosoftEdgeU	0xcd8a1217c080	6	-	0	True	2026-05-12 18:23:31.000000 UTC	N/A	Disabled
+L110: 8256	4040	MicrosoftEdgeU	0xcd8a130a5080	5	-	0	True	2026-05-12 18:23:53.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L81: 4040	MicrosoftEdgeU	"C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c
+
+--- privileges.txt ---
+L2665: 4040	MicrosoftEdgeU	2	SeCreateTokenPrivilege		Create a token object
+L2666: 4040	MicrosoftEdgeU	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L2667: 4040	MicrosoftEdgeU	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L2668: 4040	MicrosoftEdgeU	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L2669: 4040	MicrosoftEdgeU	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2670: 4040	MicrosoftEdgeU	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L2671: 4040	MicrosoftEdgeU	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L2672: 4040	MicrosoftEdgeU	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L2673: 4040	MicrosoftEdgeU	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L2674: 4040	MicrosoftEdgeU	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L2675: 4040	MicrosoftEdgeU	12	SeSystemtimePrivilege	Present	Change the system time
+L2676: 4040	MicrosoftEdgeU	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L2677: 4040	MicrosoftEdgeU	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L2678: 4040	MicrosoftEdgeU	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L2679: 4040	MicrosoftEdgeU	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L2680: 4040	MicrosoftEdgeU	17	SeBackupPrivilege	Present	Backup files and directories
+L2681: 4040	MicrosoftEdgeU	18	SeRestorePrivilege	Present	Restore files and directories
+L2682: 4040	MicrosoftEdgeU	19	SeShutdownPrivilege	Present	Shut down the system
+L2683: 4040	MicrosoftEdgeU	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L2684: 4040	MicrosoftEdgeU	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L2685: 4040	MicrosoftEdgeU	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L2686: 4040	MicrosoftEdgeU	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2687: 4040	MicrosoftEdgeU	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2688: 4040	MicrosoftEdgeU	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2689: 4040	MicrosoftEdgeU	26	SeSyncAgentPrivilege		Synch directory service data
+L2690: 4040	MicrosoftEdgeU	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2691: 4040	MicrosoftEdgeU	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L2692: 4040	MicrosoftEdgeU	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L2693: 4040	MicrosoftEdgeU	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L2694: 4040	MicrosoftEdgeU	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2695: 4040	MicrosoftEdgeU	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2696: 4040	MicrosoftEdgeU	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L2697: 4040	MicrosoftEdgeU	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L2698: 4040	MicrosoftEdgeU	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L2699: 4040	MicrosoftEdgeU	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L3320: 4040	MicrosoftEdgeU	0x810000	0x35000	MicrosoftEdgeUpdate.exe	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+L3321: 4040	MicrosoftEdgeU	0x7fffe9120000	0x267000	-	-	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+L3322: 4040	MicrosoftEdgeU	0x7fffe9070000	0x55000	wow64.dll	C:\WINDOWS\System32\wow64.dll	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+L3323: 4040	MicrosoftEdgeU	0x7fffe6f00000	0xb000	wow64base.dll	C:\WINDOWS\System32\wow64base.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3324: 4040	MicrosoftEdgeU	0x7fffe8090000	0x89000	wow64win.dll	C:\WINDOWS\System32\wow64win.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3325: 4040	MicrosoftEdgeU	0x7fffe7700000	0x19000	wow64con.dll	C:\WINDOWS\System32\wow64con.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3326: 4040	MicrosoftEdgeU	0x76ff0000	0xa000	wow64cpu.dll	C:\WINDOWS\System32\wow64cpu.dll	6	2026-05-12 18:23:33.000000 UTC	Disabled
+L3327: 4040	MicrosoftEdgeU	0x810000	0x35000	MicrosoftEdgeUpdate.exe	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	-	1695-01-23 08:43:58.000000 UTC	Disabled
+L3328: 4040	MicrosoftEdgeU	0x77000000	0x1bf000	-	-	-	-	Disabled
+L3329: 4040	MicrosoftEdgeU	0x744e0000	0xf0000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L3330: 4040	MicrosoftEdgeU	0x76570000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-	1697-05-01 08:55:49.000000 UTC	Disabled
+L3331: 4040	MicrosoftEdgeU	0x75060000	0x151000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-	3428-07-17 02:15:31.000000 UTC	Disabled
+L3332: 4040	MicrosoftEdgeU	0x75420000	0x85000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L3333: 4040	MicrosoftEdgeU	0x74700000	0x110000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L3334: 4040	MicrosoftEdgeU	0x76000000	0x22000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L3335: 4040	MicrosoftEdgeU	0x764e0000	0x1a000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L3336: 4040	MicrosoftEdgeU	0x74380000	0xeb000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L3337: 4040	MicrosoftEdgeU	0x74820000	0x1c9000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L3338: 4040	MicrosoftEdgeU	0x760c0000	0x292000	combase.dll	C:\WINDOWS\System32\combase.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L3339: 4040	MicrosoftEdgeU	0x75dd0000	0xbc000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L3340: 4040	MicrosoftEdgeU	0x75620000	0x636000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	-	7317-01-25 03:00:02.000000 UTC	Disabled
+L3341: 4040	MicrosoftEdgeU	0x76360000	0xf9000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	-	-	Disabled
+L3342: 4040	MicrosoftEdgeU	0x76900000	0x6e4000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	-	-	Disabled
+L3343: 4040	MicrosoftEdgeU	0x754b0000	0x85000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	-	-	Disabled
+L3344: 4040	MicrosoftEdgeU	0x75350000	0xc7000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-	-	Disabled
+L3345: 4040	MicrosoftEdgeU	0x76030000	0x83000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-	1601-01-01 00:03:15.000000 UTC	Disabled
+L3346: 4040	MicrosoftEdgeU	0x75540000	0xd2000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	-	2705-10-22 13:19:23.000000 UTC	Disabled
+L3347: 4040	MicrosoftEdgeU	0x751d0000	0x52000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	-	-	Disabled
+L3348: 4040	MicrosoftEdgeU	0x74130000	0x23d000	msedgeupdate.dll	C:\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll	-	-	Disabled
+L3349: 4040	MicrosoftEdgeU	0x74110000	0x15000	NETAPI32.dll	C:\WINDOWS\SYSTEM32\NETAPI32.dll	-	2496-11-15 15:30:14.000000 UTC	Disabled
+L3350: 4040	MicrosoftEdgeU	0x740e0000	0x1f000	WTSAPI32.dll	C:\WINDOWS\SYSTEM32\WTSAPI32.dll	-	-	Disabled
+L3351: 4040	MicrosoftEdgeU	0x75c60000	0x109000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	-	-	Disabled
+L3352: 4040	MicrosoftEdgeU	0x740d0000	0x8000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	-	-	Disabled
+L3353: 4040	MicrosoftEdgeU	0x74090000	0xb000	NETUTILS.DLL	C:\WINDOWS\SYSTEM32\NETUTILS.DLL	-	1601-01-01 00:03:14.000000 UTC	Disabled
+L3354: 4040	MicrosoftEdgeU	0x740a0000	0x2b000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	-	-	Disabled
+L3355: 4040	MicrosoftEdgeU	0x74070000	0x13000	WKSCLI.DLL	C:\WINDOWS\SYSTEM32\WKSCLI.DLL	-	-	Disabled
+L3356: 4040	MicrosoftEdgeU	0x74050000	0x1d000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	-	-	Disabled
+L3357: 4040	MicrosoftEdgeU	0x73f00000	0x145000	DSREG.DLL	C:\WINDOWS\SYSTEM32\DSREG.DLL	-	-	Disabled
+L3358: 4040	MicrosoftEdgeU	0x73ed0000	0x28000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	-	-	Disabled
+L3359: 4040	MicrosoftEdgeU	0x73eb0000	0x15000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-	N/A	Disabled
+L3360: 4040	MicrosoftEdgeU	0x76460000	0x74000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-	N/A	Disabled
+L3361: 4040	MicrosoftEdgeU	0x73e50000	0x4e000	WINSTA.dll	C:\WINDOWS\SYSTEM32\WINSTA.dll	-	1691-02-02 11:17:08.000000 UTC	Disabled
+L3362: 4040	MicrosoftEdgeU	0x74e50000	0x86000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-	N/A	Disabled
+L3363: 4040	MicrosoftEdgeU	0x73dc0000	0x82000	taskschd.dll	C:\Windows\System32\taskschd.dll	-	-	Disabled
+L3364: 4040	MicrosoftEdgeU	0x74650000	0x9f000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-	-	Disabled
+L3365: 4040	MicrosoftEdgeU	0x73d00000	0xae000	apphelp.dll	C:\WINDOWS\system32\apphelp.dll	-	1601-01-21 08:43:32.000000 UTC	Disabled
+L3366: 4040	MicrosoftEdgeU	0x73cf0000	0xa000	CRYPTBASE.DLL	C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL	-	N/A	Disabled
+L3367: 4040	MicrosoftEdgeU	0x73cd0000	0xe000	atlthunk.dll	C:\WINDOWS\SYSTEM32\atlthunk.dll	-	1691-02-02 11:17:08.000000 UTC	Disabled
+
+--- pstree.txt ---
+L146: *** 4040	1524	MicrosoftEdgeU	0xcd8a1217c080	6	-	0	True	2026-05-12 18:23:31.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	"C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
+L147: **** 8256	4040	MicrosoftEdgeU	0xcd8a130a5080	5	-	0	True	2026-05-12 18:23:53.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	"C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /ua /installsource core	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
+
+--- psscan.txt ---
+L107: 4040	1524	MicrosoftEdgeU	0xcd8a1217c080	6	-	0	True	2026-05-12 18:23:31.000000 UTC	N/A	Disabled
+L165: 8256	4040	MicrosoftEdgeU	0xcd8a130a5080	5	-	0	True	2026-05-12 18:23:53.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L3418: 4040	MicrosoftEdgeU	0x744e0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L3419: 4040	MicrosoftEdgeU	0x810000	True	False	True	\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
+L3420: 4040	MicrosoftEdgeU	0x73f00000	True	True	True	\Windows\SysWOW64\dsreg.dll
+L3421: 4040	MicrosoftEdgeU	0x73cd0000	True	True	True	\Windows\SysWOW64\atlthunk.dll
+L3422: 4040	MicrosoftEdgeU	0x73dc0000	True	True	True	\Windows\SysWOW64\taskschd.dll
+L3423: 4040	MicrosoftEdgeU	0x73cf0000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L3424: 4040	MicrosoftEdgeU	0x73d00000	True	True	True	\Windows\SysWOW64\apphelp.dll
+L3425: 4040	MicrosoftEdgeU	0x73eb0000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L3426: 4040	MicrosoftEdgeU	0x73e50000	True	True	True	\Windows\SysWOW64\winsta.dll
+L3427: 4040	MicrosoftEdgeU	0x73ed0000	True	True	True	\Windows\SysWOW64\userenv.dll
+L3428: 4040	MicrosoftEdgeU	0x740a0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L3429: 4040	MicrosoftEdgeU	0x74070000	True	True	True	\Windows\SysWOW64\wkscli.dll
+L3430: 4040	MicrosoftEdgeU	0x74050000	True	True	True	\Windows\SysWOW64\profapi.dll
+L3431: 4040	MicrosoftEdgeU	0x74090000	True	True	True	\Windows\SysWOW64\netutils.dll
+L3432: 4040	MicrosoftEdgeU	0x740e0000	True	True	True	\Windows\SysWOW64\wtsapi32.dll
+L3433: 4040	MicrosoftEdgeU	0x740d0000	True	True	True	\Windows\SysWOW64\version.dll
+L3434: 4040	MicrosoftEdgeU	0x74110000	True	True	True	\Windows\SysWOW64\netapi32.dll
+L3435: 4040	MicrosoftEdgeU	0x74380000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L3436: 4040	MicrosoftEdgeU	0x77000000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L3437: 4040	MicrosoftEdgeU	0x75dd0000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L3438: 4040	MicrosoftEdgeU	0x75420000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L3439: 4040	MicrosoftEdgeU	0x75060000	True	True	True	\Windows\SysWOW64\ole32.dll
+L3440: 4040	MicrosoftEdgeU	0x74700000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L3441: 4040	MicrosoftEdgeU	0x74650000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L3442: 4040	MicrosoftEdgeU	0x74e50000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L3443: 4040	MicrosoftEdgeU	0x751d0000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L3444: 4040	MicrosoftEdgeU	0x75350000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L3445: 4040	MicrosoftEdgeU	0x75540000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L3446: 4040	MicrosoftEdgeU	0x754b0000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L3447: 4040	MicrosoftEdgeU	0x75620000	True	True	True	\Windows\SysWOW64\shell32.dll
+L3448: 4040	MicrosoftEdgeU	0x75c60000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L3449: 4040	MicrosoftEdgeU	0x760c0000	True	True	True	\Windows\SysWOW64\combase.dll
+L3450: 4040	MicrosoftEdgeU	0x76000000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L3451: 4040	MicrosoftEdgeU	0x76030000	True	True	True	\Windows\SysWOW64\sechost.dll
+L3452: 4040	MicrosoftEdgeU	0x76570000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L3453: 4040	MicrosoftEdgeU	0x76460000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L3454: 4040	MicrosoftEdgeU	0x76360000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L3455: 4040	MicrosoftEdgeU	0x764e0000	True	True	True	\Windows\SysWOW64\win32u.dll
+L3456: 4040	MicrosoftEdgeU	0x76ff0000	True	True	True	\Windows\System32\wow64cpu.dll
+L3457: 4040	MicrosoftEdgeU	0x76900000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L3458: 4040	MicrosoftEdgeU	0x7fffe6f00000	True	True	True	\Windows\System32\wow64base.dll
+L3459: 4040	MicrosoftEdgeU	0x7fffe9070000	True	True	True	\Windows\System32\wow64.dll
+L3460: 4040	MicrosoftEdgeU	0x7fffe8090000	True	True	True	\Windows\System32\wow64win.dll
+L3461: 4040	MicrosoftEdgeU	0x7fffe7700000	True	True	True	\Windows\System32\wow64con.dll
+L3462: 4040	MicrosoftEdgeU	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L3418: 4040	MicrosoftEdgeU	0x744e0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L3419: 4040	MicrosoftEdgeU	0x810000	True	False	True	\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
+L3420: 4040	MicrosoftEdgeU	0x73f00000	True	True	True	\Windows\SysWOW64\dsreg.dll
+L3421: 4040	MicrosoftEdgeU	0x73cd0000	True	True	True	\Windows\SysWOW64\atlthunk.dll
+L3422: 4040	MicrosoftEdgeU	0x73dc0000	True	True	True	\Windows\SysWOW64\taskschd.dll
+L3423: 4040	MicrosoftEdgeU	0x73cf0000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L3424: 4040	MicrosoftEdgeU	0x73d00000	True	True	True	\Windows\SysWOW64\apphelp.dll
+L3425: 4040	MicrosoftEdgeU	0x73eb0000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L3426: 4040	MicrosoftEdgeU	0x73e50000	True	True	True	\Windows\SysWOW64\winsta.dll
+L3427: 4040	MicrosoftEdgeU	0x73ed0000	True	True	True	\Windows\SysWOW64\userenv.dll
+L3428: 4040	MicrosoftEdgeU	0x740a0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L3429: 4040	MicrosoftEdgeU	0x74070000	True	True	True	\Windows\SysWOW64\wkscli.dll
+L3430: 4040	MicrosoftEdgeU	0x74050000	True	True	True	\Windows\SysWOW64\profapi.dll
+L3431: 4040	MicrosoftEdgeU	0x74090000	True	True	True	\Windows\SysWOW64\netutils.dll
+L3432: 4040	MicrosoftEdgeU	0x740e0000	True	True	True	\Windows\SysWOW64\wtsapi32.dll
+L3433: 4040	MicrosoftEdgeU	0x740d0000	True	True	True	\Windows\SysWOW64\version.dll
+L3434: 4040	MicrosoftEdgeU	0x74110000	True	True	True	\Windows\SysWOW64\netapi32.dll
+L3435: 4040	MicrosoftEdgeU	0x74380000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L3436: 4040	MicrosoftEdgeU	0x77000000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L3437: 4040	MicrosoftEdgeU	0x75dd0000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L3438: 4040	MicrosoftEdgeU	0x75420000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L3439: 4040	MicrosoftEdgeU	0x75060000	True	True	True	\Windows\SysWOW64\ole32.dll
+L3440: 4040	MicrosoftEdgeU	0x74700000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L3441: 4040	MicrosoftEdgeU	0x74650000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L3442: 4040	MicrosoftEdgeU	0x74e50000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L3443: 4040	MicrosoftEdgeU	0x751d0000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L3444: 4040	MicrosoftEdgeU	0x75350000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L3445: 4040	MicrosoftEdgeU	0x75540000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L3446: 4040	MicrosoftEdgeU	0x754b0000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L3447: 4040	MicrosoftEdgeU	0x75620000	True	True	True	\Windows\SysWOW64\shell32.dll
+L3448: 4040	MicrosoftEdgeU	0x75c60000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L3449: 4040	MicrosoftEdgeU	0x760c0000	True	True	True	\Windows\SysWOW64\combase.dll
+L3450: 4040	MicrosoftEdgeU	0x76000000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L3451: 4040	MicrosoftEdgeU	0x76030000	True	True	True	\Windows\SysWOW64\sechost.dll
+L3452: 4040	MicrosoftEdgeU	0x76570000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L3453: 4040	MicrosoftEdgeU	0x76460000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L3454: 4040	MicrosoftEdgeU	0x76360000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L3455: 4040	MicrosoftEdgeU	0x764e0000	True	True	True	\Windows\SysWOW64\win32u.dll
+L3456: 4040	MicrosoftEdgeU	0x76ff0000	True	True	True	\Windows\System32\wow64cpu.dll
+L3457: 4040	MicrosoftEdgeU	0x76900000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L3458: 4040	MicrosoftEdgeU	0x7fffe6f00000	True	True	True	\Windows\System32\wow64base.dll
+L3459: 4040	MicrosoftEdgeU	0x7fffe9070000	True	True	True	\Windows\System32\wow64.dll
+L3460: 4040	MicrosoftEdgeU	0x7fffe8090000	True	True	True	\Windows\System32\wow64win.dll
+L3461: 4040	MicrosoftEdgeU	0x7fffe7700000	True	True	True	\Windows\System32\wow64con.dll
+L3462: 4040	MicrosoftEdgeU	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L81: 4040	MicrosoftEdgeU	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	False	False
+
+--- sessions.txt ---
+L71: 0	-	4040	MicrosoftEdgeU	WORKGROUP/CLEANWINDOWS11$	2026-05-12 18:23:31.000000 UTC
+
+=== PID 8256 (MicrosoftEdgeUpdate.exe, ppid=4040) ===
+Cmdline: "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /ua /installsource core
+
+--- pslist.txt ---
+L110: 8256	4040	MicrosoftEdgeU	0xcd8a130a5080	5	-	0	True	2026-05-12 18:23:53.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L110: 8256	MicrosoftEdgeU	"C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /ua /installsource core
+
+--- privileges.txt ---
+L3680: 8256	MicrosoftEdgeU	2	SeCreateTokenPrivilege		Create a token object
+L3681: 8256	MicrosoftEdgeU	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L3682: 8256	MicrosoftEdgeU	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L3683: 8256	MicrosoftEdgeU	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L3684: 8256	MicrosoftEdgeU	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3685: 8256	MicrosoftEdgeU	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L3686: 8256	MicrosoftEdgeU	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L3687: 8256	MicrosoftEdgeU	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L3688: 8256	MicrosoftEdgeU	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L3689: 8256	MicrosoftEdgeU	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L3690: 8256	MicrosoftEdgeU	12	SeSystemtimePrivilege	Present	Change the system time
+L3691: 8256	MicrosoftEdgeU	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L3692: 8256	MicrosoftEdgeU	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L3693: 8256	MicrosoftEdgeU	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L3694: 8256	MicrosoftEdgeU	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L3695: 8256	MicrosoftEdgeU	17	SeBackupPrivilege	Present	Backup files and directories
+L3696: 8256	MicrosoftEdgeU	18	SeRestorePrivilege	Present	Restore files and directories
+L3697: 8256	MicrosoftEdgeU	19	SeShutdownPrivilege	Present	Shut down the system
+L3698: 8256	MicrosoftEdgeU	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L3699: 8256	MicrosoftEdgeU	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L3700: 8256	MicrosoftEdgeU	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L3701: 8256	MicrosoftEdgeU	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3702: 8256	MicrosoftEdgeU	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3703: 8256	MicrosoftEdgeU	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3704: 8256	MicrosoftEdgeU	26	SeSyncAgentPrivilege		Synch directory service data
+L3705: 8256	MicrosoftEdgeU	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3706: 8256	MicrosoftEdgeU	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L3707: 8256	MicrosoftEdgeU	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L3708: 8256	MicrosoftEdgeU	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L3709: 8256	MicrosoftEdgeU	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3710: 8256	MicrosoftEdgeU	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3711: 8256	MicrosoftEdgeU	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L3712: 8256	MicrosoftEdgeU	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L3713: 8256	MicrosoftEdgeU	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L3714: 8256	MicrosoftEdgeU	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5321: 8256	MicrosoftEdgeU	0x810000	0x35000	MicrosoftEdgeUpdate.exe	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L5322: 8256	MicrosoftEdgeU	0x7fffe9120000	0x267000	-	-	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L5323: 8256	MicrosoftEdgeU	0x7fffe9070000	0x55000	wow64.dll	C:\WINDOWS\System32\wow64.dll	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L5324: 8256	MicrosoftEdgeU	0x7fffe6f00000	0xb000	wow64base.dll	C:\WINDOWS\System32\wow64base.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L5325: 8256	MicrosoftEdgeU	0x7fffe8090000	0x89000	wow64win.dll	C:\WINDOWS\System32\wow64win.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L5326: 8256	MicrosoftEdgeU	0x7fffe7700000	0x19000	wow64con.dll	C:\WINDOWS\System32\wow64con.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L5327: 8256	MicrosoftEdgeU	0x76ff0000	0xa000	wow64cpu.dll	C:\WINDOWS\System32\wow64cpu.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L5328: 8256	MicrosoftEdgeU	0x810000	0x35000	MicrosoftEdgeUpdate.exe	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	-	2202-08-04 20:01:20.000000 UTC	Disabled
+L5329: 8256	MicrosoftEdgeU	0x77000000	0x1bf000	-	-	-	-	Disabled
+L5330: 8256	MicrosoftEdgeU	0x744e0000	0xf0000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L5331: 8256	MicrosoftEdgeU	0x76570000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L5332: 8256	MicrosoftEdgeU	0x75060000	0x151000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-	1707-02-23 12:24:57.000000 UTC	Disabled
+L5333: 8256	MicrosoftEdgeU	0x75420000	0x85000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L5334: 8256	MicrosoftEdgeU	0x74700000	0x110000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L5335: 8256	MicrosoftEdgeU	0x76000000	0x22000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L5336: 8256	MicrosoftEdgeU	0x764e0000	0x1a000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L5337: 8256	MicrosoftEdgeU	0x74380000	0xeb000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L5338: 8256	MicrosoftEdgeU	0x74820000	0x1c9000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L5339: 8256	MicrosoftEdgeU	0x760c0000	0x292000	combase.dll	C:\WINDOWS\System32\combase.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L5340: 8256	MicrosoftEdgeU	0x75dd0000	0xbc000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L5341: 8256	MicrosoftEdgeU	0x75620000	0x636000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	-	N/A	Disabled
+L5342: 8256	MicrosoftEdgeU	0x76360000	0xf9000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	-	-	Disabled
+L5343: 8256	MicrosoftEdgeU	0x76900000	0x6e4000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	-	-	Disabled
+L5344: 8256	MicrosoftEdgeU	0x754b0000	0x85000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	-	-	Disabled
+L5345: 8256	MicrosoftEdgeU	0x75350000	0xc7000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-	-	Disabled
+L5346: 8256	MicrosoftEdgeU	0x76030000	0x83000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-	7100-04-21 21:57:33.000000 UTC	Disabled
+L5347: 8256	MicrosoftEdgeU	0x75540000	0xd2000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	-	-	Disabled
+L5348: 8256	MicrosoftEdgeU	0x751d0000	0x52000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	-	2496-11-15 15:30:18.000000 UTC	Disabled
+L5349: 8256	MicrosoftEdgeU	0x74130000	0x23d000	msedgeupdate.dll	C:\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll	-	1601-01-01 00:03:14.000000 UTC	Disabled
+L5350: 8256	MicrosoftEdgeU	0x74110000	0x15000	NETAPI32.dll	C:\WINDOWS\SYSTEM32\NETAPI32.dll	-	-	Disabled
+L5351: 8256	MicrosoftEdgeU	0x740d0000	0x8000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	-	-	Disabled
+L5352: 8256	MicrosoftEdgeU	0x740e0000	0x1f000	WTSAPI32.dll	C:\WINDOWS\SYSTEM32\WTSAPI32.dll	-	-	Disabled
+L5353: 8256	MicrosoftEdgeU	0x75c60000	0x109000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	-	-	Disabled
+L5354: 8256	MicrosoftEdgeU	0x740a0000	0x2b000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	-	-	Disabled
+L5355: 8256	MicrosoftEdgeU	0x74090000	0xb000	NETUTILS.DLL	C:\WINDOWS\SYSTEM32\NETUTILS.DLL	-	-	Disabled
+L5356: 8256	MicrosoftEdgeU	0x74070000	0x13000	WKSCLI.DLL	C:\WINDOWS\SYSTEM32\WKSCLI.DLL	-	-	Disabled
+L5357: 8256	MicrosoftEdgeU	0x74050000	0x1d000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	-	1601-01-01 00:03:15.000000 UTC	Disabled
+L5358: 8256	MicrosoftEdgeU	0x73f00000	0x145000	DSREG.DLL	C:\WINDOWS\SYSTEM32\DSREG.DLL	-	N/A	Disabled
+L5359: 8256	MicrosoftEdgeU	0x73ed0000	0x28000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	-	-	Disabled
+L5360: 8256	MicrosoftEdgeU	0x73eb0000	0x15000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-	2205-01-21 13:32:45.000000 UTC	Disabled
+L5361: 8256	MicrosoftEdgeU	0x76460000	0x74000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-	-	Disabled
+L5362: 8256	MicrosoftEdgeU	0x73e50000	0x4e000	WINSTA.dll	C:\WINDOWS\SYSTEM32\WINSTA.dll	-	-	Disabled
+L5363: 8256	MicrosoftEdgeU	0x74e50000	0x86000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-	N/A	Disabled
+L5364: 8256	MicrosoftEdgeU	0x73dc0000	0x82000	taskschd.dll	C:\Windows\System32\taskschd.dll	-	2205-01-23 11:21:32.000000 UTC	Disabled
+L5365: 8256	MicrosoftEdgeU	0x74650000	0x9f000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-	N/A	Disabled
+L5366: 8256	MicrosoftEdgeU	0x73cf0000	0xa000	CRYPTBASE.DLL	C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL	-	-	Disabled
+L5367: 8256	MicrosoftEdgeU	0x732e0000	0x58000	psmachine.dll	C:\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\psmachine.dll	-	N/A	Disabled
+L5368: 8256	MicrosoftEdgeU	0x73cd0000	0xe000	atlthunk.dll	C:\WINDOWS\SYSTEM32\atlthunk.dll	-	-	Disabled
+
+--- pstree.txt ---
+L147: **** 8256	4040	MicrosoftEdgeU	0xcd8a130a5080	5	-	0	True	2026-05-12 18:23:53.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	"C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /ua /installsource core	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
+
+--- psscan.txt ---
+L165: 8256	4040	MicrosoftEdgeU	0xcd8a130a5080	5	-	0	True	2026-05-12 18:23:53.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L5592: 8256	MicrosoftEdgeU	0x810000	True	False	True	\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
+L5593: 8256	MicrosoftEdgeU	0x30a0000	False	False	False	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdateres_en.dll
+L5594: 8256	MicrosoftEdgeU	0x75060000	True	True	True	\Windows\SysWOW64\ole32.dll
+L5595: 8256	MicrosoftEdgeU	0x74070000	True	True	True	\Windows\SysWOW64\wkscli.dll
+L5596: 8256	MicrosoftEdgeU	0x73cf0000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L5597: 8256	MicrosoftEdgeU	0x73eb0000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L5598: 8256	MicrosoftEdgeU	0x73dc0000	True	True	True	\Windows\SysWOW64\taskschd.dll
+L5599: 8256	MicrosoftEdgeU	0x73e50000	True	True	True	\Windows\SysWOW64\winsta.dll
+L5600: 8256	MicrosoftEdgeU	0x73f00000	True	True	True	\Windows\SysWOW64\dsreg.dll
+L5601: 8256	MicrosoftEdgeU	0x73ed0000	True	True	True	\Windows\SysWOW64\userenv.dll
+L5602: 8256	MicrosoftEdgeU	0x74050000	True	True	True	\Windows\SysWOW64\profapi.dll
+L5603: 8256	MicrosoftEdgeU	0x74110000	True	True	True	\Windows\SysWOW64\netapi32.dll
+L5604: 8256	MicrosoftEdgeU	0x740a0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L5605: 8256	MicrosoftEdgeU	0x74090000	True	True	True	\Windows\SysWOW64\netutils.dll
+L5606: 8256	MicrosoftEdgeU	0x740d0000	True	True	True	\Windows\SysWOW64\version.dll
+L5607: 8256	MicrosoftEdgeU	0x740e0000	True	True	True	\Windows\SysWOW64\wtsapi32.dll
+L5608: 8256	MicrosoftEdgeU	0x744e0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L5609: 8256	MicrosoftEdgeU	0x74130000	True	True	True	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll
+L5610: 8256	MicrosoftEdgeU	0x74380000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L5611: 8256	MicrosoftEdgeU	0x74820000	True	True	True	\Windows\SysWOW64\user32.dll
+L5612: 8256	MicrosoftEdgeU	0x74700000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L5613: 8256	MicrosoftEdgeU	0x74650000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L5614: 8256	MicrosoftEdgeU	0x74e50000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L5615: 8256	MicrosoftEdgeU	0x77000000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L5616: 8256	MicrosoftEdgeU	0x76000000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L5617: 8256	MicrosoftEdgeU	0x754b0000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L5618: 8256	MicrosoftEdgeU	0x75350000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L5619: 8256	MicrosoftEdgeU	0x751d0000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L5620: 8256	MicrosoftEdgeU	0x75420000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L5621: 8256	MicrosoftEdgeU	0x75620000	True	True	True	\Windows\SysWOW64\shell32.dll
+L5622: 8256	MicrosoftEdgeU	0x75540000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L5623: 8256	MicrosoftEdgeU	0x75dd0000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L5624: 8256	MicrosoftEdgeU	0x75c60000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L5625: 8256	MicrosoftEdgeU	0x764e0000	True	True	True	\Windows\SysWOW64\win32u.dll
+L5626: 8256	MicrosoftEdgeU	0x760c0000	True	True	True	\Windows\SysWOW64\combase.dll
+L5627: 8256	MicrosoftEdgeU	0x76030000	True	True	True	\Windows\SysWOW64\sechost.dll
+L5628: 8256	MicrosoftEdgeU	0x76360000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L5629: 8256	MicrosoftEdgeU	0x76900000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L5630: 8256	MicrosoftEdgeU	0x76570000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L5631: 8256	MicrosoftEdgeU	0x76ff0000	True	True	True	\Windows\System32\wow64cpu.dll
+L5632: 8256	MicrosoftEdgeU	0x7fffe6f00000	True	True	True	\Windows\System32\wow64base.dll
+L5633: 8256	MicrosoftEdgeU	0x7fffe9070000	True	True	True	\Windows\System32\wow64.dll
+L5634: 8256	MicrosoftEdgeU	0x7fffe8090000	True	True	True	\Windows\System32\wow64win.dll
+L5635: 8256	MicrosoftEdgeU	0x7fffe7700000	True	True	True	\Windows\System32\wow64con.dll
+
+--- malware_ldrmodules.txt ---
+L5592: 8256	MicrosoftEdgeU	0x810000	True	False	True	\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
+L5593: 8256	MicrosoftEdgeU	0x30a0000	False	False	False	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdateres_en.dll
+L5594: 8256	MicrosoftEdgeU	0x75060000	True	True	True	\Windows\SysWOW64\ole32.dll
+L5595: 8256	MicrosoftEdgeU	0x74070000	True	True	True	\Windows\SysWOW64\wkscli.dll
+L5596: 8256	MicrosoftEdgeU	0x73cf0000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L5597: 8256	MicrosoftEdgeU	0x73eb0000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L5598: 8256	MicrosoftEdgeU	0x73dc0000	True	True	True	\Windows\SysWOW64\taskschd.dll
+L5599: 8256	MicrosoftEdgeU	0x73e50000	True	True	True	\Windows\SysWOW64\winsta.dll
+L5600: 8256	MicrosoftEdgeU	0x73f00000	True	True	True	\Windows\SysWOW64\dsreg.dll
+L5601: 8256	MicrosoftEdgeU	0x73ed0000	True	True	True	\Windows\SysWOW64\userenv.dll
+L5602: 8256	MicrosoftEdgeU	0x74050000	True	True	True	\Windows\SysWOW64\profapi.dll
+L5603: 8256	MicrosoftEdgeU	0x74110000	True	True	True	\Windows\SysWOW64\netapi32.dll
+L5604: 8256	MicrosoftEdgeU	0x740a0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L5605: 8256	MicrosoftEdgeU	0x74090000	True	True	True	\Windows\SysWOW64\netutils.dll
+L5606: 8256	MicrosoftEdgeU	0x740d0000	True	True	True	\Windows\SysWOW64\version.dll
+L5607: 8256	MicrosoftEdgeU	0x740e0000	True	True	True	\Windows\SysWOW64\wtsapi32.dll
+L5608: 8256	MicrosoftEdgeU	0x744e0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L5609: 8256	MicrosoftEdgeU	0x74130000	True	True	True	\Program Files (x86)\Microsoft\EdgeUpdate\1.3.233.3\msedgeupdate.dll
+L5610: 8256	MicrosoftEdgeU	0x74380000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L5611: 8256	MicrosoftEdgeU	0x74820000	True	True	True	\Windows\SysWOW64\user32.dll
+L5612: 8256	MicrosoftEdgeU	0x74700000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L5613: 8256	MicrosoftEdgeU	0x74650000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L5614: 8256	MicrosoftEdgeU	0x74e50000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L5615: 8256	MicrosoftEdgeU	0x77000000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L5616: 8256	MicrosoftEdgeU	0x76000000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L5617: 8256	MicrosoftEdgeU	0x754b0000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L5618: 8256	MicrosoftEdgeU	0x75350000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L5619: 8256	MicrosoftEdgeU	0x751d0000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L5620: 8256	MicrosoftEdgeU	0x75420000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L5621: 8256	MicrosoftEdgeU	0x75620000	True	True	True	\Windows\SysWOW64\shell32.dll
+L5622: 8256	MicrosoftEdgeU	0x75540000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L5623: 8256	MicrosoftEdgeU	0x75dd0000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L5624: 8256	MicrosoftEdgeU	0x75c60000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L5625: 8256	MicrosoftEdgeU	0x764e0000	True	True	True	\Windows\SysWOW64\win32u.dll
+L5626: 8256	MicrosoftEdgeU	0x760c0000	True	True	True	\Windows\SysWOW64\combase.dll
+L5627: 8256	MicrosoftEdgeU	0x76030000	True	True	True	\Windows\SysWOW64\sechost.dll
+L5628: 8256	MicrosoftEdgeU	0x76360000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L5629: 8256	MicrosoftEdgeU	0x76900000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L5630: 8256	MicrosoftEdgeU	0x76570000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L5631: 8256	MicrosoftEdgeU	0x76ff0000	True	True	True	\Windows\System32\wow64cpu.dll
+L5632: 8256	MicrosoftEdgeU	0x7fffe6f00000	True	True	True	\Windows\System32\wow64base.dll
+L5633: 8256	MicrosoftEdgeU	0x7fffe9070000	True	True	True	\Windows\System32\wow64.dll
+L5634: 8256	MicrosoftEdgeU	0x7fffe8090000	True	True	True	\Windows\System32\wow64win.dll
+L5635: 8256	MicrosoftEdgeU	0x7fffe7700000	True	True	True	\Windows\System32\wow64con.dll
+
+--- malware_pebmasquerade.txt ---
+L110: 8256	MicrosoftEdgeU	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	False	False
+
+--- sessions.txt ---
+L82: 0	-	8256	MicrosoftEdgeU	WORKGROUP/CLEANWINDOWS11$	2026-05-12 18:23:53.000000 UTC
+
+=== END OF PIVOT REPORT ===

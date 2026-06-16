@@ -1,0 +1,75 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 6536 — RuntimeBroker.exe**
+
+Agent 1 reasons: orphaned parent (PPID 860 not in process list); EPROCESS truncation note (already acknowledged as benign artefact).
+
+Evidence review:
+- Cmdline: `C:\Windows\System32\RuntimeBroker.exe -Embedding` — this is the canonical invocation. RuntimeBroker.exe is a Windows component that brokers permissions for UWP/Store apps; `-Embedding` is its standard COM activation argument.
+- Path: `C:\Windows\System32\RuntimeBroker.exe` — legitimate system path.
+- DLLs shown: `RuntimeBroker.exe`, `ntdll.dll`, `KERNEL32.DLL` — all from System32. No user-writable path DLLs.
+- Privileges: The privilege list is enormous (35 entries) but critically, almost none are in the `Present` or `Enabled` state. Only `SeShutdownPrivilege (Present)`, `SeChangeNotifyPrivilege (Present,Enabled,Default)`, `SeUndockPrivilege (Present)`, `SeCreateGlobalPrivilege (Default)`, `SeIncreaseWorkingSetPrivilege (Present)`, `SeTimeZonePrivilege (Present)` are active. The scary ones — `SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege`, `SeLoadDriverPrivilege` — are all listed but **not** Present/Enabled. This is a standard user-context token with the full privilege list inherited from the token template but not activated. This is normal for RuntimeBroker.
+- Orphaned parent: PPID 860 not in pslist. RuntimeBroker.exe is normally spawned by `svchost.exe` (hosting DcomLaunch). If PID 860 exited after spawning it (e.g. a transient svchost), the orphaned parent is not inherently suspicious. No other corroborating signals.
+- No malfind, no netscan, no registry persistence, no suspicious DLLs.
+
+**Verdict: REJECTED.** Standard RuntimeBroker invocation, legitimate path, System32-only DLLs, no enabled dangerous privileges, orphaned parent is the sole signal and is weak in isolation.
+
+---
+
+**PID 6756 — taskhostw.exe**
+
+Agent 1 reasons: orphaned parent (PPID 1320 not in process list); SeImpersonatePrivilege enabled.
+
+Evidence review:
+- Cmdline: `taskhostw.exe` — bare invocation, no arguments. This is normal; taskhostw.exe is the Task Scheduler host for COM-based tasks and typically runs without arguments.
+- Path: `C:\Windows\system32\taskhostw.exe` — legitimate system path.
+- DLLs shown: `taskhostw.exe`, `ntdll.dll`, `KERNEL32.DLL` — all from System32. No suspicious DLLs.
+- Privileges: This process has a **very large number of Present/Enabled privileges** — `SeIncreaseQuotaPrivilege`, `SeSecurityPrivilege`, `SeLoadDriverPrivilege`, `SeDebugPrivilege (Present)`, `SeBackupPrivilege`, `SeRestorePrivilege`, `SeSystemtimePrivilege`, `SeManageVolumePrivilege`, `SeImpersonatePrivilege (Present,Enabled,Default)`, `SeCreateGlobalPrivilege (Present,Enabled,Default)`, and more. This is a **SYSTEM-level token** — taskhostw.exe running as SYSTEM is normal when it hosts tasks that require elevated context. SeImpersonatePrivilege enabled on a SYSTEM-context taskhostw is expected behaviour, not an anomaly.
+- Orphaned parent: PPID 1320 not in pslist. taskhostw.exe is normally spawned by `svchost.exe -k netsvcs` (Schedule service). If that svchost exited or was not captured, orphaned parent alone is weak.
+- No malfind, no netscan, no suspicious DLLs, no registry persistence evidence, no encoded cmdline.
+
+**Verdict: REJECTED.** The privilege set is consistent with a SYSTEM-context taskhostw.exe hosting elevated scheduled tasks — this is normal Windows behaviour. SeImpersonatePrivilege enabled on a SYSTEM process is expected. Orphaned parent is the only anomaly and is insufficient alone. No corroborating signals from any other artefact type.
+
+---
+
+Both findings: REJECTED. Counts: confirmed=0, inconclusive=0, rejected=2.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-08-07T20:00:00Z
+Summary: Both Agent 1 findings reviewed against full grep evidence. Neither process exhibits corroborating malicious indicators beyond orphaned parent PIDs, which are weak signals in isolation. All executable paths are legitimate System32 binaries, all loaded DLLs originate from System32, and privilege states are consistent with normal Windows operating contexts for each binary. No confirmed or inconclusive findings; both are rejected.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were rejected:
+
+  PID 6536 (RuntimeBroker.exe): Standard COM-activation invocation
+  (C:\Windows\System32\RuntimeBroker.exe -Embedding) from a legitimate
+  System32 path. DLLs are exclusively from System32. The 35-entry
+  privilege list contains no enabled dangerous privileges — SeDebugPrivilege,
+  SeTcbPrivilege, SeImpersonatePrivilege, and SeLoadDriverPrivilege are all
+  listed but NOT Present/Enabled, consistent with a normal user-context token
+  template. Orphaned parent (PPID 860) is the sole anomaly; RuntimeBroker is
+  routinely spawned by transient DcomLaunch svchost instances that may exit
+  after activation. No malfind, netscan, suspicious DLL paths, or registry
+  persistence evidence present.
+
+  PID 6756 (taskhostw.exe): Bare invocation (taskhostw.exe, no arguments)
+  from C:\Windows\system32\taskhostw.exe. DLLs are exclusively from System32.
+  The large set of Present/Enabled privileges — including SeDebugPrivilege,
+  SeImpersonatePrivilege (Present,Enabled,Default), SeLoadDriverPrivilege,
+  SeBackupPrivilege, SeRestorePrivilege — is consistent with a SYSTEM-context
+  token, which is normal for taskhostw.exe when hosting elevated scheduled
+  tasks. SeImpersonatePrivilege enabled on a SYSTEM process is expected and
+  not an independent indicator of abuse. Orphaned parent (PPID 1320) is the
+  sole structural anomaly; the Schedule service svchost may have exited after
+  spawning it. No malfind, netscan, suspicious DLL paths, or registry
+  persistence evidence present.
+
+================================================================

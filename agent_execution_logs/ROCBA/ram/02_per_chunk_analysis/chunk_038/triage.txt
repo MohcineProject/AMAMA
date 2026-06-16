@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_038.txt
+Summary: svchost.exe parent PID 828 not present in process list (orphaned); all other processes have exited and show no additional signals beyond unknown parent PIDs consistent with truncated snapshot.
+
+[PROCESS]
+pid: 14912
+ppid: 828
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k AarSvcGroup -p -s AarSvc
+severity: LOW
+reasons: orphaned_process: parent PID 828 (expected services.exe) is not present anywhere in the process list — cannot confirm legitimate services.exe lineage
+

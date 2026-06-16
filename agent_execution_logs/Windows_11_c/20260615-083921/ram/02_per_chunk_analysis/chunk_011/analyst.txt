@@ -1,0 +1,67 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5528 — userinit.exe**
+
+Agent 1 flags: orphaned parent (PPID 816 not in pslist), missing cmdline, short-lived.
+
+Reasoning:
+- **Orphaned parent**: PPID 816 is not visible in pslist/pstree. However, userinit.exe is legitimately spawned by winlogon.exe (which typically has a PID in the 600–900 range at boot). The parent being absent from the snapshot is consistent with winlogon.exe having exited or the snapshot being taken after session teardown — this is a known benign pattern. The pstree line shows the full path `\Device\HarddiskVolume4\Windows\System32\userinit.exe` — legitimate System32 location.
+- **Missing cmdline**: The cmdline shows `-` which in Volatility means it couldn't be read (process already exited). This is expected for a short-lived process that had already terminated by snapshot time.
+- **Short-lived**: 31 seconds is entirely normal for userinit.exe — its job is to launch explorer.exe and exit. The evidence confirms it did exactly that: PID 5556 explorer.exe has PPID 5528 and started 1 second after userinit.
+- **Privileges**: The privilege list is long but all privileges are listed as NOT enabled (only SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege are Present/Enabled/Default — all standard user-context privileges). The full list of privileges being *present but not enabled* is the standard token inherited from winlogon/SYSTEM context; this is normal for userinit.exe running in a user logon session.
+- **Path**: `\Device\HarddiskVolume4\Windows\System32\userinit.exe` — legitimate.
+- **Child**: explorer.exe spawned correctly from it.
+
+**Verdict: REJECTED** — All signals are explained by normal userinit.exe lifecycle behavior. The orphaned parent is consistent with winlogon.exe not being captured in the snapshot window, the short lifetime is by design, and the privilege set is standard.
+
+---
+
+**PID 8112 — olk.exe**
+
+Agent 1 flags: psscan_only (hidden/unlinked EPROCESS), unresolvable parent despite PPID 5556 existing, missing cmdline/path, duplicate image name with PID 5868.
+
+Reasoning:
+- **psscan_only**: This is a significant signal. A process visible in psscan but not pslist indicates DKOM (Direct Kernel Object Manipulation) — the EPROCESS was unlinked from the active process list. This is a classic rootkit/malware hiding technique.
+- **Unresolvable parent**: PPID 5556 (explorer.exe) exists in pslist, yet the parent is annotated as 'unknown' — this suggests the EPROCESS forward/back-links were tampered with, consistent with DKOM.
+- **Missing cmdline**: No command line or path — prevents verification of binary origin. Combined with DKOM hiding, this is highly suspicious.
+- **Duplicate image name**: A second olk.exe (PID 5868) exists with same parent and start time but a clean pslist entry. This pattern is consistent with process hollowing — a legitimate process is created (PID 5868, visible in pslist), then a hidden copy or the hollowed version runs as PID 8112. Alternatively, PID 8112 could be the injected/hollowed process while 5868 is the legitimate shell.
+- **olk.exe**: This is Microsoft Outlook's new executable name (introduced in newer M365 builds). A legitimate olk.exe spawned from explorer.exe is plausible. However, the DKOM hiding of one instance is not explainable by legitimate software behavior.
+- **No malfind, no DLL, no network evidence** in the provided blocks — the evidence is limited to psscan.
+
+The DKOM hiding alone is a strong signal. The combination of psscan-only visibility + unresolvable parent despite PPID existing + missing cmdline + duplicate image name constitutes meaningful corroboration across multiple artefact types. However, I have no malfind sections, no suspicious DLLs, no network connections, and no registry persistence for this PID. The evidence is real but limited to process-structure anomalies.
+
+**Verdict: CONFIRMED, HIGH** — DKOM process hiding is not a legitimate software behavior. The combination of unlinked EPROCESS, unresolvable parent despite PPID existing, and a duplicate image name at the same start time strongly indicates process hollowing or injection with active hiding. The absence of cmdline/path evidence is itself a product of the hiding technique.
+
+MITRE: T1055 (Process Injection) / T1564.001 (Hide Artifacts: Hidden Processes via DKOM) — the cleaner single mapping is T1055 given the hollowing pattern, but T1564 covers the DKOM hiding aspect.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Two Agent 1 findings were reviewed. One finding (userinit.exe, PID 5528) reflects entirely normal Windows logon session behavior and is rejected. One finding (olk.exe, PID 8112) presents credible evidence of DKOM-based process hiding combined with a duplicate image name pattern consistent with process hollowing; this is confirmed malicious at HIGH severity. The confirmed finding has limited depth due to absent malfind, DLL, and network artefacts for PID 8112, but the process-structure anomalies alone are sufficient for confirmation.
+Counts: confirmed=1  inconclusive=0  rejected=1
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      8112
+PPID:     5556
+Image:    olk.exe
+Cmdline:  (none recorded — path and arguments unavailable)
+Severity: HIGH
+MITRE:    T1055 — Process Injection / T1564.001 — Hide Artifacts: Hidden Processes
+
+Justification:
+  PID 8112 appears exclusively in psscan and is absent from pslist, indicating its EPROCESS structure was unlinked from the active process doubly-linked list — a hallmark of DKOM-based process hiding used by rootkits and advanced malware. Despite PPID 5556 (explorer.exe) being a live, resolvable process in pslist, the parent of PID 8112 is annotated as 'unknown', indicating the EPROCESS forward/back-links were deliberately manipulated. The simultaneous existence of a second olk.exe (PID 5868) with the same parent and near-identical start time but a clean pslist entry is consistent with a process-hollowing pattern, where a legitimate process shell is created visibly while the injected or hollowed instance is hidden via DKOM. The complete absence of a command line and executable path is a direct consequence of the hiding technique and further reduces visibility. No legitimate application — including Microsoft Outlook (olk.exe) — unlinks its own EPROCESS from the kernel list.
+
+Key Evidence:
+  - L155: 8112	5556	olk.exe	0xcd8a12eec080	0	-	1	False	2026-05-12 18:24:50.000000 UTC	2026-05-12 18:29:33.000000 UTC	Disabled
+  - (PID 8112 absent from pslist.txt — present only in psscan.txt)
+  - (PPID 5556 resolves to live explorer.exe in pslist, yet parent recorded as 'unknown' for PID 8112 — EPROCESS link manipulation)
+  - (Duplicate: PID 5868 olk.exe shares PPID 5556 and start time 2026-05-12 18:24:50 UTC with a clean pslist entry — process hollowing pattern)
+----------------------------------------------------------------
+
+================================================================

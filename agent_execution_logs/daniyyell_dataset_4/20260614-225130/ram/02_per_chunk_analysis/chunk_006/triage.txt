@@ -1,0 +1,5 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_006.txt
+Summary: All three processes are legitimate VMware Tools components running from expected installation paths with expected parent-child relationships and no suspicious command-line, DLL, or network indicators. Elevated privileges (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege) are normal for VMware Tools service processes. Parent PID 716 is unlisted but consistent with services.exe being outside this snapshot chunk. No signals triggered.
+

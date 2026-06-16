@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "case_id": "daniyyell_dataset_4",
+  "run_id": "20260614-225130",
+  "run_started_at": "2026-06-14T22:51:30Z",
+  "run_completed_at": "2026-06-14T23:11:43Z",
+  "termination_reason": "convergence",
+  "provenance": {
+    "generated_at": "2026-06-14T23:11:43Z",
+    "orchestrator": {
+      "model": "claude-haiku-4-5-20251001",
+      "prompt_sha256": "sha256:9cc0e62478a850ec4faa4bd855204679d9efaa46f8febfa4f40c51bca8b63280"
+    },
+    "report": {
+      "model": "claude-sonnet-4-6",
+      "prompt_sha256": "sha256:b14eb57fafd4a10b6927c7da1c2e73fd6c6569439dfb0d35a2a1531b73f70048"
+    }
+  },
+  "cost_summary": {
+    "total": {
+      "llm_calls": 2,
+      "tokens_in": 15477,
+      "tokens_out": 3139
+    },
+    "by_component": {
+      "backbone/orchestrator": {
+        "llm_calls": 1,
+        "tokens_in": 1284,
+        "tokens_out": 9
+      },
+      "backbone/report": {
+        "llm_calls": 1,
+        "tokens_in": 14193,
+        "tokens_out": 3130
+      },
+      "modules": {
+        "llm_calls": 0,
+        "tokens_in": 0,
+        "tokens_out": 0
+      }
+    }
+  },
+  "execution_sequence": [
+    {
+      "step": 1,
+      "phase": "initial_scan",
+      "module": "ram",
+      "started_at": "2026-06-14T22:51:30Z",
+      "completed_at": "2026-06-14T23:10:43Z"
+    },
+    {
+      "step": 2,
+      "phase": "initial_scan",
+      "module": "ti",
+      "started_at": "2026-06-14T22:51:30Z",
+      "completed_at": "2026-06-14T22:51:30Z"
+    },
+    {
+      "step": 3,
+      "phase": "report",
+      "completed_at": "2026-06-14T23:11:43Z"
+    }
+  ],
+  "audit_files": {
+    "backbone_orchestrator": "backbone/orchestrator_calls.jsonl",
+    "backbone_report": "backbone/report_call.jsonl",
+    "backbone_traceability": "backbone/traceability.json",
+    "threat_intel_queries": "threat_intel/queries.jsonl",
+    "ram_agent_calls": "ram/agent_calls.jsonl",
+    "disk_agent_calls": "disk/agent_calls.jsonl"
+  },
+  "module_artifacts": {
+    "ram": {
+      "chunks": "ram/01_chunks/",
+      "per_chunk_analysis": "ram/02_per_chunk_analysis/",
+      "aggregated_analyst": "ram/aggregated_analyst.txt",
+      "scan_result": "ram/scan_result.json"
+    },
+    "disk": {
+      "preprocess_inputs": "disk/01_preprocess/",
+      "triage_outputs": "disk/02_triage/",
+      "pivot_evidence": "disk/03_pivot/pivot.txt",
+      "analyst_output": "disk/04_analyst/analyst.txt",
+      "mft_audit": "disk/mft_audit.jsonl",
+      "scan_result": "disk/scan_result.json"
+    }
+  },
+  "backbone_outputs": {
+    "case_state": "backbone/case_state.json",
+    "incident_report": "backbone/incident_report.md"
+  }
+}

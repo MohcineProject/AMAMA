@@ -1,0 +1,425 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:07:20Z
+
+=== PID 19436 (SearchApp.exe, ppid=740) ===
+Cmdline: "C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe" -ServerName:CortanaUI.AppX8z9r6jm96hw4bsbneegw0kyxx296wr9t.mca
+
+--- pslist.txt ---
+L1395: 19436	740	SearchApp.exe	0xb78d10795080	28	-	1	False	2020-11-14 12:48:43.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L1395: 19436	SearchApp.exe	"C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe" -ServerName:CortanaUI.AppX8z9r6jm96hw4bsbneegw0kyxx296wr9t.mca
+
+--- privileges.txt ---
+L48655: 19436	SearchApp.exe	2	SeCreateTokenPrivilege		Create a token object
+L48656: 19436	SearchApp.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L48657: 19436	SearchApp.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L48658: 19436	SearchApp.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L48659: 19436	SearchApp.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L48660: 19436	SearchApp.exe	7	SeTcbPrivilege		Act as part of the operating system
+L48661: 19436	SearchApp.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L48662: 19436	SearchApp.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L48663: 19436	SearchApp.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L48664: 19436	SearchApp.exe	11	SeSystemProfilePrivilege		Profile system performance
+L48665: 19436	SearchApp.exe	12	SeSystemtimePrivilege		Change the system time
+L48666: 19436	SearchApp.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L48667: 19436	SearchApp.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L48668: 19436	SearchApp.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L48669: 19436	SearchApp.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L48670: 19436	SearchApp.exe	17	SeBackupPrivilege		Backup files and directories
+L48671: 19436	SearchApp.exe	18	SeRestorePrivilege		Restore files and directories
+L48672: 19436	SearchApp.exe	19	SeShutdownPrivilege		Shut down the system
+L48673: 19436	SearchApp.exe	20	SeDebugPrivilege		Debug programs
+L48674: 19436	SearchApp.exe	21	SeAuditPrivilege		Generate security audits
+L48675: 19436	SearchApp.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L48676: 19436	SearchApp.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L48677: 19436	SearchApp.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L48678: 19436	SearchApp.exe	25	SeUndockPrivilege		Remove computer from docking station
+L48679: 19436	SearchApp.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L48680: 19436	SearchApp.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L48681: 19436	SearchApp.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L48682: 19436	SearchApp.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L48683: 19436	SearchApp.exe	30	SeCreateGlobalPrivilege		Create global objects
+L48684: 19436	SearchApp.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L48685: 19436	SearchApp.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L48686: 19436	SearchApp.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L48687: 19436	SearchApp.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L48688: 19436	SearchApp.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L48689: 19436	SearchApp.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L10646: 19436	SearchApp.exe	0x7ff7cac60000	0x304000	SearchApp.exe	C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10647: 19436	SearchApp.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10648: 19436	SearchApp.exe	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10649: 19436	SearchApp.exe	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10650: 19436	SearchApp.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10651: 19436	SearchApp.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10652: 19436	SearchApp.exe	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10653: 19436	SearchApp.exe	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10654: 19436	SearchApp.exe	0x7fff473a0000	0x6f000	wincorlib.DLL	C:\WINDOWS\SYSTEM32\wincorlib.DLL	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10655: 19436	SearchApp.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10656: 19436	SearchApp.exe	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10657: 19436	SearchApp.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10658: 19436	SearchApp.exe	0x7fff57540000	0x1a0000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10659: 19436	SearchApp.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10660: 19436	SearchApp.exe	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10661: 19436	SearchApp.exe	0x7fff53940000	0xf3000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10662: 19436	SearchApp.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10663: 19436	SearchApp.exe	0x7fff4a170000	0x36000	XmlLite.dll	C:\WINDOWS\SYSTEM32\XmlLite.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10664: 19436	SearchApp.exe	0x7fff3b780000	0x2f5000	uiautomationcore.dll	C:\WINDOWS\SYSTEM32\uiautomationcore.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10665: 19436	SearchApp.exe	0x7fff52a60000	0x9e000	uxtheme.dll	C:\WINDOWS\SYSTEM32\uxtheme.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10666: 19436	SearchApp.exe	0x7fff508e0000	0xf7000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10667: 19436	SearchApp.exe	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10668: 19436	SearchApp.exe	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10669: 19436	SearchApp.exe	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10670: 19436	SearchApp.exe	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10671: 19436	SearchApp.exe	0x7fff455d0000	0x10c1000	Windows.UI.Xaml.dll	C:\Windows\System32\Windows.UI.Xaml.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10672: 19436	SearchApp.exe	0x7fff47340000	0x5b000	Bcp47Langs.dll	C:\WINDOWS\SYSTEM32\Bcp47Langs.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10673: 19436	SearchApp.exe	0x7fff468c0000	0x2b0000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10674: 19436	SearchApp.exe	0x7fff52500000	0xf2000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10675: 19436	SearchApp.exe	0x7fff51cd0000	0x1e5000	dcomp.dll	C:\WINDOWS\SYSTEM32\dcomp.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10676: 19436	SearchApp.exe	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10677: 19436	SearchApp.exe	0x7fff57800000	0x6b000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10678: 19436	SearchApp.exe	0x7fff49ad0000	0x11000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10679: 19436	SearchApp.exe	0x7fff4eb40000	0x208000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10680: 19436	SearchApp.exe	0x7fff3e960000	0x5d9000	SearchApi.dll	C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApi.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10681: 19436	SearchApp.exe	0x7fff55910000	0x55000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10682: 19436	SearchApp.exe	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10683: 19436	SearchApp.exe	0x7fff54ea0000	0x3c000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10684: 19436	SearchApp.exe	0x7fff44880000	0x29000	Cabinet.dll	C:\WINDOWS\SYSTEM32\Cabinet.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10685: 19436	SearchApp.exe	0x7fff549f0000	0x2c000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10686: 19436	SearchApp.exe	0x7fff523a0000	0x156000	WinTypes.dll	C:\Windows\System32\WinTypes.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10687: 19436	SearchApp.exe	0x7fff43150000	0x72000	Search.Core.dll	C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Search.Core.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10688: 19436	SearchApp.exe	0x7fff43130000	0x1d000	BingConfigurationClient.dll	C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\BingConfigurationClient.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10689: 19436	SearchApp.exe	0x7fff54140000	0x8a000	msvcp110_win.dll	C:\WINDOWS\SYSTEM32\msvcp110_win.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10690: 19436	SearchApp.exe	0x7fff261e0000	0x61000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10691: 19436	SearchApp.exe	0x7fff286b0000	0x207000	windowsudk.shellcommon.dll	C:\WINDOWS\system32\windowsudk.shellcommon.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10692: 19436	SearchApp.exe	0x7fff28630000	0x80000	DictationManager.dll	C:\WINDOWS\SYSTEM32\DictationManager.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10693: 19436	SearchApp.exe	0x7fff52600000	0x35e000	CoreUIComponents.dll	C:\WINDOWS\SYSTEM32\CoreUIComponents.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10694: 19436	SearchApp.exe	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10695: 19436	SearchApp.exe	0x7fff50a20000	0xa0000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10696: 19436	SearchApp.exe	0x7fff53bc0000	0x29000	slc.dll	C:\WINDOWS\SYSTEM32\slc.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10697: 19436	SearchApp.exe	0x7fff53b90000	0x25000	sppc.dll	C:\WINDOWS\SYSTEM32\sppc.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10698: 19436	SearchApp.exe	0x7fff470b0000	0x14c000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10699: 19436	SearchApp.exe	0x7fff47000000	0xa3000	WindowManagementAPI.dll	C:\WINDOWS\SYSTEM32\WindowManagementAPI.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10700: 19436	SearchApp.exe	0x7fff46da0000	0xfc000	TextInputFramework.dll	C:\WINDOWS\SYSTEM32\TextInputFramework.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10701: 19436	SearchApp.exe	0x7fff46ea0000	0x152000	InputHost.dll	C:\WINDOWS\SYSTEM32\InputHost.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10702: 19436	SearchApp.exe	0x7fff3d590000	0x4f2000	sapi_onecore.dll	C:\WINDOWS\System32\Speech_OneCore\Common\sapi_onecore.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10703: 19436	SearchApp.exe	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10704: 19436	SearchApp.exe	0x7fff54b90000	0x4b000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10705: 19436	SearchApp.exe	0x7fff54940000	0x18000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10706: 19436	SearchApp.exe	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10707: 19436	SearchApp.exe	0x7fff43100000	0x26000	winmmbase.dll	C:\WINDOWS\SYSTEM32\winmmbase.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10708: 19436	SearchApp.exe	0x7fff4c810000	0x181000	AudioSes.DLL	C:\WINDOWS\SYSTEM32\AudioSes.DLL	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10709: 19436	SearchApp.exe	0x7fff4c780000	0x85000	MMDevAPI.DLL	C:\WINDOWS\SYSTEM32\MMDevAPI.DLL	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10710: 19436	SearchApp.exe	0x7fff54a90000	0x12000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10711: 19436	SearchApp.exe	0x7fff4fea0000	0x100000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10712: 19436	SearchApp.exe	0x7fff54dc0000	0x2c000	DEVOBJ.dll	C:\WINDOWS\SYSTEM32\DEVOBJ.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10713: 19436	SearchApp.exe	0x7fff54ee0000	0x2e000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10714: 19436	SearchApp.exe	0x7fff43ed0000	0x795000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10715: 19436	SearchApp.exe	0x7fff3e7d0000	0x185000	ConstraintIndex.Search.dll	C:\Windows\System32\ConstraintIndex.Search.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10716: 19436	SearchApp.exe	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10717: 19436	SearchApp.exe	0x7fff4dc70000	0xe7000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10718: 19436	SearchApp.exe	0x7fff47200000	0xf4000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10719: 19436	SearchApp.exe	0x7fff3e650000	0x17a000	Windows.Web.Http.dll	C:\Windows\System32\Windows.Web.Http.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10720: 19436	SearchApp.exe	0x7fff30ed0000	0x40000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10721: 19436	SearchApp.exe	0x7fff46730000	0x139000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10722: 19436	SearchApp.exe	0x7fff514a0000	0x264000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10723: 19436	SearchApp.exe	0x7fff48530000	0x2d000	languageoverlayutil.dll	C:\WINDOWS\SYSTEM32\languageoverlayutil.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10724: 19436	SearchApp.exe	0x7fff41730000	0x1447000	igd10iumd64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10725: 19436	SearchApp.exe	0x7fff557e0000	0x27000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10726: 19436	SearchApp.exe	0x7fff54a60000	0x27000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10727: 19436	SearchApp.exe	0x7fff54a20000	0x3b000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10728: 19436	SearchApp.exe	0x7fff48500000	0x2d000	bcp47mrm.dll	C:\WINDOWS\SYSTEM32\bcp47mrm.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10729: 19436	SearchApp.exe	0x7fff3f820000	0x1f01000	igc64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10730: 19436	SearchApp.exe	0x7fff42b80000	0x1a8000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10731: 19436	SearchApp.exe	0x7fff42d30000	0x27f000	dwrite.dll	C:\WINDOWS\SYSTEM32\dwrite.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10732: 19436	SearchApp.exe	0x7fff3f7e0000	0x3b000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10733: 19436	SearchApp.exe	0x7fff576e0000	0x115000	msctf.dll	C:\WINDOWS\System32\msctf.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10734: 19436	SearchApp.exe	0x7fff51710000	0x5c0000	d2d1.dll	C:\WINDOWS\SYSTEM32\d2d1.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10735: 19436	SearchApp.exe	0x7fff31cc0000	0x4da000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+L10736: 19436	SearchApp.exe	0x7fff35d40000	0x13000	TOKENBINDING.dll	C:\WINDOWS\SYSTEM32\TOKENBINDING.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10737: 19436	SearchApp.exe	0x7fff45050000	0xac000	TextShaping.dll	C:\WINDOWS\SYSTEM32\TextShaping.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10738: 19436	SearchApp.exe	0x7fff52e20000	0x2a000	RMCLIENT.dll	C:\WINDOWS\SYSTEM32\RMCLIENT.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10739: 19436	SearchApp.exe	0x7fff356b0000	0x17000	ondemandconnroutehelper.dll	C:\WINDOWS\SYSTEM32\ondemandconnroutehelper.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10740: 19436	SearchApp.exe	0x7fff34bd0000	0x11d000	Windows.Security.Authentication.Web.Core.dll	C:\Windows\System32\Windows.Security.Authentication.Web.Core.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10741: 19436	SearchApp.exe	0x7fff54710000	0x6a000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10742: 19436	SearchApp.exe	0x7fff54400000	0x3b000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10743: 19436	SearchApp.exe	0x7fff4fe90000	0xb000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10744: 19436	SearchApp.exe	0x7fff57450000	0x8000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10745: 19436	SearchApp.exe	0x7fff53d70000	0x29000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10746: 19436	SearchApp.exe	0x7fff328d0000	0xa1000	UiaManager.dll	C:\Windows\System32\UiaManager.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10747: 19436	SearchApp.exe	0x7fff55650000	0x15d000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10748: 19436	SearchApp.exe	0x7fff35b00000	0xc3000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10749: 19436	SearchApp.exe	0x7fff540e0000	0xa000	DPAPI.dll	C:\WINDOWS\SYSTEM32\DPAPI.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10750: 19436	SearchApp.exe	0x7fff54960000	0xc000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10751: 19436	SearchApp.exe	0x7fff26bf0000	0x109000	windows.ui.core.textinput.dll	C:\WINDOWS\SYSTEM32\windows.ui.core.textinput.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10752: 19436	SearchApp.exe	0x7fff29bb0000	0x3e000	DataExchange.dll	C:\WINDOWS\system32\DataExchange.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10753: 19436	SearchApp.exe	0x7fff36630000	0x14000	threadpoolwinrt.dll	C:\Windows\System32\threadpoolwinrt.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10754: 19436	SearchApp.exe	0x7fff4e8a0000	0x8d000	Windows.Graphics.dll	C:\Windows\System32\Windows.Graphics.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10755: 19436	SearchApp.exe	0x7fff31280000	0xa9000	twinapi.dll	C:\Windows\System32\twinapi.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10756: 19436	SearchApp.exe	0x7fff56800000	0x12a000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10757: 19436	SearchApp.exe	0x7fff3d240000	0x34f000	msftedit.dll	C:\WINDOWS\SYSTEM32\msftedit.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10758: 19436	SearchApp.exe	0x7fff430d0000	0x25000	globinputhost.dll	C:\WINDOWS\SYSTEM32\globinputhost.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10759: 19436	SearchApp.exe	0x7fff3f060000	0x3dc000	Windows.UI.Xaml.Controls.dll	C:\Windows\System32\Windows.UI.Xaml.Controls.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10760: 19436	SearchApp.exe	0x7fff2a700000	0x14000	Windows.Globalization.Fontgroups.dll	C:\Windows\System32\Windows.Globalization.Fontgroups.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10761: 19436	SearchApp.exe	0x7fff2a6f0000	0xa000	fontgroupsoverride.dll	C:\WINDOWS\SYSTEM32\fontgroupsoverride.dll	6	2020-11-14 12:48:43.000000 UTC	Disabled
+L10762: 19436	SearchApp.exe	0x7fff45100000	0x9e000	directmanipulation.dll	C:\WINDOWS\system32\directmanipulation.dll	6	2020-11-14 12:48:44.000000 UTC	Disabled
+L10763: 19436	SearchApp.exe	0x7fff3d030000	0x1c4000	Windows.UI.Input.Inking.dll	C:\Windows\System32\Windows.UI.Input.Inking.dll	6	2020-11-14 12:48:44.000000 UTC	Disabled
+L10764: 19436	SearchApp.exe	0x7fff3ce80000	0xec000	EdgeManager.dll	C:\WINDOWS\SYSTEM32\EdgeManager.dll	6	2020-11-14 12:48:44.000000 UTC	Disabled
+L10765: 19436	SearchApp.exe	0x7fff24500000	0x1930000	edgehtml.dll	C:\WINDOWS\SYSTEM32\edgehtml.dll	6	2020-11-14 12:48:44.000000 UTC	Disabled
+
+--- pstree.txt ---
+L146: *** 19436	740	SearchApp.exe	0xb78d10795080	28	-	1	False	2020-11-14 12:48:43.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe	"C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe" -ServerName:CortanaUI.AppX8z9r6jm96hw4bsbneegw0kyxx296wr9t.mca	C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe
+
+--- psscan.txt ---
+L1698: 19436	740	SearchApp.exe	0xb78d10795080	28	-	1	False	2020-11-14 12:48:43.000000 UTC	N/A	Disabled
+
+--- malware_malfind.txt ---
+L70: 19436	SearchApp.exe	0x20313080000	0x2031309ffff	VadS	PAGE_EXECUTE_READWRITE	5	1	Disabled	N/A	
+L75: 19436	SearchApp.exe	0x20313b80000	0x20313be3fff	VadS	PAGE_EXECUTE_READWRITE	5	1	Disabled	N/A	
+
+--- ldrmodules.txt ---
+L11305: 19436	SearchApp.exe	0x1fb0a530000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.19h1.dll
+L11306: 19436	SearchApp.exe	0x1fb11020000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L11307: 19436	SearchApp.exe	0x1fb11ba0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L11308: 19436	SearchApp.exe	0x1fb11940000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L11309: 19436	SearchApp.exe	0x1fb11800000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L11310: 19436	SearchApp.exe	0x1fb11aa0000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L11311: 19436	SearchApp.exe	0x1fb11f90000	True	True	True	\Windows\System32\icuin.dll
+L11312: 19436	SearchApp.exe	0x1fb11f80000	True	True	True	\Windows\System32\icuuc.dll
+L11313: 19436	SearchApp.exe	0x20312450000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L11314: 19436	SearchApp.exe	0x203125d0000	False	False	False	\Windows\System32\en-US\edgehtml.dll.mui
+L11315: 19436	SearchApp.exe	0x20312760000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Cortana.Search.winmd
+L11316: 19436	SearchApp.exe	0x20312730000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Cortana.Internal.Search.winmd
+L11317: 19436	SearchApp.exe	0x20312780000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L11318: 19436	SearchApp.exe	0x20312e00000	False	False	False	\Windows\System32\WinMetadata\Windows.Security.winmd
+L11319: 19436	SearchApp.exe	0x20312e60000	False	False	False	\Windows\System32\WinMetadata\Windows.Storage.winmd
+L11320: 19436	SearchApp.exe	0x20312ff0000	False	False	False	\Windows\System32\WinMetadata\Windows.System.winmd
+L11321: 19436	SearchApp.exe	0x20313420000	False	False	False	\Windows\System32\en-US\dnsapi.dll.mui
+L11322: 19436	SearchApp.exe	0x203131f0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L11323: 19436	SearchApp.exe	0x20323f60000	False	False	False	\Windows\System32\WinMetadata\Windows.Web.winmd
+L11324: 19436	SearchApp.exe	0x20327520000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L11325: 19436	SearchApp.exe	0x20327500000	False	False	False	\Windows\SystemResources\Chakra.dll.mun
+L11326: 19436	SearchApp.exe	0x203275d0000	False	False	False	\Windows\System32\WinMetadata\Windows.ApplicationModel.winmd
+L11327: 19436	SearchApp.exe	0x20327840000	False	False	False	\Windows\System32\prm0009.dll
+L11328: 19436	SearchApp.exe	0x20327f20000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L11329: 19436	SearchApp.exe	0x2032cf40000	False	False	False	\Windows\System32\en-US\d2d1.dll.mui
+L11330: 19436	SearchApp.exe	0x2032d200000	False	False	False	\Windows\SystemResources\edgehtml.dll.mun
+L11331: 19436	SearchApp.exe	0x20332b10000	False	False	False	\Windows\System32\en-US\dui70.dll.mui
+L11332: 19436	SearchApp.exe	0x7fff473a0000	True	True	True	\Windows\System32\wincorlib.dll
+L11333: 19436	SearchApp.exe	0x7fff3e960000	True	True	True	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApi.dll
+L11334: 19436	SearchApp.exe	0x7fff328d0000	True	True	True	\Windows\System32\UiaManager.dll
+L11335: 19436	SearchApp.exe	0x7fff286b0000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L11336: 19436	SearchApp.exe	0x7ff7cac60000	True	False	True	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe
+L11337: 19436	SearchApp.exe	0x7fff24500000	True	True	True	\Windows\System32\edgehtml.dll
+L11338: 19436	SearchApp.exe	0x7ffecb6f0000	True	True	True	\Windows\System32\webplatstorageserver.dll
+L11339: 19436	SearchApp.exe	0x7fff26bf0000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L11340: 19436	SearchApp.exe	0x7fff261e0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L11341: 19436	SearchApp.exe	0x7fff28630000	True	True	True	\Windows\System32\DictationManager.dll
+L11342: 19436	SearchApp.exe	0x7fff2dbf0000	True	True	True	\Windows\System32\duser.dll
+L11343: 19436	SearchApp.exe	0x7fff2a6f0000	True	True	True	\Windows\System32\fontgroupsoverride.dll
+L11344: 19436	SearchApp.exe	0x7fff29800000	True	True	True	\Windows\System32\edputil.dll
+L11345: 19436	SearchApp.exe	0x7fff28c90000	True	True	True	\Windows\System32\windows.applicationmodel.datatransfer.dll
+L11346: 19436	SearchApp.exe	0x7fff29bb0000	True	True	True	\Windows\System32\DataExchange.dll
+L11347: 19436	SearchApp.exe	0x7fff2a700000	True	True	True	\Windows\System32\Windows.Globalization.Fontgroups.dll
+L11348: 19436	SearchApp.exe	0x7fff30ed0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L11349: 19436	SearchApp.exe	0x7fff2e350000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.19041.488_none_4238de57f6b64d28\comctl32.dll
+L11350: 19436	SearchApp.exe	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L11351: 19436	SearchApp.exe	0x7fff31280000	True	True	True	\Windows\System32\twinapi.dll
+L11352: 19436	SearchApp.exe	0x7fff3b1c0000	True	True	True	\Windows\System32\msimtf.dll
+L11353: 19436	SearchApp.exe	0x7fff35d40000	True	True	True	\Windows\System32\tokenbinding.dll
+L11354: 19436	SearchApp.exe	0x7fff356b0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L11355: 19436	SearchApp.exe	0x7fff34bd0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L11356: 19436	SearchApp.exe	0x7fff35b00000	True	True	True	\Windows\System32\Windows.Web.dll
+L11357: 19436	SearchApp.exe	0x7fff36630000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L11358: 19436	SearchApp.exe	0x7fff36530000	True	True	True	\Windows\System32\cryptnet.dll
+L11359: 19436	SearchApp.exe	0x7fff377f0000	True	True	True	\Windows\System32\dui70.dll
+L11360: 19436	SearchApp.exe	0x7fff3d030000	True	True	True	\Windows\System32\Windows.UI.Input.Inking.dll
+L11361: 19436	SearchApp.exe	0x7fff3c490000	True	True	True	\Windows\System32\icu.dll
+L11362: 19436	SearchApp.exe	0x7fff3b780000	True	True	True	\Windows\System32\UIAutomationCore.dll
+L11363: 19436	SearchApp.exe	0x7fff3b1e0000	True	True	True	\Windows\System32\edgeIso.dll
+L11364: 19436	SearchApp.exe	0x7fff3bca0000	True	True	True	\Windows\System32\srpapi.dll
+L11365: 19436	SearchApp.exe	0x7fff3c700000	True	True	True	\Windows\System32\Chakra.dll
+L11366: 19436	SearchApp.exe	0x7fff3c6c0000	True	True	True	\Windows\System32\rometadata.dll
+L11367: 19436	SearchApp.exe	0x7fff3ce80000	True	True	True	\Windows\System32\EdgeManager.dll
+L11368: 19436	SearchApp.exe	0x7fff3d590000	True	True	True	\Windows\System32\Speech_OneCore\common\sapi_onecore.dll
+L11369: 19436	SearchApp.exe	0x7fff3d240000	True	True	True	\Windows\System32\msftedit.dll
+L11370: 19436	SearchApp.exe	0x7fff3e7d0000	True	True	True	\Windows\System32\ConstraintIndex.Search.dll
+L11371: 19436	SearchApp.exe	0x7fff3e650000	True	True	True	\Windows\System32\Windows.Web.Http.dll
+L11372: 19436	SearchApp.exe	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L11373: 19436	SearchApp.exe	0x7fff43150000	True	True	True	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Search.Core.dll
+L11374: 19436	SearchApp.exe	0x7fff42b80000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L11375: 19436	SearchApp.exe	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L11376: 19436	SearchApp.exe	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L11377: 19436	SearchApp.exe	0x7fff3f060000	True	True	True	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L11378: 19436	SearchApp.exe	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L11379: 19436	SearchApp.exe	0x7fff430d0000	True	True	True	\Windows\System32\globinputhost.dll
+L11380: 19436	SearchApp.exe	0x7fff42fb0000	True	True	True	\Windows\System32\mskeyprotect.dll
+L11381: 19436	SearchApp.exe	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L11382: 19436	SearchApp.exe	0x7fff43100000	True	True	True	\Windows\System32\winmmbase.dll
+L11383: 19436	SearchApp.exe	0x7fff43130000	True	True	True	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\BingConfigurationClient.dll
+L11384: 19436	SearchApp.exe	0x7fff44880000	True	True	True	\Windows\System32\cabinet.dll
+L11385: 19436	SearchApp.exe	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L11386: 19436	SearchApp.exe	0x7fff436b0000	True	True	True	\Windows\System32\ncryptsslp.dll
+L11387: 19436	SearchApp.exe	0x7fff45100000	True	True	True	\Windows\System32\directmanipulation.dll
+L11388: 19436	SearchApp.exe	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L11389: 19436	SearchApp.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L11390: 19436	SearchApp.exe	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L11391: 19436	SearchApp.exe	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L11392: 19436	SearchApp.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L11393: 19436	SearchApp.exe	0x7fff46730000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L11394: 19436	SearchApp.exe	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L11395: 19436	SearchApp.exe	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L11396: 19436	SearchApp.exe	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L11397: 19436	SearchApp.exe	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L11398: 19436	SearchApp.exe	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L11399: 19436	SearchApp.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L11400: 19436	SearchApp.exe	0x7fff4c4a0000	True	True	True	\Windows\System32\rasadhlp.dll
+L11401: 19436	SearchApp.exe	0x7fff48530000	True	True	True	\Windows\System32\LanguageOverlayUtil.dll
+L11402: 19436	SearchApp.exe	0x7fff479a0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L11403: 19436	SearchApp.exe	0x7fff478f0000	True	True	True	\Windows\System32\MSWB7.dll
+L11404: 19436	SearchApp.exe	0x7fff48490000	True	True	True	\Windows\System32\ninput.dll
+L11405: 19436	SearchApp.exe	0x7fff47a50000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L11406: 19436	SearchApp.exe	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L11407: 19436	SearchApp.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L11408: 19436	SearchApp.exe	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L11409: 19436	SearchApp.exe	0x7fff4a400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L11410: 19436	SearchApp.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L11411: 19436	SearchApp.exe	0x7fff4c810000	True	True	True	\Windows\System32\AudioSes.dll
+L11412: 19436	SearchApp.exe	0x7fff4c780000	True	True	True	\Windows\System32\MMDevAPI.dll
+L11413: 19436	SearchApp.exe	0x7fff4dc70000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L11414: 19436	SearchApp.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L11415: 19436	SearchApp.exe	0x7fff4e8a0000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L11416: 19436	SearchApp.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L11417: 19436	SearchApp.exe	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L11418: 19436	SearchApp.exe	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L11419: 19436	SearchApp.exe	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L11420: 19436	SearchApp.exe	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L11421: 19436	SearchApp.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L11422: 19436	SearchApp.exe	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+L11423: 19436	SearchApp.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L11424: 19436	SearchApp.exe	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+
+--- malware_ldrmodules.txt ---
+L11305: 19436	SearchApp.exe	0x1fb0a530000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.19h1.dll
+L11306: 19436	SearchApp.exe	0x1fb11020000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L11307: 19436	SearchApp.exe	0x1fb11ba0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L11308: 19436	SearchApp.exe	0x1fb11940000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L11309: 19436	SearchApp.exe	0x1fb11800000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L11310: 19436	SearchApp.exe	0x1fb11aa0000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L11311: 19436	SearchApp.exe	0x1fb11f90000	True	True	True	\Windows\System32\icuin.dll
+L11312: 19436	SearchApp.exe	0x1fb11f80000	True	True	True	\Windows\System32\icuuc.dll
+L11313: 19436	SearchApp.exe	0x20312450000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L11314: 19436	SearchApp.exe	0x203125d0000	False	False	False	\Windows\System32\en-US\edgehtml.dll.mui
+L11315: 19436	SearchApp.exe	0x20312760000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Cortana.Search.winmd
+L11316: 19436	SearchApp.exe	0x20312730000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Cortana.Internal.Search.winmd
+L11317: 19436	SearchApp.exe	0x20312780000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L11318: 19436	SearchApp.exe	0x20312e00000	False	False	False	\Windows\System32\WinMetadata\Windows.Security.winmd
+L11319: 19436	SearchApp.exe	0x20312e60000	False	False	False	\Windows\System32\WinMetadata\Windows.Storage.winmd
+L11320: 19436	SearchApp.exe	0x20312ff0000	False	False	False	\Windows\System32\WinMetadata\Windows.System.winmd
+L11321: 19436	SearchApp.exe	0x20313420000	False	False	False	\Windows\System32\en-US\dnsapi.dll.mui
+L11322: 19436	SearchApp.exe	0x203131f0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L11323: 19436	SearchApp.exe	0x20323f60000	False	False	False	\Windows\System32\WinMetadata\Windows.Web.winmd
+L11324: 19436	SearchApp.exe	0x20327520000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L11325: 19436	SearchApp.exe	0x20327500000	False	False	False	\Windows\SystemResources\Chakra.dll.mun
+L11326: 19436	SearchApp.exe	0x203275d0000	False	False	False	\Windows\System32\WinMetadata\Windows.ApplicationModel.winmd
+L11327: 19436	SearchApp.exe	0x20327840000	False	False	False	\Windows\System32\prm0009.dll
+L11328: 19436	SearchApp.exe	0x20327f20000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L11329: 19436	SearchApp.exe	0x2032cf40000	False	False	False	\Windows\System32\en-US\d2d1.dll.mui
+L11330: 19436	SearchApp.exe	0x2032d200000	False	False	False	\Windows\SystemResources\edgehtml.dll.mun
+L11331: 19436	SearchApp.exe	0x20332b10000	False	False	False	\Windows\System32\en-US\dui70.dll.mui
+L11332: 19436	SearchApp.exe	0x7fff473a0000	True	True	True	\Windows\System32\wincorlib.dll
+L11333: 19436	SearchApp.exe	0x7fff3e960000	True	True	True	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApi.dll
+L11334: 19436	SearchApp.exe	0x7fff328d0000	True	True	True	\Windows\System32\UiaManager.dll
+L11335: 19436	SearchApp.exe	0x7fff286b0000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L11336: 19436	SearchApp.exe	0x7ff7cac60000	True	False	True	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe
+L11337: 19436	SearchApp.exe	0x7fff24500000	True	True	True	\Windows\System32\edgehtml.dll
+L11338: 19436	SearchApp.exe	0x7ffecb6f0000	True	True	True	\Windows\System32\webplatstorageserver.dll
+L11339: 19436	SearchApp.exe	0x7fff26bf0000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L11340: 19436	SearchApp.exe	0x7fff261e0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L11341: 19436	SearchApp.exe	0x7fff28630000	True	True	True	\Windows\System32\DictationManager.dll
+L11342: 19436	SearchApp.exe	0x7fff2dbf0000	True	True	True	\Windows\System32\duser.dll
+L11343: 19436	SearchApp.exe	0x7fff2a6f0000	True	True	True	\Windows\System32\fontgroupsoverride.dll
+L11344: 19436	SearchApp.exe	0x7fff29800000	True	True	True	\Windows\System32\edputil.dll
+L11345: 19436	SearchApp.exe	0x7fff28c90000	True	True	True	\Windows\System32\windows.applicationmodel.datatransfer.dll
+L11346: 19436	SearchApp.exe	0x7fff29bb0000	True	True	True	\Windows\System32\DataExchange.dll
+L11347: 19436	SearchApp.exe	0x7fff2a700000	True	True	True	\Windows\System32\Windows.Globalization.Fontgroups.dll
+L11348: 19436	SearchApp.exe	0x7fff30ed0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L11349: 19436	SearchApp.exe	0x7fff2e350000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.19041.488_none_4238de57f6b64d28\comctl32.dll
+L11350: 19436	SearchApp.exe	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L11351: 19436	SearchApp.exe	0x7fff31280000	True	True	True	\Windows\System32\twinapi.dll
+L11352: 19436	SearchApp.exe	0x7fff3b1c0000	True	True	True	\Windows\System32\msimtf.dll
+L11353: 19436	SearchApp.exe	0x7fff35d40000	True	True	True	\Windows\System32\tokenbinding.dll
+L11354: 19436	SearchApp.exe	0x7fff356b0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L11355: 19436	SearchApp.exe	0x7fff34bd0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L11356: 19436	SearchApp.exe	0x7fff35b00000	True	True	True	\Windows\System32\Windows.Web.dll
+L11357: 19436	SearchApp.exe	0x7fff36630000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L11358: 19436	SearchApp.exe	0x7fff36530000	True	True	True	\Windows\System32\cryptnet.dll
+L11359: 19436	SearchApp.exe	0x7fff377f0000	True	True	True	\Windows\System32\dui70.dll
+L11360: 19436	SearchApp.exe	0x7fff3d030000	True	True	True	\Windows\System32\Windows.UI.Input.Inking.dll
+L11361: 19436	SearchApp.exe	0x7fff3c490000	True	True	True	\Windows\System32\icu.dll
+L11362: 19436	SearchApp.exe	0x7fff3b780000	True	True	True	\Windows\System32\UIAutomationCore.dll
+L11363: 19436	SearchApp.exe	0x7fff3b1e0000	True	True	True	\Windows\System32\edgeIso.dll
+L11364: 19436	SearchApp.exe	0x7fff3bca0000	True	True	True	\Windows\System32\srpapi.dll
+L11365: 19436	SearchApp.exe	0x7fff3c700000	True	True	True	\Windows\System32\Chakra.dll
+L11366: 19436	SearchApp.exe	0x7fff3c6c0000	True	True	True	\Windows\System32\rometadata.dll
+L11367: 19436	SearchApp.exe	0x7fff3ce80000	True	True	True	\Windows\System32\EdgeManager.dll
+L11368: 19436	SearchApp.exe	0x7fff3d590000	True	True	True	\Windows\System32\Speech_OneCore\common\sapi_onecore.dll
+L11369: 19436	SearchApp.exe	0x7fff3d240000	True	True	True	\Windows\System32\msftedit.dll
+L11370: 19436	SearchApp.exe	0x7fff3e7d0000	True	True	True	\Windows\System32\ConstraintIndex.Search.dll
+L11371: 19436	SearchApp.exe	0x7fff3e650000	True	True	True	\Windows\System32\Windows.Web.Http.dll
+L11372: 19436	SearchApp.exe	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L11373: 19436	SearchApp.exe	0x7fff43150000	True	True	True	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Search.Core.dll
+L11374: 19436	SearchApp.exe	0x7fff42b80000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L11375: 19436	SearchApp.exe	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L11376: 19436	SearchApp.exe	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L11377: 19436	SearchApp.exe	0x7fff3f060000	True	True	True	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L11378: 19436	SearchApp.exe	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L11379: 19436	SearchApp.exe	0x7fff430d0000	True	True	True	\Windows\System32\globinputhost.dll
+L11380: 19436	SearchApp.exe	0x7fff42fb0000	True	True	True	\Windows\System32\mskeyprotect.dll
+L11381: 19436	SearchApp.exe	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L11382: 19436	SearchApp.exe	0x7fff43100000	True	True	True	\Windows\System32\winmmbase.dll
+L11383: 19436	SearchApp.exe	0x7fff43130000	True	True	True	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\BingConfigurationClient.dll
+L11384: 19436	SearchApp.exe	0x7fff44880000	True	True	True	\Windows\System32\cabinet.dll
+L11385: 19436	SearchApp.exe	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L11386: 19436	SearchApp.exe	0x7fff436b0000	True	True	True	\Windows\System32\ncryptsslp.dll
+L11387: 19436	SearchApp.exe	0x7fff45100000	True	True	True	\Windows\System32\directmanipulation.dll
+L11388: 19436	SearchApp.exe	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L11389: 19436	SearchApp.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L11390: 19436	SearchApp.exe	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L11391: 19436	SearchApp.exe	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L11392: 19436	SearchApp.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L11393: 19436	SearchApp.exe	0x7fff46730000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L11394: 19436	SearchApp.exe	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L11395: 19436	SearchApp.exe	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L11396: 19436	SearchApp.exe	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L11397: 19436	SearchApp.exe	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L11398: 19436	SearchApp.exe	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L11399: 19436	SearchApp.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L11400: 19436	SearchApp.exe	0x7fff4c4a0000	True	True	True	\Windows\System32\rasadhlp.dll
+L11401: 19436	SearchApp.exe	0x7fff48530000	True	True	True	\Windows\System32\LanguageOverlayUtil.dll
+L11402: 19436	SearchApp.exe	0x7fff479a0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L11403: 19436	SearchApp.exe	0x7fff478f0000	True	True	True	\Windows\System32\MSWB7.dll
+L11404: 19436	SearchApp.exe	0x7fff48490000	True	True	True	\Windows\System32\ninput.dll
+L11405: 19436	SearchApp.exe	0x7fff47a50000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L11406: 19436	SearchApp.exe	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L11407: 19436	SearchApp.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L11408: 19436	SearchApp.exe	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L11409: 19436	SearchApp.exe	0x7fff4a400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L11410: 19436	SearchApp.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L11411: 19436	SearchApp.exe	0x7fff4c810000	True	True	True	\Windows\System32\AudioSes.dll
+L11412: 19436	SearchApp.exe	0x7fff4c780000	True	True	True	\Windows\System32\MMDevAPI.dll
+L11413: 19436	SearchApp.exe	0x7fff4dc70000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L11414: 19436	SearchApp.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L11415: 19436	SearchApp.exe	0x7fff4e8a0000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L11416: 19436	SearchApp.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L11417: 19436	SearchApp.exe	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L11418: 19436	SearchApp.exe	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L11419: 19436	SearchApp.exe	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L11420: 19436	SearchApp.exe	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L11421: 19436	SearchApp.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L11422: 19436	SearchApp.exe	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+L11423: 19436	SearchApp.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+
+=== END OF PIVOT REPORT ===

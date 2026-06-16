@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_021.txt
+Summary: svchost.exe with orphaned parent PID 896 (unknown) and one instance holding high-risk privileges SeTcbPrivilege+SeImpersonatePrivilege; RuntimeBroker.exe with orphaned parent PID 516 (unknown) is low-signal but worth confirming.
+
+[PROCESS]
+pid: 5964
+ppid: 896
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_parent: PPID 896 listed as unknown — parent process not present in process list | privilege_anomaly: holds SeTcbPrivilege and SeImpersonatePrivilege — high-risk privilege combination for a svchost instance with no visible command line | missing_cmdline: no command line recorded for this svchost instance, unlike sibling PID 5712 | short_lived: process exited ~4 minutes after creation (19:15:51 → 19:19:51) while holding elevated privileges
+
+[PROCESS]
+pid: 6104
+ppid: 516
+image: RuntimeBroker.
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 516 listed as unknown — parent process (expected to be svchost.exe hosting DcomLaunch) not present in process list | truncated_name: EPROCESS name shows 'RuntimeBroker.' (kernel 14-char truncation artefact) — path and cmdline confirm legitimate binary, flagging for pivot confirmation only
+

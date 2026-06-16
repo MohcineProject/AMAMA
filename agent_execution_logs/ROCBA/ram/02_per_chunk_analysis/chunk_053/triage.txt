@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_053.txt
+Summary: Multiple browser and system processes show orphaned PPIDs (parent not present in process list); svchost.exe instances have unknown parents which deviates from expected services.exe parentage.
+
+[PROCESS]
+pid: 28064
+ppid: 828
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k DevicesFlow -s DevicePickerUserSvc
+severity: LOW
+reasons: parent_mismatch: parent PID 828 is listed as unknown — expected parent is services.exe; cannot confirm legitimate services.exe lineage | non-whitelisted DLLs list includes system32 paths that passed through the DLL filter, suggesting possible ldrmodules anomaly worth confirming
+
+[PROCESS]
+pid: 28864
+ppid: 828
+image: svchost.exe
+cmdline: 
+severity: LOW
+reasons: parent_mismatch: parent PID 828 is listed as unknown — expected parent is services.exe; cannot confirm legitimate services.exe lineage | missing command-line: no cmdline recorded for svchost.exe, which is abnormal for a legitimate service host instance
+

@@ -1,0 +1,79 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 4684 — svchost.exe (ppid=896)**
+
+Agent 1's sole reasons are `orphaned_parent` and `parent_unresolved` — PPID 896 is not in the process list. Let me evaluate all available evidence:
+
+- **Cmdline**: `C:\WINDOWS\system32\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc` — this is a perfectly standard svchost invocation. `-k ClipboardSvcGroup -p -s cbdhsvc` is the legitimate Clipboard User Service host group. Path is canonical System32.
+- **DLLs**: Only System32 paths shown (svchost.exe, ntdll.dll, KERNEL32.DLL). No user-writable paths.
+- **Privileges**: The privilege list is the full token privilege set — nearly all are *not* enabled (no `Present` or `Enabled` flags on the dangerous ones like SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege). Only SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege are Present/Enabled/Default. This is a normal restricted token for a svchost running under a non-SYSTEM context (likely LOCAL SERVICE or NETWORK SERVICE). The dangerous privileges are listed but not enabled — this is normal for Windows token enumeration which shows all privileges in the token regardless of state.
+- **Orphaned parent**: PPID 896 not in pslist. This is a common artifact — services.exe (which is the legitimate parent of svchost) may have exited or the PPID slot was reused, or the memory snapshot missed it. The cbdhsvc service is a known legitimate Windows service (Clipboard User Service). There is no other suspicious signal.
+- **No malfind, no netscan, no registry persistence, no suspicious handles** in the evidence.
+
+**Verdict: REJECTED** — The orphaned parent is the only signal, and it is a known Volatility artifact (parent process may not be captured in pslist snapshot). The cmdline, DLL paths, and privilege state are all consistent with a legitimate Windows service host. No corroborating evidence of malice.
+
+---
+
+**PID 4796 — SearchProtocolHost.exe (ppid=5220)**
+
+Agent 1's sole reasons are `orphaned_parent` and `parent_unresolved` — PPID 5220 (SearchIndexer.exe) not in process list.
+
+- **Cmdline**: The full command line is the canonical SearchProtocolHost.exe invocation — named pipes `Global\UsGthrFltPipeMssGthrPipe2_`, `Global\UsGthrCtrlFltPipeMssGthrPipe2`, the registry path `Software\Microsoft\Windows Search`, the UA string `Mozilla/4.0 (compatible; MSIE 6.0; Windows NT; MS Search 4.0 Robot)`, temp path `C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc`, and `DownLevelDaemon`. This is textbook legitimate Windows Search protocol host invocation.
+- **DLLs**: System32 paths only (SearchProtocolHost.exe, ntdll.dll, KERNEL32.DLL). No anomalies.
+- **Privileges**: Many are `Default` (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege, SeCreateGlobalPrivilege, etc.) — this reflects the LOCAL SYSTEM token that SearchProtocolHost runs under, which is normal. The `Default` state means they are in the default enabled set for the token but not necessarily actively used.
+- **Orphaned parent**: SearchIndexer.exe (PPID 5220) not in pslist — same artifact as above. SearchProtocolHost is always spawned by SearchIndexer; the indexer may have exited after spawning the protocol host, or wasn't captured.
+- **No malfind, no netscan, no suspicious DLL paths, no registry persistence** in the evidence.
+
+**Verdict: REJECTED** — Orphaned parent is the only signal. The cmdline is the exact canonical invocation for Windows Search Protocol Host. DLL paths are System32-only. The privilege set reflects normal LOCAL SYSTEM token. No corroborating evidence of malice.
+
+---
+
+Both findings are REJECTED. The report will reflect confirmed=0, inconclusive=0, rejected=2.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-13T19:30:00Z
+Summary: Both Agent 1 findings are rejected. The sole trigger in each case was an orphaned parent PID — a well-known Volatility memory-snapshot artifact that occurs when a parent process exits or is not captured in the pslist walk. No corroborating evidence of malice was found in any artifact type for either process. The overall incident scope based on this triage input is benign; no confirmed or inconclusive threats were identified.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+--- REJECTED FINDINGS SUMMARY ---
+
+PID 4684 (svchost.exe, ppid=896):
+  Rejected. The only signals were orphaned_parent and parent_unresolved
+  (PPID 896 absent from pslist). The command line
+  "C:\WINDOWS\system32\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc"
+  is the canonical invocation for the legitimate Clipboard User Service
+  (cbdhsvc). All DLLs visible in the evidence load from System32 only.
+  The privilege list shows nearly all dangerous privileges (SeDebugPrivilege,
+  SeTcbPrivilege, SeLoadDriverPrivilege, etc.) as present-but-not-enabled,
+  which is normal for a restricted service token — Volatility enumerates
+  all privileges in the token regardless of enabled state. No malfind,
+  netscan, registry persistence, or suspicious handle evidence was present.
+  The orphaned-parent artifact is consistent with services.exe having
+  exited or not been captured in the memory snapshot.
+
+PID 4796 (SearchProtocolHost.exe / SearchProtocol, ppid=5220):
+  Rejected. The only signals were orphaned_parent and parent_unresolved
+  (PPID 5220, SearchIndexer.exe, absent from pslist). The command line
+  is the exact canonical invocation for Windows Search Protocol Host,
+  including the expected named-pipe arguments
+  (Global\UsGthrFltPipeMssGthrPipe2_, Global\UsGthrCtrlFltPipeMssGthrPipe2),
+  the known registry path (Software\Microsoft\Windows Search), the
+  standard crawler UA string, and the expected temp path under
+  C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc. All DLLs visible
+  in the evidence load from System32 only. The privilege set — including
+  SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege in Default
+  state — reflects the normal LOCAL SYSTEM token that SearchProtocolHost
+  legitimately runs under. No malfind, netscan, registry persistence, or
+  suspicious handle evidence was present. The orphaned-parent artifact is
+  consistent with SearchIndexer.exe having exited after spawning the
+  protocol host, or not being captured in the snapshot.
+
+================================================================

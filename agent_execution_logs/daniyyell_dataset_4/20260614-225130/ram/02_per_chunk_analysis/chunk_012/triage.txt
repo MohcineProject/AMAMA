@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:40:00Z
+Chunk: chunk_012.txt
+Summary: svchost.exe parent PID 716 is unknown/not present in process list; orphaned parent warrants low-confidence pivot to confirm legitimacy.
+
+[PROCESS]
+pid: 5292
+ppid: 716
+image: svchost.exe
+cmdline: C:\Windows\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService
+severity: LOW
+reasons: orphaned_parent: parent PID 716 (listed as 'unknown') is not present anywhere in the process list — expected parent for svchost.exe is services.exe
+

@@ -1,0 +1,48 @@
+================================================================
+TRIAGE FINDINGS TO VALIDATE — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: Two processes were submitted for validation. Both exhibit the same
+orphaned-parent pattern (parent PID absent from the process list), which is a
+well-known Volatility artefact caused by short-lived or already-exited parent
+processes rather than a reliable indicator of malice. Neither process shows
+anomalous command lines, suspicious DLL paths, active dangerous privileges, or
+any malfind/netscan/registry-persistence evidence. The overall incident scope
+from these two findings is negligible; no confirmed malicious activity is
+present in this submission.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+[No CONFIRMED or INCONCLUSIVE findings to report.]
+
+--- REJECTED FINDINGS (count: 2) ---
+
+PID 4104 (taskhostw.exe) — REJECTED
+  The orphaned-parent signal is the sole trigger. taskhostw.exe is a legitimate
+  Windows Task Scheduler host; its parent (svchost.exe hosting the Schedule
+  service, or a transient launcher) routinely exits before a memory snapshot is
+  taken, leaving the child appearing orphaned. The GUID argument
+  {222A245B-E637-4AE9-A93F-A59CA119A75E} is a standard scheduled-task COM
+  class identifier consistent with normal operation. The binary path is
+  C:\WINDOWS\system32\taskhostw.exe (legitimate). The DLL list shows only
+  system32 modules (taskhostw.exe, ntdll.dll, KERNEL32.DLL). The privilege
+  table is the standard full-privilege set carried by a SYSTEM-token process;
+  none of the dangerous privileges (SeDebugPrivilege, SeTcbPrivilege,
+  SeLoadDriverPrivilege, SeImpersonatePrivilege) are marked Present or Enabled
+  — they are merely present in the token as disabled/not-enabled, which is
+  normal for a SYSTEM-context process. No malfind, netscan, registry-
+  persistence, or handle-anomaly evidence was provided. No basis for suspicion
+  beyond the orphaned-parent artefact.
+
+PID 4324 (svchost.exe) — REJECTED
+  Again, the sole trigger is the orphaned-parent signal. svchost.exe with
+  "-k UnistackSvcGroup" is a well-known legitimate service group (hosts
+  OneSyncSvc, UserDataSvc, etc.) and is routinely spawned by services.exe,
+  which may have already exited or may simply be absent from the snapshot's
+  visible process list due to PID reuse or timing. The binary path is
+  C:\WINDOWS\system32\svchost.exe (legitimate). The DLL list shows only
+  system32 modules. The privilege table is structurally identical to PID 4104:
+  a full SYSTEM-token set with no dangerous privileges in the Present/Enabled
+  state. No malfind, netscan, registry-persistence, or handle-anomaly evidence
+  was provided. No basis for suspicion beyond the orphaned-parent artefact.
+
+================================================================

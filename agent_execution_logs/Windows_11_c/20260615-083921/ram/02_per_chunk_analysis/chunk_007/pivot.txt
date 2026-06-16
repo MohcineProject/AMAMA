@@ -1,0 +1,418 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:49:19Z
+
+=== PID 4104 (taskhostw.exe, ppid=1524) ===
+Cmdline: taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+
+--- pslist.txt ---
+L80: 4104	1524	taskhostw.exe	0xcd8a1218b080	7	-	1	False	2026-05-12 18:23:31.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L80: 4104	taskhostw.exe	taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+
+--- privileges.txt ---
+L2630: 4104	taskhostw.exe	2	SeCreateTokenPrivilege		Create a token object
+L2631: 4104	taskhostw.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2632: 4104	taskhostw.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2633: 4104	taskhostw.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2634: 4104	taskhostw.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2635: 4104	taskhostw.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2636: 4104	taskhostw.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2637: 4104	taskhostw.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2638: 4104	taskhostw.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2639: 4104	taskhostw.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2640: 4104	taskhostw.exe	12	SeSystemtimePrivilege		Change the system time
+L2641: 4104	taskhostw.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2642: 4104	taskhostw.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2643: 4104	taskhostw.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2644: 4104	taskhostw.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2645: 4104	taskhostw.exe	17	SeBackupPrivilege		Backup files and directories
+L2646: 4104	taskhostw.exe	18	SeRestorePrivilege		Restore files and directories
+L2647: 4104	taskhostw.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2648: 4104	taskhostw.exe	20	SeDebugPrivilege		Debug programs
+L2649: 4104	taskhostw.exe	21	SeAuditPrivilege		Generate security audits
+L2650: 4104	taskhostw.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2651: 4104	taskhostw.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2652: 4104	taskhostw.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2653: 4104	taskhostw.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2654: 4104	taskhostw.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2655: 4104	taskhostw.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2656: 4104	taskhostw.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2657: 4104	taskhostw.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2658: 4104	taskhostw.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2659: 4104	taskhostw.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2660: 4104	taskhostw.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2661: 4104	taskhostw.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2662: 4104	taskhostw.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2663: 4104	taskhostw.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2664: 4104	taskhostw.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L3280: 4104	taskhostw.exe	0x7ff6df3b0000	0x1a000	taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+L3281: 4104	taskhostw.exe	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+L3282: 4104	taskhostw.exe	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+L3283: 4104	taskhostw.exe	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+L3284: 4104	taskhostw.exe	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3285: 4104	taskhostw.exe	0x7fffe6ec0000	0x31000	imm32.dll	C:\WINDOWS\System32\imm32.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3286: 4104	taskhostw.exe	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3287: 4104	taskhostw.exe	0x7fffe7e80000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3288: 4104	taskhostw.exe	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3289: 4104	taskhostw.exe	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3290: 4104	taskhostw.exe	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3291: 4104	taskhostw.exe	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3292: 4104	taskhostw.exe	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3293: 4104	taskhostw.exe	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+L3294: 4104	taskhostw.exe	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3295: 4104	taskhostw.exe	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+L3296: 4104	taskhostw.exe	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+L3297: 4104	taskhostw.exe	0x7fffe34c0000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3298: 4104	taskhostw.exe	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3299: 4104	taskhostw.exe	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3300: 4104	taskhostw.exe	0x7fffcd100000	0x24000	PlaySndSrv.dll	C:\WINDOWS\System32\PlaySndSrv.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3301: 4104	taskhostw.exe	0x7fffd2390000	0x288000	wininet.dll	C:\WINDOWS\system32\wininet.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3302: 4104	taskhostw.exe	0x7fffcfeb0000	0x1a000	MsCtfMonitor.dll	C:\WINDOWS\system32\MsCtfMonitor.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3303: 4104	taskhostw.exe	0x7fffcfe10000	0x55000	MSUTB.dll	C:\WINDOWS\system32\MSUTB.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3304: 4104	taskhostw.exe	0x7fffd67d0000	0x422000	ESENT.dll	C:\WINDOWS\SYSTEM32\ESENT.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3305: 4104	taskhostw.exe	0x7fffe5f20000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3306: 4104	taskhostw.exe	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3307: 4104	taskhostw.exe	0x7fffe8190000	0xf7000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3308: 4104	taskhostw.exe	0x7fffe8120000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3309: 4104	taskhostw.exe	0x7fffe5920000	0x29000	profapi.dll	C:\WINDOWS\System32\profapi.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3310: 4104	taskhostw.exe	0x7fffd7500000	0x2c4000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3311: 4104	taskhostw.exe	0x7fffd74a0000	0x29000	srvcli.dll	C:\WINDOWS\system32\srvcli.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3312: 4104	taskhostw.exe	0x7fffe40b0000	0xd000	netutils.dll	C:\WINDOWS\system32\netutils.dll	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3313: 4104	taskhostw.exe	0x7fffcc950000	0x1b2000	AudioSes.DLL	C:\WINDOWS\System32\AudioSes.DLL	6	2026-05-12 18:23:31.000000 UTC	Disabled
+L3314: 4104	taskhostw.exe	0x7fffe5000000	0xc000	CRYPTBASE.DLL	C:\WINDOWS\System32\CRYPTBASE.DLL	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L3315: 4104	taskhostw.exe	0x7fffe5880000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-12 18:23:55.000000 UTC	Disabled
+L3316: 4104	taskhostw.exe	0x7fffe5860000	0x14000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2026-05-12 18:23:55.000000 UTC	Disabled
+L3317: 4104	taskhostw.exe	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-12 18:23:56.000000 UTC	Disabled
+L3318: 4104	taskhostw.exe	0x7fffe4db0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-12 18:25:06.000000 UTC	Disabled
+L3319: 4104	taskhostw.exe	0x7fffe8d70000	0x15d000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2026-05-12 18:26:49.000000 UTC	Disabled
+
+--- pstree.txt ---
+L136: *** 4104	1524	taskhostw.exe	0xcd8a1218b080	7	-	1	False	2026-05-12 18:23:31.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\taskhostw.exe	taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}	C:\WINDOWS\system32\taskhostw.exe
+
+--- psscan.txt ---
+L109: 4104	1524	taskhostw.exe	0xcd8a1218b080	7	-	1	False	2026-05-12 18:23:31.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L3375: 4104	taskhostw.exe	0x1fe8a3a0000	False	False	False	\Windows\System32\en-US\taskhostw.exe.mui
+L3376: 4104	taskhostw.exe	0x1fe8a400000	False	False	False	\Windows\System32\en-US\MsCtfMonitor.dll.mui
+L3377: 4104	taskhostw.exe	0x1fe8beb0000	False	False	False	\Windows\System32\en-US\ESENT.dll.mui
+L3378: 4104	taskhostw.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L3379: 4104	taskhostw.exe	0x7fffd2390000	True	True	True	\Windows\System32\wininet.dll
+L3380: 4104	taskhostw.exe	0x7fffcd100000	True	True	True	\Windows\System32\PlaySndSrv.dll
+L3381: 4104	taskhostw.exe	0x7ff6df3b0000	True	False	True	\Windows\System32\taskhostw.exe
+L3382: 4104	taskhostw.exe	0x7fffcc950000	True	True	True	\Windows\System32\AudioSes.dll
+L3383: 4104	taskhostw.exe	0x7fffcfeb0000	True	True	True	\Windows\System32\MsCtfMonitor.dll
+L3384: 4104	taskhostw.exe	0x7fffcfe10000	True	True	True	\Windows\System32\msutb.dll
+L3385: 4104	taskhostw.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L3386: 4104	taskhostw.exe	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L3387: 4104	taskhostw.exe	0x7fffd67d0000	True	True	True	\Windows\System32\esent.dll
+L3388: 4104	taskhostw.exe	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L3389: 4104	taskhostw.exe	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L3390: 4104	taskhostw.exe	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L3391: 4104	taskhostw.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L3392: 4104	taskhostw.exe	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L3393: 4104	taskhostw.exe	0x7fffe5000000	True	True	True	\Windows\System32\cryptbase.dll
+L3394: 4104	taskhostw.exe	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L3395: 4104	taskhostw.exe	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L3396: 4104	taskhostw.exe	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L3397: 4104	taskhostw.exe	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L3398: 4104	taskhostw.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L3399: 4104	taskhostw.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L3400: 4104	taskhostw.exe	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L3401: 4104	taskhostw.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L3402: 4104	taskhostw.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L3403: 4104	taskhostw.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L3404: 4104	taskhostw.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L3405: 4104	taskhostw.exe	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L3406: 4104	taskhostw.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L3407: 4104	taskhostw.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L3408: 4104	taskhostw.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L3409: 4104	taskhostw.exe	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L3410: 4104	taskhostw.exe	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L3411: 4104	taskhostw.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L3412: 4104	taskhostw.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L3413: 4104	taskhostw.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L3414: 4104	taskhostw.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L3415: 4104	taskhostw.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L3416: 4104	taskhostw.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L3417: 4104	taskhostw.exe	0x7fffe8d70000	True	True	True	\Windows\System32\msctf.dll
+
+--- malware_ldrmodules.txt ---
+L3375: 4104	taskhostw.exe	0x1fe8a3a0000	False	False	False	\Windows\System32\en-US\taskhostw.exe.mui
+L3376: 4104	taskhostw.exe	0x1fe8a400000	False	False	False	\Windows\System32\en-US\MsCtfMonitor.dll.mui
+L3377: 4104	taskhostw.exe	0x1fe8beb0000	False	False	False	\Windows\System32\en-US\ESENT.dll.mui
+L3378: 4104	taskhostw.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L3379: 4104	taskhostw.exe	0x7fffd2390000	True	True	True	\Windows\System32\wininet.dll
+L3380: 4104	taskhostw.exe	0x7fffcd100000	True	True	True	\Windows\System32\PlaySndSrv.dll
+L3381: 4104	taskhostw.exe	0x7ff6df3b0000	True	False	True	\Windows\System32\taskhostw.exe
+L3382: 4104	taskhostw.exe	0x7fffcc950000	True	True	True	\Windows\System32\AudioSes.dll
+L3383: 4104	taskhostw.exe	0x7fffcfeb0000	True	True	True	\Windows\System32\MsCtfMonitor.dll
+L3384: 4104	taskhostw.exe	0x7fffcfe10000	True	True	True	\Windows\System32\msutb.dll
+L3385: 4104	taskhostw.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L3386: 4104	taskhostw.exe	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L3387: 4104	taskhostw.exe	0x7fffd67d0000	True	True	True	\Windows\System32\esent.dll
+L3388: 4104	taskhostw.exe	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L3389: 4104	taskhostw.exe	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L3390: 4104	taskhostw.exe	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L3391: 4104	taskhostw.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L3392: 4104	taskhostw.exe	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L3393: 4104	taskhostw.exe	0x7fffe5000000	True	True	True	\Windows\System32\cryptbase.dll
+L3394: 4104	taskhostw.exe	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L3395: 4104	taskhostw.exe	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L3396: 4104	taskhostw.exe	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L3397: 4104	taskhostw.exe	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L3398: 4104	taskhostw.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L3399: 4104	taskhostw.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L3400: 4104	taskhostw.exe	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L3401: 4104	taskhostw.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L3402: 4104	taskhostw.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L3403: 4104	taskhostw.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L3404: 4104	taskhostw.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L3405: 4104	taskhostw.exe	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L3406: 4104	taskhostw.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L3407: 4104	taskhostw.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L3408: 4104	taskhostw.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L3409: 4104	taskhostw.exe	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L3410: 4104	taskhostw.exe	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L3411: 4104	taskhostw.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L3412: 4104	taskhostw.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L3413: 4104	taskhostw.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L3414: 4104	taskhostw.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L3415: 4104	taskhostw.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L3416: 4104	taskhostw.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L3417: 4104	taskhostw.exe	0x7fffe8d70000	True	True	True	\Windows\System32\msctf.dll
+
+--- malware_pebmasquerade.txt ---
+L80: 4104	taskhostw.exe	\Device\HarddiskVolume4\Windows\System32\taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	False	False
+
+--- sessions.txt ---
+L123: 1	-	4104	taskhostw.exe	CLEANWINDOWS11/kali	2026-05-12 18:23:31.000000 UTC
+
+=== PID 4324 (svchost.exe, ppid=888) ===
+Cmdline: C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup
+
+--- pslist.txt ---
+L140: 4324	888	svchost.exe	0xcd8a0fc6d080	6	-	1	False	2026-05-12 18:25:31.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L140: 4324	svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup
+
+--- privileges.txt ---
+L4730: 4324	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L4731: 4324	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4732: 4324	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L4733: 4324	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4734: 4324	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4735: 4324	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L4736: 4324	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4737: 4324	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4738: 4324	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4739: 4324	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L4740: 4324	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L4741: 4324	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4742: 4324	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4743: 4324	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L4744: 4324	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4745: 4324	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L4746: 4324	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L4747: 4324	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L4748: 4324	svchost.exe	20	SeDebugPrivilege		Debug programs
+L4749: 4324	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L4750: 4324	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4751: 4324	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4752: 4324	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4753: 4324	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4754: 4324	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L4755: 4324	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4756: 4324	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L4757: 4324	svchost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4758: 4324	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4759: 4324	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4760: 4324	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4761: 4324	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4762: 4324	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4763: 4324	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4764: 4324	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L6669: 4324	svchost.exe	0x7ff7c49d0000	0x13000	svchost.exe	C:\WINDOWS\system32\svchost.exe	-1	2026-05-12 18:25:36.000000 UTC	Disabled
+L6670: 4324	svchost.exe	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:25:36.000000 UTC	Disabled
+L6671: 4324	svchost.exe	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:25:36.000000 UTC	Disabled
+L6672: 4324	svchost.exe	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:25:36.000000 UTC	Disabled
+L6673: 4324	svchost.exe	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6674: 4324	svchost.exe	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6675: 4324	svchost.exe	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6676: 4324	svchost.exe	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6677: 4324	svchost.exe	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6678: 4324	svchost.exe	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:25:36.000000 UTC	Disabled
+L6679: 4324	svchost.exe	0x7fffe7e80000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6680: 4324	svchost.exe	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6681: 4324	svchost.exe	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6682: 4324	svchost.exe	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6683: 4324	svchost.exe	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6684: 4324	svchost.exe	0x7fffe6ec0000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6685: 4324	svchost.exe	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6686: 4324	svchost.exe	0x7fffd1c70000	0x60000	aphostservice.dll	c:\windows\system32\aphostservice.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6687: 4324	svchost.exe	0x7fffdfba0000	0x28000	NetworkHelper.dll	c:\windows\system32\NetworkHelper.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6688: 4324	svchost.exe	0x7fffe5860000	0x14000	UMPDC.dll	c:\windows\system32\UMPDC.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6689: 4324	svchost.exe	0x7fffd1c00000	0x69000	SYNCUTIL.dll	c:\windows\system32\SYNCUTIL.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6690: 4324	svchost.exe	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6691: 4324	svchost.exe	0x7fffdfb80000	0xf000	MCCSPal.dll	c:\windows\system32\MCCSPal.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6692: 4324	svchost.exe	0x7fffdc9b0000	0x17000	UserDataPlatformHelperUtil.dll	c:\windows\system32\UserDataPlatformHelperUtil.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6693: 4324	svchost.exe	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-12 18:25:36.000000 UTC	Disabled
+L6694: 4324	svchost.exe	0x7fffd1bb0000	0x16000	InprocLogger.dll	c:\windows\system32\InprocLogger.dll	6	2026-05-12 18:25:37.000000 UTC	Disabled
+L6695: 4324	svchost.exe	0x7fffe5920000	0x29000	profapi.dll	c:\windows\system32\profapi.dll	6	2026-05-12 18:25:37.000000 UTC	Disabled
+L6696: 4324	svchost.exe	0x7fffe4a30000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6697: 4324	svchost.exe	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6698: 4324	svchost.exe	0x7fffd5580000	0x116000	FlightSettings.dll	C:\WINDOWS\System32\FlightSettings.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6699: 4324	svchost.exe	0x7fffd2200000	0xbb000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6700: 4324	svchost.exe	0x7fffde480000	0x244000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6701: 4324	svchost.exe	0x7fffe5cf0000	0x16a000	WinTypes.dll	C:\WINDOWS\System32\WinTypes.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6702: 4324	svchost.exe	0x7fffddd40000	0x19000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6703: 4324	svchost.exe	0x7fffd7500000	0x2c4000	iertutil.dll	c:\windows\system32\iertutil.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6704: 4324	svchost.exe	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6705: 4324	svchost.exe	0x7fffd74a0000	0x29000	srvcli.dll	c:\windows\system32\srvcli.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6706: 4324	svchost.exe	0x7fffe40b0000	0xd000	netutils.dll	c:\windows\system32\netutils.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6707: 4324	svchost.exe	0x7fffe4c60000	0x94000	msv1_0.DLL	C:\WINDOWS\system32\msv1_0.DLL	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6708: 4324	svchost.exe	0x7fffe4db0000	0x32000	USERENV.dll	C:\WINDOWS\system32\USERENV.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6709: 4324	svchost.exe	0x7fffe4c40000	0x17000	NtlmShared.dll	C:\WINDOWS\system32\NtlmShared.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6710: 4324	svchost.exe	0x7fffd1710000	0xa5000	SyncController.dll	C:\Windows\System32\SyncController.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6711: 4324	svchost.exe	0x7fffd1a90000	0x4a000	AccountAccessor.dll	C:\Windows\System32\AccountAccessor.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6712: 4324	svchost.exe	0x7fffd1350000	0x106000	PIMSTORE.dll	C:\Windows\System32\PIMSTORE.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6713: 4324	svchost.exe	0x7fffd16d0000	0x35000	MCCSEngineShared.dll	C:\Windows\System32\MCCSEngineShared.dll	6	2026-05-12 18:25:38.000000 UTC	Disabled
+L6714: 4324	svchost.exe	0x7fffd14c0000	0x12000	UserDataLanguageUtil.dll	C:\Windows\System32\UserDataLanguageUtil.dll	6	2026-05-12 18:25:39.000000 UTC	Disabled
+L6715: 4324	svchost.exe	0x7fffd14a0000	0x19000	APHostClient.dll	C:\Windows\System32\APHostClient.dll	6	2026-05-12 18:25:39.000000 UTC	Disabled
+L6716: 4324	svchost.exe	0x7fffd91b0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-12 18:25:39.000000 UTC	Disabled
+L6717: 4324	svchost.exe	0x7fffcc840000	0x14000	execmodelproxy.dll	C:\WINDOWS\system32\execmodelproxy.dll	6	2026-05-12 18:25:39.000000 UTC	Disabled
+L6718: 4324	svchost.exe	0x7fffe39d0000	0x36000	rmclient.dll	C:\WINDOWS\SYSTEM32\rmclient.dll	6	2026-05-12 18:25:39.000000 UTC	Disabled
+L6719: 4324	svchost.exe	0x7fffcb4b0000	0x4f000	VAULTCLI.dll	c:\windows\system32\VAULTCLI.dll	6	2026-05-12 18:25:39.000000 UTC	Disabled
+L6720: 4324	svchost.exe	0x7fffe5880000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-12 18:25:40.000000 UTC	Disabled
+
+--- pstree.txt ---
+L84: ** 4324	888	svchost.exe	0xcd8a0fc6d080	6	-	1	False	2026-05-12 18:25:31.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup	C:\WINDOWS\system32\svchost.exe
+
+--- psscan.txt ---
+L42: 4324	888	svchost.exe	0xcd8a0fc6d080	6	-	1	False	2026-05-12 18:25:31.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L7000: 4324	svchost.exe	0x222589a0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L7001: 4324	svchost.exe	0x22258d60000	False	False	False	\Windows\System32\SyncRes.dll
+L7002: 4324	svchost.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L7003: 4324	svchost.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7004: 4324	svchost.exe	0x7fffd1c70000	True	True	True	\Windows\System32\APHostService.dll
+L7005: 4324	svchost.exe	0x7fffd1710000	True	True	True	\Windows\System32\SyncController.dll
+L7006: 4324	svchost.exe	0x7fffd1350000	True	True	True	\Windows\System32\Pimstore.dll
+L7007: 4324	svchost.exe	0x7fffcb4b0000	True	True	True	\Windows\System32\vaultcli.dll
+L7008: 4324	svchost.exe	0x7ff7c49d0000	True	False	True	\Windows\System32\svchost.exe
+L7009: 4324	svchost.exe	0x7fffcc840000	True	True	True	\Windows\System32\execmodelproxy.dll
+L7010: 4324	svchost.exe	0x7fffd14c0000	True	True	True	\Windows\System32\UserDataLanguageUtil.dll
+L7011: 4324	svchost.exe	0x7fffd14a0000	True	True	True	\Windows\System32\APHostClient.dll
+L7012: 4324	svchost.exe	0x7fffd16d0000	True	True	True	\Windows\System32\MCCSEngineShared.dll
+L7013: 4324	svchost.exe	0x7fffd1bb0000	True	True	True	\Windows\System32\InprocLogger.dll
+L7014: 4324	svchost.exe	0x7fffd1a90000	True	True	True	\Windows\System32\accountaccessor.dll
+L7015: 4324	svchost.exe	0x7fffd1c00000	True	True	True	\Windows\System32\syncutil.dll
+L7016: 4324	svchost.exe	0x7fffdc9b0000	True	True	True	\Windows\System32\UserDataPlatformHelperUtil.dll
+L7017: 4324	svchost.exe	0x7fffd5580000	True	True	True	\Windows\System32\FlightSettings.dll
+L7018: 4324	svchost.exe	0x7fffd2200000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L7019: 4324	svchost.exe	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L7020: 4324	svchost.exe	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L7021: 4324	svchost.exe	0x7fffd91b0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L7022: 4324	svchost.exe	0x7fffdfb80000	True	True	True	\Windows\System32\MCCSPal.dll
+L7023: 4324	svchost.exe	0x7fffde480000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L7024: 4324	svchost.exe	0x7fffddd40000	True	True	True	\Windows\System32\npmproxy.dll
+L7025: 4324	svchost.exe	0x7fffe39d0000	True	True	True	\Windows\System32\rmclient.dll
+L7026: 4324	svchost.exe	0x7fffdfba0000	True	True	True	\Windows\System32\networkhelper.dll
+L7027: 4324	svchost.exe	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L7028: 4324	svchost.exe	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L7029: 4324	svchost.exe	0x7fffe4c60000	True	True	True	\Windows\System32\msv1_0.dll
+L7030: 4324	svchost.exe	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L7031: 4324	svchost.exe	0x7fffe4c40000	True	True	True	\Windows\System32\NtlmShared.dll
+L7032: 4324	svchost.exe	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L7033: 4324	svchost.exe	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L7034: 4324	svchost.exe	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L7035: 4324	svchost.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L7036: 4324	svchost.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7037: 4324	svchost.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L7038: 4324	svchost.exe	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L7039: 4324	svchost.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L7040: 4324	svchost.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L7041: 4324	svchost.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L7042: 4324	svchost.exe	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L7043: 4324	svchost.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L7044: 4324	svchost.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L7045: 4324	svchost.exe	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L7046: 4324	svchost.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L7047: 4324	svchost.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L7048: 4324	svchost.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L7049: 4324	svchost.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L7050: 4324	svchost.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L7051: 4324	svchost.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L7052: 4324	svchost.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L7053: 4324	svchost.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L7000: 4324	svchost.exe	0x222589a0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L7001: 4324	svchost.exe	0x22258d60000	False	False	False	\Windows\System32\SyncRes.dll
+L7002: 4324	svchost.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L7003: 4324	svchost.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7004: 4324	svchost.exe	0x7fffd1c70000	True	True	True	\Windows\System32\APHostService.dll
+L7005: 4324	svchost.exe	0x7fffd1710000	True	True	True	\Windows\System32\SyncController.dll
+L7006: 4324	svchost.exe	0x7fffd1350000	True	True	True	\Windows\System32\Pimstore.dll
+L7007: 4324	svchost.exe	0x7fffcb4b0000	True	True	True	\Windows\System32\vaultcli.dll
+L7008: 4324	svchost.exe	0x7ff7c49d0000	True	False	True	\Windows\System32\svchost.exe
+L7009: 4324	svchost.exe	0x7fffcc840000	True	True	True	\Windows\System32\execmodelproxy.dll
+L7010: 4324	svchost.exe	0x7fffd14c0000	True	True	True	\Windows\System32\UserDataLanguageUtil.dll
+L7011: 4324	svchost.exe	0x7fffd14a0000	True	True	True	\Windows\System32\APHostClient.dll
+L7012: 4324	svchost.exe	0x7fffd16d0000	True	True	True	\Windows\System32\MCCSEngineShared.dll
+L7013: 4324	svchost.exe	0x7fffd1bb0000	True	True	True	\Windows\System32\InprocLogger.dll
+L7014: 4324	svchost.exe	0x7fffd1a90000	True	True	True	\Windows\System32\accountaccessor.dll
+L7015: 4324	svchost.exe	0x7fffd1c00000	True	True	True	\Windows\System32\syncutil.dll
+L7016: 4324	svchost.exe	0x7fffdc9b0000	True	True	True	\Windows\System32\UserDataPlatformHelperUtil.dll
+L7017: 4324	svchost.exe	0x7fffd5580000	True	True	True	\Windows\System32\FlightSettings.dll
+L7018: 4324	svchost.exe	0x7fffd2200000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L7019: 4324	svchost.exe	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L7020: 4324	svchost.exe	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L7021: 4324	svchost.exe	0x7fffd91b0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L7022: 4324	svchost.exe	0x7fffdfb80000	True	True	True	\Windows\System32\MCCSPal.dll
+L7023: 4324	svchost.exe	0x7fffde480000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L7024: 4324	svchost.exe	0x7fffddd40000	True	True	True	\Windows\System32\npmproxy.dll
+L7025: 4324	svchost.exe	0x7fffe39d0000	True	True	True	\Windows\System32\rmclient.dll
+L7026: 4324	svchost.exe	0x7fffdfba0000	True	True	True	\Windows\System32\networkhelper.dll
+L7027: 4324	svchost.exe	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L7028: 4324	svchost.exe	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L7029: 4324	svchost.exe	0x7fffe4c60000	True	True	True	\Windows\System32\msv1_0.dll
+L7030: 4324	svchost.exe	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L7031: 4324	svchost.exe	0x7fffe4c40000	True	True	True	\Windows\System32\NtlmShared.dll
+L7032: 4324	svchost.exe	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L7033: 4324	svchost.exe	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L7034: 4324	svchost.exe	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L7035: 4324	svchost.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L7036: 4324	svchost.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7037: 4324	svchost.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L7038: 4324	svchost.exe	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L7039: 4324	svchost.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L7040: 4324	svchost.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L7041: 4324	svchost.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L7042: 4324	svchost.exe	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L7043: 4324	svchost.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L7044: 4324	svchost.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L7045: 4324	svchost.exe	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L7046: 4324	svchost.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L7047: 4324	svchost.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L7048: 4324	svchost.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L7049: 4324	svchost.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L7050: 4324	svchost.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L7051: 4324	svchost.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L7052: 4324	svchost.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L7053: 4324	svchost.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L140: 4324	svchost.exe	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe	False	False
+
+--- sessions.txt ---
+L155: 1	-	4324	svchost.exe	CLEANWINDOWS11/kali	2026-05-12 18:25:31.000000 UTC
+
+=== END OF PIVOT REPORT ===

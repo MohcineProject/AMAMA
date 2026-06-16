@@ -1,0 +1,190 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:36:40Z
+
+=== PID 800 (csrss.exe, ppid=740) ===
+Cmdline: %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+
+--- pslist.txt ---
+L10: 800	740	csrss.exe	0xb78cfa7a2080	13	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L10: 800	csrss.exe	%SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+
+--- privileges.txt ---
+L180: 800	csrss.exe	2	SeCreateTokenPrivilege	Present	Create a token object
+L181: 800	csrss.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L182: 800	csrss.exe	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L183: 800	csrss.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L184: 800	csrss.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L185: 800	csrss.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L186: 800	csrss.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L187: 800	csrss.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L188: 800	csrss.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L189: 800	csrss.exe	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L190: 800	csrss.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L191: 800	csrss.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L192: 800	csrss.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L193: 800	csrss.exe	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L194: 800	csrss.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L195: 800	csrss.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L196: 800	csrss.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L197: 800	csrss.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L198: 800	csrss.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L199: 800	csrss.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L200: 800	csrss.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L201: 800	csrss.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L202: 800	csrss.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L203: 800	csrss.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L204: 800	csrss.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L205: 800	csrss.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L206: 800	csrss.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L207: 800	csrss.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L208: 800	csrss.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L209: 800	csrss.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L210: 800	csrss.exe	32	SeRelabelPrivilege	Present	Modify the mandatory integrity level of an object
+L211: 800	csrss.exe	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L212: 800	csrss.exe	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L213: 800	csrss.exe	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L214: 800	csrss.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L58: 800	csrss.exe	0x7ff7f2590000	0x7000	csrss.exe	C:\WINDOWS\system32\csrss.exe	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L59: 800	csrss.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L60: 800	csrss.exe	0x7fff54fd0000	0x18000	CSRSRV.dll	C:\WINDOWS\SYSTEM32\CSRSRV.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L61: 800	csrss.exe	0x7fff54fb0000	0x16000	basesrv.DLL	C:\WINDOWS\system32\basesrv.DLL	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L62: 800	csrss.exe	0x7fff54f90000	0x15000	winsrv.DLL	C:\WINDOWS\system32\winsrv.DLL	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L63: 800	csrss.exe	0x7fff55100000	0x2c8000	kernelbase.dll	C:\WINDOWS\System32\kernelbase.dll	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L64: 800	csrss.exe	0x7fff55ae0000	0xbd000	kernel32.dll	C:\WINDOWS\System32\kernel32.dll	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L65: 800	csrss.exe	0x7fff54f60000	0x23000	winsrvext.dll	C:\WINDOWS\SYSTEM32\winsrvext.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L66: 800	csrss.exe	0x7fff57540000	0x1a0000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L67: 800	csrss.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L68: 800	csrss.exe	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L69: 800	csrss.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L70: 800	csrss.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L71: 800	csrss.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L72: 800	csrss.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L73: 800	csrss.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L74: 800	csrss.exe	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L75: 800	csrss.exe	0x7fff54f50000	0xe000	sxssrv.DLL	C:\WINDOWS\system32\sxssrv.DLL	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L76: 800	csrss.exe	0x7fff54df0000	0xa2000	sxs.dll	C:\WINDOWS\system32\sxs.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L77: 800	csrss.exe	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L78: 800	csrss.exe	0x7fff557e0000	0x27000	Bcrypt.dll	C:\WINDOWS\System32\Bcrypt.dll	-1	2020-11-11 08:15:28.000000 UTC	Disabled
+
+--- pstree.txt ---
+L105: *** 800	740	csrss.exe	0xb78cfa7a2080	13	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\csrss.exe	%SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16	C:\WINDOWS\system32\csrss.exe
+
+--- psscan.txt ---
+L203: 800	740	csrss.exe	0xb78cfa7a2080	13	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L64: 800	csrss.exe	0x1a73ad70000	False	False	False	\Windows\System32\en-US\winsrv.dll.mui
+L65: 800	csrss.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L66: 800	csrss.exe	0x7ff7f2590000	True	False	True	\Windows\System32\csrss.exe
+L67: 800	csrss.exe	0x7fff54f90000	True	True	True	\Windows\System32\winsrv.dll
+L68: 800	csrss.exe	0x7fff54f50000	True	True	True	\Windows\System32\sxssrv.dll
+L69: 800	csrss.exe	0x7fff54df0000	True	True	True	\Windows\System32\sxs.dll
+L70: 800	csrss.exe	0x7fff54f60000	True	True	True	\Windows\System32\winsrvext.dll
+L71: 800	csrss.exe	0x7fff54fd0000	True	True	True	\Windows\System32\csrsrv.dll
+L72: 800	csrss.exe	0x7fff54fb0000	True	True	True	\Windows\System32\basesrv.dll
+L73: 800	csrss.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L74: 800	csrss.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L75: 800	csrss.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L76: 800	csrss.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L77: 800	csrss.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L78: 800	csrss.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L79: 800	csrss.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L80: 800	csrss.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L81: 800	csrss.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L82: 800	csrss.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L83: 800	csrss.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L84: 800	csrss.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L85: 800	csrss.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L64: 800	csrss.exe	0x1a73ad70000	False	False	False	\Windows\System32\en-US\winsrv.dll.mui
+L65: 800	csrss.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L66: 800	csrss.exe	0x7ff7f2590000	True	False	True	\Windows\System32\csrss.exe
+L67: 800	csrss.exe	0x7fff54f90000	True	True	True	\Windows\System32\winsrv.dll
+L68: 800	csrss.exe	0x7fff54f50000	True	True	True	\Windows\System32\sxssrv.dll
+L69: 800	csrss.exe	0x7fff54df0000	True	True	True	\Windows\System32\sxs.dll
+L70: 800	csrss.exe	0x7fff54f60000	True	True	True	\Windows\System32\winsrvext.dll
+L71: 800	csrss.exe	0x7fff54fd0000	True	True	True	\Windows\System32\csrsrv.dll
+L72: 800	csrss.exe	0x7fff54fb0000	True	True	True	\Windows\System32\basesrv.dll
+L73: 800	csrss.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L74: 800	csrss.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L75: 800	csrss.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L76: 800	csrss.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L77: 800	csrss.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L78: 800	csrss.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L79: 800	csrss.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L80: 800	csrss.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L81: 800	csrss.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L82: 800	csrss.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L83: 800	csrss.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L84: 800	csrss.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L85: 800	csrss.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L10: 800	csrss.exe	\Device\HarddiskVolume3\Windows\System32\csrss.exe	C:\WINDOWS\system32\csrss.exe	False	False
+
+--- sessions.txt ---
+L135: 1	-	800	csrss.exe	/SYSTEM	2020-11-11 08:13:14.000000 UTC
+
+=== PID 584 (msedge.exe, ppid=22700) ===
+
+--- pslist.txt ---
+L1192: 584	22700	msedge.exe	0xb78cf7f56080	0	-	1	False	2020-11-14 04:57:11.000000 UTC	2020-11-14 04:59:17.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L1192: 584	msedge.exe	-
+
+--- privileges.txt ---
+L41550: 584	msedge.exe	2	SeCreateTokenPrivilege		Create a token object
+L41551: 584	msedge.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L41552: 584	msedge.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L41553: 584	msedge.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L41554: 584	msedge.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L41555: 584	msedge.exe	7	SeTcbPrivilege		Act as part of the operating system
+L41556: 584	msedge.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L41557: 584	msedge.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L41558: 584	msedge.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L41559: 584	msedge.exe	11	SeSystemProfilePrivilege		Profile system performance
+L41560: 584	msedge.exe	12	SeSystemtimePrivilege		Change the system time
+L41561: 584	msedge.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L41562: 584	msedge.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L41563: 584	msedge.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L41564: 584	msedge.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L41565: 584	msedge.exe	17	SeBackupPrivilege		Backup files and directories
+L41566: 584	msedge.exe	18	SeRestorePrivilege		Restore files and directories
+L41567: 584	msedge.exe	19	SeShutdownPrivilege		Shut down the system
+L41568: 584	msedge.exe	20	SeDebugPrivilege		Debug programs
+L41569: 584	msedge.exe	21	SeAuditPrivilege		Generate security audits
+L41570: 584	msedge.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L41571: 584	msedge.exe	23	SeChangeNotifyPrivilege	Default	Receive notifications of changes to files or directories
+L41572: 584	msedge.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L41573: 584	msedge.exe	25	SeUndockPrivilege		Remove computer from docking station
+L41574: 584	msedge.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L41575: 584	msedge.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L41576: 584	msedge.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L41577: 584	msedge.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L41578: 584	msedge.exe	30	SeCreateGlobalPrivilege		Create global objects
+L41579: 584	msedge.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L41580: 584	msedge.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L41581: 584	msedge.exe	33	SeIncreaseWorkingSetPrivilege		Allocate more memory for user applications
+L41582: 584	msedge.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L41583: 584	msedge.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L41584: 584	msedge.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L2155: 584	22700	msedge.exe	0xb78cf7f56080	0	-	1	False	2020-11-14 04:57:11.000000 UTC	2020-11-14 04:59:17.000000 UTC	\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe	-	-
+
+--- psscan.txt ---
+L34: 584	22700	msedge.exe	0xb78cf7f56080	0	-	1	False	2020-11-14 04:57:11.000000 UTC	2020-11-14 04:59:17.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L1192: 584	msedge.exe	\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe	-	False	False
+
+--- sessions.txt ---
+L1210: 1	-	584	msedge.exe	-	2020-11-14 04:57:11.000000 UTC
+
+=== END OF PIVOT REPORT ===

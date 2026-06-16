@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:35:00Z
+Chunk: chunk_027.txt
+Summary: All three SearchFilterHost.exe instances share an orphaned parent PID 6604 which does not appear anywhere in the process list; otherwise paths, commandlines, and DLLs are consistent with legitimate Windows Search infrastructure.
+
+[PROCESS]
+pid: 11948
+ppid: 6604
+image: SearchFilterHost.exe
+cmdline: "C:\WINDOWS\System32\SearchFilterHost.exe" 908 2980 2692 892 {8CD34779-9F10-4F9B-ADFB-B3FAEABDAB5A}
+severity: LOW
+reasons: orphaned_parent: PPID 6604 (unknown) does not appear anywhere in the process list — expected parent is SearchIndexer.exe
+
+[PROCESS]
+pid: 12188
+ppid: 6604
+image: SearchFilterHost.exe
+cmdline: "C:\WINDOWS\System32\SearchFilterHost.exe" 908 2952 2884 892 {0E5DCEC5-7795-4E38-9621-94DFD9F9A421}
+severity: LOW
+reasons: orphaned_parent: PPID 6604 (unknown) does not appear anywhere in the process list — expected parent is SearchIndexer.exe
+
+[PROCESS]
+pid: 12200
+ppid: 6604
+image: SearchFilterHost.exe
+cmdline: "C:\WINDOWS\System32\SearchFilterHost.exe" 908 2136 2896 892 {5E941D80-BF96-11CD-B579-08002B30BFEB}
+severity: LOW
+reasons: orphaned_parent: PPID 6604 (unknown) does not appear anywhere in the process list — expected parent is SearchIndexer.exe
+

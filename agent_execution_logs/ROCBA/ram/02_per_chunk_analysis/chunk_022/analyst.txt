@@ -1,0 +1,90 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 9136 — msedge.exe**
+
+Agent 1 reasons: orphaned parent (PPID 22700 not in process list), very short-lived (~72 seconds), no command-line recorded.
+
+Evidence analysis:
+
+1. **Orphaned parent**: PPID 22700 is absent. However, msedge.exe routinely spawns child processes (GPU, renderer, utility, crashpad) that outlive their immediate parent broker process. A parent exiting before the child is captured in a memory snapshot is a well-known benign pattern for Chromium-family browsers. This alone is weak.
+
+2. **Short-lived / no cmdline**: 72 seconds is short but not unusual for a browser subprocess (e.g., a renderer or crashpad handler that exits cleanly). The missing cmdline (`-`) is a Volatility artefact — it can occur when the process has already exited and the PTE for the cmdline block has been paged out or freed. Not inherently malicious.
+
+3. **Privilege footprint**: The privileges block shows ALL 35 privileges listed — but critically, **none are marked `Present` or `Enabled`**. Only `SeChangeNotifyPrivilege` has `Default` (which is the standard unprivileged default). This is the full privilege *universe* as enumerated by Volatility from the token structure, not a set of enabled privileges. A browser subprocess running as a normal user would show exactly this pattern — the token lists all possible privileges but none are granted/enabled. This is **not** an elevated token.
+
+4. **Path**: `\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe` — legitimate install path.
+
+5. **psscan double-hit**: Two EPROCESS structures at different physical addresses for the same PID/PPID/timestamps. This can indicate PID reuse or a scanning artefact, but both show identical metadata and the process has already exited (ExitTime recorded). Not a strong malice signal.
+
+6. **No malfind, no network, no DLL anomalies, no registry hits** in the evidence.
+
+**Verdict**: REJECTED. The orphaned parent is explained by normal Chromium subprocess lifecycle. The privilege list shows no enabled elevated privileges. The path is legitimate. No corroborating evidence of malice.
+
+---
+
+**PID 9188 — RuntimeBroker. (truncated from RuntimeBroker.exe)**
+
+Agent 1 reasons: orphaned parent (PPID 740 not in process list), dll_anomaly (process image itself appears in dlllist as a loaded module).
+
+Evidence analysis:
+
+1. **Name truncation**: `RuntimeBroker.` is the 14-char EPROCESS truncation of `RuntimeBroker.exe`. The cmdline confirms `C:\Windows\System32\RuntimeBroker.exe -Embedding`. This is the legitimate binary. The `.` ending is the known EPROCESS truncation artefact, not a typosquat.
+
+2. **Orphaned parent (PPID 740)**: RuntimeBroker.exe is normally a child of `svchost.exe` (specifically the DcomLaunch group). PPID 740 not being present in the process list is suspicious in isolation, but RuntimeBroker instances are frequently long-running (this one has no ExitTime, started 2020-11-11 08:13:49) and their parent svchost may have been restarted or the snapshot may not capture all svchost instances. This is a weak signal.
+
+3. **DLL anomaly — process image in dlllist**: The dlllist entry at L5461 shows `RuntimeBroker.exe` loaded at `0x7ff642560000` as a module. This is actually **normal** — on Windows, the main executable image is always the first entry in the PEB's `InLoadOrderModuleList`. Volatility's `dlllist` plugin enumerates this list and includes the EXE itself as the first entry. This is standard behaviour, not evidence of module unlinking or hollowing. Agent 1's flag here is a false positive on the plugin's normal output.
+
+4. **Privilege footprint**: Similar to PID 9136 — the full privilege universe is listed but only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present) are marked. These are all standard user-context privileges. No `SeDebugPrivilege`, no `SeTcbPrivilege`, no `SeImpersonatePrivilege` enabled. Normal for a medium-integrity RuntimeBroker.
+
+5. **Cmdline**: `-Embedding` is the standard COM activation argument for RuntimeBroker. Completely legitimate.
+
+6. **No malfind, no network, no suspicious DLLs from non-System32 paths** in the evidence (the 3 shown DLLs are all from `C:\WINDOWS\SYSTEM32\`).
+
+**Verdict**: REJECTED. The dll_anomaly signal is a false positive — the EXE appearing as the first dlllist entry is standard Windows/Volatility behaviour. The orphaned parent is a weak signal with no corroboration. Cmdline, path, and privilege set are all consistent with a legitimate RuntimeBroker instance.
+
+---
+
+Now writing the report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: Both Agent 1 findings reviewed against available Volatility evidence. Neither process produced corroborating signals sufficient to confirm malicious activity. PID 9136 (msedge.exe) is consistent with a normal Chromium browser subprocess that exited cleanly; PID 9188 (RuntimeBroker.exe) shows a standard COM-activation invocation with a normal privilege set and a DLL anomaly that is a known Volatility plugin artefact. No confirmed malicious processes in this triage batch.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report for this triage batch.
+
+================================================================
+REJECTION NOTES (for Agent 3 visibility)
+================================================================
+
+PID 9136 — msedge.exe (REJECTED)
+  Agent 1 signals: orphaned_process (PPID 22700 absent), very_short_lived (~72 s), no cmdline recorded.
+  Disposition: All three signals have benign explanations. Chromium-family browsers routinely spawn
+  short-lived subprocess trees (renderers, GPU, crashpad) whose immediate broker parent exits before
+  a memory snapshot is taken, producing orphaned PIDs with no recorded cmdline (paged-out PEB).
+  The privilege block lists all 35 possible privileges but none are marked Present or Enabled beyond
+  the unprivileged default (SeChangeNotifyPrivilege Default), consistent with a normal user-context
+  token. The executable path resolves to the legitimate Edge installation directory
+  (\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe). No malfind
+  hits, no network connections, no suspicious DLLs, and no registry persistence evidence were
+  present in the extracted evidence.
+
+PID 9188 — RuntimeBroker.exe (REJECTED)
+  Agent 1 signals: orphaned_process (PPID 740 absent), dll_anomaly (process image in dlllist).
+  Disposition: The dll_anomaly signal is a false positive. Windows always places the main executable
+  image as the first entry in the PEB InLoadOrderModuleList; Volatility's dlllist plugin faithfully
+  enumerates this, so RuntimeBroker.exe appearing as a loaded "DLL" is standard plugin output, not
+  evidence of module unlinking or process hollowing. The orphaned parent is a weak signal: long-
+  running RuntimeBroker instances (this one has no ExitTime, alive since 2020-11-11 08:13:49 UTC)
+  frequently outlive the specific svchost instance that activated them via COM. The cmdline
+  (-Embedding) is the canonical COM activation argument. Enabled privileges are limited to standard
+  user-context grants (SeChangeNotifyPrivilege, SeShutdownPrivilege, SeUndockPrivilege,
+  SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege, SeCreateGlobalPrivilege Default) — no
+  SeDebugPrivilege, SeTcbPrivilege, or SeImpersonatePrivilege enabled. All three DLLs shown load
+  from C:\WINDOWS\SYSTEM32\. No malfind, network, or persistence evidence present.
+
+================================================================

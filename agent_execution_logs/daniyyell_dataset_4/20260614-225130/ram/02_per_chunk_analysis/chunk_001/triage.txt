@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_001.txt
+Summary: svchost.exe with unknown/missing parent (discovered via psscan only, PPID 716 not present in process list) — possible hidden or unlinked process.
+
+[PROCESS]
+pid: 684
+ppid: 716
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_parent: PPID 716 not present in process list (discovered_via=psscan only, suggesting it may have been hidden or unlinked from the active process list) | parent_mismatch: svchost.exe parent is unknown PID 716 — expected parent is services.exe
+

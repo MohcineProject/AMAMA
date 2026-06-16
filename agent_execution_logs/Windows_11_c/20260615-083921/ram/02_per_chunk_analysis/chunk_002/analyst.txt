@@ -1,0 +1,28 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Two Agent 1 findings were reviewed. PID 3088 (svchost.exe) presents a genuine anomaly — it appears only in psscan (not pslist), has an unresolvable parent, and ran for exactly 60 seconds with no visible command line, consistent with DKOM-based process hiding or a short-lived injected/hollowed process. PID 2448 (ShellExperienceHost.exe) shows a legitimate UWP shell component with a standard path and command line; the orphaned-parent signal is a known artefact of UWP broker process lifecycle and the privilege list, while long, is entirely in the "Present" (not "Enabled") state for all sensitive entries. Overall incident scope is limited to one inconclusive DKOM-style anomaly; no confirmed malicious activity is established from this evidence set alone.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      3088
+PPID:     888
+Image:    svchost.exe
+Cmdline:  (none visible)
+Severity: (n/a — INCONCLUSIVE)
+MITRE:    T1564.001 — Hide Artifacts: Hidden Files and Directories / T1055 — Process Injection (candidate, unconfirmed)
+
+Justification:
+  PID 3088 appears exclusively in psscan and not in pslist, which is the classic signature of an EPROCESS entry that has been unlinked from the active process doubly-linked list (DKOM). The parent PID 888 is absent from the process list, so the process tree cannot be validated. The process ran for exactly 60 seconds (18:29:23–18:30:23 UTC) with no recoverable command line, which is consistent with a short-lived injected or hollowed process but is not by itself conclusive — legitimate kernel-mode or early-boot svchost instances can also leave sparse artefacts. No corroborating evidence (malfind sections, suspicious DLLs, network connections, registry persistence, or handles) was extracted for this PID, so the finding cannot be elevated to CONFIRMED under the conservative bias rule. The combination of psscan-only visibility, missing parent, zero-length command line, and precise 60-second lifetime is suspicious enough to retain as INCONCLUSIVE and warrants deeper investigation (e.g. raw EPROCESS inspection, VAD walk, handle table dump for this PID).
+
+Key Evidence:
+  - L105: 3088	888	svchost.exe	0xcd8a12064080	0	-	0	False	2026-05-12 18:29:23.000000 UTC	2026-05-12 18:30:23.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED findings (count: 1)
+  - PID 2448 (ShellExperienceHost.exe): The executable path, command line, and parent-PID pattern are all consistent with a legitimate Windows UWP Shell Experience Host. UWP processes are routinely spawned by the UWP broker infrastructure (sihost.exe, RuntimeBroker.exe, or the UWP activation chain), whose PIDs may not be present in a partial memory snapshot — this is a well-known benign artefact, not evidence of malice. The privilege list (lines L4940–L4974) shows the full Windows privilege set in the "Present" column, but only SeChangeNotifyPrivilege and SeIncreaseWorkingSetPrivilege carry "Enabled" or "Default" flags; all high-risk privileges (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege, etc.) are present but NOT enabled, which is the normal token template for a user-context UWP process. DLL entries visible in the extract (ShellExperienceHost.exe, ntdll.dll, KERNEL32.DLL) are all from canonical System32 / SystemApps paths. No malfind, netscan, or registry persistence evidence was provided. Agent 1 itself noted the flag was solely the unresolved parent PID; that signal alone does not meet the confirmation threshold.
+================================================================

@@ -1,0 +1,43 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 3328 — MsMpEng.exe**
+
+Agent 1 flagged: orphaned process (parent PID 888 not in process list).
+
+Reasoning:
+- The binary path is `C:\Program Files\Windows Defender\MsMpEng.exe` — canonical location.
+- The orphaned-parent signal: PPID 888 is absent from pslist. However, MsMpEng.exe is a Windows Defender service. On Windows 10/11, it is launched by the Service Control Manager (SCM, `services.exe`). SCM PIDs can exit after spawning services, leaving the child with a stale PPID. This is a well-known benign pattern — SCM itself can restart, or the snapshot was taken after SCM recycled. The PPID being absent is therefore a weak signal for this specific binary.
+- Cmdline is clean: `"C:\Program Files\Windows Defender\MsMpEng.exe"` — no arguments, no injection, no LOLBin abuse.
+- DLL list shows only one entry visible (the main executable from the correct path). No user-writable path DLLs visible.
+- Privileges: MsMpEng.exe legitimately runs as SYSTEM and holds a very broad privilege set including SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege. This is **expected** for Windows Defender's antimalware service — it needs these to scan processes, load drivers (ELAM), and impersonate. This is not anomalous for this specific binary.
+- Children: two `MpCmdRun.exe` processes spawned from PID 3328 — these are legitimate Windows Defender command-line scan utilities, consistent with Defender performing a scan.
+- No malfind hits, no suspicious DLLs, no network connections, no registry persistence, no suspicious handles shown.
+- The only signal is the orphaned parent, which is a known benign artifact for service processes.
+
+**Verdict: REJECTED** — Standard Windows Defender antimalware service at canonical path, legitimate privilege set for SYSTEM-context AV engine, children are legitimate MpCmdRun.exe instances, orphaned parent is a known benign artifact for SCM-launched services.
+
+---
+
+Now writing the report. There is only one finding, and it is REJECTED. The body will contain no CONFIRMED or INCONCLUSIVE blocks.
+
+---
+
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T18:30:00Z
+Summary: Agent 1 submitted one finding for validation. The sole candidate — MsMpEng.exe (PID 3328) — is the Windows Defender antimalware engine running from its canonical installation path under a SYSTEM token. All observable indicators are consistent with legitimate behaviour; the orphaned-parent signal is a known benign artifact for SCM-launched services. No confirmed or inconclusive malicious activity was identified in this submission.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were REJECTED. Rejection rationale follows for audit purposes.
+
+----------------------------------------------------------------
+REJECTED — PID 3328 — MsMpEng.exe
+Reason: The sole Agent 1 signal is an orphaned parent (PPID 888 absent from pslist). This is a well-documented benign artifact: the Windows Defender antimalware service is launched by the Service Control Manager (services.exe), which may have recycled or exited before the memory snapshot was acquired, leaving a stale PPID. Every other observable indicator is consistent with legitimate operation — the binary resides at the canonical path "C:\Program Files\Windows Defender\MsMpEng.exe", the command line carries no arguments or LOLBin abuse, the broad SYSTEM-level privilege set (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege, etc.) is expected for an AV engine that must scan processes and load ELAM drivers, and the two MpCmdRun.exe children (PIDs 5816 and 6032) are the legitimate Defender command-line scan utility. No suspicious DLLs, no malfind hits, no anomalous network connections, and no registry persistence artefacts were present in the evidence block.
+----------------------------------------------------------------
+
+================================================================

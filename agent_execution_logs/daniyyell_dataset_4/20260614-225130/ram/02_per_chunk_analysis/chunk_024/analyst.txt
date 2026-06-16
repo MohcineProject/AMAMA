@@ -1,0 +1,83 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 7960 — svchost.exe (ppid=716, Agent1 HIGH)**
+
+Agent 1 reasons: missing_image_path, orphaned_parent, high_risk_privileges, short_lived.
+
+Let me examine the evidence carefully:
+
+1. **Path**: `pstree.txt` L66 shows `\Device\HarddiskVolume3\Windows\System32\svchost.exe` — this is the legitimate system path. The "missing_image_path" flag from Agent 1 is contradicted by pstree evidence.
+
+2. **Orphaned parent (PPID 716)**: PPID 716 does not appear in the process list. However, this is a common and well-understood artefact — `services.exe` (the normal svchost parent) can exit or the PPID slot can be reused. The PPID 716 is shared by *both* PID 7960 and PID 7848, suggesting 716 was `services.exe` that exited or was captured after exit. This is not inherently malicious.
+
+3. **Privileges**: The privilege set is extremely broad — `SeTcbPrivilege` (Present,Enabled,Default), `SeImpersonatePrivilege` (Present,Enabled,Default), `SeAssignPrimaryTokenPrivilege` (Present), `SeBackupPrivilege` (Present), `SeRestorePrivilege` (Present), `SeCreateGlobalPrivilege` (Present,Enabled,Default). This is a SYSTEM-level token with nearly the full set. For a legitimate svchost running under SYSTEM (e.g. hosting services like WMI, Task Scheduler, etc.), this is actually normal. The key question is whether this is a masquerading process.
+
+4. **malware_pebmasquerade.txt** L107: `False False` — the PEB masquerade check returns False/False, meaning the image name and path are consistent. Not masquerading.
+
+5. **Cmdline**: `-` (no command line captured). This is suspicious in isolation but can occur when Volatility cannot read the PEB cmdline for a terminated process. The process had already exited by capture time (ExitTime 19:43:20).
+
+6. **Short-lived**: 6 minutes, already exited. Could be a transient service host (e.g. hosting a one-shot service). Not inherently malicious.
+
+7. **No malfind hits**, no suspicious DLLs, no network connections, no registry persistence, no suspicious handles in the evidence provided.
+
+8. **0 threads** (`0` in pslist thread count column) — this is consistent with a terminated process being read from memory.
+
+**Assessment**: The path is legitimate (System32), PEB masquerade check is clean (False/False), privilege set is consistent with a SYSTEM-context svchost, no malfind, no suspicious DLLs, no network activity. The orphaned parent is a common artefact. The missing cmdline is explained by process termination before capture. The broad privileges are normal for SYSTEM-level svchost. No corroborating evidence of malice across any artefact type. → **REJECTED**
+
+---
+
+**PID 7848 — svchost.exe (ppid=716, Agent1 LOW)**
+
+Agent 1 reason: orphaned_parent only.
+
+1. **Cmdline**: `C:\Windows\system32\svchost.exe -k UnistackSvcGroup` — legitimate, standard invocation. `UnistackSvcGroup` is a real Windows service group (hosts user-mode services like CDPUserSvc, OneSyncSvc, etc.).
+
+2. **Orphaned parent (PPID 716)**: Same PPID as PID 7960. As noted above, this is a common artefact when the parent (services.exe) has exited or its PID slot was reused/not captured.
+
+3. **Privileges**: No dangerous privileges enabled. `SeChangeNotifyPrivilege` (Present,Enabled,Default) is standard. `SeShutdownPrivilege` (Present), `SeUndockPrivilege` (Present), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present) — all normal for a user-context svchost. Notably, `SeTcbPrivilege`, `SeImpersonatePrivilege`, `SeDebugPrivilege` are all NOT present/enabled — this is a lower-privilege svchost, consistent with a user-session service group.
+
+4. **DLLs**: Only System32 paths shown (svchost.exe, ntdll.dll, KERNEL32.DLL) — all legitimate.
+
+5. **No malfind, no network, no suspicious handles** in evidence.
+
+**Assessment**: Standard svchost invocation with legitimate cmdline, normal privilege set for a user-session service group, System32 DLLs only. Orphaned parent is a common Volatility artefact. No corroborating evidence of malice. → **REJECTED**
+
+---
+
+Now writing the report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-08-07T20:00:00Z
+Summary: Both Agent 1 findings were examined against full Volatility artefact evidence. PID 7960 carries a broad SYSTEM-level privilege set and a missing command line, but the binary path resolves to the legitimate System32 svchost.exe, the PEB masquerade check is clean, and no corroborating signals (malfind, suspicious DLLs, network activity, registry persistence) are present. PID 7848 is a standard user-session svchost with a normal command line and minimal privileges. The orphaned-parent signal (PPID 716) is a common Volatility artefact caused by the parent process exiting before memory capture and applies to both PIDs equally. No confirmed malicious activity is supported by the available evidence.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+--- Rejection Notes (for Agent 3 transparency) ---
+
+PID 7960 — REJECTED
+  The "missing_image_path" signal is contradicted by pstree.txt L66, which resolves the full
+  path to \Device\HarddiskVolume3\Windows\System32\svchost.exe. The PEB masquerade check
+  (malware_pebmasquerade.txt L107) returns False/False, confirming the image name and path
+  are internally consistent. The broad SYSTEM-level privilege set (SeTcbPrivilege,
+  SeImpersonatePrivilege, etc.) is normal for a svchost.exe hosting SYSTEM-context services
+  (e.g. WMI, Task Scheduler, CryptSvc). The missing command line ("-") is explained by
+  process termination before capture — Volatility cannot reliably read PEB cmdline fields
+  for exited processes. The orphaned PPID 716 is a standard artefact when services.exe
+  exits or its slot is not captured. No malfind hits, no suspicious DLLs, no network
+  connections, and no registry persistence are present in the evidence. All signals have
+  benign explanations; none compound into a malicious pattern.
+
+PID 7848 — REJECTED
+  The command line "C:\Windows\system32\svchost.exe -k UnistackSvcGroup" is a legitimate,
+  standard invocation for the Windows user-session service group (hosts CDPUserSvc,
+  OneSyncSvc, etc.). The privilege set is low — no SeTcbPrivilege, SeImpersonatePrivilege,
+  or SeDebugPrivilege enabled. DLLs shown are exclusively from System32. The sole Agent 1
+  signal (orphaned PPID 716) is the same common artefact as PID 7960 and carries no
+  independent weight. No corroborating evidence of malice exists across any artefact type.
+
+================================================================

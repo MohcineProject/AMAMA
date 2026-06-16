@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_022.txt
+Summary: msedge.exe orphaned with unknown parent PID 22700 and very short lifespan (~72s); RuntimeBroker.exe parent PID 740 not present in process list (orphaned), and non-whitelisted DLL list includes the process executable itself which is anomalous.
+
+[PROCESS]
+pid: 9136
+ppid: 22700
+image: msedge.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 22700 not present anywhere in the process list | very_short_lived: process ran for approximately 72 seconds (04:58:05 to 04:59:17 UTC) with no command-line recorded
+
+[PROCESS]
+pid: 9188
+ppid: 740
+image: RuntimeBroker.
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_process: parent PID 740 not present anywhere in the process list | dll_anomaly: non-whitelisted DLL list includes the process image itself (C:\Windows\System32\RuntimeBroker.exe) which is an unusual ldrmodules artefact potentially indicating unlinking or hollowing; path and cmd confirm legitimate location so severity kept LOW pending pivot confirmation
+

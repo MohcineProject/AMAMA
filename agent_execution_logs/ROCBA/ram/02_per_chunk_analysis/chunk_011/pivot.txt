@@ -1,0 +1,426 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:44:08Z
+
+=== PID 6468 (sihost.exe, ppid=2444) ===
+Cmdline: sihost.exe
+
+--- pslist.txt ---
+L97: 6468	2444	sihost.exe	0xb78d008e8340	15	-	1	False	2020-11-11 08:13:40.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L97: 6468	sihost.exe	sihost.exe
+
+--- privileges.txt ---
+L3225: 6468	sihost.exe	2	SeCreateTokenPrivilege		Create a token object
+L3226: 6468	sihost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3227: 6468	sihost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3228: 6468	sihost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3229: 6468	sihost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3230: 6468	sihost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3231: 6468	sihost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L3232: 6468	sihost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3233: 6468	sihost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3234: 6468	sihost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L3235: 6468	sihost.exe	12	SeSystemtimePrivilege		Change the system time
+L3236: 6468	sihost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3237: 6468	sihost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3238: 6468	sihost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L3239: 6468	sihost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3240: 6468	sihost.exe	17	SeBackupPrivilege		Backup files and directories
+L3241: 6468	sihost.exe	18	SeRestorePrivilege		Restore files and directories
+L3242: 6468	sihost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L3243: 6468	sihost.exe	20	SeDebugPrivilege		Debug programs
+L3244: 6468	sihost.exe	21	SeAuditPrivilege		Generate security audits
+L3245: 6468	sihost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3246: 6468	sihost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3247: 6468	sihost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3248: 6468	sihost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3249: 6468	sihost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3250: 6468	sihost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3251: 6468	sihost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L3252: 6468	sihost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3253: 6468	sihost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L3254: 6468	sihost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3255: 6468	sihost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3256: 6468	sihost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3257: 6468	sihost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3258: 6468	sihost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3259: 6468	sihost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L3964: 6468	sihost.exe	0x7ff7a4e40000	0x21000	sihost.exe	C:\WINDOWS\system32\sihost.exe	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L3965: 6468	sihost.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L3966: 6468	sihost.exe	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L3967: 6468	sihost.exe	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L3968: 6468	sihost.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3969: 6468	sihost.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3970: 6468	sihost.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3971: 6468	sihost.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3972: 6468	sihost.exe	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3973: 6468	sihost.exe	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3974: 6468	sihost.exe	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3975: 6468	sihost.exe	0x7fff52500000	0xf2000	CoreMessaging.dll	C:\WINDOWS\system32\CoreMessaging.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3976: 6468	sihost.exe	0x7fff57800000	0x6b000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3977: 6468	sihost.exe	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3978: 6468	sihost.exe	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L3979: 6468	sihost.exe	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L3980: 6468	sihost.exe	0x7fff57540000	0x1a0000	user32.dll	C:\WINDOWS\System32\user32.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L3981: 6468	sihost.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L3982: 6468	sihost.exe	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3983: 6468	sihost.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3984: 6468	sihost.exe	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3985: 6468	sihost.exe	0x7fff55d80000	0xa9000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3986: 6468	sihost.exe	0x7fff47980000	0x20000	desktopshellext.dll	C:\WINDOWS\system32\desktopshellext.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3987: 6468	sihost.exe	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L3988: 6468	sihost.exe	0x7fff55910000	0x55000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L3989: 6468	sihost.exe	0x7fff4ce20000	0x14000	wtsapi32.dll	C:\WINDOWS\SYSTEM32\wtsapi32.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3990: 6468	sihost.exe	0x7fff547d0000	0x5a000	WINSTA.dll	C:\WINDOWS\SYSTEM32\WINSTA.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3991: 6468	sihost.exe	0x7fff47960000	0x1e000	Windows.Shell.ServiceHostBuilder.dll	C:\Windows\System32\Windows.Shell.ServiceHostBuilder.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3992: 6468	sihost.exe	0x7fff43ed0000	0x795000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3993: 6468	sihost.exe	0x7fff52a60000	0x9e000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3994: 6468	sihost.exe	0x7fff36f20000	0x3c000	ClipboardServer.dll	C:\Windows\System32\ClipboardServer.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3995: 6468	sihost.exe	0x7fff52e20000	0x2a000	RMCLIENT.dll	C:\Windows\System32\RMCLIENT.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3996: 6468	sihost.exe	0x7fff34cf0000	0xca000	activationmanager.dll	C:\WINDOWS\system32\activationmanager.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3997: 6468	sihost.exe	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L3998: 6468	sihost.exe	0x7fff4db70000	0xfa000	AppXDeploymentClient.dll	C:\WINDOWS\system32\AppXDeploymentClient.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L3999: 6468	sihost.exe	0x7fff4eb40000	0x208000	twinapi.appcore.dll	C:\WINDOWS\system32\twinapi.appcore.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4000: 6468	sihost.exe	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\system32\profapi.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L4001: 6468	sihost.exe	0x7fff523a0000	0x156000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L4002: 6468	sihost.exe	0x7fff36e90000	0x1d000	MPR.dll	C:\WINDOWS\system32\MPR.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4003: 6468	sihost.exe	0x7fff36d10000	0x29000	AppointmentActivation.dll	C:\WINDOWS\System32\AppointmentActivation.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4004: 6468	sihost.exe	0x7fff49ad0000	0x11000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4005: 6468	sihost.exe	0x7fff34ad0000	0x7d000	modernexecserver.dll	C:\Windows\System32\modernexecserver.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4006: 6468	sihost.exe	0x7fff4bcc0000	0x54000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4007: 6468	sihost.exe	0x7fff4db50000	0x16000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4008: 6468	sihost.exe	0x7fff52600000	0x35e000	CoreUIComponents.dll	C:\WINDOWS\system32\CoreUIComponents.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L4009: 6468	sihost.exe	0x7fff4ccc0000	0x59000	ExecModelClient.dll	C:\WINDOWS\system32\ExecModelClient.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4010: 6468	sihost.exe	0x7fff508e0000	0xf7000	PROPSYS.dll	C:\WINDOWS\system32\PROPSYS.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L4011: 6468	sihost.exe	0x7fff32d50000	0x1a4000	windowmanagement.dll	C:\Windows\System32\windowmanagement.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4012: 6468	sihost.exe	0x7fff4b230000	0xf000	NotificationPlatformComponent.dll	C:\Windows\System32\NotificationPlatformComponent.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4013: 6468	sihost.exe	0x7fff32c70000	0xe0000	AppContracts.dll	C:\Windows\System32\AppContracts.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4014: 6468	sihost.exe	0x7fff32b50000	0x115000	ShareHost.dll	C:\WINDOWS\system32\ShareHost.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4015: 6468	sihost.exe	0x7fff53140000	0x795000	Windows.Storage.dll	C:\WINDOWS\system32\Windows.Storage.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L4016: 6468	sihost.exe	0x7fff549f0000	0x2c000	Wldp.dll	C:\WINDOWS\system32\Wldp.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L4017: 6468	sihost.exe	0x7fff54140000	0x8a000	msvcp110_win.dll	C:\WINDOWS\system32\msvcp110_win.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L4018: 6468	sihost.exe	0x7fff32a90000	0xbc000	Windows.System.Launcher.dll	C:\Windows\System32\Windows.System.Launcher.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4019: 6468	sihost.exe	0x7fff34880000	0x15000	PackageStateChangeHandler.dll	C:\WINDOWS\system32\PackageStateChangeHandler.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4020: 6468	sihost.exe	0x7fff329a0000	0xa6000	twinui.appcore.dll	C:\WINDOWS\System32\twinui.appcore.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4021: 6468	sihost.exe	0x7fff328d0000	0xa1000	UiaManager.dll	C:\Windows\System32\UiaManager.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4022: 6468	sihost.exe	0x7fff36410000	0x7d000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4023: 6468	sihost.exe	0x7fff4c810000	0x181000	AudioSes.dll	C:\Windows\System32\AudioSes.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4024: 6468	sihost.exe	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L4025: 6468	sihost.exe	0x7fff4c780000	0x85000	MMDevAPI.DLL	C:\Windows\System32\MMDevAPI.DLL	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4026: 6468	sihost.exe	0x7fff54b90000	0x4b000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4027: 6468	sihost.exe	0x7fff54dc0000	0x2c000	DEVOBJ.dll	C:\Windows\System32\DEVOBJ.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4028: 6468	sihost.exe	0x7fff54a90000	0x12000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4029: 6468	sihost.exe	0x7fff32780000	0xaf000	daxexec.dll	C:\Windows\System32\daxexec.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4030: 6468	sihost.exe	0x7fff446b0000	0xb000	FLTLIB.DLL	C:\Windows\System32\FLTLIB.DLL	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L4031: 6468	sihost.exe	0x7fff32730000	0x47000	container.dll	C:\Windows\System32\container.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4032: 6468	sihost.exe	0x7fff54400000	0x3b000	IPHLPAPI.DLL	C:\Windows\System32\IPHLPAPI.DLL	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4033: 6468	sihost.exe	0x7fff32710000	0x18000	execmodelproxy.dll	C:\WINDOWS\system32\execmodelproxy.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4034: 6468	sihost.exe	0x7fff32430000	0x2df000	mssrch.dll	C:\WINDOWS\system32\mssrch.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4035: 6468	sihost.exe	0x7fff37d10000	0x32b000	ESENT.dll	C:\WINDOWS\system32\ESENT.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4036: 6468	sihost.exe	0x7fff54780000	0x15000	cryptdll.dll	C:\WINDOWS\system32\cryptdll.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4037: 6468	sihost.exe	0x7fff31780000	0x32d000	TQUERY.DLL	C:\WINDOWS\system32\TQUERY.DLL	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4038: 6468	sihost.exe	0x7fff32410000	0x1e000	CoreShellExtFramework.dll	C:\WINDOWS\system32\CoreShellExtFramework.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L4039: 6468	sihost.exe	0x7fff54ee0000	0x2e000	USERENV.dll	C:\WINDOWS\system32\USERENV.dll	-1	2020-11-11 08:13:40.000000 UTC	Disabled
+L4040: 6468	sihost.exe	0x7fff46ea0000	0x152000	InputHost.dll	C:\Windows\System32\InputHost.dll	6	2020-11-11 08:13:41.000000 UTC	Disabled
+L4041: 6468	sihost.exe	0x7fff557e0000	0x27000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-1	2020-11-11 08:13:49.000000 UTC	Disabled
+L4042: 6468	sihost.exe	0x7fff56800000	0x12a000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-1	2020-11-11 08:13:49.000000 UTC	Disabled
+L4043: 6468	sihost.exe	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\system32\urlmon.dll	-1	2020-11-13 08:35:31.000000 UTC	Disabled
+L4044: 6468	sihost.exe	0x7fff468c0000	0x2b0000	iertutil.dll	C:\WINDOWS\system32\iertutil.dll	-1	2020-11-13 08:35:31.000000 UTC	Disabled
+L4045: 6468	sihost.exe	0x7fff56050000	0x741000	shell32.dll	C:\WINDOWS\System32\shell32.dll	-1	2020-11-14 03:51:11.000000 UTC	Disabled
+L4046: 6468	sihost.exe	0x7fff28f60000	0x62000	Windows.FileExplorer.Common.dll	C:\Windows\System32\Windows.FileExplorer.Common.dll	-1	2020-11-14 03:51:11.000000 UTC	Disabled
+L4047: 6468	sihost.exe	0x7fff297d0000	0x22000	cldapi.dll	C:\Windows\System32\cldapi.dll	-1	2020-11-14 03:51:11.000000 UTC	Disabled
+L4048: 6468	sihost.exe	0x7fff54ea0000	0x3c000	SspiCli.dll	C:\WINDOWS\system32\SspiCli.dll	-1	2020-11-14 03:51:11.000000 UTC	Disabled
+L4049: 6468	sihost.exe	0x7fff29800000	0x24000	edputil.dll	C:\WINDOWS\system32\edputil.dll	-1	2020-11-14 03:51:11.000000 UTC	Disabled
+L4050: 6468	sihost.exe	0x7fff529b0000	0x90000	apphelp.dll	C:\WINDOWS\SYSTEM32\apphelp.dll	-1	2020-11-14 03:51:11.000000 UTC	Disabled
+L4051: 6468	sihost.exe	0x7fff25e30000	0xc6000	Windows.Storage.Search.dll	C:\WINDOWS\system32\Windows.Storage.Search.dll	6	2020-11-14 03:51:11.000000 UTC	Disabled
+L4052: 6468	sihost.exe	0x7fff31200000	0x80000	PhotoMetadataHandler.dll	C:\WINDOWS\system32\PhotoMetadataHandler.dll	6	2020-11-14 03:51:11.000000 UTC	Disabled
+L4053: 6468	sihost.exe	0x7fff47a50000	0x1b4000	WindowsCodecs.dll	C:\WINDOWS\system32\WindowsCodecs.dll	6	2020-11-14 03:51:11.000000 UTC	Disabled
+L4054: 6468	sihost.exe	0x7fff479a0000	0xa6000	StructuredQuery.dll	C:\WINDOWS\System32\StructuredQuery.dll	6	2020-11-14 03:51:11.000000 UTC	Disabled
+L4055: 6468	sihost.exe	0x7fff3dab0000	0x29b000	comctl32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\comctl32.dll	6	2020-11-14 03:51:12.000000 UTC	Disabled
+L4056: 6468	sihost.exe	0x7fff48430000	0x51000	capauthz.dll	C:\WINDOWS\SYSTEM32\capauthz.dll	6	2020-11-14 03:51:14.000000 UTC	Disabled
+L4057: 6468	sihost.exe	0x7fff55570000	0x60000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	6	2020-11-14 03:51:14.000000 UTC	Disabled
+L4058: 6468	sihost.exe	0x7fff55650000	0x15d000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2020-11-14 03:51:14.000000 UTC	Disabled
+L4059: 6468	sihost.exe	0x7fff54be0000	0x12000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2020-11-14 03:51:14.000000 UTC	Disabled
+L4060: 6468	sihost.exe	0x7fff28c80000	0xd000	LINKINFO.dll	C:\WINDOWS\System32\LINKINFO.dll	-1	2020-11-14 03:51:14.000000 UTC	Disabled
+L4061: 6468	sihost.exe	0x7fff28ee0000	0x7d000	ntshrui.dll	C:\WINDOWS\System32\ntshrui.dll	-1	2020-11-14 03:51:14.000000 UTC	Disabled
+L4062: 6468	sihost.exe	0x7fff35cd0000	0x28000	srvcli.dll	C:\WINDOWS\System32\srvcli.dll	-1	2020-11-14 03:51:14.000000 UTC	Disabled
+L4063: 6468	sihost.exe	0x7fff4b790000	0x12000	cscapi.dll	C:\WINDOWS\system32\cscapi.dll	6	2020-11-14 03:51:14.000000 UTC	Disabled
+L4064: 6468	sihost.exe	0x7ffed9810000	0x49000	windowscodecsext.dll	C:\WINDOWS\system32\windowscodecsext.dll	6	2020-11-14 03:59:48.000000 UTC	Disabled
+L4065: 6468	sihost.exe	0x7fff50a20000	0xa0000	policymanager.dll	C:\WINDOWS\system32\policymanager.dll	-1	2020-11-14 13:04:32.000000 UTC	Disabled
+L4066: 6468	sihost.exe	0x7fff478f0000	0x46000	MSWB7.dll	C:\WINDOWS\System32\MSWB7.dll	6	2020-11-14 13:04:32.000000 UTC	Disabled
+L4067: 6468	sihost.exe	0x7fff4a170000	0x36000	XmlLite.dll	C:\WINDOWS\system32\XmlLite.dll	-1	2020-11-14 13:05:52.000000 UTC	Disabled
+L4068: 6468	sihost.exe	0x7fff576e0000	0x115000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2020-11-14 13:05:56.000000 UTC	Disabled
+L4069: 6468	sihost.exe	0x7fff2b740000	0x100000	inetcomm.dll	C:\Windows\System32\inetcomm.dll	6	2020-11-14 13:06:07.000000 UTC	Disabled
+L4070: 6468	sihost.exe	0x7fff4b540000	0x28000	MSOERT2.dll	C:\Windows\System32\MSOERT2.dll	6	2020-11-14 13:06:07.000000 UTC	Disabled
+L4071: 6468	sihost.exe	0x7fff29bf0000	0x66000	OLEACC.dll	C:\Windows\System32\OLEACC.dll	6	2020-11-14 13:06:07.000000 UTC	Disabled
+L4072: 6468	sihost.exe	0x1fe8dc20000	0x17000	inetres.dll	C:\Windows\System32\inetres.dll	6	2020-11-14 13:06:07.000000 UTC	Disabled
+L4073: 6468	sihost.exe	0x7fff36eb0000	0x42000	mlang.dll	C:\WINDOWS\system32\mlang.dll	6	2020-11-14 13:06:07.000000 UTC	Disabled
+L4074: 6468	sihost.exe	0x7fff31cc0000	0x4da000	WININET.dll	C:\WINDOWS\system32\WININET.dll	-1	2020-11-14 13:06:20.000000 UTC	Disabled
+L4075: 6468	sihost.exe	0x7fff3bee0000	0xc000	Secur32.dll	C:\WINDOWS\system32\Secur32.dll	6	2020-11-14 13:06:20.000000 UTC	Disabled
+L4076: 6468	sihost.exe	0x7fff2abd0000	0x751000	ieframe.dll	C:\Windows\System32\ieframe.dll	6	2020-11-16 02:31:39.000000 UTC	Disabled
+L4077: 6468	sihost.exe	0x7fff447a0000	0x18000	NETAPI32.dll	C:\Windows\System32\NETAPI32.dll	6	2020-11-16 02:31:39.000000 UTC	Disabled
+L4078: 6468	sihost.exe	0x7fff4a5c0000	0xa000	VERSION.dll	C:\Windows\System32\VERSION.dll	6	2020-11-16 02:31:39.000000 UTC	Disabled
+L4079: 6468	sihost.exe	0x7fff4fea0000	0x100000	WINHTTP.dll	C:\Windows\System32\WINHTTP.dll	6	2020-11-16 02:31:39.000000 UTC	Disabled
+L4080: 6468	sihost.exe	0x7fff541d0000	0x17000	WKSCLI.DLL	C:\Windows\System32\WKSCLI.DLL	6	2020-11-16 02:31:39.000000 UTC	Disabled
+L4081: 6468	sihost.exe	0x7fff54510000	0xc000	NETUTILS.DLL	C:\Windows\System32\NETUTILS.DLL	6	2020-11-16 02:31:39.000000 UTC	Disabled
+
+--- pstree.txt ---
+L209: *** 6468	2444	sihost.exe	0xb78d008e8340	15	-	1	False	2020-11-11 08:13:40.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\sihost.exe	sihost.exe	C:\WINDOWS\system32\sihost.exe
+
+--- psscan.txt ---
+L402: 6468	2444	sihost.exe	0xb78d008e8340	15	-	1	False	2020-11-11 08:13:40.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L4202: 6468	sihost.exe	0x7fff32b50000	True	True	True	\Windows\System32\ShareHost.dll
+L4203: 6468	sihost.exe	0x1fe88ba0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L4204: 6468	sihost.exe	0x1fe89430000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L4205: 6468	sihost.exe	0x1fe89440000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L4206: 6468	sihost.exe	0x1fe894a0000	False	False	False	\Windows\System32\netmsg.dll
+L4207: 6468	sihost.exe	0x1fe89940000	False	False	False	\Windows\System32\prm0009.dll
+L4208: 6468	sihost.exe	0x1fe89720000	False	False	False	\Windows\System32\en-US\netmsg.dll.mui
+L4209: 6468	sihost.exe	0x1fe898d0000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L4210: 6468	sihost.exe	0x1fe8dbe0000	False	False	False	\Windows\System32\oleaccrc.dll
+L4211: 6468	sihost.exe	0x1fe8dc00000	False	False	False	\Windows\System32\en-US\mlang.dll.mui
+L4212: 6468	sihost.exe	0x1fe8dc20000	True	True	True	\Windows\System32\INETRES.dll
+L4213: 6468	sihost.exe	0x7fff28f60000	True	True	True	\Windows\System32\Windows.FileExplorer.Common.dll
+L4214: 6468	sihost.exe	0x7ff7a4e40000	True	False	True	\Windows\System32\sihost.exe
+L4215: 6468	sihost.exe	0x7fff28c80000	True	True	True	\Windows\System32\linkinfo.dll
+L4216: 6468	sihost.exe	0x7fff25e30000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L4217: 6468	sihost.exe	0x7ffed9810000	True	True	True	\Windows\System32\WindowsCodecsExt.dll
+L4218: 6468	sihost.exe	0x7fff28ee0000	True	True	True	\Windows\System32\ntshrui.dll
+L4219: 6468	sihost.exe	0x7fff32710000	True	True	True	\Windows\System32\execmodelproxy.dll
+L4220: 6468	sihost.exe	0x7fff31780000	True	True	True	\Windows\System32\tquery.dll
+L4221: 6468	sihost.exe	0x7fff29bf0000	True	True	True	\Windows\System32\oleacc.dll
+L4222: 6468	sihost.exe	0x7fff29800000	True	True	True	\Windows\System32\edputil.dll
+L4223: 6468	sihost.exe	0x7fff297d0000	True	True	True	\Windows\System32\cldapi.dll
+L4224: 6468	sihost.exe	0x7fff2b740000	True	True	True	\Windows\System32\inetcomm.dll
+L4225: 6468	sihost.exe	0x7fff2abd0000	True	True	True	\Windows\System32\ieframe.dll
+L4226: 6468	sihost.exe	0x7fff31200000	True	True	True	\Windows\System32\PhotoMetadataHandler.dll
+L4227: 6468	sihost.exe	0x7fff32410000	True	True	True	\Windows\System32\CoreShellExtFramework.dll
+L4228: 6468	sihost.exe	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L4229: 6468	sihost.exe	0x7fff32430000	True	True	True	\Windows\System32\mssrch.dll
+L4230: 6468	sihost.exe	0x7fff32780000	True	True	True	\Windows\System32\daxexec.dll
+L4231: 6468	sihost.exe	0x7fff32730000	True	True	True	\Windows\System32\container.dll
+L4232: 6468	sihost.exe	0x7fff329a0000	True	True	True	\Windows\System32\twinui.appcore.dll
+L4233: 6468	sihost.exe	0x7fff328d0000	True	True	True	\Windows\System32\UiaManager.dll
+L4234: 6468	sihost.exe	0x7fff32a90000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L4235: 6468	sihost.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L4236: 6468	sihost.exe	0x7fff47980000	True	True	True	\Windows\System32\DesktopShellExt.dll
+L4237: 6468	sihost.exe	0x7fff36e90000	True	True	True	\Windows\System32\mpr.dll
+L4238: 6468	sihost.exe	0x7fff34cf0000	True	True	True	\Windows\System32\ActivationManager.dll
+L4239: 6468	sihost.exe	0x7fff32d50000	True	True	True	\Windows\System32\WindowManagement.dll
+L4240: 6468	sihost.exe	0x7fff32c70000	True	True	True	\Windows\System32\AppContracts.dll
+L4241: 6468	sihost.exe	0x7fff34880000	True	True	True	\Windows\System32\PackageStateChangeHandler.dll
+L4242: 6468	sihost.exe	0x7fff34ad0000	True	True	True	\Windows\System32\modernexecserver.dll
+L4243: 6468	sihost.exe	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L4244: 6468	sihost.exe	0x7fff35cd0000	True	True	True	\Windows\System32\srvcli.dll
+L4245: 6468	sihost.exe	0x7fff36d10000	True	True	True	\Windows\System32\AppointmentActivation.dll
+L4246: 6468	sihost.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L4247: 6468	sihost.exe	0x7fff37d10000	True	True	True	\Windows\System32\esent.dll
+L4248: 6468	sihost.exe	0x7fff36f20000	True	True	True	\Windows\System32\ClipboardServer.dll
+L4249: 6468	sihost.exe	0x7fff36eb0000	True	True	True	\Windows\System32\mlang.dll
+L4250: 6468	sihost.exe	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L4251: 6468	sihost.exe	0x7fff3dab0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\comctl32.dll
+L4252: 6468	sihost.exe	0x7fff3bee0000	True	True	True	\Windows\System32\secur32.dll
+L4253: 6468	sihost.exe	0x7fff446b0000	True	True	True	\Windows\System32\fltLib.dll
+L4254: 6468	sihost.exe	0x7fff447a0000	True	True	True	\Windows\System32\netapi32.dll
+L4255: 6468	sihost.exe	0x7fff478f0000	True	True	True	\Windows\System32\MSWB7.dll
+L4256: 6468	sihost.exe	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L4257: 6468	sihost.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L4258: 6468	sihost.exe	0x7fff47960000	True	True	True	\Windows\System32\Windows.Shell.ServiceHostBuilder.dll
+L4259: 6468	sihost.exe	0x7fff4db70000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L4260: 6468	sihost.exe	0x7fff4bcc0000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L4261: 6468	sihost.exe	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L4262: 6468	sihost.exe	0x7fff47a50000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L4263: 6468	sihost.exe	0x7fff479a0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L4264: 6468	sihost.exe	0x7fff48430000	True	True	True	\Windows\System32\capauthz.dll
+L4265: 6468	sihost.exe	0x7fff4b230000	True	True	True	\Windows\System32\notificationplatformcomponent.dll
+L4266: 6468	sihost.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L4267: 6468	sihost.exe	0x7fff4a5c0000	True	True	True	\Windows\System32\version.dll
+L4268: 6468	sihost.exe	0x7fff4b790000	True	True	True	\Windows\System32\cscapi.dll
+L4269: 6468	sihost.exe	0x7fff4b540000	True	True	True	\Windows\System32\msoert2.dll
+L4270: 6468	sihost.exe	0x7fff4c810000	True	True	True	\Windows\System32\AudioSes.dll
+L4271: 6468	sihost.exe	0x7fff4c780000	True	True	True	\Windows\System32\MMDevAPI.dll
+L4272: 6468	sihost.exe	0x7fff4ce20000	True	True	True	\Windows\System32\wtsapi32.dll
+L4273: 6468	sihost.exe	0x7fff4ccc0000	True	True	True	\Windows\System32\ExecModelClient.dll
+L4274: 6468	sihost.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L4275: 6468	sihost.exe	0x7fff529b0000	True	True	True	\Windows\System32\apphelp.dll
+L4276: 6468	sihost.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L4277: 6468	sihost.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L4278: 6468	sihost.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L4279: 6468	sihost.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L4280: 6468	sihost.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L4281: 6468	sihost.exe	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L4282: 6468	sihost.exe	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L4283: 6468	sihost.exe	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L4284: 6468	sihost.exe	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L4285: 6468	sihost.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L4286: 6468	sihost.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L4287: 6468	sihost.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L4288: 6468	sihost.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L4289: 6468	sihost.exe	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L4290: 6468	sihost.exe	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L4291: 6468	sihost.exe	0x7fff541d0000	True	True	True	\Windows\System32\wkscli.dll
+L4292: 6468	sihost.exe	0x7fff54780000	True	True	True	\Windows\System32\cryptdll.dll
+L4293: 6468	sihost.exe	0x7fff54510000	True	True	True	\Windows\System32\netutils.dll
+L4294: 6468	sihost.exe	0x7fff547d0000	True	True	True	\Windows\System32\winsta.dll
+L4295: 6468	sihost.exe	0x7fff54dc0000	True	True	True	\Windows\System32\devobj.dll
+L4296: 6468	sihost.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L4297: 6468	sihost.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L4298: 6468	sihost.exe	0x7fff54be0000	True	True	True	\Windows\System32\msasn1.dll
+L4299: 6468	sihost.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L4300: 6468	sihost.exe	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L4301: 6468	sihost.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L4302: 6468	sihost.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L4303: 6468	sihost.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L4304: 6468	sihost.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L4305: 6468	sihost.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L4306: 6468	sihost.exe	0x7fff55570000	True	True	True	\Windows\System32\wintrust.dll
+L4307: 6468	sihost.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L4308: 6468	sihost.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L4309: 6468	sihost.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L4310: 6468	sihost.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L4311: 6468	sihost.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L4312: 6468	sihost.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L4313: 6468	sihost.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L4314: 6468	sihost.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L4315: 6468	sihost.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L4316: 6468	sihost.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L4317: 6468	sihost.exe	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L4318: 6468	sihost.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L4319: 6468	sihost.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L4320: 6468	sihost.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L4321: 6468	sihost.exe	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_ldrmodules.txt ---
+L4202: 6468	sihost.exe	0x7fff32b50000	True	True	True	\Windows\System32\ShareHost.dll
+L4203: 6468	sihost.exe	0x1fe88ba0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L4204: 6468	sihost.exe	0x1fe89430000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L4205: 6468	sihost.exe	0x1fe89440000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L4206: 6468	sihost.exe	0x1fe894a0000	False	False	False	\Windows\System32\netmsg.dll
+L4207: 6468	sihost.exe	0x1fe89940000	False	False	False	\Windows\System32\prm0009.dll
+L4208: 6468	sihost.exe	0x1fe89720000	False	False	False	\Windows\System32\en-US\netmsg.dll.mui
+L4209: 6468	sihost.exe	0x1fe898d0000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L4210: 6468	sihost.exe	0x1fe8dbe0000	False	False	False	\Windows\System32\oleaccrc.dll
+L4211: 6468	sihost.exe	0x1fe8dc00000	False	False	False	\Windows\System32\en-US\mlang.dll.mui
+L4212: 6468	sihost.exe	0x1fe8dc20000	True	True	True	\Windows\System32\INETRES.dll
+L4213: 6468	sihost.exe	0x7fff28f60000	True	True	True	\Windows\System32\Windows.FileExplorer.Common.dll
+L4214: 6468	sihost.exe	0x7ff7a4e40000	True	False	True	\Windows\System32\sihost.exe
+L4215: 6468	sihost.exe	0x7fff28c80000	True	True	True	\Windows\System32\linkinfo.dll
+L4216: 6468	sihost.exe	0x7fff25e30000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L4217: 6468	sihost.exe	0x7ffed9810000	True	True	True	\Windows\System32\WindowsCodecsExt.dll
+L4218: 6468	sihost.exe	0x7fff28ee0000	True	True	True	\Windows\System32\ntshrui.dll
+L4219: 6468	sihost.exe	0x7fff32710000	True	True	True	\Windows\System32\execmodelproxy.dll
+L4220: 6468	sihost.exe	0x7fff31780000	True	True	True	\Windows\System32\tquery.dll
+L4221: 6468	sihost.exe	0x7fff29bf0000	True	True	True	\Windows\System32\oleacc.dll
+L4222: 6468	sihost.exe	0x7fff29800000	True	True	True	\Windows\System32\edputil.dll
+L4223: 6468	sihost.exe	0x7fff297d0000	True	True	True	\Windows\System32\cldapi.dll
+L4224: 6468	sihost.exe	0x7fff2b740000	True	True	True	\Windows\System32\inetcomm.dll
+L4225: 6468	sihost.exe	0x7fff2abd0000	True	True	True	\Windows\System32\ieframe.dll
+L4226: 6468	sihost.exe	0x7fff31200000	True	True	True	\Windows\System32\PhotoMetadataHandler.dll
+L4227: 6468	sihost.exe	0x7fff32410000	True	True	True	\Windows\System32\CoreShellExtFramework.dll
+L4228: 6468	sihost.exe	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L4229: 6468	sihost.exe	0x7fff32430000	True	True	True	\Windows\System32\mssrch.dll
+L4230: 6468	sihost.exe	0x7fff32780000	True	True	True	\Windows\System32\daxexec.dll
+L4231: 6468	sihost.exe	0x7fff32730000	True	True	True	\Windows\System32\container.dll
+L4232: 6468	sihost.exe	0x7fff329a0000	True	True	True	\Windows\System32\twinui.appcore.dll
+L4233: 6468	sihost.exe	0x7fff328d0000	True	True	True	\Windows\System32\UiaManager.dll
+L4234: 6468	sihost.exe	0x7fff32a90000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L4235: 6468	sihost.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L4236: 6468	sihost.exe	0x7fff47980000	True	True	True	\Windows\System32\DesktopShellExt.dll
+L4237: 6468	sihost.exe	0x7fff36e90000	True	True	True	\Windows\System32\mpr.dll
+L4238: 6468	sihost.exe	0x7fff34cf0000	True	True	True	\Windows\System32\ActivationManager.dll
+L4239: 6468	sihost.exe	0x7fff32d50000	True	True	True	\Windows\System32\WindowManagement.dll
+L4240: 6468	sihost.exe	0x7fff32c70000	True	True	True	\Windows\System32\AppContracts.dll
+L4241: 6468	sihost.exe	0x7fff34880000	True	True	True	\Windows\System32\PackageStateChangeHandler.dll
+L4242: 6468	sihost.exe	0x7fff34ad0000	True	True	True	\Windows\System32\modernexecserver.dll
+L4243: 6468	sihost.exe	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L4244: 6468	sihost.exe	0x7fff35cd0000	True	True	True	\Windows\System32\srvcli.dll
+L4245: 6468	sihost.exe	0x7fff36d10000	True	True	True	\Windows\System32\AppointmentActivation.dll
+L4246: 6468	sihost.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L4247: 6468	sihost.exe	0x7fff37d10000	True	True	True	\Windows\System32\esent.dll
+L4248: 6468	sihost.exe	0x7fff36f20000	True	True	True	\Windows\System32\ClipboardServer.dll
+L4249: 6468	sihost.exe	0x7fff36eb0000	True	True	True	\Windows\System32\mlang.dll
+L4250: 6468	sihost.exe	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L4251: 6468	sihost.exe	0x7fff3dab0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\comctl32.dll
+L4252: 6468	sihost.exe	0x7fff3bee0000	True	True	True	\Windows\System32\secur32.dll
+L4253: 6468	sihost.exe	0x7fff446b0000	True	True	True	\Windows\System32\fltLib.dll
+L4254: 6468	sihost.exe	0x7fff447a0000	True	True	True	\Windows\System32\netapi32.dll
+L4255: 6468	sihost.exe	0x7fff478f0000	True	True	True	\Windows\System32\MSWB7.dll
+L4256: 6468	sihost.exe	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L4257: 6468	sihost.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L4258: 6468	sihost.exe	0x7fff47960000	True	True	True	\Windows\System32\Windows.Shell.ServiceHostBuilder.dll
+L4259: 6468	sihost.exe	0x7fff4db70000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L4260: 6468	sihost.exe	0x7fff4bcc0000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L4261: 6468	sihost.exe	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L4262: 6468	sihost.exe	0x7fff47a50000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L4263: 6468	sihost.exe	0x7fff479a0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L4264: 6468	sihost.exe	0x7fff48430000	True	True	True	\Windows\System32\capauthz.dll
+L4265: 6468	sihost.exe	0x7fff4b230000	True	True	True	\Windows\System32\notificationplatformcomponent.dll
+L4266: 6468	sihost.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L4267: 6468	sihost.exe	0x7fff4a5c0000	True	True	True	\Windows\System32\version.dll
+L4268: 6468	sihost.exe	0x7fff4b790000	True	True	True	\Windows\System32\cscapi.dll
+L4269: 6468	sihost.exe	0x7fff4b540000	True	True	True	\Windows\System32\msoert2.dll
+L4270: 6468	sihost.exe	0x7fff4c810000	True	True	True	\Windows\System32\AudioSes.dll
+L4271: 6468	sihost.exe	0x7fff4c780000	True	True	True	\Windows\System32\MMDevAPI.dll
+L4272: 6468	sihost.exe	0x7fff4ce20000	True	True	True	\Windows\System32\wtsapi32.dll
+L4273: 6468	sihost.exe	0x7fff4ccc0000	True	True	True	\Windows\System32\ExecModelClient.dll
+L4274: 6468	sihost.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L4275: 6468	sihost.exe	0x7fff529b0000	True	True	True	\Windows\System32\apphelp.dll
+L4276: 6468	sihost.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L4277: 6468	sihost.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L4278: 6468	sihost.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L4279: 6468	sihost.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L4280: 6468	sihost.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L4281: 6468	sihost.exe	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L4282: 6468	sihost.exe	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L4283: 6468	sihost.exe	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L4284: 6468	sihost.exe	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L4285: 6468	sihost.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L4286: 6468	sihost.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L4287: 6468	sihost.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L4288: 6468	sihost.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L4289: 6468	sihost.exe	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L4290: 6468	sihost.exe	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L4291: 6468	sihost.exe	0x7fff541d0000	True	True	True	\Windows\System32\wkscli.dll
+L4292: 6468	sihost.exe	0x7fff54780000	True	True	True	\Windows\System32\cryptdll.dll
+L4293: 6468	sihost.exe	0x7fff54510000	True	True	True	\Windows\System32\netutils.dll
+L4294: 6468	sihost.exe	0x7fff547d0000	True	True	True	\Windows\System32\winsta.dll
+L4295: 6468	sihost.exe	0x7fff54dc0000	True	True	True	\Windows\System32\devobj.dll
+L4296: 6468	sihost.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L4297: 6468	sihost.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L4298: 6468	sihost.exe	0x7fff54be0000	True	True	True	\Windows\System32\msasn1.dll
+L4299: 6468	sihost.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L4300: 6468	sihost.exe	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L4301: 6468	sihost.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L4302: 6468	sihost.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L4303: 6468	sihost.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L4304: 6468	sihost.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L4305: 6468	sihost.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L4306: 6468	sihost.exe	0x7fff55570000	True	True	True	\Windows\System32\wintrust.dll
+L4307: 6468	sihost.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L4308: 6468	sihost.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L4309: 6468	sihost.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L4310: 6468	sihost.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L4311: 6468	sihost.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L4312: 6468	sihost.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L4313: 6468	sihost.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L4314: 6468	sihost.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L4315: 6468	sihost.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L4316: 6468	sihost.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L4317: 6468	sihost.exe	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L4318: 6468	sihost.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L4319: 6468	sihost.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L4320: 6468	sihost.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L4321: 6468	sihost.exe	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_pebmasquerade.txt ---
+L97: 6468	sihost.exe	\Device\HarddiskVolume3\Windows\System32\sihost.exe	C:\WINDOWS\system32\sihost.exe	False	False
+
+--- sessions.txt ---
+L140: 1	-	6468	sihost.exe	SRL-FORGE/fredr	2020-11-11 08:13:40.000000 UTC
+
+=== END OF PIVOT REPORT ===

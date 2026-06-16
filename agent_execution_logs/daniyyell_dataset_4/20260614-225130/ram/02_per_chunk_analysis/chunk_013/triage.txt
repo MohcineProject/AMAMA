@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_013.txt
+Summary: MicrosoftEdgeUpdate process holds an unusual combination of high-risk privileges (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege) and has an unknown parent; orphaned parent PIDs observed on multiple processes.
+
+[PROCESS]
+pid: 5348
+ppid: 1320
+image: MicrosoftEdgeUpdate.exe
+cmdline: "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c
+severity: HIGH
+reasons: privilege_anomaly: holds SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege simultaneously — highly unusual for an update helper process | orphaned_parent: PPID 1320 does not appear anywhere in the process list | privilege_context: SeTcbPrivilege (act as part of OS) combined with SeDebugPrivilege on a non-system binary is a strong token-manipulation or injection signal
+
+[PROCESS]
+pid: 5384
+ppid: 860
+image: RuntimeBroker.
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 860 discovered only via psscan (not in active process list), suggesting the parent was terminated or the entry is a ghost/unlinked EPROCESS | discovery_method: psscan-only discovery indicates the EPROCESS block may have been unlinked from the active list (DKOM hiding technique possible) | very_short_lived: process ran for approximately 40 seconds (19:48:25 – 19:49:05 UTC), which in combination with psscan-only visibility warrants confirmation
+

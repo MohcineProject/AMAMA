@@ -1,0 +1,52 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5532 — smartscreen.exe (PPID 576)**
+
+Agent 1 flagged: orphaned parent (PPID 576 not in process list).
+
+Evidence review:
+
+1. **Orphaned parent**: PPID 576 is not in the process list. This is the primary flag. However, smartscreen.exe is legitimately launched by explorer.exe or via COM activation (`-Embedding` flag). The `-Embedding` flag means it was activated via COM/DCOM, which can result in the parent being a short-lived process that has already exited — this is a known benign pattern for smartscreen.exe.
+
+2. **Privilege footprint**: The privileges list is enormous — nearly every privilege in the Windows privilege set is listed, but almost none are `Present` or `Enabled`. Only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present) are actually present/enabled. The rest are simply listed as available in the token but not held. This is a standard Volatility `privileges` output that lists all possible privileges — the absence of `Present`/`Enabled` on the dangerous ones (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) means they are NOT held. This is normal.
+
+3. **DLL provenance**: The three shown DLLs are all from System32 — `smartscreen.exe`, `ntdll.dll`, `KERNEL32.DLL`. All legitimate paths.
+
+4. **Command line**: `C:\Windows\System32\smartscreen.exe -Embedding` — this is the standard COM activation invocation for Windows Defender SmartScreen. Completely normal.
+
+5. **Path**: `C:\Windows\System32\smartscreen.exe` — correct system path.
+
+6. **Name truncation**: `smartscreen.ex` is a known EPROCESS truncation of `smartscreen.exe`. Not an IOC.
+
+**Conclusion**: The orphaned parent is the only flag, and it's explained by the `-Embedding` COM activation pattern where the activating process may have already exited. All other signals are clean. This should be **REJECTED**.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: A single process was submitted for validation. PID 5532 (smartscreen.exe) was flagged by Agent 1 on an orphaned-parent signal. After reviewing command-line context, privilege footprint, and DLL provenance, the finding does not meet the threshold for confirmation. No confirmed or inconclusive findings remain; the incident scope based on this submission is benign.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+REJECTED findings (count: 1) — omitted from body per output specification.
+
+  PID 5532 — smartscreen.exe: The sole flag was an orphaned parent (PPID 576 absent from
+  pslist). The command line carries the -Embedding flag, which is the standard COM/DCOM
+  activation invocation for Windows Defender SmartScreen; the activating process routinely
+  exits before the child is enumerated, making an absent PPID a known-benign artefact for
+  this binary. All loaded DLLs originate from C:\Windows\System32. The privileges output
+  lists nearly every Windows privilege but only SeShutdownPrivilege, SeChangeNotifyPrivilege,
+  SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, and
+  SeTimeZonePrivilege carry Present/Enabled markers — the high-risk privileges
+  (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) are
+  listed but not held. The process image name truncation to 'smartscreen.ex' is a known
+  14-character EPROCESS field artefact, not a typosquat. No basis for malice.
+
+================================================================

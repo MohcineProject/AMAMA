@@ -1,0 +1,420 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:01:53Z
+
+=== PID 12332 (Video.UI.exe, ppid=740) ===
+Cmdline: "C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\Video.UI.exe" -ServerName:Microsoft.ZuneVideo.AppX758ya5sqdjd98rx6z7g95nw6jy7bqx9y.mca
+
+--- pslist.txt ---
+L182: 12332	740	Video.UI.exe	0xb78cff2eb080	23	-	1	False	2020-11-11 08:43:41.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L182: 12332	Video.UI.exe	"C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\Video.UI.exe" -ServerName:Microsoft.ZuneVideo.AppX758ya5sqdjd98rx6z7g95nw6jy7bqx9y.mca
+
+--- privileges.txt ---
+L6200: 12332	Video.UI.exe	2	SeCreateTokenPrivilege		Create a token object
+L6201: 12332	Video.UI.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L6202: 12332	Video.UI.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L6203: 12332	Video.UI.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L6204: 12332	Video.UI.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L6205: 12332	Video.UI.exe	7	SeTcbPrivilege		Act as part of the operating system
+L6206: 12332	Video.UI.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L6207: 12332	Video.UI.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L6208: 12332	Video.UI.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L6209: 12332	Video.UI.exe	11	SeSystemProfilePrivilege		Profile system performance
+L6210: 12332	Video.UI.exe	12	SeSystemtimePrivilege		Change the system time
+L6211: 12332	Video.UI.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L6212: 12332	Video.UI.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L6213: 12332	Video.UI.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L6214: 12332	Video.UI.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L6215: 12332	Video.UI.exe	17	SeBackupPrivilege		Backup files and directories
+L6216: 12332	Video.UI.exe	18	SeRestorePrivilege		Restore files and directories
+L6217: 12332	Video.UI.exe	19	SeShutdownPrivilege		Shut down the system
+L6218: 12332	Video.UI.exe	20	SeDebugPrivilege		Debug programs
+L6219: 12332	Video.UI.exe	21	SeAuditPrivilege		Generate security audits
+L6220: 12332	Video.UI.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L6221: 12332	Video.UI.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L6222: 12332	Video.UI.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L6223: 12332	Video.UI.exe	25	SeUndockPrivilege		Remove computer from docking station
+L6224: 12332	Video.UI.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L6225: 12332	Video.UI.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L6226: 12332	Video.UI.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L6227: 12332	Video.UI.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L6228: 12332	Video.UI.exe	30	SeCreateGlobalPrivilege		Create global objects
+L6229: 12332	Video.UI.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L6230: 12332	Video.UI.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L6231: 12332	Video.UI.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L6232: 12332	Video.UI.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L6233: 12332	Video.UI.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L6234: 12332	Video.UI.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L9925: 12332	Video.UI.exe	0x7ff797f20000	0x190a000	Video.UI.exe	C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\Video.UI.exe	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9926: 12332	Video.UI.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9927: 12332	Video.UI.exe	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9928: 12332	Video.UI.exe	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9929: 12332	Video.UI.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9930: 12332	Video.UI.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9931: 12332	Video.UI.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9932: 12332	Video.UI.exe	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9933: 12332	Video.UI.exe	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9934: 12332	Video.UI.exe	0x7fff514a0000	0x264000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9935: 12332	Video.UI.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9936: 12332	Video.UI.exe	0x7fff51710000	0x5c0000	d2d1.dll	C:\WINDOWS\SYSTEM32\d2d1.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9937: 12332	Video.UI.exe	0x7fff42d30000	0x27f000	DWrite.dll	C:\WINDOWS\SYSTEM32\DWrite.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9938: 12332	Video.UI.exe	0x7fff53940000	0xf3000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9939: 12332	Video.UI.exe	0x7fff4e850000	0x4a000	SharedUI.dll	C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\SharedUI.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9940: 12332	Video.UI.exe	0x7fff1ea60000	0x51000	vccorlib140_app.DLL	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.DLL	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9941: 12332	Video.UI.exe	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9942: 12332	Video.UI.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9943: 12332	Video.UI.exe	0x7fff1eac0000	0x8d000	MSVCP140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\MSVCP140_APP.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9944: 12332	Video.UI.exe	0x7fff1ea00000	0x48000	CONCRT140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\CONCRT140_APP.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9945: 12332	Video.UI.exe	0x7fff2a6d0000	0x19000	VCRUNTIME140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_APP.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9946: 12332	Video.UI.exe	0x7fff1ea50000	0xc000	VCRUNTIME140_1_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_1_APP.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9947: 12332	Video.UI.exe	0x7fff56930000	0x2a000	gdi32.dll	C:\WINDOWS\System32\gdi32.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9948: 12332	Video.UI.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9949: 12332	Video.UI.exe	0x7fff57540000	0x1a0000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9950: 12332	Video.UI.exe	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9951: 12332	Video.UI.exe	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9952: 12332	Video.UI.exe	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9953: 12332	Video.UI.exe	0x7fff455d0000	0x10c1000	Windows.UI.Xaml.dll	C:\Windows\System32\Windows.UI.Xaml.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9954: 12332	Video.UI.exe	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9955: 12332	Video.UI.exe	0x7fff52500000	0xf2000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9956: 12332	Video.UI.exe	0x7fff47340000	0x5b000	Bcp47Langs.dll	C:\WINDOWS\SYSTEM32\Bcp47Langs.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9957: 12332	Video.UI.exe	0x7fff57800000	0x6b000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9958: 12332	Video.UI.exe	0x7fff468c0000	0x2b0000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9959: 12332	Video.UI.exe	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9960: 12332	Video.UI.exe	0x7fff51cd0000	0x1e5000	dcomp.dll	C:\WINDOWS\SYSTEM32\dcomp.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9961: 12332	Video.UI.exe	0x7fff4eb40000	0x208000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9962: 12332	Video.UI.exe	0x7fff523a0000	0x156000	WinTypes.dll	C:\Windows\System32\WinTypes.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9963: 12332	Video.UI.exe	0x7fff49ad0000	0x11000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9964: 12332	Video.UI.exe	0x7fff470b0000	0x14c000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9965: 12332	Video.UI.exe	0x7fff46da0000	0xfc000	TextInputFramework.dll	C:\WINDOWS\SYSTEM32\TextInputFramework.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9966: 12332	Video.UI.exe	0x7fff47000000	0xa3000	WindowManagementAPI.dll	C:\WINDOWS\SYSTEM32\WindowManagementAPI.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9967: 12332	Video.UI.exe	0x7fff46ea0000	0x152000	InputHost.dll	C:\WINDOWS\SYSTEM32\InputHost.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9968: 12332	Video.UI.exe	0x7fff52600000	0x35e000	CoreUIComponents.dll	C:\WINDOWS\SYSTEM32\CoreUIComponents.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9969: 12332	Video.UI.exe	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9970: 12332	Video.UI.exe	0x7fff508e0000	0xf7000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9971: 12332	Video.UI.exe	0x7fff43ed0000	0x795000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9972: 12332	Video.UI.exe	0x7fff52a60000	0x9e000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9973: 12332	Video.UI.exe	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9974: 12332	Video.UI.exe	0x7fff41730000	0x1447000	igd10iumd64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9975: 12332	Video.UI.exe	0x7fff557e0000	0x27000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-1	2020-11-11 08:43:41.000000 UTC	Disabled
+L9976: 12332	Video.UI.exe	0x7fff54a60000	0x27000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9977: 12332	Video.UI.exe	0x7fff54a20000	0x3b000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9978: 12332	Video.UI.exe	0x7fff3c6c0000	0x3b000	rometadata.dll	C:\WINDOWS\SYSTEM32\rometadata.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9979: 12332	Video.UI.exe	0x7fff3f820000	0x1f01000	igc64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9980: 12332	Video.UI.exe	0x7fff3f7e0000	0x3b000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9981: 12332	Video.UI.exe	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9982: 12332	Video.UI.exe	0x7fff45050000	0xac000	TextShaping.dll	C:\WINDOWS\SYSTEM32\TextShaping.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9983: 12332	Video.UI.exe	0x7fff4dc70000	0xe7000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9984: 12332	Video.UI.exe	0x7fff2d2e0000	0x575000	EntCommon.dll	C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\EntCommon.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9985: 12332	Video.UI.exe	0x7fff37d10000	0x32b000	ESENT.dll	C:\WINDOWS\SYSTEM32\ESENT.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9986: 12332	Video.UI.exe	0x7fff261e0000	0x61000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9987: 12332	Video.UI.exe	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\system32\windows.storage.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9988: 12332	Video.UI.exe	0x7fff549f0000	0x2c000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9989: 12332	Video.UI.exe	0x7fff55910000	0x55000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9990: 12332	Video.UI.exe	0x7fff36630000	0x14000	threadpoolwinrt.dll	C:\Windows\System32\threadpoolwinrt.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9991: 12332	Video.UI.exe	0x7fff42b80000	0x1a8000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9992: 12332	Video.UI.exe	0x7fff48500000	0x2d000	bcp47mrm.dll	C:\WINDOWS\SYSTEM32\bcp47mrm.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9993: 12332	Video.UI.exe	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9994: 12332	Video.UI.exe	0x7fff29ce0000	0x30000	clipc.dll	C:\WINDOWS\SYSTEM32\clipc.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9995: 12332	Video.UI.exe	0x7fff54940000	0x18000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9996: 12332	Video.UI.exe	0x7fff47200000	0xf4000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9997: 12332	Video.UI.exe	0x7fff30ed0000	0x40000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9998: 12332	Video.UI.exe	0x7ffeed9d0000	0x4c6000	Microsoft.UI.Xaml.dll	C:\Program Files\WindowsApps\Microsoft.UI.Xaml.2.4_2.42007.9001.0_x64__8wekyb3d8bbwe\Microsoft.UI.Xaml.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L9999: 12332	Video.UI.exe	0x7fff54960000	0xc000	CRYPTBASE.DLL	C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L10000: 12332	Video.UI.exe	0x7fff1d5a0000	0x32000	Windows.Energy.dll	C:\Windows\System32\Windows.Energy.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L10001: 12332	Video.UI.exe	0x7fff52e20000	0x2a000	RMCLIENT.dll	C:\WINDOWS\SYSTEM32\RMCLIENT.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L10002: 12332	Video.UI.exe	0x7fff46730000	0x139000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L10003: 12332	Video.UI.exe	0x7fff576e0000	0x115000	msctf.dll	C:\WINDOWS\System32\msctf.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L10004: 12332	Video.UI.exe	0x7fff2fa70000	0x53000	biwinrt.dll	C:\Windows\System32\biwinrt.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L10005: 12332	Video.UI.exe	0x7fff20660000	0x8a0000	EntPlat.dll	C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\EntPlat.dll	6	2020-11-11 08:43:41.000000 UTC	Disabled
+L10006: 12332	Video.UI.exe	0x7fff35950000	0xb9000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10007: 12332	Video.UI.exe	0x7fff49480000	0x261000	msxml6.dll	C:\Windows\System32\msxml6.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10008: 12332	Video.UI.exe	0x7fff31cc0000	0x4da000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	-1	2020-11-11 08:43:42.000000 UTC	Disabled
+L10009: 12332	Video.UI.exe	0x7fff54ea0000	0x3c000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	-1	2020-11-11 08:43:42.000000 UTC	Disabled
+L10010: 12332	Video.UI.exe	0x7fff34bd0000	0x11d000	Windows.Security.Authentication.Web.Core.dll	C:\Windows\System32\Windows.Security.Authentication.Web.Core.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10011: 12332	Video.UI.exe	0x7fff35d40000	0x13000	TOKENBINDING.dll	C:\WINDOWS\SYSTEM32\TOKENBINDING.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10012: 12332	Video.UI.exe	0x7fff356b0000	0x17000	ondemandconnroutehelper.dll	C:\WINDOWS\SYSTEM32\ondemandconnroutehelper.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10013: 12332	Video.UI.exe	0x7fff4fea0000	0x100000	winhttp.dll	C:\WINDOWS\SYSTEM32\winhttp.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10014: 12332	Video.UI.exe	0x7fff56800000	0x12a000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10015: 12332	Video.UI.exe	0x7fff54710000	0x6a000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10016: 12332	Video.UI.exe	0x7fff54400000	0x3b000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10017: 12332	Video.UI.exe	0x7fff4fe90000	0xb000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10018: 12332	Video.UI.exe	0x7fff57450000	0x8000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10019: 12332	Video.UI.exe	0x7fff36410000	0x7d000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10020: 12332	Video.UI.exe	0x7fff32830000	0x51000	vaultcli.dll	C:\Windows\System32\vaultcli.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10021: 12332	Video.UI.exe	0x7fff54ee0000	0x2e000	userenv.dll	C:\WINDOWS\SYSTEM32\userenv.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10022: 12332	Video.UI.exe	0x7fff53d70000	0x29000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10023: 12332	Video.UI.exe	0x7fff55650000	0x15d000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10024: 12332	Video.UI.exe	0x7fff540e0000	0xa000	DPAPI.DLL	C:\WINDOWS\SYSTEM32\DPAPI.DLL	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10025: 12332	Video.UI.exe	0x7fff54be0000	0x12000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10026: 12332	Video.UI.exe	0x7fff55570000	0x60000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10027: 12332	Video.UI.exe	0x7fff540a0000	0x34000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10028: 12332	Video.UI.exe	0x7fff4db50000	0x16000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10029: 12332	Video.UI.exe	0x7fff36bb0000	0x146000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10030: 12332	Video.UI.exe	0x7fff54440000	0xcb000	DNSAPI.dll	C:\WINDOWS\SYSTEM32\DNSAPI.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10031: 12332	Video.UI.exe	0x7fff4c4a0000	0xa000	rasadhlp.dll	C:\Windows\System32\rasadhlp.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10032: 12332	Video.UI.exe	0x7fff35b00000	0xc3000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10033: 12332	Video.UI.exe	0x7fff4a400000	0x7f000	fwpuclnt.dll	C:\WINDOWS\System32\fwpuclnt.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10034: 12332	Video.UI.exe	0x7fff53fc0000	0x91000	schannel.DLL	C:\WINDOWS\system32\schannel.DLL	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10035: 12332	Video.UI.exe	0x7fff42fb0000	0x15000	mskeyprotect.dll	C:\WINDOWS\SYSTEM32\mskeyprotect.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10036: 12332	Video.UI.exe	0x7fff436b0000	0x26000	ncryptsslp.dll	C:\WINDOWS\system32\ncryptsslp.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10037: 12332	Video.UI.exe	0x7fff36530000	0x31000	cryptnet.dll	C:\Windows\System32\cryptnet.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+L10038: 12332	Video.UI.exe	0x7fff4a170000	0x36000	XmlLite.dll	C:\WINDOWS\SYSTEM32\XmlLite.dll	6	2020-11-11 08:43:42.000000 UTC	Disabled
+
+--- pstree.txt ---
+L115: *** 12332	740	Video.UI.exe	0xb78cff2eb080	23	-	1	False	2020-11-11 08:43:41.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\Video.UI.exe	"C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\Video.UI.exe" -ServerName:Microsoft.ZuneVideo.AppX758ya5sqdjd98rx6z7g95nw6jy7bqx9y.mca	C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\Video.UI.exe
+
+--- psscan.txt ---
+L275: 12332	740	Video.UI.exe	0xb78cff2eb080	23	-	1	False	2020-11-11 08:43:41.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L208: 0xb78d09d7e010	TCPv4	192.168.1.5	59973	23.197.180.10	443	CLOSE_WAIT	12332	Video.UI.exe	2020-11-15 17:12:25.000000 UTC
+
+--- netstat.txt ---
+L34: 0xb78d09d7e010	TCPv4	192.168.1.5	59973	23.197.180.10	443	CLOSE_WAIT	12332	Video.UI.exe	2020-11-15 17:12:25.000000 UTC
+
+--- ldrmodules.txt ---
+L10560: 12332	Video.UI.exe	0x7ff797f20000	True	False	True	\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\Video.UI.exe
+L10561: 12332	Video.UI.exe	0x1aacfd40000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.Xaml.winmd
+L10562: 12332	Video.UI.exe	0x1aad57d0000	False	False	False	\Windows\System32\WinMetadata\Windows.System.winmd
+L10563: 12332	Video.UI.exe	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+L10564: 12332	Video.UI.exe	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L10565: 12332	Video.UI.exe	0x7fff35950000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L10566: 12332	Video.UI.exe	0x7fff2d2e0000	True	True	True	\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\EntCommon.dll
+L10567: 12332	Video.UI.exe	0x7fff1eac0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\msvcp140_app.dll
+L10568: 12332	Video.UI.exe	0x7fff1ea50000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_1_app.dll
+L10569: 12332	Video.UI.exe	0x7fff1d5a0000	True	True	True	\Windows\System32\Windows.Energy.dll
+L10570: 12332	Video.UI.exe	0x7ffeed9d0000	True	True	True	\Program Files\WindowsApps\Microsoft.UI.Xaml.2.4_2.42007.9001.0_x64__8wekyb3d8bbwe\Microsoft.UI.Xaml.dll
+L10571: 12332	Video.UI.exe	0x7fff1ea00000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\concrt140_app.dll
+L10572: 12332	Video.UI.exe	0x7fff1ea60000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.dll
+L10573: 12332	Video.UI.exe	0x7fff29ce0000	True	True	True	\Windows\System32\Clipc.dll
+L10574: 12332	Video.UI.exe	0x7fff261e0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L10575: 12332	Video.UI.exe	0x7fff20660000	True	True	True	\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\EntPlat.dll
+L10576: 12332	Video.UI.exe	0x7fff2a6d0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_app.dll
+L10577: 12332	Video.UI.exe	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L10578: 12332	Video.UI.exe	0x7fff30ed0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L10579: 12332	Video.UI.exe	0x7fff2fa70000	True	True	True	\Windows\System32\biwinrt.dll
+L10580: 12332	Video.UI.exe	0x7fff34bd0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L10581: 12332	Video.UI.exe	0x7fff32830000	True	True	True	\Windows\System32\vaultcli.dll
+L10582: 12332	Video.UI.exe	0x7fff356b0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L10583: 12332	Video.UI.exe	0x7fff3c6c0000	True	True	True	\Windows\System32\rometadata.dll
+L10584: 12332	Video.UI.exe	0x7fff36630000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L10585: 12332	Video.UI.exe	0x7fff35d40000	True	True	True	\Windows\System32\tokenbinding.dll
+L10586: 12332	Video.UI.exe	0x7fff35b00000	True	True	True	\Windows\System32\Windows.Web.dll
+L10587: 12332	Video.UI.exe	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L10588: 12332	Video.UI.exe	0x7fff36530000	True	True	True	\Windows\System32\cryptnet.dll
+L10589: 12332	Video.UI.exe	0x7fff37d10000	True	True	True	\Windows\System32\esent.dll
+L10590: 12332	Video.UI.exe	0x7fff36bb0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L10591: 12332	Video.UI.exe	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L10592: 12332	Video.UI.exe	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L10593: 12332	Video.UI.exe	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L10594: 12332	Video.UI.exe	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L10595: 12332	Video.UI.exe	0x7fff42b80000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L10596: 12332	Video.UI.exe	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L10597: 12332	Video.UI.exe	0x7fff436b0000	True	True	True	\Windows\System32\ncryptsslp.dll
+L10598: 12332	Video.UI.exe	0x7fff42fb0000	True	True	True	\Windows\System32\mskeyprotect.dll
+L10599: 12332	Video.UI.exe	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L10600: 12332	Video.UI.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L10601: 12332	Video.UI.exe	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L10602: 12332	Video.UI.exe	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L10603: 12332	Video.UI.exe	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L10604: 12332	Video.UI.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L10605: 12332	Video.UI.exe	0x7fff46730000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L10606: 12332	Video.UI.exe	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L10607: 12332	Video.UI.exe	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L10608: 12332	Video.UI.exe	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L10609: 12332	Video.UI.exe	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L10610: 12332	Video.UI.exe	0x7fff4e850000	True	True	True	\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\SharedUI.dll
+L10611: 12332	Video.UI.exe	0x7fff4c4a0000	True	True	True	\Windows\System32\rasadhlp.dll
+L10612: 12332	Video.UI.exe	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L10613: 12332	Video.UI.exe	0x7fff49480000	True	True	True	\Windows\System32\msxml6.dll
+L10614: 12332	Video.UI.exe	0x7fff4a400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L10615: 12332	Video.UI.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L10616: 12332	Video.UI.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L10617: 12332	Video.UI.exe	0x7fff4dc70000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L10618: 12332	Video.UI.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L10619: 12332	Video.UI.exe	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L10620: 12332	Video.UI.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L10621: 12332	Video.UI.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L10622: 12332	Video.UI.exe	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L10623: 12332	Video.UI.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L10624: 12332	Video.UI.exe	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L10625: 12332	Video.UI.exe	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L10626: 12332	Video.UI.exe	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L10627: 12332	Video.UI.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L10628: 12332	Video.UI.exe	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L10629: 12332	Video.UI.exe	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L10630: 12332	Video.UI.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L10631: 12332	Video.UI.exe	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L10632: 12332	Video.UI.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L10633: 12332	Video.UI.exe	0x7fff54a60000	True	True	True	\Windows\System32\ncrypt.dll
+L10634: 12332	Video.UI.exe	0x7fff540e0000	True	True	True	\Windows\System32\dpapi.dll
+L10635: 12332	Video.UI.exe	0x7fff53d70000	True	True	True	\Windows\System32\profext.dll
+L10636: 12332	Video.UI.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L10637: 12332	Video.UI.exe	0x7fff540a0000	True	True	True	\Windows\System32\rsaenh.dll
+L10638: 12332	Video.UI.exe	0x7fff53fc0000	True	True	True	\Windows\System32\schannel.dll
+L10639: 12332	Video.UI.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L10640: 12332	Video.UI.exe	0x7fff54440000	True	True	True	\Windows\System32\dnsapi.dll
+L10641: 12332	Video.UI.exe	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L10642: 12332	Video.UI.exe	0x7fff54710000	True	True	True	\Windows\System32\mswsock.dll
+L10643: 12332	Video.UI.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L10644: 12332	Video.UI.exe	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L10645: 12332	Video.UI.exe	0x7fff54a20000	True	True	True	\Windows\System32\ntasn1.dll
+L10646: 12332	Video.UI.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L10647: 12332	Video.UI.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L10648: 12332	Video.UI.exe	0x7fff54be0000	True	True	True	\Windows\System32\msasn1.dll
+L10649: 12332	Video.UI.exe	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L10650: 12332	Video.UI.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L10651: 12332	Video.UI.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L10652: 12332	Video.UI.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L10653: 12332	Video.UI.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L10654: 12332	Video.UI.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L10655: 12332	Video.UI.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L10656: 12332	Video.UI.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L10657: 12332	Video.UI.exe	0x7fff55570000	True	True	True	\Windows\System32\wintrust.dll
+L10658: 12332	Video.UI.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L10659: 12332	Video.UI.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L10660: 12332	Video.UI.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L10661: 12332	Video.UI.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L10662: 12332	Video.UI.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L10663: 12332	Video.UI.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L10664: 12332	Video.UI.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L10665: 12332	Video.UI.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L10666: 12332	Video.UI.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L10667: 12332	Video.UI.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L10668: 12332	Video.UI.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L10669: 12332	Video.UI.exe	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+L10670: 12332	Video.UI.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L10671: 12332	Video.UI.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L10672: 12332	Video.UI.exe	0x7fff57450000	True	True	True	\Windows\System32\nsi.dll
+L10673: 12332	Video.UI.exe	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L10674: 12332	Video.UI.exe	0x7fff576e0000	True	True	True	\Windows\System32\msctf.dll
+L10675: 12332	Video.UI.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L10560: 12332	Video.UI.exe	0x7ff797f20000	True	False	True	\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\Video.UI.exe
+L10561: 12332	Video.UI.exe	0x1aacfd40000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.Xaml.winmd
+L10562: 12332	Video.UI.exe	0x1aad57d0000	False	False	False	\Windows\System32\WinMetadata\Windows.System.winmd
+L10563: 12332	Video.UI.exe	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+L10564: 12332	Video.UI.exe	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L10565: 12332	Video.UI.exe	0x7fff35950000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L10566: 12332	Video.UI.exe	0x7fff2d2e0000	True	True	True	\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\EntCommon.dll
+L10567: 12332	Video.UI.exe	0x7fff1eac0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\msvcp140_app.dll
+L10568: 12332	Video.UI.exe	0x7fff1ea50000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_1_app.dll
+L10569: 12332	Video.UI.exe	0x7fff1d5a0000	True	True	True	\Windows\System32\Windows.Energy.dll
+L10570: 12332	Video.UI.exe	0x7ffeed9d0000	True	True	True	\Program Files\WindowsApps\Microsoft.UI.Xaml.2.4_2.42007.9001.0_x64__8wekyb3d8bbwe\Microsoft.UI.Xaml.dll
+L10571: 12332	Video.UI.exe	0x7fff1ea00000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\concrt140_app.dll
+L10572: 12332	Video.UI.exe	0x7fff1ea60000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.dll
+L10573: 12332	Video.UI.exe	0x7fff29ce0000	True	True	True	\Windows\System32\Clipc.dll
+L10574: 12332	Video.UI.exe	0x7fff261e0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L10575: 12332	Video.UI.exe	0x7fff20660000	True	True	True	\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\EntPlat.dll
+L10576: 12332	Video.UI.exe	0x7fff2a6d0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_app.dll
+L10577: 12332	Video.UI.exe	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L10578: 12332	Video.UI.exe	0x7fff30ed0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L10579: 12332	Video.UI.exe	0x7fff2fa70000	True	True	True	\Windows\System32\biwinrt.dll
+L10580: 12332	Video.UI.exe	0x7fff34bd0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L10581: 12332	Video.UI.exe	0x7fff32830000	True	True	True	\Windows\System32\vaultcli.dll
+L10582: 12332	Video.UI.exe	0x7fff356b0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L10583: 12332	Video.UI.exe	0x7fff3c6c0000	True	True	True	\Windows\System32\rometadata.dll
+L10584: 12332	Video.UI.exe	0x7fff36630000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L10585: 12332	Video.UI.exe	0x7fff35d40000	True	True	True	\Windows\System32\tokenbinding.dll
+L10586: 12332	Video.UI.exe	0x7fff35b00000	True	True	True	\Windows\System32\Windows.Web.dll
+L10587: 12332	Video.UI.exe	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L10588: 12332	Video.UI.exe	0x7fff36530000	True	True	True	\Windows\System32\cryptnet.dll
+L10589: 12332	Video.UI.exe	0x7fff37d10000	True	True	True	\Windows\System32\esent.dll
+L10590: 12332	Video.UI.exe	0x7fff36bb0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L10591: 12332	Video.UI.exe	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L10592: 12332	Video.UI.exe	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L10593: 12332	Video.UI.exe	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L10594: 12332	Video.UI.exe	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L10595: 12332	Video.UI.exe	0x7fff42b80000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L10596: 12332	Video.UI.exe	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L10597: 12332	Video.UI.exe	0x7fff436b0000	True	True	True	\Windows\System32\ncryptsslp.dll
+L10598: 12332	Video.UI.exe	0x7fff42fb0000	True	True	True	\Windows\System32\mskeyprotect.dll
+L10599: 12332	Video.UI.exe	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L10600: 12332	Video.UI.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L10601: 12332	Video.UI.exe	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L10602: 12332	Video.UI.exe	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L10603: 12332	Video.UI.exe	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L10604: 12332	Video.UI.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L10605: 12332	Video.UI.exe	0x7fff46730000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L10606: 12332	Video.UI.exe	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L10607: 12332	Video.UI.exe	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L10608: 12332	Video.UI.exe	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L10609: 12332	Video.UI.exe	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L10610: 12332	Video.UI.exe	0x7fff4e850000	True	True	True	\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\SharedUI.dll
+L10611: 12332	Video.UI.exe	0x7fff4c4a0000	True	True	True	\Windows\System32\rasadhlp.dll
+L10612: 12332	Video.UI.exe	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L10613: 12332	Video.UI.exe	0x7fff49480000	True	True	True	\Windows\System32\msxml6.dll
+L10614: 12332	Video.UI.exe	0x7fff4a400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L10615: 12332	Video.UI.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L10616: 12332	Video.UI.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L10617: 12332	Video.UI.exe	0x7fff4dc70000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L10618: 12332	Video.UI.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L10619: 12332	Video.UI.exe	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L10620: 12332	Video.UI.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L10621: 12332	Video.UI.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L10622: 12332	Video.UI.exe	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L10623: 12332	Video.UI.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L10624: 12332	Video.UI.exe	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L10625: 12332	Video.UI.exe	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L10626: 12332	Video.UI.exe	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L10627: 12332	Video.UI.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L10628: 12332	Video.UI.exe	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L10629: 12332	Video.UI.exe	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L10630: 12332	Video.UI.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L10631: 12332	Video.UI.exe	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L10632: 12332	Video.UI.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L10633: 12332	Video.UI.exe	0x7fff54a60000	True	True	True	\Windows\System32\ncrypt.dll
+L10634: 12332	Video.UI.exe	0x7fff540e0000	True	True	True	\Windows\System32\dpapi.dll
+L10635: 12332	Video.UI.exe	0x7fff53d70000	True	True	True	\Windows\System32\profext.dll
+L10636: 12332	Video.UI.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L10637: 12332	Video.UI.exe	0x7fff540a0000	True	True	True	\Windows\System32\rsaenh.dll
+L10638: 12332	Video.UI.exe	0x7fff53fc0000	True	True	True	\Windows\System32\schannel.dll
+L10639: 12332	Video.UI.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L10640: 12332	Video.UI.exe	0x7fff54440000	True	True	True	\Windows\System32\dnsapi.dll
+L10641: 12332	Video.UI.exe	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L10642: 12332	Video.UI.exe	0x7fff54710000	True	True	True	\Windows\System32\mswsock.dll
+L10643: 12332	Video.UI.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L10644: 12332	Video.UI.exe	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L10645: 12332	Video.UI.exe	0x7fff54a20000	True	True	True	\Windows\System32\ntasn1.dll
+L10646: 12332	Video.UI.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L10647: 12332	Video.UI.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L10648: 12332	Video.UI.exe	0x7fff54be0000	True	True	True	\Windows\System32\msasn1.dll
+L10649: 12332	Video.UI.exe	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L10650: 12332	Video.UI.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L10651: 12332	Video.UI.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L10652: 12332	Video.UI.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L10653: 12332	Video.UI.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L10654: 12332	Video.UI.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L10655: 12332	Video.UI.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L10656: 12332	Video.UI.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L10657: 12332	Video.UI.exe	0x7fff55570000	True	True	True	\Windows\System32\wintrust.dll
+L10658: 12332	Video.UI.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L10659: 12332	Video.UI.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L10660: 12332	Video.UI.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L10661: 12332	Video.UI.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L10662: 12332	Video.UI.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L10663: 12332	Video.UI.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L10664: 12332	Video.UI.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L10665: 12332	Video.UI.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L10666: 12332	Video.UI.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L10667: 12332	Video.UI.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L10668: 12332	Video.UI.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L10669: 12332	Video.UI.exe	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+L10670: 12332	Video.UI.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L10671: 12332	Video.UI.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L10672: 12332	Video.UI.exe	0x7fff57450000	True	True	True	\Windows\System32\nsi.dll
+L10673: 12332	Video.UI.exe	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L10674: 12332	Video.UI.exe	0x7fff576e0000	True	True	True	\Windows\System32\msctf.dll
+L10675: 12332	Video.UI.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L182: 12332	Video.UI.exe	\Device\HarddiskVolume3\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\Video.UI.exe	C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\Video.UI.exe	False	False
+
+--- sessions.txt ---
+L205: 1	-	12332	Video.UI.exe	SRL-FORGE/fredr	2020-11-11 08:43:41.000000 UTC
+
+=== END OF PIVOT REPORT ===

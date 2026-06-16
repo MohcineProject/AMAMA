@@ -1,0 +1,66 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:05:16Z
+
+=== PID 16824 (TabTip.exe, ppid=1908) ===
+
+--- pslist.txt ---
+L1419: 16824	1908	TabTip.exe	0xb78d110dc080	0	-	1	False	2020-11-14 14:12:41.000000 UTC	2020-11-14 14:12:41.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L1419: 16824	TabTip.exe	-
+
+--- privileges.txt ---
+L49495: 16824	TabTip.exe	2	SeCreateTokenPrivilege		Create a token object
+L49496: 16824	TabTip.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L49497: 16824	TabTip.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L49498: 16824	TabTip.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L49499: 16824	TabTip.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L49500: 16824	TabTip.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L49501: 16824	TabTip.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L49502: 16824	TabTip.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L49503: 16824	TabTip.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L49504: 16824	TabTip.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L49505: 16824	TabTip.exe	12	SeSystemtimePrivilege		Change the system time
+L49506: 16824	TabTip.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L49507: 16824	TabTip.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L49508: 16824	TabTip.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L49509: 16824	TabTip.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L49510: 16824	TabTip.exe	17	SeBackupPrivilege		Backup files and directories
+L49511: 16824	TabTip.exe	18	SeRestorePrivilege		Restore files and directories
+L49512: 16824	TabTip.exe	19	SeShutdownPrivilege		Shut down the system
+L49513: 16824	TabTip.exe	20	SeDebugPrivilege	Default	Debug programs
+L49514: 16824	TabTip.exe	21	SeAuditPrivilege	Default	Generate security audits
+L49515: 16824	TabTip.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L49516: 16824	TabTip.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L49517: 16824	TabTip.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L49518: 16824	TabTip.exe	25	SeUndockPrivilege		Remove computer from docking station
+L49519: 16824	TabTip.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L49520: 16824	TabTip.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L49521: 16824	TabTip.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L49522: 16824	TabTip.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L49523: 16824	TabTip.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L49524: 16824	TabTip.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L49525: 16824	TabTip.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L49526: 16824	TabTip.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L49527: 16824	TabTip.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L49528: 16824	TabTip.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L49529: 16824	TabTip.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L196: *** 16824	1908	TabTip.exe	0xb78d110dc080	0	-	1	False	2020-11-14 14:12:41.000000 UTC	2020-11-14 14:12:41.000000 UTC	\Device\HarddiskVolume3\Program Files\Common Files\microsoft shared\ink\TabTip.exe	-	-
+
+--- psscan.txt ---
+L1761: 16824	1908	TabTip.exe	0xb78d110dc080	0	-	1	False	2020-11-14 14:12:41.000000 UTC	2020-11-14 14:12:41.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L1419: 16824	TabTip.exe	\Device\HarddiskVolume3\Program Files\Common Files\microsoft shared\ink\TabTip.exe	-	False	False
+
+--- sessions.txt ---
+L1433: 1	-	16824	TabTip.exe	-	2020-11-14 14:12:41.000000 UTC
+
+=== PID 16480 (SearchProtocol, ppid=11968) ===
+
+--- psscan.txt ---
+L2186: 16480	11968	SearchProtocol	0xb78d1554b080	6	-	0	False	2020-11-16 02:35:17.000000 UTC	N/A	Disabled
+
+=== END OF PIVOT REPORT ===

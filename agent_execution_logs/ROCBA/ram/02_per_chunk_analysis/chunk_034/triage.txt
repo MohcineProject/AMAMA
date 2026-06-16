@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_034.txt
+Summary: Orphaned parent PID on Video.UI.exe; single outbound HTTPS connection to public IP warrants confirmation but is likely benign for a media app.
+
+[PROCESS]
+pid: 12332
+ppid: 740
+image: Video.UI.exe
+cmdline: "C:\Program Files\WindowsApps\Microsoft.ZuneVideo_10.20092.11911.0_x64__8wekyb3d8bbwe\Video.UI.exe" -ServerName:Microsoft.ZuneVideo.AppX758ya5sqdjd98rx6z7g95nw6jy7bqx9y.mca
+severity: LOW
+reasons: orphaned_parent: PPID 740 does not appear anywhere in the process list | network: outbound connection to public IP 23.197.180.10:443 in CLOSE_WAIT state — expected for a UWP media app (CDN/Akamai range) but parent absence warrants confirmation
+

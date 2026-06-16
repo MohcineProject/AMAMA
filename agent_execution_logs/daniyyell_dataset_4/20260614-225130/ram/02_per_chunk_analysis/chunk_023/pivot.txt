@@ -1,0 +1,435 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-14T23:07:34Z
+
+=== PID 7276 (WUDFHost.exe, ppid=716) ===
+Cmdline: "C:\Windows\System32\WUDFHost.exe" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-a33f9069-eead-4cd8-8829-d4713f1aeba1 -SystemEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-af667862-765b-429f-9eb4-b4e6cbdea44d -IoCancelEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-8807ba4a-18d9-4d0c-bf5a-b6a652f15a98 -NonStateChangingEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-c22ea4b7-47a6-463f-b81f-8625a912b167 -LifetimeId:17ea3120-737e-4a69-9d56-cd9fa0c0cc2e -DeviceGroupId:WpdFsGroup -HostArg:0
+
+--- pslist.txt ---
+L120: 7276	716	WUDFHost.exe	0xbb0c93c7c300	8	-	0	False	2025-08-07 19:38:28.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L120: 7276	WUDFHost.exe	"C:\Windows\System32\WUDFHost.exe" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-a33f9069-eead-4cd8-8829-d4713f1aeba1 -SystemEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-af667862-765b-429f-9eb4-b4e6cbdea44d -IoCancelEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-8807ba4a-18d9-4d0c-bf5a-b6a652f15a98 -NonStateChangingEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-c22ea4b7-47a6-463f-b81f-8625a912b167 -LifetimeId:17ea3120-737e-4a69-9d56-cd9fa0c0cc2e -DeviceGroupId:WpdFsGroup -HostArg:0
+
+--- privileges.txt ---
+L4030: 7276	WUDFHost.exe	2	SeCreateTokenPrivilege		Create a token object
+L4031: 7276	WUDFHost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L4032: 7276	WUDFHost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L4033: 7276	WUDFHost.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L4034: 7276	WUDFHost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4035: 7276	WUDFHost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L4036: 7276	WUDFHost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4037: 7276	WUDFHost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4038: 7276	WUDFHost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4039: 7276	WUDFHost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L4040: 7276	WUDFHost.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L4041: 7276	WUDFHost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4042: 7276	WUDFHost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4043: 7276	WUDFHost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L4044: 7276	WUDFHost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4045: 7276	WUDFHost.exe	17	SeBackupPrivilege		Backup files and directories
+L4046: 7276	WUDFHost.exe	18	SeRestorePrivilege		Restore files and directories
+L4047: 7276	WUDFHost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L4048: 7276	WUDFHost.exe	20	SeDebugPrivilege		Debug programs
+L4049: 7276	WUDFHost.exe	21	SeAuditPrivilege	Present	Generate security audits
+L4050: 7276	WUDFHost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4051: 7276	WUDFHost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4052: 7276	WUDFHost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4053: 7276	WUDFHost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4054: 7276	WUDFHost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L4055: 7276	WUDFHost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4056: 7276	WUDFHost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L4057: 7276	WUDFHost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L4058: 7276	WUDFHost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L4059: 7276	WUDFHost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4060: 7276	WUDFHost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4061: 7276	WUDFHost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4062: 7276	WUDFHost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4063: 7276	WUDFHost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4064: 7276	WUDFHost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5722: 7276	WUDFHost.exe	0x7ff7c63b0000	0x47000	WUDFHost.exe	C:\Windows\System32\WUDFHost.exe	-1	2025-08-07 19:38:28.000000 UTC	Disabled
+L5723: 7276	WUDFHost.exe	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:38:28.000000 UTC	Disabled
+L5724: 7276	WUDFHost.exe	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2025-08-07 19:38:28.000000 UTC	Disabled
+L5725: 7276	WUDFHost.exe	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2025-08-07 19:38:28.000000 UTC	Disabled
+L5726: 7276	WUDFHost.exe	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5727: 7276	WUDFHost.exe	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5728: 7276	WUDFHost.exe	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5729: 7276	WUDFHost.exe	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\System32\sechost.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5730: 7276	WUDFHost.exe	0x7fff5caa0000	0x2c000	DEVOBJ.dll	C:\Windows\SYSTEM32\DEVOBJ.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5731: 7276	WUDFHost.exe	0x7fff5d570000	0x4e000	cfgmgr32.dll	C:\Windows\System32\cfgmgr32.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5732: 7276	WUDFHost.exe	0x7fff5bad0000	0x32000	WUDFPlatform.dll	C:\Windows\SYSTEM32\WUDFPlatform.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5733: 7276	WUDFHost.exe	0x7fff5eff0000	0xaf000	advapi32.dll	C:\Windows\System32\advapi32.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5734: 7276	WUDFHost.exe	0x7fff5cc90000	0x32000	SspiCli.dll	C:\Windows\SYSTEM32\SspiCli.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5735: 7276	WUDFHost.exe	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5736: 7276	WUDFHost.exe	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5737: 7276	WUDFHost.exe	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\System32\bcryptPrimitives.dll	-1	2025-08-07 19:38:28.000000 UTC	Disabled
+L5738: 7276	WUDFHost.exe	0x7fff29240000	0x4a000	wpdfs.dll	c:\windows\system32\drivers\umdf\wpdfs.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5739: 7276	WUDFHost.exe	0x7fff5d910000	0x19d000	USER32.dll	C:\Windows\System32\USER32.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5740: 7276	WUDFHost.exe	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5741: 7276	WUDFHost.exe	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\System32\GDI32.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5742: 7276	WUDFHost.exe	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5743: 7276	WUDFHost.exe	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5744: 7276	WUDFHost.exe	0x7fff24440000	0x259000	wmvcore.dll	C:\Windows\SYSTEM32\wmvcore.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5745: 7276	WUDFHost.exe	0x7fff5dcd0000	0xcd000	OLEAUT32.dll	C:\Windows\System32\OLEAUT32.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5746: 7276	WUDFHost.exe	0x7fff291e0000	0x55000	WMASF.DLL	C:\Windows\SYSTEM32\WMASF.DLL	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5747: 7276	WUDFHost.exe	0x7fff24310000	0x12d000	mfperfhelper.dll	C:\Windows\SYSTEM32\mfperfhelper.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5748: 7276	WUDFHost.exe	0x7fff29140000	0x97000	WUDFx.dll	C:\Windows\System32\WUDFx.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5749: 7276	WUDFHost.exe	0x7fff5ead0000	0xa9000	clbcatq.dll	C:\Windows\System32\clbcatq.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5750: 7276	WUDFHost.exe	0x7fff29110000	0x24000	portabledeviceclassextension.dll	C:\Windows\System32\portabledeviceclassextension.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5751: 7276	WUDFHost.exe	0x7fff3e4d0000	0x32000	PortableDeviceTypes.dll	C:\Windows\System32\PortableDeviceTypes.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5752: 7276	WUDFHost.exe	0x7fff58940000	0xf6000	PROPSYS.dll	C:\Windows\System32\PROPSYS.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5753: 7276	WUDFHost.exe	0x7fff5eb80000	0x468000	SETUPAPI.dll	C:\Windows\System32\SETUPAPI.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5754: 7276	WUDFHost.exe	0x7fff5cf20000	0x27000	bcrypt.dll	C:\Windows\System32\bcrypt.dll	-1	2025-08-07 19:38:28.000000 UTC	Disabled
+L5755: 7276	WUDFHost.exe	0x7fff5d450000	0x67000	WINTRUST.dll	C:\Windows\System32\WINTRUST.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5756: 7276	WUDFHost.exe	0x7fff5cf50000	0x15e000	CRYPT32.dll	C:\Windows\System32\CRYPT32.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5757: 7276	WUDFHost.exe	0x7fff5c8e0000	0x12000	MSASN1.dll	C:\Windows\System32\MSASN1.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+L5758: 7276	WUDFHost.exe	0x7fff5bef0000	0x33000	ntmarta.dll	C:\Windows\SYSTEM32\ntmarta.dll	6	2025-08-07 19:38:28.000000 UTC	Disabled
+
+--- pstree.txt ---
+L28: ** 7276	716	WUDFHost.exe	0xbb0c93c7c300	8	-	0	False	2025-08-07 19:38:28.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\WUDFHost.exe	"C:\Windows\System32\WUDFHost.exe" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-a33f9069-eead-4cd8-8829-d4713f1aeba1 -SystemEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-af667862-765b-429f-9eb4-b4e6cbdea44d -IoCancelEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-8807ba4a-18d9-4d0c-bf5a-b6a652f15a98 -NonStateChangingEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-c22ea4b7-47a6-463f-b81f-8625a912b167 -LifetimeId:17ea3120-737e-4a69-9d56-cd9fa0c0cc2e -DeviceGroupId:WpdFsGroup -HostArg:0	C:\Windows\System32\WUDFHost.exe
+
+--- psscan.txt ---
+L145: 7276	716	WUDFHost.exe	0xbb0c93c7c300	8	-	0	False	2025-08-07 19:38:28.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L5851: 7276	WUDFHost.exe	0x1decded0000	False	False	False	\Windows\System32\en-US\WUDFHost.exe.mui
+L5852: 7276	WUDFHost.exe	0x1decdf00000	False	False	False	\Windows\System32\en-GB\user32.dll.mui
+L5853: 7276	WUDFHost.exe	0x7fff5caa0000	True	True	True	\Windows\System32\devobj.dll
+L5854: 7276	WUDFHost.exe	0x7fff291e0000	True	True	True	\Windows\System32\WMASF.DLL
+L5855: 7276	WUDFHost.exe	0x7fff24440000	True	True	True	\Windows\System32\WMVCORE.DLL
+L5856: 7276	WUDFHost.exe	0x7ff7c63b0000	True	False	True	\Windows\System32\WUDFHost.exe
+L5857: 7276	WUDFHost.exe	0x7fff24310000	True	True	True	\Windows\System32\mfperfhelper.dll
+L5858: 7276	WUDFHost.exe	0x7fff29140000	True	True	True	\Windows\System32\WUDFx.dll
+L5859: 7276	WUDFHost.exe	0x7fff29110000	True	True	True	\Windows\System32\PortableDeviceClassExtension.dll
+L5860: 7276	WUDFHost.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5861: 7276	WUDFHost.exe	0x7fff3e4d0000	True	True	True	\Windows\System32\PortableDeviceTypes.dll
+L5862: 7276	WUDFHost.exe	0x7fff29240000	True	True	True	\Windows\System32\drivers\UMDF\WpdFs.dll
+L5863: 7276	WUDFHost.exe	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L5864: 7276	WUDFHost.exe	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L5865: 7276	WUDFHost.exe	0x7fff5bad0000	True	True	True	\Windows\System32\WUDFPlatform.dll
+L5866: 7276	WUDFHost.exe	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L5867: 7276	WUDFHost.exe	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L5868: 7276	WUDFHost.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L5869: 7276	WUDFHost.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L5870: 7276	WUDFHost.exe	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L5871: 7276	WUDFHost.exe	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5872: 7276	WUDFHost.exe	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L5873: 7276	WUDFHost.exe	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L5874: 7276	WUDFHost.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L5875: 7276	WUDFHost.exe	0x7fff5d450000	True	True	True	\Windows\System32\wintrust.dll
+L5876: 7276	WUDFHost.exe	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L5877: 7276	WUDFHost.exe	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L5878: 7276	WUDFHost.exe	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L5879: 7276	WUDFHost.exe	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5880: 7276	WUDFHost.exe	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L5881: 7276	WUDFHost.exe	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L5882: 7276	WUDFHost.exe	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L5883: 7276	WUDFHost.exe	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L5884: 7276	WUDFHost.exe	0x7fff5eb80000	True	True	True	\Windows\System32\setupapi.dll
+L5885: 7276	WUDFHost.exe	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L5886: 7276	WUDFHost.exe	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L5887: 7276	WUDFHost.exe	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L5888: 7276	WUDFHost.exe	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L5889: 7276	WUDFHost.exe	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L5851: 7276	WUDFHost.exe	0x1decded0000	False	False	False	\Windows\System32\en-US\WUDFHost.exe.mui
+L5852: 7276	WUDFHost.exe	0x1decdf00000	False	False	False	\Windows\System32\en-GB\user32.dll.mui
+L5853: 7276	WUDFHost.exe	0x7fff5caa0000	True	True	True	\Windows\System32\devobj.dll
+L5854: 7276	WUDFHost.exe	0x7fff291e0000	True	True	True	\Windows\System32\WMASF.DLL
+L5855: 7276	WUDFHost.exe	0x7fff24440000	True	True	True	\Windows\System32\WMVCORE.DLL
+L5856: 7276	WUDFHost.exe	0x7ff7c63b0000	True	False	True	\Windows\System32\WUDFHost.exe
+L5857: 7276	WUDFHost.exe	0x7fff24310000	True	True	True	\Windows\System32\mfperfhelper.dll
+L5858: 7276	WUDFHost.exe	0x7fff29140000	True	True	True	\Windows\System32\WUDFx.dll
+L5859: 7276	WUDFHost.exe	0x7fff29110000	True	True	True	\Windows\System32\PortableDeviceClassExtension.dll
+L5860: 7276	WUDFHost.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5861: 7276	WUDFHost.exe	0x7fff3e4d0000	True	True	True	\Windows\System32\PortableDeviceTypes.dll
+L5862: 7276	WUDFHost.exe	0x7fff29240000	True	True	True	\Windows\System32\drivers\UMDF\WpdFs.dll
+L5863: 7276	WUDFHost.exe	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L5864: 7276	WUDFHost.exe	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L5865: 7276	WUDFHost.exe	0x7fff5bad0000	True	True	True	\Windows\System32\WUDFPlatform.dll
+L5866: 7276	WUDFHost.exe	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L5867: 7276	WUDFHost.exe	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L5868: 7276	WUDFHost.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L5869: 7276	WUDFHost.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L5870: 7276	WUDFHost.exe	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L5871: 7276	WUDFHost.exe	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5872: 7276	WUDFHost.exe	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L5873: 7276	WUDFHost.exe	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L5874: 7276	WUDFHost.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L5875: 7276	WUDFHost.exe	0x7fff5d450000	True	True	True	\Windows\System32\wintrust.dll
+L5876: 7276	WUDFHost.exe	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L5877: 7276	WUDFHost.exe	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L5878: 7276	WUDFHost.exe	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L5879: 7276	WUDFHost.exe	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5880: 7276	WUDFHost.exe	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L5881: 7276	WUDFHost.exe	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L5882: 7276	WUDFHost.exe	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L5883: 7276	WUDFHost.exe	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L5884: 7276	WUDFHost.exe	0x7fff5eb80000	True	True	True	\Windows\System32\setupapi.dll
+L5885: 7276	WUDFHost.exe	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L5886: 7276	WUDFHost.exe	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L5887: 7276	WUDFHost.exe	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L5888: 7276	WUDFHost.exe	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L5889: 7276	WUDFHost.exe	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L120: 7276	WUDFHost.exe	\Device\HarddiskVolume3\Windows\System32\WUDFHost.exe	C:\Windows\System32\WUDFHost.exe	False	False
+
+--- sessions.txt ---
+L88: 0	-	7276	WUDFHost.exe	/SYSTEM	2025-08-07 19:38:28.000000 UTC
+
+=== PID 7408 (RuntimeBroker., ppid=860) ===
+Cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- pslist.txt ---
+L99: 7408	860	RuntimeBroker.	0xbb0c8e884080	2	-	1	False	2025-08-07 19:36:48.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L99: 7408	RuntimeBroker.	C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- privileges.txt ---
+L3295: 7408	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+L3296: 7408	RuntimeBroker.	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3297: 7408	RuntimeBroker.	4	SeLockMemoryPrivilege		Lock pages in memory
+L3298: 7408	RuntimeBroker.	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3299: 7408	RuntimeBroker.	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3300: 7408	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+L3301: 7408	RuntimeBroker.	8	SeSecurityPrivilege		Manage auditing and security log
+L3302: 7408	RuntimeBroker.	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3303: 7408	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3304: 7408	RuntimeBroker.	11	SeSystemProfilePrivilege		Profile system performance
+L3305: 7408	RuntimeBroker.	12	SeSystemtimePrivilege		Change the system time
+L3306: 7408	RuntimeBroker.	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3307: 7408	RuntimeBroker.	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3308: 7408	RuntimeBroker.	15	SeCreatePagefilePrivilege		Create a pagefile
+L3309: 7408	RuntimeBroker.	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3310: 7408	RuntimeBroker.	17	SeBackupPrivilege		Backup files and directories
+L3311: 7408	RuntimeBroker.	18	SeRestorePrivilege		Restore files and directories
+L3312: 7408	RuntimeBroker.	19	SeShutdownPrivilege	Present	Shut down the system
+L3313: 7408	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+L3314: 7408	RuntimeBroker.	21	SeAuditPrivilege		Generate security audits
+L3315: 7408	RuntimeBroker.	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3316: 7408	RuntimeBroker.	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3317: 7408	RuntimeBroker.	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3318: 7408	RuntimeBroker.	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3319: 7408	RuntimeBroker.	26	SeSyncAgentPrivilege		Synch directory service data
+L3320: 7408	RuntimeBroker.	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3321: 7408	RuntimeBroker.	28	SeManageVolumePrivilege		Manage the files on a volume
+L3322: 7408	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3323: 7408	RuntimeBroker.	30	SeCreateGlobalPrivilege	Default	Create global objects
+L3324: 7408	RuntimeBroker.	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3325: 7408	RuntimeBroker.	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3326: 7408	RuntimeBroker.	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3327: 7408	RuntimeBroker.	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3328: 7408	RuntimeBroker.	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3329: 7408	RuntimeBroker.	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L4553: 7408	RuntimeBroker.	0x7ff605390000	0x1c000	RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4554: 7408	RuntimeBroker.	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4555: 7408	RuntimeBroker.	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4556: 7408	RuntimeBroker.	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4557: 7408	RuntimeBroker.	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4558: 7408	RuntimeBroker.	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4559: 7408	RuntimeBroker.	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4560: 7408	RuntimeBroker.	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\System32\sechost.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4561: 7408	RuntimeBroker.	0x7fff5cc40000	0x4b000	powrprof.dll	C:\Windows\SYSTEM32\powrprof.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4562: 7408	RuntimeBroker.	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4563: 7408	RuntimeBroker.	0x7fff5a9c0000	0x2a000	RMCLIENT.dll	C:\Windows\System32\RMCLIENT.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4564: 7408	RuntimeBroker.	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4565: 7408	RuntimeBroker.	0x7fff5cc20000	0x12000	UMPDC.dll	C:\Windows\System32\UMPDC.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4566: 7408	RuntimeBroker.	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\System32\bcryptPrimitives.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4567: 7408	RuntimeBroker.	0x7fff5d910000	0x19d000	user32.dll	C:\Windows\System32\user32.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4568: 7408	RuntimeBroker.	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4569: 7408	RuntimeBroker.	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\System32\GDI32.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4570: 7408	RuntimeBroker.	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4571: 7408	RuntimeBroker.	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4572: 7408	RuntimeBroker.	0x7fff5db50000	0x30000	IMM32.DLL	C:\Windows\System32\IMM32.DLL	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4573: 7408	RuntimeBroker.	0x7fff5ead0000	0xa9000	clbcatq.dll	C:\Windows\System32\clbcatq.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4574: 7408	RuntimeBroker.	0x7fff40260000	0xd9000	windows.internal.shell.broker.dll	C:\Windows\System32\windows.internal.shell.broker.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4575: 7408	RuntimeBroker.	0x7fff5e8f0000	0xad000	SHCORE.dll	C:\Windows\System32\SHCORE.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4576: 7408	RuntimeBroker.	0x7fff5dcd0000	0xcd000	OLEAUT32.dll	C:\Windows\System32\OLEAUT32.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4577: 7408	RuntimeBroker.	0x7fff5f150000	0x55000	shlwapi.dll	C:\Windows\System32\shlwapi.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4578: 7408	RuntimeBroker.	0x7fff5a7e0000	0x9e000	UxTheme.dll	C:\Windows\System32\UxTheme.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4579: 7408	RuntimeBroker.	0x7fff58ac0000	0x263000	d3d11.dll	C:\Windows\System32\d3d11.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4580: 7408	RuntimeBroker.	0x7fff58940000	0xf6000	PROPSYS.dll	C:\Windows\System32\PROPSYS.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4581: 7408	RuntimeBroker.	0x7fff48360000	0x4d9000	WININET.dll	C:\Windows\System32\WININET.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4582: 7408	RuntimeBroker.	0x7fff5b690000	0xf3000	dxgi.dll	C:\Windows\System32\dxgi.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4583: 7408	RuntimeBroker.	0x7fff5eff0000	0xaf000	advapi32.dll	C:\Windows\System32\advapi32.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4584: 7408	RuntimeBroker.	0x7fff524f0000	0x11000	windows.staterepositorycore.dll	C:\Windows\SYSTEM32\windows.staterepositorycore.dll	6	2025-08-07 19:36:48.000000 UTC	Disabled
+L4585: 7408	RuntimeBroker.	0x7fff5aeb0000	0x793000	windows.storage.dll	C:\Windows\system32\windows.storage.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4586: 7408	RuntimeBroker.	0x7fff5c750000	0x2e000	Wldp.dll	C:\Windows\system32\Wldp.dll	-1	2025-08-07 19:36:48.000000 UTC	Disabled
+L4587: 7408	RuntimeBroker.	0x7fff57e10000	0xa3000	policymanager.dll	C:\Windows\SYSTEM32\policymanager.dll	6	2025-08-07 19:36:49.000000 UTC	Disabled
+L4588: 7408	RuntimeBroker.	0x7fff5be60000	0x8a000	msvcp110_win.dll	C:\Windows\System32\msvcp110_win.dll	6	2025-08-07 19:36:49.000000 UTC	Disabled
+L4589: 7408	RuntimeBroker.	0x7fff5d750000	0x79000	coml2.dll	C:\Windows\System32\coml2.dll	-1	2025-08-07 19:36:49.000000 UTC	Disabled
+L4590: 7408	RuntimeBroker.	0x7fff5dda0000	0x744000	shell32.dll	C:\Windows\System32\shell32.dll	-1	2025-08-07 19:36:49.000000 UTC	Disabled
+L4591: 7408	RuntimeBroker.	0x7fff44c10000	0xd000	LINKINFO.dll	C:\Windows\System32\LINKINFO.dll	-1	2025-08-07 19:36:49.000000 UTC	Disabled
+L4592: 7408	RuntimeBroker.	0x7fff5e9a0000	0x12a000	ole32.dll	C:\Windows\System32\ole32.dll	-1	2025-08-07 19:36:49.000000 UTC	Disabled
+L4593: 7408	RuntimeBroker.	0x7fff5d570000	0x4e000	CFGMGR32.dll	C:\Windows\System32\CFGMGR32.dll	-1	2025-08-07 19:36:49.000000 UTC	Disabled
+L4594: 7408	RuntimeBroker.	0x7fff5a610000	0x91000	apphelp.dll	C:\Windows\SYSTEM32\apphelp.dll	-1	2025-08-07 19:36:49.000000 UTC	Disabled
+L4595: 7408	RuntimeBroker.	0x7fff448e0000	0x90000	appresolver.dll	C:\Windows\System32\appresolver.dll	6	2025-08-07 19:36:49.000000 UTC	Disabled
+L4596: 7408	RuntimeBroker.	0x7fff54f20000	0x5b000	Bcp47Langs.dll	C:\Windows\System32\Bcp47Langs.dll	6	2025-08-07 19:36:49.000000 UTC	Disabled
+L4597: 7408	RuntimeBroker.	0x7fff5b910000	0x29000	SLC.dll	C:\Windows\System32\SLC.dll	6	2025-08-07 19:36:49.000000 UTC	Disabled
+L4598: 7408	RuntimeBroker.	0x7fff5ccd0000	0x2e000	USERENV.dll	C:\Windows\System32\USERENV.dll	6	2025-08-07 19:36:49.000000 UTC	Disabled
+L4599: 7408	RuntimeBroker.	0x7fff5b8e0000	0x25000	sppc.dll	C:\Windows\System32\sppc.dll	6	2025-08-07 19:36:49.000000 UTC	Disabled
+L4600: 7408	RuntimeBroker.	0x7fff5cd10000	0x1f000	profapi.dll	C:\Windows\system32\profapi.dll	-1	2025-08-07 19:36:49.000000 UTC	Disabled
+L4601: 7408	RuntimeBroker.	0x7fff533d0000	0x2b1000	iertutil.dll	C:\Windows\System32\iertutil.dll	-1	2025-08-07 19:40:30.000000 UTC	Disabled
+L4602: 7408	RuntimeBroker.	0x7fff44970000	0x29a000	comctl32.dll	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll	6	2025-08-07 19:40:30.000000 UTC	Disabled
+L4603: 7408	RuntimeBroker.	0x7fff4f260000	0xc000	Secur32.dll	C:\Windows\System32\Secur32.dll	6	2025-08-07 19:40:30.000000 UTC	Disabled
+L4604: 7408	RuntimeBroker.	0x7fff5cc90000	0x32000	SSPICLI.DLL	C:\Windows\System32\SSPICLI.DLL	-1	2025-08-07 19:40:30.000000 UTC	Disabled
+L4605: 7408	RuntimeBroker.	0x7fff4c200000	0x42000	MLANG.dll	C:\Windows\System32\MLANG.dll	6	2025-08-07 19:40:30.000000 UTC	Disabled
+L4606: 7408	RuntimeBroker.	0x7fff55e30000	0x7cb000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2025-08-07 19:41:16.000000 UTC	Disabled
+L4607: 7408	RuntimeBroker.	0x7fff4cc90000	0xa6000	StructuredQuery.dll	C:\Windows\System32\StructuredQuery.dll	6	2025-08-07 19:41:16.000000 UTC	Disabled
+L4608: 7408	RuntimeBroker.	0x7fff4c9e0000	0x46000	MSWB7.dll	C:\Windows\System32\MSWB7.dll	6	2025-08-07 19:41:16.000000 UTC	Disabled
+L4609: 7408	RuntimeBroker.	0x7fff52b70000	0x1ec000	urlmon.dll	C:\Windows\system32\urlmon.dll	6	2025-08-07 19:41:16.000000 UTC	Disabled
+L4610: 7408	RuntimeBroker.	0x7fff52b00000	0x28000	srvcli.dll	C:\Windows\system32\srvcli.dll	6	2025-08-07 19:41:16.000000 UTC	Disabled
+L4611: 7408	RuntimeBroker.	0x7fff5c2b0000	0xc000	netutils.dll	C:\Windows\system32\netutils.dll	6	2025-08-07 19:41:16.000000 UTC	Disabled
+L4612: 7408	RuntimeBroker.	0x7fff3fb60000	0xc9000	Windows.Storage.Search.dll	C:\Windows\system32\Windows.Storage.Search.dll	6	2025-08-07 19:41:16.000000 UTC	Disabled
+L4613: 7408	RuntimeBroker.	0x7fff44f90000	0x32e000	tquery.dll	C:\Windows\system32\tquery.dll	6	2025-08-07 19:41:16.000000 UTC	Disabled
+L4614: 7408	RuntimeBroker.	0x7fff5c520000	0x15000	cryptdll.dll	C:\Windows\system32\cryptdll.dll	6	2025-08-07 19:41:16.000000 UTC	Disabled
+
+--- pstree.txt ---
+L99: *** 7408	860	RuntimeBroker.	0xbb0c8e884080	2	-	1	False	2025-08-07 19:36:48.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe -Embedding	C:\Windows\System32\RuntimeBroker.exe
+
+--- psscan.txt ---
+L35: 7408	860	RuntimeBroker.	0xbb0c8e884080	2	-	1	False	2025-08-07 19:36:48.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L4860: 7408	RuntimeBroker.	0x233f5800000	False	False	False	N/A
+L4861: 7408	RuntimeBroker.	0x233f5f40000	False	False	False	\Windows\System32\en-GB\shell32.dll.mui
+L4862: 7408	RuntimeBroker.	0x233f5fd0000	False	False	False	\Windows\System32\en-GB\propsys.dll.mui
+L4863: 7408	RuntimeBroker.	0x233f5fc0000	False	False	False	\Windows\System32\en-GB\Windows.Storage.Search.dll.mui
+L4864: 7408	RuntimeBroker.	0x233f6050000	False	False	False	\Windows\System32\prm0009.dll
+L4865: 7408	RuntimeBroker.	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L4866: 7408	RuntimeBroker.	0x7fff48360000	True	True	True	\Windows\System32\wininet.dll
+L4867: 7408	RuntimeBroker.	0x7fff40260000	True	True	True	\Windows\System32\Windows.Internal.Shell.Broker.dll
+L4868: 7408	RuntimeBroker.	0x7ff605390000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L4869: 7408	RuntimeBroker.	0x7fff3fb60000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L4870: 7408	RuntimeBroker.	0x7fff44970000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll
+L4871: 7408	RuntimeBroker.	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L4872: 7408	RuntimeBroker.	0x7fff4f260000	True	True	True	\Windows\System32\secur32.dll
+L4873: 7408	RuntimeBroker.	0x7fff4c9e0000	True	True	True	\Windows\System32\MSWB7.dll
+L4874: 7408	RuntimeBroker.	0x7fff4c200000	True	True	True	\Windows\System32\mlang.dll
+L4875: 7408	RuntimeBroker.	0x7fff4cc90000	True	True	True	\Windows\System32\StructuredQuery.dll
+L4876: 7408	RuntimeBroker.	0x7fff52b00000	True	True	True	\Windows\System32\srvcli.dll
+L4877: 7408	RuntimeBroker.	0x7fff524f0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L4878: 7408	RuntimeBroker.	0x7fff52b70000	True	True	True	\Windows\System32\urlmon.dll
+L4879: 7408	RuntimeBroker.	0x7fff55e30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L4880: 7408	RuntimeBroker.	0x7fff54f20000	True	True	True	\Windows\System32\BCP47Langs.dll
+L4881: 7408	RuntimeBroker.	0x7fff57e10000	True	True	True	\Windows\System32\policymanager.dll
+L4882: 7408	RuntimeBroker.	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L4883: 7408	RuntimeBroker.	0x7fff5be60000	True	True	True	\Windows\System32\msvcp110_win.dll
+L4884: 7408	RuntimeBroker.	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L4885: 7408	RuntimeBroker.	0x7fff5a610000	True	True	True	\Windows\System32\apphelp.dll
+L4886: 7408	RuntimeBroker.	0x7fff58ac0000	True	True	True	\Windows\System32\d3d11.dll
+L4887: 7408	RuntimeBroker.	0x7fff5a7e0000	True	True	True	\Windows\System32\uxtheme.dll
+L4888: 7408	RuntimeBroker.	0x7fff5a9c0000	True	True	True	\Windows\System32\rmclient.dll
+L4889: 7408	RuntimeBroker.	0x7fff5b690000	True	True	True	\Windows\System32\dxgi.dll
+L4890: 7408	RuntimeBroker.	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L4891: 7408	RuntimeBroker.	0x7fff5b910000	True	True	True	\Windows\System32\slc.dll
+L4892: 7408	RuntimeBroker.	0x7fff5b8e0000	True	True	True	\Windows\System32\sppc.dll
+L4893: 7408	RuntimeBroker.	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L4894: 7408	RuntimeBroker.	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L4895: 7408	RuntimeBroker.	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L4896: 7408	RuntimeBroker.	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L4897: 7408	RuntimeBroker.	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L4898: 7408	RuntimeBroker.	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L4899: 7408	RuntimeBroker.	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L4900: 7408	RuntimeBroker.	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L4901: 7408	RuntimeBroker.	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L4902: 7408	RuntimeBroker.	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L4903: 7408	RuntimeBroker.	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L4904: 7408	RuntimeBroker.	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L4905: 7408	RuntimeBroker.	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L4906: 7408	RuntimeBroker.	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L4907: 7408	RuntimeBroker.	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L4908: 7408	RuntimeBroker.	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L4909: 7408	RuntimeBroker.	0x7fff5d750000	True	True	True	\Windows\System32\coml2.dll
+L4910: 7408	RuntimeBroker.	0x7fff5db50000	True	True	True	\Windows\System32\imm32.dll
+L4911: 7408	RuntimeBroker.	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L4912: 7408	RuntimeBroker.	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L4913: 7408	RuntimeBroker.	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L4914: 7408	RuntimeBroker.	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L4915: 7408	RuntimeBroker.	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L4916: 7408	RuntimeBroker.	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L4917: 7408	RuntimeBroker.	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L4918: 7408	RuntimeBroker.	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L4919: 7408	RuntimeBroker.	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L4920: 7408	RuntimeBroker.	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L4921: 7408	RuntimeBroker.	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L4922: 7408	RuntimeBroker.	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L4860: 7408	RuntimeBroker.	0x233f5800000	False	False	False	N/A
+L4861: 7408	RuntimeBroker.	0x233f5f40000	False	False	False	\Windows\System32\en-GB\shell32.dll.mui
+L4862: 7408	RuntimeBroker.	0x233f5fd0000	False	False	False	\Windows\System32\en-GB\propsys.dll.mui
+L4863: 7408	RuntimeBroker.	0x233f5fc0000	False	False	False	\Windows\System32\en-GB\Windows.Storage.Search.dll.mui
+L4864: 7408	RuntimeBroker.	0x233f6050000	False	False	False	\Windows\System32\prm0009.dll
+L4865: 7408	RuntimeBroker.	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L4866: 7408	RuntimeBroker.	0x7fff48360000	True	True	True	\Windows\System32\wininet.dll
+L4867: 7408	RuntimeBroker.	0x7fff40260000	True	True	True	\Windows\System32\Windows.Internal.Shell.Broker.dll
+L4868: 7408	RuntimeBroker.	0x7ff605390000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L4869: 7408	RuntimeBroker.	0x7fff3fb60000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L4870: 7408	RuntimeBroker.	0x7fff44970000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll
+L4871: 7408	RuntimeBroker.	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L4872: 7408	RuntimeBroker.	0x7fff4f260000	True	True	True	\Windows\System32\secur32.dll
+L4873: 7408	RuntimeBroker.	0x7fff4c9e0000	True	True	True	\Windows\System32\MSWB7.dll
+L4874: 7408	RuntimeBroker.	0x7fff4c200000	True	True	True	\Windows\System32\mlang.dll
+L4875: 7408	RuntimeBroker.	0x7fff4cc90000	True	True	True	\Windows\System32\StructuredQuery.dll
+L4876: 7408	RuntimeBroker.	0x7fff52b00000	True	True	True	\Windows\System32\srvcli.dll
+L4877: 7408	RuntimeBroker.	0x7fff524f0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L4878: 7408	RuntimeBroker.	0x7fff52b70000	True	True	True	\Windows\System32\urlmon.dll
+L4879: 7408	RuntimeBroker.	0x7fff55e30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L4880: 7408	RuntimeBroker.	0x7fff54f20000	True	True	True	\Windows\System32\BCP47Langs.dll
+L4881: 7408	RuntimeBroker.	0x7fff57e10000	True	True	True	\Windows\System32\policymanager.dll
+L4882: 7408	RuntimeBroker.	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L4883: 7408	RuntimeBroker.	0x7fff5be60000	True	True	True	\Windows\System32\msvcp110_win.dll
+L4884: 7408	RuntimeBroker.	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L4885: 7408	RuntimeBroker.	0x7fff5a610000	True	True	True	\Windows\System32\apphelp.dll
+L4886: 7408	RuntimeBroker.	0x7fff58ac0000	True	True	True	\Windows\System32\d3d11.dll
+L4887: 7408	RuntimeBroker.	0x7fff5a7e0000	True	True	True	\Windows\System32\uxtheme.dll
+L4888: 7408	RuntimeBroker.	0x7fff5a9c0000	True	True	True	\Windows\System32\rmclient.dll
+L4889: 7408	RuntimeBroker.	0x7fff5b690000	True	True	True	\Windows\System32\dxgi.dll
+L4890: 7408	RuntimeBroker.	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L4891: 7408	RuntimeBroker.	0x7fff5b910000	True	True	True	\Windows\System32\slc.dll
+L4892: 7408	RuntimeBroker.	0x7fff5b8e0000	True	True	True	\Windows\System32\sppc.dll
+L4893: 7408	RuntimeBroker.	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L4894: 7408	RuntimeBroker.	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L4895: 7408	RuntimeBroker.	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L4896: 7408	RuntimeBroker.	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L4897: 7408	RuntimeBroker.	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L4898: 7408	RuntimeBroker.	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L4899: 7408	RuntimeBroker.	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L4900: 7408	RuntimeBroker.	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L4901: 7408	RuntimeBroker.	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L4902: 7408	RuntimeBroker.	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L4903: 7408	RuntimeBroker.	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L4904: 7408	RuntimeBroker.	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L4905: 7408	RuntimeBroker.	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L4906: 7408	RuntimeBroker.	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L4907: 7408	RuntimeBroker.	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L4908: 7408	RuntimeBroker.	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L4909: 7408	RuntimeBroker.	0x7fff5d750000	True	True	True	\Windows\System32\coml2.dll
+L4910: 7408	RuntimeBroker.	0x7fff5db50000	True	True	True	\Windows\System32\imm32.dll
+L4911: 7408	RuntimeBroker.	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L4912: 7408	RuntimeBroker.	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L4913: 7408	RuntimeBroker.	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L4914: 7408	RuntimeBroker.	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L4915: 7408	RuntimeBroker.	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L4916: 7408	RuntimeBroker.	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L4917: 7408	RuntimeBroker.	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L4918: 7408	RuntimeBroker.	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L4919: 7408	RuntimeBroker.	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L4920: 7408	RuntimeBroker.	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L4921: 7408	RuntimeBroker.	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L4922: 7408	RuntimeBroker.	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L99: 7408	RuntimeBroker.	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	False	False
+
+--- sessions.txt ---
+L122: 1	-	7408	RuntimeBroker.	DESKTOP-RMH9G1A/Lab2	2025-08-07 19:36:48.000000 UTC
+
+=== END OF PIVOT REPORT ===

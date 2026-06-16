@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_013.txt
+Summary: Both processes have orphaned PPIDs (parent PIDs not present in the process list); svchost.exe with unknown parent is a mild anomaly worth confirming against services.exe lineage.
+
+[PROCESS]
+pid: 4684
+ppid: 896
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc
+severity: LOW
+reasons: orphaned_parent: PPID 896 not present in process list; expected parent is services.exe | parent_unresolved: cannot confirm svchost.exe parent is services.exe due to missing PPID 896 entry
+
+[PROCESS]
+pid: 4796
+ppid: 5220
+image: SearchProtocol
+cmdline: "C:\WINDOWS\System32\SearchProtocolHost.exe" Global\UsGthrFltPipeMssGthrPipe2_ Global\UsGthrCtrlFltPipeMssGthrPipe2 1 -2147483646 "Software\Microsoft\Windows Search" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT; MS Search 4.0 Robot)" "C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc" "DownLevelDaemon"
+severity: LOW
+reasons: orphaned_parent: PPID 5220 not present in process list; expected parent is SearchIndexer.exe | parent_unresolved: cannot confirm SearchProtocolHost.exe parent is SearchIndexer.exe due to missing PPID 5220 entry
+

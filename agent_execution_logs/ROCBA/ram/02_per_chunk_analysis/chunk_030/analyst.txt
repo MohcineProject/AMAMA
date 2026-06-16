@@ -1,0 +1,93 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 10500 — chrome.exe**
+
+Agent 1 flags: orphaned parent (24476 not in process list), short-lived (~23 seconds).
+
+Evidence assessment:
+- Path: `\Device\HarddiskVolume3\Program Files\Google\Chrome\Application\chrome.exe` — legitimate installation path, no masquerade flag (False/False in malware_pebmasquerade).
+- Cmdline: `-` (unavailable — not suspicious by itself; Volatility sometimes can't recover cmdline for exited processes).
+- Privileges: The entire privilege list shows **no "Present" or "Enabled" flags** on any privilege — every entry has an empty third column. This is the default token for a process that has not been elevated; all privileges are listed but none are enabled. This is normal for a standard user-context process.
+- Orphaned parent: Chrome's parent (24476) is not in the process list. This is common — Chrome can be launched by a browser helper, a shortcut handler, or another Chrome instance that has already exited. The parent exiting before the child is captured is routine for browser processes.
+- Short-lived: 23 seconds is plausible for a Chrome instance that opened, rendered something, and closed (e.g., a URL handler invocation, a background update check, or a single-tab session).
+- No malfind hits, no suspicious DLLs, no network connections, no registry persistence evidence.
+- PEB masquerade check: False/False — binary matches expected path.
+
+Verdict: **REJECTED** — legitimate Chrome binary at expected path, no enabled privileges, no corroborating malicious signals. Orphaned parent and short lifetime are both explained by normal browser lifecycle.
+
+---
+
+**PID 10808 — msedge.exe**
+
+Agent 1 flags: orphaned parent (22700), short-lived (~74 seconds).
+
+Evidence assessment:
+- Path: `\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe` — legitimate Edge installation path.
+- Cmdline: `-` (unavailable).
+- Privileges: Same pattern as chrome.exe — full list, zero enabled. Normal user-context token.
+- PEB masquerade: False/False.
+- No malfind, no DLL anomalies, no network, no persistence evidence.
+- Orphaned parent 22700: same reasoning as Chrome — Edge parent may have exited before snapshot.
+- 74 seconds: plausible for a browser session.
+
+Verdict: **REJECTED** — legitimate Edge binary, no enabled privileges, no corroborating signals.
+
+---
+
+**PID 11200 — msedge.exe**
+
+Agent 1 flags: orphaned parent (22700), short-lived (~76 seconds), sibling pair with PID 10808.
+
+Evidence assessment:
+- Path: `\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe` — legitimate.
+- Cmdline: `-` (unavailable).
+- Privileges: Same pattern — full list, zero enabled.
+- PEB masquerade: False/False.
+- Sibling pair: Both 10808 and 11200 share parent 22700 and have nearly identical start/end times (04:58:01–04:59:17 and 04:58:03–04:59:17). This is entirely consistent with Edge's multi-process architecture — Edge routinely spawns multiple child processes (renderer, GPU, utility) from a single parent. Both terminating at the same second (04:59:17) strongly suggests the parent session ended and all children were torn down together.
+- No malfind, no DLL anomalies, no network, no persistence evidence.
+
+Verdict: **REJECTED** — legitimate Edge binary, multi-process browser architecture explains sibling pair, no enabled privileges, no corroborating signals.
+
+---
+
+**PID 11108 — RuntimeBroker.exe**
+
+Agent 1 flags: orphaned parent (740 not in process list). Name truncation noted and explained.
+
+Evidence assessment:
+- Cmdline: `C:\Windows\System32\RuntimeBroker.exe -Embedding` — this is the canonical invocation. RuntimeBroker.exe always runs with `-Embedding` when launched by the COM infrastructure (DcomLaunch/svchost). Completely standard.
+- Path: `C:\Windows\System32\RuntimeBroker.exe` — correct system path.
+- DLLs: ntdll.dll and KERNEL32.DLL both from `C:\WINDOWS\SYSTEM32\` — clean.
+- Privileges: Only `SeChangeNotifyPrivilege` (Present,Enabled,Default), `SeShutdownPrivilege` (Present), `SeUndockPrivilege` (Present), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present), `SeCreateGlobalPrivilege` (Default) are present/enabled. This is a normal, low-privilege user-context token — exactly what RuntimeBroker.exe should have.
+- Orphaned parent 740: PID 740 is likely svchost.exe (DcomLaunch) which may have restarted or whose PID was recycled. RuntimeBroker.exe is known to be launched by svchost hosting DcomLaunch. The parent not appearing in the current process list is a common artifact in memory snapshots, especially for long-running processes (CreateTime 2020-11-11 08:14:01, three days before the snapshot).
+- No malfind, no suspicious DLLs, no network connections, no persistence evidence.
+- Name truncation: `RuntimeBroker.` is the expected 14-char truncation of `RuntimeBroker.exe` — not a typosquat.
+
+Verdict: **REJECTED** — standard system binary at correct path with canonical `-Embedding` invocation, normal privilege set, clean DLL load from System32 only. Orphaned parent is explained by long runtime and potential svchost PID recycling.
+
+---
+
+All four findings are REJECTED. The report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: All four Agent 1 findings examined in this batch are assessed as benign. The flagged processes are legitimate browser instances (Chrome, Edge) and a standard Windows system component (RuntimeBroker.exe), each running from expected installation paths with no enabled anomalous privileges, no suspicious DLL loads, no malfind hits, and no persistence or network indicators. The orphaned-parent and short-lived signals that triggered Agent 1 are fully explained by normal browser lifecycle and Windows COM infrastructure behaviour. No confirmed or inconclusive malicious activity was identified in this batch.
+Counts: confirmed=0  inconclusive=0  rejected=4
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All four PIDs (10500 chrome.exe, 10808 msedge.exe, 11200 msedge.exe, 11108 RuntimeBroker.exe) were REJECTED for the following reasons:
+
+  PID 10500 (chrome.exe): Legitimate binary at \Program Files\Google\Chrome\Application\chrome.exe, PEB masquerade check clean (False/False), no privileges enabled in token, no malfind/DLL/network evidence. Orphaned parent and 23-second lifetime are consistent with a URL-handler or background Chrome invocation whose launcher had already exited.
+
+  PID 10808 (msedge.exe): Legitimate binary at \Program Files (x86)\Microsoft\Edge\Application\msedge.exe, PEB masquerade check clean, no privileges enabled, no corroborating signals. 74-second lifetime and orphaned parent consistent with a short Edge session.
+
+  PID 11200 (msedge.exe): Same binary and path as PID 10808. Sibling relationship (shared parent 22700, identical exit time 04:59:17) is consistent with Edge's multi-process architecture — renderer/GPU/utility children spawned from a single parent session and torn down together. No anomalous signals.
+
+  PID 11108 (RuntimeBroker.exe): Standard system binary at C:\Windows\System32\RuntimeBroker.exe with canonical -Embedding invocation. Name truncation to 'RuntimeBroker.' is expected EPROCESS 14-char behaviour, not a typosquat. DLLs loaded exclusively from C:\WINDOWS\SYSTEM32\. Privilege set is minimal and appropriate for a user-context COM broker. Orphaned parent (likely svchost/DcomLaunch PID 740) is a common artifact for long-running processes in memory snapshots.
+
+================================================================

@@ -1,0 +1,61 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:38:03Z
+
+=== PID 1004 (svchost.exe, ppid=828) ===
+
+--- pslist.txt ---
+L174: 1004	828	svchost.exe	0xb78d0dbd5080	0	-	0	False	2020-11-11 08:18:17.000000 UTC	2020-11-11 08:18:23.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L174: 1004	svchost.exe	-
+
+--- privileges.txt ---
+L5920: 1004	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L5921: 1004	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L5922: 1004	svchost.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L5923: 1004	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L5924: 1004	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5925: 1004	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L5926: 1004	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L5927: 1004	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L5928: 1004	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L5929: 1004	svchost.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L5930: 1004	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L5931: 1004	svchost.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L5932: 1004	svchost.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L5933: 1004	svchost.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L5934: 1004	svchost.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L5935: 1004	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L5936: 1004	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L5937: 1004	svchost.exe	19	SeShutdownPrivilege		Shut down the system
+L5938: 1004	svchost.exe	20	SeDebugPrivilege	Default	Debug programs
+L5939: 1004	svchost.exe	21	SeAuditPrivilege	Default	Generate security audits
+L5940: 1004	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L5941: 1004	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5942: 1004	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L5943: 1004	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L5944: 1004	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L5945: 1004	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5946: 1004	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L5947: 1004	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L5948: 1004	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L5949: 1004	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5950: 1004	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5951: 1004	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L5952: 1004	svchost.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L5953: 1004	svchost.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L5954: 1004	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L233: ** 1004	828	svchost.exe	0xb78d0dbd5080	0	-	0	False	2020-11-11 08:18:17.000000 UTC	2020-11-11 08:18:23.000000 UTC	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L1203: 1004	828	svchost.exe	0xb78d0dbd5080	0	-	0	False	2020-11-11 08:18:17.000000 UTC	2020-11-11 08:18:23.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L174: 1004	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L109: 0	-	1004	svchost.exe	-	2020-11-11 08:18:17.000000 UTC
+
+=== END OF PIVOT REPORT ===

@@ -1,0 +1,448 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:58:02Z
+
+=== PID 9836 (svchost.exe, ppid=828) ===
+
+--- pslist.txt ---
+L124: 9836	828	svchost.exe	0xb78d05dd7240	0	-	0	False	2020-11-11 08:13:52.000000 UTC	2020-11-11 08:21:19.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L124: 9836	svchost.exe	-
+
+--- privileges.txt ---
+L4170: 9836	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L4171: 9836	svchost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L4172: 9836	svchost.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L4173: 9836	svchost.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L4174: 9836	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4175: 9836	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L4176: 9836	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4177: 9836	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4178: 9836	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4179: 9836	svchost.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L4180: 9836	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L4181: 9836	svchost.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L4182: 9836	svchost.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L4183: 9836	svchost.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L4184: 9836	svchost.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L4185: 9836	svchost.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L4186: 9836	svchost.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L4187: 9836	svchost.exe	19	SeShutdownPrivilege		Shut down the system
+L4188: 9836	svchost.exe	20	SeDebugPrivilege	Default	Debug programs
+L4189: 9836	svchost.exe	21	SeAuditPrivilege	Default	Generate security audits
+L4190: 9836	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4191: 9836	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4192: 9836	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4193: 9836	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L4194: 9836	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L4195: 9836	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4196: 9836	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L4197: 9836	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L4198: 9836	svchost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L4199: 9836	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4200: 9836	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4201: 9836	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L4202: 9836	svchost.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L4203: 9836	svchost.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L4204: 9836	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L31: ** 9836	828	svchost.exe	0xb78d05dd7240	0	-	0	False	2020-11-11 08:13:52.000000 UTC	2020-11-11 08:21:19.000000 UTC	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L532: 9836	828	svchost.exe	0xb78d05dd7240	0	-	0	False	2020-11-11 08:13:52.000000 UTC	2020-11-11 08:21:19.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L124: 9836	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L101: 0	-	9836	svchost.exe	-	2020-11-11 08:13:52.000000 UTC
+
+=== PID 9788 (LockApp.exe, ppid=740) ===
+Cmdline: "C:\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe" -ServerName:WindowsDefaultLockScreen.AppX7y4nbzq37zn4ks9k7amqjywdat7d3j2z.mca
+
+--- pslist.txt ---
+L123: 9788	740	LockApp.exe	0xb78d05d6d080	14	-	1	False	2020-11-11 08:13:52.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L123: 9788	LockApp.exe	"C:\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe" -ServerName:WindowsDefaultLockScreen.AppX7y4nbzq37zn4ks9k7amqjywdat7d3j2z.mca
+
+--- privileges.txt ---
+L4135: 9788	LockApp.exe	2	SeCreateTokenPrivilege		Create a token object
+L4136: 9788	LockApp.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4137: 9788	LockApp.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L4138: 9788	LockApp.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4139: 9788	LockApp.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4140: 9788	LockApp.exe	7	SeTcbPrivilege		Act as part of the operating system
+L4141: 9788	LockApp.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4142: 9788	LockApp.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4143: 9788	LockApp.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4144: 9788	LockApp.exe	11	SeSystemProfilePrivilege		Profile system performance
+L4145: 9788	LockApp.exe	12	SeSystemtimePrivilege		Change the system time
+L4146: 9788	LockApp.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4147: 9788	LockApp.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4148: 9788	LockApp.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L4149: 9788	LockApp.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4150: 9788	LockApp.exe	17	SeBackupPrivilege		Backup files and directories
+L4151: 9788	LockApp.exe	18	SeRestorePrivilege		Restore files and directories
+L4152: 9788	LockApp.exe	19	SeShutdownPrivilege		Shut down the system
+L4153: 9788	LockApp.exe	20	SeDebugPrivilege		Debug programs
+L4154: 9788	LockApp.exe	21	SeAuditPrivilege		Generate security audits
+L4155: 9788	LockApp.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4156: 9788	LockApp.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4157: 9788	LockApp.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4158: 9788	LockApp.exe	25	SeUndockPrivilege		Remove computer from docking station
+L4159: 9788	LockApp.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L4160: 9788	LockApp.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4161: 9788	LockApp.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L4162: 9788	LockApp.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4163: 9788	LockApp.exe	30	SeCreateGlobalPrivilege		Create global objects
+L4164: 9788	LockApp.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4165: 9788	LockApp.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4166: 9788	LockApp.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4167: 9788	LockApp.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L4168: 9788	LockApp.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4169: 9788	LockApp.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L6018: 9788	LockApp.exe	0x7ff6a7ba0000	0x36d000	LockApp.exe	C:\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6019: 9788	LockApp.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6020: 9788	LockApp.exe	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6021: 9788	LockApp.exe	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6022: 9788	LockApp.exe	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6023: 9788	LockApp.exe	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6024: 9788	LockApp.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6025: 9788	LockApp.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6026: 9788	LockApp.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6027: 9788	LockApp.exe	0x7fff57540000	0x1a0000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6028: 9788	LockApp.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6029: 9788	LockApp.exe	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6030: 9788	LockApp.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6031: 9788	LockApp.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6032: 9788	LockApp.exe	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6033: 9788	LockApp.exe	0x7fff50a20000	0xa0000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6034: 9788	LockApp.exe	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6035: 9788	LockApp.exe	0x7fff473a0000	0x6f000	wincorlib.DLL	C:\WINDOWS\SYSTEM32\wincorlib.DLL	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6036: 9788	LockApp.exe	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6037: 9788	LockApp.exe	0x7fff54140000	0x8a000	msvcp110_win.dll	C:\WINDOWS\SYSTEM32\msvcp110_win.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6038: 9788	LockApp.exe	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6039: 9788	LockApp.exe	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6040: 9788	LockApp.exe	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6041: 9788	LockApp.exe	0x7fff455d0000	0x10c1000	Windows.UI.Xaml.dll	C:\Windows\System32\Windows.UI.Xaml.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6042: 9788	LockApp.exe	0x7fff52500000	0xf2000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6043: 9788	LockApp.exe	0x7fff468c0000	0x2b0000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6044: 9788	LockApp.exe	0x7fff47340000	0x5b000	Bcp47Langs.dll	C:\WINDOWS\SYSTEM32\Bcp47Langs.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6045: 9788	LockApp.exe	0x7fff51cd0000	0x1e5000	dcomp.dll	C:\WINDOWS\SYSTEM32\dcomp.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6046: 9788	LockApp.exe	0x7fff57800000	0x6b000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6047: 9788	LockApp.exe	0x7fff4eb40000	0x208000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6048: 9788	LockApp.exe	0x7fff523a0000	0x156000	WinTypes.dll	C:\Windows\System32\WinTypes.dll	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6049: 9788	LockApp.exe	0x7fff49ad0000	0x11000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6050: 9788	LockApp.exe	0x7fff43ed0000	0x795000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6051: 9788	LockApp.exe	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6052: 9788	LockApp.exe	0x7fff52a60000	0x9e000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6053: 9788	LockApp.exe	0x7fff53940000	0xf3000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6054: 9788	LockApp.exe	0x7fff514a0000	0x264000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6055: 9788	LockApp.exe	0x7fff41730000	0x1447000	igd10iumd64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6056: 9788	LockApp.exe	0x7fff557e0000	0x27000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6057: 9788	LockApp.exe	0x7fff54a60000	0x27000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6058: 9788	LockApp.exe	0x7fff54a20000	0x3b000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6059: 9788	LockApp.exe	0x7fff4dc70000	0xe7000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6060: 9788	LockApp.exe	0x7fff47200000	0xf4000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6061: 9788	LockApp.exe	0x7fff30ed0000	0x40000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6062: 9788	LockApp.exe	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6063: 9788	LockApp.exe	0x7fff470b0000	0x14c000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6064: 9788	LockApp.exe	0x7fff47000000	0xa3000	WindowManagementAPI.dll	C:\WINDOWS\SYSTEM32\WindowManagementAPI.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6065: 9788	LockApp.exe	0x7fff46ea0000	0x152000	InputHost.dll	C:\WINDOWS\SYSTEM32\InputHost.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6066: 9788	LockApp.exe	0x7fff46da0000	0xfc000	TextInputFramework.dll	C:\WINDOWS\SYSTEM32\TextInputFramework.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6067: 9788	LockApp.exe	0x7fff52600000	0x35e000	CoreUIComponents.dll	C:\WINDOWS\SYSTEM32\CoreUIComponents.dll	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6068: 9788	LockApp.exe	0x7fff508e0000	0xf7000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6069: 9788	LockApp.exe	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	-1	2020-11-11 08:13:52.000000 UTC	Disabled
+L6070: 9788	LockApp.exe	0x7fff48530000	0x2d000	languageoverlayutil.dll	C:\WINDOWS\SYSTEM32\languageoverlayutil.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6071: 9788	LockApp.exe	0x7fff3f820000	0x1f01000	igc64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6072: 9788	LockApp.exe	0x7fff48500000	0x2d000	bcp47mrm.dll	C:\WINDOWS\SYSTEM32\bcp47mrm.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6073: 9788	LockApp.exe	0x7fff3f7e0000	0x3b000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6074: 9788	LockApp.exe	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6075: 9788	LockApp.exe	0x7fff42d30000	0x27f000	dwrite.dll	C:\WINDOWS\SYSTEM32\dwrite.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6076: 9788	LockApp.exe	0x7fff42b80000	0x1a8000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6077: 9788	LockApp.exe	0x7fff51710000	0x5c0000	d2d1.dll	C:\WINDOWS\SYSTEM32\d2d1.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6078: 9788	LockApp.exe	0x7fff45050000	0xac000	TextShaping.dll	C:\WINDOWS\SYSTEM32\TextShaping.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6079: 9788	LockApp.exe	0x7fff52e20000	0x2a000	RMCLIENT.dll	C:\WINDOWS\SYSTEM32\RMCLIENT.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6080: 9788	LockApp.exe	0x7fff576e0000	0x115000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6081: 9788	LockApp.exe	0x7fff328d0000	0xa1000	UiaManager.dll	C:\Windows\System32\UiaManager.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6082: 9788	LockApp.exe	0x7fff26bf0000	0x109000	windows.ui.core.textinput.dll	C:\WINDOWS\SYSTEM32\windows.ui.core.textinput.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6083: 9788	LockApp.exe	0x7fff46730000	0x139000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6084: 9788	LockApp.exe	0x7fff29bb0000	0x3e000	DataExchange.dll	C:\WINDOWS\system32\DataExchange.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6085: 9788	LockApp.exe	0x7fff54960000	0xc000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6086: 9788	LockApp.exe	0x7fff37300000	0x74000	lockappbroker.dll	C:\Windows\System32\lockappbroker.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6087: 9788	LockApp.exe	0x7fff55910000	0x55000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6088: 9788	LockApp.exe	0x7fff56800000	0x12a000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6089: 9788	LockApp.exe	0x7fff54b90000	0x4b000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6090: 9788	LockApp.exe	0x7fff56050000	0x741000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6091: 9788	LockApp.exe	0x7fff54a90000	0x12000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2020-11-11 08:13:52.000000 UTC	Disabled
+L6092: 9788	LockApp.exe	0x7fff303a0000	0x1b3000	ContentDeliveryManager.Utilities.dll	C:\Windows\System32\ContentDeliveryManager.Utilities.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6093: 9788	LockApp.exe	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6094: 9788	LockApp.exe	0x7fff33110000	0x4a2000	cdp.dll	C:\WINDOWS\SYSTEM32\cdp.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6095: 9788	LockApp.exe	0x7fff55650000	0x15d000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6096: 9788	LockApp.exe	0x7fff549f0000	0x2c000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6097: 9788	LockApp.exe	0x7fff4a9f0000	0x132000	dsreg.dll	C:\WINDOWS\SYSTEM32\dsreg.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6098: 9788	LockApp.exe	0x7fff54940000	0x18000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6099: 9788	LockApp.exe	0x7fff53bc0000	0x29000	slc.dll	C:\WINDOWS\SYSTEM32\slc.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6100: 9788	LockApp.exe	0x7fff53b90000	0x25000	sppc.dll	C:\WINDOWS\SYSTEM32\sppc.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6101: 9788	LockApp.exe	0x7fff36630000	0x14000	threadpoolwinrt.dll	C:\Windows\System32\threadpoolwinrt.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6102: 9788	LockApp.exe	0x7fff25f00000	0xdb000	windows.internal.shell.broker.dll	C:\Windows\System32\windows.internal.shell.broker.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6103: 9788	LockApp.exe	0x7fff31cc0000	0x4da000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6104: 9788	LockApp.exe	0x7fff3b0f0000	0x7e000	Windows.ApplicationModel.LockScreen.dll	C:\Windows\System32\Windows.ApplicationModel.LockScreen.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6105: 9788	LockApp.exe	0x7fff26d30000	0xae000	LockController.dll	C:\Windows\System32\LockController.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6106: 9788	LockApp.exe	0x7fff52c30000	0x2f000	dwmapi.dll	C:\WINDOWS\SYSTEM32\dwmapi.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6107: 9788	LockApp.exe	0x7fff4e8a0000	0x8d000	Windows.Graphics.dll	C:\Windows\System32\Windows.Graphics.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6108: 9788	LockApp.exe	0x7fff25fe0000	0x123000	Windows.Services.TargetedContent.dll	C:\Windows\System32\Windows.Services.TargetedContent.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6109: 9788	LockApp.exe	0x7fff54ea0000	0x3c000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6110: 9788	LockApp.exe	0x7fff32320000	0x2e000	NetworkIcon.dll	C:\Windows\System32\NetworkIcon.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6111: 9788	LockApp.exe	0x7fff54400000	0x3b000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6112: 9788	LockApp.exe	0x7fff322b0000	0x6d000	NetworkUXBroker.dll	C:\Windows\System32\NetworkUXBroker.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6113: 9788	LockApp.exe	0x7fff4a070000	0x10000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6114: 9788	LockApp.exe	0x7fff57450000	0x8000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6115: 9788	LockApp.exe	0x7fff45100000	0x9e000	directmanipulation.dll	C:\WINDOWS\system32\directmanipulation.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6116: 9788	LockApp.exe	0x7fff371c0000	0x3a000	MtcModel.dll	C:\Windows\System32\MtcModel.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6117: 9788	LockApp.exe	0x7fff47a50000	0x1b4000	windowscodecs.dll	C:\WINDOWS\system32\windowscodecs.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L6118: 9788	LockApp.exe	0x7fff35b00000	0xc3000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2020-11-11 08:13:54.000000 UTC	Disabled
+L6119: 9788	LockApp.exe	0x7fff261e0000	0x61000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2020-11-11 08:13:54.000000 UTC	Disabled
+
+--- pstree.txt ---
+L122: *** 9788	740	LockApp.exe	0xb78d05d6d080	14	-	1	False	2020-11-11 08:13:52.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe	"C:\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe" -ServerName:WindowsDefaultLockScreen.AppX7y4nbzq37zn4ks9k7amqjywdat7d3j2z.mca	C:\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe
+
+--- psscan.txt ---
+L531: 9788	740	LockApp.exe	0xb78d05d6d080	14	-	1	False	2020-11-11 08:13:52.000000 UTC	N/A	Disabled
+
+--- malware_malfind.txt ---
+L55: 9788	LockApp.exe	0x172c4080000	0x172c4080fff	Vad 	PAGE_EXECUTE_READWRITE	0	0	Disabled	N/A	
+
+--- ldrmodules.txt ---
+L6462: 9788	LockApp.exe	0x7ff6a7ba0000	True	False	True	\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe
+L6463: 9788	LockApp.exe	0x172bfe40000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.th.dll
+L6464: 9788	LockApp.exe	0x172c5c00000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L6465: 9788	LockApp.exe	0x172c4090000	False	False	False	\Windows\System32\en-US\NetworkIcon.dll.mui
+L6466: 9788	LockApp.exe	0x172c5ea0000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L6467: 9788	LockApp.exe	0x172c5d40000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L6468: 9788	LockApp.exe	0x172c5fa0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L6469: 9788	LockApp.exe	0x172c67c0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L6470: 9788	LockApp.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L6471: 9788	LockApp.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L6472: 9788	LockApp.exe	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L6473: 9788	LockApp.exe	0x7fff328d0000	True	True	True	\Windows\System32\UiaManager.dll
+L6474: 9788	LockApp.exe	0x7fff29bb0000	True	True	True	\Windows\System32\DataExchange.dll
+L6475: 9788	LockApp.exe	0x7fff26bf0000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L6476: 9788	LockApp.exe	0x7fff25fe0000	True	True	True	\Windows\System32\Windows.Services.TargetedContent.dll
+L6477: 9788	LockApp.exe	0x7fff25f00000	True	True	True	\Windows\System32\Windows.Internal.Shell.Broker.dll
+L6478: 9788	LockApp.exe	0x7fff261e0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L6479: 9788	LockApp.exe	0x7fff26d30000	True	True	True	\Windows\System32\LockController.dll
+L6480: 9788	LockApp.exe	0x7fff30ed0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L6481: 9788	LockApp.exe	0x7fff303a0000	True	True	True	\Windows\System32\ContentDeliveryManager.Utilities.dll
+L6482: 9788	LockApp.exe	0x7fff322b0000	True	True	True	\Windows\System32\NetworkUXBroker.dll
+L6483: 9788	LockApp.exe	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L6484: 9788	LockApp.exe	0x7fff32320000	True	True	True	\Windows\System32\NetworkIcon.dll
+L6485: 9788	LockApp.exe	0x7fff37300000	True	True	True	\Windows\System32\LockAppBroker.dll
+L6486: 9788	LockApp.exe	0x7fff36630000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L6487: 9788	LockApp.exe	0x7fff33110000	True	True	True	\Windows\System32\cdp.dll
+L6488: 9788	LockApp.exe	0x7fff35b00000	True	True	True	\Windows\System32\Windows.Web.dll
+L6489: 9788	LockApp.exe	0x7fff371c0000	True	True	True	\Windows\System32\MtcModel.dll
+L6490: 9788	LockApp.exe	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L6491: 9788	LockApp.exe	0x7fff3b0f0000	True	True	True	\Windows\System32\Windows.ApplicationModel.LockScreen.dll
+L6492: 9788	LockApp.exe	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L6493: 9788	LockApp.exe	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L6494: 9788	LockApp.exe	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L6495: 9788	LockApp.exe	0x7fff42b80000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L6496: 9788	LockApp.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L6497: 9788	LockApp.exe	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L6498: 9788	LockApp.exe	0x7fff45100000	True	True	True	\Windows\System32\directmanipulation.dll
+L6499: 9788	LockApp.exe	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L6500: 9788	LockApp.exe	0x7fff46730000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L6501: 9788	LockApp.exe	0x7fff473a0000	True	True	True	\Windows\System32\wincorlib.dll
+L6502: 9788	LockApp.exe	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L6503: 9788	LockApp.exe	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L6504: 9788	LockApp.exe	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L6505: 9788	LockApp.exe	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L6506: 9788	LockApp.exe	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L6507: 9788	LockApp.exe	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L6508: 9788	LockApp.exe	0x7fff4dc70000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L6509: 9788	LockApp.exe	0x7fff48530000	True	True	True	\Windows\System32\LanguageOverlayUtil.dll
+L6510: 9788	LockApp.exe	0x7fff47a50000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L6511: 9788	LockApp.exe	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L6512: 9788	LockApp.exe	0x7fff4a070000	True	True	True	\Windows\System32\npmproxy.dll
+L6513: 9788	LockApp.exe	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L6514: 9788	LockApp.exe	0x7fff4a9f0000	True	True	True	\Windows\System32\dsreg.dll
+L6515: 9788	LockApp.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L6516: 9788	LockApp.exe	0x7fff4e8a0000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L6517: 9788	LockApp.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L6518: 9788	LockApp.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L6519: 9788	LockApp.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6520: 9788	LockApp.exe	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L6521: 9788	LockApp.exe	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L6522: 9788	LockApp.exe	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L6523: 9788	LockApp.exe	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+L6524: 9788	LockApp.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L6525: 9788	LockApp.exe	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L6526: 9788	LockApp.exe	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L6527: 9788	LockApp.exe	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L6528: 9788	LockApp.exe	0x7fff52c30000	True	True	True	\Windows\System32\dwmapi.dll
+L6529: 9788	LockApp.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L6530: 9788	LockApp.exe	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L6531: 9788	LockApp.exe	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L6532: 9788	LockApp.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L6533: 9788	LockApp.exe	0x7fff53bc0000	True	True	True	\Windows\System32\slc.dll
+L6534: 9788	LockApp.exe	0x7fff53b90000	True	True	True	\Windows\System32\sppc.dll
+L6535: 9788	LockApp.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L6536: 9788	LockApp.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L6537: 9788	LockApp.exe	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L6538: 9788	LockApp.exe	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L6539: 9788	LockApp.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L6540: 9788	LockApp.exe	0x7fff54a60000	True	True	True	\Windows\System32\ncrypt.dll
+L6541: 9788	LockApp.exe	0x7fff54a20000	True	True	True	\Windows\System32\ntasn1.dll
+L6542: 9788	LockApp.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L6543: 9788	LockApp.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L6544: 9788	LockApp.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L6545: 9788	LockApp.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L6546: 9788	LockApp.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L6547: 9788	LockApp.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L6548: 9788	LockApp.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L6549: 9788	LockApp.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6550: 9788	LockApp.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L6551: 9788	LockApp.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6552: 9788	LockApp.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L6553: 9788	LockApp.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L6554: 9788	LockApp.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L6555: 9788	LockApp.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L6556: 9788	LockApp.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L6557: 9788	LockApp.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L6558: 9788	LockApp.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L6559: 9788	LockApp.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L6560: 9788	LockApp.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L6561: 9788	LockApp.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L6562: 9788	LockApp.exe	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+L6563: 9788	LockApp.exe	0x7fff56050000	True	True	True	\Windows\System32\shell32.dll
+L6564: 9788	LockApp.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L6565: 9788	LockApp.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L6566: 9788	LockApp.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L6567: 9788	LockApp.exe	0x7fff57450000	True	True	True	\Windows\System32\nsi.dll
+L6568: 9788	LockApp.exe	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L6569: 9788	LockApp.exe	0x7fff576e0000	True	True	True	\Windows\System32\msctf.dll
+L6570: 9788	LockApp.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L6462: 9788	LockApp.exe	0x7ff6a7ba0000	True	False	True	\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe
+L6463: 9788	LockApp.exe	0x172bfe40000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.th.dll
+L6464: 9788	LockApp.exe	0x172c5c00000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L6465: 9788	LockApp.exe	0x172c4090000	False	False	False	\Windows\System32\en-US\NetworkIcon.dll.mui
+L6466: 9788	LockApp.exe	0x172c5ea0000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L6467: 9788	LockApp.exe	0x172c5d40000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L6468: 9788	LockApp.exe	0x172c5fa0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L6469: 9788	LockApp.exe	0x172c67c0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L6470: 9788	LockApp.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L6471: 9788	LockApp.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L6472: 9788	LockApp.exe	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L6473: 9788	LockApp.exe	0x7fff328d0000	True	True	True	\Windows\System32\UiaManager.dll
+L6474: 9788	LockApp.exe	0x7fff29bb0000	True	True	True	\Windows\System32\DataExchange.dll
+L6475: 9788	LockApp.exe	0x7fff26bf0000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L6476: 9788	LockApp.exe	0x7fff25fe0000	True	True	True	\Windows\System32\Windows.Services.TargetedContent.dll
+L6477: 9788	LockApp.exe	0x7fff25f00000	True	True	True	\Windows\System32\Windows.Internal.Shell.Broker.dll
+L6478: 9788	LockApp.exe	0x7fff261e0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L6479: 9788	LockApp.exe	0x7fff26d30000	True	True	True	\Windows\System32\LockController.dll
+L6480: 9788	LockApp.exe	0x7fff30ed0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L6481: 9788	LockApp.exe	0x7fff303a0000	True	True	True	\Windows\System32\ContentDeliveryManager.Utilities.dll
+L6482: 9788	LockApp.exe	0x7fff322b0000	True	True	True	\Windows\System32\NetworkUXBroker.dll
+L6483: 9788	LockApp.exe	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L6484: 9788	LockApp.exe	0x7fff32320000	True	True	True	\Windows\System32\NetworkIcon.dll
+L6485: 9788	LockApp.exe	0x7fff37300000	True	True	True	\Windows\System32\LockAppBroker.dll
+L6486: 9788	LockApp.exe	0x7fff36630000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L6487: 9788	LockApp.exe	0x7fff33110000	True	True	True	\Windows\System32\cdp.dll
+L6488: 9788	LockApp.exe	0x7fff35b00000	True	True	True	\Windows\System32\Windows.Web.dll
+L6489: 9788	LockApp.exe	0x7fff371c0000	True	True	True	\Windows\System32\MtcModel.dll
+L6490: 9788	LockApp.exe	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L6491: 9788	LockApp.exe	0x7fff3b0f0000	True	True	True	\Windows\System32\Windows.ApplicationModel.LockScreen.dll
+L6492: 9788	LockApp.exe	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L6493: 9788	LockApp.exe	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L6494: 9788	LockApp.exe	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L6495: 9788	LockApp.exe	0x7fff42b80000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L6496: 9788	LockApp.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L6497: 9788	LockApp.exe	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L6498: 9788	LockApp.exe	0x7fff45100000	True	True	True	\Windows\System32\directmanipulation.dll
+L6499: 9788	LockApp.exe	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L6500: 9788	LockApp.exe	0x7fff46730000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L6501: 9788	LockApp.exe	0x7fff473a0000	True	True	True	\Windows\System32\wincorlib.dll
+L6502: 9788	LockApp.exe	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L6503: 9788	LockApp.exe	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L6504: 9788	LockApp.exe	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L6505: 9788	LockApp.exe	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L6506: 9788	LockApp.exe	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L6507: 9788	LockApp.exe	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L6508: 9788	LockApp.exe	0x7fff4dc70000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L6509: 9788	LockApp.exe	0x7fff48530000	True	True	True	\Windows\System32\LanguageOverlayUtil.dll
+L6510: 9788	LockApp.exe	0x7fff47a50000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L6511: 9788	LockApp.exe	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L6512: 9788	LockApp.exe	0x7fff4a070000	True	True	True	\Windows\System32\npmproxy.dll
+L6513: 9788	LockApp.exe	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L6514: 9788	LockApp.exe	0x7fff4a9f0000	True	True	True	\Windows\System32\dsreg.dll
+L6515: 9788	LockApp.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L6516: 9788	LockApp.exe	0x7fff4e8a0000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L6517: 9788	LockApp.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L6518: 9788	LockApp.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L6519: 9788	LockApp.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6520: 9788	LockApp.exe	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L6521: 9788	LockApp.exe	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L6522: 9788	LockApp.exe	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L6523: 9788	LockApp.exe	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+L6524: 9788	LockApp.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L6525: 9788	LockApp.exe	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L6526: 9788	LockApp.exe	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L6527: 9788	LockApp.exe	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L6528: 9788	LockApp.exe	0x7fff52c30000	True	True	True	\Windows\System32\dwmapi.dll
+L6529: 9788	LockApp.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L6530: 9788	LockApp.exe	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L6531: 9788	LockApp.exe	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L6532: 9788	LockApp.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L6533: 9788	LockApp.exe	0x7fff53bc0000	True	True	True	\Windows\System32\slc.dll
+L6534: 9788	LockApp.exe	0x7fff53b90000	True	True	True	\Windows\System32\sppc.dll
+L6535: 9788	LockApp.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L6536: 9788	LockApp.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L6537: 9788	LockApp.exe	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L6538: 9788	LockApp.exe	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L6539: 9788	LockApp.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L6540: 9788	LockApp.exe	0x7fff54a60000	True	True	True	\Windows\System32\ncrypt.dll
+L6541: 9788	LockApp.exe	0x7fff54a20000	True	True	True	\Windows\System32\ntasn1.dll
+L6542: 9788	LockApp.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L6543: 9788	LockApp.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L6544: 9788	LockApp.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L6545: 9788	LockApp.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L6546: 9788	LockApp.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L6547: 9788	LockApp.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L6548: 9788	LockApp.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L6549: 9788	LockApp.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6550: 9788	LockApp.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L6551: 9788	LockApp.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6552: 9788	LockApp.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L6553: 9788	LockApp.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L6554: 9788	LockApp.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L6555: 9788	LockApp.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L6556: 9788	LockApp.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L6557: 9788	LockApp.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L6558: 9788	LockApp.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L6559: 9788	LockApp.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L6560: 9788	LockApp.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L6561: 9788	LockApp.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L6562: 9788	LockApp.exe	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+L6563: 9788	LockApp.exe	0x7fff56050000	True	True	True	\Windows\System32\shell32.dll
+L6564: 9788	LockApp.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L6565: 9788	LockApp.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L6566: 9788	LockApp.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L6567: 9788	LockApp.exe	0x7fff57450000	True	True	True	\Windows\System32\nsi.dll
+L6568: 9788	LockApp.exe	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L6569: 9788	LockApp.exe	0x7fff576e0000	True	True	True	\Windows\System32\msctf.dll
+L6570: 9788	LockApp.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L123: 9788	LockApp.exe	\Device\HarddiskVolume3\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe	C:\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe	False	False
+
+--- sessions.txt ---
+L156: 1	-	9788	LockApp.exe	-	2020-11-11 08:13:52.000000 UTC
+
+=== END OF PIVOT REPORT ===

@@ -1,0 +1,93 @@
+I need to reason carefully about each of these three findings before rendering verdicts.
+
+---
+
+**PID 4472 — armsvc.exe**
+
+Agent 1's two signals:
+1. Orphaned parent (PPID 828 not in process list)
+2. Privilege combination: SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege
+
+On the orphaned parent: PPID 828 is absent from the process list. However, this is a common and well-understood artifact on Windows — services started by the SCM (services.exe, which typically runs at a low PID) can have their parent exit or the PID can be reused. Many legitimate services show orphaned PPIDs in memory snapshots, especially if the snapshot was taken long after boot. This alone is weak.
+
+On the privilege set: The privileges shown are the **full LocalSystem token** — every single privilege from SeCreateTokenPrivilege through SeDelegateSessionUserImpersonatePrivilege is present. This is the standard Windows LocalSystem token. Services running as LocalSystem always carry this full set. Adobe ARM service (armsvc.exe) is a well-known legitimate service that runs as LocalSystem. The path `C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe` is the canonical legitimate path. The DLL list shows only System32 DLLs. No malfind hits. No suspicious cmdline. No network connections. No suspicious DLLs from user-writable paths.
+
+The privilege set is not anomalous for a LocalSystem service — it is the standard LocalSystem token. Agent 1's "unusually broad" characterization is incorrect for a LocalSystem service. This is a false positive.
+
+**Verdict: REJECTED** — Standard LocalSystem service with canonical path and clean DLL set. The full privilege set is the expected LocalSystem token, not an anomaly.
+
+---
+
+**PID 22816 — AdobeARMHelper**
+
+Agent 1's three signals:
+1. Zero-duration lifetime (CreateTime == ExitTime)
+2. Missing path and cmdline
+3. Same privilege set as parent
+
+On zero-duration lifetime: CreateTime and ExitTime are both `2020-11-13 16:25:58.000000 UTC`. This is suspicious at first glance, but Volatility's timestamp resolution can sometimes produce this artifact for very short-lived processes. AdobeARMHelper.exe is a known legitimate Adobe helper that armsvc.exe spawns briefly to check for updates and then terminates. A very short-lived child process of an update service is entirely expected behavior.
+
+On missing cmdline: cmdline.txt shows `-` for this PID, meaning Volatility couldn't read the command line from the process's PEB (likely because the process had already exited and memory was partially freed). This is consistent with a short-lived process.
+
+On path: pstree.txt provides the full path: `\Device\HarddiskVolume3\Program Files (x86)\Common Files\Adobe\ARM\1.0\AdobeARMHelper.exe` — this is the canonical legitimate path.
+
+On malware_pebmasquerade.txt: The entry shows `False False` — meaning no PEB masquerade detected.
+
+On privilege set: Same LocalSystem token as parent — inherited, expected.
+
+The combination of: legitimate canonical path confirmed in pstree, no PEB masquerade, legitimate parent (armsvc.exe), expected short-lived behavior for an update helper, and no malfind hits — all point to benign.
+
+**Verdict: REJECTED** — Legitimate short-lived Adobe ARM helper process. Path confirmed as canonical in pstree. No PEB masquerade. Zero-duration lifetime is consistent with a brief update check subprocess. Missing cmdline is a Volatility artifact of an already-exited process.
+
+---
+
+**PID 4508 — IntelCpHDCPSvc**
+
+Agent 1's two signals:
+1. Orphaned parent (PPID 828)
+2. Privilege combination: SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege
+
+Same analysis as armsvc.exe applies here. The privilege set is the full LocalSystem token — standard for a hardware/driver service. The path `C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe` is the canonical location for Intel driver store services. The DriverStore path is a legitimate Windows location for OEM driver packages. DLLs shown are from System32 only. No malfind. No suspicious cmdline. Orphaned PPID 828 is the same as armsvc.exe — same explanation applies (SCM PID reuse/exit).
+
+**Verdict: REJECTED** — Legitimate Intel HDCP service running from the Windows DriverStore with a standard LocalSystem token. Orphaned PPID is a common artifact for services started at boot. DLL set is clean.
+
+---
+
+Now I'll write the formal report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: All three Agent 1 findings are assessed as benign after evidence review. The privilege-combination signal fired on the full Windows LocalSystem token, which is the expected token for any service running as LocalSystem — it is not an anomaly. The orphaned-parent signal is a common Volatility artifact for services started by the SCM at boot. No malicious indicators (suspicious DLLs, malfind hits, download cradles, network connections, or PEB masquerades) were found in any of the three processes.
+Counts: confirmed=0  inconclusive=0  rejected=3
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All three Agent 1 leads were REJECTED. Rejection rationale summary:
+
+  PID 4472 (armsvc.exe): Legitimate Adobe ARM update service at its canonical
+  path. The full privilege set (SeTcbPrivilege, SeDebugPrivilege,
+  SeImpersonatePrivilege, and all others) is the standard Windows LocalSystem
+  token — every LocalSystem service carries this identical set. The orphaned
+  PPID 828 is a well-known Volatility artifact when the SCM's PID has been
+  reused or the snapshot was taken long after boot. DLLs loaded exclusively
+  from System32. No malfind, no network, no suspicious cmdline.
+
+  PID 22816 (AdobeARMHelper): Legitimate short-lived child of armsvc.exe.
+  Full image path confirmed as canonical
+  (\Device\HarddiskVolume3\Program Files (x86)\Common Files\Adobe\ARM\1.0\
+  AdobeARMHelper.exe) via pstree.txt. PEB-masquerade check returned False.
+  Zero-duration lifetime is consistent with a brief update-check subprocess
+  whose memory was partially freed before the snapshot; missing cmdline is a
+  standard Volatility artifact for already-exited processes. Privilege set
+  is inherited LocalSystem token from parent — expected.
+
+  PID 4508 (IntelCpHDCPSvc): Legitimate Intel HDCP driver-store service.
+  Path (C:\WINDOWS\System32\DriverStore\FileRepository\...\IntelCpHDCPSvc.exe)
+  is the canonical Windows DriverStore location for OEM driver packages.
+  Privilege set is again the full LocalSystem token — normal for a hardware
+  service. DLLs shown are System32-only. Orphaned PPID 828 is the same
+  artifact as PID 4472. No malfind, no network, no suspicious cmdline.
+
+================================================================

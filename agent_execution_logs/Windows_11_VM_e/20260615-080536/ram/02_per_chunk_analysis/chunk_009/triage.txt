@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_009.txt
+Summary: sihost.exe has an orphaned parent PID (1924) that does not appear anywhere in the process list; all other processes appear structurally normal.
+
+[PROCESS]
+pid: 4276
+ppid: 1924
+image: sihost.exe
+cmdline: sihost.exe
+severity: LOW
+reasons: orphaned_parent: PPID 1924 (listed as 'unknown') does not appear anywhere in the process list
+

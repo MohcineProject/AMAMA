@@ -1,0 +1,41 @@
+I need to analyze the single finding for PID 8220 (SearchProtocolHost.exe) and render a verdict.
+
+**Reasoning through the evidence:**
+
+**1. Command-line plausibility:**
+The command line is entirely standard for `SearchProtocolHost.exe`. The named pipe arguments (`Global\UsGthrFltPipeMssGthrPipe1_`, `Global\UsGthrCtrlFltPipeMssGthrPipe1`), the registry path (`Software\Microsoft\Windows Search`), the user-agent string, and the temp path (`C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc`) are all textbook legitimate invocations of the Windows Search Protocol Host. Nothing encoded, no download cradle, no LOLBin abuse.
+
+**2. DLL provenance:**
+The three DLL entries shown are all from `C:\WINDOWS\System32\` — canonical system paths. No user-writable paths, no random-named DLLs.
+
+**3. Privilege footprint:**
+This is the most interesting signal. The process holds a very large privilege set including `SeTcbPrivilege` (Default), `SeDebugPrivilege` (Default), `SeImpersonatePrivilege` (Default), `SeCreateGlobalPrivilege` (Default), etc. However, critically, the column shows these are mostly **not enabled** — only `SeChangeNotifyPrivilege` is `Present,Enabled,Default`. The others are listed without `Enabled` in the state column. This is consistent with a process running under the SYSTEM token (which carries the full privilege set by default, most of which are not enabled unless explicitly activated). `SearchProtocolHost.exe` runs as SYSTEM, so this privilege set is expected and normal.
+
+**4. Orphaned parent:**
+PPID 6604 is not present in the process list. This is the core Agent 1 signal. However, this is a well-known benign artifact: `SearchIndexer.exe` (the legitimate parent) may have restarted, exited, or the PPID slot was reused. The Windows Search service architecture does spawn `SearchProtocolHost.exe` from `SearchIndexer.exe`, but the parent exiting after spawning the child is normal behavior. The orphaned PPID alone, with no other corroborating signals, is weak.
+
+**5. No malfind, no netscan, no registry persistence, no suspicious handles:**
+None of these artifact types appear in the evidence block. No injection markers, no network connections, no persistence.
+
+**6. Overall assessment:**
+The only signal is the orphaned parent PPID. The command line is legitimate, the DLLs are from System32, the privilege set is consistent with SYSTEM-context operation (mostly not enabled), and there are no corroborating signals from any other artifact type. This is a `REJECTED` finding — the orphaned PPID is a common benign artifact when the parent process has exited or been restarted.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: A single process was submitted for validation. PID 8220 (SearchProtocolHost.exe) was flagged solely on the basis of an orphaned parent PID. All available evidence — command line, DLL load paths, and privilege state — is consistent with legitimate Windows Search service operation. No corroborating malicious signals were found across any artifact type. The memory image shows no indicators of compromise for this process.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were REJECTED (1 total). See rejection rationale below for audit purposes.
+
+----------------------------------------------------------------
+REJECTED (audit note) — PID 8220 SearchProtocolHost.exe
+Reason: The sole Agent 1 signal is an orphaned PPID (6604 not present in pslist). This is a well-known benign artifact: SearchIndexer.exe (the legitimate parent) may have exited or restarted after spawning the child, leaving the PPID dangling. The command line is the canonical legitimate invocation of SearchProtocolHost.exe, including the expected named-pipe arguments, registry path, and ProgramData temp directory. All three DLL entries are loaded from C:\WINDOWS\System32\ with no user-writable paths. The privilege set is consistent with a SYSTEM-context process: the full token privilege list is present but only SeChangeNotifyPrivilege is shown as Present,Enabled,Default — all others are listed without Enabled, which is normal for an unexpanded SYSTEM token. No malfind sections, no network connections, no registry persistence, and no suspicious handles appear in the evidence. No corroborating signals exist across any artifact type to elevate this beyond the single weak orphaned-PPID indicator.
+----------------------------------------------------------------
+
+================================================================

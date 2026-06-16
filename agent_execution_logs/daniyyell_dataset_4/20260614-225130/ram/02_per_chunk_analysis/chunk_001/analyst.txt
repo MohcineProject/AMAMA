@@ -1,0 +1,64 @@
+I need to analyze the evidence for PID 684 carefully before rendering a verdict.
+
+**Reasoning through the evidence:**
+
+**Agent 1 signals:**
+1. `orphaned_parent`: PPID 716 not present in the active process list — discovered via `psscan` only (not `pslist`), suggesting the parent may have been hidden or unlinked.
+2. `parent_mismatch`: `svchost.exe` parent is unknown PID 716 — expected parent is `services.exe`.
+
+**What the evidence actually shows:**
+
+From `psscan.txt` L29:
+```
+684	716	svchost.exe	0xbb0c8e0b5080	13	-	0	False	2025-08-07 19:51:21.000000 UTC	N/A	Disabled
+```
+
+Key observations:
+- PID 684 appears in `psscan` only — not in `pslist`. This is itself a significant signal: `psscan` scans raw memory for EPROCESS structures, while `pslist` walks the active doubly-linked list. A process visible in `psscan` but absent from `pslist` is a classic indicator of DKOM (Direct Kernel Object Manipulation) — a rootkit technique to hide a process from the active list.
+- PPID 716 is not present in the process list at all. For a legitimate `svchost.exe`, the parent should be `services.exe` (typically PID 748, 824, or similar well-known PID). An unknown PPID that itself doesn't appear anywhere is suspicious.
+- The `Wow64` column shows `False` — 64-bit process, consistent with a real svchost.
+- 13 threads — plausible for svchost.
+- Session 0 — consistent with a system service.
+- `Disabled` in the last column (likely referring to the EPROCESS list link being disabled/unlinked — corroborating the DKOM hypothesis).
+
+**What's missing / limiting confidence:**
+- No `cmdline.txt` evidence — we cannot see the command-line arguments (legitimate svchost always runs with `-k <group>` arguments; absence of `-k` args would be a strong malice indicator).
+- No `dlllist.txt` evidence — cannot check DLL provenance.
+- No `malfind.txt` evidence — no code injection markers.
+- No `netscan.txt` evidence — no network connections.
+- No `privileges.txt` evidence — cannot check privilege footprint.
+
+**Assessment:**
+
+The combination of:
+1. Process visible in `psscan` but **not** in `pslist` (DKOM hiding — the `Disabled` field corroborates this)
+2. Unknown/orphaned PPID 716 that itself doesn't appear anywhere in the process list
+3. `svchost.exe` with a non-`services.exe` parent
+
+...constitutes meaningful suspicion. However, the evidence is **thin** — only a single `psscan` line. There is no cmdline, no DLL evidence, no malfind, no network activity to corroborate. The DKOM signal (pslist-only absence + `Disabled`) is the strongest indicator here, but without corroborating artefacts I cannot reach `CONFIRMED`. The absence from `pslist` combined with the orphaned PPID is more than nothing, but not enough to confirm malice with confidence.
+
+Verdict: **INCONCLUSIVE** — the DKOM-consistent hiding pattern is a real signal, but the evidence is a single psscan line with no corroboration from cmdline, DLL, malfind, or network artefacts.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-08-07T20:00:00Z
+Summary: One suspicious svchost.exe instance (PID 684) was identified as hidden from the active process list and carrying an orphaned parent PID, consistent with DKOM-based process concealment. However, the available evidence is limited to a single psscan line; no command-line, DLL, malfind, network, or privilege artefacts were recovered to corroborate active malicious behaviour. The finding cannot be confirmed or rejected on current evidence alone.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      684
+PPID:     716
+Image:    svchost.exe
+Cmdline:  (not recovered — no cmdline.txt evidence present)
+MITRE:    T1564.001 — Hide Artifacts: Hidden Files and Directories / T1014 — Rootkit (DKOM process hiding)
+
+Justification:
+  PID 684 appears in psscan but is absent from pslist, and the psscan entry carries a "Disabled" marker in the EPROCESS list-link field — a pattern consistent with Direct Kernel Object Manipulation (DKOM), where an attacker unlinks the EPROCESS structure from the active process doubly-linked list to hide the process from standard enumeration. Compounding this, PPID 716 does not appear anywhere in the process list, meaning svchost.exe lacks a traceable parent — legitimate svchost.exe instances are always spawned by services.exe (a well-known, enumerable PID). These two signals together are meaningful. However, no command-line arguments were recovered (which would reveal whether the standard "-k <ServiceGroup>" pattern is present), no DLL evidence exists to check for user-writable-path loads, no malfind sections were extracted, and no network connections were observed. Without corroborating artefacts across additional evidence types, the finding cannot be elevated to CONFIRMED under a conservative bias standard.
+
+Key Evidence:
+  - L29: 684	716	svchost.exe	0xbb0c8e0b5080	13	-	0	False	2025-08-07 19:51:21.000000 UTC	N/A	Disabled
+----------------------------------------------------------------
+
+================================================================

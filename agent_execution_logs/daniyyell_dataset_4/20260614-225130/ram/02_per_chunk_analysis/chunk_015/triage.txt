@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_015.txt
+Summary: explorer.exe holds an established internal connection to port 8070 on a peer host; userinit.exe parent PID 672 is absent from the process list (orphaned); FTK Imager holds SeImpersonatePrivilege which warrants confirmation in a forensic context.
+
+[PROCESS]
+pid: 5788
+ppid: 672
+image: userinit.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 672 is not present anywhere in the process list | missing_cmdline: no command-line recorded for userinit.exe | short_lived: exited ~30 seconds after creation (19:36:30 → 19:37:00), though short-lived userinit is normal; combined with orphaned parent warrants confirmation
+
+[PROCESS]
+pid: 5832
+ppid: 5788
+image: explorer.exe
+cmdline: C:\Windows\Explorer.EXE
+severity: MEDIUM
+reasons: network_anomaly: explorer.exe has ESTABLISHED TCPv4 connection to 192.168.135.57:8070 — explorer should not initiate outbound TCP sessions; port 8070 is non-standard | suspicious_destination_port: port 8070 on internal peer 192.168.135.57 is atypical for explorer.exe and may indicate C2 or lateral-movement tooling
+
+[PROCESS]
+pid: 1548
+ppid: 5832
+image: FTK Imager.exe
+cmdline: "C:\Program Files\AccessData\FTK Imager\FTK Imager.exe"
+severity: LOW
+reasons: privilege_signal: SeImpersonatePrivilege enabled on a forensic imaging tool — legitimate in a DFIR context but should be confirmed as analyst-initiated and not attacker-planted | forensic_tool_presence: FTK Imager running on a potentially compromised host may indicate attacker-side evidence collection or live imaging
+

@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:31:00Z
+Chunk: chunk_010.txt
+Summary: svchost.exe with unknown/missing parent (PID 888 not present in process list, discovered only via psscan); short-lived execution window of ~2 minutes.
+
+[PROCESS]
+pid: 5348
+ppid: 888
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_parent: PPID 888 not present in process list, discovered_via=psscan only — parent process has no live EPROCESS entry | parent_mismatch: svchost.exe parent is not services.exe (PID 888 is unknown/unlisted) | short_lived: process ran for approximately 2 minutes (18:28:46 to 18:30:48 UTC), suspicious in context of parent anomaly
+

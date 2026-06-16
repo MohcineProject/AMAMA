@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_010.txt
+Summary: Both svchost.exe instances reference an unknown parent PID 896 which does not appear in the process list; orphaned svchost is a weak but noteworthy signal worth pivot confirmation.
+
+[PROCESS]
+pid: 4312
+ppid: 896
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc
+severity: LOW
+reasons: orphaned_parent: PPID 896 (unknown) does not appear anywhere in the process list — expected parent is services.exe | parent_mismatch: svchost.exe parent should be services.exe, but parent PID 896 is listed as unknown
+
+[PROCESS]
+pid: 4340
+ppid: 896
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s webthreatdefusersvc
+severity: LOW
+reasons: orphaned_parent: PPID 896 (unknown) does not appear anywhere in the process list — expected parent is services.exe | parent_mismatch: svchost.exe parent should be services.exe, but parent PID 896 is listed as unknown
+

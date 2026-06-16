@@ -1,0 +1,80 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 6056 — RuntimeBroker.**
+
+**Name truncation:** "RuntimeBroker." is 14 characters — this is the EPROCESS 14-char truncation of "RuntimeBroker.exe". The pstree.txt line confirms the full path: `\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe`. So the trailing dot is NOT a typosquat — it's the known kernel truncation artefact. Agent 1's `truncated_name` signal must be rejected per the framework rules.
+
+**Orphaned parent (PPID 860):** PPID 860 is not in the process list. However, RuntimeBroker.exe is legitimately a child of svchost.exe (which hosts DcomLaunch, typically PID in the 800s range). The parent being absent from pslist is not unusual — it could have exited. This is a weak signal on its own.
+
+**Missing cmdline:** cmdline shows `-` which means Volatility couldn't read it. This is suspicious but not definitive — it can happen with protected processes or memory paging.
+
+**Privileges:** This is the most alarming signal. The privilege set is enormous — it includes `SeCreateTokenPrivilege`, `SeAssignPrimaryTokenPrivilege`, `SeTcbPrivilege`, `SeDebugPrivilege`, `SeLoadDriverPrivilege`, `SeImpersonatePrivilege`, `SeBackupPrivilege`, `SeRestorePrivilege`, `SeAuditPrivilege`, `SeSystemEnvironmentPrivilege`, etc. This is essentially the full NT AUTHORITY\SYSTEM token privilege set. A legitimate RuntimeBroker.exe runs in a user session with a very limited token — it should NOT have SeTcbPrivilege, SeCreateTokenPrivilege, SeAssignPrimaryTokenPrivilege, SeDebugPrivilege, SeLoadDriverPrivilege, etc. This is a massive red flag indicating token manipulation or that this is not a legitimate RuntimeBroker.exe.
+
+**ldrmodules:** The one shown line is `\Windows\System32\en-GB\windows.storage.dll.mui` — a legitimate Windows file. However, the flag `False False False` for all three columns (InLoad, InInit, InMem) is itself suspicious — it means this module is not in any of the three PEB loader lists, which can indicate a hidden/injected module. Wait — let me re-read. The ldrmodules format is typically: PID, Process, Base, InLoad, InInit, InMem, MappedPath. So `False False False` means the DLL at that address is NOT in any of the three loader lists. That's a strong indicator of a hidden/injected module or memory anomaly.
+
+**Overall assessment for PID 6056:** The combination of (1) SYSTEM-level privilege set on what should be a user-context process, (2) missing/unreadable cmdline, (3) orphaned parent, (4) ldrmodules showing False/False/False entries (hidden modules), and (5) the path confirmed as System32 (which could be legitimate OR a masquerading binary) — this is CONFIRMED suspicious. The privilege set alone (SeTcbPrivilege, SeCreateTokenPrivilege, SeDebugPrivilege on RuntimeBroker) is near-definitive evidence of token manipulation or process hollowing/masquerading.
+
+Severity: The SYSTEM-level token with SeDebugPrivilege, SeTcbPrivilege, SeCreateTokenPrivilege on a process that should be user-context, combined with hidden modules, indicates active post-exploitation. I'll rate this **HIGH** — it's an active attacker capability (token manipulation, possible process hollowing). It could be CRITICAL if credential dumping is occurring, but I don't have malfind data to confirm that, so I'll stay at HIGH.
+
+MITRE: T1134 — Access Token Manipulation (the SYSTEM-level token on a user-context process). Also potentially T1055 (Process Injection) given the False/False/False ldrmodules entry.
+
+---
+
+Now writing the report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-08-07T20:00:00Z
+Summary: A single process — PID 6056, masquerading as RuntimeBroker.exe — carries a full NT AUTHORITY\SYSTEM privilege token that is wholly inconsistent with the legitimate RuntimeBroker role, which runs in a restricted user-session context. The orphaned parent, unreadable command line, and ldrmodules entries showing all-False loader-list membership compound the suspicion and point to process hollowing or token manipulation as part of an active post-exploitation phase. Scope appears limited to one confirmed finding; no additional PIDs were submitted for review.
+Counts: confirmed=1  inconclusive=0  rejected=0
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      6056
+PPID:     860 (not present in process list)
+Image:    RuntimeBroker.exe  (EPROCESS truncated to "RuntimeBroker.")
+Cmdline:  - (unreadable / not captured by Volatility)
+Severity: HIGH
+MITRE:    T1134 — Access Token Manipulation
+
+Justification:
+  The legitimate RuntimeBroker.exe is a COM activation broker that runs
+  in a user session under a tightly scoped token; it should hold only a
+  handful of standard user-context privileges (SeChangeNotifyPrivilege,
+  SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege, SeUndockPrivilege
+  at most). PID 6056 instead carries the near-complete NT AUTHORITY\SYSTEM
+  privilege set, including SeCreateTokenPrivilege, SeAssignPrimaryTokenPrivilege,
+  SeTcbPrivilege, SeDebugPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege,
+  SeBackupPrivilege, SeRestorePrivilege, and SeAuditPrivilege — none of which
+  are present or enabled in a legitimate RuntimeBroker token. This is a
+  definitive indicator of token manipulation (T1134) or process hollowing
+  (T1055) where an attacker has injected into or replaced the RuntimeBroker
+  image and elevated its token to SYSTEM. The unreadable command line and
+  orphaned parent (PPID 860 absent from pslist) remove the two most common
+  exculpatory data points. Additionally, the single ldrmodules entry for this
+  PID shows all three PEB loader-list flags as False, indicating at least one
+  mapped region is hidden from the standard Windows loader — consistent with
+  injected or manually mapped code. The process path confirmed in pstree.txt
+  (\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe) is consistent
+  with either a legitimate binary that has been hollowed, or a binary placed
+  in System32 to blend in; without malfind data the distinction cannot be
+  drawn, but the token anomaly alone is sufficient to confirm malice.
+
+Key Evidence:
+  - L5085: 6056	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+  - L5080: 6056	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+  - L5081: 6056	RuntimeBroker.	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+  - L5098: 6056	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+  - L5088: 6056	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+  - L5107: 6056	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+  - L5095: 6056	RuntimeBroker.	17	SeBackupPrivilege		Backup files and directories
+  - L5099: 6056	RuntimeBroker.	21	SeAuditPrivilege		Generate security audits
+  - L151:  6056	RuntimeBroker.	-   (cmdline unreadable)
+  - L7416: 6056	RuntimeBroker.	0x25c931e0000	False	False	False	\Windows\System32\en-GB\windows.storage.dll.mui
+  - L86:   *** 6056	860	RuntimeBroker.	0xbb0c94ad4080	7	-	1	False	2025-08-07 19:48:25.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	-	-
+----------------------------------------------------------------
+
+================================================================

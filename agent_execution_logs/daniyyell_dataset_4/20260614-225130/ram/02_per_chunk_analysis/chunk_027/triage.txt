@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_027.txt
+Summary: audiodg.exe has an orphaned parent PID (2220 not present in process list) and holds SeImpersonatePrivilege, which is atypical for the audio device graph isolation process.
+
+[PROCESS]
+pid: 8552
+ppid: 2220
+image: audiodg.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_parent: PPID 2220 (unknown) not present anywhere in the process list | privilege_anomaly: SeImpersonatePrivilege enabled on audiodg.exe, which should not require impersonation capabilities in normal operation
+

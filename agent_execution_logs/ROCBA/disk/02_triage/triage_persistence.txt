@@ -1,0 +1,69 @@
+=== TRIAGE REPORT ===
+Generated: 2026-06-13T13:32:02Z
+Counts:    total_flagged=7  critical=0  high=1  medium=3  low=3
+Summary:   Input contained registry autoruns, scheduled tasks, shimcache, prefetch, and browser history for a Windows 10 endpoint (user fredr/srl-h); the most severe finding is confirmed execution of SDelete (a secure-deletion tool) run 7 times in a tight cluster immediately before Dropbox uninstall activity, corroborated by REGSVR32 and RUNDLL32 prefetch entries on the same day, suggesting deliberate evidence destruction.
+
+[FINDING]
+triage_source: persistence
+type:       execution
+key:        SDELETE.EXE
+secondary:  sdelete.exe, SDELETE.EXE-0E837E93.pf, SDELETE.EXE-2BD91720.pf
+severity:   HIGH
+reasons:    execution:sdelete_confirmed_executed_7_times_in_tight_cluster|execution:last_run=2020-11-14T13:47:10Z_run_count=5_previous_runs_span_only_2min|execution:second_prefetch_run_count=2_at_2020-11-14T13:42:38Z|staging:secure_deletion_tool_used_immediately_before_dropbox_uninstall_at_13:50|lolbas:correlated_with_REGSVR32_6_runs_at_13:50_and_RUNDLL32_runs_same_day
+source:     prefetch
+
+[FINDING]
+triage_source: persistence
+type:       lolbas
+key:        REGSVR32.EXE
+secondary:  regsvr32.exe, REGSVR32.EXE-03D3FB87.pf, REGSVR32.EXE-B31EC963.pf
+severity:   MEDIUM
+reasons:    lolbas:regsvr32_executed_6_times_in_1_second_burst_at_2020-11-14T13:50:16-18Z|lolbas:two_distinct_prefetch_hashes_indicate_different_argument_sets|execution:timing_coincides_with_dropbox_uninstall_and_sdelete_activity|lolbas:run_count=6_and_run_count=3_both_first_seen_same_day
+source:     prefetch
+
+[FINDING]
+triage_source: persistence
+type:       lolbas
+key:        RUNDLL32.EXE
+secondary:  rundll32.exe, RUNDLL32.EXE-171F7F04.pf, RUNDLL32.EXE-36D847E4.pf, RUNDLL32.EXE-75313621.pf, RUNDLL32.EXE-E0D36E93.pf, RUNDLL32.EXE-52A71BD0.pf
+severity:   MEDIUM
+reasons:    lolbas:five_distinct_prefetch_hashes_for_rundll32_indicating_multiple_distinct_invocations|lolbas:four_single-run_entries_on_2020-11-14_suggesting_one-off_payload_executions|execution:RUNDLL32.EXE-52A71BD0_run_count=14_spanning_multiple_days_including_2020-11-14T12:46:47Z|execution:timing_overlaps_with_sdelete_and_regsvr32_cluster
+source:     prefetch
+
+[FINDING]
+triage_source: persistence
+type:       execution
+key:        VSSADMIN.EXE
+secondary:  vssadmin.exe, VSSADMIN.EXE-CEAFB416.pf
+severity:   MEDIUM
+reasons:    execution:vssadmin_run_3_times_last_run=2020-11-14T14:03:24Z|execution:previous_runs_at_13:16:44_and_12:49:00_same_day|execution:timing_immediately_follows_sdelete_cluster_suggesting_shadow_copy_deletion|execution:correlated_with_VSSVC_also_running_repeatedly_same_day
+source:     prefetch
+
+[FINDING]
+triage_source: persistence
+type:       execution
+key:        C:\Users\fredr\AppData\Local\Temp\GUMF3B9.tmp\GoogleUpdateSetup.exe
+secondary:  GoogleUpdateSetup.exe, GUMF3B9.tmp
+severity:   LOW
+reasons:    execution:shimcache_executed=Yes_path_in_AppData_Temp|execution:last_modified=2020-11-10T14:09:06|execution:temp_subdirectory_with_GUID-like_name_typical_of_dropper_staging
+source:     registry_shimcache
+
+[FINDING]
+triage_source: persistence
+type:       browser
+key:        C:\Users\fredr\Downloads\installbackupandsync (1).exe
+secondary:  installbackupandsync.exe, google.com/intl/en_gh/drive/download/
+severity:   LOW
+reasons:    browser:executable_downloaded_to_Downloads_path|browser:download_path_ends_in_.exe|browser:shimcache_entry_also_present_for_same_file_at_same_timestamp_2020-11-10T14:09:06Z|browser:downloaded_twice_from_different_google_drive_locale_URLs
+source:     browser_history
+
+[FINDING]
+triage_source: persistence
+type:       lolbas
+key:        MSIEXEC.EXE
+secondary:  msiexec.exe, MSIEXEC.EXE-8FFB1633.pf, MSIEXEC.EXE-CDBFC0F7.pf
+severity:   LOW
+reasons:    lolbas:msiexec_two_distinct_prefetch_hashes_run_on_2020-11-14T14:18-19Z|lolbas:timing_immediately_follows_sdelete_vssadmin_cluster|lolbas:msiexec_alone_without_confirmed_malicious_payload_is_low_severity
+source:     prefetch
+
+=== END TRIAGE ===

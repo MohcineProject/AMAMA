@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:40:00Z
+Chunk: chunk_022.txt
+Summary: RuntimeBroker.exe has an orphaned parent (PID 860 listed as unknown); all other signals are benign.
+
+[PROCESS]
+pid: 7016
+ppid: 860
+image: RuntimeBroker.exe
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 860 is listed as 'unknown' — parent process not present in the process list
+

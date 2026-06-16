@@ -1,0 +1,53 @@
+================================================================
+PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: Two low-severity Agent 1 leads were reviewed. Both findings are consistent with legitimate Windows behaviour: an orphaned-parent svchost running a standard per-user service group, and a short-lived Microsoft Mail/Calendar helper process (HxTsr.exe) launched from its expected WindowsApps path. No malicious indicators were found in either evidence block. Both findings are rejected.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTION NOTES (for Agent 3 visibility)
+================================================================
+
+PID 6532 — svchost.exe — REJECTED
+  The sole Agent 1 signal was an orphaned parent (PPID 828 not visible in the
+  process list). This is a well-known artefact of memory acquisition timing:
+  services.exe (or another short-lived parent) may have exited or been paged
+  out before the snapshot was taken, leaving the PPID unresolvable. The command
+  line is entirely standard for a per-user notification service:
+  "svchost.exe -k UnistackSvcGroup -s WpnUserService" is the canonical
+  invocation for the Windows Push Notification User Service. The binary path is
+  C:\WINDOWS\system32\svchost.exe (System32, not a user-writable location). The
+  DLL evidence shows only ntdll.dll and KERNEL32.DLL from System32 — no
+  suspicious third-party or user-path DLLs. The privilege list is the standard
+  full-token set that Volatility reports for any process holding the default
+  Windows token; none of the high-value privileges (SeDebugPrivilege,
+  SeTcbPrivilege, SeImpersonatePrivilege) appear in the "Present" or "Enabled"
+  column — they are listed but not held. No malfind, netscan, or registry
+  persistence evidence was provided. Orphaned parent alone, with no other
+  corroborating signal, does not meet the confirmation threshold.
+
+PID 6620 — HxTsr.exe — REJECTED
+  Agent 1 flagged two signals: orphaned parent (PPID 740) and a ~2-second
+  lifespan. Both are fully explained by the process's legitimate identity.
+  HxTsr.exe is the "Hx Transport" helper for the Microsoft Mail and Calendar
+  UWP application; it is routinely spawned on-demand and exits immediately after
+  completing a background sync or notification task. The pstree evidence
+  confirms the full executable path as:
+  \Device\HarddiskVolume3\Program Files\WindowsApps\
+  microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\
+  HxTsr.exe — the expected, signed WindowsApps location. The
+  malware_pebmasquerade check returned False/False (no PEB masquerade
+  detected). The command line field shows "-" (empty/unavailable), which is
+  normal for a UWP-hosted process whose arguments are passed via COM activation
+  rather than a visible command line. The privilege list is the same default
+  full-token set as PID 6532; no elevated privileges are enabled. The orphaned
+  parent is again consistent with the UWP broker (RuntimeBroker or
+  svchost-hosted COM surrogate) having already exited. No malfind, netscan,
+  DLL anomaly, or registry persistence evidence was provided or present.
+  Short lifespan plus orphaned parent for a known UWP helper is not a
+  malicious indicator.
+
+================================================================

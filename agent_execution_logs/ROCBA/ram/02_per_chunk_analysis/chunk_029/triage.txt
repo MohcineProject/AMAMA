@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_029.txt
+Summary: Cortana.exe has an orphaned parent PID (740 unknown) and a closed external connection to a public IP on port 443; signals are weak individually but worth confirming.
+
+[PROCESS]
+pid: 10136
+ppid: 740
+image: Cortana.exe
+cmdline: "C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.exe" -ServerName:App.AppX2y379sjp88wjq1y80217mddj3fargf2y.mca
+severity: LOW
+reasons: orphaned_parent: PPID 740 does not appear anywhere in the process list | network: closed TCPv4 connection to public IP 52.167.249.196:443 (Microsoft-owned but worth confirming legitimacy in context)
+

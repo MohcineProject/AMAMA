@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_037.txt
+Summary: Orphaned parent PIDs across multiple processes; WUDFHost.exe holds SeImpersonatePrivilege which is expected but worth noting given orphaned parent context.
+
+[PROCESS]
+pid: 14152
+ppid: 828
+image: WUDFHost.exe
+cmdline: "C:\Windows\System32\WUDFHost.exe" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-289adcb1-6fe5-4b48-bd4d-08777806a9c5 -SystemEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-4b6d6c1e-91a3-4bfc-ae02-c1f25b047507 -IoCancelEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-4418831c-257d-4f01-bc45-af581fa59a33 -NonStateChangingEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-1110fa00-ea1f-4a90-8da8-0f1d0bc75d50 -LifetimeId:e02e4799-e237-4a4c-9f63-3252cafc7034 -DeviceGroupId:WpdFsGroup -HostArg:0
+severity: LOW
+reasons: orphaned_parent: PPID 828 not present anywhere in the process list | privilege: SeImpersonatePrivilege enabled — low concern for WUDFHost but warrants confirmation given orphaned parent
+

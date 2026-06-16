@@ -1,0 +1,201 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:57:05Z
+
+=== PID 8220 (SearchProtocolHost.exe, ppid=6604) ===
+Cmdline: "C:\WINDOWS\System32\SearchProtocolHost.exe" Global\UsGthrFltPipeMssGthrPipe1_ Global\UsGthrCtrlFltPipeMssGthrPipe1 1 -2147483646 "Software\Microsoft\Windows Search" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT; MS Search 4.0 Robot)" "C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc" "DownLevelDaemon"
+
+--- pslist.txt ---
+L149: 8220	6604	SearchProtocol	0xcd8a12d49080	8	-	0	False	2026-05-12 18:26:11.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L149: 8220	SearchProtocol	"C:\WINDOWS\System32\SearchProtocolHost.exe" Global\UsGthrFltPipeMssGthrPipe1_ Global\UsGthrCtrlFltPipeMssGthrPipe1 1 -2147483646 "Software\Microsoft\Windows Search" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT; MS Search 4.0 Robot)" "C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc" "DownLevelDaemon" 
+
+--- privileges.txt ---
+L5045: 8220	SearchProtocol	2	SeCreateTokenPrivilege		Create a token object
+L5046: 8220	SearchProtocol	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L5047: 8220	SearchProtocol	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L5048: 8220	SearchProtocol	5	SeIncreaseQuotaPrivilege		Increase quotas
+L5049: 8220	SearchProtocol	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5050: 8220	SearchProtocol	7	SeTcbPrivilege	Default	Act as part of the operating system
+L5051: 8220	SearchProtocol	8	SeSecurityPrivilege		Manage auditing and security log
+L5052: 8220	SearchProtocol	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L5053: 8220	SearchProtocol	10	SeLoadDriverPrivilege		Load and unload device drivers
+L5054: 8220	SearchProtocol	11	SeSystemProfilePrivilege	Default	Profile system performance
+L5055: 8220	SearchProtocol	12	SeSystemtimePrivilege		Change the system time
+L5056: 8220	SearchProtocol	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L5057: 8220	SearchProtocol	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L5058: 8220	SearchProtocol	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L5059: 8220	SearchProtocol	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L5060: 8220	SearchProtocol	17	SeBackupPrivilege		Backup files and directories
+L5061: 8220	SearchProtocol	18	SeRestorePrivilege		Restore files and directories
+L5062: 8220	SearchProtocol	19	SeShutdownPrivilege		Shut down the system
+L5063: 8220	SearchProtocol	20	SeDebugPrivilege	Default	Debug programs
+L5064: 8220	SearchProtocol	21	SeAuditPrivilege	Default	Generate security audits
+L5065: 8220	SearchProtocol	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L5066: 8220	SearchProtocol	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5067: 8220	SearchProtocol	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L5068: 8220	SearchProtocol	25	SeUndockPrivilege		Remove computer from docking station
+L5069: 8220	SearchProtocol	26	SeSyncAgentPrivilege		Synch directory service data
+L5070: 8220	SearchProtocol	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5071: 8220	SearchProtocol	28	SeManageVolumePrivilege		Manage the files on a volume
+L5072: 8220	SearchProtocol	29	SeImpersonatePrivilege	Default	Impersonate a client after authentication
+L5073: 8220	SearchProtocol	30	SeCreateGlobalPrivilege	Default	Create global objects
+L5074: 8220	SearchProtocol	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5075: 8220	SearchProtocol	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5076: 8220	SearchProtocol	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L5077: 8220	SearchProtocol	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L5078: 8220	SearchProtocol	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L5079: 8220	SearchProtocol	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L7151: 8220	SearchProtocol	0x7ff7c14b0000	0xb7000	SearchProtocolHost.exe	C:\WINDOWS\System32\SearchProtocolHost.exe	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7152: 8220	SearchProtocol	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7153: 8220	SearchProtocol	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7154: 8220	SearchProtocol	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7155: 8220	SearchProtocol	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7156: 8220	SearchProtocol	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7157: 8220	SearchProtocol	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7158: 8220	SearchProtocol	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7159: 8220	SearchProtocol	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7160: 8220	SearchProtocol	0x7fffd6e20000	0x29e000	icu.dll	C:\WINDOWS\System32\icu.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7161: 8220	SearchProtocol	0x7fffe6ec0000	0x31000	imm32.dll	C:\WINDOWS\System32\imm32.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7162: 8220	SearchProtocol	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7163: 8220	SearchProtocol	0x7fffe7e80000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7164: 8220	SearchProtocol	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7165: 8220	SearchProtocol	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7166: 8220	SearchProtocol	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7167: 8220	SearchProtocol	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7168: 8220	SearchProtocol	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7169: 8220	SearchProtocol	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7170: 8220	SearchProtocol	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7171: 8220	SearchProtocol	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7172: 8220	SearchProtocol	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7173: 8220	SearchProtocol	0x7fffd1b50000	0x30000	mssprxy.dll	C:\WINDOWS\system32\mssprxy.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7174: 8220	SearchProtocol	0x7fffd19d0000	0x3d000	mssph.dll	C:\WINDOWS\system32\mssph.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7175: 8220	SearchProtocol	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7176: 8220	SearchProtocol	0x7fffe4360000	0x50000	AUTHZ.dll	C:\WINDOWS\system32\AUTHZ.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7177: 8220	SearchProtocol	0x7fffe48b0000	0x36000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2026-05-12 18:26:11.000000 UTC	Disabled
+L7178: 8220	SearchProtocol	0x7fffe5f20000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7179: 8220	SearchProtocol	0x7fffe8120000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7180: 8220	SearchProtocol	0x7fffe1040000	0x103000	propsys.dll	C:\WINDOWS\system32\propsys.dll	-1	2026-05-12 18:26:11.000000 UTC	Disabled
+L7181: 8220	SearchProtocol	0x7fffe5540000	0x57000	CFGMGR32.dll	C:\WINDOWS\System32\CFGMGR32.dll	-1	2026-05-12 18:26:12.000000 UTC	Disabled
+L7182: 8220	SearchProtocol	0x7fffe5920000	0x29000	profapi.dll	C:\WINDOWS\System32\profapi.dll	-1	2026-05-12 18:26:12.000000 UTC	Disabled
+L7183: 8220	SearchProtocol	0x7fffc5480000	0xa6000	ntshrui.dll	C:\WINDOWS\SYSTEM32\ntshrui.dll	-1	2026-05-12 18:26:12.000000 UTC	Disabled
+L7184: 8220	SearchProtocol	0x7fffd74a0000	0x29000	srvcli.dll	C:\WINDOWS\System32\srvcli.dll	-1	2026-05-12 18:26:12.000000 UTC	Disabled
+L7185: 8220	SearchProtocol	0x7fffd3580000	0x13000	cscapi.dll	C:\WINDOWS\System32\cscapi.dll	6	2026-05-12 18:26:12.000000 UTC	Disabled
+L7186: 8220	SearchProtocol	0x7fffda1c0000	0x29000	edputil.dll	C:\WINDOWS\System32\edputil.dll	-1	2026-05-12 18:26:12.000000 UTC	Disabled
+L7187: 8220	SearchProtocol	0x7fffbf220000	0xbf000	Windows.FileExplorer.Common.dll	C:\Windows\System32\Windows.FileExplorer.Common.dll	-1	2026-05-12 18:26:12.000000 UTC	Disabled
+L7188: 8220	SearchProtocol	0x7fffe5cf0000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	-1	2026-05-12 18:26:12.000000 UTC	Disabled
+L7189: 8220	SearchProtocol	0x7fffcd1f0000	0x32000	cldapi.dll	C:\Windows\System32\cldapi.dll	-1	2026-05-12 18:26:12.000000 UTC	Disabled
+L7190: 8220	SearchProtocol	0x7fffe4a30000	0x49000	SspiCli.dll	C:\WINDOWS\System32\SspiCli.dll	-1	2026-05-12 18:26:12.000000 UTC	Disabled
+L7191: 8220	SearchProtocol	0x7fffda0a0000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-12 18:26:12.000000 UTC	Disabled
+L7192: 8220	SearchProtocol	0x7fffd9280000	0x177000	Windows.System.Launcher.dll	C:\Windows\System32\Windows.System.Launcher.dll	6	2026-05-12 18:26:12.000000 UTC	Disabled
+L7193: 8220	SearchProtocol	0x7fffdbf00000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2026-05-12 18:26:12.000000 UTC	Disabled
+L7194: 8220	SearchProtocol	0x7fffe3260000	0x9f000	apphelp.dll	C:\WINDOWS\SYSTEM32\apphelp.dll	-1	2026-05-12 18:30:08.000000 UTC	Disabled
+L7195: 8220	SearchProtocol	0x7fff95360000	0x726000	ieframe.dll	C:\Windows\System32\ieframe.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L7196: 8220	SearchProtocol	0x7fffe6f10000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L7197: 8220	SearchProtocol	0x7fffd7500000	0x2c4000	iertutil.dll	C:\Windows\System32\iertutil.dll	-1	2026-05-12 18:30:08.000000 UTC	Disabled
+L7198: 8220	SearchProtocol	0x7fffe40b0000	0xd000	netutils.dll	C:\Windows\System32\netutils.dll	-1	2026-05-12 18:30:08.000000 UTC	Disabled
+L7199: 8220	SearchProtocol	0x7fffd0b30000	0x293000	comctl32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L7200: 8220	SearchProtocol	0x7fffe3310000	0xd000	Secur32.dll	C:\WINDOWS\System32\Secur32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L7201: 8220	SearchProtocol	0x7fffa8070000	0x44000	MLANG.dll	C:\WINDOWS\System32\MLANG.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L7202: 8220	SearchProtocol	0x7fffd2390000	0x288000	WININET.dll	C:\WINDOWS\System32\WININET.dll	-1	2026-05-12 18:30:10.000000 UTC	Disabled
+L7203: 8220	SearchProtocol	0x7fffdde20000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L7204: 8220	SearchProtocol	0x7fffd2100000	0x47000	msIso.dll	C:\WINDOWS\System32\msIso.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L7205: 8220	SearchProtocol	0x7fffd77d0000	0x1dd000	urlmon.dll	C:\WINDOWS\System32\urlmon.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L7206: 8220	SearchProtocol	0x7fffda3a0000	0x47000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L7207: 8220	SearchProtocol	0x7fffc7090000	0xf000	LINKINFO.dll	C:\WINDOWS\System32\LINKINFO.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+
+--- pstree.txt ---
+L130: *** 8220	6604	SearchProtocol	0xcd8a12d49080	8	-	0	False	2026-05-12 18:26:11.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\SearchProtocolHost.exe	"C:\WINDOWS\System32\SearchProtocolHost.exe" Global\UsGthrFltPipeMssGthrPipe1_ Global\UsGthrCtrlFltPipeMssGthrPipe1 1 -2147483646 "Software\Microsoft\Windows Search" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT; MS Search 4.0 Robot)" "C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc" "DownLevelDaemon" 	C:\WINDOWS\System32\SearchProtocolHost.exe
+
+--- psscan.txt ---
+L148: 8220	6604	SearchProtocol	0xcd8a12d49080	8	-	0	False	2026-05-12 18:26:11.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L7492: 8220	SearchProtocol	0x22ca5a90000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L7493: 8220	SearchProtocol	0x22ca5850000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L7494: 8220	SearchProtocol	0x22ca5980000	False	False	False	\Windows\System32\en-US\ieframe.dll.mui
+L7495: 8220	SearchProtocol	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L7496: 8220	SearchProtocol	0x7fffd9280000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L7497: 8220	SearchProtocol	0x7ff7c14b0000	True	False	True	\Windows\System32\SearchProtocolHost.exe
+L7498: 8220	SearchProtocol	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L7499: 8220	SearchProtocol	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L7500: 8220	SearchProtocol	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7501: 8220	SearchProtocol	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L7502: 8220	SearchProtocol	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L7503: 8220	SearchProtocol	0x7fffe3260000	True	True	True	\Windows\System32\apphelp.dll
+L7504: 8220	SearchProtocol	0x7fffe3310000	True	True	True	\Windows\System32\secur32.dll
+L7505: 8220	SearchProtocol	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L7506: 8220	SearchProtocol	0x7fffe48b0000	True	True	True	\Windows\System32\ntmarta.dll
+L7507: 8220	SearchProtocol	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L7508: 8220	SearchProtocol	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7509: 8220	SearchProtocol	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L7510: 8220	SearchProtocol	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L7511: 8220	SearchProtocol	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L7512: 8220	SearchProtocol	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L7513: 8220	SearchProtocol	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L7514: 8220	SearchProtocol	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L7515: 8220	SearchProtocol	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L7516: 8220	SearchProtocol	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L7517: 8220	SearchProtocol	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L7518: 8220	SearchProtocol	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L7519: 8220	SearchProtocol	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L7520: 8220	SearchProtocol	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L7521: 8220	SearchProtocol	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L7522: 8220	SearchProtocol	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L7523: 8220	SearchProtocol	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L7524: 8220	SearchProtocol	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L7525: 8220	SearchProtocol	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L7526: 8220	SearchProtocol	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L7527: 8220	SearchProtocol	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L7528: 8220	SearchProtocol	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L7529: 8220	SearchProtocol	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_ldrmodules.txt ---
+L7492: 8220	SearchProtocol	0x22ca5a90000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L7493: 8220	SearchProtocol	0x22ca5850000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L7494: 8220	SearchProtocol	0x22ca5980000	False	False	False	\Windows\System32\en-US\ieframe.dll.mui
+L7495: 8220	SearchProtocol	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L7496: 8220	SearchProtocol	0x7fffd9280000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L7497: 8220	SearchProtocol	0x7ff7c14b0000	True	False	True	\Windows\System32\SearchProtocolHost.exe
+L7498: 8220	SearchProtocol	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L7499: 8220	SearchProtocol	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L7500: 8220	SearchProtocol	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7501: 8220	SearchProtocol	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L7502: 8220	SearchProtocol	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L7503: 8220	SearchProtocol	0x7fffe3260000	True	True	True	\Windows\System32\apphelp.dll
+L7504: 8220	SearchProtocol	0x7fffe3310000	True	True	True	\Windows\System32\secur32.dll
+L7505: 8220	SearchProtocol	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L7506: 8220	SearchProtocol	0x7fffe48b0000	True	True	True	\Windows\System32\ntmarta.dll
+L7507: 8220	SearchProtocol	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L7508: 8220	SearchProtocol	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7509: 8220	SearchProtocol	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L7510: 8220	SearchProtocol	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L7511: 8220	SearchProtocol	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L7512: 8220	SearchProtocol	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L7513: 8220	SearchProtocol	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L7514: 8220	SearchProtocol	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L7515: 8220	SearchProtocol	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L7516: 8220	SearchProtocol	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L7517: 8220	SearchProtocol	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L7518: 8220	SearchProtocol	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L7519: 8220	SearchProtocol	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L7520: 8220	SearchProtocol	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L7521: 8220	SearchProtocol	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L7522: 8220	SearchProtocol	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L7523: 8220	SearchProtocol	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L7524: 8220	SearchProtocol	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L7525: 8220	SearchProtocol	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L7526: 8220	SearchProtocol	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L7527: 8220	SearchProtocol	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L7528: 8220	SearchProtocol	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L7529: 8220	SearchProtocol	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_pebmasquerade.txt ---
+L149: 8220	SearchProtocol	\Device\HarddiskVolume4\Windows\System32\SearchProtocolHost.exe	C:\WINDOWS\System32\SearchProtocolHost.exe	False	False
+
+--- sessions.txt ---
+L104: 0	-	8220	SearchProtocol	WORKGROUP/CLEANWINDOWS11$	2026-05-12 18:26:11.000000 UTC
+
+=== END OF PIVOT REPORT ===

@@ -1,0 +1,399 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:46:38Z
+
+=== PID 3328 (MsMpEng.exe, ppid=888) ===
+Cmdline: "C:\Program Files\Windows Defender\MsMpEng.exe"
+
+--- pslist.txt ---
+L62: 3328	888	MsMpEng.exe	0xcd8a11651080	32	-	0	False	2026-05-12 18:23:16.000000 UTC	N/A	Disabled
+L88: 5816	3328	MpCmdRun.exe	0xcd8a1242d080	5	-	0	False	2026-05-12 18:23:34.000000 UTC	N/A	Disabled
+L90: 6032	3328	MpCmdRun.exe	0xcd8a1250b080	8	-	0	False	2026-05-12 18:23:34.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L62: 3328	MsMpEng.exe	"C:\Program Files\Windows Defender\MsMpEng.exe"
+
+--- privileges.txt ---
+L2000: 3328	MsMpEng.exe	2	SeCreateTokenPrivilege		Create a token object
+L2001: 3328	MsMpEng.exe	3	SeAssignPrimaryTokenPrivilege	Present,Enabled	Replace a process-level token
+L2002: 3328	MsMpEng.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L2003: 3328	MsMpEng.exe	5	SeIncreaseQuotaPrivilege	Present,Enabled	Increase quotas
+L2004: 3328	MsMpEng.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2005: 3328	MsMpEng.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L2006: 3328	MsMpEng.exe	8	SeSecurityPrivilege	Present,Enabled	Manage auditing and security log
+L2007: 3328	MsMpEng.exe	9	SeTakeOwnershipPrivilege	Present,Enabled	Take ownership of files/objects
+L2008: 3328	MsMpEng.exe	10	SeLoadDriverPrivilege	Present,Enabled	Load and unload device drivers
+L2009: 3328	MsMpEng.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L2010: 3328	MsMpEng.exe	12	SeSystemtimePrivilege		Change the system time
+L2011: 3328	MsMpEng.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L2012: 3328	MsMpEng.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L2013: 3328	MsMpEng.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L2014: 3328	MsMpEng.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L2015: 3328	MsMpEng.exe	17	SeBackupPrivilege	Present,Enabled	Backup files and directories
+L2016: 3328	MsMpEng.exe	18	SeRestorePrivilege	Present,Enabled	Restore files and directories
+L2017: 3328	MsMpEng.exe	19	SeShutdownPrivilege	Present,Enabled	Shut down the system
+L2018: 3328	MsMpEng.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L2019: 3328	MsMpEng.exe	21	SeAuditPrivilege	Default	Generate security audits
+L2020: 3328	MsMpEng.exe	22	SeSystemEnvironmentPrivilege	Present,Enabled	Edit firmware environment values
+L2021: 3328	MsMpEng.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2022: 3328	MsMpEng.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2023: 3328	MsMpEng.exe	25	SeUndockPrivilege		Remove computer from docking station
+L2024: 3328	MsMpEng.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2025: 3328	MsMpEng.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2026: 3328	MsMpEng.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2027: 3328	MsMpEng.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L2028: 3328	MsMpEng.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2029: 3328	MsMpEng.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2030: 3328	MsMpEng.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2031: 3328	MsMpEng.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L2032: 3328	MsMpEng.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L2033: 3328	MsMpEng.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L2034: 3328	MsMpEng.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L2139: 3328	MsMpEng.exe	0x7ff713ad0000	0x43000	MsMpEng.exe	C:\Program Files\Windows Defender\MsMpEng.exe	-1	2026-05-12 18:23:16.000000 UTC	Disabled
+L2140: 3328	MsMpEng.exe	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:23:16.000000 UTC	Disabled
+L2141: 3328	MsMpEng.exe	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\SYSTEM32\KERNEL32.DLL	-1	2026-05-12 18:23:16.000000 UTC	Disabled
+L2142: 3328	MsMpEng.exe	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\SYSTEM32\KERNELBASE.dll	-1	2026-05-12 18:23:16.000000 UTC	Disabled
+L2143: 3328	MsMpEng.exe	0x7fffe5b70000	0x177000	CRYPT32.dll	C:\WINDOWS\SYSTEM32\CRYPT32.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2144: 3328	MsMpEng.exe	0x7fffe5ab0000	0x81000	WINTRUST.dll	C:\WINDOWS\SYSTEM32\WINTRUST.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2145: 3328	MsMpEng.exe	0x7fffe8310000	0xbb000	ADVAPI32.dll	C:\WINDOWS\SYSTEM32\ADVAPI32.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2146: 3328	MsMpEng.exe	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\SYSTEM32\ucrtbase.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2147: 3328	MsMpEng.exe	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\SYSTEM32\msvcrt.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2148: 3328	MsMpEng.exe	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\SYSTEM32\RPCRT4.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2149: 3328	MsMpEng.exe	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\SYSTEM32\sechost.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2150: 3328	MsMpEng.exe	0x7fffe5050000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2151: 3328	MsMpEng.exe	0x7fffd8e00000	0xb000	version.dll	C:\WINDOWS\system32\version.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2152: 3328	MsMpEng.exe	0x7fffd7e80000	0x5ee000	mpsvc.dll	C:\Program Files\Windows Defender\mpsvc.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2153: 3328	MsMpEng.exe	0x7fffd7ae0000	0x1b9000	MpClient.dll	C:\Program Files\Windows Defender\MpClient.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2154: 3328	MsMpEng.exe	0x7fffe4db0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2155: 3328	MsMpEng.exe	0x7fffd77d0000	0x1dd000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2156: 3328	MsMpEng.exe	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-12 18:23:16.000000 UTC	Disabled
+L2157: 3328	MsMpEng.exe	0x7fffd74d0000	0x21000	MPR.dll	C:\WINDOWS\SYSTEM32\MPR.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2158: 3328	MsMpEng.exe	0x7fffd7500000	0x2c4000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2159: 3328	MsMpEng.exe	0x7fffe6f10000	0x75f000	SHELL32.dll	C:\WINDOWS\SYSTEM32\SHELL32.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2160: 3328	MsMpEng.exe	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\SYSTEM32\msvcp_win.dll	-1	2026-05-12 18:23:16.000000 UTC	Disabled
+L2161: 3328	MsMpEng.exe	0x7fffe7e80000	0x1c5000	USER32.dll	C:\WINDOWS\SYSTEM32\USER32.dll	-1	2026-05-12 18:23:16.000000 UTC	Disabled
+L2162: 3328	MsMpEng.exe	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\SYSTEM32\GDI32.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2163: 3328	MsMpEng.exe	0x7fffe5cf0000	0x16a000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2164: 3328	MsMpEng.exe	0x7fffe55a0000	0xa000	DPAPI.DLL	C:\WINDOWS\SYSTEM32\DPAPI.DLL	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2165: 3328	MsMpEng.exe	0x7fffd74a0000	0x29000	srvcli.dll	C:\WINDOWS\SYSTEM32\srvcli.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2166: 3328	MsMpEng.exe	0x7fffe40b0000	0xd000	netutils.dll	C:\WINDOWS\SYSTEM32\netutils.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2167: 3328	MsMpEng.exe	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\SYSTEM32\win32u.dll	-1	2026-05-12 18:23:16.000000 UTC	Disabled
+L2168: 3328	MsMpEng.exe	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\SYSTEM32\gdi32full.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2169: 3328	MsMpEng.exe	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\SYSTEM32\combase.dll	-1	2026-05-12 18:23:16.000000 UTC	Disabled
+L2170: 3328	MsMpEng.exe	0x7fffe5f20000	0x864000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2171: 3328	MsMpEng.exe	0x7fffe4d70000	0x30000	gpapi.dll	C:\WINDOWS\SYSTEM32\gpapi.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2172: 3328	MsMpEng.exe	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\SYSTEM32\shcore.dll	6	2026-05-12 18:23:16.000000 UTC	Disabled
+L2173: 3328	MsMpEng.exe	0x7fffe3ec0000	0x2d000	SLC.dll	C:\WINDOWS\SYSTEM32\SLC.dll	6	2026-05-12 18:23:17.000000 UTC	Disabled
+L2174: 3328	MsMpEng.exe	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2026-05-12 18:23:17.000000 UTC	Disabled
+L2175: 3328	MsMpEng.exe	0x7fffe48b0000	0x36000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2026-05-12 18:23:17.000000 UTC	Disabled
+L2176: 3328	MsMpEng.exe	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\SYSTEM32\ole32.dll	-1	2026-05-12 18:23:17.000000 UTC	Disabled
+L2177: 3328	MsMpEng.exe	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll	-1	2026-05-12 18:23:17.000000 UTC	Disabled
+L2178: 3328	MsMpEng.exe	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\SYSTEM32\clbcatq.dll	-1	2026-05-12 18:23:17.000000 UTC	Disabled
+L2179: 3328	MsMpEng.exe	0x7fffe83d0000	0xd7000	oleaut32.dll	C:\Windows\System32\oleaut32.dll	-1	2026-05-12 18:23:17.000000 UTC	Disabled
+L2180: 3328	MsMpEng.exe	0x7fffe7680000	0x74000	ws2_32.dll	C:\WINDOWS\system32\ws2_32.dll	6	2026-05-12 18:23:17.000000 UTC	Disabled
+L2181: 3328	MsMpEng.exe	0x7fffd65a0000	0x8d000	MpCommu.dll	C:\Program Files\Windows Defender\MpCommu.dll	6	2026-05-12 18:23:17.000000 UTC	Disabled
+L2182: 3328	MsMpEng.exe	0x7fffe5880000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-12 18:23:17.000000 UTC	Disabled
+L2183: 3328	MsMpEng.exe	0x7fffe5860000	0x14000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2026-05-12 18:23:17.000000 UTC	Disabled
+L2184: 3328	MsMpEng.exe	0x7fffd61f0000	0x12e000	mprtp.dll	C:\Program Files\Windows Defender\mprtp.dll	6	2026-05-12 18:23:17.000000 UTC	Disabled
+L2185: 3328	MsMpEng.exe	0x7fffd5d50000	0xc000	FLTLIB.DLL	C:\WINDOWS\SYSTEM32\FLTLIB.DLL	6	2026-05-12 18:23:17.000000 UTC	Disabled
+L2186: 3328	MsMpEng.exe	0x7fffde7e0000	0x86000	fwpuclnt.dll	C:\WINDOWS\system32\fwpuclnt.dll	6	2026-05-12 18:23:17.000000 UTC	Disabled
+L2187: 3328	MsMpEng.exe	0x7fffe3fc0000	0xae000	firewallapi.dll	C:\WINDOWS\system32\firewallapi.dll	6	2026-05-12 18:23:17.000000 UTC	Disabled
+L2188: 3328	MsMpEng.exe	0x7fffe3f30000	0x44000	fwbase.dll	C:\WINDOWS\system32\fwbase.dll	6	2026-05-12 18:23:17.000000 UTC	Disabled
+L2189: 3328	MsMpEng.exe	0x7fffe3610000	0x13e000	dxgi.dll	C:\WINDOWS\system32\dxgi.dll	6	2026-05-12 18:23:23.000000 UTC	Disabled
+L2190: 3328	MsMpEng.exe	0x7fffe35c0000	0x43000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	-1	2026-05-12 18:23:23.000000 UTC	Disabled
+L2191: 3328	MsMpEng.exe	0x7fffe03f0000	0x60000	directxdatabasehelper.dll	C:\WINDOWS\SYSTEM32\directxdatabasehelper.dll	6	2026-05-12 18:23:23.000000 UTC	Disabled
+L2192: 3328	MsMpEng.exe	0x7fffe5540000	0x57000	cfgmgr32.dll	C:\WINDOWS\SYSTEM32\cfgmgr32.dll	-1	2026-05-12 18:23:23.000000 UTC	Disabled
+L2193: 3328	MsMpEng.exe	0x7fffd3190000	0xf000	wofutil.dll	C:\WINDOWS\system32\wofutil.dll	6	2026-05-12 18:23:23.000000 UTC	Disabled
+L2194: 3328	MsMpEng.exe	0x7fffe4a30000	0x49000	sspicli.dll	C:\WINDOWS\SYSTEM32\sspicli.dll	6	2026-05-12 18:23:34.000000 UTC	Disabled
+L2195: 3328	MsMpEng.exe	0x7fffe78a0000	0x487000	SETUPAPI.dll	C:\WINDOWS\SYSTEM32\SETUPAPI.dll	6	2026-05-12 18:23:34.000000 UTC	Disabled
+L2196: 3328	MsMpEng.exe	0x7fffe55d0000	0x2d000	DEVOBJ.dll	C:\WINDOWS\SYSTEM32\DEVOBJ.dll	6	2026-05-12 18:23:34.000000 UTC	Disabled
+L2197: 3328	MsMpEng.exe	0x7fffdf900000	0x127000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2026-05-12 18:23:34.000000 UTC	Disabled
+L2198: 3328	MsMpEng.exe	0x7fffc8fa0000	0x46000	wscapi.dll	C:\WINDOWS\system32\wscapi.dll	6	2026-05-12 18:23:34.000000 UTC	Disabled
+L2199: 3328	MsMpEng.exe	0x7fffd8f40000	0x77000	Tdh.dll	C:\WINDOWS\system32\Tdh.dll	6	2026-05-12 18:23:34.000000 UTC	Disabled
+L2200: 3328	MsMpEng.exe	0x7fffe4fe0000	0x1b000	CRYPTSP.dll	C:\WINDOWS\SYSTEM32\CRYPTSP.dll	6	2026-05-12 18:23:34.000000 UTC	Disabled
+L2201: 3328	MsMpEng.exe	0x7fffe46f0000	0x39000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	6	2026-05-12 18:23:34.000000 UTC	Disabled
+L2202: 3328	MsMpEng.exe	0x7fffe5000000	0xc000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	6	2026-05-12 18:23:34.000000 UTC	Disabled
+L2203: 3328	MsMpEng.exe	0x7fffe8060000	0x20000	imagehlp.dll	C:\WINDOWS\SYSTEM32\imagehlp.dll	6	2026-05-12 18:23:34.000000 UTC	Disabled
+L2204: 3328	MsMpEng.exe	0x7fffe3310000	0xd000	secur32.dll	C:\WINDOWS\system32\secur32.dll	6	2026-05-12 18:23:35.000000 UTC	Disabled
+L2205: 3328	MsMpEng.exe	0x7fffe5920000	0x29000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2026-05-12 18:23:35.000000 UTC	Disabled
+L2206: 3328	MsMpEng.exe	0x7fffe8120000	0x67000	SHLWAPI.dll	C:\WINDOWS\SYSTEM32\SHLWAPI.dll	6	2026-05-12 18:23:35.000000 UTC	Disabled
+L2207: 3328	MsMpEng.exe	0x7fffe0f20000	0x6f000	netprofm.dll	C:\WINDOWS\System32\netprofm.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2208: 3328	MsMpEng.exe	0x7fffddd40000	0x19000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2209: 3328	MsMpEng.exe	0x7fffa9550000	0x35000	usoapi.dll	C:\Windows\System32\usoapi.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2210: 3328	MsMpEng.exe	0x7fffd2960000	0x26000	UpdatePolicy.dll	C:\Windows\System32\UpdatePolicy.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2211: 3328	MsMpEng.exe	0x7fffd9730000	0x4a000	wusys.dll	C:\WINDOWS\SYSTEM32\wusys.dll	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L2212: 3328	MsMpEng.exe	0x7fffd57d0000	0x6b000	uusbrain.dll	C:\WINDOWS\uus\packages\preview\AMD64\uusbrain.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2213: 3328	MsMpEng.exe	0x7fffd2af0000	0x56000	UpdatePolicyCore.dll	\\?\C:\Windows\UUS\Packages\Preview\AMD64\UpdatePolicyCore.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2214: 3328	MsMpEng.exe	0x7fffd5310000	0x12000	wbemprox.dll	C:\WINDOWS\system32\wbem\wbemprox.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2215: 3328	MsMpEng.exe	0x7fffd86a0000	0x7a000	wbemcomn.dll	C:\WINDOWS\SYSTEM32\wbemcomn.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2216: 3328	MsMpEng.exe	0x7fffda2d0000	0x15000	wbemsvc.dll	C:\WINDOWS\system32\wbem\wbemsvc.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2217: 3328	MsMpEng.exe	0x7fffd4c20000	0xf0000	fastprox.dll	C:\WINDOWS\system32\wbem\fastprox.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2218: 3328	MsMpEng.exe	0x7fffd4290000	0x1d000	amsi.dll	C:\WINDOWS\SYSTEM32\amsi.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2219: 3328	MsMpEng.exe	0x7fffd41e0000	0xa2000	MpOav.dll	C:\Program Files\Windows Defender\MpOav.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L2220: 3328	MsMpEng.exe	0x7fffe40c0000	0x33000	iphlpapi.dll	C:\WINDOWS\system32\iphlpapi.dll	-1	2026-05-12 18:23:56.000000 UTC	Disabled
+L2221: 3328	MsMpEng.exe	0x7fffe89d0000	0xa000	NSI.dll	C:\WINDOWS\SYSTEM32\NSI.dll	-1	2026-05-12 18:23:56.000000 UTC	Disabled
+L2222: 3328	MsMpEng.exe	0x7fffdfae0000	0x1d000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	-1	2026-05-12 18:23:56.000000 UTC	Disabled
+L2223: 3328	MsMpEng.exe	0x7fffdf160000	0x23000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	-1	2026-05-12 18:23:56.000000 UTC	Disabled
+L2224: 3328	MsMpEng.exe	0x7fffe41e0000	0x12a000	DNSAPI.dll	C:\WINDOWS\SYSTEM32\DNSAPI.dll	-1	2026-05-12 18:23:56.000000 UTC	Disabled
+L2225: 3328	MsMpEng.exe	0x7fffdbbb0000	0xca000	webio.dll	C:\WINDOWS\SYSTEM32\webio.dll	6	2026-05-12 18:23:56.000000 UTC	Disabled
+L2226: 3328	MsMpEng.exe	0x7fffe4d00000	0x6b000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	6	2026-05-12 18:23:56.000000 UTC	Disabled
+L2227: 3328	MsMpEng.exe	0x7fffe3450000	0xe000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	-1	2026-05-12 18:23:56.000000 UTC	Disabled
+L2228: 3328	MsMpEng.exe	0x7fffdce60000	0xb000	rasadhlp.dll	C:\Windows\System32\rasadhlp.dll	6	2026-05-12 18:23:56.000000 UTC	Disabled
+L2229: 3328	MsMpEng.exe	0x7fffe45d0000	0xc4000	schannel.DLL	C:\WINDOWS\system32\schannel.DLL	6	2026-05-12 18:23:56.000000 UTC	Disabled
+L2230: 3328	MsMpEng.exe	0x7fffe5200000	0x30000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2026-05-12 18:23:57.000000 UTC	Disabled
+L2231: 3328	MsMpEng.exe	0x7fffe51b0000	0x3f000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2026-05-12 18:23:57.000000 UTC	Disabled
+L2232: 3328	MsMpEng.exe	0x7fffd3420000	0x42000	ncryptsslp.dll	C:\WINDOWS\system32\ncryptsslp.dll	6	2026-05-12 18:23:57.000000 UTC	Disabled
+L2233: 3328	MsMpEng.exe	0x7fffd22e0000	0x3b000	cryptnet.dll	C:\WINDOWS\SYSTEM32\cryptnet.dll	6	2026-05-12 18:23:57.000000 UTC	Disabled
+L2234: 3328	MsMpEng.exe	0x7fffa2fb0000	0x1392000	mpengine.dll	C:\ProgramData\Microsoft\Windows Defender\Definition Updates\{1EE1827B-3223-48CC-9246-A7DF976EEB2F}\mpengine.dll	6	2026-05-12 18:24:33.000000 UTC	Disabled
+L2235: 3328	MsMpEng.exe	0x7fffe3320000	0x29000	Wtsapi32.dll	C:\WINDOWS\system32\Wtsapi32.dll	6	2026-05-12 18:25:30.000000 UTC	Disabled
+L2236: 3328	MsMpEng.exe	0x7fffe57b0000	0x63000	WINSTA.dll	C:\WINDOWS\system32\WINSTA.dll	6	2026-05-12 18:25:30.000000 UTC	Disabled
+L2237: 3328	MsMpEng.exe	0x7fffd31b0000	0x9000	wscproxystub.dll	C:\WINDOWS\system32\wscproxystub.dll	6	2026-05-12 18:26:03.000000 UTC	Disabled
+
+--- pstree.txt ---
+L89: ** 3328	888	MsMpEng.exe	0xcd8a11651080	32	-	0	False	2026-05-12 18:23:16.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files\Windows Defender\MsMpEng.exe	"C:\Program Files\Windows Defender\MsMpEng.exe"	C:\Program Files\Windows Defender\MsMpEng.exe
+L90: *** 5816	3328	MpCmdRun.exe	0xcd8a1242d080	5	-	0	False	2026-05-12 18:23:34.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files\Windows Defender\MpCmdRun.exe	"C:\Program Files\Windows Defender\MpCmdRun.exe" SignatureUpdate -ScheduleJob -RestrictPrivileges	C:\Program Files\Windows Defender\MpCmdRun.exe
+L92: *** 6032	3328	MpCmdRun.exe	0xcd8a1250b080	8	-	0	False	2026-05-12 18:23:34.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files\Windows Defender\MpCmdRun.exe	"C:\Program Files\Windows Defender\MpCmdRun.exe" SignaturesUpdateService -ScheduleJob -UnmanagedUpdate	C:\Program Files\Windows Defender\MpCmdRun.exe
+
+--- psscan.txt ---
+L81: 3328	888	MsMpEng.exe	0xcd8a11651080	32	-	0	False	2026-05-12 18:23:16.000000 UTC	N/A	Disabled
+L124: 5816	3328	MpCmdRun.exe	0xcd8a1242d080	5	-	0	False	2026-05-12 18:23:34.000000 UTC	N/A	Disabled
+L128: 6032	3328	MpCmdRun.exe	0xcd8a1250b080	8	-	0	False	2026-05-12 18:23:34.000000 UTC	N/A	Disabled
+
+--- malware_malfind.txt ---
+L5: 3328	MsMpEng.exe	0x23445340000	0x2344544cfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
+L10: 3328	MsMpEng.exe	0x23445790000	0x2344589cfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
+L15: 3328	MsMpEng.exe	0x23445560000	0x2344566cfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
+L20: 3328	MsMpEng.exe	0x23445450000	0x2344555cfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
+L25: 3328	MsMpEng.exe	0x23478810000	0x2347891cfff	VadS	PAGE_EXECUTE_READWRITE	269	1	Disabled	N/A	
+L30: 3328	MsMpEng.exe	0x234a3000000	0x234a3000fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
+L35: 3328	MsMpEng.exe	0x234a3d80000	0x234a3d80fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
+L40: 3328	MsMpEng.exe	0x234a3d70000	0x234a3d70fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
+L45: 3328	MsMpEng.exe	0x234a3e50000	0x234a3e52fff	VadS	PAGE_EXECUTE_READWRITE	3	1	Disabled	Function prologue	
+L50: 3328	MsMpEng.exe	0x234a3dc0000	0x234a3dc1fff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	Function prologue	
+L55: 3328	MsMpEng.exe	0x234a3e60000	0x234a3e60fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
+L60: 3328	MsMpEng.exe	0x234a3f50000	0x234a3f51fff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	Function prologue	
+L65: 3328	MsMpEng.exe	0x234a3ff0000	0x234a3ff0fff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	Function prologue	
+L70: 3328	MsMpEng.exe	0x234a6030000	0x234a603cfff	VadS	PAGE_EXECUTE_READWRITE	13	1	Disabled	Function prologue	
+L75: 3328	MsMpEng.exe	0x234a66c0000	0x234a68bffff	VadS	PAGE_EXECUTE_READWRITE	512	1	Disabled	N/A	
+L80: 3328	MsMpEng.exe	0x234a65c0000	0x234a66bffff	VadS	PAGE_EXECUTE_READWRITE	256	1	Disabled	N/A	
+
+--- ldrmodules.txt ---
+L2244: 3328	MsMpEng.exe	0x23459650000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L2245: 3328	MsMpEng.exe	0x23459790000	False	False	False	\Windows\System32\winnlsres.dll
+L2246: 3328	MsMpEng.exe	0x234597b0000	False	False	False	\Windows\System32\en-US\UpdatePolicy.dll.mui
+L2247: 3328	MsMpEng.exe	0x234597d0000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L2248: 3328	MsMpEng.exe	0x234597f0000	False	False	False	\Windows\System32\en-US\winnlsres.dll.mui
+L2249: 3328	MsMpEng.exe	0x7fffe5050000	True	True	True	\Windows\System32\msasn1.dll
+L2250: 3328	MsMpEng.exe	0x7fffe03f0000	True	True	True	\Windows\System32\directxdatabasehelper.dll
+L2251: 3328	MsMpEng.exe	0x7fffd5d50000	True	True	True	\Windows\System32\fltLib.dll
+L2252: 3328	MsMpEng.exe	0x7fffd3190000	True	True	True	\Windows\System32\WofUtil.dll
+L2253: 3328	MsMpEng.exe	0x7fffc8fa0000	True	True	True	\Windows\System32\wscapi.dll
+L2254: 3328	MsMpEng.exe	0x7fffa2fb0000	True	True	True	\ProgramData\Microsoft\Windows Defender\Definition Updates\{1EE1827B-3223-48CC-9246-A7DF976EEB2F}\mpengine.dll
+L2255: 3328	MsMpEng.exe	0x7ff713ad0000	True	False	True	\Program Files\Windows Defender\MsMpEng.exe
+L2256: 3328	MsMpEng.exe	0x7fffa9550000	True	True	True	\Windows\System32\usoapi.dll
+L2257: 3328	MsMpEng.exe	0x7fffd2960000	True	True	True	\Windows\System32\updatepolicy.dll
+L2258: 3328	MsMpEng.exe	0x7fffd22e0000	True	True	True	\Windows\System32\cryptnet.dll
+L2259: 3328	MsMpEng.exe	0x7fffd2af0000	True	True	True	\Windows\UUS\Packages\Preview\amd64\updatepolicycore.dll
+L2260: 3328	MsMpEng.exe	0x7fffd4290000	True	True	True	\Windows\System32\amsi.dll
+L2261: 3328	MsMpEng.exe	0x7fffd3420000	True	True	True	\Windows\System32\ncryptsslp.dll
+L2262: 3328	MsMpEng.exe	0x7fffd31b0000	True	True	True	\Windows\System32\wscproxystub.dll
+L2263: 3328	MsMpEng.exe	0x7fffd41e0000	True	True	True	\Program Files\Windows Defender\MpOAV.dll
+L2264: 3328	MsMpEng.exe	0x7fffd5310000	True	True	True	\Windows\System32\wbem\wbemprox.dll
+L2265: 3328	MsMpEng.exe	0x7fffd4c20000	True	True	True	\Windows\System32\wbem\fastprox.dll
+L2266: 3328	MsMpEng.exe	0x7fffd57d0000	True	True	True	\Windows\UUS\Packages\Preview\amd64\UusBrain.dll
+L2267: 3328	MsMpEng.exe	0x7fffd8f40000	True	True	True	\Windows\System32\tdh.dll
+L2268: 3328	MsMpEng.exe	0x7fffd7e80000	True	True	True	\Program Files\Windows Defender\MpSvc.dll
+L2269: 3328	MsMpEng.exe	0x7fffd74d0000	True	True	True	\Windows\System32\mpr.dll
+L2270: 3328	MsMpEng.exe	0x7fffd65a0000	True	True	True	\Program Files\Windows Defender\MpCommu.dll
+L2271: 3328	MsMpEng.exe	0x7fffd61f0000	True	True	True	\Program Files\Windows Defender\MpRtp.dll
+L2272: 3328	MsMpEng.exe	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L2273: 3328	MsMpEng.exe	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L2274: 3328	MsMpEng.exe	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L2275: 3328	MsMpEng.exe	0x7fffd7ae0000	True	True	True	\Program Files\Windows Defender\MpClient.dll
+L2276: 3328	MsMpEng.exe	0x7fffd8e00000	True	True	True	\Windows\System32\version.dll
+L2277: 3328	MsMpEng.exe	0x7fffd86a0000	True	True	True	\Windows\System32\wbemcomn.dll
+L2278: 3328	MsMpEng.exe	0x7fffddd40000	True	True	True	\Windows\System32\npmproxy.dll
+L2279: 3328	MsMpEng.exe	0x7fffda2d0000	True	True	True	\Windows\System32\wbem\wbemsvc.dll
+L2280: 3328	MsMpEng.exe	0x7fffd9730000	True	True	True	\Windows\System32\wusys.dll
+L2281: 3328	MsMpEng.exe	0x7fffdbbb0000	True	True	True	\Windows\System32\webio.dll
+L2282: 3328	MsMpEng.exe	0x7fffdce60000	True	True	True	\Windows\System32\rasadhlp.dll
+L2283: 3328	MsMpEng.exe	0x7fffdf900000	True	True	True	\Windows\System32\winhttp.dll
+L2284: 3328	MsMpEng.exe	0x7fffdf160000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L2285: 3328	MsMpEng.exe	0x7fffde7e0000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L2286: 3328	MsMpEng.exe	0x7fffdfae0000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L2287: 3328	MsMpEng.exe	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L2288: 3328	MsMpEng.exe	0x7fffe3ec0000	True	True	True	\Windows\System32\slc.dll
+L2289: 3328	MsMpEng.exe	0x7fffe3450000	True	True	True	\Windows\System32\winnsi.dll
+L2290: 3328	MsMpEng.exe	0x7fffe3310000	True	True	True	\Windows\System32\secur32.dll
+L2291: 3328	MsMpEng.exe	0x7fffe0f20000	True	True	True	\Windows\System32\netprofm.dll
+L2292: 3328	MsMpEng.exe	0x7fffe3320000	True	True	True	\Windows\System32\wtsapi32.dll
+L2293: 3328	MsMpEng.exe	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+L2294: 3328	MsMpEng.exe	0x7fffe3610000	True	True	True	\Windows\System32\dxgi.dll
+L2295: 3328	MsMpEng.exe	0x7fffe3f30000	True	True	True	\Windows\System32\fwbase.dll
+L2296: 3328	MsMpEng.exe	0x7fffe3fc0000	True	True	True	\Windows\System32\FirewallAPI.dll
+L2297: 3328	MsMpEng.exe	0x7fffe48b0000	True	True	True	\Windows\System32\ntmarta.dll
+L2298: 3328	MsMpEng.exe	0x7fffe41e0000	True	True	True	\Windows\System32\dnsapi.dll
+L2299: 3328	MsMpEng.exe	0x7fffe40c0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2300: 3328	MsMpEng.exe	0x7fffe46f0000	True	True	True	\Windows\System32\rsaenh.dll
+L2301: 3328	MsMpEng.exe	0x7fffe45d0000	True	True	True	\Windows\System32\schannel.dll
+L2302: 3328	MsMpEng.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2303: 3328	MsMpEng.exe	0x7fffe4d70000	True	True	True	\Windows\System32\gpapi.dll
+L2304: 3328	MsMpEng.exe	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L2305: 3328	MsMpEng.exe	0x7fffe4d00000	True	True	True	\Windows\System32\mswsock.dll
+L2306: 3328	MsMpEng.exe	0x7fffe4fe0000	True	True	True	\Windows\System32\cryptsp.dll
+L2307: 3328	MsMpEng.exe	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L2308: 3328	MsMpEng.exe	0x7fffe5000000	True	True	True	\Windows\System32\cryptbase.dll
+L2309: 3328	MsMpEng.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2310: 3328	MsMpEng.exe	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L2311: 3328	MsMpEng.exe	0x7fffe55d0000	True	True	True	\Windows\System32\devobj.dll
+L2312: 3328	MsMpEng.exe	0x7fffe5540000	True	True	True	\Windows\System32\cfgmgr32.dll
+L2313: 3328	MsMpEng.exe	0x7fffe51b0000	True	True	True	\Windows\System32\ntasn1.dll
+L2314: 3328	MsMpEng.exe	0x7fffe5200000	True	True	True	\Windows\System32\ncrypt.dll
+L2315: 3328	MsMpEng.exe	0x7fffe55a0000	True	True	True	\Windows\System32\dpapi.dll
+L2316: 3328	MsMpEng.exe	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L2317: 3328	MsMpEng.exe	0x7fffe57b0000	True	True	True	\Windows\System32\winsta.dll
+L2318: 3328	MsMpEng.exe	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L2319: 3328	MsMpEng.exe	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L2320: 3328	MsMpEng.exe	0x7fffe5ab0000	True	True	True	\Windows\System32\wintrust.dll
+L2321: 3328	MsMpEng.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2322: 3328	MsMpEng.exe	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L2323: 3328	MsMpEng.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L2324: 3328	MsMpEng.exe	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L2325: 3328	MsMpEng.exe	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L2326: 3328	MsMpEng.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L2327: 3328	MsMpEng.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L2328: 3328	MsMpEng.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L2329: 3328	MsMpEng.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L2330: 3328	MsMpEng.exe	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L2331: 3328	MsMpEng.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L2332: 3328	MsMpEng.exe	0x7fffe7680000	True	True	True	\Windows\System32\ws2_32.dll
+L2333: 3328	MsMpEng.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L2334: 3328	MsMpEng.exe	0x7fffe78a0000	True	True	True	\Windows\System32\setupapi.dll
+L2335: 3328	MsMpEng.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L2336: 3328	MsMpEng.exe	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L2337: 3328	MsMpEng.exe	0x7fffe8060000	True	True	True	\Windows\System32\imagehlp.dll
+L2338: 3328	MsMpEng.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L2339: 3328	MsMpEng.exe	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L2340: 3328	MsMpEng.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L2341: 3328	MsMpEng.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L2342: 3328	MsMpEng.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L2343: 3328	MsMpEng.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L2344: 3328	MsMpEng.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L2345: 3328	MsMpEng.exe	0x7fffe89d0000	True	True	True	\Windows\System32\nsi.dll
+L2346: 3328	MsMpEng.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L2347: 3328	MsMpEng.exe	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_ldrmodules.txt ---
+L2244: 3328	MsMpEng.exe	0x23459650000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L2245: 3328	MsMpEng.exe	0x23459790000	False	False	False	\Windows\System32\winnlsres.dll
+L2246: 3328	MsMpEng.exe	0x234597b0000	False	False	False	\Windows\System32\en-US\UpdatePolicy.dll.mui
+L2247: 3328	MsMpEng.exe	0x234597d0000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L2248: 3328	MsMpEng.exe	0x234597f0000	False	False	False	\Windows\System32\en-US\winnlsres.dll.mui
+L2249: 3328	MsMpEng.exe	0x7fffe5050000	True	True	True	\Windows\System32\msasn1.dll
+L2250: 3328	MsMpEng.exe	0x7fffe03f0000	True	True	True	\Windows\System32\directxdatabasehelper.dll
+L2251: 3328	MsMpEng.exe	0x7fffd5d50000	True	True	True	\Windows\System32\fltLib.dll
+L2252: 3328	MsMpEng.exe	0x7fffd3190000	True	True	True	\Windows\System32\WofUtil.dll
+L2253: 3328	MsMpEng.exe	0x7fffc8fa0000	True	True	True	\Windows\System32\wscapi.dll
+L2254: 3328	MsMpEng.exe	0x7fffa2fb0000	True	True	True	\ProgramData\Microsoft\Windows Defender\Definition Updates\{1EE1827B-3223-48CC-9246-A7DF976EEB2F}\mpengine.dll
+L2255: 3328	MsMpEng.exe	0x7ff713ad0000	True	False	True	\Program Files\Windows Defender\MsMpEng.exe
+L2256: 3328	MsMpEng.exe	0x7fffa9550000	True	True	True	\Windows\System32\usoapi.dll
+L2257: 3328	MsMpEng.exe	0x7fffd2960000	True	True	True	\Windows\System32\updatepolicy.dll
+L2258: 3328	MsMpEng.exe	0x7fffd22e0000	True	True	True	\Windows\System32\cryptnet.dll
+L2259: 3328	MsMpEng.exe	0x7fffd2af0000	True	True	True	\Windows\UUS\Packages\Preview\amd64\updatepolicycore.dll
+L2260: 3328	MsMpEng.exe	0x7fffd4290000	True	True	True	\Windows\System32\amsi.dll
+L2261: 3328	MsMpEng.exe	0x7fffd3420000	True	True	True	\Windows\System32\ncryptsslp.dll
+L2262: 3328	MsMpEng.exe	0x7fffd31b0000	True	True	True	\Windows\System32\wscproxystub.dll
+L2263: 3328	MsMpEng.exe	0x7fffd41e0000	True	True	True	\Program Files\Windows Defender\MpOAV.dll
+L2264: 3328	MsMpEng.exe	0x7fffd5310000	True	True	True	\Windows\System32\wbem\wbemprox.dll
+L2265: 3328	MsMpEng.exe	0x7fffd4c20000	True	True	True	\Windows\System32\wbem\fastprox.dll
+L2266: 3328	MsMpEng.exe	0x7fffd57d0000	True	True	True	\Windows\UUS\Packages\Preview\amd64\UusBrain.dll
+L2267: 3328	MsMpEng.exe	0x7fffd8f40000	True	True	True	\Windows\System32\tdh.dll
+L2268: 3328	MsMpEng.exe	0x7fffd7e80000	True	True	True	\Program Files\Windows Defender\MpSvc.dll
+L2269: 3328	MsMpEng.exe	0x7fffd74d0000	True	True	True	\Windows\System32\mpr.dll
+L2270: 3328	MsMpEng.exe	0x7fffd65a0000	True	True	True	\Program Files\Windows Defender\MpCommu.dll
+L2271: 3328	MsMpEng.exe	0x7fffd61f0000	True	True	True	\Program Files\Windows Defender\MpRtp.dll
+L2272: 3328	MsMpEng.exe	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L2273: 3328	MsMpEng.exe	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L2274: 3328	MsMpEng.exe	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L2275: 3328	MsMpEng.exe	0x7fffd7ae0000	True	True	True	\Program Files\Windows Defender\MpClient.dll
+L2276: 3328	MsMpEng.exe	0x7fffd8e00000	True	True	True	\Windows\System32\version.dll
+L2277: 3328	MsMpEng.exe	0x7fffd86a0000	True	True	True	\Windows\System32\wbemcomn.dll
+L2278: 3328	MsMpEng.exe	0x7fffddd40000	True	True	True	\Windows\System32\npmproxy.dll
+L2279: 3328	MsMpEng.exe	0x7fffda2d0000	True	True	True	\Windows\System32\wbem\wbemsvc.dll
+L2280: 3328	MsMpEng.exe	0x7fffd9730000	True	True	True	\Windows\System32\wusys.dll
+L2281: 3328	MsMpEng.exe	0x7fffdbbb0000	True	True	True	\Windows\System32\webio.dll
+L2282: 3328	MsMpEng.exe	0x7fffdce60000	True	True	True	\Windows\System32\rasadhlp.dll
+L2283: 3328	MsMpEng.exe	0x7fffdf900000	True	True	True	\Windows\System32\winhttp.dll
+L2284: 3328	MsMpEng.exe	0x7fffdf160000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L2285: 3328	MsMpEng.exe	0x7fffde7e0000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L2286: 3328	MsMpEng.exe	0x7fffdfae0000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L2287: 3328	MsMpEng.exe	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L2288: 3328	MsMpEng.exe	0x7fffe3ec0000	True	True	True	\Windows\System32\slc.dll
+L2289: 3328	MsMpEng.exe	0x7fffe3450000	True	True	True	\Windows\System32\winnsi.dll
+L2290: 3328	MsMpEng.exe	0x7fffe3310000	True	True	True	\Windows\System32\secur32.dll
+L2291: 3328	MsMpEng.exe	0x7fffe0f20000	True	True	True	\Windows\System32\netprofm.dll
+L2292: 3328	MsMpEng.exe	0x7fffe3320000	True	True	True	\Windows\System32\wtsapi32.dll
+L2293: 3328	MsMpEng.exe	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+L2294: 3328	MsMpEng.exe	0x7fffe3610000	True	True	True	\Windows\System32\dxgi.dll
+L2295: 3328	MsMpEng.exe	0x7fffe3f30000	True	True	True	\Windows\System32\fwbase.dll
+L2296: 3328	MsMpEng.exe	0x7fffe3fc0000	True	True	True	\Windows\System32\FirewallAPI.dll
+L2297: 3328	MsMpEng.exe	0x7fffe48b0000	True	True	True	\Windows\System32\ntmarta.dll
+L2298: 3328	MsMpEng.exe	0x7fffe41e0000	True	True	True	\Windows\System32\dnsapi.dll
+L2299: 3328	MsMpEng.exe	0x7fffe40c0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2300: 3328	MsMpEng.exe	0x7fffe46f0000	True	True	True	\Windows\System32\rsaenh.dll
+L2301: 3328	MsMpEng.exe	0x7fffe45d0000	True	True	True	\Windows\System32\schannel.dll
+L2302: 3328	MsMpEng.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2303: 3328	MsMpEng.exe	0x7fffe4d70000	True	True	True	\Windows\System32\gpapi.dll
+L2304: 3328	MsMpEng.exe	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L2305: 3328	MsMpEng.exe	0x7fffe4d00000	True	True	True	\Windows\System32\mswsock.dll
+L2306: 3328	MsMpEng.exe	0x7fffe4fe0000	True	True	True	\Windows\System32\cryptsp.dll
+L2307: 3328	MsMpEng.exe	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L2308: 3328	MsMpEng.exe	0x7fffe5000000	True	True	True	\Windows\System32\cryptbase.dll
+L2309: 3328	MsMpEng.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2310: 3328	MsMpEng.exe	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L2311: 3328	MsMpEng.exe	0x7fffe55d0000	True	True	True	\Windows\System32\devobj.dll
+L2312: 3328	MsMpEng.exe	0x7fffe5540000	True	True	True	\Windows\System32\cfgmgr32.dll
+L2313: 3328	MsMpEng.exe	0x7fffe51b0000	True	True	True	\Windows\System32\ntasn1.dll
+L2314: 3328	MsMpEng.exe	0x7fffe5200000	True	True	True	\Windows\System32\ncrypt.dll
+L2315: 3328	MsMpEng.exe	0x7fffe55a0000	True	True	True	\Windows\System32\dpapi.dll
+L2316: 3328	MsMpEng.exe	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L2317: 3328	MsMpEng.exe	0x7fffe57b0000	True	True	True	\Windows\System32\winsta.dll
+L2318: 3328	MsMpEng.exe	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L2319: 3328	MsMpEng.exe	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L2320: 3328	MsMpEng.exe	0x7fffe5ab0000	True	True	True	\Windows\System32\wintrust.dll
+L2321: 3328	MsMpEng.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2322: 3328	MsMpEng.exe	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L2323: 3328	MsMpEng.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L2324: 3328	MsMpEng.exe	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L2325: 3328	MsMpEng.exe	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L2326: 3328	MsMpEng.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L2327: 3328	MsMpEng.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L2328: 3328	MsMpEng.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L2329: 3328	MsMpEng.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L2330: 3328	MsMpEng.exe	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L2331: 3328	MsMpEng.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L2332: 3328	MsMpEng.exe	0x7fffe7680000	True	True	True	\Windows\System32\ws2_32.dll
+L2333: 3328	MsMpEng.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L2334: 3328	MsMpEng.exe	0x7fffe78a0000	True	True	True	\Windows\System32\setupapi.dll
+L2335: 3328	MsMpEng.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L2336: 3328	MsMpEng.exe	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L2337: 3328	MsMpEng.exe	0x7fffe8060000	True	True	True	\Windows\System32\imagehlp.dll
+L2338: 3328	MsMpEng.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L2339: 3328	MsMpEng.exe	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L2340: 3328	MsMpEng.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L2341: 3328	MsMpEng.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L2342: 3328	MsMpEng.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L2343: 3328	MsMpEng.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L2344: 3328	MsMpEng.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L2345: 3328	MsMpEng.exe	0x7fffe89d0000	True	True	True	\Windows\System32\nsi.dll
+L2346: 3328	MsMpEng.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L2347: 3328	MsMpEng.exe	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_pebmasquerade.txt ---
+L62: 3328	MsMpEng.exe	\Device\HarddiskVolume4\Program Files\Windows Defender\MsMpEng.exe	C:\Program Files\Windows Defender\MsMpEng.exe	False	False
+
+--- sessions.txt ---
+L57: 0	-	3328	MsMpEng.exe	WORKGROUP/CLEANWINDOWS11$	2026-05-12 18:23:16.000000 UTC
+
+=== END OF PIVOT REPORT ===

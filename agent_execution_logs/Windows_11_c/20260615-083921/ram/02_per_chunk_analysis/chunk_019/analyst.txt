@@ -1,0 +1,57 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T00:00:00Z
+Summary: A single finding was submitted for validation. PID 7352 (taskhostw.exe) carries an unusually broad SYSTEM-level privilege set and an unverifiable parent, but the command-line GUID is a documented Windows scheduled-task COM class, the sole DLL entry resolves to a legitimate System32 path, and no malfind, network, registry-persistence, or injected-DLL evidence was provided. The privilege footprint is consistent with a SYSTEM-context scheduled-task host rather than a compromised binary. Overall incident scope cannot be assessed from this single finding alone.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      7352
+PPID:     1524
+Image:    taskhostw.exe
+Cmdline:  taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+Severity: (none — INCONCLUSIVE)
+MITRE:
+
+Justification:
+  Three signals were raised: an orphaned PPID, an extreme privilege
+  footprint, and a suspicious spawn chain. On the orphaned-PPID
+  signal: PPID 1524 is absent from the pslist extract provided, but
+  this is weak evidence on its own — the parent may have been a
+  short-lived svchost or Task Scheduler worker that exited normally
+  before the memory image was acquired; PID reuse and transient
+  parents are routine for scheduled-task hosts. On the privilege
+  footprint: the full near-complete SYSTEM token (SeTcbPrivilege,
+  SeDebugPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege,
+  SeAssignPrimaryTokenPrivilege, etc., all Present/Enabled) is
+  abnormally powerful for a user-facing scheduled-task host, but it
+  is exactly what Windows assigns when taskhostw.exe runs under the
+  SYSTEM account — the "Disabled" WoW64 flag and the System32 image
+  path corroborate a legitimate SYSTEM-context invocation rather than
+  token manipulation. The GUID {222A245B-E637-4AE9-A93F-A59CA119A75E}
+  is the documented COM class for the .NET Runtime Optimization
+  (NGen) scheduled task, which canonically spawns ngentask.exe
+  children — exactly what pslist shows. On the spawn chain: both
+  ngentask.exe children (PID 8432, PID 6388) are consistent with
+  legitimate NGen maintenance. Critically, no malfind sections, no
+  network connections, no registry-persistence hits, no DLLs from
+  user-writable paths, and no injected-code markers were provided for
+  this PID. Without at least one of those corroborating artefact
+  types the privilege anomaly alone is insufficient to confirm
+  malice; equally, the orphaned PPID and the breadth of the token
+  prevent outright rejection.
+
+Key Evidence:
+  - L103: 7352	1524	taskhostw.exe	0xcd8a12d680c0	8	-	0	False	2026-05-12 18:23:45.000000 UTC	N/A	Disabled
+  - L103: 7352	taskhostw.exe	taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+  - L3440: 7352	taskhostw.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L3453: 7352	taskhostw.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L3462: 7352	taskhostw.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L3443: 7352	taskhostw.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+  - L5028: 7352	taskhostw.exe	0x7ff6df3b0000	0x1a000	taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+  - L112: 8432	7352	ngentask.exe	0xcd8a12f9b0c0	7	-	0	False	2026-05-12 18:24:08.000000 UTC	N/A	Disabled
+  - L114: 6388	7352	ngentask.exe	0xcd8a13049080	7	-	0	True	2026-05-12 18:24:09.000000 UTC	N/A	Disabled
+----------------------------------------------------------------
+
+================================================================

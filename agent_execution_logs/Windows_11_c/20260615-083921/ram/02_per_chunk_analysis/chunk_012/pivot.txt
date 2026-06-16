@@ -1,0 +1,184 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:51:56Z
+
+=== PID 5532 (smartscreen.ex, ppid=576) ===
+Cmdline: C:\Windows\System32\smartscreen.exe -Embedding
+
+--- pslist.txt ---
+L119: 5532	576	smartscreen.ex	0xcd8a131c7080	6	-	1	False	2026-05-12 18:24:18.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L119: 5532	smartscreen.ex	C:\Windows\System32\smartscreen.exe -Embedding
+
+--- privileges.txt ---
+L3995: 5532	smartscreen.ex	2	SeCreateTokenPrivilege		Create a token object
+L3996: 5532	smartscreen.ex	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3997: 5532	smartscreen.ex	4	SeLockMemoryPrivilege		Lock pages in memory
+L3998: 5532	smartscreen.ex	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3999: 5532	smartscreen.ex	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4000: 5532	smartscreen.ex	7	SeTcbPrivilege		Act as part of the operating system
+L4001: 5532	smartscreen.ex	8	SeSecurityPrivilege		Manage auditing and security log
+L4002: 5532	smartscreen.ex	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4003: 5532	smartscreen.ex	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4004: 5532	smartscreen.ex	11	SeSystemProfilePrivilege		Profile system performance
+L4005: 5532	smartscreen.ex	12	SeSystemtimePrivilege		Change the system time
+L4006: 5532	smartscreen.ex	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4007: 5532	smartscreen.ex	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4008: 5532	smartscreen.ex	15	SeCreatePagefilePrivilege		Create a pagefile
+L4009: 5532	smartscreen.ex	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4010: 5532	smartscreen.ex	17	SeBackupPrivilege		Backup files and directories
+L4011: 5532	smartscreen.ex	18	SeRestorePrivilege		Restore files and directories
+L4012: 5532	smartscreen.ex	19	SeShutdownPrivilege	Present	Shut down the system
+L4013: 5532	smartscreen.ex	20	SeDebugPrivilege		Debug programs
+L4014: 5532	smartscreen.ex	21	SeAuditPrivilege		Generate security audits
+L4015: 5532	smartscreen.ex	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4016: 5532	smartscreen.ex	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4017: 5532	smartscreen.ex	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4018: 5532	smartscreen.ex	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4019: 5532	smartscreen.ex	26	SeSyncAgentPrivilege		Synch directory service data
+L4020: 5532	smartscreen.ex	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4021: 5532	smartscreen.ex	28	SeManageVolumePrivilege		Manage the files on a volume
+L4022: 5532	smartscreen.ex	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4023: 5532	smartscreen.ex	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4024: 5532	smartscreen.ex	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4025: 5532	smartscreen.ex	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4026: 5532	smartscreen.ex	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4027: 5532	smartscreen.ex	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4028: 5532	smartscreen.ex	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4029: 5532	smartscreen.ex	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5699: 5532	smartscreen.ex	0x7ff67caf0000	0x96000	smartscreen.exe	C:\Windows\System32\smartscreen.exe	-1	2026-05-12 18:24:18.000000 UTC	Disabled
+L5700: 5532	smartscreen.ex	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:24:18.000000 UTC	Disabled
+L5701: 5532	smartscreen.ex	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:24:18.000000 UTC	Disabled
+L5702: 5532	smartscreen.ex	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:24:18.000000 UTC	Disabled
+L5703: 5532	smartscreen.ex	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5704: 5532	smartscreen.ex	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5705: 5532	smartscreen.ex	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5706: 5532	smartscreen.ex	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5707: 5532	smartscreen.ex	0x7fffe7e80000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5708: 5532	smartscreen.ex	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5709: 5532	smartscreen.ex	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5710: 5532	smartscreen.ex	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5711: 5532	smartscreen.ex	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5712: 5532	smartscreen.ex	0x7fffe5b70000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5713: 5532	smartscreen.ex	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5714: 5532	smartscreen.ex	0x7fffe7680000	0x74000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5715: 5532	smartscreen.ex	0x7fffa4ad0000	0x5b9000	SmartScreen.DLL	C:\Windows\System32\SmartScreen.DLL	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5716: 5532	smartscreen.ex	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5717: 5532	smartscreen.ex	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5718: 5532	smartscreen.ex	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5719: 5532	smartscreen.ex	0x7fffe6f10000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5720: 5532	smartscreen.ex	0x7fffe5cf0000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5721: 5532	smartscreen.ex	0x7fffe5ab0000	0x81000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5722: 5532	smartscreen.ex	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5723: 5532	smartscreen.ex	0x7fffdf900000	0x127000	WINHTTP.dll	C:\Windows\System32\WINHTTP.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5724: 5532	smartscreen.ex	0x7fffe4fe0000	0x1b000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2026-05-12 18:24:18.000000 UTC	Disabled
+L5725: 5532	smartscreen.ex	0x7fffe40c0000	0x33000	IPHLPAPI.DLL	C:\Windows\System32\IPHLPAPI.DLL	6	2026-05-12 18:24:19.000000 UTC	Disabled
+L5726: 5532	smartscreen.ex	0x7fffe41e0000	0x12a000	DNSAPI.dll	C:\Windows\System32\DNSAPI.dll	6	2026-05-12 18:24:19.000000 UTC	Disabled
+L5727: 5532	smartscreen.ex	0x7fffe89d0000	0xa000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2026-05-12 18:24:19.000000 UTC	Disabled
+L5728: 5532	smartscreen.ex	0x7fffe6ec0000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-12 18:24:19.000000 UTC	Disabled
+L5729: 5532	smartscreen.ex	0x7fffe5050000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-12 18:24:19.000000 UTC	Disabled
+L5730: 5532	smartscreen.ex	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-12 18:24:19.000000 UTC	Disabled
+L5731: 5532	smartscreen.ex	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:24:19.000000 UTC	Disabled
+L5732: 5532	smartscreen.ex	0x7fffd2e70000	0xb000	WTDSENSOR.dll	C:\Windows\System32\WTDSENSOR.dll	6	2026-05-12 18:24:19.000000 UTC	Disabled
+L5733: 5532	smartscreen.ex	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-12 18:24:19.000000 UTC	Disabled
+L5734: 5532	smartscreen.ex	0x7fffc4b30000	0x1e000	smartscreenps.dll	C:\Windows\System32\smartscreenps.dll	6	2026-05-12 18:24:19.000000 UTC	Disabled
+L5735: 5532	smartscreen.ex	0x7fffca510000	0x32000	Windows.Management.Workplace.dll	C:\Windows\System32\Windows.Management.Workplace.dll	6	2026-05-12 18:24:19.000000 UTC	Disabled
+L5736: 5532	smartscreen.ex	0x7fffe1550000	0xb4000	policymanager.dll	C:\Windows\System32\policymanager.dll	6	2026-05-12 18:24:19.000000 UTC	Disabled
+
+--- pstree.txt ---
+L38: *** 5532	576	smartscreen.ex	0xcd8a131c7080	6	-	1	False	2026-05-12 18:24:18.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\smartscreen.exe	C:\Windows\System32\smartscreen.exe -Embedding	C:\Windows\System32\smartscreen.exe
+
+--- psscan.txt ---
+L170: 5532	576	smartscreen.ex	0xcd8a131c7080	6	-	1	False	2026-05-12 18:24:18.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L5981: 5532	smartscreen.ex	0x25264a10000	False	False	False	\Windows\System32\en-US\smartscreen.exe.mui
+L5982: 5532	smartscreen.ex	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5983: 5532	smartscreen.ex	0x7fffe41e0000	True	True	True	\Windows\System32\dnsapi.dll
+L5984: 5532	smartscreen.ex	0x7ff67caf0000	True	False	True	\Windows\System32\smartscreen.exe
+L5985: 5532	smartscreen.ex	0x7fffd2e70000	True	True	True	\Windows\System32\wtdsensor.dll
+L5986: 5532	smartscreen.ex	0x7fffc4b30000	True	True	True	\Windows\System32\smartscreenps.dll
+L5987: 5532	smartscreen.ex	0x7fffa4ad0000	True	True	True	\Windows\System32\smartscreen.dll
+L5988: 5532	smartscreen.ex	0x7fffca510000	True	True	True	\Windows\System32\Windows.Management.Workplace.dll
+L5989: 5532	smartscreen.ex	0x7fffe1550000	True	True	True	\Windows\System32\policymanager.dll
+L5990: 5532	smartscreen.ex	0x7fffdf900000	True	True	True	\Windows\System32\winhttp.dll
+L5991: 5532	smartscreen.ex	0x7fffe40c0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L5992: 5532	smartscreen.ex	0x7fffe5ab0000	True	True	True	\Windows\System32\wintrust.dll
+L5993: 5532	smartscreen.ex	0x7fffe4fe0000	True	True	True	\Windows\System32\cryptsp.dll
+L5994: 5532	smartscreen.ex	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5995: 5532	smartscreen.ex	0x7fffe5050000	True	True	True	\Windows\System32\msasn1.dll
+L5996: 5532	smartscreen.ex	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5997: 5532	smartscreen.ex	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L5998: 5532	smartscreen.ex	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L5999: 5532	smartscreen.ex	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L6000: 5532	smartscreen.ex	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L6001: 5532	smartscreen.ex	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L6002: 5532	smartscreen.ex	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L6003: 5532	smartscreen.ex	0x7fffe7680000	True	True	True	\Windows\System32\ws2_32.dll
+L6004: 5532	smartscreen.ex	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L6005: 5532	smartscreen.ex	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L6006: 5532	smartscreen.ex	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L6007: 5532	smartscreen.ex	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L6008: 5532	smartscreen.ex	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L6009: 5532	smartscreen.ex	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L6010: 5532	smartscreen.ex	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L6011: 5532	smartscreen.ex	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L6012: 5532	smartscreen.ex	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L6013: 5532	smartscreen.ex	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L6014: 5532	smartscreen.ex	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L6015: 5532	smartscreen.ex	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L6016: 5532	smartscreen.ex	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L6017: 5532	smartscreen.ex	0x7fffe89d0000	True	True	True	\Windows\System32\nsi.dll
+L6018: 5532	smartscreen.ex	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L6019: 5532	smartscreen.ex	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_ldrmodules.txt ---
+L5981: 5532	smartscreen.ex	0x25264a10000	False	False	False	\Windows\System32\en-US\smartscreen.exe.mui
+L5982: 5532	smartscreen.ex	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5983: 5532	smartscreen.ex	0x7fffe41e0000	True	True	True	\Windows\System32\dnsapi.dll
+L5984: 5532	smartscreen.ex	0x7ff67caf0000	True	False	True	\Windows\System32\smartscreen.exe
+L5985: 5532	smartscreen.ex	0x7fffd2e70000	True	True	True	\Windows\System32\wtdsensor.dll
+L5986: 5532	smartscreen.ex	0x7fffc4b30000	True	True	True	\Windows\System32\smartscreenps.dll
+L5987: 5532	smartscreen.ex	0x7fffa4ad0000	True	True	True	\Windows\System32\smartscreen.dll
+L5988: 5532	smartscreen.ex	0x7fffca510000	True	True	True	\Windows\System32\Windows.Management.Workplace.dll
+L5989: 5532	smartscreen.ex	0x7fffe1550000	True	True	True	\Windows\System32\policymanager.dll
+L5990: 5532	smartscreen.ex	0x7fffdf900000	True	True	True	\Windows\System32\winhttp.dll
+L5991: 5532	smartscreen.ex	0x7fffe40c0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L5992: 5532	smartscreen.ex	0x7fffe5ab0000	True	True	True	\Windows\System32\wintrust.dll
+L5993: 5532	smartscreen.ex	0x7fffe4fe0000	True	True	True	\Windows\System32\cryptsp.dll
+L5994: 5532	smartscreen.ex	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5995: 5532	smartscreen.ex	0x7fffe5050000	True	True	True	\Windows\System32\msasn1.dll
+L5996: 5532	smartscreen.ex	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5997: 5532	smartscreen.ex	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L5998: 5532	smartscreen.ex	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L5999: 5532	smartscreen.ex	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L6000: 5532	smartscreen.ex	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L6001: 5532	smartscreen.ex	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L6002: 5532	smartscreen.ex	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L6003: 5532	smartscreen.ex	0x7fffe7680000	True	True	True	\Windows\System32\ws2_32.dll
+L6004: 5532	smartscreen.ex	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L6005: 5532	smartscreen.ex	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L6006: 5532	smartscreen.ex	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L6007: 5532	smartscreen.ex	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L6008: 5532	smartscreen.ex	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L6009: 5532	smartscreen.ex	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L6010: 5532	smartscreen.ex	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L6011: 5532	smartscreen.ex	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L6012: 5532	smartscreen.ex	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L6013: 5532	smartscreen.ex	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L6014: 5532	smartscreen.ex	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L6015: 5532	smartscreen.ex	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L6016: 5532	smartscreen.ex	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L6017: 5532	smartscreen.ex	0x7fffe89d0000	True	True	True	\Windows\System32\nsi.dll
+L6018: 5532	smartscreen.ex	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L6019: 5532	smartscreen.ex	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_pebmasquerade.txt ---
+L119: 5532	smartscreen.ex	\Device\HarddiskVolume4\Windows\System32\smartscreen.exe	C:\Windows\System32\smartscreen.exe	False	False
+
+--- sessions.txt ---
+L142: 1	-	5532	smartscreen.ex	CLEANWINDOWS11/kali	2026-05-12 18:24:18.000000 UTC
+
+=== END OF PIVOT REPORT ===

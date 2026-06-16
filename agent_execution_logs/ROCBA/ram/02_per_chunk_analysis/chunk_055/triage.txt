@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_055.txt
+Summary: svchost.exe with unknown parent holding high-risk privilege triad; orphaned parent PIDs across multiple processes warrant low-severity review.
+
+[PROCESS]
+pid: 30216
+ppid: 828
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: parent_unknown: PPID 828 not present in process list — orphaned svchost.exe | privilege_anomaly: holds high-risk triad SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege simultaneously | missing_path: no image path or command line recorded for this svchost instance
+
+[PROCESS]
+pid: 30124
+ppid: 740
+image: RuntimeBroker.exe
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: parent_unknown: PPID 740 not present in process list — orphaned RuntimeBroker.exe | dll_list_anomaly: non-whitelisted DLL entry includes the process image itself (C:\Windows\System32\RuntimeBroker.exe listed among loaded DLLs — possible artefact worth confirming)
+

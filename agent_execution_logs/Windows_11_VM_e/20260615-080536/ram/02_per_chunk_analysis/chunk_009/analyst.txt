@@ -1,0 +1,29 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T19:45:00Z
+Summary: A single suspicious process was submitted for validation. The orphaned-parent signal for sihost.exe (PID 4276) is a known artefact of memory-capture timing rather than evidence of malicious activity; the process image, command line, DLL path, and child processes are all consistent with a legitimate Windows Shell Infrastructure Host. No confirmed malicious findings were identified in this triage batch.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      4276
+PPID:     1924
+Image:    sihost.exe
+Cmdline:  sihost.exe
+Severity: N/A
+MITRE:
+
+Justification:
+  Agent 1 flagged this process solely because PPID 1924 does not appear in the process list, which is a common benign artefact: the legitimate parent (typically svchost.exe hosting the UserManager service, or winlogon.exe) may have already exited by the time the memory image was captured, leaving the PPID dangling. The executable path resolves to C:\WINDOWS\system32\sihost.exe — the canonical Windows Shell Infrastructure Host — and the single loaded module entry confirms it is running from System32 with no user-writable-path DLLs visible in the extracted evidence. The child processes (ShellHost.exe PID 5112, CrossDeviceRes PID 5144) are both expected descendants of sihost.exe in a normal Windows 11 session. The privilege set is very large (all 35 privileges listed), but none appear in the "Enabled" column except SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege, and SeDelegateSessionUserImpersonatePrivilege — a profile consistent with a standard interactive-session shell process. No malfind hits, no suspicious DLL paths, no network connections, and no registry-persistence evidence were present in the extracted data; the finding is therefore inconclusive rather than confirmed, pending review of a fuller DLL list and any malfind output for this PID.
+
+Key Evidence:
+  - L70: 4276	1924	sihost.exe	0x990ef7759080	12	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	Disabled
+  - L2357: 4276	sihost.exe	0x7ff614050000	0x22000	sihost.exe	C:\WINDOWS\system32\sihost.exe	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+  - L80: 5112	4276	ShellHost.exe	0x990ef79ef080	5	-	1	False	2026-05-13 19:15:45.000000 UTC	N/A	Disabled
+  - L83: 5144	4276	CrossDeviceRes	0x990ef73ac080	5	-	1	False	2026-05-13 19:15:47.000000 UTC	N/A	Disabled
+  - L2298: 4276	sihost.exe	20	SeDebugPrivilege		Debug programs
+  - L2307: 4276	sihost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+----------------------------------------------------------------
+
+================================================================

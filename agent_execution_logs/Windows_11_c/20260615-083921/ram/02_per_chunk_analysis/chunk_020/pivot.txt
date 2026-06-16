@@ -1,0 +1,289 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:55:37Z
+
+=== PID 7472 (ctfmon.exe, ppid=2644) ===
+Cmdline: /QuitInfo:0000000000000330;0000000000000334;
+
+--- pslist.txt ---
+L109: 7472	2644	ctfmon.exe	0xcd8a11fe8080	14	-	1	False	2026-05-12 18:23:51.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L109: 7472	ctfmon.exe	/QuitInfo:0000000000000330;0000000000000334; 
+
+--- privileges.txt ---
+L3645: 7472	ctfmon.exe	2	SeCreateTokenPrivilege		Create a token object
+L3646: 7472	ctfmon.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3647: 7472	ctfmon.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3648: 7472	ctfmon.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3649: 7472	ctfmon.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3650: 7472	ctfmon.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3651: 7472	ctfmon.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L3652: 7472	ctfmon.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3653: 7472	ctfmon.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3654: 7472	ctfmon.exe	11	SeSystemProfilePrivilege		Profile system performance
+L3655: 7472	ctfmon.exe	12	SeSystemtimePrivilege		Change the system time
+L3656: 7472	ctfmon.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3657: 7472	ctfmon.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3658: 7472	ctfmon.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L3659: 7472	ctfmon.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3660: 7472	ctfmon.exe	17	SeBackupPrivilege		Backup files and directories
+L3661: 7472	ctfmon.exe	18	SeRestorePrivilege		Restore files and directories
+L3662: 7472	ctfmon.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L3663: 7472	ctfmon.exe	20	SeDebugPrivilege		Debug programs
+L3664: 7472	ctfmon.exe	21	SeAuditPrivilege		Generate security audits
+L3665: 7472	ctfmon.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3666: 7472	ctfmon.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3667: 7472	ctfmon.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3668: 7472	ctfmon.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3669: 7472	ctfmon.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3670: 7472	ctfmon.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3671: 7472	ctfmon.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L3672: 7472	ctfmon.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3673: 7472	ctfmon.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L3674: 7472	ctfmon.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3675: 7472	ctfmon.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3676: 7472	ctfmon.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3677: 7472	ctfmon.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3678: 7472	ctfmon.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3679: 7472	ctfmon.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5251: 7472	ctfmon.exe	0x7ff605630000	0x11000	ctfmon.exe	C:\WINDOWS\system32\ctfmon.exe	-1	2026-05-12 18:23:51.000000 UTC	Disabled
+L5252: 7472	ctfmon.exe	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:23:51.000000 UTC	Disabled
+L5253: 7472	ctfmon.exe	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:23:51.000000 UTC	Disabled
+L5254: 7472	ctfmon.exe	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:23:51.000000 UTC	Disabled
+L5255: 7472	ctfmon.exe	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5256: 7472	ctfmon.exe	0x7fffcfeb0000	0x1a000	MsCtfMonitor.DLL	C:\WINDOWS\system32\MsCtfMonitor.DLL	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5257: 7472	ctfmon.exe	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5258: 7472	ctfmon.exe	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5259: 7472	ctfmon.exe	0x7fffcfe10000	0x55000	MSUTB.dll	C:\WINDOWS\system32\MSUTB.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5260: 7472	ctfmon.exe	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5261: 7472	ctfmon.exe	0x7fffe7e80000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5262: 7472	ctfmon.exe	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5263: 7472	ctfmon.exe	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5264: 7472	ctfmon.exe	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5265: 7472	ctfmon.exe	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5266: 7472	ctfmon.exe	0x7fffe6ec0000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5267: 7472	ctfmon.exe	0x7fffe8d70000	0x15d000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5268: 7472	ctfmon.exe	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-12 18:23:51.000000 UTC	Disabled
+L5269: 7472	ctfmon.exe	0x7fffe57b0000	0x63000	WINSTA.dll	C:\WINDOWS\system32\WINSTA.dll	-1	2026-05-12 18:23:51.000000 UTC	Disabled
+L5270: 7472	ctfmon.exe	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5271: 7472	ctfmon.exe	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5272: 7472	ctfmon.exe	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:23:51.000000 UTC	Disabled
+L5273: 7472	ctfmon.exe	0x7fffe34c0000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-12 18:23:51.000000 UTC	Disabled
+L5274: 7472	ctfmon.exe	0x7fffe2e80000	0x127000	CoreMessaging.dll	C:\WINDOWS\System32\CoreMessaging.dll	-1	2026-05-12 18:23:51.000000 UTC	Disabled
+L5275: 7472	ctfmon.exe	0x7fffdfe20000	0x2e2000	CoreUIComponents.dll	C:\WINDOWS\System32\CoreUIComponents.dll	-1	2026-05-12 18:23:51.000000 UTC	Disabled
+L5276: 7472	ctfmon.exe	0x7fffe5cf0000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	-1	2026-05-12 18:23:51.000000 UTC	Disabled
+L5277: 7472	ctfmon.exe	0x7fffcf810000	0x4ec000	InputService.dll	C:\WINDOWS\system32\InputService.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5278: 7472	ctfmon.exe	0x7fffe5b70000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5279: 7472	ctfmon.exe	0x7fffcf780000	0x8c000	TextInputMethodFormatter.dll	C:\WINDOWS\system32\TextInputMethodFormatter.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5280: 7472	ctfmon.exe	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5281: 7472	ctfmon.exe	0x7fffce950000	0x4f000	MTFServer.dll	C:\WINDOWS\system32\MTFServer.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5282: 7472	ctfmon.exe	0x7fffda470000	0x148000	TextInputFramework.dll	C:\WINDOWS\SYSTEM32\TextInputFramework.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5283: 7472	ctfmon.exe	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5284: 7472	ctfmon.exe	0x7fffdf740000	0x1b6000	windowmanagementapi.dll	C:\Windows\System32\windowmanagementapi.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5285: 7472	ctfmon.exe	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5286: 7472	ctfmon.exe	0x7fffe5000000	0xc000	CRYPTBASE.DLL	C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5287: 7472	ctfmon.exe	0x7fffdbeb0000	0x1b000	InputLocaleManager.dll	C:\WINDOWS\system32\InputLocaleManager.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5288: 7472	ctfmon.exe	0x7fffe1550000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5289: 7472	ctfmon.exe	0x7fffdbf20000	0x5e000	Bcp47Langs.dll	C:\WINDOWS\system32\Bcp47Langs.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5290: 7472	ctfmon.exe	0x7fffda1b0000	0x9000	KBDUS.DLL	C:\WINDOWS\system32\KBDUS.DLL	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5291: 7472	ctfmon.exe	0x7fffe3320000	0x29000	wtsapi32.dll	C:\WINDOWS\SYSTEM32\wtsapi32.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5292: 7472	ctfmon.exe	0x7fffe4a30000	0x49000	SspiCli.dll	C:\WINDOWS\system32\SspiCli.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5293: 7472	ctfmon.exe	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2026-05-12 18:23:52.000000 UTC	Disabled
+L5294: 7472	ctfmon.exe	0x7fffa9ab0000	0x14f000	MsSpellCheckingFacility.dll	C:\Windows\System32\MsSpellCheckingFacility.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5295: 7472	ctfmon.exe	0x7fffe5920000	0x29000	profapi.dll	C:\Windows\System32\profapi.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5296: 7472	ctfmon.exe	0x7fffda5c0000	0x1e3000	inputhost.dll	C:\WINDOWS\SYSTEM32\inputhost.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5297: 7472	ctfmon.exe	0x7fffe48b0000	0x36000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5298: 7472	ctfmon.exe	0x7fffdb9e0000	0x156000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5299: 7472	ctfmon.exe	0x7fffd87f0000	0x14f000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5300: 7472	ctfmon.exe	0x7fffbf0b0000	0xbc000	Windows.Devices.Enumeration.dll	C:\Windows\System32\Windows.Devices.Enumeration.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5301: 7472	ctfmon.exe	0x7fffe1040000	0x103000	PROPSYS.dll	C:\Windows\System32\PROPSYS.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5302: 7472	ctfmon.exe	0x7fffd70d0000	0xc0000	StructuredQuery.dll	C:\WINDOWS\System32\StructuredQuery.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5303: 7472	ctfmon.exe	0x7fffd6e20000	0x29e000	icu.dll	C:\WINDOWS\System32\icu.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5304: 7472	ctfmon.exe	0x7fffac7d0000	0x50000	MSWB7.dll	C:\WINDOWS\System32\MSWB7.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5305: 7472	ctfmon.exe	0x7fffe5540000	0x57000	cfgmgr32.dll	C:\WINDOWS\SYSTEM32\cfgmgr32.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5306: 7472	ctfmon.exe	0x7fffac670000	0x2d000	DevDispItemProvider.dll	C:\Windows\System32\DevDispItemProvider.dll	6	2026-05-12 18:23:52.000000 UTC	Disabled
+L5307: 7472	ctfmon.exe	0x7fffce900000	0x47000	mtf.dll	C:\Windows\System32\mtf.dll	6	2026-05-12 18:23:53.000000 UTC	Disabled
+L5308: 7472	ctfmon.exe	0x7fffdde20000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-12 18:23:58.000000 UTC	Disabled
+L5309: 7472	ctfmon.exe	0x7fffd5040000	0x9c000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2026-05-12 18:23:58.000000 UTC	Disabled
+L5310: 7472	ctfmon.exe	0x7fffd1b30000	0x17000	WordBreakers.dll	C:\Windows\System32\WordBreakers.dll	6	2026-05-12 18:26:19.000000 UTC	Disabled
+L5311: 7472	ctfmon.exe	0x7fffce3f0000	0x2d1000	Windows.CloudStore.dll	C:\Windows\System32\Windows.CloudStore.dll	6	2026-05-12 18:28:52.000000 UTC	Disabled
+L5312: 7472	ctfmon.exe	0x7fffe0bd0000	0x17000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2026-05-12 18:28:52.000000 UTC	Disabled
+L5313: 7472	ctfmon.exe	0x7fffca6b0000	0x49000	AppExtension.dll	C:\Windows\System32\AppExtension.dll	6	2026-05-12 18:28:52.000000 UTC	Disabled
+L5314: 7472	ctfmon.exe	0x7fffda0a0000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-12 18:28:52.000000 UTC	Disabled
+L5315: 7472	ctfmon.exe	0x7fffe4db0000	0x32000	USERENV.dll	C:\Windows\System32\USERENV.dll	6	2026-05-12 18:28:52.000000 UTC	Disabled
+L5316: 7472	ctfmon.exe	0x7fffe6f10000	0x75f000	shell32.dll	C:\WINDOWS\System32\shell32.dll	6	2026-05-12 18:28:52.000000 UTC	Disabled
+L5317: 7472	ctfmon.exe	0x7fffcd620000	0x5a4000	cdp.dll	C:\Windows\System32\cdp.dll	6	2026-05-12 18:28:52.000000 UTC	Disabled
+L5318: 7472	ctfmon.exe	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\Windows\System32\bcrypt.dll	-1	2026-05-12 18:28:52.000000 UTC	Disabled
+L5319: 7472	ctfmon.exe	0x7fffe5f20000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-12 18:28:52.000000 UTC	Disabled
+L5320: 7472	ctfmon.exe	0x7fffe8120000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-12 18:28:52.000000 UTC	Disabled
+
+--- pstree.txt ---
+L53: *** 7472	2644	ctfmon.exe	0xcd8a11fe8080	14	-	1	False	2026-05-12 18:23:51.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\ctfmon.exe	/QuitInfo:0000000000000330;0000000000000334; 	C:\WINDOWS\system32\ctfmon.exe
+
+--- psscan.txt ---
+L101: 7472	2644	ctfmon.exe	0xcd8a11fe8080	14	-	1	False	2026-05-12 18:23:51.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L5519: 7472	ctfmon.exe	0x22925770000	False	False	False	\Windows\System32\en-US\ctfmon.exe.mui
+L5520: 7472	ctfmon.exe	0x22928270000	False	False	False	\Windows\System32\prm0009.dll
+L5521: 7472	ctfmon.exe	0x22928250000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L5522: 7472	ctfmon.exe	0x7fffdbeb0000	True	True	True	\Windows\System32\InputLocaleManager.dll
+L5523: 7472	ctfmon.exe	0x7fffcfeb0000	True	True	True	\Windows\System32\MsCtfMonitor.dll
+L5524: 7472	ctfmon.exe	0x7fffac7d0000	True	True	True	\Windows\System32\MSWB7.dll
+L5525: 7472	ctfmon.exe	0x7ff605630000	True	False	True	\Windows\System32\ctfmon.exe
+L5526: 7472	ctfmon.exe	0x7fffa9ab0000	True	True	True	\Windows\System32\MsSpellCheckingFacility.dll
+L5527: 7472	ctfmon.exe	0x7fffac670000	True	True	True	\Windows\System32\DevDispItemProvider.dll
+L5528: 7472	ctfmon.exe	0x7fffce950000	True	True	True	\Windows\System32\MTFServer.dll
+L5529: 7472	ctfmon.exe	0x7fffce3f0000	True	True	True	\Windows\System32\Windows.CloudStore.dll
+L5530: 7472	ctfmon.exe	0x7fffca6b0000	True	True	True	\Windows\System32\AppExtension.dll
+L5531: 7472	ctfmon.exe	0x7fffbf0b0000	True	True	True	\Windows\System32\Windows.Devices.Enumeration.dll
+L5532: 7472	ctfmon.exe	0x7fffcd620000	True	True	True	\Windows\System32\cdp.dll
+L5533: 7472	ctfmon.exe	0x7fffce900000	True	True	True	\Windows\System32\MTF.dll
+L5534: 7472	ctfmon.exe	0x7fffcf810000	True	True	True	\Windows\System32\InputService.dll
+L5535: 7472	ctfmon.exe	0x7fffcf780000	True	True	True	\Windows\System32\TextInputMethodFormatter.dll
+L5536: 7472	ctfmon.exe	0x7fffcfe10000	True	True	True	\Windows\System32\msutb.dll
+L5537: 7472	ctfmon.exe	0x7fffd87f0000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L5538: 7472	ctfmon.exe	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L5539: 7472	ctfmon.exe	0x7fffd5040000	True	True	True	\Windows\System32\Windows.Web.dll
+L5540: 7472	ctfmon.exe	0x7fffd1b30000	True	True	True	\Windows\System32\WordBreakers.dll
+L5541: 7472	ctfmon.exe	0x7fffd70d0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L5542: 7472	ctfmon.exe	0x7fffda470000	True	True	True	\Windows\System32\TextInputFramework.dll
+L5543: 7472	ctfmon.exe	0x7fffda1b0000	True	True	True	\Windows\System32\KBDUS.DLL
+L5544: 7472	ctfmon.exe	0x7fffda0a0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L5545: 7472	ctfmon.exe	0x7fffda5c0000	True	True	True	\Windows\System32\InputHost.dll
+L5546: 7472	ctfmon.exe	0x7fffdb9e0000	True	True	True	\Windows\System32\Windows.UI.dll
+L5547: 7472	ctfmon.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L5548: 7472	ctfmon.exe	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L5549: 7472	ctfmon.exe	0x7fffdfe20000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L5550: 7472	ctfmon.exe	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L5551: 7472	ctfmon.exe	0x7fffdbf20000	True	True	True	\Windows\System32\BCP47Langs.dll
+L5552: 7472	ctfmon.exe	0x7fffdf740000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L5553: 7472	ctfmon.exe	0x7fffe2e80000	True	True	True	\Windows\System32\CoreMessaging.dll
+L5554: 7472	ctfmon.exe	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L5555: 7472	ctfmon.exe	0x7fffe0bd0000	True	True	True	\Windows\System32\usermgrcli.dll
+L5556: 7472	ctfmon.exe	0x7fffe1550000	True	True	True	\Windows\System32\policymanager.dll
+L5557: 7472	ctfmon.exe	0x7fffe3320000	True	True	True	\Windows\System32\wtsapi32.dll
+L5558: 7472	ctfmon.exe	0x7fffe57b0000	True	True	True	\Windows\System32\winsta.dll
+L5559: 7472	ctfmon.exe	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L5560: 7472	ctfmon.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5561: 7472	ctfmon.exe	0x7fffe48b0000	True	True	True	\Windows\System32\ntmarta.dll
+L5562: 7472	ctfmon.exe	0x7fffe5000000	True	True	True	\Windows\System32\cryptbase.dll
+L5563: 7472	ctfmon.exe	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L5564: 7472	ctfmon.exe	0x7fffe5540000	True	True	True	\Windows\System32\cfgmgr32.dll
+L5565: 7472	ctfmon.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L5566: 7472	ctfmon.exe	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L5567: 7472	ctfmon.exe	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L5568: 7472	ctfmon.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5569: 7472	ctfmon.exe	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L5570: 7472	ctfmon.exe	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L5571: 7472	ctfmon.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L5572: 7472	ctfmon.exe	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L5573: 7472	ctfmon.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L5574: 7472	ctfmon.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L5575: 7472	ctfmon.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L5576: 7472	ctfmon.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5577: 7472	ctfmon.exe	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L5578: 7472	ctfmon.exe	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L5579: 7472	ctfmon.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L5580: 7472	ctfmon.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L5581: 7472	ctfmon.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L5582: 7472	ctfmon.exe	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L5583: 7472	ctfmon.exe	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L5584: 7472	ctfmon.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L5585: 7472	ctfmon.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L5586: 7472	ctfmon.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L5587: 7472	ctfmon.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L5588: 7472	ctfmon.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L5589: 7472	ctfmon.exe	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+L5590: 7472	ctfmon.exe	0x7fffe8d70000	True	True	True	\Windows\System32\msctf.dll
+L5591: 7472	ctfmon.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L5519: 7472	ctfmon.exe	0x22925770000	False	False	False	\Windows\System32\en-US\ctfmon.exe.mui
+L5520: 7472	ctfmon.exe	0x22928270000	False	False	False	\Windows\System32\prm0009.dll
+L5521: 7472	ctfmon.exe	0x22928250000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L5522: 7472	ctfmon.exe	0x7fffdbeb0000	True	True	True	\Windows\System32\InputLocaleManager.dll
+L5523: 7472	ctfmon.exe	0x7fffcfeb0000	True	True	True	\Windows\System32\MsCtfMonitor.dll
+L5524: 7472	ctfmon.exe	0x7fffac7d0000	True	True	True	\Windows\System32\MSWB7.dll
+L5525: 7472	ctfmon.exe	0x7ff605630000	True	False	True	\Windows\System32\ctfmon.exe
+L5526: 7472	ctfmon.exe	0x7fffa9ab0000	True	True	True	\Windows\System32\MsSpellCheckingFacility.dll
+L5527: 7472	ctfmon.exe	0x7fffac670000	True	True	True	\Windows\System32\DevDispItemProvider.dll
+L5528: 7472	ctfmon.exe	0x7fffce950000	True	True	True	\Windows\System32\MTFServer.dll
+L5529: 7472	ctfmon.exe	0x7fffce3f0000	True	True	True	\Windows\System32\Windows.CloudStore.dll
+L5530: 7472	ctfmon.exe	0x7fffca6b0000	True	True	True	\Windows\System32\AppExtension.dll
+L5531: 7472	ctfmon.exe	0x7fffbf0b0000	True	True	True	\Windows\System32\Windows.Devices.Enumeration.dll
+L5532: 7472	ctfmon.exe	0x7fffcd620000	True	True	True	\Windows\System32\cdp.dll
+L5533: 7472	ctfmon.exe	0x7fffce900000	True	True	True	\Windows\System32\MTF.dll
+L5534: 7472	ctfmon.exe	0x7fffcf810000	True	True	True	\Windows\System32\InputService.dll
+L5535: 7472	ctfmon.exe	0x7fffcf780000	True	True	True	\Windows\System32\TextInputMethodFormatter.dll
+L5536: 7472	ctfmon.exe	0x7fffcfe10000	True	True	True	\Windows\System32\msutb.dll
+L5537: 7472	ctfmon.exe	0x7fffd87f0000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L5538: 7472	ctfmon.exe	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L5539: 7472	ctfmon.exe	0x7fffd5040000	True	True	True	\Windows\System32\Windows.Web.dll
+L5540: 7472	ctfmon.exe	0x7fffd1b30000	True	True	True	\Windows\System32\WordBreakers.dll
+L5541: 7472	ctfmon.exe	0x7fffd70d0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L5542: 7472	ctfmon.exe	0x7fffda470000	True	True	True	\Windows\System32\TextInputFramework.dll
+L5543: 7472	ctfmon.exe	0x7fffda1b0000	True	True	True	\Windows\System32\KBDUS.DLL
+L5544: 7472	ctfmon.exe	0x7fffda0a0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L5545: 7472	ctfmon.exe	0x7fffda5c0000	True	True	True	\Windows\System32\InputHost.dll
+L5546: 7472	ctfmon.exe	0x7fffdb9e0000	True	True	True	\Windows\System32\Windows.UI.dll
+L5547: 7472	ctfmon.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L5548: 7472	ctfmon.exe	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L5549: 7472	ctfmon.exe	0x7fffdfe20000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L5550: 7472	ctfmon.exe	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L5551: 7472	ctfmon.exe	0x7fffdbf20000	True	True	True	\Windows\System32\BCP47Langs.dll
+L5552: 7472	ctfmon.exe	0x7fffdf740000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L5553: 7472	ctfmon.exe	0x7fffe2e80000	True	True	True	\Windows\System32\CoreMessaging.dll
+L5554: 7472	ctfmon.exe	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L5555: 7472	ctfmon.exe	0x7fffe0bd0000	True	True	True	\Windows\System32\usermgrcli.dll
+L5556: 7472	ctfmon.exe	0x7fffe1550000	True	True	True	\Windows\System32\policymanager.dll
+L5557: 7472	ctfmon.exe	0x7fffe3320000	True	True	True	\Windows\System32\wtsapi32.dll
+L5558: 7472	ctfmon.exe	0x7fffe57b0000	True	True	True	\Windows\System32\winsta.dll
+L5559: 7472	ctfmon.exe	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L5560: 7472	ctfmon.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5561: 7472	ctfmon.exe	0x7fffe48b0000	True	True	True	\Windows\System32\ntmarta.dll
+L5562: 7472	ctfmon.exe	0x7fffe5000000	True	True	True	\Windows\System32\cryptbase.dll
+L5563: 7472	ctfmon.exe	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L5564: 7472	ctfmon.exe	0x7fffe5540000	True	True	True	\Windows\System32\cfgmgr32.dll
+L5565: 7472	ctfmon.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L5566: 7472	ctfmon.exe	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L5567: 7472	ctfmon.exe	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L5568: 7472	ctfmon.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5569: 7472	ctfmon.exe	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L5570: 7472	ctfmon.exe	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L5571: 7472	ctfmon.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L5572: 7472	ctfmon.exe	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L5573: 7472	ctfmon.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L5574: 7472	ctfmon.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L5575: 7472	ctfmon.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L5576: 7472	ctfmon.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5577: 7472	ctfmon.exe	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L5578: 7472	ctfmon.exe	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L5579: 7472	ctfmon.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L5580: 7472	ctfmon.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L5581: 7472	ctfmon.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L5582: 7472	ctfmon.exe	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L5583: 7472	ctfmon.exe	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L5584: 7472	ctfmon.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L5585: 7472	ctfmon.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L5586: 7472	ctfmon.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L5587: 7472	ctfmon.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L5588: 7472	ctfmon.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L5589: 7472	ctfmon.exe	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+L5590: 7472	ctfmon.exe	0x7fffe8d70000	True	True	True	\Windows\System32\msctf.dll
+L5591: 7472	ctfmon.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L109: 7472	ctfmon.exe	\Device\HarddiskVolume4\Windows\System32\ctfmon.exe	C:\WINDOWS\system32\ctfmon.exe	False	False
+
+--- sessions.txt ---
+L141: 1	-	7472	ctfmon.exe	CLEANWINDOWS11/kali	2026-05-12 18:23:51.000000 UTC
+
+=== PID 7648 (audiodg.exe, ppid=2528) ===
+
+--- psscan.txt ---
+L115: 7648	2528	audiodg.exe	0xcd8a12220080	0	-	0	False	2026-05-12 18:23:49.000000 UTC	2026-05-12 18:31:08.000000 UTC	Disabled
+
+=== END OF PIVOT REPORT ===

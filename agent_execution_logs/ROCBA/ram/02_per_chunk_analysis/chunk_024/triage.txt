@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_024.txt
+Summary: Orphaned parent PID for ctfmon.exe; all other signals appear benign.
+
+[PROCESS]
+pid: 9488
+ppid: 1908
+image: ctfmon.exe
+cmdline: "ctfmon.exe"
+severity: LOW
+reasons: orphaned_parent: PPID 1908 does not appear anywhere in the process list
+

@@ -1,0 +1,37 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_030.txt
+Summary: All four processes have orphaned PPIDs (parents not present in process list); chrome.exe and both msedge.exe instances are very short-lived; RuntimeBroker.exe PPID 740 is unresolvable.
+
+[PROCESS]
+pid: 10500
+ppid: 24476
+image: chrome.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 24476 not present in process list | short_lived: process ran for ~23 seconds (04:55:57 to 04:56:20 UTC)
+
+[PROCESS]
+pid: 10808
+ppid: 22700
+image: msedge.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 22700 not present in process list | short_lived: process ran for ~74 seconds (04:58:03 to 04:59:17 UTC)
+
+[PROCESS]
+pid: 11200
+ppid: 22700
+image: msedge.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 22700 not present in process list | short_lived: process ran for ~76 seconds (04:58:01 to 04:59:17 UTC) | sibling_pair: shares orphaned parent PID 22700 with PID 10808 msedge.exe
+
+[PROCESS]
+pid: 11108
+ppid: 740
+image: RuntimeBroker.
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_process: parent PID 740 not present in process list | name_truncation_note: EPROCESS name shows 'RuntimeBroker.' (kernel 14-char truncation); path and cmdline confirm legitimate C:\Windows\System32\RuntimeBroker.exe — not a typosquat
+

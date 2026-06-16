@@ -1,0 +1,61 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:57:01Z
+
+=== PID 9644 (HxTsr.exe, ppid=740) ===
+
+--- pslist.txt ---
+L1397: 9644	740	HxTsr.exe	0xb78d11c63080	0	-	1	False	2020-11-14 13:03:39.000000 UTC	2020-11-14 13:03:41.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L1397: 9644	HxTsr.exe	-
+
+--- privileges.txt ---
+L48725: 9644	HxTsr.exe	2	SeCreateTokenPrivilege		Create a token object
+L48726: 9644	HxTsr.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L48727: 9644	HxTsr.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L48728: 9644	HxTsr.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L48729: 9644	HxTsr.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L48730: 9644	HxTsr.exe	7	SeTcbPrivilege		Act as part of the operating system
+L48731: 9644	HxTsr.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L48732: 9644	HxTsr.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L48733: 9644	HxTsr.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L48734: 9644	HxTsr.exe	11	SeSystemProfilePrivilege		Profile system performance
+L48735: 9644	HxTsr.exe	12	SeSystemtimePrivilege		Change the system time
+L48736: 9644	HxTsr.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L48737: 9644	HxTsr.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L48738: 9644	HxTsr.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L48739: 9644	HxTsr.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L48740: 9644	HxTsr.exe	17	SeBackupPrivilege		Backup files and directories
+L48741: 9644	HxTsr.exe	18	SeRestorePrivilege		Restore files and directories
+L48742: 9644	HxTsr.exe	19	SeShutdownPrivilege		Shut down the system
+L48743: 9644	HxTsr.exe	20	SeDebugPrivilege		Debug programs
+L48744: 9644	HxTsr.exe	21	SeAuditPrivilege		Generate security audits
+L48745: 9644	HxTsr.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L48746: 9644	HxTsr.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L48747: 9644	HxTsr.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L48748: 9644	HxTsr.exe	25	SeUndockPrivilege		Remove computer from docking station
+L48749: 9644	HxTsr.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L48750: 9644	HxTsr.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L48751: 9644	HxTsr.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L48752: 9644	HxTsr.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L48753: 9644	HxTsr.exe	30	SeCreateGlobalPrivilege		Create global objects
+L48754: 9644	HxTsr.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L48755: 9644	HxTsr.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L48756: 9644	HxTsr.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L48757: 9644	HxTsr.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L48758: 9644	HxTsr.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L48759: 9644	HxTsr.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L116: *** 9644	740	HxTsr.exe	0xb78d11c63080	0	-	1	False	2020-11-14 13:03:39.000000 UTC	2020-11-14 13:03:41.000000 UTC	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	-
+
+--- psscan.txt ---
+L1908: 9644	740	HxTsr.exe	0xb78d11c63080	0	-	1	False	2020-11-14 13:03:39.000000 UTC	2020-11-14 13:03:41.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L1397: 9644	HxTsr.exe	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	False	False
+
+--- sessions.txt ---
+L1411: 1	-	9644	HxTsr.exe	-	2020-11-14 13:03:39.000000 UTC
+
+=== END OF PIVOT REPORT ===

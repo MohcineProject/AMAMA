@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_027.txt
+Summary: Orphaned parent PIDs on both visible processes; svchost.exe holds high-risk privileges (SeTcbPrivilege, SeImpersonatePrivilege) with an unresolvable parent and no image path.
+
+[PROCESS]
+pid: 9836
+ppid: 828
+image: svchost.exe
+cmdline: 
+severity: HIGH
+reasons: orphaned_parent: PPID 828 (unknown) not present in process list — cannot verify services.exe parentage | missing_image_path: no Path field present for svchost.exe — backing file inaccessible or hidden | missing_cmdline: no command line recorded — svchost.exe normally carries explicit -k <group> arguments | privilege_anomaly: holds SeTcbPrivilege and SeImpersonatePrivilege — high-risk combination enabling token impersonation and acting as OS | exited_process: process exited at 2020-11-11 08:21:19 UTC (~7 min runtime) — short-lived svchost with no path and elevated privileges is suspicious
+
+[PROCESS]
+pid: 9788
+ppid: 740
+image: LockApp.exe
+cmdline: "C:\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy\LockApp.exe" -ServerName:WindowsDefaultLockScreen.AppX7y4nbzq37zn4ks9k7amqjywdat7d3j2z.mca
+severity: LOW
+reasons: orphaned_parent: PPID 740 (unknown) not present in process list — expected parent is svchost.exe hosting DcomLaunch or similar UWP host | dll_list_anomaly: non-whitelisted DLL entries include system32 DLLs (ntdll.dll, KERNEL32.DLL, KERNELBASE.dll) that should normally be suppressed by whitelist — suggests whitelist gap rather than true IOC, but warrants confirmation
+

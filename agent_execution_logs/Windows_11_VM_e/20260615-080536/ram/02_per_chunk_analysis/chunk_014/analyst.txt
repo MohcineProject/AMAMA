@@ -1,0 +1,80 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 4948 — userinit.exe**
+
+Agent 1 flags: orphaned parent (824 unknown), missing cmdline, short-lived.
+
+Reasoning:
+- `userinit.exe` is legitimately short-lived — it sets up the user shell and exits after spawning `explorer.exe`. The ~45-second lifespan is entirely normal.
+- Parent PID 824 not appearing in the process list is expected: `winlogon.exe` (the legitimate parent of `userinit.exe`) may have exited or its EPROCESS entry may not be captured in the snapshot. PID 824 being "unknown" in a memory snapshot is a common artefact, not evidence of injection.
+- The pstree confirms the path: `\Device\HarddiskVolume4\Windows\System32\userinit.exe` — legitimate System32 path.
+- `explorer.exe` (PID 4968) is the child, which is exactly the expected behaviour.
+- Missing cmdline: `userinit.exe` often has no recorded cmdline in Volatility because it exits before the snapshot or the cmdline block is paged out. Not suspicious on its own.
+- Privilege footprint: The long list of privileges is the standard token inherited from `winlogon.exe` / the logon session. Most are not enabled (only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeCreateGlobalPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are Present/Enabled). This is the normal user token privilege set. No anomalous enabled privileges.
+- No DLL anomalies, no malfind, no network connections, no registry persistence evidence.
+- **Verdict: REJECTED** — all signals have benign explanations consistent with normal Windows logon flow.
+
+---
+
+**PID 7996 — OneDrive.exe**
+
+Agent 1 flags: AppData path, DLL loaded from AppData.
+
+Reasoning:
+- Microsoft OneDrive installs per-user by design into `C:\Users\<user>\AppData\Local\Microsoft\OneDrive\`. This is the canonical, expected install path — not anomalous.
+- The username `kali` is notable (Kali Linux default user) but this appears to be a Windows VM running under that username, not inherently malicious.
+- Cmdline `/background` is the standard OneDrive startup argument.
+- Parent is `explorer.exe` (PID 4968) — correct for a user-launched or autostart application.
+- DLL evidence (3 lines shown): `OneDrive.exe` from AppData, `ntdll.dll` and `KERNEL32.DLL` from `System32` — entirely normal. No suspicious DLLs from Temp, Downloads, or other anomalous paths visible in the evidence.
+- Privilege footprint: identical pattern to PID 4948 — standard user token, same set of Present/Enabled privileges. Nothing elevated or anomalous.
+- No malfind, no network connections, no registry persistence, no injection indicators in the evidence provided.
+- Agent 1's signal is purely path-based heuristic. The AppData path is the legitimate OneDrive install location. Without a hash mismatch, malfind hit, suspicious DLL, or network IOC, there is nothing to confirm.
+- **Verdict: REJECTED** — standard per-user OneDrive installation with normal cmdline, parent, and DLL set. AppData path is expected for this binary.
+
+---
+
+Both findings: REJECTED. Count: confirmed=0, inconclusive=0, rejected=2.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-13T19:30:00Z
+Summary: Both Agent 1 findings examined in this batch resolve to benign behaviour
+upon evidence review. PID 4948 (userinit.exe) follows the normal Windows logon
+sequence with expected parent ambiguity and child spawning. PID 7996 (OneDrive.exe)
+runs from its canonical per-user install path with a standard invocation. No
+confirmed malicious activity is present in this finding set.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+--- REJECTED findings (count only, per output spec) ---
+  PID 4948 userinit.exe  — REJECTED
+    Rationale: userinit.exe legitimately exits after spawning explorer.exe (~45 s
+    lifespan is normal). Parent PID 824 absent from the snapshot is a common
+    Volatility artefact when winlogon.exe has exited or its EPROCESS is paged out;
+    it is not evidence of injection or spoofing. The pstree confirms the binary
+    runs from \Device\HarddiskVolume4\Windows\System32\userinit.exe (legitimate
+    System32 path) and correctly spawned explorer.exe (PID 4968). The privilege
+    list is the standard inherited user-logon token with only benign privileges
+    enabled (SeChangeNotifyPrivilege, SeShutdownPrivilege, SeUndockPrivilege,
+    SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege).
+    No DLL anomalies, malfind hits, network connections, or registry persistence
+    evidence is present.
+
+  PID 7996 OneDrive.exe  — REJECTED
+    Rationale: Microsoft OneDrive installs per-user into
+    C:\Users\<user>\AppData\Local\Microsoft\OneDrive\ by design; this is the
+    canonical install path, not an anomalous writable-path placement. The cmdline
+    argument /background is the standard autostart invocation. Parent is
+    explorer.exe (PID 4968), which is correct for a user-context autostart. The
+    three DLL lines shown load only from System32 (ntdll.dll, KERNEL32.DLL) with
+    no suspicious third-party or Temp/Downloads-path DLLs visible. The privilege
+    token is identical in structure to the standard user token seen on PID 4948.
+    No malfind hits, network IOCs, or registry persistence evidence is present.
+    Agent 1's signal is a path-heuristic false positive for this binary class.
+================================================================

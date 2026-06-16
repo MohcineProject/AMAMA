@@ -1,0 +1,44 @@
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Three Agent 1 leads were reviewed. One process (PID 8060, svchost.exe) shows strong DKOM/process-hiding indicators and warrants CONFIRMED status at HIGH severity. One process (PID 8048, taskhostw.exe) carries an anomalous and extremely broad privilege set that is inconsistent with a standard task-host token, but insufficient corroborating evidence prevents full confirmation. One process (PID 7800, WidgetService.exe) is a legitimate Microsoft component with a benign command line, normal privilege footprint, and clean DLL paths — rejected as a false positive.
+Counts: confirmed=1  inconclusive=1  rejected=1
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      8060
+PPID:     888
+Image:    svchost.exe
+Cmdline:  (not recoverable)
+Severity: HIGH
+MITRE:    T1564.001 — Hide Artifacts: Hidden Files and Directories / T1055 — Process Injection (DKOM process hiding)
+
+Justification:
+  PID 8060 appears exclusively in psscan output and is entirely absent from pslist, which is the canonical indicator of Direct Kernel Object Manipulation (DKOM) — an attacker has unlinked the EPROCESS structure from the active process list to hide the process from standard enumeration. The parent PID 888 is not present in any process list, meaning the process tree is severed and the lineage cannot be verified. No command-line data is recoverable, which is consistent with deliberate evasion (the PID exited or the cmdline block was wiped). The process ran for approximately two minutes and then terminated, a pattern consistent with a short-lived loader, injector, or stager that completes its work and exits to reduce dwell-time visibility. The combination of psscan-only visibility, orphaned PPID, and missing command line across three independent artefact types constitutes a clear multi-signal confirmation of process hiding.
+
+Key Evidence:
+  - L137: 8060	888	svchost.exe	0xcd8a126d2080	0	-	0	False	2026-05-12 18:28:35.000000 UTC	2026-05-12 18:30:41.000000 UTC	Disabled
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      8048
+PPID:     1524
+Image:    taskhostw.exe
+Cmdline:  taskhostw.exe $(Arg0)
+MITRE:    T1134 — Access Token Manipulation (possible)
+
+Justification:
+  The privilege set assigned to this taskhostw.exe instance is strikingly broad for a standard scheduled-task host. In a normal user-session taskhostw.exe the token carries a small subset of user-context privileges; here the process holds SeDebugPrivilege (Present), SeLoadDriverPrivilege (Present), SeBackupPrivilege (Present), SeRestorePrivilege (Present), SeImpersonatePrivilege (Present, Enabled, Default), SeTakeOwnershipPrivilege (Present), SeSystemEnvironmentPrivilege (Present), and SeManageVolumePrivilege (Present) — a privilege footprint more consistent with a LOCAL SYSTEM or high-integrity administrative token than a typical task-host invocation. The unexpanded placeholder argument `$(Arg0)` is unusual but not by itself malicious; it can appear when the Task Scheduler COM interface is invoked programmatically without substituting the argument. The parent PID 1524 is absent from the process list, which prevents lineage verification. However, the DLL evidence provided shows only clean System32 paths (taskhostw.exe, ntdll.dll, KERNEL32.DLL), no malfind hits are present in the input, and no network connections, registry persistence, or user-writable DLL paths are evidenced. The privilege anomaly is real and significant, but without malfind data, network artefacts, or a suspicious DLL to corroborate, the evidence is insufficient to confirm malice — the process could be a legitimately elevated scheduled task running under a SYSTEM-equivalent token.
+
+Key Evidence:
+  - L124: 8048	taskhostw.exe	taskhostw.exe $(Arg0)
+  - L4188: 8048	taskhostw.exe	20	SeDebugPrivilege	Present	Debug programs
+  - L4197: 8048	taskhostw.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L4178: 8048	taskhostw.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+  - L4186: 8048	taskhostw.exe	18	SeRestorePrivilege	Present	Restore files and directories
+  - L5940: 8048	taskhostw.exe	0x7ff6df3b0000	0x1a000	taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	-1	2026-05-12 18:24:33.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================

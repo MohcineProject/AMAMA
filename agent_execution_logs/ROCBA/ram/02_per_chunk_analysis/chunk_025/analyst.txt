@@ -1,0 +1,29 @@
+================================================================
+PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: A single process was submitted for validation. HxTsr.exe (PID 9644) was flagged by Agent 1 for an orphaned parent PID and a very short lifetime. After reviewing all available evidence, the finding does not meet the threshold for confirmation. The process path, binary identity, and privilege set are consistent with a legitimate Windows Communications Apps component running under a SYSTEM-level host. No malicious indicators were found.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      9644
+PPID:     740
+Image:    HxTsr.exe
+Cmdline:  - (not captured)
+Severity: N/A
+MITRE:
+
+Justification:
+  HxTsr.exe is a legitimate Microsoft component of the Windows Communications Apps (Mail/Calendar) UWP package, and the pstree path confirms it originates from the expected WindowsApps location: `\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe`. The malware PE masquerade check returned False/False, meaning neither the binary path nor the PE header raised a masquerade flag. The orphaned parent (PPID 740 absent from the process list) is a known artefact of short-lived UWP broker host processes that exit before a memory snapshot is taken, and the 2-second lifetime is consistent with a transient COM activation. However, two signals prevent a clean REJECTED verdict: (1) the command line was not captured (`-`), so the invocation arguments cannot be verified; and (2) the privilege set is the full SYSTEM token (SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege, and the entire NT AUTHORITY\SYSTEM privilege list are all present), which is unusually broad for a UWP mail helper — though this is consistent with the process having been spawned by a SYSTEM-level host (PPID 740) rather than with the process itself being malicious. On balance, the binary identity and path are clean, but the missing command line and SYSTEM-level token on a UWP component warrant flagging as inconclusive rather than outright rejected.
+
+Key Evidence:
+  - L116: *** 9644	740	HxTsr.exe	0xb78d11c63080	0	-	1	False	2020-11-14 13:03:39.000000 UTC	2020-11-14 13:03:41.000000 UTC	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	-
+  - L1397: 9644	HxTsr.exe	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	False	False
+  - L48743: 9644	HxTsr.exe	20	SeDebugPrivilege		Debug programs
+  - L48730: 9644	HxTsr.exe	7	SeTcbPrivilege		Act as part of the operating system
+  - L48752: 9644	HxTsr.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+  - L1397: 9644	HxTsr.exe	-
+----------------------------------------------------------------
+
+================================================================

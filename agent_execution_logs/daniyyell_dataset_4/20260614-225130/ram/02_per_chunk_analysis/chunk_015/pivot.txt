@@ -1,0 +1,910 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-14T23:03:21Z
+
+=== PID 5788 (userinit.exe, ppid=672) ===
+
+--- pslist.txt ---
+L85: 5788	672	userinit.exe	0xbb0c905b9340	0	-	1	False	2025-08-07 19:36:30.000000 UTC	2025-08-07 19:37:00.000000 UTC	Disabled
+L86: 5832	5788	explorer.exe	0xbb0c905bc340	55	-	1	False	2025-08-07 19:36:30.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L85: 5788	userinit.exe	-
+
+--- privileges.txt ---
+L2805: 5788	userinit.exe	2	SeCreateTokenPrivilege		Create a token object
+L2806: 5788	userinit.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2807: 5788	userinit.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2808: 5788	userinit.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2809: 5788	userinit.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2810: 5788	userinit.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2811: 5788	userinit.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2812: 5788	userinit.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2813: 5788	userinit.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2814: 5788	userinit.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2815: 5788	userinit.exe	12	SeSystemtimePrivilege		Change the system time
+L2816: 5788	userinit.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2817: 5788	userinit.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2818: 5788	userinit.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2819: 5788	userinit.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2820: 5788	userinit.exe	17	SeBackupPrivilege		Backup files and directories
+L2821: 5788	userinit.exe	18	SeRestorePrivilege		Restore files and directories
+L2822: 5788	userinit.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2823: 5788	userinit.exe	20	SeDebugPrivilege		Debug programs
+L2824: 5788	userinit.exe	21	SeAuditPrivilege		Generate security audits
+L2825: 5788	userinit.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2826: 5788	userinit.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2827: 5788	userinit.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2828: 5788	userinit.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2829: 5788	userinit.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2830: 5788	userinit.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2831: 5788	userinit.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2832: 5788	userinit.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2833: 5788	userinit.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2834: 5788	userinit.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2835: 5788	userinit.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2836: 5788	userinit.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2837: 5788	userinit.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2838: 5788	userinit.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2839: 5788	userinit.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L132: * 5788	672	userinit.exe	0xbb0c905b9340	0	-	1	False	2025-08-07 19:36:30.000000 UTC	2025-08-07 19:37:00.000000 UTC	\Device\HarddiskVolume3\Windows\System32\userinit.exe	-	-
+L133: ** 5832	5788	explorer.exe	0xbb0c905bc340	55	-	1	False	2025-08-07 19:36:30.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\explorer.exe	C:\Windows\Explorer.EXE	C:\Windows\Explorer.EXE
+
+--- psscan.txt ---
+L12: 5832	5788	explorer.exe	0xb480001ba340	55	-	1	False	2025-08-07 19:36:30.000000 UTC	N/A	Disabled
+L13: 5788	672	userinit.exe	0xb480001bd340	0	-	1	False	2025-08-07 19:36:30.000000 UTC	2025-08-07 19:37:00.000000 UTC	Disabled
+L104: 5788	672	userinit.exe	0xbb0c905b9340	0	-	1	False	2025-08-07 19:36:30.000000 UTC	2025-08-07 19:37:00.000000 UTC	Disabled
+L105: 5832	5788	explorer.exe	0xbb0c905bc340	55	-	1	False	2025-08-07 19:36:30.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L85: 5788	userinit.exe	\Device\HarddiskVolume3\Windows\System32\userinit.exe	-	False	False
+
+--- sessions.txt ---
+L112: 1	-	5788	userinit.exe	-	2025-08-07 19:36:30.000000 UTC
+
+=== PID 5832 (explorer.exe, ppid=5788) ===
+Cmdline: C:\Windows\Explorer.EXE
+
+--- pslist.txt ---
+L86: 5832	5788	explorer.exe	0xbb0c905bc340	55	-	1	False	2025-08-07 19:36:30.000000 UTC	N/A	Disabled
+L102: 8168	5832	SecurityHealth	0xbb0c90dbc0c0	1	-	1	False	2025-08-07 19:36:58.000000 UTC	N/A	Disabled
+L104: 3828	5832	vmtoolsd.exe	0xbb0c93053080	4	-	1	False	2025-08-07 19:36:59.000000 UTC	N/A	Disabled
+L105: 6620	5832	OneDrive.exe	0xbb0c90e212c0	23	-	1	False	2025-08-07 19:37:00.000000 UTC	N/A	Disabled
+L124: 6332	5832	procexp64.exe	0xbb0c942ba080	5	-	1	False	2025-08-07 19:39:13.000000 UTC	N/A	Disabled
+L125: 2684	5832	msedge.exe	0xbb0c931f3080	62	-	1	False	2025-08-07 19:40:15.000000 UTC	N/A	Disabled
+L148: 1548	5832	FTK Imager.exe	0xbb0c94adb080	12	-	1	False	2025-08-07 19:47:49.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L86: 5832	explorer.exe	C:\Windows\Explorer.EXE
+
+--- privileges.txt ---
+L2840: 5832	explorer.exe	2	SeCreateTokenPrivilege		Create a token object
+L2841: 5832	explorer.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2842: 5832	explorer.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2843: 5832	explorer.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2844: 5832	explorer.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2845: 5832	explorer.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2846: 5832	explorer.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2847: 5832	explorer.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2848: 5832	explorer.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2849: 5832	explorer.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2850: 5832	explorer.exe	12	SeSystemtimePrivilege		Change the system time
+L2851: 5832	explorer.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2852: 5832	explorer.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2853: 5832	explorer.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2854: 5832	explorer.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2855: 5832	explorer.exe	17	SeBackupPrivilege		Backup files and directories
+L2856: 5832	explorer.exe	18	SeRestorePrivilege		Restore files and directories
+L2857: 5832	explorer.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2858: 5832	explorer.exe	20	SeDebugPrivilege		Debug programs
+L2859: 5832	explorer.exe	21	SeAuditPrivilege		Generate security audits
+L2860: 5832	explorer.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2861: 5832	explorer.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2862: 5832	explorer.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2863: 5832	explorer.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2864: 5832	explorer.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2865: 5832	explorer.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2866: 5832	explorer.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2867: 5832	explorer.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2868: 5832	explorer.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2869: 5832	explorer.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2870: 5832	explorer.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2871: 5832	explorer.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2872: 5832	explorer.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2873: 5832	explorer.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2874: 5832	explorer.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L3512: 5832	explorer.exe	0x7ff67f160000	0x4fd000	Explorer.EXE	C:\Windows\Explorer.EXE	-1	2025-08-07 19:36:30.000000 UTC	Disabled
+L3513: 5832	explorer.exe	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:36:30.000000 UTC	Disabled
+L3514: 5832	explorer.exe	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2025-08-07 19:36:30.000000 UTC	Disabled
+L3515: 5832	explorer.exe	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2025-08-07 19:36:30.000000 UTC	Disabled
+L3516: 5832	explorer.exe	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3517: 5832	explorer.exe	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3518: 5832	explorer.exe	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3519: 5832	explorer.exe	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3520: 5832	explorer.exe	0x7fff5dcd0000	0xcd000	OLEAUT32.dll	C:\Windows\System32\OLEAUT32.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3521: 5832	explorer.exe	0x7fff5e8f0000	0xad000	shcore.dll	C:\Windows\System32\shcore.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3522: 5832	explorer.exe	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3523: 5832	explorer.exe	0x7fff5eff0000	0xaf000	advapi32.dll	C:\Windows\System32\advapi32.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3524: 5832	explorer.exe	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\System32\sechost.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3525: 5832	explorer.exe	0x7fff5f150000	0x55000	shlwapi.dll	C:\Windows\System32\shlwapi.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3526: 5832	explorer.exe	0x7fff5d910000	0x19d000	user32.dll	C:\Windows\System32\user32.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3527: 5832	explorer.exe	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3528: 5832	explorer.exe	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\System32\GDI32.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3529: 5832	explorer.exe	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3530: 5832	explorer.exe	0x7fff5dda0000	0x744000	SHELL32.dll	C:\Windows\System32\SHELL32.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3531: 5832	explorer.exe	0x7fff5ccd0000	0x2e000	USERENV.dll	C:\Windows\SYSTEM32\USERENV.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3532: 5832	explorer.exe	0x7fff5c1a0000	0x3c000	IPHLPAPI.DLL	C:\Windows\SYSTEM32\IPHLPAPI.DLL	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3533: 5832	explorer.exe	0x7fff5cc40000	0x4b000	powrprof.dll	C:\Windows\SYSTEM32\powrprof.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3534: 5832	explorer.exe	0x7fff5aeb0000	0x793000	windows.storage.dll	C:\Windows\SYSTEM32\windows.storage.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3535: 5832	explorer.exe	0x7fff5b690000	0xf3000	dxgi.dll	C:\Windows\SYSTEM32\dxgi.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3536: 5832	explorer.exe	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3537: 5832	explorer.exe	0x7fff58940000	0xf6000	PROPSYS.dll	C:\Windows\SYSTEM32\PROPSYS.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3538: 5832	explorer.exe	0x7fff5a2d0000	0xf2000	CoreMessaging.dll	C:\Windows\SYSTEM32\CoreMessaging.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3539: 5832	explorer.exe	0x7fff52b70000	0x1ec000	urlmon.dll	C:\Windows\SYSTEM32\urlmon.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3540: 5832	explorer.exe	0x7fff5dc60000	0x6b000	WS2_32.dll	C:\Windows\System32\WS2_32.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3541: 5832	explorer.exe	0x7fff58a70000	0x14000	WTSAPI32.dll	C:\Windows\SYSTEM32\WTSAPI32.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3542: 5832	explorer.exe	0x7fff48360000	0x4d9000	WININET.dll	C:\Windows\SYSTEM32\WININET.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3543: 5832	explorer.exe	0x7fff48a00000	0x92000	AEPIC.dll	C:\Windows\SYSTEM32\AEPIC.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3544: 5832	explorer.exe	0x7fff44ce0000	0xa9000	TWINAPI.dll	C:\Windows\SYSTEM32\TWINAPI.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3545: 5832	explorer.exe	0x7fff5cf20000	0x27000	bcrypt.dll	C:\Windows\System32\bcrypt.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3546: 5832	explorer.exe	0x7fff5a7e0000	0x9e000	UxTheme.dll	C:\Windows\SYSTEM32\UxTheme.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3547: 5832	explorer.exe	0x7fff5cc90000	0x32000	SspiCli.dll	C:\Windows\SYSTEM32\SspiCli.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3548: 5832	explorer.exe	0x7fff579f0000	0x200000	twinapi.appcore.dll	C:\Windows\SYSTEM32\twinapi.appcore.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3549: 5832	explorer.exe	0x7fff5c750000	0x2e000	Wldp.dll	C:\Windows\SYSTEM32\Wldp.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3550: 5832	explorer.exe	0x7fff533d0000	0x2b1000	iertutil.dll	C:\Windows\SYSTEM32\iertutil.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3551: 5832	explorer.exe	0x7fff52b00000	0x28000	srvcli.dll	C:\Windows\SYSTEM32\srvcli.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3552: 5832	explorer.exe	0x7fff5c2b0000	0xc000	netutils.dll	C:\Windows\SYSTEM32\netutils.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3553: 5832	explorer.exe	0x7fff5bef0000	0x33000	ntmarta.dll	C:\Windows\SYSTEM32\ntmarta.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3554: 5832	explorer.exe	0x7fff5c6a0000	0x18000	cryptsp.dll	C:\Windows\SYSTEM32\cryptsp.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3555: 5832	explorer.exe	0x7fff5aad0000	0x2f000	dwmapi.dll	C:\Windows\SYSTEM32\dwmapi.dll	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3556: 5832	explorer.exe	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\System32\bcryptPrimitives.dll	-1	2025-08-07 19:36:30.000000 UTC	Disabled
+L3557: 5832	explorer.exe	0x7fff5db50000	0x30000	IMM32.DLL	C:\Windows\System32\IMM32.DLL	6	2025-08-07 19:36:30.000000 UTC	Disabled
+L3558: 5832	explorer.exe	0x7fff5cc20000	0x12000	UMPDC.dll	C:\Windows\SYSTEM32\UMPDC.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3559: 5832	explorer.exe	0x7fff58160000	0x6a000	NInput.dll	C:\Windows\SYSTEM32\NInput.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3560: 5832	explorer.exe	0x7fff5e560000	0x114000	MSCTF.dll	C:\Windows\System32\MSCTF.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3561: 5832	explorer.exe	0x7fff5e9a0000	0x12a000	ole32.dll	C:\Windows\System32\ole32.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3562: 5832	explorer.exe	0x7fff44970000	0x29a000	comctl32.dll	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3563: 5832	explorer.exe	0x7fff5ead0000	0xa9000	clbcatq.dll	C:\Windows\System32\clbcatq.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3564: 5832	explorer.exe	0x7fff448e0000	0x90000	appresolver.dll	C:\Windows\System32\appresolver.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3565: 5832	explorer.exe	0x7fff54f20000	0x5b000	Bcp47Langs.dll	C:\Windows\System32\Bcp47Langs.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3566: 5832	explorer.exe	0x7fff5b910000	0x29000	SLC.dll	C:\Windows\System32\SLC.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3567: 5832	explorer.exe	0x7fff5b8e0000	0x25000	sppc.dll	C:\Windows\System32\sppc.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3568: 5832	explorer.exe	0x7fff5cd10000	0x1f000	profapi.dll	C:\Windows\SYSTEM32\profapi.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3569: 5832	explorer.exe	0x7fff55e30000	0x7cb000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3570: 5832	explorer.exe	0x7fff44160000	0x582000	StartTileData.dll	C:\Windows\System32\StartTileData.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3571: 5832	explorer.exe	0x7fff4cfd0000	0x2b000	IDStore.dll	C:\Windows\System32\IDStore.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3572: 5832	explorer.exe	0x7fff58a40000	0x27000	SAMLIB.dll	C:\Windows\System32\SAMLIB.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3573: 5832	explorer.exe	0x7fff58610000	0x16000	usermgrcli.dll	C:\Windows\SYSTEM32\usermgrcli.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3574: 5832	explorer.exe	0x7fff45ff0000	0xaa000	wlidprov.dll	C:\Windows\System32\wlidprov.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3575: 5832	explorer.exe	0x7fff519e0000	0x19000	samcli.dll	C:\Windows\System32\samcli.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3576: 5832	explorer.exe	0x7fff49150000	0x146000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3577: 5832	explorer.exe	0x7fff56dd0000	0x54000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3578: 5832	explorer.exe	0x7fff4deb0000	0xe6000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3579: 5832	explorer.exe	0x7fff570b0000	0x104000	AppXDeploymentClient.dll	C:\Windows\System32\AppXDeploymentClient.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3580: 5832	explorer.exe	0x7fff57e10000	0xa3000	policymanager.dll	C:\Windows\SYSTEM32\policymanager.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3581: 5832	explorer.exe	0x7fff5be60000	0x8a000	msvcp110_win.dll	C:\Windows\SYSTEM32\msvcp110_win.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3582: 5832	explorer.exe	0x7fff5cbb0000	0x64000	winsta.dll	C:\Windows\SYSTEM32\winsta.dll	-1	2025-08-07 19:36:31.000000 UTC	Disabled
+L3583: 5832	explorer.exe	0x7fff479b0000	0x216000	Windows.CloudStore.dll	C:\Windows\System32\Windows.CloudStore.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3584: 5832	explorer.exe	0x7fff46300000	0x50000	SndVolSSO.DLL	C:\Windows\SYSTEM32\SndVolSSO.DLL	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3585: 5832	explorer.exe	0x7fff56e90000	0x85000	MMDevAPI.DLL	C:\Windows\SYSTEM32\MMDevAPI.DLL	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3586: 5832	explorer.exe	0x7fff5caa0000	0x2c000	DEVOBJ.dll	C:\Windows\SYSTEM32\DEVOBJ.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3587: 5832	explorer.exe	0x7fff5d570000	0x4e000	cfgmgr32.dll	C:\Windows\System32\cfgmgr32.dll	-1	2025-08-07 19:36:31.000000 UTC	Disabled
+L3588: 5832	explorer.exe	0x7fff462c0000	0x37000	AppExtension.dll	C:\Windows\System32\AppExtension.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3589: 5832	explorer.exe	0x7fff448a0000	0x40000	Windows.StateRepositoryClient.dll	C:\Windows\System32\Windows.StateRepositoryClient.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3590: 5832	explorer.exe	0x7fff46840000	0x66000	OLEACC.dll	C:\Windows\SYSTEM32\OLEACC.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3591: 5832	explorer.exe	0x7fff598a0000	0x154000	WinTypes.dll	C:\Windows\System32\WinTypes.dll	-1	2025-08-07 19:36:31.000000 UTC	Disabled
+L3592: 5832	explorer.exe	0x7fff50a30000	0xac000	TextShaping.dll	C:\Windows\SYSTEM32\TextShaping.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3593: 5832	explorer.exe	0x7fff54c20000	0x141000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3594: 5832	explorer.exe	0x7fff54b20000	0xfa000	TextInputFramework.dll	C:\Windows\System32\TextInputFramework.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3595: 5832	explorer.exe	0x7fff549c0000	0x152000	InputHost.dll	C:\Windows\System32\InputHost.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3596: 5832	explorer.exe	0x7fff57f00000	0xa1000	WindowManagementAPI.dll	C:\Windows\System32\WindowManagementAPI.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3597: 5832	explorer.exe	0x7fff59f70000	0x35e000	CoreUIComponents.dll	C:\Windows\System32\CoreUIComponents.dll	-1	2025-08-07 19:36:31.000000 UTC	Disabled
+L3598: 5832	explorer.exe	0x7fff57830000	0x1b4000	windowscodecs.dll	C:\Windows\system32\windowscodecs.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3599: 5832	explorer.exe	0x7fff59a00000	0x1e3000	dcomp.dll	C:\Windows\System32\dcomp.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3600: 5832	explorer.exe	0x7fff58ac0000	0x263000	d3d11.dll	C:\Windows\SYSTEM32\d3d11.dll	6	2025-08-07 19:36:31.000000 UTC	Disabled
+L3601: 5832	explorer.exe	0x7fff54960000	0x51000	vm3dum64_loader.dll	C:\Windows\SYSTEM32\vm3dum64_loader.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3602: 5832	explorer.exe	0x7fff548c0000	0x9f000	vm3dum64_10.dll	C:\Windows\SYSTEM32\vm3dum64_10.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3603: 5832	explorer.exe	0x7fff54890000	0x27000	WINMM.dll	C:\Windows\SYSTEM32\WINMM.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3604: 5832	explorer.exe	0x7fff54880000	0xa000	VERSION.dll	C:\Windows\SYSTEM32\VERSION.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3605: 5832	explorer.exe	0x7fff54d70000	0x3b000	dxcore.dll	C:\Windows\SYSTEM32\dxcore.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3606: 5832	explorer.exe	0x7fff59190000	0x5c0000	d2d1.dll	C:\Windows\SYSTEM32\d2d1.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3607: 5832	explorer.exe	0x7fff50e20000	0x27f000	DWrite.dll	C:\Windows\SYSTEM32\DWrite.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3608: 5832	explorer.exe	0x7fff5a610000	0x91000	apphelp.dll	C:\Windows\SYSTEM32\apphelp.dll	-1	2025-08-07 19:36:32.000000 UTC	Disabled
+L3609: 5832	explorer.exe	0x7fff58900000	0x36000	XmlLite.dll	C:\Windows\SYSTEM32\XmlLite.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3610: 5832	explorer.exe	0x7fff43880000	0x22000	cldapi.dll	C:\Windows\SYSTEM32\cldapi.dll	-1	2025-08-07 19:36:32.000000 UTC	Disabled
+L3611: 5832	explorer.exe	0x7fff4d290000	0xb000	FLTLIB.DLL	C:\Windows\SYSTEM32\FLTLIB.DLL	-1	2025-08-07 19:36:32.000000 UTC	Disabled
+L3612: 5832	explorer.exe	0x7fff43360000	0x3e000	dataexchange.dll	C:\Windows\system32\dataexchange.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3613: 5832	explorer.exe	0x7fff44e50000	0x9a000	TileDataRepository.dll	C:\Windows\System32\TileDataRepository.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3614: 5832	explorer.exe	0x7fff51e60000	0x58f000	Windows.StateRepository.dll	C:\Windows\System32\Windows.StateRepository.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3615: 5832	explorer.exe	0x7fff51d10000	0xb1000	StateRepository.Core.dll	C:\Windows\System32\StateRepository.Core.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3616: 5832	explorer.exe	0x7fff524f0000	0x11000	windows.staterepositorycore.dll	C:\Windows\SYSTEM32\windows.staterepositorycore.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3617: 5832	explorer.exe	0x7fff54db0000	0xf4000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3618: 5832	explorer.exe	0x7fff436e0000	0x83000	SyncCenter.dll	C:\Windows\System32\SyncCenter.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3619: 5832	explorer.exe	0x7fff54830000	0x41000	languageoverlayutil.dll	C:\Windows\SYSTEM32\languageoverlayutil.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3620: 5832	explorer.exe	0x7fff43460000	0x220000	explorerframe.dll	C:\Windows\system32\explorerframe.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3621: 5832	explorer.exe	0x7fff54800000	0x2d000	bcp47mrm.dll	C:\Windows\System32\bcp47mrm.dll	6	2025-08-07 19:36:32.000000 UTC	Disabled
+L3622: 5832	explorer.exe	0x7fff432f0000	0x66000	thumbcache.dll	C:\Windows\System32\thumbcache.dll	6	2025-08-07 19:36:33.000000 UTC	Disabled
+L3623: 5832	explorer.exe	0x7fff43280000	0x24000	edputil.dll	C:\Windows\SYSTEM32\edputil.dll	6	2025-08-07 19:36:33.000000 UTC	Disabled
+L3624: 5832	explorer.exe	0x7fff5d750000	0x79000	coml2.dll	C:\Windows\System32\coml2.dll	6	2025-08-07 19:36:33.000000 UTC	Disabled
+L3625: 5832	explorer.exe	0x7fff42c50000	0x628000	twinui.pcshell.dll	C:\Windows\system32\twinui.pcshell.dll	6	2025-08-07 19:36:33.000000 UTC	Disabled
+L3626: 5832	explorer.exe	0x7fff5cf50000	0x15e000	CRYPT32.dll	C:\Windows\System32\CRYPT32.dll	6	2025-08-07 19:36:33.000000 UTC	Disabled
+L3627: 5832	explorer.exe	0x7fff5bf30000	0x19000	wkscli.dll	C:\Windows\system32\wkscli.dll	6	2025-08-07 19:36:33.000000 UTC	Disabled
+L3628: 5832	explorer.exe	0x7fff47420000	0x4ca000	cdp.dll	C:\Windows\system32\cdp.dll	6	2025-08-07 19:36:33.000000 UTC	Disabled
+L3629: 5832	explorer.exe	0x7fff558b0000	0x6f000	wincorlib.DLL	C:\Windows\system32\wincorlib.DLL	6	2025-08-07 19:36:33.000000 UTC	Disabled
+L3630: 5832	explorer.exe	0x7fff59750000	0x14d000	dsreg.dll	C:\Windows\system32\dsreg.dll	6	2025-08-07 19:36:33.000000 UTC	Disabled
+L3631: 5832	explorer.exe	0x7fff42b80000	0xc2000	windows.immersiveshell.serviceprovider.dll	C:\Windows\System32\windows.immersiveshell.serviceprovider.dll	6	2025-08-07 19:36:33.000000 UTC	Disabled
+
+--- pstree.txt ---
+L133: ** 5832	5788	explorer.exe	0xbb0c905bc340	55	-	1	False	2025-08-07 19:36:30.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\explorer.exe	C:\Windows\Explorer.EXE	C:\Windows\Explorer.EXE
+L134: *** 8168	5832	SecurityHealth	0xbb0c90dbc0c0	1	-	1	False	2025-08-07 19:36:58.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\SecurityHealthSystray.exe	"C:\Windows\System32\SecurityHealthSystray.exe" 	C:\Windows\System32\SecurityHealthSystray.exe
+L135: *** 1548	5832	FTK Imager.exe	0xbb0c94adb080	12	-	1	False	2025-08-07 19:47:49.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\AccessData\FTK Imager\FTK Imager.exe	"C:\Program Files\AccessData\FTK Imager\FTK Imager.exe" 	C:\Program Files\AccessData\FTK Imager\FTK Imager.exe
+L136: *** 6332	5832	procexp64.exe	0xbb0c942ba080	5	-	1	False	2025-08-07 19:39:13.000000 UTC	N/A	\Device\HarddiskVolume3\Users\Lab2\Desktop\procexp64.exe	"C:\Users\Lab2\Desktop\procexp64.exe" 	C:\Users\Lab2\Desktop\procexp64.exe
+L137: *** 3828	5832	vmtoolsd.exe	0xbb0c93053080	4	-	1	False	2025-08-07 19:36:59.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\VMware\VMware Tools\vmtoolsd.exe	"C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr	C:\Program Files\VMware\VMware Tools\vmtoolsd.exe
+L138: *** 6620	5832	OneDrive.exe	0xbb0c90e212c0	23	-	1	False	2025-08-07 19:37:00.000000 UTC	N/A	\Device\HarddiskVolume3\Users\Lab2\AppData\Local\Microsoft\OneDrive\OneDrive.exe	"C:\Users\Lab2\AppData\Local\Microsoft\OneDrive\OneDrive.exe" /background	C:\Users\Lab2\AppData\Local\Microsoft\OneDrive\OneDrive.exe
+L140: *** 2684	5832	msedge.exe	0xbb0c931f3080	62	-	1	False	2025-08-07 19:40:15.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe	"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" 	C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+
+--- psscan.txt ---
+L12: 5832	5788	explorer.exe	0xb480001ba340	55	-	1	False	2025-08-07 19:36:30.000000 UTC	N/A	Disabled
+L105: 5832	5788	explorer.exe	0xbb0c905bc340	55	-	1	False	2025-08-07 19:36:30.000000 UTC	N/A	Disabled
+L132: 8168	5832	SecurityHealth	0xbb0c90dbc0c0	1	-	1	False	2025-08-07 19:36:58.000000 UTC	N/A	Disabled
+L136: 6620	5832	OneDrive.exe	0xbb0c90e212c0	23	-	1	False	2025-08-07 19:37:00.000000 UTC	N/A	Disabled
+L137: 3828	5832	vmtoolsd.exe	0xbb0c93053080	4	-	1	False	2025-08-07 19:36:59.000000 UTC	N/A	Disabled
+L139: 2684	5832	msedge.exe	0xbb0c931f3080	62	-	1	False	2025-08-07 19:40:15.000000 UTC	N/A	Disabled
+L155: 6332	5832	procexp64.exe	0xbb0c942ba080	5	-	1	False	2025-08-07 19:39:13.000000 UTC	N/A	Disabled
+L169: 1548	5832	FTK Imager.exe	0xbb0c94adb080	12	-	1	False	2025-08-07 19:47:49.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L88: 0xbb0c94242720	TCPv4	192.168.135.59	49909	192.168.135.57	8070	ESTABLISHED	5832	explorer.exe	2025-08-07 19:46:24.000000 UTC
+
+--- netstat.txt ---
+L6: 0xbb0c94242720	TCPv4	192.168.135.59	49909	192.168.135.57	8070	ESTABLISHED	5832	explorer.exe	2025-08-07 19:46:24.000000 UTC
+
+--- ldrmodules.txt ---
+L3590: 5832	explorer.exe	0xd40000	False	False	False	\Windows\System32\netmsg.dll
+L3591: 5832	explorer.exe	0xd30000	False	False	False	\Windows\System32\en-GB\explorerframe.dll.mui
+L3592: 5832	explorer.exe	0xd70000	False	False	False	\Windows\System32\en-US\ole32.dll.mui
+L3593: 5832	explorer.exe	0xdd0000	False	False	False	\Windows\en-GB\explorer.exe.mui
+L3594: 5832	explorer.exe	0x2db0000	False	False	False	\Windows\System32\en-GB\twinui.dll.mui
+L3595: 5832	explorer.exe	0x2d30000	False	False	False	\Windows\System32\en-US\wdmaud.drv.mui
+L3596: 5832	explorer.exe	0x2d40000	False	False	False	\Windows\System32\en-US\MMDevAPI.dll.mui
+L3597: 5832	explorer.exe	0x2fb0000	False	False	False	\Windows\System32\en-GB\shell32.dll.mui
+L3598: 5832	explorer.exe	0x5b80000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L3599: 5832	explorer.exe	0x6000000	False	False	False	\Windows\System32\en-GB\propsys.dll.mui
+L3600: 5832	explorer.exe	0x6030000	False	False	False	\Windows\System32\en-GB\dsreg.dll.mui
+L3601: 5832	explorer.exe	0x60c0000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L3602: 5832	explorer.exe	0x6e20000	False	False	False	\Windows\System32\en-US\netmsg.dll.mui
+L3603: 5832	explorer.exe	0x6f20000	False	False	False	\Windows\System32\msxml6r.dll
+L3604: 5832	explorer.exe	0x6ff0000	False	False	False	\Windows\System32\en-GB\ApplicationFrame.dll.mui
+L3605: 5832	explorer.exe	0x6fe0000	False	False	False	\Windows\System32\en-GB\user32.dll.mui
+L3606: 5832	explorer.exe	0x7210000	False	False	False	\Windows\System32\wscui.cpl
+L3607: 5832	explorer.exe	0x7270000	False	False	False	\Windows\System32\en-GB\ActionCenter.dll.mui
+L3608: 5832	explorer.exe	0x7230000	False	False	False	\Windows\System32\en-GB\wscui.cpl.mui
+L3609: 5832	explorer.exe	0x7260000	False	False	False	\Windows\System32\en-GB\hcproviders.dll.mui
+L3610: 5832	explorer.exe	0x72f0000	False	False	False	\Windows\System32\en-GB\zipfldr.dll.mui
+L3611: 5832	explorer.exe	0x75c0000	False	False	False	\Windows\System32\winnlsres.dll
+L3612: 5832	explorer.exe	0x7980000	False	False	False	\Windows\System32\en-GB\ntshrui.dll.mui
+L3613: 5832	explorer.exe	0x7b30000	False	False	False	\Windows\System32\en-GB\winnlsres.dll.mui
+L3614: 5832	explorer.exe	0x7e80000	False	False	False	\Windows\System32\en-GB\windows.storage.dll.mui
+L3615: 5832	explorer.exe	0x7eb0000	False	False	False	\Windows\WinSxS\amd64_microsoft.windows.c..-controls.resources_6595b64144ccf1df_6.0.19041.1_en-gb_c3d871e478025c14\comctl32.dll.mui
+L3616: 5832	explorer.exe	0xaad0000	False	False	False	\Windows\System32\en-GB\crypt32.dll.mui
+L3617: 5832	explorer.exe	0x9740000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L3618: 5832	explorer.exe	0x8cb0000	False	False	False	\Windows\System32\prm0009.dll
+L3619: 5832	explorer.exe	0x9730000	False	False	False	\Windows\System32\en-US\combase.dll.mui
+L3620: 5832	explorer.exe	0xb550000	False	False	False	\Windows\System32\UIRibbonRes.dll
+L3621: 5832	explorer.exe	0xac70000	False	False	False	\Windows\SystemResources\SndVolSSO.dll.mun
+L3622: 5832	explorer.exe	0xe940000	False	False	False	\Windows\System32\UIRibbonRes.dll
+L3623: 5832	explorer.exe	0xf900000	False	False	False	\Windows\System32\imageres.dll
+L3624: 5832	explorer.exe	0x10ec0000	False	False	False	\Windows\SystemResources\zipfldr.dll.mun
+L3625: 5832	explorer.exe	0x11730000	False	False	False	\Windows\System32\en-GB\mpr.dll.mui
+L3626: 5832	explorer.exe	0x692c0000	False	False	False	N/A
+L3627: 5832	explorer.exe	0x151b0000	False	False	False	\Windows\SystemResources\imageres.dll.mun
+L3628: 5832	explorer.exe	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L3629: 5832	explorer.exe	0x7fff48a00000	True	True	True	\Windows\System32\aepic.dll
+L3630: 5832	explorer.exe	0x7fff43880000	True	True	True	\Windows\System32\cldapi.dll
+L3631: 5832	explorer.exe	0x7fff3f960000	True	True	True	\Windows\System32\RTWorkQ.dll
+L3632: 5832	explorer.exe	0x7fff32040000	True	True	True	\Windows\System32\chartv.dll
+L3633: 5832	explorer.exe	0x7fff294a0000	True	True	True	\Windows\System32\wdmaud.drv
+L3634: 5832	explorer.exe	0x7fff23ac0000	True	True	True	\Windows\System32\wscinterop.dll
+L3635: 5832	explorer.exe	0x7fff238f0000	True	True	True	\Windows\System32\ieproxy.dll
+L3636: 5832	explorer.exe	0x7ff67f160000	True	False	True	\Windows\explorer.exe
+L3637: 5832	explorer.exe	0x7fff239e0000	True	True	True	\Windows\System32\werconcpl.dll
+L3638: 5832	explorer.exe	0x7fff28dd0000	True	True	True	\Windows\System32\wscui.cpl
+L3639: 5832	explorer.exe	0x7fff28770000	True	True	True	\Windows\System32\PlayToDevice.dll
+L3640: 5832	explorer.exe	0x7fff27db0000	True	True	True	\Windows\System32\hcproviders.dll
+L3641: 5832	explorer.exe	0x7fff28d30000	True	True	True	\Windows\System32\StorageUsage.dll
+L3642: 5832	explorer.exe	0x7fff29490000	True	True	True	\Windows\System32\midimap.dll
+L3643: 5832	explorer.exe	0x7fff2e990000	True	True	True	\Windows\System32\SettingSyncCore.dll
+L3644: 5832	explorer.exe	0x7fff29520000	True	True	True	\Windows\System32\ksuser.dll
+L3645: 5832	explorer.exe	0x7fff29510000	True	True	True	\Windows\System32\msacm32.drv
+L3646: 5832	explorer.exe	0x7fff2ac20000	True	True	True	\Windows\System32\ieframe.dll
+L3647: 5832	explorer.exe	0x7fff2ecd0000	True	True	True	\Windows\ShellExperiences\TileControl.dll
+L3648: 5832	explorer.exe	0x7fff2eab0000	True	True	True	\Windows\ShellComponents\TaskFlowUI.dll
+L3649: 5832	explorer.exe	0x7fff2ed50000	True	True	True	\Windows\ShellComponents\WindowsInternal.ComposableShell.Experiences.Switcher.dll
+L3650: 5832	explorer.exe	0x7fff3bae0000	True	True	True	\Windows\System32\ActionCenter.dll
+L3651: 5832	explorer.exe	0x7fff32480000	True	True	True	\Windows\System32\zipfldr.dll
+L3652: 5832	explorer.exe	0x7fff32230000	True	True	True	\Windows\System32\duser.dll
+L3653: 5832	explorer.exe	0x7fff322d0000	True	True	True	\Windows\System32\dui70.dll
+L3654: 5832	explorer.exe	0x7fff38cc0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.2251_none_91a40448cc8846c1\GdiPlus.dll
+L3655: 5832	explorer.exe	0x7fff332e0000	True	True	True	\Windows\System32\WorkFoldersShell.dll
+L3656: 5832	explorer.exe	0x7fff3b9b0000	True	True	True	\Windows\System32\mscoree.dll
+L3657: 5832	explorer.exe	0x7fff38fe0000	True	True	True	\Windows\System32\credui.dll
+L3658: 5832	explorer.exe	0x7fff3ba70000	True	True	True	\Windows\System32\Windows.FileExplorer.Common.dll
+L3659: 5832	explorer.exe	0x7fff3e3f0000	True	True	True	\Windows\System32\DXP.dll
+L3660: 5832	explorer.exe	0x7fff3be00000	True	True	True	\Windows\System32\pnidui.dll
+L3661: 5832	explorer.exe	0x7fff3bc20000	True	True	True	\Windows\System32\imapi2.dll
+L3662: 5832	explorer.exe	0x7fff3bb80000	True	True	True	\Windows\System32\shdocvw.dll
+L3663: 5832	explorer.exe	0x7fff3c0d0000	True	True	True	\Windows\System32\srchadmin.dll
+L3664: 5832	explorer.exe	0x7fff3c110000	True	True	True	\Windows\System32\icu.dll
+L3665: 5832	explorer.exe	0x7fff3f670000	True	True	True	\Windows\System32\WPDShServiceObj.dll
+L3666: 5832	explorer.exe	0x7fff3e4d0000	True	True	True	\Windows\System32\PortableDeviceTypes.dll
+L3667: 5832	explorer.exe	0x7fff3e480000	True	True	True	\Windows\System32\cscobj.dll
+L3668: 5832	explorer.exe	0x7fff3f650000	True	True	True	\Windows\System32\Syncreg.dll
+L3669: 5832	explorer.exe	0x7fff3f730000	True	True	True	\Windows\System32\stobject.dll
+L3670: 5832	explorer.exe	0x7fff3f6f0000	True	True	True	\Windows\System32\rometadata.dll
+L3671: 5832	explorer.exe	0x7fff41a10000	True	True	True	\Windows\System32\ntshrui.dll
+L3672: 5832	explorer.exe	0x7fff414e0000	True	True	True	\Windows\System32\cscui.dll
+L3673: 5832	explorer.exe	0x7fff3fdd0000	True	True	True	\Windows\System32\UIAutomationCore.dll
+L3674: 5832	explorer.exe	0x7fff3fdb0000	True	True	True	\Windows\System32\atlthunk.dll
+L3675: 5832	explorer.exe	0x7fff3fb60000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L3676: 5832	explorer.exe	0x7fff3f9a0000	True	True	True	\Windows\System32\mfplat.dll
+L3677: 5832	explorer.exe	0x7fff3fc60000	True	True	True	\Windows\System32\winmmbase.dll
+L3678: 5832	explorer.exe	0x7fff3fdc0000	True	True	True	\Windows\System32\Windows.UI.Shell.dll
+L3679: 5832	explorer.exe	0x7fff40b40000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L3680: 5832	explorer.exe	0x7fff400d0000	True	True	True	\Windows\System32\wpnclient.dll
+L3681: 5832	explorer.exe	0x7fff40260000	True	True	True	\Windows\System32\Windows.Internal.Shell.Broker.dll
+L3682: 5832	explorer.exe	0x7fff40c20000	True	True	True	\Windows\System32\Windows.Internal.Signals.dll
+L3683: 5832	explorer.exe	0x7fff41480000	True	True	True	\Windows\System32\Windows.Shell.BlueLightReduction.dll
+L3684: 5832	explorer.exe	0x7fff416b0000	True	True	True	\Users\Lab2\AppData\Local\Microsoft\OneDrive\25.095.0518.0002\FileSyncShell64.dll
+L3685: 5832	explorer.exe	0x7fff415f0000	True	True	True	\Windows\System32\EhStorShell.dll
+L3686: 5832	explorer.exe	0x7fff415b0000	True	True	True	\Windows\System32\NPSM.dll
+L3687: 5832	explorer.exe	0x7fff41910000	True	True	True	\Windows\System32\VirtualMonitorManager.dll
+L3688: 5832	explorer.exe	0x7fff418a0000	True	True	True	\Windows\System32\AboveLockAppHost.dll
+L3689: 5832	explorer.exe	0x7fff41930000	True	True	True	\Windows\System32\HolographicExtensions.dll
+L3690: 5832	explorer.exe	0x7fff42b80000	True	True	True	\Windows\System32\windows.immersiveshell.serviceprovider.dll
+L3691: 5832	explorer.exe	0x7fff41b90000	True	True	True	\Windows\System32\twinui.dll
+L3692: 5832	explorer.exe	0x7fff41b40000	True	True	True	\Windows\System32\pdh.dll
+L3693: 5832	explorer.exe	0x7fff41a90000	True	True	True	\Windows\System32\ApplicationFrame.dll
+L3694: 5832	explorer.exe	0x7fff42670000	True	True	True	\Windows\System32\TaskFlowDataEngine.dll
+L3695: 5832	explorer.exe	0x7fff42310000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L3696: 5832	explorer.exe	0x7fff42260000	True	True	True	\Windows\System32\batmeter.dll
+L3697: 5832	explorer.exe	0x7fff42560000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L3698: 5832	explorer.exe	0x7fff42980000	True	True	True	\Windows\System32\cflapi.dll
+L3699: 5832	explorer.exe	0x7fff428f0000	True	True	True	\Windows\System32\mssprxy.dll
+L3700: 5832	explorer.exe	0x7fff42ab0000	True	True	True	\Windows\System32\Windows.Web.dll
+L3701: 5832	explorer.exe	0x7fff43360000	True	True	True	\Windows\System32\DataExchange.dll
+L3702: 5832	explorer.exe	0x7fff43280000	True	True	True	\Windows\System32\edputil.dll
+L3703: 5832	explorer.exe	0x7fff42c50000	True	True	True	\Windows\System32\twinui.pcshell.dll
+L3704: 5832	explorer.exe	0x7fff432f0000	True	True	True	\Windows\System32\thumbcache.dll
+L3705: 5832	explorer.exe	0x7fff432b0000	True	True	True	\Windows\System32\cryptnet.dll
+L3706: 5832	explorer.exe	0x7fff43460000	True	True	True	\Windows\System32\ExplorerFrame.dll
+L3707: 5832	explorer.exe	0x7fff433f0000	True	True	True	\Windows\System32\NotificationControllerPS.dll
+L3708: 5832	explorer.exe	0x7fff436e0000	True	True	True	\Windows\System32\SyncCenter.dll
+L3709: 5832	explorer.exe	0x7fff45ff0000	True	True	True	\Windows\System32\wlidprov.dll
+
+--- malware_ldrmodules.txt ---
+L3590: 5832	explorer.exe	0xd40000	False	False	False	\Windows\System32\netmsg.dll
+L3591: 5832	explorer.exe	0xd30000	False	False	False	\Windows\System32\en-GB\explorerframe.dll.mui
+L3592: 5832	explorer.exe	0xd70000	False	False	False	\Windows\System32\en-US\ole32.dll.mui
+L3593: 5832	explorer.exe	0xdd0000	False	False	False	\Windows\en-GB\explorer.exe.mui
+L3594: 5832	explorer.exe	0x2db0000	False	False	False	\Windows\System32\en-GB\twinui.dll.mui
+L3595: 5832	explorer.exe	0x2d30000	False	False	False	\Windows\System32\en-US\wdmaud.drv.mui
+L3596: 5832	explorer.exe	0x2d40000	False	False	False	\Windows\System32\en-US\MMDevAPI.dll.mui
+L3597: 5832	explorer.exe	0x2fb0000	False	False	False	\Windows\System32\en-GB\shell32.dll.mui
+L3598: 5832	explorer.exe	0x5b80000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L3599: 5832	explorer.exe	0x6000000	False	False	False	\Windows\System32\en-GB\propsys.dll.mui
+L3600: 5832	explorer.exe	0x6030000	False	False	False	\Windows\System32\en-GB\dsreg.dll.mui
+L3601: 5832	explorer.exe	0x60c0000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L3602: 5832	explorer.exe	0x6e20000	False	False	False	\Windows\System32\en-US\netmsg.dll.mui
+L3603: 5832	explorer.exe	0x6f20000	False	False	False	\Windows\System32\msxml6r.dll
+L3604: 5832	explorer.exe	0x6ff0000	False	False	False	\Windows\System32\en-GB\ApplicationFrame.dll.mui
+L3605: 5832	explorer.exe	0x6fe0000	False	False	False	\Windows\System32\en-GB\user32.dll.mui
+L3606: 5832	explorer.exe	0x7210000	False	False	False	\Windows\System32\wscui.cpl
+L3607: 5832	explorer.exe	0x7270000	False	False	False	\Windows\System32\en-GB\ActionCenter.dll.mui
+L3608: 5832	explorer.exe	0x7230000	False	False	False	\Windows\System32\en-GB\wscui.cpl.mui
+L3609: 5832	explorer.exe	0x7260000	False	False	False	\Windows\System32\en-GB\hcproviders.dll.mui
+L3610: 5832	explorer.exe	0x72f0000	False	False	False	\Windows\System32\en-GB\zipfldr.dll.mui
+L3611: 5832	explorer.exe	0x75c0000	False	False	False	\Windows\System32\winnlsres.dll
+L3612: 5832	explorer.exe	0x7980000	False	False	False	\Windows\System32\en-GB\ntshrui.dll.mui
+L3613: 5832	explorer.exe	0x7b30000	False	False	False	\Windows\System32\en-GB\winnlsres.dll.mui
+L3614: 5832	explorer.exe	0x7e80000	False	False	False	\Windows\System32\en-GB\windows.storage.dll.mui
+L3615: 5832	explorer.exe	0x7eb0000	False	False	False	\Windows\WinSxS\amd64_microsoft.windows.c..-controls.resources_6595b64144ccf1df_6.0.19041.1_en-gb_c3d871e478025c14\comctl32.dll.mui
+L3616: 5832	explorer.exe	0xaad0000	False	False	False	\Windows\System32\en-GB\crypt32.dll.mui
+L3617: 5832	explorer.exe	0x9740000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L3618: 5832	explorer.exe	0x8cb0000	False	False	False	\Windows\System32\prm0009.dll
+L3619: 5832	explorer.exe	0x9730000	False	False	False	\Windows\System32\en-US\combase.dll.mui
+L3620: 5832	explorer.exe	0xb550000	False	False	False	\Windows\System32\UIRibbonRes.dll
+L3621: 5832	explorer.exe	0xac70000	False	False	False	\Windows\SystemResources\SndVolSSO.dll.mun
+L3622: 5832	explorer.exe	0xe940000	False	False	False	\Windows\System32\UIRibbonRes.dll
+L3623: 5832	explorer.exe	0xf900000	False	False	False	\Windows\System32\imageres.dll
+L3624: 5832	explorer.exe	0x10ec0000	False	False	False	\Windows\SystemResources\zipfldr.dll.mun
+L3625: 5832	explorer.exe	0x11730000	False	False	False	\Windows\System32\en-GB\mpr.dll.mui
+L3626: 5832	explorer.exe	0x692c0000	False	False	False	N/A
+L3627: 5832	explorer.exe	0x151b0000	False	False	False	\Windows\SystemResources\imageres.dll.mun
+L3628: 5832	explorer.exe	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L3629: 5832	explorer.exe	0x7fff48a00000	True	True	True	\Windows\System32\aepic.dll
+L3630: 5832	explorer.exe	0x7fff43880000	True	True	True	\Windows\System32\cldapi.dll
+L3631: 5832	explorer.exe	0x7fff3f960000	True	True	True	\Windows\System32\RTWorkQ.dll
+L3632: 5832	explorer.exe	0x7fff32040000	True	True	True	\Windows\System32\chartv.dll
+L3633: 5832	explorer.exe	0x7fff294a0000	True	True	True	\Windows\System32\wdmaud.drv
+L3634: 5832	explorer.exe	0x7fff23ac0000	True	True	True	\Windows\System32\wscinterop.dll
+L3635: 5832	explorer.exe	0x7fff238f0000	True	True	True	\Windows\System32\ieproxy.dll
+L3636: 5832	explorer.exe	0x7ff67f160000	True	False	True	\Windows\explorer.exe
+L3637: 5832	explorer.exe	0x7fff239e0000	True	True	True	\Windows\System32\werconcpl.dll
+L3638: 5832	explorer.exe	0x7fff28dd0000	True	True	True	\Windows\System32\wscui.cpl
+L3639: 5832	explorer.exe	0x7fff28770000	True	True	True	\Windows\System32\PlayToDevice.dll
+L3640: 5832	explorer.exe	0x7fff27db0000	True	True	True	\Windows\System32\hcproviders.dll
+L3641: 5832	explorer.exe	0x7fff28d30000	True	True	True	\Windows\System32\StorageUsage.dll
+L3642: 5832	explorer.exe	0x7fff29490000	True	True	True	\Windows\System32\midimap.dll
+L3643: 5832	explorer.exe	0x7fff2e990000	True	True	True	\Windows\System32\SettingSyncCore.dll
+L3644: 5832	explorer.exe	0x7fff29520000	True	True	True	\Windows\System32\ksuser.dll
+L3645: 5832	explorer.exe	0x7fff29510000	True	True	True	\Windows\System32\msacm32.drv
+L3646: 5832	explorer.exe	0x7fff2ac20000	True	True	True	\Windows\System32\ieframe.dll
+L3647: 5832	explorer.exe	0x7fff2ecd0000	True	True	True	\Windows\ShellExperiences\TileControl.dll
+L3648: 5832	explorer.exe	0x7fff2eab0000	True	True	True	\Windows\ShellComponents\TaskFlowUI.dll
+L3649: 5832	explorer.exe	0x7fff2ed50000	True	True	True	\Windows\ShellComponents\WindowsInternal.ComposableShell.Experiences.Switcher.dll
+L3650: 5832	explorer.exe	0x7fff3bae0000	True	True	True	\Windows\System32\ActionCenter.dll
+L3651: 5832	explorer.exe	0x7fff32480000	True	True	True	\Windows\System32\zipfldr.dll
+L3652: 5832	explorer.exe	0x7fff32230000	True	True	True	\Windows\System32\duser.dll
+L3653: 5832	explorer.exe	0x7fff322d0000	True	True	True	\Windows\System32\dui70.dll
+L3654: 5832	explorer.exe	0x7fff38cc0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.2251_none_91a40448cc8846c1\GdiPlus.dll
+L3655: 5832	explorer.exe	0x7fff332e0000	True	True	True	\Windows\System32\WorkFoldersShell.dll
+L3656: 5832	explorer.exe	0x7fff3b9b0000	True	True	True	\Windows\System32\mscoree.dll
+L3657: 5832	explorer.exe	0x7fff38fe0000	True	True	True	\Windows\System32\credui.dll
+L3658: 5832	explorer.exe	0x7fff3ba70000	True	True	True	\Windows\System32\Windows.FileExplorer.Common.dll
+L3659: 5832	explorer.exe	0x7fff3e3f0000	True	True	True	\Windows\System32\DXP.dll
+L3660: 5832	explorer.exe	0x7fff3be00000	True	True	True	\Windows\System32\pnidui.dll
+L3661: 5832	explorer.exe	0x7fff3bc20000	True	True	True	\Windows\System32\imapi2.dll
+L3662: 5832	explorer.exe	0x7fff3bb80000	True	True	True	\Windows\System32\shdocvw.dll
+L3663: 5832	explorer.exe	0x7fff3c0d0000	True	True	True	\Windows\System32\srchadmin.dll
+L3664: 5832	explorer.exe	0x7fff3c110000	True	True	True	\Windows\System32\icu.dll
+L3665: 5832	explorer.exe	0x7fff3f670000	True	True	True	\Windows\System32\WPDShServiceObj.dll
+L3666: 5832	explorer.exe	0x7fff3e4d0000	True	True	True	\Windows\System32\PortableDeviceTypes.dll
+L3667: 5832	explorer.exe	0x7fff3e480000	True	True	True	\Windows\System32\cscobj.dll
+L3668: 5832	explorer.exe	0x7fff3f650000	True	True	True	\Windows\System32\Syncreg.dll
+L3669: 5832	explorer.exe	0x7fff3f730000	True	True	True	\Windows\System32\stobject.dll
+L3670: 5832	explorer.exe	0x7fff3f6f0000	True	True	True	\Windows\System32\rometadata.dll
+L3671: 5832	explorer.exe	0x7fff41a10000	True	True	True	\Windows\System32\ntshrui.dll
+L3672: 5832	explorer.exe	0x7fff414e0000	True	True	True	\Windows\System32\cscui.dll
+L3673: 5832	explorer.exe	0x7fff3fdd0000	True	True	True	\Windows\System32\UIAutomationCore.dll
+L3674: 5832	explorer.exe	0x7fff3fdb0000	True	True	True	\Windows\System32\atlthunk.dll
+L3675: 5832	explorer.exe	0x7fff3fb60000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L3676: 5832	explorer.exe	0x7fff3f9a0000	True	True	True	\Windows\System32\mfplat.dll
+L3677: 5832	explorer.exe	0x7fff3fc60000	True	True	True	\Windows\System32\winmmbase.dll
+L3678: 5832	explorer.exe	0x7fff3fdc0000	True	True	True	\Windows\System32\Windows.UI.Shell.dll
+L3679: 5832	explorer.exe	0x7fff40b40000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L3680: 5832	explorer.exe	0x7fff400d0000	True	True	True	\Windows\System32\wpnclient.dll
+L3681: 5832	explorer.exe	0x7fff40260000	True	True	True	\Windows\System32\Windows.Internal.Shell.Broker.dll
+L3682: 5832	explorer.exe	0x7fff40c20000	True	True	True	\Windows\System32\Windows.Internal.Signals.dll
+L3683: 5832	explorer.exe	0x7fff41480000	True	True	True	\Windows\System32\Windows.Shell.BlueLightReduction.dll
+L3684: 5832	explorer.exe	0x7fff416b0000	True	True	True	\Users\Lab2\AppData\Local\Microsoft\OneDrive\25.095.0518.0002\FileSyncShell64.dll
+L3685: 5832	explorer.exe	0x7fff415f0000	True	True	True	\Windows\System32\EhStorShell.dll
+L3686: 5832	explorer.exe	0x7fff415b0000	True	True	True	\Windows\System32\NPSM.dll
+L3687: 5832	explorer.exe	0x7fff41910000	True	True	True	\Windows\System32\VirtualMonitorManager.dll
+L3688: 5832	explorer.exe	0x7fff418a0000	True	True	True	\Windows\System32\AboveLockAppHost.dll
+L3689: 5832	explorer.exe	0x7fff41930000	True	True	True	\Windows\System32\HolographicExtensions.dll
+
+=== PID 1548 (FTK Imager.exe, ppid=5832) ===
+Cmdline: "C:\Program Files\AccessData\FTK Imager\FTK Imager.exe"
+
+--- pslist.txt ---
+L148: 1548	5832	FTK Imager.exe	0xbb0c94adb080	12	-	1	False	2025-08-07 19:47:49.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L148: 1548	FTK Imager.exe	"C:\Program Files\AccessData\FTK Imager\FTK Imager.exe" 
+
+--- privileges.txt ---
+L5010: 1548	FTK Imager.exe	2	SeCreateTokenPrivilege		Create a token object
+L5011: 1548	FTK Imager.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L5012: 1548	FTK Imager.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L5013: 1548	FTK Imager.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L5014: 1548	FTK Imager.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5015: 1548	FTK Imager.exe	7	SeTcbPrivilege		Act as part of the operating system
+L5016: 1548	FTK Imager.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L5017: 1548	FTK Imager.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L5018: 1548	FTK Imager.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L5019: 1548	FTK Imager.exe	11	SeSystemProfilePrivilege	Present	Profile system performance
+L5020: 1548	FTK Imager.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L5021: 1548	FTK Imager.exe	13	SeProfileSingleProcessPrivilege	Present	Profile a single process
+L5022: 1548	FTK Imager.exe	14	SeIncreaseBasePriorityPrivilege	Present	Increase scheduling priority
+L5023: 1548	FTK Imager.exe	15	SeCreatePagefilePrivilege	Present	Create a pagefile
+L5024: 1548	FTK Imager.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L5025: 1548	FTK Imager.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L5026: 1548	FTK Imager.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L5027: 1548	FTK Imager.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L5028: 1548	FTK Imager.exe	20	SeDebugPrivilege	Present	Debug programs
+L5029: 1548	FTK Imager.exe	21	SeAuditPrivilege		Generate security audits
+L5030: 1548	FTK Imager.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L5031: 1548	FTK Imager.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5032: 1548	FTK Imager.exe	24	SeRemoteShutdownPrivilege	Present	Force shutdown from a remote system
+L5033: 1548	FTK Imager.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L5034: 1548	FTK Imager.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L5035: 1548	FTK Imager.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5036: 1548	FTK Imager.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L5037: 1548	FTK Imager.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L5038: 1548	FTK Imager.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L5039: 1548	FTK Imager.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5040: 1548	FTK Imager.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5041: 1548	FTK Imager.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L5042: 1548	FTK Imager.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L5043: 1548	FTK Imager.exe	35	SeCreateSymbolicLinkPrivilege	Present	Required to create a symbolic link
+L5044: 1548	FTK Imager.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L7062: 1548	FTK Imager.exe	0x140000000	0x40b000	FTK Imager.exe	C:\Program Files\AccessData\FTK Imager\FTK Imager.exe	-1	2025-08-07 19:47:49.000000 UTC	Disabled
+L7063: 1548	FTK Imager.exe	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:47:49.000000 UTC	Disabled
+L7064: 1548	FTK Imager.exe	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2025-08-07 19:47:49.000000 UTC	Disabled
+L7065: 1548	FTK Imager.exe	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2025-08-07 19:47:49.000000 UTC	Disabled
+L7066: 1548	FTK Imager.exe	0x7fff5a610000	0x91000	apphelp.dll	C:\Windows\SYSTEM32\apphelp.dll	-1	2025-08-07 19:47:49.000000 UTC	Disabled
+L7067: 1548	FTK Imager.exe	0x7fff5d910000	0x19d000	USER32.dll	C:\Windows\System32\USER32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7068: 1548	FTK Imager.exe	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7069: 1548	FTK Imager.exe	0x7fff4ef10000	0x1e4000	dbghelp.dll	C:\Windows\SYSTEM32\dbghelp.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7070: 1548	FTK Imager.exe	0x7fff49000000	0x148000	LMS.dll	C:\Program Files\AccessData\FTK Imager\LMS.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7071: 1548	FTK Imager.exe	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\System32\GDI32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7072: 1548	FTK Imager.exe	0x7fff54890000	0x27000	WINMM.dll	C:\Windows\SYSTEM32\WINMM.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7073: 1548	FTK Imager.exe	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7074: 1548	FTK Imager.exe	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7075: 1548	FTK Imager.exe	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7076: 1548	FTK Imager.exe	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7077: 1548	FTK Imager.exe	0x7fff5eff0000	0xaf000	ADVAPI32.dll	C:\Windows\System32\ADVAPI32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7078: 1548	FTK Imager.exe	0x7fff31250000	0x24b000	adlib.dll	C:\Program Files\AccessData\FTK Imager\adlib.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7079: 1548	FTK Imager.exe	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\System32\sechost.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7080: 1548	FTK Imager.exe	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7081: 1548	FTK Imager.exe	0x7fff5dcd0000	0xcd000	OLEAUT32.dll	C:\Windows\System32\OLEAUT32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7082: 1548	FTK Imager.exe	0x7fff2b6c0000	0xb30000	adsharedfs.dll	C:\Program Files\AccessData\FTK Imager\adsharedfs.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7083: 1548	FTK Imager.exe	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7084: 1548	FTK Imager.exe	0x7fff301e0000	0x5aa000	adshared.dll	C:\Program Files\AccessData\FTK Imager\adshared.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7085: 1548	FTK Imager.exe	0x7fff5dda0000	0x744000	SHELL32.dll	C:\Windows\System32\SHELL32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7086: 1548	FTK Imager.exe	0x7fff5f150000	0x55000	SHLWAPI.dll	C:\Windows\System32\SHLWAPI.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7087: 1548	FTK Imager.exe	0x7fff5e9a0000	0x12a000	ole32.dll	C:\Windows\System32\ole32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7088: 1548	FTK Imager.exe	0x7fff5dc60000	0x6b000	WS2_32.dll	C:\Windows\System32\WS2_32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7089: 1548	FTK Imager.exe	0x7fff5db80000	0xda000	COMDLG32.dll	C:\Windows\System32\COMDLG32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7090: 1548	FTK Imager.exe	0x7fff58880000	0x1e000	adencrypt.dll	C:\Program Files\AccessData\FTK Imager\adencrypt.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7091: 1548	FTK Imager.exe	0x7fff5e8f0000	0xad000	shcore.dll	C:\Windows\System32\shcore.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7092: 1548	FTK Imager.exe	0x7fff55d00000	0x25000	ADIsoDLL.dll	C:\Program Files\AccessData\FTK Imager\ADIsoDLL.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7093: 1548	FTK Imager.exe	0x7fff57ed0000	0x1f000	efsdecrypter.dll	C:\Program Files\AccessData\FTK Imager\efsdecrypter.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7094: 1548	FTK Imager.exe	0x7fff0d110000	0x1a43000	adsharedfbfs.dll	C:\Program Files\AccessData\FTK Imager\adsharedfbfs.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7095: 1548	FTK Imager.exe	0x7fff4ab90000	0x81000	cbfsdisk22.dll	C:\Program Files\AccessData\FTK Imager\cbfsdisk22.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7096: 1548	FTK Imager.exe	0x7fff2fc70000	0x564000	mfc140u.dll	C:\Program Files\AccessData\FTK Imager\mfc140u.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7097: 1548	FTK Imager.exe	0x7fff5eb80000	0x468000	SETUPAPI.dll	C:\Windows\System32\SETUPAPI.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7098: 1548	FTK Imager.exe	0x7fff5db50000	0x30000	IMM32.dll	C:\Windows\System32\IMM32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7099: 1548	FTK Imager.exe	0x7fff30f40000	0x30e000	LMS-FS.dll	C:\Program Files\AccessData\FTK Imager\LMS-FS.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7100: 1548	FTK Imager.exe	0x7fff5f570000	0x8000	PSAPI.DLL	C:\Windows\System32\PSAPI.DLL	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7101: 1548	FTK Imager.exe	0x7fff5d570000	0x4e000	cfgmgr32.dll	C:\Windows\System32\cfgmgr32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7102: 1548	FTK Imager.exe	0x7fff5cf20000	0x27000	bcrypt.dll	C:\Windows\System32\bcrypt.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7103: 1548	FTK Imager.exe	0x7fff48d10000	0x91000	MSVCP140.dll	C:\Program Files\AccessData\FTK Imager\MSVCP140.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7104: 1548	FTK Imager.exe	0x7fff588b0000	0xc000	boost_system-vc140-mt-1_59.dll	C:\Program Files\AccessData\FTK Imager\boost_system-vc140-mt-1_59.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7105: 1548	FTK Imager.exe	0x7fff55ce0000	0x19000	VCRUNTIME140.dll	C:\Program Files\AccessData\FTK Imager\VCRUNTIME140.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7106: 1548	FTK Imager.exe	0x7fff30a10000	0x1f0000	LIBEAY32.dll	C:\Program Files\AccessData\FTK Imager\LIBEAY32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7107: 1548	FTK Imager.exe	0x7fff54880000	0xa000	VERSION.dll	C:\Windows\SYSTEM32\VERSION.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7108: 1548	FTK Imager.exe	0x7fff308b0000	0x160000	adshattrdefs.dll	C:\Program Files\AccessData\FTK Imager\adshattrdefs.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7109: 1548	FTK Imager.exe	0x7fff55cc0000	0x18000	boost_date_time-vc140-mt-1_59.dll	C:\Program Files\AccessData\FTK Imager\boost_date_time-vc140-mt-1_59.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7110: 1548	FTK Imager.exe	0x7fff44970000	0x29a000	COMCTL32.dll	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7111: 1548	FTK Imager.exe	0x180000000	0x13b3000	ProfUISad64.dll	C:\Program Files\AccessData\FTK Imager\ProfUISad64.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7112: 1548	FTK Imager.exe	0x7fff4d3e0000	0x27000	boost_thread-vc140-mt-1_59.dll	C:\Program Files\AccessData\FTK Imager\boost_thread-vc140-mt-1_59.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7113: 1548	FTK Imager.exe	0x7fff58940000	0xf6000	PROPSYS.dll	C:\Windows\SYSTEM32\PROPSYS.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7114: 1548	FTK Imager.exe	0x7fff39240000	0xdc000	libbfio.dll	C:\Program Files\AccessData\FTK Imager\libbfio.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7115: 1548	FTK Imager.exe	0x7fff4d3b0000	0x27000	adtz_globals.dll	C:\Program Files\AccessData\FTK Imager\adtz_globals.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7116: 1548	FTK Imager.exe	0x7fff4cc50000	0x37000	libvshadow.dll	C:\Program Files\AccessData\FTK Imager\libvshadow.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7117: 1548	FTK Imager.exe	0x50d80000	0x16c000	icuuc57.dll	C:\Program Files\AccessData\FTK Imager\icuuc57.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7118: 1548	FTK Imager.exe	0x50b70000	0x201000	icuin57.dll	C:\Program Files\AccessData\FTK Imager\icuin57.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7119: 1548	FTK Imager.exe	0x7fff2fb60000	0x109000	boost_regex-vc140-mt-1_59.dll	C:\Program Files\AccessData\FTK Imager\boost_regex-vc140-mt-1_59.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7120: 1548	FTK Imager.exe	0x7fff4c3f0000	0x2c000	boost_filesystem-vc140-mt-1_59.dll	C:\Program Files\AccessData\FTK Imager\boost_filesystem-vc140-mt-1_59.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7121: 1548	FTK Imager.exe	0x7fff2f910000	0xf3000	adefs.dll	C:\Program Files\AccessData\FTK Imager\adefs.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7122: 1548	FTK Imager.exe	0x7fff52ec0000	0xc000	VCRUNTIME140_1.dll	C:\Program Files\AccessData\FTK Imager\VCRUNTIME140_1.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7123: 1548	FTK Imager.exe	0x7fff2b3d0000	0x151000	adlotus.dll	C:\Program Files\AccessData\FTK Imager\adlotus.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7124: 1548	FTK Imager.exe	0x7fff2b530000	0x182000	adese.dll	C:\Program Files\AccessData\FTK Imager\adese.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7125: 1548	FTK Imager.exe	0x7fff5a7e0000	0x9e000	UxTheme.dll	C:\Windows\SYSTEM32\UxTheme.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7126: 1548	FTK Imager.exe	0x7fff296d0000	0x151000	cbfsconnect22.dll	C:\Program Files\AccessData\FTK Imager\cbfsconnect22.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7127: 1548	FTK Imager.exe	0x7fff4fc50000	0x19000	NETAPI32.dll	C:\Windows\SYSTEM32\NETAPI32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7128: 1548	FTK Imager.exe	0x7fff4b0a0000	0x2b000	MSVFW32.dll	C:\Windows\SYSTEM32\MSVFW32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7129: 1548	FTK Imager.exe	0x7fff513c0000	0xe000	boost_chrono-vc140-mt-1_59.dll	C:\Program Files\AccessData\FTK Imager\boost_chrono-vc140-mt-1_59.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7130: 1548	FTK Imager.exe	0x7fff4b070000	0x21000	AVIFIL32.dll	C:\Windows\SYSTEM32\AVIFIL32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7131: 1548	FTK Imager.exe	0x4ad00000	0x1cb7000	icudt57.dll	C:\Program Files\AccessData\FTK Imager\icudt57.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7132: 1548	FTK Imager.exe	0x7fff49680000	0x1e000	MSACM32.dll	C:\Windows\SYSTEM32\MSACM32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7133: 1548	FTK Imager.exe	0x7fff52b00000	0x28000	SRVCLI.DLL	C:\Windows\SYSTEM32\SRVCLI.DLL	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7134: 1548	FTK Imager.exe	0x7fff3fc60000	0x26000	winmmbase.dll	C:\Windows\SYSTEM32\winmmbase.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7135: 1548	FTK Imager.exe	0xa40000	0x81000	ad_log.dll	C:\Program Files\AccessData\FTK Imager\ad_log.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7136: 1548	FTK Imager.exe	0x7fff4e960000	0x34000	dbgcore.DLL	C:\Windows\SYSTEM32\dbgcore.DLL	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7137: 1548	FTK Imager.exe	0x7fff5aad0000	0x2f000	dwmapi.dll	C:\Windows\SYSTEM32\dwmapi.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7138: 1548	FTK Imager.exe	0x7fff4a0c0000	0x7000	msimg32.dll	C:\Windows\SYSTEM32\msimg32.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7139: 1548	FTK Imager.exe	0x7fff5a9f0000	0xde000	Wer.dll	C:\Windows\SYSTEM32\Wer.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7140: 1548	FTK Imager.exe	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	-1	2025-08-07 19:47:49.000000 UTC	Disabled
+L7141: 1548	FTK Imager.exe	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\System32\bcryptPrimitives.dll	-1	2025-08-07 19:47:49.000000 UTC	Disabled
+L7142: 1548	FTK Imager.exe	0x7fff536e0000	0x9000	IconCodecService.dll	C:\Windows\system32\IconCodecService.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7143: 1548	FTK Imager.exe	0x7fff57830000	0x1b4000	WindowsCodecs.dll	C:\Windows\SYSTEM32\WindowsCodecs.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7144: 1548	FTK Imager.exe	0x7fff5e560000	0x114000	MSCTF.dll	C:\Windows\System32\MSCTF.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7145: 1548	FTK Imager.exe	0x7fff50a30000	0xac000	TextShaping.dll	C:\Windows\SYSTEM32\TextShaping.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7146: 1548	FTK Imager.exe	0x7fff5ead0000	0xa9000	clbcatq.dll	C:\Windows\System32\clbcatq.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7147: 1548	FTK Imager.exe	0x7fff2ac20000	0x768000	ieframe.dll	C:\Windows\System32\ieframe.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7148: 1548	FTK Imager.exe	0x7fff5ccd0000	0x2e000	USERENV.dll	C:\Windows\System32\USERENV.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7149: 1548	FTK Imager.exe	0x7fff533d0000	0x2b1000	iertutil.dll	C:\Windows\System32\iertutil.dll	-1	2025-08-07 19:47:49.000000 UTC	Disabled
+L7150: 1548	FTK Imager.exe	0x7fff55920000	0x10a000	WINHTTP.dll	C:\Windows\System32\WINHTTP.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7151: 1548	FTK Imager.exe	0x7fff5c2b0000	0xc000	NETUTILS.DLL	C:\Windows\System32\NETUTILS.DLL	-1	2025-08-07 19:47:49.000000 UTC	Disabled
+L7152: 1548	FTK Imager.exe	0x7fff5bf30000	0x19000	WKSCLI.DLL	C:\Windows\System32\WKSCLI.DLL	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7153: 1548	FTK Imager.exe	0x7fff43360000	0x3e000	dataexchange.dll	C:\Windows\system32\dataexchange.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7154: 1548	FTK Imager.exe	0x7fff58ac0000	0x263000	d3d11.dll	C:\Windows\system32\d3d11.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7155: 1548	FTK Imager.exe	0x7fff59a00000	0x1e3000	dcomp.dll	C:\Windows\system32\dcomp.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7156: 1548	FTK Imager.exe	0x7fff5b690000	0xf3000	dxgi.dll	C:\Windows\system32\dxgi.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7157: 1548	FTK Imager.exe	0x7fff579f0000	0x200000	twinapi.appcore.dll	C:\Windows\system32\twinapi.appcore.dll	6	2025-08-07 19:47:49.000000 UTC	Disabled
+L7158: 1548	FTK Imager.exe	0x7fff5aeb0000	0x793000	windows.storage.dll	C:\Windows\System32\windows.storage.dll	-1	2025-08-07 19:47:50.000000 UTC	Disabled
+L7159: 1548	FTK Imager.exe	0x7fff5c750000	0x2e000	Wldp.dll	C:\Windows\System32\Wldp.dll	-1	2025-08-07 19:47:50.000000 UTC	Disabled
+L7160: 1548	FTK Imager.exe	0x7fff52b70000	0x1ec000	urlmon.dll	C:\Windows\SYSTEM32\urlmon.dll	-1	2025-08-07 19:47:50.000000 UTC	Disabled
+L7161: 1548	FTK Imager.exe	0x7fff5cb00000	0xa2000	sxs.dll	C:\Windows\SYSTEM32\sxs.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7162: 1548	FTK Imager.exe	0x7fff4ac90000	0x58000	msIso.dll	C:\Windows\SYSTEM32\msIso.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7163: 1548	FTK Imager.exe	0x7fff0ba90000	0x1675000	mshtml.dll	C:\Windows\System32\mshtml.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7164: 1548	FTK Imager.exe	0x7fff5cc90000	0x32000	SspiCli.dll	C:\Windows\System32\SspiCli.dll	-1	2025-08-07 19:47:50.000000 UTC	Disabled
+L7165: 1548	FTK Imager.exe	0x7fff5cc40000	0x4b000	powrprof.dll	C:\Windows\SYSTEM32\powrprof.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7166: 1548	FTK Imager.exe	0x7fff5cc20000	0x12000	UMPDC.dll	C:\Windows\SYSTEM32\UMPDC.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7167: 1548	FTK Imager.exe	0x7fff48360000	0x4d9000	WININET.dll	C:\Windows\SYSTEM32\WININET.dll	-1	2025-08-07 19:47:50.000000 UTC	Disabled
+L7168: 1548	FTK Imager.exe	0x7fff5cd10000	0x1f000	profapi.dll	C:\Windows\System32\profapi.dll	-1	2025-08-07 19:47:50.000000 UTC	Disabled
+L7169: 1548	FTK Imager.exe	0x7fff45fd0000	0x17000	ondemandconnroutehelper.dll	C:\Windows\SYSTEM32\ondemandconnroutehelper.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7170: 1548	FTK Imager.exe	0x7fff5c1a0000	0x3c000	IPHLPAPI.DLL	C:\Windows\SYSTEM32\IPHLPAPI.DLL	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7171: 1548	FTK Imager.exe	0x7fff5c4b0000	0x6a000	mswsock.dll	C:\Windows\system32\mswsock.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7172: 1548	FTK Imager.exe	0x7fff5f140000	0x8000	NSI.dll	C:\Windows\System32\NSI.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7173: 1548	FTK Imager.exe	0x7fff57450000	0xb000	WINNSI.DLL	C:\Windows\SYSTEM32\WINNSI.DLL	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7174: 1548	FTK Imager.exe	0x7fff3f6c0000	0x2c000	srpapi.dll	C:\Windows\System32\srpapi.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7175: 1548	FTK Imager.exe	0x7fff5cf50000	0x15e000	CRYPT32.dll	C:\Windows\System32\CRYPT32.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7176: 1548	FTK Imager.exe	0x7fff54b20000	0xfa000	textinputframework.dll	C:\Windows\SYSTEM32\textinputframework.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+L7177: 1548	FTK Imager.exe	0x7fff59f70000	0x35e000	CoreUIComponents.dll	C:\Windows\SYSTEM32\CoreUIComponents.dll	-1	2025-08-07 19:47:50.000000 UTC	Disabled
+L7178: 1548	FTK Imager.exe	0x7fff5a2d0000	0xf2000	CoreMessaging.dll	C:\Windows\SYSTEM32\CoreMessaging.dll	-1	2025-08-07 19:47:50.000000 UTC	Disabled
+L7179: 1548	FTK Imager.exe	0x7fff5bef0000	0x33000	ntmarta.dll	C:\Windows\SYSTEM32\ntmarta.dll	-1	2025-08-07 19:47:50.000000 UTC	Disabled
+L7180: 1548	FTK Imager.exe	0x7fff598a0000	0x154000	wintypes.dll	C:\Windows\SYSTEM32\wintypes.dll	-1	2025-08-07 19:47:50.000000 UTC	Disabled
+L7181: 1548	FTK Imager.exe	0x7fff432f0000	0x66000	thumbcache.dll	C:\Windows\System32\thumbcache.dll	6	2025-08-07 19:47:50.000000 UTC	Disabled
+
+--- pstree.txt ---
+L135: *** 1548	5832	FTK Imager.exe	0xbb0c94adb080	12	-	1	False	2025-08-07 19:47:49.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\AccessData\FTK Imager\FTK Imager.exe	"C:\Program Files\AccessData\FTK Imager\FTK Imager.exe" 	C:\Program Files\AccessData\FTK Imager\FTK Imager.exe
+
+--- psscan.txt ---
+L169: 1548	5832	FTK Imager.exe	0xbb0c94adb080	12	-	1	False	2025-08-07 19:47:49.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L7247: 1548	FTK Imager.exe	0x140000000	True	False	True	\Program Files\AccessData\FTK Imager\FTK Imager.exe
+L7248: 1548	FTK Imager.exe	0x5280000	False	False	False	\Windows\System32\en-GB\ieframe.dll.mui
+L7249: 1548	FTK Imager.exe	0xa40000	True	True	True	\Program Files\AccessData\FTK Imager\ad_log.dll
+L7250: 1548	FTK Imager.exe	0xb30000	False	False	False	\Windows\System32\en-US\msvfw32.dll.mui
+L7251: 1548	FTK Imager.exe	0x5240000	False	False	False	\Windows\System32\stdole2.tlb
+L7252: 1548	FTK Imager.exe	0x5470000	False	False	False	\Windows\System32\en-GB\urlmon.dll.mui
+L7253: 1548	FTK Imager.exe	0x68e0000	False	False	False	\Windows\System32\en-GB\mshtml.dll.mui
+L7254: 1548	FTK Imager.exe	0xaa60000	False	False	False	\Windows\System32\en-GB\shell32.dll.mui
+L7255: 1548	FTK Imager.exe	0xaa40000	False	False	False	\Windows\System32\en-US\winmm.dll.mui
+L7256: 1548	FTK Imager.exe	0xaad0000	False	False	False	\Windows\System32\en-GB\user32.dll.mui
+L7257: 1548	FTK Imager.exe	0xab00000	False	False	False	\Windows\System32\en-GB\windows.storage.dll.mui
+L7258: 1548	FTK Imager.exe	0xac80000	False	False	False	\Windows\System32\en-GB\propsys.dll.mui
+L7259: 1548	FTK Imager.exe	0x4ad00000	True	True	True	\Program Files\AccessData\FTK Imager\icudt57.dll
+L7260: 1548	FTK Imager.exe	0xb2b0000	False	False	False	\Windows\System32\en-GB\NetworkExplorer.dll.mui
+L7261: 1548	FTK Imager.exe	0x50d80000	True	True	True	\Program Files\AccessData\FTK Imager\icuuc57.dll
+L7262: 1548	FTK Imager.exe	0x7fff5a610000	True	True	True	\Windows\System32\apphelp.dll
+L7263: 1548	FTK Imager.exe	0x7fff4ef10000	True	True	True	\Windows\System32\dbghelp.dll
+L7264: 1548	FTK Imager.exe	0x7fff31250000	True	True	True	\Program Files\AccessData\FTK Imager\adlib.dll
+L7265: 1548	FTK Imager.exe	0x180000000	True	True	True	\Program Files\AccessData\FTK Imager\ProfUISad64.dll
+L7266: 1548	FTK Imager.exe	0x7fff2b6c0000	True	True	True	\Program Files\AccessData\FTK Imager\adsharedfs.dll
+L7267: 1548	FTK Imager.exe	0x7fff296d0000	True	True	True	\Program Files\AccessData\FTK Imager\cbfsconnect22.dll
+L7268: 1548	FTK Imager.exe	0x7fff0d110000	True	True	True	\Program Files\AccessData\FTK Imager\adsharedfbfs.dll
+L7269: 1548	FTK Imager.exe	0x7fff0ba90000	True	True	True	\Windows\System32\mshtml.dll
+L7270: 1548	FTK Imager.exe	0x7fff2b3d0000	True	True	True	\Program Files\AccessData\FTK Imager\adlotus.dll
+L7271: 1548	FTK Imager.exe	0x7fff2ac20000	True	True	True	\Windows\System32\ieframe.dll
+L7272: 1548	FTK Imager.exe	0x7fff2b530000	True	True	True	\Program Files\AccessData\FTK Imager\adese.dll
+L7273: 1548	FTK Imager.exe	0x7fff301e0000	True	True	True	\Program Files\AccessData\FTK Imager\adshared.dll
+L7274: 1548	FTK Imager.exe	0x7fff2fb60000	True	True	True	\Program Files\AccessData\FTK Imager\boost_regex-vc140-mt-1_59.dll
+L7275: 1548	FTK Imager.exe	0x7fff2f910000	True	True	True	\Program Files\AccessData\FTK Imager\adefs.dll
+L7276: 1548	FTK Imager.exe	0x7fff2fc70000	True	True	True	\Program Files\AccessData\FTK Imager\mfc140u.dll
+L7277: 1548	FTK Imager.exe	0x7fff30a10000	True	True	True	\Program Files\AccessData\FTK Imager\libeay32.dll
+L7278: 1548	FTK Imager.exe	0x7fff308b0000	True	True	True	\Program Files\AccessData\FTK Imager\adshattrdefs.dll
+L7279: 1548	FTK Imager.exe	0x7fff30f40000	True	True	True	\Program Files\AccessData\FTK Imager\LMS-FS.dll
+L7280: 1548	FTK Imager.exe	0x7fff49000000	True	True	True	\Program Files\AccessData\FTK Imager\LMS.dll
+L7281: 1548	FTK Imager.exe	0x7fff43360000	True	True	True	\Windows\System32\DataExchange.dll
+L7282: 1548	FTK Imager.exe	0x7fff3fc60000	True	True	True	\Windows\System32\winmmbase.dll
+L7283: 1548	FTK Imager.exe	0x7fff3e860000	True	True	True	\Windows\System32\msimtf.dll
+L7284: 1548	FTK Imager.exe	0x7fff39240000	True	True	True	\Program Files\AccessData\FTK Imager\libbfio.dll
+L7285: 1548	FTK Imager.exe	0x7fff3ba70000	True	True	True	\Windows\System32\Windows.FileExplorer.Common.dll
+L7286: 1548	FTK Imager.exe	0x7fff3f6c0000	True	True	True	\Windows\System32\srpapi.dll
+L7287: 1548	FTK Imager.exe	0x7fff415f0000	True	True	True	\Windows\System32\EhStorShell.dll
+L7288: 1548	FTK Imager.exe	0x7fff414e0000	True	True	True	\Windows\System32\cscui.dll
+L7289: 1548	FTK Imager.exe	0x7fff432f0000	True	True	True	\Windows\System32\thumbcache.dll
+L7290: 1548	FTK Imager.exe	0x7fff48360000	True	True	True	\Windows\System32\wininet.dll
+L7291: 1548	FTK Imager.exe	0x7fff44970000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll
+L7292: 1548	FTK Imager.exe	0x7fff45fd0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L7293: 1548	FTK Imager.exe	0x7fff48d10000	True	True	True	\Program Files\AccessData\FTK Imager\msvcp140.dll
+L7294: 1548	FTK Imager.exe	0x7fff48cd0000	True	True	True	\Windows\System32\networkexplorer.dll
+L7295: 1548	FTK Imager.exe	0x7fff4b070000	True	True	True	\Windows\System32\avifil32.dll
+L7296: 1548	FTK Imager.exe	0x7fff4a0e0000	True	True	True	\Windows\System32\msls31.dll
+L7297: 1548	FTK Imager.exe	0x7fff4a0c0000	True	True	True	\Windows\System32\msimg32.dll
+L7298: 1548	FTK Imager.exe	0x7fff49680000	True	True	True	\Windows\System32\msacm32.dll
+L7299: 1548	FTK Imager.exe	0x7fff4ab90000	True	True	True	\Program Files\AccessData\FTK Imager\cbfsdisk22.dll
+L7300: 1548	FTK Imager.exe	0x7fff4ac90000	True	True	True	\Windows\System32\msIso.dll
+L7301: 1548	FTK Imager.exe	0x7fff4d3b0000	True	True	True	\Program Files\AccessData\FTK Imager\adtz_globals.dll
+L7302: 1548	FTK Imager.exe	0x7fff4c3f0000	True	True	True	\Program Files\AccessData\FTK Imager\boost_filesystem-vc140-mt-1_59.dll
+L7303: 1548	FTK Imager.exe	0x7fff4b0a0000	True	True	True	\Windows\System32\msvfw32.dll
+L7304: 1548	FTK Imager.exe	0x7fff4c200000	True	True	True	\Windows\System32\mlang.dll
+L7305: 1548	FTK Imager.exe	0x7fff4cc50000	True	True	True	\Program Files\AccessData\FTK Imager\libvshadow.dll
+L7306: 1548	FTK Imager.exe	0x7fff4d3e0000	True	True	True	\Program Files\AccessData\FTK Imager\boost_thread-vc140-mt-1_59.dll
+L7307: 1548	FTK Imager.exe	0x7fff4e960000	True	True	True	\Windows\System32\dbgcore.dll
+L7308: 1548	FTK Imager.exe	0x7fff55d00000	True	True	True	\Program Files\AccessData\FTK Imager\ADIsoDLL.dll
+L7309: 1548	FTK Imager.exe	0x7fff52ec0000	True	True	True	\Program Files\AccessData\FTK Imager\vcruntime140_1.dll
+L7310: 1548	FTK Imager.exe	0x7fff513c0000	True	True	True	\Program Files\AccessData\FTK Imager\boost_chrono-vc140-mt-1_59.dll
+L7311: 1548	FTK Imager.exe	0x7fff50a30000	True	True	True	\Windows\System32\TextShaping.dll
+L7312: 1548	FTK Imager.exe	0x7fff4fc50000	True	True	True	\Windows\System32\netapi32.dll
+L7313: 1548	FTK Imager.exe	0x7fff4f260000	True	True	True	\Windows\System32\secur32.dll
+L7314: 1548	FTK Imager.exe	0x7fff50e20000	True	True	True	\Windows\System32\DWrite.dll
+L7315: 1548	FTK Imager.exe	0x7fff52b00000	True	True	True	\Windows\System32\srvcli.dll
+L7316: 1548	FTK Imager.exe	0x7fff519e0000	True	True	True	\Windows\System32\samcli.dll
+L7317: 1548	FTK Imager.exe	0x7fff52b70000	True	True	True	\Windows\System32\urlmon.dll
+L7318: 1548	FTK Imager.exe	0x7fff54890000	True	True	True	\Windows\System32\winmm.dll
+L7319: 1548	FTK Imager.exe	0x7fff536e0000	True	True	True	\Windows\System32\IconCodecService.dll
+L7320: 1548	FTK Imager.exe	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L7321: 1548	FTK Imager.exe	0x7fff54880000	True	True	True	\Windows\System32\version.dll
+L7322: 1548	FTK Imager.exe	0x7fff54f80000	True	True	True	\Windows\System32\d3d10warp.dll
+L7323: 1548	FTK Imager.exe	0x7fff54b20000	True	True	True	\Windows\System32\TextInputFramework.dll
+L7324: 1548	FTK Imager.exe	0x7fff54d70000	True	True	True	\Windows\System32\DXCore.dll
+L7325: 1548	FTK Imager.exe	0x7fff55cc0000	True	True	True	\Program Files\AccessData\FTK Imager\boost_date_time-vc140-mt-1_59.dll
+L7326: 1548	FTK Imager.exe	0x7fff55920000	True	True	True	\Windows\System32\winhttp.dll
+L7327: 1548	FTK Imager.exe	0x7fff55ce0000	True	True	True	\Program Files\AccessData\FTK Imager\vcruntime140.dll
+L7328: 1548	FTK Imager.exe	0x7fff58880000	True	True	True	\Program Files\AccessData\FTK Imager\adencrypt.dll
+L7329: 1548	FTK Imager.exe	0x7fff579f0000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L7330: 1548	FTK Imager.exe	0x7fff57830000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L7331: 1548	FTK Imager.exe	0x7fff57450000	True	True	True	\Windows\System32\winnsi.dll
+L7332: 1548	FTK Imager.exe	0x7fff57ed0000	True	True	True	\Program Files\AccessData\FTK Imager\efsdecrypter.dll
+L7333: 1548	FTK Imager.exe	0x7fff57e10000	True	True	True	\Windows\System32\policymanager.dll
+L7334: 1548	FTK Imager.exe	0x7fff59a00000	True	True	True	\Windows\System32\dcomp.dll
+L7335: 1548	FTK Imager.exe	0x7fff58ac0000	True	True	True	\Windows\System32\d3d11.dll
+L7336: 1548	FTK Imager.exe	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L7337: 1548	FTK Imager.exe	0x7fff588b0000	True	True	True	\Program Files\AccessData\FTK Imager\boost_system-vc140-mt-1_59.dll
+L7338: 1548	FTK Imager.exe	0x7fff58a40000	True	True	True	\Windows\System32\samlib.dll
+L7339: 1548	FTK Imager.exe	0x7fff59190000	True	True	True	\Windows\System32\d2d1.dll
+L7340: 1548	FTK Imager.exe	0x7fff598a0000	True	True	True	\Windows\System32\WinTypes.dll
+L7341: 1548	FTK Imager.exe	0x7fff59f70000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L7342: 1548	FTK Imager.exe	0x7fff5a2d0000	True	True	True	\Windows\System32\CoreMessaging.dll
+L7343: 1548	FTK Imager.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L7344: 1548	FTK Imager.exe	0x7fff5cb00000	True	True	True	\Windows\System32\sxs.dll
+L7345: 1548	FTK Imager.exe	0x7fff5bf30000	True	True	True	\Windows\System32\wkscli.dll
+L7346: 1548	FTK Imager.exe	0x7fff5aad0000	True	True	True	\Windows\System32\dwmapi.dll
+L7347: 1548	FTK Imager.exe	0x7fff5a9f0000	True	True	True	\Windows\System32\wer.dll
+L7348: 1548	FTK Imager.exe	0x7fff5a7e0000	True	True	True	\Windows\System32\uxtheme.dll
+L7349: 1548	FTK Imager.exe	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L7350: 1548	FTK Imager.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7351: 1548	FTK Imager.exe	0x7fff5be60000	True	True	True	\Windows\System32\msvcp110_win.dll
+L7352: 1548	FTK Imager.exe	0x7fff5b690000	True	True	True	\Windows\System32\dxgi.dll
+L7353: 1548	FTK Imager.exe	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L7354: 1548	FTK Imager.exe	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L7355: 1548	FTK Imager.exe	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L7356: 1548	FTK Imager.exe	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L7357: 1548	FTK Imager.exe	0x7fff5c4b0000	True	True	True	\Windows\System32\mswsock.dll
+L7358: 1548	FTK Imager.exe	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L7359: 1548	FTK Imager.exe	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L7360: 1548	FTK Imager.exe	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L7361: 1548	FTK Imager.exe	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L7362: 1548	FTK Imager.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L7363: 1548	FTK Imager.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L7364: 1548	FTK Imager.exe	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L7365: 1548	FTK Imager.exe	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L7366: 1548	FTK Imager.exe	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+
+--- malware_ldrmodules.txt ---
+L7247: 1548	FTK Imager.exe	0x140000000	True	False	True	\Program Files\AccessData\FTK Imager\FTK Imager.exe
+L7248: 1548	FTK Imager.exe	0x5280000	False	False	False	\Windows\System32\en-GB\ieframe.dll.mui
+L7249: 1548	FTK Imager.exe	0xa40000	True	True	True	\Program Files\AccessData\FTK Imager\ad_log.dll
+L7250: 1548	FTK Imager.exe	0xb30000	False	False	False	\Windows\System32\en-US\msvfw32.dll.mui
+L7251: 1548	FTK Imager.exe	0x5240000	False	False	False	\Windows\System32\stdole2.tlb
+L7252: 1548	FTK Imager.exe	0x5470000	False	False	False	\Windows\System32\en-GB\urlmon.dll.mui
+L7253: 1548	FTK Imager.exe	0x68e0000	False	False	False	\Windows\System32\en-GB\mshtml.dll.mui
+L7254: 1548	FTK Imager.exe	0xaa60000	False	False	False	\Windows\System32\en-GB\shell32.dll.mui
+L7255: 1548	FTK Imager.exe	0xaa40000	False	False	False	\Windows\System32\en-US\winmm.dll.mui
+L7256: 1548	FTK Imager.exe	0xaad0000	False	False	False	\Windows\System32\en-GB\user32.dll.mui
+L7257: 1548	FTK Imager.exe	0xab00000	False	False	False	\Windows\System32\en-GB\windows.storage.dll.mui
+L7258: 1548	FTK Imager.exe	0xac80000	False	False	False	\Windows\System32\en-GB\propsys.dll.mui
+L7259: 1548	FTK Imager.exe	0x4ad00000	True	True	True	\Program Files\AccessData\FTK Imager\icudt57.dll
+L7260: 1548	FTK Imager.exe	0xb2b0000	False	False	False	\Windows\System32\en-GB\NetworkExplorer.dll.mui
+L7261: 1548	FTK Imager.exe	0x50d80000	True	True	True	\Program Files\AccessData\FTK Imager\icuuc57.dll
+L7262: 1548	FTK Imager.exe	0x7fff5a610000	True	True	True	\Windows\System32\apphelp.dll
+L7263: 1548	FTK Imager.exe	0x7fff4ef10000	True	True	True	\Windows\System32\dbghelp.dll
+L7264: 1548	FTK Imager.exe	0x7fff31250000	True	True	True	\Program Files\AccessData\FTK Imager\adlib.dll
+L7265: 1548	FTK Imager.exe	0x180000000	True	True	True	\Program Files\AccessData\FTK Imager\ProfUISad64.dll
+L7266: 1548	FTK Imager.exe	0x7fff2b6c0000	True	True	True	\Program Files\AccessData\FTK Imager\adsharedfs.dll
+L7267: 1548	FTK Imager.exe	0x7fff296d0000	True	True	True	\Program Files\AccessData\FTK Imager\cbfsconnect22.dll
+L7268: 1548	FTK Imager.exe	0x7fff0d110000	True	True	True	\Program Files\AccessData\FTK Imager\adsharedfbfs.dll
+L7269: 1548	FTK Imager.exe	0x7fff0ba90000	True	True	True	\Windows\System32\mshtml.dll
+L7270: 1548	FTK Imager.exe	0x7fff2b3d0000	True	True	True	\Program Files\AccessData\FTK Imager\adlotus.dll
+L7271: 1548	FTK Imager.exe	0x7fff2ac20000	True	True	True	\Windows\System32\ieframe.dll
+L7272: 1548	FTK Imager.exe	0x7fff2b530000	True	True	True	\Program Files\AccessData\FTK Imager\adese.dll
+L7273: 1548	FTK Imager.exe	0x7fff301e0000	True	True	True	\Program Files\AccessData\FTK Imager\adshared.dll
+L7274: 1548	FTK Imager.exe	0x7fff2fb60000	True	True	True	\Program Files\AccessData\FTK Imager\boost_regex-vc140-mt-1_59.dll
+L7275: 1548	FTK Imager.exe	0x7fff2f910000	True	True	True	\Program Files\AccessData\FTK Imager\adefs.dll
+L7276: 1548	FTK Imager.exe	0x7fff2fc70000	True	True	True	\Program Files\AccessData\FTK Imager\mfc140u.dll
+L7277: 1548	FTK Imager.exe	0x7fff30a10000	True	True	True	\Program Files\AccessData\FTK Imager\libeay32.dll
+L7278: 1548	FTK Imager.exe	0x7fff308b0000	True	True	True	\Program Files\AccessData\FTK Imager\adshattrdefs.dll
+L7279: 1548	FTK Imager.exe	0x7fff30f40000	True	True	True	\Program Files\AccessData\FTK Imager\LMS-FS.dll
+L7280: 1548	FTK Imager.exe	0x7fff49000000	True	True	True	\Program Files\AccessData\FTK Imager\LMS.dll
+L7281: 1548	FTK Imager.exe	0x7fff43360000	True	True	True	\Windows\System32\DataExchange.dll
+L7282: 1548	FTK Imager.exe	0x7fff3fc60000	True	True	True	\Windows\System32\winmmbase.dll
+L7283: 1548	FTK Imager.exe	0x7fff3e860000	True	True	True	\Windows\System32\msimtf.dll
+L7284: 1548	FTK Imager.exe	0x7fff39240000	True	True	True	\Program Files\AccessData\FTK Imager\libbfio.dll
+L7285: 1548	FTK Imager.exe	0x7fff3ba70000	True	True	True	\Windows\System32\Windows.FileExplorer.Common.dll
+L7286: 1548	FTK Imager.exe	0x7fff3f6c0000	True	True	True	\Windows\System32\srpapi.dll
+L7287: 1548	FTK Imager.exe	0x7fff415f0000	True	True	True	\Windows\System32\EhStorShell.dll
+L7288: 1548	FTK Imager.exe	0x7fff414e0000	True	True	True	\Windows\System32\cscui.dll
+L7289: 1548	FTK Imager.exe	0x7fff432f0000	True	True	True	\Windows\System32\thumbcache.dll
+L7290: 1548	FTK Imager.exe	0x7fff48360000	True	True	True	\Windows\System32\wininet.dll
+L7291: 1548	FTK Imager.exe	0x7fff44970000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll
+L7292: 1548	FTK Imager.exe	0x7fff45fd0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L7293: 1548	FTK Imager.exe	0x7fff48d10000	True	True	True	\Program Files\AccessData\FTK Imager\msvcp140.dll
+L7294: 1548	FTK Imager.exe	0x7fff48cd0000	True	True	True	\Windows\System32\networkexplorer.dll
+L7295: 1548	FTK Imager.exe	0x7fff4b070000	True	True	True	\Windows\System32\avifil32.dll
+L7296: 1548	FTK Imager.exe	0x7fff4a0e0000	True	True	True	\Windows\System32\msls31.dll
+L7297: 1548	FTK Imager.exe	0x7fff4a0c0000	True	True	True	\Windows\System32\msimg32.dll
+L7298: 1548	FTK Imager.exe	0x7fff49680000	True	True	True	\Windows\System32\msacm32.dll
+L7299: 1548	FTK Imager.exe	0x7fff4ab90000	True	True	True	\Program Files\AccessData\FTK Imager\cbfsdisk22.dll
+L7300: 1548	FTK Imager.exe	0x7fff4ac90000	True	True	True	\Windows\System32\msIso.dll
+L7301: 1548	FTK Imager.exe	0x7fff4d3b0000	True	True	True	\Program Files\AccessData\FTK Imager\adtz_globals.dll
+L7302: 1548	FTK Imager.exe	0x7fff4c3f0000	True	True	True	\Program Files\AccessData\FTK Imager\boost_filesystem-vc140-mt-1_59.dll
+L7303: 1548	FTK Imager.exe	0x7fff4b0a0000	True	True	True	\Windows\System32\msvfw32.dll
+L7304: 1548	FTK Imager.exe	0x7fff4c200000	True	True	True	\Windows\System32\mlang.dll
+L7305: 1548	FTK Imager.exe	0x7fff4cc50000	True	True	True	\Program Files\AccessData\FTK Imager\libvshadow.dll
+L7306: 1548	FTK Imager.exe	0x7fff4d3e0000	True	True	True	\Program Files\AccessData\FTK Imager\boost_thread-vc140-mt-1_59.dll
+L7307: 1548	FTK Imager.exe	0x7fff4e960000	True	True	True	\Windows\System32\dbgcore.dll
+L7308: 1548	FTK Imager.exe	0x7fff55d00000	True	True	True	\Program Files\AccessData\FTK Imager\ADIsoDLL.dll
+L7309: 1548	FTK Imager.exe	0x7fff52ec0000	True	True	True	\Program Files\AccessData\FTK Imager\vcruntime140_1.dll
+L7310: 1548	FTK Imager.exe	0x7fff513c0000	True	True	True	\Program Files\AccessData\FTK Imager\boost_chrono-vc140-mt-1_59.dll
+L7311: 1548	FTK Imager.exe	0x7fff50a30000	True	True	True	\Windows\System32\TextShaping.dll
+L7312: 1548	FTK Imager.exe	0x7fff4fc50000	True	True	True	\Windows\System32\netapi32.dll
+L7313: 1548	FTK Imager.exe	0x7fff4f260000	True	True	True	\Windows\System32\secur32.dll
+L7314: 1548	FTK Imager.exe	0x7fff50e20000	True	True	True	\Windows\System32\DWrite.dll
+L7315: 1548	FTK Imager.exe	0x7fff52b00000	True	True	True	\Windows\System32\srvcli.dll
+L7316: 1548	FTK Imager.exe	0x7fff519e0000	True	True	True	\Windows\System32\samcli.dll
+L7317: 1548	FTK Imager.exe	0x7fff52b70000	True	True	True	\Windows\System32\urlmon.dll
+L7318: 1548	FTK Imager.exe	0x7fff54890000	True	True	True	\Windows\System32\winmm.dll
+L7319: 1548	FTK Imager.exe	0x7fff536e0000	True	True	True	\Windows\System32\IconCodecService.dll
+L7320: 1548	FTK Imager.exe	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L7321: 1548	FTK Imager.exe	0x7fff54880000	True	True	True	\Windows\System32\version.dll
+L7322: 1548	FTK Imager.exe	0x7fff54f80000	True	True	True	\Windows\System32\d3d10warp.dll
+L7323: 1548	FTK Imager.exe	0x7fff54b20000	True	True	True	\Windows\System32\TextInputFramework.dll
+L7324: 1548	FTK Imager.exe	0x7fff54d70000	True	True	True	\Windows\System32\DXCore.dll
+L7325: 1548	FTK Imager.exe	0x7fff55cc0000	True	True	True	\Program Files\AccessData\FTK Imager\boost_date_time-vc140-mt-1_59.dll
+L7326: 1548	FTK Imager.exe	0x7fff55920000	True	True	True	\Windows\System32\winhttp.dll
+L7327: 1548	FTK Imager.exe	0x7fff55ce0000	True	True	True	\Program Files\AccessData\FTK Imager\vcruntime140.dll
+L7328: 1548	FTK Imager.exe	0x7fff58880000	True	True	True	\Program Files\AccessData\FTK Imager\adencrypt.dll
+L7329: 1548	FTK Imager.exe	0x7fff579f0000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L7330: 1548	FTK Imager.exe	0x7fff57830000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L7331: 1548	FTK Imager.exe	0x7fff57450000	True	True	True	\Windows\System32\winnsi.dll
+L7332: 1548	FTK Imager.exe	0x7fff57ed0000	True	True	True	\Program Files\AccessData\FTK Imager\efsdecrypter.dll
+L7333: 1548	FTK Imager.exe	0x7fff57e10000	True	True	True	\Windows\System32\policymanager.dll
+L7334: 1548	FTK Imager.exe	0x7fff59a00000	True	True	True	\Windows\System32\dcomp.dll
+L7335: 1548	FTK Imager.exe	0x7fff58ac0000	True	True	True	\Windows\System32\d3d11.dll
+L7336: 1548	FTK Imager.exe	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L7337: 1548	FTK Imager.exe	0x7fff588b0000	True	True	True	\Program Files\AccessData\FTK Imager\boost_system-vc140-mt-1_59.dll
+L7338: 1548	FTK Imager.exe	0x7fff58a40000	True	True	True	\Windows\System32\samlib.dll
+L7339: 1548	FTK Imager.exe	0x7fff59190000	True	True	True	\Windows\System32\d2d1.dll
+L7340: 1548	FTK Imager.exe	0x7fff598a0000	True	True	True	\Windows\System32\WinTypes.dll
+L7341: 1548	FTK Imager.exe	0x7fff59f70000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L7342: 1548	FTK Imager.exe	0x7fff5a2d0000	True	True	True	\Windows\System32\CoreMessaging.dll
+L7343: 1548	FTK Imager.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L7344: 1548	FTK Imager.exe	0x7fff5cb00000	True	True	True	\Windows\System32\sxs.dll
+L7345: 1548	FTK Imager.exe	0x7fff5bf30000	True	True	True	\Windows\System32\wkscli.dll
+L7346: 1548	FTK Imager.exe	0x7fff5aad0000	True	True	True	\Windows\System32\dwmapi.dll
+L7347: 1548	FTK Imager.exe	0x7fff5a9f0000	True	True	True	\Windows\System32\wer.dll
+L7348: 1548	FTK Imager.exe	0x7fff5a7e0000	True	True	True	\Windows\System32\uxtheme.dll
+L7349: 1548	FTK Imager.exe	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L7350: 1548	FTK Imager.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7351: 1548	FTK Imager.exe	0x7fff5be60000	True	True	True	\Windows\System32\msvcp110_win.dll
+L7352: 1548	FTK Imager.exe	0x7fff5b690000	True	True	True	\Windows\System32\dxgi.dll
+L7353: 1548	FTK Imager.exe	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L7354: 1548	FTK Imager.exe	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L7355: 1548	FTK Imager.exe	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L7356: 1548	FTK Imager.exe	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L7357: 1548	FTK Imager.exe	0x7fff5c4b0000	True	True	True	\Windows\System32\mswsock.dll
+L7358: 1548	FTK Imager.exe	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L7359: 1548	FTK Imager.exe	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L7360: 1548	FTK Imager.exe	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L7361: 1548	FTK Imager.exe	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L7362: 1548	FTK Imager.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L7363: 1548	FTK Imager.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L7364: 1548	FTK Imager.exe	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L7365: 1548	FTK Imager.exe	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L7366: 1548	FTK Imager.exe	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+
+--- malware_pebmasquerade.txt ---
+L148: 1548	FTK Imager.exe	\Device\HarddiskVolume3\Program Files\AccessData\FTK Imager\FTK Imager.exe	C:\Program Files\AccessData\FTK Imager\FTK Imager.exe	False	False
+
+=== END OF PIVOT REPORT ===

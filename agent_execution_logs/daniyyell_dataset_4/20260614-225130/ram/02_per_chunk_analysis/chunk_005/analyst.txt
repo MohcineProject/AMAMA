@@ -1,0 +1,80 @@
+================================================================
+PIVOT REPORT
+Generated: 2025-08-08T00:00:00Z
+Summary: Two Agent 1 findings were reviewed. PID 2972 (taskhostw.exe) presents a genuinely anomalous privilege footprint combined with an orphaned parent and an outbound connection to a public IP, warranting an INCONCLUSIVE verdict pending further corroboration. PID 2924 (SecurityHealthService.exe) shows a benign process with a normal command line, standard System32 DLL set, and a DLL-list artefact that is a known Volatility formatting convention rather than an injection indicator. No findings were confirmed.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      2972
+PPID:     1320
+Image:    taskhostw.exe
+Cmdline:  - (not recovered)
+MITRE:    T1134 — Access Token Manipulation (candidate)
+
+Justification:
+  Three independent signals converge on this process but none is individually
+  unambiguous. First, PPID 1320 is absent from the process list; legitimate
+  taskhostw.exe instances are spawned by svchost.exe (typically under
+  services.exe), so an orphaned parent is suspicious, though PID reuse after
+  a short-lived parent process can produce the same artefact. Second, the
+  privilege set is extraordinary: SeTcbPrivilege, SeAssignPrimaryTokenPrivilege,
+  SeLoadDriverPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege are all
+  simultaneously Present and Enabled — a combination consistent with a SYSTEM-
+  token process, but highly unusual for taskhostw.exe which normally runs under
+  a user or LOCAL SERVICE context with a much narrower privilege set. Third, a
+  CLOSED TCPv4 connection to the public IP 150.171.27.10:443 is recorded;
+  taskhostw.exe does not ordinarily initiate outbound connections to public
+  addresses. However, the command line was not recovered ("-"), no malfind
+  sections were provided, no DLL list was provided, and no registry persistence
+  evidence was supplied. Without at least one of those corroborating artefacts
+  (injected PE region, suspicious DLL from a user-writable path, or a Run-key
+  pointing at this binary), the evidence is insufficient to confirm malice —
+  the process could be a legitimate SYSTEM-context task host whose parent
+  exited before the snapshot. Marked INCONCLUSIVE; a malfind and dlllist slice
+  for this PID would likely resolve the verdict.
+
+Key Evidence:
+  - L5120: 2972	taskhostw.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L5123: 2972	taskhostw.exe	10	SeLoadDriverPrivilege	Present,Enabled	Load and unload device drivers
+  - L5133: 2972	taskhostw.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L5116: 2972	taskhostw.exe	3	SeAssignPrimaryTokenPrivilege	Present,Enabled	Replace a process-level token
+  - L5142: 2972	taskhostw.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L94: 0xbb0c945e28a0	TCPv4	192.168.135.59	49946	150.171.27.10	443	CLOSED	2972	taskhostw.exe	2025-08-07 19:48:31.000000 UTC
+  - L152: 2972	1320	taskhostw.exe	0xbb0c90a54080	6	-	0	False	2025-08-07 19:51:21.000000 UTC	N/A	Disabled
+----------------------------------------------------------------
+
+================================================================
+REJECTED FINDINGS (count: 1)
+PID 2924 — SecurityHealthService.exe
+
+  The three Agent 1 signals do not survive scrutiny.
+
+  (1) Orphaned parent (PPID 716): PPID 716 is consistent with a short-lived
+  svchost.exe or SCM-related process that exited after spawning the service;
+  this is a common artefact for long-running services captured mid-session and
+  is not independently suspicious.
+
+  (2) Elevated privileges: Reviewing the actual privilege flags, SeTcbPrivilege
+  is Present,Enabled,Default and SeImpersonatePrivilege is Present,Enabled,Default
+  — both are standard for a SYSTEM-context Windows service. SeDebugPrivilege is
+  Present,Enabled,Default, also normal for SYSTEM. Critically, the majority of
+  the high-risk privileges (SeAssignPrimaryTokenPrivilege, SeLoadDriverPrivilege,
+  SeTakeOwnershipPrivilege, SeBackupPrivilege, SeRestorePrivilege) are listed as
+  Present only — not Enabled — which is the expected posture for a SYSTEM token
+  that holds but does not actively exercise those rights. This is the standard
+  Windows SYSTEM token privilege set, not an anomalous one.
+
+  (3) DLL anomaly: The first entry in dlllist.txt for any process is always the
+  process's own executable image mapped into its address space; Volatility
+  reports it in the DLL list at the image base address. The appearance of
+  "SecurityHealthService.exe" at L4791 is a normal Volatility artefact, not
+  evidence of injection or a malformed DLL list. The remaining DLLs shown
+  (ntdll.dll, KERNEL32.DLL) are loaded from C:\Windows\SYSTEM32 — entirely
+  legitimate.
+
+  Verdict: REJECTED. Standard SYSTEM-context Windows security service with a
+  normal System32 binary path, expected privilege posture, and no anomalous
+  DLL provenance.
+================================================================

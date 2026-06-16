@@ -1,0 +1,71 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5368 — svchost.exe**
+
+Agent 1 reason: orphaned parent (PPID 896 not in process list).
+
+Evidence assessment:
+- Cmdline: `C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup` — this is a completely standard, legitimate svchost invocation. `UnistackSvcGroup` is a real Windows service group (hosts UWP/user-session services like CDPUserSvc, OneSyncSvc, etc.).
+- Path: `C:\WINDOWS\system32\svchost.exe` — canonical system32 path, no anomaly.
+- DLLs shown: svchost.exe from system32, ntdll.dll, KERNEL32.DLL — all from System32, no user-writable paths.
+- Privileges: The privilege list is very long (all 35 privileges listed), but **none are marked Present/Enabled** except SeShutdownPrivilege (Present), SeChangeNotifyPrivilege (Present,Enabled,Default), SeUndockPrivilege (Present), SeCreateGlobalPrivilege (Default), SeIncreaseWorkingSetPrivilege (Present), SeTimeZonePrivilege (Present). This is a standard user-context svchost token — the dangerous privileges (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) are all listed but **not enabled/present**. This is normal — Volatility lists all privileges in the token regardless of whether they're enabled.
+- Orphaned parent: PPID 896 not visible in pslist. This is a common benign artifact — services.exe (PID 896) may have exited or the snapshot may not capture it, especially for long-running svchost instances. The legitimate cmdline and system32 path strongly outweigh this single weak signal.
+- No malfind, no netscan, no suspicious DLLs, no registry persistence evidence.
+
+**Verdict: REJECTED** — Standard svchost invocation from system32 with a legitimate service group argument, system32-only DLLs, no enabled dangerous privileges. Orphaned parent is a common benign artifact in memory snapshots.
+
+---
+
+**PID 5356 — FileCoAuth.exe**
+
+Agent 1 reasons: orphaned parent (PPID 516 not in process list) + path in user-writable AppData.
+
+Evidence assessment:
+- Cmdline: `"C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe" -Embedding` — FileCoAuth.exe is a legitimate Microsoft OneDrive component (File Co-Authoring). The `-Embedding` flag is a standard COM activation argument used when a process is launched as an out-of-process COM server. This is exactly how OneDrive components are legitimately invoked.
+- Path: AppData\Local\Microsoft\OneDrive — this is the standard installation location for OneDrive on Windows. OneDrive installs per-user in AppData by design; this is not anomalous.
+- Version `26.070.0414.0001` is a plausible OneDrive version string.
+- DLLs shown: FileCoAuth.exe from the OneDrive AppData path, ntdll.dll and KERNEL32.DLL from System32. Only 3 of 71 DLL entries are shown — no suspicious DLLs visible in the shown entries, though 71 total is consistent with a COM-enabled OneDrive component.
+- Privileges: Same pattern as PID 5368 — long list, dangerous privileges not enabled. Standard user token.
+- Orphaned parent (PPID 516): Could be the OneDrive main process (OneDrive.exe) which may have exited after spawning this COM server, or a svchost hosting COM. Not unusual for COM-activated processes.
+- No malfind, no netscan, no registry persistence evidence.
+- The AppData path flag is technically correct but OneDrive legitimately lives there — this is by Microsoft design, not attacker placement.
+
+**Verdict: REJECTED** — FileCoAuth.exe is a legitimate Microsoft OneDrive co-authoring COM component. Its presence in AppData\Local\Microsoft\OneDrive is by design. The `-Embedding` argument is standard COM out-of-process server activation. No malicious indicators in any artifact type.
+
+---
+
+Both findings are REJECTED. Summary: 0 confirmed, 0 inconclusive, 2 rejected.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-13T19:30:00Z
+Summary: Both Agent 1 findings represent legitimate Windows and Microsoft application behaviour. PID 5368 is a standard svchost.exe instance hosting the UnistackSvcGroup service group, launched from system32 with a normal user-context token. PID 5356 is a legitimate Microsoft OneDrive co-authoring COM component invoked via standard COM activation. Neither process exhibits any corroborating malicious indicators across any artifact type. No confirmed or inconclusive threats were identified in this triage batch.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were REJECTED:
+
+  PID 5368 (svchost.exe): Standard svchost.exe invocation from C:\WINDOWS\system32
+  with a legitimate service group argument (-k UnistackSvcGroup). DLLs are
+  exclusively from System32. No dangerous privileges are enabled in the token
+  (SeDebugPrivilege, SeTcbPrivilege, etc. are present in the token structure but
+  not enabled — normal for a user-context svchost). Orphaned parent (PPID 896
+  absent from pslist) is a common benign artifact in memory snapshots where
+  services.exe has exited or is not captured; it does not override the clean
+  cmdline, path, and DLL evidence.
+
+  PID 5356 (FileCoAuth.exe): Legitimate Microsoft OneDrive file co-authoring
+  component. OneDrive installs per-user under AppData\Local\Microsoft\OneDrive
+  by design — this path is not anomalous. The -Embedding argument is standard
+  COM out-of-process server activation syntax. No suspicious DLLs, no enabled
+  dangerous privileges, no malfind hits, no network connections, no registry
+  persistence evidence. Orphaned parent (PPID 516) is consistent with a COM
+  host or OneDrive.exe having exited after spawning this component.
+
+================================================================

@@ -1,0 +1,5 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_002.txt
+Summary: No suspicious signals detected. ShellExperienceHost.exe runs from its legitimate SystemApps path with a normal command-line; the truncated EPROCESS name and unknown PPID 516 are consistent with kernel name truncation and a DWM/svchost-family parent not present in this snapshot slice.
+

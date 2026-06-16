@@ -1,0 +1,50 @@
+================================================================
+TRIAGE FINDINGS TO VALIDATE — PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: All five Agent 1 findings concern repeated short-lived instances of HxTsr.exe, the Microsoft Windows Communications Apps telemetry/sync helper. Every instance resolves to the legitimate WindowsApps store path, passes the PEB masquerade check, carries an identical privilege set consistent with a UWP broker process, and shows no anomalous DLL loads, network connections, malfind hits, or code-injection markers. The orphaned-parent and short-lived signals are explained by the UWP activation model (PID 740 is the WpnUserService or a similar UWP broker that may not appear in the pslist snapshot). No malicious activity is evidenced across any of the five PIDs.
+Counts: confirmed=0  inconclusive=0  rejected=5
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All five findings (PIDs 19652, 19812, 19944, 20564, 20652) were REJECTED.
+
+Rejection rationale (common to all five):
+
+1. PATH / PEB MASQUERADE CHECK CLEAN: Every instance resolves to
+   \Device\HarddiskVolume3\Program Files\WindowsApps\
+   microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe
+   and malware_pebmasquerade.txt records False/False for both masquerade
+   flags. The binary is the legitimate Microsoft Mail & Calendar telemetry
+   relay helper shipped with the Windows Communications Apps UWP package.
+
+2. ORPHANED PARENT IS A KNOWN UWP ARTEFACT: PPID 740 is consistent with
+   a UWP activation host or WpnUserService instance. UWP broker processes
+   are frequently absent from a Volatility pslist snapshot because they
+   are transient or run in a separate session silo. An absent PPID is
+   therefore expected for this binary and is not a reliable malice signal
+   in isolation.
+
+3. SHORT LIFETIME IS EXPECTED BEHAVIOUR: HxTsr.exe is documented to
+   launch briefly on mail-sync events and exit within seconds. Runtimes
+   of 3–8 seconds across all five instances are entirely consistent with
+   normal periodic sync activity.
+
+4. PRIVILEGE SET IS BOILERPLATE, NOT ANOMALOUS: All 35 privilege entries
+   are identical across every instance and match the standard
+   full-privilege token that Windows assigns to UWP broker processes
+   running under the connected-user context. Critically, none of the
+   high-value privileges (SeDebugPrivilege, SeTcbPrivilege,
+   SeImpersonatePrivilege, SeLoadDriverPrivilege) appear in the
+   "Present" or "Enabled" column — they are listed but not held, which
+   is the normal unenabled state for a non-elevated process token.
+
+5. NO CORROBORATING MALICE SIGNALS: No malfind hits, no suspicious DLL
+   paths, no network connections, no registry persistence, no encoded
+   command-line arguments, and no cross-process handle anomalies were
+   present in any of the five evidence blocks. The cmdline field shows
+   "-" (not captured / UWP activation path), which is normal for
+   WindowsApps binaries launched via the activation broker rather than
+   a standard CreateProcess call.
+
+================================================================

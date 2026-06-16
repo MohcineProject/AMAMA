@@ -1,0 +1,107 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5964 — svchost.exe (ppid=896)**
+
+Agent 1 reasons: orphaned parent, privilege anomaly (SeTcbPrivilege + SeImpersonatePrivilege), missing cmdline, short-lived.
+
+Evidence analysis:
+
+1. **Orphaned parent (PPID 896):** pslist, psscan, and pstree all confirm PPID 896 is not present in the process list. This is a genuine anomaly — legitimate svchost instances are spawned by services.exe (PID typically in the 700–900 range, but the parent should be visible). An invisible parent can indicate process hollowing, a parent that exited before the snapshot, or a PID-reuse scenario. It is a real signal but not definitive alone.
+
+2. **Missing cmdline:** `cmdline.txt` L89 shows `-` for PID 5964. Legitimate svchost instances always carry `-k <group>` arguments. A missing/null cmdline for svchost is a meaningful anomaly — it can indicate process hollowing where the original svchost was replaced with injected code that didn't set a command line, or a very early-stage spawn. This is a genuine red flag.
+
+3. **Privilege footprint:** The privilege set is enormous — SeTcbPrivilege (Present,Enabled,Default), SeAssignPrimaryTokenPrivilege (Present), SeBackupPrivilege (Present), SeRestorePrivilege (Present), SeImpersonatePrivilege (Present,Enabled,Default), SeCreateGlobalPrivilege (Present,Enabled,Default), SeDebugPrivilege (Default). This is essentially a SYSTEM-level token with nearly every privilege present or enabled. While some svchost instances do run as SYSTEM, the combination of: no cmdline, orphaned parent, short lifetime, and this full SYSTEM token is highly suspicious. Legitimate svchost instances hosting specific service groups don't typically have ALL of these simultaneously enabled.
+
+4. **Short-lived (4 minutes):** Exited at 19:19:51, created at 19:15:51. Short-lived elevated processes can indicate a task-completion pattern (e.g., a dropper that ran, did its work, and exited).
+
+5. **Path check:** `malware_pebmasquerade.txt` L89 shows the path as `\Device\HarddiskVolume4\Windows\System32\svchost.exe` — the binary itself is legitimate System32 svchost. This argues against a typosquat or path-based masquerade. However, process hollowing would use the legitimate binary path.
+
+6. **No malfind data provided.** No DLL list provided. No network connections provided. The absence of these is notable — if there were injected code or network activity, we'd expect to see it.
+
+**Assessment:** The combination of missing cmdline + orphaned parent + full SYSTEM privilege set + short lifetime is genuinely suspicious and multi-signal. However, there's no malfind evidence, no suspicious DLLs, no network connections, and the binary path is legitimate System32. The missing cmdline is the strongest single signal. I'll mark this **INCONCLUSIVE** — the signals are real and concerning but without malfind/DLL/network corroboration I cannot confirm malice. The orphaned parent could also be explained by the parent having exited before the snapshot (e.g., a service manager that spawned it and terminated). The missing cmdline is harder to explain benignly for svchost, but I won't CONFIRM without injection evidence.
+
+Actually, re-examining: the privilege set shows `SeDebugPrivilege	Default` — "Default" means it's in the token but not explicitly enabled. `SeTcbPrivilege	Present,Enabled,Default` is very unusual for a non-SYSTEM service. The combination of no cmdline + orphaned parent + SeTcbPrivilege enabled + short lifetime — I'll keep this INCONCLUSIVE. There's no smoking gun (no malfind, no bad DLLs, no C2 connection).
+
+---
+
+**PID 6104 — RuntimeBroker. (ppid=516)**
+
+Agent 1 reasons: orphaned parent (PPID 516 not in process list), truncated name (known EPROCESS artefact).
+
+Evidence analysis:
+
+1. **Truncated name:** Per the known data artefact rule, `RuntimeBroker.` is the 14-char truncation of `RuntimeBroker.exe`. The cmdline confirms `C:\Windows\System32\RuntimeBroker.exe -Embedding` — this is the legitimate binary. This signal must be **rejected** per the framework rules.
+
+2. **Orphaned parent (PPID 516):** RuntimeBroker.exe is normally spawned by svchost.exe hosting DcomLaunch (which typically runs at a low PID). PPID 516 not being visible in the process list could mean the parent exited, or PID reuse. This is a weak signal on its own.
+
+3. **Cmdline:** `C:\Windows\System32\RuntimeBroker.exe -Embedding` — this is the canonical, expected invocation of RuntimeBroker. The `-Embedding` flag is standard for COM activation broker instances.
+
+4. **Privileges:** No high-risk privileges are enabled. SeImpersonatePrivilege is not present/enabled. SeDebugPrivilege is not present/enabled. SeChangeNotifyPrivilege is Present,Enabled,Default — completely normal. SeShutdownPrivilege Present, SeUndockPrivilege Present, SeIncreaseWorkingSetPrivilege Present, SeTimeZonePrivilege Present — all normal user-context privileges.
+
+5. **DLLs:** The three shown DLLs are all from System32 — RuntimeBroker.exe, ntdll.dll, KERNEL32.DLL. All legitimate paths.
+
+6. **No malfind, no network, no suspicious handles.**
+
+**Assessment:** This is a legitimate RuntimeBroker.exe instance. The truncated name is a known artefact (explicitly rejected per framework). The orphaned parent is the only remaining signal, and it's weak — RuntimeBroker instances are frequently spawned transiently. The cmdline, privilege set, and DLL paths are all entirely normal. **REJECTED.**
+
+---
+
+Now writing the report.
+
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T20:00:00Z
+Summary: Two Agent 1 findings were evaluated. One finding (PID 5964, svchost.exe) presents
+multiple genuine anomalies — missing command line, orphaned parent, full SYSTEM-level privilege
+token, and a short four-minute lifetime — but lacks corroborating injection, network, or DLL
+evidence sufficient to confirm malice. The second finding (PID 6104, RuntimeBroker.exe) is
+benign: the truncated EPROCESS name is a known kernel artefact, and all other indicators are
+consistent with a legitimate COM broker instance. No findings were confirmed at this stage;
+Agent 3 should note that PID 5964 warrants deeper artefact collection (malfind, dlllist, netscan)
+before the incident can be scoped.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      5964
+PPID:     896 (not present in process list)
+Image:    svchost.exe
+Cmdline:  - (no command line recorded)
+Severity: N/A
+MITRE:    T1055 — Process Injection (candidate, unconfirmed)
+
+Justification:
+  Four independent signals converge on PID 5964 without any single one being definitive.
+  First, the command line is absent (recorded as "-"), which is structurally abnormal for
+  svchost.exe — every legitimate svchost instance carries a "-k <ServiceGroupName>" argument;
+  a null cmdline is consistent with process hollowing where injected code did not inherit or
+  set the original argument string. Second, PPID 896 is absent from the process list, meaning
+  the parent cannot be verified as services.exe or any other expected launcher. Third, the
+  privilege token is unusually broad for a svchost instance: SeTcbPrivilege is
+  Present,Enabled,Default (grants "act as part of the OS"), SeImpersonatePrivilege is
+  Present,Enabled,Default, SeAssignPrimaryTokenPrivilege is Present, SeBackupPrivilege and
+  SeRestorePrivilege are both Present, and SeDebugPrivilege is in the token at Default — this
+  is a near-complete SYSTEM token, which is atypical even for elevated svchost service groups.
+  Fourth, the process lived for exactly four minutes before exiting, a pattern consistent with
+  a task-completion payload. Counterweighing these signals: the binary path resolves cleanly to
+  \Device\HarddiskVolume4\Windows\System32\svchost.exe (no masquerade), no malfind sections
+  were provided, no DLL list was provided, and no network connections were provided. Without
+  injection evidence or suspicious loaded modules, confirmation is not warranted; however, the
+  missing cmdline alone is strong enough to prevent rejection. Agent 3 should flag this PID for
+  malfind, full dlllist, netscan, and handles analysis before closing.
+
+Key Evidence:
+  - L89 (pslist): 5964	896	svchost.exe	0x990ef7e92080	0	-	0	False	2026-05-13 19:15:51.000000 UTC	2026-05-13 19:19:51.000000 UTC	Disabled
+  - L89 (cmdline): 5964	svchost.exe	-
+  - L2950 (privileges): 5964	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L2972 (privileges): 5964	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L2963 (privileges): 5964	svchost.exe	20	SeDebugPrivilege	Default	Debug programs
+  - L2946 (privileges): 5964	svchost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+  - L97 (pstree): ** 5964	896	svchost.exe	0x990ef7e92080	0	-	0	False	2026-05-13 19:15:51.000000 UTC	2026-05-13 19:19:51.000000 UTC	\Device\HarddiskVolume4\Windows\System32\svchost.exe	-	-
+  - L89 (malware_pebmasquerade): 5964	svchost.exe	\Device\HarddiskVolume4\Windows\System32\svchost.exe	-	False	False
+----------------------------------------------------------------
+
+================================================================

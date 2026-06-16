@@ -1,0 +1,422 @@
+{
+  "case_id": "Windows_11_VM_e",
+  "entity_count": 35,
+  "modules_scanned": [
+    "ram",
+    "ti"
+  ],
+  "termination_reason": "convergence",
+  "rounds": [],
+  "host_profile": {},
+  "nodes": {
+    "pid:1708": {
+      "type": "pid",
+      "value": "1708",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "image_name:AggregatorHost.exe": {
+      "type": "image_name",
+      "value": "AggregatorHost.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:2600": {
+      "type": "pid",
+      "value": "2600",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\WINDOWS\\System32\\AggregatorHost.exe": {
+      "type": "file_path",
+      "value": "C:\\WINDOWS\\System32\\AggregatorHost.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:2380": {
+      "type": "pid",
+      "value": "2380",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "image_name:cmd.exe": {
+      "type": "image_name",
+      "value": "cmd.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:4240": {
+      "type": "pid",
+      "value": "4240",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\WINDOWS\\system32\\cmd.exe": {
+      "type": "file_path",
+      "value": "C:\\WINDOWS\\system32\\cmd.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\Users\\kali\\AppData\\Local\\Temp\\EMwLtc9FBmME.bat": {
+      "type": "file_path",
+      "value": "C:\\Users\\kali\\AppData\\Local\\Temp\\EMwLtc9FBmME.bat",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:2388": {
+      "type": "pid",
+      "value": "2388",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "pid:6956": {
+      "type": "pid",
+      "value": "6956",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:4276": {
+      "type": "pid",
+      "value": "4276",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:sihost.exe": {
+      "type": "image_name",
+      "value": "sihost.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:1924": {
+      "type": "pid",
+      "value": "1924",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\WINDOWS\\system32\\sihost.exe": {
+      "type": "file_path",
+      "value": "C:\\WINDOWS\\system32\\sihost.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:4644": {
+      "type": "pid",
+      "value": "4644",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:MicrosoftEdgeUpdate.exe": {
+      "type": "image_name",
+      "value": "MicrosoftEdgeUpdate.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:2168 (not present in process list)": {
+      "type": "pid",
+      "value": "2168 (not present in process list)",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\Program": {
+      "type": "file_path",
+      "value": "C:\\Program",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:376": {
+      "type": "pid",
+      "value": "376",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    "image_name:Client.exe": {
+      "type": "image_name",
+      "value": "Client.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:7980": {
+      "type": "pid",
+      "value": "7980",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "file_path:C:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe": {
+      "type": "file_path",
+      "value": "C:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\WINDOWS\\SYSTEM32\\MSCOREE.DLL": {
+      "type": "file_path",
+      "value": "C:\\WINDOWS\\SYSTEM32\\MSCOREE.DLL",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:5568": {
+      "type": "pid",
+      "value": "5568",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "pid:560": {
+      "type": "pid",
+      "value": "560",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:5836": {
+      "type": "pid",
+      "value": "5836",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "pid:5608": {
+      "type": "pid",
+      "value": "5608",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:PING.EXE": {
+      "type": "image_name",
+      "value": "PING.EXE",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:5964": {
+      "type": "pid",
+      "value": "5964",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:svchost.exe": {
+      "type": "image_name",
+      "value": "svchost.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:896 (not present in process list)": {
+      "type": "pid",
+      "value": "896 (not present in process list)",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:6420": {
+      "type": "pid",
+      "value": "6420",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:taskhostw.exe": {
+      "type": "image_name",
+      "value": "taskhostw.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:2168": {
+      "type": "pid",
+      "value": "2168",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    }
+  },
+  "provenance": {
+    "generated_at": "2026-06-15T08:24:45Z",
+    "orchestrator": {
+      "model": "claude-haiku-4-5-20251001",
+      "prompt_sha256": "sha256:9cc0e62478a850ec4faa4bd855204679d9efaa46f8febfa4f40c51bca8b63280"
+    },
+    "report": {
+      "model": "claude-sonnet-4-6",
+      "prompt_sha256": "sha256:b14eb57fafd4a10b6927c7da1c2e73fd6c6569439dfb0d35a2a1531b73f70048"
+    }
+  },
+  "cost": {
+    "modules": {
+      "llm_calls": 0,
+      "tokens_in": 0,
+      "tokens_out": 0
+    },
+    "orchestrator": {
+      "llm_calls": 1,
+      "tokens_in": 1219,
+      "tokens_out": 9
+    },
+    "report": {
+      "llm_calls": 1,
+      "tokens_in": 13389,
+      "tokens_out": 4561
+    },
+    "total": {
+      "llm_calls": 2,
+      "tokens_in": 14608,
+      "tokens_out": 4570
+    }
+  }
+}

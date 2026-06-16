@@ -1,0 +1,425 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:59:19Z
+
+=== PID 10136 (Cortana.exe, ppid=740) ===
+Cmdline: "C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.exe" -ServerName:App.AppX2y379sjp88wjq1y80217mddj3fargf2y.mca
+
+--- pslist.txt ---
+L150: 10136	740	Cortana.exe	0xb78cf80860c0	23	-	1	False	2020-11-11 08:14:24.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L150: 10136	Cortana.exe	"C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.exe" -ServerName:App.AppX2y379sjp88wjq1y80217mddj3fargf2y.mca
+
+--- privileges.txt ---
+L5080: 10136	Cortana.exe	2	SeCreateTokenPrivilege		Create a token object
+L5081: 10136	Cortana.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L5082: 10136	Cortana.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L5083: 10136	Cortana.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L5084: 10136	Cortana.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5085: 10136	Cortana.exe	7	SeTcbPrivilege		Act as part of the operating system
+L5086: 10136	Cortana.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L5087: 10136	Cortana.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L5088: 10136	Cortana.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L5089: 10136	Cortana.exe	11	SeSystemProfilePrivilege		Profile system performance
+L5090: 10136	Cortana.exe	12	SeSystemtimePrivilege		Change the system time
+L5091: 10136	Cortana.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L5092: 10136	Cortana.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L5093: 10136	Cortana.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L5094: 10136	Cortana.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L5095: 10136	Cortana.exe	17	SeBackupPrivilege		Backup files and directories
+L5096: 10136	Cortana.exe	18	SeRestorePrivilege		Restore files and directories
+L5097: 10136	Cortana.exe	19	SeShutdownPrivilege		Shut down the system
+L5098: 10136	Cortana.exe	20	SeDebugPrivilege		Debug programs
+L5099: 10136	Cortana.exe	21	SeAuditPrivilege		Generate security audits
+L5100: 10136	Cortana.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L5101: 10136	Cortana.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5102: 10136	Cortana.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L5103: 10136	Cortana.exe	25	SeUndockPrivilege		Remove computer from docking station
+L5104: 10136	Cortana.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L5105: 10136	Cortana.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5106: 10136	Cortana.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L5107: 10136	Cortana.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L5108: 10136	Cortana.exe	30	SeCreateGlobalPrivilege		Create global objects
+L5109: 10136	Cortana.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5110: 10136	Cortana.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5111: 10136	Cortana.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L5112: 10136	Cortana.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L5113: 10136	Cortana.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L5114: 10136	Cortana.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L8393: 10136	Cortana.exe	0x7ff76f5e0000	0x9000	Cortana.exe	C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.exe	-1	2020-11-11 08:14:25.000000 UTC	Disabled
+L8394: 10136	Cortana.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:14:25.000000 UTC	Disabled
+L8395: 10136	Cortana.exe	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-11 08:14:25.000000 UTC	Disabled
+L8396: 10136	Cortana.exe	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-11 08:14:25.000000 UTC	Disabled
+L8397: 10136	Cortana.exe	0x7ffef7620000	0x1c67000	Cortana.dll	C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8398: 10136	Cortana.exe	0x7fff55650000	0x15d000	crypt32.dll	C:\WINDOWS\System32\crypt32.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8399: 10136	Cortana.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8400: 10136	Cortana.exe	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8401: 10136	Cortana.exe	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8402: 10136	Cortana.exe	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8403: 10136	Cortana.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8404: 10136	Cortana.exe	0x7fff557e0000	0x27000	BCrypt.dll	C:\WINDOWS\System32\BCrypt.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8405: 10136	Cortana.exe	0x7fff57800000	0x6b000	ws2_32.dll	C:\WINDOWS\System32\ws2_32.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8406: 10136	Cortana.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8407: 10136	Cortana.exe	0x7fff21d60000	0xccd000	SharedLibrary.dll	C:\Program Files\WindowsApps\microsoft.net.native.framework.2.2_2.2.27912.0_x64__8wekyb3d8bbwe\SharedLibrary.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8408: 10136	Cortana.exe	0x7fff56800000	0x12a000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8409: 10136	Cortana.exe	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8410: 10136	Cortana.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8411: 10136	Cortana.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8412: 10136	Cortana.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8413: 10136	Cortana.exe	0x7fff57540000	0x1a0000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8414: 10136	Cortana.exe	0x7fff55f80000	0xcd000	OleAut32.dll	C:\WINDOWS\System32\OleAut32.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8415: 10136	Cortana.exe	0x7fff55ed0000	0x8000	Normaliz.dll	C:\WINDOWS\System32\Normaliz.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8416: 10136	Cortana.exe	0x7fff22a30000	0x86000	mrt100_app.dll	C:\Program Files\WindowsApps\microsoft.net.native.runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe\mrt100_app.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8417: 10136	Cortana.exe	0x7fff54a60000	0x27000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8418: 10136	Cortana.exe	0x7fff54ea0000	0x3c000	sspicli.dll	C:\WINDOWS\SYSTEM32\sspicli.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8419: 10136	Cortana.exe	0x7fff54400000	0x3b000	iphlpapi.dll	C:\WINDOWS\SYSTEM32\iphlpapi.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8420: 10136	Cortana.exe	0x7fff523a0000	0x156000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8421: 10136	Cortana.exe	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8422: 10136	Cortana.exe	0x7fff20040000	0x120000	e_sqlite3.dll	C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\e_sqlite3.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8423: 10136	Cortana.exe	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8424: 10136	Cortana.exe	0x7ffef7600000	0x12000	clrcompression.dll	C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\clrcompression.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8425: 10136	Cortana.exe	0x7fff2a6d0000	0x19000	VCRUNTIME140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_APP.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8426: 10136	Cortana.exe	0x7fff468c0000	0x2b0000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8427: 10136	Cortana.exe	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8428: 10136	Cortana.exe	0x7fff540e0000	0xa000	DPAPI.DLL	C:\WINDOWS\SYSTEM32\DPAPI.DLL	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8429: 10136	Cortana.exe	0x7fff21d40000	0x9000	mrt100.dll	C:\WINDOWS\SYSTEM32\mrt100.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8430: 10136	Cortana.exe	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8431: 10136	Cortana.exe	0x7fff52e20000	0x2a000	rmclient.dll	C:\Windows\System32\rmclient.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8432: 10136	Cortana.exe	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8433: 10136	Cortana.exe	0x7fff54a20000	0x3b000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2020-11-11 08:14:25.000000 UTC	Disabled
+L8434: 10136	Cortana.exe	0x7fff4eb40000	0x208000	twinapi.appcore.dll	C:\WINDOWS\SYSTEM32\twinapi.appcore.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8435: 10136	Cortana.exe	0x7fff455d0000	0x10c1000	Windows.UI.Xaml.dll	C:\Windows\System32\Windows.UI.Xaml.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8436: 10136	Cortana.exe	0x7fff52500000	0xf2000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2020-11-11 08:14:26.000000 UTC	Disabled
+L8437: 10136	Cortana.exe	0x7fff47340000	0x5b000	Bcp47Langs.dll	C:\WINDOWS\SYSTEM32\Bcp47Langs.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8438: 10136	Cortana.exe	0x7fff51cd0000	0x1e5000	dcomp.dll	C:\WINDOWS\SYSTEM32\dcomp.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8439: 10136	Cortana.exe	0x7fff49ad0000	0x11000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8440: 10136	Cortana.exe	0x7fff470b0000	0x14c000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8441: 10136	Cortana.exe	0x7fff47000000	0xa3000	WindowManagementAPI.dll	C:\WINDOWS\SYSTEM32\WindowManagementAPI.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8442: 10136	Cortana.exe	0x7fff46da0000	0xfc000	TextInputFramework.dll	C:\WINDOWS\SYSTEM32\TextInputFramework.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8443: 10136	Cortana.exe	0x7fff46ea0000	0x152000	InputHost.dll	C:\WINDOWS\SYSTEM32\InputHost.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8444: 10136	Cortana.exe	0x7fff52600000	0x35e000	CoreUIComponents.dll	C:\WINDOWS\SYSTEM32\CoreUIComponents.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8445: 10136	Cortana.exe	0x7fff508e0000	0xf7000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8446: 10136	Cortana.exe	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8447: 10136	Cortana.exe	0x7fff43ed0000	0x795000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8448: 10136	Cortana.exe	0x7fff52a60000	0x9e000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8449: 10136	Cortana.exe	0x7fff53940000	0xf3000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8450: 10136	Cortana.exe	0x7fff514a0000	0x264000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8451: 10136	Cortana.exe	0x7fff41730000	0x1447000	igd10iumd64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8452: 10136	Cortana.exe	0x7fff3f820000	0x1f01000	igc64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8453: 10136	Cortana.exe	0x7fff3f7e0000	0x3b000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8454: 10136	Cortana.exe	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8455: 10136	Cortana.exe	0x7fff54ee0000	0x2e000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8456: 10136	Cortana.exe	0x7fff53d70000	0x29000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8457: 10136	Cortana.exe	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8458: 10136	Cortana.exe	0x7fff4dc70000	0xe7000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8459: 10136	Cortana.exe	0x7fff51710000	0x5c0000	d2d1.dll	C:\WINDOWS\SYSTEM32\d2d1.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8460: 10136	Cortana.exe	0x7fff261e0000	0x61000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8461: 10136	Cortana.exe	0x7fff42d30000	0x27f000	dwrite.dll	C:\WINDOWS\SYSTEM32\dwrite.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8462: 10136	Cortana.exe	0x7fff45050000	0xac000	TextShaping.dll	C:\WINDOWS\SYSTEM32\TextShaping.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8463: 10136	Cortana.exe	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\system32\windows.storage.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8464: 10136	Cortana.exe	0x7fff549f0000	0x2c000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8465: 10136	Cortana.exe	0x7fff55910000	0x55000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8466: 10136	Cortana.exe	0x7fff47200000	0xf4000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8467: 10136	Cortana.exe	0x7fff30ed0000	0x40000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8468: 10136	Cortana.exe	0x7fff48500000	0x2d000	bcp47mrm.dll	C:\WINDOWS\SYSTEM32\bcp47mrm.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8469: 10136	Cortana.exe	0x7fff4ccc0000	0x59000	execmodelclient.dll	C:\Windows\System32\execmodelclient.dll	6	2020-11-11 08:14:26.000000 UTC	Disabled
+L8470: 10136	Cortana.exe	0x7ffeed9d0000	0x4c6000	Microsoft.UI.Xaml.dll	C:\Program Files\WindowsApps\Microsoft.UI.Xaml.2.4_2.42007.9001.0_x64__8wekyb3d8bbwe\Microsoft.UI.Xaml.dll	6	2020-11-11 08:14:27.000000 UTC	Disabled
+L8471: 10136	Cortana.exe	0x7fff1eac0000	0x8d000	MSVCP140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\MSVCP140_APP.dll	6	2020-11-11 08:14:27.000000 UTC	Disabled
+L8472: 10136	Cortana.exe	0x7fff1ea50000	0xc000	VCRUNTIME140_1_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_1_APP.dll	6	2020-11-11 08:14:27.000000 UTC	Disabled
+L8473: 10136	Cortana.exe	0x7fff576e0000	0x115000	msctf.dll	C:\WINDOWS\System32\msctf.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8474: 10136	Cortana.exe	0x7ffeeb330000	0x1c1000	Microsoft.IoT.Cortana.dll	C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Microsoft.IoT.Cortana.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8475: 10136	Cortana.exe	0x7fff1ea60000	0x51000	vccorlib140_app.DLL	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.DLL	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8476: 10136	Cortana.exe	0x7fff4c780000	0x85000	MMDevAPI.DLL	C:\WINDOWS\SYSTEM32\MMDevAPI.DLL	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8477: 10136	Cortana.exe	0x7ffeeb070000	0x18c000	Microsoft.Applications.Telemetry.Windows.native.dll	C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Microsoft.Applications.Telemetry.Windows.native.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8478: 10136	Cortana.exe	0x7fff54dc0000	0x2c000	DEVOBJ.dll	C:\WINDOWS\SYSTEM32\DEVOBJ.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8479: 10136	Cortana.exe	0x7fff2fa70000	0x53000	biwinrt.dll	C:\Windows\System32\biwinrt.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8480: 10136	Cortana.exe	0x7fff3e650000	0x17a000	Windows.Web.Http.dll	C:\Windows\System32\Windows.Web.Http.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8481: 10136	Cortana.exe	0x7fff3c6c0000	0x3b000	rometadata.dll	C:\WINDOWS\SYSTEM32\rometadata.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8482: 10136	Cortana.exe	0x7fff54440000	0xcb000	DNSAPI.dll	C:\WINDOWS\SYSTEM32\DNSAPI.dll	-1	2020-11-11 08:14:28.000000 UTC	Disabled
+L8483: 10136	Cortana.exe	0x7fff57450000	0x8000	NSI.dll	C:\WINDOWS\System32\NSI.dll	-1	2020-11-11 08:14:28.000000 UTC	Disabled
+L8484: 10136	Cortana.exe	0x7fff4ae80000	0x17000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	-1	2020-11-11 08:14:28.000000 UTC	Disabled
+L8485: 10136	Cortana.exe	0x7fff4b730000	0x1d000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8486: 10136	Cortana.exe	0x7fff32c70000	0xe0000	AppContracts.dll	C:\Windows\System32\AppContracts.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8487: 10136	Cortana.exe	0x7fff47960000	0x1e000	Windows.Shell.ServiceHostBuilder.dll	C:\Windows\System32\Windows.Shell.ServiceHostBuilder.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8488: 10136	Cortana.exe	0x7fff4fe90000	0xb000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8489: 10136	Cortana.exe	0x7fff42b80000	0x1a8000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8490: 10136	Cortana.exe	0x7ffeea040000	0x20000	CortanaApp.WinRT.dll	C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\CortanaApp.WinRT.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8491: 10136	Cortana.exe	0x7fff286b0000	0x207000	windowsudk.shellcommon.dll	C:\WINDOWS\system32\windowsudk.shellcommon.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8492: 10136	Cortana.exe	0x7fff28630000	0x80000	DictationManager.dll	C:\WINDOWS\SYSTEM32\DictationManager.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8493: 10136	Cortana.exe	0x7ffee9e70000	0x1ca000	Windows.Media.Speech.dll	C:\Windows\System32\Windows.Media.Speech.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8494: 10136	Cortana.exe	0x7fff54140000	0x8a000	msvcp110_win.dll	C:\WINDOWS\SYSTEM32\msvcp110_win.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8495: 10136	Cortana.exe	0x7fff3d590000	0x4f2000	sapi_onecore.dll	C:\WINDOWS\System32\Speech_OneCore\Common\sapi_onecore.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8496: 10136	Cortana.exe	0x7fff4c810000	0x181000	AudioSes.DLL	C:\WINDOWS\SYSTEM32\AudioSes.DLL	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8497: 10136	Cortana.exe	0x7fff54b90000	0x4b000	POWRPROF.dll	C:\WINDOWS\SYSTEM32\POWRPROF.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8498: 10136	Cortana.exe	0x7fff54940000	0x18000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8499: 10136	Cortana.exe	0x7fff43100000	0x26000	winmmbase.dll	C:\WINDOWS\SYSTEM32\winmmbase.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8500: 10136	Cortana.exe	0x7fff54a90000	0x12000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8501: 10136	Cortana.exe	0x7fff4fea0000	0x100000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2020-11-11 08:14:28.000000 UTC	Disabled
+L8502: 10136	Cortana.exe	0x7fff3c490000	0x22e000	icu.dll	C:\WINDOWS\SYSTEM32\icu.dll	6	2020-11-11 08:14:29.000000 UTC	Disabled
+L8503: 10136	Cortana.exe	0x7fff4a170000	0x36000	XmlLite.dll	C:\WINDOWS\SYSTEM32\XmlLite.dll	6	2020-11-11 08:14:29.000000 UTC	Disabled
+L8504: 10136	Cortana.exe	0x7fff1dd00000	0x235000	Windows.ApplicationModel.Store.dll	C:\Windows\System32\Windows.ApplicationModel.Store.dll	6	2020-11-11 08:14:29.000000 UTC	Disabled
+L8505: 10136	Cortana.exe	0x7fff44880000	0x29000	Cabinet.dll	C:\WINDOWS\SYSTEM32\Cabinet.dll	6	2020-11-11 08:14:29.000000 UTC	Disabled
+L8506: 10136	Cortana.exe	0x7fff48b70000	0x153000	webservices.dll	C:\WINDOWS\SYSTEM32\webservices.dll	6	2020-11-11 08:14:29.000000 UTC	Disabled
+L8507: 10136	Cortana.exe	0x7fff3ad00000	0x22000	Windows.ApplicationModel.Background.SystemEventsBroker.dll	C:\Windows\System32\Windows.ApplicationModel.Background.SystemEventsBroker.dll	6	2020-11-11 08:14:29.000000 UTC	Disabled
+L8508: 10136	Cortana.exe	0x7fff3a730000	0xe5000	FlightSettings.dll	C:\Windows\System32\FlightSettings.dll	6	2020-11-11 08:14:30.000000 UTC	Disabled
+L8509: 10136	Cortana.exe	0x7fff35b00000	0xc3000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2020-11-11 08:14:30.000000 UTC	Disabled
+L8510: 10136	Cortana.exe	0x7fff35ab0000	0x48000	wosc.dll	C:\Windows\System32\wosc.dll	6	2020-11-11 08:14:30.000000 UTC	Disabled
+L8511: 10136	Cortana.exe	0x7fff35950000	0xb9000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2020-11-11 08:14:30.000000 UTC	Disabled
+L8512: 10136	Cortana.exe	0x7fff49f20000	0x7e000	Windows.Media.Devices.dll	C:\Windows\System32\Windows.Media.Devices.dll	6	2020-11-11 08:14:30.000000 UTC	Disabled
+
+--- pstree.txt ---
+L101: *** 10136	740	Cortana.exe	0xb78cf80860c0	23	-	1	False	2020-11-11 08:14:24.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.exe	"C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.exe" -ServerName:App.AppX2y379sjp88wjq1y80217mddj3fargf2y.mca	C:\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.exe
+
+--- psscan.txt ---
+L41: 10136	740	Cortana.exe	0xb78cf80860c0	23	-	1	False	2020-11-11 08:14:24.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L193: 0xb78d0963c010	TCPv4	192.168.1.5	49986	52.167.249.196	443	CLOSED	10136	Cortana.exe	2020-11-11 08:14:53.000000 UTC
+
+--- ldrmodules.txt ---
+L8954: 10136	Cortana.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L8955: 10136	Cortana.exe	0x18ac2ff0000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L8956: 10136	Cortana.exe	0x18ac5c10000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L8957: 10136	Cortana.exe	0x18acbcf0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.19h1.dll
+L8958: 10136	Cortana.exe	0x18acbdb0000	False	False	False	\Windows\System32\netmsg.dll
+L8959: 10136	Cortana.exe	0x18acbda0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.Common.dll
+L8960: 10136	Cortana.exe	0x18acbdc0000	False	False	False	\Windows\System32\en-US\netmsg.dll.mui
+L8961: 10136	Cortana.exe	0x18acc770000	False	False	False	\Windows\System32\WinMetadata\Windows.Web.winmd
+L8962: 10136	Cortana.exe	0x18acc860000	False	False	False	\Windows\System32\WinMetadata\Windows.System.winmd
+L8963: 10136	Cortana.exe	0x18acc840000	False	False	False	\Windows\System32\WinMetadata\Windows.Services.winmd
+L8964: 10136	Cortana.exe	0x18acc8d0000	False	False	False	\Windows\System32\WinMetadata\Windows.Media.winmd
+L8965: 10136	Cortana.exe	0x18acc8a0000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
+L8966: 10136	Cortana.exe	0x18accc00000	False	False	False	\Windows\System32\WinMetadata\Windows.ApplicationModel.winmd
+L8967: 10136	Cortana.exe	0x18accd80000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L8968: 10136	Cortana.exe	0x18accd60000	False	False	False	\Windows\System32\en-US\dnsapi.dll.mui
+L8969: 10136	Cortana.exe	0x7fff2a6d0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_app.dll
+L8970: 10136	Cortana.exe	0x7ffef7620000	True	True	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.dll
+L8971: 10136	Cortana.exe	0x7ffeeb070000	True	True	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Microsoft.Applications.Telemetry.Windows.native.dll
+L8972: 10136	Cortana.exe	0x7ff76f5e0000	True	False	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.exe
+L8973: 10136	Cortana.exe	0x7ffeea040000	True	True	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\CortanaApp.WinRT.dll
+L8974: 10136	Cortana.exe	0x7ffed8cc0000	True	True	True	\Windows\System32\cdprt.dll
+L8975: 10136	Cortana.exe	0x7ffed77d0000	True	True	True	\Windows\System32\Windows.System.Profile.SystemId.dll
+L8976: 10136	Cortana.exe	0x7ffee9e70000	True	True	True	\Windows\System32\Windows.Media.Speech.dll
+L8977: 10136	Cortana.exe	0x7ffeea6a0000	True	True	True	\Windows\System32\windows.applicationmodel.conversationalagent.internal.proxystub.dll
+L8978: 10136	Cortana.exe	0x7ffeebe00000	True	True	True	\Windows\System32\Windows.ApplicationModel.ConversationalAgent.dll
+L8979: 10136	Cortana.exe	0x7ffeeb330000	True	True	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Microsoft.IoT.Cortana.dll
+L8980: 10136	Cortana.exe	0x7ffeeb2c0000	True	True	True	\Windows\System32\Windows.Management.Workplace.dll
+L8981: 10136	Cortana.exe	0x7ffeed9d0000	True	True	True	\Program Files\WindowsApps\Microsoft.UI.Xaml.2.4_2.42007.9001.0_x64__8wekyb3d8bbwe\Microsoft.UI.Xaml.dll
+L8982: 10136	Cortana.exe	0x7ffeebf10000	True	True	True	\Windows\System32\Windows.Media.MediaControl.dll
+L8983: 10136	Cortana.exe	0x7ffef7600000	True	True	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\clrcompression.dll
+L8984: 10136	Cortana.exe	0x7fff21d60000	True	True	True	\Program Files\WindowsApps\microsoft.net.native.framework.2.2_2.2.27912.0_x64__8wekyb3d8bbwe\SharedLibrary.dll
+L8985: 10136	Cortana.exe	0x7fff1ea60000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.dll
+L8986: 10136	Cortana.exe	0x7fff1dd00000	True	True	True	\Windows\System32\Windows.ApplicationModel.Store.dll
+L8987: 10136	Cortana.exe	0x7fff1c4c0000	True	True	True	\Windows\System32\certca.dll
+L8988: 10136	Cortana.exe	0x7fff1bde0000	True	True	True	\Windows\System32\Speech_OneCore\common\SpeechServiceWinRTApi.ProxyStub.dll
+L8989: 10136	Cortana.exe	0x7fff1c590000	True	True	True	\Windows\System32\CertEnroll.dll
+L8990: 10136	Cortana.exe	0x7fff1ea50000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_1_app.dll
+L8991: 10136	Cortana.exe	0x7fff20040000	True	True	True	\Program Files\WindowsApps\Microsoft.SurfaceHub_47.606.139.0_x64__8wekyb3d8bbwe\e_sqlite3.dll
+L8992: 10136	Cortana.exe	0x7fff1eac0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\msvcp140_app.dll
+L8993: 10136	Cortana.exe	0x7fff21d40000	True	True	True	\Windows\System32\mrt100.dll
+L8994: 10136	Cortana.exe	0x7fff261e0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L8995: 10136	Cortana.exe	0x7fff22a30000	True	True	True	\Program Files\WindowsApps\microsoft.net.native.runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe\mrt100_app.dll
+L8996: 10136	Cortana.exe	0x7fff286b0000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L8997: 10136	Cortana.exe	0x7fff28630000	True	True	True	\Windows\System32\DictationManager.dll
+L8998: 10136	Cortana.exe	0x7fff29ce0000	True	True	True	\Windows\System32\Clipc.dll
+L8999: 10136	Cortana.exe	0x7fff3ad00000	True	True	True	\Windows\System32\Windows.ApplicationModel.Background.SystemEventsBroker.dll
+L9000: 10136	Cortana.exe	0x7fff35950000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L9001: 10136	Cortana.exe	0x7fff32c70000	True	True	True	\Windows\System32\AppContracts.dll
+L9002: 10136	Cortana.exe	0x7fff30ed0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L9003: 10136	Cortana.exe	0x7fff2fa70000	True	True	True	\Windows\System32\biwinrt.dll
+L9004: 10136	Cortana.exe	0x7fff305c0000	True	True	True	\Windows\System32\wpnapps.dll
+L9005: 10136	Cortana.exe	0x7fff32730000	True	True	True	\Windows\System32\container.dll
+L9006: 10136	Cortana.exe	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L9007: 10136	Cortana.exe	0x7fff32780000	True	True	True	\Windows\System32\daxexec.dll
+L9008: 10136	Cortana.exe	0x7fff35560000	True	True	True	\Windows\System32\CryptoWinRT.dll
+L9009: 10136	Cortana.exe	0x7fff33110000	True	True	True	\Windows\System32\cdp.dll
+L9010: 10136	Cortana.exe	0x7fff35910000	True	True	True	\Windows\System32\updatepolicy.dll
+L9011: 10136	Cortana.exe	0x7fff356b0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L9012: 10136	Cortana.exe	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L9013: 10136	Cortana.exe	0x7fff35b00000	True	True	True	\Windows\System32\Windows.Web.dll
+L9014: 10136	Cortana.exe	0x7fff35ab0000	True	True	True	\Windows\System32\wosc.dll
+L9015: 10136	Cortana.exe	0x7fff35d40000	True	True	True	\Windows\System32\tokenbinding.dll
+L9016: 10136	Cortana.exe	0x7fff36bb0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L9017: 10136	Cortana.exe	0x7fff36530000	True	True	True	\Windows\System32\cryptnet.dll
+L9018: 10136	Cortana.exe	0x7fff3a730000	True	True	True	\Windows\System32\FlightSettings.dll
+L9019: 10136	Cortana.exe	0x7fff36eb0000	True	True	True	\Windows\System32\mlang.dll
+L9020: 10136	Cortana.exe	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L9021: 10136	Cortana.exe	0x7fff3c6c0000	True	True	True	\Windows\System32\rometadata.dll
+L9022: 10136	Cortana.exe	0x7fff3c490000	True	True	True	\Windows\System32\icu.dll
+L9023: 10136	Cortana.exe	0x7fff3e650000	True	True	True	\Windows\System32\Windows.Web.Http.dll
+L9024: 10136	Cortana.exe	0x7fff3d590000	True	True	True	\Windows\System32\Speech_OneCore\common\sapi_onecore.dll
+L9025: 10136	Cortana.exe	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L9026: 10136	Cortana.exe	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L9027: 10136	Cortana.exe	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L9028: 10136	Cortana.exe	0x7fff42b80000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L9029: 10136	Cortana.exe	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L9030: 10136	Cortana.exe	0x7fff43100000	True	True	True	\Windows\System32\winmmbase.dll
+L9031: 10136	Cortana.exe	0x7fff42fb0000	True	True	True	\Windows\System32\mskeyprotect.dll
+L9032: 10136	Cortana.exe	0x7fff436b0000	True	True	True	\Windows\System32\ncryptsslp.dll
+L9033: 10136	Cortana.exe	0x7fff44880000	True	True	True	\Windows\System32\cabinet.dll
+L9034: 10136	Cortana.exe	0x7fff446b0000	True	True	True	\Windows\System32\fltLib.dll
+L9035: 10136	Cortana.exe	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L9036: 10136	Cortana.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L9037: 10136	Cortana.exe	0x7fff4ae80000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L9038: 10136	Cortana.exe	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L9039: 10136	Cortana.exe	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L9040: 10136	Cortana.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L9041: 10136	Cortana.exe	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L9042: 10136	Cortana.exe	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L9043: 10136	Cortana.exe	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L9044: 10136	Cortana.exe	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L9045: 10136	Cortana.exe	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L9046: 10136	Cortana.exe	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L9047: 10136	Cortana.exe	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L9048: 10136	Cortana.exe	0x7fff47960000	True	True	True	\Windows\System32\Windows.Shell.ServiceHostBuilder.dll
+L9049: 10136	Cortana.exe	0x7fff48b70000	True	True	True	\Windows\System32\webservices.dll
+L9050: 10136	Cortana.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L9051: 10136	Cortana.exe	0x7fff49f20000	True	True	True	\Windows\System32\Windows.Media.Devices.dll
+L9052: 10136	Cortana.exe	0x7fff4a9f0000	True	True	True	\Windows\System32\dsreg.dll
+L9053: 10136	Cortana.exe	0x7fff4a400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L9054: 10136	Cortana.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L9055: 10136	Cortana.exe	0x7fff4c780000	True	True	True	\Windows\System32\MMDevAPI.dll
+L9056: 10136	Cortana.exe	0x7fff4bcc0000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L9057: 10136	Cortana.exe	0x7fff4b730000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L9058: 10136	Cortana.exe	0x7fff4ba50000	True	True	True	\Windows\System32\dsparse.dll
+L9059: 10136	Cortana.exe	0x7fff4c4a0000	True	True	True	\Windows\System32\rasadhlp.dll
+L9060: 10136	Cortana.exe	0x7fff4ccc0000	True	True	True	\Windows\System32\ExecModelClient.dll
+L9061: 10136	Cortana.exe	0x7fff4c810000	True	True	True	\Windows\System32\AudioSes.dll
+L9062: 10136	Cortana.exe	0x7fff4c9c0000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L9063: 10136	Cortana.exe	0x7fff4db70000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L9064: 10136	Cortana.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L9065: 10136	Cortana.exe	0x7fff4dc70000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L9066: 10136	Cortana.exe	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L9067: 10136	Cortana.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L9068: 10136	Cortana.exe	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L9069: 10136	Cortana.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L9070: 10136	Cortana.exe	0x7fff50480000	True	True	True	\Windows\System32\SystemEventsBrokerClient.dll
+L9071: 10136	Cortana.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L9072: 10136	Cortana.exe	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L9073: 10136	Cortana.exe	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+
+--- malware_ldrmodules.txt ---
+L8954: 10136	Cortana.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L8955: 10136	Cortana.exe	0x18ac2ff0000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L8956: 10136	Cortana.exe	0x18ac5c10000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L8957: 10136	Cortana.exe	0x18acbcf0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.19h1.dll
+L8958: 10136	Cortana.exe	0x18acbdb0000	False	False	False	\Windows\System32\netmsg.dll
+L8959: 10136	Cortana.exe	0x18acbda0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.Common.dll
+L8960: 10136	Cortana.exe	0x18acbdc0000	False	False	False	\Windows\System32\en-US\netmsg.dll.mui
+L8961: 10136	Cortana.exe	0x18acc770000	False	False	False	\Windows\System32\WinMetadata\Windows.Web.winmd
+L8962: 10136	Cortana.exe	0x18acc860000	False	False	False	\Windows\System32\WinMetadata\Windows.System.winmd
+L8963: 10136	Cortana.exe	0x18acc840000	False	False	False	\Windows\System32\WinMetadata\Windows.Services.winmd
+L8964: 10136	Cortana.exe	0x18acc8d0000	False	False	False	\Windows\System32\WinMetadata\Windows.Media.winmd
+L8965: 10136	Cortana.exe	0x18acc8a0000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
+L8966: 10136	Cortana.exe	0x18accc00000	False	False	False	\Windows\System32\WinMetadata\Windows.ApplicationModel.winmd
+L8967: 10136	Cortana.exe	0x18accd80000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L8968: 10136	Cortana.exe	0x18accd60000	False	False	False	\Windows\System32\en-US\dnsapi.dll.mui
+L8969: 10136	Cortana.exe	0x7fff2a6d0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_app.dll
+L8970: 10136	Cortana.exe	0x7ffef7620000	True	True	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.dll
+L8971: 10136	Cortana.exe	0x7ffeeb070000	True	True	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Microsoft.Applications.Telemetry.Windows.native.dll
+L8972: 10136	Cortana.exe	0x7ff76f5e0000	True	False	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Cortana.exe
+L8973: 10136	Cortana.exe	0x7ffeea040000	True	True	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\CortanaApp.WinRT.dll
+L8974: 10136	Cortana.exe	0x7ffed8cc0000	True	True	True	\Windows\System32\cdprt.dll
+L8975: 10136	Cortana.exe	0x7ffed77d0000	True	True	True	\Windows\System32\Windows.System.Profile.SystemId.dll
+L8976: 10136	Cortana.exe	0x7ffee9e70000	True	True	True	\Windows\System32\Windows.Media.Speech.dll
+L8977: 10136	Cortana.exe	0x7ffeea6a0000	True	True	True	\Windows\System32\windows.applicationmodel.conversationalagent.internal.proxystub.dll
+L8978: 10136	Cortana.exe	0x7ffeebe00000	True	True	True	\Windows\System32\Windows.ApplicationModel.ConversationalAgent.dll
+L8979: 10136	Cortana.exe	0x7ffeeb330000	True	True	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\Microsoft.IoT.Cortana.dll
+L8980: 10136	Cortana.exe	0x7ffeeb2c0000	True	True	True	\Windows\System32\Windows.Management.Workplace.dll
+L8981: 10136	Cortana.exe	0x7ffeed9d0000	True	True	True	\Program Files\WindowsApps\Microsoft.UI.Xaml.2.4_2.42007.9001.0_x64__8wekyb3d8bbwe\Microsoft.UI.Xaml.dll
+L8982: 10136	Cortana.exe	0x7ffeebf10000	True	True	True	\Windows\System32\Windows.Media.MediaControl.dll
+L8983: 10136	Cortana.exe	0x7ffef7600000	True	True	True	\Program Files\WindowsApps\Microsoft.549981C3F5F10_2.2010.22653.0_x64__8wekyb3d8bbwe\clrcompression.dll
+L8984: 10136	Cortana.exe	0x7fff21d60000	True	True	True	\Program Files\WindowsApps\microsoft.net.native.framework.2.2_2.2.27912.0_x64__8wekyb3d8bbwe\SharedLibrary.dll
+L8985: 10136	Cortana.exe	0x7fff1ea60000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.dll
+L8986: 10136	Cortana.exe	0x7fff1dd00000	True	True	True	\Windows\System32\Windows.ApplicationModel.Store.dll
+L8987: 10136	Cortana.exe	0x7fff1c4c0000	True	True	True	\Windows\System32\certca.dll
+L8988: 10136	Cortana.exe	0x7fff1bde0000	True	True	True	\Windows\System32\Speech_OneCore\common\SpeechServiceWinRTApi.ProxyStub.dll
+L8989: 10136	Cortana.exe	0x7fff1c590000	True	True	True	\Windows\System32\CertEnroll.dll
+L8990: 10136	Cortana.exe	0x7fff1ea50000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_1_app.dll
+L8991: 10136	Cortana.exe	0x7fff20040000	True	True	True	\Program Files\WindowsApps\Microsoft.SurfaceHub_47.606.139.0_x64__8wekyb3d8bbwe\e_sqlite3.dll
+L8992: 10136	Cortana.exe	0x7fff1eac0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\msvcp140_app.dll
+L8993: 10136	Cortana.exe	0x7fff21d40000	True	True	True	\Windows\System32\mrt100.dll
+L8994: 10136	Cortana.exe	0x7fff261e0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L8995: 10136	Cortana.exe	0x7fff22a30000	True	True	True	\Program Files\WindowsApps\microsoft.net.native.runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe\mrt100_app.dll
+L8996: 10136	Cortana.exe	0x7fff286b0000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L8997: 10136	Cortana.exe	0x7fff28630000	True	True	True	\Windows\System32\DictationManager.dll
+L8998: 10136	Cortana.exe	0x7fff29ce0000	True	True	True	\Windows\System32\Clipc.dll
+L8999: 10136	Cortana.exe	0x7fff3ad00000	True	True	True	\Windows\System32\Windows.ApplicationModel.Background.SystemEventsBroker.dll
+L9000: 10136	Cortana.exe	0x7fff35950000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L9001: 10136	Cortana.exe	0x7fff32c70000	True	True	True	\Windows\System32\AppContracts.dll
+L9002: 10136	Cortana.exe	0x7fff30ed0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L9003: 10136	Cortana.exe	0x7fff2fa70000	True	True	True	\Windows\System32\biwinrt.dll
+L9004: 10136	Cortana.exe	0x7fff305c0000	True	True	True	\Windows\System32\wpnapps.dll
+L9005: 10136	Cortana.exe	0x7fff32730000	True	True	True	\Windows\System32\container.dll
+L9006: 10136	Cortana.exe	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L9007: 10136	Cortana.exe	0x7fff32780000	True	True	True	\Windows\System32\daxexec.dll
+L9008: 10136	Cortana.exe	0x7fff35560000	True	True	True	\Windows\System32\CryptoWinRT.dll
+L9009: 10136	Cortana.exe	0x7fff33110000	True	True	True	\Windows\System32\cdp.dll
+L9010: 10136	Cortana.exe	0x7fff35910000	True	True	True	\Windows\System32\updatepolicy.dll
+L9011: 10136	Cortana.exe	0x7fff356b0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L9012: 10136	Cortana.exe	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L9013: 10136	Cortana.exe	0x7fff35b00000	True	True	True	\Windows\System32\Windows.Web.dll
+L9014: 10136	Cortana.exe	0x7fff35ab0000	True	True	True	\Windows\System32\wosc.dll
+L9015: 10136	Cortana.exe	0x7fff35d40000	True	True	True	\Windows\System32\tokenbinding.dll
+L9016: 10136	Cortana.exe	0x7fff36bb0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L9017: 10136	Cortana.exe	0x7fff36530000	True	True	True	\Windows\System32\cryptnet.dll
+L9018: 10136	Cortana.exe	0x7fff3a730000	True	True	True	\Windows\System32\FlightSettings.dll
+L9019: 10136	Cortana.exe	0x7fff36eb0000	True	True	True	\Windows\System32\mlang.dll
+L9020: 10136	Cortana.exe	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L9021: 10136	Cortana.exe	0x7fff3c6c0000	True	True	True	\Windows\System32\rometadata.dll
+L9022: 10136	Cortana.exe	0x7fff3c490000	True	True	True	\Windows\System32\icu.dll
+L9023: 10136	Cortana.exe	0x7fff3e650000	True	True	True	\Windows\System32\Windows.Web.Http.dll
+L9024: 10136	Cortana.exe	0x7fff3d590000	True	True	True	\Windows\System32\Speech_OneCore\common\sapi_onecore.dll
+L9025: 10136	Cortana.exe	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L9026: 10136	Cortana.exe	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L9027: 10136	Cortana.exe	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L9028: 10136	Cortana.exe	0x7fff42b80000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L9029: 10136	Cortana.exe	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L9030: 10136	Cortana.exe	0x7fff43100000	True	True	True	\Windows\System32\winmmbase.dll
+L9031: 10136	Cortana.exe	0x7fff42fb0000	True	True	True	\Windows\System32\mskeyprotect.dll
+L9032: 10136	Cortana.exe	0x7fff436b0000	True	True	True	\Windows\System32\ncryptsslp.dll
+L9033: 10136	Cortana.exe	0x7fff44880000	True	True	True	\Windows\System32\cabinet.dll
+L9034: 10136	Cortana.exe	0x7fff446b0000	True	True	True	\Windows\System32\fltLib.dll
+L9035: 10136	Cortana.exe	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L9036: 10136	Cortana.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L9037: 10136	Cortana.exe	0x7fff4ae80000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L9038: 10136	Cortana.exe	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L9039: 10136	Cortana.exe	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L9040: 10136	Cortana.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L9041: 10136	Cortana.exe	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L9042: 10136	Cortana.exe	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L9043: 10136	Cortana.exe	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L9044: 10136	Cortana.exe	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L9045: 10136	Cortana.exe	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L9046: 10136	Cortana.exe	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L9047: 10136	Cortana.exe	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L9048: 10136	Cortana.exe	0x7fff47960000	True	True	True	\Windows\System32\Windows.Shell.ServiceHostBuilder.dll
+L9049: 10136	Cortana.exe	0x7fff48b70000	True	True	True	\Windows\System32\webservices.dll
+L9050: 10136	Cortana.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L9051: 10136	Cortana.exe	0x7fff49f20000	True	True	True	\Windows\System32\Windows.Media.Devices.dll
+L9052: 10136	Cortana.exe	0x7fff4a9f0000	True	True	True	\Windows\System32\dsreg.dll
+L9053: 10136	Cortana.exe	0x7fff4a400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L9054: 10136	Cortana.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L9055: 10136	Cortana.exe	0x7fff4c780000	True	True	True	\Windows\System32\MMDevAPI.dll
+L9056: 10136	Cortana.exe	0x7fff4bcc0000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L9057: 10136	Cortana.exe	0x7fff4b730000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L9058: 10136	Cortana.exe	0x7fff4ba50000	True	True	True	\Windows\System32\dsparse.dll
+L9059: 10136	Cortana.exe	0x7fff4c4a0000	True	True	True	\Windows\System32\rasadhlp.dll
+L9060: 10136	Cortana.exe	0x7fff4ccc0000	True	True	True	\Windows\System32\ExecModelClient.dll
+L9061: 10136	Cortana.exe	0x7fff4c810000	True	True	True	\Windows\System32\AudioSes.dll
+L9062: 10136	Cortana.exe	0x7fff4c9c0000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L9063: 10136	Cortana.exe	0x7fff4db70000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L9064: 10136	Cortana.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L9065: 10136	Cortana.exe	0x7fff4dc70000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L9066: 10136	Cortana.exe	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L9067: 10136	Cortana.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L9068: 10136	Cortana.exe	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L9069: 10136	Cortana.exe	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L9070: 10136	Cortana.exe	0x7fff50480000	True	True	True	\Windows\System32\SystemEventsBrokerClient.dll
+L9071: 10136	Cortana.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L9072: 10136	Cortana.exe	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L9073: 10136	Cortana.exe	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+
+=== END OF PIVOT REPORT ===

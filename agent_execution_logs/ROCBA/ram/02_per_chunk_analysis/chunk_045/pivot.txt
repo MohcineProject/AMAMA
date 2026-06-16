@@ -1,0 +1,197 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:08:19Z
+
+=== PID 21432 (Microsoft.Photos.exe, ppid=740) ===
+Cmdline: "C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe" -ServerName:App.AppXzst44mncqdg84v7sv6p7yznqwssy6f7f.mca
+
+--- pslist.txt ---
+L1993: 21432	740	Microsoft.Phot	0xb78d056e0080	17	-	1	False	2020-11-15 17:59:04.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L1993: 21432	Microsoft.Phot	"C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe" -ServerName:App.AppXzst44mncqdg84v7sv6p7yznqwssy6f7f.mca
+
+--- privileges.txt ---
+L69585: 21432	Microsoft.Phot	2	SeCreateTokenPrivilege		Create a token object
+L69586: 21432	Microsoft.Phot	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L69587: 21432	Microsoft.Phot	4	SeLockMemoryPrivilege		Lock pages in memory
+L69588: 21432	Microsoft.Phot	5	SeIncreaseQuotaPrivilege		Increase quotas
+L69589: 21432	Microsoft.Phot	6	SeMachineAccountPrivilege		Add workstations to the domain
+L69590: 21432	Microsoft.Phot	7	SeTcbPrivilege		Act as part of the operating system
+L69591: 21432	Microsoft.Phot	8	SeSecurityPrivilege		Manage auditing and security log
+L69592: 21432	Microsoft.Phot	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L69593: 21432	Microsoft.Phot	10	SeLoadDriverPrivilege		Load and unload device drivers
+L69594: 21432	Microsoft.Phot	11	SeSystemProfilePrivilege		Profile system performance
+L69595: 21432	Microsoft.Phot	12	SeSystemtimePrivilege		Change the system time
+L69596: 21432	Microsoft.Phot	13	SeProfileSingleProcessPrivilege		Profile a single process
+L69597: 21432	Microsoft.Phot	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L69598: 21432	Microsoft.Phot	15	SeCreatePagefilePrivilege		Create a pagefile
+L69599: 21432	Microsoft.Phot	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L69600: 21432	Microsoft.Phot	17	SeBackupPrivilege		Backup files and directories
+L69601: 21432	Microsoft.Phot	18	SeRestorePrivilege		Restore files and directories
+L69602: 21432	Microsoft.Phot	19	SeShutdownPrivilege		Shut down the system
+L69603: 21432	Microsoft.Phot	20	SeDebugPrivilege		Debug programs
+L69604: 21432	Microsoft.Phot	21	SeAuditPrivilege		Generate security audits
+L69605: 21432	Microsoft.Phot	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L69606: 21432	Microsoft.Phot	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L69607: 21432	Microsoft.Phot	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L69608: 21432	Microsoft.Phot	25	SeUndockPrivilege		Remove computer from docking station
+L69609: 21432	Microsoft.Phot	26	SeSyncAgentPrivilege		Synch directory service data
+L69610: 21432	Microsoft.Phot	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L69611: 21432	Microsoft.Phot	28	SeManageVolumePrivilege		Manage the files on a volume
+L69612: 21432	Microsoft.Phot	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L69613: 21432	Microsoft.Phot	30	SeCreateGlobalPrivilege		Create global objects
+L69614: 21432	Microsoft.Phot	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L69615: 21432	Microsoft.Phot	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L69616: 21432	Microsoft.Phot	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L69617: 21432	Microsoft.Phot	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L69618: 21432	Microsoft.Phot	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L69619: 21432	Microsoft.Phot	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L11583: 21432	Microsoft.Phot	0x7ff77f260000	0x7a000	Microsoft.Photos.exe	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11584: 21432	Microsoft.Phot	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11585: 21432	Microsoft.Phot	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11586: 21432	Microsoft.Phot	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11587: 21432	Microsoft.Phot	0x7fff529b0000	0x90000	apphelp.dll	C:\WINDOWS\SYSTEM32\apphelp.dll	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11588: 21432	Microsoft.Phot	0x7fff12510000	0x4def000	Microsoft.Photos.dll	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11589: 21432	Microsoft.Phot	0x7fff55650000	0x15d000	crypt32.dll	C:\WINDOWS\System32\crypt32.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11590: 21432	Microsoft.Phot	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11591: 21432	Microsoft.Phot	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11592: 21432	Microsoft.Phot	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11593: 21432	Microsoft.Phot	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11594: 21432	Microsoft.Phot	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11595: 21432	Microsoft.Phot	0x7fff557e0000	0x27000	BCrypt.dll	C:\WINDOWS\System32\BCrypt.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11596: 21432	Microsoft.Phot	0x7fff57800000	0x6b000	ws2_32.dll	C:\WINDOWS\System32\ws2_32.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11597: 21432	Microsoft.Phot	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11598: 21432	Microsoft.Phot	0x7fff21d60000	0xccd000	SharedLibrary.dll	C:\Program Files\WindowsApps\microsoft.net.native.framework.2.2_2.2.27912.0_x64__8wekyb3d8bbwe\SharedLibrary.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11599: 21432	Microsoft.Phot	0x7fff22a30000	0x86000	mrt100_app.dll	C:\Program Files\WindowsApps\microsoft.net.native.runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe\mrt100_app.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11600: 21432	Microsoft.Phot	0x7fff218e0000	0x28c000	UnityEngineDelegates.dll	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\UnityEngineDelegates.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11601: 21432	Microsoft.Phot	0x7fff54a60000	0x27000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11602: 21432	Microsoft.Phot	0x7fff54400000	0x3b000	iphlpapi.dll	C:\WINDOWS\SYSTEM32\iphlpapi.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11603: 21432	Microsoft.Phot	0x7fff54ea0000	0x3c000	sspicli.dll	C:\WINDOWS\SYSTEM32\sspicli.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11604: 21432	Microsoft.Phot	0x7fff523a0000	0x156000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11605: 21432	Microsoft.Phot	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11606: 21432	Microsoft.Phot	0x7fff1c130000	0x38d000	MediaEngineCSWrapper.dll	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\MediaEngineCSWrapper.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11607: 21432	Microsoft.Phot	0x7fff56800000	0x12a000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11608: 21432	Microsoft.Phot	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11609: 21432	Microsoft.Phot	0x7fff4c4e0000	0x13000	clrcompression.dll	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\clrcompression.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11610: 21432	Microsoft.Phot	0x7fff2a6d0000	0x19000	VCRUNTIME140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_APP.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11611: 21432	Microsoft.Phot	0x7fff4fb10000	0x7000	RenderingPlugin.dll	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\RenderingPlugin.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11612: 21432	Microsoft.Phot	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11613: 21432	Microsoft.Phot	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11614: 21432	Microsoft.Phot	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11615: 21432	Microsoft.Phot	0x7fff57540000	0x1a0000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11616: 21432	Microsoft.Phot	0x7fff1eac0000	0x8d000	MSVCP140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\MSVCP140_APP.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11617: 21432	Microsoft.Phot	0x7fff1ea50000	0xc000	VCRUNTIME140_1_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_1_APP.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11618: 21432	Microsoft.Phot	0x7fff55f80000	0xcd000	OleAut32.dll	C:\WINDOWS\System32\OleAut32.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11619: 21432	Microsoft.Phot	0x7fff55ed0000	0x8000	Normaliz.dll	C:\WINDOWS\System32\Normaliz.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11620: 21432	Microsoft.Phot	0x7fff540e0000	0xa000	DPAPI.DLL	C:\WINDOWS\SYSTEM32\DPAPI.DLL	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11621: 21432	Microsoft.Phot	0x7fff1ea60000	0x51000	vccorlib140_app.DLL	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.DLL	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11622: 21432	Microsoft.Phot	0x7fff21d40000	0x9000	mrt100.dll	C:\WINDOWS\SYSTEM32\mrt100.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11623: 21432	Microsoft.Phot	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11624: 21432	Microsoft.Phot	0x7fff52e20000	0x2a000	rmclient.dll	C:\Windows\System32\rmclient.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11625: 21432	Microsoft.Phot	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11626: 21432	Microsoft.Phot	0x7fff54a20000	0x3b000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11627: 21432	Microsoft.Phot	0x7fff4eb40000	0x208000	twinapi.appcore.dll	C:\WINDOWS\SYSTEM32\twinapi.appcore.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11628: 21432	Microsoft.Phot	0x7fff455d0000	0x10c1000	Windows.UI.Xaml.dll	C:\Windows\System32\Windows.UI.Xaml.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11629: 21432	Microsoft.Phot	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11630: 21432	Microsoft.Phot	0x7fff47340000	0x5b000	Bcp47Langs.dll	C:\WINDOWS\SYSTEM32\Bcp47Langs.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11631: 21432	Microsoft.Phot	0x7fff468c0000	0x2b0000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11632: 21432	Microsoft.Phot	0x7fff52500000	0xf2000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11633: 21432	Microsoft.Phot	0x7fff51cd0000	0x1e5000	dcomp.dll	C:\WINDOWS\SYSTEM32\dcomp.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11634: 21432	Microsoft.Phot	0x7fff49ad0000	0x11000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11635: 21432	Microsoft.Phot	0x7fff470b0000	0x14c000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11636: 21432	Microsoft.Phot	0x7fff47000000	0xa3000	WindowManagementAPI.dll	C:\WINDOWS\SYSTEM32\WindowManagementAPI.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11637: 21432	Microsoft.Phot	0x7fff46ea0000	0x152000	InputHost.dll	C:\WINDOWS\SYSTEM32\InputHost.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11638: 21432	Microsoft.Phot	0x7fff46da0000	0xfc000	TextInputFramework.dll	C:\WINDOWS\SYSTEM32\TextInputFramework.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11639: 21432	Microsoft.Phot	0x7fff52600000	0x35e000	CoreUIComponents.dll	C:\WINDOWS\SYSTEM32\CoreUIComponents.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11640: 21432	Microsoft.Phot	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11641: 21432	Microsoft.Phot	0x7fff508e0000	0xf7000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11642: 21432	Microsoft.Phot	0x7fff43ed0000	0x795000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11643: 21432	Microsoft.Phot	0x7fff52a60000	0x9e000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11644: 21432	Microsoft.Phot	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11645: 21432	Microsoft.Phot	0x7fff53940000	0xf3000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11646: 21432	Microsoft.Phot	0x7fff47200000	0xf4000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11647: 21432	Microsoft.Phot	0x7fff30ed0000	0x40000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11648: 21432	Microsoft.Phot	0x7fff514a0000	0x264000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11649: 21432	Microsoft.Phot	0x7fff41730000	0x1447000	igd10iumd64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11650: 21432	Microsoft.Phot	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11651: 21432	Microsoft.Phot	0x7fff3f820000	0x1f01000	igc64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11652: 21432	Microsoft.Phot	0x7fff48500000	0x2d000	bcp47mrm.dll	C:\WINDOWS\SYSTEM32\bcp47mrm.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11653: 21432	Microsoft.Phot	0x7fff3f7e0000	0x3b000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11654: 21432	Microsoft.Phot	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11655: 21432	Microsoft.Phot	0x7fff4dc70000	0xe7000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11656: 21432	Microsoft.Phot	0x7fff36bb0000	0x146000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11657: 21432	Microsoft.Phot	0x7fff51710000	0x5c0000	d2d1.dll	C:\WINDOWS\SYSTEM32\d2d1.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11658: 21432	Microsoft.Phot	0x7fff42d30000	0x27f000	dwrite.dll	C:\WINDOWS\SYSTEM32\dwrite.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11659: 21432	Microsoft.Phot	0x7fff45050000	0xac000	TextShaping.dll	C:\WINDOWS\SYSTEM32\TextShaping.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11660: 21432	Microsoft.Phot	0x7fff184f0000	0xa01000	PhotosApp.Windows.dll	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\PhotosApp.Windows.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11661: 21432	Microsoft.Phot	0x7fff1ea00000	0x48000	CONCRT140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\CONCRT140_APP.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11662: 21432	Microsoft.Phot	0x7fff2d8e0000	0x23e000	AppCore.Windows.dll	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\AppCore.Windows.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11663: 21432	Microsoft.Phot	0x7fff1df40000	0x16000	Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	C:\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11664: 21432	Microsoft.Phot	0x7fff261e0000	0x61000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11665: 21432	Microsoft.Phot	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\system32\windows.storage.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11666: 21432	Microsoft.Phot	0x7fff549f0000	0x2c000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11667: 21432	Microsoft.Phot	0x7fff55910000	0x55000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11668: 21432	Microsoft.Phot	0x7fff38630000	0xfc000	RuntimeConfiguration.dll	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\RuntimeConfiguration.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11669: 21432	Microsoft.Phot	0x7fff3e650000	0x17a000	Windows.Web.Http.dll	C:\Windows\System32\Windows.Web.Http.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11670: 21432	Microsoft.Phot	0x7fff4dd60000	0x723000	Windows.Media.dll	C:\Windows\System32\Windows.Media.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11671: 21432	Microsoft.Phot	0x7fff4edb0000	0x1bb000	MFPlat.DLL	C:\WINDOWS\SYSTEM32\MFPlat.DLL	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11672: 21432	Microsoft.Phot	0x7fff4ed60000	0x30000	RTWorkQ.DLL	C:\WINDOWS\SYSTEM32\RTWorkQ.DLL	-1	2020-11-15 17:59:04.000000 UTC	Disabled
+L11673: 21432	Microsoft.Phot	0x7fff4c020000	0x1f000	AppSettingsCppCX.dll	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\AppSettingsCppCX.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11674: 21432	Microsoft.Phot	0x7fff17d80000	0x3af000	Microsoft.UI.Xaml.dll	C:\Program Files\WindowsApps\Microsoft.UI.Xaml.2.3_2.32002.13001.0_x64__8wekyb3d8bbwe\Microsoft.UI.Xaml.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11675: 21432	Microsoft.Phot	0x7fff35100000	0x159000	Microsoft.RichMedia.Ink.Controls.dll	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.RichMedia.Ink.Controls.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11676: 21432	Microsoft.Phot	0x7fff39ef0000	0xdb000	OnlineMediaComponent.dll	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\OnlineMediaComponent.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11677: 21432	Microsoft.Phot	0x7fff42b80000	0x1a8000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11678: 21432	Microsoft.Phot	0x7fff576e0000	0x115000	msctf.dll	C:\WINDOWS\System32\msctf.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11679: 21432	Microsoft.Phot	0x7fff2fa70000	0x53000	biwinrt.dll	C:\Windows\System32\biwinrt.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11680: 21432	Microsoft.Phot	0x7fff54ee0000	0x2e000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11681: 21432	Microsoft.Phot	0x7fff53d70000	0x29000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2020-11-15 17:59:04.000000 UTC	Disabled
+L11682: 21432	Microsoft.Phot	0x7fff36630000	0x14000	threadpoolwinrt.dll	C:\Windows\System32\threadpoolwinrt.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11683: 21432	Microsoft.Phot	0x7fff4bf10000	0x31000	WinRtTracing.dll	C:\Windows\System32\WinRtTracing.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11684: 21432	Microsoft.Phot	0x7fff31cc0000	0x4da000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	-1	2020-11-15 18:43:19.000000 UTC	Disabled
+L11685: 21432	Microsoft.Phot	0x7fff35d40000	0x13000	TOKENBINDING.dll	C:\WINDOWS\SYSTEM32\TOKENBINDING.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11686: 21432	Microsoft.Phot	0x7fff356b0000	0x17000	ondemandconnroutehelper.dll	C:\WINDOWS\SYSTEM32\ondemandconnroutehelper.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11687: 21432	Microsoft.Phot	0x7fff4fea0000	0x100000	winhttp.dll	C:\WINDOWS\SYSTEM32\winhttp.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11688: 21432	Microsoft.Phot	0x7fff54710000	0x6a000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11689: 21432	Microsoft.Phot	0x7fff53c90000	0xa0000	firewallapi.dll	C:\WINDOWS\SYSTEM32\firewallapi.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11690: 21432	Microsoft.Phot	0x7fff54440000	0xcb000	DNSAPI.dll	C:\WINDOWS\SYSTEM32\DNSAPI.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11691: 21432	Microsoft.Phot	0x7fff57450000	0x8000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11692: 21432	Microsoft.Phot	0x7fff53c60000	0x2f000	fwbase.dll	C:\WINDOWS\SYSTEM32\fwbase.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11693: 21432	Microsoft.Phot	0x7fff4fe90000	0xb000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11694: 21432	Microsoft.Phot	0x7fff54be0000	0x12000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11695: 21432	Microsoft.Phot	0x7fff55570000	0x60000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11696: 21432	Microsoft.Phot	0x7fff54940000	0x18000	CRYPTSP.dll	C:\WINDOWS\SYSTEM32\CRYPTSP.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11697: 21432	Microsoft.Phot	0x7fff540a0000	0x34000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11698: 21432	Microsoft.Phot	0x7fff54960000	0xc000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11699: 21432	Microsoft.Phot	0x7fff4c4a0000	0xa000	rasadhlp.dll	C:\Windows\System32\rasadhlp.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11700: 21432	Microsoft.Phot	0x7fff4a400000	0x7f000	fwpuclnt.dll	C:\WINDOWS\System32\fwpuclnt.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11701: 21432	Microsoft.Phot	0x7fff53fc0000	0x91000	schannel.DLL	C:\WINDOWS\system32\schannel.DLL	6	2020-11-15 18:43:19.000000 UTC	Disabled
+L11702: 21432	Microsoft.Phot	0x7fff42fb0000	0x15000	mskeyprotect.dll	C:\WINDOWS\SYSTEM32\mskeyprotect.dll	6	2020-11-15 18:43:19.000000 UTC	Disabled
+
+--- pstree.txt ---
+L121: *** 21432	740	Microsoft.Phot	0xb78d056e0080	17	-	1	False	2020-11-15 17:59:04.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe	"C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe" -ServerName:App.AppXzst44mncqdg84v7sv6p7yznqwssy6f7f.mca	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe
+
+--- psscan.txt ---
+L472: 21432	740	Microsoft.Phot	0xb78d056e0080	17	-	1	False	2020-11-15 17:59:04.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L352: 0xb78d0dea6b80	TCPv4	192.168.1.5	61130	52.167.249.196	443	CLOSED	21432	Microsoft.Phot	2020-11-15 22:43:19.000000 UTC
+
+--- ldrmodules.txt ---
+L12299: 21432	Microsoft.Phot	0x7ff77f260000	True	False	True	\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe
+L12300: 21432	Microsoft.Phot	0x7fff540a0000	True	True	True	\Windows\System32\rsaenh.dll
+L12301: 21432	Microsoft.Phot	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L12299: 21432	Microsoft.Phot	0x7ff77f260000	True	False	True	\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe
+L12300: 21432	Microsoft.Phot	0x7fff540a0000	True	True	True	\Windows\System32\rsaenh.dll
+L12301: 21432	Microsoft.Phot	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L1993: 21432	Microsoft.Phot	\Device\HarddiskVolume3\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe	C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe	False	False
+
+--- sessions.txt ---
+L2003: 1	-	21432	Microsoft.Phot	SRL-FORGE/fredr	2020-11-15 17:59:04.000000 UTC
+
+=== END OF PIVOT REPORT ===

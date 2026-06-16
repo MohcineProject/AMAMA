@@ -1,0 +1,5 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:40:00Z
+Chunk: chunk_019.txt
+Summary: No suspicious signals detected. Single process reviewed is StartMenuExperienceHost.exe running from its expected SystemApps path with a legitimate -ServerName launch argument; EPROCESS name truncation accounts for the shortened display name; parent PID 860 is unlisted but consistent with svchost/sihost hosting UWP app activation; DLLs listed are all standard System32 binaries.
+

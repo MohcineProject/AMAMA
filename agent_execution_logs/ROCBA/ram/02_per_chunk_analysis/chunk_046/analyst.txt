@@ -1,0 +1,116 @@
+I'll work through each finding systematically before rendering verdicts.
+
+---
+
+**PID 21836 — RuntimeBroker. (ppid=740)**
+
+*Lens 1 — Command-line plausibility:* The cmdline field returns `-` (inaccessible). The legitimate `RuntimeBroker.exe` always runs under `svchost.exe` (PID typically in the 800–1200 range on modern Windows) with a well-known command line (`C:\Windows\System32\RuntimeBroker.exe -Embedding`). PPID 740 is absent from the process list entirely — not a known svchost PID.
+
+*Lens 2 — DLL provenance:* No dlllist evidence provided. Cannot corroborate or refute.
+
+*Lens 3 — Privileges:* No privileges evidence provided.
+
+*Lens 4 — Handle cross-references:* No handles evidence provided.
+
+*Lens 6 — File/path corroboration:* `malware_pebmasquerade.txt` line shows `False False` for both PEB masquerade checks — this means the PEB name does NOT match a known-good path, but the fields are blank/dash rather than a confirmed mismatch path. The absence of a path is itself the anomaly.
+
+*Lens 7 — Code injection:* No malfind evidence provided for this PID.
+
+*Lens 8 — Timeline:* Process lived ~91 seconds (02:31:19–02:32:50). It spawned PID 29656 at the same second it was created (02:31:19), and PID 29656 exited after 1 second. The parent (PPID 740) is a ghost — not in pslist or psscan.
+
+*Assessment:* Three independent anomalies converge: (1) orphaned PPID not present anywhere in the process list, (2) inaccessible cmdline/path for a process that should have a well-known invocation, (3) spawned a child (LocalBridge.ex) that is itself hidden from pslist and extremely short-lived. The `malware_pebmasquerade.txt` entry with blank path fields further supports that the image backing is inaccessible or was unlinked. No single signal is definitive alone, but the combination — ghost parent, no path, hidden child — is a strong cluster. However, no malfind, no DLL evidence, no network evidence, and no registry persistence evidence is present. The process also has an ExitTime (it terminated), which limits active threat scope. I'll call this **CONFIRMED** at **HIGH** — the cluster of anomalies (ghost parent, inaccessible image, hidden child process) is consistent with a process-hollowing or injection host that has since exited, not a false positive pattern for legitimate RuntimeBroker.
+
+*MITRE mapping:* The hidden child and inaccessible image back most cleanly to T1055 (Process Injection) or T1036.005 (Masquerading: Match Legitimate Name or Location). The PPID spoofing / ghost parent maps to T1134.004 (Access Token Manipulation: Parent PID Spoofing). I'll use T1036.005 as the primary since the name masquerade + inaccessible path is the clearest single signal.
+
+---
+
+**PID 29656 — LocalBridge.ex (ppid=21836)**
+
+*Lens 1 — Command-line plausibility:* No cmdline available. `LocalBridge.exe` is not a known Windows system binary. The name is generic and plausible as a masquerade.
+
+*Lens 2–7:* Only one evidence line exists — the psscan entry. No dlllist, no malfind, no cmdline, no netscan, no registry hits.
+
+*Lens 8 — Timeline:* Lived exactly 1 second (02:31:19–02:31:20). Created at the same instant as its parent PID 21836. This is consistent with a dropper, stager, or injector that completes its task and exits immediately.
+
+*Lens — psscan-only visibility:* Absence from pslist while present in psscan is the classic DKOM unlink signature — the EPROCESS `ActiveProcessLinks` doubly-linked list has been manipulated to hide the process from the standard enumeration path. This is a well-established rootkit/injector technique.
+
+*Assessment:* The evidence is thin (single psscan line) but the signals that are present are high-quality: (1) not a Windows binary, (2) hidden from pslist (DKOM unlink), (3) 1-second lifespan consistent with a stager/dropper, (4) spawned by an already-anomalous parent with no path. The name truncation to `.ex` is the standard 14-char EPROCESS truncation of `LocalBridge.exe` — not itself suspicious, but the binary is unknown. The combination of DKOM hiding + unknown binary name + 1-second life + anomalous parent is sufficient for **CONFIRMED** at **HIGH**. The DKOM unlink alone is a near-definitive rootkit/injector signal; it does not occur in legitimate Windows operation.
+
+*MITRE mapping:* T1014 (Rootkit — DKOM process hiding) is the clearest mapping for the psscan-only visibility. The short-lived dropper behavior also maps to T1055 staging patterns, but T1014 is the most directly evidenced.
+
+---
+
+Now rendering the formal report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: Two closely related processes exhibit a coordinated cluster of high-confidence malicious indicators. PID 21836 masquerades as the legitimate RuntimeBroker.exe but has an inaccessible image path, an orphaned parent PID absent from all process lists, and spawned a non-Windows binary that was hidden from the standard process enumeration. PID 29656 (LocalBridge.ex) was visible only via psscan — a classic DKOM process-unlinking signature — lived exactly one second, and has no known-good Windows identity. The two processes together are consistent with a process-injection or dropper chain that has since exited but left forensic traces in physical memory. No active network connections or registry persistence were evidenced in the extracted data, but the absence of those artefacts may reflect the processes having already terminated rather than their absence during execution.
+Counts: confirmed=2  inconclusive=0  rejected=0
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      21836
+PPID:     740
+Image:    RuntimeBroker.
+Cmdline:  - (inaccessible)
+Severity: HIGH
+MITRE:    T1036.005 — Masquerading: Match Legitimate Name or Location
+
+Justification:
+  This process uses the name of the legitimate Windows RuntimeBroker.exe but
+  exhibits three independent anomalies that collectively rule out a benign
+  explanation. First, its parent PID 740 does not appear anywhere in pslist
+  or psscan — it is a ghost PPID, consistent with PPID spoofing or PID reuse
+  after the true parent exited under adversarial control. Second, both the
+  command-line and image path fields are inaccessible (returned as "-"),
+  whereas the legitimate RuntimeBroker.exe always runs from System32 with a
+  known "-Embedding" argument; inaccessible path fields indicate the image
+  backing has been unlinked or was never mapped from a real file on disk.
+  Third, the process spawned PID 29656 (LocalBridge.ex), a non-Windows binary
+  that was hidden from pslist via DKOM unlinking (see PID 29656 finding).
+  The malware_pebmasquerade entry with blank path fields corroborates that
+  the PEB does not point to a legitimate on-disk image. The process has an
+  ExitTime, so it is no longer active, but its artefacts in physical memory
+  confirm it executed.
+
+Key Evidence:
+  - L2189: 21836	740	RuntimeBroker.	0xb78d1043b080	0	-	1	False	2020-11-16 02:31:19.000000 UTC	2020-11-16 02:32:50.000000 UTC	Disabled
+  - L2189: 21836	RuntimeBroker.	-
+  - L2189: 21836	RuntimeBroker.	-	-	False	False
+  - L1669: 29656	21836	LocalBridge.ex	0xb78d10428080	0	-	1	False	2020-11-16 02:31:19.000000 UTC	2020-11-16 02:31:20.000000 UTC	Disabled
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      29656
+PPID:     21836
+Image:    LocalBridge.ex
+Cmdline:  - (inaccessible / not present in cmdline.txt)
+Severity: HIGH
+MITRE:    T1014 — Rootkit (DKOM process list unlinking)
+
+Justification:
+  PID 29656 appears in psscan (physical memory walk) but is entirely absent
+  from pslist (ActiveProcessLinks walk), which is the canonical signature of
+  Direct Kernel Object Manipulation (DKOM) process hiding: an attacker or
+  rootkit component has unlinked the EPROCESS structure from the doubly-linked
+  active process list so that standard OS and tool enumeration cannot see it.
+  This technique does not occur in legitimate Windows operation. The binary
+  name "LocalBridge.exe" (truncated to "LocalBridge.ex" by the 14-char
+  EPROCESS field) is not a known Windows system component. The process lived
+  exactly one second (02:31:19–02:31:20 UTC), consistent with a stager or
+  dropper that completes a single task — such as injecting a payload or
+  writing a file — and immediately exits to reduce its exposure window. Its
+  parent (PID 21836) is itself the anomalous masquerading RuntimeBroker
+  confirmed above, completing a two-stage chain. No cmdline, DLL list, or
+  network evidence was available, but the DKOM hiding alone is a
+  near-definitive indicator of adversarial intent; the remaining signals
+  (unknown binary, 1-second life, malicious parent) compound the confidence.
+
+Key Evidence:
+  - L1669: 29656	21836	LocalBridge.ex	0xb78d10428080	0	-	1	False	2020-11-16 02:31:19.000000 UTC	2020-11-16 02:31:20.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================

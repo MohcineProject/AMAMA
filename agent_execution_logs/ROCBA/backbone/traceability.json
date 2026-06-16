@@ -1,0 +1,2948 @@
+{
+  "pid:800": {
+    "type": "pid",
+    "value": "800",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_001-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "privileges.txt",
+            "line": 185,
+            "content": "800\tcsrss.exe\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 198,
+            "content": "800\tcsrss.exe\t20\tSeDebugPrivilege\tPresent,Enabled,Default\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 188,
+            "content": "800\tcsrss.exe\t10\tSeLoadDriverPrivilege\tPresent\tLoad and unload device drivers"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 180,
+            "content": "800\tcsrss.exe\t2\tSeCreateTokenPrivilege\tPresent\tCreate a token object"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 181,
+            "content": "800\tcsrss.exe\t3\tSeAssignPrimaryTokenPrivilege\tPresent\tReplace a process-level token"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 207,
+            "content": "800\tcsrss.exe\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after authentic…"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 58,
+            "content": "800\tcsrss.exe\t0x7ff7f2590000\t0x7000\tcsrss.exe\tC:\\WINDOWS\\system32\\csrss.exe\t-1\t2020-11-11 08:13:14.0…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "de362726-1de6-4e5c-bda9-aad980138661",
+          "artifact": "ram/02_per_chunk_analysis/chunk_001/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:29440": {
+    "type": "pid",
+    "value": "29440",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_002-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 2188,
+            "content": "29440\t7464\tMRC.exe\t0xb78d106d2080\t20\t-\t1\tTrue\t2020-11-16 02:31:15.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "cmdline.txt",
+            "line": 2188,
+            "content": "29440\tMRC.exe\t\"D:\\Tools\\MRC.exe\""
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76393,
+            "content": "29440\tMRC.exe\t20\tSeDebugPrivilege\tPresent\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76402,
+            "content": "29440\tMRC.exe\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after authentic…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76383,
+            "content": "29440\tMRC.exe\t10\tSeLoadDriverPrivilege\tPresent\tLoad and unload device drivers"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 12647,
+            "content": "29440\tMRC.exe\t0x400000\t0x55000\tMRC.exe\tD:\\Tools\\MRC.exe\t-1\t2020-11-16 02:31:16.000000 UTC\tDisabled"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "bf93b009-98f3-47af-a0fa-cacc5eb583a9",
+          "artifact": "ram/02_per_chunk_analysis/chunk_002/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:1004": {
+    "type": "pid",
+    "value": "1004",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_003-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 174,
+            "content": "1004  828  svchost.exe  0xb78d0dbd5080  0  -  0  False  2020-11-11 08:18:17.000000 UTC  2020-11-11 0…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 174,
+            "content": "1004  svchost.exe  -"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 5925,
+            "content": "1004  svchost.exe  7  SeTcbPrivilege  Present,Enabled,Default  Act as part of the operating system"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 5938,
+            "content": "1004  svchost.exe  20  SeDebugPrivilege  Default  Debug programs"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 5947,
+            "content": "1004  svchost.exe  29  SeImpersonatePrivilege  Present,Enabled,Default  Impersonate a client after a…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 233,
+            "content": "** 1004  828  svchost.exe  0xb78d0dbd5080  0  -  0  False  2020-11-11 08:18:17.000000 UTC  2020-11-1…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 174,
+            "content": "1004  svchost.exe  \\Device\\HarddiskVolume3\\Windows\\System32\\svchost.exe  -  False  False"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "8b7e75e3-e46f-461a-a255-c91fc9806e06",
+          "artifact": "ram/02_per_chunk_analysis/chunk_003/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:1676": {
+    "type": "pid",
+    "value": "1676",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_004-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [
+          "T1055",
+          "T1564.001"
+        ],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 184,
+            "content": "1676\t740\tdllhost.exe\t0xb78cf9d17080\t0\t-\t1\tFalse\t2020-11-16 02:30:36.000000 UTC\t2020-11-16 02:30:44.0…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "d9b81fac-060e-433d-8790-d323333b6a35",
+          "artifact": "ram/02_per_chunk_analysis/chunk_004/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:4420": {
+    "type": "pid",
+    "value": "4420",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_006-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [
+          "T1562.001"
+        ],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 50,
+            "content": "4420\t11968\tSearchFilterHo\t0xb78cf8808080\t4\t-\t0\tFalse\t2020-11-16 02:35:17.000000 UTC\tN/A\tDisabled"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "85a11a93-1ea4-4e17-a749-dec0c02af7d9",
+          "artifact": "ram/02_per_chunk_analysis/chunk_006/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:7900": {
+    "type": "pid",
+    "value": "7900",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_015-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [
+          "T1014"
+        ],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 1678,
+            "content": "7900\t828\tsvchost.exe\t0xb78d10566080\t7\t-\t0\tFalse\t2020-11-16 02:36:35.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "psscan.txt",
+            "line": 2208,
+            "content": "7900\t828\tsvchost.exe\t0xf180000c3080\t7\t-\t0\tFalse\t2020-11-16 02:36:35.000000 UTC\tN/A\tDisabled"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "9e9e02af-81a1-479d-b7e2-add6e428fbdf",
+          "artifact": "ram/02_per_chunk_analysis/chunk_015/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:8156": {
+    "type": "pid",
+    "value": "8156",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_016-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "privileges.txt",
+            "line": 3685,
+            "content": "8156\tGoogleCrashHan\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 3698,
+            "content": "8156\tGoogleCrashHan\t20\tSeDebugPrivilege\tPresent,Enabled,Default\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 3707,
+            "content": "8156\tGoogleCrashHan\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after aut…"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 5082,
+            "content": "8156\tGoogleCrashHan\t0x7fff578b0000\t0x1f6000\t-\t-\t-1\t2020-11-11 08:13:42.000000 UTC\tDisabled"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "f584a9cf-473f-409e-b7bd-dbc497d33c39",
+          "artifact": "ram/02_per_chunk_analysis/chunk_016/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:8164": {
+    "type": "pid",
+    "value": "8164",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_016-f002",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "privileges.txt",
+            "line": 3720,
+            "content": "8164\tGoogleCrashHan\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 3733,
+            "content": "8164\tGoogleCrashHan\t20\tSeDebugPrivilege\tPresent,Enabled,Default\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 3742,
+            "content": "8164\tGoogleCrashHan\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after aut…"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 5118,
+            "content": "8164\tGoogleCrashHan\t0x7fff578b0000\t0x1f6000\t-\t-\t-1\t2020-11-11 08:13:43.000000 UTC\tDisabled"
+          },
+          {
+            "source_file": "pslist.txt",
+            "line": 111,
+            "content": "8164\t6676\tGoogleCrashHan\t0xb78d00ce70c0\t3\t-\t0\tFalse\t2020-11-11 08:13:42.000000 UTC\tN/A\tDisabled"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "f584a9cf-473f-409e-b7bd-dbc497d33c39",
+          "artifact": "ram/02_per_chunk_analysis/chunk_016/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:8172": {
+    "type": "pid",
+    "value": "8172",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_017-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 1194,
+            "content": "8172\t22700\tmsedge.exe\t0xb78d0ace1080\t0\t-\t1\tFalse\t2020-11-14 04:57:13.000000 UTC\t2020-11-14 04:59:17.…"
+          },
+          {
+            "source_file": "cmdline.txt",
+            "line": 1194,
+            "content": "8172\tmsedge.exe\t-"
+          },
+          {
+            "source_file": "pstree.txt",
+            "line": 2157,
+            "content": "8172\t22700\tmsedge.exe\t0xb78d0ace1080\t0\t-\t1\tFalse\t2020-11-14 04:57:13.000000 UTC\t2020-11-14 04:59:17.…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 41625,
+            "content": "8172\tmsedge.exe\t7\tSeTcbPrivilege\t\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 41628,
+            "content": "8172\tmsedge.exe\t10\tSeLoadDriverPrivilege\t\tLoad and unload device drivers"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 41638,
+            "content": "8172\tmsedge.exe\t20\tSeDebugPrivilege\t\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 41647,
+            "content": "8172\tmsedge.exe\t29\tSeImpersonatePrivilege\t\tImpersonate a client after authentication"
+          },
+          {
+            "source_file": "malware_pebmasquerade.txt",
+            "line": 1194,
+            "content": "8172\tmsedge.exe\t\\Device\\HarddiskVolume3\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\t-\t…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "37424b94-e175-480e-9294-2884f030c47c",
+          "artifact": "ram/02_per_chunk_analysis/chunk_017/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:8728": {
+    "type": "pid",
+    "value": "8728",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_020-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "privileges.txt",
+            "line": 4350,
+            "content": "8728\tSecurityHealth\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4363,
+            "content": "8728\tSecurityHealth\t20\tSeDebugPrivilege\tPresent,Enabled,Default\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4372,
+            "content": "8728\tSecurityHealth\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after aut…"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 6364,
+            "content": "8728\tSecurityHealth\t0x7ff619c60000\t0xf1000\tSecurityHealthService.exe\tC:\\WINDOWS\\system32\\SecurityHea…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "25f1acc9-d08f-428f-a546-28e4a217eb89",
+          "artifact": "ram/02_per_chunk_analysis/chunk_020/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:9488": {
+    "type": "pid",
+    "value": "9488",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_024-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 1163,
+            "content": "9488\t1908\tctfmon.exe\t0xb78d101d4080\t12\t-\t1\tFalse\t2020-11-14 03:42:50.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 10269,
+            "content": "9488\tctfmon.exe\t0x7ff6adca0000\t0x7000\tctfmon.exe\tC:\\WINDOWS\\system32\\ctfmon.exe\t-1\t2020-11-14 03:42:…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 40540,
+            "content": "9488\tctfmon.exe\t7\tSeTcbPrivilege\t\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 40553,
+            "content": "9488\tctfmon.exe\t20\tSeDebugPrivilege\t\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 40562,
+            "content": "9488\tctfmon.exe\t29\tSeImpersonatePrivilege\t\tImpersonate a client after authentication"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 40552,
+            "content": "9488\tctfmon.exe\t19\tSeShutdownPrivilege\tPresent\tShut down the system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 40556,
+            "content": "9488\tctfmon.exe\t23\tSeChangeNotifyPrivilege\tPresent,Enabled,Default\tReceive notifications of changes …"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "32efee52-b14f-46c2-8bff-1a4dbd1e88c0",
+          "artifact": "ram/02_per_chunk_analysis/chunk_024/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:9644": {
+    "type": "pid",
+    "value": "9644",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_025-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pstree.txt",
+            "line": 116,
+            "content": "*** 9644\t740\tHxTsr.exe\t0xb78d11c63080\t0\t-\t1\tFalse\t2020-11-14 13:03:39.000000 UTC\t2020-11-14 13:03:41…"
+          },
+          {
+            "source_file": "malware_pebmasquerade.txt",
+            "line": 1397,
+            "content": "9644\tHxTsr.exe\t\\Device\\HarddiskVolume3\\Program Files\\WindowsApps\\microsoft.windowscommunicationsapps…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 48743,
+            "content": "9644\tHxTsr.exe\t20\tSeDebugPrivilege\t\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 48730,
+            "content": "9644\tHxTsr.exe\t7\tSeTcbPrivilege\t\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 48752,
+            "content": "9644\tHxTsr.exe\t29\tSeImpersonatePrivilege\t\tImpersonate a client after authentication"
+          },
+          {
+            "source_file": "cmdline.txt",
+            "line": 1397,
+            "content": "9644\tHxTsr.exe\t-"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "7d332137-426a-454a-b8d6-62f6c33cd512",
+          "artifact": "ram/02_per_chunk_analysis/chunk_025/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:9836": {
+    "type": "pid",
+    "value": "9836",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_027-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [
+          "T1134"
+        ],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 124,
+            "content": "9836\t828\tsvchost.exe\t0xb78d05dd7240\t0\t-\t0\tFalse\t2020-11-11 08:13:52.000000 UTC\t2020-11-11 08:21:19.0…"
+          },
+          {
+            "source_file": "cmdline.txt",
+            "line": 124,
+            "content": "9836\tsvchost.exe\t-"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4175,
+            "content": "9836\tsvchost.exe\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4197,
+            "content": "9836\tsvchost.exe\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after authen…"
+          },
+          {
+            "source_file": "pstree.txt",
+            "line": 31,
+            "content": "** 9836\t828\tsvchost.exe\t0xb78d05dd7240\t0\t-\t0\tFalse\t2020-11-11 08:13:52.000000 UTC\t2020-11-11 08:21:1…"
+          },
+          {
+            "source_file": "malware_pebmasquerade.txt",
+            "line": 124,
+            "content": "9836\tsvchost.exe\t\\Device\\HarddiskVolume3\\Windows\\System32\\svchost.exe\t-\tFalse\tFalse"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "2b084bb4-c04e-4328-a22e-9338e881fcf5",
+          "artifact": "ram/02_per_chunk_analysis/chunk_027/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:9964": {
+    "type": "pid",
+    "value": "9964",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_028-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 125,
+            "content": "9964\t740\tRuntimeBroker.\t0xb78d05ef8080\t11\t-\t1\tFalse\t2020-11-11 08:13:53.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4207,
+            "content": "9964\tRuntimeBroker.\t4\tSeLockMemoryPrivilege\t\tLock pages in memory"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4210,
+            "content": "9964\tRuntimeBroker.\t7\tSeTcbPrivilege\t\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4213,
+            "content": "9964\tRuntimeBroker.\t10\tSeLoadDriverPrivilege\t\tLoad and unload device drivers"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4223,
+            "content": "9964\tRuntimeBroker.\t20\tSeDebugPrivilege\t\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4232,
+            "content": "9964\tRuntimeBroker.\t29\tSeImpersonatePrivilege\t\tImpersonate a client after authentication"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4205,
+            "content": "9964\tRuntimeBroker.\t2\tSeCreateTokenPrivilege\t\tCreate a token object"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 6120,
+            "content": "9964\tRuntimeBroker.\t0x7ff642560000\t0x1c000\tRuntimeBroker.exe\tC:\\Windows\\System32\\RuntimeBroker.exe\t-…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "734fcccb-a82b-4e55-9156-a2342322e05a",
+          "artifact": "ram/02_per_chunk_analysis/chunk_028/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:11392": {
+    "type": "pid",
+    "value": "11392",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_031-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 1407,
+            "content": "11392  28380  chrome.exe  0xb78d09f99080  0  -  1  False  2020-11-14 13:52:47.000000 UTC  2020-11-14…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 2182,
+            "content": "11392  28380  chrome.exe  0xb78d09f99080  0  -  1  False  2020-11-14 13:52:47.000000 UTC  2020-11-14…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 49080,
+            "content": "11392  chrome.exe  7  SeTcbPrivilege    Act as part of the operating system"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 49093,
+            "content": "11392  chrome.exe  20  SeDebugPrivilege    Debug programs"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 49102,
+            "content": "11392  chrome.exe  29  SeImpersonatePrivilege    Impersonate a client after authentication"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 49083,
+            "content": "11392  chrome.exe  10  SeLoadDriverPrivilege    Load and unload device drivers"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 49096,
+            "content": "11392  chrome.exe  23  SeChangeNotifyPrivilege  Default  Receive notifications of changes to files o…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 1407,
+            "content": "11392  chrome.exe  \\Device\\HarddiskVolume3\\Program Files\\Google\\Chrome\\Application\\chrome.exe  -  Fa…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "b73e06d9-ff59-45c2-9dce-b13372c1bfd0",
+          "artifact": "ram/02_per_chunk_analysis/chunk_031/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:14028": {
+    "type": "pid",
+    "value": "14028",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_036-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 154,
+            "content": "14028\t740\tRuntimeBroker.\t0xb78cf77b70c0\t2\t-\t1\tFalse\t2020-11-11 08:14:29.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 5225,
+            "content": "14028\tRuntimeBroker.\t7\tSeTcbPrivilege\t\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 5220,
+            "content": "14028\tRuntimeBroker.\t2\tSeCreateTokenPrivilege\t\tCreate a token object"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 5238,
+            "content": "14028\tRuntimeBroker.\t20\tSeDebugPrivilege\t\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 5228,
+            "content": "14028\tRuntimeBroker.\t10\tSeLoadDriverPrivilege\t\tLoad and unload device drivers"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 5247,
+            "content": "14028\tRuntimeBroker.\t29\tSeImpersonatePrivilege\t\tImpersonate a client after authentication"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 8663,
+            "content": "14028\tRuntimeBroker.\t0x7ff642560000\t0x1c000\tRuntimeBroker.exe\tC:\\Windows\\System32\\RuntimeBroker.exe\t…"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 8664,
+            "content": "14028\tRuntimeBroker.\t0x7fff578b0000\t0x1f6000\tntdll.dll\tC:\\WINDOWS\\SYSTEM32\\ntdll.dll\t-1\t2020-11-11 0…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "be0554ec-d34f-4db5-9d08-a3aa028213bf",
+          "artifact": "ram/02_per_chunk_analysis/chunk_036/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:16824": {
+    "type": "pid",
+    "value": "16824",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_040-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "privileges.txt",
+            "line": 49500,
+            "content": "16824\tTabTip.exe\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 49522,
+            "content": "16824\tTabTip.exe\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after authen…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 49513,
+            "content": "16824\tTabTip.exe\t20\tSeDebugPrivilege\tDefault\tDebug programs"
+          },
+          {
+            "source_file": "pstree.txt",
+            "line": 196,
+            "content": "*** 16824\t1908\tTabTip.exe\t0xb78d110dc080\t0\t-\t1\tFalse\t2020-11-14 14:12:41.000000 UTC\t2020-11-14 14:12…"
+          },
+          {
+            "source_file": "malware_pebmasquerade.txt",
+            "line": 1419,
+            "content": "16824\tTabTip.exe\t\\Device\\HarddiskVolume3\\Program Files\\Common Files\\microsoft shared\\ink\\TabTip.exe\t…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "4ad9db86-9b85-4e49-8364-c9727e5f955a",
+          "artifact": "ram/02_per_chunk_analysis/chunk_040/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:17316": {
+    "type": "pid",
+    "value": "17316",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_041-f001",
+        "module": "ram",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1055.012"
+        ],
+        "evidence": [
+          {
+            "source_file": "pstree.txt",
+            "line": 220,
+            "content": "** 17316\t828\tsvchost.exe\t0xb78cffa180c0\t7\t-\t0\tFalse\t2020-11-16 02:29:37.000000 UTC\tN/A\t\\Device\\Hardd…"
+          },
+          {
+            "source_file": "cmdline.txt",
+            "line": 2179,
+            "content": "17316\tsvchost.exe\t-"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 12276,
+            "content": "17316\tsvchost.exe\t0x1996511acb0\t0x0\t\t\t0\tN/A\tDisabled"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76100,
+            "content": "17316\tsvchost.exe\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76122,
+            "content": "17316\tsvchost.exe\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after authe…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76113,
+            "content": "17316\tsvchost.exe\t20\tSeDebugPrivilege\tDefault\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76096,
+            "content": "17316\tsvchost.exe\t3\tSeAssignPrimaryTokenPrivilege\tPresent\tReplace a process-level token"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "572ed567-a9a5-4a21-9ec1-2aabc8b83d44",
+          "artifact": "ram/02_per_chunk_analysis/chunk_041/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:19348": {
+    "type": "pid",
+    "value": "19348",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_042-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pstree.txt",
+            "line": 100,
+            "content": "*** 19348\t740\tsmartscreen.ex\t0xb78d145dc240\t6\t-\t1\tFalse\t2020-11-16 02:30:38.000000 UTC\tN/A\t\\Device\\H…"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 12646,
+            "content": "19348\tsmartscreen.ex\t0x0\t0x0\t\t\t0\tN/A\tDisabled"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76345,
+            "content": "19348\tsmartscreen.ex\t7\tSeTcbPrivilege\t\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76348,
+            "content": "19348\tsmartscreen.ex\t10\tSeLoadDriverPrivilege\t\tLoad and unload device drivers"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76358,
+            "content": "19348\tsmartscreen.ex\t20\tSeDebugPrivilege\t\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76340,
+            "content": "19348\tsmartscreen.ex\t2\tSeCreateTokenPrivilege\t\tCreate a token object"
+          },
+          {
+            "source_file": "cmdline.txt",
+            "line": 2187,
+            "content": "19348\tsmartscreen.ex\t-"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "7617770c-c954-4e10-b80d-e68ef73baf93",
+          "artifact": "ram/02_per_chunk_analysis/chunk_042/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:19436": {
+    "type": "pid",
+    "value": "19436",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_043-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 1395,
+            "content": "19436\t740\tSearchApp.exe\t0xb78d10795080\t28\t-\t1\tFalse\t2020-11-14 12:48:43.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "cmdline.txt",
+            "line": 1395,
+            "content": "19436\tSearchApp.exe\t\"C:\\Windows\\SystemApps\\Microsoft.Windows.Search_cw5n1h2txyewy\\SearchApp.exe\" -Se…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 48673,
+            "content": "19436\tSearchApp.exe\t20\tSeDebugPrivilege\t\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 48676,
+            "content": "19436\tSearchApp.exe\t23\tSeChangeNotifyPrivilege\tPresent,Enabled,Default\tReceive notifications of chan…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 48682,
+            "content": "19436\tSearchApp.exe\t29\tSeImpersonatePrivilege\t\tImpersonate a client after authentication"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 10646,
+            "content": "19436\tSearchApp.exe\t0x7ff7cac60000\t0x304000\tSearchApp.exe\tC:\\Windows\\SystemApps\\Microsoft.Windows.Se…"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 10647,
+            "content": "19436\tSearchApp.exe\t0x7fff578b0000\t0x1f6000\tntdll.dll\tC:\\WINDOWS\\SYSTEM32\\ntdll.dll\t-1\t2020-11-14 12…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "b0efe017-d0a7-4063-8bbf-c926f88b94eb",
+          "artifact": "ram/02_per_chunk_analysis/chunk_043/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:21836": {
+    "type": "pid",
+    "value": "21836",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_046-f001",
+        "module": "ram",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1036.005"
+        ],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 2189,
+            "content": "21836\t740\tRuntimeBroker.\t0xb78d1043b080\t0\t-\t1\tFalse\t2020-11-16 02:31:19.000000 UTC\t2020-11-16 02:32:…"
+          },
+          {
+            "source_file": "cmdline.txt",
+            "line": 2189,
+            "content": "21836\tRuntimeBroker.\t-"
+          },
+          {
+            "source_file": "malware_pebmasquerade.txt",
+            "line": 2189,
+            "content": "21836\tRuntimeBroker.\t-\t-\tFalse\tFalse"
+          },
+          {
+            "source_file": "psscan.txt",
+            "line": 1669,
+            "content": "29656\t21836\tLocalBridge.ex\t0xb78d10428080\t0\t-\t1\tFalse\t2020-11-16 02:31:19.000000 UTC\t2020-11-16 02:3…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "0e886e25-ae8c-41de-a378-afe2b5de3152",
+          "artifact": "ram/02_per_chunk_analysis/chunk_046/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:29656": {
+    "type": "pid",
+    "value": "29656",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_046-f002",
+        "module": "ram",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1014"
+        ],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 1669,
+            "content": "29656\t21836\tLocalBridge.ex\t0xb78d10428080\t0\t-\t1\tFalse\t2020-11-16 02:31:19.000000 UTC\t2020-11-16 02:3…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "0e886e25-ae8c-41de-a378-afe2b5de3152",
+          "artifact": "ram/02_per_chunk_analysis/chunk_046/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:25508": {
+    "type": "pid",
+    "value": "25508",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_048-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 70290,
+            "content": "25508  RuntimeBroker.  7  SeTcbPrivilege    Act as part of the operating system"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 70293,
+            "content": "25508  RuntimeBroker.  10  SeLoadDriverPrivilege    Load and unload device drivers"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 70303,
+            "content": "25508  RuntimeBroker.  20  SeDebugPrivilege    Debug programs"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 70312,
+            "content": "25508  RuntimeBroker.  29  SeImpersonatePrivilege    Impersonate a client after authentication"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 70302,
+            "content": "25508  RuntimeBroker.  19  SeShutdownPrivilege  Present  Shut down the system"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 2013,
+            "content": "25508  740  RuntimeBroker.  0xb78d0d76e080  3  -  1  False  2020-11-15 18:43:19.000000 UTC  N/A  Dis…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 11928,
+            "content": "25508  RuntimeBroker.  0x7ff642560000  0x1c000  RuntimeBroker.exe  C:\\Windows\\System32\\RuntimeBroker…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "e353c509-10a8-43d6-8c77-a216888e8639",
+          "artifact": "ram/02_per_chunk_analysis/chunk_048/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:26768": {
+    "type": "pid",
+    "value": "26768",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_050-f001",
+        "module": "ram",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1014"
+        ],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 2162,
+            "content": "26768\t740\tbackgroundTask\t0xb78d1538f080\t0\t-\t1\tFalse\t2020-11-16 02:31:19.000000 UTC\t2020-11-16 02:32:…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "b7543f65-8bd7-493b-9fb0-990f1f30e255",
+          "artifact": "ram/02_per_chunk_analysis/chunk_050/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:28864": {
+    "type": "pid",
+    "value": "28864",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_053-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "cmdline.txt",
+            "line": 2180,
+            "content": "28864\tsvchost.exe\t-"
+          },
+          {
+            "source_file": "malware_pebmasquerade.txt",
+            "line": 2180,
+            "content": "28864\tsvchost.exe\t\\Device\\HarddiskVolume3\\Windows\\System32\\svchost.exe\t-\tFalse\tFalse"
+          },
+          {
+            "source_file": "pstree.txt",
+            "line": 56,
+            "content": "** 28864\t828\tsvchost.exe\t0xb78d15380240\t3\t-\t0\tFalse\t2020-11-16 02:29:39.000000 UTC\tN/A\t\\Device\\Hardd…"
+          },
+          {
+            "source_file": "psscan.txt",
+            "line": 2161,
+            "content": "28864\t828\tsvchost.exe\t0xb78d15380240\t3\t-\t0\tFalse\t2020-11-16 02:29:39.000000 UTC\tN/A\tDisabled"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "9cd73b62-2127-4a5f-b56f-efc211b93e5c",
+          "artifact": "ram/02_per_chunk_analysis/chunk_053/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:30012": {
+    "type": "pid",
+    "value": "30012",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_054-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "privileges.txt",
+            "line": 76240,
+            "content": "30012\tWinStore.App.e\t7\tSeTcbPrivilege\t\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76243,
+            "content": "30012\tWinStore.App.e\t10\tSeLoadDriverPrivilege\t\tLoad and unload device drivers"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76253,
+            "content": "30012\tWinStore.App.e\t20\tSeDebugPrivilege\t\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76262,
+            "content": "30012\tWinStore.App.e\t29\tSeImpersonatePrivilege\t\tImpersonate a client after authentication"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76235,
+            "content": "30012\tWinStore.App.e\t2\tSeCreateTokenPrivilege\t\tCreate a token object"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76236,
+            "content": "30012\tWinStore.App.e\t3\tSeAssignPrimaryTokenPrivilege\t\tReplace a process-level token"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 12389,
+            "content": "30012\tWinStore.App.e\t0x7ff76c0c0000\t0x8000\tWinStore.App.exe\tC:\\Program Files\\WindowsApps\\Microsoft.W…"
+          },
+          {
+            "source_file": "pslist.txt",
+            "line": 2184,
+            "content": "30012\t740\tWinStore.App.e\t0xb78d14fae080\t20\t-\t1\tFalse\t2020-11-16 02:30:21.000000 UTC\tN/A\tDisabled"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "aa85045b-753f-45ed-892b-b609d6e55ff0",
+          "artifact": "ram/02_per_chunk_analysis/chunk_054/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:30216": {
+    "type": "pid",
+    "value": "30216",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_055-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 2186,
+            "content": "30216\t828\tsvchost.exe\t0xb78cff934080\t6\t-\t0\tFalse\t2020-11-16 02:30:22.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "cmdline.txt",
+            "line": 2186,
+            "content": "30216\tsvchost.exe\t-"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76310,
+            "content": "30216\tsvchost.exe\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76323,
+            "content": "30216\tsvchost.exe\t20\tSeDebugPrivilege\tPresent,Enabled,Default\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 76332,
+            "content": "30216\tsvchost.exe\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after authe…"
+          },
+          {
+            "source_file": "pstree.txt",
+            "line": 15,
+            "content": "** 30216\t828\tsvchost.exe\t0xb78cff934080\t6\t-\t0\tFalse\t2020-11-16 02:30:22.000000 UTC\tN/A\t\\Device\\Hardd…"
+          },
+          {
+            "source_file": "malware_pebmasquerade.txt",
+            "line": 2186,
+            "content": "30216\tsvchost.exe\t\\Device\\HarddiskVolume3\\Windows\\System32\\svchost.exe\t-\tFalse\tFalse"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "c575532b-4423-433b-b338-4bfb419c253e",
+          "artifact": "ram/02_per_chunk_analysis/chunk_055/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "image_name:SDELETE.EXE": {
+    "type": "image_name",
+    "value": "SDELETE.EXE",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f001",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1485",
+          "T1070.004"
+        ],
+        "evidence": [
+          {
+            "source_file": "prefetch_records.txt",
+            "line": 131,
+            "content": "type=execution path=SDELETE.EXE last_run=2020-11-14T13:47:10Z run_count=5 previous_runs=2020-11-14T1…"
+          },
+          {
+            "source_file": "prefetch_records.txt",
+            "line": 132,
+            "content": "type=execution path=SDELETE.EXE last_run=2020-11-14T13:42:38Z run_count=2 previous_runs=2020-11-14T1…"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 36743,
+            "content": "type=file path=Windows\\Prefetch\\SDELETE.EXE-0E837E93.pf mft_ref=104219-7 size=5912 deleted=false cre…"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 138834,
+            "content": "type=file path=Windows\\Prefetch\\SDELETE.EXE-2BD91720.pf mft_ref=472552-9 size=7439 deleted=false cre…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "image_name:REGSVR32.EXE": {
+    "type": "image_name",
+    "value": "REGSVR32.EXE",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f002",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "prefetch_records.txt",
+            "line": 110,
+            "content": "type=execution path=REGSVR32.EXE last_run=2020-11-14T13:50:18Z run_count=6 previous_runs=2020-11-14T…"
+          },
+          {
+            "source_file": "prefetch_records.txt",
+            "line": 111,
+            "content": "type=execution path=REGSVR32.EXE last_run=2020-11-14T13:50:18Z run_count=3 previous_runs=2020-11-14T…"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 36544,
+            "content": "type=file path=Windows\\Prefetch\\REGSVR32.EXE-03D3FB87.pf created=2020-11-14T13:50:16Z modified=2020-…"
+          },
+          {
+            "source_file": "registry_shimcache.txt",
+            "line": 451,
+            "content": "type=execution path=C:\\Windows\\SysWOW64\\regsvr32.exe last_modified=\"2019-12-07 09:10:04\" executed=Ye…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "image_name:RUNDLL32.EXE": {
+    "type": "image_name",
+    "value": "RUNDLL32.EXE",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f003",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "prefetch_records.txt",
+            "line": 112,
+            "content": "type=execution path=RUNDLL32.EXE last_run=2020-11-14T14:01:25Z run_count=1 previous_runs=1601-01-01T…"
+          },
+          {
+            "source_file": "prefetch_records.txt",
+            "line": 114,
+            "content": "type=execution path=RUNDLL32.EXE last_run=2020-11-15T17:58:38Z run_count=14 previous_runs=2020-11-14…"
+          },
+          {
+            "source_file": "prefetch_records.txt",
+            "line": 115,
+            "content": "type=execution path=RUNDLL32.EXE last_run=2020-11-14T03:44:40Z run_count=1 previous_runs=1601-01-01T…"
+          },
+          {
+            "source_file": "scheduled_tasks.txt",
+            "line": 27,
+            "content": "type=persistence mechanism=scheduled_task name=PcaPatchDbTask action=%windir%\\system32\\rundll32.exe …"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 36546,
+            "content": "type=file path=Windows\\Prefetch\\RUNDLL32.EXE-171F7F04.pf created=2020-11-14T14:01:26Z modified=2020-…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "image_name:VSSADMIN.EXE": {
+    "type": "image_name",
+    "value": "VSSADMIN.EXE",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f004",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "prefetch_records.txt",
+            "line": 186,
+            "content": "type=execution path=VSSADMIN.EXE last_run=2020-11-14T14:03:24Z run_count=3 previous_runs=2020-11-14T…"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 143960,
+            "content": "type=file path=Windows\\Prefetch\\VSSADMIN.EXE-CEAFB416.pf mft_ref=477693-1 size=4069 deleted=false cr…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "file_path:C:\\Users\\fredr\\AppData\\Local\\Temp\\GUMF3B9.tmp\\GoogleUpdateSetup.exe": {
+    "type": "file_path",
+    "value": "C:\\Users\\fredr\\AppData\\Local\\Temp\\GUMF3B9.tmp\\GoogleUpdateSetup.exe",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f005",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "registry_shimcache.txt",
+            "line": 19,
+            "content": "type=execution path=C:\\Users\\fredr\\AppData\\Local\\Temp\\GUMF3B9.tmp\\GoogleUpdateSetup.exe last_modifie…"
+          },
+          {
+            "source_file": "registry_autoruns.txt",
+            "line": 304,
+            "content": "type=registry key=\"System\\\\ROOT\\\\ControlSet001\\\\Control\\\\Session Manager\\\\AppCompatCache\" value=AppC…"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 53307,
+            "content": "type=file path=\"Program Files (x86)\\\\Google\\\\Update\\\\1.3.36.32\\\\GoogleUpdateSetup.exe\" mft_ref=12211…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "image_name:MSIEXEC.EXE": {
+    "type": "image_name",
+    "value": "MSIEXEC.EXE",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f007",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [
+          "T1218.007"
+        ],
+        "evidence": [
+          {
+            "source_file": "prefetch_records.txt",
+            "line": 83,
+            "content": "type=execution path=MSIEXEC.EXE last_run=2020-11-14T14:19:43Z run_count=4 previous_runs=2020-11-14T1…"
+          },
+          {
+            "source_file": "prefetch_records.txt",
+            "line": 84,
+            "content": "type=execution path=MSIEXEC.EXE last_run=2020-11-14T14:19:41Z run_count=2 previous_runs=2020-11-14T1…"
+          },
+          {
+            "source_file": "registry_shimcache.txt",
+            "line": 79,
+            "content": "type=execution path=C:\\Windows\\syswow64\\MsiExec.exe last_modified=\"2019-12-07 09:10:02\" executed=Yes…"
+          },
+          {
+            "source_file": "registry_shimcache.txt",
+            "line": 123,
+            "content": "type=execution path=C:\\WINDOWS\\system32\\msiexec.exe last_modified=\"2019-12-07 09:09:44\" executed=Yes…"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 85657,
+            "content": "type=file path=Windows\\Prefetch\\MSIEXEC.EXE-CDBFC0F7.pf mft_ref=156592-15 size=6168 deleted=false cr…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "ip:193.93.62.32": {
+    "type": "ip",
+    "value": "193.93.62.32",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f008",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "CRITICAL",
+        "mitre": [
+          "T1110.001"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 302,
+            "content": "type=event id=4625 time=\"2020-11-01 22:22:02...\" computer=SRL-FORGE src_ip=\"- (202.137.116.125)\" det…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 716,
+            "content": "type=event id=4625 time=\"2020-11-01 23:26:41...\" src_ip=\"Remmina (89.248.168.40)\" detail1=\"Target: \\…"
+          },
+          {
+            "source_file": "registry_misc.txt",
+            "line": 17969,
+            "content": "type=registry key=Sam\\ROOT\\SAM\\Domains\\Account\\Users value=V data=\"Username: Administrator Id: 500 V…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 227784,
+            "content": "type=event id=4625 time=\"2020-11-03 09:04:39...\" src_ip=\"- (193.93.62.32)\" detail1=\"Target: \\\\MMARTI…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "2502f433-adf0-43e3-b7b7-5ffa1423b11c",
+        "module": "ti",
+        "verdict": "NOT_FOUND",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "162c8b2b-816d-4975-b201-e2693cef8a9a",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "ip:85.14.242.76": {
+    "type": "ip",
+    "value": "85.14.242.76",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f009",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "CRITICAL",
+        "mitre": [
+          "T1110.003"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 435661,
+            "content": "type=event id=4625 time=\"2020-11-13 23:12:38...\" src_ip=\"Windows2019 (85.14.242.76)\" detail1=\"Target…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 435662,
+            "content": "type=event id=4625 time=\"2020-11-13 23:12:40...\" src_ip=\"Remmina (85.14.242.76)\" detail1=\"Target: \\\\…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 435663,
+            "content": "type=event id=4625 time=\"2020-11-13 23:12:42...\" src_ip=\"Windows8 (85.14.242.76)\" detail1=\"Target: \\…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 435668,
+            "content": "type=event id=4625 time=\"2020-11-13 23:12:48...\" src_ip=\"Rdesktop (85.14.242.76)\" detail1=\"Target: \\…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 435695,
+            "content": "type=event id=4625 time=\"2020-11-13 23:13:33...\" src_ip=\"FreeRDP (85.14.242.76)\" detail1=\"Target: \\\\…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 435721,
+            "content": "type=event id=4625 time=\"2020-11-13 23:14:18...\" src_ip=\"Windows2016 (85.14.242.76)\" detail1=\"Target…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "0f7fc1ba-1d96-4fc3-87ca-3bfcfba4c259",
+        "module": "ti",
+        "verdict": "NOT_FOUND",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "f505c43a-b87b-43ba-a037-455a9bad0ed9",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "ip:213.202.233.90": {
+    "type": "ip",
+    "value": "213.202.233.90",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f010",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "CRITICAL",
+        "mitre": [
+          "T1110.001"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 302,
+            "content": "type=event id=4625 time=\"2020-11-01 22:22:02.7303750\" computer=SRL-FORGE src_ip=\"- (202.137.116.125)…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 716,
+            "content": "type=event id=4625 time=\"2020-11-01 23:26:41.3694416\" computer=SRL-FORGE src_ip=\"Remmina (89.248.168…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 993,
+            "content": "type=event id=4625 time=\"2020-11-02 00:06:21.9836736\" computer=SRL-FORGE src_ip=\"- (54.36.113.57)\" d…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "b46be1c3-cfdc-4a7b-a4be-9ee613cefba8",
+        "module": "ti",
+        "verdict": "NOT_FOUND",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "d05111ea-6c7d-4322-acb8-a80db68d1919",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "ip:213.202.233.104": {
+    "type": "ip",
+    "value": "213.202.233.104",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f011",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "CRITICAL",
+        "mitre": [
+          "T1110.003"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 626,
+            "content": "type=event id=4625 time=\"2020-11-01 23:11:47.5341514\" computer=SRL-FORGE src_ip=\"- (89.46.223.220)\" …"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 193779,
+            "content": "type=event id=4625 time=\"2020-11-03 05:49:15.9455624\" computer=SRL-FORGE src_ip=\"- (193.93.62.29)\" d…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 223526,
+            "content": "type=event id=4625 time=\"2020-11-03 08:41:27.1575391\" computer=SRL-FORGE src_ip=\"- (193.93.62.6)\" de…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 241970,
+            "content": "type=event id=4625 time=\"2020-11-03 10:38:30.1649529\" computer=SRL-FORGE src_ip=\"- (193.93.62.6)\" de…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 368283,
+            "content": "type=event id=4625 time=\"2020-11-06 08:53:57.0726932\" computer=SRL-FORGE src_ip=\"- (89.46.223.246)\" …"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 92960,
+            "content": "type=file path=Users\\fredr\\AppData\\LocalLow\\Temp\\Microsoft\\OPC mft_ref=164156-9 deleted=false create…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "d41c77d2-5372-4150-b89c-0b84e9ef0051",
+        "module": "ti",
+        "verdict": "NOT_FOUND",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "349bc95d-7ad0-4aaf-bfc3-baee87669ed3",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "ip:52.249.198.56": {
+    "type": "ip",
+    "value": "52.249.198.56",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f012",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "CRITICAL",
+        "mitre": [
+          "T1078"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 19,
+            "content": "type=event id=4672 time=\"2020-11-01 22:15:33.4800581\" user=\"NT AUTHORITY\\\\SYSTEM\" detail1=\"Privilege…"
+          },
+          {
+            "source_file": "registry_misc.txt",
+            "line": 16576,
+            "content": "type=registry key=\"Software\\\\ROOT\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Winlogon\" value=LastUsedUs…"
+          },
+          {
+            "source_file": "registry_misc.txt",
+            "line": 16633,
+            "content": "type=registry key=...OneDrive...Business1...\\UserSyncRoots value=S-1-5-21-528816539-567677750-276746…"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 175,
+            "content": "type=file path=Users\\fredr\\AppData\\Local\\Temp\\Diagnostics\\OUTLOOK\\App_1605239594076733300_62D88F59-D…"
+          },
+          {
+            "source_file": "registry_shimcache.txt",
+            "line": 16,
+            "content": "type=execution path=c:\\users\\fredr\\appdata\\local\\temp\\GOOGLE_DRIVE_UPGRADE_sfuiux\\googledrivesync.ex…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "finding_id": "disk-scan-f024",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "LOW",
+        "mitre": [
+          "T1078"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 446812,
+            "content": "type=event id=4625 time=\"2020-11-14 03:42:14.7524320\" computer=SRL-FORGE user=-\\- src_ip=\"cobra (52.…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 446834,
+            "content": "type=event id=4624 time=\"2020-11-14 03:42:40.2268052\" computer=SRL-FORGE user=-\\- src_ip=\"cobra (52.…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 446870,
+            "content": "type=event id=4624 time=\"2020-11-14 03:42:52.4880957\" computer=SRL-FORGE user=SRL\\SRL-FORGE$ src_ip=…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 446872,
+            "content": "type=event id=4672 time=\"2020-11-14 03:42:52.4882112\" computer=SRL-FORGE user=\"MicrosoftAccount\\\\fre…"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 55251,
+            "content": "type=file path=Users\\fredr\\AppData\\Local\\Microsoft\\Outlook\\fred.rocba@outlook.com.ost mft_ref=124086…"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 118288,
+            "content": "type=file path=\"Users\\\\fredr\\\\Downloads\\\\fred.rocba@outlook.com Firefox Recovery Key.txt\" ... create…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "86f513d6-08ca-474d-b4c4-725c2bc885a2",
+        "module": "ti",
+        "verdict": "NOT_FOUND",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "0f3a3fae-0497-4fdb-ba80-0ecfc27775f1",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "image_name:fredr": {
+    "type": "image_name",
+    "value": "fredr",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f013",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "CRITICAL",
+        "mitre": [
+          "T1021.001"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 449717,
+            "content": "type=event id=4648 time=\"2020-11-14 05:00:49.5022172\" computer=SRL-FORGE user=SRL-FORGE\\fredr src_ip…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 449901,
+            "content": "type=event id=4648 time=\"2020-11-14 05:05:37.1652938\" computer=SRL-FORGE user=SRL-FORGE\\fredr src_ip…"
+          },
+          {
+            "source_file": "eventlog_other.txt",
+            "line": 55,
+            "content": "type=event id=1102 time=\"2020-11-14 05:00:50.7768569\" computer=SRL-FORGE description=\"RDP client has…"
+          },
+          {
+            "source_file": "eventlog_other.txt",
+            "line": 56,
+            "content": "type=event id=1102 time=\"2020-11-14 05:05:37.6952969\" computer=SRL-FORGE description=\"RDP client has…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 446834,
+            "content": "type=event id=4624 time=\"2020-11-14 03:42:40.2268052\" computer=SRL-FORGE user=-\\- src_ip=\"cobra (52.…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "finding_id": "disk-scan-f019",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1543.003"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 406216,
+            "content": "type=event id=4697 time=\"2020-11-10 14:12:18.5542028\" computer=SRL-FORGE user=SRL-FORGE\\fredr descri…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 446832,
+            "content": "type=event id=4672 time=\"2020-11-14 03:42:40.2263047\" computer=SRL-FORGE user=\"SRL-FORGE\\\\fredr (S-1…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 446834,
+            "content": "type=event id=4624 time=\"2020-11-14 03:42:40.2268052\" computer=SRL-FORGE user=-\\- src_ip=\"cobra (52.…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "finding_id": "disk-scan-f020",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1021.002"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 163546,
+            "content": "type=event id=5140 time=\"2020-11-03 02:03:35.4154369\" computer=SRL-FORGE user=SRL-FORGE\\fredr src_ip…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 163547,
+            "content": "type=event id=5140 time=\"2020-11-03 02:03:35.4316218\" computer=SRL-FORGE user=SRL-FORGE\\fredr src_ip…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 446834,
+            "content": "type=event id=4624 time=\"2020-11-14 03:42:40.2268052\" computer=SRL-FORGE user=-\\- src_ip=\"cobra (52.…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 469940,
+            "content": "type=event id=5140 time=\"2020-11-14 12:44:27.4183571\" computer=SRL-FORGE user=SRL-FORGE\\fredr src_ip…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 449717,
+            "content": "type=event id=4648 time=\"2020-11-14 05:00:49.5022172\" computer=SRL-FORGE user=SRL-FORGE\\fredr src_ip…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "ip:174.196.200.9": {
+    "type": "ip",
+    "value": "174.196.200.9",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f014",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "registry_misc.txt",
+            "line": 17973,
+            "content": "type=registry key=Sam\\ROOT\\SAM\\Domains\\Account\\Users value=V data=\"Username: srl-h Id: 1001 ValidUse…"
+          },
+          {
+            "source_file": "registry_misc.txt",
+            "line": 18006,
+            "content": "type=registry key=Default\\ROOT\\Software\\Microsoft\\IdentityCRL\\StoredIdentities\\srl-helpdesk@outlook.…"
+          },
+          {
+            "source_file": "registry_autoruns.txt",
+            "line": 42,
+            "content": "type=registry key=NtUser\\ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5C…"
+          },
+          {
+            "source_file": "registry_misc.txt",
+            "line": 16592,
+            "content": "type=registry key=\"Software\\\\ROOT\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\" value=RegisteredOwner data…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "afe85599-ee06-48af-bee7-1b313556dcdf",
+        "module": "ti",
+        "verdict": "NOT_FOUND",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "077eef02-fe09-4160-ae10-bc371ac8a2d5",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "ip:194.61.54.121": {
+    "type": "ip",
+    "value": "194.61.54.121",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f015",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1110.001"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 132512,
+            "content": "type=event id=4625 time=\"2020-11-06 00:58:25.1284381\" computer=SRL-FORGE user=-\\- src_ip=\"- (194.61.…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 132542,
+            "content": "type=event id=4625 time=\"2020-11-06 00:58:40.7297391\" computer=SRL-FORGE user=-\\- src_ip=\"- (194.61.…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 132587,
+            "content": "type=event id=4625 time=\"2020-11-06 00:59:00.1999433\" computer=SRL-FORGE user=-\\- src_ip=\"- (194.61.…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 132781,
+            "content": "type=event id=4625 time=\"2020-11-06 01:00:26.3153333\" computer=SRL-FORGE user=-\\- src_ip=\"- (194.61.…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 134463,
+            "content": "type=event id=4625 time=\"2020-11-06 01:13:06.5663520\" computer=SRL-FORGE user=-\\- src_ip=\"- (194.61.…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "00bb0485-10c5-4c79-b464-59ab2936543a",
+        "module": "ti",
+        "verdict": "NOT_FOUND",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "d4a6ff2f-f4a2-448f-9a82-06e8676b8bed",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "ip:141.98.83.187": {
+    "type": "ip",
+    "value": "141.98.83.187",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f016",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1110"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 432782,
+            "content": "type=event id=4625 time=\"2020-11-13 16:47:46.9697904\" computer=SRL-FORGE user=-\\- src_ip=\"- (141.98.…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 432786,
+            "content": "type=event id=4625 time=\"2020-11-13 16:48:35.0322282\" computer=SRL-FORGE user=-\\- src_ip=\"- (141.98.…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 432880,
+            "content": "type=event id=4625 time=\"2020-11-13 17:08:55.8863771\" computer=SRL-FORGE user=-\\- src_ip=\"- (141.98.…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 433473,
+            "content": "type=event id=4625 time=\"2020-11-13 18:29:17.8814869\" computer=SRL-FORGE user=-\\- src_ip=\"- (141.98.…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "104ec4eb-2353-4688-9da0-ba5d41b4bcc0",
+        "module": "ti",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "cf773f63-dd08-4ab0-8d2e-87aface2b515",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "ip:201.193.188.114": {
+    "type": "ip",
+    "value": "201.193.188.114",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f017",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1110"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 302,
+            "content": "type=event id=4625 time=\"2020-11-01 22:22:02.7303750\" computer=SRL-FORGE src_ip=\"- (202.137.116.125)…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 716,
+            "content": "type=event id=4625 time=\"2020-11-01 23:26:41.3694416\" computer=SRL-FORGE src_ip=\"Remmina (89.248.168…"
+          },
+          {
+            "source_file": "registry_misc.txt",
+            "line": 17969,
+            "content": "type=registry key=Sam\\ROOT\\SAM\\Domains\\Account\\Users value=V data=\"Username: Administrator Id: 500 V…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "5987f5ce-c464-4fb0-b0a4-8f371707e57c",
+        "module": "ti",
+        "verdict": "NOT_FOUND",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "a46cbed5-1b39-403d-b69c-236fec2c181d",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "ip:81.19.209.101": {
+    "type": "ip",
+    "value": "81.19.209.101",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f018",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 302,
+            "content": "type=event id=4625 time=\"2020-11-01 22:22:02.7303750\" computer=SRL-FORGE src_ip=\"- (202.137.116.125)…"
+          },
+          {
+            "source_file": "analyst.txt",
+            "line": 1,
+            "content": "(no pivot evidence lines from Archive-Security-2020-11-15-03-14-49-203.evtx or containing 81.19.209.…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "830351de-958f-4abb-b52f-00af1a02e524",
+        "module": "ti",
+        "verdict": "NOT_FOUND",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "84c0f267-a523-47ec-8a98-e184f74b3d77",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "ip:91.241.19.97": {
+    "type": "ip",
+    "value": "91.241.19.97",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f022",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "MEDIUM",
+        "mitre": [
+          "T1110.003"
+        ],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 302,
+            "content": "type=event id=4625 time=\"2020-11-01 22:22:02.7303750\" computer=SRL-FORGE user=-\\- src_ip=\"- (202.137…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 716,
+            "content": "type=event id=4625 time=\"2020-11-01 23:26:41.3694416\" computer=SRL-FORGE user=-\\- src_ip=\"Remmina (8…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 993,
+            "content": "type=event id=4625 time=\"2020-11-02 00:06:21.9836736\" computer=SRL-FORGE user=-\\- src_ip=\"- (54.36.1…"
+          },
+          {
+            "source_file": "registry_misc.txt",
+            "line": 17969,
+            "content": "type=registry key=Sam\\ROOT\\SAM\\Domains\\Account\\Users value=V data=\"Username: Administrator Id: 500 V…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "18fbbbbc-310f-480a-b75c-f599f490e230",
+        "module": "ti",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "770168b6-3620-46be-a764-59fbaef37d87",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "ip:185.202.1.123": {
+    "type": "ip",
+    "value": "185.202.1.123",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f023",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 302,
+            "content": "type=event id=4625 time=\"2020-11-01 22:22:02.7303750\" computer=SRL-FORGE user=-\\- src_ip=\"- (202.137…"
+          },
+          {
+            "source_file": "eventlog_security.txt",
+            "line": 716,
+            "content": "type=event id=4625 time=\"2020-11-01 23:26:41.3694416\" computer=SRL-FORGE user=-\\- src_ip=\"Remmina (8…"
+          },
+          {
+            "source_file": "registry_misc.txt",
+            "line": 17969,
+            "content": "type=registry key=Sam\\ROOT\\SAM\\Domains\\Account\\Users value=V data=\"Username: Administrator Id: 500 V…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      },
+      {
+        "query_id": "2ba3e125-d218-4ee1-94b6-ea26998a26a3",
+        "module": "ti",
+        "verdict": "NOT_FOUND",
+        "severity": null,
+        "evidence": [],
+        "produced_by": {
+          "agent_name": "threat_intel/vt_lookup",
+          "call_id": "99cd8981-f95d-4e62-a30c-1a50a1bf0830",
+          "artifact": null,
+          "log_file": "threat_intel/queries.jsonl"
+        }
+      }
+    ]
+  },
+  "file_path:ProgramData\\Package Cache\\{7f51bdb9-ee21-49ee-94d6-90afc321780e}\\vcredist_x64.exe": {
+    "type": "file_path",
+    "value": "ProgramData\\Package Cache\\{7f51bdb9-ee21-49ee-94d6-90afc321780e}\\vcredist_x64.exe",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f025",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "mft_records.txt",
+            "line": 12610,
+            "content": "type=file path=\"ProgramData\\\\Package Cache\\\\{7f51bdb9-ee21-49ee-94d6-90afc321780e}\\\\vcredist_x64.exe…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "file_path:ProgramData\\Package Cache\\{ce085a78-074e-4823-8dc1-8a721b94b76d}\\vcredist_x86.exe": {
+    "type": "file_path",
+    "value": "ProgramData\\Package Cache\\{ce085a78-074e-4823-8dc1-8a721b94b76d}\\vcredist_x86.exe",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f026",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "mft_records.txt",
+            "line": 12628,
+            "content": "type=file path=\"ProgramData\\\\Package Cache\\\\{ce085a78-074e-4823-8dc1-8a721b94b76d}\\\\vcredist_x86.exe…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "file_path:ProgramData\\Adobe\\Setup\\{AC76BA86-7AD7-1033-7B44-AC0F074E4100}\\setup.exe": {
+    "type": "file_path",
+    "value": "ProgramData\\Adobe\\Setup\\{AC76BA86-7AD7-1033-7B44-AC0F074E4100}\\setup.exe",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f028",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [
+          "T1036.005"
+        ],
+        "evidence": [
+          {
+            "source_file": "mft_records.txt",
+            "line": 56827,
+            "content": "type=file path=ProgramData\\Adobe\\Setup\\{AC76BA86-7AD7-1033-7B44-AC0F074E4100}\\setup.exe mft_ref=1256…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "file_path:Users\\srl-h\\Downloads\\sdelete64.exe": {
+    "type": "file_path",
+    "value": "Users\\srl-h\\Downloads\\sdelete64.exe",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f029",
+        "module": "disk",
+        "verdict": "CONFIRMED",
+        "severity": "MEDIUM",
+        "mitre": [
+          "T1070.004"
+        ],
+        "evidence": [
+          {
+            "source_file": "mft_records.txt",
+            "line": 33968,
+            "content": "type=file path=Users\\srl-h\\Downloads\\sdelete64.exe mft_ref=101249-5 size=246528 deleted=false create…"
+          },
+          {
+            "source_file": "registry_autoruns.txt",
+            "line": 42,
+            "content": "type=registry key=NtUser\\ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5C…"
+          },
+          {
+            "source_file": "mft_records.txt",
+            "line": 33969,
+            "content": "type=file path=Windows.old\\WINDOWS\\Prefetch\\SDELETE64.EXE-B0C2AF3F.pf mft_ref=101250-6 size=6570 del…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "file_path:Users\\fredr\\AppData\\Local\\Temp\\f4136dbd-be88-4a99-8fb9-c70f12760e2b.bat": {
+    "type": "file_path",
+    "value": "Users\\fredr\\AppData\\Local\\Temp\\f4136dbd-be88-4a99-8fb9-c70f12760e2b.bat",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f030",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [
+          "T1059.003"
+        ],
+        "evidence": [
+          {
+            "source_file": "mft_records.txt",
+            "line": 122230,
+            "content": "type=file path=Users\\fredr\\AppData\\Local\\Temp\\f4136dbd-be88-4a99-8fb9-c70f12760e2b.bat mft_ref=37223…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  },
+  "file_path:Users\\fredr\\AppData\\Local\\Temp\\~nsu.tmp\\Au_.exe": {
+    "type": "file_path",
+    "value": "Users\\fredr\\AppData\\Local\\Temp\\~nsu.tmp\\Au_.exe",
+    "findings": [
+      {
+        "finding_id": "disk-scan-f032",
+        "module": "disk",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "mft_records.txt",
+            "line": 36472,
+            "content": "type=file path=Users\\fredr\\AppData\\Local\\Temp\\~nsu.tmp\\Au_.exe mft_ref=103934-18 size=163096 deleted…"
+          },
+          {
+            "source_file": "prefetch_records.txt",
+            "line": 9,
+            "content": "type=execution path=AU_.EXE last_run=2020-11-14T13:50:04Z run_count=1 artifact_source=prefetch sourc…"
+          },
+          {
+            "source_file": "registry_autoruns.txt",
+            "line": 862,
+            "content": "type=registry key=System\\ROOT\\ControlSet001\\Services\\bam\\State\\UserSettings\\S-1-5-21-528816539-56767…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "disk/pivot_analyst",
+          "call_ids": [
+            "57183b3d-40fe-4e59-8a20-5f80cf008b44",
+            "bb0cae37-2ba2-419e-8078-f06291e11521",
+            "1ba5569c-9e56-4dad-92fd-081c17ea5284",
+            "0bc1bf8d-eadd-4125-a4a7-1120a1076ea0",
+            "6893e7d0-7463-4ce3-9338-c296f667ab37",
+            "7afaf363-1e12-4da6-b96f-90054cabda83",
+            "dd8423e7-ca88-4b43-9f2f-4dc3a47b17da",
+            "6596978e-ebbc-4c43-9caa-bf239334384b",
+            "07e7f1aa-fdea-4adb-ad28-47ea17c96246",
+            "08daa6c3-d0a7-4dab-b4c3-15c2529b3176",
+            "0c9892b5-8a49-488a-87de-bb6137ee1aa2"
+          ],
+          "artifact": "disk/04_analyst/analyst.txt",
+          "log_file": "disk/agent_calls.jsonl",
+          "note": "disk analyst writes one shared file; resolves to the call set"
+        }
+      }
+    ]
+  }
+}

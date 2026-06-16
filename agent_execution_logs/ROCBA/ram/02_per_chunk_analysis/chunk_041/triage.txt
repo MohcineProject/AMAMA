@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_041.txt
+Summary: svchost.exe with unknown parent holding high-risk privileges SeTcbPrivilege and SeImpersonatePrivilege; all other processes show orphaned parents consistent with snapshot truncation and no additional signals.
+
+[PROCESS]
+pid: 17316
+ppid: 828
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: parent_unknown: PPID 828 not present in process list — orphaned svchost with no visible services.exe parent | privilege_anomaly: holds SeTcbPrivilege (act as part of OS) and SeImpersonatePrivilege simultaneously without visible legitimate service context | missing_path_and_cmdline: no image path or command line recorded, preventing verification of legitimate svchost invocation (expected path C:\Windows\System32\svchost.exe with -k flag)
+

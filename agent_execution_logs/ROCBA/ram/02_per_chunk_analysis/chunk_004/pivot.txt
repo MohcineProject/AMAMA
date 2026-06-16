@@ -1,0 +1,13 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:38:46Z
+
+=== PID 1676 (dllhost.exe, ppid=740) ===
+
+--- dlllist.txt ---
+L5090: 8156	GoogleCrashHan	0x75cc0000	0x196000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-	1676-10-25 15:03:50.000000 UTC	Disabled
+L7488: 12756	iCloudServices	0x6e280000	0x1ad000	CoreFoundation.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreFoundation.dll	-	1676-10-25 13:30:46.000000 UTC	Disabled
+
+--- psscan.txt ---
+L184: 1676	740	dllhost.exe	0xb78cf9d17080	0	-	1	False	2020-11-16 02:30:36.000000 UTC	2020-11-16 02:30:44.000000 UTC	Disabled
+
+=== END OF PIVOT REPORT ===

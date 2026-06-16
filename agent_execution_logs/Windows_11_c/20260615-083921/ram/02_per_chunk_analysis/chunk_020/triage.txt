@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:31:08Z
+Chunk: chunk_020.txt
+Summary: Orphaned parent PIDs on both ctfmon.exe and audiodg.exe; audiodg.exe discovered only via psscan with a short-lived exit window suggesting possible process hiding.
+
+[PROCESS]
+pid: 7472
+ppid: 2644
+image: ctfmon.exe
+cmdline: /QuitInfo:0000000000000330;0000000000000334;
+severity: LOW
+reasons: orphaned_parent: PPID 2644 not present anywhere in the process list | unusual_cmdline: ctfmon.exe launched with /QuitInfo arguments rather than its typical no-argument invocation
+
+[PROCESS]
+pid: 7648
+ppid: 2528
+image: audiodg.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 2528 not present in the process list (discovered_via=psscan only, suggesting possible process hiding or DKOM unlinking) | psscan_only: process visible in psscan but not in pslist — classic indicator of DKOM-based process hiding | short_lived: process exited at 2026-05-12 18:31:08 UTC, approximately 7 minutes after creation, in a suspicious context alongside hidden parent
+

@@ -1,0 +1,101 @@
+================================================================
+TRIAGE FINDINGS TO VALIDATE — PIVOT REPORT
+Generated: 2026-05-14T00:00:00Z
+Summary: A staged dropper/launcher chain is confirmed on this host, originating from an orphaned cmd.exe (PID 5568) whose parent (PID 560) is absent from the process list. The chain proceeds cmd.exe → Client.exe (PID 5836) → cmd.exe (PID 7980) → Client.exe (PID 376), terminating in a persistent implant running from C:\Users\kali\AppData\Roaming\SubDir\Client.exe. The surviving process (PID 376) holds a near-complete SYSTEM-level privilege set, is still running after all ancestor processes have exited, and loads MSCOREE.DLL consistent with a .NET payload. PING.EXE instances are assessed as timing/connectivity probes embedded in the dropper script.
+Counts: confirmed=4  inconclusive=1  rejected=0
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      376
+PPID:     7980
+Image:    Client.exe
+Cmdline:  "C:\Users\kali\AppData\Roaming\SubDir\Client.exe"
+Severity: CRITICAL
+MITRE:    T1543 / T1134 — Create or Modify System Process / Access Token Manipulation (privilege footprint); T1059.003 — Windows Command Shell (spawn chain)
+
+Justification:
+  Client.exe (PID 376) is the surviving terminal node of a multi-hop dropper chain and is the highest-confidence malicious artefact in this image. It executes from a user-writable AppData subdirectory (C:\Users\kali\AppData\Roaming\SubDir\), has no ExitTime while every ancestor process has already terminated, and carries a privilege token that is effectively SYSTEM-equivalent: SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege, SeCreateTokenPrivilege, SeAssignPrimaryTokenPrivilege, SeBackupPrivilege, SeRestorePrivilege, and SeAuditPrivilege are all present in the token — a set that no legitimate user-context binary should hold. The self-referential DLL list entry (the .exe appearing as its own loaded module at 0xb50000) combined with MSCOREE.DLL is consistent with a .NET assembly loaded reflectively or via the CLR host. The path corroborates the pstree device path (\Device\HarddiskVolume4\Users\kali\AppData\Roaming\SubDir\Client.exe), confirming the binary is on disk at that location.
+
+Key Evidence:
+  - L137: 376	7980	Client.exe	0x990ef4b38080	9	-	1	False	2026-05-13 19:26:53.000000 UTC	N/A	Disabled
+  - L137: 376	Client.exe	"C:\Users\kali\AppData\Roaming\SubDir\Client.exe"
+  - L6308: 376	Client.exe	0xb50000	0x324000	Client.exe	C:\Users\kali\AppData\Roaming\SubDir\Client.exe	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+  - L6310: 376	Client.exe	0x7fffad750000	0x6d000	MSCOREE.DLL	C:\WINDOWS\SYSTEM32\MSCOREE.DLL	-1	2026-05-13 19:26:53.000000 UTC	Disabled
+  - L4630: 376	Client.exe	7	SeTcbPrivilege		Act as part of the operating system
+  - L4633: 376	Client.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+  - L4643: 376	Client.exe	20	SeDebugPrivilege		Debug programs
+  - L4652: 376	Client.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+  - L137: 376	7980	Client.exe	... \Device\HarddiskVolume4\Users\kali\AppData\Roaming\SubDir\Client.exe	"C:\Users\kali\AppData\Roaming\SubDir\Client.exe"
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      5568
+PPID:     560
+Image:    cmd.exe
+Cmdline:  (not recovered)
+Severity: HIGH
+MITRE:    T1059.003 — Windows Command Shell
+
+Justification:
+  cmd.exe (PID 5568) is the root of the confirmed dropper chain. Its parent PID 560 does not appear in either pslist or psscan, making it an orphaned process — a strong indicator of injection, PID reuse, or a launcher that cleaned itself up. Within its ~10-second lifespan it directly spawned both PING.EXE (PID 5608, consistent with a connectivity check or sleep-via-ping) and Client.exe (PID 5836), the next stage of the chain. The combination of orphaned parentage, scripted multi-child spawning, and a 10-second lifespan is consistent with a cmd.exe dropper script executing a staged payload sequence. No cmdline was recovered, which is itself a minor additional signal (the process was captured only in psscan, not pslist, suggesting it had already exited before the live list was walked).
+
+Key Evidence:
+  - L114: 5568	560	cmd.exe	0x990ef7af3080	0	-	1	False	2026-05-13 19:26:26.000000 UTC	2026-05-13 19:26:36.000000 UTC	Disabled
+  - L134: 5608	5568	PING.EXE	0x990ef87e9080	0	-	1	False	2026-05-13 19:26:26.000000 UTC	2026-05-13 19:26:36.000000 UTC	Disabled
+  - L142: 5836	5568	Client.exe	0x990efa9d3080	0	-	1	False	2026-05-13 19:26:36.000000 UTC	2026-05-13 19:26:43.000000 UTC	Disabled
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      5836
+PPID:     5568
+Image:    Client.exe
+Cmdline:  (not recovered)
+Severity: HIGH
+MITRE:    T1059.003 — Windows Command Shell (intermediary launcher role)
+
+Justification:
+  Client.exe (PID 5836) is the first-stage payload in the chain, spawned by the orphaned cmd.exe (PID 5568) and itself spawning cmd.exe (PID 7980) before exiting after ~7 seconds. This short-lived, no-cmdline, no-path-recovered instance is consistent with a dropper or loader whose sole purpose is to re-execute a second copy of Client.exe under a fresh cmd.exe wrapper — a classic staged re-execution pattern used to obscure the original launch context and inherit a cleaner process tree. No DLL or cmdline evidence was recovered (process was psscan-only), but the spawn chain evidence is unambiguous: it sits between the orphaned root cmd.exe and the persistent PID 376 implant.
+
+Key Evidence:
+  - L142: 5836	5568	Client.exe	0x990efa9d3080	0	-	1	False	2026-05-13 19:26:36.000000 UTC	2026-05-13 19:26:43.000000 UTC	Disabled
+  - L104: 7980	5836	cmd.exe	0x990ef77f8080	0	-	1	False	2026-05-13 19:26:43.000000 UTC	2026-05-13 19:26:53.000000 UTC	Disabled
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      7980
+PPID:     5836
+Image:    cmd.exe
+Cmdline:  (not recovered)
+Severity: HIGH
+MITRE:    T1059.003 — Windows Command Shell
+
+Justification:
+  cmd.exe (PID 7980) is the second intermediary wrapper in the chain, spawned by Client.exe (PID 5836) and itself spawning both PING.EXE (PID 7552) and the persistent Client.exe (PID 376) from AppData\Roaming\SubDir before exiting after ~10 seconds. The pstree evidence confirms the full device path of the child it launched (\Device\HarddiskVolume4\Users\kali\AppData\Roaming\SubDir\Client.exe), corroborating the AppData path seen in cmdline.txt for PID 376. The pattern — cmd.exe spawning a PING.EXE alongside a payload binary — mirrors the behaviour of the root cmd.exe (PID 5568), suggesting a templated dropper script was executed twice across the chain.
+
+Key Evidence:
+  - L104: 7980	5836	cmd.exe	0x990ef77f8080	0	-	1	False	2026-05-13 19:26:43.000000 UTC	2026-05-13 19:26:53.000000 UTC	Disabled
+  - L25: 376	7980	Client.exe	0x990ef4b38080	9	-	1	False	2026-05-13 19:26:53.000000 UTC	N/A	Disabled
+  - L132: 7552	7980	PING.EXE	0x990ef8639080	0	-	1	False	2026-05-13 19:26:43.000000 UTC	2026-05-13 19:26:53.000000 UTC	Disabled
+  - L137: 376	7980	Client.exe	... \Device\HarddiskVolume4\Users\kali\AppData\Roaming\SubDir\Client.exe	"C:\Users\kali\AppData\Roaming\SubDir\Client.exe"
+----------------------------------------------------------------
+
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      5608
+PPID:     5568
+Image:    PING.EXE
+Cmdline:  (not recovered)
+
+Justification:
+  PING.EXE (PID 5608) was spawned by the confirmed-malicious cmd.exe (PID 5568) alongside Client.exe (PID 5836), and a second PING.EXE (PID 7552) was similarly spawned by cmd.exe (PID 7980) — a repeated pattern strongly suggesting ping is being used as a timing delay (e.g. "ping -n 10 127.0.0.1") or a connectivity probe within the dropper script. However, PING.EXE is a legitimate Windows binary and its use as a sleep substitute is a well-known but not unambiguous technique; without the command-line arguments (not recovered) it is impossible to confirm the specific abuse. The process is assessed INCONCLUSIVE rather than CONFIRMED because the binary itself is benign and the only evidence of misuse is contextual (malicious parent, co-spawning with payload). Agent 3 should note that recovery of the ping arguments would likely resolve this to CONFIRMED MEDIUM.
+
+Key Evidence:
+  - L134: 5608	5568	PING.EXE	0x990ef87e9080	0	-	1	False	2026-05-13 19:26:26.000000 UTC	2026-05-13 19:26:36.000000 UTC	Disabled
+  - L132: 7552	7980	PING.EXE	0x990ef8639080	0	-	1	False	2026-05-13 19:26:43.000000 UTC	2026-05-13 19:26:53.000000 UTC	Disabled
+----------------------------------------------------------------

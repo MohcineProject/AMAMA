@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_012.txt
+Summary: Two processes with unknown/missing parent PIDs; one svchost.exe with unresolvable parent and one short-lived HxTsr.exe with unresolvable parent.
+
+[PROCESS]
+pid: 6532
+ppid: 828
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService
+severity: LOW
+reasons: orphaned_parent: PPID 828 (listed as 'unknown') does not appear anywhere in the process list — expected parent is services.exe
+
+[PROCESS]
+pid: 6620
+ppid: 740
+image: HxTsr.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 740 (listed as 'unknown') does not appear anywhere in the process list | very_short_lived: process exited approximately 2 seconds after creation (Start: 2020-11-12 01:01:48 UTC, Exit: 2020-11-12 01:01:50 UTC)
+

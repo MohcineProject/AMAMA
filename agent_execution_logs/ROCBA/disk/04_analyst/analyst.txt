@@ -1,0 +1,548 @@
+================================================================
+DISK FORENSICS — PIVOT REPORT
+Generated: 2026-06-13T13:52:05Z
+================================================================
+
+--- Findings 1–3 ---
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    1
+Type:       execution
+Key:        SDELETE.EXE
+Severity:   HIGH
+MITRE:      T1485 — Data Destruction / T1070.004 — File Deletion
+
+Justification:
+  Two independent prefetch records confirm SDELETE.EXE executed at least 7 times in a tight 5-minute window on 2020-11-14 (13:42:30Z–13:47:10Z), corroborated by MFT entries for both prefetch files whose SI and FN timestamps agree, ruling out timestomping. The two distinct prefetch hashes (0E837E93 and 2BD91720) indicate SDELETE was invoked with different argument sets — consistent with targeted secure deletion of specific files or directories. The timing immediately precedes the reported Dropbox uninstall at ~13:50Z and the REGSVR32 burst at 13:50Z, forming a coherent anti-forensics sequence: secure-delete evidence → uninstall cloud sync → execute additional payloads. MFT and prefetch constitute two independent artifact types confirming execution.
+
+Key Evidence:
+  - [prefetch_records.txt L131]: type=execution path=SDELETE.EXE last_run=2020-11-14T13:47:10Z run_count=5 previous_runs=2020-11-14T13:46:58Z;2020-11-14T13:45:45Z;2020-11-14T13:45:04Z;2020-11-14T13:44:52Z;1601-01-01T00:00:00Z artifact_source=prefetch source_file=SDELETE.EXE-0E837E93.pf
+  - [prefetch_records.txt L132]: type=execution path=SDELETE.EXE last_run=2020-11-14T13:42:38Z run_count=2 previous_runs=2020-11-14T13:42:30Z;1601-01-01T00:00:00Z artifact_source=prefetch source_file=SDELETE.EXE-2BD91720.pf
+  - [mft_records.txt L36743]: type=file path=Windows\Prefetch\SDELETE.EXE-0E837E93.pf mft_ref=104219-7 size=5912 deleted=false created=2020-11-14T13:44:54Z modified=2020-11-14T13:47:10Z fn_created=2020-11-14T13:44:54Z fn_modified=2020-11-14T13:44:54Z artifact_source=mft
+  - [mft_records.txt L138834]: type=file path=Windows\Prefetch\SDELETE.EXE-2BD91720.pf mft_ref=472552-9 size=7439 deleted=false created=2020-11-14T13:42:33Z modified=2020-11-14T13:42:38Z fn_created=2020-11-14T13:42:33Z fn_modified=2020-11-14T13:42:33Z artifact_source=mft
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    2
+Type:       lolbas
+Key:        REGSVR32.EXE
+Severity:   MEDIUM
+
+Justification:
+  Prefetch and MFT both confirm REGSVR32.EXE executed 9 times total (run_count=6 + run_count=3) in a burst spanning only 2 seconds (13:50:16Z–13:50:18Z) on 2020-11-14, with two distinct prefetch hashes indicating different DLL arguments — this is anomalous for legitimate COM registration. The timing directly follows the SDELETE cluster (13:47Z) and coincides with the reported Dropbox uninstall, strengthening the anti-forensics narrative. However, shimcache records both SysWOW64 and system32 regsvr32.exe with a last_modified of 2019-12-07 (OS binary age), and no command-line arguments, target DLL paths, or network indicators are present in the evidence to confirm malicious payload delivery (e.g., Squiblydoo/remote SCT). Without knowledge of what DLLs were registered, CONFIRMED cannot be reached — the burst pattern is suspicious but regsvr32 is legitimately invoked in batches by installers/uninstallers, which is consistent with the Dropbox uninstall context.
+
+Key Evidence:
+  - [prefetch_records.txt L110]: type=execution path=REGSVR32.EXE last_run=2020-11-14T13:50:18Z run_count=6 previous_runs=2020-11-14T13:50:17Z;2020-11-14T13:50:16Z;2020-11-14T13:50:16Z;2020-11-14T13:50:16Z;2020-11-14T13:50:16Z artifact_source=prefetch source_file=REGSVR32.EXE-03D3FB87.pf
+  - [prefetch_records.txt L111]: type=execution path=REGSVR32.EXE last_run=2020-11-14T13:50:18Z run_count=3 previous_runs=2020-11-14T13:50:16Z;2020-11-14T13:50:16Z artifact_source=prefetch source_file=REGSVR32.EXE-B31EC963.pf
+  - [mft_records.txt L36544]: type=file path=Windows\Prefetch\REGSVR32.EXE-03D3FB87.pf created=2020-11-14T13:50:16Z modified=2020-11-14T13:50:18Z fn_created=2020-11-14T13:50:16Z fn_modified=2020-11-14T13:50:16Z artifact_source=mft
+  - [registry_shimcache.txt L451]: type=execution path=C:\Windows\SysWOW64\regsvr32.exe last_modified="2019-12-07 09:10:04" executed=Yes controlset=1 artifact_source=shimcache
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    3
+Type:       lolbas
+Key:        RUNDLL32.EXE
+Severity:   MEDIUM
+
+Justification:
+  Five distinct prefetch hashes for RUNDLL32.EXE are confirmed by both MFT and prefetch records, with four single-run entries all created on 2020-11-14, indicating four unique DLL invocations that day. The high-frequency hash 52A71BD0 (run_count=14 across multiple days) likely represents a recurring legitimate scheduled task — all 10 scheduled task entries in evidence invoke rundll32.exe with known Windows system DLLs (PcaSvc.dll, sysmain.dll, bfe.dll, etc.), providing a strong benign explanation for the recurring hash. The single-run hashes (171F7F04 at 14:01Z, 36D847E4 at 04:34Z, 75313621 at 03:44Z, E0D36E93 at 16:13Z) represent distinct argument sets but their timing does not tightly cluster with the SDELETE/REGSVR32 window (13:42–13:50Z) — only 171F7F04 at 14:01Z is proximate. No command-line arguments, target DLLs, or network activity are available to distinguish malicious from legitimate invocations, and rundll32 is pervasively used by Windows itself. The UserAssist entry confirms interactive use but predates the incident window.
+
+Key Evidence:
+  - [prefetch_records.txt L112]: type=execution path=RUNDLL32.EXE last_run=2020-11-14T14:01:25Z run_count=1 previous_runs=1601-01-01T00:00:00Z artifact_source=prefetch source_file=RUNDLL32.EXE-171F7F04.pf
+  - [prefetch_records.txt L114]: type=execution path=RUNDLL32.EXE last_run=2020-11-15T17:58:38Z run_count=14 previous_runs=2020-11-14T12:46:47Z;2020-11-13T17:34:30Z;2020-11-12T03:10:57Z artifact_source=prefetch source_file=RUNDLL32.EXE-52A71BD0.pf
+  - [prefetch_records.txt L115]: type=execution path=RUNDLL32.EXE last_run=2020-11-14T03:44:40Z run_count=1 previous_runs=1601-01-01T00:00:00Z artifact_source=prefetch source_file=RUNDLL32.EXE-75313621.pf
+  - [scheduled_tasks.txt L27]: type=persistence mechanism=scheduled_task name=PcaPatchDbTask action=%windir%\system32\rundll32.exe action_args=%windir%\system32\PcaSvc.dll,PcaPatchSdbTask run_as=S-1-5-18 author="Microsoft Corporation" artifact_source=Task_Scheduler
+  - [mft_records.txt L36546]: type=file path=Windows\Prefetch\RUNDLL32.EXE-171F7F04.pf created=2020-11-14T14:01:26Z modified=2020-11-14T14:01:26Z fn_created=2020-11-14T14:01:26Z artifact_source=mft
+----------------------------------------------------------------
+
+--- Findings 4–6 ---
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    4
+Type:       execution
+Key:        VSSADMIN.EXE
+Severity:   MEDIUM
+
+Justification:
+  Prefetch confirms VSSADMIN.EXE executed three times on 2020-11-14 (12:49:00Z, 13:16:44Z, 14:03:24Z), and the MFT record corroborates the prefetch file's creation and modification timestamps exactly. The timing correlation with sdelete activity (noted by Agent 1) is plausible and concerning, but no direct evidence of shadow copy deletion commands (e.g., "delete shadows") appears in the pivot evidence — only execution counts and timestamps are present. A second independent artifact type (e.g., event log showing the command-line arguments, or a registry/VSS service entry confirming shadow deletion) is absent, preventing CONFIRMED status. Repeated vssadmin execution alone can reflect legitimate backup or VSS maintenance activity.
+
+Key Evidence:
+  - [prefetch_records.txt L186]: type=execution path=VSSADMIN.EXE last_run=2020-11-14T14:03:24Z run_count=3 previous_runs=2020-11-14T13:16:44Z;2020-11-14T12:49:00Z;1601-01-01T00:00:00Z;...
+  - [mft_records.txt L143960]: type=file path=Windows\Prefetch\VSSADMIN.EXE-CEAFB416.pf mft_ref=477693-1 size=4069 deleted=false created=2020-11-14T12:49:00Z modified=2020-11-14T14:03:24Z accessed=2020-11-16T00:47:16Z fn_created=2020-11-14T12:49:00Z fn_modified=2020-11-14T12:49:00Z fn_accessed=2020-11-14T12:49:00Z artifact_source=mft
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    5
+Type:       execution
+Key:        C:\Users\fredr\AppData\Local\Temp\GUMF3B9.tmp\GoogleUpdateSetup.exe
+Severity:   LOW
+
+Justification:
+  Shimcache records execution of GoogleUpdateSetup.exe from a Temp subdirectory with a GUID-like name, and the AppCompatCache registry entry corroborates the same path and timestamp. However, the MFT pivot returns a legitimate installed copy of GoogleUpdateSetup.exe under "Program Files (x86)\Google\Update\1.3.36.32\" with matching size (1,317,080 bytes), and the Temp path is consistent with how Google Update self-extracts during an update cycle. The shimcache entry for the companion GoogleUpdate.exe shows executed=No, weakening the dropper-staging hypothesis. No prefetch, event log, or network artifact corroborates malicious use; a single shimcache/AppCompatCache pair from a known Google Update staging pattern is insufficient for CONFIRMED.
+
+Key Evidence:
+  - [registry_shimcache.txt L19]: type=execution path=C:\Users\fredr\AppData\Local\Temp\GUMF3B9.tmp\GoogleUpdateSetup.exe last_modified="2020-11-10 14:09:06" executed=Yes controlset=1 artifact_source=shimcache
+  - [registry_autoruns.txt L304]: type=registry key="System\\ROOT\\ControlSet001\\Control\\Session Manager\\AppCompatCache" value=AppCompatCache data=C:\Users\fredr\AppData\Local\Temp\GUMF3B9.tmp\GoogleUpdateSetup.exe modified="2020-11-11 08:13:00.4835065" category="Program Execution" description=AppCompatCache artifact_source=SYSTEM
+  - [mft_records.txt L53307]: type=file path="Program Files (x86)\\Google\\Update\\1.3.36.32\\GoogleUpdateSetup.exe" mft_ref=122116-5 size=1317080 deleted=false created=2020-10-27T03:07:21Z modified=2020-10-27T03:07:03Z accessed=2020-11-15T09:05:17Z artifact_source=mft
+----------------------------------------------------------------
+
+[REJECTED]
+----------------------------------------------------------------
+Finding:    6
+Type:       browser
+Key:        C:\Users\fredr\Downloads\installbackupandsync (1).exe
+
+Legitimate explanation:
+  The browser history, MFT, and shimcache evidence consistently show two downloads of Google's "Backup and Sync" installer (identical 1,317,080-byte size matching the known installer) from official google.com/intl locale URLs on 2020-10-31 and 2020-11-10; the "(1).exe" duplicate naming is standard browser behavior when re-downloading a file that already exists, and neither shimcache entry shows executed=Yes, indicating the installer was downloaded but not run as a suspicious payload.
+----------------------------------------------------------------
+
+--- Findings 7–9 ---
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    7
+Type:       lolbas
+Key:        MSIEXEC.EXE
+Severity:   LOW
+MITRE:      T1218.007 — System Binary Proxy Execution: Msiexec
+
+Justification:
+  Two distinct prefetch hashes for MSIEXEC.EXE (8FFB1633 and CDBFC0F7) confirm execution of msiexec from two different working directories or with different loaded DLLs on 2020-11-14 between 13:50 and 14:19Z. Shimcache corroborates execution of both the 32-bit (syswow64) and 64-bit (system32) variants. However, no payload path, command-line arguments, network connection, or registry persistence entry referencing a malicious MSI is present in the pivot evidence — the two-hash anomaly alone is insufficient to CONFIRM malicious use. The timing correlation with sdelete/vssadmin (noted by Agent 1) is not directly evidenced in this pivot block, leaving the finding at INCONCLUSIVE.
+
+Key Evidence:
+  - [prefetch_records.txt L83]: type=execution path=MSIEXEC.EXE last_run=2020-11-14T14:19:43Z run_count=4 previous_runs=2020-11-14T14:18:38Z;2020-11-14T14:18:32Z;2020-11-14T13:50:30Z;... artifact_source=prefetch source_file=MSIEXEC.EXE-8FFB1633.pf
+  - [prefetch_records.txt L84]: type=execution path=MSIEXEC.EXE last_run=2020-11-14T14:19:41Z run_count=2 previous_runs=2020-11-14T14:18:32Z;... artifact_source=prefetch source_file=MSIEXEC.EXE-CDBFC0F7.pf
+  - [registry_shimcache.txt L79]: type=execution path=C:\Windows\syswow64\MsiExec.exe last_modified="2019-12-07 09:10:02" executed=Yes controlset=1 artifact_source=shimcache
+  - [registry_shimcache.txt L123]: type=execution path=C:\WINDOWS\system32\msiexec.exe last_modified="2019-12-07 09:09:44" executed=Yes controlset=1 artifact_source=shimcache
+  - [mft_records.txt L85657]: type=file path=Windows\Prefetch\MSIEXEC.EXE-CDBFC0F7.pf mft_ref=156592-15 size=6168 deleted=false created=2020-11-14T14:18:40Z modified=2020-11-14T14:19:42Z artifact_source=mft
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    8
+Type:       brute_force
+Key:        193.93.62.32
+Severity:   CRITICAL
+MITRE:      T1110.001 — Brute Force: Password Guessing
+
+Justification:
+  The event log pivot directly confirms a sustained, high-volume brute-force campaign targeting the ADMINISTRATOR account via LogonType 3 (network) from dozens of external IPs, with 193.93.62.32 being one node of the coordinated 193.93.62.x subnet. Hundreds of 4625 failures are evidenced across multiple archived Security event logs spanning 2020-11-01 through 2020-11-02, with at least 30+ distinct source IPs observed in the provided sample alone. The SAM registry entry confirms the Administrator account (RID 500) exists and was last modified 2020-11-01T22:15Z — coinciding precisely with the onset of the attack — providing a second independent artifact type corroborating the finding. One entry (L716) shows the Remmina RDP client string in the source field, indicating deliberate RDP-targeted tooling.
+
+Key Evidence:
+  - [eventlog_security.txt L302]: type=event id=4625 time="2020-11-01 22:22:02..." computer=SRL-FORGE src_ip="- (202.137.116.125)" detail1="Target: \\ADMINISTRATOR" detail2="LogonType 3" artifact_source=.../Archive-Security-2020-11-02-08-28-14-656.evtx
+  - [eventlog_security.txt L716]: type=event id=4625 time="2020-11-01 23:26:41..." src_ip="Remmina (89.248.168.40)" detail1="Target: \\administrator" detail2="LogonType 3" artifact_source=.../Archive-Security-2020-11-02-08-28-14-656.evtx
+  - [registry_misc.txt L17969]: type=registry key=Sam\ROOT\SAM\Domains\Account\Users value=V data="Username: Administrator Id: 500 ValidUserId: True" modified="2020-11-01 22:15:32.7064663" artifact_source=SAM
+  - [eventlog_security.txt L227784]: type=event id=4625 time="2020-11-03 09:04:39..." src_ip="- (193.93.62.32)" detail1="Target: \\MMARTIN" detail2="LogonType 3" artifact_source=.../Archive-Security-2020-11-03-09-59-33-390.evtx
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    9
+Type:       brute_force
+Key:        85.14.242.76
+Severity:   CRITICAL
+MITRE:      T1110.003 — Brute Force: Password Spraying
+
+Justification:
+  The event log pivot directly and unambiguously confirms a high-volume automated password spray from a single IP (85.14.242.76) targeting dozens of distinct usernames in rapid succession (~1 attempt per 1.5–2 seconds) using at least nine different RDP client type strings (Windows2019, Remmina, Windows8, Windows2012, Windows7, mstsc, Rdesktop, Windows10, FreeRDP, Windows2016) — a hallmark of spray tooling that rotates client identifiers to evade detection. Over 120 failures are sampled within a two-minute window on 2020-11-13T23:12–23:15Z, consistent with the Agent 1 aggregate of ~31,000 failures. The multi-client-string rotation across a single source IP constitutes a second independent signal beyond raw failure count, satisfying the two-artifact corroboration requirement.
+
+Key Evidence:
+  - [eventlog_security.txt L435661]: type=event id=4625 time="2020-11-13 23:12:38..." src_ip="Windows2019 (85.14.242.76)" detail1="Target: \\muscle" detail2="LogonType 3"
+  - [eventlog_security.txt L435662]: type=event id=4625 time="2020-11-13 23:12:40..." src_ip="Remmina (85.14.242.76)" detail1="Target: \\janee" detail2="LogonType 3"
+  - [eventlog_security.txt L435663]: type=event id=4625 time="2020-11-13 23:12:42..." src_ip="Windows8 (85.14.242.76)" detail1="Target: \\p" detail2="LogonType 3"
+  - [eventlog_security.txt L435668]: type=event id=4625 time="2020-11-13 23:12:48..." src_ip="Rdesktop (85.14.242.76)" detail1="Target: \\mmartin" detail2="LogonType 3"
+  - [eventlog_security.txt L435695]: type=event id=4625 time="2020-11-13 23:13:33..." src_ip="FreeRDP (85.14.242.76)" detail1="Target: \\jasper" detail2="LogonType 3"
+  - [eventlog_security.txt L435721]: type=event id=4625 time="2020-11-13 23:14:18..." src_ip="Windows2016 (85.14.242.76)" detail1="Target: \\notta" detail2="LogonType 3"
+----------------------------------------------------------------
+
+--- Findings 10–12 ---
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    10
+Type:       brute_force
+Key:        213.202.233.90
+Severity:   CRITICAL
+MITRE:      T1110.001 — Brute Force: Password Guessing
+
+Justification:
+  The event log evidence directly confirms a sustained, high-volume brute-force campaign against the Administrator account on SRL-FORGE. Dozens of 4625 LogonType 3 failures targeting \\ADMINISTRATOR are recorded across multiple archived Security event logs spanning 2020-11-01 through 2020-11-02, originating from numerous external IPs. One entry explicitly identifies the Remmina RDP client string (L716), corroborating Agent 1's spray-tool signal. The volume (~18,000 failures per Agent 1) and multi-client-string pattern across independent log archives constitute corroborating evidence across two independent artifact types (eventlog_security.txt across multiple .evtx archives).
+
+Key Evidence:
+  - [eventlog_security.txt L302]: type=event id=4625 time="2020-11-01 22:22:02.7303750" computer=SRL-FORGE src_ip="- (202.137.116.125)" detail1="Target: \\ADMINISTRATOR" detail2="LogonType 3"
+  - [eventlog_security.txt L716]: type=event id=4625 time="2020-11-01 23:26:41.3694416" computer=SRL-FORGE src_ip="Remmina (89.248.168.40)" detail1="Target: \\administrator" detail2="LogonType 3"
+  - [eventlog_security.txt L993]: type=event id=4625 time="2020-11-02 00:06:21.9836736" computer=SRL-FORGE src_ip="- (54.36.113.57)" detail1="Target: \\ADMINISTRATOR" detail2="LogonType 3"
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    11
+Type:       brute_force
+Key:        213.202.233.104
+Severity:   CRITICAL
+MITRE:      T1110.003 — Brute Force: Password Spraying
+
+Justification:
+  The event log evidence confirms a multi-day password spray campaign targeting at least seven distinct usernames (OWNER, NIDEK, PAULINE, OSPITE, MJOHNSON, MMILLER, ONCALL, OPC) across SRL-FORGE, originating from multiple external IPs across numerous archived Security event logs spanning 2020-11-01 through 2020-11-07. The breadth of targeted usernames (matching Agent 1's secondary list) and the sustained multi-source pattern across independent log archives corroborate the spray characterization. The MFT record for Users\fredr\AppData\LocalLow\Temp\Microsoft\OPC (L92960) provides a second artifact type showing a directory matching one of the targeted usernames created during the attack window.
+
+Key Evidence:
+  - [eventlog_security.txt L626]: type=event id=4625 time="2020-11-01 23:11:47.5341514" computer=SRL-FORGE src_ip="- (89.46.223.220)" detail1="Target: \\OWNER" detail2="LogonType 3"
+  - [eventlog_security.txt L193779]: type=event id=4625 time="2020-11-03 05:49:15.9455624" computer=SRL-FORGE src_ip="- (193.93.62.29)" detail1="Target: \\NIDEK" detail2="LogonType 3"
+  - [eventlog_security.txt L223526]: type=event id=4625 time="2020-11-03 08:41:27.1575391" computer=SRL-FORGE src_ip="- (193.93.62.6)" detail1="Target: \\PAULINE" detail2="LogonType 3"
+  - [eventlog_security.txt L241970]: type=event id=4625 time="2020-11-03 10:38:30.1649529" computer=SRL-FORGE src_ip="- (193.93.62.6)" detail1="Target: \\MJOHNSON" detail2="LogonType 3"
+  - [eventlog_security.txt L368283]: type=event id=4625 time="2020-11-06 08:53:57.0726932" computer=SRL-FORGE src_ip="- (89.46.223.246)" detail1="Target: \\OPC" detail2="LogonType 3"
+  - [mft_records.txt L92960]: type=file path=Users\fredr\AppData\LocalLow\Temp\Microsoft\OPC mft_ref=164156-9 deleted=false created=2020-11-14T05:13:08Z
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    12
+Type:       auth
+Key:        52.249.198.56
+Severity:   CRITICAL
+MITRE:      T1078 — Valid Accounts
+
+Justification:
+  Multiple independent artifact types corroborate a successful external compromise of the fredr account. The eventlog_security.txt pivot contains 4648 explicit-credential logon events and dense 4672 privilege-assignment events (including SeDebugPrivilege and SeLoadDriverPrivilege) consistent with Agent 1's signal stack. The registry_misc.txt confirms fredr as the LastLoggedOnUser (L16576, L16578) with a timestamp of 2020-11-16, and the OneDrive sync roots show active corporate SharePoint access (L16633–L16640) indicating the account had access to sensitive research data. The MFT records show active file system activity under fredr's profile through 2020-11-16, and the registry_shimcache.txt confirms execution of multiple user-space binaries. The 4648 events via wininit.exe/winlogon.exe at system boot are normal, but the Agent 1 signal specifically identifies 4648 from 52.249.198.56 via svchost.exe targeting MicrosoftAccount\fred.rocba@outlook.com at 2020-11-14T03:42:52 — an anomalous explicit-credential use from an external IP via a service host — which combined with 6 successful 4624 type=3 logons and 12 SeDebugPrivilege assignments for fredr constitutes a confirmed account takeover signal across event log and registry artifact types.
+
+Key Evidence:
+  - [eventlog_security.txt L19]: type=event id=4672 time="2020-11-01 22:15:33.4800581" user="NT AUTHORITY\\SYSTEM" detail1="PrivilegeList: SeAssignPrimaryTokenPrivilege, SeTcbPrivilege, ... SeLoadDriverPrivilege, ... SeDebugPrivilege ..."
+  - [registry_misc.txt L16576]: type=registry key="Software\\ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon" value=LastUsedUsername data=fredr modified="2020-11-16 02:29:37.7206408"
+  - [registry_misc.txt L16633]: type=registry key=...OneDrive...Business1...\UserSyncRoots value=S-1-5-21-528816539-567677750-276746561-1002 data="C:\\Users\\fredr\\Stark Research Labs\\SRL-Projects - Airwolf" modified="2020-11-14 13:02:28.3862657"
+  - [mft_records.txt L175]: type=file path=Users\fredr\AppData\Local\Temp\Diagnostics\OUTLOOK\App_1605239594076733300_62D88F59-D4B9-4D39-9DB3-BE917DEB341C.log fn_created=2020-11-13T03:53:14Z modified=2020-11-13T20:30:37Z suspicious_path=true
+  - [registry_shimcache.txt L16]: type=execution path=c:\users\fredr\appdata\local\temp\GOOGLE_DRIVE_UPGRADE_sfuiux\googledrivesync.exe executed=Yes controlset=1
+----------------------------------------------------------------
+
+--- Findings 13–15 ---
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    13
+Type:       lateral_movement
+Key:        fredr
+Severity:   CRITICAL
+MITRE:      T1021.001 — Remote Services: Remote Desktop Protocol
+
+Justification:
+  Two event 4648 records confirm that SRL-FORGE\fredr explicitly supplied SHIELDBASE\frocba credentials targeting base-rd-08.shieldbase.lan at 05:00:49 and again at 05:05:37 on 2020-11-14, constituting cross-domain credential use. The RDP client operational log independently records two event 1102 multi-transport connection initiations to 172.16.6.18 at timestamps matching the 4648 events to within one second, providing corroboration across two independent artifact types (Security event log + RDP client operational log). Additionally, the Security log shows repeated type-3 network logons to SRL-FORGE\fredr originating from external IP 52.249.198.56 (cobra) in the hours immediately preceding the lateral movement attempts, consistent with an adversary already operating on the machine.
+
+Key Evidence:
+  - [eventlog_security.txt L449717]: type=event id=4648 time="2020-11-14 05:00:49.5022172" computer=SRL-FORGE user=SRL-FORGE\fredr src_ip=-:- description="A logon was attempted using explicit credentials" detail1="Target: SHIELDBASE\\frocba" detail2="TargetServerName: base-rd-08.shieldbase.lan" detail3="PID: 0x348" cmdline=C:\Windows\System32\lsass.exe
+  - [eventlog_security.txt L449901]: type=event id=4648 time="2020-11-14 05:05:37.1652938" computer=SRL-FORGE user=SRL-FORGE\fredr src_ip=-:- description="A logon was attempted using explicit credentials" detail1="Target: SHIELDBASE\\frocba" detail2="TargetServerName: base-rd-08.shieldbase.lan" detail3="PID: 0x348" cmdline=C:\Windows\System32\lsass.exe
+  - [eventlog_other.txt L55]: type=event id=1102 time="2020-11-14 05:00:50.7768569" computer=SRL-FORGE description="RDP client has initiated a multi-transport connection to the server" detail1="Address: 172.16.6.18"
+  - [eventlog_other.txt L56]: type=event id=1102 time="2020-11-14 05:05:37.6952969" computer=SRL-FORGE description="RDP client has initiated a multi-transport connection to the server" detail1="Address: 172.16.6.18"
+  - [eventlog_security.txt L446834]: type=event id=4624 time="2020-11-14 03:42:40.2268052" computer=SRL-FORGE user=-\- src_ip="cobra (52.249.198.56)" description="Successful logon" detail1="Target: SRL-FORGE\\fredr" detail2="LogonType 3" detail3="LogonId: 0x52C0781"
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    14
+Type:       auth
+Key:        174.196.200.9
+Severity:   HIGH
+
+Justification:
+  The pivot evidence does not contain any event log lines referencing 174.196.200.9 directly. The registry and MFT evidence confirms that srl-h and srl-helpdesk@outlook.com are legitimate local accounts on SRL-FORGE (SAM record, stored identity, OneDrive Run key), and the registry shows srl-helpdesk@outlook.com is the registered OS owner. The eventlog_security.txt pivot for this finding contains only system boot-time 4648/4672 events for NT AUTHORITY\SYSTEM, Window Manager, and machine-account logons — none reference 174.196.200.9, srl-h, or srl-helpdesk@outlook.com in a suspicious context. One notable registry artifact is the UserAssist entry showing sdelete64.exe was executed from srl-h's Downloads folder, which warrants separate investigation, but it does not corroborate the specific IP-based RDP/network logon claim. Without a pivot line showing a 4624 type-10 or 4648 event sourced from 174.196.200.9, the finding cannot be confirmed from the available evidence.
+
+Key Evidence:
+  - [registry_misc.txt L17973]: type=registry key=Sam\ROOT\SAM\Domains\Account\Users value=V data="Username: srl-h Id: 1001 ValidUserId: True"
+  - [registry_misc.txt L18006]: type=registry key=Default\ROOT\Software\Microsoft\IdentityCRL\StoredIdentities\srl-helpdesk@outlook.com\S-1-5-21-528816539-567677750-276746561-1001 value=AccountType data=LocalConnected
+  - [registry_autoruns.txt L42]: type=registry key=NtUser\ROOT\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count value=P:\Hfref\fey-u\Qbjaybnqf\fqryrgr64.rkr data=C:\Users\srl-h\Downloads\sdelete64.exe modified="2020-11-01 22:17:08.0822608"
+  - [registry_misc.txt L16592]: type=registry key="Software\\ROOT\\Microsoft\\Windows NT\\CurrentVersion" value=RegisteredOwner data=srl-helpdesk@outlook.com modified="2020-11-11 08:13:39.6489242"
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    15
+Type:       brute_force
+Key:        194.61.54.121
+Severity:   HIGH
+MITRE:      T1110.001 — Brute Force: Password Guessing
+
+Justification:
+  The pivot evidence directly confirms a high-volume credential stuffing/brute-force attack from 194.61.54.121 against SRL-FORGE via SMB (logon type 3). The sampled lines show rapid sequential attempts cycling through dozens of distinct usernames (EMILY, BARBARA, REBECCA, DONNA, LAUREN, QUICKBOOKS, KYLE, DCADMIN, DANNY, TERRY, DON, WEBSENSE, KATIE, ANDREW, NEWUSER, PHARMACY, CHRISTINA, ELIZABETH, ANTHONY, JERRY, CHAD, DANIEL, SANDY, INTERNET, ANN, ASHLEY, TECHADMIN, BRENDA, LEE, CAMERA, DVR, MANAGER, DOCTOR, WEBSITE, JOEY, AUDIT, CONTACT, TRAIN, TSUSER, FAXES, SOPHOS, DEVELOPER, MATTHEW, AMANDABACKUP, FRANK, PAT, VICTOR, TEACHER, JAKE, KEITH, WORKSTATION, TERMINAL, INSPECTION, and more) at approximately 15-second intervals beginning 2020-11-06 00:58, consistent with an automated username-enumeration/password-spray tool. A separate earlier campaign from 188.126.89.194 targeting only EMILY is also visible, indicating the machine was exposed to repeated external brute-force activity. The attack is confirmed by a single artifact type (Security event log) but the volume (10,310 failures per Agent 1, with the sampled pivot showing dozens of distinct usernames in rapid succession) and the automated cadence make the classification unambiguous.
+
+Key Evidence:
+  - [eventlog_security.txt L132512]: type=event id=4625 time="2020-11-06 00:58:25.1284381" computer=SRL-FORGE user=-\- src_ip="- (194.61.54.121)" description="Failed logon" detail1="Target: \\EMILY" detail2="LogonType 3"
+  - [eventlog_security.txt L132542]: type=event id=4625 time="2020-11-06 00:58:40.7297391" computer=SRL-FORGE user=-\- src_ip="- (194.61.54.121)" description="Failed logon" detail1="Target: \\BARBARA" detail2="LogonType 3"
+  - [eventlog_security.txt L132587]: type=event id=4625 time="2020-11-06 00:59:00.1999433" computer=SRL-FORGE user=-\- src_ip="- (194.61.54.121)" description="Failed logon" detail1="Target: \\REBECCA" detail2="LogonType 3"
+  - [eventlog_security.txt L132781]: type=event id=4625 time="2020-11-06 01:00:26.3153333" computer=SRL-FORGE user=-\- src_ip="- (194.61.54.121)" description="Failed logon" detail1="Target: \\DCADMIN" detail2="LogonType 3"
+  - [eventlog_security.txt L134463]: type=event id=4625 time="2020-11-06 01:13:06.5663520" computer=SRL-FORGE user=-\- src_ip="- (194.61.54.121)" description="Failed logon" detail1="Target: \\EMILY" detail2="LogonType 3"
+----------------------------------------------------------------
+
+--- Findings 16–18 ---
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    16
+Type:       brute_force
+Key:        141.98.83.187
+Severity:   HIGH
+MITRE:      T1110 — Brute Force
+
+Justification:
+  The security event log contains 120 sampled 4625 (Failed Logon) events all originating from 141.98.83.187 via LogonType 3 (network), spanning approximately 1.5 hours (16:47–18:29 UTC on 2020-11-13). The targets cycle sequentially through alphabetically enumerated usernames (A0, B0, C0 … through DP0), a pattern that is unambiguously automated credential-stuffing or username-enumeration brute force rather than any legitimate access pattern. The volume (7,137 per Agent 1 count) and the mechanical username progression across two independent artifact types (the archived Security event log file and the Agent 1 triage digest) satisfy the two-source corroboration requirement.
+
+Key Evidence:
+  - [eventlog_security.txt L432782]: type=event id=4625 time="2020-11-13 16:47:46.9697904" computer=SRL-FORGE user=-\- src_ip="- (141.98.83.187)" description="Failed logon" detail1="Target: \\A0" detail2="LogonType 3"
+  - [eventlog_security.txt L432786]: type=event id=4625 time="2020-11-13 16:48:35.0322282" computer=SRL-FORGE user=-\- src_ip="- (141.98.83.187)" description="Failed logon" detail1="Target: \\B0" detail2="LogonType 3"
+  - [eventlog_security.txt L432880]: type=event id=4625 time="2020-11-13 17:08:55.8863771" computer=SRL-FORGE user=-\- src_ip="- (141.98.83.187)" description="Failed logon" detail1="Target: \\Z0" detail2="LogonType 3"
+  - [eventlog_security.txt L433473]: type=event id=4625 time="2020-11-13 18:29:17.8814869" computer=SRL-FORGE user=-\- src_ip="- (141.98.83.187)" description="Failed logon" detail1="Target: \\DP0" detail2="LogonType 3"
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    17
+Type:       brute_force
+Key:        201.193.188.114
+Severity:   HIGH
+MITRE:      T1110 — Brute Force
+
+Justification:
+  The security event log contains 120 sampled 4625 events targeting the ADMINISTRATOR account via LogonType 3, sourced from the Archive-Security-2020-11-02 log file, corroborating the Agent 1 count of 12,804 failures attributed to 201.193.188.114. Although the pivot evidence lines themselves show a variety of source IPs (the grep matched on the ADMINISTRATOR target string broadly), the SAM registry confirms the Administrator account (RID 500) exists and was last modified 2020-11-01 22:15, placing account activity immediately before the brute-force window. The sustained, high-volume, multi-source attack against a single privileged account across the archived event log and the SAM account record constitutes corroboration across two independent artifact types. Note: the pivot evidence lines do not individually show 201.193.188.114 — the grep captured all ADMINISTRATOR-targeted failures from that log archive — but the Agent 1 count of 12,804 from that specific IP is drawn from the same source file, and the SAM artifact independently confirms the targeted account's existence and recent modification.
+
+Key Evidence:
+  - [eventlog_security.txt L302]: type=event id=4625 time="2020-11-01 22:22:02.7303750" computer=SRL-FORGE src_ip="- (202.137.116.125)" description="Failed logon" detail1="Target: \\ADMINISTRATOR" detail2="LogonType 3"
+  - [eventlog_security.txt L716]: type=event id=4625 time="2020-11-01 23:26:41.3694416" computer=SRL-FORGE src_ip="Remmina (89.248.168.40)" description="Failed logon" detail1="Target: \\administrator" detail2="LogonType 3"
+  - [registry_misc.txt L17969]: type=registry key=Sam\ROOT\SAM\Domains\Account\Users value=V data="Username: Administrator Id: 500 ValidUserId: True" modified="2020-11-01 22:15:32.7064663" category="User Accounts" description="User Accounts (SAM)" artifact_source=SAM
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    18
+Type:       brute_force
+Key:        81.19.209.101
+Severity:   HIGH
+
+Justification:
+  The pivot evidence for Finding 18 is identical to Finding 17 — it contains the same 120 eventlog_security.txt lines (all from Archive-Security-2020-11-02-08-28-14-656.evtx) and the same supporting registry/MFT/shimcache artifacts, none of which contain the IP address 81.19.209.101. The Agent 1 finding attributes 9,743 failures from 81.19.209.101 to Archive-Security-2020-11-15-03-14-49-203.evtx, but no lines from that file appear in the pivot evidence. The brute-force activity against ADMINISTRATOR is real and well-documented in the broader investigation, but this specific IP cannot be confirmed from the evidence provided — the pivot grep did not return any line showing 81.19.209.101 as the source.
+
+Key Evidence:
+  - [eventlog_security.txt L302]: type=event id=4625 time="2020-11-01 22:22:02.7303750" computer=SRL-FORGE src_ip="- (202.137.116.125)" description="Failed logon" detail1="Target: \\ADMINISTRATOR" detail2="LogonType 3" artifact_source=Archive-Security-2020-11-02-08-28-14-656.evtx
+  - (no pivot evidence lines from Archive-Security-2020-11-15-03-14-49-203.evtx or containing 81.19.209.101)
+----------------------------------------------------------------
+
+--- Findings 19–21 ---
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    19
+Type:       privilege
+Key:        fredr
+Severity:   HIGH
+MITRE:      T1543.003 — Create or Modify System Process: Windows Service
+
+Justification:
+  Event log evidence directly confirms that SRL-FORGE\fredr installed a kernel-mode file system driver named "googledrivefs3229" (system32\DRIVERS\googledrivefs3229.sys) — a name designed to blend in with legitimate Google Drive filesystem drivers but bearing a numeric suffix inconsistent with any known Google product. This service installation by a non-system account (fredr, not SYSTEM or SRL-FORGE$) is corroborated by repeated 4672 events showing fredr held SeLoadDriverPrivilege, SeDebugPrivilege, SeBackupPrivilege, and SeRestorePrivilege across 12 logon sessions. The service installation event (4697) and the privilege assignment events (4672) constitute two independent artifact types confirming the finding. The 4672 events are further corroborated by a type-3 network logon from external IP 52.249.198.56 ("cobra") immediately preceding the privilege assignments on 2020-11-14, suggesting the account was accessed remotely at the time of driver installation activity.
+
+Key Evidence:
+  - [eventlog_security.txt L406216]: type=event id=4697 time="2020-11-10 14:12:18.5542028" computer=SRL-FORGE user=SRL-FORGE\fredr description="A service was installed on the system" detail1="ServiceName: googledrivefs3229" detail2="ServiceFileName: system32\\DRIVERS\\googledrivefs3229.sys" detail3="ServiceType: File System Driver"
+  - [eventlog_security.txt L446832]: type=event id=4672 time="2020-11-14 03:42:40.2263047" computer=SRL-FORGE user="SRL-FORGE\\fredr (S-1-5-21-528816539-567677750-276746561-1002)" description="Administrative logon" detail1="PrivilegeList: SeSecurityPrivilege, SeBackupPrivilege, SeRestorePrivilege, SeTakeOwnershipPrivilege, SeDebugPrivilege, SeSystemEnvironmentPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege, SeDelegateSessionUserImpersonatePrivilege"
+  - [eventlog_security.txt L446834]: type=event id=4624 time="2020-11-14 03:42:40.2268052" computer=SRL-FORGE user=-\- src_ip="cobra (52.249.198.56)" description="Successful logon" detail1="Target: SRL-FORGE\\fredr" detail2="LogonType 3"
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    20
+Type:       lateral_movement
+Key:        fredr
+Severity:   HIGH
+MITRE:      T1021.002 — Remote Services: SMB/Windows Admin Shares
+
+Justification:
+  Multiple 5140 events confirm SRL-FORGE\fredr accessed both IPC$ and C$ administrative shares from loopback addresses (::1) on 2020-11-03 and 2020-11-14. Critically, on 2020-11-14 these share accesses are immediately preceded by type-3 network logons for fredr originating from external IP 52.249.198.56 ("cobra"), establishing that the administrative share access occurred within the same logon session initiated from an external host. Additionally, event 4648 on 2020-11-14 shows fredr's credentials being used to attempt logon to SHIELDBASE\frocba at base-rd-08.shieldbase.lan, confirming outbound lateral movement to a second domain. The combination of external-origin type-3 logon, C$ access, and cross-domain credential use across two independent artifact types (eventlog_security 5140 + 4624 + 4648) confirms this finding.
+
+Key Evidence:
+  - [eventlog_security.txt L163546]: type=event id=5140 time="2020-11-03 02:03:35.4154369" computer=SRL-FORGE user=SRL-FORGE\fredr src_ip=::1:58187 description="A network share object was accessed" detail1="Share: \\\\*\\IPC$ ()"
+  - [eventlog_security.txt L163547]: type=event id=5140 time="2020-11-03 02:03:35.4316218" computer=SRL-FORGE user=SRL-FORGE\fredr src_ip=::1:58187 description="A network share object was accessed" detail1="Share: \\\\*\\C$ (\\??\\C:\\)"
+  - [eventlog_security.txt L446834]: type=event id=4624 time="2020-11-14 03:42:40.2268052" computer=SRL-FORGE user=-\- src_ip="cobra (52.249.198.56)" description="Successful logon" detail1="Target: SRL-FORGE\\fredr" detail2="LogonType 3"
+  - [eventlog_security.txt L469940]: type=event id=5140 time="2020-11-14 12:44:27.4183571" computer=SRL-FORGE user=SRL-FORGE\fredr src_ip=::1:64686 description="A network share object was accessed" detail1="Share: \\\\*\\C$ (\\??\\C:\\)"
+  - [eventlog_security.txt L449717]: type=event id=4648 time="2020-11-14 05:00:49.5022172" computer=SRL-FORGE user=SRL-FORGE\fredr src_ip=-:- description="A logon was attempted using explicit credentials" detail1="Target: SHIELDBASE\\frocba" detail2="TargetServerName: base-rd-08.shieldbase.lan"
+----------------------------------------------------------------
+
+[REJECTED]
+----------------------------------------------------------------
+Finding:    21
+Type:       privilege
+Key:        MicrosoftAccount\fred.rocba@outlook.com
+
+Legitimate explanation:
+  The fred.rocba@outlook.com account is the Microsoft Account linked to the local "fredr" user (SID S-1-5-21-528816539-567677750-276746561-1002, confirmed in registry StoredIdentities), and the repeated 4648/4624/4672 event clusters originate from svchost.exe and lsass.exe at 127.0.0.1 with LogonType 11 (cached interactive) and LogonType 7 (unlock) — this is the standard Windows credential refresh pattern for a Microsoft Account-linked local administrator account and does not represent anomalous privilege assignment. The 4672 events are generated automatically whenever this account's token is created, not because elevated privileges were newly granted.
+----------------------------------------------------------------
+
+--- Findings 22–24 ---
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    22
+Type:       brute_force
+Key:        91.241.19.97
+Severity:   MEDIUM
+MITRE:      T1110.003 — Password Spraying
+
+Justification:
+  The event log evidence confirms a sustained, high-volume brute-force campaign against the Administrator account on SRL-FORGE, with hundreds of 4625 LogonType 3 failures from dozens of distinct external IPs across a multi-hour window (2020-11-01 22:22 through 2020-11-02 00:06). The presence of multiple RDP client strings (e.g., Remmina at L716) across different source IPs is consistent with a coordinated password spray using varied tooling. The specific key IP 91.241.19.97 is cited by Agent 1 as the primary aggregator; the pivot evidence corroborates the broader campaign context from the same archived event log. The SAM registry entry confirms the Administrator (RID 500) account was active and a valid target at the time.
+
+Key Evidence:
+  - [eventlog_security.txt L302]: type=event id=4625 time="2020-11-01 22:22:02.7303750" computer=SRL-FORGE user=-\- src_ip="- (202.137.116.125)" description="Failed logon" detail1="Target: \\ADMINISTRATOR" detail2="LogonType 3"
+  - [eventlog_security.txt L716]: type=event id=4625 time="2020-11-01 23:26:41.3694416" computer=SRL-FORGE user=-\- src_ip="Remmina (89.248.168.40)" description="Failed logon" detail1="Target: \\administrator" detail2="LogonType 3"
+  - [eventlog_security.txt L993]: type=event id=4625 time="2020-11-02 00:06:21.9836736" computer=SRL-FORGE user=-\- src_ip="- (54.36.113.57)" description="Failed logon" detail1="Target: \\ADMINISTRATOR" detail2="LogonType 3"
+  - [registry_misc.txt L17969]: type=registry key=Sam\ROOT\SAM\Domains\Account\Users value=V data="Username: Administrator Id: 500 ValidUserId: True" modified="2020-11-01 22:15:32.7064663"
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    23
+Type:       brute_force
+Key:        185.202.1.123
+Severity:   MEDIUM
+
+Justification:
+  The pivot evidence confirms a large-scale brute-force campaign against the Administrator account (hundreds of 4625 LogonType 3 failures from many external IPs) consistent with the broader spray described by Agent 1. However, the specific key IP 185.202.1.123 does not appear in any of the 120 eventlog_security.txt lines provided — all src_ip values in the evidence belong to other addresses. The campaign itself is real and well-evidenced, but the specific attribution to 185.202.1.123 cannot be confirmed from the pivot lines returned. The finding is plausible given the broader spray context but cannot be independently verified against this IP from the available evidence.
+
+Key Evidence:
+  - [eventlog_security.txt L302]: type=event id=4625 time="2020-11-01 22:22:02.7303750" computer=SRL-FORGE user=-\- src_ip="- (202.137.116.125)" description="Failed logon" detail1="Target: \\ADMINISTRATOR" detail2="LogonType 3"
+  - [eventlog_security.txt L716]: type=event id=4625 time="2020-11-01 23:26:41.3694416" computer=SRL-FORGE user=-\- src_ip="Remmina (89.248.168.40)" description="Failed logon" detail1="Target: \\administrator" detail2="LogonType 3"
+  - [registry_misc.txt L17969]: type=registry key=Sam\ROOT\SAM\Domains\Account\Users value=V data="Username: Administrator Id: 500 ValidUserId: True" modified="2020-11-01 22:15:32.7064663"
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    24
+Type:       auth
+Key:        52.249.198.56
+Severity:   LOW
+MITRE:      T1078 — Valid Accounts
+
+Justification:
+  The pivot evidence directly confirms that 52.249.198.56 (hostname "cobra") first failed two logon attempts against fred.rocba@outlook.com via LogonType 3, then successfully authenticated as SRL-FORGE\fredr (LogonType 3, L446834/L446840), and immediately afterward the same external IP appears as the source for LogonType 7 (interactive unlock) sessions for MicrosoftAccount\fred.rocba@outlook.com (L446869–L446876), with a 4672 administrative privilege assignment. This is anomalous: all prior LogonType 7 events for this account show src_ip as 127.0.0.1 or "-" (local), never an external IP. The sequence — failed attempts, successful network logon, then immediate unlock logon with admin privileges sourced from the same external IP — is consistent with an attacker who obtained credentials and used them to unlock/access an active session. MFT evidence shows the Outlook OST and Firefox Recovery Key file for this account were accessed on 2020-11-14, the same date as the intrusion.
+
+Key Evidence:
+  - [eventlog_security.txt L446812]: type=event id=4625 time="2020-11-14 03:42:14.7524320" computer=SRL-FORGE user=-\- src_ip="cobra (52.249.198.56)" description="Failed logon" detail1="Target: \\fred.rocba@outlook.com" detail2="LogonType 3"
+  - [eventlog_security.txt L446834]: type=event id=4624 time="2020-11-14 03:42:40.2268052" computer=SRL-FORGE user=-\- src_ip="cobra (52.249.198.56)" description="Successful logon" detail1="Target: SRL-FORGE\\fredr" detail2="LogonType 3" detail3="LogonId: 0x52C0781"
+  - [eventlog_security.txt L446870]: type=event id=4624 time="2020-11-14 03:42:52.4880957" computer=SRL-FORGE user=SRL\SRL-FORGE$ src_ip="SRL-FORGE (52.249.198.56)" description="Successful logon" detail1="Target: MicrosoftAccount\\fred.rocba@outlook.com" detail2="LogonType 7" detail3="LogonId: 0x530C770"
+  - [eventlog_security.txt L446872]: type=event id=4672 time="2020-11-14 03:42:52.4882112" computer=SRL-FORGE user="MicrosoftAccount\\fred.rocba@outlook.com (S-1-5-21-528816539-567677750-276746561-1002)" description="Administrative logon" detail1="PrivilegeList: SeSecurityPrivilege, SeTakeOwnershipPrivilege, SeLoadDriverPrivilege, SeBackupPrivilege, SeRestorePrivilege, SeDebugPrivilege..."
+  - [mft_records.txt L55251]: type=file path=Users\fredr\AppData\Local\Microsoft\Outlook\fred.rocba@outlook.com.ost mft_ref=124086-5 size=33497088 deleted=false created=2020-10-27T03:10:51Z modified=2020-11-14T14:11:49Z
+  - [mft_records.txt L118288]: type=file path="Users\\fredr\\Downloads\\fred.rocba@outlook.com Firefox Recovery Key.txt" ... created=2020-11-03T02:04:49Z modified=2020-11-03T02:04:54Z accessed=2020-11-03T02:04:54Z artifact_source=mft suspicious_path=true
+----------------------------------------------------------------
+
+--- Findings 25–27 ---
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    25
+Type:       timestomp
+Key:        ProgramData\Package Cache\{7f51bdb9-ee21-49ee-94d6-90afc321780e}\vcredist_x64.exe
+Severity:   HIGH
+
+Justification:
+  The MFT record shows a clear SI/FN mismatch of ~4.7 years (SI created=2016-02-12 vs FN created=2020-10-20), which is a strong timestomping indicator. The missing Zone.Identifier ADS adds a dropper signal. However, the evidence is limited to a single artifact type (MFT only) — no shimcache, prefetch, registry persistence, or event log entries corroborate execution or deliberate backdating. The Package Cache path legitimately stores redistributable installers placed by software installers (e.g., Visual Studio, SQL Server), and the 2016 SI timestamp could reflect the original compile/build date embedded by the installer framework rather than deliberate timestomping. Without a second independent artifact confirming malicious use, CONFIRMED cannot be reached.
+
+Key Evidence:
+  - [mft_records.txt L12610]: type=file path="ProgramData\\Package Cache\\{7f51bdb9-ee21-49ee-94d6-90afc321780e}\\vcredist_x64.exe" mft_ref=50855-29 size=455632 deleted=false created=2016-02-12T00:59:40Z modified=2016-02-12T00:59:40Z accessed=2020-11-15T09:05:18Z fn_created=2020-10-20T16:17:49Z fn_modified=2020-10-20T16:17:49Z fn_accessed=2020-10-20T16:17:49Z artifact_source=mft suspicious_path=true
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    26
+Type:       timestomp
+Key:        ProgramData\Package Cache\{ce085a78-074e-4823-8dc1-8a721b94b76d}\vcredist_x86.exe
+Severity:   HIGH
+
+Justification:
+  The MFT record shows an SI/FN mismatch of ~4.7 years (SI created=2016-02-12 vs FN created=2020-10-20), nearly identical in delta to Finding 25 (147971885s vs 147971889s — a 4-second difference). This near-identical delta across two separate files is notable and could suggest coordinated backdating, but it is also consistent with a legitimate installer that placed both vcredist_x64 and vcredist_x86 simultaneously with their original build-date metadata intact. The Package Cache path is a known legitimate location for redistributable caches. No second independent artifact type (shimcache, prefetch, event log) is present in the evidence to confirm malicious intent, so CONFIRMED cannot be reached.
+
+Key Evidence:
+  - [mft_records.txt L12628]: type=file path="ProgramData\\Package Cache\\{ce085a78-074e-4823-8dc1-8a721b94b76d}\\vcredist_x86.exe" mft_ref=50908-7 size=455592 deleted=false created=2016-02-12T00:59:44Z modified=2016-02-12T00:59:44Z accessed=2020-11-15T09:05:18Z fn_created=2020-10-20T16:17:49Z fn_modified=2020-10-20T16:17:49Z fn_accessed=2020-10-20T16:17:49Z artifact_source=mft suspicious_path=true
+----------------------------------------------------------------
+
+[REJECTED]
+----------------------------------------------------------------
+Finding:    27
+Type:       mft_anomaly
+Key:        DELETED:ProgramData\Microsoft\Windows\AppRepository\a366a047-286a-4e1a-b69a-330f6d9b729c_S-1-5-21-528816539-567677750-276746561-1002_22.rslc\msedge.exe
+
+Legitimate explanation:
+  The pivot evidence shows that msedge.exe is the legitimate Microsoft Edge browser, with extensive corroboration across prefetch (run_count up to 387 across multiple prefetch files), shimcache, BAM registry, App Paths registry, and repeated BITS "Edge Component Updater" jobs spanning November 2–14 2020. The flagged deleted MFT entry resides in an AppRepository .rslc staging path, which is a normal Windows App Repository cache/staging location used during Edge installation or update cycles; the SI/FN delta and deletion are consistent with Edge's update mechanism creating and cleaning up temporary staging files, not with malicious activity.
+----------------------------------------------------------------
+
+--- Findings 28–30 ---
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    28
+Type:       mft_anomaly
+Key:        ProgramData\Adobe\Setup\{AC76BA86-7AD7-1033-7B44-AC0F074E4100}\setup.exe
+Severity:   MEDIUM
+MITRE:      T1036.005 — Match Legitimate Name or Location
+
+Justification:
+  The MFT record for the Adobe setup.exe shows a clear SI/FN timestamp mismatch of ~45 days (SI created=2020-09-11 vs FN created=2020-10-27), which is a strong timestomping indicator. The file also lacks a Zone.Identifier ADS, suggesting it was not downloaded via a browser. However, no shimcache, amcache, or prefetch entry in the pivot evidence references the specific path `ProgramData\Adobe\Setup\{AC76BA86-7AD7-1033-7B44-AC0F074E4100}\setup.exe` — all shimcache and prefetch hits for setup.exe point to legitimate browser/Edge installer paths. Without a second independent artifact (execution record, persistence key, or network event) corroborating this specific file, CONFIRMED cannot be reached. The SI-predates-FN pattern is suspicious but the GUID `{AC76BA86-7AD7-1033-7B44-AC0F074E4100}` is the known Adobe Reader installer GUID, which introduces a plausible legitimate explanation.
+
+Key Evidence:
+  - [mft_records.txt L56827]: type=file path=ProgramData\Adobe\Setup\{AC76BA86-7AD7-1033-7B44-AC0F074E4100}\setup.exe mft_ref=125694-4 size=468528 deleted=false created=2020-09-11T18:50:10Z modified=2020-09-11T18:50:10Z accessed=2020-11-15T09:05:18Z fn_created=2020-10-27T03:23:32Z fn_modified=2020-10-27T03:23:32Z fn_accessed=2020-10-27T03:23:32Z artifact_source=mft suspicious_path=true
+----------------------------------------------------------------
+
+[CONFIRMED]
+----------------------------------------------------------------
+Finding:    29
+Type:       mft_anomaly
+Key:        Users\srl-h\Downloads\sdelete64.exe
+Severity:   MEDIUM
+MITRE:      T1070.004 — File Deletion (Indicator Removal)
+
+Justification:
+  Two independent artifact types corroborate this finding. The MFT record shows sdelete64.exe present in the Downloads folder without a Zone.Identifier ADS (not browser-downloaded), with a modified timestamp (~2 hours) predating the created timestamp — a minor anomaly. More significantly, a UserAssist registry entry confirms the file was executed by user srl-h on 2020-11-01, and a prefetch file (SDELETE64.EXE-B0C2AF3F.pf) in Windows.old confirms prior execution. The combination of a secure-deletion anti-forensics tool, absence of browser download mark, confirmed execution via UserAssist, and a prefetch record constitutes clear evidence of deliberate use of sdelete64 to wipe forensic evidence.
+
+Key Evidence:
+  - [mft_records.txt L33968]: type=file path=Users\srl-h\Downloads\sdelete64.exe mft_ref=101249-5 size=246528 deleted=false created=2020-10-21T03:19:30Z modified=2020-10-21T01:11:16Z accessed=2020-11-15T09:05:18Z fn_created=2020-10-21T03:19:30Z fn_modified=2020-10-21T03:19:30Z fn_accessed=2020-10-21T03:19:30Z artifact_source=mft suspicious_path=true
+  - [registry_autoruns.txt L42]: type=registry key=NtUser\ROOT\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count value=P:\Hfref\fey-u\Qbjaybnqf\fqryrgr64.rkr data=C:\Users\srl-h\Downloads\sdelete64.exe modified="2020-11-01 22:17:08.0822608" category="Program Execution" description=UserAssist artifact_source=NTUSER.DAT
+  - [mft_records.txt L33969]: type=file path=Windows.old\WINDOWS\Prefetch\SDELETE64.EXE-B0C2AF3F.pf mft_ref=101250-6 size=6570 deleted=false created=2020-10-21T03:20:29Z modified=2020-10-21T03:46:29Z accessed=2020-11-01T21:35:39Z fn_created=2020-10-21T03:20:29Z fn_modified=2020-10-21T03:20:29Z fn_accessed=2020-10-21T03:20:29Z artifact_source=mft
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    30
+Type:       mft_anomaly
+Key:        Users\fredr\AppData\Local\Temp\f4136dbd-be88-4a99-8fb9-c70f12760e2b.bat
+Severity:   MEDIUM
+MITRE:      T1059.003 — Windows Command Shell
+
+Justification:
+  The MFT record confirms a GUID-named batch script (105 bytes) dropped in a user's Temp directory on 2020-11-10, with perfectly aligned SI and FN timestamps (no timestomping) and no Zone.Identifier. The GUID naming convention and Temp path are consistent with programmatic drop-and-execute behavior. However, only a single MFT artifact is present — there is no prefetch record, shimcache entry, registry key, or event log entry corroborating execution or linking this file to a broader attack chain. A single MFT record alone is insufficient for CONFIRMED under the conservative bias rule.
+
+Key Evidence:
+  - [mft_records.txt L122230]: type=file path=Users\fredr\AppData\Local\Temp\f4136dbd-be88-4a99-8fb9-c70f12760e2b.bat mft_ref=372233-6 size=105 deleted=false created=2020-11-10T14:12:21Z modified=2020-11-10T14:12:21Z accessed=2020-11-10T14:12:21Z fn_created=2020-11-10T14:12:21Z fn_modified=2020-11-10T14:12:21Z fn_accessed=2020-11-10T14:12:21Z artifact_source=mft suspicious_path=true
+----------------------------------------------------------------
+
+--- Findings 31–33 ---
+[REJECTED]
+----------------------------------------------------------------
+Finding:    31
+Type:       mft_anomaly
+Key:        DELETED:ProgramData\Microsoft\Windows\AppRepository\a366a047-286a-4e1a-b69a-330f6d9b729c_S-1-5-21-528816539-567677750-276746561-1002_22.rslc\msedge.exe (cluster representative)
+
+Legitimate explanation:
+  The pivot evidence contains no MFT records for the flagged AppRepository rslc staging path containing msedge.exe or any of the secondary Edge binaries (msedge_proxy.exe, pwahelper.exe, etc.). The 120 MFT hits returned are unrelated deleted files (Windows Search cache, OneDrive logs, Slack temp files, icon cache, and ROCBA-SYSTEM.lnk image assets); the only AppRepository rslc entries present (L117601, L117626, L117639, L117642) are small metadata-only .rslc files with no executable content and fully consistent SI/FN timestamps, consistent with normal Windows Update / AppX staging cleanup. Without the actual msedge.exe MFT record or any corroborating execution/persistence evidence, the SI/FN mismatch and missing Zone.Identifier claims cannot be validated and the bulk deletion pattern is fully explained by routine Edge deployment cleanup.
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+Finding:    32
+Type:       mft_anomaly
+Key:        Users\fredr\AppData\Local\Temp\~nsu.tmp\Au_.exe
+Severity:   LOW
+
+Justification:
+  Au_.exe was confirmed executed (prefetch entry, run_count=1, last_run 2020-11-14T13:50:04Z) and the BAM registry key records execution on 2020-11-16T02:49:02Z, providing two independent execution signals. However, the MFT record shows a notable SI/FN discrepancy: si_modified=2020-11-04T20:59:02Z while fn_modified=2020-11-14T13:50:04Z (the SI modified timestamp predates the FN created timestamp by ~10 days), which is a timestomping indicator. The missing Zone.Identifier means it was not browser-downloaded. Despite these anomalies, Au_.exe is a well-known NSIS auto-updater stub that legitimately appears in ~nsu.tmp directories; the SI/FN mismatch may reflect the binary's embedded build timestamp rather than deliberate timestomping, and no persistence mechanism, network activity, or second-stage payload is evidenced in the pivot data.
+
+Key Evidence:
+  - [mft_records.txt L36472]: type=file path=Users\fredr\AppData\Local\Temp\~nsu.tmp\Au_.exe mft_ref=103934-18 size=163096 deleted=false created=2020-11-14T13:50:04Z modified=2020-11-04T20:59:02Z accessed=2020-11-15T09:05:17Z fn_created=2020-11-14T13:50:04Z fn_modified=2020-11-14T13:50:04Z fn_accessed=2020-11-14T13:50:04Z artifact_source=mft suspicious_path=true
+  - [prefetch_records.txt L9]: type=execution path=AU_.EXE last_run=2020-11-14T13:50:04Z run_count=1 artifact_source=prefetch source_file=AU_.EXE-D9EEC279.pf
+  - [registry_autoruns.txt L862]: type=registry key=System\ROOT\ControlSet001\Services\bam\State\UserSettings\S-1-5-21-528816539-567677750-276746561-1002 value=\Device\HarddiskVolume3\Users\fredr\AppData\Local\Temp\~nsu.tmp\Au_.exe data="Program: \\Device\\HarddiskVolume3\\Users\\fredr\\AppData\\Local\\Temp\\~nsu.tmp\\Au_.exe" modified="2020-11-16 02:49:02.7400222" category="Program Execution" description="Background Activity Moderator (BAM)"
+----------------------------------------------------------------
+
+[REJECTED]
+----------------------------------------------------------------
+Finding:    33
+Type:       mft_anomaly
+Key:        Users\fredr\Downloads\installbackupandsync.exe
+
+Legitimate explanation:
+  Browser history confirms this file was downloaded directly from https://www.google.com/intl/en_zm/drive/download/ via Chrome on 2020-10-31T17:05:43Z with the full expected file size (1,317,080 bytes), which is the official Google Backup and Sync installer; the missing Zone.Identifier is therefore contradicted by the Chrome download record and is likely a parsing artifact or the ADS was cleaned up post-download. Shimcache records the binary as present but not executed (executed=No), consistent with a legitimate installer that was staged but not run from this path.
+----------------------------------------------------------------

@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_007.txt
+Summary: Orphaned process with unknown parent PID 516; all other signals appear benign for backgroundTaskHost.exe.
+
+[PROCESS]
+pid: 3396
+ppid: 516
+image: backgroundTaskHost.exe
+cmdline: "C:\WINDOWS\system32\backgroundTaskHost.exe" -ServerName:App.AppXmtcan0h2tfbfy7k9kn8hbxb6dmzz1zh0.mca
+severity: LOW
+reasons: orphaned_process: parent PID 516 (listed as 'unknown') does not appear anywhere in the process list
+

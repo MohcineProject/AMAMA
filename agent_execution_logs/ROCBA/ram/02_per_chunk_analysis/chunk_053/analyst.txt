@@ -1,0 +1,72 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 28064 — svchost.exe (ppid=828)**
+
+Agent 1 reasons:
+1. Parent PID 828 is "unknown" — cannot confirm services.exe lineage
+2. Non-whitelisted DLLs / possible ldrmodules anomaly
+
+Evidence analysis:
+
+- Cmdline: `C:\WINDOWS\system32\svchost.exe -k DevicesFlow -s DevicePickerUserSvc` — this is a completely legitimate, well-known Windows service group. `DevicePickerUserSvc` is a real per-user service introduced in Windows 10. The `-k DevicesFlow -s` pattern is standard.
+- PPID 828 being "unknown" in the Volatility output is a known artifact of memory forensics on live/large systems — the parent process (services.exe, typically PID 828 or similar) may have exited or its EPROCESS block may not have been captured in the snapshot. This is a common false positive in Volatility pslist analysis. The cmdline and path are fully legitimate.
+- DLL evidence: Only 3 lines shown (svchost.exe, ntdll.dll, KERNEL32.DLL), all from `C:\WINDOWS\system32\` or `C:\WINDOWS\System32\`. No user-writable paths, no suspicious DLLs. The "non-whitelisted DLLs" reason from Agent 1 is not corroborated by the actual evidence shown.
+- Privileges: The full token privilege set shown is the standard Windows SYSTEM token (all privileges present, most not enabled). This is normal for svchost.exe running under SYSTEM. No privileges are anomalously *enabled* — only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeCreateGlobalPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are Present/Enabled, which is normal.
+- No malfind, no netscan, no registry persistence, no suspicious handles in evidence.
+
+**Verdict: REJECTED** — Standard svchost invocation with legitimate service group, System32 path, normal DLL set, standard SYSTEM token. Parent "unknown" is a Volatility artifact, not a real anomaly.
+
+---
+
+**PID 28864 — svchost.exe (ppid=828)**
+
+Agent 1 reasons:
+1. Parent PID 828 is "unknown"
+2. Missing command-line (cmdline shows `-`)
+
+Evidence analysis:
+
+- Cmdline: `-` — this is genuinely missing/unparseable by Volatility. For a legitimate svchost, this is unusual but not unheard of (can happen with per-user service instances, or if the process was very recently created and the PEB wasn't fully populated at snapshot time).
+- pstree.txt shows full path: `\Device\HarddiskVolume3\Windows\System32\svchost.exe` — legitimate System32 path.
+- malware_pebmasquerade.txt: `False False` — both masquerade checks are negative. The binary is confirmed to be the real svchost.exe from System32.
+- psscan.txt corroborates pslist — consistent EPROCESS block, no signs of DKOM hiding.
+- Session 0 (the `0` in the session column) — consistent with a system-level service.
+- Privileges: This token is notably richer than PID 28064 — `SeTcbPrivilege` (Default), `SeDebugPrivilege` (Default), `SeImpersonatePrivilege` (Default), `SeCreateGlobalPrivilege` (Present,Enabled,Default), `SeLockMemoryPrivilege` (Default), `SeCreatePermanentPrivilege` (Default), `SeAuditPrivilege` (Default) — this is the full LocalSystem token with many privileges at Default (meaning they're in the token but not explicitly enabled). This is consistent with a high-privilege svchost running under SYSTEM. Not anomalous on its own.
+- The missing cmdline is the only real signal. However, the PEB masquerade check is clean, the path is legitimate, psscan/pslist are consistent, and there are no other corroborating signals (no malfind, no suspicious DLLs, no network connections, no registry persistence).
+- The missing cmdline could indicate process hollowing in theory, but the masquerade check (`False False`) argues against it. It could also be a Volatility parsing artifact for a per-user or early-lifecycle service.
+
+**Verdict: INCONCLUSIVE** — The missing cmdline is a genuine anomaly that cannot be fully explained away, but the masquerade check is clean, the path is legitimate, and no other corroborating evidence of malice exists. Cannot confirm or reject with confidence.
+
+---
+
+Now writing the report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: Two svchost.exe instances were flagged by Agent 1 on the basis of an unresolvable parent PID and, in one case, a missing command line. Neither finding is strongly supported by the available evidence. PID 28064 is cleanly rejected as a Volatility artifact. PID 28864 carries a single unexplained anomaly (missing cmdline) that cannot be confirmed as malicious given the clean masquerade check and legitimate System32 path, but cannot be fully dismissed without additional artefacts.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      28864
+PPID:     828
+Image:    svchost.exe
+Cmdline:  - (not recorded)
+Severity: N/A
+MITRE:
+
+Justification:
+  Volatility recorded no command-line arguments for this svchost.exe instance (cmdline shows `-`), which is abnormal for a legitimate service host and is the primary driver of suspicion. However, the PEB masquerade check in malware_pebmasquerade.txt returns `False False`, confirming the on-disk image is the genuine Windows binary at `\Device\HarddiskVolume3\Windows\System32\svchost.exe`. The psscan and pslist entries are consistent (same EPROCESS address, same thread/handle counts), arguing against DKOM manipulation. The privilege token is a standard full LocalSystem set with no anomalously enabled high-risk privileges beyond what SYSTEM svchost instances routinely carry. Without DLL list data, malfind output, or network connections for this PID, it is not possible to confirm or rule out process hollowing — the missing cmdline remains unexplained but is insufficient alone to confirm malice.
+
+Key Evidence:
+  - L2180: 28864	svchost.exe	-
+  - L2180: 28864	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+  - L56: ** 28864	828	svchost.exe	0xb78d15380240	3	-	0	False	2020-11-16 02:29:39.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+  - L2161: 28864	828	svchost.exe	0xb78d15380240	3	-	0	False	2020-11-16 02:29:39.000000 UTC	N/A	Disabled
+----------------------------------------------------------------
+
+================================================================

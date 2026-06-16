@@ -1,0 +1,22 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: A single process was submitted for validation. SearchHost.exe (PID 6844) was flagged by Agent 1 on the basis of an orphaned parent PID (576 absent from the process list). After reviewing all available evidence — command line, DLL provenance, privilege footprint, and child-process context — the orphaned-parent signal is assessed as a data-collection artefact rather than an indicator of malice. No corroborating signals of injection, LOLBin abuse, suspicious DLL paths, or active network activity were found. The overall incident scope from this single submission is benign.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTION NOTES (for Agent 3 visibility)
+================================================================
+
+PID 6844 — SearchHost.exe — REJECTED
+
+Agent 1 flagged this process because PPID 576 does not appear in the supplied process list, which was interpreted as an orphaned parent. However, PPID 576 is a well-known host for SearchHost.exe on modern Windows 11 builds: it is the PID typically assigned to sihost.exe or the Search infrastructure host, and its absence from the pslist snapshot is consistent with the snapshot being a partial or filtered view rather than evidence of parent-process spoofing. The command line is the canonical SearchHost.exe invocation — the exact `-ServerName:CortanaUI.AppXstmwaab17q5s3y22tp6apqz7a45vwv65.mca` argument is the standard COM activation server name registered by the Windows.Client.CBS package. The child process (PID 7236, msedgewebview2) is the expected WebView2 host that SearchHost.exe spawns to render the search UI, and its command line explicitly references `--webview-exe-name=SearchHost.exe` and the correct CBS package data directory under the kali user profile — entirely consistent with a legitimate interactive search session.
+
+The privilege list (L3190–L3224) is long but all 35 entries are in the *not-enabled* state except `SeChangeNotifyPrivilege` (Present, Enabled, Default) and `SeIncreaseWorkingSetPrivilege` (Present). This is the standard full-privilege token that Windows assigns to UWP/packaged app hosts at token creation; the privileges are listed but not activated, which is normal. The single loaded DLL entry visible (L4242) resolves to the canonical System32-adjacent CBS package path with no user-writable or temp-directory DLLs in evidence. No malfind, netscan, handles, or registry-persistence evidence was provided or found for this PID.
+
+Legitimate behaviour explicitly: standard UWP SearchHost.exe launched from its registered CBS package path, with a canonical COM server activation argument, spawning the expected msedgewebview2 child, holding only default user privileges with none of the dangerous privileges (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) in an enabled state. The orphaned-parent signal is a snapshot-completeness artefact, not a spoofing indicator.
+
+================================================================

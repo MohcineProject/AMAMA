@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_020.txt
+Summary: RuntimeBroker.exe has an orphaned parent PID (516) not present in the process list; all other signals are benign.
+
+[PROCESS]
+pid: 5684
+ppid: 516
+image: RuntimeBroker.exe
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 516 (listed as 'unknown') does not appear anywhere in the process list — expected parent is svchost.exe under services.exe | name_note: 'RuntimeBroker.' is the 14-char EPROCESS truncation of 'RuntimeBroker.exe' — not a typosquat; path and cmdline confirm legitimate image
+

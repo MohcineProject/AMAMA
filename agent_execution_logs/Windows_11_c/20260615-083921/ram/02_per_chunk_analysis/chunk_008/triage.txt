@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:35:00Z
+Chunk: chunk_008.txt
+Summary: TiWorker.exe has orphaned parent PID 576 (unknown) and holds high-risk privileges (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege); path is legitimate winsxs location so severity is moderate pending pivot confirmation.
+
+[PROCESS]
+pid: 4936
+ppid: 576
+image: TiWorker.exe
+cmdline: C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe -Embedding
+severity: MEDIUM
+reasons: orphaned_parent: PPID 576 listed as 'unknown' — parent process not present in process list | privilege_anomaly: holds SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege simultaneously — unusual for a servicing worker | path_note: image path is a legitimate winsxs component directory, but parent absence prevents full legitimacy confirmation
+

@@ -1,0 +1,64 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 4384 — svchost.exe (ppid=896)**
+
+Agent 1 reason: orphaned parent (PPID 896 not in snapshot).
+
+Let me evaluate each lens:
+
+1. **Cmdline plausibility**: `C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService` — this is a completely legitimate svchost invocation. WpnUserService (Windows Push Notifications User Service) is a standard Windows service hosted in UnistackSvcGroup. Path is canonical System32.
+
+2. **DLL provenance**: The three DLLs shown are `svchost.exe` from `C:\WINDOWS\system32\`, `ntdll.dll` from `C:\WINDOWS\SYSTEM32\`, `KERNEL32.DLL` from `C:\WINDOWS\System32\` — all canonical. No user-writable paths.
+
+3. **Privilege footprint**: The privilege list is very long (35 entries) but critically, almost none are *enabled* — only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present). The dangerous ones like `SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege`, `SeLoadDriverPrivilege` are all listed but **not enabled** (no "Present" or "Enabled" flag). This is actually the standard full privilege list that Windows assigns to many svchost instances running under SYSTEM — the vast majority are present-but-not-enabled, which is normal. The enabled set is modest and appropriate.
+
+4. **Orphaned parent**: PPID 896 is not in the snapshot. This is a well-known benign artifact — `services.exe` (the legitimate parent of svchost) can exit or be absent from a memory snapshot for timing reasons, or the snapshot was taken after a service manager restart. The canonical parent of svchost is `services.exe` (typically PID in the 800s range), and 896 is plausible for that. This alone is a very weak signal.
+
+5. **No malfind, no netscan, no registry persistence, no suspicious handles** — none of these artefact types appear in the evidence block.
+
+6. **No injection markers, no suspicious DLLs, no anomalous cmdline.**
+
+**Verdict: REJECTED.** The orphaned-parent signal is the sole basis for flagging, and it is a well-known benign artifact in memory forensics. The cmdline, DLL set, and privilege footprint are all consistent with a legitimate Windows Push Notification svchost instance. No corroborating evidence of malice exists.
+
+---
+
+Now writing the report.
+
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T19:45:00Z
+Summary: Only one process was submitted for validation. That process — svchost.exe (PID 4384) — presents a fully legitimate command line, canonical DLL paths, and a standard (mostly-disabled) privilege set consistent with a Windows Push Notification service host. The sole Agent 1 signal (orphaned parent PPID 896) is a well-known benign memory-snapshot artifact and is unsupported by any corroborating evidence. No confirmed or inconclusive malicious activity was identified in this submission.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+================================================================
+REJECTED FINDINGS SUMMARY (count=1)
+================================================================
+
+PID 4384 — svchost.exe — REJECTED
+
+The only signal was an orphaned parent (PPID 896 absent from the process list
+snapshot). This is a routine artifact in Volatility memory analysis: services.exe
+(the canonical svchost parent, typically in the 800–900 PID range) may not appear
+in a snapshot due to timing, PID reuse, or snapshot scope. No other lens produced
+a suspicious result:
+
+  - Cmdline is canonical: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup
+    -s WpnUserService — a standard Windows Push Notification User Service host,
+    legitimately grouped under UnistackSvcGroup.
+  - All three DLLs visible in the dlllist slice load from C:\WINDOWS\system32\
+    or C:\WINDOWS\System32\ — no user-writable paths.
+  - 35 privileges are listed, but the enabled set is minimal and appropriate:
+    SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege,
+    SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege.
+    High-risk privileges (SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege,
+    SeLoadDriverPrivilege) are present in the token but NOT enabled — this is
+    normal for a SYSTEM-context svchost whose hosted service does not require them.
+  - No malfind sections, no network connections, no registry persistence, no
+    suspicious handles, and no injection markers were present in the evidence block.
+
+================================================================

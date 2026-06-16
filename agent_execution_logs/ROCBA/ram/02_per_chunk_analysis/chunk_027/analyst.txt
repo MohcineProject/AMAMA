@@ -1,0 +1,35 @@
+================================================================
+PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: Two Agent 1 findings were evaluated. PID 9836 (svchost.exe) presents a genuinely suspicious profile — orphaned parent, missing command line, and a SYSTEM-level privilege set including SeTcbPrivilege and SeImpersonatePrivilege enabled — though the image path resolves to the legitimate System32 binary and no malfind or network evidence was provided. PID 9788 (LockApp.exe) shows entirely benign characteristics consistent with the Windows lock-screen UWP host. Overall incident scope remains uncertain pending additional artefacts for PID 9836.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      9836
+PPID:     828
+Image:    svchost.exe
+Cmdline:  - (no command line recorded)
+Severity: (none — INCONCLUSIVE)
+MITRE:    T1134 — Access Token Manipulation (candidate; not confirmed)
+
+Justification:
+  PID 9836 carries a striking combination of anomalies: its parent PID 828 is absent from the process list (orphaned), it has no recorded command line (legitimate svchost.exe always carries -k <group> arguments), and its privilege token includes SeTcbPrivilege and SeImpersonatePrivilege both in the Present/Enabled/Default state — a combination that would allow the process to act as the OS and impersonate any client token. These signals together are genuinely suspicious and would normally push toward CONFIRMED. However, the pstree artefact resolves the image path to \Device\HarddiskVolume3\Windows\System32\svchost.exe (the legitimate binary location), the malware_pebmasquerade check returns False/False (no PE header masquerade detected), and no malfind sections, network connections, DLL anomalies, or registry persistence entries were provided for this PID. The missing command line and orphaned parent could also be explained by the process having already exited before the memory snapshot fully captured its EPROCESS metadata — the 7-minute runtime and clean exit time are consistent with a transient service host (e.g. a one-shot COM activation). Without malfind output, a DLL list, or network artefacts, there is insufficient evidence to confirm malice; the legitimate-path resolution and clean PE masquerade check prevent outright confirmation.
+
+Key Evidence:
+  - L124: 9836	828	svchost.exe	0xb78d05dd7240	0	-	0	False	2020-11-11 08:13:52.000000 UTC	2020-11-11 08:21:19.000000 UTC	Disabled
+  - L124: 9836	svchost.exe	-
+  - L4175: 9836	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L4197: 9836	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L31: ** 9836	828	svchost.exe	0xb78d05dd7240	0	-	0	False	2020-11-11 08:13:52.000000 UTC	2020-11-11 08:21:19.000000 UTC	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+  - L124: 9836	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED findings (count: 1)
+
+PID 9788 (LockApp.exe) — REJECTED. The command line is the standard Windows lock-screen UWP activation string (-ServerName:WindowsDefaultLockScreen.AppX…), the executable path resolves to the legitimate SystemApps package directory, all DLLs shown load from C:\WINDOWS\SYSTEM32, and the privilege token has no elevated privileges enabled (only SeChangeNotifyPrivilege and SeIncreaseWorkingSetPrivilege are Present, both normal for a user-context UWP process). The orphaned-parent signal is a known artefact of UWP host processes whose DcomLaunch/svchost parent may have exited or may not be captured in the snapshot window. The DLL whitelist gap noted by Agent 1 is confirmed as a whitelist configuration issue, not an IOC — ntdll.dll and KERNEL32.DLL loading from System32 are expected for every Windows process.
+
+================================================================

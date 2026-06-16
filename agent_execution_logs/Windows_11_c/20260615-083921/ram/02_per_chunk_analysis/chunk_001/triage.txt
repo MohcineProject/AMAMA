@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:45:00Z
+Chunk: chunk_001.txt
+Summary: AggregatorHost.exe holds high-risk privilege triad and loads a non-standard DLL (UpdateReboot.dll); orphaned parent PIDs on multiple processes warrant low-severity review.
+
+[PROCESS]
+pid: 1188
+ppid: 3148
+image: AggregatorHost.exe
+cmdline: AggregatorHost.exe
+severity: HIGH
+reasons: privilege_triad: process holds SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege simultaneously — high-risk combination indicative of token manipulation or privilege escalation | non_standard_dll: C:\WINDOWS\SYSTEM32\UpdateReboot.dll loaded — not a recognised Windows system DLL, possible DLL hijack or planted payload | orphaned_parent: PPID 3148 not present anywhere in the process list
+
+[PROCESS]
+pid: 2024
+ppid: 576
+image: RuntimeBroker.
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 576 discovered only via psscan (not in pslist), suggesting parent process was hidden or terminated and is not accounted for in the live process list | psscan_only_discovery: process visible in psscan but not pslist — possible DKOM (Direct Kernel Object Manipulation) artefact or already-exited process with suspicious lineage
+

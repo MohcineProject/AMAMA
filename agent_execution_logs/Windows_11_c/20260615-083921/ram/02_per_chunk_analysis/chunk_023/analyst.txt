@@ -1,0 +1,77 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 8616 — MicrosoftEdgeUpdate.exe**
+
+**Agent 1 signals:**
+1. `orphaned_parent`: PPID 888 not in process list
+2. `privilege_anomaly`: SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege enabled
+3. `dll_note`: executable appears as its own DLL entry
+
+**Reasoning:**
+
+*Orphaned parent:* PPID 888 is absent from pslist. This is a real signal but has a mundane explanation: the parent process (likely `services.exe` or a session manager) may have exited after spawning the child, which is normal for service-type processes. MicrosoftEdgeUpdate.exe /svc is a legitimate Windows service invocation. Without evidence that PPID 888 was something suspicious (e.g., a user process, a known-malicious PID), this is weak in isolation.
+
+*Privilege set:* The privilege set is extremely broad — SeTcbPrivilege ("Act as part of the operating system"), SeDebugPrivilege, SeAssignPrimaryTokenPrivilege, SeLoadDriverPrivilege, SeBackupPrivilege, SeRestorePrivilege, SeImpersonatePrivilege, SeAuditPrivilege, etc. This is essentially the full LocalSystem token. MicrosoftEdgeUpdate.exe running as a service *can* legitimately run as LocalSystem, which would explain this token. However, an update service running as LocalSystem with SeTcbPrivilege enabled by default is unusual — most update services run as a dedicated service account with a reduced token. The breadth here (35 privileges, many Enabled,Default) matches a SYSTEM-level token rather than a typical service account.
+
+*DLL note:* The executable appearing as the first entry in dlllist is completely normal — Volatility's dlllist always shows the main module (the .exe itself) as the first entry in the PEB's module list. This is not anomalous.
+
+*Overall:* The path is legitimate (`C:\Program Files (x86)\Microsoft\EdgeUpdate\`), the cmdline is standard (`/svc`), the DLL evidence shows only System32 paths (ntdll.dll, wow64.dll — the wow64 bridge is expected for a 32-bit process on 64-bit Windows). No malfind hits, no suspicious network connections, no registry persistence, no user-writable DLL paths. The only real signals are the orphaned parent (weak) and the SYSTEM-level token (explainable if the service is configured to run as LocalSystem). There is no corroborating evidence of malice across multiple artefact types.
+
+**Verdict: INCONCLUSIVE** — The privilege set is genuinely unusual for an update service (full SYSTEM token with SeTcbPrivilege enabled by default), and the orphaned parent is a minor flag, but the path, cmdline, and DLL evidence are all clean. Without malfind hits, suspicious DLLs, network connections, or registry persistence, this cannot be confirmed as malicious. The SYSTEM token warrants verification of the service configuration.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: One process was submitted for validation. The process (MicrosoftEdgeUpdate.exe, PID 8616) presents a genuinely anomalous privilege footprint — a full LocalSystem-equivalent token with SeTcbPrivilege, SeDebugPrivilege, and SeLoadDriverPrivilege enabled by default — combined with an orphaned parent PID. However, the executable path, command line, and loaded DLL set are all consistent with a legitimate Microsoft Edge update service, and no corroborating artefacts (malfind hits, suspicious DLLs, network connections, registry persistence) were present in the extracted evidence. The finding cannot be confirmed as malicious on current evidence but warrants offline verification of the service's configured account and binary hash.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      8616
+PPID:     888 (not present in pslist)
+Image:    MicrosoftEdgeUpdate.exe
+Cmdline:  "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /svc
+Severity: N/A
+MITRE:
+
+Justification:
+  Three signals were raised by Agent 1. The "DLL note" (executable appearing as
+  its own first dlllist entry) is a known Volatility artefact — the PEB module
+  list always begins with the main image — and is REJECTED as a signal. The
+  orphaned parent (PPID 888 absent from pslist) is a weak signal: service-host
+  parents routinely exit after spawning child services, and without evidence of
+  what process 888 was, this cannot be treated as indicative of injection or
+  masquerading. The privilege set is the only substantive concern: the token
+  carries 35 privileges with SeTcbPrivilege, SeDebugPrivilege,
+  SeAssignPrimaryTokenPrivilege, SeLoadDriverPrivilege, SeBackupPrivilege,
+  SeRestorePrivilege, and SeImpersonatePrivilege all Present or
+  Present,Enabled,Default — this is a full LocalSystem token, which is
+  atypically powerful for an update service (most run under a dedicated
+  low-privilege service account). That said, MicrosoftEdgeUpdate.exe is a
+  known-legitimate binary, its path is the canonical installation directory,
+  the /svc invocation is standard, and the only DLLs visible in the extracted
+  evidence (ntdll.dll, wow64.dll) are clean System32 paths consistent with a
+  32-bit process on a 64-bit host. No malfind sections, no suspicious network
+  connections, no user-writable DLL paths, and no registry persistence artefacts
+  were present in the extracted evidence. The SYSTEM-level token is anomalous
+  enough to warrant follow-up but is insufficient on its own to confirm malice.
+
+Key Evidence:
+  - L3895: 8616  MicrosoftEdgeU  7   SeTcbPrivilege  Present,Enabled,Default  Act as part of the operating system
+  - L3908: 8616  MicrosoftEdgeU  20  SeDebugPrivilege  Present,Enabled,Default  Debug programs
+  - L3898: 8616  MicrosoftEdgeU  10  SeLoadDriverPrivilege  Present  Load and unload device drivers
+  - L3917: 8616  MicrosoftEdgeU  29  SeImpersonatePrivilege  Present,Enabled,Default  Impersonate a client after authentication
+  - L3891: 8616  MicrosoftEdgeU  3   SeAssignPrimaryTokenPrivilege  Present  Replace a process-level token
+  - L116:  8616  888  MicrosoftEdgeU  0xcd8a12fa8080  8  -  0  True  2026-05-12 18:24:12.000000 UTC  N/A  Disabled
+  - L5549: 8616  MicrosoftEdgeU  0x7fffe9120000  0x267000  ntdll.dll  C:\WINDOWS\SYSTEM32\ntdll.dll
+  - L5550: 8616  MicrosoftEdgeU  0x7fffe9070000  0x55000  wow64.dll  C:\WINDOWS\System32\wow64.dll
+----------------------------------------------------------------
+
+================================================================

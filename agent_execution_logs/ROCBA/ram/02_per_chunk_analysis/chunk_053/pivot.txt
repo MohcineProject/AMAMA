@@ -1,0 +1,196 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:13:37Z
+
+=== PID 28064 (svchost.exe, ppid=828) ===
+Cmdline: C:\WINDOWS\system32\svchost.exe -k DevicesFlow -s DevicePickerUserSvc
+
+--- pslist.txt ---
+L1210: 28064	828	svchost.exe	0xb78d1149b080	3	-	1	False	2020-11-14 04:58:58.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L1210: 28064	svchost.exe	C:\WINDOWS\system32\svchost.exe -k DevicesFlow -s DevicePickerUserSvc
+
+--- privileges.txt ---
+L42180: 28064	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L42181: 28064	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L42182: 28064	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L42183: 28064	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L42184: 28064	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L42185: 28064	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L42186: 28064	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L42187: 28064	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L42188: 28064	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L42189: 28064	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L42190: 28064	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L42191: 28064	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L42192: 28064	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L42193: 28064	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L42194: 28064	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L42195: 28064	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L42196: 28064	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L42197: 28064	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L42198: 28064	svchost.exe	20	SeDebugPrivilege		Debug programs
+L42199: 28064	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L42200: 28064	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L42201: 28064	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L42202: 28064	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L42203: 28064	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L42204: 28064	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L42205: 28064	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L42206: 28064	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L42207: 28064	svchost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L42208: 28064	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L42209: 28064	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L42210: 28064	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L42211: 28064	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L42212: 28064	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L42213: 28064	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L42214: 28064	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L10515: 28064	svchost.exe	0x7ff6ccbe0000	0x11000	svchost.exe	C:\WINDOWS\system32\svchost.exe	-1	2020-11-14 04:58:58.000000 UTC	Disabled
+L10516: 28064	svchost.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-14 04:58:58.000000 UTC	Disabled
+L10517: 28064	svchost.exe	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-14 04:58:58.000000 UTC	Disabled
+L10518: 28064	svchost.exe	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-14 04:58:58.000000 UTC	Disabled
+L10519: 28064	svchost.exe	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10520: 28064	svchost.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10521: 28064	svchost.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10522: 28064	svchost.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10523: 28064	svchost.exe	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10524: 28064	svchost.exe	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10525: 28064	svchost.exe	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-14 04:58:58.000000 UTC	Disabled
+L10526: 28064	svchost.exe	0x7fff57540000	0x1a0000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10527: 28064	svchost.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10528: 28064	svchost.exe	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10529: 28064	svchost.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10530: 28064	svchost.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10531: 28064	svchost.exe	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10532: 28064	svchost.exe	0x7fff2c190000	0x7a000	windows.devices.picker.dll	c:\windows\system32\windows.devices.picker.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10533: 28064	svchost.exe	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10534: 28064	svchost.exe	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10535: 28064	svchost.exe	0x7fff549f0000	0x2c000	WLDP.DLL	C:\WINDOWS\SYSTEM32\WLDP.DLL	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10536: 28064	svchost.exe	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+L10537: 28064	svchost.exe	0x7fff55d80000	0xa9000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2020-11-14 04:58:58.000000 UTC	Disabled
+
+--- pstree.txt ---
+L216: ** 28064	828	svchost.exe	0xb78d1149b080	3	-	1	False	2020-11-14 04:58:58.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k DevicesFlow -s DevicePickerUserSvc	C:\WINDOWS\system32\svchost.exe
+
+--- psscan.txt ---
+L1850: 28064	828	svchost.exe	0xb78d1149b080	3	-	1	False	2020-11-14 04:58:58.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L11171: 28064	svchost.exe	0x182504b0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L11172: 28064	svchost.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L11173: 28064	svchost.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L11174: 28064	svchost.exe	0x7ff6ccbe0000	True	False	True	\Windows\System32\svchost.exe
+L11175: 28064	svchost.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L11176: 28064	svchost.exe	0x7fff2c190000	True	True	True	\Windows\System32\Windows.Devices.Picker.dll
+L11177: 28064	svchost.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L11178: 28064	svchost.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L11179: 28064	svchost.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L11180: 28064	svchost.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L11181: 28064	svchost.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L11182: 28064	svchost.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L11183: 28064	svchost.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L11184: 28064	svchost.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L11185: 28064	svchost.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L11186: 28064	svchost.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L11187: 28064	svchost.exe	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L11188: 28064	svchost.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L11189: 28064	svchost.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L11190: 28064	svchost.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L11191: 28064	svchost.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L11192: 28064	svchost.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L11193: 28064	svchost.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L11194: 28064	svchost.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L11171: 28064	svchost.exe	0x182504b0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L11172: 28064	svchost.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L11173: 28064	svchost.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L11174: 28064	svchost.exe	0x7ff6ccbe0000	True	False	True	\Windows\System32\svchost.exe
+L11175: 28064	svchost.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L11176: 28064	svchost.exe	0x7fff2c190000	True	True	True	\Windows\System32\Windows.Devices.Picker.dll
+L11177: 28064	svchost.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L11178: 28064	svchost.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L11179: 28064	svchost.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L11180: 28064	svchost.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L11181: 28064	svchost.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L11182: 28064	svchost.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L11183: 28064	svchost.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L11184: 28064	svchost.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L11185: 28064	svchost.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L11186: 28064	svchost.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L11187: 28064	svchost.exe	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L11188: 28064	svchost.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L11189: 28064	svchost.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L11190: 28064	svchost.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L11191: 28064	svchost.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L11192: 28064	svchost.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L11193: 28064	svchost.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L11194: 28064	svchost.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L1210: 28064	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe	False	False
+
+--- sessions.txt ---
+L1228: 1	-	28064	svchost.exe	SRL-FORGE/fredr	2020-11-14 04:58:58.000000 UTC
+
+=== PID 28864 (svchost.exe, ppid=828) ===
+
+--- pslist.txt ---
+L2180: 28864	828	svchost.exe	0xb78d15380240	3	-	0	False	2020-11-16 02:29:39.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L2180: 28864	svchost.exe	-
+
+--- privileges.txt ---
+L76130: 28864	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L76131: 28864	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L76132: 28864	svchost.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L76133: 28864	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L76134: 28864	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L76135: 28864	svchost.exe	7	SeTcbPrivilege	Default	Act as part of the operating system
+L76136: 28864	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L76137: 28864	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L76138: 28864	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L76139: 28864	svchost.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L76140: 28864	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L76141: 28864	svchost.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L76142: 28864	svchost.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L76143: 28864	svchost.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L76144: 28864	svchost.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L76145: 28864	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L76146: 28864	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L76147: 28864	svchost.exe	19	SeShutdownPrivilege		Shut down the system
+L76148: 28864	svchost.exe	20	SeDebugPrivilege	Default	Debug programs
+L76149: 28864	svchost.exe	21	SeAuditPrivilege	Default	Generate security audits
+L76150: 28864	svchost.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L76151: 28864	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L76152: 28864	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L76153: 28864	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L76154: 28864	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L76155: 28864	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L76156: 28864	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L76157: 28864	svchost.exe	29	SeImpersonatePrivilege	Default	Impersonate a client after authentication
+L76158: 28864	svchost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L76159: 28864	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L76160: 28864	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L76161: 28864	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L76162: 28864	svchost.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L76163: 28864	svchost.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L76164: 28864	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L56: ** 28864	828	svchost.exe	0xb78d15380240	3	-	0	False	2020-11-16 02:29:39.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L2161: 28864	828	svchost.exe	0xb78d15380240	3	-	0	False	2020-11-16 02:29:39.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L2180: 28864	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L129: 0	-	28864	svchost.exe	-	2020-11-16 02:29:39.000000 UTC
+
+=== END OF PIVOT REPORT ===

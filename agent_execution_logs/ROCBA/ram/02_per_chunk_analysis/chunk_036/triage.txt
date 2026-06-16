@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_036.txt
+Summary: Orphaned RuntimeBroker with unknown parent PID 740; short-lived Win32Bridge child is a kernel-truncated name artefact and low-signal on its own.
+
+[PROCESS]
+pid: 14028
+ppid: 740
+image: RuntimeBroker.exe
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_process: parent PID 740 listed as 'unknown' — not present anywhere in the process list | note: non-whitelisted DLL list includes standard System32 binaries (ntdll, kernel32, kernelbase, combase, rpcrt4, sechost, ucrtbase) — likely a whitelist filter artefact, no genuinely suspicious DLLs observed
+

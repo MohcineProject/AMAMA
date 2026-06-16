@@ -1,0 +1,55 @@
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: A single Agent 1 lead was reviewed. The flagged process, SearchApp.exe (PID 19436), presents an orphaned parent (PPID 740 absent from the process list) and an anomalous privilege footprint, but both observations have plausible benign explanations rooted in normal Windows UWP/AppContainer process lifecycle and Volatility token-enumeration behaviour. No malicious command-line arguments, no suspicious DLL paths, no malfind hits, and no network connections were present in the extracted evidence. Overall incident scope appears low; no confirmed malicious activity was identified in this triage batch.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      19436
+PPID:     740
+Image:    SearchApp.exe
+Cmdline:  "C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe" -ServerName:CortanaUI.AppX8z9r6jm96hw4bsbneegw0kyxx296wr9t.mca
+Severity: (none — INCONCLUSIVE)
+MITRE:
+
+Justification:
+  Agent 1 flagged this process because PPID 740 does not appear elsewhere
+  in the process list, making the parent "unknown." This is a recognised
+  artefact of Windows UWP/AppContainer hosting: SearchApp.exe is routinely
+  spawned by a transient RuntimeBroker or sihost instance whose EPROCESS
+  entry may have already been freed or may not have been captured in the
+  memory snapshot, leaving a dangling PPID. The command line is entirely
+  consistent with a legitimate Cortana/Search UWP activation
+  (-ServerName:CortanaUI.AppX…), the binary path is the canonical
+  Microsoft.Windows.Search SystemApps location, and all three sampled DLLs
+  load exclusively from System32/the app's own directory — no user-writable
+  paths. The privilege block is the primary residual concern: the token
+  carries a very large set of privileges (SeDebugPrivilege,
+  SeImpersonatePrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, etc.),
+  virtually all of which appear with no "Present" or "Enabled" flag, meaning
+  they are listed in the token but not actually enabled. Volatility's
+  privileges plugin enumerates every privilege in the token regardless of
+  state; only SeChangeNotifyPrivilege and SeIncreaseWorkingSetPrivilege show
+  "Present" or "Enabled." This pattern — a full privilege set that is almost
+  entirely disabled — is consistent with a SYSTEM-context token whose
+  privileges have not been activated, which can occur legitimately in UWP
+  host processes. Without malfind hits, network connections, suspicious DLL
+  paths, or registry persistence evidence, there is insufficient basis to
+  confirm malice; however, the orphaned parent and the unusually broad
+  (even if disabled) token cannot be fully dismissed without additional
+  artefacts (e.g. handles.txt, malfind output, or netscan entries for this
+  PID).
+
+Key Evidence:
+  - L1395: 19436	740	SearchApp.exe	0xb78d10795080	28	-	1	False	2020-11-14 12:48:43.000000 UTC	N/A	Disabled
+  - L1395: 19436	SearchApp.exe	"C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe" -ServerName:CortanaUI.AppX8z9r6jm96hw4bsbneegw0kyxx296wr9t.mca
+  - L48673: 19436	SearchApp.exe	20	SeDebugPrivilege		Debug programs
+  - L48676: 19436	SearchApp.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+  - L48682: 19436	SearchApp.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+  - L10646: 19436	SearchApp.exe	0x7ff7cac60000	0x304000	SearchApp.exe	C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+  - L10647: 19436	SearchApp.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-14 12:48:43.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================

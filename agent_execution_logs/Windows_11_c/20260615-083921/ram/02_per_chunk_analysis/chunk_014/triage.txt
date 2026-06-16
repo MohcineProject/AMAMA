@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:30:00Z
+Chunk: chunk_014.txt
+Summary: SearchHost.exe (PID 6844) has an orphaned parent (PPID 576 not present in process list); all other processes are legitimate EdgeWebView2 children of the SearchHost WebView2 host and show no additional signals.
+
+[PROCESS]
+pid: 6844
+ppid: 576
+image: SearchHost.exe
+cmdline: "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe" -ServerName:CortanaUI.AppXstmwaab17q5s3y22tp6apqz7a45vwv65.mca
+severity: LOW
+reasons: orphaned_parent: PPID 576 does not appear anywhere in the supplied process list; expected parent for SearchHost.exe is typically StartMenuExperienceHost or sihost.exe under explorer.exe
+

@@ -1,0 +1,98 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 30216 — svchost.exe**
+
+Agent 1 flags: orphaned PPID 828, high-risk privilege triad, missing cmdline.
+
+Evidence review:
+
+1. **Cmdline**: `cmdline.txt` shows `-` — no command line recorded. Legitimate svchost always runs as `svchost.exe -k <ServiceGroupName>`. Missing cmdline is a genuine anomaly.
+
+2. **Parent**: PPID 828 is not visible in the process list. Legitimate svchost should be parented by `services.exe`. An orphaned svchost with no visible parent is suspicious.
+
+3. **Privileges**: The token has `SeTcbPrivilege`, `SeDebugPrivilege`, and `SeImpersonatePrivilege` all simultaneously **Present, Enabled, Default**. This is the full SYSTEM token privilege set. While a SYSTEM-context svchost can hold these, the combination with missing cmdline and orphaned parent is corroborating.
+
+4. **pstree.txt**: Shows the full path `\Device\HarddiskVolume3\Windows\System32\svchost.exe` — the binary itself is legitimate (not a masquerade from a user-writable path). `malware_pebmasquerade.txt` confirms `False, False` — no PE masquerade detected.
+
+5. **psscan.txt**: Single hit, consistent with pslist — no DKOM hiding detected.
+
+Assessment: The binary path is legitimate System32. No malfind hits, no suspicious DLLs, no network connections in evidence. The missing cmdline could be a Volatility artefact (some svchost instances launched very early or via unusual service hosting can have cmdline not captured). The orphaned PPID is suspicious but could reflect a parent that exited (services.exe restart, or early boot). The privilege set is consistent with a SYSTEM-token svchost. However, the combination of orphaned PPID + missing cmdline + full SYSTEM privilege triad is genuinely anomalous. No malfind or DLL evidence to confirm injection. I'll mark **INCONCLUSIVE** — signals are real but insufficient to confirm malice without malfind/DLL/network corroboration.
+
+---
+
+**PID 30124 — RuntimeBroker.exe**
+
+Agent 1 flags: orphaned PPID 740, DLL list anomaly (process image listed among DLLs).
+
+Evidence review:
+
+1. **Cmdline**: `C:\Windows\System32\RuntimeBroker.exe -Embedding` — this is the canonical, expected invocation for RuntimeBroker. Completely normal.
+
+2. **Parent**: PPID 740 not in process list. RuntimeBroker.exe is normally parented by `svchost.exe` (the DcomLaunch group). An orphaned parent could mean the parent svchost exited, which is not unusual for COM activation hosts. This is a weak signal.
+
+3. **DLL anomaly**: The process image itself (`RuntimeBroker.exe`) appearing at the top of the DLL list is standard Volatility `dlllist` behaviour — the main executable module is always listed first as the first entry in the PEB's `InLoadOrderModuleList`. This is not an anomaly; it is how Volatility reports the loaded module list. The remaining DLLs shown (`ntdll.dll`, `KERNEL32.DLL`) are from `C:\WINDOWS\SYSTEM32\` — entirely legitimate.
+
+4. **Privileges**: No high-risk privileges are enabled. `SeChangeNotifyPrivilege` (Present, Enabled, Default) is standard for all user processes. `SeShutdownPrivilege`, `SeUndockPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are Present but not Enabled — normal for a medium-integrity user-context process. No `SeDebugPrivilege`, no `SeTcbPrivilege`, no `SeImpersonatePrivilege` enabled.
+
+5. **Name truncation**: `RuntimeBroker.` is the 14-char EPROCESS truncation of `RuntimeBroker.exe` — not a typosquat.
+
+Assessment: Both Agent 1 signals are weak or false. The cmdline is canonical. The DLL anomaly is a Volatility artefact. The orphaned PPID is a weak signal with no corroboration. Privilege set is normal for a user-context process. **REJECTED**.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: Two Agent 1 leads were reviewed. One (svchost.exe PID 30216) presents
+genuine anomalies — orphaned parent, missing command line, and a fully-enabled
+SYSTEM-level privilege triad — but lacks malfind, suspicious DLL, or network
+corroboration sufficient to confirm malice. One (RuntimeBroker.exe PID 30124)
+is assessed as benign: its command line is canonical, its DLL anomaly is a
+Volatility artefact, and its privilege set is normal for a user-context process.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      30216
+PPID:     828
+Image:    svchost.exe
+Cmdline:  - (no command line recorded)
+Severity: N/A
+MITRE:
+
+Justification:
+  Three independent signals converge on this process: (1) PPID 828 is absent
+  from the process list, meaning svchost.exe has no visible parent — legitimate
+  svchost instances are always children of services.exe; (2) the command line
+  field is blank ("-"), whereas every legitimate svchost carries a "-k
+  <ServiceGroupName>" argument; (3) the token holds SeTcbPrivilege,
+  SeDebugPrivilege, and SeImpersonatePrivilege all simultaneously marked
+  "Present, Enabled, Default", which is the full SYSTEM-token privilege set and
+  unusual for a svchost that cannot be attributed to a known service group.
+  Countervailing evidence prevents confirmation: pstree.txt resolves the full
+  image path to \Device\HarddiskVolume3\Windows\System32\svchost.exe (not a
+  user-writable location), malware_pebmasquerade.txt returns False/False (no PE
+  masquerade), psscan is consistent with pslist (no DKOM hiding), and no
+  malfind hits, suspicious DLL paths, or network connections appear in the
+  extracted evidence. The missing cmdline may be a Volatility capture artefact
+  for a very early-boot or unusual service host, and the orphaned PPID may
+  reflect a parent that exited normally. Without malfind sections, DLL provenance
+  data, or network activity to corroborate, the anomalies are real but
+  insufficient to confirm malice.
+
+Key Evidence:
+  - L2186: 30216	828	svchost.exe	0xb78cff934080	6	-	0	False	2020-11-16 02:30:22.000000 UTC	N/A	Disabled
+  - L2186: 30216	svchost.exe	-
+  - L76310: 30216	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L76323: 30216	svchost.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L76332: 30216	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L15: ** 30216	828	svchost.exe	0xb78cff934080	6	-	0	False	2020-11-16 02:30:22.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+  - L2186: 30216	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+----------------------------------------------------------------
+
+================================================================

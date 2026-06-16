@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_040.txt
+Summary: TabTip.exe holds high-risk privileges (SeTcbPrivilege, SeImpersonatePrivilege) atypical for a touch-keyboard UI process; SearchProtocolHost discovered only via psscan with an unresolvable parent suggests possible process hiding.
+
+[PROCESS]
+pid: 16824
+ppid: 1908
+image: TabTip.exe
+cmdline: 
+severity: MEDIUM
+reasons: privilege_anomaly: SeTcbPrivilege enabled on a touch-keyboard UI process (TabTip.exe) — highly atypical, indicates possible token manipulation or abuse | privilege_anomaly: SeImpersonatePrivilege enabled alongside SeTcbPrivilege on a non-service UI process | parent_unknown: PPID 1908 not present in process list, orphaned parent
+
+[PROCESS]
+pid: 16480
+ppid: 11968
+image: SearchProtocol
+cmdline: 
+severity: LOW
+reasons: psscan_only: process discovered exclusively via psscan (discovered_via=psscan), not visible in pslist — possible process hiding or DKOM manipulation | parent_unknown: PPID 11968 not present in process list, unresolvable parent
+

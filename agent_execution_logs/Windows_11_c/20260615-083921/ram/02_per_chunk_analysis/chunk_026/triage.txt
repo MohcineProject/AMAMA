@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:35:00Z
+Chunk: chunk_026.txt
+Summary: All three processes have orphaned PPIDs not present in the process list; TrustedInstaller and WMIADAP hold high-risk privilege combinations (SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege) warranting confirmation of legitimacy.
+
+[PROCESS]
+pid: 10504
+ppid: 888
+image: TrustedInstall
+cmdline: C:\WINDOWS\servicing\TrustedInstaller.exe
+severity: MEDIUM
+reasons: orphaned_parent: PPID 888 not present anywhere in the process list | privilege_stack: holds SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege simultaneously — high-risk combination for a servicing process | name_truncation_note: EPROCESS name 'TrustedInstall' is a 14-char kernel truncation of TrustedInstaller.exe; path confirms legitimate binary, but orphaned parent warrants pivot confirmation
+
+[PROCESS]
+pid: 11040
+ppid: 3260
+image: WMIADAP.exe
+cmdline: wmiadap.exe /F /T /R
+severity: MEDIUM
+reasons: orphaned_parent: PPID 3260 not present anywhere in the process list | privilege_stack: holds SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege — atypical for a WMI adapter process | path_anomaly: image path uses device-namespace prefix '\\?\' which is unusual for a standard system process invocation
+
+[PROCESS]
+pid: 11316
+ppid: 576
+image: RuntimeBroker.
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 576 not present anywhere in the process list — expected parent is svchost.exe hosting DcomLaunch | name_truncation_note: EPROCESS name 'RuntimeBroker.' is a 14-char kernel truncation of RuntimeBroker.exe; path and cmdline confirm legitimate binary, flagged solely for orphaned PPID confirmation
+

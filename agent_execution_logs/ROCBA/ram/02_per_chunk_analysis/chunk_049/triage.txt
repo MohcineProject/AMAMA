@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-01-30T00:00:00Z
+Chunk: chunk_049.txt
+Summary: Orphaned parent PID on YourPhone.exe (PPID 740 not present in process list); all other signals appear benign.
+
+[PROCESS]
+pid: 26476
+ppid: 740
+image: YourPhone.exe
+cmdline: "C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.exe" -ServerName:App.AppX9yct9q388jvt4h7y0gn06smzkxcsnt8m.mca
+severity: LOW
+reasons: orphaned_parent: PPID 740 (listed as 'unknown') is not present anywhere in the process list
+

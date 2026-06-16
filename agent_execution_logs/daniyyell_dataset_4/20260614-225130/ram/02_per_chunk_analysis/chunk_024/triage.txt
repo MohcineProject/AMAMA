@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_024.txt
+Summary: Two svchost.exe instances with unknown/missing parent (PID 716 not present in process list); one svchost instance (PID 7960) has no image path, exited after ~6 minutes, and holds high-risk privileges SeTcbPrivilege and SeImpersonatePrivilege.
+
+[PROCESS]
+pid: 7960
+ppid: 716
+image: svchost.exe
+cmdline: 
+severity: HIGH
+reasons: missing_image_path: no Path field present for this svchost.exe instance | orphaned_parent: PPID 716 does not appear anywhere in the process list | high_risk_privileges: SeTcbPrivilege and SeImpersonatePrivilege both enabled — strong token/impersonation abuse signal | short_lived: process exited after ~6 minutes (19:37:04 → 19:43:20) with no visible command-line, suspicious in combination with privilege anomalies
+
+[PROCESS]
+pid: 7848
+ppid: 716
+image: svchost.exe
+cmdline: C:\Windows\system32\svchost.exe -k UnistackSvcGroup
+severity: LOW
+reasons: orphaned_parent: PPID 716 does not appear anywhere in the process list — expected parent is services.exe
+

@@ -1,0 +1,386 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:14:20Z
+
+=== PID 4312 (svchost.exe, ppid=896) ===
+Cmdline: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc
+
+--- pslist.txt ---
+L71: 4312	896	svchost.exe	0x990ef779b080	5	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L71: 4312	svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc
+
+--- privileges.txt ---
+L2315: 4312	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L2316: 4312	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2317: 4312	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2318: 4312	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2319: 4312	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2320: 4312	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2321: 4312	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2322: 4312	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2323: 4312	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2324: 4312	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2325: 4312	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L2326: 4312	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2327: 4312	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2328: 4312	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2329: 4312	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2330: 4312	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L2331: 4312	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L2332: 4312	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2333: 4312	svchost.exe	20	SeDebugPrivilege		Debug programs
+L2334: 4312	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L2335: 4312	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2336: 4312	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2337: 4312	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2338: 4312	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2339: 4312	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2340: 4312	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2341: 4312	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2342: 4312	svchost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2343: 4312	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2344: 4312	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2345: 4312	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2346: 4312	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2347: 4312	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2348: 4312	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2349: 4312	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L2471: 4312	svchost.exe	0x7ff7d0000000	0x13000	svchost.exe	C:\WINDOWS\system32\svchost.exe	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2472: 4312	svchost.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2473: 4312	svchost.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2474: 4312	svchost.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2475: 4312	svchost.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2476: 4312	svchost.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2477: 4312	svchost.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2478: 4312	svchost.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2479: 4312	svchost.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2480: 4312	svchost.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2481: 4312	svchost.exe	0x7ffff7c20000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2482: 4312	svchost.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2483: 4312	svchost.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2484: 4312	svchost.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2485: 4312	svchost.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2486: 4312	svchost.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2487: 4312	svchost.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2488: 4312	svchost.exe	0x7fffe14c0000	0xb2000	cdpusersvc.dll	c:\windows\system32\cdpusersvc.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2489: 4312	svchost.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2490: 4312	svchost.exe	0x7ffff61c0000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2491: 4312	svchost.exe	0x7ffff5e80000	0x57000	cfgmgr32.dll	C:\WINDOWS\SYSTEM32\cfgmgr32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2492: 4312	svchost.exe	0x7fffe0f10000	0x5a4000	cdp.dll	c:\windows\system32\cdp.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2493: 4312	svchost.exe	0x7ffff61a0000	0x14000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2494: 4312	svchost.exe	0x7fffed8c0000	0x2c4000	iertutil.dll	c:\windows\system32\iertutil.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2495: 4312	svchost.exe	0x7ffff9820000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2496: 4312	svchost.exe	0x7fffed890000	0x29000	srvcli.dll	c:\windows\system32\srvcli.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2497: 4312	svchost.exe	0x7ffff49f0000	0xd000	netutils.dll	c:\windows\system32\netutils.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2498: 4312	svchost.exe	0x7ffff39c0000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2499: 4312	svchost.exe	0x7fffe9f20000	0x8000	gamestreamingext.dll	C:\WINDOWS\SYSTEM32\gamestreamingext.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2500: 4312	svchost.exe	0x7ffff6230000	0x2a000	bcrypt.dll	c:\windows\system32\bcrypt.dll	-1	2026-05-13 19:15:36.000000 UTC	Disabled
+L2501: 4312	svchost.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2502: 4312	svchost.exe	0x7fffe3ee0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2503: 4312	svchost.exe	0x7fffe03b0000	0x138000	Windows.Security.Authentication.Web.Core.dll	C:\Windows\System32\Windows.Security.Authentication.Web.Core.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2504: 4312	svchost.exe	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2505: 4312	svchost.exe	0x7fffea0a0000	0x17000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2506: 4312	svchost.exe	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\System32\SspiCli.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2507: 4312	svchost.exe	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2508: 4312	svchost.exe	0x7ffff5990000	0x13000	MSASN1.dll	C:\WINDOWS\System32\MSASN1.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2509: 4312	svchost.exe	0x7ffff5b40000	0x30000	ncrypt.dll	c:\windows\system32\ncrypt.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2510: 4312	svchost.exe	0x7ffff5af0000	0x3f000	NTASN1.dll	c:\windows\system32\NTASN1.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2511: 4312	svchost.exe	0x7fffeb2c0000	0x8b000	ncryptprov.dll	C:\WINDOWS\system32\ncryptprov.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2512: 4312	svchost.exe	0x7ffff5920000	0xc000	CRYPTBASE.dll	C:\WINDOWS\system32\CRYPTBASE.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+L2513: 4312	svchost.exe	0x7ffff9630000	0xf7000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2514: 4312	svchost.exe	0x7fffdcc80000	0x4f000	vaultcli.dll	C:\Windows\System32\vaultcli.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2515: 4312	svchost.exe	0x7fffdf890000	0xbb000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2516: 4312	svchost.exe	0x7fffedd70000	0x244000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2517: 4312	svchost.exe	0x7fffeb7e0000	0x19000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2518: 4312	svchost.exe	0x7fffee2a0000	0x127000	WINHTTP.dll	c:\windows\system32\WINHTTP.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2519: 4312	svchost.exe	0x7ffff7810000	0x74000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2520: 4312	svchost.exe	0x7ffff5640000	0x6b000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2521: 4312	svchost.exe	0x7ffff4a00000	0x33000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2522: 4312	svchost.exe	0x7ffff4030000	0xe000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2523: 4312	svchost.exe	0x7ffff8700000	0xa000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2524: 4312	svchost.exe	0x7ffff0470000	0x1d000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2525: 4312	svchost.exe	0x7fffee670000	0x23000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	6	2026-05-13 19:15:45.000000 UTC	Disabled
+L2526: 4312	svchost.exe	0x7fffe5ba0000	0x10f000	winsqlite3.dll	c:\windows\system32\winsqlite3.dll	6	2026-05-13 19:15:46.000000 UTC	Disabled
+L2527: 4312	svchost.exe	0x7fffeb630000	0x37000	Windows.Devices.Radios.dll	C:\Windows\System32\Windows.Devices.Radios.dll	6	2026-05-13 19:15:52.000000 UTC	Disabled
+L2528: 4312	svchost.exe	0x7fffed300000	0x60000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+L2529: 4312	svchost.exe	0x7fffd6580000	0x73000	CapabilityAccessManagerClient.dll	C:\Windows\System32\CapabilityAccessManagerClient.dll	6	2026-05-13 19:20:52.000000 UTC	Disabled
+
+--- pstree.txt ---
+L81: ** 4312	896	svchost.exe	0x990ef779b080	5	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc	C:\WINDOWS\system32\svchost.exe
+
+--- psscan.txt ---
+L99: 4312	896	svchost.exe	0x990ef779b080	5	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L2586: 4312	svchost.exe	0x2b0f5f80000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2587: 4312	svchost.exe	0x2b0f87a0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L2588: 4312	svchost.exe	0x2b0f87e0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2589: 4312	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2590: 4312	svchost.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L2591: 4312	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2592: 4312	svchost.exe	0x7fffe03b0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L2593: 4312	svchost.exe	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
+L2594: 4312	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2595: 4312	svchost.exe	0x7fffd6580000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L2596: 4312	svchost.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L2597: 4312	svchost.exe	0x7fffe0f10000	True	True	True	\Windows\System32\cdp.dll
+L2598: 4312	svchost.exe	0x7fffe14c0000	True	True	True	\Windows\System32\cdpusersvc.dll
+L2599: 4312	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2600: 4312	svchost.exe	0x7fffe9f20000	True	True	True	\Windows\System32\gamestreamingext.dll
+L2601: 4312	svchost.exe	0x7fffe5ba0000	True	True	True	\Windows\System32\winsqlite3.dll
+L2602: 4312	svchost.exe	0x7fffeb630000	True	True	True	\Windows\System32\Windows.Devices.Radios.dll
+L2603: 4312	svchost.exe	0x7fffeb2c0000	True	True	True	\Windows\System32\ncryptprov.dll
+L2604: 4312	svchost.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L2605: 4312	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2606: 4312	svchost.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L2607: 4312	svchost.exe	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L2608: 4312	svchost.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L2609: 4312	svchost.exe	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L2610: 4312	svchost.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L2611: 4312	svchost.exe	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L2612: 4312	svchost.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L2613: 4312	svchost.exe	0x7ffff4030000	True	True	True	\Windows\System32\winnsi.dll
+L2614: 4312	svchost.exe	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2615: 4312	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2616: 4312	svchost.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L2617: 4312	svchost.exe	0x7ffff5b40000	True	True	True	\Windows\System32\ncrypt.dll
+L2618: 4312	svchost.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L2619: 4312	svchost.exe	0x7ffff5640000	True	True	True	\Windows\System32\mswsock.dll
+L2620: 4312	svchost.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L2621: 4312	svchost.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L2622: 4312	svchost.exe	0x7ffff5af0000	True	True	True	\Windows\System32\ntasn1.dll
+L2623: 4312	svchost.exe	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
+L2624: 4312	svchost.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L2625: 4312	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2626: 4312	svchost.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L2627: 4312	svchost.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L2628: 4312	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2629: 4312	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2630: 4312	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2631: 4312	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2632: 4312	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2633: 4312	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2634: 4312	svchost.exe	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
+L2635: 4312	svchost.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L2636: 4312	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2637: 4312	svchost.exe	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
+L2638: 4312	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2639: 4312	svchost.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L2640: 4312	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2641: 4312	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2642: 4312	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2643: 4312	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2644: 4312	svchost.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L2645: 4312	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L2646: 4312	svchost.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L2647: 4312	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L2586: 4312	svchost.exe	0x2b0f5f80000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2587: 4312	svchost.exe	0x2b0f87a0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L2588: 4312	svchost.exe	0x2b0f87e0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2589: 4312	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2590: 4312	svchost.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L2591: 4312	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2592: 4312	svchost.exe	0x7fffe03b0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L2593: 4312	svchost.exe	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
+L2594: 4312	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2595: 4312	svchost.exe	0x7fffd6580000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L2596: 4312	svchost.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L2597: 4312	svchost.exe	0x7fffe0f10000	True	True	True	\Windows\System32\cdp.dll
+L2598: 4312	svchost.exe	0x7fffe14c0000	True	True	True	\Windows\System32\cdpusersvc.dll
+L2599: 4312	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2600: 4312	svchost.exe	0x7fffe9f20000	True	True	True	\Windows\System32\gamestreamingext.dll
+L2601: 4312	svchost.exe	0x7fffe5ba0000	True	True	True	\Windows\System32\winsqlite3.dll
+L2602: 4312	svchost.exe	0x7fffeb630000	True	True	True	\Windows\System32\Windows.Devices.Radios.dll
+L2603: 4312	svchost.exe	0x7fffeb2c0000	True	True	True	\Windows\System32\ncryptprov.dll
+L2604: 4312	svchost.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L2605: 4312	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2606: 4312	svchost.exe	0x7ffff39c0000	True	True	True	\Windows\System32\policymanager.dll
+L2607: 4312	svchost.exe	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L2608: 4312	svchost.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L2609: 4312	svchost.exe	0x7fffee670000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L2610: 4312	svchost.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L2611: 4312	svchost.exe	0x7ffff0470000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L2612: 4312	svchost.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L2613: 4312	svchost.exe	0x7ffff4030000	True	True	True	\Windows\System32\winnsi.dll
+L2614: 4312	svchost.exe	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2615: 4312	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2616: 4312	svchost.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L2617: 4312	svchost.exe	0x7ffff5b40000	True	True	True	\Windows\System32\ncrypt.dll
+L2618: 4312	svchost.exe	0x7ffff5990000	True	True	True	\Windows\System32\msasn1.dll
+L2619: 4312	svchost.exe	0x7ffff5640000	True	True	True	\Windows\System32\mswsock.dll
+L2620: 4312	svchost.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L2621: 4312	svchost.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L2622: 4312	svchost.exe	0x7ffff5af0000	True	True	True	\Windows\System32\ntasn1.dll
+L2623: 4312	svchost.exe	0x7ffff5e80000	True	True	True	\Windows\System32\cfgmgr32.dll
+L2624: 4312	svchost.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L2625: 4312	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2626: 4312	svchost.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L2627: 4312	svchost.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L2628: 4312	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2629: 4312	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2630: 4312	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2631: 4312	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2632: 4312	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2633: 4312	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2634: 4312	svchost.exe	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
+L2635: 4312	svchost.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L2636: 4312	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2637: 4312	svchost.exe	0x7ffff8700000	True	True	True	\Windows\System32\nsi.dll
+L2638: 4312	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2639: 4312	svchost.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L2640: 4312	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2641: 4312	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2642: 4312	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2643: 4312	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2644: 4312	svchost.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L2645: 4312	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L2646: 4312	svchost.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L2647: 4312	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L71: 4312	svchost.exe	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe	False	False
+
+--- sessions.txt ---
+L95: 1	-	4312	svchost.exe	CLEANWINDOWS11/kali	2026-05-13 19:15:35.000000 UTC
+
+=== PID 4340 (svchost.exe, ppid=896) ===
+Cmdline: C:\WINDOWS\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s webthreatdefusersvc
+
+--- pslist.txt ---
+L72: 4340	896	svchost.exe	0x990ef4979080	3	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L72: 4340	svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s webthreatdefusersvc
+
+--- privileges.txt ---
+L2350: 4340	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L2351: 4340	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2352: 4340	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2353: 4340	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2354: 4340	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2355: 4340	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2356: 4340	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2357: 4340	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2358: 4340	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2359: 4340	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2360: 4340	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L2361: 4340	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2362: 4340	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2363: 4340	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2364: 4340	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2365: 4340	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L2366: 4340	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L2367: 4340	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2368: 4340	svchost.exe	20	SeDebugPrivilege		Debug programs
+L2369: 4340	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L2370: 4340	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2371: 4340	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2372: 4340	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2373: 4340	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2374: 4340	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2375: 4340	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2376: 4340	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2377: 4340	svchost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2378: 4340	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2379: 4340	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2380: 4340	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2381: 4340	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2382: 4340	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2383: 4340	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2384: 4340	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L2530: 4340	svchost.exe	0x7ff7d0000000	0x13000	svchost.exe	C:\WINDOWS\system32\svchost.exe	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2531: 4340	svchost.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2532: 4340	svchost.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2533: 4340	svchost.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2534: 4340	svchost.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2535: 4340	svchost.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2536: 4340	svchost.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2537: 4340	svchost.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2538: 4340	svchost.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2539: 4340	svchost.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:15:35.000000 UTC	Disabled
+L2540: 4340	svchost.exe	0x7ffff7c20000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2541: 4340	svchost.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2542: 4340	svchost.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2543: 4340	svchost.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2544: 4340	svchost.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2545: 4340	svchost.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2546: 4340	svchost.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-13 19:15:35.000000 UTC	Disabled
+L2547: 4340	svchost.exe	0x7fffe0e80000	0x49000	webthreatdefusersvc.dll	c:\windows\system32\webthreatdefusersvc.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2548: 4340	svchost.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2549: 4340	svchost.exe	0x7fffe0d30000	0x27000	ThreatResponseEngine.dll	C:\Windows\System32\ThreatResponseEngine.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2550: 4340	svchost.exe	0x7fffed300000	0x60000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2026-05-13 19:15:36.000000 UTC	Disabled
+L2551: 4340	svchost.exe	0x7fffe3ee0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-13 19:15:37.000000 UTC	Disabled
+L2552: 4340	svchost.exe	0x7fffea0a0000	0x17000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2026-05-13 19:15:38.000000 UTC	Disabled
+
+--- pstree.txt ---
+L84: ** 4340	896	svchost.exe	0x990ef4979080	3	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s webthreatdefusersvc	C:\WINDOWS\system32\svchost.exe
+
+--- psscan.txt ---
+L23: 4340	896	svchost.exe	0x990ef4979080	3	-	1	False	2026-05-13 19:15:35.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L2648: 4340	svchost.exe	0x1659bed0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2649: 4340	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2650: 4340	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2651: 4340	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2652: 4340	svchost.exe	0x7fffe0d30000	True	True	True	\Windows\System32\ThreatResponseEngine.dll
+L2653: 4340	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2654: 4340	svchost.exe	0x7fffe0e80000	True	True	True	\Windows\System32\webthreatdefusersvc.dll
+L2655: 4340	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2656: 4340	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2657: 4340	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2658: 4340	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2659: 4340	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2660: 4340	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2661: 4340	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2662: 4340	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2663: 4340	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2664: 4340	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2665: 4340	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2666: 4340	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2667: 4340	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2668: 4340	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2669: 4340	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2670: 4340	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L2671: 4340	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_ldrmodules.txt ---
+L2648: 4340	svchost.exe	0x1659bed0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L2649: 4340	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L2650: 4340	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2651: 4340	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L2652: 4340	svchost.exe	0x7fffe0d30000	True	True	True	\Windows\System32\ThreatResponseEngine.dll
+L2653: 4340	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L2654: 4340	svchost.exe	0x7fffe0e80000	True	True	True	\Windows\System32\webthreatdefusersvc.dll
+L2655: 4340	svchost.exe	0x7fffed300000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L2656: 4340	svchost.exe	0x7fffea0a0000	True	True	True	\Windows\System32\usermgrcli.dll
+L2657: 4340	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L2658: 4340	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2659: 4340	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L2660: 4340	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L2661: 4340	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L2662: 4340	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2663: 4340	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L2664: 4340	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L2665: 4340	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L2666: 4340	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L2667: 4340	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L2668: 4340	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L2669: 4340	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L2670: 4340	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L2671: 4340	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_pebmasquerade.txt ---
+L72: 4340	svchost.exe	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe	False	False
+
+--- sessions.txt ---
+L96: 1	-	4340	svchost.exe	CLEANWINDOWS11/kali	2026-05-13 19:15:35.000000 UTC
+
+=== END OF PIVOT REPORT ===

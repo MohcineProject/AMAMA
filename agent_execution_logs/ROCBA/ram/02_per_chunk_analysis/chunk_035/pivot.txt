@@ -1,0 +1,327 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:02:30Z
+
+=== PID 13224 (APSDaemon.exe, ppid=740) ===
+Cmdline: "C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe" -Embedding
+
+--- pslist.txt ---
+L143: 13224	740	APSDaemon.exe	0xb78cf7e16080	9	-	1	True	2020-11-11 08:14:16.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L143: 13224	APSDaemon.exe	"C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe" -Embedding
+
+--- privileges.txt ---
+L4835: 13224	APSDaemon.exe	2	SeCreateTokenPrivilege		Create a token object
+L4836: 13224	APSDaemon.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4837: 13224	APSDaemon.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L4838: 13224	APSDaemon.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4839: 13224	APSDaemon.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4840: 13224	APSDaemon.exe	7	SeTcbPrivilege		Act as part of the operating system
+L4841: 13224	APSDaemon.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4842: 13224	APSDaemon.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4843: 13224	APSDaemon.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4844: 13224	APSDaemon.exe	11	SeSystemProfilePrivilege		Profile system performance
+L4845: 13224	APSDaemon.exe	12	SeSystemtimePrivilege		Change the system time
+L4846: 13224	APSDaemon.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4847: 13224	APSDaemon.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4848: 13224	APSDaemon.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L4849: 13224	APSDaemon.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4850: 13224	APSDaemon.exe	17	SeBackupPrivilege		Backup files and directories
+L4851: 13224	APSDaemon.exe	18	SeRestorePrivilege		Restore files and directories
+L4852: 13224	APSDaemon.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L4853: 13224	APSDaemon.exe	20	SeDebugPrivilege		Debug programs
+L4854: 13224	APSDaemon.exe	21	SeAuditPrivilege		Generate security audits
+L4855: 13224	APSDaemon.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4856: 13224	APSDaemon.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4857: 13224	APSDaemon.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4858: 13224	APSDaemon.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4859: 13224	APSDaemon.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L4860: 13224	APSDaemon.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4861: 13224	APSDaemon.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L4862: 13224	APSDaemon.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4863: 13224	APSDaemon.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4864: 13224	APSDaemon.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4865: 13224	APSDaemon.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4866: 13224	APSDaemon.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4867: 13224	APSDaemon.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4868: 13224	APSDaemon.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4869: 13224	APSDaemon.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L7656: 13224	APSDaemon.exe	0x2b0000	0x13000	APSDaemon.exe	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe	-1	2020-11-11 08:14:16.000000 UTC	Disabled
+L7657: 13224	APSDaemon.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:14:16.000000 UTC	Disabled
+L7658: 13224	APSDaemon.exe	0x7fff57190000	0x59000	wow64.dll	C:\WINDOWS\System32\wow64.dll	-1	2020-11-11 08:14:16.000000 UTC	Disabled
+L7659: 13224	APSDaemon.exe	0x7fff559a0000	0x83000	wow64win.dll	C:\WINDOWS\System32\wow64win.dll	6	2020-11-11 08:14:16.000000 UTC	Disabled
+L7660: 13224	APSDaemon.exe	0x779c0000	0xa000	wow64cpu.dll	C:\WINDOWS\System32\wow64cpu.dll	6	2020-11-11 08:14:16.000000 UTC	Disabled
+L7661: 13224	APSDaemon.exe	0x2b0000	0x13000	APSDaemon.exe	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe	-	1678-08-08 10:10:11.000000 UTC	Disabled
+L7662: 13224	APSDaemon.exe	0x779d0000	0x1a3000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-	1639-11-08 01:54:56.000000 UTC	Disabled
+L7663: 13224	APSDaemon.exe	0x76cd0000	0xf0000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L7664: 13224	APSDaemon.exe	0x775f0000	0x214000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L7665: 13224	APSDaemon.exe	0x77050000	0x7a000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	-	1772-08-26 13:15:19.000000 UTC	Disabled
+L7666: 13224	APSDaemon.exe	0x76180000	0xbf000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L7667: 13224	APSDaemon.exe	0x76a00000	0x75000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L7668: 13224	APSDaemon.exe	0x75e60000	0xba000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L7669: 13224	APSDaemon.exe	0x76340000	0x5b3000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L7670: 13224	APSDaemon.exe	0x76290000	0x7b000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L7671: 13224	APSDaemon.exe	0x75ba0000	0x120000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L7672: 13224	APSDaemon.exe	0x75cc0000	0x196000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L7673: 13224	APSDaemon.exe	0x75890000	0x18000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-	1601-01-02 17:20:15.000000 UTC	Disabled
+L7674: 13224	APSDaemon.exe	0x76310000	0x23000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	-	N/A	Disabled
+L7675: 13224	APSDaemon.exe	0x758f0000	0xda000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	-	1678-08-08 10:10:11.000000 UTC	Disabled
+L7676: 13224	APSDaemon.exe	0x76240000	0x45000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	-	1773-08-29 08:53:44.000000 UTC	Disabled
+L7677: 13224	APSDaemon.exe	0x6e200000	0x71000	MSVCP140.dll	C:\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\MSVCP140.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7678: 13224	APSDaemon.exe	0x6cab0000	0x14000	VCRUNTIME140.dll	C:\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\VCRUNTIME140.dll	-	1642-01-12 04:18:58.000000 UTC	Disabled
+L7679: 13224	APSDaemon.exe	0x770d0000	0x25000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7680: 13224	APSDaemon.exe	0x77810000	0x87000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7681: 13224	APSDaemon.exe	0x76dc0000	0x281000	combase.dll	C:\WINDOWS\System32\combase.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7682: 13224	APSDaemon.exe	0x6b280000	0x7000	AppleVersions.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\AppleVersions.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7683: 13224	APSDaemon.exe	0x747c0000	0x8000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7684: 13224	APSDaemon.exe	0x6b270000	0xf000	YSCrashDump.DLL	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\YSCrashDump.DLL	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7685: 13224	APSDaemon.exe	0x6e280000	0x1ad000	CoreFoundation.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreFoundation.dll	-	1642-01-12 04:18:58.000000 UTC	Disabled
+L7686: 13224	APSDaemon.exe	0x76b60000	0x63000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7687: 13224	APSDaemon.exe	0x6c210000	0x10000	ASL.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\ASL.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7688: 13224	APSDaemon.exe	0x6c580000	0x2f000	objc.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\objc.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7689: 13224	APSDaemon.exe	0x6c560000	0x18000	libdispatch.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libdispatch.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7690: 13224	APSDaemon.exe	0x6c220000	0x207000	libicuin.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuin.dll	-	1773-08-30 03:01:48.000000 UTC	Disabled
+L7691: 13224	APSDaemon.exe	0x6c0d0000	0x140000	libicuuc.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuuc.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7692: 13224	APSDaemon.exe	0x70250000	0x28000	WINMM.dll	C:\WINDOWS\SYSTEM32\WINMM.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7693: 13224	APSDaemon.exe	0x28c0000	0x19e5000	icudt62.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\icudt62.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7694: 13224	APSDaemon.exe	0x73cd0000	0x28000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7695: 13224	APSDaemon.exe	0x75270000	0x60a000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7696: 13224	APSDaemon.exe	0x75240000	0x24000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7697: 13224	APSDaemon.exe	0x74200000	0x1d000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7698: 13224	APSDaemon.exe	0x69d60000	0xbb000	APSDaemon_main.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon_main.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7699: 13224	APSDaemon.exe	0x778a0000	0xff000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	-	N/A	Disabled
+L7700: 13224	APSDaemon.exe	0x76be0000	0xe3000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7701: 13224	APSDaemon.exe	0x76900000	0x96000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7702: 13224	APSDaemon.exe	0x6c880000	0x22e000	CFNetwork.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CFNetwork.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7703: 13224	APSDaemon.exe	0x750c0000	0x32000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7704: 13224	APSDaemon.exe	0x6bfc0000	0x3f000	CRYPTUI.dll	C:\WINDOWS\SYSTEM32\CRYPTUI.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7705: 13224	APSDaemon.exe	0x779a0000	0x19000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7706: 13224	APSDaemon.exe	0x749c0000	0x458000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7707: 13224	APSDaemon.exe	0x6b630000	0xff000	libxml2.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libxml2.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7708: 13224	APSDaemon.exe	0x6bf00000	0xbd000	SQLite3.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\SQLite3.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7709: 13224	APSDaemon.exe	0x6b810000	0x15000	zlib1.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\zlib1.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7710: 13224	APSDaemon.exe	0x6bee0000	0x13000	pthreadVC2.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\pthreadVC2.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7711: 13224	APSDaemon.exe	0x6b500000	0x8000	WSOCK32.dll	C:\WINDOWS\SYSTEM32\WSOCK32.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7712: 13224	APSDaemon.exe	0x75880000	0xf000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-	1604-07-27 02:59:50.000000 UTC	Disabled
+L7713: 13224	APSDaemon.exe	0x769a0000	0x5c000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7714: 13224	APSDaemon.exe	0x74240000	0x74000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7715: 13224	APSDaemon.exe	0x76ae0000	0x7e000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-	1650-12-13 17:57:49.000000 UTC	Disabled
+L7716: 13224	APSDaemon.exe	0x73cc0000	0xd000	atlthunk.dll	C:\WINDOWS\SYSTEM32\atlthunk.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7717: 13224	APSDaemon.exe	0x75f30000	0xd3000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7718: 13224	APSDaemon.exe	0x67a30000	0x88000	sxs.dll	C:\WINDOWS\SYSTEM32\sxs.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7719: 13224	APSDaemon.exe	0x759d0000	0x7000	NSI.dll	C:\WINDOWS\System32\NSI.dll	-	1650-12-13 17:57:49.000000 UTC	Disabled
+L7720: 13224	APSDaemon.exe	0x74230000	0xe000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7721: 13224	APSDaemon.exe	0x741e0000	0x13000	CRYPTSP.dll	C:\WINDOWS\SYSTEM32\CRYPTSP.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7722: 13224	APSDaemon.exe	0x741b0000	0x2f000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7723: 13224	APSDaemon.exe	0x74790000	0x25000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7724: 13224	APSDaemon.exe	0x6f680000	0x8000	DPAPI.dll	C:\WINDOWS\SYSTEM32\DPAPI.dll	-	N/A	Disabled
+L7725: 13224	APSDaemon.exe	0x74220000	0xa000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	-	N/A	Disabled
+L7726: 13224	APSDaemon.exe	0x737d0000	0x52000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7727: 13224	APSDaemon.exe	0x702a0000	0x92000	DNSAPI.dll	C:\WINDOWS\SYSTEM32\DNSAPI.dll	-	N/A	Disabled
+L7728: 13224	APSDaemon.exe	0x6f5b0000	0x8000	rasadhlp.dll	C:\Windows\System32\rasadhlp.dll	-	N/A	Disabled
+L7729: 13224	APSDaemon.exe	0x6f550000	0x58000	fwpuclnt.dll	C:\WINDOWS\System32\fwpuclnt.dll	-	N/A	Disabled
+L7730: 13224	APSDaemon.exe	0x68ae0000	0x1e000	gpapi.dll	C:\WINDOWS\SYSTEM32\gpapi.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7731: 13224	APSDaemon.exe	0x74620000	0xa000	Secur32.dll	C:\WINDOWS\SYSTEM32\Secur32.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7732: 13224	APSDaemon.exe	0x6f4d0000	0x78000	schannel.dll	C:\WINDOWS\System32\schannel.dll	-	N/A	Disabled
+L7733: 13224	APSDaemon.exe	0x6f4c0000	0x10000	mskeyprotect.dll	C:\WINDOWS\SYSTEM32\mskeyprotect.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7734: 13224	APSDaemon.exe	0x70090000	0x28000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7735: 13224	APSDaemon.exe	0x73de0000	0x21000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L7736: 13224	APSDaemon.exe	0x6efc0000	0x1f000	ncryptsslp.dll	C:\WINDOWS\system32\ncryptsslp.dll	-	2653-01-28 13:42:57.000000 UTC	Disabled
+L7737: 13224	APSDaemon.exe	0x6f490000	0x26000	cryptnet.dll	C:\WINDOWS\SYSTEM32\cryptnet.dll	-	N/A	Disabled
+L7738: 13224	APSDaemon.exe	0x6f6f0000	0x8000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	-	1601-01-01 00:00:01.000000 UTC	Disabled
+
+--- pstree.txt ---
+L113: *** 13224	740	APSDaemon.exe	0xb78cf7e16080	9	-	1	True	2020-11-11 08:14:16.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe	"C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe" -Embedding	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe
+
+--- psscan.txt ---
+L21: 13224	740	APSDaemon.exe	0xb78cf7e16080	9	-	1	True	2020-11-11 08:14:16.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L5: 0xb78cf354aa20	TCPv4	192.168.1.5	53810	17.57.144.165	5223	ESTABLISHED	13224	APSDaemon.exe	2020-11-12 06:06:19.000000 UTC
+L119: 0xb78cfacc57f0	UDPv4	127.0.0.1	63453	*	0		13224	APSDaemon.exe	2020-11-11 08:14:27.000000 UTC
+L147: 0xb78cfecf83a0	UDPv4	127.0.0.1	63454	*	0		13224	APSDaemon.exe	2020-11-11 08:14:27.000000 UTC
+
+--- netstat.txt ---
+L62: 0xb78cf354aa20	TCPv4	192.168.1.5	53810	17.57.144.165	5223	ESTABLISHED	13224	APSDaemon.exe	2020-11-12 06:06:19.000000 UTC
+L165: 0xb78cfacc57f0	UDPv4	127.0.0.1	63453	*	0		13224	APSDaemon.exe	2020-11-11 08:14:27.000000 UTC
+L166: 0xb78cfecf83a0	UDPv4	127.0.0.1	63454	*	0		13224	APSDaemon.exe	2020-11-11 08:14:27.000000 UTC
+
+--- ldrmodules.txt ---
+L8186: 13224	APSDaemon.exe	0x6cab0000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\vcruntime140.dll
+L8187: 13224	APSDaemon.exe	0x2b0000	True	False	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe
+L8188: 13224	APSDaemon.exe	0x28c0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\icudt62.dll
+L8189: 13224	APSDaemon.exe	0x6b270000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\YSCrashDump.dll
+L8190: 13224	APSDaemon.exe	0x5450000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L8191: 13224	APSDaemon.exe	0x67a30000	True	True	True	\Windows\SysWOW64\sxs.dll
+L8192: 13224	APSDaemon.exe	0x68ae0000	True	True	True	\Windows\SysWOW64\gpapi.dll
+L8193: 13224	APSDaemon.exe	0x69d60000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon_main.dll
+L8194: 13224	APSDaemon.exe	0x6c210000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\ASL.dll
+L8195: 13224	APSDaemon.exe	0x6bf00000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\SQLite3.dll
+L8196: 13224	APSDaemon.exe	0x6b630000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libxml2.dll
+L8197: 13224	APSDaemon.exe	0x6b280000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\AppleVersions.dll
+L8198: 13224	APSDaemon.exe	0x6b500000	True	True	True	\Windows\SysWOW64\wsock32.dll
+L8199: 13224	APSDaemon.exe	0x6b810000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\zlib1.dll
+L8200: 13224	APSDaemon.exe	0x6bee0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\pthreadVC2.dll
+L8201: 13224	APSDaemon.exe	0x6bfc0000	True	True	True	\Windows\SysWOW64\cryptui.dll
+L8202: 13224	APSDaemon.exe	0x6c0d0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuuc.dll
+L8203: 13224	APSDaemon.exe	0x6c560000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libdispatch.dll
+L8204: 13224	APSDaemon.exe	0x6c220000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuin.dll
+L8205: 13224	APSDaemon.exe	0x6c580000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\objc.dll
+L8206: 13224	APSDaemon.exe	0x6c880000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CFNetwork.dll
+L8207: 13224	APSDaemon.exe	0x76180000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L8208: 13224	APSDaemon.exe	0x73cd0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L8209: 13224	APSDaemon.exe	0x6f550000	True	True	True	\Windows\SysWOW64\FWPUCLNT.DLL
+L8210: 13224	APSDaemon.exe	0x6efc0000	True	True	True	\Windows\SysWOW64\ncryptsslp.dll
+L8211: 13224	APSDaemon.exe	0x6e280000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreFoundation.dll
+L8212: 13224	APSDaemon.exe	0x6e200000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\msvcp140.dll
+L8213: 13224	APSDaemon.exe	0x6f4c0000	True	True	True	\Windows\SysWOW64\mskeyprotect.dll
+L8214: 13224	APSDaemon.exe	0x6f490000	True	True	True	\Windows\SysWOW64\cryptnet.dll
+L8215: 13224	APSDaemon.exe	0x6f4d0000	True	True	True	\Windows\SysWOW64\schannel.dll
+L8216: 13224	APSDaemon.exe	0x70250000	True	True	True	\Windows\SysWOW64\winmm.dll
+L8217: 13224	APSDaemon.exe	0x6f680000	True	True	True	\Windows\SysWOW64\dpapi.dll
+L8218: 13224	APSDaemon.exe	0x6f5b0000	True	True	True	\Windows\SysWOW64\rasadhlp.dll
+L8219: 13224	APSDaemon.exe	0x70090000	True	True	True	\Windows\SysWOW64\ntasn1.dll
+L8220: 13224	APSDaemon.exe	0x6f6f0000	True	True	True	\Windows\SysWOW64\winnsi.dll
+L8221: 13224	APSDaemon.exe	0x737d0000	True	True	True	\Windows\SysWOW64\mswsock.dll
+L8222: 13224	APSDaemon.exe	0x702a0000	True	True	True	\Windows\SysWOW64\dnsapi.dll
+L8223: 13224	APSDaemon.exe	0x73cc0000	True	True	True	\Windows\SysWOW64\atlthunk.dll
+L8224: 13224	APSDaemon.exe	0x747c0000	True	True	True	\Windows\SysWOW64\version.dll
+L8225: 13224	APSDaemon.exe	0x74230000	True	True	True	\Windows\SysWOW64\msasn1.dll
+L8226: 13224	APSDaemon.exe	0x741e0000	True	True	True	\Windows\SysWOW64\cryptsp.dll
+L8227: 13224	APSDaemon.exe	0x741b0000	True	True	True	\Windows\SysWOW64\rsaenh.dll
+L8228: 13224	APSDaemon.exe	0x73de0000	True	True	True	\Windows\SysWOW64\ncrypt.dll
+L8229: 13224	APSDaemon.exe	0x74200000	True	True	True	\Windows\SysWOW64\profapi.dll
+L8230: 13224	APSDaemon.exe	0x74220000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L8231: 13224	APSDaemon.exe	0x74620000	True	True	True	\Windows\SysWOW64\secur32.dll
+L8232: 13224	APSDaemon.exe	0x74240000	True	True	True	\Windows\SysWOW64\uxtheme.dll
+L8233: 13224	APSDaemon.exe	0x74790000	True	True	True	\Windows\SysWOW64\userenv.dll
+L8234: 13224	APSDaemon.exe	0x75890000	True	True	True	\Windows\SysWOW64\win32u.dll
+L8235: 13224	APSDaemon.exe	0x75240000	True	True	True	\Windows\SysWOW64\wldp.dll
+L8236: 13224	APSDaemon.exe	0x750c0000	True	True	True	\Windows\SysWOW64\IPHLPAPI.DLL
+L8237: 13224	APSDaemon.exe	0x749c0000	True	True	True	\Windows\SysWOW64\wininet.dll
+L8238: 13224	APSDaemon.exe	0x75270000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L8239: 13224	APSDaemon.exe	0x75880000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L8240: 13224	APSDaemon.exe	0x75ba0000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L8241: 13224	APSDaemon.exe	0x758f0000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L8242: 13224	APSDaemon.exe	0x759d0000	True	True	True	\Windows\SysWOW64\nsi.dll
+L8243: 13224	APSDaemon.exe	0x75e60000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L8244: 13224	APSDaemon.exe	0x75cc0000	True	True	True	\Windows\SysWOW64\user32.dll
+L8245: 13224	APSDaemon.exe	0x75f30000	True	True	True	\Windows\SysWOW64\msctf.dll
+L8246: 13224	APSDaemon.exe	0x779d0000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L8247: 13224	APSDaemon.exe	0x76cd0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L8248: 13224	APSDaemon.exe	0x76340000	True	True	True	\Windows\SysWOW64\shell32.dll
+L8249: 13224	APSDaemon.exe	0x76290000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L8250: 13224	APSDaemon.exe	0x76240000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L8251: 13224	APSDaemon.exe	0x76310000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L8252: 13224	APSDaemon.exe	0x76a00000	True	True	True	\Windows\SysWOW64\sechost.dll
+L8253: 13224	APSDaemon.exe	0x769a0000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L8254: 13224	APSDaemon.exe	0x76900000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L8255: 13224	APSDaemon.exe	0x76b60000	True	True	True	\Windows\SysWOW64\ws2_32.dll
+L8256: 13224	APSDaemon.exe	0x76ae0000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L8257: 13224	APSDaemon.exe	0x76be0000	True	True	True	\Windows\SysWOW64\ole32.dll
+L8258: 13224	APSDaemon.exe	0x775f0000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L8259: 13224	APSDaemon.exe	0x77050000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L8260: 13224	APSDaemon.exe	0x76dc0000	True	True	True	\Windows\SysWOW64\combase.dll
+L8261: 13224	APSDaemon.exe	0x770d0000	True	True	True	\Windows\SysWOW64\imm32.dll
+L8262: 13224	APSDaemon.exe	0x778a0000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L8263: 13224	APSDaemon.exe	0x77810000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L8264: 13224	APSDaemon.exe	0x779c0000	True	True	True	\Windows\System32\wow64cpu.dll
+L8265: 13224	APSDaemon.exe	0x779a0000	True	True	True	\Windows\SysWOW64\bcrypt.dll
+L8266: 13224	APSDaemon.exe	0x7fff57190000	True	True	True	\Windows\System32\wow64.dll
+L8267: 13224	APSDaemon.exe	0x7fff559a0000	True	True	True	\Windows\System32\wow64win.dll
+L8268: 13224	APSDaemon.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L8186: 13224	APSDaemon.exe	0x6cab0000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\vcruntime140.dll
+L8187: 13224	APSDaemon.exe	0x2b0000	True	False	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe
+L8188: 13224	APSDaemon.exe	0x28c0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\icudt62.dll
+L8189: 13224	APSDaemon.exe	0x6b270000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\YSCrashDump.dll
+L8190: 13224	APSDaemon.exe	0x5450000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L8191: 13224	APSDaemon.exe	0x67a30000	True	True	True	\Windows\SysWOW64\sxs.dll
+L8192: 13224	APSDaemon.exe	0x68ae0000	True	True	True	\Windows\SysWOW64\gpapi.dll
+L8193: 13224	APSDaemon.exe	0x69d60000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon_main.dll
+L8194: 13224	APSDaemon.exe	0x6c210000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\ASL.dll
+L8195: 13224	APSDaemon.exe	0x6bf00000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\SQLite3.dll
+L8196: 13224	APSDaemon.exe	0x6b630000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libxml2.dll
+L8197: 13224	APSDaemon.exe	0x6b280000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\AppleVersions.dll
+L8198: 13224	APSDaemon.exe	0x6b500000	True	True	True	\Windows\SysWOW64\wsock32.dll
+L8199: 13224	APSDaemon.exe	0x6b810000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\zlib1.dll
+L8200: 13224	APSDaemon.exe	0x6bee0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\pthreadVC2.dll
+L8201: 13224	APSDaemon.exe	0x6bfc0000	True	True	True	\Windows\SysWOW64\cryptui.dll
+L8202: 13224	APSDaemon.exe	0x6c0d0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuuc.dll
+L8203: 13224	APSDaemon.exe	0x6c560000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libdispatch.dll
+L8204: 13224	APSDaemon.exe	0x6c220000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuin.dll
+L8205: 13224	APSDaemon.exe	0x6c580000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\objc.dll
+L8206: 13224	APSDaemon.exe	0x6c880000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CFNetwork.dll
+L8207: 13224	APSDaemon.exe	0x76180000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L8208: 13224	APSDaemon.exe	0x73cd0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L8209: 13224	APSDaemon.exe	0x6f550000	True	True	True	\Windows\SysWOW64\FWPUCLNT.DLL
+L8210: 13224	APSDaemon.exe	0x6efc0000	True	True	True	\Windows\SysWOW64\ncryptsslp.dll
+L8211: 13224	APSDaemon.exe	0x6e280000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreFoundation.dll
+L8212: 13224	APSDaemon.exe	0x6e200000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\msvcp140.dll
+L8213: 13224	APSDaemon.exe	0x6f4c0000	True	True	True	\Windows\SysWOW64\mskeyprotect.dll
+L8214: 13224	APSDaemon.exe	0x6f490000	True	True	True	\Windows\SysWOW64\cryptnet.dll
+L8215: 13224	APSDaemon.exe	0x6f4d0000	True	True	True	\Windows\SysWOW64\schannel.dll
+L8216: 13224	APSDaemon.exe	0x70250000	True	True	True	\Windows\SysWOW64\winmm.dll
+L8217: 13224	APSDaemon.exe	0x6f680000	True	True	True	\Windows\SysWOW64\dpapi.dll
+L8218: 13224	APSDaemon.exe	0x6f5b0000	True	True	True	\Windows\SysWOW64\rasadhlp.dll
+L8219: 13224	APSDaemon.exe	0x70090000	True	True	True	\Windows\SysWOW64\ntasn1.dll
+L8220: 13224	APSDaemon.exe	0x6f6f0000	True	True	True	\Windows\SysWOW64\winnsi.dll
+L8221: 13224	APSDaemon.exe	0x737d0000	True	True	True	\Windows\SysWOW64\mswsock.dll
+L8222: 13224	APSDaemon.exe	0x702a0000	True	True	True	\Windows\SysWOW64\dnsapi.dll
+L8223: 13224	APSDaemon.exe	0x73cc0000	True	True	True	\Windows\SysWOW64\atlthunk.dll
+L8224: 13224	APSDaemon.exe	0x747c0000	True	True	True	\Windows\SysWOW64\version.dll
+L8225: 13224	APSDaemon.exe	0x74230000	True	True	True	\Windows\SysWOW64\msasn1.dll
+L8226: 13224	APSDaemon.exe	0x741e0000	True	True	True	\Windows\SysWOW64\cryptsp.dll
+L8227: 13224	APSDaemon.exe	0x741b0000	True	True	True	\Windows\SysWOW64\rsaenh.dll
+L8228: 13224	APSDaemon.exe	0x73de0000	True	True	True	\Windows\SysWOW64\ncrypt.dll
+L8229: 13224	APSDaemon.exe	0x74200000	True	True	True	\Windows\SysWOW64\profapi.dll
+L8230: 13224	APSDaemon.exe	0x74220000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L8231: 13224	APSDaemon.exe	0x74620000	True	True	True	\Windows\SysWOW64\secur32.dll
+L8232: 13224	APSDaemon.exe	0x74240000	True	True	True	\Windows\SysWOW64\uxtheme.dll
+L8233: 13224	APSDaemon.exe	0x74790000	True	True	True	\Windows\SysWOW64\userenv.dll
+L8234: 13224	APSDaemon.exe	0x75890000	True	True	True	\Windows\SysWOW64\win32u.dll
+L8235: 13224	APSDaemon.exe	0x75240000	True	True	True	\Windows\SysWOW64\wldp.dll
+L8236: 13224	APSDaemon.exe	0x750c0000	True	True	True	\Windows\SysWOW64\IPHLPAPI.DLL
+L8237: 13224	APSDaemon.exe	0x749c0000	True	True	True	\Windows\SysWOW64\wininet.dll
+L8238: 13224	APSDaemon.exe	0x75270000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L8239: 13224	APSDaemon.exe	0x75880000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L8240: 13224	APSDaemon.exe	0x75ba0000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L8241: 13224	APSDaemon.exe	0x758f0000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L8242: 13224	APSDaemon.exe	0x759d0000	True	True	True	\Windows\SysWOW64\nsi.dll
+L8243: 13224	APSDaemon.exe	0x75e60000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L8244: 13224	APSDaemon.exe	0x75cc0000	True	True	True	\Windows\SysWOW64\user32.dll
+L8245: 13224	APSDaemon.exe	0x75f30000	True	True	True	\Windows\SysWOW64\msctf.dll
+L8246: 13224	APSDaemon.exe	0x779d0000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L8247: 13224	APSDaemon.exe	0x76cd0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L8248: 13224	APSDaemon.exe	0x76340000	True	True	True	\Windows\SysWOW64\shell32.dll
+L8249: 13224	APSDaemon.exe	0x76290000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L8250: 13224	APSDaemon.exe	0x76240000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L8251: 13224	APSDaemon.exe	0x76310000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L8252: 13224	APSDaemon.exe	0x76a00000	True	True	True	\Windows\SysWOW64\sechost.dll
+L8253: 13224	APSDaemon.exe	0x769a0000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L8254: 13224	APSDaemon.exe	0x76900000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L8255: 13224	APSDaemon.exe	0x76b60000	True	True	True	\Windows\SysWOW64\ws2_32.dll
+L8256: 13224	APSDaemon.exe	0x76ae0000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L8257: 13224	APSDaemon.exe	0x76be0000	True	True	True	\Windows\SysWOW64\ole32.dll
+L8258: 13224	APSDaemon.exe	0x775f0000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L8259: 13224	APSDaemon.exe	0x77050000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L8260: 13224	APSDaemon.exe	0x76dc0000	True	True	True	\Windows\SysWOW64\combase.dll
+L8261: 13224	APSDaemon.exe	0x770d0000	True	True	True	\Windows\SysWOW64\imm32.dll
+L8262: 13224	APSDaemon.exe	0x778a0000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L8263: 13224	APSDaemon.exe	0x77810000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L8264: 13224	APSDaemon.exe	0x779c0000	True	True	True	\Windows\System32\wow64cpu.dll
+L8265: 13224	APSDaemon.exe	0x779a0000	True	True	True	\Windows\SysWOW64\bcrypt.dll
+L8266: 13224	APSDaemon.exe	0x7fff57190000	True	True	True	\Windows\System32\wow64.dll
+L8267: 13224	APSDaemon.exe	0x7fff559a0000	True	True	True	\Windows\System32\wow64win.dll
+L8268: 13224	APSDaemon.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L143: 13224	APSDaemon.exe	\Device\HarddiskVolume3\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe	False	False
+
+--- sessions.txt ---
+L173: 1	-	13224	APSDaemon.exe	SRL-FORGE/fredr	2020-11-11 08:14:16.000000 UTC
+
+=== END OF PIVOT REPORT ===

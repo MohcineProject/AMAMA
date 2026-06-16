@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_013.txt
+Summary: taskhostw.exe has an orphaned parent PID (2936) not present in the process list; all other signals are weak or absent.
+
+[PROCESS]
+pid: 6700
+ppid: 2936
+image: taskhostw.exe
+cmdline: taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+severity: LOW
+reasons: orphaned_parent: PPID 2936 (unknown) not present anywhere in the process list
+

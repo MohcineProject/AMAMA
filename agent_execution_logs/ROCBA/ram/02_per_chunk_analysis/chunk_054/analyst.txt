@@ -1,0 +1,62 @@
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: A single Agent 1 lead was evaluated. The Windows Store application (PID 30012) presents an anomalous privilege footprint that is inconsistent with a sandboxed UWP process, warranting an inconclusive verdict pending further context. No confirmed malicious activity was identified in this snapshot. The orphaned-parent signal and name-truncation note are assessed as benign artefacts.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      30012
+PPID:     740
+Image:    WinStore.App.exe  (EPROCESS truncated to WinStore.App.e — not a typosquat)
+Cmdline:  "C:\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.exe" -ServerName:App.AppXc75wvwned5vhz4xyxxecvgdjhdkgsdza.mca
+MITRE:
+
+Justification:
+  The executable path and command-line arguments are consistent with a
+  legitimately installed Microsoft Store UWP application launched via
+  its COM server activation contract (-ServerName:App.AppX…). The
+  name truncation to 'WinStore.App.e' is a normal EPROCESS artefact
+  and the orphaned PPID 740 is a common snapshot timing artefact
+  (parent exited before the memory image was acquired) — neither
+  signal is independently suspicious.
+
+  However, the privilege token is highly anomalous for a UWP process.
+  UWP applications run in an AppContainer sandbox and are expected to
+  hold a minimal, restricted token. This process instead carries the
+  full Windows privilege set (35 entries), including high-impact
+  privileges such as SeDebugPrivilege, SeTcbPrivilege,
+  SeImpersonatePrivilege, SeLoadDriverPrivilege,
+  SeAssignPrimaryTokenPrivilege, and SeCreateTokenPrivilege — a
+  profile indistinguishable from a SYSTEM-level service token. Only
+  SeChangeNotifyPrivilege is marked Present/Enabled/Default; the
+  remainder are listed but not enabled, which is the standard
+  representation of a full token whose privileges have not yet been
+  individually enabled. This is still inconsistent with an AppContainer
+  token, which should not possess these privileges at all.
+
+  The DLL evidence (3 lines shown) is limited to the main executable,
+  ntdll.dll, and KERNEL32.DLL — all from canonical System32/WindowsApps
+  paths — and provides no corroboration of injection or side-loading.
+  The network connections noted by Agent 1 (plain HTTP to 23.197.181.157,
+  plus Microsoft/Akamai CDN ranges) are mildly unusual for a store app
+  but not independently confirmatory of malice. Taken together, the
+  evidence is insufficient to confirm malicious activity, but the
+  over-privileged token is a genuine anomaly that cannot be explained
+  away as a benign artefact and warrants deeper investigation (full
+  token/SID dump, VAD/malfind output for this PID, and verification
+  that the AppContainer SID is present in the token).
+
+Key Evidence:
+  - L76240: 30012	WinStore.App.e	7	SeTcbPrivilege		Act as part of the operating system
+  - L76243: 30012	WinStore.App.e	10	SeLoadDriverPrivilege		Load and unload device drivers
+  - L76253: 30012	WinStore.App.e	20	SeDebugPrivilege		Debug programs
+  - L76262: 30012	WinStore.App.e	29	SeImpersonatePrivilege		Impersonate a client after authentication
+  - L76235: 30012	WinStore.App.e	2	SeCreateTokenPrivilege		Create a token object
+  - L76236: 30012	WinStore.App.e	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+  - L12389: 30012	WinStore.App.e	0x7ff76c0c0000	0x8000	WinStore.App.exe	C:\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.exe	-1	2020-11-16 02:30:21.000000 UTC	Disabled
+  - L2184: 30012	740	WinStore.App.e	0xb78d14fae080	20	-	1	False	2020-11-16 02:30:21.000000 UTC	N/A	Disabled
+----------------------------------------------------------------
+
+================================================================

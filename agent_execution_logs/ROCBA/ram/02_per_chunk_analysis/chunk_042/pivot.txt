@@ -1,0 +1,332 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:06:50Z
+
+=== PID 19348 (smartscreen.ex, ppid=740) ===
+
+--- pslist.txt ---
+L2187: 19348	740	smartscreen.ex	0xb78d145dc240	6	-	1	False	2020-11-16 02:30:38.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L2187: 19348	smartscreen.ex	-
+
+--- privileges.txt ---
+L76340: 19348	smartscreen.ex	2	SeCreateTokenPrivilege		Create a token object
+L76341: 19348	smartscreen.ex	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L76342: 19348	smartscreen.ex	4	SeLockMemoryPrivilege		Lock pages in memory
+L76343: 19348	smartscreen.ex	5	SeIncreaseQuotaPrivilege		Increase quotas
+L76344: 19348	smartscreen.ex	6	SeMachineAccountPrivilege		Add workstations to the domain
+L76345: 19348	smartscreen.ex	7	SeTcbPrivilege		Act as part of the operating system
+L76346: 19348	smartscreen.ex	8	SeSecurityPrivilege		Manage auditing and security log
+L76347: 19348	smartscreen.ex	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L76348: 19348	smartscreen.ex	10	SeLoadDriverPrivilege		Load and unload device drivers
+L76349: 19348	smartscreen.ex	11	SeSystemProfilePrivilege		Profile system performance
+L76350: 19348	smartscreen.ex	12	SeSystemtimePrivilege		Change the system time
+L76351: 19348	smartscreen.ex	13	SeProfileSingleProcessPrivilege		Profile a single process
+L76352: 19348	smartscreen.ex	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L76353: 19348	smartscreen.ex	15	SeCreatePagefilePrivilege		Create a pagefile
+L76354: 19348	smartscreen.ex	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L76355: 19348	smartscreen.ex	17	SeBackupPrivilege		Backup files and directories
+L76356: 19348	smartscreen.ex	18	SeRestorePrivilege		Restore files and directories
+L76357: 19348	smartscreen.ex	19	SeShutdownPrivilege	Present	Shut down the system
+L76358: 19348	smartscreen.ex	20	SeDebugPrivilege		Debug programs
+L76359: 19348	smartscreen.ex	21	SeAuditPrivilege		Generate security audits
+L76360: 19348	smartscreen.ex	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L76361: 19348	smartscreen.ex	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L76362: 19348	smartscreen.ex	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L76363: 19348	smartscreen.ex	25	SeUndockPrivilege	Present	Remove computer from docking station
+L76364: 19348	smartscreen.ex	26	SeSyncAgentPrivilege		Synch directory service data
+L76365: 19348	smartscreen.ex	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L76366: 19348	smartscreen.ex	28	SeManageVolumePrivilege		Manage the files on a volume
+L76367: 19348	smartscreen.ex	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L76368: 19348	smartscreen.ex	30	SeCreateGlobalPrivilege	Default	Create global objects
+L76369: 19348	smartscreen.ex	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L76370: 19348	smartscreen.ex	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L76371: 19348	smartscreen.ex	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L76372: 19348	smartscreen.ex	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L76373: 19348	smartscreen.ex	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L76374: 19348	smartscreen.ex	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L12646: 19348	smartscreen.ex	0x0	0x0			0	N/A	Disabled
+
+--- pstree.txt ---
+L100: *** 19348	740	smartscreen.ex	0xb78d145dc240	6	-	1	False	2020-11-16 02:30:38.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\smartscreen.exe		
+
+--- psscan.txt ---
+L2046: 19348	740	smartscreen.ex	0xb78d145dc240	6	-	1	False	2020-11-16 02:30:38.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L40: 0xb78cf7bf0950	UDPv4	0.0.0.0	0	*	0		19348	smartscreen.ex	2020-11-16 02:30:39.000000 UTC
+L45: 0xb78cf7cd77d0	UDPv4	0.0.0.0	0	*	0		19348	smartscreen.ex	2020-11-16 02:30:39.000000 UTC
+L46: 0xb78cf7cd77d0	UDPv6	::	0	*	0		19348	smartscreen.ex	2020-11-16 02:30:39.000000 UTC
+
+--- malware_malfind.txt ---
+L80: 19348	smartscreen.ex	0x14869940000	0x1486995ffff	VadS	PAGE_EXECUTE_READWRITE	0	1	Disabled	N/A	
+
+--- ldrmodules.txt ---
+L13119: 19348	smartscreen.ex	0x140677b0000	False	False	False	\Windows\System32\en-US\smartscreen.exe.mui
+L13120: 19348	smartscreen.ex	0x14067810000	False	False	False	\Windows\System32\icuuc.dll
+L13121: 19348	smartscreen.ex	0x14067840000	False	False	False	\Windows\System32\icuin.dll
+L13122: 19348	smartscreen.ex	0x14869b90000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L13123: 19348	smartscreen.ex	0x14869cb0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L13124: 19348	smartscreen.ex	0x7fff52f20000	False	False	False	\Windows\System32\kernel.appcore.dll
+L13125: 19348	smartscreen.ex	0x7fff31cc0000	False	False	False	\Windows\System32\wininet.dll
+L13126: 19348	smartscreen.ex	0x7fff1c4c0000	False	False	False	\Windows\System32\certca.dll
+L13127: 19348	smartscreen.ex	0x7fff1b4a0000	False	False	False	\Windows\System32\smartscreenps.dll
+L13128: 19348	smartscreen.ex	0x7fff1c590000	False	False	False	\Windows\System32\CertEnroll.dll
+L13129: 19348	smartscreen.ex	0x7fff36530000	False	False	False	\Windows\System32\cryptnet.dll
+L13130: 19348	smartscreen.ex	0x7fff35bd0000	False	False	False	\Windows\System32\Windows.Security.Authentication.OnlineId.dll
+L13131: 19348	smartscreen.ex	0x7fff356b0000	False	False	False	\Windows\System32\OnDemandConnRouteHelper.dll
+L13132: 19348	smartscreen.ex	0x7fff3c490000	False	False	False	\Windows\System32\icu.dll
+L13133: 19348	smartscreen.ex	0x7fff36eb0000	False	False	False	\Windows\System32\mlang.dll
+L13134: 19348	smartscreen.ex	0x7fff4cca0000	False	False	False	\Windows\System32\tbs.dll
+L13135: 19348	smartscreen.ex	0x7fff42fb0000	False	False	False	\Windows\System32\mskeyprotect.dll
+L13136: 19348	smartscreen.ex	0x7fff3e650000	False	False	False	\Windows\System32\Windows.Web.Http.dll
+L13137: 19348	smartscreen.ex	0x7fff453e0000	False	False	False	\Windows\System32\urlmon.dll
+L13138: 19348	smartscreen.ex	0x7fff436b0000	False	False	False	\Windows\System32\ncryptsslp.dll
+L13139: 19348	smartscreen.ex	0x7fff4bf10000	False	False	False	\Windows\System32\WinRtTracing.dll
+L13140: 19348	smartscreen.ex	0x7fff4a400000	False	False	False	\Windows\System32\FWPUCLNT.DLL
+L13141: 19348	smartscreen.ex	0x7fff4ba50000	False	False	False	\Windows\System32\dsparse.dll
+L13142: 19348	smartscreen.ex	0x7fff4c4a0000	False	False	False	\Windows\System32\rasadhlp.dll
+L13143: 19348	smartscreen.ex	0x7fff50a20000	False	False	False	\Windows\System32\policymanager.dll
+L13144: 19348	smartscreen.ex	0x7fff4fea0000	False	False	False	\Windows\System32\winhttp.dll
+L13145: 19348	smartscreen.ex	0x7fff4fe90000	False	False	False	\Windows\System32\winnsi.dll
+L13146: 19348	smartscreen.ex	0x7fff55470000	False	False	False	\Windows\System32\ucrtbase.dll
+L13147: 19348	smartscreen.ex	0x7fff549f0000	False	False	False	\Windows\System32\wldp.dll
+L13148: 19348	smartscreen.ex	0x7fff54140000	False	False	False	\Windows\System32\msvcp110_win.dll
+L13149: 19348	smartscreen.ex	0x7fff53c90000	False	False	False	\Windows\System32\FirewallAPI.dll
+L13150: 19348	smartscreen.ex	0x7fff53140000	False	False	False	\Windows\System32\windows.storage.dll
+L13151: 19348	smartscreen.ex	0x7fff53c60000	False	False	False	\Windows\System32\fwbase.dll
+L13152: 19348	smartscreen.ex	0x7fff540a0000	False	False	False	\Windows\System32\rsaenh.dll
+L13153: 19348	smartscreen.ex	0x7fff53fc0000	False	False	False	\Windows\System32\schannel.dll
+L13154: 19348	smartscreen.ex	0x7fff540e0000	False	False	False	\Windows\System32\dpapi.dll
+L13155: 19348	smartscreen.ex	0x7fff54510000	False	False	False	\Windows\System32\netutils.dll
+L13156: 19348	smartscreen.ex	0x7fff54400000	False	False	False	\Windows\System32\IPHLPAPI.DLL
+L13157: 19348	smartscreen.ex	0x7fff541d0000	False	False	False	\Windows\System32\wkscli.dll
+L13158: 19348	smartscreen.ex	0x7fff54440000	False	False	False	\Windows\System32\dnsapi.dll
+L13159: 19348	smartscreen.ex	0x7fff54940000	False	False	False	\Windows\System32\cryptsp.dll
+L13160: 19348	smartscreen.ex	0x7fff54960000	False	False	False	\Windows\System32\cryptbase.dll
+L13161: 19348	smartscreen.ex	0x7fff54ff0000	False	False	False	\Windows\System32\gdi32full.dll
+L13162: 19348	smartscreen.ex	0x7fff54ea0000	False	False	False	\Windows\System32\sspicli.dll
+L13163: 19348	smartscreen.ex	0x7fff54a60000	False	False	False	\Windows\System32\ncrypt.dll
+L13164: 19348	smartscreen.ex	0x7fff54a20000	False	False	False	\Windows\System32\ntasn1.dll
+L13165: 19348	smartscreen.ex	0x7fff54be0000	False	False	False	\Windows\System32\msasn1.dll
+L13166: 19348	smartscreen.ex	0x7fff54f20000	False	False	False	\Windows\System32\profapi.dll
+L13167: 19348	smartscreen.ex	0x7fff55100000	False	False	False	\Windows\System32\KernelBase.dll
+L13168: 19348	smartscreen.ex	0x7fff553d0000	False	False	False	\Windows\System32\msvcp_win.dll
+L13169: 19348	smartscreen.ex	0x7fff55ae0000	False	False	False	\Windows\System32\kernel32.dll
+L13170: 19348	smartscreen.ex	0x7fff55650000	False	False	False	\Windows\System32\crypt32.dll
+L13171: 19348	smartscreen.ex	0x7fff555d0000	False	False	False	\Windows\System32\bcryptprimitives.dll
+L13172: 19348	smartscreen.ex	0x7fff55570000	False	False	False	\Windows\System32\wintrust.dll
+L13173: 19348	smartscreen.ex	0x7fff557e0000	False	False	False	\Windows\System32\bcrypt.dll
+L13174: 19348	smartscreen.ex	0x7fff557b0000	False	False	False	\Windows\System32\win32u.dll
+L13175: 19348	smartscreen.ex	0x7fff55a30000	False	False	False	\Windows\System32\SHCore.dll
+L13176: 19348	smartscreen.ex	0x7fff56e30000	False	False	False	\Windows\System32\combase.dll
+L13177: 19348	smartscreen.ex	0x7fff55e30000	False	False	False	\Windows\System32\msvcrt.dll
+L13178: 19348	smartscreen.ex	0x7fff55d50000	False	False	False	\Windows\System32\imagehlp.dll
+L13179: 19348	smartscreen.ex	0x7fff55ba0000	False	False	False	\Windows\System32\rpcrt4.dll
+L13180: 19348	smartscreen.ex	0x7fff55d80000	False	False	False	\Windows\System32\clbcatq.dll
+L13181: 19348	smartscreen.ex	0x7fff55f80000	False	False	False	\Windows\System32\oleaut32.dll
+L13182: 19348	smartscreen.ex	0x7fff55ee0000	False	False	False	\Windows\System32\sechost.dll
+L13183: 19348	smartscreen.ex	0x7fff56930000	False	False	False	\Windows\System32\gdi32.dll
+L13184: 19348	smartscreen.ex	0x7fff56960000	False	False	False	\Windows\System32\Wldap32.dll
+L13185: 19348	smartscreen.ex	0x7fff57800000	False	False	False	\Windows\System32\ws2_32.dll
+L13186: 19348	smartscreen.ex	0x7fff57450000	False	False	False	\Windows\System32\nsi.dll
+L13187: 19348	smartscreen.ex	0x7fff573a0000	False	False	False	\Windows\System32\advapi32.dll
+L13188: 19348	smartscreen.ex	0x7fff57540000	False	False	False	\Windows\System32\user32.dll
+L13189: 19348	smartscreen.ex	0x7fff578b0000	False	False	False	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L13119: 19348	smartscreen.ex	0x140677b0000	False	False	False	\Windows\System32\en-US\smartscreen.exe.mui
+L13120: 19348	smartscreen.ex	0x14067810000	False	False	False	\Windows\System32\icuuc.dll
+L13121: 19348	smartscreen.ex	0x14067840000	False	False	False	\Windows\System32\icuin.dll
+L13122: 19348	smartscreen.ex	0x14869b90000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L13123: 19348	smartscreen.ex	0x14869cb0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L13124: 19348	smartscreen.ex	0x7fff52f20000	False	False	False	\Windows\System32\kernel.appcore.dll
+L13125: 19348	smartscreen.ex	0x7fff31cc0000	False	False	False	\Windows\System32\wininet.dll
+L13126: 19348	smartscreen.ex	0x7fff1c4c0000	False	False	False	\Windows\System32\certca.dll
+L13127: 19348	smartscreen.ex	0x7fff1b4a0000	False	False	False	\Windows\System32\smartscreenps.dll
+L13128: 19348	smartscreen.ex	0x7fff1c590000	False	False	False	\Windows\System32\CertEnroll.dll
+L13129: 19348	smartscreen.ex	0x7fff36530000	False	False	False	\Windows\System32\cryptnet.dll
+L13130: 19348	smartscreen.ex	0x7fff35bd0000	False	False	False	\Windows\System32\Windows.Security.Authentication.OnlineId.dll
+L13131: 19348	smartscreen.ex	0x7fff356b0000	False	False	False	\Windows\System32\OnDemandConnRouteHelper.dll
+L13132: 19348	smartscreen.ex	0x7fff3c490000	False	False	False	\Windows\System32\icu.dll
+L13133: 19348	smartscreen.ex	0x7fff36eb0000	False	False	False	\Windows\System32\mlang.dll
+L13134: 19348	smartscreen.ex	0x7fff4cca0000	False	False	False	\Windows\System32\tbs.dll
+L13135: 19348	smartscreen.ex	0x7fff42fb0000	False	False	False	\Windows\System32\mskeyprotect.dll
+L13136: 19348	smartscreen.ex	0x7fff3e650000	False	False	False	\Windows\System32\Windows.Web.Http.dll
+L13137: 19348	smartscreen.ex	0x7fff453e0000	False	False	False	\Windows\System32\urlmon.dll
+L13138: 19348	smartscreen.ex	0x7fff436b0000	False	False	False	\Windows\System32\ncryptsslp.dll
+L13139: 19348	smartscreen.ex	0x7fff4bf10000	False	False	False	\Windows\System32\WinRtTracing.dll
+L13140: 19348	smartscreen.ex	0x7fff4a400000	False	False	False	\Windows\System32\FWPUCLNT.DLL
+L13141: 19348	smartscreen.ex	0x7fff4ba50000	False	False	False	\Windows\System32\dsparse.dll
+L13142: 19348	smartscreen.ex	0x7fff4c4a0000	False	False	False	\Windows\System32\rasadhlp.dll
+L13143: 19348	smartscreen.ex	0x7fff50a20000	False	False	False	\Windows\System32\policymanager.dll
+L13144: 19348	smartscreen.ex	0x7fff4fea0000	False	False	False	\Windows\System32\winhttp.dll
+L13145: 19348	smartscreen.ex	0x7fff4fe90000	False	False	False	\Windows\System32\winnsi.dll
+L13146: 19348	smartscreen.ex	0x7fff55470000	False	False	False	\Windows\System32\ucrtbase.dll
+L13147: 19348	smartscreen.ex	0x7fff549f0000	False	False	False	\Windows\System32\wldp.dll
+L13148: 19348	smartscreen.ex	0x7fff54140000	False	False	False	\Windows\System32\msvcp110_win.dll
+L13149: 19348	smartscreen.ex	0x7fff53c90000	False	False	False	\Windows\System32\FirewallAPI.dll
+L13150: 19348	smartscreen.ex	0x7fff53140000	False	False	False	\Windows\System32\windows.storage.dll
+L13151: 19348	smartscreen.ex	0x7fff53c60000	False	False	False	\Windows\System32\fwbase.dll
+L13152: 19348	smartscreen.ex	0x7fff540a0000	False	False	False	\Windows\System32\rsaenh.dll
+L13153: 19348	smartscreen.ex	0x7fff53fc0000	False	False	False	\Windows\System32\schannel.dll
+L13154: 19348	smartscreen.ex	0x7fff540e0000	False	False	False	\Windows\System32\dpapi.dll
+L13155: 19348	smartscreen.ex	0x7fff54510000	False	False	False	\Windows\System32\netutils.dll
+L13156: 19348	smartscreen.ex	0x7fff54400000	False	False	False	\Windows\System32\IPHLPAPI.DLL
+L13157: 19348	smartscreen.ex	0x7fff541d0000	False	False	False	\Windows\System32\wkscli.dll
+L13158: 19348	smartscreen.ex	0x7fff54440000	False	False	False	\Windows\System32\dnsapi.dll
+L13159: 19348	smartscreen.ex	0x7fff54940000	False	False	False	\Windows\System32\cryptsp.dll
+L13160: 19348	smartscreen.ex	0x7fff54960000	False	False	False	\Windows\System32\cryptbase.dll
+L13161: 19348	smartscreen.ex	0x7fff54ff0000	False	False	False	\Windows\System32\gdi32full.dll
+L13162: 19348	smartscreen.ex	0x7fff54ea0000	False	False	False	\Windows\System32\sspicli.dll
+L13163: 19348	smartscreen.ex	0x7fff54a60000	False	False	False	\Windows\System32\ncrypt.dll
+L13164: 19348	smartscreen.ex	0x7fff54a20000	False	False	False	\Windows\System32\ntasn1.dll
+L13165: 19348	smartscreen.ex	0x7fff54be0000	False	False	False	\Windows\System32\msasn1.dll
+L13166: 19348	smartscreen.ex	0x7fff54f20000	False	False	False	\Windows\System32\profapi.dll
+L13167: 19348	smartscreen.ex	0x7fff55100000	False	False	False	\Windows\System32\KernelBase.dll
+L13168: 19348	smartscreen.ex	0x7fff553d0000	False	False	False	\Windows\System32\msvcp_win.dll
+L13169: 19348	smartscreen.ex	0x7fff55ae0000	False	False	False	\Windows\System32\kernel32.dll
+L13170: 19348	smartscreen.ex	0x7fff55650000	False	False	False	\Windows\System32\crypt32.dll
+L13171: 19348	smartscreen.ex	0x7fff555d0000	False	False	False	\Windows\System32\bcryptprimitives.dll
+L13172: 19348	smartscreen.ex	0x7fff55570000	False	False	False	\Windows\System32\wintrust.dll
+L13173: 19348	smartscreen.ex	0x7fff557e0000	False	False	False	\Windows\System32\bcrypt.dll
+L13174: 19348	smartscreen.ex	0x7fff557b0000	False	False	False	\Windows\System32\win32u.dll
+L13175: 19348	smartscreen.ex	0x7fff55a30000	False	False	False	\Windows\System32\SHCore.dll
+L13176: 19348	smartscreen.ex	0x7fff56e30000	False	False	False	\Windows\System32\combase.dll
+L13177: 19348	smartscreen.ex	0x7fff55e30000	False	False	False	\Windows\System32\msvcrt.dll
+L13178: 19348	smartscreen.ex	0x7fff55d50000	False	False	False	\Windows\System32\imagehlp.dll
+L13179: 19348	smartscreen.ex	0x7fff55ba0000	False	False	False	\Windows\System32\rpcrt4.dll
+L13180: 19348	smartscreen.ex	0x7fff55d80000	False	False	False	\Windows\System32\clbcatq.dll
+L13181: 19348	smartscreen.ex	0x7fff55f80000	False	False	False	\Windows\System32\oleaut32.dll
+L13182: 19348	smartscreen.ex	0x7fff55ee0000	False	False	False	\Windows\System32\sechost.dll
+L13183: 19348	smartscreen.ex	0x7fff56930000	False	False	False	\Windows\System32\gdi32.dll
+L13184: 19348	smartscreen.ex	0x7fff56960000	False	False	False	\Windows\System32\Wldap32.dll
+L13185: 19348	smartscreen.ex	0x7fff57800000	False	False	False	\Windows\System32\ws2_32.dll
+L13186: 19348	smartscreen.ex	0x7fff57450000	False	False	False	\Windows\System32\nsi.dll
+L13187: 19348	smartscreen.ex	0x7fff573a0000	False	False	False	\Windows\System32\advapi32.dll
+L13188: 19348	smartscreen.ex	0x7fff57540000	False	False	False	\Windows\System32\user32.dll
+L13189: 19348	smartscreen.ex	0x7fff578b0000	False	False	False	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L2187: 19348	smartscreen.ex	\Device\HarddiskVolume3\Windows\System32\smartscreen.exe	-	False	False
+
+--- sessions.txt ---
+L2187: 1	-	19348	smartscreen.ex	SRL-FORGE/fredr	2020-11-16 02:30:38.000000 UTC
+
+=== PID 19360 (RdrCEF.exe, ppid=16272) ===
+
+--- pslist.txt ---
+L1179: 19360	16272	RdrCEF.exe	0xb78cf80d7080	0	-	1	True	2020-11-14 04:28:52.000000 UTC	2020-11-14 04:33:52.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L1179: 19360	RdrCEF.exe	-
+
+--- privileges.txt ---
+L41095: 19360	RdrCEF.exe	2	SeCreateTokenPrivilege		Create a token object
+L41096: 19360	RdrCEF.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L41097: 19360	RdrCEF.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L41098: 19360	RdrCEF.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L41099: 19360	RdrCEF.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L41100: 19360	RdrCEF.exe	7	SeTcbPrivilege		Act as part of the operating system
+L41101: 19360	RdrCEF.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L41102: 19360	RdrCEF.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L41103: 19360	RdrCEF.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L41104: 19360	RdrCEF.exe	11	SeSystemProfilePrivilege		Profile system performance
+L41105: 19360	RdrCEF.exe	12	SeSystemtimePrivilege		Change the system time
+L41106: 19360	RdrCEF.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L41107: 19360	RdrCEF.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L41108: 19360	RdrCEF.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L41109: 19360	RdrCEF.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L41110: 19360	RdrCEF.exe	17	SeBackupPrivilege		Backup files and directories
+L41111: 19360	RdrCEF.exe	18	SeRestorePrivilege		Restore files and directories
+L41112: 19360	RdrCEF.exe	19	SeShutdownPrivilege		Shut down the system
+L41113: 19360	RdrCEF.exe	20	SeDebugPrivilege		Debug programs
+L41114: 19360	RdrCEF.exe	21	SeAuditPrivilege		Generate security audits
+L41115: 19360	RdrCEF.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L41116: 19360	RdrCEF.exe	23	SeChangeNotifyPrivilege	Default	Receive notifications of changes to files or directories
+L41117: 19360	RdrCEF.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L41118: 19360	RdrCEF.exe	25	SeUndockPrivilege		Remove computer from docking station
+L41119: 19360	RdrCEF.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L41120: 19360	RdrCEF.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L41121: 19360	RdrCEF.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L41122: 19360	RdrCEF.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L41123: 19360	RdrCEF.exe	30	SeCreateGlobalPrivilege		Create global objects
+L41124: 19360	RdrCEF.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L41125: 19360	RdrCEF.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L41126: 19360	RdrCEF.exe	33	SeIncreaseWorkingSetPrivilege		Allocate more memory for user applications
+L41127: 19360	RdrCEF.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L41128: 19360	RdrCEF.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L41129: 19360	RdrCEF.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L2144: 19360	16272	RdrCEF.exe	0xb78cf80d7080	0	-	1	True	2020-11-14 04:28:52.000000 UTC	2020-11-14 04:33:52.000000 UTC	\Device\HarddiskVolume3\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroCEF\RdrCEF.exe	-	-
+
+--- psscan.txt ---
+L46: 19360	16272	RdrCEF.exe	0xb78cf80d7080	0	-	1	True	2020-11-14 04:28:52.000000 UTC	2020-11-14 04:33:52.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L1179: 19360	RdrCEF.exe	\Device\HarddiskVolume3\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroCEF\RdrCEF.exe	-	False	False
+
+--- sessions.txt ---
+L1197: 1	-	19360	RdrCEF.exe	-	2020-11-14 04:28:52.000000 UTC
+
+=== PID 19428 (msedge.exe, ppid=22700) ===
+
+--- pslist.txt ---
+L1203: 19428	22700	msedge.exe	0xb78d0d5dd080	0	-	1	False	2020-11-14 04:58:05.000000 UTC	2020-11-14 04:59:17.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L1203: 19428	msedge.exe	-
+
+--- privileges.txt ---
+L41935: 19428	msedge.exe	2	SeCreateTokenPrivilege		Create a token object
+L41936: 19428	msedge.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L41937: 19428	msedge.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L41938: 19428	msedge.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L41939: 19428	msedge.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L41940: 19428	msedge.exe	7	SeTcbPrivilege		Act as part of the operating system
+L41941: 19428	msedge.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L41942: 19428	msedge.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L41943: 19428	msedge.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L41944: 19428	msedge.exe	11	SeSystemProfilePrivilege		Profile system performance
+L41945: 19428	msedge.exe	12	SeSystemtimePrivilege		Change the system time
+L41946: 19428	msedge.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L41947: 19428	msedge.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L41948: 19428	msedge.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L41949: 19428	msedge.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L41950: 19428	msedge.exe	17	SeBackupPrivilege		Backup files and directories
+L41951: 19428	msedge.exe	18	SeRestorePrivilege		Restore files and directories
+L41952: 19428	msedge.exe	19	SeShutdownPrivilege		Shut down the system
+L41953: 19428	msedge.exe	20	SeDebugPrivilege		Debug programs
+L41954: 19428	msedge.exe	21	SeAuditPrivilege		Generate security audits
+L41955: 19428	msedge.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L41956: 19428	msedge.exe	23	SeChangeNotifyPrivilege	Default	Receive notifications of changes to files or directories
+L41957: 19428	msedge.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L41958: 19428	msedge.exe	25	SeUndockPrivilege		Remove computer from docking station
+L41959: 19428	msedge.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L41960: 19428	msedge.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L41961: 19428	msedge.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L41962: 19428	msedge.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L41963: 19428	msedge.exe	30	SeCreateGlobalPrivilege		Create global objects
+L41964: 19428	msedge.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L41965: 19428	msedge.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L41966: 19428	msedge.exe	33	SeIncreaseWorkingSetPrivilege		Allocate more memory for user applications
+L41967: 19428	msedge.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L41968: 19428	msedge.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L41969: 19428	msedge.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L2166: 19428	22700	msedge.exe	0xb78d0d5dd080	0	-	1	False	2020-11-14 04:58:05.000000 UTC	2020-11-14 04:59:17.000000 UTC	\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe	-	-
+
+--- psscan.txt ---
+L1109: 19428	22700	msedge.exe	0xb78d0d5dd080	0	-	1	False	2020-11-14 04:58:05.000000 UTC	2020-11-14 04:59:17.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L1203: 19428	msedge.exe	\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe	-	False	False
+
+--- sessions.txt ---
+L1221: 1	-	19428	msedge.exe	-	2020-11-14 04:58:05.000000 UTC
+
+=== END OF PIVOT REPORT ===

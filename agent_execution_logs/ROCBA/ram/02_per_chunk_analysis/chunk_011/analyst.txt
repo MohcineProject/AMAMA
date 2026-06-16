@@ -1,0 +1,32 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 6468 — sihost.exe**
+
+Agent 1 flagged: orphaned parent (PPID 2444 not in process list).
+
+Reasoning:
+- `sihost.exe` (Shell Infrastructure Host) is a legitimate Windows component that runs in user sessions. It is normally parented by `svchost.exe` (specifically the one hosting `UserManager`). An orphaned parent is suspicious but not uncommon after a memory snapshot — the parent may have already exited by capture time, or the snapshot may not have captured all processes cleanly.
+- The command line is bare `sihost.exe` — no unusual arguments.
+- DLLs shown are from `C:\WINDOWS\system32\` and `C:\WINDOWS\System32\` — entirely legitimate paths.
+- The privilege block is the full token privilege set (all 35 privileges listed, most **not** enabled — only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeCreateGlobalPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are Present/Enabled/Default). This is a **standard user-session token** — the full list of privileges is present but nearly all are disabled, which is normal for a medium-integrity user-context process. `SeDebugPrivilege` is listed but **not** marked Present or Enabled — it is simply in the token's privilege list as disabled, which is normal.
+- No malfind hits, no suspicious DLLs, no network connections, no registry persistence evidence.
+- The sole signal is the orphaned parent, which is a weak indicator in isolation.
+
+**Verdict: REJECTED** — orphaned parent is the only signal; all other evidence (binary path, DLL paths, privilege state) is consistent with a legitimate user-session `sihost.exe`. The parent may have exited before snapshot capture.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Only one Agent 1 finding was submitted for validation. That finding — sihost.exe (PID 6468) — was rejected on the evidence available. The sole trigger was an orphaned parent PID; all corroborating artefacts (binary path, loaded DLLs, privilege state) are consistent with a legitimate Windows user-session component. No confirmed or inconclusive findings were produced from this triage batch.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report for this batch.)
+
+================================================================

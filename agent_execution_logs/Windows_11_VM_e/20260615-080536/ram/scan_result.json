@@ -1,0 +1,824 @@
+{
+  "contract_version": "1.0",
+  "case_id": "Windows_11_VM_e",
+  "module": "ram",
+  "scan_started_at": "2026-06-15T08:05:36Z",
+  "scan_completed_at": "2026-06-15T08:23:17Z",
+  "summary": "23 chunk(s) processed. 6 CONFIRMED, 6 INCONCLUSIVE, 2 REJECTED.",
+  "counts": {
+    "confirmed": 6,
+    "inconclusive": 6,
+    "rejected": 2
+  },
+  "findings": [
+    {
+      "finding_id": "ram-chunk_001-f001",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1134"
+      ],
+      "primary_entity": {
+        "type": "pid",
+        "value": "1708"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "AggregatorHost.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "2600",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\WINDOWS\\System32\\AggregatorHost.exe",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "AggregatorHost.exe (PID 1708) presents three converging anomalies. First, its declared parent PID 2600 is absent from the process list, making this an orphaned process \u2014 a common indicator of process injection, hollowing, or a manually spawned implant that spoofed a non-existent parent. Second, the privilege token is grossly over-privileged for this binary: SeTcbPrivilege (\"Act as part of the operating system\"), SeDebugPrivilege, and SeImpersonatePrivilege are all simultaneously Present, Enabled, and Default \u2014 a combination that is characteristic of a SYSTEM-level token obtained via token theft or impersonation rather than a legitimately assigned token for AggregatorHost, which in normal operation runs with a far narrower privilege set. Third, Agent 1 identified a non-standard DLL (C:\\WINDOWS\\SYSTEM32\\ UpdateReboot.dll) in the load list; while the grep script did not surface that specific line among the 3 shown from 28 total dlllist hits, the discrepancy (28 hits, only 3 shown) means the remaining 25 entries were not provided for review \u2014 the DLL signal cannot be confirmed verbatim here but also cannot be dismissed. The combination of orphaned parent and a fully enabled SeTcbPrivilege+SeDebugPrivilege+SeImpersonatePrivilege token on a non-SYSTEM-class binary is sufficient for CONFIRMED HIGH without the DLL line.",
+      "evidence": [
+        {
+          "source_file": "pslist.txt",
+          "line": 65,
+          "content": "1708\t2600\tAggregatorHost\t0x990ef42c9080\t3\t-\t0\tFalse\t2026-05-13 19:15:18.000000 UTC\tN/A\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 2110,
+          "content": "1708\tAggregatorHost\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 2123,
+          "content": "1708\tAggregatorHost\t20\tSeDebugPrivilege\tPresent,Enabled,Default\tDebug programs",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 2132,
+          "content": "1708\tAggregatorHost\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after authentication",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 2106,
+          "content": "1708\tAggregatorHost\t3\tSeAssignPrimaryTokenPrivilege\tPresent\tReplace a process-level token",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 2111,
+          "content": "1708\tAggregatorHost\t8\tSeSecurityPrivilege\tPresent\tManage auditing and security log",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "dlllist.txt",
+          "line": 2191,
+          "content": "1708\tAggregatorHost\t0x7ff7112b0000\t0x4e000\tAggregatorHost.exe\tC:\\WINDOWS\\System32\\AggregatorHost.exe\t-1\t2026-05-13 19:15:18.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "ram-chunk_003-f001",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1059.003"
+      ],
+      "primary_entity": {
+        "type": "pid",
+        "value": "2380"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "cmd.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "4240",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\WINDOWS\\system32\\cmd.exe",
+          "relationship": "referenced_path"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\Users\\kali\\AppData\\Local\\Temp\\EMwLtc9FBmME.bat",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "Three independent signals converge here. First, the command line directly invokes a randomly-named batch file (`EMwLtc9FBmME.bat`) from the user-writable Temp directory \u2014 a classic dropper/stager pattern. Second, the parent PID 4240 is absent from the process list, indicating the launching process has already exited, consistent with a dropper that spawned this shell and terminated. Third, the privilege token carried by this cmd.exe contains the near-complete Windows privilege set (including SeTcbPrivilege, SeCreateTokenPrivilege, SeLoadDriverPrivilege, SeDebugPrivilege) \u2014 privileges that would not appear even as non-enabled entries on a standard user token \u2014 strongly indicating the process ran under a SYSTEM or highly elevated token despite being in a user profile path. The child PING.EXE process is a well-known sleep-substitute technique used in batch-based stagers to introduce delays between execution stages.",
+      "evidence": [
+        {
+          "source_file": "cmdline.txt",
+          "line": 138,
+          "content": "2380\tcmd.exe\tC:\\WINDOWS\\system32\\cmd.exe /c \"\"C:\\Users\\kali\\AppData\\Local\\Temp\\EMwLtc9FBmME.bat\" \"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "pslist.txt",
+          "line": 138,
+          "content": "2380\t4240\tcmd.exe\t0x990ef8261080\t4\t-\t1\tFalse\t2026-05-13 19:26:56.000000 UTC\tN/A\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "pslist.txt",
+          "line": 140,
+          "content": "7284\t2380\tPING.EXE\t0x990efacf2080\t6\t-\t1\tFalse\t2026-05-13 19:26:57.000000 UTC\tN/A\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 4665,
+          "content": "2380\tcmd.exe\t7\tSeTcbPrivilege\t\tAct as part of the operating system",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 4678,
+          "content": "2380\tcmd.exe\t20\tSeDebugPrivilege\t\tDebug programs",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 4668,
+          "content": "2380\tcmd.exe\t10\tSeLoadDriverPrivilege\t\tLoad and unload device drivers",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "ram-chunk_003-f002",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "2388"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "cmd.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "6956",
+          "relationship": "parent_pid"
+        }
+      ],
+      "justification": "The command line for this process was not captured by Volatility (recorded as `-`), which is the single most important gap preventing confirmation. The orphaned parent (PID 6956 absent from the process list) and the near-identical SYSTEM-level privilege token (same full privilege set as confirmed PID 2380) are genuine anomalies \u2014 a standard user cmd.exe would not carry SeTcbPrivilege, SeCreateTokenPrivilege, or SeLoadDriverPrivilege even as non-enabled entries. However, short-lived orphaned cmd.exe processes with elevated tokens also arise from legitimate Windows automation (e.g., installer post-processing, scheduled task wrappers). Without the command line, the balance of evidence is suspicious but not confirmable. This process warrants further investigation \u2014 particularly recovery of the batch or script it may have executed \u2014 but cannot be confirmed malicious on present evidence alone.",
+      "evidence": [
+        {
+          "source_file": "cmdline.txt",
+          "line": 133,
+          "content": "2388\tcmd.exe\t-",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "pslist.txt",
+          "line": 133,
+          "content": "2388\t6956\tcmd.exe\t0x990ef612e080\t0\t-\t1\tFalse\t2026-05-13 19:26:14.000000 UTC\t2026-05-13 19:26:23.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 4490,
+          "content": "2388\tcmd.exe\t7\tSeTcbPrivilege\t\tAct as part of the operating system",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 4503,
+          "content": "2388\tcmd.exe\t20\tSeDebugPrivilege\t\tDebug programs",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 4493,
+          "content": "2388\tcmd.exe\t10\tSeLoadDriverPrivilege\t\tLoad and unload device drivers",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "ram-chunk_009-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "4276"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "sihost.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "1924",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\WINDOWS\\system32\\sihost.exe",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "Agent 1 flagged this process solely because PPID 1924 does not appear in the process list, which is a common benign artefact: the legitimate parent (typically svchost.exe hosting the UserManager service, or winlogon.exe) may have already exited by the time the memory image was captured, leaving the PPID dangling. The executable path resolves to C:\\WINDOWS\\system32\\sihost.exe \u2014 the canonical Windows Shell Infrastructure Host \u2014 and the single loaded module entry confirms it is running from System32 with no user-writable-path DLLs visible in the extracted evidence. The child processes (ShellHost.exe PID 5112, CrossDeviceRes PID 5144) are both expected descendants of sihost.exe in a normal Windows 11 session. The privilege set is very large (all 35 privileges listed), but none appear in the \"Enabled\" column except SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege, and SeDelegateSessionUserImpersonatePrivilege \u2014 a profile consistent with a standard interactive-session shell process. No malfind hits, no suspicious DLL paths, no network connections, and no registry-persistence evidence were present in the extracted data; the finding is therefore inconclusive rather than confirmed, pending review of a fuller DLL list and any malfind output for this PID.",
+      "evidence": [
+        {
+          "source_file": "pslist.txt",
+          "line": 70,
+          "content": "4276\t1924\tsihost.exe\t0x990ef7759080\t12\t-\t1\tFalse\t2026-05-13 19:15:35.000000 UTC\tN/A\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "dlllist.txt",
+          "line": 2357,
+          "content": "4276\tsihost.exe\t0x7ff614050000\t0x22000\tsihost.exe\tC:\\WINDOWS\\system32\\sihost.exe\t-1\t2026-05-13 19:15:35.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "pslist.txt",
+          "line": 80,
+          "content": "5112\t4276\tShellHost.exe\t0x990ef79ef080\t5\t-\t1\tFalse\t2026-05-13 19:15:45.000000 UTC\tN/A\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "pslist.txt",
+          "line": 83,
+          "content": "5144\t4276\tCrossDeviceRes\t0x990ef73ac080\t5\t-\t1\tFalse\t2026-05-13 19:15:47.000000 UTC\tN/A\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 2298,
+          "content": "4276\tsihost.exe\t20\tSeDebugPrivilege\t\tDebug programs",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 2307,
+          "content": "4276\tsihost.exe\t29\tSeImpersonatePrivilege\t\tImpersonate a client after authentication",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "ram-chunk_012-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "4644"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "MicrosoftEdgeUpdate.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "2168 (not present in process list)",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\Program",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "The process runs in session 0 with a canonical installation path and the standard `/c` (update-check) invocation, both consistent with the legitimate Microsoft Edge Update service executing under LOCAL SYSTEM. The DLL set visible in the evidence is limited to the main executable and System32 components (wow64.dll), with no user-writable-path or random-named DLLs. However, the privilege token is extraordinarily broad \u2014 SeTcbPrivilege, SeDebugPrivilege, SeAssignPrimaryTokenPrivilege, SeLoadDriverPrivilege, SeBackupPrivilege, SeRestorePrivilege, SeAuditPrivilege, and SeDelegateSessionUserImpersonatePrivilege are all Present and several are Enabled,Default \u2014 a footprint more consistent with a raw SYSTEM token than with a scoped service account. SeTcbPrivilege being Enabled,Default on a user-space updater binary is the primary residual concern: while LOCAL SYSTEM carries this privilege, it is rarely left enabled by default on a process that has no kernel-level need for it. The orphaned parent (PPID 2168 absent) is a weak secondary signal \u2014 Task Scheduler and COM activation routinely produce orphaned parents \u2014 and does not independently confirm malice. Without malfind hits, network connections, suspicious DLLs, or encoded cmdline arguments, the evidence is insufficient to CONFIRM, but the privilege anomaly is real enough to warrant retention as INCONCLUSIVE rather than outright rejection. Corroboration from malfind output, handles, or network artefacts for this PID would resolve the verdict.",
+      "evidence": [
+        {
+          "source_file": "aggregated_analyst.txt",
+          "line": 2495,
+          "content": "4644  MicrosoftEdgeU  7   SeTcbPrivilege  Present,Enabled,Default  Act as part of the operating system",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "aggregated_analyst.txt",
+          "line": 2508,
+          "content": "4644  MicrosoftEdgeU  20  SeDebugPrivilege  Present,Enabled,Default  Debug programs",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "aggregated_analyst.txt",
+          "line": 2517,
+          "content": "4644  MicrosoftEdgeU  29  SeImpersonatePrivilege  Present,Enabled,Default  Impersonate a client after authentication",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "aggregated_analyst.txt",
+          "line": 2491,
+          "content": "4644  MicrosoftEdgeU  3   SeAssignPrimaryTokenPrivilege  Present  Replace a process-level token",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "aggregated_analyst.txt",
+          "line": 2498,
+          "content": "4644  MicrosoftEdgeU  10  SeLoadDriverPrivilege  Present  Load and unload device drivers",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "aggregated_analyst.txt",
+          "line": 2524,
+          "content": "4644  MicrosoftEdgeU  36  SeDelegateSessionUserImpersonatePrivilege  Present,Enabled,Default  Obtain an impersonation token for another user in the same session.",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "aggregated_analyst.txt",
+          "line": 76,
+          "content": "4644  2168  MicrosoftEdgeU  0x990ef7880080  4  -  0  True  2026-05-13 19:15:37.000000 UTC  N/A  Disabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "aggregated_analyst.txt",
+          "line": 2735,
+          "content": "4644  MicrosoftEdgeU  0x880000  0x35000  MicrosoftEdgeUpdate.exe  C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe  -1  2026-05-13 19:15:38.000000 UTC  Disabled",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "ram-chunk_018-f001",
+      "verdict": "CONFIRMED",
+      "severity": "CRITICAL",
+      "mitre": [
+        "T1543",
+        "T1134",
+        "T1059.003"
+      ],
+      "primary_entity": {
+        "type": "pid",
+        "value": "376"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "Client.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "7980",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe",
+          "relationship": "referenced_path"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\WINDOWS\\SYSTEM32\\MSCOREE.DLL",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "Client.exe (PID 376) is the surviving terminal node of a multi-hop dropper chain and is the highest-confidence malicious artefact in this image. It executes from a user-writable AppData subdirectory (C:\\Users\\kali\\AppData\\Roaming\\SubDir\\), has no ExitTime while every ancestor process has already terminated, and carries a privilege token that is effectively SYSTEM-equivalent: SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege, SeCreateTokenPrivilege, SeAssignPrimaryTokenPrivilege, SeBackupPrivilege, SeRestorePrivilege, and SeAuditPrivilege are all present in the token \u2014 a set that no legitimate user-context binary should hold. The self-referential DLL list entry (the .exe appearing as its own loaded module at 0xb50000) combined with MSCOREE.DLL is consistent with a .NET assembly loaded reflectively or via the CLR host. The path corroborates the pstree device path (\\Device\\HarddiskVolume4\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe), confirming the binary is on disk at that location.",
+      "evidence": [
+        {
+          "source_file": "pslist.txt",
+          "line": 137,
+          "content": "376\t7980\tClient.exe\t0x990ef4b38080\t9\t-\t1\tFalse\t2026-05-13 19:26:53.000000 UTC\tN/A\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "cmdline.txt",
+          "line": 137,
+          "content": "376\tClient.exe\t\"C:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe\"",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "dlllist.txt",
+          "line": 6308,
+          "content": "376\tClient.exe\t0xb50000\t0x324000\tClient.exe\tC:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe\t-1\t2026-05-13 19:26:53.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "dlllist.txt",
+          "line": 6310,
+          "content": "376\tClient.exe\t0x7fffad750000\t0x6d000\tMSCOREE.DLL\tC:\\WINDOWS\\SYSTEM32\\MSCOREE.DLL\t-1\t2026-05-13 19:26:53.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 4630,
+          "content": "376\tClient.exe\t7\tSeTcbPrivilege\t\tAct as part of the operating system",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 4633,
+          "content": "376\tClient.exe\t10\tSeLoadDriverPrivilege\t\tLoad and unload device drivers",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 4643,
+          "content": "376\tClient.exe\t20\tSeDebugPrivilege\t\tDebug programs",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 4652,
+          "content": "376\tClient.exe\t29\tSeImpersonatePrivilege\t\tImpersonate a client after authentication",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "aggregated_analyst.txt",
+          "line": 137,
+          "content": "376\t7980\tClient.exe\t... \\Device\\HarddiskVolume4\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe\t\"C:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe\"",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "ram-chunk_018-f002",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1059.003"
+      ],
+      "primary_entity": {
+        "type": "pid",
+        "value": "5568"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "cmd.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "560",
+          "relationship": "parent_pid"
+        }
+      ],
+      "justification": "cmd.exe (PID 5568) is the root of the confirmed dropper chain. Its parent PID 560 does not appear in either pslist or psscan, making it an orphaned process \u2014 a strong indicator of injection, PID reuse, or a launcher that cleaned itself up. Within its ~10-second lifespan it directly spawned both PING.EXE (PID 5608, consistent with a connectivity check or sleep-via-ping) and Client.exe (PID 5836), the next stage of the chain. The combination of orphaned parentage, scripted multi-child spawning, and a 10-second lifespan is consistent with a cmd.exe dropper script executing a staged payload sequence. No cmdline was recovered, which is itself a minor additional signal (the process was captured only in psscan, not pslist, suggesting it had already exited before the live list was walked).",
+      "evidence": [
+        {
+          "source_file": "psscan.txt",
+          "line": 114,
+          "content": "5568\t560\tcmd.exe\t0x990ef7af3080\t0\t-\t1\tFalse\t2026-05-13 19:26:26.000000 UTC\t2026-05-13 19:26:36.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "psscan.txt",
+          "line": 134,
+          "content": "5608\t5568\tPING.EXE\t0x990ef87e9080\t0\t-\t1\tFalse\t2026-05-13 19:26:26.000000 UTC\t2026-05-13 19:26:36.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "psscan.txt",
+          "line": 142,
+          "content": "5836\t5568\tClient.exe\t0x990efa9d3080\t0\t-\t1\tFalse\t2026-05-13 19:26:36.000000 UTC\t2026-05-13 19:26:43.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "ram-chunk_018-f003",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1059.003"
+      ],
+      "primary_entity": {
+        "type": "pid",
+        "value": "5836"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "Client.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "5568",
+          "relationship": "parent_pid"
+        }
+      ],
+      "justification": "Client.exe (PID 5836) is the first-stage payload in the chain, spawned by the orphaned cmd.exe (PID 5568) and itself spawning cmd.exe (PID 7980) before exiting after ~7 seconds. This short-lived, no-cmdline, no-path-recovered instance is consistent with a dropper or loader whose sole purpose is to re-execute a second copy of Client.exe under a fresh cmd.exe wrapper \u2014 a classic staged re-execution pattern used to obscure the original launch context and inherit a cleaner process tree. No DLL or cmdline evidence was recovered (process was psscan-only), but the spawn chain evidence is unambiguous: it sits between the orphaned root cmd.exe and the persistent PID 376 implant.",
+      "evidence": [
+        {
+          "source_file": "psscan.txt",
+          "line": 142,
+          "content": "5836\t5568\tClient.exe\t0x990efa9d3080\t0\t-\t1\tFalse\t2026-05-13 19:26:36.000000 UTC\t2026-05-13 19:26:43.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "psscan.txt",
+          "line": 104,
+          "content": "7980\t5836\tcmd.exe\t0x990ef77f8080\t0\t-\t1\tFalse\t2026-05-13 19:26:43.000000 UTC\t2026-05-13 19:26:53.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "ram-chunk_018-f004",
+      "verdict": "CONFIRMED",
+      "severity": "HIGH",
+      "mitre": [
+        "T1059.003"
+      ],
+      "primary_entity": {
+        "type": "pid",
+        "value": "7980"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "cmd.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "5836",
+          "relationship": "parent_pid"
+        },
+        {
+          "type": "file_path",
+          "value": "C:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe",
+          "relationship": "referenced_path"
+        }
+      ],
+      "justification": "cmd.exe (PID 7980) is the second intermediary wrapper in the chain, spawned by Client.exe (PID 5836) and itself spawning both PING.EXE (PID 7552) and the persistent Client.exe (PID 376) from AppData\\Roaming\\SubDir before exiting after ~10 seconds. The pstree evidence confirms the full device path of the child it launched (\\Device\\HarddiskVolume4\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe), corroborating the AppData path seen in cmdline.txt for PID 376. The pattern \u2014 cmd.exe spawning a PING.EXE alongside a payload binary \u2014 mirrors the behaviour of the root cmd.exe (PID 5568), suggesting a templated dropper script was executed twice across the chain.",
+      "evidence": [
+        {
+          "source_file": "psscan.txt",
+          "line": 104,
+          "content": "7980\t5836\tcmd.exe\t0x990ef77f8080\t0\t-\t1\tFalse\t2026-05-13 19:26:43.000000 UTC\t2026-05-13 19:26:53.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "psscan.txt",
+          "line": 25,
+          "content": "376\t7980\tClient.exe\t0x990ef4b38080\t9\t-\t1\tFalse\t2026-05-13 19:26:53.000000 UTC\tN/A\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "psscan.txt",
+          "line": 132,
+          "content": "7552\t7980\tPING.EXE\t0x990ef8639080\t0\t-\t1\tFalse\t2026-05-13 19:26:43.000000 UTC\t2026-05-13 19:26:53.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "aggregated_analyst.txt",
+          "line": 137,
+          "content": "376\t7980\tClient.exe\t... \\Device\\HarddiskVolume4\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe\t\"C:\\Users\\kali\\AppData\\Roaming\\SubDir\\Client.exe\"",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "ram-chunk_018-f005",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [],
+      "primary_entity": {
+        "type": "pid",
+        "value": "5608"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "PING.EXE",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "5568",
+          "relationship": "parent_pid"
+        }
+      ],
+      "justification": "PING.EXE (PID 5608) was spawned by the confirmed-malicious cmd.exe (PID 5568) alongside Client.exe (PID 5836), and a second PING.EXE (PID 7552) was similarly spawned by cmd.exe (PID 7980) \u2014 a repeated pattern strongly suggesting ping is being used as a timing delay (e.g. \"ping -n 10 127.0.0.1\") or a connectivity probe within the dropper script. However, PING.EXE is a legitimate Windows binary and its use as a sleep substitute is a well-known but not unambiguous technique; without the command-line arguments (not recovered) it is impossible to confirm the specific abuse. The process is assessed INCONCLUSIVE rather than CONFIRMED because the binary itself is benign and the only evidence of misuse is contextual (malicious parent, co-spawning with payload). Agent 3 should note that recovery of the ping arguments would likely resolve this to CONFIRMED MEDIUM.",
+      "evidence": [
+        {
+          "source_file": "psscan.txt",
+          "line": 134,
+          "content": "5608\t5568\tPING.EXE\t0x990ef87e9080\t0\t-\t1\tFalse\t2026-05-13 19:26:26.000000 UTC\t2026-05-13 19:26:36.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "psscan.txt",
+          "line": 132,
+          "content": "7552\t7980\tPING.EXE\t0x990ef8639080\t0\t-\t1\tFalse\t2026-05-13 19:26:43.000000 UTC\t2026-05-13 19:26:53.000000 UTC\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    },
+    {
+      "finding_id": "ram-chunk_021-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [
+        "T1055"
+      ],
+      "primary_entity": {
+        "type": "pid",
+        "value": "5964"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "svchost.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "896 (not present in process list)",
+          "relationship": "parent_pid"
+        }
+      ],
+      "justification": "Four independent signals converge on PID 5964 without any single one being definitive. First, the command line is absent (recorded as \"-\"), which is structurally abnormal for svchost.exe \u2014 every legitimate svchost instance carries a \"-k <ServiceGroupName>\" argument; a null cmdline is consistent with process hollowing where injected code did not inherit or set the original argument string. Second, PPID 896 is absent from the process list, meaning the parent cannot be verified as services.exe or any other expected launcher. Third, the privilege token is unusually broad for a svchost instance: SeTcbPrivilege is Present,Enabled,Default (grants \"act as part of the OS\"), SeImpersonatePrivilege is Present,Enabled,Default, SeAssignPrimaryTokenPrivilege is Present, SeBackupPrivilege and SeRestorePrivilege are both Present, and SeDebugPrivilege is in the token at Default \u2014 this is a near-complete SYSTEM token, which is atypical even for elevated svchost service groups. Fourth, the process lived for exactly four minutes before exiting, a pattern consistent with a task-completion payload. Counterweighing these signals: the binary path resolves cleanly to \\Device\\HarddiskVolume4\\Windows\\System32\\svchost.exe (no masquerade), no malfind sections were provided, no DLL list was provided, and no network connections were provided. Without injection evidence or suspicious loaded modules, confirmation is not warranted; however, the missing cmdline alone is strong enough to prevent rejection. Agent 3 should flag this PID for malfind, full dlllist, netscan, and handles analysis before closing.",
+      "evidence": []
+    },
+    {
+      "finding_id": "ram-chunk_022-f001",
+      "verdict": "INCONCLUSIVE",
+      "severity": null,
+      "mitre": [
+        "T1134"
+      ],
+      "primary_entity": {
+        "type": "pid",
+        "value": "6420"
+      },
+      "related_entities": [
+        {
+          "type": "image_name",
+          "value": "taskhostw.exe",
+          "relationship": "process_image"
+        },
+        {
+          "type": "pid",
+          "value": "2168",
+          "relationship": "parent_pid"
+        }
+      ],
+      "justification": "Three independent signals converge on this process without any single one being individually conclusive. First, the parent PID 2168 is absent from the process list, meaning the process cannot be anchored to a known legitimate parent (e.g. svchost.exe hosting the Task Scheduler service). Second, the command line retains the literal placeholder \"$(Arg0)\" rather than an expanded task argument, which is atypical for a legitimately scheduled taskhostw invocation and may indicate the process was launched outside of the normal Task Scheduler code path. Third, and most significant, the privilege set is extraordinarily broad for a user-session task host: SeDebugPrivilege, SeLoadDriverPrivilege, SeBackupPrivilege, SeRestorePrivilege, SeImpersonatePrivilege, SeTakeOwnershipPrivilege, and SeSecurityPrivilege are all marked Present \u2014 a profile consistent with a LOCAL SYSTEM or highly elevated token rather than a standard interactive user token. However, the DLL evidence (three lines shown) points only to System32 paths, no malfind data was provided, and no network connections or registry persistence artefacts appear in the extracted evidence. The privilege anomaly is real and warrants escalation, but without code- injection markers, suspicious DLLs, network connections, or registry persistence, a CONFIRMED verdict would exceed what the evidence supports.",
+      "evidence": [
+        {
+          "source_file": "pslist.txt",
+          "line": 104,
+          "content": "6420\t2168\ttaskhostw.exe\t0x990ef79b3080\t5\t-\t1\tFalse\t2026-05-13 19:16:45.000000 UTC\tN/A\tDisabled",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "cmdline.txt",
+          "line": 104,
+          "content": "6420\ttaskhostw.exe\ttaskhostw.exe $(Arg0)",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 3488,
+          "content": "6420\ttaskhostw.exe\t20\tSeDebugPrivilege\tPresent\tDebug programs",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 3478,
+          "content": "6420\ttaskhostw.exe\t10\tSeLoadDriverPrivilege\tPresent\tLoad and unload device drivers",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 3497,
+          "content": "6420\ttaskhostw.exe\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after authentication",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 3485,
+          "content": "6420\ttaskhostw.exe\t17\tSeBackupPrivilege\tPresent\tBackup files and directories",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 3486,
+          "content": "6420\ttaskhostw.exe\t18\tSeRestorePrivilege\tPresent\tRestore files and directories",
+          "verbatim": true,
+          "timestamp": null
+        },
+        {
+          "source_file": "privileges.txt",
+          "line": 3476,
+          "content": "6420\ttaskhostw.exe\t8\tSeSecurityPrivilege\tPresent\tManage auditing and security log",
+          "verbatim": true,
+          "timestamp": null
+        }
+      ]
+    }
+  ],
+  "artifacts": {
+    "human_report": "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/aggregated_analyst.txt",
+    "per_chunk": [
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_001/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_002/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_003/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_004/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_005/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_006/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_007/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_008/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_009/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_010/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_011/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_012/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_013/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_014/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_015/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_016/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_017/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_018/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_019/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_020/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_021/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_022/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_023/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_024/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_025/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_026/analyst.txt",
+      "/home/sansforensics/Documents/AMAMA/Modules/RAM/ram-agentic-architecture/output/chunk_027/analyst.txt"
+    ]
+  }
+}

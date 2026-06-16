@@ -1,0 +1,670 @@
+{
+  "pid:1188": {
+    "type": "pid",
+    "value": "1188",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_001-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 67,
+            "content": "1188  3148  AggregatorHost  0xcd8a11a91080  3  -  0  False  2026-05-12 18:23:21.000000 UTC  N/A  Dis…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 2180,
+            "content": "1188  AggregatorHost  7   SeTcbPrivilege          Present,Enabled,Default   Act as part of the opera…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 2193,
+            "content": "1188  AggregatorHost  20  SeDebugPrivilege        Present,Enabled,Default   Debug programs"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 2202,
+            "content": "1188  AggregatorHost  29  SeImpersonatePrivilege  Present,Enabled,Default   Impersonate a client aft…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 2176,
+            "content": "1188  AggregatorHost  3   SeAssignPrimaryTokenPrivilege  Present            Replace a process-level …"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 2588,
+            "content": "1188  AggregatorHost  0x7ff63b130000  0x4e000  AggregatorHost.exe  C:\\WINDOWS\\System32\\AggregatorHos…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "fba3cd03-ee5e-4770-8d1c-7ad83c21bde7",
+          "artifact": "ram/02_per_chunk_analysis/chunk_001/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:3088": {
+    "type": "pid",
+    "value": "3088",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_002-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [
+          "T1564.001",
+          "T1055"
+        ],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 105,
+            "content": "3088\t888\tsvchost.exe\t0xcd8a12064080\t0\t-\t0\tFalse\t2026-05-12 18:29:23.000000 UTC\t2026-05-12 18:30:23.0…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "00fee5c8-ec01-48ad-ac74-2e31b4ab9b85",
+          "artifact": "ram/02_per_chunk_analysis/chunk_002/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:3340": {
+    "type": "pid",
+    "value": "3340",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_004-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 175,
+            "content": "3340\t576\tbackgroundTask\t0xcd8a13a52080\t0\t-\t1\tFalse\t2026-05-12 18:24:29.000000 UTC\t2026-05-12 18:30:5…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "f4c57e3b-6939-4390-9741-d8f769526c53",
+          "artifact": "ram/02_per_chunk_analysis/chunk_004/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:4040": {
+    "type": "pid",
+    "value": "4040",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_006-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 81,
+            "content": "4040\t1524\tMicrosoftEdgeU\t0xcd8a1217c080\t6\t-\t0\tTrue\t2026-05-12 18:23:31.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 2670,
+            "content": "4040\tMicrosoftEdgeU\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 2683,
+            "content": "4040\tMicrosoftEdgeU\t20\tSeDebugPrivilege\tPresent,Enabled,Default\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 2692,
+            "content": "4040\tMicrosoftEdgeU\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after aut…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 2673,
+            "content": "4040\tMicrosoftEdgeU\t10\tSeLoadDriverPrivilege\tPresent\tLoad and unload device drivers"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 3321,
+            "content": "4040\tMicrosoftEdgeU\t0x7fffe9120000\t0x267000\t-\t-\t-1\t2026-05-12 18:23:31.000000 UTC\tDisabled"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "1b62cab8-27f2-43d7-b6e7-5f29a9f0b9a7",
+          "artifact": "ram/02_per_chunk_analysis/chunk_006/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:8256": {
+    "type": "pid",
+    "value": "8256",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_006-f002",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 110,
+            "content": "8256\t4040\tMicrosoftEdgeU\t0xcd8a130a5080\t5\t-\t0\tTrue\t2026-05-12 18:23:53.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 3685,
+            "content": "8256\tMicrosoftEdgeU\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 3698,
+            "content": "8256\tMicrosoftEdgeU\t20\tSeDebugPrivilege\tPresent,Enabled,Default\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 3707,
+            "content": "8256\tMicrosoftEdgeU\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after aut…"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 5322,
+            "content": "8256\tMicrosoftEdgeU\t0x7fffe9120000\t0x267000\t-\t-\t-1\t2026-05-12 18:23:54.000000 UTC\tDisabled"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "1b62cab8-27f2-43d7-b6e7-5f29a9f0b9a7",
+          "artifact": "ram/02_per_chunk_analysis/chunk_006/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:5348": {
+    "type": "pid",
+    "value": "5348",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_010-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 174,
+            "content": "5348\t888\tsvchost.exe\t0xcd8a13a4c080\t0\t-\t0\tFalse\t2026-05-12 18:28:46.000000 UTC\t2026-05-12 18:30:48.0…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "7dd59321-9f44-4224-8a4d-e8bd213ee536",
+          "artifact": "ram/02_per_chunk_analysis/chunk_010/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:8112": {
+    "type": "pid",
+    "value": "8112",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_011-f001",
+        "module": "ram",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1055",
+          "T1564.001"
+        ],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 155,
+            "content": "8112\t5556\tolk.exe\t0xcd8a12eec080\t0\t-\t1\tFalse\t2026-05-12 18:24:50.000000 UTC\t2026-05-12 18:29:33.0000…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "a8c1238b-f254-4608-8387-19f4586b3d1b",
+          "artifact": "ram/02_per_chunk_analysis/chunk_011/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:6516": {
+    "type": "pid",
+    "value": "6516",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_013-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 122,
+            "content": "6516\t888\tSecurityHealth\t0xcd8a0d5ac080\t14\t-\t0\tFalse\t2026-05-12 18:24:19.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4105,
+            "content": "6516\tSecurityHealth\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4118,
+            "content": "6516\tSecurityHealth\t20\tSeDebugPrivilege\tPresent,Enabled,Default\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4127,
+            "content": "6516\tSecurityHealth\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after aut…"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 5843,
+            "content": "6516\tSecurityHealth\t0x7ff714680000\t0x22000\tSecurityHealthService.exe\tC:\\WINDOWS\\system32\\SecurityHea…"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 5844,
+            "content": "6516\tSecurityHealth\t0x7fffe9120000\t0x267000\tntdll.dll\tC:\\WINDOWS\\SYSTEM32\\ntdll.dll\t-1\t2026-05-12 18…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "05dd4a40-abff-48fd-b809-f9517de1443c",
+          "artifact": "ram/02_per_chunk_analysis/chunk_013/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:7352": {
+    "type": "pid",
+    "value": "7352",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_019-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "pslist.txt",
+            "line": 103,
+            "content": "7352\t1524\ttaskhostw.exe\t0xcd8a12d680c0\t8\t-\t0\tFalse\t2026-05-12 18:23:45.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "cmdline.txt",
+            "line": 103,
+            "content": "7352\ttaskhostw.exe\ttaskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 3440,
+            "content": "7352\ttaskhostw.exe\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 3453,
+            "content": "7352\ttaskhostw.exe\t20\tSeDebugPrivilege\tPresent,Enabled,Default\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 3462,
+            "content": "7352\ttaskhostw.exe\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after auth…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 3443,
+            "content": "7352\ttaskhostw.exe\t10\tSeLoadDriverPrivilege\tPresent\tLoad and unload device drivers"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 5028,
+            "content": "7352\ttaskhostw.exe\t0x7ff6df3b0000\t0x1a000\ttaskhostw.exe\tC:\\WINDOWS\\system32\\taskhostw.exe\t-1\t2026-05…"
+          },
+          {
+            "source_file": "pslist.txt",
+            "line": 112,
+            "content": "8432\t7352\tngentask.exe\t0xcd8a12f9b0c0\t7\t-\t0\tFalse\t2026-05-12 18:24:08.000000 UTC\tN/A\tDisabled"
+          },
+          {
+            "source_file": "pslist.txt",
+            "line": 114,
+            "content": "6388\t7352\tngentask.exe\t0xcd8a13049080\t7\t-\t0\tTrue\t2026-05-12 18:24:09.000000 UTC\tN/A\tDisabled"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "3a5192e9-a86b-42c9-95be-d55bb88582f1",
+          "artifact": "ram/02_per_chunk_analysis/chunk_019/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:8060": {
+    "type": "pid",
+    "value": "8060",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_021-f001",
+        "module": "ram",
+        "verdict": "CONFIRMED",
+        "severity": "HIGH",
+        "mitre": [
+          "T1564.001",
+          "T1055"
+        ],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 137,
+            "content": "8060\t888\tsvchost.exe\t0xcd8a126d2080\t0\t-\t0\tFalse\t2026-05-12 18:28:35.000000 UTC\t2026-05-12 18:30:41.0…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "8eff6142-933e-44f9-b2dd-23fbca84a536",
+          "artifact": "ram/02_per_chunk_analysis/chunk_021/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:8048": {
+    "type": "pid",
+    "value": "8048",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_021-f002",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [
+          "T1134"
+        ],
+        "evidence": [
+          {
+            "source_file": "cmdline.txt",
+            "line": 124,
+            "content": "8048\ttaskhostw.exe\ttaskhostw.exe $(Arg0)"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4188,
+            "content": "8048\ttaskhostw.exe\t20\tSeDebugPrivilege\tPresent\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4197,
+            "content": "8048\ttaskhostw.exe\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after auth…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4178,
+            "content": "8048\ttaskhostw.exe\t10\tSeLoadDriverPrivilege\tPresent\tLoad and unload device drivers"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 4186,
+            "content": "8048\ttaskhostw.exe\t18\tSeRestorePrivilege\tPresent\tRestore files and directories"
+          },
+          {
+            "source_file": "dlllist.txt",
+            "line": 5940,
+            "content": "8048\ttaskhostw.exe\t0x7ff6df3b0000\t0x1a000\ttaskhostw.exe\tC:\\WINDOWS\\system32\\taskhostw.exe\t-1\t2026-05…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "8eff6142-933e-44f9-b2dd-23fbca84a536",
+          "artifact": "ram/02_per_chunk_analysis/chunk_021/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:8616": {
+    "type": "pid",
+    "value": "8616",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_023-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 3895,
+            "content": "8616  MicrosoftEdgeU  7   SeTcbPrivilege  Present,Enabled,Default  Act as part of the operating syst…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 3908,
+            "content": "8616  MicrosoftEdgeU  20  SeDebugPrivilege  Present,Enabled,Default  Debug programs"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 3898,
+            "content": "8616  MicrosoftEdgeU  10  SeLoadDriverPrivilege  Present  Load and unload device drivers"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 3917,
+            "content": "8616  MicrosoftEdgeU  29  SeImpersonatePrivilege  Present,Enabled,Default  Impersonate a client afte…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 3891,
+            "content": "8616  MicrosoftEdgeU  3   SeAssignPrimaryTokenPrivilege  Present  Replace a process-level token"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 116,
+            "content": "8616  888  MicrosoftEdgeU  0xcd8a12fa8080  8  -  0  True  2026-05-12 18:24:12.000000 UTC  N/A  Disab…"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 5549,
+            "content": "8616  MicrosoftEdgeU  0x7fffe9120000  0x267000  ntdll.dll  C:\\WINDOWS\\SYSTEM32\\ntdll.dll"
+          },
+          {
+            "source_file": "aggregated_analyst.txt",
+            "line": 5550,
+            "content": "8616  MicrosoftEdgeU  0x7fffe9070000  0x55000  wow64.dll  C:\\WINDOWS\\System32\\wow64.dll"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "cc4a9d0d-6b27-4eb5-a889-0302d78d5766",
+          "artifact": "ram/02_per_chunk_analysis/chunk_023/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:9044": {
+    "type": "pid",
+    "value": "9044",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_024-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 164,
+            "content": "9044\t576\tbackgroundTask\t0xcd8a13056080\t0\t-\t1\tFalse\t2026-05-12 18:29:03.000000 UTC\t2026-05-12 18:31:0…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "b39d1f24-ded7-48c1-b952-aeca74c09fe0",
+          "artifact": "ram/02_per_chunk_analysis/chunk_024/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:9168": {
+    "type": "pid",
+    "value": "9168",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_024-f002",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 114,
+            "content": "9168\t576\tRuntimeBroker.\t0xcd8a1221c080\t0\t-\t1\tFalse\t2026-05-12 18:27:59.000000 UTC\t2026-05-12 18:31:1…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "b39d1f24-ded7-48c1-b952-aeca74c09fe0",
+          "artifact": "ram/02_per_chunk_analysis/chunk_024/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:9460": {
+    "type": "pid",
+    "value": "9460",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_025-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 94,
+            "content": "9460\t576\tdllhost.exe\t0xcd8a11ccf080\t0\t-\t1\tFalse\t2026-05-12 18:31:05.000000 UTC\t2026-05-12 18:31:10.0…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "bfe10cf9-c5d4-4925-bf97-1d7d6ee32b71",
+          "artifact": "ram/02_per_chunk_analysis/chunk_025/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:9812": {
+    "type": "pid",
+    "value": "9812",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_025-f002",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "psscan.txt",
+            "line": 178,
+            "content": "9812\t576\tbackgroundTask\t0xcd8a1402d080\t0\t-\t1\tFalse\t2026-05-12 18:29:05.000000 UTC\t2026-05-12 18:31:1…"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "bfe10cf9-c5d4-4925-bf97-1d7d6ee32b71",
+          "artifact": "ram/02_per_chunk_analysis/chunk_025/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  },
+  "pid:11040": {
+    "type": "pid",
+    "value": "11040",
+    "findings": [
+      {
+        "finding_id": "ram-chunk_026-f001",
+        "module": "ram",
+        "verdict": "INCONCLUSIVE",
+        "severity": null,
+        "mitre": [],
+        "evidence": [
+          {
+            "source_file": "dlllist.txt",
+            "line": 7405,
+            "content": "11040\tWMIADAP.exe\t0x7ff76fd80000\t0x2d000\tWMIADAP.EXE\t\\\\?\\C:\\WINDOWS\\system32\\wbem\\WMIADAP.EXE\t-1\t202…"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 5295,
+            "content": "11040\tWMIADAP.exe\t7\tSeTcbPrivilege\tPresent,Enabled,Default\tAct as part of the operating system"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 5308,
+            "content": "11040\tWMIADAP.exe\t20\tSeDebugPrivilege\tPresent,Enabled,Default\tDebug programs"
+          },
+          {
+            "source_file": "privileges.txt",
+            "line": 5317,
+            "content": "11040\tWMIADAP.exe\t29\tSeImpersonatePrivilege\tPresent,Enabled,Default\tImpersonate a client after authe…"
+          },
+          {
+            "source_file": "cmdline.txt",
+            "line": 156,
+            "content": "11040\tWMIADAP.exe\twmiadap.exe /F /T /R"
+          }
+        ],
+        "produced_by": {
+          "agent_name": "ram/pivot_analyst",
+          "call_id": "c22307f6-7dd8-47b3-a7e8-44c696fcda7e",
+          "artifact": "ram/02_per_chunk_analysis/chunk_026/analyst.txt",
+          "log_file": "ram/agent_calls.jsonl"
+        }
+      }
+    ]
+  }
+}

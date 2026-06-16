@@ -1,0 +1,220 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:10:58Z
+
+=== PID 26476 (YourPhone.exe, ppid=740) ===
+Cmdline: "C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.exe" -ServerName:App.AppX9yct9q388jvt4h7y0gn06smzkxcsnt8m.mca
+
+--- pslist.txt ---
+L2006: 26476	740	YourPhone.exe	0xb78cf88f1080	15	-	1	False	2020-11-15 18:28:19.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L2006: 26476	YourPhone.exe	"C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.exe" -ServerName:App.AppX9yct9q388jvt4h7y0gn06smzkxcsnt8m.mca
+
+--- privileges.txt ---
+L70040: 26476	YourPhone.exe	2	SeCreateTokenPrivilege		Create a token object
+L70041: 26476	YourPhone.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L70042: 26476	YourPhone.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L70043: 26476	YourPhone.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L70044: 26476	YourPhone.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L70045: 26476	YourPhone.exe	7	SeTcbPrivilege		Act as part of the operating system
+L70046: 26476	YourPhone.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L70047: 26476	YourPhone.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L70048: 26476	YourPhone.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L70049: 26476	YourPhone.exe	11	SeSystemProfilePrivilege		Profile system performance
+L70050: 26476	YourPhone.exe	12	SeSystemtimePrivilege		Change the system time
+L70051: 26476	YourPhone.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L70052: 26476	YourPhone.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L70053: 26476	YourPhone.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L70054: 26476	YourPhone.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L70055: 26476	YourPhone.exe	17	SeBackupPrivilege		Backup files and directories
+L70056: 26476	YourPhone.exe	18	SeRestorePrivilege		Restore files and directories
+L70057: 26476	YourPhone.exe	19	SeShutdownPrivilege		Shut down the system
+L70058: 26476	YourPhone.exe	20	SeDebugPrivilege		Debug programs
+L70059: 26476	YourPhone.exe	21	SeAuditPrivilege		Generate security audits
+L70060: 26476	YourPhone.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L70061: 26476	YourPhone.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L70062: 26476	YourPhone.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L70063: 26476	YourPhone.exe	25	SeUndockPrivilege		Remove computer from docking station
+L70064: 26476	YourPhone.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L70065: 26476	YourPhone.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L70066: 26476	YourPhone.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L70067: 26476	YourPhone.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L70068: 26476	YourPhone.exe	30	SeCreateGlobalPrivilege		Create global objects
+L70069: 26476	YourPhone.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L70070: 26476	YourPhone.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L70071: 26476	YourPhone.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L70072: 26476	YourPhone.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L70073: 26476	YourPhone.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L70074: 26476	YourPhone.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L11722: 26476	YourPhone.exe	0x7ff70e570000	0x9000	YourPhone.exe	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.exe	-1	2020-11-15 18:28:19.000000 UTC	Disabled
+L11723: 26476	YourPhone.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-15 18:28:19.000000 UTC	Disabled
+L11724: 26476	YourPhone.exe	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-15 18:28:19.000000 UTC	Disabled
+L11725: 26476	YourPhone.exe	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-15 18:28:19.000000 UTC	Disabled
+L11726: 26476	YourPhone.exe	0x7fff529b0000	0x90000	apphelp.dll	C:\WINDOWS\SYSTEM32\apphelp.dll	-1	2020-11-15 18:28:19.000000 UTC	Disabled
+L11727: 26476	YourPhone.exe	0x7fff22ac0000	0x162f000	YourPhone.dll	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11728: 26476	YourPhone.exe	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11729: 26476	YourPhone.exe	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11730: 26476	YourPhone.exe	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11731: 26476	YourPhone.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11732: 26476	YourPhone.exe	0x7fff21d60000	0xccd000	SharedLibrary.dll	C:\Program Files\WindowsApps\microsoft.net.native.framework.2.2_2.2.27912.0_x64__8wekyb3d8bbwe\SharedLibrary.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11733: 26476	YourPhone.exe	0x7fff557e0000	0x27000	BCrypt.dll	C:\WINDOWS\System32\BCrypt.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11734: 26476	YourPhone.exe	0x7fff57800000	0x6b000	ws2_32.dll	C:\WINDOWS\System32\ws2_32.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11735: 26476	YourPhone.exe	0x7fff22a30000	0x86000	mrt100_app.dll	C:\Program Files\WindowsApps\microsoft.net.native.runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe\mrt100_app.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11736: 26476	YourPhone.exe	0x7fff55650000	0x15d000	crypt32.dll	C:\WINDOWS\System32\crypt32.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11737: 26476	YourPhone.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11738: 26476	YourPhone.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11739: 26476	YourPhone.exe	0x7fff56800000	0x12a000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11740: 26476	YourPhone.exe	0x7fff54400000	0x3b000	iphlpapi.dll	C:\WINDOWS\SYSTEM32\iphlpapi.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11741: 26476	YourPhone.exe	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11742: 26476	YourPhone.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11743: 26476	YourPhone.exe	0x7fff523a0000	0x156000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11744: 26476	YourPhone.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11745: 26476	YourPhone.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11746: 26476	YourPhone.exe	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11747: 26476	YourPhone.exe	0x7fff57540000	0x1a0000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11748: 26476	YourPhone.exe	0x7fff55f80000	0xcd000	OleAut32.dll	C:\WINDOWS\System32\OleAut32.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11749: 26476	YourPhone.exe	0x7fff55ed0000	0x8000	Normaliz.dll	C:\WINDOWS\System32\Normaliz.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11750: 26476	YourPhone.exe	0x7fff54ea0000	0x3c000	sspicli.dll	C:\WINDOWS\SYSTEM32\sspicli.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11751: 26476	YourPhone.exe	0x7fff54a60000	0x27000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11752: 26476	YourPhone.exe	0x7fff2a6d0000	0x19000	VCRUNTIME140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_APP.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11753: 26476	YourPhone.exe	0x7fff540e0000	0xa000	DPAPI.DLL	C:\WINDOWS\SYSTEM32\DPAPI.DLL	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11754: 26476	YourPhone.exe	0x7fff21d40000	0x9000	mrt100.dll	C:\WINDOWS\SYSTEM32\mrt100.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11755: 26476	YourPhone.exe	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2020-11-15 18:28:19.000000 UTC	Disabled
+L11756: 26476	YourPhone.exe	0x7fff52e20000	0x2a000	rmclient.dll	C:\Windows\System32\rmclient.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11757: 26476	YourPhone.exe	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11758: 26476	YourPhone.exe	0x7fff54a20000	0x3b000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11759: 26476	YourPhone.exe	0x7fff4eb40000	0x208000	twinapi.appcore.dll	C:\WINDOWS\SYSTEM32\twinapi.appcore.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11760: 26476	YourPhone.exe	0x7fff455d0000	0x10c1000	Windows.UI.Xaml.dll	C:\Windows\System32\Windows.UI.Xaml.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11761: 26476	YourPhone.exe	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2020-11-15 18:28:19.000000 UTC	Disabled
+L11762: 26476	YourPhone.exe	0x7fff47340000	0x5b000	Bcp47Langs.dll	C:\WINDOWS\SYSTEM32\Bcp47Langs.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11763: 26476	YourPhone.exe	0x7fff52500000	0xf2000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2020-11-15 18:28:19.000000 UTC	Disabled
+L11764: 26476	YourPhone.exe	0x7fff468c0000	0x2b0000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	-1	2020-11-15 18:28:19.000000 UTC	Disabled
+L11765: 26476	YourPhone.exe	0x7fff51cd0000	0x1e5000	dcomp.dll	C:\WINDOWS\SYSTEM32\dcomp.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11766: 26476	YourPhone.exe	0x7fff49ad0000	0x11000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11767: 26476	YourPhone.exe	0x7fff470b0000	0x14c000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11768: 26476	YourPhone.exe	0x7fff47000000	0xa3000	WindowManagementAPI.dll	C:\WINDOWS\SYSTEM32\WindowManagementAPI.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11769: 26476	YourPhone.exe	0x7fff46ea0000	0x152000	InputHost.dll	C:\WINDOWS\SYSTEM32\InputHost.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11770: 26476	YourPhone.exe	0x7fff46da0000	0xfc000	TextInputFramework.dll	C:\WINDOWS\SYSTEM32\TextInputFramework.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11771: 26476	YourPhone.exe	0x7fff508e0000	0xf7000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11772: 26476	YourPhone.exe	0x7fff52600000	0x35e000	CoreUIComponents.dll	C:\WINDOWS\SYSTEM32\CoreUIComponents.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11773: 26476	YourPhone.exe	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11774: 26476	YourPhone.exe	0x7fff43ed0000	0x795000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11775: 26476	YourPhone.exe	0x7fff52a60000	0x9e000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11776: 26476	YourPhone.exe	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11777: 26476	YourPhone.exe	0x7fff53940000	0xf3000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11778: 26476	YourPhone.exe	0x7fff514a0000	0x264000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11779: 26476	YourPhone.exe	0x7fff41730000	0x1447000	igd10iumd64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11780: 26476	YourPhone.exe	0x7fff1ebe0000	0x1456000	YourPhone.Views.dll	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.Views.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11781: 26476	YourPhone.exe	0x7fff1eac0000	0x8d000	MSVCP140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\MSVCP140_APP.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11782: 26476	YourPhone.exe	0x7fff1ea60000	0x51000	vccorlib140_app.DLL	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.DLL	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11783: 26476	YourPhone.exe	0x7fff1ea00000	0x48000	CONCRT140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\CONCRT140_APP.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11784: 26476	YourPhone.exe	0x7fff1ea50000	0xc000	VCRUNTIME140_1_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_1_APP.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11785: 26476	YourPhone.exe	0x7fff51710000	0x5c0000	d2d1.dll	C:\WINDOWS\SYSTEM32\d2d1.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11786: 26476	YourPhone.exe	0x200e4540000	0x9000	icuuc.dll	C:\WINDOWS\SYSTEM32\icuuc.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11787: 26476	YourPhone.exe	0x7fff3c490000	0x22e000	icu.DLL	C:\WINDOWS\SYSTEM32\icu.DLL	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11788: 26476	YourPhone.exe	0x7fff3f820000	0x1f01000	igc64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11789: 26476	YourPhone.exe	0x7fff1e060000	0x99a000	YourPhone.AppCore.WinRT.dll	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.AppCore.WinRT.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11790: 26476	YourPhone.exe	0x7fff35b00000	0xc3000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11791: 26476	YourPhone.exe	0x7fff3f7e0000	0x3b000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11792: 26476	YourPhone.exe	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11793: 26476	YourPhone.exe	0x7fff49220000	0xf8000	RuntimeConfiguration.dll	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\RuntimeConfiguration.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11794: 26476	YourPhone.exe	0x7fff3e650000	0x17a000	Windows.Web.Http.dll	C:\Windows\System32\Windows.Web.Http.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11795: 26476	YourPhone.exe	0x7fff261e0000	0x61000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11796: 26476	YourPhone.exe	0x7fff42d30000	0x27f000	dwrite.dll	C:\WINDOWS\SYSTEM32\dwrite.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11797: 26476	YourPhone.exe	0x7fff45050000	0xac000	TextShaping.dll	C:\WINDOWS\SYSTEM32\TextShaping.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11798: 26476	YourPhone.exe	0x7fff1df40000	0x16000	Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	C:\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11799: 26476	YourPhone.exe	0x7fff39850000	0x261000	YourPhone.ScreenMirroring.dll	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.ScreenMirroring.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11800: 26476	YourPhone.exe	0x7fff2df90000	0x3b7000	PhoneCommunicationAppService.dll	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\PhoneCommunicationAppService.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11801: 26476	YourPhone.exe	0x7fff47200000	0xf4000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11802: 26476	YourPhone.exe	0x7fff30ed0000	0x40000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11803: 26476	YourPhone.exe	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11804: 26476	YourPhone.exe	0x7fff48500000	0x2d000	bcp47mrm.dll	C:\WINDOWS\SYSTEM32\bcp47mrm.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11805: 26476	YourPhone.exe	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\system32\windows.storage.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11806: 26476	YourPhone.exe	0x7fff549f0000	0x2c000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11807: 26476	YourPhone.exe	0x7fff55910000	0x55000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11808: 26476	YourPhone.exe	0x7fff43df0000	0x98000	YourPhone.Devices.WinRT.dll	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.Devices.WinRT.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11809: 26476	YourPhone.exe	0x7fff11200000	0x4c1000	Microsoft.UI.Xaml.dll	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\Microsoft.UI.Xaml.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11810: 26476	YourPhone.exe	0x7fff35ee0000	0x196000	YourPhoneControls.dll	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhoneControls.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11811: 26476	YourPhone.exe	0x7fff4dc70000	0xe7000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11812: 26476	YourPhone.exe	0x7fff1d5a0000	0x32000	Windows.Energy.dll	C:\Windows\System32\Windows.Energy.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11813: 26476	YourPhone.exe	0x7fff46730000	0x139000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11814: 26476	YourPhone.exe	0x7fff42b80000	0x1a8000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11815: 26476	YourPhone.exe	0x7fff3f060000	0x3dc000	Windows.UI.Xaml.Controls.dll	C:\WINDOWS\SYSTEM32\Windows.UI.Xaml.Controls.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11816: 26476	YourPhone.exe	0x7fff576e0000	0x115000	msctf.dll	C:\WINDOWS\System32\msctf.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11817: 26476	YourPhone.exe	0x7fff2fa70000	0x53000	biwinrt.dll	C:\Windows\System32\biwinrt.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11818: 26476	YourPhone.exe	0x7fff32c70000	0xe0000	AppContracts.dll	C:\Windows\System32\AppContracts.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11819: 26476	YourPhone.exe	0x7fff36bb0000	0x146000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2020-11-15 18:28:19.000000 UTC	Disabled
+L11820: 26476	YourPhone.exe	0x7ffed8cc0000	0x1bc000	cdprt.dll	C:\Windows\System32\cdprt.dll	6	2020-11-15 18:28:20.000000 UTC	Disabled
+L11821: 26476	YourPhone.exe	0x7fff33110000	0x4a2000	cdp.dll	C:\WINDOWS\SYSTEM32\cdp.dll	6	2020-11-15 18:28:20.000000 UTC	Disabled
+L11822: 26476	YourPhone.exe	0x7fff54a90000	0x12000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2020-11-15 18:28:20.000000 UTC	Disabled
+L11823: 26476	YourPhone.exe	0x7fff4a9f0000	0x132000	dsreg.dll	C:\WINDOWS\SYSTEM32\dsreg.dll	6	2020-11-15 18:28:20.000000 UTC	Disabled
+L11824: 26476	YourPhone.exe	0x7fff54940000	0x18000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2020-11-15 18:28:20.000000 UTC	Disabled
+L11825: 26476	YourPhone.exe	0x7fff54140000	0x8a000	msvcp110_win.dll	C:\WINDOWS\SYSTEM32\msvcp110_win.dll	6	2020-11-15 18:28:20.000000 UTC	Disabled
+L11826: 26476	YourPhone.exe	0x7fff47960000	0x1e000	Windows.Shell.ServiceHostBuilder.dll	C:\Windows\System32\Windows.Shell.ServiceHostBuilder.dll	6	2020-11-15 18:28:20.000000 UTC	Disabled
+L11827: 26476	YourPhone.exe	0x7fff54ee0000	0x2e000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2020-11-15 18:28:20.000000 UTC	Disabled
+L11828: 26476	YourPhone.exe	0x7fff53d70000	0x29000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2020-11-15 18:28:20.000000 UTC	Disabled
+L11829: 26476	YourPhone.exe	0x7fff4ccc0000	0x59000	execmodelclient.dll	C:\Windows\System32\execmodelclient.dll	6	2020-11-15 18:28:20.000000 UTC	Disabled
+L11830: 26476	YourPhone.exe	0x7ffeeb2c0000	0x40000	Windows.Management.Workplace.dll	C:\Windows\System32\Windows.Management.Workplace.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+L11831: 26476	YourPhone.exe	0x7fff3a730000	0xe5000	FlightSettings.dll	C:\Windows\System32\FlightSettings.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+L11832: 26476	YourPhone.exe	0x7fff35ab0000	0x48000	wosc.dll	C:\Windows\System32\wosc.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+L11833: 26476	YourPhone.exe	0x7fff4fea0000	0x100000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+L11834: 26476	YourPhone.exe	0x7fff35950000	0xb9000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+L11835: 26476	YourPhone.exe	0x7fff35910000	0x37000	UpdatePolicy.dll	C:\Windows\System32\UpdatePolicy.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+L11836: 26476	YourPhone.exe	0x7fff55570000	0x60000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+L11837: 26476	YourPhone.exe	0x7fff44880000	0x29000	Cabinet.dll	C:\WINDOWS\SYSTEM32\Cabinet.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+L11838: 26476	YourPhone.exe	0x7fff54be0000	0x12000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+L11839: 26476	YourPhone.exe	0x7fff50a20000	0xa0000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+L11840: 26476	YourPhone.exe	0x7fff36630000	0x14000	threadpoolwinrt.dll	C:\Windows\System32\threadpoolwinrt.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+L11841: 26476	YourPhone.exe	0x7fff3c6c0000	0x3b000	rometadata.dll	C:\WINDOWS\SYSTEM32\rometadata.dll	6	2020-11-15 18:58:19.000000 UTC	Disabled
+
+--- pstree.txt ---
+L147: *** 26476	740	YourPhone.exe	0xb78cf88f1080	15	-	1	False	2020-11-15 18:28:19.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.exe	"C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.exe" -ServerName:App.AppX9yct9q388jvt4h7y0gn06smzkxcsnt8m.mca	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.exe
+
+--- psscan.txt ---
+L53: 26476	740	YourPhone.exe	0xb78cf88f1080	15	-	1	False	2020-11-15 18:28:19.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L12302: 26476	YourPhone.exe	0x7ff70e570000	True	False	True	\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.exe
+L12303: 26476	YourPhone.exe	0x200eb1f0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L12304: 26476	YourPhone.exe	0x7fff305c0000	True	True	True	\Windows\System32\wpnapps.dll
+L12305: 26476	YourPhone.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L12306: 26476	YourPhone.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L12307: 26476	YourPhone.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L12308: 26476	YourPhone.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L12309: 26476	YourPhone.exe	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L12310: 26476	YourPhone.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L12311: 26476	YourPhone.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L12312: 26476	YourPhone.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L12313: 26476	YourPhone.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L12314: 26476	YourPhone.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L12315: 26476	YourPhone.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L12316: 26476	YourPhone.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L12317: 26476	YourPhone.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L12302: 26476	YourPhone.exe	0x7ff70e570000	True	False	True	\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.exe
+L12303: 26476	YourPhone.exe	0x200eb1f0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L12304: 26476	YourPhone.exe	0x7fff305c0000	True	True	True	\Windows\System32\wpnapps.dll
+L12305: 26476	YourPhone.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L12306: 26476	YourPhone.exe	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L12307: 26476	YourPhone.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L12308: 26476	YourPhone.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L12309: 26476	YourPhone.exe	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L12310: 26476	YourPhone.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L12311: 26476	YourPhone.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L12312: 26476	YourPhone.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L12313: 26476	YourPhone.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L12314: 26476	YourPhone.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L12315: 26476	YourPhone.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L12316: 26476	YourPhone.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L12317: 26476	YourPhone.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L2006: 26476	YourPhone.exe	\Device\HarddiskVolume3\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.exe	C:\Program Files\WindowsApps\Microsoft.YourPhone_1.20101.99.0_x64__8wekyb3d8bbwe\YourPhone.exe	False	False
+
+--- sessions.txt ---
+L2016: 1	-	26476	YourPhone.exe	SRL-FORGE/fredr	2020-11-15 18:28:19.000000 UTC
+
+=== END OF PIVOT REPORT ===

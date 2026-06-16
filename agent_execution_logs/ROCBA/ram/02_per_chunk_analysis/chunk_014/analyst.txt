@@ -1,0 +1,57 @@
+I'll work through each finding systematically before writing the report.
+
+**PID 7052 — svchost.exe (ppid=828)**
+
+Agent 1's sole signal is `orphaned_parent`: PPID 828 is not present in the process list. I need to assess whether this is genuinely suspicious or a known benign artefact.
+
+On Windows 10, `svchost.exe` instances hosting **per-user services** (those with `SvcGroup` names ending in `_<LUID>` or groups like `UnistackSvcGroup`, `BthAppGroup`) are spawned by `services.exe` but can also be spawned by `svchost.exe` instances that themselves exit after spawning children, or by the Session Manager. More importantly, on Windows 10 the **per-user service host** instances are often spawned by a `svchost.exe` that hosts `UserManager` (PID 828 in this case), which may have already exited by the time the memory snapshot was taken — leaving the children with an orphaned PPID. This is a well-documented benign artefact for per-user service groups.
+
+The command line `svchost.exe -k UnistackSvcGroup -s CDPUserSvc` is a completely legitimate per-user service invocation (Connected Devices Platform User Service). The binary path is `C:\WINDOWS\system32\svchost.exe` — canonical. The DLLs shown are all from `System32`. The privilege set is the standard full token that `services.exe`/`svchost.exe` carries — none are *enabled* (only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege`, `SeCreateGlobalPrivilege` are Present/Default — this is the standard restricted token for a per-user svchost). No malfind hits, no suspicious DLLs, no network connections, no anomalous handles. The orphaned-parent signal alone, for a per-user service group svchost, is a known false positive. → **REJECTED**
+
+**PID 7064 — svchost.exe (ppid=828)**
+
+Identical analysis. `svchost.exe -k BthAppGroup -p -s BluetoothUserService` is a legitimate per-user Bluetooth service. Same PPID 828 (same parent that has exited), same canonical path, same System32-only DLLs, same standard privilege token pattern (only the same small set are Present/Default/Enabled). No malfind, no network, no suspicious DLLs. → **REJECTED**
+
+Both findings are REJECTED. The report will reflect this.
+
+---
+
+================================================================
+PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: Both Agent 1 findings concern svchost.exe instances hosting
+per-user Windows services (CDPUserSvc under UnistackSvcGroup and
+BluetoothUserService under BthAppGroup). The sole trigger in each
+case is an orphaned PPID (828), which is a well-documented benign
+artefact on Windows 10 when the per-user service host parent exits
+after spawning children. No corroborating evidence of malice was
+found in any artefact type. The memory image shows no confirmed or
+inconclusive malicious activity from the two submitted PIDs.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+Rejection notes (for Agent 3 visibility):
+
+PID 7052 — svchost.exe -k UnistackSvcGroup -s CDPUserSvc
+  Reason rejected: Orphaned PPID 828 is the only signal. On Windows 10,
+  per-user service host instances (UnistackSvcGroup, BthAppGroup, etc.)
+  are commonly spawned by a transient svchost.exe that hosts UserManager
+  and exits before the snapshot, leaving children with an unresolvable
+  PPID. The binary path is canonical (C:\WINDOWS\system32\svchost.exe),
+  all loaded DLLs originate from System32, the privilege token matches
+  the standard restricted per-user svchost pattern (no privileges are
+  enabled beyond SeChangeNotifyPrivilege, SeShutdownPrivilege,
+  SeUndockPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege,
+  and SeCreateGlobalPrivilege as Default — consistent with a normal
+  user-session service token), and no malfind, network, or handle
+  anomalies are present.
+
+PID 7064 — svchost.exe -k BthAppGroup -p -s BluetoothUserService
+  Reason rejected: Identical basis for rejection as PID 7052. Same
+  orphaned PPID 828, same canonical binary path, same System32-only
+  DLL set, same standard privilege token pattern. BluetoothUserService
+  is a legitimate Windows 10 per-user Bluetooth service. No additional
+  corroborating signals exist in any artefact type.
+================================================================

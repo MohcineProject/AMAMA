@@ -1,0 +1,30 @@
+================================================================
+PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: Two Agent 1 findings were reviewed. PID 800 (csrss.exe) presents an orphaned parent and an extraordinarily broad enabled privilege set that is atypical for csrss.exe; this warrants INCONCLUSIVE pending deeper artefact review. PID 584 (msedge.exe) shows a short-lived, already-exited browser process with an orphaned parent but no privileges enabled, a legitimate install path, no PEB masquerade, and no other corroborating signals; this is rejected as benign. No CONFIRMED findings were produced from this triage batch.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      800
+PPID:     740
+Image:    csrss.exe
+Cmdline:  %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+Severity: (none — INCONCLUSIVE)
+MITRE:
+
+Justification:
+  Two signals were raised: an orphaned parent (PPID 740 absent from the process list) and an unusually broad enabled privilege set. The command line itself is textbook-legitimate for a Session 1 csrss.exe instance and raises no concern on its own. The orphaned-parent signal is weak in isolation: smss.exe spawns csrss.exe and then exits, so PPID 740 being absent from a live or post-mortem pslist is the normal, expected condition — this is not a meaningful indicator of compromise. The privilege footprint, however, is genuinely anomalous: a real csrss.exe runs as SYSTEM but its token should carry only a narrow set of enabled privileges (SeChangeNotifyPrivilege, SeCreateGlobalPrivilege, SeImpersonatePrivilege, SeAuditPrivilege, and a few others). The evidence shows SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeCreateTokenPrivilege, SeAssignPrimaryTokenPrivilege, SeBackupPrivilege, SeRestorePrivilege, and SeCreatePermanentPrivilege all marked Present (and several Enabled,Default) — a profile more consistent with a SYSTEM-level token that has been inflated or with a process impersonating csrss.exe after token manipulation. That said, the DLL list shows only System32 paths (csrss.exe, ntdll.dll, CSRSRV.dll), no malfind data was provided, and no network or registry persistence evidence was extracted. Without malfind output, handles data, or a full DLL list to corroborate injection or masquerade, the privilege anomaly alone is insufficient to CONFIRM. The finding is INCONCLUSIVE and warrants malfind, handles, and full dlllist review for PID 800.
+
+Key Evidence:
+  - L185: 800	csrss.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L198: 800	csrss.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L188: 800	csrss.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+  - L180: 800	csrss.exe	2	SeCreateTokenPrivilege	Present	Create a token object
+  - L181: 800	csrss.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+  - L207: 800	csrss.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L58: 800	csrss.exe	0x7ff7f2590000	0x7000	csrss.exe	C:\WINDOWS\system32\csrss.exe	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================

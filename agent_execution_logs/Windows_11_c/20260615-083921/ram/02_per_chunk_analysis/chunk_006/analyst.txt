@@ -1,0 +1,92 @@
+I need to reason carefully about both findings before rendering verdicts.
+
+**PID 4040 — MicrosoftEdgeUpdate.exe**
+
+*Orphaned parent (PPID 1524):* PPID 1524 does not appear in pslist. This is a genuine anomaly — legitimate MicrosoftEdgeUpdate.exe is typically launched by the Windows Task Scheduler (`taskeng.exe` / `svchost.exe` hosting Schedule) or by a COM surrogate. An absent parent is suspicious but not by itself conclusive; PID reuse or a short-lived parent process could explain it.
+
+*Privilege footprint:* The process holds the full SYSTEM-level token: `SeTcbPrivilege` (Enabled), `SeDebugPrivilege` (Enabled), `SeImpersonatePrivilege` (Enabled), `SeLoadDriverPrivilege` (Present), `SeAssignPrimaryTokenPrivilege` (Present), `SeCreateTokenPrivilege` (Present), `SeAuditPrivilege` (Enabled), `SeCreatePermanentPrivilege` (Enabled) — essentially the complete NT AUTHORITY\SYSTEM privilege set. This is far beyond what an updater binary needs. However, MicrosoftEdgeUpdate *does* run as SYSTEM via a scheduled task or service, so a SYSTEM token is not impossible. The question is whether this is the real binary or an impersonator.
+
+*DLL anomaly:* `L3321` shows a mapped region at `0x7fffe9120000` with name `-` and path `-`. This is a Volatility artefact for a VAD-mapped region that has no backing module name resolvable from the PEB loader list — it could be an injected anonymous mapping, a manually mapped PE, or simply a memory-mapped file that Volatility cannot resolve. It is present in both PID 4040 and 8256 at the same base address, which is consistent with a shared section (e.g. a read-only data section shared between processes) rather than per-process injection. This weakens the injection hypothesis somewhat.
+
+*No malfind, no network, no registry persistence, no cmdline abuse:* The command line `/c` is a legitimate EdgeUpdate switch (run as a COM server). No download cradle, no encoded payload, no suspicious child processes beyond the legitimate `/ua /installsource core` child.
+
+*Overall for 4040:* Three signals — orphaned parent, SYSTEM-level privileges, unresolvable DLL entry. The privilege set is consistent with running as SYSTEM (which EdgeUpdate legitimately does), the cmdline is benign, and the unresolvable DLL entry appears shared with the child at the same address. The orphaned parent is the strongest anomaly but is explainable by PID reuse of a short-lived scheduler host. No malfind, no network, no persistence. This does not meet the CONFIRMED bar. → **INCONCLUSIVE**
+
+**PID 8256 — MicrosoftEdgeUpdate.exe (child of 4040)**
+
+All three Agent 1 signals derive entirely from the parent: inherited privileges, same unresolvable DLL entry, and being spawned by a flagged parent. The cmdline `/ua /installsource core` is a completely standard EdgeUpdate update-check invocation. The DLL entry at `0x7fffe9120000` is identical to the parent's — same base, same size, consistent with a shared read-only section. There is no independent malicious signal for this process. Its verdict depends entirely on whether 4040 is malicious, which itself is only INCONCLUSIVE. → **INCONCLUSIVE** (derivative of parent's uncertainty, no independent signal)
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: Two MicrosoftEdgeUpdate.exe processes (PID 4040 and child PID 8256) present
+anomalies — an absent parent process, a full SYSTEM-level privilege token, and an
+unresolvable DLL entry — but no corroborating evidence of active malice (no malfind
+hits, no network connections, no download cradles, no registry persistence). Both
+findings are inconclusive pending deeper artefact review. No confirmed malicious
+activity is established from the available evidence.
+Counts: confirmed=0  inconclusive=2  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      4040
+PPID:     1524
+Image:    MicrosoftEdgeUpdate.exe
+Cmdline:  "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c
+Severity: N/A
+MITRE:
+
+Justification:
+  Three signals were raised: an orphaned parent (PPID 1524 absent from pslist), a
+  full SYSTEM-level privilege token with SeTcbPrivilege, SeDebugPrivilege, and
+  SeImpersonatePrivilege all enabled, and an unresolvable DLL entry ('-'/'-') in the
+  loaded module list. MicrosoftEdgeUpdate.exe legitimately runs as NT AUTHORITY\SYSTEM
+  via a scheduled task or COM service, which accounts for the broad privilege set; the
+  /c switch is a standard COM server invocation. The absent PPID is the strongest
+  anomaly but is consistent with PID reuse of a short-lived Task Scheduler host. The
+  unresolvable DLL entry appears at the same base address (0x7fffe9120000, size
+  0x267000) in both this process and its child, suggesting a shared read-only section
+  rather than per-process injection. No malfind hits, network connections, download
+  cradles, or registry persistence artefacts are present in the evidence to corroborate
+  active malice; the finding cannot be confirmed or rejected without additional
+  artefacts (e.g. malfind output, netscan, registry Run keys, or a file hash of the
+  binary on disk).
+
+Key Evidence:
+  - L81: 4040	1524	MicrosoftEdgeU	0xcd8a1217c080	6	-	0	True	2026-05-12 18:23:31.000000 UTC	N/A	Disabled
+  - L2670: 4040	MicrosoftEdgeU	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L2683: 4040	MicrosoftEdgeU	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L2692: 4040	MicrosoftEdgeU	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L2673: 4040	MicrosoftEdgeU	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+  - L3321: 4040	MicrosoftEdgeU	0x7fffe9120000	0x267000	-	-	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      8256
+PPID:     4040
+Image:    MicrosoftEdgeUpdate.exe
+Cmdline:  "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /ua /installsource core
+Severity: N/A
+MITRE:
+
+Justification:
+  All three Agent 1 signals for this process are derivative of the parent (PID 4040):
+  inherited SYSTEM-level privileges, the same unresolvable DLL entry at the same base
+  address, and parentage from a flagged process. The command line (/ua /installsource
+  core) is a standard EdgeUpdate update-check invocation with no independent malicious
+  indicator. The unresolvable DLL entry at 0x7fffe9120000 is identical in base and
+  size to the parent's entry, consistent with a shared section rather than independent
+  injection. There is no independent malicious signal for PID 8256; its status is
+  contingent on resolution of the PID 4040 finding.
+
+Key Evidence:
+  - L110: 8256	4040	MicrosoftEdgeU	0xcd8a130a5080	5	-	0	True	2026-05-12 18:23:53.000000 UTC	N/A	Disabled
+  - L3685: 8256	MicrosoftEdgeU	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L3698: 8256	MicrosoftEdgeU	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L3707: 8256	MicrosoftEdgeU	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L5322: 8256	MicrosoftEdgeU	0x7fffe9120000	0x267000	-	-	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================

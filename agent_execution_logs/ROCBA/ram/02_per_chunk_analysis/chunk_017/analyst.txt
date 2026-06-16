@@ -1,0 +1,70 @@
+================================================================
+PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: Two Agent 1 findings were reviewed. Neither finding presents clear evidence of malicious activity. PID 8172 (msedge.exe) carries an anomalous privilege footprint for a browser process but runs from a legitimate installation path with no command-line evidence of abuse; the orphaned-parent signal alone is insufficient to confirm malice. PID 8244 (svchost.exe) shows a standard DevicesFlowUserSvc invocation from System32 with a normal per-user-service privilege set; the orphaned-parent signal is a known artefact of snapshot timing. No confirmed malicious findings were identified.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      8172
+PPID:     22700
+Image:    msedge.exe
+Cmdline:  (none recorded — cmdline field is "-")
+Severity: (n/a — INCONCLUSIVE)
+MITRE:
+
+Justification:
+  The binary path resolves cleanly to the legitimate Edge installation
+  (\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe),
+  and malware_pebmasquerade.txt shows no PE-header masquerade (both flags False).
+  However, two signals prevent a clean rejection. First, the command-line field is
+  entirely absent ("-"), which is unusual for any Edge process — even a subprocess
+  or crash-handler invocation normally carries at least a "--type=" argument.
+  Second, and more significantly, the privilege token is the full 35-privilege
+  set including SeCreateTokenPrivilege, SeTcbPrivilege, SeDebugPrivilege,
+  SeLoadDriverPrivilege, and SeImpersonatePrivilege — a SYSTEM-level token.
+  A browser process running under a SYSTEM token is highly abnormal; Edge
+  subprocesses run under a restricted user or low-integrity token, not SYSTEM.
+  The orphaned parent (PPID 22700 absent from the process list) and the 2-minute
+  lifespan are consistent with either a short-lived legitimate helper or a
+  process that was injected into / hollowed and then terminated. Without
+  malfind output, DLL list, or network connections for this PID, there is
+  insufficient evidence to confirm malice, but the SYSTEM-level token on a
+  browser binary with no recorded command line warrants further investigation.
+
+Key Evidence:
+  - L1194: 8172	22700	msedge.exe	0xb78d0ace1080	0	-	1	False	2020-11-14 04:57:13.000000 UTC	2020-11-14 04:59:17.000000 UTC	Disabled
+  - L1194: 8172	msedge.exe	-
+  - L2157: 8172	22700	msedge.exe	0xb78d0ace1080	0	-	1	False	2020-11-14 04:57:13.000000 UTC	2020-11-14 04:59:17.000000 UTC	\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe	-	-
+  - L41625: 8172	msedge.exe	7	SeTcbPrivilege		Act as part of the operating system
+  - L41628: 8172	msedge.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+  - L41638: 8172	msedge.exe	20	SeDebugPrivilege		Debug programs
+  - L41647: 8172	msedge.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+  - L1194: 8172	msedge.exe	\Device\HarddiskVolume3\Program Files (x86)\Microsoft\Edge\Application\msedge.exe	-	False	False
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED count: 1
+
+Rejected finding — PID 8244 (svchost.exe, ppid=828):
+  The command line "C:\WINDOWS\system32\svchost.exe -k DevicesFlow -s DevicesFlowUserSvc"
+  is a standard per-user service host invocation. DevicesFlowUserSvc is a legitimate
+  Windows 10 service (handles device pairing flows for the logged-on user session).
+  Per-user svchost instances are spawned by the per-session services.exe surrogate;
+  their parent PID frequently appears absent in a memory snapshot because the
+  spawning process may have already exited or because PID 828 was a short-lived
+  session manager surrogate — this is a well-known snapshot-timing artefact, not
+  an indicator of injection. The DLL list shows only System32-resident modules
+  (svchost.exe, ntdll.dll, KERNEL32.DLL), and the enabled privileges
+  (SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege,
+  SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege)
+  are exactly the reduced set expected for a per-user service host — notably,
+  SeDebugPrivilege, SeTcbPrivilege, and SeImpersonatePrivilege are all present
+  in the token but NOT enabled, which is normal for this service class.
+  No malfind hits, no suspicious DLL paths, no anomalous network connections.
+  Agent 1's signals (orphaned parent, parent mismatch) are fully explained by
+  legitimate per-user service architecture.
+
+================================================================

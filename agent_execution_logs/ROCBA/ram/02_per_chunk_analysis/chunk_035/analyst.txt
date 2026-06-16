@@ -1,0 +1,54 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 13224 — APSDaemon.exe**
+
+Agent 1 reasons: network connection to 17.57.144.165:5223 (Apple APNS), orphaned parent (PPID 740 absent), non-whitelisted DLLs from System32.
+
+**Lens 1 — Command-line plausibility:** `"C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe" -Embedding` — this is a legitimate Apple Push Services daemon invocation. The `-Embedding` flag is a standard COM out-of-process server activation argument used by Windows when a COM server is launched on behalf of a client. The path is a legitimate WindowsApps package path for iCloud. Nothing suspicious here.
+
+**Lens 2 — DLL provenance:** The three shown DLLs (`APSDaemon.exe`, `ntdll.dll`, `wow64.dll`) are all from `C:\WINDOWS\SYSTEM32\` or the binary's own package directory. The `wow64.dll` presence is consistent with a 32-bit process (`x86` in the package name) running on a 64-bit OS. No user-writable path DLLs visible. The "83 hits, showing 3" means only 3 were extracted — but the 3 shown are clean.
+
+**Lens 3 — Privilege footprint:** The privileges list is very long but critically: almost none are **enabled**. Only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present) are actually present/enabled. The rest — including `SeDebugPrivilege`, `SeTcbPrivilege`, `SeLoadDriverPrivilege`, `SeImpersonatePrivilege` — are listed but **not** Present or Enabled. This is the standard full privilege list that Volatility enumerates for all possible privilege slots; the absence of "Present" or "Enabled" means they are not held. This is normal for a user-context process.
+
+**Lens 4 — Orphaned parent:** PPID 740 is not in the process list. This is a common benign occurrence — the parent process (likely `svchost.exe` or the Windows Package Manager / COM surrogate that launched it) exited after spawning APSDaemon. Orphaned parents are very common for long-running service-like processes. Without any other corroborating signal, this alone is weak.
+
+**Lens 5 — Network:** Port 5223 to 17.57.144.165 — 17.x.x.x is Apple's registered ASN (AS714). Port 5223 is Apple Push Notification Service. This is exactly what APSDaemon.exe does. Not suspicious.
+
+**Lens 7 — Malfind / injection:** No malfind evidence provided.
+
+**Overall:** All three Agent 1 signals are explained by legitimate behaviour. The privilege list looks alarming at first glance but the dangerous privileges are not enabled. The parent being gone is benign. The network connection is to Apple's own ASN on the expected port. The DLLs shown are clean. **REJECTED.**
+
+---
+
+Now writing the report. There is only one finding and it is REJECTED, so the body will have no CONFIRMED or INCONCLUSIVE blocks — just the header.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Only one process was submitted for validation. PID 13224 (APSDaemon.exe) was assessed against all available evidence and found to exhibit entirely legitimate behaviour consistent with Apple's iCloud Push Notification daemon. No confirmed or inconclusive malicious activity was identified in this triage batch.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+--- REJECTED FINDING NOTES (for Agent 3 audit trail) ---
+
+PID 13224 — APSDaemon.exe — REJECTED
+
+All three Agent 1 signals resolve to benign explanations:
+
+1. Network connection to 17.57.144.165:5223: The 17.0.0.0/8 block is registered to Apple Inc. (AS714). Port 5223 is the documented Apple Push Notification Service (APNS) port. An ESTABLISHED connection from APSDaemon.exe to this address on this port is precisely the expected behaviour of the Apple Push Services daemon bundled with iCloud for Windows.
+
+2. Orphaned parent (PPID 740 absent): The parent process having exited before the memory snapshot is a routine occurrence for COM out-of-process servers and service-adjacent daemons. The `-Embedding` argument in the command line is the standard Windows COM activation flag, confirming this process was launched as a COM server host. The parent's absence is not anomalous in this context.
+
+3. Privilege footprint: The privileges.txt output lists all 35 possible privilege slots, which is how Volatility enumerates the token — it does not mean all are held. Examining the "Present" / "Enabled" column, only SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, and SeTimeZonePrivilege carry any status flag. The alarming privileges (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege, etc.) have no "Present" or "Enabled" marker — they are not held by this token. This is a normal user-context token.
+
+4. DLL provenance: The three DLLs shown (APSDaemon.exe from its WindowsApps package path, ntdll.dll and wow64.dll from C:\WINDOWS\SYSTEM32\) are all legitimate. The wow64.dll load is consistent with the binary being a 32-bit (x86) process running under WoW64 on a 64-bit OS, matching the "x86" in the package name.
+
+5. Non-whitelisted DLL signal: KERNEL32.DLL and KERNELBASE.dll from System32 are standard imports for virtually every Windows process. This signal should be suppressed in Agent 1's filter for future runs.
+
+No malfind, handles, or registry persistence evidence was provided for this PID. No basis for CONFIRMED or INCONCLUSIVE.
+
+================================================================

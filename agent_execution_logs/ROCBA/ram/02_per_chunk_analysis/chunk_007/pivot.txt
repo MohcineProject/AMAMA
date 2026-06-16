@@ -1,0 +1,479 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:40:51Z
+
+=== PID 4472 (armsvc.exe, ppid=828) ===
+Cmdline: "C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe"
+
+--- pslist.txt ---
+L75: 4472	828	armsvc.exe	0xb78cfad472c0	3	-	0	True	2020-11-11 08:13:19.000000 UTC	N/A	Disabled
+L980: 22816	4472	AdobeARMHelper	0xb78d05479080	0	-	0	True	2020-11-13 16:25:58.000000 UTC	2020-11-13 16:25:58.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L75: 4472	armsvc.exe	"C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe"
+
+--- privileges.txt ---
+L2455: 4472	armsvc.exe	2	SeCreateTokenPrivilege		Create a token object
+L2456: 4472	armsvc.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L2457: 4472	armsvc.exe	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L2458: 4472	armsvc.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L2459: 4472	armsvc.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2460: 4472	armsvc.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L2461: 4472	armsvc.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L2462: 4472	armsvc.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L2463: 4472	armsvc.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L2464: 4472	armsvc.exe	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L2465: 4472	armsvc.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L2466: 4472	armsvc.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L2467: 4472	armsvc.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L2468: 4472	armsvc.exe	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L2469: 4472	armsvc.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L2470: 4472	armsvc.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L2471: 4472	armsvc.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L2472: 4472	armsvc.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2473: 4472	armsvc.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L2474: 4472	armsvc.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L2475: 4472	armsvc.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L2476: 4472	armsvc.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2477: 4472	armsvc.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2478: 4472	armsvc.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2479: 4472	armsvc.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2480: 4472	armsvc.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2481: 4472	armsvc.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L2482: 4472	armsvc.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L2483: 4472	armsvc.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L2484: 4472	armsvc.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2485: 4472	armsvc.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2486: 4472	armsvc.exe	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L2487: 4472	armsvc.exe	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L2488: 4472	armsvc.exe	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L2489: 4472	armsvc.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L2761: 4472	armsvc.exe	0xb40000	0x2c000	armsvc.exe	C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe	-1	2020-11-11 08:13:19.000000 UTC	Disabled
+L2762: 4472	armsvc.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:13:19.000000 UTC	Disabled
+L2763: 4472	armsvc.exe	0x7fff57190000	0x59000	wow64.dll	C:\WINDOWS\System32\wow64.dll	-1	2020-11-11 08:13:19.000000 UTC	Disabled
+L2764: 4472	armsvc.exe	0x7fff559a0000	0x83000	wow64win.dll	C:\WINDOWS\System32\wow64win.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2765: 4472	armsvc.exe	0x779c0000	0xa000	wow64cpu.dll	C:\WINDOWS\System32\wow64cpu.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2766: 4472	armsvc.exe	0xb40000	0x2c000	armsvc.exe	C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe	-	N/A	Disabled
+L2767: 4472	armsvc.exe	0x779d0000	0x1a3000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-	1762-01-02 10:04:17.000000 UTC	Disabled
+L2768: 4472	armsvc.exe	0x76cd0000	0xf0000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L2769: 4472	armsvc.exe	0x775f0000	0x214000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L2770: 4472	armsvc.exe	0x75cc0000	0x196000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-	1763-10-08 08:19:05.000000 UTC	Disabled
+L2771: 4472	armsvc.exe	0x75890000	0x18000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L2772: 4472	armsvc.exe	0x76310000	0x23000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L2773: 4472	armsvc.exe	0x758f0000	0xda000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L2774: 4472	armsvc.exe	0x76290000	0x7b000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L2775: 4472	armsvc.exe	0x75ba0000	0x120000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L2776: 4472	armsvc.exe	0x77050000	0x7a000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L2777: 4472	armsvc.exe	0x76180000	0xbf000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-	1655-05-31 03:31:18.000000 UTC	Disabled
+L2778: 4472	armsvc.exe	0x76a00000	0x75000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-	1691-02-02 10:34:11.000000 UTC	Disabled
+L2779: 4472	armsvc.exe	0x75e60000	0xba000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L2780: 4472	armsvc.exe	0x76340000	0x5b3000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L2781: 4472	armsvc.exe	0x76be0000	0xe3000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-	2291-01-08 08:18:36.000000 UTC	Disabled
+L2782: 4472	armsvc.exe	0x76dc0000	0x281000	combase.dll	C:\WINDOWS\System32\combase.dll	-	2291-06-02 16:46:40.000000 UTC	Disabled
+L2783: 4472	armsvc.exe	0x76900000	0x96000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-	2291-05-28 23:11:59.000000 UTC	Disabled
+L2784: 4472	armsvc.exe	0x75880000	0xf000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-	2291-01-07 05:35:08.000000 UTC	Disabled
+L2785: 4472	armsvc.exe	0x769a0000	0x5c000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-	2291-06-02 10:05:48.000000 UTC	Disabled
+L2786: 4472	armsvc.exe	0x75270000	0x60a000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	-	2292-10-07 06:26:12.000000 UTC	Disabled
+L2787: 4472	armsvc.exe	0x75240000	0x24000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	-	2291-05-29 05:52:51.000000 UTC	Disabled
+L2788: 4472	armsvc.exe	0x77810000	0x87000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	-	2291-05-31 11:19:46.000000 UTC	Disabled
+L2789: 4472	armsvc.exe	0x76240000	0x45000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	-	2291-06-03 19:30:07.000000 UTC	Disabled
+L2790: 4472	armsvc.exe	0x74200000	0x1d000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	-	N/A	Disabled
+L2791: 4472	armsvc.exe	0x775a0000	0x47000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	-	2291-05-30 01:55:26.000000 UTC	Disabled
+L2792: 4472	armsvc.exe	0x778a0000	0xff000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	-	2292-09-29 04:41:09.000000 UTC	Disabled
+L2793: 4472	armsvc.exe	0x74230000	0xe000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	-	1689-04-21 20:14:09.000000 UTC	Disabled
+L2794: 4472	armsvc.exe	0x741e0000	0x13000	CRYPTSP.dll	C:\WINDOWS\SYSTEM32\CRYPTSP.dll	-	1601-01-01 00:00:03.000000 UTC	Disabled
+L2795: 4472	armsvc.exe	0x741b0000	0x2f000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	-	2291-06-03 06:08:24.000000 UTC	Disabled
+L2796: 4472	armsvc.exe	0x779a0000	0x19000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-	2291-05-30 15:17:10.000000 UTC	Disabled
+L2797: 4472	armsvc.exe	0x74220000	0xa000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	-	2291-06-01 00:41:29.000000 UTC	Disabled
+L2798: 4472	armsvc.exe	0x75af0000	0x19000	imagehlp.dll	C:\WINDOWS\System32\imagehlp.dll	-	N/A	Disabled
+L2799: 4472	armsvc.exe	0x68ae0000	0x1e000	gpapi.dll	C:\WINDOWS\SYSTEM32\gpapi.dll	-	N/A	Disabled
+L2800: 4472	armsvc.exe	0x6f490000	0x26000	cryptnet.dll	C:\Windows\System32\cryptnet.dll	-	2297-02-03 11:57:08.000000 UTC	Disabled
+L2801: 4472	armsvc.exe	0x750c0000	0x32000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	-	2297-01-25 00:47:47.000000 UTC	Disabled
+L2802: 4472	armsvc.exe	0x6f6f0000	0x8000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	-	2297-01-28 08:58:08.000000 UTC	Disabled
+L2803: 4472	armsvc.exe	0x759d0000	0x7000	NSI.dll	C:\WINDOWS\System32\NSI.dll	-	N/A	Disabled
+L2804: 4472	armsvc.exe	0x721f0000	0xc2000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	-	2297-02-02 02:32:49.000000 UTC	Disabled
+L2805: 4472	armsvc.exe	0x76b60000	0x63000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	-	2297-01-28 22:19:52.000000 UTC	Disabled
+L2806: 4472	armsvc.exe	0x737d0000	0x52000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	-	2297-01-27 06:14:41.000000 UTC	Disabled
+L2807: 4472	armsvc.exe	0x6ee30000	0x14000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	-	2297-01-22 05:59:09.000000 UTC	Disabled
+L2808: 4472	armsvc.exe	0x74570000	0x16000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	-	2297-01-30 14:25:03.000000 UTC	Disabled
+L2809: 4472	armsvc.exe	0x6edb0000	0x75000	webio.dll	C:\WINDOWS\SYSTEM32\webio.dll	-	N/A	Disabled
+L2810: 4472	armsvc.exe	0x73cd0000	0x28000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	-	2297-01-20 13:53:58.000000 UTC	Disabled
+L2811: 4472	armsvc.exe	0x702a0000	0x92000	DNSAPI.dll	C:\WINDOWS\SYSTEM32\DNSAPI.dll	-	2297-01-26 10:12:06.000000 UTC	Disabled
+L2812: 4472	armsvc.exe	0x6f5b0000	0x8000	rasadhlp.dll	C:\Windows\System32\rasadhlp.dll	-	2297-01-25 14:09:30.000000 UTC	Disabled
+L2813: 4472	armsvc.exe	0x77100000	0x5e000	coml2.dll	C:\WINDOWS\System32\coml2.dll	-	N/A	Disabled
+L2814: 4472	armsvc.exe	0x72590000	0x1a9000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	-	2297-02-07 02:48:22.000000 UTC	Disabled
+L2815: 4472	armsvc.exe	0x71dd0000	0x22b000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	-	2295-06-20 16:17:47.000000 UTC	Disabled
+L2816: 4472	armsvc.exe	0x74630000	0xc3000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	-	N/A	Disabled
+L2817: 4472	armsvc.exe	0x76ae0000	0x7e000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-	2294-05-05 11:10:34.000000 UTC	Disabled
+L2818: 4472	armsvc.exe	0x758b0000	0x3b000	CFGMGR32.dll	C:\WINDOWS\System32\CFGMGR32.dll	-	2302-03-02 05:24:38.000000 UTC	Disabled
+L2819: 4472	armsvc.exe	0x6ff30000	0x4a000	Windows.FileExplorer.Common.dll	C:\Windows\System32\Windows.FileExplorer.Common.dll	-	-	Disabled
+L2820: 4472	armsvc.exe	0x6fe90000	0x93000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	-	N/A	Disabled
+L2821: 4472	armsvc.exe	0x6fdb0000	0xde000	WinTypes.dll	C:\Windows\System32\WinTypes.dll	-	1691-02-02 10:34:11.000000 UTC	Disabled
+L2822: 4472	armsvc.exe	0x6fd90000	0x1b000	edputil.dll	C:\WINDOWS\SYSTEM32\edputil.dll	-	2302-02-18 19:29:14.000000 UTC	Disabled
+L2823: 4472	armsvc.exe	0x70030000	0x1c000	cldapi.dll	C:\Windows\System32\cldapi.dll	-	2706-04-22 00:36:19.000000 UTC	Disabled
+L2824: 4472	armsvc.exe	0x70020000	0x8000	FLTLIB.DLL	C:\Windows\System32\FLTLIB.DLL	-	2706-04-18 09:45:05.000000 UTC	Disabled
+L2825: 4472	armsvc.exe	0x73d00000	0x71000	appresolver.dll	C:\Windows\System32\appresolver.dll	-	1643-10-25 17:56:03.000000 UTC	Disabled
+L2826: 4472	armsvc.exe	0x74790000	0x25000	USERENV.dll	C:\Windows\System32\USERENV.dll	-	1691-02-02 10:34:11.000000 UTC	Disabled
+L2827: 4472	armsvc.exe	0x747e0000	0x1f000	SLC.dll	C:\Windows\System32\SLC.dll	-	1643-10-25 17:56:03.000000 UTC	Disabled
+L2828: 4472	armsvc.exe	0x6fd40000	0x48000	Bcp47Langs.dll	C:\Windows\System32\Bcp47Langs.dll	-	1649-03-02 10:40:08.000000 UTC	Disabled
+L2829: 4472	armsvc.exe	0x73b50000	0x1c000	sppc.dll	C:\Windows\System32\sppc.dll	-	2302-02-21 07:37:00.000000 UTC	Disabled
+L2830: 4472	armsvc.exe	0x6fd00000	0x3d000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	-	2706-04-26 18:10:59.000000 UTC	Disabled
+L2831: 4472	armsvc.exe	0x6f8e0000	0x39f000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	-	2302-02-19 08:50:57.000000 UTC	Disabled
+
+--- pstree.txt ---
+L200: ** 4472	828	armsvc.exe	0xb78cfad472c0	3	-	0	True	2020-11-11 08:13:19.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe	"C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe"	C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe
+L201: *** 22816	4472	AdobeARMHelper	0xb78d05479080	0	-	0	True	2020-11-13 16:25:58.000000 UTC	2020-11-13 16:25:58.000000 UTC	\Device\HarddiskVolume3\Program Files (x86)\Common Files\Adobe\ARM\1.0\AdobeARMHelper.exe	-	-
+
+--- psscan.txt ---
+L209: 4472	828	armsvc.exe	0xb78cfad472c0	3	-	0	True	2020-11-11 08:13:19.000000 UTC	N/A	Disabled
+L455: 22816	4472	AdobeARMHelper	0xb78d05479080	0	-	0	True	2020-11-13 16:25:58.000000 UTC	2020-11-13 16:25:58.000000 UTC	Disabled
+
+--- ldrmodules.txt ---
+L2923: 4472	armsvc.exe	0x68ae0000	True	True	True	\Windows\SysWOW64\gpapi.dll
+L2924: 4472	armsvc.exe	0xb40000	True	False	True	\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe
+L2925: 4472	armsvc.exe	0x38c0000	False	False	False	\Windows\SysWOW64\winnlsres.dll
+L2926: 4472	armsvc.exe	0x3830000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L2927: 4472	armsvc.exe	0x4460000	False	False	False	\Windows\System32\en-US\winnlsres.dll.mui
+L2928: 4472	armsvc.exe	0x4840000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L2929: 4472	armsvc.exe	0x4aa0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L2930: 4472	armsvc.exe	0x75cc0000	True	True	True	\Windows\SysWOW64\user32.dll
+L2931: 4472	armsvc.exe	0x741e0000	True	True	True	\Windows\SysWOW64\cryptsp.dll
+L2932: 4472	armsvc.exe	0x702a0000	True	True	True	\Windows\SysWOW64\dnsapi.dll
+L2933: 4472	armsvc.exe	0x6f6f0000	True	True	True	\Windows\SysWOW64\winnsi.dll
+L2934: 4472	armsvc.exe	0x6ee30000	True	True	True	\Windows\SysWOW64\dhcpcsvc6.dll
+L2935: 4472	armsvc.exe	0x6edb0000	True	True	True	\Windows\SysWOW64\webio.dll
+L2936: 4472	armsvc.exe	0x6f5b0000	True	True	True	\Windows\SysWOW64\rasadhlp.dll
+L2937: 4472	armsvc.exe	0x6f490000	True	True	True	\Windows\SysWOW64\cryptnet.dll
+L2938: 4472	armsvc.exe	0x6fe90000	True	True	True	\Windows\SysWOW64\Windows.StateRepositoryPS.dll
+L2939: 4472	armsvc.exe	0x6fd90000	True	True	True	\Windows\SysWOW64\edputil.dll
+L2940: 4472	armsvc.exe	0x6fd00000	True	True	True	\Windows\SysWOW64\OneCoreCommonProxyStub.dll
+L2941: 4472	armsvc.exe	0x6f8e0000	True	True	True	\Windows\SysWOW64\OneCoreUAPCommonProxyStub.dll
+L2942: 4472	armsvc.exe	0x6fd40000	True	True	True	\Windows\SysWOW64\BCP47Langs.dll
+L2943: 4472	armsvc.exe	0x6fdb0000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L2944: 4472	armsvc.exe	0x70020000	True	True	True	\Windows\SysWOW64\fltLib.dll
+L2945: 4472	armsvc.exe	0x6ff30000	True	True	True	\Windows\SysWOW64\Windows.FileExplorer.Common.dll
+L2946: 4472	armsvc.exe	0x70030000	True	True	True	\Windows\SysWOW64\cldapi.dll
+L2947: 4472	armsvc.exe	0x737d0000	True	True	True	\Windows\SysWOW64\mswsock.dll
+L2948: 4472	armsvc.exe	0x721f0000	True	True	True	\Windows\SysWOW64\winhttp.dll
+L2949: 4472	armsvc.exe	0x71dd0000	True	True	True	\Windows\SysWOW64\iertutil.dll
+L2950: 4472	armsvc.exe	0x72590000	True	True	True	\Windows\SysWOW64\urlmon.dll
+L2951: 4472	armsvc.exe	0x73d00000	True	True	True	\Windows\SysWOW64\AppResolver.dll
+L2952: 4472	armsvc.exe	0x73cd0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L2953: 4472	armsvc.exe	0x73b50000	True	True	True	\Windows\SysWOW64\sppc.dll
+L2954: 4472	armsvc.exe	0x741b0000	True	True	True	\Windows\SysWOW64\rsaenh.dll
+L2955: 4472	armsvc.exe	0x75240000	True	True	True	\Windows\SysWOW64\wldp.dll
+L2956: 4472	armsvc.exe	0x74570000	True	True	True	\Windows\SysWOW64\dhcpcsvc.dll
+L2957: 4472	armsvc.exe	0x74220000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L2958: 4472	armsvc.exe	0x74200000	True	True	True	\Windows\SysWOW64\profapi.dll
+L2959: 4472	armsvc.exe	0x74230000	True	True	True	\Windows\SysWOW64\msasn1.dll
+L2960: 4472	armsvc.exe	0x747e0000	True	True	True	\Windows\SysWOW64\slc.dll
+L2961: 4472	armsvc.exe	0x74790000	True	True	True	\Windows\SysWOW64\userenv.dll
+L2962: 4472	armsvc.exe	0x74630000	True	True	True	\Windows\SysWOW64\propsys.dll
+L2963: 4472	armsvc.exe	0x750c0000	True	True	True	\Windows\SysWOW64\IPHLPAPI.DLL
+L2964: 4472	armsvc.exe	0x758f0000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L2965: 4472	armsvc.exe	0x75880000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L2966: 4472	armsvc.exe	0x75270000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L2967: 4472	armsvc.exe	0x75890000	True	True	True	\Windows\SysWOW64\win32u.dll
+L2968: 4472	armsvc.exe	0x758b0000	True	True	True	\Windows\SysWOW64\cfgmgr32.dll
+L2969: 4472	armsvc.exe	0x75af0000	True	True	True	\Windows\SysWOW64\imagehlp.dll
+L2970: 4472	armsvc.exe	0x759d0000	True	True	True	\Windows\SysWOW64\nsi.dll
+L2971: 4472	armsvc.exe	0x75ba0000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L2972: 4472	armsvc.exe	0x779d0000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L2973: 4472	armsvc.exe	0x76cd0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L2974: 4472	armsvc.exe	0x76340000	True	True	True	\Windows\SysWOW64\shell32.dll
+L2975: 4472	armsvc.exe	0x76290000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L2976: 4472	armsvc.exe	0x76180000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L2977: 4472	armsvc.exe	0x75e60000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L2978: 4472	armsvc.exe	0x76240000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L2979: 4472	armsvc.exe	0x76310000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L2980: 4472	armsvc.exe	0x76a00000	True	True	True	\Windows\SysWOW64\sechost.dll
+L2981: 4472	armsvc.exe	0x76900000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L2982: 4472	armsvc.exe	0x769a0000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L2983: 4472	armsvc.exe	0x76b60000	True	True	True	\Windows\SysWOW64\ws2_32.dll
+L2984: 4472	armsvc.exe	0x76ae0000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L2985: 4472	armsvc.exe	0x76be0000	True	True	True	\Windows\SysWOW64\ole32.dll
+L2986: 4472	armsvc.exe	0x775f0000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L2987: 4472	armsvc.exe	0x77050000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L2988: 4472	armsvc.exe	0x76dc0000	True	True	True	\Windows\SysWOW64\combase.dll
+L2989: 4472	armsvc.exe	0x775a0000	True	True	True	\Windows\SysWOW64\wintrust.dll
+L2990: 4472	armsvc.exe	0x77100000	True	True	True	\Windows\SysWOW64\coml2.dll
+L2991: 4472	armsvc.exe	0x778a0000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L2992: 4472	armsvc.exe	0x77810000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L2993: 4472	armsvc.exe	0x779c0000	True	True	True	\Windows\System32\wow64cpu.dll
+L2994: 4472	armsvc.exe	0x779a0000	True	True	True	\Windows\SysWOW64\bcrypt.dll
+L2995: 4472	armsvc.exe	0x7fff57190000	True	True	True	\Windows\System32\wow64.dll
+L2996: 4472	armsvc.exe	0x7fff559a0000	True	True	True	\Windows\System32\wow64win.dll
+L2997: 4472	armsvc.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L2923: 4472	armsvc.exe	0x68ae0000	True	True	True	\Windows\SysWOW64\gpapi.dll
+L2924: 4472	armsvc.exe	0xb40000	True	False	True	\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe
+L2925: 4472	armsvc.exe	0x38c0000	False	False	False	\Windows\SysWOW64\winnlsres.dll
+L2926: 4472	armsvc.exe	0x3830000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L2927: 4472	armsvc.exe	0x4460000	False	False	False	\Windows\System32\en-US\winnlsres.dll.mui
+L2928: 4472	armsvc.exe	0x4840000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L2929: 4472	armsvc.exe	0x4aa0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L2930: 4472	armsvc.exe	0x75cc0000	True	True	True	\Windows\SysWOW64\user32.dll
+L2931: 4472	armsvc.exe	0x741e0000	True	True	True	\Windows\SysWOW64\cryptsp.dll
+L2932: 4472	armsvc.exe	0x702a0000	True	True	True	\Windows\SysWOW64\dnsapi.dll
+L2933: 4472	armsvc.exe	0x6f6f0000	True	True	True	\Windows\SysWOW64\winnsi.dll
+L2934: 4472	armsvc.exe	0x6ee30000	True	True	True	\Windows\SysWOW64\dhcpcsvc6.dll
+L2935: 4472	armsvc.exe	0x6edb0000	True	True	True	\Windows\SysWOW64\webio.dll
+L2936: 4472	armsvc.exe	0x6f5b0000	True	True	True	\Windows\SysWOW64\rasadhlp.dll
+L2937: 4472	armsvc.exe	0x6f490000	True	True	True	\Windows\SysWOW64\cryptnet.dll
+L2938: 4472	armsvc.exe	0x6fe90000	True	True	True	\Windows\SysWOW64\Windows.StateRepositoryPS.dll
+L2939: 4472	armsvc.exe	0x6fd90000	True	True	True	\Windows\SysWOW64\edputil.dll
+L2940: 4472	armsvc.exe	0x6fd00000	True	True	True	\Windows\SysWOW64\OneCoreCommonProxyStub.dll
+L2941: 4472	armsvc.exe	0x6f8e0000	True	True	True	\Windows\SysWOW64\OneCoreUAPCommonProxyStub.dll
+L2942: 4472	armsvc.exe	0x6fd40000	True	True	True	\Windows\SysWOW64\BCP47Langs.dll
+L2943: 4472	armsvc.exe	0x6fdb0000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L2944: 4472	armsvc.exe	0x70020000	True	True	True	\Windows\SysWOW64\fltLib.dll
+L2945: 4472	armsvc.exe	0x6ff30000	True	True	True	\Windows\SysWOW64\Windows.FileExplorer.Common.dll
+L2946: 4472	armsvc.exe	0x70030000	True	True	True	\Windows\SysWOW64\cldapi.dll
+L2947: 4472	armsvc.exe	0x737d0000	True	True	True	\Windows\SysWOW64\mswsock.dll
+L2948: 4472	armsvc.exe	0x721f0000	True	True	True	\Windows\SysWOW64\winhttp.dll
+L2949: 4472	armsvc.exe	0x71dd0000	True	True	True	\Windows\SysWOW64\iertutil.dll
+L2950: 4472	armsvc.exe	0x72590000	True	True	True	\Windows\SysWOW64\urlmon.dll
+L2951: 4472	armsvc.exe	0x73d00000	True	True	True	\Windows\SysWOW64\AppResolver.dll
+L2952: 4472	armsvc.exe	0x73cd0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L2953: 4472	armsvc.exe	0x73b50000	True	True	True	\Windows\SysWOW64\sppc.dll
+L2954: 4472	armsvc.exe	0x741b0000	True	True	True	\Windows\SysWOW64\rsaenh.dll
+L2955: 4472	armsvc.exe	0x75240000	True	True	True	\Windows\SysWOW64\wldp.dll
+L2956: 4472	armsvc.exe	0x74570000	True	True	True	\Windows\SysWOW64\dhcpcsvc.dll
+L2957: 4472	armsvc.exe	0x74220000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L2958: 4472	armsvc.exe	0x74200000	True	True	True	\Windows\SysWOW64\profapi.dll
+L2959: 4472	armsvc.exe	0x74230000	True	True	True	\Windows\SysWOW64\msasn1.dll
+L2960: 4472	armsvc.exe	0x747e0000	True	True	True	\Windows\SysWOW64\slc.dll
+L2961: 4472	armsvc.exe	0x74790000	True	True	True	\Windows\SysWOW64\userenv.dll
+L2962: 4472	armsvc.exe	0x74630000	True	True	True	\Windows\SysWOW64\propsys.dll
+L2963: 4472	armsvc.exe	0x750c0000	True	True	True	\Windows\SysWOW64\IPHLPAPI.DLL
+L2964: 4472	armsvc.exe	0x758f0000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L2965: 4472	armsvc.exe	0x75880000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L2966: 4472	armsvc.exe	0x75270000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L2967: 4472	armsvc.exe	0x75890000	True	True	True	\Windows\SysWOW64\win32u.dll
+L2968: 4472	armsvc.exe	0x758b0000	True	True	True	\Windows\SysWOW64\cfgmgr32.dll
+L2969: 4472	armsvc.exe	0x75af0000	True	True	True	\Windows\SysWOW64\imagehlp.dll
+L2970: 4472	armsvc.exe	0x759d0000	True	True	True	\Windows\SysWOW64\nsi.dll
+L2971: 4472	armsvc.exe	0x75ba0000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L2972: 4472	armsvc.exe	0x779d0000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L2973: 4472	armsvc.exe	0x76cd0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L2974: 4472	armsvc.exe	0x76340000	True	True	True	\Windows\SysWOW64\shell32.dll
+L2975: 4472	armsvc.exe	0x76290000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L2976: 4472	armsvc.exe	0x76180000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L2977: 4472	armsvc.exe	0x75e60000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L2978: 4472	armsvc.exe	0x76240000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L2979: 4472	armsvc.exe	0x76310000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L2980: 4472	armsvc.exe	0x76a00000	True	True	True	\Windows\SysWOW64\sechost.dll
+L2981: 4472	armsvc.exe	0x76900000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L2982: 4472	armsvc.exe	0x769a0000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L2983: 4472	armsvc.exe	0x76b60000	True	True	True	\Windows\SysWOW64\ws2_32.dll
+L2984: 4472	armsvc.exe	0x76ae0000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L2985: 4472	armsvc.exe	0x76be0000	True	True	True	\Windows\SysWOW64\ole32.dll
+L2986: 4472	armsvc.exe	0x775f0000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L2987: 4472	armsvc.exe	0x77050000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L2988: 4472	armsvc.exe	0x76dc0000	True	True	True	\Windows\SysWOW64\combase.dll
+L2989: 4472	armsvc.exe	0x775a0000	True	True	True	\Windows\SysWOW64\wintrust.dll
+L2990: 4472	armsvc.exe	0x77100000	True	True	True	\Windows\SysWOW64\coml2.dll
+L2991: 4472	armsvc.exe	0x778a0000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L2992: 4472	armsvc.exe	0x77810000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L2993: 4472	armsvc.exe	0x779c0000	True	True	True	\Windows\System32\wow64cpu.dll
+L2994: 4472	armsvc.exe	0x779a0000	True	True	True	\Windows\SysWOW64\bcrypt.dll
+L2995: 4472	armsvc.exe	0x7fff57190000	True	True	True	\Windows\System32\wow64.dll
+L2996: 4472	armsvc.exe	0x7fff559a0000	True	True	True	\Windows\System32\wow64win.dll
+L2997: 4472	armsvc.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L75: 4472	armsvc.exe	\Device\HarddiskVolume3\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe	C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\armsvc.exe	False	False
+
+--- sessions.txt ---
+L69: 0	-	4472	armsvc.exe	-	2020-11-11 08:13:19.000000 UTC
+
+=== PID 22816 (AdobeARMHelper, ppid=4472) ===
+
+--- pslist.txt ---
+L980: 22816	4472	AdobeARMHelper	0xb78d05479080	0	-	0	True	2020-11-13 16:25:58.000000 UTC	2020-11-13 16:25:58.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L980: 22816	AdobeARMHelper	-
+
+--- privileges.txt ---
+L34130: 22816	AdobeARMHelper	2	SeCreateTokenPrivilege		Create a token object
+L34131: 22816	AdobeARMHelper	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L34132: 22816	AdobeARMHelper	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L34133: 22816	AdobeARMHelper	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L34134: 22816	AdobeARMHelper	6	SeMachineAccountPrivilege		Add workstations to the domain
+L34135: 22816	AdobeARMHelper	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L34136: 22816	AdobeARMHelper	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L34137: 22816	AdobeARMHelper	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L34138: 22816	AdobeARMHelper	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L34139: 22816	AdobeARMHelper	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L34140: 22816	AdobeARMHelper	12	SeSystemtimePrivilege	Present	Change the system time
+L34141: 22816	AdobeARMHelper	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L34142: 22816	AdobeARMHelper	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L34143: 22816	AdobeARMHelper	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L34144: 22816	AdobeARMHelper	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L34145: 22816	AdobeARMHelper	17	SeBackupPrivilege	Present	Backup files and directories
+L34146: 22816	AdobeARMHelper	18	SeRestorePrivilege	Present	Restore files and directories
+L34147: 22816	AdobeARMHelper	19	SeShutdownPrivilege	Present	Shut down the system
+L34148: 22816	AdobeARMHelper	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L34149: 22816	AdobeARMHelper	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L34150: 22816	AdobeARMHelper	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L34151: 22816	AdobeARMHelper	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L34152: 22816	AdobeARMHelper	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L34153: 22816	AdobeARMHelper	25	SeUndockPrivilege	Present	Remove computer from docking station
+L34154: 22816	AdobeARMHelper	26	SeSyncAgentPrivilege		Synch directory service data
+L34155: 22816	AdobeARMHelper	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L34156: 22816	AdobeARMHelper	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L34157: 22816	AdobeARMHelper	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L34158: 22816	AdobeARMHelper	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L34159: 22816	AdobeARMHelper	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L34160: 22816	AdobeARMHelper	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L34161: 22816	AdobeARMHelper	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L34162: 22816	AdobeARMHelper	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L34163: 22816	AdobeARMHelper	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L34164: 22816	AdobeARMHelper	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L201: *** 22816	4472	AdobeARMHelper	0xb78d05479080	0	-	0	True	2020-11-13 16:25:58.000000 UTC	2020-11-13 16:25:58.000000 UTC	\Device\HarddiskVolume3\Program Files (x86)\Common Files\Adobe\ARM\1.0\AdobeARMHelper.exe	-	-
+
+--- psscan.txt ---
+L455: 22816	4472	AdobeARMHelper	0xb78d05479080	0	-	0	True	2020-11-13 16:25:58.000000 UTC	2020-11-13 16:25:58.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L980: 22816	AdobeARMHelper	\Device\HarddiskVolume3\Program Files (x86)\Common Files\Adobe\ARM\1.0\AdobeARMHelper.exe	-	False	False
+
+--- sessions.txt ---
+L114: 0	-	22816	AdobeARMHelper	-	2020-11-13 16:25:58.000000 UTC
+
+=== PID 4508 (IntelCpHDCPSvc, ppid=828) ===
+Cmdline: C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe
+
+--- pslist.txt ---
+L76: 4508	828	IntelCpHDCPSvc	0xb78cff7580c0	3	-	0	False	2020-11-11 08:13:19.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L76: 4508	IntelCpHDCPSvc	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe
+
+--- privileges.txt ---
+L2490: 4508	IntelCpHDCPSvc	2	SeCreateTokenPrivilege		Create a token object
+L2491: 4508	IntelCpHDCPSvc	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L2492: 4508	IntelCpHDCPSvc	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L2493: 4508	IntelCpHDCPSvc	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L2494: 4508	IntelCpHDCPSvc	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2495: 4508	IntelCpHDCPSvc	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L2496: 4508	IntelCpHDCPSvc	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L2497: 4508	IntelCpHDCPSvc	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L2498: 4508	IntelCpHDCPSvc	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L2499: 4508	IntelCpHDCPSvc	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L2500: 4508	IntelCpHDCPSvc	12	SeSystemtimePrivilege	Present	Change the system time
+L2501: 4508	IntelCpHDCPSvc	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L2502: 4508	IntelCpHDCPSvc	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L2503: 4508	IntelCpHDCPSvc	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L2504: 4508	IntelCpHDCPSvc	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L2505: 4508	IntelCpHDCPSvc	17	SeBackupPrivilege	Present	Backup files and directories
+L2506: 4508	IntelCpHDCPSvc	18	SeRestorePrivilege	Present	Restore files and directories
+L2507: 4508	IntelCpHDCPSvc	19	SeShutdownPrivilege	Present	Shut down the system
+L2508: 4508	IntelCpHDCPSvc	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L2509: 4508	IntelCpHDCPSvc	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L2510: 4508	IntelCpHDCPSvc	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L2511: 4508	IntelCpHDCPSvc	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2512: 4508	IntelCpHDCPSvc	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2513: 4508	IntelCpHDCPSvc	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2514: 4508	IntelCpHDCPSvc	26	SeSyncAgentPrivilege		Synch directory service data
+L2515: 4508	IntelCpHDCPSvc	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2516: 4508	IntelCpHDCPSvc	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L2517: 4508	IntelCpHDCPSvc	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L2518: 4508	IntelCpHDCPSvc	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L2519: 4508	IntelCpHDCPSvc	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2520: 4508	IntelCpHDCPSvc	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2521: 4508	IntelCpHDCPSvc	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L2522: 4508	IntelCpHDCPSvc	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L2523: 4508	IntelCpHDCPSvc	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L2524: 4508	IntelCpHDCPSvc	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L2832: 4508	IntelCpHDCPSvc	0x7ff78da20000	0x79000	IntelCpHDCPSvc.exe	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe	-1	2020-11-11 08:13:19.000000 UTC	Disabled
+L2833: 4508	IntelCpHDCPSvc	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:13:19.000000 UTC	Disabled
+L2834: 4508	IntelCpHDCPSvc	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-11 08:13:19.000000 UTC	Disabled
+L2835: 4508	IntelCpHDCPSvc	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-11 08:13:19.000000 UTC	Disabled
+L2836: 4508	IntelCpHDCPSvc	0x7fff558c0000	0x4e000	CFGMGR32.dll	C:\WINDOWS\System32\CFGMGR32.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2837: 4508	IntelCpHDCPSvc	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2838: 4508	IntelCpHDCPSvc	0x7fff573a0000	0xac000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2839: 4508	IntelCpHDCPSvc	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2840: 4508	IntelCpHDCPSvc	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2841: 4508	IntelCpHDCPSvc	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2842: 4508	IntelCpHDCPSvc	0x7fff57540000	0x1a0000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2843: 4508	IntelCpHDCPSvc	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2844: 4508	IntelCpHDCPSvc	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2845: 4508	IntelCpHDCPSvc	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2846: 4508	IntelCpHDCPSvc	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2847: 4508	IntelCpHDCPSvc	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2848: 4508	IntelCpHDCPSvc	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2849: 4508	IntelCpHDCPSvc	0x7fff56800000	0x12a000	OLE32.dll	C:\WINDOWS\System32\OLE32.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2850: 4508	IntelCpHDCPSvc	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2851: 4508	IntelCpHDCPSvc	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-11 08:13:19.000000 UTC	Disabled
+L2852: 4508	IntelCpHDCPSvc	0x7fff55d80000	0xa9000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+L2853: 4508	IntelCpHDCPSvc	0x7fff54df0000	0xa2000	sxs.dll	C:\WINDOWS\SYSTEM32\sxs.dll	6	2020-11-11 08:13:19.000000 UTC	Disabled
+
+--- pstree.txt ---
+L215: ** 4508	828	IntelCpHDCPSvc	0xb78cff7580c0	3	-	0	False	2020-11-11 08:13:19.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe
+
+--- psscan.txt ---
+L309: 4508	828	IntelCpHDCPSvc	0xb78cff7580c0	3	-	0	False	2020-11-11 08:13:19.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L2998: 4508	IntelCpHDCPSvc	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L2999: 4508	IntelCpHDCPSvc	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L3000: 4508	IntelCpHDCPSvc	0x7ff78da20000	True	False	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe
+L3001: 4508	IntelCpHDCPSvc	0x7fff54df0000	True	True	True	\Windows\System32\sxs.dll
+L3002: 4508	IntelCpHDCPSvc	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L3003: 4508	IntelCpHDCPSvc	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L3004: 4508	IntelCpHDCPSvc	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L3005: 4508	IntelCpHDCPSvc	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L3006: 4508	IntelCpHDCPSvc	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L3007: 4508	IntelCpHDCPSvc	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L3008: 4508	IntelCpHDCPSvc	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L3009: 4508	IntelCpHDCPSvc	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L3010: 4508	IntelCpHDCPSvc	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L3011: 4508	IntelCpHDCPSvc	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L3012: 4508	IntelCpHDCPSvc	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L3013: 4508	IntelCpHDCPSvc	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L3014: 4508	IntelCpHDCPSvc	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L3015: 4508	IntelCpHDCPSvc	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L3016: 4508	IntelCpHDCPSvc	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+L3017: 4508	IntelCpHDCPSvc	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L3018: 4508	IntelCpHDCPSvc	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+L3019: 4508	IntelCpHDCPSvc	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+
+--- malware_ldrmodules.txt ---
+L2998: 4508	IntelCpHDCPSvc	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L2999: 4508	IntelCpHDCPSvc	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L3000: 4508	IntelCpHDCPSvc	0x7ff78da20000	True	False	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe
+L3001: 4508	IntelCpHDCPSvc	0x7fff54df0000	True	True	True	\Windows\System32\sxs.dll
+L3002: 4508	IntelCpHDCPSvc	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L3003: 4508	IntelCpHDCPSvc	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L3004: 4508	IntelCpHDCPSvc	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L3005: 4508	IntelCpHDCPSvc	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L3006: 4508	IntelCpHDCPSvc	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L3007: 4508	IntelCpHDCPSvc	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L3008: 4508	IntelCpHDCPSvc	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L3009: 4508	IntelCpHDCPSvc	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L3010: 4508	IntelCpHDCPSvc	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L3011: 4508	IntelCpHDCPSvc	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L3012: 4508	IntelCpHDCPSvc	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L3013: 4508	IntelCpHDCPSvc	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L3014: 4508	IntelCpHDCPSvc	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L3015: 4508	IntelCpHDCPSvc	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L3016: 4508	IntelCpHDCPSvc	0x7fff56800000	True	True	True	\Windows\System32\ole32.dll
+L3017: 4508	IntelCpHDCPSvc	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L3018: 4508	IntelCpHDCPSvc	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+L3019: 4508	IntelCpHDCPSvc	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+
+--- malware_pebmasquerade.txt ---
+L76: 4508	IntelCpHDCPSvc	\Device\HarddiskVolume3\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\IntelCpHDCPSvc.exe	False	False
+
+--- sessions.txt ---
+L70: 0	-	4508	IntelCpHDCPSvc	SRL/SRL-FORGE$	2020-11-11 08:13:19.000000 UTC
+
+=== END OF PIVOT REPORT ===

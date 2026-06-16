@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_042.txt
+Summary: All three processes have orphaned PPIDs not present in the process list; this is the primary signal across the board. Severity is kept LOW given no additional corroborating indicators (no suspicious paths, commandlines, DLLs, or network anomalies beyond UDP listeners on smartscreen).
+
+[PROCESS]
+pid: 19348
+ppid: 740
+image: smartscreen.ex
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 740 (unknown) not present in process list | name_note: 'smartscreen.ex' is a kernel EPROCESS truncation of 'smartscreen.exe' — not a typosquat; no path or cmdline available to confirm binary location | network: UDP listeners on 0.0.0.0:0 and :::0 — low signal on their own but noted in absence of path confirmation
+
+[PROCESS]
+pid: 19360
+ppid: 16272
+image: RdrCEF.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 16272 (unknown) not present in process list | short_lived: process ran approximately 5 minutes (04:28:52 to 04:33:52 UTC) — low signal alone but noted alongside orphaned parent
+
+[PROCESS]
+pid: 19428
+ppid: 22700
+image: msedge.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 22700 (unknown) not present in process list | short_lived: process ran approximately 72 seconds (04:58:05 to 04:59:17 UTC) — low signal alone but noted alongside orphaned parent
+

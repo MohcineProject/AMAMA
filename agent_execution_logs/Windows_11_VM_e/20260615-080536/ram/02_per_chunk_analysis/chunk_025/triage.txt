@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:45:00Z
+Chunk: chunk_025.txt
+Summary: Orphaned parent PID on ApplicationFrameHost.exe; all other signals appear benign.
+
+[PROCESS]
+pid: 8044
+ppid: 860
+image: ApplicationFra
+cmdline: C:\Windows\system32\ApplicationFrameHost.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 860 does not appear anywhere in the process list | name_truncation_note: 'ApplicationFra' is expected EPROCESS truncation of 'ApplicationFrameHost.exe'; path and cmdline confirm legitimate identity — not a typosquat | non-whitelisted_dlls_note: listed DLLs are all standard System32 paths; filter artefact, no actual third-party DLLs present
+

@@ -1,0 +1,69 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:51:10Z
+
+=== PID 5528 (userinit.exe, ppid=816) ===
+
+--- pslist.txt ---
+L83: 5528	816	userinit.exe	0xcd8a12368080	0	-	1	False	2026-05-12 18:23:32.000000 UTC	2026-05-12 18:24:03.000000 UTC	Disabled
+L84: 5556	5528	explorer.exe	0xcd8a12272080	87	-	1	False	2026-05-12 18:23:33.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L83: 5528	userinit.exe	-
+
+--- privileges.txt ---
+L2735: 5528	userinit.exe	2	SeCreateTokenPrivilege		Create a token object
+L2736: 5528	userinit.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L2737: 5528	userinit.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2738: 5528	userinit.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L2739: 5528	userinit.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2740: 5528	userinit.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2741: 5528	userinit.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2742: 5528	userinit.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2743: 5528	userinit.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2744: 5528	userinit.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2745: 5528	userinit.exe	12	SeSystemtimePrivilege		Change the system time
+L2746: 5528	userinit.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2747: 5528	userinit.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2748: 5528	userinit.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2749: 5528	userinit.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2750: 5528	userinit.exe	17	SeBackupPrivilege		Backup files and directories
+L2751: 5528	userinit.exe	18	SeRestorePrivilege		Restore files and directories
+L2752: 5528	userinit.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2753: 5528	userinit.exe	20	SeDebugPrivilege		Debug programs
+L2754: 5528	userinit.exe	21	SeAuditPrivilege		Generate security audits
+L2755: 5528	userinit.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2756: 5528	userinit.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2757: 5528	userinit.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2758: 5528	userinit.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2759: 5528	userinit.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2760: 5528	userinit.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2761: 5528	userinit.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2762: 5528	userinit.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L2763: 5528	userinit.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L2764: 5528	userinit.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2765: 5528	userinit.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2766: 5528	userinit.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2767: 5528	userinit.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2768: 5528	userinit.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2769: 5528	userinit.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L155: * 5528	816	userinit.exe	0xcd8a12368080	0	-	1	False	2026-05-12 18:23:32.000000 UTC	2026-05-12 18:24:03.000000 UTC	\Device\HarddiskVolume4\Windows\System32\userinit.exe	-	-
+L156: ** 5556	5528	explorer.exe	0xcd8a12272080	87	-	1	False	2026-05-12 18:23:33.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\explorer.exe	C:\WINDOWS\Explorer.EXE	C:\WINDOWS\Explorer.EXE
+
+--- psscan.txt ---
+L119: 5556	5528	explorer.exe	0xcd8a12272080	87	-	1	False	2026-05-12 18:23:33.000000 UTC	N/A	Disabled
+L122: 5528	816	userinit.exe	0xcd8a12368080	0	-	1	False	2026-05-12 18:23:32.000000 UTC	2026-05-12 18:24:03.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L83: 5528	userinit.exe	\Device\HarddiskVolume4\Windows\System32\userinit.exe	-	False	False
+
+--- sessions.txt ---
+L124: 1	-	5528	userinit.exe	-	2026-05-12 18:23:32.000000 UTC
+
+=== PID 8112 (olk.exe, ppid=5556) ===
+
+--- psscan.txt ---
+L155: 8112	5556	olk.exe	0xcd8a12eec080	0	-	1	False	2026-05-12 18:24:50.000000 UTC	2026-05-12 18:29:33.000000 UTC	Disabled
+
+=== END OF PIVOT REPORT ===

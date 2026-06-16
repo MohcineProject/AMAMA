@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_005.txt
+Summary: PRIVILEGE ANOMALY on dasHost.exe (PID 2772): holds both SYSTEM and user SIDs indicating possible token impersonation; SeImpersonatePrivilege enabled. Remaining processes are short-lived or orphaned but carry no additional converging signals.
+
+[PROCESS]
+pid: 2772
+ppid: 2212
+image: dasHost.exe
+cmdline: dashost.exe {31e2ec11-4670-4f05-89567a54e4adad61}
+severity: MEDIUM
+reasons: privilege_anomaly: dasHost.exe (PID 2772) holds both SYSTEM and user SIDs — possible token impersonation (pre-computed structural anomaly) | privilege: SeImpersonatePrivilege enabled — commonly abused for token impersonation attacks (e.g. Potato-family exploits) | orphaned_parent: PPID 2212 not present in process list
+

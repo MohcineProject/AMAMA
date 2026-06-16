@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_017.txt
+Summary: Orphaned parent PID 860 for both RuntimeBroker and SkypeBackgroundHost; RuntimeBroker missing path and command-line data.
+
+[PROCESS]
+pid: 6056
+ppid: 860
+image: RuntimeBroker.
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 860 listed as 'unknown' — parent process not present in process list | missing_path: no image path or command-line recorded for this process | truncated_name: 'RuntimeBroker.' — trailing dot may indicate EPROCESS truncation artefact, but no Cmd/Path to confirm legitimate identity
+

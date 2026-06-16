@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:50:00Z
+Chunk: chunk_016.txt
+Summary: svchost.exe with unknown parent PID 716 (not services.exe); SgrmBroker.exe also orphaned under same unknown PID 716 with SeImpersonatePrivilege enabled.
+
+[PROCESS]
+pid: 5940
+ppid: 716
+image: svchost.exe
+cmdline: C:\Windows\system32\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc
+severity: LOW
+reasons: parent_mismatch: parent PID 716 is listed as 'unknown' — expected parent is services.exe for any svchost.exe instance | orphaned_parent: PID 716 does not appear anywhere in the process list
+

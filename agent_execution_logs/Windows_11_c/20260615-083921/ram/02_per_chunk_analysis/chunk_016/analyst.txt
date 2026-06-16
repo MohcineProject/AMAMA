@@ -1,0 +1,30 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: A single Agent 1 lead was reviewed. The sole flagged process, Widgets.exe (PID 6924), presents an orphaned-parent signal but all other evidence is consistent with a legitimate Microsoft Windows Widgets (WebExperience) component. No malicious indicators were found across command-line, DLL, or privilege artefacts. The privilege list is long but entirely non-enabled, which is normal for a standard user-context process carrying the full Windows privilege table in a disabled state. Incident scope is assessed as negligible based on available evidence.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTED FINDINGS — SUMMARY
+================================================================
+
+PID 6924 — Widgets.exe — REJECTED
+
+Agent 1 flagged this process because PPID 576 does not appear anywhere in the process list (orphaned parent). This is a recognised benign artefact: on modern Windows the Widgets process is launched by the Windows Dashboard broker (svchost or a transient COM activation host) that may have already exited by the time the memory image was acquired, leaving the PPID unresolvable. The orphaned-parent signal alone is insufficient to sustain suspicion.
+
+All remaining evidence is consistent with legitimate behaviour:
+
+• Command line: the binary resides in the canonical WindowsApps package path for MicrosoftWindows.Client.WebExperience and is invoked with the standard -ServerName:Microsoft.Windows.DashboardServer argument — exactly the expected launch pattern for the Windows 11 Widgets panel.
+
+• Child process: msedgewebview2.exe (PID 7784) is spawned by Widgets.exe with --webview-exe-name=Widgets.exe and a user-data-dir inside the correct package LocalState folder, confirming normal WebView2 embedding.
+
+• DLL: the single shown DLL entry maps Widgets.exe from its expected WindowsApps package path with no user-writable or anomalous locations.
+
+• Privileges: the privilege table lists the full Windows privilege set, but only SeShutdownPrivilege, SeChangeNotifyPrivilege (Enabled,Default), SeUndockPrivilege, SeCreateGlobalPrivilege (Default), SeIncreaseWorkingSetPrivilege, and SeTimeZonePrivilege carry any Present/Enabled flags. Critically, SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege, and all other high-risk privileges are listed but carry no Present or Enabled marker — they are not held. This is the standard user-context privilege table; the absence of enablement on the dangerous entries is the key point.
+
+No malfind hits, no suspicious network connections, no registry persistence, and no anomalous DLL paths were present in the evidence block. Rejection is appropriate.
+
+================================================================

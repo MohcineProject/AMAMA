@@ -1,0 +1,61 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-14T23:10:08Z
+
+=== PID 8552 (audiodg.exe, ppid=2220) ===
+
+--- pslist.txt ---
+L109: 8552	2220	audiodg.exe	0xbb0c90d0e080	4	-	0	False	2025-08-07 19:37:21.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L109: 8552	audiodg.exe	-
+
+--- privileges.txt ---
+L3645: 8552	audiodg.exe	2	SeCreateTokenPrivilege		Create a token object
+L3646: 8552	audiodg.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3647: 8552	audiodg.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3648: 8552	audiodg.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3649: 8552	audiodg.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3650: 8552	audiodg.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3651: 8552	audiodg.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L3652: 8552	audiodg.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3653: 8552	audiodg.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3654: 8552	audiodg.exe	11	SeSystemProfilePrivilege		Profile system performance
+L3655: 8552	audiodg.exe	12	SeSystemtimePrivilege		Change the system time
+L3656: 8552	audiodg.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3657: 8552	audiodg.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3658: 8552	audiodg.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L3659: 8552	audiodg.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3660: 8552	audiodg.exe	17	SeBackupPrivilege		Backup files and directories
+L3661: 8552	audiodg.exe	18	SeRestorePrivilege		Restore files and directories
+L3662: 8552	audiodg.exe	19	SeShutdownPrivilege		Shut down the system
+L3663: 8552	audiodg.exe	20	SeDebugPrivilege		Debug programs
+L3664: 8552	audiodg.exe	21	SeAuditPrivilege		Generate security audits
+L3665: 8552	audiodg.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3666: 8552	audiodg.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3667: 8552	audiodg.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3668: 8552	audiodg.exe	25	SeUndockPrivilege		Remove computer from docking station
+L3669: 8552	audiodg.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3670: 8552	audiodg.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3671: 8552	audiodg.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L3672: 8552	audiodg.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L3673: 8552	audiodg.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L3674: 8552	audiodg.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3675: 8552	audiodg.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3676: 8552	audiodg.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3677: 8552	audiodg.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L3678: 8552	audiodg.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3679: 8552	audiodg.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L41: *** 8552	2220	audiodg.exe	0xbb0c90d0e080	4	-	0	False	2025-08-07 19:37:21.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\audiodg.exe	-	-
+
+--- psscan.txt ---
+L130: 8552	2220	audiodg.exe	0xbb0c90d0e080	4	-	0	False	2025-08-07 19:37:21.000000 UTC	N/A	Disabled
+
+--- malware_pebmasquerade.txt ---
+L109: 8552	audiodg.exe	\Device\HarddiskVolume3\Windows\System32\audiodg.exe	-	False	False
+
+--- sessions.txt ---
+L81: 0	-	8552	audiodg.exe	-	2025-08-07 19:37:21.000000 UTC
+
+=== END OF PIVOT REPORT ===

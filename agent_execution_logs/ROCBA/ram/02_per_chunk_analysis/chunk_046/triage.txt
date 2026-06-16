@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_046.txt
+Summary: Orphaned parent PIDs across all processes; RuntimeBroker truncation is a kernel artefact but PID 21836 lacks a path/cmdline and spawned a very short-lived child (LocalBridge.ex) that was only discovered via psscan — possible hidden/injected process.
+
+[PROCESS]
+pid: 21836
+ppid: 740
+image: RuntimeBroker.
+cmdline: 
+severity: MEDIUM
+reasons: no_path_or_cmdline: unlike PID 23924 (also RuntimeBroker), PID 21836 has no Path or Cmd fields — image backing may be inaccessible or process was injected | orphaned_parent: PPID 740 is not present anywhere in the process list | suspicious_child: spawned PID 29656 (LocalBridge.ex) which was only found via psscan (not pslist), suggesting it may have been hidden from the standard process list
+
+[PROCESS]
+pid: 29656
+ppid: 21836
+image: LocalBridge.ex
+cmdline: 
+severity: MEDIUM
+reasons: psscan_only: process discovered exclusively via psscan (discovered_via=psscan) and not visible in pslist — classic indicator of DKOM-based process hiding or process already terminated and unlinked | very_short_lived: start 2020-11-16 02:31:19 UTC, exit 2020-11-16 02:31:20 UTC — lived approximately 1 second, consistent with a dropper or stager | no_path_or_cmdline: no Path or Cmd fields present, image backing inaccessible | unusual_parent: spawned by PID 21836 (RuntimeBroker with no path/cmdline), which is itself anomalous
+

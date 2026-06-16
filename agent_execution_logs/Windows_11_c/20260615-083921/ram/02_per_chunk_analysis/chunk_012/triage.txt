@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:35:00Z
+Chunk: chunk_012.txt
+Summary: Orphaned parent PIDs across multiple processes (PID 576, 888 not present in process list); smartscreen.exe parent PID 576 is unknown/absent — mild orphan signal worth confirming.
+
+[PROCESS]
+pid: 5532
+ppid: 576
+image: smartscreen.ex
+cmdline: C:\Windows\System32\smartscreen.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 576 does not appear anywhere in the process list | name_note: 'smartscreen.ex' is a kernel EPROCESS truncation artefact of 'smartscreen.exe'; path C:\Windows\System32\smartscreen.exe and cmdline confirm legitimate binary — name alone is not an IOC
+

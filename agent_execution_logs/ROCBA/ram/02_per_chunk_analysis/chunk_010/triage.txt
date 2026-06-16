@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_010.txt
+Summary: OfficeClickToRun service process has an orphaned parent (PID 828 not present in process list) and holds high-risk privileges including SeTcbPrivilege and SeDebugPrivilege; AppVShNotify inherits similar privileges but is otherwise consistent with its parent.
+
+[PROCESS]
+pid: 6416
+ppid: 828
+image: OfficeClickToRun.exe
+cmdline: "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeClickToRun.exe" /service
+severity: LOW
+reasons: orphaned_parent: PPID 828 (unknown) not present anywhere in the process list | privilege_concern: holds SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege — high-risk combination for a Click-to-Run service process; warrants confirmation that these are legitimately granted
+

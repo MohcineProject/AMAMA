@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_008.txt
+Summary: ctfmon.exe has an orphaned parent PID (2620) not present in the process list; all other signals are benign.
+
+[PROCESS]
+pid: 3712
+ppid: 2620
+image: ctfmon.exe
+cmdline: /QuitInfo:000000000000017C;0000000000000328;
+severity: LOW
+reasons: orphaned_parent: PPID 2620 (unknown) not present anywhere in the process list
+

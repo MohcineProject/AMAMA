@@ -1,0 +1,5 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_017.txt
+Summary: All processes in this snapshot are part of the SearchHost/Cortana EdgeWebView2 process tree (SearchHost.exe → msedgewebview2.exe subprocesses for GPU, network, storage, renderer, and crashpad). Paths, parent-child relationships, and command-line arguments are consistent with legitimate Windows Search/Cortana WebView2 hosting. No structural anomalies were pre-computed. No signals fired across any heuristic category.
+

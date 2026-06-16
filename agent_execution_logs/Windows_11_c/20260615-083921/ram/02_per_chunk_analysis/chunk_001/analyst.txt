@@ -1,0 +1,71 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T00:00:00Z
+Summary: Two Agent 1 leads were evaluated. PID 1188 (AggregatorHost.exe) presents a genuinely anomalous privilege footprint and an unrecognised DLL alongside an orphaned parent, warranting an INCONCLUSIVE verdict pending DLL and file-path corroboration. PID 2024 (RuntimeBroker.) is a terminated process visible only in psscan with an exit time recorded, consistent with normal process churn rather than DKOM manipulation; it is rejected. No CONFIRMED findings were produced from the available evidence.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      1188
+PPID:     3148
+Image:    AggregatorHost.exe
+Cmdline:  AggregatorHost.exe
+Severity: (none — INCONCLUSIVE)
+MITRE:
+
+Justification:
+  AggregatorHost.exe is a legitimate Windows binary (part of the
+  Compatibility Telemetry / Aggregator infrastructure, hosted under
+  svchost or a dedicated host process) and its presence in
+  C:\WINDOWS\System32\ is consistent with a genuine system component.
+  However, three signals together prevent a clean rejection.
+
+  First, the privilege set is unusually broad: SeTcbPrivilege,
+  SeDebugPrivilege, and SeImpersonatePrivilege are all simultaneously
+  Present/Enabled/Default (lines L2180, L2193, L2202). The full
+  token also includes SeAssignPrimaryTokenPrivilege (Present) and
+  SeCreateGlobalPrivilege (Present/Enabled/Default). This breadth is
+  consistent with a SYSTEM-context service token, which AggregatorHost
+  can legitimately hold, but it is also exactly the token a process
+  would carry after a successful token-impersonation or
+  CreateProcessWithToken escalation. Without a SID/group block to
+  confirm the token is genuinely S-1-5-18 and not a cloned or
+  manipulated token, this cannot be dismissed.
+
+  Second, Agent 1 flagged a non-standard DLL
+  (C:\WINDOWS\SYSTEM32\UpdateReboot.dll). The grep script returned
+  only three DLL lines for this PID (ntdll, KERNEL32, and the
+  executable itself); the alleged UpdateReboot.dll line is NOT present
+  in the extracted evidence. This means either the DLL was not loaded
+  at the time of the dlllist snapshot, the grep hit count was
+  misreported, or the DLL was already unloaded. The absence of the
+  line in the evidence prevents confirmation, but also prevents
+  confident rejection — the DLL name is not a recognised Windows
+  component and warrants file-system verification.
+
+  Third, PPID 3148 does not appear in pslist (line L67 confirms the
+  parent is absent from the live list). For a SYSTEM-context service
+  this is unusual but not impossible if the parent was a short-lived
+  SCM helper; however, combined with the other signals it adds to
+  the overall suspicion.
+
+  In summary: the binary path is legitimate, but the orphaned parent,
+  the extremely broad enabled-privilege set, and the unverifiable
+  non-standard DLL claim together prevent a clean rejection. The
+  finding is INCONCLUSIVE and requires: (a) file-hash verification of
+  AggregatorHost.exe in System32, (b) confirmation of whether
+  UpdateReboot.dll exists on disk and its hash, and (c) a token/SID
+  dump to verify the process is genuinely running as S-1-5-18.
+
+Key Evidence:
+  - L67:  1188  3148  AggregatorHost  0xcd8a11a91080  3  -  0  False  2026-05-12 18:23:21.000000 UTC  N/A  Disabled
+  - L2180: 1188  AggregatorHost  7   SeTcbPrivilege          Present,Enabled,Default   Act as part of the operating system
+  - L2193: 1188  AggregatorHost  20  SeDebugPrivilege        Present,Enabled,Default   Debug programs
+  - L2202: 1188  AggregatorHost  29  SeImpersonatePrivilege  Present,Enabled,Default   Impersonate a client after authentication
+  - L2176: 1188  AggregatorHost  3   SeAssignPrimaryTokenPrivilege  Present            Replace a process-level token
+  - L2588: 1188  AggregatorHost  0x7ff63b130000  0x4e000  AggregatorHost.exe  C:\WINDOWS\System32\AggregatorHost.exe  -1  2026-05-12 18:23:21.000000 UTC  Disabled
+  - (UpdateReboot.dll line: NOT present in extracted dlllist evidence — only ntdll.dll and KERNEL32.DLL returned alongside the executable)
+----------------------------------------------------------------
+
+================================================================

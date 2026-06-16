@@ -1,0 +1,268 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:11:12Z
+
+=== PID 2380 (cmd.exe, ppid=4240) ===
+Cmdline: C:\WINDOWS\system32\cmd.exe /c ""C:\Users\kali\AppData\Local\Temp\EMwLtc9FBmME.bat" "
+
+--- pslist.txt ---
+L138: 2380	4240	cmd.exe	0x990ef8261080	4	-	1	False	2026-05-13 19:26:56.000000 UTC	N/A	Disabled
+L139: 7924	2380	conhost.exe	0x990ef240c080	4	-	1	False	2026-05-13 19:26:56.000000 UTC	N/A	Disabled
+L140: 7284	2380	PING.EXE	0x990efacf2080	6	-	1	False	2026-05-13 19:26:57.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L138: 2380	cmd.exe	C:\WINDOWS\system32\cmd.exe /c ""C:\Users\kali\AppData\Local\Temp\EMwLtc9FBmME.bat" "
+
+--- privileges.txt ---
+L4660: 2380	cmd.exe	2	SeCreateTokenPrivilege		Create a token object
+L4661: 2380	cmd.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4662: 2380	cmd.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L4663: 2380	cmd.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4664: 2380	cmd.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4665: 2380	cmd.exe	7	SeTcbPrivilege		Act as part of the operating system
+L4666: 2380	cmd.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4667: 2380	cmd.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4668: 2380	cmd.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4669: 2380	cmd.exe	11	SeSystemProfilePrivilege		Profile system performance
+L4670: 2380	cmd.exe	12	SeSystemtimePrivilege		Change the system time
+L4671: 2380	cmd.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4672: 2380	cmd.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4673: 2380	cmd.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L4674: 2380	cmd.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4675: 2380	cmd.exe	17	SeBackupPrivilege		Backup files and directories
+L4676: 2380	cmd.exe	18	SeRestorePrivilege		Restore files and directories
+L4677: 2380	cmd.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L4678: 2380	cmd.exe	20	SeDebugPrivilege		Debug programs
+L4679: 2380	cmd.exe	21	SeAuditPrivilege		Generate security audits
+L4680: 2380	cmd.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4681: 2380	cmd.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4682: 2380	cmd.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4683: 2380	cmd.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4684: 2380	cmd.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L4685: 2380	cmd.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4686: 2380	cmd.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L4687: 2380	cmd.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4688: 2380	cmd.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4689: 2380	cmd.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4690: 2380	cmd.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4691: 2380	cmd.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4692: 2380	cmd.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4693: 2380	cmd.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4694: 2380	cmd.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L6364: 2380	cmd.exe	0x7ff608f60000	0x70000	cmd.exe	C:\WINDOWS\system32\cmd.exe	-1	2026-05-13 19:26:56.000000 UTC	Disabled
+L6365: 2380	cmd.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:26:56.000000 UTC	Disabled
+L6366: 2380	cmd.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:26:56.000000 UTC	Disabled
+L6367: 2380	cmd.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:26:56.000000 UTC	Disabled
+L6368: 2380	cmd.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6369: 2380	cmd.exe	0x7ffff1640000	0x11000	cmdext.dll	C:\WINDOWS\SYSTEM32\cmdext.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6370: 2380	cmd.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6371: 2380	cmd.exe	0x7ffff9820000	0xbb000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6372: 2380	cmd.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:26:57.000000 UTC	Disabled
+L6373: 2380	cmd.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6374: 2380	cmd.exe	0x7fffed4a0000	0x16000	appidapi.dll	C:\WINDOWS\system32\appidapi.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6375: 2380	cmd.exe	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6376: 2380	cmd.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6377: 2380	cmd.exe	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6378: 2380	cmd.exe	0x7fffed440000	0x31000	srpapi.dll	C:\WINDOWS\system32\srpapi.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6379: 2380	cmd.exe	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\system32\bcrypt.dll	-1	2026-05-13 19:26:57.000000 UTC	Disabled
+L6380: 2380	cmd.exe	0x7ffff6540000	0xa5000	bcryptprimitives.dll	C:\WINDOWS\System32\bcryptprimitives.dll	-1	2026-05-13 19:26:57.000000 UTC	Disabled
+L6381: 2380	cmd.exe	0x7ffff7c20000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6382: 2380	cmd.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6383: 2380	cmd.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6384: 2380	cmd.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6385: 2380	cmd.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6386: 2380	cmd.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6387: 2380	cmd.exe	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+L6388: 2380	cmd.exe	0x7ffff5a00000	0x68000	Wldp.dll	C:\WINDOWS\system32\Wldp.dll	6	2026-05-13 19:26:57.000000 UTC	Disabled
+
+--- pstree.txt ---
+L138: 2380	4240	cmd.exe	0x990ef8261080	4	-	1	False	2026-05-13 19:26:56.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\cmd.exe	C:\WINDOWS\system32\cmd.exe /c ""C:\Users\kali\AppData\Local\Temp\EMwLtc9FBmME.bat" "	C:\WINDOWS\system32\cmd.exe
+L139: * 7284	2380	PING.EXE	0x990efacf2080	6	-	1	False	2026-05-13 19:26:57.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\PING.EXE	ping  -n 10 localhost 	C:\WINDOWS\system32\PING.EXE
+L140: * 7924	2380	conhost.exe	0x990ef240c080	4	-	1	False	2026-05-13 19:26:56.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\conhost.exe	\??\C:\WINDOWS\system32\conhost.exe 0x4	C:\WINDOWS\system32\conhost.exe
+
+--- psscan.txt ---
+L13: 7924	2380	conhost.exe	0x990ef240c080	4	-	1	False	2026-05-13 19:26:56.000000 UTC	N/A	Disabled
+L130: 2380	4240	cmd.exe	0x990ef8261080	4	-	1	False	2026-05-13 19:26:56.000000 UTC	N/A	Disabled
+L144: 7284	2380	PING.EXE	0x990efacf2080	6	-	1	False	2026-05-13 19:26:57.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L6651: 2380	cmd.exe	0x272beed0000	False	False	False	\Windows\System32\en-US\cmd.exe.mui
+L6652: 2380	cmd.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6653: 2380	cmd.exe	0x7ffff1640000	True	True	True	\Windows\System32\cmdext.dll
+L6654: 2380	cmd.exe	0x7ff608f60000	True	False	True	\Windows\System32\cmd.exe
+L6655: 2380	cmd.exe	0x7fffed4a0000	True	True	True	\Windows\System32\appidapi.dll
+L6656: 2380	cmd.exe	0x7fffed440000	True	True	True	\Windows\System32\srpapi.dll
+L6657: 2380	cmd.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L6658: 2380	cmd.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L6659: 2380	cmd.exe	0x7ffff5a00000	True	True	True	\Windows\System32\wldp.dll
+L6660: 2380	cmd.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6661: 2380	cmd.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6662: 2380	cmd.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6663: 2380	cmd.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6664: 2380	cmd.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6665: 2380	cmd.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6666: 2380	cmd.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6667: 2380	cmd.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L6668: 2380	cmd.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6669: 2380	cmd.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6670: 2380	cmd.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6671: 2380	cmd.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6672: 2380	cmd.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6673: 2380	cmd.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6674: 2380	cmd.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6675: 2380	cmd.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6676: 2380	cmd.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L6651: 2380	cmd.exe	0x272beed0000	False	False	False	\Windows\System32\en-US\cmd.exe.mui
+L6652: 2380	cmd.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6653: 2380	cmd.exe	0x7ffff1640000	True	True	True	\Windows\System32\cmdext.dll
+L6654: 2380	cmd.exe	0x7ff608f60000	True	False	True	\Windows\System32\cmd.exe
+L6655: 2380	cmd.exe	0x7fffed4a0000	True	True	True	\Windows\System32\appidapi.dll
+L6656: 2380	cmd.exe	0x7fffed440000	True	True	True	\Windows\System32\srpapi.dll
+L6657: 2380	cmd.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L6658: 2380	cmd.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L6659: 2380	cmd.exe	0x7ffff5a00000	True	True	True	\Windows\System32\wldp.dll
+L6660: 2380	cmd.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6661: 2380	cmd.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6662: 2380	cmd.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6663: 2380	cmd.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6664: 2380	cmd.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6665: 2380	cmd.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6666: 2380	cmd.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6667: 2380	cmd.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L6668: 2380	cmd.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6669: 2380	cmd.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6670: 2380	cmd.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6671: 2380	cmd.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6672: 2380	cmd.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6673: 2380	cmd.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6674: 2380	cmd.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6675: 2380	cmd.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6676: 2380	cmd.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L138: 2380	cmd.exe	\Device\HarddiskVolume4\Windows\System32\cmd.exe	C:\WINDOWS\system32\cmd.exe	False	False
+
+--- sessions.txt ---
+L137: 1	Console	2380	cmd.exe	CLEANWINDOWS11/kali	2026-05-13 19:26:56.000000 UTC
+
+=== PID 2388 (cmd.exe, ppid=6956) ===
+
+--- pslist.txt ---
+L133: 2388	6956	cmd.exe	0x990ef612e080	0	-	1	False	2026-05-13 19:26:14.000000 UTC	2026-05-13 19:26:23.000000 UTC	Disabled
+L134: 4812	2388	conhost.exe	0x990ef7e64080	0	-	1	False	2026-05-13 19:26:14.000000 UTC	2026-05-13 19:26:23.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L133: 2388	cmd.exe	-
+
+--- privileges.txt ---
+L4485: 2388	cmd.exe	2	SeCreateTokenPrivilege		Create a token object
+L4486: 2388	cmd.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4487: 2388	cmd.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L4488: 2388	cmd.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4489: 2388	cmd.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4490: 2388	cmd.exe	7	SeTcbPrivilege		Act as part of the operating system
+L4491: 2388	cmd.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4492: 2388	cmd.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4493: 2388	cmd.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4494: 2388	cmd.exe	11	SeSystemProfilePrivilege		Profile system performance
+L4495: 2388	cmd.exe	12	SeSystemtimePrivilege		Change the system time
+L4496: 2388	cmd.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4497: 2388	cmd.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4498: 2388	cmd.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L4499: 2388	cmd.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4500: 2388	cmd.exe	17	SeBackupPrivilege		Backup files and directories
+L4501: 2388	cmd.exe	18	SeRestorePrivilege		Restore files and directories
+L4502: 2388	cmd.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L4503: 2388	cmd.exe	20	SeDebugPrivilege		Debug programs
+L4504: 2388	cmd.exe	21	SeAuditPrivilege		Generate security audits
+L4505: 2388	cmd.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4506: 2388	cmd.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4507: 2388	cmd.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4508: 2388	cmd.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4509: 2388	cmd.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L4510: 2388	cmd.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4511: 2388	cmd.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L4512: 2388	cmd.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4513: 2388	cmd.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4514: 2388	cmd.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4515: 2388	cmd.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4516: 2388	cmd.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4517: 2388	cmd.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4518: 2388	cmd.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4519: 2388	cmd.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L135: 2388	6956	cmd.exe	0x990ef612e080	0	-	1	False	2026-05-13 19:26:14.000000 UTC	2026-05-13 19:26:23.000000 UTC	\Device\HarddiskVolume4\Windows\System32\cmd.exe	-	-
+L136: * 4812	2388	conhost.exe	0x990ef7e64080	0	-	1	False	2026-05-13 19:26:14.000000 UTC	2026-05-13 19:26:23.000000 UTC	\Device\HarddiskVolume4\Windows\System32\conhost.exe	-	-
+
+--- psscan.txt ---
+L42: 2388	6956	cmd.exe	0x990ef612e080	0	-	1	False	2026-05-13 19:26:14.000000 UTC	2026-05-13 19:26:23.000000 UTC	Disabled
+L123: 4812	2388	conhost.exe	0x990ef7e64080	0	-	1	False	2026-05-13 19:26:14.000000 UTC	2026-05-13 19:26:23.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L133: 2388	cmd.exe	\Device\HarddiskVolume4\Windows\System32\cmd.exe	-	False	False
+
+--- sessions.txt ---
+L134: 1	-	2388	cmd.exe	-	2026-05-13 19:26:14.000000 UTC
+
+=== PID 4812 (conhost.exe, ppid=2388) ===
+
+--- pslist.txt ---
+L134: 4812	2388	conhost.exe	0x990ef7e64080	0	-	1	False	2026-05-13 19:26:14.000000 UTC	2026-05-13 19:26:23.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L134: 4812	conhost.exe	-
+
+--- privileges.txt ---
+L4520: 4812	conhost.exe	2	SeCreateTokenPrivilege		Create a token object
+L4521: 4812	conhost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4522: 4812	conhost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L4523: 4812	conhost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4524: 4812	conhost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4525: 4812	conhost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L4526: 4812	conhost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4527: 4812	conhost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4528: 4812	conhost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4529: 4812	conhost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L4530: 4812	conhost.exe	12	SeSystemtimePrivilege		Change the system time
+L4531: 4812	conhost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4532: 4812	conhost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4533: 4812	conhost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L4534: 4812	conhost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4535: 4812	conhost.exe	17	SeBackupPrivilege		Backup files and directories
+L4536: 4812	conhost.exe	18	SeRestorePrivilege		Restore files and directories
+L4537: 4812	conhost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L4538: 4812	conhost.exe	20	SeDebugPrivilege		Debug programs
+L4539: 4812	conhost.exe	21	SeAuditPrivilege		Generate security audits
+L4540: 4812	conhost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4541: 4812	conhost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4542: 4812	conhost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4543: 4812	conhost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4544: 4812	conhost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L4545: 4812	conhost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4546: 4812	conhost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L4547: 4812	conhost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4548: 4812	conhost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4549: 4812	conhost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4550: 4812	conhost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4551: 4812	conhost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4552: 4812	conhost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4553: 4812	conhost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4554: 4812	conhost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L136: * 4812	2388	conhost.exe	0x990ef7e64080	0	-	1	False	2026-05-13 19:26:14.000000 UTC	2026-05-13 19:26:23.000000 UTC	\Device\HarddiskVolume4\Windows\System32\conhost.exe	-	-
+
+--- psscan.txt ---
+L123: 4812	2388	conhost.exe	0x990ef7e64080	0	-	1	False	2026-05-13 19:26:14.000000 UTC	2026-05-13 19:26:23.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L134: 4812	conhost.exe	\Device\HarddiskVolume4\Windows\System32\conhost.exe	-	False	False
+
+--- sessions.txt ---
+L135: 1	-	4812	conhost.exe	-	2026-05-13 19:26:14.000000 UTC
+
+=== END OF PIVOT REPORT ===

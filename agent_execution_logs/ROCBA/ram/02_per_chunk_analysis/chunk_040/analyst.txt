@@ -1,0 +1,72 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 16824 — TabTip.exe**
+
+Agent 1 flags: SeTcbPrivilege enabled, SeImpersonatePrivilege enabled, orphaned parent (PPID 1908 not in process list).
+
+Evidence review:
+
+1. **Path**: `\Device\HarddiskVolume3\Program Files\Common Files\microsoft shared\ink\TabTip.exe` — this is the legitimate Windows Touch Keyboard and Handwriting Panel binary. The path is canonical.
+
+2. **Privilege set**: The privilege set is enormous — SeAssignPrimaryTokenPrivilege, SeTcbPrivilege (Present,Enabled,Default), SeDebugPrivilege (Default), SeImpersonatePrivilege (Present,Enabled,Default), SeCreateGlobalPrivilege, SeAuditPrivilege, SeCreatePermanentPrivilege, etc. This is a **SYSTEM-level token**, not a user-level token. A UI process running as SYSTEM with SeTcbPrivilege is unusual for a touch keyboard, but TabTip.exe is known to run under the SYSTEM account in certain Windows 10 configurations (it is launched by the Input Method Manager service or svchost). The privilege set here is consistent with a SYSTEM-context process, not with token manipulation per se.
+
+3. **Orphaned parent**: PPID 1908 not in pslist. This is a weak signal on its own — the parent may have exited after spawning TabTip (e.g., a service host that restarted). The process itself is visible in both pslist and psscan (no DKOM hiding).
+
+4. **Cmdline**: Listed as `-` (unavailable/empty), which is not unusual for system processes where the cmdline block is not populated.
+
+5. **Masquerade check**: `malware_pebmasquerade.txt` shows `False False` — no masquerade detected.
+
+6. **No malfind, no suspicious DLLs, no network connections, no registry persistence** evidence provided.
+
+Assessment: The privilege set is consistent with a SYSTEM-token process, which TabTip.exe can legitimately be. The path is canonical. No injection markers, no suspicious DLLs, no network activity. The orphaned parent is a weak signal. The privilege anomaly is real but explainable by SYSTEM context. **INCONCLUSIVE** — the SYSTEM-level token on a UI binary is worth noting but not confirmable as malicious without additional evidence (e.g., malfind hits, suspicious DLLs, network connections).
+
+---
+
+**PID 16480 — SearchProtocol (ppid=11968)**
+
+Agent 1 flags: psscan-only (not in pslist), orphaned parent.
+
+Evidence review:
+
+1. **psscan-only**: The process appears only in psscan, not pslist. This is a classic DKOM (Direct Kernel Object Manipulation) hiding indicator. However, it can also occur for processes that have already exited — psscan scans raw memory and can find EPROCESS structures of terminated processes. The `ExitTime` field shows `N/A`, which would suggest it hadn't exited cleanly, but the thread count is 6 and session 0.
+
+2. **Name**: `SearchProtocol` — this is a truncated name (14-char EPROCESS limit). The full name is likely `SearchProtocolHost.exe`, a legitimate Windows Search indexer component. PPID 11968 would normally be `SearchIndexer.exe`.
+
+3. **No cmdline, no DLL, no malfind, no privileges, no network evidence** provided.
+
+4. **Orphaned parent**: PPID 11968 not in process list — consistent with SearchIndexer.exe having exited or been restarted.
+
+Assessment: The psscan-only appearance is the primary signal. For a process named `SearchProtocol` (likely `SearchProtocolHost.exe`), appearing only in psscan with no other corroborating evidence of malice (no malfind, no suspicious cmdline, no network) is most consistent with a terminated process whose EPROCESS structure remains in memory. The grep block is extremely thin. **REJECTED** — the psscan-only appearance for what is almost certainly a terminated `SearchProtocolHost.exe` instance, with zero corroborating malicious indicators across any other artefact type, does not meet the confirmation threshold.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: Two Agent 1 leads were evaluated. Neither produced confirmable evidence of active malicious activity. The most notable finding is TabTip.exe carrying a full SYSTEM-level privilege token, which is atypical for a UI binary but not definitively malicious given its canonical path and absence of injection markers, suspicious DLLs, or network activity. The SearchProtocol psscan-only hit is most consistent with a terminated legitimate Windows Search component and is rejected. Overall incident scope from these two leads is low; no confirmed malicious processes were identified.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      16824
+PPID:     1908
+Image:    TabTip.exe
+Cmdline:  - (unavailable)
+Severity: (none — INCONCLUSIVE)
+MITRE:
+
+Justification:
+  TabTip.exe resides at its canonical path (`\Program Files\Common Files\microsoft shared\ink\TabTip.exe`) and passes the masquerade check (False/False). The privilege set — SeTcbPrivilege, SeImpersonatePrivilege, SeAssignPrimaryTokenPrivilege, SeDebugPrivilege, SeAuditPrivilege all present or enabled — is consistent with a SYSTEM-context token rather than a user-context token, and TabTip.exe is known to run under SYSTEM in certain Windows 10 Input Method Manager configurations. The orphaned parent (PPID 1908 absent from pslist) is a weak signal that could reflect a service host that exited after spawning the process. No malfind hits, suspicious DLL paths, network connections, or registry persistence evidence were provided, so the privilege anomaly cannot be elevated to CONFIRMED without additional corroboration.
+
+Key Evidence:
+  - L49500: 16824	TabTip.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L49522: 16824	TabTip.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L49513: 16824	TabTip.exe	20	SeDebugPrivilege	Default	Debug programs
+  - L196: *** 16824	1908	TabTip.exe	0xb78d110dc080	0	-	1	False	2020-11-14 14:12:41.000000 UTC	2020-11-14 14:12:41.000000 UTC	\Device\HarddiskVolume3\Program Files\Common Files\microsoft shared\ink\TabTip.exe	-	-
+  - L1419: 16824	TabTip.exe	\Device\HarddiskVolume3\Program Files\Common Files\microsoft shared\ink\TabTip.exe	-	False	False
+----------------------------------------------------------------
+
+================================================================

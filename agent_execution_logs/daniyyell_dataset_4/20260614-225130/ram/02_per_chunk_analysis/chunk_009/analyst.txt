@@ -1,0 +1,52 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5216 — sihost.exe**
+
+Agent 1 reason: orphaned parent (PPID 1492 not in process list).
+
+Evidence assessment:
+- `sihost.exe` normally runs under `svchost.exe` (the User Manager service, PID varies). An orphaned PPID is common after a parent exits or after a memory snapshot — not inherently malicious.
+- DLL paths: `C:\Windows\system32\sihost.exe`, `ntdll.dll` and `KERNEL32.DLL` both from `C:\Windows\System32\` — all legitimate System32 paths.
+- Privileges: The list is very long (35 entries) but almost all are **not** marked `Present` or `Enabled`. Only `SeShutdownPrivilege (Present)`, `SeChangeNotifyPrivilege (Present,Enabled,Default)`, `SeUndockPrivilege (Present)`, `SeCreateGlobalPrivilege (Default)`, `SeIncreaseWorkingSetPrivilege (Present)`, `SeTimeZonePrivilege (Present)` are active. This is a normal user-session token for `sihost.exe` — the full list of 35 is just the complete privilege table with most disabled. `SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege` etc. are all **not** marked Present/Enabled — they are just listed as possible privileges in the token but not held.
+- No malfind hits, no suspicious DLLs, no network connections, no suspicious cmdline.
+- Orphaned PPID alone is weak — parent could have exited normally (e.g. `userinit.exe` exits after launching the shell).
+
+**Verdict: REJECTED** — Standard `sihost.exe` from System32, normal privilege set (most not enabled), all DLLs from System32. Orphaned PPID is expected behaviour when the parent process (e.g. `svchost.exe` hosting User Manager) has exited or is not captured in the snapshot. No corroborating malicious signals.
+
+---
+
+Now writing the report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-08-07T20:00:00Z
+Summary: Agent 1 submitted one finding for validation. PID 5216 (sihost.exe) was flagged solely on an orphaned parent PID. All available artefact evidence — binary path, loaded DLLs, and active privilege set — is consistent with a legitimate Windows Shell Infrastructure Host process. No corroborating malicious signals were found across any artefact type. Incident scope based on this submission is negligible.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were REJECTED. See rejection rationale below for audit purposes.
+
+----------------------------------------------------------------
+REJECTED (not included in body per format rules) — count: 1
+
+PID 5216 | sihost.exe | orphaned_parent
+  Reason for rejection: sihost.exe resolves to C:\Windows\system32\sihost.exe
+  (legitimate Shell Infrastructure Host). All loaded DLLs originate from
+  C:\Windows\System32\. Of the 35 privilege entries, only SeShutdownPrivilege,
+  SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege,
+  SeIncreaseWorkingSetPrivilege, and SeTimeZonePrivilege carry Present/Enabled
+  flags — a normal interactive-user token. High-risk privileges
+  (SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, etc.) are listed
+  in the token table but are NOT marked Present or Enabled. The orphaned PPID
+  is consistent with the parent process (typically the svchost.exe instance
+  hosting the User Manager service) having exited before the memory snapshot
+  was taken — a routine occurrence. No malfind hits, no suspicious DLLs, no
+  network connections, and no anomalous command-line arguments were present.
+  The single Agent 1 signal (orphaned PPID) is insufficient in isolation.
+----------------------------------------------------------------
+
+================================================================

@@ -1,0 +1,61 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:00:42Z
+
+=== PID 11392 (chrome.exe, ppid=28380) ===
+
+--- pslist.txt ---
+L1407: 11392	28380	chrome.exe	0xb78d09f99080	0	-	1	False	2020-11-14 13:52:47.000000 UTC	2020-11-14 14:16:01.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L1407: 11392	chrome.exe	-
+
+--- privileges.txt ---
+L49075: 11392	chrome.exe	2	SeCreateTokenPrivilege		Create a token object
+L49076: 11392	chrome.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L49077: 11392	chrome.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L49078: 11392	chrome.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L49079: 11392	chrome.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L49080: 11392	chrome.exe	7	SeTcbPrivilege		Act as part of the operating system
+L49081: 11392	chrome.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L49082: 11392	chrome.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L49083: 11392	chrome.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L49084: 11392	chrome.exe	11	SeSystemProfilePrivilege		Profile system performance
+L49085: 11392	chrome.exe	12	SeSystemtimePrivilege		Change the system time
+L49086: 11392	chrome.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L49087: 11392	chrome.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L49088: 11392	chrome.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L49089: 11392	chrome.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L49090: 11392	chrome.exe	17	SeBackupPrivilege		Backup files and directories
+L49091: 11392	chrome.exe	18	SeRestorePrivilege		Restore files and directories
+L49092: 11392	chrome.exe	19	SeShutdownPrivilege		Shut down the system
+L49093: 11392	chrome.exe	20	SeDebugPrivilege		Debug programs
+L49094: 11392	chrome.exe	21	SeAuditPrivilege		Generate security audits
+L49095: 11392	chrome.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L49096: 11392	chrome.exe	23	SeChangeNotifyPrivilege	Default	Receive notifications of changes to files or directories
+L49097: 11392	chrome.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L49098: 11392	chrome.exe	25	SeUndockPrivilege		Remove computer from docking station
+L49099: 11392	chrome.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L49100: 11392	chrome.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L49101: 11392	chrome.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L49102: 11392	chrome.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L49103: 11392	chrome.exe	30	SeCreateGlobalPrivilege		Create global objects
+L49104: 11392	chrome.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L49105: 11392	chrome.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L49106: 11392	chrome.exe	33	SeIncreaseWorkingSetPrivilege		Allocate more memory for user applications
+L49107: 11392	chrome.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L49108: 11392	chrome.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L49109: 11392	chrome.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L2182: 11392	28380	chrome.exe	0xb78d09f99080	0	-	1	False	2020-11-14 13:52:47.000000 UTC	2020-11-14 14:16:01.000000 UTC	\Device\HarddiskVolume3\Program Files\Google\Chrome\Application\chrome.exe	-	-
+
+--- psscan.txt ---
+L710: 11392	28380	chrome.exe	0xb78d09f99080	0	-	1	False	2020-11-14 13:52:47.000000 UTC	2020-11-14 14:16:01.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L1407: 11392	chrome.exe	\Device\HarddiskVolume3\Program Files\Google\Chrome\Application\chrome.exe	-	False	False
+
+--- sessions.txt ---
+L1421: 1	-	11392	chrome.exe	-	2020-11-14 13:52:47.000000 UTC
+
+=== END OF PIVOT REPORT ===

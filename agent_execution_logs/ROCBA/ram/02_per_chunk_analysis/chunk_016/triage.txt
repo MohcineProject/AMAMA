@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_016.txt
+Summary: Orphaned parent PIDs on all three processes; taskhostw.exe holds SeImpersonatePrivilege with unknown parent; GoogleCrashHandler processes hold high-risk privilege triad (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege) with orphaned parent.
+
+[PROCESS]
+pid: 8036
+ppid: 2936
+image: taskhostw.exe
+cmdline: taskhostw.exe
+severity: LOW
+reasons: orphaned_parent: PPID 2936 not present anywhere in the process list | privilege: SeImpersonatePrivilege enabled on a task-host process with unknown parent lineage
+
+[PROCESS]
+pid: 8156
+ppid: 6676
+image: GoogleCrashHandler.exe
+cmdline: "C:\Program Files (x86)\Google\Update\1.3.36.32\GoogleCrashHandler.exe"
+severity: MEDIUM
+reasons: orphaned_parent: PPID 6676 not present anywhere in the process list | privilege: holds high-risk triad SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege simultaneously | dll_anomaly: DLL list entry shows bare '-' (unresolved/missing module) alongside legitimate DLLs
+
+[PROCESS]
+pid: 8164
+ppid: 6676
+image: GoogleCrashHandler64.exe
+cmdline: "C:\Program Files (x86)\Google\Update\1.3.36.32\GoogleCrashHandler64.exe"
+severity: MEDIUM
+reasons: orphaned_parent: PPID 6676 not present anywhere in the process list (same unknown parent as PID 8156) | privilege: holds high-risk triad SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege simultaneously | sibling_correlation: shares orphaned PPID 6676 with PID 8156, both spawned at identical timestamp 2020-11-11 08:13:42 UTC
+

@@ -1,0 +1,47 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5244 — svchost.exe**
+
+Agent 1 flags: orphaned/unknown parent PID 716, cannot confirm services.exe parentage.
+
+Reasoning:
+- The cmdline is `C:\Windows\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc` — this is a completely legitimate Windows service host invocation. `CDPUserSvc` (Connected Devices Platform User Service) is a standard Windows 10/11 per-user service that runs under `UnistackSvcGroup`. This is textbook normal.
+- Parent PID 716 being "unknown" / not in pslist is a well-known Volatility artefact: per-user svchost instances under `UnistackSvcGroup` are often spawned by `svchost.exe -k netsvcs` or `services.exe` itself, and the parent may have exited or the EPROCESS may not be captured in the memory snapshot. This is extremely common for per-user service group hosts and is not inherently suspicious.
+- The privilege set is the full Windows default token privilege list — nearly all privileges are **not enabled** (no `Present` or `Enabled` flag). Only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeCreateGlobalPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are Present/Enabled/Default — this is the standard limited user-context token. No `SeDebugPrivilege` enabled, no `SeTcbPrivilege` enabled, no `SeImpersonatePrivilege` enabled. The full list appearing is just Volatility showing all privileges in the token structure regardless of state.
+- DLLs shown are from `C:\Windows\system32\` and `C:\Windows\SYSTEM32\` — entirely legitimate system paths.
+- No malfind hits, no netscan hits, no suspicious handles, no registry persistence evidence.
+- The orphaned parent signal is the sole basis for flagging, and it is a well-understood Volatility artefact for per-user service hosts.
+
+**Verdict: REJECTED** — standard per-user svchost invocation, legitimate cmdline, system-path DLLs, no enabled dangerous privileges, orphaned parent is a common Volatility artefact for this service class.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-08-07T20:00:00Z
+Summary: A single Agent 1 finding was submitted for validation. The flagged process is a standard Windows per-user service host (CDPUserSvc under UnistackSvcGroup) with a legitimate command line, system-path DLLs, and no enabled dangerous privileges. The orphaned-parent signal is a well-understood Volatility artefact for this service class and does not constitute evidence of malice. No confirmed or inconclusive findings were produced; the incident scope based on this submission is benign.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were REJECTED. Rejection summary:
+
+  PID 5244 (svchost.exe): Sole signal was an orphaned/unknown parent PID (716).
+  This is a well-documented Volatility artefact for per-user svchost instances
+  (UnistackSvcGroup / CDPUserSvc) whose parent process has exited or whose
+  EPROCESS was not captured in the snapshot. The command line is a standard
+  Windows 10/11 Connected Devices Platform User Service invocation from
+  C:\Windows\system32\. DLLs are loaded exclusively from System32. The
+  privilege token shows the full Windows default list but with only benign
+  privileges enabled (SeShutdownPrivilege, SeChangeNotifyPrivilege,
+  SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege,
+  SeTimeZonePrivilege — all normal for a user-context service). No malfind
+  hits, no network connections, no suspicious DLL paths, and no registry
+  persistence evidence were present in the extracted artefacts.
+
+================================================================

@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00.000000Z
+Chunk: chunk_001.txt
+Summary: AggregatorHost.exe holds high-risk privileges (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege) and loads an unrecognised DLL (UpdateReboot.dll) from System32; parent PID 2600 is absent from the process list.
+
+[PROCESS]
+pid: 1708
+ppid: 2600
+image: AggregatorHost.exe
+cmdline: AggregatorHost.exe
+severity: HIGH
+reasons: orphaned_process: parent PID 2600 is not present anywhere in the process list | suspicious_dll: C:\WINDOWS\SYSTEM32\UpdateReboot.dll is not a recognised Windows system DLL and does not appear in standard AggregatorHost load sets | privilege_anomaly: process holds SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege simultaneously — atypical for AggregatorHost.exe in normal operation
+

@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:35:00Z
+Chunk: chunk_021.txt
+Summary: Orphaned/unknown-parent svchost discovered only via psscan (possible process hiding); taskhostw holding SeImpersonatePrivilege with unknown parent; WidgetService with orphaned parent PID.
+
+[PROCESS]
+pid: 8060
+ppid: 888
+image: svchost.exe
+cmdline: 
+severity: HIGH
+reasons: discovered_via=psscan only: process not visible in pslist, indicating possible process hiding or DKOM manipulation | parent_unknown: PPID 888 not present in process list | short_lived: runtime ~2 minutes (18:28:35 to 18:30:41) with no visible commandline — suspicious ephemeral execution | missing_commandline: no command-line data recoverable, consistent with evasion
+
+[PROCESS]
+pid: 8048
+ppid: 1524
+image: taskhostw.exe
+cmdline: taskhostw.exe $(Arg0)
+severity: MEDIUM
+reasons: parent_unknown: PPID 1524 not present in process list | privilege_anomaly: SeImpersonatePrivilege enabled — high-risk privilege on a task host process | cmdline_anomaly: unexpanded placeholder argument '$(Arg0)' suggests abnormal or scripted invocation rather than standard scheduled-task launch
+
+[PROCESS]
+pid: 7800
+ppid: 576
+image: WidgetService.
+cmdline: "C:\Program Files\WindowsApps\Microsoft.WidgetsPlatformRuntime_1.6.14.0_x64__8wekyb3d8bbwe\WidgetService\WidgetService.exe" -RegisterProcessAsComServer -Embedding
+severity: LOW
+reasons: parent_unknown: PPID 576 not present in process list | eprocess_name_truncation: image name shown as 'WidgetService.' (14-char EPROCESS truncation) — path and cmdline confirm legitimate WidgetService.exe, but orphaned parent warrants confirmation
+

@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:30:00Z
+Chunk: chunk_023.txt
+Summary: MicrosoftEdgeUpdate.exe holds high-risk SYSTEM-level privileges (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege) and has an orphaned parent PID 888 not present in the process list.
+
+[PROCESS]
+pid: 8616
+ppid: 888
+image: MicrosoftEdgeUpdate.exe
+cmdline: "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /svc
+severity: MEDIUM
+reasons: orphaned_parent: PPID 888 (unknown) not present anywhere in the process list | privilege_anomaly: holds SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege — unusually powerful set for an update service process | dll_note: non-whitelisted entry includes the process image itself (C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe) loaded as a DLL entry — warrants verification that the binary on disk matches expected hash
+

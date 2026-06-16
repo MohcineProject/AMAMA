@@ -1,0 +1,439 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:59:32Z
+
+=== PID 9344 (RuntimeBroker., ppid=576) ===
+Cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- pslist.txt ---
+L147: 9344	576	RuntimeBroker.	0xcd8a0979e080	6	-	1	False	2026-05-12 18:25:52.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L147: 9344	RuntimeBroker.	C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- privileges.txt ---
+L4975: 9344	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+L4976: 9344	RuntimeBroker.	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4977: 9344	RuntimeBroker.	4	SeLockMemoryPrivilege		Lock pages in memory
+L4978: 9344	RuntimeBroker.	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4979: 9344	RuntimeBroker.	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4980: 9344	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+L4981: 9344	RuntimeBroker.	8	SeSecurityPrivilege		Manage auditing and security log
+L4982: 9344	RuntimeBroker.	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4983: 9344	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4984: 9344	RuntimeBroker.	11	SeSystemProfilePrivilege		Profile system performance
+L4985: 9344	RuntimeBroker.	12	SeSystemtimePrivilege		Change the system time
+L4986: 9344	RuntimeBroker.	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4987: 9344	RuntimeBroker.	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4988: 9344	RuntimeBroker.	15	SeCreatePagefilePrivilege		Create a pagefile
+L4989: 9344	RuntimeBroker.	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4990: 9344	RuntimeBroker.	17	SeBackupPrivilege		Backup files and directories
+L4991: 9344	RuntimeBroker.	18	SeRestorePrivilege		Restore files and directories
+L4992: 9344	RuntimeBroker.	19	SeShutdownPrivilege	Present	Shut down the system
+L4993: 9344	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+L4994: 9344	RuntimeBroker.	21	SeAuditPrivilege		Generate security audits
+L4995: 9344	RuntimeBroker.	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4996: 9344	RuntimeBroker.	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4997: 9344	RuntimeBroker.	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4998: 9344	RuntimeBroker.	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4999: 9344	RuntimeBroker.	26	SeSyncAgentPrivilege		Synch directory service data
+L5000: 9344	RuntimeBroker.	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5001: 9344	RuntimeBroker.	28	SeManageVolumePrivilege		Manage the files on a volume
+L5002: 9344	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L5003: 9344	RuntimeBroker.	30	SeCreateGlobalPrivilege	Default	Create global objects
+L5004: 9344	RuntimeBroker.	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5005: 9344	RuntimeBroker.	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5006: 9344	RuntimeBroker.	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L5007: 9344	RuntimeBroker.	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L5008: 9344	RuntimeBroker.	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L5009: 9344	RuntimeBroker.	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L7040: 9344	RuntimeBroker.	0x7ff751480000	0x1f000	RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L7041: 9344	RuntimeBroker.	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L7042: 9344	RuntimeBroker.	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L7043: 9344	RuntimeBroker.	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L7044: 9344	RuntimeBroker.	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7045: 9344	RuntimeBroker.	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7046: 9344	RuntimeBroker.	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7047: 9344	RuntimeBroker.	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L7048: 9344	RuntimeBroker.	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7049: 9344	RuntimeBroker.	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7050: 9344	RuntimeBroker.	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L7051: 9344	RuntimeBroker.	0x7fffe5880000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7052: 9344	RuntimeBroker.	0x7fffe5860000	0x14000	UMPDC.dll	C:\Windows\System32\UMPDC.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7053: 9344	RuntimeBroker.	0x7fffe7e80000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7054: 9344	RuntimeBroker.	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7055: 9344	RuntimeBroker.	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7056: 9344	RuntimeBroker.	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7057: 9344	RuntimeBroker.	0x7fffe6ec0000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7058: 9344	RuntimeBroker.	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L7059: 9344	RuntimeBroker.	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7060: 9344	RuntimeBroker.	0x7fffe5f20000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7061: 9344	RuntimeBroker.	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7062: 9344	RuntimeBroker.	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7063: 9344	RuntimeBroker.	0x7fffe34c0000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7064: 9344	RuntimeBroker.	0x7fffdde20000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7065: 9344	RuntimeBroker.	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7066: 9344	RuntimeBroker.	0x7fffe8120000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7067: 9344	RuntimeBroker.	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7068: 9344	RuntimeBroker.	0x7fffe5540000	0x57000	CFGMGR32.dll	C:\WINDOWS\System32\CFGMGR32.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7069: 9344	RuntimeBroker.	0x7fffe1040000	0x103000	propsys.dll	C:\WINDOWS\system32\propsys.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7070: 9344	RuntimeBroker.	0x7fffd70d0000	0xc0000	StructuredQuery.dll	C:\WINDOWS\System32\StructuredQuery.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7071: 9344	RuntimeBroker.	0x7fffd6e20000	0x29e000	icu.dll	C:\WINDOWS\System32\icu.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7072: 9344	RuntimeBroker.	0x7fffda0a0000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7073: 9344	RuntimeBroker.	0x7fffd9280000	0x177000	Windows.System.Launcher.dll	C:\Windows\System32\Windows.System.Launcher.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7074: 9344	RuntimeBroker.	0x7fffdbf00000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7075: 9344	RuntimeBroker.	0x7fffe5cf0000	0x16a000	WinTypes.dll	C:\WINDOWS\System32\WinTypes.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7076: 9344	RuntimeBroker.	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\Windows\System32\bcrypt.dll	-1	2026-05-12 18:25:56.000000 UTC	Disabled
+L7077: 9344	RuntimeBroker.	0x7fffda3a0000	0x47000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7078: 9344	RuntimeBroker.	0x7fffdbc80000	0x114000	mrmcorer.dll	C:\WINDOWS\SYSTEM32\mrmcorer.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7079: 9344	RuntimeBroker.	0x7fffd7500000	0x2c4000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7080: 9344	RuntimeBroker.	0x7fffe40b0000	0xd000	netutils.dll	C:\WINDOWS\SYSTEM32\netutils.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7081: 9344	RuntimeBroker.	0x7fffd74a0000	0x29000	srvcli.dll	C:\WINDOWS\SYSTEM32\srvcli.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7082: 9344	RuntimeBroker.	0x7fffe3180000	0x56000	mrmdeploy.dll	C:\WINDOWS\SYSTEM32\mrmdeploy.dll	6	2026-05-12 18:25:57.000000 UTC	Disabled
+L7083: 9344	RuntimeBroker.	0x7fffdb950000	0x34000	bcp47mrm.dll	C:\WINDOWS\SYSTEM32\bcp47mrm.dll	6	2026-05-12 18:25:57.000000 UTC	Disabled
+L7084: 9344	RuntimeBroker.	0x7fffdb9e0000	0x156000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2026-05-12 18:25:57.000000 UTC	Disabled
+L7085: 9344	RuntimeBroker.	0x7fffda1c0000	0x29000	edputil.dll	C:\WINDOWS\System32\edputil.dll	6	2026-05-12 18:25:57.000000 UTC	Disabled
+
+--- pstree.txt ---
+L20: *** 9344	576	RuntimeBroker.	0xcd8a0979e080	6	-	1	False	2026-05-12 18:25:52.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe -Embedding	C:\Windows\System32\RuntimeBroker.exe
+
+--- psscan.txt ---
+L12: 9344	576	RuntimeBroker.	0xcd8a0979e080	6	-	1	False	2026-05-12 18:25:52.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L7391: 9344	RuntimeBroker.	0x241ed450000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L7392: 9344	RuntimeBroker.	0x241ed6c0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L7393: 9344	RuntimeBroker.	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L7394: 9344	RuntimeBroker.	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L7395: 9344	RuntimeBroker.	0x7fffd9280000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L7396: 9344	RuntimeBroker.	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L7397: 9344	RuntimeBroker.	0x7ff751480000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L7398: 9344	RuntimeBroker.	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L7399: 9344	RuntimeBroker.	0x7fffd70d0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L7400: 9344	RuntimeBroker.	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L7401: 9344	RuntimeBroker.	0x7fffdbc80000	True	True	True	\Windows\System32\MrmCoreR.dll
+L7402: 9344	RuntimeBroker.	0x7fffda3a0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L7403: 9344	RuntimeBroker.	0x7fffda0a0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L7404: 9344	RuntimeBroker.	0x7fffda1c0000	True	True	True	\Windows\System32\edputil.dll
+L7405: 9344	RuntimeBroker.	0x7fffdb950000	True	True	True	\Windows\System32\BCP47mrm.dll
+L7406: 9344	RuntimeBroker.	0x7fffdb9e0000	True	True	True	\Windows\System32\Windows.UI.dll
+L7407: 9344	RuntimeBroker.	0x7fffdbf00000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L7408: 9344	RuntimeBroker.	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L7409: 9344	RuntimeBroker.	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L7410: 9344	RuntimeBroker.	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7411: 9344	RuntimeBroker.	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L7412: 9344	RuntimeBroker.	0x7fffe3180000	True	True	True	\Windows\System32\MrmDeploy.dll
+L7413: 9344	RuntimeBroker.	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L7414: 9344	RuntimeBroker.	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L7415: 9344	RuntimeBroker.	0x7fffe5540000	True	True	True	\Windows\System32\cfgmgr32.dll
+L7416: 9344	RuntimeBroker.	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L7417: 9344	RuntimeBroker.	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L7418: 9344	RuntimeBroker.	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7419: 9344	RuntimeBroker.	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L7420: 9344	RuntimeBroker.	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L7421: 9344	RuntimeBroker.	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L7422: 9344	RuntimeBroker.	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L7423: 9344	RuntimeBroker.	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L7424: 9344	RuntimeBroker.	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L7425: 9344	RuntimeBroker.	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L7426: 9344	RuntimeBroker.	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L7427: 9344	RuntimeBroker.	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L7428: 9344	RuntimeBroker.	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L7429: 9344	RuntimeBroker.	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L7430: 9344	RuntimeBroker.	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L7431: 9344	RuntimeBroker.	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L7432: 9344	RuntimeBroker.	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L7433: 9344	RuntimeBroker.	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L7434: 9344	RuntimeBroker.	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L7435: 9344	RuntimeBroker.	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L7436: 9344	RuntimeBroker.	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L7437: 9344	RuntimeBroker.	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L7438: 9344	RuntimeBroker.	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_ldrmodules.txt ---
+L7391: 9344	RuntimeBroker.	0x241ed450000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L7392: 9344	RuntimeBroker.	0x241ed6c0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L7393: 9344	RuntimeBroker.	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L7394: 9344	RuntimeBroker.	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L7395: 9344	RuntimeBroker.	0x7fffd9280000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L7396: 9344	RuntimeBroker.	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L7397: 9344	RuntimeBroker.	0x7ff751480000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L7398: 9344	RuntimeBroker.	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L7399: 9344	RuntimeBroker.	0x7fffd70d0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L7400: 9344	RuntimeBroker.	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L7401: 9344	RuntimeBroker.	0x7fffdbc80000	True	True	True	\Windows\System32\MrmCoreR.dll
+L7402: 9344	RuntimeBroker.	0x7fffda3a0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L7403: 9344	RuntimeBroker.	0x7fffda0a0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L7404: 9344	RuntimeBroker.	0x7fffda1c0000	True	True	True	\Windows\System32\edputil.dll
+L7405: 9344	RuntimeBroker.	0x7fffdb950000	True	True	True	\Windows\System32\BCP47mrm.dll
+L7406: 9344	RuntimeBroker.	0x7fffdb9e0000	True	True	True	\Windows\System32\Windows.UI.dll
+L7407: 9344	RuntimeBroker.	0x7fffdbf00000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L7408: 9344	RuntimeBroker.	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L7409: 9344	RuntimeBroker.	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L7410: 9344	RuntimeBroker.	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7411: 9344	RuntimeBroker.	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L7412: 9344	RuntimeBroker.	0x7fffe3180000	True	True	True	\Windows\System32\MrmDeploy.dll
+L7413: 9344	RuntimeBroker.	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L7414: 9344	RuntimeBroker.	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L7415: 9344	RuntimeBroker.	0x7fffe5540000	True	True	True	\Windows\System32\cfgmgr32.dll
+L7416: 9344	RuntimeBroker.	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L7417: 9344	RuntimeBroker.	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L7418: 9344	RuntimeBroker.	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7419: 9344	RuntimeBroker.	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L7420: 9344	RuntimeBroker.	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L7421: 9344	RuntimeBroker.	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L7422: 9344	RuntimeBroker.	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L7423: 9344	RuntimeBroker.	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L7424: 9344	RuntimeBroker.	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L7425: 9344	RuntimeBroker.	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L7426: 9344	RuntimeBroker.	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L7427: 9344	RuntimeBroker.	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L7428: 9344	RuntimeBroker.	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L7429: 9344	RuntimeBroker.	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L7430: 9344	RuntimeBroker.	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L7431: 9344	RuntimeBroker.	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L7432: 9344	RuntimeBroker.	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L7433: 9344	RuntimeBroker.	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L7434: 9344	RuntimeBroker.	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L7435: 9344	RuntimeBroker.	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L7436: 9344	RuntimeBroker.	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L7437: 9344	RuntimeBroker.	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L7438: 9344	RuntimeBroker.	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_pebmasquerade.txt ---
+L147: 9344	RuntimeBroker.	\Device\HarddiskVolume4\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	False	False
+
+--- sessions.txt ---
+L158: 1	-	9344	RuntimeBroker.	CLEANWINDOWS11/kali	2026-05-12 18:25:52.000000 UTC
+
+=== PID 10164 (RuntimeBroker., ppid=576) ===
+Cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- pslist.txt ---
+L152: 10164	576	RuntimeBroker.	0xcd8a14a99080	6	-	1	False	2026-05-12 18:26:27.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L152: 10164	RuntimeBroker.	C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- privileges.txt ---
+L5150: 10164	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+L5151: 10164	RuntimeBroker.	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L5152: 10164	RuntimeBroker.	4	SeLockMemoryPrivilege		Lock pages in memory
+L5153: 10164	RuntimeBroker.	5	SeIncreaseQuotaPrivilege		Increase quotas
+L5154: 10164	RuntimeBroker.	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5155: 10164	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+L5156: 10164	RuntimeBroker.	8	SeSecurityPrivilege		Manage auditing and security log
+L5157: 10164	RuntimeBroker.	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L5158: 10164	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+L5159: 10164	RuntimeBroker.	11	SeSystemProfilePrivilege		Profile system performance
+L5160: 10164	RuntimeBroker.	12	SeSystemtimePrivilege		Change the system time
+L5161: 10164	RuntimeBroker.	13	SeProfileSingleProcessPrivilege		Profile a single process
+L5162: 10164	RuntimeBroker.	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L5163: 10164	RuntimeBroker.	15	SeCreatePagefilePrivilege		Create a pagefile
+L5164: 10164	RuntimeBroker.	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L5165: 10164	RuntimeBroker.	17	SeBackupPrivilege		Backup files and directories
+L5166: 10164	RuntimeBroker.	18	SeRestorePrivilege		Restore files and directories
+L5167: 10164	RuntimeBroker.	19	SeShutdownPrivilege	Present	Shut down the system
+L5168: 10164	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+L5169: 10164	RuntimeBroker.	21	SeAuditPrivilege		Generate security audits
+L5170: 10164	RuntimeBroker.	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L5171: 10164	RuntimeBroker.	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5172: 10164	RuntimeBroker.	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L5173: 10164	RuntimeBroker.	25	SeUndockPrivilege	Present	Remove computer from docking station
+L5174: 10164	RuntimeBroker.	26	SeSyncAgentPrivilege		Synch directory service data
+L5175: 10164	RuntimeBroker.	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5176: 10164	RuntimeBroker.	28	SeManageVolumePrivilege		Manage the files on a volume
+L5177: 10164	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L5178: 10164	RuntimeBroker.	30	SeCreateGlobalPrivilege	Default	Create global objects
+L5179: 10164	RuntimeBroker.	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5180: 10164	RuntimeBroker.	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5181: 10164	RuntimeBroker.	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L5182: 10164	RuntimeBroker.	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L5183: 10164	RuntimeBroker.	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L5184: 10164	RuntimeBroker.	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L7257: 10164	RuntimeBroker.	0x7ff751480000	0x1f000	RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7258: 10164	RuntimeBroker.	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7259: 10164	RuntimeBroker.	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7260: 10164	RuntimeBroker.	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7261: 10164	RuntimeBroker.	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7262: 10164	RuntimeBroker.	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7263: 10164	RuntimeBroker.	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7264: 10164	RuntimeBroker.	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7265: 10164	RuntimeBroker.	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7266: 10164	RuntimeBroker.	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7267: 10164	RuntimeBroker.	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7268: 10164	RuntimeBroker.	0x7fffe5880000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7269: 10164	RuntimeBroker.	0x7fffe5860000	0x14000	UMPDC.dll	C:\Windows\System32\UMPDC.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7270: 10164	RuntimeBroker.	0x7fffe7e80000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7271: 10164	RuntimeBroker.	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7272: 10164	RuntimeBroker.	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7273: 10164	RuntimeBroker.	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7274: 10164	RuntimeBroker.	0x7fffe6ec0000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7275: 10164	RuntimeBroker.	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7276: 10164	RuntimeBroker.	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7277: 10164	RuntimeBroker.	0x7fffe5f20000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7278: 10164	RuntimeBroker.	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7279: 10164	RuntimeBroker.	0x7fffdde20000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7280: 10164	RuntimeBroker.	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7281: 10164	RuntimeBroker.	0x7fffe5cf0000	0x16a000	WinTypes.dll	C:\WINDOWS\System32\WinTypes.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7282: 10164	RuntimeBroker.	0x7fffd70d0000	0xc0000	StructuredQuery.dll	C:\WINDOWS\System32\StructuredQuery.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7283: 10164	RuntimeBroker.	0x7fffd6e20000	0x29e000	icu.dll	C:\WINDOWS\System32\icu.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7284: 10164	RuntimeBroker.	0x7fffe8190000	0xf7000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7285: 10164	RuntimeBroker.	0x7fffe5920000	0x29000	profapi.dll	C:\WINDOWS\System32\profapi.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7286: 10164	RuntimeBroker.	0x7fffe1040000	0x103000	propsys.dll	C:\WINDOWS\system32\propsys.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7287: 10164	RuntimeBroker.	0x7fffac7d0000	0x50000	MSWB7.dll	C:\WINDOWS\System32\MSWB7.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7288: 10164	RuntimeBroker.	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7289: 10164	RuntimeBroker.	0x7fffe8120000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7290: 10164	RuntimeBroker.	0x7fffe6f10000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7291: 10164	RuntimeBroker.	0x7fffd77d0000	0x1dd000	urlmon.dll	C:\WINDOWS\System32\urlmon.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7292: 10164	RuntimeBroker.	0x7fffd7500000	0x2c4000	iertutil.dll	C:\WINDOWS\System32\iertutil.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7293: 10164	RuntimeBroker.	0x7fffd74a0000	0x29000	srvcli.dll	C:\WINDOWS\System32\srvcli.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7294: 10164	RuntimeBroker.	0x7fffe40b0000	0xd000	netutils.dll	C:\WINDOWS\System32\netutils.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7295: 10164	RuntimeBroker.	0x7fffd51a0000	0x137000	Windows.Storage.Search.dll	C:\WINDOWS\system32\Windows.Storage.Search.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7296: 10164	RuntimeBroker.	0x7fffe8290000	0x7c000	coml2.dll	C:\WINDOWS\System32\coml2.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7297: 10164	RuntimeBroker.	0x7fffe3260000	0x9f000	apphelp.dll	C:\WINDOWS\SYSTEM32\apphelp.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7298: 10164	RuntimeBroker.	0x7fffd0b30000	0x293000	comctl32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7299: 10164	RuntimeBroker.	0x7fffe3310000	0xd000	Secur32.dll	C:\Windows\System32\Secur32.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7300: 10164	RuntimeBroker.	0x7fffe4a30000	0x49000	SSPICLI.DLL	C:\Windows\System32\SSPICLI.DLL	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7301: 10164	RuntimeBroker.	0x7fffa8070000	0x44000	MLANG.dll	C:\Windows\System32\MLANG.dll	6	2026-05-12 18:26:27.000000 UTC	Disabled
+L7302: 10164	RuntimeBroker.	0x7fffd2390000	0x288000	WININET.dll	C:\Windows\System32\WININET.dll	-1	2026-05-12 18:26:27.000000 UTC	Disabled
+L7303: 10164	RuntimeBroker.	0x7fffe34c0000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-12 18:26:28.000000 UTC	Disabled
+L7304: 10164	RuntimeBroker.	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\WINDOWS\system32\bcrypt.dll	-1	2026-05-12 18:26:28.000000 UTC	Disabled
+
+--- pstree.txt ---
+L35: *** 10164	576	RuntimeBroker.	0xcd8a14a99080	6	-	1	False	2026-05-12 18:26:27.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe -Embedding	C:\Windows\System32\RuntimeBroker.exe
+
+--- psscan.txt ---
+L185: 10164	576	RuntimeBroker.	0xcd8a14a99080	6	-	1	False	2026-05-12 18:26:27.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L7579: 10164	RuntimeBroker.	0x17feed10000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L7580: 10164	RuntimeBroker.	0x17feee80000	False	False	False	\Windows\System32\en-US\Windows.Storage.Search.dll.mui
+L7581: 10164	RuntimeBroker.	0x17ff1410000	False	False	False	\Windows\System32\prm0009.dll
+L7582: 10164	RuntimeBroker.	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L7583: 10164	RuntimeBroker.	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L7584: 10164	RuntimeBroker.	0x7fffd2390000	True	True	True	\Windows\System32\wininet.dll
+L7585: 10164	RuntimeBroker.	0x7fffac7d0000	True	True	True	\Windows\System32\MSWB7.dll
+L7586: 10164	RuntimeBroker.	0x7fffa8070000	True	True	True	\Windows\System32\mlang.dll
+L7587: 10164	RuntimeBroker.	0x7ff751480000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L7588: 10164	RuntimeBroker.	0x7fffd0b30000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll
+L7589: 10164	RuntimeBroker.	0x7fffd70d0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L7590: 10164	RuntimeBroker.	0x7fffd51a0000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L7591: 10164	RuntimeBroker.	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L7592: 10164	RuntimeBroker.	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L7593: 10164	RuntimeBroker.	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L7594: 10164	RuntimeBroker.	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L7595: 10164	RuntimeBroker.	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L7596: 10164	RuntimeBroker.	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L7597: 10164	RuntimeBroker.	0x7fffe3260000	True	True	True	\Windows\System32\apphelp.dll
+L7598: 10164	RuntimeBroker.	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L7599: 10164	RuntimeBroker.	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L7600: 10164	RuntimeBroker.	0x7fffe3310000	True	True	True	\Windows\System32\secur32.dll
+L7601: 10164	RuntimeBroker.	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L7602: 10164	RuntimeBroker.	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7603: 10164	RuntimeBroker.	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L7604: 10164	RuntimeBroker.	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L7605: 10164	RuntimeBroker.	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L7606: 10164	RuntimeBroker.	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L7607: 10164	RuntimeBroker.	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L7608: 10164	RuntimeBroker.	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7609: 10164	RuntimeBroker.	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L7610: 10164	RuntimeBroker.	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L7611: 10164	RuntimeBroker.	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L7612: 10164	RuntimeBroker.	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L7613: 10164	RuntimeBroker.	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L7614: 10164	RuntimeBroker.	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L7615: 10164	RuntimeBroker.	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L7616: 10164	RuntimeBroker.	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L7617: 10164	RuntimeBroker.	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L7618: 10164	RuntimeBroker.	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L7619: 10164	RuntimeBroker.	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L7620: 10164	RuntimeBroker.	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L7621: 10164	RuntimeBroker.	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L7622: 10164	RuntimeBroker.	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L7623: 10164	RuntimeBroker.	0x7fffe8290000	True	True	True	\Windows\System32\coml2.dll
+L7624: 10164	RuntimeBroker.	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L7625: 10164	RuntimeBroker.	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L7626: 10164	RuntimeBroker.	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L7627: 10164	RuntimeBroker.	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L7628: 10164	RuntimeBroker.	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L7629: 10164	RuntimeBroker.	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_ldrmodules.txt ---
+L7579: 10164	RuntimeBroker.	0x17feed10000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L7580: 10164	RuntimeBroker.	0x17feee80000	False	False	False	\Windows\System32\en-US\Windows.Storage.Search.dll.mui
+L7581: 10164	RuntimeBroker.	0x17ff1410000	False	False	False	\Windows\System32\prm0009.dll
+L7582: 10164	RuntimeBroker.	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L7583: 10164	RuntimeBroker.	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L7584: 10164	RuntimeBroker.	0x7fffd2390000	True	True	True	\Windows\System32\wininet.dll
+L7585: 10164	RuntimeBroker.	0x7fffac7d0000	True	True	True	\Windows\System32\MSWB7.dll
+L7586: 10164	RuntimeBroker.	0x7fffa8070000	True	True	True	\Windows\System32\mlang.dll
+L7587: 10164	RuntimeBroker.	0x7ff751480000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L7588: 10164	RuntimeBroker.	0x7fffd0b30000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll
+L7589: 10164	RuntimeBroker.	0x7fffd70d0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L7590: 10164	RuntimeBroker.	0x7fffd51a0000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L7591: 10164	RuntimeBroker.	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L7592: 10164	RuntimeBroker.	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L7593: 10164	RuntimeBroker.	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L7594: 10164	RuntimeBroker.	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L7595: 10164	RuntimeBroker.	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L7596: 10164	RuntimeBroker.	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L7597: 10164	RuntimeBroker.	0x7fffe3260000	True	True	True	\Windows\System32\apphelp.dll
+L7598: 10164	RuntimeBroker.	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L7599: 10164	RuntimeBroker.	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L7600: 10164	RuntimeBroker.	0x7fffe3310000	True	True	True	\Windows\System32\secur32.dll
+L7601: 10164	RuntimeBroker.	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L7602: 10164	RuntimeBroker.	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7603: 10164	RuntimeBroker.	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L7604: 10164	RuntimeBroker.	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L7605: 10164	RuntimeBroker.	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L7606: 10164	RuntimeBroker.	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L7607: 10164	RuntimeBroker.	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L7608: 10164	RuntimeBroker.	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7609: 10164	RuntimeBroker.	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L7610: 10164	RuntimeBroker.	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L7611: 10164	RuntimeBroker.	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L7612: 10164	RuntimeBroker.	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L7613: 10164	RuntimeBroker.	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L7614: 10164	RuntimeBroker.	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L7615: 10164	RuntimeBroker.	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L7616: 10164	RuntimeBroker.	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L7617: 10164	RuntimeBroker.	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L7618: 10164	RuntimeBroker.	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L7619: 10164	RuntimeBroker.	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L7620: 10164	RuntimeBroker.	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L7621: 10164	RuntimeBroker.	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L7622: 10164	RuntimeBroker.	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L7623: 10164	RuntimeBroker.	0x7fffe8290000	True	True	True	\Windows\System32\coml2.dll
+L7624: 10164	RuntimeBroker.	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L7625: 10164	RuntimeBroker.	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L7626: 10164	RuntimeBroker.	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L7627: 10164	RuntimeBroker.	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L7628: 10164	RuntimeBroker.	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L7629: 10164	RuntimeBroker.	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_pebmasquerade.txt ---
+L152: 10164	RuntimeBroker.	\Device\HarddiskVolume4\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	False	False
+
+--- sessions.txt ---
+L161: 1	-	10164	RuntimeBroker.	CLEANWINDOWS11/kali	2026-05-12 18:26:27.000000 UTC
+
+=== PID 9460 (dllhost.exe, ppid=576) ===
+
+--- psscan.txt ---
+L94: 9460	576	dllhost.exe	0xcd8a11ccf080	0	-	1	False	2026-05-12 18:31:05.000000 UTC	2026-05-12 18:31:10.000000 UTC	Disabled
+
+=== PID 9812 (backgroundTask, ppid=576) ===
+
+--- psscan.txt ---
+L178: 9812	576	backgroundTask	0xcd8a1402d080	0	-	1	False	2026-05-12 18:29:05.000000 UTC	2026-05-12 18:31:10.000000 UTC	Disabled
+
+=== PID 9960 (backgroundTask, ppid=576) ===
+
+--- psscan.txt ---
+L18: 9960	576	backgroundTask	0xcd8a0d998080	0	-	1	False	2026-05-12 18:25:43.000000 UTC	2026-05-12 18:30:43.000000 UTC	Disabled
+
+=== END OF PIVOT REPORT ===

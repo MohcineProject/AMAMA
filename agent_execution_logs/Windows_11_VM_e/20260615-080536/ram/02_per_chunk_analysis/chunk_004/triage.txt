@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_004.txt
+Summary: MpDefenderCoreService has an orphaned parent (PID 896 unknown) and holds SeDebugPrivilege; all other signals are consistent with a legitimate Defender component.
+
+[PROCESS]
+pid: 3144
+ppid: 896
+image: MpDefenderCore
+cmdline: "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\MpDefenderCoreService.exe"
+severity: LOW
+reasons: orphaned_parent: PPID 896 is listed as 'unknown' — parent process not present in the process list | privilege: SeDebugPrivilege enabled — expected for Defender but worth confirming token legitimacy given orphaned parent | path: binary resides under C:\ProgramData rather than C:\Program Files\Windows Defender — consistent with modern Defender platform updates but non-standard root location warrants confirmation
+

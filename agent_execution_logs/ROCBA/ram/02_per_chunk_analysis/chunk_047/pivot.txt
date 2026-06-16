@@ -1,0 +1,12 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:09:51Z
+
+=== PID 24920 (SearchFilterHo, ppid=11968) ===
+
+--- psscan.txt ---
+L2071: 24920	11968	SearchFilterHo	0xb78d1484b080	0	-	0	False	2020-11-16 02:29:42.000000 UTC	2020-11-16 02:31:52.000000 UTC	Disabled
+
+--- netscan.txt ---
+L164: 0xb78cffc5f4b0	TCPv4	192.168.1.5	61867	52.113.194.132	443	ESTABLISHED	24920	SearchFilterHo	2020-11-16 02:33:38.000000 UTC
+
+=== END OF PIVOT REPORT ===

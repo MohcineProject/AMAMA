@@ -1,0 +1,75 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 15840 — FileCoAuth.exe**
+
+**Agent 1 reasons:** orphaned_parent (PPID 740 not in process list) | path (AppData, non-whitelisted DLLs)
+
+**Reasoning:**
+
+1. **Orphaned parent:** PPID 740 is absent from pslist. However, FileCoAuth.exe is a legitimate Microsoft OneDrive co-authoring helper. It is launched via COM `-Embedding` (DCOM activation), which means its parent is typically `svchost.exe` hosting the COM infrastructure. The parent process may have already exited by the time the memory snapshot was taken — this is normal for COM-activated processes. The `-Embedding` flag is the canonical signal for this pattern.
+
+2. **Path:** The executable lives in `C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\`. OneDrive ships as a per-user install and legitimately lives in AppData. Version `20.169.0823.0008` is a real OneDrive build. The DLL list shown (ntdll.dll, wow64.dll from System32) is entirely clean; the "58 hits" are truncated to 3 but the visible ones are all from System32.
+
+3. **Privileges:** The privilege list is very long, but critically, almost none are `Present` or `Enabled` — only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeCreateGlobalPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are Present/Enabled/Default. This is the standard user-token privilege set. The long list of *not-enabled* privileges is just the full privilege enumeration — they are not held. `SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege` etc. are all blank (not Present, not Enabled).
+
+4. **No malfind, no suspicious cmdline, no network connections, no registry persistence evidence.**
+
+**Verdict: REJECTED** — Legitimate OneDrive COM helper. Orphaned parent is expected for `-Embedding` COM activation. Privileges are standard user-token (none of the dangerous ones are enabled). DLLs visible are from System32.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Only one process was submitted for validation. That process, FileCoAuth.exe (PID 15840), is a legitimate Microsoft OneDrive co-authoring helper launched via COM activation. All examined signals resolve to benign explanations. No confirmed or inconclusive malicious activity was identified in this submission.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTION NOTES (for Agent 3 audit trail)
+================================================================
+
+PID 15840 — FileCoAuth.exe — REJECTED
+
+Agent 1 flagged two signals: orphaned parent (PPID 740 absent from pslist) and
+execution from a user-writable AppData path. Both resolve to legitimate behaviour
+upon examination of the grep evidence.
+
+  Orphaned parent: FileCoAuth.exe was invoked with the "-Embedding" flag, which
+  is the standard Windows COM/DCOM activation argument. In this launch model the
+  COM surrogate or SCM host that activated the object may exit immediately after
+  handing off the process; the parent PID disappearing from pslist is therefore
+  expected and is not an indicator of process-hollowing or injection.
+
+  AppData path: OneDrive ships as a per-user installation and legitimately
+  resides under C:\Users\<user>\AppData\Local\Microsoft\OneDrive\<version>\.
+  Version 20.169.0823.0008 is a real OneDrive release. There is nothing
+  anomalous about the path.
+
+  DLL set: The three DLL entries visible in the truncated dlllist output
+  (FileCoAuth.exe itself, ntdll.dll, wow64.dll) all resolve to canonical
+  System32 paths. No user-writable-path DLLs are evidenced in the shown lines.
+
+  Privilege footprint: The privileges list is long but the "Present" / "Enabled"
+  column is populated only for the standard user-token privileges:
+  SeShutdownPrivilege (Present), SeChangeNotifyPrivilege (Present/Enabled/
+  Default), SeUndockPrivilege (Present), SeCreateGlobalPrivilege (Default),
+  SeIncreaseWorkingSetPrivilege (Present), SeTimeZonePrivilege (Present).
+  The high-value privileges Agent 1 might have been concerned about —
+  SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege,
+  SeLoadDriverPrivilege — are listed but carry no Present/Enabled flag,
+  meaning they are not held by this token. This is the normal full-privilege-
+  enumeration output for a standard user process; it does not indicate
+  privilege escalation.
+
+  No malfind sections, no network connections, no registry persistence
+  artefacts, and no suspicious command-line arguments were present in the
+  evidence block.
+
+================================================================

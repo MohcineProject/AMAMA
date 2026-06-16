@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_031.txt
+Summary: chrome.exe with orphaned parent (PPID 28380 not present in process list).
+
+[PROCESS]
+pid: 11392
+ppid: 28380
+image: chrome.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 28380 (unknown) not present anywhere in the process list
+

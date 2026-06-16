@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:35:00Z
+Chunk: chunk_004.txt
+Summary: Orphaned backgroundTask process with unknown parent discovered only via psscan; svchost.exe with unknown/unresolved parent PID 888 instead of expected services.exe.
+
+[PROCESS]
+pid: 3340
+ppid: 576
+image: backgroundTask
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_process: parent PID 576 not present in process list (discovered_via=psscan only — may indicate hidden/unlinked process) | psscan_only: process visible in psscan but not pslist, suggesting possible DKOM manipulation or process already exited and unlinked | short_lived: process ran ~6 minutes (18:24:29–18:30:57) with no visible command line or path — suspicious in combination with orphaned parent | missing_path_and_cmdline: no image path or command line recorded for this process
+
+[PROCESS]
+pid: 3840
+ppid: 888
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc
+severity: LOW
+reasons: parent_mismatch: svchost.exe parent is PID 888 (unknown/unresolved) — expected parent is services.exe | non_whitelisted_dlls: DLL list includes svchost.exe itself listed as a loaded module entry, which is anomalous formatting and may indicate tampered module list
+

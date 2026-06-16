@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_026.txt
+Summary: Orphaned parent PID for SettingSyncHost.exe; all other signals appear benign.
+
+[PROCESS]
+pid: 9708
+ppid: 740
+image: SettingSyncHost.exe
+cmdline: C:\WINDOWS\system32\SettingSyncHost.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 740 does not appear anywhere in the process list (parent name listed as 'unknown')
+

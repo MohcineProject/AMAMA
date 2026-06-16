@@ -1,0 +1,65 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 3860 — svchost.exe (ppid=888)**
+
+Agent 1 flags: orphaned parent (PPID 888 not in process list), parent mismatch (should be services.exe).
+
+**Reasoning:**
+
+1. **Orphaned parent signal**: PPID 888 is not visible in the process list. However, this is a well-known benign artefact on Windows — `svchost.exe -k UnistackSvcGroup -s WpnUserService` is a per-user service group instance. Per-user svchost instances are spawned by `svchost.exe -k netsvcs` or by the service host infrastructure, and the parent process may have already exited by the time the memory snapshot was taken. The PPID being absent from pslist is not unusual for this service class.
+
+2. **Command line**: `C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService` — this is a completely standard invocation. `WpnUserService` (Windows Push Notifications User Service) is a legitimate per-user service that runs under `UnistackSvcGroup`. The binary path is `C:\WINDOWS\system32\svchost.exe` — canonical location.
+
+3. **DLLs**: The three shown DLLs (`svchost.exe`, `ntdll.dll`, `KERNEL32.DLL`) are all from `C:\WINDOWS\SYSTEM32` — no user-writable paths, no suspicious DLLs.
+
+4. **Privileges**: The privilege list is the full standard token privilege set — none are shown as `Present,Enabled` except `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present), `SeCreateGlobalPrivilege` (Default). The dangerous privileges (`SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege`, `SeLoadDriverPrivilege`) are listed but **not** marked Present or Enabled — they are simply in the token's defined set but not active. This is normal for a standard svchost token.
+
+5. **No malfind, no netscan, no registry persistence, no suspicious handles** — no corroborating evidence of malice.
+
+**Verdict: REJECTED** — Standard per-user svchost invocation with canonical path, normal DLL set from System32, and no dangerous privileges enabled. Orphaned PPID is a benign artefact of parent process exit before snapshot.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: Only one finding was submitted for validation. PID 3860 (svchost.exe -k UnistackSvcGroup -s WpnUserService) presents a standard per-user Windows Push Notification service instance with a canonical binary path, clean DLL set, and no dangerous privileges enabled. The orphaned-parent signal is a well-known benign artefact caused by the parent process exiting before the memory snapshot was acquired. No malicious activity is supported by the available evidence.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were REJECTED. See rejection rationale below.
+
+----------------------------------------------------------------
+REJECTED (not shown in body per format rules) — count: 1
+
+PID 3860 | svchost.exe | ppid=888
+  Reason for rejection: The command line "C:\WINDOWS\system32\svchost.exe -k
+  UnistackSvcGroup -s WpnUserService" is a standard per-user service host
+  invocation for the Windows Push Notifications User Service (WpnUserService),
+  a legitimate Windows component. The binary resides in the canonical
+  System32 path. All three DLLs visible in the dlllist slice load exclusively
+  from C:\WINDOWS\SYSTEM32 — no user-writable paths. The privilege token
+  contains the full standard defined-privilege set, but the only privileges
+  marked Present or Enabled are routine low-risk entries (SeShutdownPrivilege,
+  SeChangeNotifyPrivilege, SeUndockPrivilege, SeIncreaseWorkingSetPrivilege,
+  SeTimeZonePrivilege, SeCreateGlobalPrivilege); high-risk privileges such as
+  SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, and
+  SeLoadDriverPrivilege are listed in the token definition but carry no
+  Present/Enabled flag, which is normal. The orphaned PPID (888 absent from
+  pslist) is a well-documented benign artefact: per-user svchost instances
+  are launched by the service control infrastructure, and the spawning parent
+  process routinely exits before a memory snapshot is acquired, leaving the
+  PPID unresolvable. No malfind sections, network connections, registry
+  persistence entries, or suspicious handles were present in the evidence
+  block. Agent 1's two signals (orphaned_parent, parent_mismatch) are fully
+  explained by this benign artefact pattern; no corroborating evidence of
+  malice exists.
+----------------------------------------------------------------
+
+================================================================

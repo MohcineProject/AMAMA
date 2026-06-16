@@ -1,0 +1,526 @@
+{
+  "case_id": "Windows_11_c",
+  "entity_count": 43,
+  "modules_scanned": [
+    "ram",
+    "ti"
+  ],
+  "termination_reason": "convergence",
+  "rounds": [],
+  "host_profile": {},
+  "nodes": {
+    "pid:1188": {
+      "type": "pid",
+      "value": "1188",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:AggregatorHost.exe": {
+      "type": "image_name",
+      "value": "AggregatorHost.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:3148": {
+      "type": "pid",
+      "value": "3148",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\WINDOWS\\System32\\AggregatorHost.exe": {
+      "type": "file_path",
+      "value": "C:\\WINDOWS\\System32\\AggregatorHost.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:3088": {
+      "type": "pid",
+      "value": "3088",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:svchost.exe": {
+      "type": "image_name",
+      "value": "svchost.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:888": {
+      "type": "pid",
+      "value": "888",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:3340": {
+      "type": "pid",
+      "value": "3340",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:backgroundTask  (likely truncated: BackgroundTaskHost.exe \u2014 14-char EPROCESS field)": {
+      "type": "image_name",
+      "value": "backgroundTask  (likely truncated: BackgroundTaskHost.exe \u2014 14-char EPROCESS field)",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:576": {
+      "type": "pid",
+      "value": "576",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:4040": {
+      "type": "pid",
+      "value": "4040",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:MicrosoftEdgeUpdate.exe": {
+      "type": "image_name",
+      "value": "MicrosoftEdgeUpdate.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:1524": {
+      "type": "pid",
+      "value": "1524",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\Program": {
+      "type": "file_path",
+      "value": "C:\\Program",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:8256": {
+      "type": "pid",
+      "value": "8256",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "pid:5348": {
+      "type": "pid",
+      "value": "5348",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "pid:8112": {
+      "type": "pid",
+      "value": "8112",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "image_name:olk.exe": {
+      "type": "image_name",
+      "value": "olk.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:5556": {
+      "type": "pid",
+      "value": "5556",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:6516": {
+      "type": "pid",
+      "value": "6516",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:SecurityHealthService.exe": {
+      "type": "image_name",
+      "value": "SecurityHealthService.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\WINDOWS\\system32\\SecurityHealthService.exe": {
+      "type": "file_path",
+      "value": "C:\\WINDOWS\\system32\\SecurityHealthService.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\WINDOWS\\SYSTEM32\\ntdll.dll": {
+      "type": "file_path",
+      "value": "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:7352": {
+      "type": "pid",
+      "value": "7352",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:taskhostw.exe": {
+      "type": "image_name",
+      "value": "taskhostw.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\WINDOWS\\system32\\taskhostw.exe": {
+      "type": "file_path",
+      "value": "C:\\WINDOWS\\system32\\taskhostw.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:8060": {
+      "type": "pid",
+      "value": "8060",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "CONFIRMED",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    "pid:8048": {
+      "type": "pid",
+      "value": "8048",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "pid:8616": {
+      "type": "pid",
+      "value": "8616",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "pid:888 (not present in pslist)": {
+      "type": "pid",
+      "value": "888 (not present in pslist)",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\WINDOWS\\System32\\wow64.dll": {
+      "type": "file_path",
+      "value": "C:\\WINDOWS\\System32\\wow64.dll",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:9044": {
+      "type": "pid",
+      "value": "9044",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:backgroundTask  (truncated; full name likely backgroundTaskHost.exe)": {
+      "type": "image_name",
+      "value": "backgroundTask  (truncated; full name likely backgroundTaskHost.exe)",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:9168": {
+      "type": "pid",
+      "value": "9168",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:RuntimeBroker.  (truncated; full name is RuntimeBroker.exe \u2014 14-char EPROCESS truncation is correct)": {
+      "type": "image_name",
+      "value": "RuntimeBroker.  (truncated; full name is RuntimeBroker.exe \u2014 14-char EPROCESS truncation is correct)",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:9460": {
+      "type": "pid",
+      "value": "9460",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:dllhost.exe": {
+      "type": "image_name",
+      "value": "dllhost.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:9812": {
+      "type": "pid",
+      "value": "9812",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:backgroundTask (14-char EPROCESS truncation)": {
+      "type": "image_name",
+      "value": "backgroundTask (14-char EPROCESS truncation)",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:11040": {
+      "type": "pid",
+      "value": "11040",
+      "first_seen_module": "ram",
+      "queried_modules": [
+        "ram"
+      ],
+      "finding_count": 1,
+      "verdicts_received": [
+        {
+          "module": "ram",
+          "verdict": "INCONCLUSIVE",
+          "severity": null
+        }
+      ]
+    },
+    "image_name:WMIADAP.exe": {
+      "type": "image_name",
+      "value": "WMIADAP.exe",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "pid:3260": {
+      "type": "pid",
+      "value": "3260",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    },
+    "file_path:C:\\WINDOWS\\system32\\wbem\\WMIADAP.EXE": {
+      "type": "file_path",
+      "value": "C:\\WINDOWS\\system32\\wbem\\WMIADAP.EXE",
+      "first_seen_module": "ram",
+      "queried_modules": [],
+      "finding_count": 0,
+      "verdicts_received": []
+    }
+  },
+  "provenance": {
+    "generated_at": "2026-06-15T09:02:23Z",
+    "orchestrator": {
+      "model": "claude-haiku-4-5-20251001",
+      "prompt_sha256": "sha256:9cc0e62478a850ec4faa4bd855204679d9efaa46f8febfa4f40c51bca8b63280"
+    },
+    "report": {
+      "model": "claude-sonnet-4-6",
+      "prompt_sha256": "sha256:b14eb57fafd4a10b6927c7da1c2e73fd6c6569439dfb0d35a2a1531b73f70048"
+    }
+  },
+  "cost": {
+    "modules": {
+      "llm_calls": 0,
+      "tokens_in": 0,
+      "tokens_out": 0
+    },
+    "orchestrator": {
+      "llm_calls": 1,
+      "tokens_in": 1514,
+      "tokens_out": 9
+    },
+    "report": {
+      "llm_calls": 1,
+      "tokens_in": 15308,
+      "tokens_out": 4335
+    },
+    "total": {
+      "llm_calls": 2,
+      "tokens_in": 16822,
+      "tokens_out": 4344
+    }
+  }
+}

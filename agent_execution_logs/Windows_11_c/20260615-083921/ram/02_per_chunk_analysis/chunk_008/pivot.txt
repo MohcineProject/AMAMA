@@ -1,0 +1,225 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:49:42Z
+
+=== PID 4936 (TiWorker.exe, ppid=576) ===
+Cmdline: C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe -Embedding
+
+--- pslist.txt ---
+L169: 4936	576	TiWorker.exe	0xcd8a12562080	4	-	0	False	2026-05-12 18:29:09.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L169: 4936	TiWorker.exe	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe -Embedding
+
+--- privileges.txt ---
+L5745: 4936	TiWorker.exe	2	SeCreateTokenPrivilege		Create a token object
+L5746: 4936	TiWorker.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L5747: 4936	TiWorker.exe	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L5748: 4936	TiWorker.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L5749: 4936	TiWorker.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5750: 4936	TiWorker.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L5751: 4936	TiWorker.exe	8	SeSecurityPrivilege	Present,Enabled	Manage auditing and security log
+L5752: 4936	TiWorker.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L5753: 4936	TiWorker.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L5754: 4936	TiWorker.exe	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L5755: 4936	TiWorker.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L5756: 4936	TiWorker.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L5757: 4936	TiWorker.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L5758: 4936	TiWorker.exe	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L5759: 4936	TiWorker.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L5760: 4936	TiWorker.exe	17	SeBackupPrivilege	Present,Enabled	Backup files and directories
+L5761: 4936	TiWorker.exe	18	SeRestorePrivilege	Present,Enabled	Restore files and directories
+L5762: 4936	TiWorker.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L5763: 4936	TiWorker.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L5764: 4936	TiWorker.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L5765: 4936	TiWorker.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L5766: 4936	TiWorker.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5767: 4936	TiWorker.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L5768: 4936	TiWorker.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L5769: 4936	TiWorker.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L5770: 4936	TiWorker.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5771: 4936	TiWorker.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L5772: 4936	TiWorker.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L5773: 4936	TiWorker.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L5774: 4936	TiWorker.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5775: 4936	TiWorker.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5776: 4936	TiWorker.exe	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L5777: 4936	TiWorker.exe	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L5778: 4936	TiWorker.exe	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L5779: 4936	TiWorker.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L8032: 4936	TiWorker.exe	0x7ff769620000	0x56000	TiWorker.exe	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe	-1	2026-05-12 18:29:09.000000 UTC	Disabled
+L8033: 4936	TiWorker.exe	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:29:09.000000 UTC	Disabled
+L8034: 4936	TiWorker.exe	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:29:09.000000 UTC	Disabled
+L8035: 4936	TiWorker.exe	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:29:09.000000 UTC	Disabled
+L8036: 4936	TiWorker.exe	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8037: 4936	TiWorker.exe	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8038: 4936	TiWorker.exe	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8039: 4936	TiWorker.exe	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8040: 4936	TiWorker.exe	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8041: 4936	TiWorker.exe	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8042: 4936	TiWorker.exe	0x7fff9d8e0000	0x44000	wdscore.dll	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\wdscore.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8043: 4936	TiWorker.exe	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8044: 4936	TiWorker.exe	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8045: 4936	TiWorker.exe	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8046: 4936	TiWorker.exe	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:29:09.000000 UTC	Disabled
+L8047: 4936	TiWorker.exe	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8048: 4936	TiWorker.exe	0x7fffce200000	0x13000	CbsApi.dll	C:\WINDOWS\servicing\CbsApi.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8049: 4936	TiWorker.exe	0x7fff9b500000	0x350000	cbscore.dll	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\cbscore.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8050: 4936	TiWorker.exe	0x7fffe5b70000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8051: 4936	TiWorker.exe	0x7fffe48b0000	0x36000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8052: 4936	TiWorker.exe	0x7fffe4fe0000	0x1b000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8053: 4936	TiWorker.exe	0x7fffe5ab0000	0x81000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8054: 4936	TiWorker.exe	0x7fffe4db0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8055: 4936	TiWorker.exe	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-12 18:29:09.000000 UTC	Disabled
+L8056: 4936	TiWorker.exe	0x7fffe5050000	0x13000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8057: 4936	TiWorker.exe	0x7fff9cfa0000	0x10e000	dpx.dll	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\dpx.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8058: 4936	TiWorker.exe	0x7fff9b0a0000	0x451000	wcp.dll	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\wcp.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8059: 4936	TiWorker.exe	0x7fff9d810000	0x69000	DrUpdate.dll	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\DrUpdate.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8060: 4936	TiWorker.exe	0x7fffe5540000	0x57000	cfgmgr32.dll	C:\WINDOWS\SYSTEM32\cfgmgr32.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8061: 4936	TiWorker.exe	0x7fffd2070000	0x18000	SrClient.dll	C:\WINDOWS\SYSTEM32\SrClient.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8062: 4936	TiWorker.exe	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8063: 4936	TiWorker.exe	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8064: 4936	TiWorker.exe	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8065: 4936	TiWorker.exe	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8066: 4936	TiWorker.exe	0x7fffa6720000	0x48000	SPP.dll	C:\WINDOWS\SYSTEM32\SPP.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8067: 4936	TiWorker.exe	0x7fffe7e80000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8068: 4936	TiWorker.exe	0x7fffddb50000	0x184000	VSSAPI.DLL	C:\WINDOWS\SYSTEM32\VSSAPI.DLL	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8069: 4936	TiWorker.exe	0x7fffe5880000	0x5e000	POWRPROF.dll	C:\WINDOWS\SYSTEM32\POWRPROF.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8070: 4936	TiWorker.exe	0x7fffdda60000	0x19000	VssTrace.DLL	C:\WINDOWS\SYSTEM32\VssTrace.DLL	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8071: 4936	TiWorker.exe	0x7fffe5860000	0x14000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8072: 4936	TiWorker.exe	0x7fff9ae70000	0x22d000	TurboStack.dll	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TurboStack.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8073: 4936	TiWorker.exe	0x7fffe8120000	0x67000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8074: 4936	TiWorker.exe	0x7fffe5f20000	0x864000	Windows.Storage.dll	C:\WINDOWS\System32\Windows.Storage.dll	6	2026-05-12 18:29:09.000000 UTC	Disabled
+L8075: 4936	TiWorker.exe	0x7fff9c030000	0xed000	turbocontainer.dll	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\turbocontainer.dll	6	2026-05-12 18:29:10.000000 UTC	Disabled
+L8076: 4936	TiWorker.exe	0x7fffd5d50000	0xc000	FLTLIB.DLL	C:\WINDOWS\SYSTEM32\FLTLIB.DLL	6	2026-05-12 18:29:10.000000 UTC	Disabled
+L8077: 4936	TiWorker.exe	0x7fffd9600000	0x2a000	Cabinet.dll	C:\WINDOWS\SYSTEM32\Cabinet.dll	6	2026-05-12 18:29:10.000000 UTC	Disabled
+L8078: 4936	TiWorker.exe	0x7fffd3d80000	0x81000	wosc.dll	C:\Windows\System32\wosc.dll	6	2026-05-12 18:29:10.000000 UTC	Disabled
+L8079: 4936	TiWorker.exe	0x7fffd5040000	0x9c000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2026-05-12 18:29:10.000000 UTC	Disabled
+L8080: 4936	TiWorker.exe	0x7fffe5cf0000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-12 18:29:10.000000 UTC	Disabled
+L8081: 4936	TiWorker.exe	0x7fffe1550000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-12 18:29:10.000000 UTC	Disabled
+L8082: 4936	TiWorker.exe	0x7fffc1b50000	0x97000	UpdateCompression.dll	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\UpdateCompression.dll	6	2026-05-12 18:29:14.000000 UTC	Disabled
+
+--- pstree.txt ---
+L24: *** 4936	576	TiWorker.exe	0xcd8a12562080	4	-	0	False	2026-05-12 18:29:09.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe -Embedding	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe
+
+--- psscan.txt ---
+L132: 4936	576	TiWorker.exe	0xcd8a12562080	4	-	0	False	2026-05-12 18:29:09.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L8377: 4936	TiWorker.exe	0x1d261520000	False	False	False	\Windows\servicing\CbsMsg.dll
+L8378: 4936	TiWorker.exe	0x1d261d60000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L8379: 4936	TiWorker.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L8380: 4936	TiWorker.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L8381: 4936	TiWorker.exe	0x7fff9d8e0000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\wdscore.dll
+L8382: 4936	TiWorker.exe	0x7fff9b500000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\CbsCore.dll
+L8383: 4936	TiWorker.exe	0x7fff9ae70000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\turbostack.dll
+L8384: 4936	TiWorker.exe	0x7ff769620000	True	False	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe
+L8385: 4936	TiWorker.exe	0x7fff9b0a0000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\wcp.dll
+L8386: 4936	TiWorker.exe	0x7fff9cfa0000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\dpx.dll
+L8387: 4936	TiWorker.exe	0x7fff9c030000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\turbocontainer.dll
+L8388: 4936	TiWorker.exe	0x7fff9d810000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\drupdate.dll
+L8389: 4936	TiWorker.exe	0x7fffd5d50000	True	True	True	\Windows\System32\fltLib.dll
+L8390: 4936	TiWorker.exe	0x7fffd2070000	True	True	True	\Windows\System32\srclient.dll
+L8391: 4936	TiWorker.exe	0x7fffc1b50000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\UpdateCompression.dll
+L8392: 4936	TiWorker.exe	0x7fffa6720000	True	True	True	\Windows\System32\spp.dll
+L8393: 4936	TiWorker.exe	0x7fffce200000	True	True	True	\Windows\servicing\CbsApi.dll
+L8394: 4936	TiWorker.exe	0x7fffd3d80000	True	True	True	\Windows\System32\wosc.dll
+L8395: 4936	TiWorker.exe	0x7fffd5040000	True	True	True	\Windows\System32\Windows.Web.dll
+L8396: 4936	TiWorker.exe	0x7fffdda60000	True	True	True	\Windows\System32\vsstrace.dll
+L8397: 4936	TiWorker.exe	0x7fffd9600000	True	True	True	\Windows\System32\cabinet.dll
+L8398: 4936	TiWorker.exe	0x7fffddb50000	True	True	True	\Windows\System32\vssapi.dll
+L8399: 4936	TiWorker.exe	0x7fffe1550000	True	True	True	\Windows\System32\policymanager.dll
+L8400: 4936	TiWorker.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L8401: 4936	TiWorker.exe	0x7fffe5050000	True	True	True	\Windows\System32\msasn1.dll
+L8402: 4936	TiWorker.exe	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L8403: 4936	TiWorker.exe	0x7fffe48b0000	True	True	True	\Windows\System32\ntmarta.dll
+L8404: 4936	TiWorker.exe	0x7fffe4fe0000	True	True	True	\Windows\System32\cryptsp.dll
+L8405: 4936	TiWorker.exe	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L8406: 4936	TiWorker.exe	0x7fffe5540000	True	True	True	\Windows\System32\cfgmgr32.dll
+L8407: 4936	TiWorker.exe	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L8408: 4936	TiWorker.exe	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L8409: 4936	TiWorker.exe	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L8410: 4936	TiWorker.exe	0x7fffe5ab0000	True	True	True	\Windows\System32\wintrust.dll
+L8411: 4936	TiWorker.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L8412: 4936	TiWorker.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L8413: 4936	TiWorker.exe	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L8414: 4936	TiWorker.exe	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L8415: 4936	TiWorker.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L8416: 4936	TiWorker.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L8417: 4936	TiWorker.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L8418: 4936	TiWorker.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L8419: 4936	TiWorker.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L8420: 4936	TiWorker.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L8421: 4936	TiWorker.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L8422: 4936	TiWorker.exe	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L8423: 4936	TiWorker.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L8424: 4936	TiWorker.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L8425: 4936	TiWorker.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L8426: 4936	TiWorker.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L8427: 4936	TiWorker.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L8428: 4936	TiWorker.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L8429: 4936	TiWorker.exe	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_ldrmodules.txt ---
+L8377: 4936	TiWorker.exe	0x1d261520000	False	False	False	\Windows\servicing\CbsMsg.dll
+L8378: 4936	TiWorker.exe	0x1d261d60000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L8379: 4936	TiWorker.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L8380: 4936	TiWorker.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L8381: 4936	TiWorker.exe	0x7fff9d8e0000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\wdscore.dll
+L8382: 4936	TiWorker.exe	0x7fff9b500000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\CbsCore.dll
+L8383: 4936	TiWorker.exe	0x7fff9ae70000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\turbostack.dll
+L8384: 4936	TiWorker.exe	0x7ff769620000	True	False	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe
+L8385: 4936	TiWorker.exe	0x7fff9b0a0000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\wcp.dll
+L8386: 4936	TiWorker.exe	0x7fff9cfa0000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\dpx.dll
+L8387: 4936	TiWorker.exe	0x7fff9c030000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\turbocontainer.dll
+L8388: 4936	TiWorker.exe	0x7fff9d810000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\drupdate.dll
+L8389: 4936	TiWorker.exe	0x7fffd5d50000	True	True	True	\Windows\System32\fltLib.dll
+L8390: 4936	TiWorker.exe	0x7fffd2070000	True	True	True	\Windows\System32\srclient.dll
+L8391: 4936	TiWorker.exe	0x7fffc1b50000	True	True	True	\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\UpdateCompression.dll
+L8392: 4936	TiWorker.exe	0x7fffa6720000	True	True	True	\Windows\System32\spp.dll
+L8393: 4936	TiWorker.exe	0x7fffce200000	True	True	True	\Windows\servicing\CbsApi.dll
+L8394: 4936	TiWorker.exe	0x7fffd3d80000	True	True	True	\Windows\System32\wosc.dll
+L8395: 4936	TiWorker.exe	0x7fffd5040000	True	True	True	\Windows\System32\Windows.Web.dll
+L8396: 4936	TiWorker.exe	0x7fffdda60000	True	True	True	\Windows\System32\vsstrace.dll
+L8397: 4936	TiWorker.exe	0x7fffd9600000	True	True	True	\Windows\System32\cabinet.dll
+L8398: 4936	TiWorker.exe	0x7fffddb50000	True	True	True	\Windows\System32\vssapi.dll
+L8399: 4936	TiWorker.exe	0x7fffe1550000	True	True	True	\Windows\System32\policymanager.dll
+L8400: 4936	TiWorker.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L8401: 4936	TiWorker.exe	0x7fffe5050000	True	True	True	\Windows\System32\msasn1.dll
+L8402: 4936	TiWorker.exe	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L8403: 4936	TiWorker.exe	0x7fffe48b0000	True	True	True	\Windows\System32\ntmarta.dll
+L8404: 4936	TiWorker.exe	0x7fffe4fe0000	True	True	True	\Windows\System32\cryptsp.dll
+L8405: 4936	TiWorker.exe	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L8406: 4936	TiWorker.exe	0x7fffe5540000	True	True	True	\Windows\System32\cfgmgr32.dll
+L8407: 4936	TiWorker.exe	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L8408: 4936	TiWorker.exe	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L8409: 4936	TiWorker.exe	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L8410: 4936	TiWorker.exe	0x7fffe5ab0000	True	True	True	\Windows\System32\wintrust.dll
+L8411: 4936	TiWorker.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L8412: 4936	TiWorker.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L8413: 4936	TiWorker.exe	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L8414: 4936	TiWorker.exe	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L8415: 4936	TiWorker.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L8416: 4936	TiWorker.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L8417: 4936	TiWorker.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L8418: 4936	TiWorker.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L8419: 4936	TiWorker.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L8420: 4936	TiWorker.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L8421: 4936	TiWorker.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L8422: 4936	TiWorker.exe	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L8423: 4936	TiWorker.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L8424: 4936	TiWorker.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L8425: 4936	TiWorker.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L8426: 4936	TiWorker.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L8427: 4936	TiWorker.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L8428: 4936	TiWorker.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L8429: 4936	TiWorker.exe	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_pebmasquerade.txt ---
+L169: 4936	TiWorker.exe	\Device\HarddiskVolume4\Windows\WinSxS\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe	C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe	False	False
+
+--- sessions.txt ---
+L110: 0	-	4936	TiWorker.exe	WORKGROUP/CLEANWINDOWS11$	2026-05-12 18:29:09.000000 UTC
+
+=== END OF PIVOT REPORT ===

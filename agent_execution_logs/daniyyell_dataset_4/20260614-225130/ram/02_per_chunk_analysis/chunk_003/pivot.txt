@@ -1,0 +1,412 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-14T22:56:58Z
+
+=== PID 2284 (RuntimeBroker.exe, ppid=860) ===
+Cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- pslist.txt ---
+L111: 2284	860	RuntimeBroker.	0xbb0c930622c0	1	-	1	False	2025-08-07 19:38:01.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L111: 2284	RuntimeBroker.	C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- privileges.txt ---
+L3715: 2284	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+L3716: 2284	RuntimeBroker.	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3717: 2284	RuntimeBroker.	4	SeLockMemoryPrivilege		Lock pages in memory
+L3718: 2284	RuntimeBroker.	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3719: 2284	RuntimeBroker.	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3720: 2284	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+L3721: 2284	RuntimeBroker.	8	SeSecurityPrivilege		Manage auditing and security log
+L3722: 2284	RuntimeBroker.	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3723: 2284	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3724: 2284	RuntimeBroker.	11	SeSystemProfilePrivilege		Profile system performance
+L3725: 2284	RuntimeBroker.	12	SeSystemtimePrivilege		Change the system time
+L3726: 2284	RuntimeBroker.	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3727: 2284	RuntimeBroker.	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3728: 2284	RuntimeBroker.	15	SeCreatePagefilePrivilege		Create a pagefile
+L3729: 2284	RuntimeBroker.	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3730: 2284	RuntimeBroker.	17	SeBackupPrivilege		Backup files and directories
+L3731: 2284	RuntimeBroker.	18	SeRestorePrivilege		Restore files and directories
+L3732: 2284	RuntimeBroker.	19	SeShutdownPrivilege	Present	Shut down the system
+L3733: 2284	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+L3734: 2284	RuntimeBroker.	21	SeAuditPrivilege		Generate security audits
+L3735: 2284	RuntimeBroker.	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3736: 2284	RuntimeBroker.	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3737: 2284	RuntimeBroker.	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3738: 2284	RuntimeBroker.	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3739: 2284	RuntimeBroker.	26	SeSyncAgentPrivilege		Synch directory service data
+L3740: 2284	RuntimeBroker.	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3741: 2284	RuntimeBroker.	28	SeManageVolumePrivilege		Manage the files on a volume
+L3742: 2284	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3743: 2284	RuntimeBroker.	30	SeCreateGlobalPrivilege	Default	Create global objects
+L3744: 2284	RuntimeBroker.	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3745: 2284	RuntimeBroker.	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3746: 2284	RuntimeBroker.	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3747: 2284	RuntimeBroker.	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3748: 2284	RuntimeBroker.	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3749: 2284	RuntimeBroker.	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5231: 2284	RuntimeBroker.	0x7ff605390000	0x1c000	RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	-1	2025-08-07 19:38:01.000000 UTC	Disabled
+L5232: 2284	RuntimeBroker.	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:38:01.000000 UTC	Disabled
+L5233: 2284	RuntimeBroker.	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2025-08-07 19:38:01.000000 UTC	Disabled
+L5234: 2284	RuntimeBroker.	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2025-08-07 19:38:01.000000 UTC	Disabled
+L5235: 2284	RuntimeBroker.	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5236: 2284	RuntimeBroker.	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5237: 2284	RuntimeBroker.	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5238: 2284	RuntimeBroker.	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\System32\sechost.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5239: 2284	RuntimeBroker.	0x7fff5cc40000	0x4b000	powrprof.dll	C:\Windows\SYSTEM32\powrprof.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5240: 2284	RuntimeBroker.	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5241: 2284	RuntimeBroker.	0x7fff5a9c0000	0x2a000	RMCLIENT.dll	C:\Windows\System32\RMCLIENT.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5242: 2284	RuntimeBroker.	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5243: 2284	RuntimeBroker.	0x7fff5cc20000	0x12000	UMPDC.dll	C:\Windows\System32\UMPDC.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5244: 2284	RuntimeBroker.	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\System32\bcryptPrimitives.dll	-1	2025-08-07 19:38:01.000000 UTC	Disabled
+L5245: 2284	RuntimeBroker.	0x7fff5d910000	0x19d000	user32.dll	C:\Windows\System32\user32.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5246: 2284	RuntimeBroker.	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5247: 2284	RuntimeBroker.	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\System32\GDI32.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5248: 2284	RuntimeBroker.	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5249: 2284	RuntimeBroker.	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5250: 2284	RuntimeBroker.	0x7fff5db50000	0x30000	IMM32.DLL	C:\Windows\System32\IMM32.DLL	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5251: 2284	RuntimeBroker.	0x7fff5ead0000	0xa9000	clbcatq.dll	C:\Windows\System32\clbcatq.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5252: 2284	RuntimeBroker.	0x7fff27980000	0x233000	Windows.ApplicationModel.Store.dll	C:\Windows\System32\Windows.ApplicationModel.Store.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5253: 2284	RuntimeBroker.	0x7fff5e8f0000	0xad000	shcore.dll	C:\Windows\System32\shcore.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5254: 2284	RuntimeBroker.	0x7fff536b0000	0x29000	Cabinet.dll	C:\Windows\System32\Cabinet.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5255: 2284	RuntimeBroker.	0x7fff5eff0000	0xaf000	advapi32.dll	C:\Windows\System32\advapi32.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5256: 2284	RuntimeBroker.	0x7fff5c6a0000	0x18000	CRYPTSP.dll	C:\Windows\System32\CRYPTSP.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5257: 2284	RuntimeBroker.	0x7fff533d0000	0x2b1000	iertutil.dll	C:\Windows\System32\iertutil.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5258: 2284	RuntimeBroker.	0x7fff55920000	0x10a000	WINHTTP.dll	C:\Windows\System32\WINHTTP.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+L5259: 2284	RuntimeBroker.	0x7fff528a0000	0x153000	webservices.dll	C:\Windows\System32\webservices.dll	6	2025-08-07 19:38:01.000000 UTC	Disabled
+
+--- pstree.txt ---
+L97: *** 2284	860	RuntimeBroker.	0xbb0c930622c0	1	-	1	False	2025-08-07 19:38:01.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe -Embedding	C:\Windows\System32\RuntimeBroker.exe
+
+--- psscan.txt ---
+L138: 2284	860	RuntimeBroker.	0xbb0c930622c0	1	-	1	False	2025-08-07 19:38:01.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L5451: 2284	RuntimeBroker.	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L5452: 2284	RuntimeBroker.	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5453: 2284	RuntimeBroker.	0x7ff605390000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L5454: 2284	RuntimeBroker.	0x7fff536b0000	True	True	True	\Windows\System32\cabinet.dll
+L5455: 2284	RuntimeBroker.	0x7fff528a0000	True	True	True	\Windows\System32\webservices.dll
+L5456: 2284	RuntimeBroker.	0x7fff27980000	True	True	True	\Windows\System32\Windows.ApplicationModel.Store.dll
+L5457: 2284	RuntimeBroker.	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L5458: 2284	RuntimeBroker.	0x7fff5a9c0000	True	True	True	\Windows\System32\rmclient.dll
+L5459: 2284	RuntimeBroker.	0x7fff55920000	True	True	True	\Windows\System32\winhttp.dll
+L5460: 2284	RuntimeBroker.	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L5461: 2284	RuntimeBroker.	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L5462: 2284	RuntimeBroker.	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L5463: 2284	RuntimeBroker.	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L5464: 2284	RuntimeBroker.	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L5465: 2284	RuntimeBroker.	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5466: 2284	RuntimeBroker.	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L5467: 2284	RuntimeBroker.	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L5468: 2284	RuntimeBroker.	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L5469: 2284	RuntimeBroker.	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5470: 2284	RuntimeBroker.	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L5471: 2284	RuntimeBroker.	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L5472: 2284	RuntimeBroker.	0x7fff5db50000	True	True	True	\Windows\System32\imm32.dll
+L5473: 2284	RuntimeBroker.	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L5474: 2284	RuntimeBroker.	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L5475: 2284	RuntimeBroker.	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L5476: 2284	RuntimeBroker.	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L5477: 2284	RuntimeBroker.	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L5478: 2284	RuntimeBroker.	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L5479: 2284	RuntimeBroker.	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L5451: 2284	RuntimeBroker.	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L5452: 2284	RuntimeBroker.	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5453: 2284	RuntimeBroker.	0x7ff605390000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L5454: 2284	RuntimeBroker.	0x7fff536b0000	True	True	True	\Windows\System32\cabinet.dll
+L5455: 2284	RuntimeBroker.	0x7fff528a0000	True	True	True	\Windows\System32\webservices.dll
+L5456: 2284	RuntimeBroker.	0x7fff27980000	True	True	True	\Windows\System32\Windows.ApplicationModel.Store.dll
+L5457: 2284	RuntimeBroker.	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L5458: 2284	RuntimeBroker.	0x7fff5a9c0000	True	True	True	\Windows\System32\rmclient.dll
+L5459: 2284	RuntimeBroker.	0x7fff55920000	True	True	True	\Windows\System32\winhttp.dll
+L5460: 2284	RuntimeBroker.	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L5461: 2284	RuntimeBroker.	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L5462: 2284	RuntimeBroker.	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L5463: 2284	RuntimeBroker.	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L5464: 2284	RuntimeBroker.	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L5465: 2284	RuntimeBroker.	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5466: 2284	RuntimeBroker.	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L5467: 2284	RuntimeBroker.	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L5468: 2284	RuntimeBroker.	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L5469: 2284	RuntimeBroker.	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5470: 2284	RuntimeBroker.	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L5471: 2284	RuntimeBroker.	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L5472: 2284	RuntimeBroker.	0x7fff5db50000	True	True	True	\Windows\System32\imm32.dll
+L5473: 2284	RuntimeBroker.	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L5474: 2284	RuntimeBroker.	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L5475: 2284	RuntimeBroker.	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L5476: 2284	RuntimeBroker.	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L5477: 2284	RuntimeBroker.	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L5478: 2284	RuntimeBroker.	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L5479: 2284	RuntimeBroker.	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L111: 2284	RuntimeBroker.	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	False	False
+
+--- sessions.txt ---
+L129: 1	-	2284	RuntimeBroker.	DESKTOP-RMH9G1A/Lab2	2025-08-07 19:38:01.000000 UTC
+
+=== PID 2468 (MpDefenderCoreService.exe, ppid=716) ===
+Cmdline: "C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\MpDefenderCoreService.exe"
+
+--- pslist.txt ---
+L145: 2468	716	MpDefenderCore	0xbb0c8be54080	10	-	0	False	2025-08-07 19:47:16.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L145: 2468	MpDefenderCore	"C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\MpDefenderCoreService.exe"
+
+--- privileges.txt ---
+L4905: 2468	MpDefenderCore	2	SeCreateTokenPrivilege		Create a token object
+L4906: 2468	MpDefenderCore	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4907: 2468	MpDefenderCore	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L4908: 2468	MpDefenderCore	5	SeIncreaseQuotaPrivilege	Present,Enabled	Increase quotas
+L4909: 2468	MpDefenderCore	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4910: 2468	MpDefenderCore	7	SeTcbPrivilege	Default	Act as part of the operating system
+L4911: 2468	MpDefenderCore	8	SeSecurityPrivilege	Present,Enabled	Manage auditing and security log
+L4912: 2468	MpDefenderCore	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4913: 2468	MpDefenderCore	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4914: 2468	MpDefenderCore	11	SeSystemProfilePrivilege	Default	Profile system performance
+L4915: 2468	MpDefenderCore	12	SeSystemtimePrivilege		Change the system time
+L4916: 2468	MpDefenderCore	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L4917: 2468	MpDefenderCore	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L4918: 2468	MpDefenderCore	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L4919: 2468	MpDefenderCore	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L4920: 2468	MpDefenderCore	17	SeBackupPrivilege	Present,Enabled	Backup files and directories
+L4921: 2468	MpDefenderCore	18	SeRestorePrivilege	Present,Enabled	Restore files and directories
+L4922: 2468	MpDefenderCore	19	SeShutdownPrivilege	Present,Enabled	Shut down the system
+L4923: 2468	MpDefenderCore	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L4924: 2468	MpDefenderCore	21	SeAuditPrivilege	Default	Generate security audits
+L4925: 2468	MpDefenderCore	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4926: 2468	MpDefenderCore	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4927: 2468	MpDefenderCore	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4928: 2468	MpDefenderCore	25	SeUndockPrivilege		Remove computer from docking station
+L4929: 2468	MpDefenderCore	26	SeSyncAgentPrivilege		Synch directory service data
+L4930: 2468	MpDefenderCore	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4931: 2468	MpDefenderCore	28	SeManageVolumePrivilege		Manage the files on a volume
+L4932: 2468	MpDefenderCore	29	SeImpersonatePrivilege	Default	Impersonate a client after authentication
+L4933: 2468	MpDefenderCore	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4934: 2468	MpDefenderCore	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4935: 2468	MpDefenderCore	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4936: 2468	MpDefenderCore	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L4937: 2468	MpDefenderCore	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L4938: 2468	MpDefenderCore	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L4939: 2468	MpDefenderCore	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L6936: 2468	MpDefenderCore	0x7ff618cd0000	0x1f1000	MpDefenderCoreService.exe	C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\MpDefenderCoreService.exe	-1	2025-08-07 19:47:16.000000 UTC	Disabled
+L6937: 2468	MpDefenderCore	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:47:16.000000 UTC	Disabled
+L6938: 2468	MpDefenderCore	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\SYSTEM32\KERNEL32.DLL	-1	2025-08-07 19:47:16.000000 UTC	Disabled
+L6939: 2468	MpDefenderCore	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\SYSTEM32\KERNELBASE.dll	-1	2025-08-07 19:47:16.000000 UTC	Disabled
+L6940: 2468	MpDefenderCore	0x7fff5cf50000	0x15e000	CRYPT32.dll	C:\Windows\SYSTEM32\CRYPT32.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6941: 2468	MpDefenderCore	0x7fff5e9a0000	0x12a000	ole32.dll	C:\Windows\SYSTEM32\ole32.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6942: 2468	MpDefenderCore	0x7fff5d450000	0x67000	WINTRUST.dll	C:\Windows\SYSTEM32\WINTRUST.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6943: 2468	MpDefenderCore	0x7fff5dc60000	0x6b000	WS2_32.dll	C:\Windows\SYSTEM32\WS2_32.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6944: 2468	MpDefenderCore	0x7fff5b790000	0x11b000	tdh.dll	C:\Windows\SYSTEM32\tdh.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6945: 2468	MpDefenderCore	0x7fff5eff0000	0xaf000	ADVAPI32.dll	C:\Windows\SYSTEM32\ADVAPI32.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6946: 2468	MpDefenderCore	0x7fff4e710000	0x1b9000	MpClient.dll	C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\MpClient.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6947: 2468	MpDefenderCore	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\SYSTEM32\RPCRT4.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6948: 2468	MpDefenderCore	0x7fff5c1a0000	0x3c000	IPHLPAPI.DLL	C:\Windows\SYSTEM32\IPHLPAPI.DLL	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6949: 2468	MpDefenderCore	0x7fff54880000	0xa000	VERSION.dll	C:\Windows\SYSTEM32\VERSION.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6950: 2468	MpDefenderCore	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\SYSTEM32\ucrtbase.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6951: 2468	MpDefenderCore	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\SYSTEM32\combase.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6952: 2468	MpDefenderCore	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\SYSTEM32\GDI32.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6953: 2468	MpDefenderCore	0x7fff5d910000	0x19d000	USER32.dll	C:\Windows\SYSTEM32\USER32.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6954: 2468	MpDefenderCore	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\SYSTEM32\msvcrt.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6955: 2468	MpDefenderCore	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\SYSTEM32\msvcp_win.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6956: 2468	MpDefenderCore	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\SYSTEM32\sechost.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6957: 2468	MpDefenderCore	0x7fff5ccd0000	0x2e000	USERENV.dll	C:\Windows\SYSTEM32\USERENV.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6958: 2468	MpDefenderCore	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\SYSTEM32\win32u.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6959: 2468	MpDefenderCore	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\SYSTEM32\gdi32full.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6960: 2468	MpDefenderCore	0x7fff48360000	0x4d9000	WININET.dll	C:\Windows\SYSTEM32\WININET.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6961: 2468	MpDefenderCore	0x7fff5c8e0000	0x12000	MSASN1.dll	C:\Windows\SYSTEM32\MSASN1.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6962: 2468	MpDefenderCore	0x7fff5bef0000	0x33000	ntmarta.dll	C:\Windows\SYSTEM32\ntmarta.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6963: 2468	MpDefenderCore	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2025-08-07 19:47:16.000000 UTC	Disabled
+L6964: 2468	MpDefenderCore	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\SYSTEM32\bcryptPrimitives.dll	-1	2025-08-07 19:47:16.000000 UTC	Disabled
+L6965: 2468	MpDefenderCore	0x7fff5f140000	0x8000	NSI.dll	C:\Windows\SYSTEM32\NSI.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6966: 2468	MpDefenderCore	0x7fff56d30000	0x1d000	dhcpcsvc.DLL	C:\Windows\SYSTEM32\dhcpcsvc.DLL	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6967: 2468	MpDefenderCore	0x7fff533d0000	0x2b1000	iertutil.dll	C:\Windows\SYSTEM32\iertutil.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6968: 2468	MpDefenderCore	0x7fff5e8f0000	0xad000	shcore.dll	C:\Windows\SYSTEM32\shcore.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6969: 2468	MpDefenderCore	0x7fff5cc90000	0x32000	SspiCli.dll	C:\Windows\SYSTEM32\SspiCli.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6970: 2468	MpDefenderCore	0x7fff5aeb0000	0x793000	windows.storage.dll	C:\Windows\SYSTEM32\windows.storage.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6971: 2468	MpDefenderCore	0x7fff5c750000	0x2e000	Wldp.dll	C:\Windows\SYSTEM32\Wldp.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6972: 2468	MpDefenderCore	0x7fff5f150000	0x55000	shlwapi.dll	C:\Windows\SYSTEM32\shlwapi.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6973: 2468	MpDefenderCore	0x7fff5cd10000	0x1f000	profapi.dll	C:\Windows\SYSTEM32\profapi.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6974: 2468	MpDefenderCore	0x7fff45fd0000	0x17000	ondemandconnroutehelper.dll	C:\Windows\SYSTEM32\ondemandconnroutehelper.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6975: 2468	MpDefenderCore	0x7fff55920000	0x10a000	winhttp.dll	C:\Windows\SYSTEM32\winhttp.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6976: 2468	MpDefenderCore	0x7fff5c4b0000	0x6a000	mswsock.dll	C:\Windows\system32\mswsock.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6977: 2468	MpDefenderCore	0x7fff57450000	0xb000	WINNSI.DLL	C:\Windows\SYSTEM32\WINNSI.DLL	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6978: 2468	MpDefenderCore	0x7fff5c6c0000	0xc000	CRYPTBASE.DLL	C:\Windows\SYSTEM32\CRYPTBASE.DLL	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6979: 2468	MpDefenderCore	0x7fff5dcd0000	0xcd000	OLEAUT32.dll	C:\Windows\SYSTEM32\OLEAUT32.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6980: 2468	MpDefenderCore	0x7fff5ead0000	0xa9000	clbcatq.dll	C:\Windows\SYSTEM32\clbcatq.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6981: 2468	MpDefenderCore	0x7fff52b70000	0x1ec000	urlmon.dll	C:\Windows\SYSTEM32\urlmon.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6982: 2468	MpDefenderCore	0x7fff52b00000	0x28000	srvcli.dll	C:\Windows\SYSTEM32\srvcli.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6983: 2468	MpDefenderCore	0x7fff5c2b0000	0xc000	netutils.dll	C:\Windows\SYSTEM32\netutils.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6984: 2468	MpDefenderCore	0x7fff5c1e0000	0xcb000	DNSAPI.dll	C:\Windows\SYSTEM32\DNSAPI.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6985: 2468	MpDefenderCore	0x7fff51930000	0xa000	rasadhlp.dll	C:\Windows\System32\rasadhlp.dll	6	2025-08-07 19:47:18.000000 UTC	Disabled
+L6986: 2468	MpDefenderCore	0x7fff52400000	0x82000	fwpuclnt.dll	C:\Windows\System32\fwpuclnt.dll	6	2025-08-07 19:47:20.000000 UTC	Disabled
+L6987: 2468	MpDefenderCore	0x7fff5cf20000	0x27000	bcrypt.dll	C:\Windows\SYSTEM32\bcrypt.dll	-1	2025-08-07 19:47:20.000000 UTC	Disabled
+L6988: 2468	MpDefenderCore	0x7fff5bcf0000	0x99000	schannel.DLL	C:\Windows\system32\schannel.DLL	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L6989: 2468	MpDefenderCore	0x7fff49900000	0x16000	mskeyprotect.dll	C:\Windows\SYSTEM32\mskeyprotect.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L6990: 2468	MpDefenderCore	0x7fff5c780000	0x3b000	NTASN1.dll	C:\Windows\SYSTEM32\NTASN1.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L6991: 2468	MpDefenderCore	0x7fff5caf0000	0xa000	DPAPI.DLL	C:\Windows\SYSTEM32\DPAPI.DLL	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L6992: 2468	MpDefenderCore	0x7fff5c6a0000	0x18000	CRYPTSP.dll	C:\Windows\SYSTEM32\CRYPTSP.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L6993: 2468	MpDefenderCore	0x7fff5bdd0000	0x34000	rsaenh.dll	C:\Windows\system32\rsaenh.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L6994: 2468	MpDefenderCore	0x7fff432b0000	0x31000	cryptnet.dll	C:\Windows\System32\cryptnet.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L6995: 2468	MpDefenderCore	0x7fff56d50000	0x17000	dhcpcsvc6.DLL	C:\Windows\SYSTEM32\dhcpcsvc6.DLL	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L6996: 2468	MpDefenderCore	0x7fff51150000	0x98000	webio.dll	C:\Windows\SYSTEM32\webio.dll	6	2025-08-07 19:47:21.000000 UTC	Disabled
+L6997: 2468	MpDefenderCore	0x7fff5c7c0000	0x28000	ncrypt.dll	C:\Windows\SYSTEM32\ncrypt.dll	6	2025-08-07 19:47:23.000000 UTC	Disabled
+L6998: 2468	MpDefenderCore	0x7fff49e10000	0x26000	ncryptsslp.dll	C:\Windows\system32\ncryptsslp.dll	6	2025-08-07 19:47:23.000000 UTC	Disabled
+
+--- pstree.txt ---
+L113: ** 2468	716	MpDefenderCore	0xbb0c8be54080	10	-	0	False	2025-08-07 19:47:16.000000 UTC	N/A	\Device\HarddiskVolume3\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\MpDefenderCoreService.exe	"C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\MpDefenderCoreService.exe"	C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\MpDefenderCoreService.exe
+
+--- psscan.txt ---
+L21: 2468	716	MpDefenderCore	0xbb0c8be54080	10	-	0	False	2025-08-07 19:47:16.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L81: 0xbb0c90c88900	TCPv4	192.168.135.59	49939	20.189.173.24	443	ESTABLISHED	2468	MpDefenderCore	2025-08-07 19:47:21.000000 UTC
+L82: 0xbb0c90da8a20	TCPv4	192.168.135.59	49941	2.22.98.7	80	ESTABLISHED	2468	MpDefenderCore	2025-08-07 19:47:22.000000 UTC
+
+--- ldrmodules.txt ---
+L7120: 2468	MpDefenderCore	0x1ec11e30000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L7121: 2468	MpDefenderCore	0x1ec11e60000	False	False	False	\Windows\System32\en-GB\winnlsres.dll.mui
+L7122: 2468	MpDefenderCore	0x1ec11e50000	False	False	False	\Windows\System32\winnlsres.dll
+L7123: 2468	MpDefenderCore	0x1ec11e70000	False	False	False	\Windows\System32\en-GB\crypt32.dll.mui
+L7124: 2468	MpDefenderCore	0x7fff5b790000	True	True	True	\Windows\System32\tdh.dll
+L7125: 2468	MpDefenderCore	0x7fff4e710000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\MpClient.dll
+L7126: 2468	MpDefenderCore	0x7ff618cd0000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\MpDefenderCoreService.exe
+L7127: 2468	MpDefenderCore	0x7fff48360000	True	True	True	\Windows\System32\wininet.dll
+L7128: 2468	MpDefenderCore	0x7fff432b0000	True	True	True	\Windows\System32\cryptnet.dll
+L7129: 2468	MpDefenderCore	0x7fff45fd0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L7130: 2468	MpDefenderCore	0x7fff49e10000	True	True	True	\Windows\System32\ncryptsslp.dll
+L7131: 2468	MpDefenderCore	0x7fff49900000	True	True	True	\Windows\System32\mskeyprotect.dll
+L7132: 2468	MpDefenderCore	0x7fff54880000	True	True	True	\Windows\System32\version.dll
+L7133: 2468	MpDefenderCore	0x7fff52400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L7134: 2468	MpDefenderCore	0x7fff51930000	True	True	True	\Windows\System32\rasadhlp.dll
+L7135: 2468	MpDefenderCore	0x7fff51150000	True	True	True	\Windows\System32\webio.dll
+L7136: 2468	MpDefenderCore	0x7fff52b70000	True	True	True	\Windows\System32\urlmon.dll
+L7137: 2468	MpDefenderCore	0x7fff52b00000	True	True	True	\Windows\System32\srvcli.dll
+L7138: 2468	MpDefenderCore	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L7139: 2468	MpDefenderCore	0x7fff547d0000	False	False	False	\Windows\System32\npmproxy.dll
+L7140: 2468	MpDefenderCore	0x7fff586e0000	False	False	False	\Windows\System32\netprofm.dll
+L7141: 2468	MpDefenderCore	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L7142: 2468	MpDefenderCore	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L7143: 2468	MpDefenderCore	0x7fff5c4b0000	True	True	True	\Windows\System32\mswsock.dll
+L7144: 2468	MpDefenderCore	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L7145: 2468	MpDefenderCore	0x7fff5bdd0000	True	True	True	\Windows\System32\rsaenh.dll
+L7146: 2468	MpDefenderCore	0x7fff5bcf0000	True	True	True	\Windows\System32\schannel.dll
+L7147: 2468	MpDefenderCore	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L7148: 2468	MpDefenderCore	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L7149: 2468	MpDefenderCore	0x7fff5c1e0000	True	True	True	\Windows\System32\dnsapi.dll
+L7150: 2468	MpDefenderCore	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L7151: 2468	MpDefenderCore	0x7fff5c6c0000	True	True	True	\Windows\System32\cryptbase.dll
+L7152: 2468	MpDefenderCore	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L7153: 2468	MpDefenderCore	0x7fff5c780000	True	True	True	\Windows\System32\ntasn1.dll
+L7154: 2468	MpDefenderCore	0x7fff5c7c0000	True	True	True	\Windows\System32\ncrypt.dll
+L7155: 2468	MpDefenderCore	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L7156: 2468	MpDefenderCore	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L7157: 2468	MpDefenderCore	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L7158: 2468	MpDefenderCore	0x7fff5caf0000	True	True	True	\Windows\System32\dpapi.dll
+L7159: 2468	MpDefenderCore	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L7160: 2468	MpDefenderCore	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L7161: 2468	MpDefenderCore	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L7162: 2468	MpDefenderCore	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L7163: 2468	MpDefenderCore	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L7164: 2468	MpDefenderCore	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L7165: 2468	MpDefenderCore	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L7166: 2468	MpDefenderCore	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L7167: 2468	MpDefenderCore	0x7fff5d450000	True	True	True	\Windows\System32\wintrust.dll
+L7168: 2468	MpDefenderCore	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7169: 2468	MpDefenderCore	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L7170: 2468	MpDefenderCore	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L7171: 2468	MpDefenderCore	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L7172: 2468	MpDefenderCore	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L7173: 2468	MpDefenderCore	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L7174: 2468	MpDefenderCore	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L7175: 2468	MpDefenderCore	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L7176: 2468	MpDefenderCore	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L7177: 2468	MpDefenderCore	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L7178: 2468	MpDefenderCore	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L7179: 2468	MpDefenderCore	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L7180: 2468	MpDefenderCore	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L7181: 2468	MpDefenderCore	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L7182: 2468	MpDefenderCore	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L7120: 2468	MpDefenderCore	0x1ec11e30000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L7121: 2468	MpDefenderCore	0x1ec11e60000	False	False	False	\Windows\System32\en-GB\winnlsres.dll.mui
+L7122: 2468	MpDefenderCore	0x1ec11e50000	False	False	False	\Windows\System32\winnlsres.dll
+L7123: 2468	MpDefenderCore	0x1ec11e70000	False	False	False	\Windows\System32\en-GB\crypt32.dll.mui
+L7124: 2468	MpDefenderCore	0x7fff5b790000	True	True	True	\Windows\System32\tdh.dll
+L7125: 2468	MpDefenderCore	0x7fff4e710000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\MpClient.dll
+L7126: 2468	MpDefenderCore	0x7ff618cd0000	True	False	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\MpDefenderCoreService.exe
+L7127: 2468	MpDefenderCore	0x7fff48360000	True	True	True	\Windows\System32\wininet.dll
+L7128: 2468	MpDefenderCore	0x7fff432b0000	True	True	True	\Windows\System32\cryptnet.dll
+L7129: 2468	MpDefenderCore	0x7fff45fd0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L7130: 2468	MpDefenderCore	0x7fff49e10000	True	True	True	\Windows\System32\ncryptsslp.dll
+L7131: 2468	MpDefenderCore	0x7fff49900000	True	True	True	\Windows\System32\mskeyprotect.dll
+L7132: 2468	MpDefenderCore	0x7fff54880000	True	True	True	\Windows\System32\version.dll
+L7133: 2468	MpDefenderCore	0x7fff52400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L7134: 2468	MpDefenderCore	0x7fff51930000	True	True	True	\Windows\System32\rasadhlp.dll
+L7135: 2468	MpDefenderCore	0x7fff51150000	True	True	True	\Windows\System32\webio.dll
+L7136: 2468	MpDefenderCore	0x7fff52b70000	True	True	True	\Windows\System32\urlmon.dll
+L7137: 2468	MpDefenderCore	0x7fff52b00000	True	True	True	\Windows\System32\srvcli.dll
+L7138: 2468	MpDefenderCore	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L7139: 2468	MpDefenderCore	0x7fff547d0000	False	False	False	\Windows\System32\npmproxy.dll
+L7140: 2468	MpDefenderCore	0x7fff586e0000	False	False	False	\Windows\System32\netprofm.dll
+L7141: 2468	MpDefenderCore	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L7142: 2468	MpDefenderCore	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L7143: 2468	MpDefenderCore	0x7fff5c4b0000	True	True	True	\Windows\System32\mswsock.dll
+L7144: 2468	MpDefenderCore	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L7145: 2468	MpDefenderCore	0x7fff5bdd0000	True	True	True	\Windows\System32\rsaenh.dll
+L7146: 2468	MpDefenderCore	0x7fff5bcf0000	True	True	True	\Windows\System32\schannel.dll
+L7147: 2468	MpDefenderCore	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L7148: 2468	MpDefenderCore	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L7149: 2468	MpDefenderCore	0x7fff5c1e0000	True	True	True	\Windows\System32\dnsapi.dll
+L7150: 2468	MpDefenderCore	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L7151: 2468	MpDefenderCore	0x7fff5c6c0000	True	True	True	\Windows\System32\cryptbase.dll
+L7152: 2468	MpDefenderCore	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L7153: 2468	MpDefenderCore	0x7fff5c780000	True	True	True	\Windows\System32\ntasn1.dll
+L7154: 2468	MpDefenderCore	0x7fff5c7c0000	True	True	True	\Windows\System32\ncrypt.dll
+L7155: 2468	MpDefenderCore	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L7156: 2468	MpDefenderCore	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L7157: 2468	MpDefenderCore	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L7158: 2468	MpDefenderCore	0x7fff5caf0000	True	True	True	\Windows\System32\dpapi.dll
+L7159: 2468	MpDefenderCore	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L7160: 2468	MpDefenderCore	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L7161: 2468	MpDefenderCore	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L7162: 2468	MpDefenderCore	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L7163: 2468	MpDefenderCore	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L7164: 2468	MpDefenderCore	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L7165: 2468	MpDefenderCore	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L7166: 2468	MpDefenderCore	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L7167: 2468	MpDefenderCore	0x7fff5d450000	True	True	True	\Windows\System32\wintrust.dll
+L7168: 2468	MpDefenderCore	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7169: 2468	MpDefenderCore	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L7170: 2468	MpDefenderCore	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L7171: 2468	MpDefenderCore	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L7172: 2468	MpDefenderCore	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L7173: 2468	MpDefenderCore	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L7174: 2468	MpDefenderCore	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L7175: 2468	MpDefenderCore	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L7176: 2468	MpDefenderCore	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L7177: 2468	MpDefenderCore	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L7178: 2468	MpDefenderCore	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L7179: 2468	MpDefenderCore	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L7180: 2468	MpDefenderCore	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L7181: 2468	MpDefenderCore	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L7182: 2468	MpDefenderCore	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L145: 2468	MpDefenderCore	\Device\HarddiskVolume3\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\MpDefenderCoreService.exe	C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\MpDefenderCoreService.exe	False	False
+
+--- sessions.txt ---
+L96: 0	-	2468	MpDefenderCore	WORKGROUP/DESKTOP-RMH9G1A$	2025-08-07 19:47:16.000000 UTC
+
+=== END OF PIVOT REPORT ===

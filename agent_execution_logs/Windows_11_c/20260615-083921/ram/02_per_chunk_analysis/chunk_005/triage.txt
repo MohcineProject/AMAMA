@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:30:00Z
+Chunk: chunk_005.txt
+Summary: svchost.exe with orphaned parent PID 888 (unknown/not present in process list); all other signals are clean.
+
+[PROCESS]
+pid: 3860
+ppid: 888
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService
+severity: LOW
+reasons: orphaned_parent: PPID 888 does not appear anywhere in the process list (expected parent is services.exe) | parent_mismatch: svchost.exe parent should be services.exe; parent PID 888 is listed as 'unknown'
+

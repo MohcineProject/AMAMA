@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_016.txt
+Summary: Single process in snapshot; orphaned parent PID 516 not present in process list warrants low-confidence flag.
+
+[PROCESS]
+pid: 5432
+ppid: 516
+image: StartMenuExperienceHost.exe
+cmdline: "C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe" -ServerName:FullTrustApp.AppXykjsye98af63ez2annt9djke8trg8stn.mca
+severity: LOW
+reasons: orphaned_parent: PPID 516 (listed as 'unknown') is not present anywhere in the provided process list | name_truncation_note: 'StartMenuExper' is a kernel EPROCESS truncation of 'StartMenuExperienceHost.exe'; path and cmdline confirm legitimate identity — not a typosquat | path_and_cmdline_clean: image path matches expected SystemApps location and cmdline matches known StartMenuExperienceHost launch pattern; no malicious indicators beyond missing parent
+

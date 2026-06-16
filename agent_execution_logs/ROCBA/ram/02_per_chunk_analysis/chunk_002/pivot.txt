@@ -1,0 +1,649 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:37:13Z
+
+=== PID 29440 (MRC.exe, ppid=7464) ===
+Cmdline: "D:\Tools\MRC.exe"
+
+--- pslist.txt ---
+L2188: 29440	7464	MRC.exe	0xb78d106d2080	20	-	1	True	2020-11-16 02:31:15.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L2188: 29440	MRC.exe	"D:\Tools\MRC.exe" 
+
+--- privileges.txt ---
+L76375: 29440	MRC.exe	2	SeCreateTokenPrivilege		Create a token object
+L76376: 29440	MRC.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L76377: 29440	MRC.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L76378: 29440	MRC.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L76379: 29440	MRC.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L76380: 29440	MRC.exe	7	SeTcbPrivilege		Act as part of the operating system
+L76381: 29440	MRC.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L76382: 29440	MRC.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L76383: 29440	MRC.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L76384: 29440	MRC.exe	11	SeSystemProfilePrivilege	Present	Profile system performance
+L76385: 29440	MRC.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L76386: 29440	MRC.exe	13	SeProfileSingleProcessPrivilege	Present	Profile a single process
+L76387: 29440	MRC.exe	14	SeIncreaseBasePriorityPrivilege	Present	Increase scheduling priority
+L76388: 29440	MRC.exe	15	SeCreatePagefilePrivilege	Present	Create a pagefile
+L76389: 29440	MRC.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L76390: 29440	MRC.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L76391: 29440	MRC.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L76392: 29440	MRC.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L76393: 29440	MRC.exe	20	SeDebugPrivilege	Present	Debug programs
+L76394: 29440	MRC.exe	21	SeAuditPrivilege		Generate security audits
+L76395: 29440	MRC.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L76396: 29440	MRC.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L76397: 29440	MRC.exe	24	SeRemoteShutdownPrivilege	Present	Force shutdown from a remote system
+L76398: 29440	MRC.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L76399: 29440	MRC.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L76400: 29440	MRC.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L76401: 29440	MRC.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L76402: 29440	MRC.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L76403: 29440	MRC.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L76404: 29440	MRC.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L76405: 29440	MRC.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L76406: 29440	MRC.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L76407: 29440	MRC.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L76408: 29440	MRC.exe	35	SeCreateSymbolicLinkPrivilege	Present	Required to create a symbolic link
+L76409: 29440	MRC.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L12647: 29440	MRC.exe	0x400000	0x55000	MRC.exe	D:\Tools\MRC.exe	-1	2020-11-16 02:31:16.000000 UTC	Disabled
+L12648: 29440	MRC.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-16 02:31:16.000000 UTC	Disabled
+L12649: 29440	MRC.exe	0x7fff57190000	0x59000	wow64.dll	C:\WINDOWS\System32\wow64.dll	-1	2020-11-16 02:31:16.000000 UTC	Disabled
+L12650: 29440	MRC.exe	0x7fff559a0000	0x83000	wow64win.dll	C:\WINDOWS\System32\wow64win.dll	6	2020-11-16 02:31:16.000000 UTC	Disabled
+L12651: 29440	MRC.exe	0x779c0000	0xa000	wow64cpu.dll	C:\WINDOWS\System32\wow64cpu.dll	6	2020-11-16 02:31:16.000000 UTC	Disabled
+L12652: 29440	MRC.exe	0x400000	0x55000	MRC.exe	D:\Tools\MRC.exe	-	1600-12-01 10:52:23.000000 UTC	Disabled
+L12653: 29440	MRC.exe	0x779d0000	0x1a3000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-	1658-03-03 23:27:54.000000 UTC	Disabled
+L12654: 29440	MRC.exe	0x76cd0000	0xf0000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L12655: 29440	MRC.exe	0x775f0000	0x214000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L12656: 29440	MRC.exe	0x73e10000	0x9f000	apphelp.dll	C:\WINDOWS\SYSTEM32\apphelp.dll	-	1708-12-11 11:50:15.000000 UTC	Disabled
+L12657: 29440	MRC.exe	0x66000000	0x153000	MSVBVM60.DLL	C:\WINDOWS\SYSTEM32\MSVBVM60.DLL	-	1601-01-01 13:21:44.000000 UTC	Disabled
+L12658: 29440	MRC.exe	0x75cc0000	0x196000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L12659: 29440	MRC.exe	0x75890000	0x18000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L12660: 29440	MRC.exe	0x76310000	0x23000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L12661: 29440	MRC.exe	0x758f0000	0xda000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L12662: 29440	MRC.exe	0x76290000	0x7b000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L12663: 29440	MRC.exe	0x75ba0000	0x120000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-	1709-12-17 11:46:54.000000 UTC	Disabled
+L12664: 29440	MRC.exe	0x77050000	0x7a000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	-	1709-12-22 11:05:11.000000 UTC	Disabled
+L12665: 29440	MRC.exe	0x76180000	0xbf000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-	1709-12-29 19:39:26.000000 UTC	Disabled
+L12666: 29440	MRC.exe	0x76a00000	0x75000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-	N/A	Disabled
+L12667: 29440	MRC.exe	0x75e60000	0xba000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-	1709-12-31 11:44:37.000000 UTC	Disabled
+L12668: 29440	MRC.exe	0x76be0000	0xe3000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-	1710-05-16 02:22:28.000000 UTC	Disabled
+L12669: 29440	MRC.exe	0x76dc0000	0x281000	combase.dll	C:\WINDOWS\System32\combase.dll	-	1709-12-31 05:03:45.000000 UTC	Disabled
+L12670: 29440	MRC.exe	0x76900000	0x96000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-	1710-05-13 00:52:58.000000 UTC	Disabled
+L12671: 29440	MRC.exe	0x770d0000	0x25000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	-	1710-05-14 16:58:09.000000 UTC	Disabled
+L12672: 29440	MRC.exe	0x75880000	0xf000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-	1709-12-15 13:00:52.000000 UTC	Disabled
+L12673: 29440	MRC.exe	0x769a0000	0x5c000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-	1710-05-12 04:50:23.000000 UTC	Disabled
+L12674: 29440	MRC.exe	0x74240000	0x74000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	-	1710-05-17 11:46:47.000000 UTC	Disabled
+L12675: 29440	MRC.exe	0x67a30000	0x88000	SXS.DLL	C:\WINDOWS\SYSTEM32\SXS.DLL	-	1671-06-20 01:18:42.000000 UTC	Disabled
+L12676: 29440	MRC.exe	0x75f30000	0xd3000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	-	1710-05-14 03:36:25.000000 UTC	Disabled
+L12677: 29440	MRC.exe	0x74300000	0x212000	comctl32.dll	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_11b1e5df2ffd8627\comctl32.dll	-	1710-05-15 06:19:53.000000 UTC	Disabled
+L12678: 29440	MRC.exe	0x77100000	0x5e000	coml2.dll	C:\WINDOWS\System32\coml2.dll	-	1710-05-15 19:41:36.000000 UTC	Disabled
+L12679: 29440	MRC.exe	0x77810000	0x87000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	-	1709-12-29 12:58:35.000000 UTC	Disabled
+L12680: 29440	MRC.exe	0x6e4d0000	0x94000	TextShaping.dll	C:\WINDOWS\SYSTEM32\TextShaping.dll	-	1710-05-14 23:39:01.000000 UTC	Disabled
+L12681: 29440	MRC.exe	0x75160000	0x16000	asycfilt.dll	C:\WINDOWS\system32\asycfilt.dll	-	1710-05-12 18:12:06.000000 UTC	Disabled
+L12682: 29440	MRC.exe	0x76240000	0x45000	shlwapi.DLL	C:\WINDOWS\System32\shlwapi.DLL	-	1709-12-28 23:36:51.000000 UTC	Disabled
+L12683: 29440	MRC.exe	0x68b60000	0xba000	textinputframework.dll	C:\WINDOWS\SYSTEM32\textinputframework.dll	-	1715-10-20 23:25:39.000000 UTC	Disabled
+L12684: 29440	MRC.exe	0x689a0000	0x9b000	CoreMessaging.dll	C:\WINDOWS\System32\CoreMessaging.dll	-	1710-05-18 14:30:14.000000 UTC	Disabled
+L12685: 29440	MRC.exe	0x68080000	0x27e000	CoreUIComponents.dll	C:\WINDOWS\System32\CoreUIComponents.dll	-	1710-05-11 15:28:39.000000 UTC	Disabled
+L12686: 29440	MRC.exe	0x76b60000	0x63000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	-	1714-06-25 12:11:44.000000 UTC	Disabled
+L12687: 29440	MRC.exe	0x74180000	0x29000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	-	N/A	Disabled
+L12688: 29440	MRC.exe	0x6fdb0000	0xde000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	-	1714-06-21 01:17:55.000000 UTC	Disabled
+L12689: 29440	MRC.exe	0x748a0000	0x53000	Oleacc.dll	C:\WINDOWS\system32\Oleacc.dll	-	N/A	Disabled
+L12690: 29440	MRC.exe	0x75a40000	0xaf000	comdlg32.dll	C:\WINDOWS\System32\comdlg32.dll	-	1710-05-11 08:47:47.000000 UTC	Disabled
+L12691: 29440	MRC.exe	0x76340000	0x5b3000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	-	1714-06-20 11:56:12.000000 UTC	Disabled
+L12692: 29440	MRC.exe	0x76ae0000	0x7e000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-	1714-06-22 17:23:06.000000 UTC	Disabled
+L12693: 29440	MRC.exe	0x75270000	0x60a000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	-	1713-10-09 18:37:39.000000 UTC	Disabled
+L12694: 29440	MRC.exe	0x75240000	0x24000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	-	1715-10-20 10:03:55.000000 UTC	Disabled
+L12695: 29440	MRC.exe	0x74f60000	0x15f000	DUI70.dll	C:\WINDOWS\SYSTEM32\DUI70.dll	-	1714-06-26 01:33:28.000000 UTC	Disabled
+L12696: 29440	MRC.exe	0x68c60000	0x77000	DUser.dll	C:\WINDOWS\SYSTEM32\DUser.dll	-	1714-06-24 02:47:25.000000 UTC	Disabled
+L12697: 29440	MRC.exe	0x740a0000	0x26000	dwmapi.dll	C:\WINDOWS\SYSTEM32\dwmapi.dll	-	1718-02-19 11:41:50.000000 UTC	Disabled
+L12698: 29440	MRC.exe	0x6ee50000	0x170000	WindowsCodecs.dll	C:\WINDOWS\SYSTEM32\WindowsCodecs.dll	-	N/A	Disabled
+L12699: 29440	MRC.exe	0x779a0000	0x19000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-	1710-05-18 07:49:23.000000 UTC	Disabled
+L12700: 29440	MRC.exe	0x74200000	0x1d000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	-	1714-06-26 14:55:12.000000 UTC	Disabled
+L12701: 29440	MRC.exe	0x6e5e0000	0x49000	thumbcache.dll	C:\Windows\System32\thumbcache.dll	-	1718-02-12 12:40:15.000000 UTC	Disabled
+L12702: 29440	MRC.exe	0x561d0000	0x83000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	-	1710-05-16 09:03:20.000000 UTC	Disabled
+L12703: 29440	MRC.exe	0x6ec40000	0x65000	msvcp110_win.dll	C:\WINDOWS\SYSTEM32\msvcp110_win.dll	-	1718-02-16 23:34:04.000000 UTC	Disabled
+L12704: 29440	MRC.exe	0x68910000	0x32000	dataexchange.dll	C:\WINDOWS\system32\dataexchange.dll	-	1715-10-24 07:36:01.000000 UTC	Disabled
+L12705: 29440	MRC.exe	0x704e0000	0x1e0000	d3d11.dll	C:\WINDOWS\system32\d3d11.dll	-	1712-09-06 12:53:39.000000 UTC	Disabled
+L12706: 29440	MRC.exe	0x67cc0000	0x165000	dcomp.dll	C:\WINDOWS\system32\dcomp.dll	-	1715-10-25 23:41:12.000000 UTC	Disabled
+L12707: 29440	MRC.exe	0x706c0000	0xc2000	dxgi.dll	C:\WINDOWS\system32\dxgi.dll	-	1718-02-13 15:23:42.000000 UTC	Disabled
+L12708: 29440	MRC.exe	0x6f2f0000	0x191000	twinapi.appcore.dll	C:\WINDOWS\system32\twinapi.appcore.dll	-	1710-05-16 15:44:12.000000 UTC	Disabled
+L12709: 29440	MRC.exe	0x67b70000	0x145000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	-	1718-02-13 22:04:34.000000 UTC	Disabled
+L12710: 29440	MRC.exe	0x6ea10000	0x22000	bcp47mrm.dll	C:\Windows\System32\bcp47mrm.dll	-	1718-02-18 22:20:06.000000 UTC	Disabled
+L12711: 29440	MRC.exe	0x6fd40000	0x48000	Bcp47Langs.dll	C:\Windows\System32\Bcp47Langs.dll	-	-	Disabled
+L12712: 29440	MRC.exe	0x75140000	0x1c000	globinputhost.dll	C:\WINDOWS\SYSTEM32\globinputhost.dll	-	1721-07-19 02:34:43.000000 UTC	Disabled
+L12713: 29440	MRC.exe	0x73cc0000	0xd000	atlthunk.dll	C:\WINDOWS\SYSTEM32\atlthunk.dll	-	1718-02-14 04:45:26.000000 UTC	Disabled
+L12714: 29440	MRC.exe	0x75130000	0x10000	AssignedAccessRuntime.dll	C:\Windows\System32\AssignedAccessRuntime.dll	-	N/A	Disabled
+L12715: 29440	MRC.exe	0x74630000	0xc3000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	-	1718-02-17 19:36:39.000000 UTC	Disabled
+L12716: 29440	MRC.exe	0x758b0000	0x3b000	CFGMGR32.dll	C:\WINDOWS\System32\CFGMGR32.dll	-	1720-09-27 02:37:04.000000 UTC	Disabled
+L12717: 29440	MRC.exe	0x6ff30000	0x4a000	Windows.FileExplorer.Common.dll	C:\Windows\System32\Windows.FileExplorer.Common.dll	-	1601-01-01 00:07:09.000000 UTC	Disabled
+L12718: 29440	MRC.exe	0x71dd0000	0x22b000	iertutil.dll	C:\Windows\System32\iertutil.dll	-	3443-06-16 00:00:16.000000 UTC	Disabled
+L12719: 29440	MRC.exe	0x6fe90000	0x93000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	-	N/A	Disabled
+L12720: 29440	MRC.exe	0x74070000	0x2b000	XmlLite.dll	C:\WINDOWS\SYSTEM32\XmlLite.dll	-	3444-08-04 15:43:52.000000 UTC	Disabled
+L12721: 29440	MRC.exe	0x675f0000	0xb000	LINKINFO.dll	C:\WINDOWS\SYSTEM32\LINKINFO.dll	-	-	Disabled
+L12722: 29440	MRC.exe	0x6fd90000	0x1b000	edputil.dll	C:\WINDOWS\SYSTEM32\edputil.dll	-	N/A	Disabled
+L12723: 29440	MRC.exe	0x6e760000	0x273000	uiautomationcore.dll	C:\Windows\System32\uiautomationcore.dll	-	N/A	Disabled
+L12724: 29440	MRC.exe	0x73850000	0x81000	StructuredQuery.dll	C:\WINDOWS\System32\StructuredQuery.dll	-	1601-01-01 00:07:09.000000 UTC	Disabled
+L12725: 29440	MRC.exe	0x6f5e0000	0x9d000	Windows.Storage.Search.dll	C:\WINDOWS\system32\Windows.Storage.Search.dll	-	-	Disabled
+L12726: 29440	MRC.exe	0x70280000	0x19000	MPR.dll	C:\WINDOWS\SYSTEM32\MPR.dll	-	3515-08-24 12:34:28.000000 UTC	Disabled
+L12727: 29440	MRC.exe	0x75120000	0x9000	drprov.dll	C:\WINDOWS\System32\drprov.dll	-	3443-06-27 01:20:17.000000 UTC	Disabled
+L12728: 29440	MRC.exe	0x57a60000	0x47000	WINSTA.dll	C:\WINDOWS\System32\WINSTA.dll	-	1718-02-16 10:12:20.000000 UTC	Disabled
+L12729: 29440	MRC.exe	0x74eb0000	0x13000	ntlanman.dll	C:\WINDOWS\System32\ntlanman.dll	-	3520-04-29 08:36:03.000000 UTC	Disabled
+L12730: 29440	MRC.exe	0x74e90000	0x19000	davclnt.dll	C:\WINDOWS\System32\davclnt.dll	-	3515-08-25 01:56:12.000000 UTC	Disabled
+L12731: 29440	MRC.exe	0x74e80000	0xa000	DAVHLPR.dll	C:\WINDOWS\System32\DAVHLPR.dll	-	3536-08-01 16:58:40.000000 UTC	Disabled
+L12732: 29440	MRC.exe	0x742e0000	0x10000	wkscli.dll	C:\WINDOWS\System32\wkscli.dll	-	N/A	Disabled
+L12733: 29440	MRC.exe	0x74170000	0xe000	cscapi.dll	C:\WINDOWS\SYSTEM32\cscapi.dll	-	1652-09-25 18:26:18.000000 UTC	Disabled
+L12734: 29440	MRC.exe	0x742f0000	0xb000	netutils.dll	C:\WINDOWS\System32\netutils.dll	-	3520-04-18 05:21:30.000000 UTC	Disabled
+L12735: 29440	MRC.exe	0x74e30000	0x43000	dlnashext.dll	C:\Windows\System32\dlnashext.dll	-	3515-08-25 21:58:47.000000 UTC	Disabled
+L12736: 29440	MRC.exe	0x74850000	0x49000	PlayToDevice.dll	C:\Windows\System32\PlayToDevice.dll	-	1710-09-18 09:05:24.000000 UTC	Disabled
+L12737: 29440	MRC.exe	0x6f690000	0x5c000	ntshrui.dll	C:\WINDOWS\SYSTEM32\ntshrui.dll	-	N/A	Disabled
+L12738: 29440	MRC.exe	0x73cd0000	0x28000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	-	3515-08-22 13:48:25.000000 UTC	Disabled
+L12739: 29440	MRC.exe	0x70230000	0x1d000	srvcli.dll	C:\WINDOWS\SYSTEM32\srvcli.dll	-	1652-09-25 18:26:18.000000 UTC	Disabled
+L12740: 29440	MRC.exe	0x74910000	0x1b000	DevDispItemProvider.dll	C:\Windows\System32\DevDispItemProvider.dll	-	3522-06-01 13:12:16.000000 UTC	Disabled
+L12741: 29440	MRC.exe	0x6f5c0000	0x13000	mssprxy.dll	C:\WINDOWS\system32\mssprxy.dll	-	N/A	Disabled
+L12742: 29440	MRC.exe	0x70030000	0x1c000	cldapi.dll	C:\WINDOWS\SYSTEM32\cldapi.dll	-	N/A	Disabled
+L12743: 29440	MRC.exe	0x70020000	0x8000	FLTLIB.DLL	C:\WINDOWS\SYSTEM32\FLTLIB.DLL	-	N/A	Disabled
+L12744: 29440	MRC.exe	0x693a0000	0x6a000	MMDevApi.dll	C:\WINDOWS\System32\MMDevApi.dll	-	-	Disabled
+L12745: 29440	MRC.exe	0x69370000	0x24000	DEVOBJ.dll	C:\WINDOWS\System32\DEVOBJ.dll	-	3520-04-08 18:12:09.000000 UTC	Disabled
+L12746: 29440	MRC.exe	0x6f8e0000	0x39f000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	-	-	Disabled
+L12747: 29440	MRC.exe	0x62340000	0x83000	PortableDeviceApi.dll	C:\Windows\System32\PortableDeviceApi.dll	-	-	Disabled
+L12748: 29440	MRC.exe	0x77160000	0x434000	SETUPAPI.dll	C:\WINDOWS\System32\SETUPAPI.dll	-	-	Disabled
+L12749: 29440	MRC.exe	0x775a0000	0x47000	WINTRUST.dll	C:\WINDOWS\System32\WINTRUST.dll	-	1604-07-27 04:04:16.000000 UTC	Disabled
+L12750: 29440	MRC.exe	0x778a0000	0xff000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	-	3522-06-14 08:32:01.000000 UTC	Disabled
+L12751: 29440	MRC.exe	0x74230000	0xe000	MSASN1.dll	C:\WINDOWS\System32\MSASN1.dll	-	3522-05-19 17:52:33.000000 UTC	Disabled
+L12752: 29440	MRC.exe	0x6e4a0000	0x27000	PortableDeviceTypes.dll	C:\Windows\System32\PortableDeviceTypes.dll	-	-	Disabled
+L12753: 29440	MRC.exe	0x73d80000	0x13000	NetworkExplorer.dll	C:\WINDOWS\system32\NetworkExplorer.dll	-	1604-07-27 04:04:16.000000 UTC	Disabled
+L12754: 29440	MRC.exe	0x6fc80000	0x1f000	shacct.dll	C:\WINDOWS\System32\shacct.dll	-	1710-09-18 09:05:25.000000 UTC	Disabled
+L12755: 29440	MRC.exe	0x67ea0000	0x22000	IDStore.dll	C:\WINDOWS\System32\IDStore.dll	-	-	Disabled
+L12756: 29440	MRC.exe	0x6e480000	0x19000	SAMLIB.dll	C:\WINDOWS\System32\SAMLIB.dll	-	3443-10-12 08:24:35.000000 UTC	Disabled
+L12757: 29440	MRC.exe	0x6f0f0000	0x86000	wlidprov.dll	C:\WINDOWS\System32\wlidprov.dll	-	3536-08-08 22:41:08.000000 UTC	Disabled
+L12758: 29440	MRC.exe	0x6f0d0000	0x15000	samcli.dll	C:\WINDOWS\System32\samcli.dll	-	-	Disabled
+L12759: 29440	MRC.exe	0x620c0000	0x62000	provsvc.dll	C:\WINDOWS\System32\provsvc.dll	-	3443-11-09 02:36:24.000000 UTC	Disabled
+L12760: 29440	MRC.exe	0x61a90000	0x629000	ieframe.dll	C:\Windows\System32\ieframe.dll	-	3945-10-08 04:01:08.000000 UTC	Disabled
+L12761: 29440	MRC.exe	0x74790000	0x25000	USERENV.dll	C:\Windows\System32\USERENV.dll	-	N/A	Disabled
+L12762: 29440	MRC.exe	0x75100000	0x13000	NETAPI32.dll	C:\Windows\System32\NETAPI32.dll	-	N/A	Disabled
+L12763: 29440	MRC.exe	0x721f0000	0xc2000	WINHTTP.dll	C:\Windows\System32\WINHTTP.dll	-	N/A	Disabled
+L12764: 29440	MRC.exe	0x747c0000	0x8000	VERSION.dll	C:\Windows\System32\VERSION.dll	-	3945-10-05 15:53:22.000000 UTC	Disabled
+L12765: 29440	MRC.exe	0x749c0000	0x458000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	-	3945-10-10 02:47:11.000000 UTC	Disabled
+L12766: 29440	MRC.exe	0x72590000	0x1a9000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	-	3437-10-04 10:39:51.000000 UTC	Disabled
+
+--- pstree.txt ---
+L75: ****** 29440	7464	MRC.exe	0xb78d106d2080	20	-	1	True	2020-11-16 02:31:15.000000 UTC	N/A	\Device\HarddiskVolume7\Tools\MRC.exe	"D:\Tools\MRC.exe" 	D:\Tools\MRC.exe
+
+--- psscan.txt ---
+L1695: 29440	7464	MRC.exe	0xb78d106d2080	20	-	1	True	2020-11-16 02:31:15.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L13190: 29440	MRC.exe	0x67a30000	True	True	True	\Windows\SysWOW64\sxs.dll
+L13191: 29440	MRC.exe	0x400000	True	False	True	\Tools\MRC.exe
+L13192: 29440	MRC.exe	0x560000	False	False	False	\Windows\SysWOW64\imageres.dll
+L13193: 29440	MRC.exe	0x2240000	False	False	False	\Windows\System32\en-US\user32.dll.mui
+L13194: 29440	MRC.exe	0x23c0000	False	False	False	\Windows\SysWOW64\oleaccrc.dll
+L13195: 29440	MRC.exe	0x31d0000	False	False	False	\Windows\System32\en-US\comdlg32.dll.mui
+L13196: 29440	MRC.exe	0x3590000	False	False	False	\Windows\SystemResources\shell32.dll.mun
+L13197: 29440	MRC.exe	0x34b0000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L13198: 29440	MRC.exe	0x3440000	False	False	False	\Windows\SystemResources\comdlg32.dll.mun
+L13199: 29440	MRC.exe	0x7ed0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L13200: 29440	MRC.exe	0x8300000	False	False	False	\Windows\System32\en-US\UIAutomationCore.dll.mui
+L13201: 29440	MRC.exe	0x8330000	False	False	False	\Windows\System32\en-US\oleaccrc.dll.mui
+L13202: 29440	MRC.exe	0x83a0000	False	False	False	\Windows\System32\en-US\mpr.dll.mui
+L13203: 29440	MRC.exe	0x8ee0000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L13204: 29440	MRC.exe	0x9110000	False	False	False	\Windows\System32\en-US\dui70.dll.mui
+L13205: 29440	MRC.exe	0x9970000	False	False	False	\Windows\System32\en-US\ntshrui.dll.mui
+L13206: 29440	MRC.exe	0x62340000	True	True	True	\Windows\SysWOW64\PortableDeviceApi.dll
+L13207: 29440	MRC.exe	0x61a90000	True	True	True	\Windows\SysWOW64\ieframe.dll
+L13208: 29440	MRC.exe	0x57a60000	True	True	True	\Windows\SysWOW64\winsta.dll
+L13209: 29440	MRC.exe	0x620c0000	True	True	True	\Windows\SysWOW64\provsvc.dll
+L13210: 29440	MRC.exe	0x66000000	True	True	True	\Windows\SysWOW64\msvbvm60.dll
+L13211: 29440	MRC.exe	0x675f0000	True	True	True	\Windows\SysWOW64\linkinfo.dll
+L13212: 29440	MRC.exe	0x73e10000	True	True	True	\Windows\SysWOW64\apphelp.dll
+L13213: 29440	MRC.exe	0x6ee50000	True	True	True	\Windows\SysWOW64\WindowsCodecs.dll
+L13214: 29440	MRC.exe	0x68b60000	True	True	True	\Windows\SysWOW64\TextInputFramework.dll
+L13215: 29440	MRC.exe	0x68080000	True	True	True	\Windows\SysWOW64\CoreUIComponents.dll
+L13216: 29440	MRC.exe	0x67cc0000	True	True	True	\Windows\SysWOW64\dcomp.dll
+L13217: 29440	MRC.exe	0x67b70000	True	True	True	\Windows\SysWOW64\Windows.Globalization.dll
+L13218: 29440	MRC.exe	0x67ea0000	True	True	True	\Windows\SysWOW64\IDStore.dll
+L13219: 29440	MRC.exe	0x689a0000	True	True	True	\Windows\SysWOW64\CoreMessaging.dll
+L13220: 29440	MRC.exe	0x68910000	True	True	True	\Windows\SysWOW64\DataExchange.dll
+L13221: 29440	MRC.exe	0x6e4a0000	True	True	True	\Windows\SysWOW64\PortableDeviceTypes.dll
+L13222: 29440	MRC.exe	0x693a0000	True	True	True	\Windows\SysWOW64\MMDevAPI.dll
+L13223: 29440	MRC.exe	0x68c60000	True	True	True	\Windows\SysWOW64\duser.dll
+L13224: 29440	MRC.exe	0x68c30000	True	True	True	\Windows\SysWOW64\scrrun.dll
+L13225: 29440	MRC.exe	0x69370000	True	True	True	\Windows\SysWOW64\devobj.dll
+L13226: 29440	MRC.exe	0x6e480000	True	True	True	\Windows\SysWOW64\samlib.dll
+L13227: 29440	MRC.exe	0x6e5e0000	True	True	True	\Windows\SysWOW64\thumbcache.dll
+L13228: 29440	MRC.exe	0x6e4d0000	True	True	True	\Windows\SysWOW64\TextShaping.dll
+L13229: 29440	MRC.exe	0x6ea10000	True	True	True	\Windows\SysWOW64\BCP47mrm.dll
+L13230: 29440	MRC.exe	0x6e760000	True	True	True	\Windows\SysWOW64\UIAutomationCore.dll
+L13231: 29440	MRC.exe	0x6ec40000	True	True	True	\Windows\SysWOW64\msvcp110_win.dll
+L13232: 29440	MRC.exe	0x70230000	True	True	True	\Windows\SysWOW64\srvcli.dll
+L13233: 29440	MRC.exe	0x6fdb0000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L13234: 29440	MRC.exe	0x6f5e0000	True	True	True	\Windows\SysWOW64\Windows.Storage.Search.dll
+L13235: 29440	MRC.exe	0x6f2f0000	True	True	True	\Windows\SysWOW64\twinapi.appcore.dll
+L13236: 29440	MRC.exe	0x6f0f0000	True	True	True	\Windows\SysWOW64\wlidprov.dll
+L13237: 29440	MRC.exe	0x6f0d0000	True	True	True	\Windows\SysWOW64\samcli.dll
+L13238: 29440	MRC.exe	0x6f5c0000	True	True	True	\Windows\SysWOW64\mssprxy.dll
+L13239: 29440	MRC.exe	0x6fd40000	True	True	True	\Windows\SysWOW64\BCP47Langs.dll
+L13240: 29440	MRC.exe	0x6f8e0000	True	True	True	\Windows\SysWOW64\OneCoreUAPCommonProxyStub.dll
+L13241: 29440	MRC.exe	0x6f690000	True	True	True	\Windows\SysWOW64\ntshrui.dll
+L13242: 29440	MRC.exe	0x6fc80000	True	True	True	\Windows\SysWOW64\shacct.dll
+L13243: 29440	MRC.exe	0x6fd90000	True	True	True	\Windows\SysWOW64\edputil.dll
+L13244: 29440	MRC.exe	0x6ff30000	True	True	True	\Windows\SysWOW64\Windows.FileExplorer.Common.dll
+L13245: 29440	MRC.exe	0x6fe90000	True	True	True	\Windows\SysWOW64\Windows.StateRepositoryPS.dll
+L13246: 29440	MRC.exe	0x70030000	True	True	True	\Windows\SysWOW64\cldapi.dll
+L13247: 29440	MRC.exe	0x70020000	True	True	True	\Windows\SysWOW64\fltLib.dll
+L13248: 29440	MRC.exe	0x706c0000	True	True	True	\Windows\SysWOW64\dxgi.dll
+L13249: 29440	MRC.exe	0x70280000	True	True	True	\Windows\SysWOW64\mpr.dll
+L13250: 29440	MRC.exe	0x704e0000	True	True	True	\Windows\SysWOW64\d3d11.dll
+L13251: 29440	MRC.exe	0x73850000	True	True	True	\Windows\SysWOW64\StructuredQuery.dll
+L13252: 29440	MRC.exe	0x721f0000	True	True	True	\Windows\SysWOW64\winhttp.dll
+L13253: 29440	MRC.exe	0x71dd0000	True	True	True	\Windows\SysWOW64\iertutil.dll
+L13254: 29440	MRC.exe	0x72590000	True	True	True	\Windows\SysWOW64\urlmon.dll
+L13255: 29440	MRC.exe	0x73cd0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L13256: 29440	MRC.exe	0x73cc0000	True	True	True	\Windows\SysWOW64\atlthunk.dll
+L13257: 29440	MRC.exe	0x73d80000	True	True	True	\Windows\SysWOW64\networkexplorer.dll
+L13258: 29440	MRC.exe	0x76290000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L13259: 29440	MRC.exe	0x74f60000	True	True	True	\Windows\SysWOW64\dui70.dll
+L13260: 29440	MRC.exe	0x74300000	True	True	True	\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_11b1e5df2ffd8627\comctl32.dll
+L13261: 29440	MRC.exe	0x74180000	True	True	True	\Windows\SysWOW64\ntmarta.dll
+L13262: 29440	MRC.exe	0x740a0000	True	True	True	\Windows\SysWOW64\dwmapi.dll
+L13263: 29440	MRC.exe	0x74070000	True	True	True	\Windows\SysWOW64\xmllite.dll
+L13264: 29440	MRC.exe	0x74170000	True	True	True	\Windows\SysWOW64\cscapi.dll
+L13265: 29440	MRC.exe	0x74240000	True	True	True	\Windows\SysWOW64\uxtheme.dll
+L13266: 29440	MRC.exe	0x74200000	True	True	True	\Windows\SysWOW64\profapi.dll
+L13267: 29440	MRC.exe	0x74230000	True	True	True	\Windows\SysWOW64\msasn1.dll
+L13268: 29440	MRC.exe	0x742e0000	True	True	True	\Windows\SysWOW64\wkscli.dll
+L13269: 29440	MRC.exe	0x742f0000	True	True	True	\Windows\SysWOW64\netutils.dll
+L13270: 29440	MRC.exe	0x748a0000	True	True	True	\Windows\SysWOW64\oleacc.dll
+L13271: 29440	MRC.exe	0x74790000	True	True	True	\Windows\SysWOW64\userenv.dll
+L13272: 29440	MRC.exe	0x74630000	True	True	True	\Windows\SysWOW64\propsys.dll
+L13273: 29440	MRC.exe	0x74850000	True	True	True	\Windows\SysWOW64\PlayToDevice.dll
+L13274: 29440	MRC.exe	0x747c0000	True	True	True	\Windows\SysWOW64\version.dll
+L13275: 29440	MRC.exe	0x74e30000	True	True	True	\Windows\SysWOW64\dlnashext.dll
+L13276: 29440	MRC.exe	0x749c0000	True	True	True	\Windows\SysWOW64\wininet.dll
+L13277: 29440	MRC.exe	0x74910000	True	True	True	\Windows\SysWOW64\DevDispItemProvider.dll
+L13278: 29440	MRC.exe	0x74e90000	True	True	True	\Windows\SysWOW64\davclnt.dll
+L13279: 29440	MRC.exe	0x74e80000	True	True	True	\Windows\SysWOW64\davhlpr.dll
+L13280: 29440	MRC.exe	0x74eb0000	True	True	True	\Windows\SysWOW64\ntlanman.dll
+L13281: 29440	MRC.exe	0x75880000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L13282: 29440	MRC.exe	0x75160000	True	True	True	\Windows\SysWOW64\asycfilt.dll
+L13283: 29440	MRC.exe	0x75130000	True	True	True	\Windows\SysWOW64\AssignedAccessRuntime.dll
+L13284: 29440	MRC.exe	0x75120000	True	True	True	\Windows\SysWOW64\drprov.dll
+L13285: 29440	MRC.exe	0x75100000	True	True	True	\Windows\SysWOW64\netapi32.dll
+L13286: 29440	MRC.exe	0x75140000	True	True	True	\Windows\SysWOW64\globinputhost.dll
+L13287: 29440	MRC.exe	0x75270000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L13288: 29440	MRC.exe	0x75240000	True	True	True	\Windows\SysWOW64\wldp.dll
+L13289: 29440	MRC.exe	0x75cc0000	True	True	True	\Windows\SysWOW64\user32.dll
+L13290: 29440	MRC.exe	0x758f0000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L13291: 29440	MRC.exe	0x75890000	True	True	True	\Windows\SysWOW64\win32u.dll
+L13292: 29440	MRC.exe	0x758b0000	True	True	True	\Windows\SysWOW64\cfgmgr32.dll
+L13293: 29440	MRC.exe	0x75ba0000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L13294: 29440	MRC.exe	0x75a40000	True	True	True	\Windows\SysWOW64\comdlg32.dll
+L13295: 29440	MRC.exe	0x75f30000	True	True	True	\Windows\SysWOW64\msctf.dll
+L13296: 29440	MRC.exe	0x75e60000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L13297: 29440	MRC.exe	0x76180000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L13298: 29440	MRC.exe	0x76240000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L13299: 29440	MRC.exe	0x779d0000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L13300: 29440	MRC.exe	0x76cd0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L13301: 29440	MRC.exe	0x76a00000	True	True	True	\Windows\SysWOW64\sechost.dll
+L13302: 29440	MRC.exe	0x76900000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L13303: 29440	MRC.exe	0x76310000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L13304: 29440	MRC.exe	0x76340000	True	True	True	\Windows\SysWOW64\shell32.dll
+L13305: 29440	MRC.exe	0x769a0000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L13306: 29440	MRC.exe	0x76b60000	True	True	True	\Windows\SysWOW64\ws2_32.dll
+L13307: 29440	MRC.exe	0x76ae0000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L13308: 29440	MRC.exe	0x76be0000	True	True	True	\Windows\SysWOW64\ole32.dll
+L13309: 29440	MRC.exe	0x775f0000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+
+--- malware_ldrmodules.txt ---
+L13190: 29440	MRC.exe	0x67a30000	True	True	True	\Windows\SysWOW64\sxs.dll
+L13191: 29440	MRC.exe	0x400000	True	False	True	\Tools\MRC.exe
+L13192: 29440	MRC.exe	0x560000	False	False	False	\Windows\SysWOW64\imageres.dll
+L13193: 29440	MRC.exe	0x2240000	False	False	False	\Windows\System32\en-US\user32.dll.mui
+L13194: 29440	MRC.exe	0x23c0000	False	False	False	\Windows\SysWOW64\oleaccrc.dll
+L13195: 29440	MRC.exe	0x31d0000	False	False	False	\Windows\System32\en-US\comdlg32.dll.mui
+L13196: 29440	MRC.exe	0x3590000	False	False	False	\Windows\SystemResources\shell32.dll.mun
+L13197: 29440	MRC.exe	0x34b0000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L13198: 29440	MRC.exe	0x3440000	False	False	False	\Windows\SystemResources\comdlg32.dll.mun
+L13199: 29440	MRC.exe	0x7ed0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L13200: 29440	MRC.exe	0x8300000	False	False	False	\Windows\System32\en-US\UIAutomationCore.dll.mui
+L13201: 29440	MRC.exe	0x8330000	False	False	False	\Windows\System32\en-US\oleaccrc.dll.mui
+L13202: 29440	MRC.exe	0x83a0000	False	False	False	\Windows\System32\en-US\mpr.dll.mui
+L13203: 29440	MRC.exe	0x8ee0000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L13204: 29440	MRC.exe	0x9110000	False	False	False	\Windows\System32\en-US\dui70.dll.mui
+L13205: 29440	MRC.exe	0x9970000	False	False	False	\Windows\System32\en-US\ntshrui.dll.mui
+L13206: 29440	MRC.exe	0x62340000	True	True	True	\Windows\SysWOW64\PortableDeviceApi.dll
+L13207: 29440	MRC.exe	0x61a90000	True	True	True	\Windows\SysWOW64\ieframe.dll
+L13208: 29440	MRC.exe	0x57a60000	True	True	True	\Windows\SysWOW64\winsta.dll
+L13209: 29440	MRC.exe	0x620c0000	True	True	True	\Windows\SysWOW64\provsvc.dll
+L13210: 29440	MRC.exe	0x66000000	True	True	True	\Windows\SysWOW64\msvbvm60.dll
+L13211: 29440	MRC.exe	0x675f0000	True	True	True	\Windows\SysWOW64\linkinfo.dll
+L13212: 29440	MRC.exe	0x73e10000	True	True	True	\Windows\SysWOW64\apphelp.dll
+L13213: 29440	MRC.exe	0x6ee50000	True	True	True	\Windows\SysWOW64\WindowsCodecs.dll
+L13214: 29440	MRC.exe	0x68b60000	True	True	True	\Windows\SysWOW64\TextInputFramework.dll
+L13215: 29440	MRC.exe	0x68080000	True	True	True	\Windows\SysWOW64\CoreUIComponents.dll
+L13216: 29440	MRC.exe	0x67cc0000	True	True	True	\Windows\SysWOW64\dcomp.dll
+L13217: 29440	MRC.exe	0x67b70000	True	True	True	\Windows\SysWOW64\Windows.Globalization.dll
+L13218: 29440	MRC.exe	0x67ea0000	True	True	True	\Windows\SysWOW64\IDStore.dll
+L13219: 29440	MRC.exe	0x689a0000	True	True	True	\Windows\SysWOW64\CoreMessaging.dll
+L13220: 29440	MRC.exe	0x68910000	True	True	True	\Windows\SysWOW64\DataExchange.dll
+L13221: 29440	MRC.exe	0x6e4a0000	True	True	True	\Windows\SysWOW64\PortableDeviceTypes.dll
+L13222: 29440	MRC.exe	0x693a0000	True	True	True	\Windows\SysWOW64\MMDevAPI.dll
+L13223: 29440	MRC.exe	0x68c60000	True	True	True	\Windows\SysWOW64\duser.dll
+L13224: 29440	MRC.exe	0x68c30000	True	True	True	\Windows\SysWOW64\scrrun.dll
+L13225: 29440	MRC.exe	0x69370000	True	True	True	\Windows\SysWOW64\devobj.dll
+L13226: 29440	MRC.exe	0x6e480000	True	True	True	\Windows\SysWOW64\samlib.dll
+L13227: 29440	MRC.exe	0x6e5e0000	True	True	True	\Windows\SysWOW64\thumbcache.dll
+L13228: 29440	MRC.exe	0x6e4d0000	True	True	True	\Windows\SysWOW64\TextShaping.dll
+L13229: 29440	MRC.exe	0x6ea10000	True	True	True	\Windows\SysWOW64\BCP47mrm.dll
+L13230: 29440	MRC.exe	0x6e760000	True	True	True	\Windows\SysWOW64\UIAutomationCore.dll
+L13231: 29440	MRC.exe	0x6ec40000	True	True	True	\Windows\SysWOW64\msvcp110_win.dll
+L13232: 29440	MRC.exe	0x70230000	True	True	True	\Windows\SysWOW64\srvcli.dll
+L13233: 29440	MRC.exe	0x6fdb0000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L13234: 29440	MRC.exe	0x6f5e0000	True	True	True	\Windows\SysWOW64\Windows.Storage.Search.dll
+L13235: 29440	MRC.exe	0x6f2f0000	True	True	True	\Windows\SysWOW64\twinapi.appcore.dll
+L13236: 29440	MRC.exe	0x6f0f0000	True	True	True	\Windows\SysWOW64\wlidprov.dll
+L13237: 29440	MRC.exe	0x6f0d0000	True	True	True	\Windows\SysWOW64\samcli.dll
+L13238: 29440	MRC.exe	0x6f5c0000	True	True	True	\Windows\SysWOW64\mssprxy.dll
+L13239: 29440	MRC.exe	0x6fd40000	True	True	True	\Windows\SysWOW64\BCP47Langs.dll
+L13240: 29440	MRC.exe	0x6f8e0000	True	True	True	\Windows\SysWOW64\OneCoreUAPCommonProxyStub.dll
+L13241: 29440	MRC.exe	0x6f690000	True	True	True	\Windows\SysWOW64\ntshrui.dll
+L13242: 29440	MRC.exe	0x6fc80000	True	True	True	\Windows\SysWOW64\shacct.dll
+L13243: 29440	MRC.exe	0x6fd90000	True	True	True	\Windows\SysWOW64\edputil.dll
+L13244: 29440	MRC.exe	0x6ff30000	True	True	True	\Windows\SysWOW64\Windows.FileExplorer.Common.dll
+L13245: 29440	MRC.exe	0x6fe90000	True	True	True	\Windows\SysWOW64\Windows.StateRepositoryPS.dll
+L13246: 29440	MRC.exe	0x70030000	True	True	True	\Windows\SysWOW64\cldapi.dll
+L13247: 29440	MRC.exe	0x70020000	True	True	True	\Windows\SysWOW64\fltLib.dll
+L13248: 29440	MRC.exe	0x706c0000	True	True	True	\Windows\SysWOW64\dxgi.dll
+L13249: 29440	MRC.exe	0x70280000	True	True	True	\Windows\SysWOW64\mpr.dll
+L13250: 29440	MRC.exe	0x704e0000	True	True	True	\Windows\SysWOW64\d3d11.dll
+L13251: 29440	MRC.exe	0x73850000	True	True	True	\Windows\SysWOW64\StructuredQuery.dll
+L13252: 29440	MRC.exe	0x721f0000	True	True	True	\Windows\SysWOW64\winhttp.dll
+L13253: 29440	MRC.exe	0x71dd0000	True	True	True	\Windows\SysWOW64\iertutil.dll
+L13254: 29440	MRC.exe	0x72590000	True	True	True	\Windows\SysWOW64\urlmon.dll
+L13255: 29440	MRC.exe	0x73cd0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L13256: 29440	MRC.exe	0x73cc0000	True	True	True	\Windows\SysWOW64\atlthunk.dll
+L13257: 29440	MRC.exe	0x73d80000	True	True	True	\Windows\SysWOW64\networkexplorer.dll
+L13258: 29440	MRC.exe	0x76290000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L13259: 29440	MRC.exe	0x74f60000	True	True	True	\Windows\SysWOW64\dui70.dll
+L13260: 29440	MRC.exe	0x74300000	True	True	True	\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_11b1e5df2ffd8627\comctl32.dll
+L13261: 29440	MRC.exe	0x74180000	True	True	True	\Windows\SysWOW64\ntmarta.dll
+L13262: 29440	MRC.exe	0x740a0000	True	True	True	\Windows\SysWOW64\dwmapi.dll
+L13263: 29440	MRC.exe	0x74070000	True	True	True	\Windows\SysWOW64\xmllite.dll
+L13264: 29440	MRC.exe	0x74170000	True	True	True	\Windows\SysWOW64\cscapi.dll
+L13265: 29440	MRC.exe	0x74240000	True	True	True	\Windows\SysWOW64\uxtheme.dll
+L13266: 29440	MRC.exe	0x74200000	True	True	True	\Windows\SysWOW64\profapi.dll
+L13267: 29440	MRC.exe	0x74230000	True	True	True	\Windows\SysWOW64\msasn1.dll
+L13268: 29440	MRC.exe	0x742e0000	True	True	True	\Windows\SysWOW64\wkscli.dll
+L13269: 29440	MRC.exe	0x742f0000	True	True	True	\Windows\SysWOW64\netutils.dll
+L13270: 29440	MRC.exe	0x748a0000	True	True	True	\Windows\SysWOW64\oleacc.dll
+L13271: 29440	MRC.exe	0x74790000	True	True	True	\Windows\SysWOW64\userenv.dll
+L13272: 29440	MRC.exe	0x74630000	True	True	True	\Windows\SysWOW64\propsys.dll
+L13273: 29440	MRC.exe	0x74850000	True	True	True	\Windows\SysWOW64\PlayToDevice.dll
+L13274: 29440	MRC.exe	0x747c0000	True	True	True	\Windows\SysWOW64\version.dll
+L13275: 29440	MRC.exe	0x74e30000	True	True	True	\Windows\SysWOW64\dlnashext.dll
+L13276: 29440	MRC.exe	0x749c0000	True	True	True	\Windows\SysWOW64\wininet.dll
+L13277: 29440	MRC.exe	0x74910000	True	True	True	\Windows\SysWOW64\DevDispItemProvider.dll
+L13278: 29440	MRC.exe	0x74e90000	True	True	True	\Windows\SysWOW64\davclnt.dll
+L13279: 29440	MRC.exe	0x74e80000	True	True	True	\Windows\SysWOW64\davhlpr.dll
+L13280: 29440	MRC.exe	0x74eb0000	True	True	True	\Windows\SysWOW64\ntlanman.dll
+L13281: 29440	MRC.exe	0x75880000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L13282: 29440	MRC.exe	0x75160000	True	True	True	\Windows\SysWOW64\asycfilt.dll
+L13283: 29440	MRC.exe	0x75130000	True	True	True	\Windows\SysWOW64\AssignedAccessRuntime.dll
+L13284: 29440	MRC.exe	0x75120000	True	True	True	\Windows\SysWOW64\drprov.dll
+L13285: 29440	MRC.exe	0x75100000	True	True	True	\Windows\SysWOW64\netapi32.dll
+L13286: 29440	MRC.exe	0x75140000	True	True	True	\Windows\SysWOW64\globinputhost.dll
+L13287: 29440	MRC.exe	0x75270000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L13288: 29440	MRC.exe	0x75240000	True	True	True	\Windows\SysWOW64\wldp.dll
+L13289: 29440	MRC.exe	0x75cc0000	True	True	True	\Windows\SysWOW64\user32.dll
+L13290: 29440	MRC.exe	0x758f0000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L13291: 29440	MRC.exe	0x75890000	True	True	True	\Windows\SysWOW64\win32u.dll
+L13292: 29440	MRC.exe	0x758b0000	True	True	True	\Windows\SysWOW64\cfgmgr32.dll
+L13293: 29440	MRC.exe	0x75ba0000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L13294: 29440	MRC.exe	0x75a40000	True	True	True	\Windows\SysWOW64\comdlg32.dll
+L13295: 29440	MRC.exe	0x75f30000	True	True	True	\Windows\SysWOW64\msctf.dll
+L13296: 29440	MRC.exe	0x75e60000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L13297: 29440	MRC.exe	0x76180000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L13298: 29440	MRC.exe	0x76240000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L13299: 29440	MRC.exe	0x779d0000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L13300: 29440	MRC.exe	0x76cd0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L13301: 29440	MRC.exe	0x76a00000	True	True	True	\Windows\SysWOW64\sechost.dll
+L13302: 29440	MRC.exe	0x76900000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L13303: 29440	MRC.exe	0x76310000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L13304: 29440	MRC.exe	0x76340000	True	True	True	\Windows\SysWOW64\shell32.dll
+L13305: 29440	MRC.exe	0x769a0000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L13306: 29440	MRC.exe	0x76b60000	True	True	True	\Windows\SysWOW64\ws2_32.dll
+L13307: 29440	MRC.exe	0x76ae0000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L13308: 29440	MRC.exe	0x76be0000	True	True	True	\Windows\SysWOW64\ole32.dll
+L13309: 29440	MRC.exe	0x775f0000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+
+--- malware_pebmasquerade.txt ---
+L2188: 29440	MRC.exe	\Device\HarddiskVolume7\Tools\MRC.exe	D:\Tools\MRC.exe	False	False
+
+=== PID 896 (winlogon.exe, ppid=740) ===
+Cmdline: winlogon.exe
+
+--- pslist.txt ---
+L13: 896	740	winlogon.exe	0xb78cfa262080	3	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	Disabled
+L15: 392	896	fontdrvhost.ex	0xb78cfa619140	6	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	Disabled
+L20: 1168	896	LogonUI.exe	0xb78cfa6a1080	0	-	1	False	2020-11-11 08:13:14.000000 UTC	2020-11-14 03:42:49.000000 UTC	Disabled
+L21: 1176	896	dwm.exe	0xb78cfa89c080	14	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	Disabled
+L103: 7404	896	userinit.exe	0xb78d00a18080	0	-	1	False	2020-11-11 08:13:41.000000 UTC	2020-11-11 08:14:16.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L13: 896	winlogon.exe	winlogon.exe
+
+--- privileges.txt ---
+L285: 896	winlogon.exe	2	SeCreateTokenPrivilege		Create a token object
+L286: 896	winlogon.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L287: 896	winlogon.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L288: 896	winlogon.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L289: 896	winlogon.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L290: 896	winlogon.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L291: 896	winlogon.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L292: 896	winlogon.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L293: 896	winlogon.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L294: 896	winlogon.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L295: 896	winlogon.exe	12	SeSystemtimePrivilege		Change the system time
+L296: 896	winlogon.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L297: 896	winlogon.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L298: 896	winlogon.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L299: 896	winlogon.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L300: 896	winlogon.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L301: 896	winlogon.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L302: 896	winlogon.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L303: 896	winlogon.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L304: 896	winlogon.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L305: 896	winlogon.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L306: 896	winlogon.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L307: 896	winlogon.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L308: 896	winlogon.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L309: 896	winlogon.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L310: 896	winlogon.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L311: 896	winlogon.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L312: 896	winlogon.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L313: 896	winlogon.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L314: 896	winlogon.exe	31	SeTrustedCredManAccessPrivilege	Present	Access Credential Manager as a trusted caller
+L315: 896	winlogon.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L316: 896	winlogon.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L317: 896	winlogon.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L318: 896	winlogon.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L319: 896	winlogon.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L215: 896	winlogon.exe	0x7ff6c8e80000	0xe3000	winlogon.exe	C:\WINDOWS\system32\winlogon.exe	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L216: 896	winlogon.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L217: 896	winlogon.exe	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L218: 896	winlogon.exe	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L219: 896	winlogon.exe	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L220: 896	winlogon.exe	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L221: 896	winlogon.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L222: 896	winlogon.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L223: 896	winlogon.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L224: 896	winlogon.exe	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L225: 896	winlogon.exe	0x7fff54b90000	0x4b000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L226: 896	winlogon.exe	0x7fff54a90000	0x12000	UMPDC.dll	C:\WINDOWS\system32\UMPDC.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L227: 896	winlogon.exe	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\system32\profapi.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L228: 896	winlogon.exe	0x7fff57540000	0x1a0000	user32.dll	C:\WINDOWS\System32\user32.dll	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L229: 896	winlogon.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L230: 896	winlogon.exe	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L231: 896	winlogon.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L232: 896	winlogon.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L233: 896	winlogon.exe	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L234: 896	winlogon.exe	0x7fff547d0000	0x5a000	winsta.dll	C:\WINDOWS\SYSTEM32\winsta.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L235: 896	winlogon.exe	0x7fff54ea0000	0x3c000	SspiCli.dll	C:\WINDOWS\system32\SspiCli.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L236: 896	winlogon.exe	0x7fff54ee0000	0x2e000	USERENV.dll	C:\WINDOWS\system32\USERENV.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L237: 896	winlogon.exe	0x7fff53d70000	0x29000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L238: 896	winlogon.exe	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L239: 896	winlogon.exe	0x7fff557e0000	0x27000	Bcrypt.dll	C:\WINDOWS\System32\Bcrypt.dll	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L240: 896	winlogon.exe	0x7fff555d0000	0x7f000	bcryptprimitives.dll	C:\WINDOWS\System32\bcryptprimitives.dll	-1	2020-11-11 08:13:14.000000 UTC	Disabled
+L241: 896	winlogon.exe	0x7fff53c90000	0xa0000	firewallapi.dll	C:\WINDOWS\SYSTEM32\firewallapi.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L242: 896	winlogon.exe	0x7fff54440000	0xcb000	DNSAPI.dll	C:\WINDOWS\system32\DNSAPI.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L243: 896	winlogon.exe	0x7fff54400000	0x3b000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L244: 896	winlogon.exe	0x7fff57450000	0x8000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L245: 896	winlogon.exe	0x7fff53c60000	0x2f000	fwbase.dll	C:\WINDOWS\system32\fwbase.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L246: 896	winlogon.exe	0x7fff52b00000	0x1e000	uxinit.dll	C:\WINDOWS\SYSTEM32\uxinit.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L247: 896	winlogon.exe	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L248: 896	winlogon.exe	0x7fff52c30000	0x2f000	dwmapi.dll	C:\WINDOWS\system32\dwmapi.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L249: 896	winlogon.exe	0x7fff52a60000	0x9e000	UxTheme.dll	C:\WINDOWS\system32\UxTheme.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L250: 896	winlogon.exe	0x7fff55650000	0x15d000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L251: 896	winlogon.exe	0x7fff540e0000	0xa000	DPAPI.dll	C:\WINDOWS\system32\DPAPI.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L252: 896	winlogon.exe	0x7fff54960000	0xc000	CRYPTBASE.dll	C:\WINDOWS\system32\CRYPTBASE.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L253: 896	winlogon.exe	0x7fff52a40000	0x14000	dwminit.dll	C:\WINDOWS\SYSTEM32\dwminit.dll	6	2020-11-11 08:13:14.000000 UTC	Disabled
+L254: 896	winlogon.exe	0x7fff529b0000	0x90000	apphelp.dll	C:\WINDOWS\system32\apphelp.dll	-1	2020-11-11 08:13:15.000000 UTC	Disabled
+L255: 896	winlogon.exe	0x7fff4a9f0000	0x132000	dsreg.dll	C:\WINDOWS\system32\dsreg.dll	6	2020-11-11 08:13:39.000000 UTC	Disabled
+L256: 896	winlogon.exe	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2020-11-11 08:13:39.000000 UTC	Disabled
+L257: 896	winlogon.exe	0x7fff54940000	0x18000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2020-11-11 08:13:39.000000 UTC	Disabled
+L258: 896	winlogon.exe	0x7fff54140000	0x8a000	msvcp110_win.dll	C:\WINDOWS\system32\msvcp110_win.dll	6	2020-11-11 08:13:39.000000 UTC	Disabled
+L259: 896	winlogon.exe	0x7fff4db50000	0x16000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2020-11-11 08:13:39.000000 UTC	Disabled
+L260: 896	winlogon.exe	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2020-11-11 08:13:39.000000 UTC	Disabled
+L261: 896	winlogon.exe	0x7fff36e90000	0x1d000	MPR.dll	C:\WINDOWS\system32\MPR.dll	6	2020-11-11 08:13:40.000000 UTC	Disabled
+L262: 896	winlogon.exe	0x7fff53de0000	0x4c000	AUTHZ.dll	C:\WINDOWS\system32\AUTHZ.dll	6	2020-11-11 08:13:41.000000 UTC	Disabled
+
+--- pstree.txt ---
+L63: *** 896	740	winlogon.exe	0xb78cfa262080	3	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\winlogon.exe	winlogon.exe	C:\WINDOWS\system32\winlogon.exe
+L64: **** 392	896	fontdrvhost.ex	0xb78cfa619140	6	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\fontdrvhost.exe	"fontdrvhost.exe"	C:\WINDOWS\system32\fontdrvhost.exe
+L65: **** 1176	896	dwm.exe	0xb78cfa89c080	14	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\dwm.exe	"dwm.exe"	C:\WINDOWS\system32\dwm.exe
+L66: **** 7404	896	userinit.exe	0xb78d00a18080	0	-	1	False	2020-11-11 08:13:41.000000 UTC	2020-11-11 08:14:16.000000 UTC	\Device\HarddiskVolume3\Windows\System32\userinit.exe	-	-
+L93: **** 1168	896	LogonUI.exe	0xb78cfa6a1080	0	-	1	False	2020-11-11 08:13:14.000000 UTC	2020-11-14 03:42:49.000000 UTC	\Device\HarddiskVolume3\Windows\System32\LogonUI.exe	-	-
+
+--- psscan.txt ---
+L191: 896	740	winlogon.exe	0xb78cfa262080	3	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	Disabled
+L196: 392	896	fontdrvhost.ex	0xb78cfa619140	6	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	Disabled
+L201: 1168	896	LogonUI.exe	0xb78cfa6a1080	0	-	1	False	2020-11-11 08:13:14.000000 UTC	2020-11-14 03:42:49.000000 UTC	Disabled
+L205: 1176	896	dwm.exe	0xb78cfa89c080	14	-	1	False	2020-11-11 08:13:14.000000 UTC	N/A	Disabled
+L409: 7404	896	userinit.exe	0xb78d00a18080	0	-	1	False	2020-11-11 08:13:41.000000 UTC	2020-11-11 08:14:16.000000 UTC	Disabled
+
+--- ldrmodules.txt ---
+L231: 896	winlogon.exe	0x1c9904b0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
+L232: 896	winlogon.exe	0x1c9907a0000	False	False	False	\Windows\System32\en-US\winlogon.exe.mui
+L233: 896	winlogon.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L234: 896	winlogon.exe	0x7fff53d70000	True	True	True	\Windows\System32\profext.dll
+L235: 896	winlogon.exe	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L236: 896	winlogon.exe	0x7ff6c8e80000	True	False	True	\Windows\System32\winlogon.exe
+L237: 896	winlogon.exe	0x7fff4a9f0000	True	True	True	\Windows\System32\dsreg.dll
+L238: 896	winlogon.exe	0x7fff36e90000	True	True	True	\Windows\System32\mpr.dll
+L239: 896	winlogon.exe	0x7fff529b0000	True	True	True	\Windows\System32\apphelp.dll
+L240: 896	winlogon.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L241: 896	winlogon.exe	0x7fff52a40000	True	True	True	\Windows\System32\dwminit.dll
+L242: 896	winlogon.exe	0x7fff53c60000	True	True	True	\Windows\System32\fwbase.dll
+L243: 896	winlogon.exe	0x7fff52c30000	True	True	True	\Windows\System32\dwmapi.dll
+L244: 896	winlogon.exe	0x7fff52b00000	True	True	True	\Windows\System32\UXInit.dll
+L245: 896	winlogon.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L246: 896	winlogon.exe	0x7fff53c90000	True	True	True	\Windows\System32\FirewallAPI.dll
+L247: 896	winlogon.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L248: 896	winlogon.exe	0x7fff547d0000	True	True	True	\Windows\System32\winsta.dll
+L249: 896	winlogon.exe	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L250: 896	winlogon.exe	0x7fff540e0000	True	True	True	\Windows\System32\dpapi.dll
+L251: 896	winlogon.exe	0x7fff53de0000	True	True	True	\Windows\System32\authz.dll
+L252: 896	winlogon.exe	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L253: 896	winlogon.exe	0x7fff54440000	True	True	True	\Windows\System32\dnsapi.dll
+L254: 896	winlogon.exe	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L255: 896	winlogon.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L256: 896	winlogon.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L257: 896	winlogon.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L258: 896	winlogon.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L259: 896	winlogon.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L260: 896	winlogon.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L261: 896	winlogon.exe	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L262: 896	winlogon.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L263: 896	winlogon.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L264: 896	winlogon.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L265: 896	winlogon.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L266: 896	winlogon.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L267: 896	winlogon.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L268: 896	winlogon.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L269: 896	winlogon.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L270: 896	winlogon.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L271: 896	winlogon.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L272: 896	winlogon.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L273: 896	winlogon.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L274: 896	winlogon.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L275: 896	winlogon.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L276: 896	winlogon.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L277: 896	winlogon.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L278: 896	winlogon.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L279: 896	winlogon.exe	0x7fff57450000	True	True	True	\Windows\System32\nsi.dll
+L280: 896	winlogon.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L231: 896	winlogon.exe	0x1c9904b0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
+L232: 896	winlogon.exe	0x1c9907a0000	False	False	False	\Windows\System32\en-US\winlogon.exe.mui
+L233: 896	winlogon.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L234: 896	winlogon.exe	0x7fff53d70000	True	True	True	\Windows\System32\profext.dll
+L235: 896	winlogon.exe	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L236: 896	winlogon.exe	0x7ff6c8e80000	True	False	True	\Windows\System32\winlogon.exe
+L237: 896	winlogon.exe	0x7fff4a9f0000	True	True	True	\Windows\System32\dsreg.dll
+L238: 896	winlogon.exe	0x7fff36e90000	True	True	True	\Windows\System32\mpr.dll
+L239: 896	winlogon.exe	0x7fff529b0000	True	True	True	\Windows\System32\apphelp.dll
+L240: 896	winlogon.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L241: 896	winlogon.exe	0x7fff52a40000	True	True	True	\Windows\System32\dwminit.dll
+L242: 896	winlogon.exe	0x7fff53c60000	True	True	True	\Windows\System32\fwbase.dll
+L243: 896	winlogon.exe	0x7fff52c30000	True	True	True	\Windows\System32\dwmapi.dll
+L244: 896	winlogon.exe	0x7fff52b00000	True	True	True	\Windows\System32\UXInit.dll
+L245: 896	winlogon.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L246: 896	winlogon.exe	0x7fff53c90000	True	True	True	\Windows\System32\FirewallAPI.dll
+L247: 896	winlogon.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L248: 896	winlogon.exe	0x7fff547d0000	True	True	True	\Windows\System32\winsta.dll
+L249: 896	winlogon.exe	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L250: 896	winlogon.exe	0x7fff540e0000	True	True	True	\Windows\System32\dpapi.dll
+L251: 896	winlogon.exe	0x7fff53de0000	True	True	True	\Windows\System32\authz.dll
+L252: 896	winlogon.exe	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L253: 896	winlogon.exe	0x7fff54440000	True	True	True	\Windows\System32\dnsapi.dll
+L254: 896	winlogon.exe	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L255: 896	winlogon.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L256: 896	winlogon.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L257: 896	winlogon.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L258: 896	winlogon.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L259: 896	winlogon.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L260: 896	winlogon.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L261: 896	winlogon.exe	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L262: 896	winlogon.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L263: 896	winlogon.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L264: 896	winlogon.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L265: 896	winlogon.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L266: 896	winlogon.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L267: 896	winlogon.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L268: 896	winlogon.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L269: 896	winlogon.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L270: 896	winlogon.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L271: 896	winlogon.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L272: 896	winlogon.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L273: 896	winlogon.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L274: 896	winlogon.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L275: 896	winlogon.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L276: 896	winlogon.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L277: 896	winlogon.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L278: 896	winlogon.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L279: 896	winlogon.exe	0x7fff57450000	True	True	True	\Windows\System32\nsi.dll
+L280: 896	winlogon.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L13: 896	winlogon.exe	\Device\HarddiskVolume3\Windows\System32\winlogon.exe	C:\WINDOWS\system32\winlogon.exe	False	False
+
+--- sessions.txt ---
+L136: 1	-	896	winlogon.exe	/SYSTEM	2020-11-11 08:13:14.000000 UTC
+
+=== END OF PIVOT REPORT ===

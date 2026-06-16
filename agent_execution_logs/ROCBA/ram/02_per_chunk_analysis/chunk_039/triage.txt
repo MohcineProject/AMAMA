@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_039.txt
+Summary: FileCoAuth.exe loaded from AppData with orphaned parent (PID 740 unknown); all other processes are exited browser instances with unknown parents consistent with normal browser child-process churn.
+
+[PROCESS]
+pid: 15840
+ppid: 740
+image: FileCoAuth.exe
+cmdline: C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 740 is not present anywhere in the process list | path: executable and non-whitelisted DLLs loaded entirely from user-writable AppData path (C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\)
+

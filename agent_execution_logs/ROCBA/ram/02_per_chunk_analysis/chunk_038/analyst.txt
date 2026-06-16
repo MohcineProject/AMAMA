@@ -1,0 +1,56 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 14912 — svchost.exe (ppid=828)**
+
+Agent 1 reason: orphaned process — parent PID 828 not present in process list.
+
+Evidence assessment:
+- Cmdline: `C:\WINDOWS\system32\svchost.exe -k AarSvcGroup -p -s AarSvc` — this is a perfectly standard svchost invocation. AarSvc (Agent Activation Runtime) is a legitimate Windows 10 service group. The `-k`, `-p`, `-s` flags are normal.
+- Path: `C:\WINDOWS\system32\svchost.exe` — canonical system path, no anomaly.
+- DLLs shown: `svchost.exe`, `ntdll.dll`, `KERNEL32.DLL` — all from `C:\WINDOWS\SYSTEM32\` or `C:\WINDOWS\System32\`. No user-writable paths, no suspicious DLLs.
+- Privileges: The list is long but almost entirely **not enabled** (no `Present` or `Enabled` marker on the dangerous ones). Only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeCreateGlobalPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are Present/Enabled — all normal for a standard svchost running under LocalSystem. `SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege`, `SeLoadDriverPrivilege` etc. are listed but **not enabled** — this is the standard token for a SYSTEM-context svchost; these privileges exist in the token but are not activated.
+- No malfind hits, no netscan hits, no registry persistence hits, no suspicious handles.
+- Orphaned parent: PID 828 not in pslist. This is a common and well-understood artefact — `services.exe` (or any parent) can exit or be reaped from the process list while children remain. On Windows 10, PID reuse and memory snapshot timing routinely produce orphaned PIDs. The cmdline, path, and DLL set are all consistent with a legitimate Windows service host.
+
+**Verdict: REJECTED** — Standard svchost invocation from System32 with a legitimate service group argument, all DLLs from System32, no dangerous privileges enabled. Orphaned parent is a common Volatility artefact and is the sole Agent 1 signal; it does not survive scrutiny given the otherwise clean evidence.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Agent 1 submitted one finding for validation. The single candidate — a svchost.exe instance flagged solely on an orphaned parent PID — presents no corroborating malicious indicators across any artefact type. The orphaned-parent signal is a well-known Volatility timing artefact and does not constitute evidence of compromise in isolation. No confirmed or inconclusive findings were produced from this submission.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTION SUMMARY
+----------------------------------------------------------------
+PID 14912 — svchost.exe — REJECTED
+
+Agent 1 flagged this process because parent PID 828 (expected
+services.exe) does not appear in the process list snapshot.
+However, every other available signal is consistent with a
+legitimate Windows service host: the command line uses the
+standard -k/-p/-s flags with the known AarSvcGroup service
+group; the executable path is the canonical
+C:\WINDOWS\system32\svchost.exe; all three DLL entries visible
+in the dlllist slice load exclusively from C:\WINDOWS\SYSTEM32\
+or C:\WINDOWS\System32\ with no user-writable paths; and while
+the privilege token is long, none of the high-risk privileges
+(SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege,
+SeLoadDriverPrivilege) carry a Present or Enabled marker —
+consistent with a standard LocalSystem svchost token where
+privileges exist in the token but are not activated. No malfind,
+netscan, registry persistence, or handle anomalies were present
+in the evidence block. The orphaned parent is a routine
+Volatility snapshot-timing artefact (services.exe may have been
+reaped from the kernel list or PID 828 reused) and is
+insufficient on its own to sustain a malicious verdict.
+================================================================

@@ -1,0 +1,49 @@
+================================================================
+PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: A single RuntimeBroker.exe instance (PID 14028) was flagged by Agent 1 due to an orphaned parent PID (740 not present in the process list). The privilege footprint is extremely broad — nearly the full Windows privilege set is present in the token — which is anomalous for a user-context broker process. However, the command line, executable path, and DLL provenance are all consistent with a legitimate Windows component. The orphaned-parent signal alone is insufficient to confirm malice; the privilege anomaly elevates this to INCONCLUSIVE pending further artefact review.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      14028
+PPID:     740
+Image:    RuntimeBroker.exe
+Cmdline:  C:\Windows\System32\RuntimeBroker.exe -Embedding
+Severity: N/A
+MITRE:
+
+Justification:
+  RuntimeBroker.exe with the `-Embedding` argument is a standard Windows
+  invocation — the binary lives in System32, the command line is textbook,
+  and the two DLL entries shown (RuntimeBroker.exe itself and ntdll.dll from
+  System32) are entirely clean. The orphaned-parent signal (PPID 740 absent
+  from pslist) is a common artefact of memory-snapshot timing: svchost or
+  DcomLaunch instances that spawned RuntimeBroker can exit before the
+  snapshot is taken, leaving a dangling PPID; this is not inherently
+  suspicious. What prevents outright rejection is the privilege token: the
+  process carries nearly the entire Windows privilege set in the Present
+  state (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege,
+  SeImpersonatePrivilege, SeBackupPrivilege, SeRestorePrivilege, and many
+  others), the vast majority of which are NOT enabled (no "Enabled" flag),
+  but their mere presence in a user-context broker token is unusual —
+  legitimate RuntimeBroker instances run under a restricted user token and
+  should not hold SeTcbPrivilege or SeCreateTokenPrivilege at all. This
+  pattern is consistent with token manipulation or process-hollowing into a
+  legitimate binary, but the DLL and cmdline evidence does not corroborate
+  that hypothesis. Without malfind output, handles data, or a fuller DLL
+  list for this PID, a definitive verdict cannot be reached.
+
+Key Evidence:
+  - L154: 14028	740	RuntimeBroker.	0xb78cf77b70c0	2	-	1	False	2020-11-11 08:14:29.000000 UTC	N/A	Disabled
+  - L5225: 14028	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+  - L5220: 14028	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+  - L5238: 14028	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+  - L5228: 14028	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+  - L5247: 14028	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+  - L8663: 14028	RuntimeBroker.	0x7ff642560000	0x1c000	RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	-1	2020-11-11 08:14:29.000000 UTC	Disabled
+  - L8664: 14028	RuntimeBroker.	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:14:29.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================

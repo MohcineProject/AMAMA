@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:40:00Z
+Chunk: chunk_011.txt
+Summary: svchost.exe parent PID 716 is unknown/not present in process list — orphaned parent anomaly.
+
+[PROCESS]
+pid: 5244
+ppid: 716
+image: svchost.exe
+cmdline: C:\Windows\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc
+severity: LOW
+reasons: orphaned_parent: parent PID 716 listed as 'unknown' — not present in process list; expected parent for svchost.exe is services.exe | parent_mismatch: cannot confirm parent is services.exe due to unknown PID 716
+

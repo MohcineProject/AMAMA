@@ -1,0 +1,198 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:55:05Z
+
+=== PID 7352 (taskhostw.exe, ppid=1524) ===
+Cmdline: taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+
+--- pslist.txt ---
+L103: 7352	1524	taskhostw.exe	0xcd8a12d680c0	8	-	0	False	2026-05-12 18:23:45.000000 UTC	N/A	Disabled
+L112: 8432	7352	ngentask.exe	0xcd8a12f9b0c0	7	-	0	False	2026-05-12 18:24:08.000000 UTC	N/A	Disabled
+L114: 6388	7352	ngentask.exe	0xcd8a13049080	7	-	0	True	2026-05-12 18:24:09.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L103: 7352	taskhostw.exe	taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+
+--- privileges.txt ---
+L3435: 7352	taskhostw.exe	2	SeCreateTokenPrivilege		Create a token object
+L3436: 7352	taskhostw.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L3437: 7352	taskhostw.exe	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L3438: 7352	taskhostw.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L3439: 7352	taskhostw.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3440: 7352	taskhostw.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L3441: 7352	taskhostw.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L3442: 7352	taskhostw.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L3443: 7352	taskhostw.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L3444: 7352	taskhostw.exe	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L3445: 7352	taskhostw.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L3446: 7352	taskhostw.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L3447: 7352	taskhostw.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L3448: 7352	taskhostw.exe	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L3449: 7352	taskhostw.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L3450: 7352	taskhostw.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L3451: 7352	taskhostw.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L3452: 7352	taskhostw.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L3453: 7352	taskhostw.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L3454: 7352	taskhostw.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L3455: 7352	taskhostw.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L3456: 7352	taskhostw.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3457: 7352	taskhostw.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3458: 7352	taskhostw.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3459: 7352	taskhostw.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3460: 7352	taskhostw.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3461: 7352	taskhostw.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L3462: 7352	taskhostw.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L3463: 7352	taskhostw.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L3464: 7352	taskhostw.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3465: 7352	taskhostw.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3466: 7352	taskhostw.exe	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L3467: 7352	taskhostw.exe	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L3468: 7352	taskhostw.exe	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L3469: 7352	taskhostw.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5028: 7352	taskhostw.exe	0x7ff6df3b0000	0x1a000	taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5029: 7352	taskhostw.exe	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5030: 7352	taskhostw.exe	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5031: 7352	taskhostw.exe	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5032: 7352	taskhostw.exe	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:23:53.000000 UTC	Disabled
+L5033: 7352	taskhostw.exe	0x7fffe6ec0000	0x31000	imm32.dll	C:\WINDOWS\System32\imm32.dll	6	2026-05-12 18:23:53.000000 UTC	Disabled
+L5034: 7352	taskhostw.exe	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5035: 7352	taskhostw.exe	0x7fffe7e80000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5036: 7352	taskhostw.exe	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:23:53.000000 UTC	Disabled
+L5037: 7352	taskhostw.exe	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:23:53.000000 UTC	Disabled
+L5038: 7352	taskhostw.exe	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5039: 7352	taskhostw.exe	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5040: 7352	taskhostw.exe	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5041: 7352	taskhostw.exe	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5042: 7352	taskhostw.exe	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5043: 7352	taskhostw.exe	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5044: 7352	taskhostw.exe	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5045: 7352	taskhostw.exe	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:23:53.000000 UTC	Disabled
+L5046: 7352	taskhostw.exe	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+L5047: 7352	taskhostw.exe	0x7fffab1c0000	0x6d000	mscoree.dll	C:\Windows\System32\mscoree.dll	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L5048: 7352	taskhostw.exe	0x7fffe8310000	0xbb000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L5049: 7352	taskhostw.exe	0x7fffab120000	0x9b000	mscoreei.dll	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L5050: 7352	taskhostw.exe	0x7fffe5700000	0xa2000	sxs.dll	C:\WINDOWS\system32\sxs.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L5051: 7352	taskhostw.exe	0x7fffd8e00000	0xb000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	6	2026-05-12 18:23:54.000000 UTC	Disabled
+L5052: 7352	taskhostw.exe	0x7fffa8250000	0x9a4000	clr.dll	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L5053: 7352	taskhostw.exe	0x7fffe8120000	0x67000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L5054: 7352	taskhostw.exe	0x7fffe5f20000	0x864000	Windows.Storage.dll	C:\WINDOWS\System32\Windows.Storage.dll	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L5055: 7352	taskhostw.exe	0x7fffdbef0000	0xc000	VCRUNTIME140_1_CLR0400.dll	C:\WINDOWS\SYSTEM32\VCRUNTIME140_1_CLR0400.dll	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L5056: 7352	taskhostw.exe	0x7fffdbed0000	0x1b000	VCRUNTIME140_CLR0400.dll	C:\WINDOWS\SYSTEM32\VCRUNTIME140_CLR0400.dll	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L5057: 7352	taskhostw.exe	0x7fffa7d00000	0xce000	ucrtbase_clr0400.dll	C:\WINDOWS\SYSTEM32\ucrtbase_clr0400.dll	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+L5058: 7352	taskhostw.exe	0x7fffa6f50000	0x12f000	clrjit.dll	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll	6	2026-05-12 18:23:56.000000 UTC	Disabled
+L5059: 7352	taskhostw.exe	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\WINDOWS\system32\bcrypt.dll	-1	2026-05-12 18:23:57.000000 UTC	Disabled
+L5060: 7352	taskhostw.exe	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-12 18:23:57.000000 UTC	Disabled
+L5061: 7352	taskhostw.exe	0x7fffe50c0000	0x68000	wldp.dll	C:\WINDOWS\SYSTEM32\wldp.dll	6	2026-05-12 18:24:01.000000 UTC	Disabled
+L5062: 7352	taskhostw.exe	0x7fffcdef0000	0x77000	mscorsvc.DLL	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorsvc.DLL	6	2026-05-12 18:24:03.000000 UTC	Disabled
+L5063: 7352	taskhostw.exe	0x7fffcde80000	0x1c000	fusion.dll	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\fusion.dll	6	2026-05-12 18:24:04.000000 UTC	Disabled
+
+--- pstree.txt ---
+L138: *** 7352	1524	taskhostw.exe	0xcd8a12d680c0	8	-	0	False	2026-05-12 18:23:45.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\taskhostw.exe	taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}	C:\WINDOWS\system32\taskhostw.exe
+L139: **** 8432	7352	ngentask.exe	0xcd8a12f9b0c0	7	-	0	False	2026-05-12 18:24:08.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\Microsoft.NET\Framework64\v4.0.30319\ngentask.exe	"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\NGenTask.exe" /RuntimeWide /Critical /StopEvent:1120	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\NGenTask.exe
+L143: **** 6388	7352	ngentask.exe	0xcd8a13049080	7	-	0	True	2026-05-12 18:24:09.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\Microsoft.NET\Framework\v4.0.30319\ngentask.exe	"C:\Windows\Microsoft.NET\Framework\v4.0.30319\NGenTask.exe" /RuntimeWide /Critical /StopEvent:1108	C:\Windows\Microsoft.NET\Framework\v4.0.30319\NGenTask.exe
+
+--- psscan.txt ---
+L151: 7352	1524	taskhostw.exe	0xcd8a12d680c0	8	-	0	False	2026-05-12 18:23:45.000000 UTC	N/A	Disabled
+L160: 8432	7352	ngentask.exe	0xcd8a12f9b0c0	7	-	0	False	2026-05-12 18:24:08.000000 UTC	N/A	Disabled
+L163: 6388	7352	ngentask.exe	0xcd8a13049080	7	-	0	True	2026-05-12 18:24:09.000000 UTC	N/A	Disabled
+
+--- malware_malfind.txt ---
+L85: 7352	taskhostw.exe	0x7df477e00000	0x7df477e0ffff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	N/A	
+L90: 7352	taskhostw.exe	0x7df477e10000	0x7df477eaffff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	N/A	
+
+--- ldrmodules.txt ---
+L5279: 7352	taskhostw.exe	0x21cb0070000	False	False	False	\Windows\System32\en-US\taskhostw.exe.mui
+L5280: 7352	taskhostw.exe	0x21cb0160000	False	False	False	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorrc.dll
+L5281: 7352	taskhostw.exe	0x21cb0630000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L5282: 7352	taskhostw.exe	0x21cb07a0000	False	False	False	\Windows\Microsoft.NET\Framework64\v4.0.30319\ngentasklauncher.dll
+L5283: 7352	taskhostw.exe	0x21cc9590000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll
+L5284: 7352	taskhostw.exe	0x21cc9ad0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll
+L5285: 7352	taskhostw.exe	0x7fffab120000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll
+L5286: 7352	taskhostw.exe	0x7ff6df3b0000	True	False	True	\Windows\System32\taskhostw.exe
+L5287: 7352	taskhostw.exe	0x7fffa6f50000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll
+L5288: 7352	taskhostw.exe	0x7fffa7d00000	True	True	True	\Windows\System32\ucrtbase_clr0400.dll
+L5289: 7352	taskhostw.exe	0x7fffa8250000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
+L5290: 7352	taskhostw.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L5291: 7352	taskhostw.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5292: 7352	taskhostw.exe	0x7fffd8e00000	True	True	True	\Windows\System32\version.dll
+L5293: 7352	taskhostw.exe	0x7fffcde80000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\fusion.dll
+L5294: 7352	taskhostw.exe	0x7fffab1c0000	True	True	True	\Windows\System32\mscoree.dll
+L5295: 7352	taskhostw.exe	0x7fffcdef0000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorsvc.dll
+L5296: 7352	taskhostw.exe	0x7fffdbef0000	True	True	True	\Windows\System32\vcruntime140_1_clr0400.dll
+L5297: 7352	taskhostw.exe	0x7fffdbed0000	True	True	True	\Windows\System32\vcruntime140_clr0400.dll
+L5298: 7352	taskhostw.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L5299: 7352	taskhostw.exe	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L5300: 7352	taskhostw.exe	0x7fffe5700000	True	True	True	\Windows\System32\sxs.dll
+L5301: 7352	taskhostw.exe	0x7fffe50c0000	True	True	True	\Windows\System32\wldp.dll
+L5302: 7352	taskhostw.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5303: 7352	taskhostw.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L5304: 7352	taskhostw.exe	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L5305: 7352	taskhostw.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L5306: 7352	taskhostw.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L5307: 7352	taskhostw.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5308: 7352	taskhostw.exe	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L5309: 7352	taskhostw.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L5310: 7352	taskhostw.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L5311: 7352	taskhostw.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L5312: 7352	taskhostw.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L5313: 7352	taskhostw.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L5314: 7352	taskhostw.exe	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L5315: 7352	taskhostw.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L5316: 7352	taskhostw.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L5317: 7352	taskhostw.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L5318: 7352	taskhostw.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L5319: 7352	taskhostw.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L5320: 7352	taskhostw.exe	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_ldrmodules.txt ---
+L5279: 7352	taskhostw.exe	0x21cb0070000	False	False	False	\Windows\System32\en-US\taskhostw.exe.mui
+L5280: 7352	taskhostw.exe	0x21cb0160000	False	False	False	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorrc.dll
+L5281: 7352	taskhostw.exe	0x21cb0630000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L5282: 7352	taskhostw.exe	0x21cb07a0000	False	False	False	\Windows\Microsoft.NET\Framework64\v4.0.30319\ngentasklauncher.dll
+L5283: 7352	taskhostw.exe	0x21cc9590000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll
+L5284: 7352	taskhostw.exe	0x21cc9ad0000	False	False	False	\Windows\Microsoft.NET\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll
+L5285: 7352	taskhostw.exe	0x7fffab120000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll
+L5286: 7352	taskhostw.exe	0x7ff6df3b0000	True	False	True	\Windows\System32\taskhostw.exe
+L5287: 7352	taskhostw.exe	0x7fffa6f50000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll
+L5288: 7352	taskhostw.exe	0x7fffa7d00000	True	True	True	\Windows\System32\ucrtbase_clr0400.dll
+L5289: 7352	taskhostw.exe	0x7fffa8250000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
+L5290: 7352	taskhostw.exe	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L5291: 7352	taskhostw.exe	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5292: 7352	taskhostw.exe	0x7fffd8e00000	True	True	True	\Windows\System32\version.dll
+L5293: 7352	taskhostw.exe	0x7fffcde80000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\fusion.dll
+L5294: 7352	taskhostw.exe	0x7fffab1c0000	True	True	True	\Windows\System32\mscoree.dll
+L5295: 7352	taskhostw.exe	0x7fffcdef0000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorsvc.dll
+L5296: 7352	taskhostw.exe	0x7fffdbef0000	True	True	True	\Windows\System32\vcruntime140_1_clr0400.dll
+L5297: 7352	taskhostw.exe	0x7fffdbed0000	True	True	True	\Windows\System32\vcruntime140_clr0400.dll
+L5298: 7352	taskhostw.exe	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L5299: 7352	taskhostw.exe	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L5300: 7352	taskhostw.exe	0x7fffe5700000	True	True	True	\Windows\System32\sxs.dll
+L5301: 7352	taskhostw.exe	0x7fffe50c0000	True	True	True	\Windows\System32\wldp.dll
+L5302: 7352	taskhostw.exe	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5303: 7352	taskhostw.exe	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L5304: 7352	taskhostw.exe	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L5305: 7352	taskhostw.exe	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L5306: 7352	taskhostw.exe	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L5307: 7352	taskhostw.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5308: 7352	taskhostw.exe	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L5309: 7352	taskhostw.exe	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L5310: 7352	taskhostw.exe	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L5311: 7352	taskhostw.exe	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L5312: 7352	taskhostw.exe	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L5313: 7352	taskhostw.exe	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L5314: 7352	taskhostw.exe	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L5315: 7352	taskhostw.exe	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L5316: 7352	taskhostw.exe	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L5317: 7352	taskhostw.exe	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L5318: 7352	taskhostw.exe	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L5319: 7352	taskhostw.exe	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L5320: 7352	taskhostw.exe	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_pebmasquerade.txt ---
+L103: 7352	taskhostw.exe	\Device\HarddiskVolume4\Windows\System32\taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	False	False
+
+--- sessions.txt ---
+L81: 0	-	7352	taskhostw.exe	WORKGROUP/CLEANWINDOWS11$	2026-05-12 18:23:45.000000 UTC
+
+=== END OF PIVOT REPORT ===

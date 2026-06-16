@@ -1,0 +1,30 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:08:50Z
+
+=== PID 21836 (RuntimeBroker., ppid=740) ===
+
+--- pslist.txt ---
+L2189: 21836	740	RuntimeBroker.	0xb78d1043b080	0	-	1	False	2020-11-16 02:31:19.000000 UTC	2020-11-16 02:32:50.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L2189: 21836	RuntimeBroker.	-
+
+--- pstree.txt ---
+L132: *** 21836	740	RuntimeBroker.	0xb78d1043b080	0	-	1	False	2020-11-16 02:31:19.000000 UTC	2020-11-16 02:32:50.000000 UTC	-	-	-
+
+--- psscan.txt ---
+L1669: 29656	21836	LocalBridge.ex	0xb78d10428080	0	-	1	False	2020-11-16 02:31:19.000000 UTC	2020-11-16 02:31:20.000000 UTC	Disabled
+L1671: 21836	740	RuntimeBroker.	0xb78d1043b080	0	-	1	False	2020-11-16 02:31:19.000000 UTC	2020-11-16 02:32:50.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L2189: 21836	RuntimeBroker.	-	-	False	False
+
+--- sessions.txt ---
+L2189: 1	-	21836	RuntimeBroker.	-	2020-11-16 02:31:19.000000 UTC
+
+=== PID 29656 (LocalBridge.ex, ppid=21836) ===
+
+--- psscan.txt ---
+L1669: 29656	21836	LocalBridge.ex	0xb78d10428080	0	-	1	False	2020-11-16 02:31:19.000000 UTC	2020-11-16 02:31:20.000000 UTC	Disabled
+
+=== END OF PIVOT REPORT ===

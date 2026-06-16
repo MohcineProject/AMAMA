@@ -1,0 +1,427 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:12:57Z
+
+=== PID 27740 (iCloudIE.exe, ppid=11004) ===
+Cmdline: "iCloudIE-AppX.exe"
+
+--- pslist.txt ---
+L2127: 27740	11004	iCloudIE.exe	0xb78d14a1f080	28	-	1	True	2020-11-16 00:14:48.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L2127: 27740	iCloudIE.exe	"iCloudIE-AppX.exe"
+
+--- privileges.txt ---
+L74275: 27740	iCloudIE.exe	2	SeCreateTokenPrivilege		Create a token object
+L74276: 27740	iCloudIE.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L74277: 27740	iCloudIE.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L74278: 27740	iCloudIE.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L74279: 27740	iCloudIE.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L74280: 27740	iCloudIE.exe	7	SeTcbPrivilege		Act as part of the operating system
+L74281: 27740	iCloudIE.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L74282: 27740	iCloudIE.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L74283: 27740	iCloudIE.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L74284: 27740	iCloudIE.exe	11	SeSystemProfilePrivilege		Profile system performance
+L74285: 27740	iCloudIE.exe	12	SeSystemtimePrivilege		Change the system time
+L74286: 27740	iCloudIE.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L74287: 27740	iCloudIE.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L74288: 27740	iCloudIE.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L74289: 27740	iCloudIE.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L74290: 27740	iCloudIE.exe	17	SeBackupPrivilege		Backup files and directories
+L74291: 27740	iCloudIE.exe	18	SeRestorePrivilege		Restore files and directories
+L74292: 27740	iCloudIE.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L74293: 27740	iCloudIE.exe	20	SeDebugPrivilege		Debug programs
+L74294: 27740	iCloudIE.exe	21	SeAuditPrivilege		Generate security audits
+L74295: 27740	iCloudIE.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L74296: 27740	iCloudIE.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L74297: 27740	iCloudIE.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L74298: 27740	iCloudIE.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L74299: 27740	iCloudIE.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L74300: 27740	iCloudIE.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L74301: 27740	iCloudIE.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L74302: 27740	iCloudIE.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L74303: 27740	iCloudIE.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L74304: 27740	iCloudIE.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L74305: 27740	iCloudIE.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L74306: 27740	iCloudIE.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L74307: 27740	iCloudIE.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L74308: 27740	iCloudIE.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L74309: 27740	iCloudIE.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L11988: 27740	iCloudIE.exe	0x4d0000	0x73c000	iCloudIE.exe	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\iCloudIE.exe	-1	2020-11-16 00:14:48.000000 UTC	Disabled
+L11989: 27740	iCloudIE.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-16 00:14:48.000000 UTC	Disabled
+L11990: 27740	iCloudIE.exe	0x7fff57190000	0x59000	wow64.dll	C:\WINDOWS\System32\wow64.dll	-1	2020-11-16 00:14:48.000000 UTC	Disabled
+L11991: 27740	iCloudIE.exe	0x7fff559a0000	0x83000	wow64win.dll	C:\WINDOWS\System32\wow64win.dll	6	2020-11-16 00:14:48.000000 UTC	Disabled
+L11992: 27740	iCloudIE.exe	0x779c0000	0xa000	wow64cpu.dll	C:\WINDOWS\System32\wow64cpu.dll	6	2020-11-16 00:14:48.000000 UTC	Disabled
+L11993: 27740	iCloudIE.exe	0x4d0000	0x73c000	iCloudIE.exe	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\iCloudIE.exe	-	1678-08-08 10:10:11.000000 UTC	Disabled
+L11994: 27740	iCloudIE.exe	0x779d0000	0x1a3000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-	1710-08-23 02:55:23.000000 UTC	Disabled
+L11995: 27740	iCloudIE.exe	0x76cd0000	0xf0000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L11996: 27740	iCloudIE.exe	0x775f0000	0x214000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L11997: 27740	iCloudIE.exe	0x75cc0000	0x196000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-	1601-01-01 06:26:32.000000 UTC	Disabled
+L11998: 27740	iCloudIE.exe	0x75890000	0x18000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-	-	Disabled
+L11999: 27740	iCloudIE.exe	0x76310000	0x23000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	-	N/A	Disabled
+L12000: 27740	iCloudIE.exe	0x758f0000	0xda000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	-	1886-11-19 22:31:12.000000 UTC	Disabled
+L12001: 27740	iCloudIE.exe	0x76290000	0x7b000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L12002: 27740	iCloudIE.exe	0x747c0000	0x8000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	-	1886-11-14 10:19:52.000000 UTC	Disabled
+L12003: 27740	iCloudIE.exe	0x75ba0000	0x120000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L12004: 27740	iCloudIE.exe	0x76180000	0xbf000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L12005: 27740	iCloudIE.exe	0x77050000	0x7a000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	-	1886-08-20 20:51:34.000000 UTC	Disabled
+L12006: 27740	iCloudIE.exe	0x76a00000	0x75000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-	1894-02-12 22:33:14.000000 UTC	Disabled
+L12007: 27740	iCloudIE.exe	0x75e60000	0xba000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12008: 27740	iCloudIE.exe	0x76340000	0x5b3000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12009: 27740	iCloudIE.exe	0x76be0000	0xe3000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12010: 27740	iCloudIE.exe	0x76dc0000	0x281000	combase.dll	C:\WINDOWS\System32\combase.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12011: 27740	iCloudIE.exe	0x76900000	0x96000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12012: 27740	iCloudIE.exe	0x76240000	0x45000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12013: 27740	iCloudIE.exe	0x779a0000	0x19000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12014: 27740	iCloudIE.exe	0x76b60000	0x63000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12015: 27740	iCloudIE.exe	0x6e200000	0x71000	MSVCP140.dll	C:\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\MSVCP140.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12016: 27740	iCloudIE.exe	0x721f0000	0xc2000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12017: 27740	iCloudIE.exe	0x778a0000	0xff000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12018: 27740	iCloudIE.exe	0x75240000	0x24000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12019: 27740	iCloudIE.exe	0x6e280000	0x1ad000	CoreFoundation.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreFoundation.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12020: 27740	iCloudIE.exe	0x6c880000	0x22e000	CFNetwork.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CFNetwork.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12021: 27740	iCloudIE.exe	0x750c0000	0x32000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12022: 27740	iCloudIE.exe	0x741e0000	0x13000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12023: 27740	iCloudIE.exe	0x6a7e0000	0xd6000	mmcs.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\mmcs.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12024: 27740	iCloudIE.exe	0x6e430000	0x4e000	AOSKit.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\AOSKit.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12025: 27740	iCloudIE.exe	0x6cab0000	0x14000	VCRUNTIME140.dll	C:\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\VCRUNTIME140.dll	-	1675-01-13 07:10:20.000000 UTC	Disabled
+L12026: 27740	iCloudIE.exe	0x700c0000	0x167000	gdiplus.dll	C:\WINDOWS\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.630_none_4294daf48a972df6\gdiplus.dll	-	1601-01-01 00:00:11.000000 UTC	Disabled
+L12027: 27740	iCloudIE.exe	0x74240000	0x74000	UxTheme.dll	C:\WINDOWS\SYSTEM32\UxTheme.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12028: 27740	iCloudIE.exe	0x6dbf0000	0x605000	JavaScriptCore.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\JavaScriptCore.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12029: 27740	iCloudIE.exe	0x6cad0000	0x1114000	WebKit.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\WebKit.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12030: 27740	iCloudIE.exe	0x74790000	0x25000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12031: 27740	iCloudIE.exe	0x75a40000	0xaf000	COMDLG32.dll	C:\WINDOWS\System32\COMDLG32.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12032: 27740	iCloudIE.exe	0x74300000	0x212000	COMCTL32.dll	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_11b1e5df2ffd8627\COMCTL32.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12033: 27740	iCloudIE.exe	0x77810000	0x87000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12034: 27740	iCloudIE.exe	0x6c560000	0x18000	libdispatch.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libdispatch.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12035: 27740	iCloudIE.exe	0x6c210000	0x10000	ASL.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\ASL.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12036: 27740	iCloudIE.exe	0x73ee0000	0x188000	dbghelp.dll	C:\WINDOWS\SYSTEM32\dbghelp.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12037: 27740	iCloudIE.exe	0x6c0d0000	0x140000	libicuuc.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuuc.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12038: 27740	iCloudIE.exe	0x6c580000	0x2f000	objc.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\objc.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12039: 27740	iCloudIE.exe	0x6bfc0000	0x3f000	CRYPTUI.dll	C:\WINDOWS\SYSTEM32\CRYPTUI.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12040: 27740	iCloudIE.exe	0x6a8c0000	0x1e4000	PCS.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\PCS.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12041: 27740	iCloudIE.exe	0x749c0000	0x458000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12042: 27740	iCloudIE.exe	0x6b630000	0xff000	libxml2.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libxml2.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12043: 27740	iCloudIE.exe	0x6c220000	0x207000	libicuin.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuin.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12044: 27740	iCloudIE.exe	0x6bf00000	0xbd000	SQLite3.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\SQLite3.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12045: 27740	iCloudIE.exe	0x6b810000	0x15000	zlib1.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\zlib1.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12046: 27740	iCloudIE.exe	0x6bee0000	0x13000	pthreadVC2.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\pthreadVC2.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12047: 27740	iCloudIE.exe	0x69ec0000	0x63000	ChunkingLibrary.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\ChunkingLibrary.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12048: 27740	iCloudIE.exe	0x6c5b0000	0x2c9000	Foundation.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\Foundation.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12049: 27740	iCloudIE.exe	0x6c4a0000	0xbf000	MSVCR100.dll	C:\WINDOWS\SYSTEM32\MSVCR100.dll	-	2841-09-08 23:28:11.000000 UTC	Disabled
+L12050: 27740	iCloudIE.exe	0x6c430000	0x69000	MSVCP100.dll	C:\WINDOWS\SYSTEM32\MSVCP100.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12051: 27740	iCloudIE.exe	0x6c000000	0xcb000	WTF.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\WTF.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12052: 27740	iCloudIE.exe	0x6bab0000	0x407000	CoreGraphics.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreGraphics.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12053: 27740	iCloudIE.exe	0x6b9c0000	0xe7000	CoreText.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreText.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12054: 27740	iCloudIE.exe	0x6b860000	0x15c000	QuartzCore.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\QuartzCore.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12055: 27740	iCloudIE.exe	0x6b830000	0x2f000	libxslt.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libxslt.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12056: 27740	iCloudIE.exe	0x6b7f0000	0x17000	USP10.dll	C:\WINDOWS\SYSTEM32\USP10.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12057: 27740	iCloudIE.exe	0x70250000	0x28000	WINMM.dll	C:\WINDOWS\SYSTEM32\WINMM.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12058: 27740	iCloudIE.exe	0x73de0000	0x21000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12059: 27740	iCloudIE.exe	0x6b500000	0x8000	WSOCK32.dll	C:\WINDOWS\SYSTEM32\WSOCK32.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12060: 27740	iCloudIE.exe	0x6b7b0000	0x3e000	libtidy.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libtidy.dll	-	1889-06-13 19:12:09.000000 UTC	Disabled
+L12061: 27740	iCloudIE.exe	0x75100000	0x13000	NETAPI32.dll	C:\WINDOWS\SYSTEM32\NETAPI32.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12062: 27740	iCloudIE.exe	0x6b510000	0x28000	CoreVideo.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreVideo.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12063: 27740	iCloudIE.exe	0x73eb0000	0x26000	dbgcore.DLL	C:\WINDOWS\SYSTEM32\dbgcore.DLL	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12064: 27740	iCloudIE.exe	0x6f0d0000	0x15000	SAMCLI.DLL	C:\WINDOWS\SYSTEM32\SAMCLI.DLL	-	1888-05-21 01:31:42.000000 UTC	Disabled
+L12065: 27740	iCloudIE.exe	0x742f0000	0xb000	NETUTILS.DLL	C:\WINDOWS\SYSTEM32\NETUTILS.DLL	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12066: 27740	iCloudIE.exe	0x19f0000	0x19e5000	icudt62.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\icudt62.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12067: 27740	iCloudIE.exe	0x770d0000	0x25000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12068: 27740	iCloudIE.exe	0x70090000	0x28000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	-	1888-05-24 15:25:40.000000 UTC	Disabled
+L12069: 27740	iCloudIE.exe	0x75270000	0x60a000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	-	2832-12-21 10:51:54.000000 UTC	Disabled
+L12070: 27740	iCloudIE.exe	0x75880000	0xf000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12071: 27740	iCloudIE.exe	0x769a0000	0x5c000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12072: 27740	iCloudIE.exe	0x4dc0000	0x4000	AppleBMDAVLocalized.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\AppleBMDAV.resources\en.lproj\AppleBMDAVLocalized.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12073: 27740	iCloudIE.exe	0x76ae0000	0x7e000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12074: 27740	iCloudIE.exe	0x67a30000	0x88000	sxs.dll	C:\WINDOWS\SYSTEM32\sxs.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12075: 27740	iCloudIE.exe	0x67e40000	0x31000	netprofm.dll	C:\WINDOWS\System32\netprofm.dll	-	1642-01-12 04:18:58.000000 UTC	Disabled
+L12076: 27740	iCloudIE.exe	0x67e30000	0xa000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L12077: 27740	iCloudIE.exe	0x73cd0000	0x28000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	-	2832-12-07 08:59:39.000000 UTC	Disabled
+L12078: 27740	iCloudIE.exe	0x74200000	0x1d000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12079: 27740	iCloudIE.exe	0x6f680000	0x8000	DPAPI.dll	C:\WINDOWS\SYSTEM32\DPAPI.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12080: 27740	iCloudIE.exe	0x74220000	0xa000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	-	1666-02-11 12:45:09.000000 UTC	Disabled
+L12081: 27740	iCloudIE.exe	0x759d0000	0x7000	NSI.dll	C:\WINDOWS\System32\NSI.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12082: 27740	iCloudIE.exe	0x6ee30000	0x14000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12083: 27740	iCloudIE.exe	0x74570000	0x16000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	-	1650-12-13 17:57:49.000000 UTC	Disabled
+L12084: 27740	iCloudIE.exe	0x702a0000	0x92000	DNSAPI.dll	C:\WINDOWS\SYSTEM32\DNSAPI.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12085: 27740	iCloudIE.exe	0x741b0000	0x2f000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12086: 27740	iCloudIE.exe	0x751c0000	0x7a000	RICHED20.DLL	C:\WINDOWS\SYSTEM32\RICHED20.DLL	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12087: 27740	iCloudIE.exe	0x75180000	0x31000	msls31.dll	C:\WINDOWS\SYSTEM32\msls31.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12088: 27740	iCloudIE.exe	0x73cc0000	0xd000	atlthunk.dll	C:\WINDOWS\SYSTEM32\atlthunk.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12089: 27740	iCloudIE.exe	0x75f30000	0xd3000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12090: 27740	iCloudIE.exe	0x68b60000	0xba000	textinputframework.dll	C:\WINDOWS\SYSTEM32\textinputframework.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12091: 27740	iCloudIE.exe	0x68080000	0x27e000	CoreUIComponents.dll	C:\WINDOWS\SYSTEM32\CoreUIComponents.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12092: 27740	iCloudIE.exe	0x689a0000	0x9b000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12093: 27740	iCloudIE.exe	0x74180000	0x29000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	-	N/A	Disabled
+L12094: 27740	iCloudIE.exe	0x6fdb0000	0xde000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	-	N/A	Disabled
+L12095: 27740	iCloudIE.exe	0x748a0000	0x53000	Oleacc.dll	C:\WINDOWS\system32\Oleacc.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12096: 27740	iCloudIE.exe	0x6b290000	0x191000	CoreADI32.dll	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreADI32.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12097: 27740	iCloudIE.exe	0x71dd0000	0x22b000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12098: 27740	iCloudIE.exe	0x73830000	0x12000	ondemandconnroutehelper.dll	C:\WINDOWS\SYSTEM32\ondemandconnroutehelper.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12099: 27740	iCloudIE.exe	0x737d0000	0x52000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12100: 27740	iCloudIE.exe	0x6f6f0000	0x8000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12101: 27740	iCloudIE.exe	0x6f5b0000	0x8000	rasadhlp.dll	C:\Windows\System32\rasadhlp.dll	-	1601-01-01 00:00:11.000000 UTC	Disabled
+L12102: 27740	iCloudIE.exe	0x74620000	0xa000	Secur32.dll	C:\WINDOWS\SYSTEM32\Secur32.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12103: 27740	iCloudIE.exe	0x6f4d0000	0x78000	schannel.dll	C:\WINDOWS\System32\schannel.dll	-	1601-01-01 00:00:01.000000 UTC	Disabled
+L12104: 27740	iCloudIE.exe	0x6f550000	0x58000	fwpuclnt.dll	C:\WINDOWS\System32\fwpuclnt.dll	-	1601-01-01 00:00:09.000000 UTC	Disabled
+L12105: 27740	iCloudIE.exe	0x6f4c0000	0x10000	mskeyprotect.dll	C:\WINDOWS\SYSTEM32\mskeyprotect.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12106: 27740	iCloudIE.exe	0x6efc0000	0x1f000	ncryptsslp.dll	C:\WINDOWS\system32\ncryptsslp.dll	-	1601-01-01 00:00:02.000000 UTC	Disabled
+L12107: 27740	iCloudIE.exe	0x74230000	0xe000	MSASN1.dll	C:\WINDOWS\SYSTEM32\MSASN1.dll	-	N/A	Disabled
+
+--- pstree.txt ---
+L2190: 27740	11004	iCloudIE.exe	0xb78d14a1f080	28	-	1	True	2020-11-16 00:14:48.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\iCloudIE.exe	"iCloudIE-AppX.exe"	C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\iCloudIE.exe
+
+--- psscan.txt ---
+L2120: 27740	11004	iCloudIE.exe	0xb78d14a1f080	28	-	1	True	2020-11-16 00:14:48.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L7: 0xb78cf35654c0	UDPv4	127.0.0.1	56521	*	0		27740	iCloudIE.exe	2020-11-16 00:14:48.000000 UTC
+L11: 0xb78cf3566910	UDPv4	127.0.0.1	56522	*	0		27740	iCloudIE.exe	2020-11-16 00:14:48.000000 UTC
+L360: 0xb78d0f5d4260	TCPv4	192.168.1.5	61423	104.91.97.114	443	CLOSE_WAIT	27740	iCloudIE.exe	2020-11-16 00:14:49.000000 UTC
+L386: 0xb78d10f96260	TCPv4	192.168.1.5	61426	17.248.138.12	443	CLOSE_WAIT	27740	iCloudIE.exe	2020-11-16 00:14:49.000000 UTC
+L412: 0xb78d144bd7c0	TCPv4	192.168.1.5	61422	17.248.138.104	443	CLOSE_WAIT	27740	iCloudIE.exe	2020-11-16 00:14:48.000000 UTC
+L415: 0xb78d1456a010	TCPv4	192.168.1.5	61425	17.248.138.18	443	CLOSE_WAIT	27740	iCloudIE.exe	2020-11-16 00:14:49.000000 UTC
+
+--- netstat.txt ---
+L8: 0xb78d0f5d4260	TCPv4	192.168.1.5	61423	104.91.97.114	443	CLOSE_WAIT	27740	iCloudIE.exe	2020-11-16 00:14:49.000000 UTC
+L16: 0xb78d1456a010	TCPv4	192.168.1.5	61425	17.248.138.18	443	CLOSE_WAIT	27740	iCloudIE.exe	2020-11-16 00:14:49.000000 UTC
+L52: 0xb78d10f96260	TCPv4	192.168.1.5	61426	17.248.138.12	443	CLOSE_WAIT	27740	iCloudIE.exe	2020-11-16 00:14:49.000000 UTC
+L69: 0xb78d144bd7c0	TCPv4	192.168.1.5	61422	17.248.138.104	443	CLOSE_WAIT	27740	iCloudIE.exe	2020-11-16 00:14:48.000000 UTC
+L152: 0xb78cf35654c0	UDPv4	127.0.0.1	56521	*	0		27740	iCloudIE.exe	2020-11-16 00:14:48.000000 UTC
+L153: 0xb78cf3566910	UDPv4	127.0.0.1	56522	*	0		27740	iCloudIE.exe	2020-11-16 00:14:48.000000 UTC
+
+--- ldrmodules.txt ---
+L12438: 27740	iCloudIE.exe	0x6a7e0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\mmcs.dll
+L12439: 27740	iCloudIE.exe	0x4d0000	True	False	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\iCloudIE.exe
+L12440: 27740	iCloudIE.exe	0x19f0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\icudt62.dll
+L12441: 27740	iCloudIE.exe	0x4dc0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\AppleBMDAV.resources\en.lproj\AppleBMDAVLocalized.dll
+L12442: 27740	iCloudIE.exe	0x60e0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L12443: 27740	iCloudIE.exe	0x69a0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
+L12444: 27740	iCloudIE.exe	0x6b80000	False	False	False	\Windows\SysWOW64\oleaccrc.dll
+L12445: 27740	iCloudIE.exe	0x7d10000	False	False	False	\Windows\SysWOW64\winnlsres.dll
+L12446: 27740	iCloudIE.exe	0x7940000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L12447: 27740	iCloudIE.exe	0x7d20000	False	False	False	\Windows\System32\en-US\winnlsres.dll.mui
+L12448: 27740	iCloudIE.exe	0x7d40000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L12449: 27740	iCloudIE.exe	0x8110000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L12450: 27740	iCloudIE.exe	0x67a30000	True	True	True	\Windows\SysWOW64\sxs.dll
+L12451: 27740	iCloudIE.exe	0x68080000	True	True	True	\Windows\SysWOW64\CoreUIComponents.dll
+L12452: 27740	iCloudIE.exe	0x67e40000	True	True	True	\Windows\SysWOW64\netprofm.dll
+L12453: 27740	iCloudIE.exe	0x67e30000	True	True	True	\Windows\SysWOW64\npmproxy.dll
+L12454: 27740	iCloudIE.exe	0x68b60000	True	True	True	\Windows\SysWOW64\TextInputFramework.dll
+L12455: 27740	iCloudIE.exe	0x689a0000	True	True	True	\Windows\SysWOW64\CoreMessaging.dll
+L12456: 27740	iCloudIE.exe	0x69ec0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\ChunkingLibrary.dll
+L12457: 27740	iCloudIE.exe	0x721f0000	True	True	True	\Windows\SysWOW64\winhttp.dll
+L12458: 27740	iCloudIE.exe	0x6c210000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\ASL.dll
+L12459: 27740	iCloudIE.exe	0x6bab0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreGraphics.dll
+L12460: 27740	iCloudIE.exe	0x6b630000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libxml2.dll
+L12461: 27740	iCloudIE.exe	0x6b500000	True	True	True	\Windows\SysWOW64\wsock32.dll
+L12462: 27740	iCloudIE.exe	0x6a8c0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\PCS.dll
+L12463: 27740	iCloudIE.exe	0x6b290000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreADI32.dll
+L12464: 27740	iCloudIE.exe	0x6b510000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreVideo.dll
+L12465: 27740	iCloudIE.exe	0x6b810000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\zlib1.dll
+L12466: 27740	iCloudIE.exe	0x6b7f0000	True	True	True	\Windows\SysWOW64\usp10.dll
+L12467: 27740	iCloudIE.exe	0x6b7b0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libtidy.dll
+L12468: 27740	iCloudIE.exe	0x6b860000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\QuartzCore.dll
+L12469: 27740	iCloudIE.exe	0x6b830000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libxslt.dll
+L12470: 27740	iCloudIE.exe	0x6b9c0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreText.dll
+L12471: 27740	iCloudIE.exe	0x6bf00000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\SQLite3.dll
+L12472: 27740	iCloudIE.exe	0x6bee0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\pthreadVC2.dll
+L12473: 27740	iCloudIE.exe	0x6c000000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\WTF.dll
+L12474: 27740	iCloudIE.exe	0x6bfc0000	True	True	True	\Windows\SysWOW64\cryptui.dll
+L12475: 27740	iCloudIE.exe	0x6c0d0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuuc.dll
+L12476: 27740	iCloudIE.exe	0x6dbf0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\JavaScriptCore.dll
+L12477: 27740	iCloudIE.exe	0x6c880000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CFNetwork.dll
+L12478: 27740	iCloudIE.exe	0x6c560000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libdispatch.dll
+L12479: 27740	iCloudIE.exe	0x6c430000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\VFS\SystemX86\msvcp100.dll
+L12480: 27740	iCloudIE.exe	0x6c220000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuin.dll
+L12481: 27740	iCloudIE.exe	0x6c4a0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\VFS\SystemX86\msvcr100.dll
+L12482: 27740	iCloudIE.exe	0x6c580000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\objc.dll
+L12483: 27740	iCloudIE.exe	0x6c5b0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\Foundation.dll
+L12484: 27740	iCloudIE.exe	0x6cab0000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\vcruntime140.dll
+L12485: 27740	iCloudIE.exe	0x6cad0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\WebKit.dll
+L12486: 27740	iCloudIE.exe	0x6f680000	True	True	True	\Windows\SysWOW64\dpapi.dll
+L12487: 27740	iCloudIE.exe	0x6f0d0000	True	True	True	\Windows\SysWOW64\samcli.dll
+L12488: 27740	iCloudIE.exe	0x6e430000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\AOSKit.dll
+L12489: 27740	iCloudIE.exe	0x6e280000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreFoundation.dll
+L12490: 27740	iCloudIE.exe	0x6e200000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\msvcp140.dll
+L12491: 27740	iCloudIE.exe	0x6ee30000	True	True	True	\Windows\SysWOW64\dhcpcsvc6.dll
+L12492: 27740	iCloudIE.exe	0x6edb0000	True	True	True	\Windows\SysWOW64\webio.dll
+L12493: 27740	iCloudIE.exe	0x6efc0000	True	True	True	\Windows\SysWOW64\ncryptsslp.dll
+L12494: 27740	iCloudIE.exe	0x6f4d0000	True	True	True	\Windows\SysWOW64\schannel.dll
+L12495: 27740	iCloudIE.exe	0x6f4c0000	True	True	True	\Windows\SysWOW64\mskeyprotect.dll
+L12496: 27740	iCloudIE.exe	0x6f490000	True	True	True	\Windows\SysWOW64\cryptnet.dll
+L12497: 27740	iCloudIE.exe	0x6f550000	True	True	True	\Windows\SysWOW64\FWPUCLNT.DLL
+L12498: 27740	iCloudIE.exe	0x6f5b0000	True	True	True	\Windows\SysWOW64\rasadhlp.dll
+L12499: 27740	iCloudIE.exe	0x700c0000	True	True	True	\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.630_none_4294daf48a972df6\GdiPlus.dll
+L12500: 27740	iCloudIE.exe	0x6fdb0000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L12501: 27740	iCloudIE.exe	0x6f6f0000	True	True	True	\Windows\SysWOW64\winnsi.dll
+L12502: 27740	iCloudIE.exe	0x70090000	True	True	True	\Windows\SysWOW64\ntasn1.dll
+L12503: 27740	iCloudIE.exe	0x702a0000	True	True	True	\Windows\SysWOW64\dnsapi.dll
+L12504: 27740	iCloudIE.exe	0x70250000	True	True	True	\Windows\SysWOW64\winmm.dll
+L12505: 27740	iCloudIE.exe	0x71dd0000	True	True	True	\Windows\SysWOW64\iertutil.dll
+L12506: 27740	iCloudIE.exe	0x76340000	True	True	True	\Windows\SysWOW64\shell32.dll
+L12507: 27740	iCloudIE.exe	0x747c0000	True	True	True	\Windows\SysWOW64\version.dll
+L12508: 27740	iCloudIE.exe	0x74240000	True	True	True	\Windows\SysWOW64\uxtheme.dll
+L12509: 27740	iCloudIE.exe	0x73ee0000	True	True	True	\Windows\SysWOW64\dbghelp.dll
+L12510: 27740	iCloudIE.exe	0x73cc0000	True	True	True	\Windows\SysWOW64\atlthunk.dll
+L12511: 27740	iCloudIE.exe	0x73830000	True	True	True	\Windows\SysWOW64\OnDemandConnRouteHelper.dll
+L12512: 27740	iCloudIE.exe	0x737d0000	True	True	True	\Windows\SysWOW64\mswsock.dll
+L12513: 27740	iCloudIE.exe	0x73de0000	True	True	True	\Windows\SysWOW64\ncrypt.dll
+L12514: 27740	iCloudIE.exe	0x73cd0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L12515: 27740	iCloudIE.exe	0x73eb0000	True	True	True	\Windows\SysWOW64\dbgcore.dll
+L12516: 27740	iCloudIE.exe	0x74200000	True	True	True	\Windows\SysWOW64\profapi.dll
+L12517: 27740	iCloudIE.exe	0x741b0000	True	True	True	\Windows\SysWOW64\rsaenh.dll
+L12518: 27740	iCloudIE.exe	0x74180000	True	True	True	\Windows\SysWOW64\ntmarta.dll
+L12519: 27740	iCloudIE.exe	0x741e0000	True	True	True	\Windows\SysWOW64\cryptsp.dll
+L12520: 27740	iCloudIE.exe	0x74220000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L12521: 27740	iCloudIE.exe	0x74230000	True	True	True	\Windows\SysWOW64\msasn1.dll
+L12522: 27740	iCloudIE.exe	0x74300000	True	True	True	\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_11b1e5df2ffd8627\comctl32.dll
+L12523: 27740	iCloudIE.exe	0x742f0000	True	True	True	\Windows\SysWOW64\netutils.dll
+L12524: 27740	iCloudIE.exe	0x74620000	True	True	True	\Windows\SysWOW64\secur32.dll
+L12525: 27740	iCloudIE.exe	0x74570000	True	True	True	\Windows\SysWOW64\dhcpcsvc.dll
+L12526: 27740	iCloudIE.exe	0x74790000	True	True	True	\Windows\SysWOW64\userenv.dll
+L12527: 27740	iCloudIE.exe	0x75890000	True	True	True	\Windows\SysWOW64\win32u.dll
+L12528: 27740	iCloudIE.exe	0x75240000	True	True	True	\Windows\SysWOW64\wldp.dll
+L12529: 27740	iCloudIE.exe	0x750c0000	True	True	True	\Windows\SysWOW64\IPHLPAPI.DLL
+L12530: 27740	iCloudIE.exe	0x749c0000	True	True	True	\Windows\SysWOW64\wininet.dll
+L12531: 27740	iCloudIE.exe	0x748a0000	True	True	True	\Windows\SysWOW64\oleacc.dll
+L12532: 27740	iCloudIE.exe	0x75180000	True	True	True	\Windows\SysWOW64\msls31.dll
+L12533: 27740	iCloudIE.exe	0x75100000	True	True	True	\Windows\SysWOW64\netapi32.dll
+L12534: 27740	iCloudIE.exe	0x751c0000	True	True	True	\Windows\SysWOW64\riched20.dll
+L12535: 27740	iCloudIE.exe	0x75270000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L12536: 27740	iCloudIE.exe	0x75880000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L12537: 27740	iCloudIE.exe	0x75cc0000	True	True	True	\Windows\SysWOW64\user32.dll
+L12538: 27740	iCloudIE.exe	0x75a40000	True	True	True	\Windows\SysWOW64\comdlg32.dll
+L12539: 27740	iCloudIE.exe	0x758f0000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L12540: 27740	iCloudIE.exe	0x759d0000	True	True	True	\Windows\SysWOW64\nsi.dll
+L12541: 27740	iCloudIE.exe	0x75ba0000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L12542: 27740	iCloudIE.exe	0x76180000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L12543: 27740	iCloudIE.exe	0x75e60000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L12544: 27740	iCloudIE.exe	0x75f30000	True	True	True	\Windows\SysWOW64\msctf.dll
+L12545: 27740	iCloudIE.exe	0x76290000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L12546: 27740	iCloudIE.exe	0x76240000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L12547: 27740	iCloudIE.exe	0x76310000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L12548: 27740	iCloudIE.exe	0x779d0000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L12549: 27740	iCloudIE.exe	0x76cd0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L12550: 27740	iCloudIE.exe	0x76a00000	True	True	True	\Windows\SysWOW64\sechost.dll
+L12551: 27740	iCloudIE.exe	0x76900000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L12552: 27740	iCloudIE.exe	0x769a0000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L12553: 27740	iCloudIE.exe	0x76b60000	True	True	True	\Windows\SysWOW64\ws2_32.dll
+L12554: 27740	iCloudIE.exe	0x76ae0000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L12555: 27740	iCloudIE.exe	0x76be0000	True	True	True	\Windows\SysWOW64\ole32.dll
+L12556: 27740	iCloudIE.exe	0x775f0000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L12557: 27740	iCloudIE.exe	0x77050000	True	True	True	\Windows\SysWOW64\advapi32.dll
+
+--- malware_ldrmodules.txt ---
+L12438: 27740	iCloudIE.exe	0x6a7e0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\mmcs.dll
+L12439: 27740	iCloudIE.exe	0x4d0000	True	False	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\iCloudIE.exe
+L12440: 27740	iCloudIE.exe	0x19f0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\icudt62.dll
+L12441: 27740	iCloudIE.exe	0x4dc0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\AppleBMDAV.resources\en.lproj\AppleBMDAVLocalized.dll
+L12442: 27740	iCloudIE.exe	0x60e0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L12443: 27740	iCloudIE.exe	0x69a0000	False	False	False	\Windows\System32\en-US\user32.dll.mui
+L12444: 27740	iCloudIE.exe	0x6b80000	False	False	False	\Windows\SysWOW64\oleaccrc.dll
+L12445: 27740	iCloudIE.exe	0x7d10000	False	False	False	\Windows\SysWOW64\winnlsres.dll
+L12446: 27740	iCloudIE.exe	0x7940000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+L12447: 27740	iCloudIE.exe	0x7d20000	False	False	False	\Windows\System32\en-US\winnlsres.dll.mui
+L12448: 27740	iCloudIE.exe	0x7d40000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L12449: 27740	iCloudIE.exe	0x8110000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L12450: 27740	iCloudIE.exe	0x67a30000	True	True	True	\Windows\SysWOW64\sxs.dll
+L12451: 27740	iCloudIE.exe	0x68080000	True	True	True	\Windows\SysWOW64\CoreUIComponents.dll
+L12452: 27740	iCloudIE.exe	0x67e40000	True	True	True	\Windows\SysWOW64\netprofm.dll
+L12453: 27740	iCloudIE.exe	0x67e30000	True	True	True	\Windows\SysWOW64\npmproxy.dll
+L12454: 27740	iCloudIE.exe	0x68b60000	True	True	True	\Windows\SysWOW64\TextInputFramework.dll
+L12455: 27740	iCloudIE.exe	0x689a0000	True	True	True	\Windows\SysWOW64\CoreMessaging.dll
+L12456: 27740	iCloudIE.exe	0x69ec0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\ChunkingLibrary.dll
+L12457: 27740	iCloudIE.exe	0x721f0000	True	True	True	\Windows\SysWOW64\winhttp.dll
+L12458: 27740	iCloudIE.exe	0x6c210000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\ASL.dll
+L12459: 27740	iCloudIE.exe	0x6bab0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreGraphics.dll
+L12460: 27740	iCloudIE.exe	0x6b630000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libxml2.dll
+L12461: 27740	iCloudIE.exe	0x6b500000	True	True	True	\Windows\SysWOW64\wsock32.dll
+L12462: 27740	iCloudIE.exe	0x6a8c0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\PCS.dll
+L12463: 27740	iCloudIE.exe	0x6b290000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreADI32.dll
+L12464: 27740	iCloudIE.exe	0x6b510000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreVideo.dll
+L12465: 27740	iCloudIE.exe	0x6b810000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\zlib1.dll
+L12466: 27740	iCloudIE.exe	0x6b7f0000	True	True	True	\Windows\SysWOW64\usp10.dll
+L12467: 27740	iCloudIE.exe	0x6b7b0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libtidy.dll
+L12468: 27740	iCloudIE.exe	0x6b860000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\QuartzCore.dll
+L12469: 27740	iCloudIE.exe	0x6b830000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libxslt.dll
+L12470: 27740	iCloudIE.exe	0x6b9c0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreText.dll
+L12471: 27740	iCloudIE.exe	0x6bf00000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\SQLite3.dll
+L12472: 27740	iCloudIE.exe	0x6bee0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\pthreadVC2.dll
+L12473: 27740	iCloudIE.exe	0x6c000000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\WTF.dll
+L12474: 27740	iCloudIE.exe	0x6bfc0000	True	True	True	\Windows\SysWOW64\cryptui.dll
+L12475: 27740	iCloudIE.exe	0x6c0d0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuuc.dll
+L12476: 27740	iCloudIE.exe	0x6dbf0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\JavaScriptCore.dll
+L12477: 27740	iCloudIE.exe	0x6c880000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CFNetwork.dll
+L12478: 27740	iCloudIE.exe	0x6c560000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libdispatch.dll
+L12479: 27740	iCloudIE.exe	0x6c430000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\VFS\SystemX86\msvcp100.dll
+L12480: 27740	iCloudIE.exe	0x6c220000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\libicuin.dll
+L12481: 27740	iCloudIE.exe	0x6c4a0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\VFS\SystemX86\msvcr100.dll
+L12482: 27740	iCloudIE.exe	0x6c580000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\objc.dll
+L12483: 27740	iCloudIE.exe	0x6c5b0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\Foundation.dll
+L12484: 27740	iCloudIE.exe	0x6cab0000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\vcruntime140.dll
+L12485: 27740	iCloudIE.exe	0x6cad0000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\WebKit.dll
+L12486: 27740	iCloudIE.exe	0x6f680000	True	True	True	\Windows\SysWOW64\dpapi.dll
+L12487: 27740	iCloudIE.exe	0x6f0d0000	True	True	True	\Windows\SysWOW64\samcli.dll
+L12488: 27740	iCloudIE.exe	0x6e430000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\AOSKit.dll
+L12489: 27740	iCloudIE.exe	0x6e280000	True	True	True	\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\CoreFoundation.dll
+L12490: 27740	iCloudIE.exe	0x6e200000	True	True	True	\Program Files\WindowsApps\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe\msvcp140.dll
+L12491: 27740	iCloudIE.exe	0x6ee30000	True	True	True	\Windows\SysWOW64\dhcpcsvc6.dll
+L12492: 27740	iCloudIE.exe	0x6edb0000	True	True	True	\Windows\SysWOW64\webio.dll
+L12493: 27740	iCloudIE.exe	0x6efc0000	True	True	True	\Windows\SysWOW64\ncryptsslp.dll
+L12494: 27740	iCloudIE.exe	0x6f4d0000	True	True	True	\Windows\SysWOW64\schannel.dll
+L12495: 27740	iCloudIE.exe	0x6f4c0000	True	True	True	\Windows\SysWOW64\mskeyprotect.dll
+L12496: 27740	iCloudIE.exe	0x6f490000	True	True	True	\Windows\SysWOW64\cryptnet.dll
+L12497: 27740	iCloudIE.exe	0x6f550000	True	True	True	\Windows\SysWOW64\FWPUCLNT.DLL
+L12498: 27740	iCloudIE.exe	0x6f5b0000	True	True	True	\Windows\SysWOW64\rasadhlp.dll
+L12499: 27740	iCloudIE.exe	0x700c0000	True	True	True	\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.630_none_4294daf48a972df6\GdiPlus.dll
+L12500: 27740	iCloudIE.exe	0x6fdb0000	True	True	True	\Windows\SysWOW64\WinTypes.dll
+L12501: 27740	iCloudIE.exe	0x6f6f0000	True	True	True	\Windows\SysWOW64\winnsi.dll
+L12502: 27740	iCloudIE.exe	0x70090000	True	True	True	\Windows\SysWOW64\ntasn1.dll
+L12503: 27740	iCloudIE.exe	0x702a0000	True	True	True	\Windows\SysWOW64\dnsapi.dll
+L12504: 27740	iCloudIE.exe	0x70250000	True	True	True	\Windows\SysWOW64\winmm.dll
+L12505: 27740	iCloudIE.exe	0x71dd0000	True	True	True	\Windows\SysWOW64\iertutil.dll
+L12506: 27740	iCloudIE.exe	0x76340000	True	True	True	\Windows\SysWOW64\shell32.dll
+L12507: 27740	iCloudIE.exe	0x747c0000	True	True	True	\Windows\SysWOW64\version.dll
+L12508: 27740	iCloudIE.exe	0x74240000	True	True	True	\Windows\SysWOW64\uxtheme.dll
+L12509: 27740	iCloudIE.exe	0x73ee0000	True	True	True	\Windows\SysWOW64\dbghelp.dll
+L12510: 27740	iCloudIE.exe	0x73cc0000	True	True	True	\Windows\SysWOW64\atlthunk.dll
+L12511: 27740	iCloudIE.exe	0x73830000	True	True	True	\Windows\SysWOW64\OnDemandConnRouteHelper.dll
+L12512: 27740	iCloudIE.exe	0x737d0000	True	True	True	\Windows\SysWOW64\mswsock.dll
+L12513: 27740	iCloudIE.exe	0x73de0000	True	True	True	\Windows\SysWOW64\ncrypt.dll
+L12514: 27740	iCloudIE.exe	0x73cd0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L12515: 27740	iCloudIE.exe	0x73eb0000	True	True	True	\Windows\SysWOW64\dbgcore.dll
+L12516: 27740	iCloudIE.exe	0x74200000	True	True	True	\Windows\SysWOW64\profapi.dll
+L12517: 27740	iCloudIE.exe	0x741b0000	True	True	True	\Windows\SysWOW64\rsaenh.dll
+L12518: 27740	iCloudIE.exe	0x74180000	True	True	True	\Windows\SysWOW64\ntmarta.dll
+L12519: 27740	iCloudIE.exe	0x741e0000	True	True	True	\Windows\SysWOW64\cryptsp.dll
+L12520: 27740	iCloudIE.exe	0x74220000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L12521: 27740	iCloudIE.exe	0x74230000	True	True	True	\Windows\SysWOW64\msasn1.dll
+L12522: 27740	iCloudIE.exe	0x74300000	True	True	True	\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_11b1e5df2ffd8627\comctl32.dll
+L12523: 27740	iCloudIE.exe	0x742f0000	True	True	True	\Windows\SysWOW64\netutils.dll
+L12524: 27740	iCloudIE.exe	0x74620000	True	True	True	\Windows\SysWOW64\secur32.dll
+L12525: 27740	iCloudIE.exe	0x74570000	True	True	True	\Windows\SysWOW64\dhcpcsvc.dll
+L12526: 27740	iCloudIE.exe	0x74790000	True	True	True	\Windows\SysWOW64\userenv.dll
+L12527: 27740	iCloudIE.exe	0x75890000	True	True	True	\Windows\SysWOW64\win32u.dll
+L12528: 27740	iCloudIE.exe	0x75240000	True	True	True	\Windows\SysWOW64\wldp.dll
+L12529: 27740	iCloudIE.exe	0x750c0000	True	True	True	\Windows\SysWOW64\IPHLPAPI.DLL
+L12530: 27740	iCloudIE.exe	0x749c0000	True	True	True	\Windows\SysWOW64\wininet.dll
+L12531: 27740	iCloudIE.exe	0x748a0000	True	True	True	\Windows\SysWOW64\oleacc.dll
+L12532: 27740	iCloudIE.exe	0x75180000	True	True	True	\Windows\SysWOW64\msls31.dll
+L12533: 27740	iCloudIE.exe	0x75100000	True	True	True	\Windows\SysWOW64\netapi32.dll
+L12534: 27740	iCloudIE.exe	0x751c0000	True	True	True	\Windows\SysWOW64\riched20.dll
+L12535: 27740	iCloudIE.exe	0x75270000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L12536: 27740	iCloudIE.exe	0x75880000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L12537: 27740	iCloudIE.exe	0x75cc0000	True	True	True	\Windows\SysWOW64\user32.dll
+L12538: 27740	iCloudIE.exe	0x75a40000	True	True	True	\Windows\SysWOW64\comdlg32.dll
+L12539: 27740	iCloudIE.exe	0x758f0000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L12540: 27740	iCloudIE.exe	0x759d0000	True	True	True	\Windows\SysWOW64\nsi.dll
+L12541: 27740	iCloudIE.exe	0x75ba0000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L12542: 27740	iCloudIE.exe	0x76180000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L12543: 27740	iCloudIE.exe	0x75e60000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L12544: 27740	iCloudIE.exe	0x75f30000	True	True	True	\Windows\SysWOW64\msctf.dll
+L12545: 27740	iCloudIE.exe	0x76290000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L12546: 27740	iCloudIE.exe	0x76240000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+
+=== END OF PIVOT REPORT ===

@@ -1,0 +1,101 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 4176 — dasHost.exe**
+
+Agent 1 flags: SYSTEM+user SID token anomaly, SeImpersonatePrivilege enabled, orphaned parent (PPID 2212 absent).
+
+Reasoning:
+- `dasHost.exe` is the legitimate Windows Device Association Framework Host, lives in `C:\WINDOWS\system32\dashost.exe`. The binary path is confirmed in dlllist.
+- The command line `dashost.exe {de95c1ed-978c-4db8-87ad608b9d7365cc}` is the standard invocation — a GUID argument is normal for dasHost.
+- The privilege set: `SeImpersonatePrivilege` is `Present,Enabled,Default` — this is normal for LOCAL SERVICE / NETWORK SERVICE class processes. `SeAssignPrimaryTokenPrivilege` is `Present` (not enabled). The vast majority of the other powerful privileges (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeCreateTokenPrivilege) are listed but **not** marked Present or Enabled — they are simply enumerated as part of the full privilege table, which Volatility does for all processes. Only the ones marked `Present` or `Present,Enabled` are actually in the token.
+- Enabled/Present privileges: SeAssignPrimaryTokenPrivilege (Present), SeIncreaseQuotaPrivilege (Present), SeShutdownPrivilege (Present), SeAuditPrivilege (Present), SeChangeNotifyPrivilege (Present,Enabled,Default), SeUndockPrivilege (Present), SeImpersonatePrivilege (Present,Enabled,Default), SeCreateGlobalPrivilege (Present,Enabled,Default), SeIncreaseWorkingSetPrivilege (Present), SeTimeZonePrivilege (Present). This is a standard LOCAL SERVICE token profile.
+- DLLs all from System32 — no suspicious paths.
+- No malfind, no netscan, no registry persistence evidence.
+- Orphaned parent: PPID 2212 not in pslist. This is common in memory captures — the parent (likely svchost.exe or services.exe) may have exited after spawning dasHost, or the PPID slot was reused. Not independently suspicious for a system binary.
+- No evidence of token manipulation beyond what is normal for this service class.
+
+**Verdict: REJECTED** — Standard system binary, normal cmdline, System32 path, privilege set consistent with LOCAL SERVICE, no corroborating malicious signals.
+
+---
+
+**PID 4420 — SearchFilterHo (ppid=11968)**
+
+Agent 1 flags: psscan-only (not in pslist = possible DKOM hiding), orphaned parent, no cmdline/image path.
+
+Reasoning:
+- `SearchFilterHost.exe` is a legitimate Windows Search process. The truncated name `SearchFilterHo` is consistent with the 14-char EPROCESS truncation of `SearchFilterHost.exe` (15 chars → truncated to `SearchFilterHo`).
+- However, it appears **only in psscan, not pslist** — this is the DKOM hiding signal. A legitimate SearchFilterHost would normally appear in pslist.
+- PPID 11968 is not in the process list — orphaned.
+- No cmdline, no DLL list, no privileges, no malfind data available.
+- The absence of evidence here cuts both ways: we can't confirm malice, but the psscan-only appearance is a genuine anomaly.
+- SearchFilterHost.exe is normally spawned by SearchIndexer.exe. PPID 11968 being absent and the process being hidden from pslist is suspicious, but without any corroborating evidence (no cmdline, no DLLs, no malfind, no network connections), I cannot confirm malice.
+
+**Verdict: INCONCLUSIVE** — psscan-only visibility is a real anomaly (possible DKOM), but zero corroborating evidence prevents confirmation.
+
+---
+
+**PID 3360 — WUDFHost.exe (ppid=828)**
+
+Agent 1 flags: SeImpersonatePrivilege enabled, orphaned parent.
+
+Reasoning:
+- `WUDFHost.exe` (Windows User-Mode Driver Framework Host) is a legitimate Windows binary at `C:\Windows\System32\WUDFHost.exe` — confirmed in dlllist.
+- The command line is a textbook legitimate WUDFHost invocation: `-HostGUID`, `-IoEventPortName`, `-SystemEventPortName`, `-IoCancelEventPortName`, `-NonStateChangingEventPortName`, `-LifetimeId`, `-DeviceGroupId:WudfDefaultDevicePoolPriorityHigh`, `-HostArg:0` — all standard UMDF parameters.
+- Privilege set: SeImpersonatePrivilege is `Present,Enabled,Default` — this is entirely normal for WUDFHost, which runs as LOCAL SERVICE and needs to impersonate clients. The privilege profile is essentially identical to dasHost and is consistent with a LOCAL SERVICE token.
+- DLLs all from System32.
+- No malfind, no netscan, no registry persistence.
+- Orphaned parent (PPID 828 absent): same explanation as dasHost — parent likely exited or PPID reused. Normal for system services.
+
+**Verdict: REJECTED** — Standard WUDFHost invocation with legitimate UMDF parameters, System32 binary, normal LOCAL SERVICE privilege profile, no corroborating malicious signals.
+
+---
+
+Now writing the report:
+
+```
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: Three Agent 1 leads were reviewed. One process (SearchFilterHost.exe,
+PID 4420) presents a genuine structural anomaly — visible only in psscan and
+not pslist — consistent with DKOM-based process hiding, but the absence of any
+corroborating artefact data prevents confirmation. The remaining two findings
+(dasHost.exe and WUDFHost.exe) are standard Windows service-class binaries with
+normal invocations and privilege profiles; both are rejected as benign. No
+confirmed malicious activity was identified in this finding set.
+Counts: confirmed=0  inconclusive=1  rejected=2
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      4420
+PPID:     11968
+Image:    SearchFilterHo (SearchFilterHost.exe — EPROCESS 14-char truncation)
+Cmdline:  (not available)
+Severity: N/A
+MITRE:    T1562.001 — Impair Defenses: Disable or Modify Tools
+          (DKOM process unlinking, if confirmed)
+
+Justification:
+  PID 4420 appears in psscan but is absent from pslist, which is the classic
+  signature of Direct Kernel Object Manipulation (DKOM) process unlinking — an
+  attacker removes the EPROCESS entry from the ActiveProcessLinks doubly-linked
+  list so that pslist (which walks that list) cannot see it, while psscan (which
+  scans raw memory for EPROCESS pool tags) still finds it. The parent PID 11968
+  is also absent from the process list, removing the ability to assess lineage.
+  However, no command line, DLL list, privilege data, malfind output, or network
+  connections were available for this PID; the name itself (SearchFilterHost.exe)
+  is a legitimate Windows Search component normally parented by SearchIndexer.exe.
+  Without corroborating evidence of malicious behaviour the finding cannot be
+  confirmed, but the psscan-only visibility is a real and meaningful anomaly that
+  warrants further investigation (e.g. raw EPROCESS inspection, memory carving
+  for the associated VAD tree).
+
+Key Evidence:
+  - L50: 4420	11968	SearchFilterHo	0xb78cf8808080	4	-	0	False	2020-11-16 02:35:17.000000 UTC	N/A	Disabled
+----------------------------------------------------------------
+
+================================================================
+```

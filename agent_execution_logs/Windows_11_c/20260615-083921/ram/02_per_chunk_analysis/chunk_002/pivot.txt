@@ -1,0 +1,427 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:46:09Z
+
+=== PID 3088 (svchost.exe, ppid=888) ===
+
+--- psscan.txt ---
+L105: 3088	888	svchost.exe	0xcd8a12064080	0	-	0	False	2026-05-12 18:29:23.000000 UTC	2026-05-12 18:30:23.000000 UTC	Disabled
+
+=== PID 2448 (ShellExperienceHost.exe, ppid=576) ===
+Cmdline: "C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe" -ServerName:App.AppXtk181tbxbce2qsex02s8tw7hfxa9xb3t.mca
+
+--- pslist.txt ---
+L146: 2448	576	ShellExperienc	0xcd8a1243e080	18	-	1	False	2026-05-12 18:25:52.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L146: 2448	ShellExperienc	"C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe" -ServerName:App.AppXtk181tbxbce2qsex02s8tw7hfxa9xb3t.mca
+
+--- privileges.txt ---
+L4940: 2448	ShellExperienc	2	SeCreateTokenPrivilege		Create a token object
+L4941: 2448	ShellExperienc	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4942: 2448	ShellExperienc	4	SeLockMemoryPrivilege		Lock pages in memory
+L4943: 2448	ShellExperienc	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4944: 2448	ShellExperienc	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4945: 2448	ShellExperienc	7	SeTcbPrivilege		Act as part of the operating system
+L4946: 2448	ShellExperienc	8	SeSecurityPrivilege		Manage auditing and security log
+L4947: 2448	ShellExperienc	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4948: 2448	ShellExperienc	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4949: 2448	ShellExperienc	11	SeSystemProfilePrivilege		Profile system performance
+L4950: 2448	ShellExperienc	12	SeSystemtimePrivilege		Change the system time
+L4951: 2448	ShellExperienc	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4952: 2448	ShellExperienc	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4953: 2448	ShellExperienc	15	SeCreatePagefilePrivilege		Create a pagefile
+L4954: 2448	ShellExperienc	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4955: 2448	ShellExperienc	17	SeBackupPrivilege		Backup files and directories
+L4956: 2448	ShellExperienc	18	SeRestorePrivilege		Restore files and directories
+L4957: 2448	ShellExperienc	19	SeShutdownPrivilege		Shut down the system
+L4958: 2448	ShellExperienc	20	SeDebugPrivilege		Debug programs
+L4959: 2448	ShellExperienc	21	SeAuditPrivilege		Generate security audits
+L4960: 2448	ShellExperienc	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4961: 2448	ShellExperienc	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4962: 2448	ShellExperienc	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4963: 2448	ShellExperienc	25	SeUndockPrivilege		Remove computer from docking station
+L4964: 2448	ShellExperienc	26	SeSyncAgentPrivilege		Synch directory service data
+L4965: 2448	ShellExperienc	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4966: 2448	ShellExperienc	28	SeManageVolumePrivilege		Manage the files on a volume
+L4967: 2448	ShellExperienc	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4968: 2448	ShellExperienc	30	SeCreateGlobalPrivilege		Create global objects
+L4969: 2448	ShellExperienc	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4970: 2448	ShellExperienc	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4971: 2448	ShellExperienc	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4972: 2448	ShellExperienc	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L4973: 2448	ShellExperienc	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4974: 2448	ShellExperienc	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L6926: 2448	ShellExperienc	0x7ff764340000	0x85000	ShellExperienceHost.exe	C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6927: 2448	ShellExperienc	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6928: 2448	ShellExperienc	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6929: 2448	ShellExperienc	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6930: 2448	ShellExperienc	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6931: 2448	ShellExperienc	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6932: 2448	ShellExperienc	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6933: 2448	ShellExperienc	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6934: 2448	ShellExperienc	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6935: 2448	ShellExperienc	0x7fffe3610000	0x13e000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6936: 2448	ShellExperienc	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6937: 2448	ShellExperienc	0x7fffdc5d0000	0x5e000	wincorlib.DLL	C:\WINDOWS\SYSTEM32\wincorlib.DLL	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6938: 2448	ShellExperienc	0x7fffe5880000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6939: 2448	ShellExperienc	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6940: 2448	ShellExperienc	0x7fffe5860000	0x14000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6941: 2448	ShellExperienc	0x7fffe7d30000	0x2b000	gdi32.dll	C:\WINDOWS\System32\gdi32.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6942: 2448	ShellExperienc	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6943: 2448	ShellExperienc	0x7fffe7e80000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6944: 2448	ShellExperienc	0x7fffe6ec0000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6945: 2448	ShellExperienc	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6946: 2448	ShellExperienc	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6947: 2448	ShellExperienc	0x7fffda840000	0x1107000	Windows.UI.Xaml.dll	C:\Windows\System32\Windows.UI.Xaml.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6948: 2448	ShellExperienc	0x7fffd7500000	0x2c4000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6949: 2448	ShellExperienc	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6950: 2448	ShellExperienc	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6951: 2448	ShellExperienc	0x7fffd74a0000	0x29000	srvcli.dll	C:\WINDOWS\SYSTEM32\srvcli.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6952: 2448	ShellExperienc	0x7fffe40b0000	0xd000	netutils.dll	C:\WINDOWS\SYSTEM32\netutils.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6953: 2448	ShellExperienc	0x7fffde480000	0x244000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6954: 2448	ShellExperienc	0x7fffe5cf0000	0x16a000	WinTypes.dll	C:\WINDOWS\System32\WinTypes.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6955: 2448	ShellExperienc	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6956: 2448	ShellExperienc	0x7fffdbf00000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6957: 2448	ShellExperienc	0x7fffdb9e0000	0x156000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6958: 2448	ShellExperienc	0x7fffe2e80000	0x127000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6959: 2448	ShellExperienc	0x7fffdde20000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6960: 2448	ShellExperienc	0x7fffe34c0000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6961: 2448	ShellExperienc	0x7fffd77d0000	0x1dd000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6962: 2448	ShellExperienc	0x7fffe5f20000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6963: 2448	ShellExperienc	0x7fffe6f10000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6964: 2448	ShellExperienc	0x7fffe35c0000	0x43000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6965: 2448	ShellExperienc	0x7fffe03f0000	0x60000	directxdatabasehelper.dll	C:\WINDOWS\SYSTEM32\directxdatabasehelper.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6966: 2448	ShellExperienc	0x7fff9c570000	0x5cd000	Windows.UI.QuickActions.dll	C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\Windows.UI.QuickActions.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6967: 2448	ShellExperienc	0x7fffe1550000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6968: 2448	ShellExperienc	0x7fffe1aa0000	0x22d000	WindowsCodecs.dll	C:\WINDOWS\SYSTEM32\WindowsCodecs.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6969: 2448	ShellExperienc	0x7fffe1cf0000	0x63a000	d2d1.dll	C:\WINDOWS\SYSTEM32\d2d1.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6970: 2448	ShellExperienc	0x7fff9cf00000	0x5e000	QuickActionsDataModel.dll	C:\WINDOWS\SYSTEM32\QuickActionsDataModel.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6971: 2448	ShellExperienc	0x7fffe5540000	0x57000	cfgmgr32.dll	C:\WINDOWS\SYSTEM32\cfgmgr32.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6972: 2448	ShellExperienc	0x7fffc3e30000	0x2d000	Windows.UI.Shell.SharedUtilities.dll	C:\Windows\System32\ShellExperiences\Windows.UI.Shell.SharedUtilities.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6973: 2448	ShellExperienc	0x7fff9cd00000	0x1ef000	NetworkUX.dll	C:\Windows\ShellExperiences\NetworkUX.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6974: 2448	ShellExperienc	0x7fffdef20000	0x22000	MobileNetworking.dll	C:\WINDOWS\SYSTEM32\MobileNetworking.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6975: 2448	ShellExperienc	0x7fffe25a0000	0x263000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6976: 2448	ShellExperienc	0x7fffdf190000	0x5aa000	d3d10warp.dll	C:\WINDOWS\SYSTEM32\d3d10warp.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6977: 2448	ShellExperienc	0x7fffe2330000	0x267000	dwrite.dll	C:\WINDOWS\SYSTEM32\dwrite.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6978: 2448	ShellExperienc	0x7fff9c2a0000	0x2be000	DevicesFlowUI.dll	C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\DevicesFlowUI.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6979: 2448	ShellExperienc	0x7fffd6d30000	0xb3000	TextShaping.dll	C:\WINDOWS\SYSTEM32\TextShaping.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6980: 2448	ShellExperienc	0x7fff9b860000	0x506000	Windows.UI.ActionCenter.dll	C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\Windows.UI.ActionCenter.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6981: 2448	ShellExperienc	0x7fffc9210000	0x594000	Microsoft.UI.Xaml.dll	C:\Windows\SystemApps\Microsoft.UI.Xaml.CBS_8wekyb3d8bbwe\Microsoft.UI.Xaml.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6982: 2448	ShellExperienc	0x7fffc1e70000	0x65000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6983: 2448	ShellExperienc	0x7fffdbc80000	0x114000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6984: 2448	ShellExperienc	0x7fffda3a0000	0x47000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6985: 2448	ShellExperienc	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6986: 2448	ShellExperienc	0x7fffe4db0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6987: 2448	ShellExperienc	0x7fffe4120000	0x30000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6988: 2448	ShellExperienc	0x7fffe5920000	0x29000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6989: 2448	ShellExperienc	0x7fffdb990000	0x43000	languageoverlayutil.dll	C:\WINDOWS\SYSTEM32\languageoverlayutil.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6990: 2448	ShellExperienc	0x7fffdb950000	0x34000	bcp47mrm.dll	C:\WINDOWS\SYSTEM32\bcp47mrm.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6991: 2448	ShellExperienc	0x7fffe8d70000	0x15d000	msctf.dll	C:\WINDOWS\System32\msctf.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6992: 2448	ShellExperienc	0x7fffd4b60000	0x1f000	Windows.Shell.ServiceHostBuilder.dll	C:\Windows\System32\Windows.Shell.ServiceHostBuilder.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6993: 2448	ShellExperienc	0x7fffcc840000	0x14000	execmodelproxy.dll	C:\WINDOWS\system32\execmodelproxy.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6994: 2448	ShellExperienc	0x7fffdfe20000	0x2e2000	CoreUIComponents.dll	C:\WINDOWS\system32\CoreUIComponents.dll	-1	2026-05-12 18:25:52.000000 UTC	Disabled
+L6995: 2448	ShellExperienc	0x7fffe39d0000	0x36000	RMCLIENT.dll	C:\WINDOWS\SYSTEM32\RMCLIENT.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6996: 2448	ShellExperienc	0x7fffda5c0000	0x1e3000	InputHost.dll	C:\Windows\System32\InputHost.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6997: 2448	ShellExperienc	0x7fffe5000000	0xc000	CRYPTBASE.DLL	C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6998: 2448	ShellExperienc	0x7fffcc350000	0xdb000	UiaManager.dll	C:\Windows\System32\UiaManager.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L6999: 2448	ShellExperienc	0x7fffdf740000	0x1b6000	WindowManagementAPI.dll	C:\WINDOWS\SYSTEM32\WindowManagementAPI.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7000: 2448	ShellExperienc	0x7fffdeff0000	0x16a000	AppXDeploymentClient.dll	C:\Windows\System32\AppXDeploymentClient.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7001: 2448	ShellExperienc	0x7fffe8060000	0x20000	imagehlp.dll	C:\WINDOWS\System32\imagehlp.dll	6	2026-05-12 18:25:52.000000 UTC	Disabled
+L7002: 2448	ShellExperienc	0x7fffd0250000	0x16f000	windows.ui.core.textinput.dll	C:\WINDOWS\SYSTEM32\windows.ui.core.textinput.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7003: 2448	ShellExperienc	0x7fffda470000	0x148000	TextInputFramework.dll	C:\WINDOWS\SYSTEM32\TextInputFramework.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7004: 2448	ShellExperienc	0x7fffd87f0000	0x14f000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7005: 2448	ShellExperienc	0x7fffc8ff0000	0x5a000	DataExchange.dll	C:\WINDOWS\system32\DataExchange.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7006: 2448	ShellExperienc	0x7fffe1040000	0x103000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7007: 2448	ShellExperienc	0x7fffd9280000	0x177000	Windows.System.Launcher.dll	C:\Windows\System32\Windows.System.Launcher.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7008: 2448	ShellExperienc	0x7fffe8120000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7009: 2448	ShellExperienc	0x7fffd5d90000	0x329000	Windows.UI.Xaml.Controls.dll	C:\WINDOWS\SYSTEM32\Windows.UI.Xaml.Controls.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7010: 2448	ShellExperienc	0x7fffd6630000	0x18f000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7011: 2448	ShellExperienc	0x7fffdbf20000	0x5e000	Bcp47Langs.dll	C:\WINDOWS\SYSTEM32\Bcp47Langs.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7012: 2448	ShellExperienc	0x7fffd0470000	0x647000	windowsudk.shellcommon.dll	C:\WINDOWS\system32\windowsudk.shellcommon.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7013: 2448	ShellExperienc	0x7fffda2f0000	0xa3000	directmanipulation.dll	C:\WINDOWS\system32\directmanipulation.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7014: 2448	ShellExperienc	0x7fffe2810000	0x220000	dcomp.dll	C:\WINDOWS\SYSTEM32\dcomp.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7015: 2448	ShellExperienc	0x7fffe1cd0000	0x19000	Microsoft.Internal.WarpPal.dll	C:\WINDOWS\SYSTEM32\Microsoft.Internal.WarpPal.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7016: 2448	ShellExperienc	0x7fffc8f30000	0x67000	NotificationControllerPS.dll	C:\Windows\System32\NotificationControllerPS.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7017: 2448	ShellExperienc	0x7fffc13b0000	0x2d000	WindowsInternal.ShellUI.dll	C:\Windows\ShellComponents\WindowsInternal.ShellUI.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7018: 2448	ShellExperienc	0x7fffc3a30000	0x15000	Windows.Globalization.Fontgroups.dll	C:\Windows\System32\Windows.Globalization.Fontgroups.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7019: 2448	ShellExperienc	0x7fffc39f0000	0xb000	fontgroupsoverride.dll	C:\WINDOWS\SYSTEM32\fontgroupsoverride.dll	6	2026-05-12 18:25:53.000000 UTC	Disabled
+L7020: 2448	ShellExperienc	0x7fffd9520000	0xd6000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7021: 2448	ShellExperienc	0x7fffc1ce0000	0x52000	Windows.Energy.dll	C:\Windows\System32\Windows.Energy.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7022: 2448	ShellExperienc	0x7fffdd850000	0x94000	Windows.Graphics.dll	C:\Windows\System32\Windows.Graphics.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7023: 2448	ShellExperienc	0x7fffa5e30000	0x37000	NotificationIntelligencePlatform.dll	C:\Windows\System32\NotificationIntelligencePlatform.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7024: 2448	ShellExperienc	0x7fffd9130000	0xa000	dmiso8601utils.dll	C:\WINDOWS\SYSTEM32\dmiso8601utils.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7025: 2448	ShellExperienc	0x7fffd31e0000	0x23d000	msxml6.dll	C:\Windows\System32\msxml6.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7026: 2448	ShellExperienc	0x7fffe4a30000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7027: 2448	ShellExperienc	0x7fffda0a0000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-12 18:25:55.000000 UTC	Disabled
+L7028: 2448	ShellExperienc	0x7fffcc950000	0x1b2000	audioses.dll	C:\WINDOWS\SYSTEM32\audioses.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7029: 2448	ShellExperienc	0x7fffdd490000	0x98000	MMDevApi.dll	C:\WINDOWS\System32\MMDevApi.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7030: 2448	ShellExperienc	0x7fffe55d0000	0x2d000	DEVOBJ.dll	C:\WINDOWS\SYSTEM32\DEVOBJ.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7031: 2448	ShellExperienc	0x7fffe0390000	0xb000	AVRT.dll	C:\WINDOWS\SYSTEM32\AVRT.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7032: 2448	ShellExperienc	0x7fffe3a10000	0x14000	resourcepolicyclient.dll	C:\WINDOWS\SYSTEM32\resourcepolicyclient.dll	6	2026-05-12 18:25:56.000000 UTC	Disabled
+L7033: 2448	ShellExperienc	0x7fffcfd60000	0xa5000	PhotoMetadataHandler.dll	C:\WINDOWS\SYSTEM32\PhotoMetadataHandler.dll	6	2026-05-12 18:25:57.000000 UTC	Disabled
+L7034: 2448	ShellExperienc	0x7fffcf6b0000	0x16000	threadpoolwinrt.dll	C:\Windows\System32\threadpoolwinrt.dll	6	2026-05-12 18:25:57.000000 UTC	Disabled
+L7035: 2448	ShellExperienc	0x7fffe34a0000	0x12000	pfclient.dll	C:\WINDOWS\SYSTEM32\pfclient.dll	6	2026-05-12 18:25:57.000000 UTC	Disabled
+L7036: 2448	ShellExperienc	0x7fffab230000	0x81000	RTMediaFrame.dll	C:\Windows\System32\RTMediaFrame.dll	6	2026-05-12 18:25:57.000000 UTC	Disabled
+L7037: 2448	ShellExperienc	0x7fffc0a90000	0x54000	wuceffects.dll	C:\WINDOWS\SYSTEM32\wuceffects.dll	6	2026-05-12 18:26:01.000000 UTC	Disabled
+L7038: 2448	ShellExperienc	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-12 18:26:01.000000 UTC	Disabled
+L7039: 2448	ShellExperienc	0x7fffe3780000	0x2e000	dwmapi.dll	C:\WINDOWS\SYSTEM32\dwmapi.dll	6	2026-05-12 18:26:01.000000 UTC	Disabled
+
+--- pstree.txt ---
+L34: *** 2448	576	ShellExperienc	0xcd8a1243e080	18	-	1	False	2026-05-12 18:25:52.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe	"C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe" -ServerName:App.AppXtk181tbxbce2qsex02s8tw7hfxa9xb3t.mca	C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe
+
+--- psscan.txt ---
+L127: 2448	576	ShellExperienc	0xcd8a1243e080	18	-	1	False	2026-05-12 18:25:52.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L7267: 2448	ShellExperienc	0x2f4911e0000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L7268: 2448	ShellExperienc	0x2f490750000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L7269: 2448	ShellExperienc	0x2f490bc0000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L7270: 2448	ShellExperienc	0x2f490f60000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L7271: 2448	ShellExperienc	0x2f490eb0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.21h1.dll
+L7272: 2448	ShellExperienc	0x2f4910a0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L7273: 2448	ShellExperienc	0x2f4912b0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L7274: 2448	ShellExperienc	0x2f4931e0000	False	False	False	\Windows\System32\en-US\windows.ui.xaml.dll.mui
+L7275: 2448	ShellExperienc	0x2f491ba0000	False	False	False	\Windows\System32\msxml6r.dll
+L7276: 2448	ShellExperienc	0x2f4931d0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.Common.dll
+L7277: 2448	ShellExperienc	0x7fffde480000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L7278: 2448	ShellExperienc	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L7279: 2448	ShellExperienc	0x7fff9cf00000	True	True	True	\Windows\System32\QuickActionsDataModel.dll
+L7280: 2448	ShellExperienc	0x7ff764340000	True	False	True	\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe
+L7281: 2448	ShellExperienc	0x7fff9c570000	True	True	True	\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\Windows.UI.QuickActions.dll
+L7282: 2448	ShellExperienc	0x7fff9c2a0000	True	True	True	\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\DevicesFlowUI.dll
+L7283: 2448	ShellExperienc	0x7fff9b860000	True	True	True	\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\Windows.UI.ActionCenter.dll
+L7284: 2448	ShellExperienc	0x7fff9cd00000	True	True	True	\Windows\ShellExperiences\NetworkUX.dll
+L7285: 2448	ShellExperienc	0x7fffcc840000	True	True	True	\Windows\System32\execmodelproxy.dll
+L7286: 2448	ShellExperienc	0x7fffc3a30000	True	True	True	\Windows\System32\Windows.Globalization.Fontgroups.dll
+L7287: 2448	ShellExperienc	0x7fffc13b0000	True	True	True	\Windows\ShellComponents\WindowsInternal.ShellUI.dll
+L7288: 2448	ShellExperienc	0x7fffab230000	True	True	True	\Windows\System32\RTMediaFrame.dll
+L7289: 2448	ShellExperienc	0x7fffa5e30000	True	True	True	\Windows\System32\NotificationIntelligencePlatform.dll
+L7290: 2448	ShellExperienc	0x7fffc0a90000	True	True	True	\Windows\System32\wuceffects.dll
+L7291: 2448	ShellExperienc	0x7fffc1e70000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L7292: 2448	ShellExperienc	0x7fffc1ce0000	True	True	True	\Windows\System32\Windows.Energy.dll
+L7293: 2448	ShellExperienc	0x7fffc39f0000	True	True	True	\Windows\System32\fontgroupsoverride.dll
+L7294: 2448	ShellExperienc	0x7fffc8ff0000	True	True	True	\Windows\System32\DataExchange.dll
+L7295: 2448	ShellExperienc	0x7fffc3e30000	True	True	True	\Windows\System32\ShellExperiences\Windows.UI.Shell.SharedUtilities.dll
+L7296: 2448	ShellExperienc	0x7fffc8f30000	True	True	True	\Windows\System32\NotificationControllerPS.dll
+L7297: 2448	ShellExperienc	0x7fffc9210000	True	True	True	\Windows\SystemApps\Microsoft.UI.Xaml.CBS_8wekyb3d8bbwe\Microsoft.UI.Xaml.dll
+L7298: 2448	ShellExperienc	0x7fffcc350000	True	True	True	\Windows\System32\UiaManager.dll
+L7299: 2448	ShellExperienc	0x7fffd4b60000	True	True	True	\Windows\System32\Windows.Shell.ServiceHostBuilder.dll
+L7300: 2448	ShellExperienc	0x7fffcfd60000	True	True	True	\Windows\System32\PhotoMetadataHandler.dll
+L7301: 2448	ShellExperienc	0x7fffcc950000	True	True	True	\Windows\System32\AudioSes.dll
+L7302: 2448	ShellExperienc	0x7fffcf6b0000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L7303: 2448	ShellExperienc	0x7fffd0470000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L7304: 2448	ShellExperienc	0x7fffd0250000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L7305: 2448	ShellExperienc	0x7fffd31e0000	True	True	True	\Windows\System32\msxml6.dll
+L7306: 2448	ShellExperienc	0x7fffd6630000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L7307: 2448	ShellExperienc	0x7fffd5d90000	True	True	True	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L7308: 2448	ShellExperienc	0x7fffd6d30000	True	True	True	\Windows\System32\TextShaping.dll
+L7309: 2448	ShellExperienc	0x7fffda840000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L7310: 2448	ShellExperienc	0x7fffd9280000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L7311: 2448	ShellExperienc	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L7312: 2448	ShellExperienc	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L7313: 2448	ShellExperienc	0x7fffd87f0000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L7314: 2448	ShellExperienc	0x7fffd9130000	True	True	True	\Windows\System32\dmiso8601utils.dll
+L7315: 2448	ShellExperienc	0x7fffda3a0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L7316: 2448	ShellExperienc	0x7fffda0a0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L7317: 2448	ShellExperienc	0x7fffd9520000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L7318: 2448	ShellExperienc	0x7fffda2f0000	True	True	True	\Windows\System32\directmanipulation.dll
+L7319: 2448	ShellExperienc	0x7fffda470000	True	True	True	\Windows\System32\TextInputFramework.dll
+L7320: 2448	ShellExperienc	0x7fffda5c0000	True	True	True	\Windows\System32\InputHost.dll
+L7321: 2448	ShellExperienc	0x7fffdbc80000	True	True	True	\Windows\System32\MrmCoreR.dll
+L7322: 2448	ShellExperienc	0x7fffdb990000	True	True	True	\Windows\System32\LanguageOverlayUtil.dll
+L7323: 2448	ShellExperienc	0x7fffdb950000	True	True	True	\Windows\System32\BCP47mrm.dll
+L7324: 2448	ShellExperienc	0x7fffdb9e0000	True	True	True	\Windows\System32\Windows.UI.dll
+L7325: 2448	ShellExperienc	0x7fffdc5d0000	True	True	True	\Windows\System32\wincorlib.dll
+L7326: 2448	ShellExperienc	0x7fffdbf00000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L7327: 2448	ShellExperienc	0x7fffdbf20000	True	True	True	\Windows\System32\BCP47Langs.dll
+L7328: 2448	ShellExperienc	0x7fffdd850000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L7329: 2448	ShellExperienc	0x7fffdd490000	True	True	True	\Windows\System32\MMDevAPI.dll
+L7330: 2448	ShellExperienc	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L7331: 2448	ShellExperienc	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L7332: 2448	ShellExperienc	0x7fffe3610000	True	True	True	\Windows\System32\dxgi.dll
+L7333: 2448	ShellExperienc	0x7fffe1cf0000	True	True	True	\Windows\System32\d2d1.dll
+L7334: 2448	ShellExperienc	0x7fffe03f0000	True	True	True	\Windows\System32\directxdatabasehelper.dll
+L7335: 2448	ShellExperienc	0x7fffdf190000	True	True	True	\Windows\System32\d3d10warp.dll
+L7336: 2448	ShellExperienc	0x7fffdef20000	True	True	True	\Windows\System32\mobilenetworking.dll
+L7337: 2448	ShellExperienc	0x7fffdeff0000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L7338: 2448	ShellExperienc	0x7fffdfe20000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L7339: 2448	ShellExperienc	0x7fffdf740000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L7340: 2448	ShellExperienc	0x7fffe0390000	True	True	True	\Windows\System32\avrt.dll
+L7341: 2448	ShellExperienc	0x7fffe1550000	True	True	True	\Windows\System32\policymanager.dll
+L7342: 2448	ShellExperienc	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L7343: 2448	ShellExperienc	0x7fffe1aa0000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L7344: 2448	ShellExperienc	0x7fffe1cd0000	True	True	True	\Windows\System32\Microsoft.Internal.WarpPal.dll
+L7345: 2448	ShellExperienc	0x7fffe2e80000	True	True	True	\Windows\System32\CoreMessaging.dll
+L7346: 2448	ShellExperienc	0x7fffe25a0000	True	True	True	\Windows\System32\d3d11.dll
+L7347: 2448	ShellExperienc	0x7fffe2330000	True	True	True	\Windows\System32\DWrite.dll
+L7348: 2448	ShellExperienc	0x7fffe2810000	True	True	True	\Windows\System32\dcomp.dll
+L7349: 2448	ShellExperienc	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L7350: 2448	ShellExperienc	0x7fffe34a0000	True	True	True	\Windows\System32\pfclient.dll
+L7351: 2448	ShellExperienc	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+L7352: 2448	ShellExperienc	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L7353: 2448	ShellExperienc	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7354: 2448	ShellExperienc	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L7355: 2448	ShellExperienc	0x7fffe39d0000	True	True	True	\Windows\System32\rmclient.dll
+L7356: 2448	ShellExperienc	0x7fffe3780000	True	True	True	\Windows\System32\dwmapi.dll
+L7357: 2448	ShellExperienc	0x7fffe3a10000	True	True	True	\Windows\System32\ResourcePolicyClient.dll
+L7358: 2448	ShellExperienc	0x7fffe4120000	True	True	True	\Windows\System32\profext.dll
+L7359: 2448	ShellExperienc	0x7fffe5540000	True	True	True	\Windows\System32\cfgmgr32.dll
+L7360: 2448	ShellExperienc	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L7361: 2448	ShellExperienc	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L7362: 2448	ShellExperienc	0x7fffe5000000	True	True	True	\Windows\System32\cryptbase.dll
+L7363: 2448	ShellExperienc	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L7364: 2448	ShellExperienc	0x7fffe55d0000	True	True	True	\Windows\System32\devobj.dll
+L7365: 2448	ShellExperienc	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L7366: 2448	ShellExperienc	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7367: 2448	ShellExperienc	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L7368: 2448	ShellExperienc	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L7369: 2448	ShellExperienc	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L7370: 2448	ShellExperienc	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L7371: 2448	ShellExperienc	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L7372: 2448	ShellExperienc	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L7373: 2448	ShellExperienc	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L7374: 2448	ShellExperienc	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L7375: 2448	ShellExperienc	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L7376: 2448	ShellExperienc	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L7377: 2448	ShellExperienc	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L7378: 2448	ShellExperienc	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L7379: 2448	ShellExperienc	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L7380: 2448	ShellExperienc	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L7381: 2448	ShellExperienc	0x7fffe8060000	True	True	True	\Windows\System32\imagehlp.dll
+L7382: 2448	ShellExperienc	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L7383: 2448	ShellExperienc	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L7384: 2448	ShellExperienc	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L7385: 2448	ShellExperienc	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L7386: 2448	ShellExperienc	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+
+--- malware_ldrmodules.txt ---
+L7267: 2448	ShellExperienc	0x2f4911e0000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L7268: 2448	ShellExperienc	0x2f490750000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L7269: 2448	ShellExperienc	0x2f490bc0000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L7270: 2448	ShellExperienc	0x2f490f60000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L7271: 2448	ShellExperienc	0x2f490eb0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.21h1.dll
+L7272: 2448	ShellExperienc	0x2f4910a0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L7273: 2448	ShellExperienc	0x2f4912b0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L7274: 2448	ShellExperienc	0x2f4931e0000	False	False	False	\Windows\System32\en-US\windows.ui.xaml.dll.mui
+L7275: 2448	ShellExperienc	0x2f491ba0000	False	False	False	\Windows\System32\msxml6r.dll
+L7276: 2448	ShellExperienc	0x2f4931d0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.Common.dll
+L7277: 2448	ShellExperienc	0x7fffde480000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L7278: 2448	ShellExperienc	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L7279: 2448	ShellExperienc	0x7fff9cf00000	True	True	True	\Windows\System32\QuickActionsDataModel.dll
+L7280: 2448	ShellExperienc	0x7ff764340000	True	False	True	\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe
+L7281: 2448	ShellExperienc	0x7fff9c570000	True	True	True	\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\Windows.UI.QuickActions.dll
+L7282: 2448	ShellExperienc	0x7fff9c2a0000	True	True	True	\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\DevicesFlowUI.dll
+L7283: 2448	ShellExperienc	0x7fff9b860000	True	True	True	\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\Windows.UI.ActionCenter.dll
+L7284: 2448	ShellExperienc	0x7fff9cd00000	True	True	True	\Windows\ShellExperiences\NetworkUX.dll
+L7285: 2448	ShellExperienc	0x7fffcc840000	True	True	True	\Windows\System32\execmodelproxy.dll
+L7286: 2448	ShellExperienc	0x7fffc3a30000	True	True	True	\Windows\System32\Windows.Globalization.Fontgroups.dll
+L7287: 2448	ShellExperienc	0x7fffc13b0000	True	True	True	\Windows\ShellComponents\WindowsInternal.ShellUI.dll
+L7288: 2448	ShellExperienc	0x7fffab230000	True	True	True	\Windows\System32\RTMediaFrame.dll
+L7289: 2448	ShellExperienc	0x7fffa5e30000	True	True	True	\Windows\System32\NotificationIntelligencePlatform.dll
+L7290: 2448	ShellExperienc	0x7fffc0a90000	True	True	True	\Windows\System32\wuceffects.dll
+L7291: 2448	ShellExperienc	0x7fffc1e70000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L7292: 2448	ShellExperienc	0x7fffc1ce0000	True	True	True	\Windows\System32\Windows.Energy.dll
+L7293: 2448	ShellExperienc	0x7fffc39f0000	True	True	True	\Windows\System32\fontgroupsoverride.dll
+L7294: 2448	ShellExperienc	0x7fffc8ff0000	True	True	True	\Windows\System32\DataExchange.dll
+L7295: 2448	ShellExperienc	0x7fffc3e30000	True	True	True	\Windows\System32\ShellExperiences\Windows.UI.Shell.SharedUtilities.dll
+L7296: 2448	ShellExperienc	0x7fffc8f30000	True	True	True	\Windows\System32\NotificationControllerPS.dll
+L7297: 2448	ShellExperienc	0x7fffc9210000	True	True	True	\Windows\SystemApps\Microsoft.UI.Xaml.CBS_8wekyb3d8bbwe\Microsoft.UI.Xaml.dll
+L7298: 2448	ShellExperienc	0x7fffcc350000	True	True	True	\Windows\System32\UiaManager.dll
+L7299: 2448	ShellExperienc	0x7fffd4b60000	True	True	True	\Windows\System32\Windows.Shell.ServiceHostBuilder.dll
+L7300: 2448	ShellExperienc	0x7fffcfd60000	True	True	True	\Windows\System32\PhotoMetadataHandler.dll
+L7301: 2448	ShellExperienc	0x7fffcc950000	True	True	True	\Windows\System32\AudioSes.dll
+L7302: 2448	ShellExperienc	0x7fffcf6b0000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L7303: 2448	ShellExperienc	0x7fffd0470000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L7304: 2448	ShellExperienc	0x7fffd0250000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L7305: 2448	ShellExperienc	0x7fffd31e0000	True	True	True	\Windows\System32\msxml6.dll
+L7306: 2448	ShellExperienc	0x7fffd6630000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L7307: 2448	ShellExperienc	0x7fffd5d90000	True	True	True	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L7308: 2448	ShellExperienc	0x7fffd6d30000	True	True	True	\Windows\System32\TextShaping.dll
+L7309: 2448	ShellExperienc	0x7fffda840000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L7310: 2448	ShellExperienc	0x7fffd9280000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L7311: 2448	ShellExperienc	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L7312: 2448	ShellExperienc	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L7313: 2448	ShellExperienc	0x7fffd87f0000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L7314: 2448	ShellExperienc	0x7fffd9130000	True	True	True	\Windows\System32\dmiso8601utils.dll
+L7315: 2448	ShellExperienc	0x7fffda3a0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L7316: 2448	ShellExperienc	0x7fffda0a0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L7317: 2448	ShellExperienc	0x7fffd9520000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L7318: 2448	ShellExperienc	0x7fffda2f0000	True	True	True	\Windows\System32\directmanipulation.dll
+L7319: 2448	ShellExperienc	0x7fffda470000	True	True	True	\Windows\System32\TextInputFramework.dll
+L7320: 2448	ShellExperienc	0x7fffda5c0000	True	True	True	\Windows\System32\InputHost.dll
+L7321: 2448	ShellExperienc	0x7fffdbc80000	True	True	True	\Windows\System32\MrmCoreR.dll
+L7322: 2448	ShellExperienc	0x7fffdb990000	True	True	True	\Windows\System32\LanguageOverlayUtil.dll
+L7323: 2448	ShellExperienc	0x7fffdb950000	True	True	True	\Windows\System32\BCP47mrm.dll
+L7324: 2448	ShellExperienc	0x7fffdb9e0000	True	True	True	\Windows\System32\Windows.UI.dll
+L7325: 2448	ShellExperienc	0x7fffdc5d0000	True	True	True	\Windows\System32\wincorlib.dll
+L7326: 2448	ShellExperienc	0x7fffdbf00000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L7327: 2448	ShellExperienc	0x7fffdbf20000	True	True	True	\Windows\System32\BCP47Langs.dll
+L7328: 2448	ShellExperienc	0x7fffdd850000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L7329: 2448	ShellExperienc	0x7fffdd490000	True	True	True	\Windows\System32\MMDevAPI.dll
+L7330: 2448	ShellExperienc	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L7331: 2448	ShellExperienc	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L7332: 2448	ShellExperienc	0x7fffe3610000	True	True	True	\Windows\System32\dxgi.dll
+L7333: 2448	ShellExperienc	0x7fffe1cf0000	True	True	True	\Windows\System32\d2d1.dll
+L7334: 2448	ShellExperienc	0x7fffe03f0000	True	True	True	\Windows\System32\directxdatabasehelper.dll
+L7335: 2448	ShellExperienc	0x7fffdf190000	True	True	True	\Windows\System32\d3d10warp.dll
+L7336: 2448	ShellExperienc	0x7fffdef20000	True	True	True	\Windows\System32\mobilenetworking.dll
+L7337: 2448	ShellExperienc	0x7fffdeff0000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L7338: 2448	ShellExperienc	0x7fffdfe20000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L7339: 2448	ShellExperienc	0x7fffdf740000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L7340: 2448	ShellExperienc	0x7fffe0390000	True	True	True	\Windows\System32\avrt.dll
+L7341: 2448	ShellExperienc	0x7fffe1550000	True	True	True	\Windows\System32\policymanager.dll
+L7342: 2448	ShellExperienc	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L7343: 2448	ShellExperienc	0x7fffe1aa0000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L7344: 2448	ShellExperienc	0x7fffe1cd0000	True	True	True	\Windows\System32\Microsoft.Internal.WarpPal.dll
+L7345: 2448	ShellExperienc	0x7fffe2e80000	True	True	True	\Windows\System32\CoreMessaging.dll
+L7346: 2448	ShellExperienc	0x7fffe25a0000	True	True	True	\Windows\System32\d3d11.dll
+L7347: 2448	ShellExperienc	0x7fffe2330000	True	True	True	\Windows\System32\DWrite.dll
+L7348: 2448	ShellExperienc	0x7fffe2810000	True	True	True	\Windows\System32\dcomp.dll
+L7349: 2448	ShellExperienc	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L7350: 2448	ShellExperienc	0x7fffe34a0000	True	True	True	\Windows\System32\pfclient.dll
+L7351: 2448	ShellExperienc	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+L7352: 2448	ShellExperienc	0x7fffe5880000	True	True	True	\Windows\System32\powrprof.dll
+L7353: 2448	ShellExperienc	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L7354: 2448	ShellExperienc	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L7355: 2448	ShellExperienc	0x7fffe39d0000	True	True	True	\Windows\System32\rmclient.dll
+L7356: 2448	ShellExperienc	0x7fffe3780000	True	True	True	\Windows\System32\dwmapi.dll
+L7357: 2448	ShellExperienc	0x7fffe3a10000	True	True	True	\Windows\System32\ResourcePolicyClient.dll
+L7358: 2448	ShellExperienc	0x7fffe4120000	True	True	True	\Windows\System32\profext.dll
+L7359: 2448	ShellExperienc	0x7fffe5540000	True	True	True	\Windows\System32\cfgmgr32.dll
+L7360: 2448	ShellExperienc	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L7361: 2448	ShellExperienc	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L7362: 2448	ShellExperienc	0x7fffe5000000	True	True	True	\Windows\System32\cryptbase.dll
+L7363: 2448	ShellExperienc	0x7fffe5860000	True	True	True	\Windows\System32\umpdc.dll
+L7364: 2448	ShellExperienc	0x7fffe55d0000	True	True	True	\Windows\System32\devobj.dll
+L7365: 2448	ShellExperienc	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L7366: 2448	ShellExperienc	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L7367: 2448	ShellExperienc	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L7368: 2448	ShellExperienc	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L7369: 2448	ShellExperienc	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L7370: 2448	ShellExperienc	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L7371: 2448	ShellExperienc	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L7372: 2448	ShellExperienc	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L7373: 2448	ShellExperienc	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L7374: 2448	ShellExperienc	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L7375: 2448	ShellExperienc	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L7376: 2448	ShellExperienc	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L7377: 2448	ShellExperienc	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L7378: 2448	ShellExperienc	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L7379: 2448	ShellExperienc	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L7380: 2448	ShellExperienc	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L7381: 2448	ShellExperienc	0x7fffe8060000	True	True	True	\Windows\System32\imagehlp.dll
+L7382: 2448	ShellExperienc	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L7383: 2448	ShellExperienc	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L7384: 2448	ShellExperienc	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L7385: 2448	ShellExperienc	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L7386: 2448	ShellExperienc	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+
+--- malware_pebmasquerade.txt ---
+L146: 2448	ShellExperienc	\Device\HarddiskVolume4\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe	C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe	False	False
+
+--- sessions.txt ---
+L157: 1	-	2448	ShellExperienc	CLEANWINDOWS11/kali	2026-05-12 18:25:52.000000 UTC
+
+=== END OF PIVOT REPORT ===

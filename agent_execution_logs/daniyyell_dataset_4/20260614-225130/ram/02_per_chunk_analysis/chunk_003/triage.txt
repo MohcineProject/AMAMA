@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_003.txt
+Summary: RuntimeBroker orphaned parent (PID 860 not in process list); MpDefenderCoreService running from ProgramData with SeDebugPrivilege and an unexpected HTTP (port 80) outbound connection alongside the expected HTTPS one.
+
+[PROCESS]
+pid: 2284
+ppid: 860
+image: RuntimeBroker.exe
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 860 (unknown) not present anywhere in the process list
+
+[PROCESS]
+pid: 2468
+ppid: 716
+image: MpDefenderCoreService.exe
+cmdline: "C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\MpDefenderCoreService.exe"
+severity: LOW
+reasons: privilege_anomaly: SeDebugPrivilege enabled on a Defender service process — worth confirming legitimacy | network_anomaly: outbound TCPv4 connection to 2.22.98.7:80 (plain HTTP) alongside expected HTTPS to 20.189.173.24:443 — unexpected cleartext channel for a security product | orphaned_parent: PPID 716 (unknown) not present anywhere in the process list
+

@@ -1,0 +1,313 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-14T23:06:28Z
+
+=== PID 6804 (SearchApp.exe, ppid=860) ===
+
+--- pslist.txt ---
+L95: 6804	860	SearchApp.exe	0xbb0c9084a080	38	-	1	False	2025-08-07 19:36:42.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L95: 6804	SearchApp.exe	-
+
+--- privileges.txt ---
+L3155: 6804	SearchApp.exe	2	SeCreateTokenPrivilege		Create a token object
+L3156: 6804	SearchApp.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3157: 6804	SearchApp.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3158: 6804	SearchApp.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3159: 6804	SearchApp.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3160: 6804	SearchApp.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3161: 6804	SearchApp.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L3162: 6804	SearchApp.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3163: 6804	SearchApp.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3164: 6804	SearchApp.exe	11	SeSystemProfilePrivilege		Profile system performance
+L3165: 6804	SearchApp.exe	12	SeSystemtimePrivilege		Change the system time
+L3166: 6804	SearchApp.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3167: 6804	SearchApp.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3168: 6804	SearchApp.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L3169: 6804	SearchApp.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3170: 6804	SearchApp.exe	17	SeBackupPrivilege		Backup files and directories
+L3171: 6804	SearchApp.exe	18	SeRestorePrivilege		Restore files and directories
+L3172: 6804	SearchApp.exe	19	SeShutdownPrivilege		Shut down the system
+L3173: 6804	SearchApp.exe	20	SeDebugPrivilege		Debug programs
+L3174: 6804	SearchApp.exe	21	SeAuditPrivilege		Generate security audits
+L3175: 6804	SearchApp.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3176: 6804	SearchApp.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3177: 6804	SearchApp.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3178: 6804	SearchApp.exe	25	SeUndockPrivilege		Remove computer from docking station
+L3179: 6804	SearchApp.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3180: 6804	SearchApp.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3181: 6804	SearchApp.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L3182: 6804	SearchApp.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3183: 6804	SearchApp.exe	30	SeCreateGlobalPrivilege		Create global objects
+L3184: 6804	SearchApp.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3185: 6804	SearchApp.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3186: 6804	SearchApp.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3187: 6804	SearchApp.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L3188: 6804	SearchApp.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3189: 6804	SearchApp.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L85: *** 6804	860	SearchApp.exe	0xbb0c9084a080	38	-	1	False	2025-08-07 19:36:42.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe	-	-
+
+--- psscan.txt ---
+L112: 6804	860	SearchApp.exe	0xbb0c9084a080	38	-	1	False	2025-08-07 19:36:42.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L37: 0xbb0c8eaca290	TCPv4	192.168.135.59	49848	23.4.84.73	443	CLOSE_WAIT	6804	SearchApp.exe	2025-08-07 19:40:26.000000 UTC
+L83: 0xbb0c90daeb50	TCPv4	192.168.135.59	49844	23.4.84.71	443	CLOSE_WAIT	6804	SearchApp.exe	2025-08-07 19:40:25.000000 UTC
+
+--- netstat.txt ---
+L5: 0xbb0c8eaca290	TCPv4	192.168.135.59	49848	23.4.84.73	443	CLOSE_WAIT	6804	SearchApp.exe	2025-08-07 19:40:26.000000 UTC
+L8: 0xbb0c90daeb50	TCPv4	192.168.135.59	49844	23.4.84.71	443	CLOSE_WAIT	6804	SearchApp.exe	2025-08-07 19:40:25.000000 UTC
+
+--- ldrmodules.txt ---
+L4460: 6804	SearchApp.exe	0x1bc98340000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.19h1.dll
+L4461: 6804	SearchApp.exe	0x1bc98e20000	False	False	False	\Windows\System32\en-GB\windows.storage.dll.mui
+L4462: 6804	SearchApp.exe	0x1bc98e40000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L4463: 6804	SearchApp.exe	0x1bc9bc60000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L4464: 6804	SearchApp.exe	0x1bc9ba00000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L4465: 6804	SearchApp.exe	0x1bc9bb60000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L4466: 6804	SearchApp.exe	0x1bc9c1e0000	False	False	False	\Windows\System32\icuuc.dll
+L4467: 6804	SearchApp.exe	0x1bc9c1f0000	False	False	False	\Windows\System32\icuin.dll
+L4468: 6804	SearchApp.exe	0x1bc9c600000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L4469: 6804	SearchApp.exe	0x1c49cfa0000	False	False	False	\Windows\System32\en-GB\edgehtml.dll.mui
+L4470: 6804	SearchApp.exe	0x1c49f100000	False	False	False	\Windows\System32\en-GB\crypt32.dll.mui
+L4471: 6804	SearchApp.exe	0x1c49f170000	False	False	False	\Windows\System32\en-US\dnsapi.dll.mui
+L4472: 6804	SearchApp.exe	0x1c49fe20000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Cortana.Internal.Search.winmd
+L4473: 6804	SearchApp.exe	0x1c49ff60000	False	False	False	\Windows\System32\WinMetadata\Windows.Storage.winmd
+L4474: 6804	SearchApp.exe	0x1c49fe80000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L4475: 6804	SearchApp.exe	0x1c49fe60000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Cortana.Search.winmd
+L4476: 6804	SearchApp.exe	0x1c49ff00000	False	False	False	\Windows\System32\WinMetadata\Windows.Security.winmd
+L4477: 6804	SearchApp.exe	0x1c4a0200000	False	False	False	\Windows\System32\WinMetadata\Windows.ApplicationModel.winmd
+L4478: 6804	SearchApp.exe	0x1c4a03f0000	False	False	False	\Windows\System32\WinMetadata\Windows.System.winmd
+L4479: 6804	SearchApp.exe	0x1c4b1340000	False	False	False	\Windows\System32\WinMetadata\Windows.Web.winmd
+L4480: 6804	SearchApp.exe	0x1c4b3200000	False	False	False	\Windows\System32\prm0009.dll
+L4481: 6804	SearchApp.exe	0x1c4b5960000	False	False	False	\Windows\System32\en-GB\shell32.dll.mui
+L4482: 6804	SearchApp.exe	0x1c4b5ef0000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L4483: 6804	SearchApp.exe	0x7fff58900000	False	False	False	\Windows\System32\xmllite.dll
+L4484: 6804	SearchApp.exe	0x7fff524f0000	False	False	False	\Windows\System32\Windows.StateRepositoryCore.dll
+L4485: 6804	SearchApp.exe	0x7fff45e40000	False	False	False	\Windows\System32\DictationManager.dll
+L4486: 6804	SearchApp.exe	0x7fff3fcb0000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Search.Core.dll
+L4487: 6804	SearchApp.exe	0x7fff3e590000	False	False	False	\Windows\System32\EdgeManager.dll
+L4488: 6804	SearchApp.exe	0x7fff3c340000	False	False	False	\Windows\System32\Chakra.dll
+L4489: 6804	SearchApp.exe	0x7ff69a4a0000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe
+L4490: 6804	SearchApp.exe	0x7fff3bb60000	False	False	False	\Windows\System32\Windows.Internal.SecurityMitigationsBroker.dll
+L4491: 6804	SearchApp.exe	0x7fff3c110000	False	False	False	\Windows\System32\icu.dll
+L4492: 6804	SearchApp.exe	0x7fff3cac0000	False	False	False	\Windows\System32\edgehtml.dll
+L4493: 6804	SearchApp.exe	0x7fff3e510000	False	False	False	\Windows\System32\edgeIso.dll
+L4494: 6804	SearchApp.exe	0x7fff3efa0000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApi.dll
+L4495: 6804	SearchApp.exe	0x7fff3e910000	False	False	False	\Windows\System32\ConstraintIndex.Search.dll
+L4496: 6804	SearchApp.exe	0x7fff3e6e0000	False	False	False	\Windows\System32\Windows.Web.Http.dll
+L4497: 6804	SearchApp.exe	0x7fff3e860000	False	False	False	\Windows\System32\msimtf.dll
+L4498: 6804	SearchApp.exe	0x7fff3eaa0000	False	False	False	\Windows\System32\Speech_OneCore\common\sapi_onecore.dll
+L4499: 6804	SearchApp.exe	0x7fff3f790000	False	False	False	\Windows\System32\Windows.UI.Input.Inking.dll
+L4500: 6804	SearchApp.exe	0x7fff3f6c0000	False	False	False	\Windows\System32\srpapi.dll
+L4501: 6804	SearchApp.exe	0x7fff3f690000	False	False	False	\Windows\System32\Windows.ApplicationModel.Background.SystemEventsBroker.dll
+L4502: 6804	SearchApp.exe	0x7fff3f6f0000	False	False	False	\Windows\System32\rometadata.dll
+L4503: 6804	SearchApp.exe	0x7fff3fc60000	False	False	False	\Windows\System32\winmmbase.dll
+L4504: 6804	SearchApp.exe	0x7fff3fc30000	False	False	False	\Windows\System32\Windows.Cortana.ProxyStub.dll
+L4505: 6804	SearchApp.exe	0x7fff3fc90000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\BingConfigurationClient.dll
+L4506: 6804	SearchApp.exe	0x7fff42ab0000	False	False	False	\Windows\System32\Windows.Web.dll
+L4507: 6804	SearchApp.exe	0x7fff42310000	False	False	False	\Windows\System32\windowsudk.shellcommon.dll
+L4508: 6804	SearchApp.exe	0x7fff40260000	False	False	False	\Windows\System32\Windows.Internal.Shell.Broker.dll
+L4509: 6804	SearchApp.exe	0x7fff3fdd0000	False	False	False	\Windows\System32\UIAutomationCore.dll
+L4510: 6804	SearchApp.exe	0x7fff40b40000	False	False	False	\Windows\System32\ShellCommonCommonProxyStub.dll
+L4511: 6804	SearchApp.exe	0x7fff40340000	False	False	False	\Windows\System32\biwinrt.dll
+L4512: 6804	SearchApp.exe	0x7fff422a0000	False	False	False	\Windows\System32\Windows.Storage.ApplicationData.dll
+L4513: 6804	SearchApp.exe	0x7fff42560000	False	False	False	\Windows\System32\Windows.UI.Core.TextInput.dll
+L4514: 6804	SearchApp.exe	0x7fff42920000	False	False	False	\Windows\System32\Windows.Globalization.Fontgroups.dll
+L4515: 6804	SearchApp.exe	0x7fff448a0000	False	False	False	\Windows\System32\Windows.StateRepositoryClient.dll
+L4516: 6804	SearchApp.exe	0x7fff44160000	False	False	False	\Windows\System32\StartTileData.dll
+L4517: 6804	SearchApp.exe	0x7fff43360000	False	False	False	\Windows\System32\DataExchange.dll
+L4518: 6804	SearchApp.exe	0x7fff432b0000	False	False	False	\Windows\System32\cryptnet.dll
+L4519: 6804	SearchApp.exe	0x7fff43bd0000	False	False	False	\Windows\System32\vaultcli.dll
+L4520: 6804	SearchApp.exe	0x7fff44850000	False	False	False	\Windows\System32\fontgroupsoverride.dll
+L4521: 6804	SearchApp.exe	0x7fff44ce0000	False	False	False	\Windows\System32\twinapi.dll
+L4522: 6804	SearchApp.exe	0x7fff448e0000	False	False	False	\Windows\System32\AppResolver.dll
+L4523: 6804	SearchApp.exe	0x7fff44f90000	False	False	False	\Windows\System32\tquery.dll
+L4524: 6804	SearchApp.exe	0x7fff44e50000	False	False	False	\Windows\System32\TileDataRepository.dll
+L4525: 6804	SearchApp.exe	0x7fff45d90000	False	False	False	\Windows\System32\UiaManager.dll
+L4526: 6804	SearchApp.exe	0x7fff49300000	False	False	False	\Windows\System32\FlightSettings.dll
+L4527: 6804	SearchApp.exe	0x7fff48360000	False	False	False	\Windows\System32\wininet.dll
+L4528: 6804	SearchApp.exe	0x7fff46750000	False	False	False	\Windows\System32\Windows.CloudStore.Schema.Shell.dll
+L4529: 6804	SearchApp.exe	0x7fff46280000	False	False	False	\Windows\System32\execmodelproxy.dll
+L4530: 6804	SearchApp.exe	0x7fff45fd0000	False	False	False	\Windows\System32\OnDemandConnRouteHelper.dll
+L4531: 6804	SearchApp.exe	0x7fff479b0000	False	False	False	\Windows\System32\Windows.CloudStore.dll
+L4532: 6804	SearchApp.exe	0x7fff46980000	False	False	False	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L4533: 6804	SearchApp.exe	0x7fff48010000	False	False	False	\Windows\System32\msftedit.dll
+L4534: 6804	SearchApp.exe	0x7fff48bd0000	False	False	False	\Windows\System32\Windows.Security.Authentication.OnlineId.dll
+L4535: 6804	SearchApp.exe	0x7fff488d0000	False	False	False	\Windows\System32\globinputhost.dll
+L4536: 6804	SearchApp.exe	0x7fff49150000	False	False	False	\Windows\System32\Windows.StateRepositoryPS.dll
+L4537: 6804	SearchApp.exe	0x7fff4deb0000	False	False	False	\Windows\System32\Windows.ApplicationModel.dll
+L4538: 6804	SearchApp.exe	0x7fff4c9c0000	False	False	False	\Windows\System32\threadpoolwinrt.dll
+L4539: 6804	SearchApp.exe	0x7fff49ad0000	False	False	False	\Windows\System32\Windows.Shell.ServiceHostBuilder.dll
+L4540: 6804	SearchApp.exe	0x7fff49900000	False	False	False	\Windows\System32\mskeyprotect.dll
+L4541: 6804	SearchApp.exe	0x7fff49e10000	False	False	False	\Windows\System32\ncryptsslp.dll
+L4542: 6804	SearchApp.exe	0x7fff4d1f0000	False	False	False	\Windows\System32\OneCoreCommonProxyStub.dll
+L4543: 6804	SearchApp.exe	0x7fff4c9e0000	False	False	False	\Windows\System32\MSWB7.dll
+L4544: 6804	SearchApp.exe	0x7fff4cc90000	False	False	False	\Windows\System32\StructuredQuery.dll
+L4545: 6804	SearchApp.exe	0x7fff4dc60000	False	False	False	\Windows\System32\wuceffects.dll
+L4546: 6804	SearchApp.exe	0x7fff50b70000	False	False	False	\Windows\System32\Windows.Globalization.dll
+L4547: 6804	SearchApp.exe	0x7fff50180000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L4548: 6804	SearchApp.exe	0x7fff50080000	False	False	False	\Windows\System32\directmanipulation.dll
+L4549: 6804	SearchApp.exe	0x7fff4e260000	False	False	False	\Windows\System32\SystemSettings.DataModel.dll
+L4550: 6804	SearchApp.exe	0x7fff50a30000	False	False	False	\Windows\System32\TextShaping.dll
+L4551: 6804	SearchApp.exe	0x7fff51930000	False	False	False	\Windows\System32\rasadhlp.dll
+L4552: 6804	SearchApp.exe	0x7fff50e20000	False	False	False	\Windows\System32\DWrite.dll
+L4553: 6804	SearchApp.exe	0x7fff51e60000	False	False	False	\Windows\System32\Windows.StateRepository.dll
+L4554: 6804	SearchApp.exe	0x7fff51d10000	False	False	False	\Windows\System32\StateRepository.Core.dll
+L4555: 6804	SearchApp.exe	0x7fff52400000	False	False	False	\Windows\System32\FWPUCLNT.DLL
+L4556: 6804	SearchApp.exe	0x7fff54c20000	False	False	False	\Windows\System32\Windows.UI.dll
+L4557: 6804	SearchApp.exe	0x7fff53710000	False	False	False	\Windows\System32\Windows.UI.Xaml.dll
+L4558: 6804	SearchApp.exe	0x7fff533d0000	False	False	False	\Windows\System32\iertutil.dll
+L4559: 6804	SearchApp.exe	0x7fff52b70000	False	False	False	\Windows\System32\urlmon.dll
+L4560: 6804	SearchApp.exe	0x7fff52b00000	False	False	False	\Windows\System32\srvcli.dll
+L4561: 6804	SearchApp.exe	0x7fff52f00000	False	False	False	\Windows\System32\Windows.UI.Immersive.dll
+L4562: 6804	SearchApp.exe	0x7fff536b0000	False	False	False	\Windows\System32\cabinet.dll
+L4563: 6804	SearchApp.exe	0x7fff548c0000	False	False	False	\Windows\System32\vm3dum64_10.dll
+L4564: 6804	SearchApp.exe	0x7fff54880000	False	False	False	\Windows\System32\version.dll
+L4565: 6804	SearchApp.exe	0x7fff54830000	False	False	False	\Windows\System32\LanguageOverlayUtil.dll
+L4566: 6804	SearchApp.exe	0x7fff54800000	False	False	False	\Windows\System32\BCP47mrm.dll
+L4567: 6804	SearchApp.exe	0x7fff54890000	False	False	False	\Windows\System32\winmm.dll
+L4568: 6804	SearchApp.exe	0x7fff549c0000	False	False	False	\Windows\System32\InputHost.dll
+L4569: 6804	SearchApp.exe	0x7fff54960000	False	False	False	\Windows\System32\vm3dum64_loader.dll
+L4570: 6804	SearchApp.exe	0x7fff54b20000	False	False	False	\Windows\System32\TextInputFramework.dll
+L4571: 6804	SearchApp.exe	0x7fff56f20000	False	False	False	\Windows\System32\AudioSes.dll
+L4572: 6804	SearchApp.exe	0x7fff55e30000	False	False	False	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L4573: 6804	SearchApp.exe	0x7fff54f20000	False	False	False	\Windows\System32\BCP47Langs.dll
+L4574: 6804	SearchApp.exe	0x7fff54db0000	False	False	False	\Windows\System32\MrmCoreR.dll
+L4575: 6804	SearchApp.exe	0x7fff54d70000	False	False	False	\Windows\System32\DXCore.dll
+L4576: 6804	SearchApp.exe	0x7fff558b0000	False	False	False	\Windows\System32\wincorlib.dll
+L4577: 6804	SearchApp.exe	0x7fff54f80000	False	False	False	\Windows\System32\d3d10warp.dll
+L4578: 6804	SearchApp.exe	0x7fff55920000	False	False	False	\Windows\System32\winhttp.dll
+L4579: 6804	SearchApp.exe	0x7fff56890000	False	False	False	\Windows\System32\actxprxy.dll
+
+--- malware_ldrmodules.txt ---
+L4460: 6804	SearchApp.exe	0x1bc98340000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.19h1.dll
+L4461: 6804	SearchApp.exe	0x1bc98e20000	False	False	False	\Windows\System32\en-GB\windows.storage.dll.mui
+L4462: 6804	SearchApp.exe	0x1bc98e40000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L4463: 6804	SearchApp.exe	0x1bc9bc60000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L4464: 6804	SearchApp.exe	0x1bc9ba00000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L4465: 6804	SearchApp.exe	0x1bc9bb60000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L4466: 6804	SearchApp.exe	0x1bc9c1e0000	False	False	False	\Windows\System32\icuuc.dll
+L4467: 6804	SearchApp.exe	0x1bc9c1f0000	False	False	False	\Windows\System32\icuin.dll
+L4468: 6804	SearchApp.exe	0x1bc9c600000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L4469: 6804	SearchApp.exe	0x1c49cfa0000	False	False	False	\Windows\System32\en-GB\edgehtml.dll.mui
+L4470: 6804	SearchApp.exe	0x1c49f100000	False	False	False	\Windows\System32\en-GB\crypt32.dll.mui
+L4471: 6804	SearchApp.exe	0x1c49f170000	False	False	False	\Windows\System32\en-US\dnsapi.dll.mui
+L4472: 6804	SearchApp.exe	0x1c49fe20000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Cortana.Internal.Search.winmd
+L4473: 6804	SearchApp.exe	0x1c49ff60000	False	False	False	\Windows\System32\WinMetadata\Windows.Storage.winmd
+L4474: 6804	SearchApp.exe	0x1c49fe80000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L4475: 6804	SearchApp.exe	0x1c49fe60000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Cortana.Search.winmd
+L4476: 6804	SearchApp.exe	0x1c49ff00000	False	False	False	\Windows\System32\WinMetadata\Windows.Security.winmd
+L4477: 6804	SearchApp.exe	0x1c4a0200000	False	False	False	\Windows\System32\WinMetadata\Windows.ApplicationModel.winmd
+L4478: 6804	SearchApp.exe	0x1c4a03f0000	False	False	False	\Windows\System32\WinMetadata\Windows.System.winmd
+L4479: 6804	SearchApp.exe	0x1c4b1340000	False	False	False	\Windows\System32\WinMetadata\Windows.Web.winmd
+L4480: 6804	SearchApp.exe	0x1c4b3200000	False	False	False	\Windows\System32\prm0009.dll
+L4481: 6804	SearchApp.exe	0x1c4b5960000	False	False	False	\Windows\System32\en-GB\shell32.dll.mui
+L4482: 6804	SearchApp.exe	0x1c4b5ef0000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L4483: 6804	SearchApp.exe	0x7fff58900000	False	False	False	\Windows\System32\xmllite.dll
+L4484: 6804	SearchApp.exe	0x7fff524f0000	False	False	False	\Windows\System32\Windows.StateRepositoryCore.dll
+L4485: 6804	SearchApp.exe	0x7fff45e40000	False	False	False	\Windows\System32\DictationManager.dll
+L4486: 6804	SearchApp.exe	0x7fff3fcb0000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\Search.Core.dll
+L4487: 6804	SearchApp.exe	0x7fff3e590000	False	False	False	\Windows\System32\EdgeManager.dll
+L4488: 6804	SearchApp.exe	0x7fff3c340000	False	False	False	\Windows\System32\Chakra.dll
+L4489: 6804	SearchApp.exe	0x7ff69a4a0000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe
+L4490: 6804	SearchApp.exe	0x7fff3bb60000	False	False	False	\Windows\System32\Windows.Internal.SecurityMitigationsBroker.dll
+L4491: 6804	SearchApp.exe	0x7fff3c110000	False	False	False	\Windows\System32\icu.dll
+L4492: 6804	SearchApp.exe	0x7fff3cac0000	False	False	False	\Windows\System32\edgehtml.dll
+L4493: 6804	SearchApp.exe	0x7fff3e510000	False	False	False	\Windows\System32\edgeIso.dll
+L4494: 6804	SearchApp.exe	0x7fff3efa0000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApi.dll
+L4495: 6804	SearchApp.exe	0x7fff3e910000	False	False	False	\Windows\System32\ConstraintIndex.Search.dll
+L4496: 6804	SearchApp.exe	0x7fff3e6e0000	False	False	False	\Windows\System32\Windows.Web.Http.dll
+L4497: 6804	SearchApp.exe	0x7fff3e860000	False	False	False	\Windows\System32\msimtf.dll
+L4498: 6804	SearchApp.exe	0x7fff3eaa0000	False	False	False	\Windows\System32\Speech_OneCore\common\sapi_onecore.dll
+L4499: 6804	SearchApp.exe	0x7fff3f790000	False	False	False	\Windows\System32\Windows.UI.Input.Inking.dll
+L4500: 6804	SearchApp.exe	0x7fff3f6c0000	False	False	False	\Windows\System32\srpapi.dll
+L4501: 6804	SearchApp.exe	0x7fff3f690000	False	False	False	\Windows\System32\Windows.ApplicationModel.Background.SystemEventsBroker.dll
+L4502: 6804	SearchApp.exe	0x7fff3f6f0000	False	False	False	\Windows\System32\rometadata.dll
+L4503: 6804	SearchApp.exe	0x7fff3fc60000	False	False	False	\Windows\System32\winmmbase.dll
+L4504: 6804	SearchApp.exe	0x7fff3fc30000	False	False	False	\Windows\System32\Windows.Cortana.ProxyStub.dll
+L4505: 6804	SearchApp.exe	0x7fff3fc90000	False	False	False	\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\BingConfigurationClient.dll
+L4506: 6804	SearchApp.exe	0x7fff42ab0000	False	False	False	\Windows\System32\Windows.Web.dll
+L4507: 6804	SearchApp.exe	0x7fff42310000	False	False	False	\Windows\System32\windowsudk.shellcommon.dll
+L4508: 6804	SearchApp.exe	0x7fff40260000	False	False	False	\Windows\System32\Windows.Internal.Shell.Broker.dll
+L4509: 6804	SearchApp.exe	0x7fff3fdd0000	False	False	False	\Windows\System32\UIAutomationCore.dll
+L4510: 6804	SearchApp.exe	0x7fff40b40000	False	False	False	\Windows\System32\ShellCommonCommonProxyStub.dll
+L4511: 6804	SearchApp.exe	0x7fff40340000	False	False	False	\Windows\System32\biwinrt.dll
+L4512: 6804	SearchApp.exe	0x7fff422a0000	False	False	False	\Windows\System32\Windows.Storage.ApplicationData.dll
+L4513: 6804	SearchApp.exe	0x7fff42560000	False	False	False	\Windows\System32\Windows.UI.Core.TextInput.dll
+L4514: 6804	SearchApp.exe	0x7fff42920000	False	False	False	\Windows\System32\Windows.Globalization.Fontgroups.dll
+L4515: 6804	SearchApp.exe	0x7fff448a0000	False	False	False	\Windows\System32\Windows.StateRepositoryClient.dll
+L4516: 6804	SearchApp.exe	0x7fff44160000	False	False	False	\Windows\System32\StartTileData.dll
+L4517: 6804	SearchApp.exe	0x7fff43360000	False	False	False	\Windows\System32\DataExchange.dll
+L4518: 6804	SearchApp.exe	0x7fff432b0000	False	False	False	\Windows\System32\cryptnet.dll
+L4519: 6804	SearchApp.exe	0x7fff43bd0000	False	False	False	\Windows\System32\vaultcli.dll
+L4520: 6804	SearchApp.exe	0x7fff44850000	False	False	False	\Windows\System32\fontgroupsoverride.dll
+L4521: 6804	SearchApp.exe	0x7fff44ce0000	False	False	False	\Windows\System32\twinapi.dll
+L4522: 6804	SearchApp.exe	0x7fff448e0000	False	False	False	\Windows\System32\AppResolver.dll
+L4523: 6804	SearchApp.exe	0x7fff44f90000	False	False	False	\Windows\System32\tquery.dll
+L4524: 6804	SearchApp.exe	0x7fff44e50000	False	False	False	\Windows\System32\TileDataRepository.dll
+L4525: 6804	SearchApp.exe	0x7fff45d90000	False	False	False	\Windows\System32\UiaManager.dll
+L4526: 6804	SearchApp.exe	0x7fff49300000	False	False	False	\Windows\System32\FlightSettings.dll
+L4527: 6804	SearchApp.exe	0x7fff48360000	False	False	False	\Windows\System32\wininet.dll
+L4528: 6804	SearchApp.exe	0x7fff46750000	False	False	False	\Windows\System32\Windows.CloudStore.Schema.Shell.dll
+L4529: 6804	SearchApp.exe	0x7fff46280000	False	False	False	\Windows\System32\execmodelproxy.dll
+L4530: 6804	SearchApp.exe	0x7fff45fd0000	False	False	False	\Windows\System32\OnDemandConnRouteHelper.dll
+L4531: 6804	SearchApp.exe	0x7fff479b0000	False	False	False	\Windows\System32\Windows.CloudStore.dll
+L4532: 6804	SearchApp.exe	0x7fff46980000	False	False	False	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L4533: 6804	SearchApp.exe	0x7fff48010000	False	False	False	\Windows\System32\msftedit.dll
+L4534: 6804	SearchApp.exe	0x7fff48bd0000	False	False	False	\Windows\System32\Windows.Security.Authentication.OnlineId.dll
+L4535: 6804	SearchApp.exe	0x7fff488d0000	False	False	False	\Windows\System32\globinputhost.dll
+L4536: 6804	SearchApp.exe	0x7fff49150000	False	False	False	\Windows\System32\Windows.StateRepositoryPS.dll
+L4537: 6804	SearchApp.exe	0x7fff4deb0000	False	False	False	\Windows\System32\Windows.ApplicationModel.dll
+L4538: 6804	SearchApp.exe	0x7fff4c9c0000	False	False	False	\Windows\System32\threadpoolwinrt.dll
+L4539: 6804	SearchApp.exe	0x7fff49ad0000	False	False	False	\Windows\System32\Windows.Shell.ServiceHostBuilder.dll
+L4540: 6804	SearchApp.exe	0x7fff49900000	False	False	False	\Windows\System32\mskeyprotect.dll
+L4541: 6804	SearchApp.exe	0x7fff49e10000	False	False	False	\Windows\System32\ncryptsslp.dll
+L4542: 6804	SearchApp.exe	0x7fff4d1f0000	False	False	False	\Windows\System32\OneCoreCommonProxyStub.dll
+L4543: 6804	SearchApp.exe	0x7fff4c9e0000	False	False	False	\Windows\System32\MSWB7.dll
+L4544: 6804	SearchApp.exe	0x7fff4cc90000	False	False	False	\Windows\System32\StructuredQuery.dll
+L4545: 6804	SearchApp.exe	0x7fff4dc60000	False	False	False	\Windows\System32\wuceffects.dll
+L4546: 6804	SearchApp.exe	0x7fff50b70000	False	False	False	\Windows\System32\Windows.Globalization.dll
+L4547: 6804	SearchApp.exe	0x7fff50180000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L4548: 6804	SearchApp.exe	0x7fff50080000	False	False	False	\Windows\System32\directmanipulation.dll
+L4549: 6804	SearchApp.exe	0x7fff4e260000	False	False	False	\Windows\System32\SystemSettings.DataModel.dll
+L4550: 6804	SearchApp.exe	0x7fff50a30000	False	False	False	\Windows\System32\TextShaping.dll
+L4551: 6804	SearchApp.exe	0x7fff51930000	False	False	False	\Windows\System32\rasadhlp.dll
+L4552: 6804	SearchApp.exe	0x7fff50e20000	False	False	False	\Windows\System32\DWrite.dll
+L4553: 6804	SearchApp.exe	0x7fff51e60000	False	False	False	\Windows\System32\Windows.StateRepository.dll
+L4554: 6804	SearchApp.exe	0x7fff51d10000	False	False	False	\Windows\System32\StateRepository.Core.dll
+L4555: 6804	SearchApp.exe	0x7fff52400000	False	False	False	\Windows\System32\FWPUCLNT.DLL
+L4556: 6804	SearchApp.exe	0x7fff54c20000	False	False	False	\Windows\System32\Windows.UI.dll
+L4557: 6804	SearchApp.exe	0x7fff53710000	False	False	False	\Windows\System32\Windows.UI.Xaml.dll
+L4558: 6804	SearchApp.exe	0x7fff533d0000	False	False	False	\Windows\System32\iertutil.dll
+L4559: 6804	SearchApp.exe	0x7fff52b70000	False	False	False	\Windows\System32\urlmon.dll
+L4560: 6804	SearchApp.exe	0x7fff52b00000	False	False	False	\Windows\System32\srvcli.dll
+L4561: 6804	SearchApp.exe	0x7fff52f00000	False	False	False	\Windows\System32\Windows.UI.Immersive.dll
+L4562: 6804	SearchApp.exe	0x7fff536b0000	False	False	False	\Windows\System32\cabinet.dll
+L4563: 6804	SearchApp.exe	0x7fff548c0000	False	False	False	\Windows\System32\vm3dum64_10.dll
+L4564: 6804	SearchApp.exe	0x7fff54880000	False	False	False	\Windows\System32\version.dll
+L4565: 6804	SearchApp.exe	0x7fff54830000	False	False	False	\Windows\System32\LanguageOverlayUtil.dll
+L4566: 6804	SearchApp.exe	0x7fff54800000	False	False	False	\Windows\System32\BCP47mrm.dll
+L4567: 6804	SearchApp.exe	0x7fff54890000	False	False	False	\Windows\System32\winmm.dll
+L4568: 6804	SearchApp.exe	0x7fff549c0000	False	False	False	\Windows\System32\InputHost.dll
+L4569: 6804	SearchApp.exe	0x7fff54960000	False	False	False	\Windows\System32\vm3dum64_loader.dll
+L4570: 6804	SearchApp.exe	0x7fff54b20000	False	False	False	\Windows\System32\TextInputFramework.dll
+L4571: 6804	SearchApp.exe	0x7fff56f20000	False	False	False	\Windows\System32\AudioSes.dll
+L4572: 6804	SearchApp.exe	0x7fff55e30000	False	False	False	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L4573: 6804	SearchApp.exe	0x7fff54f20000	False	False	False	\Windows\System32\BCP47Langs.dll
+L4574: 6804	SearchApp.exe	0x7fff54db0000	False	False	False	\Windows\System32\MrmCoreR.dll
+L4575: 6804	SearchApp.exe	0x7fff54d70000	False	False	False	\Windows\System32\DXCore.dll
+L4576: 6804	SearchApp.exe	0x7fff558b0000	False	False	False	\Windows\System32\wincorlib.dll
+L4577: 6804	SearchApp.exe	0x7fff54f80000	False	False	False	\Windows\System32\d3d10warp.dll
+L4578: 6804	SearchApp.exe	0x7fff55920000	False	False	False	\Windows\System32\winhttp.dll
+L4579: 6804	SearchApp.exe	0x7fff56890000	False	False	False	\Windows\System32\actxprxy.dll
+
+--- malware_pebmasquerade.txt ---
+L95: 6804	SearchApp.exe	\Device\HarddiskVolume3\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe	-	False	False
+
+--- sessions.txt ---
+L118: 1	-	6804	SearchApp.exe	-	2025-08-07 19:36:42.000000 UTC
+
+=== END OF PIVOT REPORT ===

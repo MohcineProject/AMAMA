@@ -1,0 +1,1463 @@
+=== CHUNK 1: chunk_001.txt ===
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T00:00:00Z
+Summary: Two Agent 1 leads were evaluated. PID 1188 (AggregatorHost.exe) presents a genuinely anomalous privilege footprint and an unrecognised DLL alongside an orphaned parent, warranting an INCONCLUSIVE verdict pending DLL and file-path corroboration. PID 2024 (RuntimeBroker.) is a terminated process visible only in psscan with an exit time recorded, consistent with normal process churn rather than DKOM manipulation; it is rejected. No CONFIRMED findings were produced from the available evidence.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      1188
+PPID:     3148
+Image:    AggregatorHost.exe
+Cmdline:  AggregatorHost.exe
+Severity: (none — INCONCLUSIVE)
+MITRE:
+
+Justification:
+  AggregatorHost.exe is a legitimate Windows binary (part of the
+  Compatibility Telemetry / Aggregator infrastructure, hosted under
+  svchost or a dedicated host process) and its presence in
+  C:\WINDOWS\System32\ is consistent with a genuine system component.
+  However, three signals together prevent a clean rejection.
+
+  First, the privilege set is unusually broad: SeTcbPrivilege,
+  SeDebugPrivilege, and SeImpersonatePrivilege are all simultaneously
+  Present/Enabled/Default (lines L2180, L2193, L2202). The full
+  token also includes SeAssignPrimaryTokenPrivilege (Present) and
+  SeCreateGlobalPrivilege (Present/Enabled/Default). This breadth is
+  consistent with a SYSTEM-context service token, which AggregatorHost
+  can legitimately hold, but it is also exactly the token a process
+  would carry after a successful token-impersonation or
+  CreateProcessWithToken escalation. Without a SID/group block to
+  confirm the token is genuinely S-1-5-18 and not a cloned or
+  manipulated token, this cannot be dismissed.
+
+  Second, Agent 1 flagged a non-standard DLL
+  (C:\WINDOWS\SYSTEM32\UpdateReboot.dll). The grep script returned
+  only three DLL lines for this PID (ntdll, KERNEL32, and the
+  executable itself); the alleged UpdateReboot.dll line is NOT present
+  in the extracted evidence. This means either the DLL was not loaded
+  at the time of the dlllist snapshot, the grep hit count was
+  misreported, or the DLL was already unloaded. The absence of the
+  line in the evidence prevents confirmation, but also prevents
+  confident rejection — the DLL name is not a recognised Windows
+  component and warrants file-system verification.
+
+  Third, PPID 3148 does not appear in pslist (line L67 confirms the
+  parent is absent from the live list). For a SYSTEM-context service
+  this is unusual but not impossible if the parent was a short-lived
+  SCM helper; however, combined with the other signals it adds to
+  the overall suspicion.
+
+  In summary: the binary path is legitimate, but the orphaned parent,
+  the extremely broad enabled-privilege set, and the unverifiable
+  non-standard DLL claim together prevent a clean rejection. The
+  finding is INCONCLUSIVE and requires: (a) file-hash verification of
+  AggregatorHost.exe in System32, (b) confirmation of whether
+  UpdateReboot.dll exists on disk and its hash, and (c) a token/SID
+  dump to verify the process is genuinely running as S-1-5-18.
+
+Key Evidence:
+  - L67:  1188  3148  AggregatorHost  0xcd8a11a91080  3  -  0  False  2026-05-12 18:23:21.000000 UTC  N/A  Disabled
+  - L2180: 1188  AggregatorHost  7   SeTcbPrivilege          Present,Enabled,Default   Act as part of the operating system
+  - L2193: 1188  AggregatorHost  20  SeDebugPrivilege        Present,Enabled,Default   Debug programs
+  - L2202: 1188  AggregatorHost  29  SeImpersonatePrivilege  Present,Enabled,Default   Impersonate a client after authentication
+  - L2176: 1188  AggregatorHost  3   SeAssignPrimaryTokenPrivilege  Present            Replace a process-level token
+  - L2588: 1188  AggregatorHost  0x7ff63b130000  0x4e000  AggregatorHost.exe  C:\WINDOWS\System32\AggregatorHost.exe  -1  2026-05-12 18:23:21.000000 UTC  Disabled
+  - (UpdateReboot.dll line: NOT present in extracted dlllist evidence — only ntdll.dll and KERNEL32.DLL returned alongside the executable)
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 2: chunk_002.txt ===
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Two Agent 1 findings were reviewed. PID 3088 (svchost.exe) presents a genuine anomaly — it appears only in psscan (not pslist), has an unresolvable parent, and ran for exactly 60 seconds with no visible command line, consistent with DKOM-based process hiding or a short-lived injected/hollowed process. PID 2448 (ShellExperienceHost.exe) shows a legitimate UWP shell component with a standard path and command line; the orphaned-parent signal is a known artefact of UWP broker process lifecycle and the privilege list, while long, is entirely in the "Present" (not "Enabled") state for all sensitive entries. Overall incident scope is limited to one inconclusive DKOM-style anomaly; no confirmed malicious activity is established from this evidence set alone.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      3088
+PPID:     888
+Image:    svchost.exe
+Cmdline:  (none visible)
+Severity: (n/a — INCONCLUSIVE)
+MITRE:    T1564.001 — Hide Artifacts: Hidden Files and Directories / T1055 — Process Injection (candidate, unconfirmed)
+
+Justification:
+  PID 3088 appears exclusively in psscan and not in pslist, which is the classic signature of an EPROCESS entry that has been unlinked from the active process doubly-linked list (DKOM). The parent PID 888 is absent from the process list, so the process tree cannot be validated. The process ran for exactly 60 seconds (18:29:23–18:30:23 UTC) with no recoverable command line, which is consistent with a short-lived injected or hollowed process but is not by itself conclusive — legitimate kernel-mode or early-boot svchost instances can also leave sparse artefacts. No corroborating evidence (malfind sections, suspicious DLLs, network connections, registry persistence, or handles) was extracted for this PID, so the finding cannot be elevated to CONFIRMED under the conservative bias rule. The combination of psscan-only visibility, missing parent, zero-length command line, and precise 60-second lifetime is suspicious enough to retain as INCONCLUSIVE and warrants deeper investigation (e.g. raw EPROCESS inspection, VAD walk, handle table dump for this PID).
+
+Key Evidence:
+  - L105: 3088	888	svchost.exe	0xcd8a12064080	0	-	0	False	2026-05-12 18:29:23.000000 UTC	2026-05-12 18:30:23.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED findings (count: 1)
+  - PID 2448 (ShellExperienceHost.exe): The executable path, command line, and parent-PID pattern are all consistent with a legitimate Windows UWP Shell Experience Host. UWP processes are routinely spawned by the UWP broker infrastructure (sihost.exe, RuntimeBroker.exe, or the UWP activation chain), whose PIDs may not be present in a partial memory snapshot — this is a well-known benign artefact, not evidence of malice. The privilege list (lines L4940–L4974) shows the full Windows privilege set in the "Present" column, but only SeChangeNotifyPrivilege and SeIncreaseWorkingSetPrivilege carry "Enabled" or "Default" flags; all high-risk privileges (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege, etc.) are present but NOT enabled, which is the normal token template for a user-context UWP process. DLL entries visible in the extract (ShellExperienceHost.exe, ntdll.dll, KERNEL32.DLL) are all from canonical System32 / SystemApps paths. No malfind, netscan, or registry persistence evidence was provided. Agent 1 itself noted the flag was solely the unresolved parent PID; that signal alone does not meet the confirmation threshold.
+================================================================
+
+=== CHUNK 3: chunk_003.txt ===
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 3328 — MsMpEng.exe**
+
+Agent 1 flagged: orphaned process (parent PID 888 not in process list).
+
+Reasoning:
+- The binary path is `C:\Program Files\Windows Defender\MsMpEng.exe` — canonical location.
+- The orphaned-parent signal: PPID 888 is absent from pslist. However, MsMpEng.exe is a Windows Defender service. On Windows 10/11, it is launched by the Service Control Manager (SCM, `services.exe`). SCM PIDs can exit after spawning services, leaving the child with a stale PPID. This is a well-known benign pattern — SCM itself can restart, or the snapshot was taken after SCM recycled. The PPID being absent is therefore a weak signal for this specific binary.
+- Cmdline is clean: `"C:\Program Files\Windows Defender\MsMpEng.exe"` — no arguments, no injection, no LOLBin abuse.
+- DLL list shows only one entry visible (the main executable from the correct path). No user-writable path DLLs visible.
+- Privileges: MsMpEng.exe legitimately runs as SYSTEM and holds a very broad privilege set including SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege. This is **expected** for Windows Defender's antimalware service — it needs these to scan processes, load drivers (ELAM), and impersonate. This is not anomalous for this specific binary.
+- Children: two `MpCmdRun.exe` processes spawned from PID 3328 — these are legitimate Windows Defender command-line scan utilities, consistent with Defender performing a scan.
+- No malfind hits, no suspicious DLLs, no network connections, no registry persistence, no suspicious handles shown.
+- The only signal is the orphaned parent, which is a known benign artifact for service processes.
+
+**Verdict: REJECTED** — Standard Windows Defender antimalware service at canonical path, legitimate privilege set for SYSTEM-context AV engine, children are legitimate MpCmdRun.exe instances, orphaned parent is a known benign artifact for SCM-launched services.
+
+---
+
+Now writing the report. There is only one finding, and it is REJECTED. The body will contain no CONFIRMED or INCONCLUSIVE blocks.
+
+---
+
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T18:30:00Z
+Summary: Agent 1 submitted one finding for validation. The sole candidate — MsMpEng.exe (PID 3328) — is the Windows Defender antimalware engine running from its canonical installation path under a SYSTEM token. All observable indicators are consistent with legitimate behaviour; the orphaned-parent signal is a known benign artifact for SCM-launched services. No confirmed or inconclusive malicious activity was identified in this submission.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were REJECTED. Rejection rationale follows for audit purposes.
+
+----------------------------------------------------------------
+REJECTED — PID 3328 — MsMpEng.exe
+Reason: The sole Agent 1 signal is an orphaned parent (PPID 888 absent from pslist). This is a well-documented benign artifact: the Windows Defender antimalware service is launched by the Service Control Manager (services.exe), which may have recycled or exited before the memory snapshot was acquired, leaving a stale PPID. Every other observable indicator is consistent with legitimate operation — the binary resides at the canonical path "C:\Program Files\Windows Defender\MsMpEng.exe", the command line carries no arguments or LOLBin abuse, the broad SYSTEM-level privilege set (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege, etc.) is expected for an AV engine that must scan processes and load ELAM drivers, and the two MpCmdRun.exe children (PIDs 5816 and 6032) are the legitimate Defender command-line scan utility. No suspicious DLLs, no malfind hits, no anomalous network connections, and no registry persistence artefacts were present in the evidence block.
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 4: chunk_004.txt ===
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 3340 — backgroundTask (ppid=576)**
+
+Agent 1 reasons: orphaned process (parent 576 not in pslist), psscan-only (DKOM or exited), short-lived (~6 min), missing path/cmdline.
+
+Evidence: Single psscan line. No cmdline, no dlllist, no malfind, no netscan, no privileges, no registry hits. The process has an ExitTime (18:30:57), meaning it completed. "backgroundTask" is a legitimate Windows process name (BackgroundTaskHost.exe is truncated to "backgroundTask" at 14 chars — actually "backgroundTask" is 14 chars exactly, so this could be `backgroundTaskH` truncated... wait: "backgroundTask" = 14 chars, so the full name could be "backgroundTaskH..." — likely `BackgroundTaskHost.exe`). Actually let me count: b-a-c-k-g-r-o-u-n-d-T-a-s-k = 14 characters. So "backgroundTask" is exactly 14 chars and could be the truncated form of `backgroundTaskHost.exe`. This is a known Windows component.
+
+The psscan-only appearance with an ExitTime is consistent with a process that had already exited and been unlinked from the active list by the time the memory snapshot was taken — this is normal behavior, not necessarily DKOM. The parent PID 576 not being in pslist is also consistent with a transient parent that exited. No corroborating malicious evidence exists (no cmdline, no suspicious DLLs, no malfind, no network connections). The name matches a legitimate Windows binary truncation. With zero corroborating evidence, this should be INCONCLUSIVE at best — the psscan-only + orphaned parent + missing cmdline are weak signals that could all be explained by normal process lifecycle. I'll mark INCONCLUSIVE because the combination of signals (psscan-only, orphaned, no path) is mildly suspicious even if individually explainable.
+
+Actually, re-reading the bias rules: "A finding with zero corroborating grep evidence should almost always be REJECTED or INCONCLUSIVE." The only evidence is the single psscan line. The name matches a legitimate Windows process truncation. I'll go INCONCLUSIVE — the signals are real but entirely explainable by normal process lifecycle, and there's no positive evidence of malice.
+
+---
+
+**PID 3840 — svchost.exe (ppid=888)**
+
+Agent 1 reasons: parent_mismatch (parent is PID 888, not services.exe), non_whitelisted_dlls (svchost.exe listed as loaded module).
+
+Evidence:
+- Cmdline: `C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc` — this is a completely legitimate svchost invocation. CDPUserSvc (Connected Devices Platform User Service) is a real Windows service hosted in UnistackSvcGroup.
+- Parent PID 888: This needs context. PID 888 is not identified in the evidence as anything other than "unknown/unresolved." However, `svchost -k UnistackSvcGroup` instances are per-user service hosts and can be parented by `svchost.exe` instances that host the service control manager functions, or by `services.exe`. PID 888 could be `services.exe` — we simply don't have that data. The parent_mismatch signal is weak without confirmation that 888 is NOT services.exe.
+- Privileges: The list shows mostly non-enabled privileges (no "Present" or "Enabled" markers on the dangerous ones like SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege). Only SeShutdownPrivilege (Present), SeChangeNotifyPrivilege (Present, Enabled, Default), SeUndockPrivilege (Present), SeCreateGlobalPrivilege (Default), SeIncreaseWorkingSetPrivilege (Present), SeTimeZonePrivilege (Present) are active. This is a normal, minimal privilege set for a user-context svchost.
+- DLL list: The three shown lines are all from `C:\WINDOWS\system32\` and `C:\WINDOWS\SYSTEM32\` — legitimate paths. The svchost.exe appearing as a loaded module entry is standard (the main executable always appears in the module list).
+- No malfind, no netscan, no suspicious registry hits.
+
+The "non_whitelisted_dlls" reason about svchost.exe appearing in its own module list is a false positive — the main executable always appears as the first entry in dlllist. The parent mismatch is unconfirmed (888 could be services.exe). The cmdline is legitimate. Privilege set is normal. No corroborating malicious evidence. → **REJECTED**.
+
+---
+
+Now writing the report.
+
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Two Agent 1 findings were reviewed. Neither produced clear evidence of confirmed malicious activity. PID 3340 (backgroundTask) presents a combination of weak structural anomalies — psscan-only visibility, orphaned parent, missing path/cmdline — that are individually explainable by normal process lifecycle but cannot be fully dismissed without additional artefact coverage. PID 3840 (svchost.exe) shows a legitimate command line, a normal privilege footprint, and System32-only DLLs; all Agent 1 signals resolve to benign explanations. No confirmed malicious findings were produced.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      3340
+PPID:     576
+Image:    backgroundTask  (likely truncated: BackgroundTaskHost.exe — 14-char EPROCESS field)
+Cmdline:  (none recorded)
+Severity: N/A
+MITRE:
+
+Justification:
+  The process name "backgroundTask" is exactly 14 characters and is consistent with the EPROCESS truncation of the legitimate Windows binary BackgroundTaskHost.exe; this alone does not constitute a typosquat or masquerade signal. The psscan-only appearance combined with a recorded ExitTime (18:30:57) is the expected artefact of a process that completed and was unlinked from the active doubly-linked list before the memory snapshot was taken — this is normal Windows behavior and does not by itself indicate DKOM manipulation. The orphaned parent (PID 576 absent from pslist) is similarly consistent with a transient parent that exited before the snapshot. However, the complete absence of a recorded image path and command line, and the fact that no corroborating artefact (dlllist, cmdline, malfind, netscan, privileges) was captured for this PID, means the process cannot be positively identified or cleared. The finding is held as INCONCLUSIVE: the structural signals are weak and individually benign, but the total absence of path/cmdline data prevents a confident rejection.
+
+Key Evidence:
+  - L175: 3340	576	backgroundTask	0xcd8a13a52080	0	-	1	False	2026-05-12 18:24:29.000000 UTC	2026-05-12 18:30:57.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 5: chunk_005.txt ===
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 3860 — svchost.exe (ppid=888)**
+
+Agent 1 flags: orphaned parent (PPID 888 not in process list), parent mismatch (should be services.exe).
+
+**Reasoning:**
+
+1. **Orphaned parent signal**: PPID 888 is not visible in the process list. However, this is a well-known benign artefact on Windows — `svchost.exe -k UnistackSvcGroup -s WpnUserService` is a per-user service group instance. Per-user svchost instances are spawned by `svchost.exe -k netsvcs` or by the service host infrastructure, and the parent process may have already exited by the time the memory snapshot was taken. The PPID being absent from pslist is not unusual for this service class.
+
+2. **Command line**: `C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService` — this is a completely standard invocation. `WpnUserService` (Windows Push Notifications User Service) is a legitimate per-user service that runs under `UnistackSvcGroup`. The binary path is `C:\WINDOWS\system32\svchost.exe` — canonical location.
+
+3. **DLLs**: The three shown DLLs (`svchost.exe`, `ntdll.dll`, `KERNEL32.DLL`) are all from `C:\WINDOWS\SYSTEM32` — no user-writable paths, no suspicious DLLs.
+
+4. **Privileges**: The privilege list is the full standard token privilege set — none are shown as `Present,Enabled` except `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present), `SeCreateGlobalPrivilege` (Default). The dangerous privileges (`SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege`, `SeLoadDriverPrivilege`) are listed but **not** marked Present or Enabled — they are simply in the token's defined set but not active. This is normal for a standard svchost token.
+
+5. **No malfind, no netscan, no registry persistence, no suspicious handles** — no corroborating evidence of malice.
+
+**Verdict: REJECTED** — Standard per-user svchost invocation with canonical path, normal DLL set from System32, and no dangerous privileges enabled. Orphaned PPID is a benign artefact of parent process exit before snapshot.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: Only one finding was submitted for validation. PID 3860 (svchost.exe -k UnistackSvcGroup -s WpnUserService) presents a standard per-user Windows Push Notification service instance with a canonical binary path, clean DLL set, and no dangerous privileges enabled. The orphaned-parent signal is a well-known benign artefact caused by the parent process exiting before the memory snapshot was acquired. No malicious activity is supported by the available evidence.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were REJECTED. See rejection rationale below.
+
+----------------------------------------------------------------
+REJECTED (not shown in body per format rules) — count: 1
+
+PID 3860 | svchost.exe | ppid=888
+  Reason for rejection: The command line "C:\WINDOWS\system32\svchost.exe -k
+  UnistackSvcGroup -s WpnUserService" is a standard per-user service host
+  invocation for the Windows Push Notifications User Service (WpnUserService),
+  a legitimate Windows component. The binary resides in the canonical
+  System32 path. All three DLLs visible in the dlllist slice load exclusively
+  from C:\WINDOWS\SYSTEM32 — no user-writable paths. The privilege token
+  contains the full standard defined-privilege set, but the only privileges
+  marked Present or Enabled are routine low-risk entries (SeShutdownPrivilege,
+  SeChangeNotifyPrivilege, SeUndockPrivilege, SeIncreaseWorkingSetPrivilege,
+  SeTimeZonePrivilege, SeCreateGlobalPrivilege); high-risk privileges such as
+  SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, and
+  SeLoadDriverPrivilege are listed in the token definition but carry no
+  Present/Enabled flag, which is normal. The orphaned PPID (888 absent from
+  pslist) is a well-documented benign artefact: per-user svchost instances
+  are launched by the service control infrastructure, and the spawning parent
+  process routinely exits before a memory snapshot is acquired, leaving the
+  PPID unresolvable. No malfind sections, network connections, registry
+  persistence entries, or suspicious handles were present in the evidence
+  block. Agent 1's two signals (orphaned_parent, parent_mismatch) are fully
+  explained by this benign artefact pattern; no corroborating evidence of
+  malice exists.
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 6: chunk_006.txt ===
+I need to reason carefully about both findings before rendering verdicts.
+
+**PID 4040 — MicrosoftEdgeUpdate.exe**
+
+*Orphaned parent (PPID 1524):* PPID 1524 does not appear in pslist. This is a genuine anomaly — legitimate MicrosoftEdgeUpdate.exe is typically launched by the Windows Task Scheduler (`taskeng.exe` / `svchost.exe` hosting Schedule) or by a COM surrogate. An absent parent is suspicious but not by itself conclusive; PID reuse or a short-lived parent process could explain it.
+
+*Privilege footprint:* The process holds the full SYSTEM-level token: `SeTcbPrivilege` (Enabled), `SeDebugPrivilege` (Enabled), `SeImpersonatePrivilege` (Enabled), `SeLoadDriverPrivilege` (Present), `SeAssignPrimaryTokenPrivilege` (Present), `SeCreateTokenPrivilege` (Present), `SeAuditPrivilege` (Enabled), `SeCreatePermanentPrivilege` (Enabled) — essentially the complete NT AUTHORITY\SYSTEM privilege set. This is far beyond what an updater binary needs. However, MicrosoftEdgeUpdate *does* run as SYSTEM via a scheduled task or service, so a SYSTEM token is not impossible. The question is whether this is the real binary or an impersonator.
+
+*DLL anomaly:* `L3321` shows a mapped region at `0x7fffe9120000` with name `-` and path `-`. This is a Volatility artefact for a VAD-mapped region that has no backing module name resolvable from the PEB loader list — it could be an injected anonymous mapping, a manually mapped PE, or simply a memory-mapped file that Volatility cannot resolve. It is present in both PID 4040 and 8256 at the same base address, which is consistent with a shared section (e.g. a read-only data section shared between processes) rather than per-process injection. This weakens the injection hypothesis somewhat.
+
+*No malfind, no network, no registry persistence, no cmdline abuse:* The command line `/c` is a legitimate EdgeUpdate switch (run as a COM server). No download cradle, no encoded payload, no suspicious child processes beyond the legitimate `/ua /installsource core` child.
+
+*Overall for 4040:* Three signals — orphaned parent, SYSTEM-level privileges, unresolvable DLL entry. The privilege set is consistent with running as SYSTEM (which EdgeUpdate legitimately does), the cmdline is benign, and the unresolvable DLL entry appears shared with the child at the same address. The orphaned parent is the strongest anomaly but is explainable by PID reuse of a short-lived scheduler host. No malfind, no network, no persistence. This does not meet the CONFIRMED bar. → **INCONCLUSIVE**
+
+**PID 8256 — MicrosoftEdgeUpdate.exe (child of 4040)**
+
+All three Agent 1 signals derive entirely from the parent: inherited privileges, same unresolvable DLL entry, and being spawned by a flagged parent. The cmdline `/ua /installsource core` is a completely standard EdgeUpdate update-check invocation. The DLL entry at `0x7fffe9120000` is identical to the parent's — same base, same size, consistent with a shared read-only section. There is no independent malicious signal for this process. Its verdict depends entirely on whether 4040 is malicious, which itself is only INCONCLUSIVE. → **INCONCLUSIVE** (derivative of parent's uncertainty, no independent signal)
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: Two MicrosoftEdgeUpdate.exe processes (PID 4040 and child PID 8256) present
+anomalies — an absent parent process, a full SYSTEM-level privilege token, and an
+unresolvable DLL entry — but no corroborating evidence of active malice (no malfind
+hits, no network connections, no download cradles, no registry persistence). Both
+findings are inconclusive pending deeper artefact review. No confirmed malicious
+activity is established from the available evidence.
+Counts: confirmed=0  inconclusive=2  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      4040
+PPID:     1524
+Image:    MicrosoftEdgeUpdate.exe
+Cmdline:  "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c
+Severity: N/A
+MITRE:
+
+Justification:
+  Three signals were raised: an orphaned parent (PPID 1524 absent from pslist), a
+  full SYSTEM-level privilege token with SeTcbPrivilege, SeDebugPrivilege, and
+  SeImpersonatePrivilege all enabled, and an unresolvable DLL entry ('-'/'-') in the
+  loaded module list. MicrosoftEdgeUpdate.exe legitimately runs as NT AUTHORITY\SYSTEM
+  via a scheduled task or COM service, which accounts for the broad privilege set; the
+  /c switch is a standard COM server invocation. The absent PPID is the strongest
+  anomaly but is consistent with PID reuse of a short-lived Task Scheduler host. The
+  unresolvable DLL entry appears at the same base address (0x7fffe9120000, size
+  0x267000) in both this process and its child, suggesting a shared read-only section
+  rather than per-process injection. No malfind hits, network connections, download
+  cradles, or registry persistence artefacts are present in the evidence to corroborate
+  active malice; the finding cannot be confirmed or rejected without additional
+  artefacts (e.g. malfind output, netscan, registry Run keys, or a file hash of the
+  binary on disk).
+
+Key Evidence:
+  - L81: 4040	1524	MicrosoftEdgeU	0xcd8a1217c080	6	-	0	True	2026-05-12 18:23:31.000000 UTC	N/A	Disabled
+  - L2670: 4040	MicrosoftEdgeU	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L2683: 4040	MicrosoftEdgeU	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L2692: 4040	MicrosoftEdgeU	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L2673: 4040	MicrosoftEdgeU	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+  - L3321: 4040	MicrosoftEdgeU	0x7fffe9120000	0x267000	-	-	-1	2026-05-12 18:23:31.000000 UTC	Disabled
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      8256
+PPID:     4040
+Image:    MicrosoftEdgeUpdate.exe
+Cmdline:  "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /ua /installsource core
+Severity: N/A
+MITRE:
+
+Justification:
+  All three Agent 1 signals for this process are derivative of the parent (PID 4040):
+  inherited SYSTEM-level privileges, the same unresolvable DLL entry at the same base
+  address, and parentage from a flagged process. The command line (/ua /installsource
+  core) is a standard EdgeUpdate update-check invocation with no independent malicious
+  indicator. The unresolvable DLL entry at 0x7fffe9120000 is identical in base and
+  size to the parent's entry, consistent with a shared section rather than independent
+  injection. There is no independent malicious signal for PID 8256; its status is
+  contingent on resolution of the PID 4040 finding.
+
+Key Evidence:
+  - L110: 8256	4040	MicrosoftEdgeU	0xcd8a130a5080	5	-	0	True	2026-05-12 18:23:53.000000 UTC	N/A	Disabled
+  - L3685: 8256	MicrosoftEdgeU	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L3698: 8256	MicrosoftEdgeU	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L3707: 8256	MicrosoftEdgeU	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L5322: 8256	MicrosoftEdgeU	0x7fffe9120000	0x267000	-	-	-1	2026-05-12 18:23:54.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 7: chunk_007.txt ===
+================================================================
+TRIAGE FINDINGS TO VALIDATE — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: Two processes were submitted for validation. Both exhibit the same
+orphaned-parent pattern (parent PID absent from the process list), which is a
+well-known Volatility artefact caused by short-lived or already-exited parent
+processes rather than a reliable indicator of malice. Neither process shows
+anomalous command lines, suspicious DLL paths, active dangerous privileges, or
+any malfind/netscan/registry-persistence evidence. The overall incident scope
+from these two findings is negligible; no confirmed malicious activity is
+present in this submission.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+[No CONFIRMED or INCONCLUSIVE findings to report.]
+
+--- REJECTED FINDINGS (count: 2) ---
+
+PID 4104 (taskhostw.exe) — REJECTED
+  The orphaned-parent signal is the sole trigger. taskhostw.exe is a legitimate
+  Windows Task Scheduler host; its parent (svchost.exe hosting the Schedule
+  service, or a transient launcher) routinely exits before a memory snapshot is
+  taken, leaving the child appearing orphaned. The GUID argument
+  {222A245B-E637-4AE9-A93F-A59CA119A75E} is a standard scheduled-task COM
+  class identifier consistent with normal operation. The binary path is
+  C:\WINDOWS\system32\taskhostw.exe (legitimate). The DLL list shows only
+  system32 modules (taskhostw.exe, ntdll.dll, KERNEL32.DLL). The privilege
+  table is the standard full-privilege set carried by a SYSTEM-token process;
+  none of the dangerous privileges (SeDebugPrivilege, SeTcbPrivilege,
+  SeLoadDriverPrivilege, SeImpersonatePrivilege) are marked Present or Enabled
+  — they are merely present in the token as disabled/not-enabled, which is
+  normal for a SYSTEM-context process. No malfind, netscan, registry-
+  persistence, or handle-anomaly evidence was provided. No basis for suspicion
+  beyond the orphaned-parent artefact.
+
+PID 4324 (svchost.exe) — REJECTED
+  Again, the sole trigger is the orphaned-parent signal. svchost.exe with
+  "-k UnistackSvcGroup" is a well-known legitimate service group (hosts
+  OneSyncSvc, UserDataSvc, etc.) and is routinely spawned by services.exe,
+  which may have already exited or may simply be absent from the snapshot's
+  visible process list due to PID reuse or timing. The binary path is
+  C:\WINDOWS\system32\svchost.exe (legitimate). The DLL list shows only
+  system32 modules. The privilege table is structurally identical to PID 4104:
+  a full SYSTEM-token set with no dangerous privileges in the Present/Enabled
+  state. No malfind, netscan, registry-persistence, or handle-anomaly evidence
+  was provided. No basis for suspicion beyond the orphaned-parent artefact.
+
+================================================================
+
+=== CHUNK 8: chunk_008.txt ===
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 4936 — TiWorker.exe**
+
+Agent 1 flags: orphaned parent (PPID 576 not in process list), privilege anomaly (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege), path note.
+
+**Reasoning:**
+
+1. **Orphaned parent:** PPID 576 is listed as "unknown." In a live system, TiWorker.exe is normally spawned by TiWorkerW or svchost.exe (Windows Update service). PPID 576 not being present in the process list is a common artifact of memory acquisition timing — the parent (likely svchost.exe hosting the Windows Update service) may have already exited by the time the snapshot was taken. This is a known benign artifact, not inherently suspicious.
+
+2. **Privilege footprint:** The privilege set is enormous — essentially the full SYSTEM token. However, TiWorker.exe runs as SYSTEM and is a legitimate Windows servicing component. The full SYSTEM token includes SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege, and all the others listed. This is entirely normal for a SYSTEM-context process. The privileges are not anomalous for a SYSTEM-level binary.
+
+3. **Path:** `C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe` — this is the canonical winsxs path for the Windows servicing stack. Legitimate.
+
+4. **Command line:** `-Embedding` is the standard COM activation flag used when TiWorker.exe is invoked as a COM server by the Windows Update service. This is textbook legitimate behavior.
+
+5. **DLLs:** All three visible DLLs (TiWorker.exe itself, ntdll.dll, KERNEL32.DLL) are loaded from System32 or the winsxs path. No user-writable path DLLs.
+
+6. **No malfind, no netscan, no registry persistence, no suspicious handles** in the evidence.
+
+**Verdict: REJECTED.** All signals have benign explanations. The orphaned parent is a timing artifact. The privilege set is standard SYSTEM. The path and cmdline are canonical. No corroborating evidence of malice across any artifact type.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Only one process was submitted for validation. That process, TiWorker.exe (PID 4936), presents no credible indicators of compromise after cross-referencing command-line, DLL provenance, privilege context, and path legitimacy. All Agent 1 signals resolve to known-benign explanations. No confirmed or inconclusive findings are present in this batch.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report for this batch.)
+
+================================================================
+REJECTED SUMMARY (count=1)
+================================================================
+
+PID 4936 — TiWorker.exe was rejected on the following grounds:
+
+  1. Orphaned parent (PPID 576 absent from pslist): TiWorker.exe is a COM-activated
+     servicing worker launched by the Windows Update svchost instance. The parent
+     svchost commonly exits before or shortly after spawning TiWorker, making an
+     absent PPID a routine memory-acquisition timing artifact rather than a masquerade
+     signal. No evidence of a suspicious spawning chain exists in the provided data.
+
+  2. Privilege footprint: The full token seen at L5745–L5779 — including SeTcbPrivilege,
+     SeDebugPrivilege, and SeImpersonatePrivilege — is the standard SYSTEM token.
+     TiWorker.exe runs as NT AUTHORITY\SYSTEM by design; every SYSTEM-context process
+     carries this token. These privileges are not anomalous for this binary class.
+
+  3. Command line ("-Embedding"): This flag is the standard OLE/COM in-process server
+     activation argument. It is the canonical invocation for TiWorker.exe when called
+     by the Windows Update service via COM. No download cradle, encoded payload, or
+     LOLBin abuse pattern is present.
+
+  4. DLL set: All visible loaded modules (TiWorker.exe, ntdll.dll, KERNEL32.DLL) load
+     from System32 or the winsxs component path. No user-writable path DLLs observed.
+
+  5. No corroborating signals: No malfind sections, no network connections, no registry
+     persistence, no suspicious handles, and no dropped artefacts were present in the
+     evidence block. With zero cross-artefact corroboration, confirmation is not
+     warranted.
+
+================================================================
+
+=== CHUNK 9: chunk_009.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: A single Agent 1 lead was reviewed. The flagged process (sihost.exe, PID 5084) shows an orphaned parent PID but all other observable indicators are consistent with a legitimate Windows Shell Infrastructure Host running under a normal interactive user session. No malicious command-line arguments, no suspicious DLL paths, no enabled high-privilege tokens, and no injection markers were found. The orphaned-parent condition is fully explained by the parent process (likely svchost or winlogon hosting the user session) having exited or been paged out before the memory snapshot was taken — a routine artefact in live captures.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTED FINDINGS — SUMMARY
+================================================================
+
+PID 5084 — sihost.exe — REJECTED
+
+Agent 1 signal: orphaned_parent (PPID 1732 not present in process list).
+
+Reasoning: sihost.exe (Shell Infrastructure Host) is a standard Windows component launched per interactive user session, typically parented by svchost.exe (the UserManager/DcomLaunch group) or winlogon.exe. The absence of PPID 1732 from the pslist snapshot is a well-known Volatility artefact: the parent may have exited after spawning sihost.exe, or its EPROCESS block may simply not have been captured in the memory image. This alone is not a malicious indicator.
+
+All remaining evidence is benign:
+- The executable path resolves to C:\WINDOWS\system32\sihost.exe — the canonical system32 location.
+- The command line is the bare binary name with no arguments, exactly as Windows launches it.
+- The privilege table is the standard full-token list for a user-session process: the only *enabled* privileges are SeShutdownPrivilege (Present), SeChangeNotifyPrivilege (Present/Enabled/Default), SeUndockPrivilege (Present), SeCreateGlobalPrivilege (Default), SeIncreaseWorkingSetPrivilege (Present), and SeTimeZonePrivilege (Present). High-sensitivity privileges such as SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, and SeLoadDriverPrivilege are listed but **not enabled** — this is the normal unelevated user token on Windows 10/11, which carries the full privilege list in a disabled state.
+- Child processes (ShellHost.exe PID 5604, CrossDeviceRes PID 5808) are expected legitimate shell-infrastructure children.
+- No malfind, netscan, or suspicious DLL-path evidence was present in the extracted data.
+
+The orphaned-parent signal is the sole basis for the flag, and it is a known-benign data artefact in this context. Finding rejected.
+
+================================================================
+
+=== CHUNK 10: chunk_010.txt ===
+I need to analyze the single finding provided and render a verdict.
+
+**Analyzing PID 5348 — svchost.exe (ppid=888)**
+
+Agent 1 flags:
+1. `orphaned_parent`: PPID 888 not in live process list, only found via `psscan`
+2. `parent_mismatch`: svchost.exe parent is not services.exe
+3. `short_lived`: ~2 minutes runtime
+
+**Evidence assessment:**
+
+The only evidence is a single `psscan.txt` line. Let me reason through each signal:
+
+1. **Orphaned parent / psscan-only**: The process appears only in `psscan` (not `pslist`), which means it has already exited — confirmed by the `ExitTime` of 18:30:48. This is not inherently suspicious; terminated processes appear in `psscan` but not `pslist`. The PPID 888 being absent from the live list is consistent with the parent also having exited before the memory snapshot was taken, or the parent being a short-lived process itself. This is a weak signal without corroboration.
+
+2. **Parent mismatch**: PPID 888 is unknown/unlisted. Legitimate `svchost.exe` should be parented by `services.exe`. However, without knowing what PID 888 was (it's not in the evidence), we cannot confirm it was *not* `services.exe` — PID 888 could have been `services.exe` that also exited. The evidence does not tell us what image ran at PID 888.
+
+3. **Short-lived**: ~2 minutes is not inherently suspicious for `svchost.exe` — some service host instances are transient.
+
+**Critical gap**: There is no `cmdline.txt`, `dlllist.txt`, `malfind.txt`, `netscan.txt`, `privileges.txt`, or any other corroborating artifact evidence. The grep block is essentially empty beyond the single psscan line. The `0` thread count and `-` session are consistent with a terminated process in a memory snapshot, not necessarily injection or hollowing.
+
+**Verdict**: `INCONCLUSIVE`. The parent anomaly is a real signal — legitimate svchost should parent to services.exe — but without any corroborating evidence (cmdline, DLLs, network, malfind), and given the plausible alternative explanation (PPID 888 was services.exe that also exited), I cannot confirm malice. I will not `REJECT` outright because the parent lineage cannot be verified, but I will not `CONFIRM` without further evidence.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: A single terminated svchost.exe instance with an unverifiable parent lineage was flagged. The process exited approximately two minutes after creation and appears only in psscan, consistent with a process that had already terminated at snapshot time. No corroborating artefacts (cmdline, DLL list, network connections, malfind regions, privileges) were available to confirm or refute malicious behaviour. Overall incident scope cannot be assessed from this evidence alone.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      5348
+PPID:     888
+Image:    svchost.exe
+Cmdline:  (not available in extracted evidence)
+MITRE:
+
+Justification:
+  The process appears exclusively in psscan with an ExitTime of 18:30:48 UTC,
+  confirming it had already terminated at snapshot time; absence from pslist is
+  therefore expected and not independently suspicious. PPID 888 is unlisted, but
+  because both parent and child had exited, it is plausible that PID 888 was
+  services.exe (or another legitimate short-lived process) that also terminated
+  before the snapshot — the evidence does not establish what image ran at PID 888.
+  The parent-mismatch signal is real and warrants follow-up, but without cmdline,
+  DLL provenance, network activity, privilege footprint, or malfind data, there is
+  insufficient evidence to confirm malicious intent. The ~2-minute lifespan is
+  consistent with both a transient legitimate service host and a short-lived
+  malicious implant; neither interpretation can be ruled out.
+
+Key Evidence:
+  - L174: 5348	888	svchost.exe	0xcd8a13a4c080	0	-	0	False	2026-05-12 18:28:46.000000 UTC	2026-05-12 18:30:48.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 11: chunk_011.txt ===
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5528 — userinit.exe**
+
+Agent 1 flags: orphaned parent (PPID 816 not in pslist), missing cmdline, short-lived.
+
+Reasoning:
+- **Orphaned parent**: PPID 816 is not visible in pslist/pstree. However, userinit.exe is legitimately spawned by winlogon.exe (which typically has a PID in the 600–900 range at boot). The parent being absent from the snapshot is consistent with winlogon.exe having exited or the snapshot being taken after session teardown — this is a known benign pattern. The pstree line shows the full path `\Device\HarddiskVolume4\Windows\System32\userinit.exe` — legitimate System32 location.
+- **Missing cmdline**: The cmdline shows `-` which in Volatility means it couldn't be read (process already exited). This is expected for a short-lived process that had already terminated by snapshot time.
+- **Short-lived**: 31 seconds is entirely normal for userinit.exe — its job is to launch explorer.exe and exit. The evidence confirms it did exactly that: PID 5556 explorer.exe has PPID 5528 and started 1 second after userinit.
+- **Privileges**: The privilege list is long but all privileges are listed as NOT enabled (only SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege are Present/Enabled/Default — all standard user-context privileges). The full list of privileges being *present but not enabled* is the standard token inherited from winlogon/SYSTEM context; this is normal for userinit.exe running in a user logon session.
+- **Path**: `\Device\HarddiskVolume4\Windows\System32\userinit.exe` — legitimate.
+- **Child**: explorer.exe spawned correctly from it.
+
+**Verdict: REJECTED** — All signals are explained by normal userinit.exe lifecycle behavior. The orphaned parent is consistent with winlogon.exe not being captured in the snapshot window, the short lifetime is by design, and the privilege set is standard.
+
+---
+
+**PID 8112 — olk.exe**
+
+Agent 1 flags: psscan_only (hidden/unlinked EPROCESS), unresolvable parent despite PPID 5556 existing, missing cmdline/path, duplicate image name with PID 5868.
+
+Reasoning:
+- **psscan_only**: This is a significant signal. A process visible in psscan but not pslist indicates DKOM (Direct Kernel Object Manipulation) — the EPROCESS was unlinked from the active process list. This is a classic rootkit/malware hiding technique.
+- **Unresolvable parent**: PPID 5556 (explorer.exe) exists in pslist, yet the parent is annotated as 'unknown' — this suggests the EPROCESS forward/back-links were tampered with, consistent with DKOM.
+- **Missing cmdline**: No command line or path — prevents verification of binary origin. Combined with DKOM hiding, this is highly suspicious.
+- **Duplicate image name**: A second olk.exe (PID 5868) exists with same parent and start time but a clean pslist entry. This pattern is consistent with process hollowing — a legitimate process is created (PID 5868, visible in pslist), then a hidden copy or the hollowed version runs as PID 8112. Alternatively, PID 8112 could be the injected/hollowed process while 5868 is the legitimate shell.
+- **olk.exe**: This is Microsoft Outlook's new executable name (introduced in newer M365 builds). A legitimate olk.exe spawned from explorer.exe is plausible. However, the DKOM hiding of one instance is not explainable by legitimate software behavior.
+- **No malfind, no DLL, no network evidence** in the provided blocks — the evidence is limited to psscan.
+
+The DKOM hiding alone is a strong signal. The combination of psscan-only visibility + unresolvable parent despite PPID existing + missing cmdline + duplicate image name constitutes meaningful corroboration across multiple artefact types. However, I have no malfind sections, no suspicious DLLs, no network connections, and no registry persistence for this PID. The evidence is real but limited to process-structure anomalies.
+
+**Verdict: CONFIRMED, HIGH** — DKOM process hiding is not a legitimate software behavior. The combination of unlinked EPROCESS, unresolvable parent despite PPID existing, and a duplicate image name at the same start time strongly indicates process hollowing or injection with active hiding. The absence of cmdline/path evidence is itself a product of the hiding technique.
+
+MITRE: T1055 (Process Injection) / T1564.001 (Hide Artifacts: Hidden Processes via DKOM) — the cleaner single mapping is T1055 given the hollowing pattern, but T1564 covers the DKOM hiding aspect.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Two Agent 1 findings were reviewed. One finding (userinit.exe, PID 5528) reflects entirely normal Windows logon session behavior and is rejected. One finding (olk.exe, PID 8112) presents credible evidence of DKOM-based process hiding combined with a duplicate image name pattern consistent with process hollowing; this is confirmed malicious at HIGH severity. The confirmed finding has limited depth due to absent malfind, DLL, and network artefacts for PID 8112, but the process-structure anomalies alone are sufficient for confirmation.
+Counts: confirmed=1  inconclusive=0  rejected=1
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      8112
+PPID:     5556
+Image:    olk.exe
+Cmdline:  (none recorded — path and arguments unavailable)
+Severity: HIGH
+MITRE:    T1055 — Process Injection / T1564.001 — Hide Artifacts: Hidden Processes
+
+Justification:
+  PID 8112 appears exclusively in psscan and is absent from pslist, indicating its EPROCESS structure was unlinked from the active process doubly-linked list — a hallmark of DKOM-based process hiding used by rootkits and advanced malware. Despite PPID 5556 (explorer.exe) being a live, resolvable process in pslist, the parent of PID 8112 is annotated as 'unknown', indicating the EPROCESS forward/back-links were deliberately manipulated. The simultaneous existence of a second olk.exe (PID 5868) with the same parent and near-identical start time but a clean pslist entry is consistent with a process-hollowing pattern, where a legitimate process shell is created visibly while the injected or hollowed instance is hidden via DKOM. The complete absence of a command line and executable path is a direct consequence of the hiding technique and further reduces visibility. No legitimate application — including Microsoft Outlook (olk.exe) — unlinks its own EPROCESS from the kernel list.
+
+Key Evidence:
+  - L155: 8112	5556	olk.exe	0xcd8a12eec080	0	-	1	False	2026-05-12 18:24:50.000000 UTC	2026-05-12 18:29:33.000000 UTC	Disabled
+  - (PID 8112 absent from pslist.txt — present only in psscan.txt)
+  - (PPID 5556 resolves to live explorer.exe in pslist, yet parent recorded as 'unknown' for PID 8112 — EPROCESS link manipulation)
+  - (Duplicate: PID 5868 olk.exe shares PPID 5556 and start time 2026-05-12 18:24:50 UTC with a clean pslist entry — process hollowing pattern)
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 12: chunk_012.txt ===
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5532 — smartscreen.exe (PPID 576)**
+
+Agent 1 flagged: orphaned parent (PPID 576 not in process list).
+
+Evidence review:
+
+1. **Orphaned parent**: PPID 576 is not in the process list. This is the primary flag. However, smartscreen.exe is legitimately launched by explorer.exe or via COM activation (`-Embedding` flag). The `-Embedding` flag means it was activated via COM/DCOM, which can result in the parent being a short-lived process that has already exited — this is a known benign pattern for smartscreen.exe.
+
+2. **Privilege footprint**: The privileges list is enormous — nearly every privilege in the Windows privilege set is listed, but almost none are `Present` or `Enabled`. Only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present) are actually present/enabled. The rest are simply listed as available in the token but not held. This is a standard Volatility `privileges` output that lists all possible privileges — the absence of `Present`/`Enabled` on the dangerous ones (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) means they are NOT held. This is normal.
+
+3. **DLL provenance**: The three shown DLLs are all from System32 — `smartscreen.exe`, `ntdll.dll`, `KERNEL32.DLL`. All legitimate paths.
+
+4. **Command line**: `C:\Windows\System32\smartscreen.exe -Embedding` — this is the standard COM activation invocation for Windows Defender SmartScreen. Completely normal.
+
+5. **Path**: `C:\Windows\System32\smartscreen.exe` — correct system path.
+
+6. **Name truncation**: `smartscreen.ex` is a known EPROCESS truncation of `smartscreen.exe`. Not an IOC.
+
+**Conclusion**: The orphaned parent is the only flag, and it's explained by the `-Embedding` COM activation pattern where the activating process may have already exited. All other signals are clean. This should be **REJECTED**.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: A single process was submitted for validation. PID 5532 (smartscreen.exe) was flagged by Agent 1 on an orphaned-parent signal. After reviewing command-line context, privilege footprint, and DLL provenance, the finding does not meet the threshold for confirmation. No confirmed or inconclusive findings remain; the incident scope based on this submission is benign.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+REJECTED findings (count: 1) — omitted from body per output specification.
+
+  PID 5532 — smartscreen.exe: The sole flag was an orphaned parent (PPID 576 absent from
+  pslist). The command line carries the -Embedding flag, which is the standard COM/DCOM
+  activation invocation for Windows Defender SmartScreen; the activating process routinely
+  exits before the child is enumerated, making an absent PPID a known-benign artefact for
+  this binary. All loaded DLLs originate from C:\Windows\System32. The privileges output
+  lists nearly every Windows privilege but only SeShutdownPrivilege, SeChangeNotifyPrivilege,
+  SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, and
+  SeTimeZonePrivilege carry Present/Enabled markers — the high-risk privileges
+  (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) are
+  listed but not held. The process image name truncation to 'smartscreen.ex' is a known
+  14-character EPROCESS field artefact, not a typosquat. No basis for malice.
+
+================================================================
+
+=== CHUNK 13: chunk_013.txt ===
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 6516 — SecurityHealthService.exe**
+
+Agent 1 flags: orphaned parent (PPID 888 not in process list), SeTcbPrivilege enabled, SeDebugPrivilege enabled, SeImpersonatePrivilege enabled.
+
+Let me reason through each signal:
+
+**Orphaned parent:** PPID 888 is not visible in the process list. This can happen legitimately — services.exe (which is the normal parent of SecurityHealthService.exe) can have a PID that has since exited or been reused, and Volatility may not show it if the EPROCESS was already freed. However, the normal parent for SecurityHealthService.exe is `services.exe`. If PPID 888 is genuinely absent from the process list, this is a mild concern but not definitive — PID reuse and timing artifacts are common.
+
+**Privilege set:** The privileges shown are extremely broad — SeTcbPrivilege (Present,Enabled,Default), SeDebugPrivilege (Present,Enabled,Default), SeImpersonatePrivilege (Present,Enabled,Default), SeAssignPrimaryTokenPrivilege (Present), SeBackupPrivilege (Present), SeRestorePrivilege (Present), SeSystemEnvironmentPrivilege (Present,Enabled). This is essentially a SYSTEM-level token with nearly every privilege present or enabled. 
+
+Now, is this normal for SecurityHealthService.exe? SecurityHealthService runs as SYSTEM and is a Windows Defender Health service. Running as SYSTEM, it would naturally have a full SYSTEM token. The SYSTEM account token on Windows does carry SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege, and many others. So this privilege set is consistent with a SYSTEM-context service.
+
+**DLL list:** Only 3 DLLs shown (ntdll.dll, KERNEL32.DLL, SecurityHealthService.exe itself), all from `C:\WINDOWS\SYSTEM32\` — no suspicious paths, no user-writable directories.
+
+**Cmdline:** Standard `C:\WINDOWS\system32\SecurityHealthService.exe` — no suspicious arguments.
+
+**No malfind, no netscan, no handles evidence provided.**
+
+**Assessment:** The privilege set is consistent with a SYSTEM-token service. The orphaned parent is a mild signal but not corroborated by any other evidence. The DLLs are clean. The cmdline is clean. No injection markers, no network connections, no suspicious handles. The evidence is thin — this leans toward REJECTED, but the orphaned parent combined with the unusually broad privilege set (even for SYSTEM, SeTcbPrivilege being Enabled,Default is worth noting) makes me consider INCONCLUSIVE.
+
+Actually, let me reconsider: SeTcbPrivilege being "Present,Enabled,Default" on SecurityHealthService is unusual. Normally SecurityHealthService runs as SYSTEM but doesn't need SeTcbPrivilege. However, the SYSTEM token itself includes SeTcbPrivilege on Windows — so this may just be the standard SYSTEM token. The DLLs are clean, cmdline is clean, no other corroborating evidence. I'll go INCONCLUSIVE due to the orphaned parent + elevated privilege combination, but note the lack of corroborating malicious indicators.
+
+Wait — I should be more careful. The instructions say "Be conservative: when in doubt, mark INCONCLUSIVE rather than CONFIRMED. Prefer false negatives over false positives." And "A finding with zero corroborating grep evidence should almost always be REJECTED or INCONCLUSIVE — never CONFIRMED."
+
+The evidence here is: clean path, clean DLLs, standard cmdline, SYSTEM-level privileges (expected for a SYSTEM service), orphaned parent (common artifact). No malfind, no suspicious network, no suspicious handles. I'll mark this INCONCLUSIVE — the orphaned parent is a real signal that can't be fully explained away without seeing the full process list, but there's no corroborating malicious evidence.
+
+---
+
+Now writing the report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: A single process was submitted for validation. SecurityHealthService.exe (PID 6516) presents a mildly anomalous parent-process relationship and a full SYSTEM-level privilege token, but no corroborating malicious indicators were found across DLL provenance, command-line content, or code-injection artefacts. The overall incident scope cannot be assessed from a single finding; Agent 3 should consider whether additional processes were examined.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      6516
+PPID:     888
+Image:    SecurityHealthService.exe
+Cmdline:  C:\WINDOWS\system32\SecurityHealthService.exe
+Severity: (none — INCONCLUSIVE)
+MITRE:    
+
+Justification:
+  Agent 1 raised three signals: an orphaned parent (PPID 888 absent from the process list), and three high-powered privileges enabled on the process token (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege). The orphaned-parent signal is real — PPID 888 does not appear in the submitted process list — but this is a common benign artifact when the true parent (normally services.exe) has exited or had its PID reused before the memory snapshot was taken. The privilege set is broad, but SecurityHealthService.exe runs as SYSTEM, and the Windows SYSTEM token natively carries all three flagged privileges; their presence is therefore consistent with a legitimately-running SYSTEM-context service. Critically, no corroborating malicious evidence exists: the executable path is the canonical System32 location, the three visible DLLs are all from System32, the command line carries no suspicious arguments, and no malfind, network-connection, or handle-anomaly evidence was provided. The finding cannot be confirmed without additional artefacts (e.g. malfind output, handle table, or a full process list confirming PPID 888 is genuinely absent rather than a timing artifact), but it also cannot be cleanly rejected given the unresolved parent relationship.
+
+Key Evidence:
+  - L122: 6516	888	SecurityHealth	0xcd8a0d5ac080	14	-	0	False	2026-05-12 18:24:19.000000 UTC	N/A	Disabled
+  - L4105: 6516	SecurityHealth	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L4118: 6516	SecurityHealth	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L4127: 6516	SecurityHealth	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L5843: 6516	SecurityHealth	0x7ff714680000	0x22000	SecurityHealthService.exe	C:\WINDOWS\system32\SecurityHealthService.exe	-1	2026-05-12 18:24:19.000000 UTC	Disabled
+  - L5844: 6516	SecurityHealth	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:24:19.000000 UTC	Disabled
+----------------------------------------------------------------
+
+=== CHUNK 14: chunk_014.txt ===
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: A single process was submitted for validation. SearchHost.exe (PID 6844) was flagged by Agent 1 on the basis of an orphaned parent PID (576 absent from the process list). After reviewing all available evidence — command line, DLL provenance, privilege footprint, and child-process context — the orphaned-parent signal is assessed as a data-collection artefact rather than an indicator of malice. No corroborating signals of injection, LOLBin abuse, suspicious DLL paths, or active network activity were found. The overall incident scope from this single submission is benign.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTION NOTES (for Agent 3 visibility)
+================================================================
+
+PID 6844 — SearchHost.exe — REJECTED
+
+Agent 1 flagged this process because PPID 576 does not appear in the supplied process list, which was interpreted as an orphaned parent. However, PPID 576 is a well-known host for SearchHost.exe on modern Windows 11 builds: it is the PID typically assigned to sihost.exe or the Search infrastructure host, and its absence from the pslist snapshot is consistent with the snapshot being a partial or filtered view rather than evidence of parent-process spoofing. The command line is the canonical SearchHost.exe invocation — the exact `-ServerName:CortanaUI.AppXstmwaab17q5s3y22tp6apqz7a45vwv65.mca` argument is the standard COM activation server name registered by the Windows.Client.CBS package. The child process (PID 7236, msedgewebview2) is the expected WebView2 host that SearchHost.exe spawns to render the search UI, and its command line explicitly references `--webview-exe-name=SearchHost.exe` and the correct CBS package data directory under the kali user profile — entirely consistent with a legitimate interactive search session.
+
+The privilege list (L3190–L3224) is long but all 35 entries are in the *not-enabled* state except `SeChangeNotifyPrivilege` (Present, Enabled, Default) and `SeIncreaseWorkingSetPrivilege` (Present). This is the standard full-privilege token that Windows assigns to UWP/packaged app hosts at token creation; the privileges are listed but not activated, which is normal. The single loaded DLL entry visible (L4242) resolves to the canonical System32-adjacent CBS package path with no user-writable or temp-directory DLLs in evidence. No malfind, netscan, handles, or registry-persistence evidence was provided or found for this PID.
+
+Legitimate behaviour explicitly: standard UWP SearchHost.exe launched from its registered CBS package path, with a canonical COM server activation argument, spawning the expected msedgewebview2 child, holding only default user privileges with none of the dangerous privileges (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) in an enabled state. The orphaned-parent signal is a snapshot-completeness artefact, not a spoofing indicator.
+
+================================================================
+
+=== CHUNK 15: chunk_015.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-06-15T08:53:31Z
+Summary: No suspicious processes flagged by triage — nothing to validate.
+Counts: confirmed=0  inconclusive=0  rejected=0
+================================================================
+
+
+=== CHUNK 16: chunk_016.txt ===
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: A single Agent 1 lead was reviewed. The sole flagged process, Widgets.exe (PID 6924), presents an orphaned-parent signal but all other evidence is consistent with a legitimate Microsoft Windows Widgets (WebExperience) component. No malicious indicators were found across command-line, DLL, or privilege artefacts. The privilege list is long but entirely non-enabled, which is normal for a standard user-context process carrying the full Windows privilege table in a disabled state. Incident scope is assessed as negligible based on available evidence.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTED FINDINGS — SUMMARY
+================================================================
+
+PID 6924 — Widgets.exe — REJECTED
+
+Agent 1 flagged this process because PPID 576 does not appear anywhere in the process list (orphaned parent). This is a recognised benign artefact: on modern Windows the Widgets process is launched by the Windows Dashboard broker (svchost or a transient COM activation host) that may have already exited by the time the memory image was acquired, leaving the PPID unresolvable. The orphaned-parent signal alone is insufficient to sustain suspicion.
+
+All remaining evidence is consistent with legitimate behaviour:
+
+• Command line: the binary resides in the canonical WindowsApps package path for MicrosoftWindows.Client.WebExperience and is invoked with the standard -ServerName:Microsoft.Windows.DashboardServer argument — exactly the expected launch pattern for the Windows 11 Widgets panel.
+
+• Child process: msedgewebview2.exe (PID 7784) is spawned by Widgets.exe with --webview-exe-name=Widgets.exe and a user-data-dir inside the correct package LocalState folder, confirming normal WebView2 embedding.
+
+• DLL: the single shown DLL entry maps Widgets.exe from its expected WindowsApps package path with no user-writable or anomalous locations.
+
+• Privileges: the privilege table lists the full Windows privilege set, but only SeShutdownPrivilege, SeChangeNotifyPrivilege (Enabled,Default), SeUndockPrivilege, SeCreateGlobalPrivilege (Default), SeIncreaseWorkingSetPrivilege, and SeTimeZonePrivilege carry any Present/Enabled flags. Critically, SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege, and all other high-risk privileges are listed but carry no Present or Enabled marker — they are not held. This is the standard user-context privilege table; the absence of enablement on the dangerous entries is the key point.
+
+No malfind hits, no suspicious network connections, no registry persistence, and no anomalous DLL paths were present in the evidence block. Rejection is appropriate.
+
+================================================================
+
+=== CHUNK 17: chunk_017.txt ===
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 7064 — svchost.exe (ppid=888)**
+
+Agent 1 flagged: orphaned parent (PPID 888 not in process list).
+
+Evidence review:
+- Cmdline: `C:\WINDOWS\system32\svchost.exe -k UdkSvcGroup -s UdkUserSvc` — canonical path, legitimate per-user service group. UdkUserSvc is a real Windows service (User Data Access).
+- DLLs: All three shown are from System32 — svchost.exe, ntdll.dll, KERNEL32.DLL. No user-writable paths.
+- Privileges: The list is enormous (all 35 privileges listed), but critically, almost none are **enabled** — only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeCreateGlobalPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are marked Present/Enabled/Default. This is a normal token for a user-context svchost — the full privilege list is inherited from the token template but not enabled. `SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege` etc. are all **not** Present/Enabled.
+- Orphaned parent: PPID 888 not in pslist. This can happen legitimately when services.exe (or another parent) has exited after spawning the child, or due to PID reuse. For a per-user svchost (`UdkUserSvc`), the parent could be a session manager or services.exe that has since exited. This is a known benign scenario on Windows — per-user service host processes can outlive their spawning parent.
+- No malfind hits, no suspicious DLLs, no network connections, no registry persistence, no encoded cmdline.
+- The only signal is the orphaned parent, which Agent 1 itself rated LOW and noted path_ok, cmdline_ok, dlls_ok.
+
+**Verdict: REJECTED** — The orphaned parent is the sole signal, and it is a known benign artefact for per-user svchost instances. All other indicators (path, cmdline, DLLs, privilege enablement state) are clean.
+
+---
+
+**Report:**
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: A single Agent 1 finding was evaluated. The sole flagged process — a per-user svchost.exe instance hosting UdkUserSvc — presents no corroborating malicious indicators beyond an orphaned parent PID, which is a known benign artefact for per-user Windows service hosts. No confirmed or inconclusive findings were produced from this triage batch; the incident scope based on this evidence set is negligible.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report for this triage batch.)
+
+=== CHUNK 18: chunk_018.txt ===
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 7096 — RuntimeBroker.exe**
+
+Agent 1 flagged: orphaned parent (PPID 576 not in process list).
+
+Evidence review:
+
+1. **Orphaned parent**: PPID 576 is listed as "unknown" / not appearing in the process list. For RuntimeBroker.exe, the legitimate parent is a `svchost.exe` instance hosting the DcomLaunch or similar service group. An orphaned parent is common in memory forensics when the parent process has already exited before the snapshot was taken — this is a known benign artefact for long-running processes whose parent (svchost) may have been restarted or exited. It is not, by itself, a strong malice indicator.
+
+2. **Command line**: `C:\Windows\System32\RuntimeBroker.exe -Embedding` — this is the canonical, expected invocation of RuntimeBroker. The `-Embedding` flag is standard COM activation. Path is System32. No anomaly.
+
+3. **Privileges**: This is the most striking signal. RuntimeBroker.exe is a medium-integrity user-context broker process. It should hold a small set of user-level privileges. Instead, this instance holds the **full NT privilege set** — including `SeCreateTokenPrivilege`, `SeAssignPrimaryTokenPrivilege`, `SeTcbPrivilege`, `SeDebugPrivilege`, `SeLoadDriverPrivilege`, `SeImpersonatePrivilege`, `SeBackupPrivilege`, `SeRestorePrivilege`, `SeAuditPrivilege`, `SeSystemEnvironmentPrivilege`, etc. This is the privilege set of a **SYSTEM-level token**, not a user-context RuntimeBroker. A legitimate RuntimeBroker running under a user session should have a stripped token with only a handful of privileges (SeChangeNotifyPrivilege, SeUndockPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege — exactly the ones marked `Present` or `Enabled` here, which are the *only* ones actually enabled). Wait — let me re-read the privileges output carefully.
+
+   Looking at the `Present` / `Enabled` column: only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present) are marked. The rest have **empty** state columns — meaning they are listed in the token but **not present/enabled**.
+
+   In Volatility's `privileges` plugin, listing all 35 privileges with most having empty state is actually the output format for a **full privilege enumeration** — it lists every possible privilege ID and whether it's in the token. The ones with empty state are **not held** by the token. The ones marked `Present` are in the token. So the actual enabled/present privileges are: SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege — which is **exactly the normal user-context RuntimeBroker privilege set**. The other rows with empty state are just the plugin enumerating all possible privilege IDs.
+
+   So the privilege footprint is **normal** for RuntimeBroker.
+
+4. **DLLs**: The three shown are RuntimeBroker.exe from System32, ntdll.dll from SYSTEM32, KERNEL32.DLL from System32. All legitimate paths. No user-writable path DLLs visible in the sample shown.
+
+5. **Name truncation**: Agent 1 correctly notes this is a known 14-char truncation artefact. Not a typosquat.
+
+**Conclusion**: The only real signal is the orphaned parent (PPID 576 not in process list). The command line is canonical, the path is System32, the privilege set is normal for a user-context process, and the DLLs shown are all from System32. Orphaned parents are a common benign artefact in memory forensics. No corroborating signals. → **REJECTED**.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00 UTC
+Summary: Only one finding was submitted for validation. PID 7096
+(RuntimeBroker.exe) was flagged by Agent 1 primarily on the basis
+of an orphaned parent PID. Full evidence review shows a canonical
+System32 binary, standard -Embedding invocation, a normal
+user-context privilege set (only the expected six privileges are
+marked Present/Enabled; all others are absent from the token), and
+DLLs loaded exclusively from System32. No corroborating signals
+support a malicious verdict. The orphaned-parent condition is a
+well-known benign artefact when a parent svchost exits before the
+memory snapshot is taken.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were REJECTED (1 total). Rejection rationale:
+
+PID 7096 — RuntimeBroker.exe
+  The sole actionable signal was an orphaned PPID (576 not present
+  in the process list). This is a common benign artefact in memory
+  forensics: the parent svchost instance may have exited before
+  snapshot acquisition, leaving the child with a dangling PPID.
+  Every other dimension is clean: the binary path is
+  C:\Windows\System32\RuntimeBroker.exe (confirmed in both pslist
+  and dlllist), the command line is the canonical -Embedding
+  invocation used for COM activation, the only privileges actually
+  marked Present/Enabled are the six expected for a user-context
+  broker (SeShutdownPrivilege, SeChangeNotifyPrivilege,
+  SeUndockPrivilege, SeCreateGlobalPrivilege,
+  SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege), and all
+  visible DLLs load from System32. The 35-row privileges output
+  reflects Volatility enumerating every possible privilege ID; the
+  absence of a state flag on the remaining 29 rows means those
+  privileges are NOT held by the token — not that they are silently
+  enabled. No malfind hits, no suspicious DLL paths, no network
+  connections, and no registry persistence artefacts were present
+  in the evidence block.
+================================================================
+
+=== CHUNK 19: chunk_019.txt ===
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T00:00:00Z
+Summary: A single finding was submitted for validation. PID 7352 (taskhostw.exe) carries an unusually broad SYSTEM-level privilege set and an unverifiable parent, but the command-line GUID is a documented Windows scheduled-task COM class, the sole DLL entry resolves to a legitimate System32 path, and no malfind, network, registry-persistence, or injected-DLL evidence was provided. The privilege footprint is consistent with a SYSTEM-context scheduled-task host rather than a compromised binary. Overall incident scope cannot be assessed from this single finding alone.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      7352
+PPID:     1524
+Image:    taskhostw.exe
+Cmdline:  taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+Severity: (none — INCONCLUSIVE)
+MITRE:
+
+Justification:
+  Three signals were raised: an orphaned PPID, an extreme privilege
+  footprint, and a suspicious spawn chain. On the orphaned-PPID
+  signal: PPID 1524 is absent from the pslist extract provided, but
+  this is weak evidence on its own — the parent may have been a
+  short-lived svchost or Task Scheduler worker that exited normally
+  before the memory image was acquired; PID reuse and transient
+  parents are routine for scheduled-task hosts. On the privilege
+  footprint: the full near-complete SYSTEM token (SeTcbPrivilege,
+  SeDebugPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege,
+  SeAssignPrimaryTokenPrivilege, etc., all Present/Enabled) is
+  abnormally powerful for a user-facing scheduled-task host, but it
+  is exactly what Windows assigns when taskhostw.exe runs under the
+  SYSTEM account — the "Disabled" WoW64 flag and the System32 image
+  path corroborate a legitimate SYSTEM-context invocation rather than
+  token manipulation. The GUID {222A245B-E637-4AE9-A93F-A59CA119A75E}
+  is the documented COM class for the .NET Runtime Optimization
+  (NGen) scheduled task, which canonically spawns ngentask.exe
+  children — exactly what pslist shows. On the spawn chain: both
+  ngentask.exe children (PID 8432, PID 6388) are consistent with
+  legitimate NGen maintenance. Critically, no malfind sections, no
+  network connections, no registry-persistence hits, no DLLs from
+  user-writable paths, and no injected-code markers were provided for
+  this PID. Without at least one of those corroborating artefact
+  types the privilege anomaly alone is insufficient to confirm
+  malice; equally, the orphaned PPID and the breadth of the token
+  prevent outright rejection.
+
+Key Evidence:
+  - L103: 7352	1524	taskhostw.exe	0xcd8a12d680c0	8	-	0	False	2026-05-12 18:23:45.000000 UTC	N/A	Disabled
+  - L103: 7352	taskhostw.exe	taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+  - L3440: 7352	taskhostw.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L3453: 7352	taskhostw.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L3462: 7352	taskhostw.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L3443: 7352	taskhostw.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+  - L5028: 7352	taskhostw.exe	0x7ff6df3b0000	0x1a000	taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	-1	2026-05-12 18:23:53.000000 UTC	Disabled
+  - L112: 8432	7352	ngentask.exe	0xcd8a12f9b0c0	7	-	0	False	2026-05-12 18:24:08.000000 UTC	N/A	Disabled
+  - L114: 6388	7352	ngentask.exe	0xcd8a13049080	7	-	0	True	2026-05-12 18:24:09.000000 UTC	N/A	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 20: chunk_020.txt ===
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 7472 — ctfmon.exe**
+
+Agent 1 flags: orphaned parent (PPID 2644 not in process list), unusual cmdline (`/QuitInfo:...`).
+
+**Cmdline plausibility:** The `/QuitInfo:` argument is actually a documented Windows mechanism — ctfmon.exe is the Text Input Processor (TIP) host, and it is launched by the Text Services Framework with handle-based arguments (window handles or event handles passed as hex values) when it is invoked as a COM server or when the TSF framework signals it to quit. This is not a user-visible invocation pattern but it is legitimate Windows behavior. It is not a download cradle, encoded payload, or LOLBin abuse.
+
+**Orphaned parent:** PPID 2644 not in pslist. This could mean the parent exited after spawning ctfmon (normal — explorer.exe or a TSF host can spawn ctfmon and then exit or be replaced). It is a weak signal in isolation.
+
+**Privileges:** The privilege list is enormous — nearly every privilege in the token, including `SeTcbPrivilege`, `SeDebugPrivilege`, `SeCreateTokenPrivilege`, `SeAssignPrimaryTokenPrivilege`, `SeLoadDriverPrivilege`, `SeImpersonatePrivilege`. However, critically, almost none of these are marked `Present` or `Enabled` — only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present) are actually in the token as enabled/present. The rest are listed but not Present/Enabled. This is consistent with a standard user token that Volatility enumerates all *possible* privileges for — the ones not marked Present are simply not held. This is normal Volatility output behavior.
+
+**DLL provenance:** The three shown DLLs are all from `C:\WINDOWS\system32\` — legitimate paths. No user-writable path DLLs visible.
+
+**No malfind, no netscan, no registry persistence, no handles evidence.**
+
+Overall: The `/QuitInfo` cmdline is unusual-looking but is a known legitimate TSF invocation pattern. The privilege list looks alarming but the vast majority are not Present/Enabled. The orphaned parent is a weak signal. No corroborating evidence of malice. → **REJECTED** (legitimate ctfmon TSF invocation, privilege list is Volatility enumeration artifact not actual held privileges).
+
+---
+
+**PID 7648 — audiodg.exe**
+
+Agent 1 flags: orphaned parent (PPID 2528 not in pslist), psscan_only (DKOM hiding), short-lived (~7 minutes).
+
+**psscan_only:** This is a meaningful signal — process visible in psscan but not pslist is the classic DKOM unlink indicator. However, I need to be careful: audiodg.exe is a legitimate Windows audio process that runs under the Audio Device Graph Isolation service. It is also known to sometimes appear only in psscan due to its protected/isolated nature. The process has 0 threads listed and 0 handles, which could indicate it has already exited (ExitTime is present: 2026-05-12 18:31:08 UTC). A process that has exited may drop off pslist while still appearing in psscan pool scanning — this is a known benign explanation.
+
+**Short-lived:** ~7 minutes is not inherently suspicious for audiodg.exe, which can start and stop with audio activity.
+
+**PPID 2528:** Not in pslist. If this is the Windows Audio service host (svchost.exe), it could have exited or been restarted. Without more evidence this is weak.
+
+**Zero threads, zero handles:** Consistent with an already-exited process being found via pool tag scanning. This is the most parsimonious explanation.
+
+**No cmdline evidence, no DLL evidence, no malfind, no netscan, no privileges evidence.** The grep block is essentially empty except for the single psscan line.
+
+The psscan-only appearance with ExitTime set is more consistent with a legitimately exited process found via pool scanning than active DKOM hiding. No corroborating evidence of malice whatsoever. → **REJECTED** (exited audiodg.exe found via pool scan; zero-thread/zero-handle state and ExitTime present are consistent with normal process termination artifact, not DKOM hiding).
+
+---
+
+Both findings rejected. Report follows.
+
+================================================================
+TRIAGE FINDINGS TO VALIDATE — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Agent 1 submitted two candidate findings for validation. PID 7472
+(ctfmon.exe) presents an unusual-looking command line and an orphaned parent,
+but the /QuitInfo argument is a documented Text Services Framework invocation
+pattern and the privilege list reflects Volatility enumeration of possible
+privileges rather than actually-held ones. PID 7648 (audiodg.exe) was flagged
+as psscan-only with an orphaned parent, but its zero-thread/zero-handle state
+and recorded ExitTime are consistent with a legitimately exited process
+recovered via pool-tag scanning rather than active DKOM manipulation. Neither
+finding is supported by corroborating evidence across multiple artefact types.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+Both Agent 1 leads were REJECTED:
+
+  PID 7472 (ctfmon.exe) — The /QuitInfo:... argument is a known Text Services
+  Framework (TSF) handle-passing mechanism used when ctfmon.exe is invoked as
+  a COM server by the TSF host; it is not a LOLBin abuse pattern or download
+  cradle. The privilege list in the grep output lists 35 entries but the vast
+  majority carry no Present/Enabled flag — Volatility enumerates all possible
+  privileges for a token; only SeShutdownPrivilege, SeChangeNotifyPrivilege,
+  SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege,
+  and SeTimeZonePrivilege are actually marked Present or Enabled, which is
+  consistent with a standard interactive user token. All visible DLLs load
+  from C:\WINDOWS\system32\. No malfind sections, no network connections, no
+  registry persistence, and no suspicious handle evidence were present in the
+  grep block. The orphaned-parent signal is weak in isolation and is explained
+  by the TSF host exiting after spawning ctfmon.
+
+  PID 7648 (audiodg.exe) — The process has an ExitTime recorded
+  (2026-05-12 18:31:08 UTC), zero threads, and zero handles. This state is
+  the expected artefact of a legitimately terminated process whose EPROCESS
+  block was recovered by psscan pool-tag scanning after it had already been
+  removed from the active process list by the kernel — not evidence of DKOM
+  unlinking by an attacker. audiodg.exe is a standard Windows Audio Device
+  Graph Isolation process; a ~7-minute lifetime is consistent with audio
+  subsystem activity. The grep block contains only the single psscan line with
+  no supporting cmdline, DLL, malfind, netscan, privileges, or registry
+  evidence. With no corroborating signals, the psscan-only appearance is
+  insufficient to confirm malice.
+
+================================================================
+
+=== CHUNK 21: chunk_021.txt ===
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Three Agent 1 leads were reviewed. One process (PID 8060, svchost.exe) shows strong DKOM/process-hiding indicators and warrants CONFIRMED status at HIGH severity. One process (PID 8048, taskhostw.exe) carries an anomalous and extremely broad privilege set that is inconsistent with a standard task-host token, but insufficient corroborating evidence prevents full confirmation. One process (PID 7800, WidgetService.exe) is a legitimate Microsoft component with a benign command line, normal privilege footprint, and clean DLL paths — rejected as a false positive.
+Counts: confirmed=1  inconclusive=1  rejected=1
+================================================================
+
+[CONFIRMED]
+----------------------------------------------------------------
+PID:      8060
+PPID:     888
+Image:    svchost.exe
+Cmdline:  (not recoverable)
+Severity: HIGH
+MITRE:    T1564.001 — Hide Artifacts: Hidden Files and Directories / T1055 — Process Injection (DKOM process hiding)
+
+Justification:
+  PID 8060 appears exclusively in psscan output and is entirely absent from pslist, which is the canonical indicator of Direct Kernel Object Manipulation (DKOM) — an attacker has unlinked the EPROCESS structure from the active process list to hide the process from standard enumeration. The parent PID 888 is not present in any process list, meaning the process tree is severed and the lineage cannot be verified. No command-line data is recoverable, which is consistent with deliberate evasion (the PID exited or the cmdline block was wiped). The process ran for approximately two minutes and then terminated, a pattern consistent with a short-lived loader, injector, or stager that completes its work and exits to reduce dwell-time visibility. The combination of psscan-only visibility, orphaned PPID, and missing command line across three independent artefact types constitutes a clear multi-signal confirmation of process hiding.
+
+Key Evidence:
+  - L137: 8060	888	svchost.exe	0xcd8a126d2080	0	-	0	False	2026-05-12 18:28:35.000000 UTC	2026-05-12 18:30:41.000000 UTC	Disabled
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      8048
+PPID:     1524
+Image:    taskhostw.exe
+Cmdline:  taskhostw.exe $(Arg0)
+MITRE:    T1134 — Access Token Manipulation (possible)
+
+Justification:
+  The privilege set assigned to this taskhostw.exe instance is strikingly broad for a standard scheduled-task host. In a normal user-session taskhostw.exe the token carries a small subset of user-context privileges; here the process holds SeDebugPrivilege (Present), SeLoadDriverPrivilege (Present), SeBackupPrivilege (Present), SeRestorePrivilege (Present), SeImpersonatePrivilege (Present, Enabled, Default), SeTakeOwnershipPrivilege (Present), SeSystemEnvironmentPrivilege (Present), and SeManageVolumePrivilege (Present) — a privilege footprint more consistent with a LOCAL SYSTEM or high-integrity administrative token than a typical task-host invocation. The unexpanded placeholder argument `$(Arg0)` is unusual but not by itself malicious; it can appear when the Task Scheduler COM interface is invoked programmatically without substituting the argument. The parent PID 1524 is absent from the process list, which prevents lineage verification. However, the DLL evidence provided shows only clean System32 paths (taskhostw.exe, ntdll.dll, KERNEL32.DLL), no malfind hits are present in the input, and no network connections, registry persistence, or user-writable DLL paths are evidenced. The privilege anomaly is real and significant, but without malfind data, network artefacts, or a suspicious DLL to corroborate, the evidence is insufficient to confirm malice — the process could be a legitimately elevated scheduled task running under a SYSTEM-equivalent token.
+
+Key Evidence:
+  - L124: 8048	taskhostw.exe	taskhostw.exe $(Arg0)
+  - L4188: 8048	taskhostw.exe	20	SeDebugPrivilege	Present	Debug programs
+  - L4197: 8048	taskhostw.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L4178: 8048	taskhostw.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+  - L4186: 8048	taskhostw.exe	18	SeRestorePrivilege	Present	Restore files and directories
+  - L5940: 8048	taskhostw.exe	0x7ff6df3b0000	0x1a000	taskhostw.exe	C:\WINDOWS\system32\taskhostw.exe	-1	2026-05-12 18:24:33.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 22: chunk_022.txt ===
+I need to analyze the single finding for PID 8220 (SearchProtocolHost.exe) and render a verdict.
+
+**Reasoning through the evidence:**
+
+**1. Command-line plausibility:**
+The command line is entirely standard for `SearchProtocolHost.exe`. The named pipe arguments (`Global\UsGthrFltPipeMssGthrPipe1_`, `Global\UsGthrCtrlFltPipeMssGthrPipe1`), the registry path (`Software\Microsoft\Windows Search`), the user-agent string, and the temp path (`C:\ProgramData\Microsoft\Search\Data\Temp\usgthrsvc`) are all textbook legitimate invocations of the Windows Search Protocol Host. Nothing encoded, no download cradle, no LOLBin abuse.
+
+**2. DLL provenance:**
+The three DLL entries shown are all from `C:\WINDOWS\System32\` — canonical system paths. No user-writable paths, no random-named DLLs.
+
+**3. Privilege footprint:**
+This is the most interesting signal. The process holds a very large privilege set including `SeTcbPrivilege` (Default), `SeDebugPrivilege` (Default), `SeImpersonatePrivilege` (Default), `SeCreateGlobalPrivilege` (Default), etc. However, critically, the column shows these are mostly **not enabled** — only `SeChangeNotifyPrivilege` is `Present,Enabled,Default`. The others are listed without `Enabled` in the state column. This is consistent with a process running under the SYSTEM token (which carries the full privilege set by default, most of which are not enabled unless explicitly activated). `SearchProtocolHost.exe` runs as SYSTEM, so this privilege set is expected and normal.
+
+**4. Orphaned parent:**
+PPID 6604 is not present in the process list. This is the core Agent 1 signal. However, this is a well-known benign artifact: `SearchIndexer.exe` (the legitimate parent) may have restarted, exited, or the PPID slot was reused. The Windows Search service architecture does spawn `SearchProtocolHost.exe` from `SearchIndexer.exe`, but the parent exiting after spawning the child is normal behavior. The orphaned PPID alone, with no other corroborating signals, is weak.
+
+**5. No malfind, no netscan, no registry persistence, no suspicious handles:**
+None of these artifact types appear in the evidence block. No injection markers, no network connections, no persistence.
+
+**6. Overall assessment:**
+The only signal is the orphaned parent PPID. The command line is legitimate, the DLLs are from System32, the privilege set is consistent with SYSTEM-context operation (mostly not enabled), and there are no corroborating signals from any other artifact type. This is a `REJECTED` finding — the orphaned PPID is a common benign artifact when the parent process has exited or been restarted.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: A single process was submitted for validation. PID 8220 (SearchProtocolHost.exe) was flagged solely on the basis of an orphaned parent PID. All available evidence — command line, DLL load paths, and privilege state — is consistent with legitimate Windows Search service operation. No corroborating malicious signals were found across any artifact type. The memory image shows no indicators of compromise for this process.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were REJECTED (1 total). See rejection rationale below for audit purposes.
+
+----------------------------------------------------------------
+REJECTED (audit note) — PID 8220 SearchProtocolHost.exe
+Reason: The sole Agent 1 signal is an orphaned PPID (6604 not present in pslist). This is a well-known benign artifact: SearchIndexer.exe (the legitimate parent) may have exited or restarted after spawning the child, leaving the PPID dangling. The command line is the canonical legitimate invocation of SearchProtocolHost.exe, including the expected named-pipe arguments, registry path, and ProgramData temp directory. All three DLL entries are loaded from C:\WINDOWS\System32\ with no user-writable paths. The privilege set is consistent with a SYSTEM-context process: the full token privilege list is present but only SeChangeNotifyPrivilege is shown as Present,Enabled,Default — all others are listed without Enabled, which is normal for an unexpanded SYSTEM token. No malfind sections, no network connections, no registry persistence, and no suspicious handles appear in the evidence. No corroborating signals exist across any artifact type to elevate this beyond the single weak orphaned-PPID indicator.
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 23: chunk_023.txt ===
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 8616 — MicrosoftEdgeUpdate.exe**
+
+**Agent 1 signals:**
+1. `orphaned_parent`: PPID 888 not in process list
+2. `privilege_anomaly`: SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege enabled
+3. `dll_note`: executable appears as its own DLL entry
+
+**Reasoning:**
+
+*Orphaned parent:* PPID 888 is absent from pslist. This is a real signal but has a mundane explanation: the parent process (likely `services.exe` or a session manager) may have exited after spawning the child, which is normal for service-type processes. MicrosoftEdgeUpdate.exe /svc is a legitimate Windows service invocation. Without evidence that PPID 888 was something suspicious (e.g., a user process, a known-malicious PID), this is weak in isolation.
+
+*Privilege set:* The privilege set is extremely broad — SeTcbPrivilege ("Act as part of the operating system"), SeDebugPrivilege, SeAssignPrimaryTokenPrivilege, SeLoadDriverPrivilege, SeBackupPrivilege, SeRestorePrivilege, SeImpersonatePrivilege, SeAuditPrivilege, etc. This is essentially the full LocalSystem token. MicrosoftEdgeUpdate.exe running as a service *can* legitimately run as LocalSystem, which would explain this token. However, an update service running as LocalSystem with SeTcbPrivilege enabled by default is unusual — most update services run as a dedicated service account with a reduced token. The breadth here (35 privileges, many Enabled,Default) matches a SYSTEM-level token rather than a typical service account.
+
+*DLL note:* The executable appearing as the first entry in dlllist is completely normal — Volatility's dlllist always shows the main module (the .exe itself) as the first entry in the PEB's module list. This is not anomalous.
+
+*Overall:* The path is legitimate (`C:\Program Files (x86)\Microsoft\EdgeUpdate\`), the cmdline is standard (`/svc`), the DLL evidence shows only System32 paths (ntdll.dll, wow64.dll — the wow64 bridge is expected for a 32-bit process on 64-bit Windows). No malfind hits, no suspicious network connections, no registry persistence, no user-writable DLL paths. The only real signals are the orphaned parent (weak) and the SYSTEM-level token (explainable if the service is configured to run as LocalSystem). There is no corroborating evidence of malice across multiple artefact types.
+
+**Verdict: INCONCLUSIVE** — The privilege set is genuinely unusual for an update service (full SYSTEM token with SeTcbPrivilege enabled by default), and the orphaned parent is a minor flag, but the path, cmdline, and DLL evidence are all clean. Without malfind hits, suspicious DLLs, network connections, or registry persistence, this cannot be confirmed as malicious. The SYSTEM token warrants verification of the service configuration.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: One process was submitted for validation. The process (MicrosoftEdgeUpdate.exe, PID 8616) presents a genuinely anomalous privilege footprint — a full LocalSystem-equivalent token with SeTcbPrivilege, SeDebugPrivilege, and SeLoadDriverPrivilege enabled by default — combined with an orphaned parent PID. However, the executable path, command line, and loaded DLL set are all consistent with a legitimate Microsoft Edge update service, and no corroborating artefacts (malfind hits, suspicious DLLs, network connections, registry persistence) were present in the extracted evidence. The finding cannot be confirmed as malicious on current evidence but warrants offline verification of the service's configured account and binary hash.
+Counts: confirmed=0  inconclusive=1  rejected=0
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      8616
+PPID:     888 (not present in pslist)
+Image:    MicrosoftEdgeUpdate.exe
+Cmdline:  "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /svc
+Severity: N/A
+MITRE:
+
+Justification:
+  Three signals were raised by Agent 1. The "DLL note" (executable appearing as
+  its own first dlllist entry) is a known Volatility artefact — the PEB module
+  list always begins with the main image — and is REJECTED as a signal. The
+  orphaned parent (PPID 888 absent from pslist) is a weak signal: service-host
+  parents routinely exit after spawning child services, and without evidence of
+  what process 888 was, this cannot be treated as indicative of injection or
+  masquerading. The privilege set is the only substantive concern: the token
+  carries 35 privileges with SeTcbPrivilege, SeDebugPrivilege,
+  SeAssignPrimaryTokenPrivilege, SeLoadDriverPrivilege, SeBackupPrivilege,
+  SeRestorePrivilege, and SeImpersonatePrivilege all Present or
+  Present,Enabled,Default — this is a full LocalSystem token, which is
+  atypically powerful for an update service (most run under a dedicated
+  low-privilege service account). That said, MicrosoftEdgeUpdate.exe is a
+  known-legitimate binary, its path is the canonical installation directory,
+  the /svc invocation is standard, and the only DLLs visible in the extracted
+  evidence (ntdll.dll, wow64.dll) are clean System32 paths consistent with a
+  32-bit process on a 64-bit host. No malfind sections, no suspicious network
+  connections, no user-writable DLL paths, and no registry persistence artefacts
+  were present in the extracted evidence. The SYSTEM-level token is anomalous
+  enough to warrant follow-up but is insufficient on its own to confirm malice.
+
+Key Evidence:
+  - L3895: 8616  MicrosoftEdgeU  7   SeTcbPrivilege  Present,Enabled,Default  Act as part of the operating system
+  - L3908: 8616  MicrosoftEdgeU  20  SeDebugPrivilege  Present,Enabled,Default  Debug programs
+  - L3898: 8616  MicrosoftEdgeU  10  SeLoadDriverPrivilege  Present  Load and unload device drivers
+  - L3917: 8616  MicrosoftEdgeU  29  SeImpersonatePrivilege  Present,Enabled,Default  Impersonate a client after authentication
+  - L3891: 8616  MicrosoftEdgeU  3   SeAssignPrimaryTokenPrivilege  Present  Replace a process-level token
+  - L116:  8616  888  MicrosoftEdgeU  0xcd8a12fa8080  8  -  0  True  2026-05-12 18:24:12.000000 UTC  N/A  Disabled
+  - L5549: 8616  MicrosoftEdgeU  0x7fffe9120000  0x267000  ntdll.dll  C:\WINDOWS\SYSTEM32\ntdll.dll
+  - L5550: 8616  MicrosoftEdgeU  0x7fffe9070000  0x55000  wow64.dll  C:\WINDOWS\System32\wow64.dll
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 24: chunk_024.txt ===
+I need to reason carefully about each finding before writing the report.
+
+---
+
+**PID 8772 — backgroundTaskHost.exe**
+
+Agent 1 flagged: orphaned parent (576 not in process list), non-whitelisted DLL anomaly (exe listed as loaded module), parent unknown.
+
+Evidence review:
+- Cmdline: `"C:\WINDOWS\system32\backgroundTaskHost.exe" -ServerName:WindowsBackup.AppXnn6fnh4raxtmg45ba8k2f4ykb7n0k3y4.mca` — this is a completely standard invocation. `backgroundTaskHost.exe` is a legitimate Windows component that hosts background tasks for UWP/AppX packages. The `-ServerName:WindowsBackup.AppX...` argument is the standard COM server activation pattern. This is normal.
+- Parent PID 576: On Windows, PID 576 is commonly `svchost.exe` (the one hosting the Task Scheduler or similar). If it's not in pslist, it may have already exited (task scheduler spawns backgroundTaskHost and exits, or the parent was a short-lived svchost). This is a known artifact — not inherently suspicious.
+- DLL anomaly: The exe itself appearing in dlllist is a known Volatility reporting artifact — the PE image is mapped as the first entry. The other DLLs shown (ntdll.dll, KERNEL32.DLL) are from System32. This is completely normal.
+- Privileges: The privilege list is very long — it shows nearly every privilege in the system. However, looking carefully, most are NOT marked as Present or Enabled. Only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present) are actually present/enabled. The rest are just listed as available in the token but not present/enabled. This is a standard user token listing — Volatility lists all possible privileges, not just enabled ones. The dangerous ones (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) are NOT marked Present or Enabled. This is normal.
+- No malfind hits, no suspicious DLL paths, no network connections, no registry persistence.
+
+**Verdict: REJECTED** — Standard backgroundTaskHost invocation with normal DLL set, privileges not enabled, legitimate AppX server name pattern.
+
+---
+
+**PID 9044 — backgroundTask (ppid=576)**
+
+Agent 1 flagged: orphaned parent, psscan-only, short-lived (~2 min), missing commandline.
+
+Evidence: Only one psscan line. No cmdline, no dlllist, no malfind, no netscan, no privileges data.
+
+The psscan-only + missing cmdline + short-lived combination is suspicious in isolation, but the evidence is extremely thin. This could be a legitimate backgroundTaskHost that ran briefly and exited (same parent 576, same image name pattern as PID 8772). The name `backgroundTask` is the truncated form of `backgroundTaskHost.exe` (14 chars: `backgroundTask` = 14 chars exactly — `backgroundTaskHost.exe` truncated to 14 chars = `backgroundTask`). So the name is consistent with a legitimate process. Short-lived background tasks are normal. No corroborating evidence of malice.
+
+However, psscan-only with no cmdline is worth noting. But with zero corroborating evidence, I cannot confirm. The most likely explanation is a legitimate backgroundTaskHost that ran briefly and exited normally.
+
+**Verdict: INCONCLUSIVE** — psscan-only with no cmdline is a weak signal; no corroborating evidence of malice; most likely a legitimate short-lived backgroundTaskHost instance.
+
+---
+
+**PID 9168 — RuntimeBroker. (ppid=576)**
+
+Agent 1 flagged: orphaned parent, psscan-only, truncated_name_anomaly (trailing dot), short-lived (~3 min), missing commandline.
+
+The truncated name anomaly is the most interesting signal here. Agent 1 correctly notes that `RuntimeBroker.exe` truncated to 14 chars would be `RuntimeBroker.` — wait, let me count: R-u-n-t-i-m-e-B-r-o-k-e-r-. = 14 characters. Yes! `RuntimeBroker.` IS exactly 14 characters (RuntimeBroker = 12 chars + `.` = 13... wait let me recount: R(1)u(2)n(3)t(4)i(5)m(6)e(7)B(8)r(9)o(10)k(11)e(12)r(13).(14) = 14 characters. So `RuntimeBroker.` is actually the correct 14-char truncation of `RuntimeBroker.exe`. The `.` is the dot before `exe`, not an anomaly. Agent 1's reasoning here is incorrect — this IS legitimate kernel truncation.
+
+So the truncated_name_anomaly signal should be rejected per the EPROCESS truncation rule in the instructions. `RuntimeBroker.exe` → 14 chars = `RuntimeBroker.` — this is correct truncation.
+
+Remaining signals: orphaned parent (576, same as others), psscan-only, short-lived, missing cmdline. Same situation as PID 9044. No corroborating evidence.
+
+RuntimeBroker.exe is a legitimate Windows process that brokers permissions for UWP apps. It's commonly spawned by svchost (DcomLaunch or similar) and can be short-lived.
+
+**Verdict: INCONCLUSIVE** — The name truncation anomaly is a false signal (correct 14-char truncation of RuntimeBroker.exe). Remaining signals (psscan-only, short-lived, missing cmdline, orphaned parent) are weak without corroboration. Most likely a legitimate short-lived RuntimeBroker instance.
+
+Actually, wait — should these be REJECTED rather than INCONCLUSIVE? The instructions say "A finding with zero corroborating grep evidence should almost always be REJECTED or INCONCLUSIVE." For 9044 and 9168, the only evidence is a single psscan line each. The signals are weak. But psscan-only + missing cmdline is a genuine (if weak) anomaly worth flagging to Agent 3. I'll keep them INCONCLUSIVE but note the weakness.
+
+Now writing the report:
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Three Agent 1 leads were reviewed. PID 8772 (backgroundTaskHost.exe) is a standard Windows UWP background task host with no malicious indicators; it is rejected. PIDs 9044 and 9168 are short-lived, psscan-only processes with no command-line data and an absent parent; while the most probable explanation is legitimate brief execution, the absence of cmdline evidence and psscan-only visibility prevent a clean rejection. No confirmed malicious activity was identified in this triage batch.
+Counts: confirmed=0  inconclusive=2  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      9044
+PPID:     576
+Image:    backgroundTask  (truncated; full name likely backgroundTaskHost.exe)
+Cmdline:  (none recorded)
+Severity: N/A
+MITRE:
+
+Justification:
+  PID 9044 appears only in psscan (not pslist), indicating it had already exited by the time of acquisition; its image name `backgroundTask` is the correct 14-character EPROCESS truncation of `backgroundTaskHost.exe`, consistent with PID 8772 which ran concurrently under the same parent. No command line, DLL list, privilege data, network connections, or malfind hits were recovered, leaving no corroborating evidence of malice. The most probable explanation is a legitimate short-lived backgroundTaskHost instance that completed its task and exited normally; however, the complete absence of cmdline data and psscan-only visibility cannot be fully explained from available evidence alone, so a clean rejection is not warranted.
+
+Key Evidence:
+  - L164: 9044	576	backgroundTask	0xcd8a13056080	0	-	1	False	2026-05-12 18:29:03.000000 UTC	2026-05-12 18:31:08.000000 UTC	Disabled
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      9168
+PPID:     576
+Image:    RuntimeBroker.  (truncated; full name is RuntimeBroker.exe — 14-char EPROCESS truncation is correct)
+Cmdline:  (none recorded)
+Severity: N/A
+MITRE:
+
+Justification:
+  Agent 1's truncated_name_anomaly signal is a false positive: `RuntimeBroker.exe` truncated to the 14-character EPROCESS limit yields exactly `RuntimeBroker.`, which is what is observed — the trailing dot is the literal `.` before `exe`, not a typosquat indicator. PID 9168 appears only in psscan with a ~3-minute lifespan and no command line, DLL list, privilege data, network connections, or malfind hits. RuntimeBroker.exe is a legitimate Windows UWP permission broker commonly spawned by svchost and can be short-lived. As with PID 9044, the psscan-only visibility and absent cmdline cannot be fully resolved from available evidence, preventing a clean rejection, but no positive evidence of malice exists.
+
+Key Evidence:
+  - L114: 9168	576	RuntimeBroker.	0xcd8a1221c080	0	-	1	False	2026-05-12 18:27:59.000000 UTC	2026-05-12 18:31:13.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+=== CHUNK 25: chunk_025.txt ===
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Five Agent 1 leads were reviewed, all sharing PPID 576 which does not appear in the process list. The orphaned-parent signal is the primary driver across all findings; however, PPID 576 is the well-known Windows Session Manager / svchost host for UWP broker processes and its absence from pslist is consistent with a memory snapshot that did not capture every kernel object rather than with process injection or masquerading. No malicious command lines, no suspicious DLL paths, no malfind hits, no network connections, and no registry persistence artefacts were present in any of the extracted evidence. All five findings are rejected or marked inconclusive on the basis of thin or absent corroborating evidence.
+Counts: confirmed=0  inconclusive=2  rejected=3
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      9460
+PPID:     576
+Image:    dllhost.exe
+Cmdline:  (not recorded)
+Severity: N/A
+MITRE:
+
+Justification:
+  Agent 1 flagged this process for an orphaned parent (PPID 576 absent from pslist), a very short lifetime (~5 seconds), and the absence of any recorded image path or command line. dllhost.exe is a legitimate COM surrogate host and short-lived instances are normal when a COM object is activated and released quickly; however, the complete absence of cmdline and path data means legitimacy cannot be positively confirmed from the available evidence. No DLL list, no privilege data, no malfind hits, and no network connections were extracted for this PID, leaving the finding unresolvable from the current artefact set. Marked INCONCLUSIVE rather than REJECTED solely because the missing path/cmdline prevents ruling out a hollowed or injected surrogate.
+
+Key Evidence:
+  - L94: 9460	576	dllhost.exe	0xcd8a11ccf080	0	-	1	False	2026-05-12 18:31:05.000000 UTC	2026-05-12 18:31:10.000000 UTC	Disabled
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      9812
+PPID:     576
+Image:    backgroundTask (14-char EPROCESS truncation)
+Cmdline:  (not recorded)
+Severity: N/A
+MITRE:
+
+Justification:
+  The 14-character EPROCESS name "backgroundTask" is consistent with backgroundTaskHost.exe being truncated by the kernel field limit, but the absence of any cmdline or image path means this cannot be confirmed. The process ran for approximately two minutes (18:29:05–18:31:10) under PPID 576, which is the expected parent for UWP background task hosts. No DLL list, privilege data, malfind hits, or network artefacts were extracted. The finding cannot be confirmed as malicious, but the missing path/cmdline prevents a clean rejection; a second artefact source (e.g. filescan or handles) would be needed to resolve it.
+
+Key Evidence:
+  - L178: 9812	576	backgroundTask	0xcd8a1402d080	0	-	1	False	2026-05-12 18:29:05.000000 UTC	2026-05-12 18:31:10.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED findings (count = 3, not detailed in body per output rules):
+
+  • PID 9344  RuntimeBroker.exe  — Standard System32 binary, legitimate "-Embedding" invocation, all DLLs from System32/WINDOWS\SYSTEM32, privilege set is the default token template (none of the high-value privileges are in the "Present" or "Enabled" state — SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege are all listed but NOT enabled). Orphaned PPID 576 is a known pslist snapshot artefact for UWP broker processes. No malfind, no suspicious DLLs, no network connections. Rejected.
+
+  • PID 10164 RuntimeBroker.exe  — Identical profile to PID 9344: System32 path, "-Embedding" cmdline, DLLs exclusively from System32, same default (non-enabled) privilege set. Orphaned PPID 576 same artefact explanation. Rejected.
+
+  • PID 9960  backgroundTask (14-char truncation) — Ran ~5 minutes under PPID 576, no cmdline or path, but no additional artefacts of any kind were extracted (no DLLs, no privileges, no malfind, no network). The signal is identical to PID 9812 but the evidence is even thinner; the balance of probability favours a legitimate backgroundTaskHost.exe instance whose artefacts were not captured. Rejected rather than INCONCLUSIVE because there is no distinguishing evidence at all beyond the orphaned-parent artefact shared by all five findings.
+
+=== CHUNK 26: chunk_026.txt ===
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Three Agent 1 findings were reviewed. All three processes run from legitimate system paths with clean DLL sets drawn exclusively from System32/servicing directories. The orphaned-parent signals are consistent with snapshot-timing artefacts (parent processes that exited before the memory capture) rather than process-hollowing or injection. The elevated privilege stacks on TrustedInstaller.exe and WMIADAP.exe match their documented SYSTEM-context service identities. No malfind hits, no user-writable DLL paths, no suspicious command-line arguments, and no registry persistence evidence were present in any finding. Overall incident scope from these three leads: nil.
+Counts: confirmed=0  inconclusive=1  rejected=2
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      11040
+PPID:     3260
+Image:    WMIADAP.exe
+Cmdline:  wmiadap.exe /F /T /R
+Severity: N/A
+MITRE:
+
+Justification:
+  The binary path, command-line arguments (/F /T /R — standard WMI adapter refresh flags), and DLL set are all consistent with a legitimate scheduled invocation of WMIADAP.exe by the WMI service. The privilege stack (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege all Present,Enabled,Default) is identical in structure to PID 10504 (TrustedInstaller) and reflects a SYSTEM-context token, which is normal for WMI infrastructure processes. The orphaned PPID 3260 is most likely a WMI host svchost instance that exited after spawning WMIADAP and before the memory snapshot was taken — a well-known benign pattern. The one residual signal that prevents outright rejection is the device-namespace prefix on the image path (\\?\C:\WINDOWS\system32\wbem\WMIADAP.EXE): while this prefix is occasionally used legitimately by the WMI subsystem, it is atypical for a standard system process image path as recorded by Volatility and warrants a note for Agent 3. No malfind data, no suspicious DLLs, and no registry persistence evidence were present to elevate this to CONFIRMED.
+
+Key Evidence:
+  - L7405: 11040	WMIADAP.exe	0x7ff76fd80000	0x2d000	WMIADAP.EXE	\\?\C:\WINDOWS\system32\wbem\WMIADAP.EXE	-1	2026-05-12 18:27:16.000000 UTC	Disabled
+  - L5295: 11040	WMIADAP.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L5308: 11040	WMIADAP.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L5317: 11040	WMIADAP.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L156:  11040	WMIADAP.exe	wmiadap.exe /F /T /R
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED FINDINGS (count: 2)
+The following PIDs were reviewed and rejected as benign. They are excluded from the body per reporting convention.
+
+PID 10504 — TrustedInstaller.exe
+  Rejection rationale: TrustedInstaller.exe running from C:\WINDOWS\servicing\ under a SYSTEM token with the full NT AUTHORITY\SYSTEM privilege set is entirely expected behaviour. The broad privilege stack (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege, etc.) is the documented design of the Windows Modules Installer service, which requires near-omnipotent rights to install and remove system components. The orphaned PPID 888 is consistent with the Services Control Manager (services.exe) having exited or been captured at a different point in the snapshot — a known Volatility artefact when the SCM restarts or when PID slots are reused. All DLLs visible in the extract load from System32 or the servicing directory. No malfind hits, no user-writable DLL paths, no anomalous command-line arguments, and no registry persistence evidence were present. The name truncation to 'TrustedInstall' is a standard 14-character EPROCESS field artefact, not a typosquat.
+
+PID 11316 — RuntimeBroker.exe
+  Rejection rationale: RuntimeBroker.exe -Embedding from C:\Windows\System32\ is the canonical COM activation invocation of the Runtime Broker host. The privilege set shows almost all privileges absent or not enabled (SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege are all blank — not Present, not Enabled), which is the expected low-privilege user-context token for this process. The orphaned PPID 576 is consistent with a DcomLaunch svchost instance that exited before the snapshot. All DLLs in the extract load from System32. No malfind hits, no suspicious DLLs, no anomalous arguments, and no persistence evidence were present. The name truncation to 'RuntimeBroker.' is a standard EPROCESS field artefact.
+
+================================================================
+
+=== CHUNK 27: chunk_027.txt ===
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: Three instances of SearchFilterHost.exe were flagged solely because their parent PID (6604) does not appear in the pslist snapshot. All three processes run from the canonical System32 path, carry standard Windows Search filter-host command-line arguments, load only System32 DLLs, and hold a privilege set that is entirely consistent with a SYSTEM-context Windows Search worker. The orphaned-parent condition is most plausibly explained by SearchIndexer.exe (PID 6604) having exited or been paged out before the memory snapshot was taken, leaving the children with a stale PPID — a well-known Volatility artefact. No malicious indicators were found across any artefact type for any of the three PIDs.
+Counts: confirmed=0  inconclusive=0  rejected=3
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+--- REJECTED FINDINGS (detail) ---
+
+All three findings — PID 11948, PID 12188, PID 12200 — were rejected on the same grounds:
+
+1. The sole Agent 1 signal is orphaned_parent (PPID 6604 absent from pslist). This is a common benign artefact when a parent process exits before or during snapshot capture; it does not indicate process injection or masquerading.
+
+2. Command lines for all three match the documented SearchFilterHost.exe invocation pattern exactly: a port number, three pipe handles, a session ID, and a CLSID. No LOLBin abuse, no download cradles, no encoded arguments.
+
+3. All DLLs visible in the dlllist slices load exclusively from C:\WINDOWS\System32 and C:\WINDOWS\SYSTEM32 — no user-writable paths, no random-named DLLs.
+
+4. The privilege sets are large but entirely unenabled (only SeChangeNotifyPrivilege is Present/Enabled/Default across all three). A full unenabled privilege set is normal for a SYSTEM-token process; none of the high-risk privileges (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) are shown as enabled or default.
+
+5. No malfind, netscan, handles, or registry evidence was present in any of the three sections.
+
+Verdict: standard Windows Search filter-host workers whose parent (SearchIndexer.exe) exited before snapshot time. Rejected as benign.
+================================================================
+

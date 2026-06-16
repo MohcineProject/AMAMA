@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_054.txt
+Summary: WinStore.App.e has an orphaned parent PID (740 not present in process list); otherwise network connections appear consistent with legitimate Windows Store CDN traffic.
+
+[PROCESS]
+pid: 30012
+ppid: 740
+image: WinStore.App.e
+cmdline: "C:\Program Files\WindowsApps\Microsoft.WindowsStore_12011.1001.1.0_x64__8wekyb3d8bbwe\WinStore.App.exe" -ServerName:App.AppXc75wvwned5vhz4xyxxecvgdjhdkgsdza.mca
+severity: LOW
+reasons: orphaned_parent: PPID 740 does not appear anywhere in the process list snapshot | name_truncation_note: 'WinStore.App.e' is a kernel EPROCESS truncation of 'WinStore.App.exe'; path and cmdline confirm legitimate WindowsApps installation — not a typosquat | network: connection to 23.197.181.157:80 (plain HTTP, ESTABLISHED) from a store app is mildly unusual; all other destinations (13.107.42.12, 23.46.190.35, 184.24.107.139) are consistent with known Microsoft/Akamai CDN ranges
+

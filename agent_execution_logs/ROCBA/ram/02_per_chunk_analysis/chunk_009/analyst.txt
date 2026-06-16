@@ -1,0 +1,84 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5140 — IntelCpHeciSvc.exe**
+
+Agent 1 flags: (1) broad high-risk privilege set, (2) orphaned parent PPID 828, (3) DLLs from DriverStore path.
+
+**Privilege analysis:** The privilege set shown is the full SYSTEM token — every privilege that a LocalSystem service receives. `SeTcbPrivilege`, `SeDebugPrivilege`, `SeImpersonatePrivilege`, `SeLockMemoryPrivilege`, `SeCreatePermanentPrivilege`, `SeAuditPrivilege`, etc. are all standard for a service running as LocalSystem. This is not anomalous for a hardware interface service running as SYSTEM. The "unusually broad" characterisation by Agent 1 is incorrect — this is the standard LocalSystem token.
+
+**Orphaned parent PPID 828:** PPID 828 is not in the pslist snapshot. This is a common artefact in memory forensics — the parent process (likely `services.exe`) may have exited or the snapshot may be partial. Both `IntelCpHeciSvc` (PID 5140) and `NisSrv.exe` (PID 5896) share PPID 828, which strongly suggests PPID 828 was `services.exe` — the standard SCM host. The fact that two unrelated legitimate services share the same PPID 828 makes it near-certain this is `services.exe` that simply isn't captured in the snapshot. Not a meaningful signal.
+
+**DriverStore path:** `C:\WINDOWS\System32\DriverStore\FileRepository\` is a legitimate, ACL-protected Windows path managed by the Driver Store. Intel hardware services (HECI = Host Embedded Controller Interface, used for Intel ME/AMT communication) legitimately reside here. The inf package name `64gh6299.inf_amd64_94401bd29769cd59` is a standard auto-generated DriverStore folder name. The DLLs shown (ntdll.dll, KERNEL32.DLL) are from System32 — no user-writable path DLLs visible in the 3 shown lines.
+
+**No malfind, no netscan, no cmdline anomaly, no suspicious handles.** The command line is a clean path invocation with no arguments.
+
+**Verdict: REJECTED.** All three Agent 1 signals are explainable by legitimate behaviour. The privilege set is standard LocalSystem, the orphaned parent is almost certainly services.exe not captured in snapshot, and DriverStore is a legitimate protected path.
+
+---
+
+**PID 5896 — NisSrv.exe**
+
+Agent 1 flags: (1) ProgramData path (user-writable), (2) orphaned parent PPID 828, (3) DLLs from ProgramData.
+
+**Path analysis:** `C:\ProgramData\Microsoft\Windows Defender\platform\4.18.2010.7-0\NisSrv.exe` is the **documented, expected** location for Windows Defender's Network Inspection Service. Microsoft Defender updates its platform binaries to versioned subdirectories under `C:\ProgramData\Microsoft\Windows Defender\platform\`. This is well-known and expected behaviour — not a red flag. While ProgramData is technically user-writable in some contexts, the Defender platform directory is ACL-protected.
+
+**Privilege analysis:** The privilege set is notably more restricted than PID 5140 — `SeTcbPrivilege` is NOT enabled (blank), `SeDebugPrivilege` is NOT enabled, `SeLoadDriverPrivilege` is NOT enabled. Only `SeImpersonatePrivilege` and `SeCreateGlobalPrivilege` are Present+Enabled, which is appropriate for a network inspection service. This is a normal, constrained service token.
+
+**Orphaned parent PPID 828:** Same as above — shared with PID 5140, almost certainly services.exe not in snapshot.
+
+**DLLs:** The 3 shown DLL lines are ntdll.dll and KERNEL32.DLL from System32. No anomalous DLL paths visible.
+
+**No malfind, no netscan anomalies, no suspicious cmdline.** Clean invocation.
+
+**Verdict: REJECTED.** NisSrv.exe running from the versioned Defender platform directory is standard Microsoft Defender behaviour. The orphaned parent is the same benign artefact as PID 5140. Privilege set is appropriately constrained. No corroborating evidence of malice.
+
+---
+
+Both findings are REJECTED. The report will reflect confirmed=0, inconclusive=0, rejected=2.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Both Agent 1 findings resolve to benign, well-understood Windows behaviour. PID 5140 (IntelCpHeciSvc.exe) is a legitimate Intel hardware interface service running as LocalSystem from a protected DriverStore path with a standard SYSTEM token. PID 5896 (NisSrv.exe) is the Windows Defender Network Inspection Service running from its documented versioned platform directory with an appropriately constrained privilege set. No confirmed malicious activity was identified in this triage batch.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+--- REJECTION NOTES (for Agent 3 audit trail) ---
+
+PID 5140 — IntelCpHeciSvc.exe — REJECTED
+  All three Agent 1 signals are benign artefacts:
+  (1) Privilege set: The full complement of Present/Enabled privileges shown
+      (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege, SeLockMemoryPrivilege,
+      SeCreatePermanentPrivilege, SeAuditPrivilege, etc.) is the standard LocalSystem
+      token issued to any service running as NT AUTHORITY\SYSTEM. This is not anomalous.
+  (2) Orphaned parent PPID 828: PIDs 5140 and 5896 share PPID 828, which is consistent
+      with both being children of services.exe (SCM). The parent process is simply absent
+      from the pslist snapshot — a common memory forensics artefact, not an injection
+      or masquerading indicator.
+  (3) DriverStore path: C:\WINDOWS\System32\DriverStore\FileRepository\ is an
+      ACL-protected Windows-managed directory. Intel HECI (Host Embedded Controller
+      Interface / Intel ME) services legitimately reside in auto-named inf subdirectories
+      here. The DLL lines shown load only from System32. No user-writable path DLLs,
+      no malfind hits, no network connections, no suspicious cmdline arguments.
+
+PID 5896 — NisSrv.exe — REJECTED
+  All three Agent 1 signals are benign artefacts:
+  (1) ProgramData path: C:\ProgramData\Microsoft\Windows Defender\platform\<version>\
+      is the documented, expected location for Windows Defender platform binaries.
+      Microsoft ships Defender updates as versioned subdirectories under this path.
+      The specific version 4.18.2010.7-0 is a known legitimate Defender platform release.
+  (2) Orphaned parent PPID 828: Identical artefact to PID 5140 — almost certainly
+      services.exe not captured in the snapshot.
+  (3) Privilege set: Notably more constrained than a full LocalSystem token —
+      SeTcbPrivilege, SeDebugPrivilege, and SeLoadDriverPrivilege are all absent
+      (blank, not Present). Only SeImpersonatePrivilege and SeCreateGlobalPrivilege
+      are enabled, which is appropriate for a network inspection service. No
+      corroborating evidence of malice across any artefact type.
+
+================================================================

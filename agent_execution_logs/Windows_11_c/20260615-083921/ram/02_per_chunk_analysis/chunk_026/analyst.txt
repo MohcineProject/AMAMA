@@ -1,0 +1,39 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Three Agent 1 findings were reviewed. All three processes run from legitimate system paths with clean DLL sets drawn exclusively from System32/servicing directories. The orphaned-parent signals are consistent with snapshot-timing artefacts (parent processes that exited before the memory capture) rather than process-hollowing or injection. The elevated privilege stacks on TrustedInstaller.exe and WMIADAP.exe match their documented SYSTEM-context service identities. No malfind hits, no user-writable DLL paths, no suspicious command-line arguments, and no registry persistence evidence were present in any finding. Overall incident scope from these three leads: nil.
+Counts: confirmed=0  inconclusive=1  rejected=2
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      11040
+PPID:     3260
+Image:    WMIADAP.exe
+Cmdline:  wmiadap.exe /F /T /R
+Severity: N/A
+MITRE:
+
+Justification:
+  The binary path, command-line arguments (/F /T /R — standard WMI adapter refresh flags), and DLL set are all consistent with a legitimate scheduled invocation of WMIADAP.exe by the WMI service. The privilege stack (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege all Present,Enabled,Default) is identical in structure to PID 10504 (TrustedInstaller) and reflects a SYSTEM-context token, which is normal for WMI infrastructure processes. The orphaned PPID 3260 is most likely a WMI host svchost instance that exited after spawning WMIADAP and before the memory snapshot was taken — a well-known benign pattern. The one residual signal that prevents outright rejection is the device-namespace prefix on the image path (\\?\C:\WINDOWS\system32\wbem\WMIADAP.EXE): while this prefix is occasionally used legitimately by the WMI subsystem, it is atypical for a standard system process image path as recorded by Volatility and warrants a note for Agent 3. No malfind data, no suspicious DLLs, and no registry persistence evidence were present to elevate this to CONFIRMED.
+
+Key Evidence:
+  - L7405: 11040	WMIADAP.exe	0x7ff76fd80000	0x2d000	WMIADAP.EXE	\\?\C:\WINDOWS\system32\wbem\WMIADAP.EXE	-1	2026-05-12 18:27:16.000000 UTC	Disabled
+  - L5295: 11040	WMIADAP.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+  - L5308: 11040	WMIADAP.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+  - L5317: 11040	WMIADAP.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+  - L156:  11040	WMIADAP.exe	wmiadap.exe /F /T /R
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED FINDINGS (count: 2)
+The following PIDs were reviewed and rejected as benign. They are excluded from the body per reporting convention.
+
+PID 10504 — TrustedInstaller.exe
+  Rejection rationale: TrustedInstaller.exe running from C:\WINDOWS\servicing\ under a SYSTEM token with the full NT AUTHORITY\SYSTEM privilege set is entirely expected behaviour. The broad privilege stack (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege, etc.) is the documented design of the Windows Modules Installer service, which requires near-omnipotent rights to install and remove system components. The orphaned PPID 888 is consistent with the Services Control Manager (services.exe) having exited or been captured at a different point in the snapshot — a known Volatility artefact when the SCM restarts or when PID slots are reused. All DLLs visible in the extract load from System32 or the servicing directory. No malfind hits, no user-writable DLL paths, no anomalous command-line arguments, and no registry persistence evidence were present. The name truncation to 'TrustedInstall' is a standard 14-character EPROCESS field artefact, not a typosquat.
+
+PID 11316 — RuntimeBroker.exe
+  Rejection rationale: RuntimeBroker.exe -Embedding from C:\Windows\System32\ is the canonical COM activation invocation of the Runtime Broker host. The privilege set shows almost all privileges absent or not enabled (SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege are all blank — not Present, not Enabled), which is the expected low-privilege user-context token for this process. The orphaned PPID 576 is consistent with a DcomLaunch svchost instance that exited before the snapshot. All DLLs in the extract load from System32. No malfind hits, no suspicious DLLs, no anomalous arguments, and no persistence evidence were present. The name truncation to 'RuntimeBroker.' is a standard EPROCESS field artefact.
+
+================================================================

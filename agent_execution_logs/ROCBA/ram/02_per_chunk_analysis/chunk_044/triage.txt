@@ -1,0 +1,45 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_044.txt
+Summary: All five HxTsr.exe instances share an orphaned parent PID 740 which does not appear anywhere in the process list; each instance is also very short-lived (2–8 seconds), stacking a second weak signal on every entry.
+
+[PROCESS]
+pid: 19652
+ppid: 740
+image: HxTsr.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 740 ('unknown') does not appear anywhere in the process list | short_lived: process ran for approximately 3 seconds (11:31:23 to 11:31:26 UTC)
+
+[PROCESS]
+pid: 19812
+ppid: 740
+image: HxTsr.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 740 ('unknown') does not appear anywhere in the process list | short_lived: process ran for approximately 4 seconds (04:18:41 to 04:18:45 UTC)
+
+[PROCESS]
+pid: 19944
+ppid: 740
+image: HxTsr.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 740 ('unknown') does not appear anywhere in the process list | short_lived: process ran for approximately 3 seconds (11:24:56 to 11:24:59 UTC)
+
+[PROCESS]
+pid: 20564
+ppid: 740
+image: HxTsr.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 740 ('unknown') does not appear anywhere in the process list | short_lived: process ran for approximately 8 seconds (06:32:48 to 06:32:56 UTC)
+
+[PROCESS]
+pid: 20652
+ppid: 740
+image: HxTsr.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 740 ('unknown') does not appear anywhere in the process list | short_lived: process ran for approximately 3 seconds (00:58:17 to 00:58:20 UTC)
+

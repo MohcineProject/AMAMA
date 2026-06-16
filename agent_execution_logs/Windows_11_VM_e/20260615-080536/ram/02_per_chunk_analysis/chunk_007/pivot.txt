@@ -1,0 +1,153 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:13:07Z
+
+=== PID 3396 (backgroundTaskHost.exe, ppid=516) ===
+Cmdline: "C:\WINDOWS\system32\backgroundTaskHost.exe" -ServerName:App.AppXmtcan0h2tfbfy7k9kn8hbxb6dmzz1zh0.mca
+
+--- pslist.txt ---
+L115: 3396	516	backgroundTask	0x990ef77b90c0	31	-	1	False	2026-05-13 19:17:51.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L115: 3396	backgroundTask	"C:\WINDOWS\system32\backgroundTaskHost.exe" -ServerName:App.AppXmtcan0h2tfbfy7k9kn8hbxb6dmzz1zh0.mca
+
+--- privileges.txt ---
+L3855: 3396	backgroundTask	2	SeCreateTokenPrivilege		Create a token object
+L3856: 3396	backgroundTask	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3857: 3396	backgroundTask	4	SeLockMemoryPrivilege		Lock pages in memory
+L3858: 3396	backgroundTask	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3859: 3396	backgroundTask	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3860: 3396	backgroundTask	7	SeTcbPrivilege		Act as part of the operating system
+L3861: 3396	backgroundTask	8	SeSecurityPrivilege		Manage auditing and security log
+L3862: 3396	backgroundTask	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3863: 3396	backgroundTask	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3864: 3396	backgroundTask	11	SeSystemProfilePrivilege		Profile system performance
+L3865: 3396	backgroundTask	12	SeSystemtimePrivilege		Change the system time
+L3866: 3396	backgroundTask	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3867: 3396	backgroundTask	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3868: 3396	backgroundTask	15	SeCreatePagefilePrivilege		Create a pagefile
+L3869: 3396	backgroundTask	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3870: 3396	backgroundTask	17	SeBackupPrivilege		Backup files and directories
+L3871: 3396	backgroundTask	18	SeRestorePrivilege		Restore files and directories
+L3872: 3396	backgroundTask	19	SeShutdownPrivilege		Shut down the system
+L3873: 3396	backgroundTask	20	SeDebugPrivilege		Debug programs
+L3874: 3396	backgroundTask	21	SeAuditPrivilege		Generate security audits
+L3875: 3396	backgroundTask	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3876: 3396	backgroundTask	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3877: 3396	backgroundTask	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3878: 3396	backgroundTask	25	SeUndockPrivilege		Remove computer from docking station
+L3879: 3396	backgroundTask	26	SeSyncAgentPrivilege		Synch directory service data
+L3880: 3396	backgroundTask	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3881: 3396	backgroundTask	28	SeManageVolumePrivilege		Manage the files on a volume
+L3882: 3396	backgroundTask	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3883: 3396	backgroundTask	30	SeCreateGlobalPrivilege		Create global objects
+L3884: 3396	backgroundTask	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3885: 3396	backgroundTask	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3886: 3396	backgroundTask	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3887: 3396	backgroundTask	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L3888: 3396	backgroundTask	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3889: 3396	backgroundTask	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5269: 3396	backgroundTask	0x7ff6306e0000	0xa000	backgroundTaskHost.exe	C:\WINDOWS\system32\backgroundTaskHost.exe	-1	2026-05-13 19:17:51.000000 UTC	Disabled
+L5270: 3396	backgroundTask	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:17:51.000000 UTC	Disabled
+L5271: 3396	backgroundTask	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:17:51.000000 UTC	Disabled
+L5272: 3396	backgroundTask	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:17:51.000000 UTC	Disabled
+L5273: 3396	backgroundTask	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5274: 3396	backgroundTask	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5275: 3396	backgroundTask	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5276: 3396	backgroundTask	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-13 19:17:51.000000 UTC	Disabled
+L5277: 3396	backgroundTask	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:17:51.000000 UTC	Disabled
+L5278: 3396	backgroundTask	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5279: 3396	backgroundTask	0x7fffedd70000	0x244000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5280: 3396	backgroundTask	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5281: 3396	backgroundTask	0x7ffff6340000	0x16a000	WinTypes.dll	C:\WINDOWS\System32\WinTypes.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5282: 3396	backgroundTask	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5283: 3396	backgroundTask	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-13 19:17:51.000000 UTC	Disabled
+L5284: 3396	backgroundTask	0x7ffff7c20000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5285: 3396	backgroundTask	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5286: 3396	backgroundTask	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5287: 3396	backgroundTask	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:17:51.000000 UTC	Disabled
+L5288: 3396	backgroundTask	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5289: 3396	backgroundTask	0x7fffefba0000	0x114000	mrmcorer.dll	C:\WINDOWS\SYSTEM32\mrmcorer.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5290: 3396	backgroundTask	0x7fffeca30000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5291: 3396	backgroundTask	0x7fffd6bb0000	0x58000	biwinrt.dll	C:\Windows\System32\biwinrt.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5292: 3396	backgroundTask	0x7fffe87c0000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5293: 3396	backgroundTask	0x7fffaf3a0000	0x2e1000	ContentDeliveryManager.Background.dll	C:\Windows\SystemApps\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\ContentDeliveryManager.Background.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5294: 3396	backgroundTask	0x7fffeff40000	0x5e000	wincorlib.DLL	C:\WINDOWS\system32\wincorlib.DLL	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5295: 3396	backgroundTask	0x7ffff4a40000	0x2d000	slc.dll	C:\WINDOWS\SYSTEM32\slc.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5296: 3396	backgroundTask	0x7fffd72c0000	0x65000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5297: 3396	backgroundTask	0x7fffe3a00000	0x16000	threadpoolwinrt.dll	C:\Windows\System32\threadpoolwinrt.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5298: 3396	backgroundTask	0x7fffd5d80000	0xe000	Windows.ApplicationModel.Background.TimeBroker.dll	C:\Windows\System32\Windows.ApplicationModel.Background.TimeBroker.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5299: 3396	backgroundTask	0x7fffd5ce0000	0x25000	Windows.ApplicationModel.Background.SystemEventsBroker.dll	C:\Windows\System32\Windows.ApplicationModel.Background.SystemEventsBroker.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5300: 3396	backgroundTask	0x7ffff9820000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5301: 3396	backgroundTask	0x7ffff39c0000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5302: 3396	backgroundTask	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5303: 3396	backgroundTask	0x7fffb0eb0000	0xea000	Windows.Services.TargetedContent.dll	C:\Windows\System32\Windows.Services.TargetedContent.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5304: 3396	backgroundTask	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\system32\SspiCli.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5305: 3396	backgroundTask	0x7fffe9de0000	0x9c000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5306: 3396	backgroundTask	0x7fffaed30000	0x23f000	ContentManagementSDK.dll	C:\Windows\SystemApps\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\ContentManagementSDK.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5307: 3396	backgroundTask	0x7ffff5930000	0x1b000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5308: 3396	backgroundTask	0x7fffec4f0000	0x18f000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5309: 3396	backgroundTask	0x7fffefe30000	0x5e000	Bcp47Langs.dll	C:\WINDOWS\system32\Bcp47Langs.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5310: 3396	backgroundTask	0x7fffefa40000	0x156000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5311: 3396	backgroundTask	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5312: 3396	backgroundTask	0x7ffff5a00000	0x68000	Wldp.dll	C:\WINDOWS\system32\Wldp.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5313: 3396	backgroundTask	0x7fffe03b0000	0x138000	Windows.Security.Authentication.Web.Core.dll	C:\Windows\System32\Windows.Security.Authentication.Web.Core.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5314: 3396	backgroundTask	0x7fffed8c0000	0x2c4000	iertutil.dll	C:\Windows\System32\iertutil.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5315: 3396	backgroundTask	0x7fffed890000	0x29000	srvcli.dll	C:\WINDOWS\system32\srvcli.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5316: 3396	backgroundTask	0x7ffff49f0000	0xd000	netutils.dll	C:\WINDOWS\system32\netutils.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5317: 3396	backgroundTask	0x7fffe3ee0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5318: 3396	backgroundTask	0x7fffdcc80000	0x4f000	vaultcli.dll	C:\Windows\System32\vaultcli.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5319: 3396	backgroundTask	0x7fffe6b10000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5320: 3396	backgroundTask	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\system32\bcrypt.dll	-1	2026-05-13 19:17:52.000000 UTC	Disabled
+L5321: 3396	backgroundTask	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5322: 3396	backgroundTask	0x7ffff5f30000	0xa000	DPAPI.dll	C:\WINDOWS\system32\DPAPI.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5323: 3396	backgroundTask	0x7ffff5920000	0xc000	CRYPTBASE.dll	C:\WINDOWS\system32\CRYPTBASE.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5324: 3396	backgroundTask	0x7fffaf6f0000	0x39000	aadWamExtension.dll	C:\Windows\System32\aadWamExtension.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5325: 3396	backgroundTask	0x7ffff6d60000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5326: 3396	backgroundTask	0x7ffff1bd0000	0x103000	PROPSYS.dll	C:\WINDOWS\system32\PROPSYS.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5327: 3396	backgroundTask	0x7fffe6740000	0x177000	Windows.System.Launcher.dll	C:\Windows\System32\Windows.System.Launcher.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5328: 3396	backgroundTask	0x7ffff8e80000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-13 19:17:52.000000 UTC	Disabled
+L5329: 3396	backgroundTask	0x7fffd6500000	0x6e000	CryptoWinRT.dll	C:\Windows\System32\CryptoWinRT.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5330: 3396	backgroundTask	0x7ffff5b40000	0x30000	ncrypt.dll	C:\WINDOWS\system32\ncrypt.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5331: 3396	backgroundTask	0x7ffff5af0000	0x3f000	NTASN1.dll	C:\WINDOWS\system32\NTASN1.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5332: 3396	backgroundTask	0x7fffeb2c0000	0x8b000	ncryptprov.dll	C:\WINDOWS\system32\ncryptprov.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5333: 3396	backgroundTask	0x7ffff56f0000	0x32000	USERENV.dll	C:\WINDOWS\system32\USERENV.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5334: 3396	backgroundTask	0x7ffff49b0000	0x30000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5335: 3396	backgroundTask	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\system32\profapi.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5336: 3396	backgroundTask	0x7fffe2ef0000	0x647000	windowsudk.shellcommon.dll	C:\WINDOWS\system32\windowsudk.shellcommon.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5337: 3396	backgroundTask	0x7fffe66b0000	0x47000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5338: 3396	backgroundTask	0x7fffec8c0000	0x16a000	appxdeploymentclient.dll	C:\WINDOWS\SYSTEM32\appxdeploymentclient.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5339: 3396	backgroundTask	0x7ffff86d0000	0x20000	imagehlp.dll	C:\WINDOWS\System32\imagehlp.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5340: 3396	backgroundTask	0x7fffd6700000	0x4a4000	StartMenu.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.Core_cw5n1h2txyewy\StartMenu.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5341: 3396	backgroundTask	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5342: 3396	backgroundTask	0x7fffe3950000	0x8c000	MSVCP140_APP.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CoreAI_cw5n1h2txyewy\MSVCP140_APP.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5343: 3396	backgroundTask	0x7fffe3b40000	0xc000	VCRUNTIME140_1_APP.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CoreAI_cw5n1h2txyewy\VCRUNTIME140_1_APP.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5344: 3396	backgroundTask	0x7fffe3930000	0x1d000	VCRUNTIME140_APP.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CoreAI_cw5n1h2txyewy\VCRUNTIME140_APP.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5345: 3396	backgroundTask	0x7ffff8710000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5346: 3396	backgroundTask	0x7fffd6640000	0xb4000	COMCTL32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.26100.8037_none_87ebc5097a2f9e52\COMCTL32.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5347: 3396	backgroundTask	0x7ffff4a00000	0x33000	IPHLPAPI.DLL	C:\WINDOWS\system32\IPHLPAPI.DLL	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5348: 3396	backgroundTask	0x7ffff3c50000	0xd000	Secur32.dll	C:\WINDOWS\system32\Secur32.dll	6	2026-05-13 19:17:53.000000 UTC	Disabled
+L5349: 3396	backgroundTask	0x7fffdd670000	0x19b000	ContentDeliveryManager.Utilities.dll	C:\Windows\System32\ContentDeliveryManager.Utilities.dll	6	2026-05-13 19:17:54.000000 UTC	Disabled
+
+--- pstree.txt ---
+L14: *** 3396	516	backgroundTask	0x990ef77b90c0	31	-	1	False	2026-05-13 19:17:51.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\backgroundTaskHost.exe	"C:\WINDOWS\system32\backgroundTaskHost.exe" -ServerName:App.AppXmtcan0h2tfbfy7k9kn8hbxb6dmzz1zh0.mca	C:\WINDOWS\system32\backgroundTaskHost.exe
+
+--- psscan.txt ---
+L101: 3396	516	backgroundTask	0x990ef77b90c0	31	-	1	False	2026-05-13 19:17:51.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L5590: 3396	backgroundTask	0x7ff6306e0000	True	False	True	\Windows\System32\backgroundTaskHost.exe
+L5591: 3396	backgroundTask	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L5590: 3396	backgroundTask	0x7ff6306e0000	True	False	True	\Windows\System32\backgroundTaskHost.exe
+L5591: 3396	backgroundTask	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L115: 3396	backgroundTask	\Device\HarddiskVolume4\Windows\System32\backgroundTaskHost.exe	C:\WINDOWS\system32\backgroundTaskHost.exe	False	False
+
+--- sessions.txt ---
+L120: 1	-	3396	backgroundTask	CLEANWINDOWS11/kali	2026-05-13 19:17:51.000000 UTC
+
+=== END OF PIVOT REPORT ===

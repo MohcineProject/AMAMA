@@ -1,0 +1,79 @@
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-08-07T20:00:00Z
+Summary: Analysis of three Agent 1 findings on a single interactive user session. The explorer.exe network connection to an internal host on a non-standard port is the most significant signal and warrants escalation; however, the evidence available does not rise to CONFIRMED without corroborating malfind, DLL, or registry artefacts. The userinit.exe orphaned-parent finding is consistent with normal post-logon behaviour. FTK Imager appears to be analyst-initiated forensic tooling.
+Counts: confirmed=0  inconclusive=1  rejected=2
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      5832
+PPID:     5788
+Image:    explorer.exe
+Cmdline:  C:\Windows\Explorer.EXE
+Severity: (none — INCONCLUSIVE)
+MITRE:
+
+Justification:
+  Explorer.exe initiating an ESTABLISHED outbound TCP connection to
+  192.168.135.57:8070 is anomalous. Explorer does not legitimately
+  open persistent TCP sessions to internal peers on non-standard
+  ports; port 8070 is associated with various C2 and proxy frameworks
+  in the wild. However, the grep evidence provided contains no
+  netscan.txt line directly confirming this connection (the network
+  anomaly was stated in Agent 1's reason tag, not in a verbatim
+  evidence line), and there are no corroborating malfind sections,
+  suspicious DLL paths, or registry persistence artefacts in the
+  extracted evidence. The process tree, cmdline, and privilege set
+  are all consistent with a normal interactive explorer.exe launched
+  by userinit.exe. Without a verbatim netscan hit, a malfind entry,
+  or a suspicious DLL load, the threshold for CONFIRMED is not met
+  under a conservative bias; the finding is INCONCLUSIVE and should
+  be prioritised for deeper review (full netscan output, malfind for
+  PID 5832, and dlllist for PID 5832).
+
+Key Evidence:
+  - L86: 5832	5788	explorer.exe	0xbb0c905bc340	55	-	1	False	2025-08-07 19:36:30.000000 UTC	N/A	Disabled
+  - L86: 5832	explorer.exe	C:\Windows\Explorer.EXE
+  - (Agent 1 network signal: ESTABLISHED TCPv4 to 192.168.135.57:8070 — no verbatim netscan line present in extracted evidence)
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED findings (count: 2) — not detailed in body per output rules.
+
+  PID 5788 userinit.exe — REJECTED.
+    The orphaned-parent signal is weak in isolation. userinit.exe
+    spawning explorer.exe and then exiting within ~30 seconds is
+    textbook normal Windows logon behaviour (userinit.exe is designed
+    to be short-lived). The parent PID 672 being absent from the
+    process list is expected: winlogon.exe (or its equivalent at that
+    PID) will have exited or the PID slot recycled before the memory
+    capture. The missing cmdline is a common Volatility artefact for
+    short-lived processes and is not independently suspicious. The
+    privilege set (L2805–L2839) shows no privileges in the
+    Present/Enabled state beyond SeShutdownPrivilege, SeChangeNotify,
+    SeUndockPrivilege, SeCreateGlobal, SeIncreaseWorkingSet, and
+    SeTimeZone — all normal for a user-context logon process. No
+    malfind, DLL, or network evidence was provided. The pstree path
+    (\Device\HarddiskVolume3\Windows\System32\userinit.exe) is the
+    canonical system location. No basis for confirmation.
+
+  PID 1548 FTK Imager.exe — REJECTED.
+    FTK Imager is a well-known, commercially distributed forensic
+    imaging tool. Its installation path
+    (C:\Program Files\AccessData\FTK Imager\FTK Imager.exe) is the
+    standard vendor path. The elevated privilege set — including
+    SeDebugPrivilege, SeBackupPrivilege, SeRestorePrivilege,
+    SeLoadDriverPrivilege, SeManageVolumePrivilege (all Present) — is
+    expected and required for raw disk imaging. It was launched by
+    explorer.exe (PID 5832) at 19:47:49, approximately 11 minutes
+    after the session started, consistent with an analyst launching
+    the tool interactively. All three DLL entries visible in the
+    dlllist slice load from canonical System32 paths. No malfind,
+    network, or registry persistence evidence was provided or is
+    expected for this tool. The forensic-tool-on-compromised-host
+    concern is noted for Agent 3's contextual narrative but does not
+    constitute a malicious finding under conservative bias.
+
+================================================================

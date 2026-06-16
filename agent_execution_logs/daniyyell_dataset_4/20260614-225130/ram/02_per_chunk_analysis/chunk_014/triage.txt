@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:40:00Z
+Chunk: chunk_014.txt
+Summary: ctfmon.exe has an orphaned parent (PID 5592 not present in process list); all other signals are benign.
+
+[PROCESS]
+pid: 5684
+ppid: 5592
+image: ctfmon.exe
+cmdline: "ctfmon.exe"
+severity: LOW
+reasons: orphaned_parent: PPID 5592 (unknown) not present anywhere in the process list
+

@@ -1,0 +1,49 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 3396 — backgroundTaskHost.exe**
+
+Agent 1 flagged: orphaned process (parent PID 516 not in process list).
+
+Evidence assessment:
+- Cmdline: standard `backgroundTaskHost.exe -ServerName:App.AppX...` invocation — this is the normal UWP/COM surrogate activation pattern on Windows 10/11. The AppX GUID-style server name is entirely normal.
+- Path: `C:\WINDOWS\system32\backgroundTaskHost.exe` — legitimate system path.
+- Orphaned parent: PPID 516 not visible in pslist. This is a known benign artefact — the parent (likely `svchost.exe` hosting the COM infrastructure or a UWP broker) may have already exited after spawning the background task host, or may be outside the snapshot window. This is extremely common for backgroundTaskHost processes.
+- Privileges: The list shows 35 privileges, but critically, almost **none are enabled** — only `SeChangeNotifyPrivilege` (Present, Enabled, Default) and `SeIncreaseWorkingSetPrivilege` (Present) are active. The rest are listed but not enabled. This is the standard token for a process running under a highly-privileged account (e.g. SYSTEM) where the full privilege set is present in the token but not enabled. For backgroundTaskHost running under SYSTEM context this is normal — the privileges are present but not activated.
+- DLLs: All from `C:\WINDOWS\SYSTEM32\` — no suspicious paths.
+- No malfind hits, no network connections, no suspicious cmdline arguments.
+
+The orphaned parent is the sole signal, and it's a weak one for this process class. Everything else is clean. → **REJECTED**
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-13T19:45:00Z
+Summary: Agent 1 submitted one finding for validation. The single candidate process, backgroundTaskHost.exe (PID 3396), presents no corroborating malicious indicators beyond an orphaned parent PID — a well-documented benign artefact for this process class. The command line, binary path, loaded DLLs, and privilege activation state are all consistent with a legitimate UWP background task invocation. No confirmed or inconclusive findings were produced.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTED SUMMARY (detail retained for Agent 3 audit trail)
+================================================================
+
+PID 3396 — backgroundTaskHost.exe
+  Rejection reason: The sole Agent 1 signal (orphaned parent PID 516) is a
+  known benign artefact for this process class. backgroundTaskHost.exe is
+  routinely spawned by transient COM/UWP broker svchost instances that exit
+  immediately after activation, leaving the child with a PPID that no longer
+  appears in pslist. Every other indicator is clean: the binary resides in
+  C:\WINDOWS\system32\, the -ServerName:App.AppX... argument is the standard
+  UWP COM surrogate activation pattern, all loaded DLLs originate from
+  System32, and of the 35 privileges present in the token only
+  SeChangeNotifyPrivilege and SeIncreaseWorkingSetPrivilege are actually
+  enabled — consistent with a SYSTEM-context token where the full privilege
+  set is present but not activated. No malfind hits, no network connections,
+  and no suspicious DLL paths were observed.
+================================================================

@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_003.txt
+Summary: cmd.exe instances with orphaned/unknown parents; cmd.exe executing a batch file from user Temp directory; short-lived cmd.exe/conhost.exe pair with unknown parent.
+
+[PROCESS]
+pid: 2380
+ppid: 4240
+image: cmd.exe
+cmdline: C:\WINDOWS\system32\cmd.exe /c ""C:\Users\kali\AppData\Local\Temp\EMwLtc9FBmME.bat" "
+severity: HIGH
+reasons: orphaned_process: parent PID 4240 not present anywhere in the process list | path: batch file executed from user-writable Temp directory — C:\Users\kali\AppData\Local\Temp\EMwLtc9FBmME.bat | random_name: batch file name 'EMwLtc9FBmME.bat' is hex/random-looking, consistent with dropped payload
+
+[PROCESS]
+pid: 2388
+ppid: 6956
+image: cmd.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_process: parent PID 6956 not present anywhere in the process list | short_lived: process started 2026-05-13 19:26:14 and exited 2026-05-13 19:26:23 (~9 seconds), paired with orphaned parent signal
+
+[PROCESS]
+pid: 4812
+ppid: 2388
+image: conhost.exe
+cmdline: 
+severity: LOW
+reasons: short_lived: exited within ~9 seconds alongside suspicious orphaned parent cmd.exe PID 2388 | ancestry: child of suspicious short-lived orphaned cmd.exe (PID 2388)
+

@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_014.txt
+Summary: userinit.exe has an unknown/missing parent PID; OneDrive.exe loads from AppData user-writable path.
+
+[PROCESS]
+pid: 4948
+ppid: 824
+image: userinit.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 824 is listed as 'unknown' and does not appear anywhere in the process list | missing_cmdline: no command-line recorded for userinit.exe | short_lived: process exited ~45 seconds after creation (19:15:43 to 19:16:28), which is normal for userinit but warrants confirmation given unknown parent
+
+[PROCESS]
+pid: 7996
+ppid: 4968
+image: OneDrive.exe
+cmdline: "C:\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe" /background
+severity: LOW
+reasons: path: executable resides in user-writable AppData directory (C:\Users\kali\AppData\Local\Microsoft\OneDrive\OneDrive.exe) — legitimate OneDrive install location but warrants confirmation that binary hash matches Microsoft-signed OneDrive | dll_path: primary image DLL loaded from AppData user-writable path
+

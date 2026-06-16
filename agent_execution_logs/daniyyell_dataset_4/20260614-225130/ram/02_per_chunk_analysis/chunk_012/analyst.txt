@@ -1,0 +1,41 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5292 — svchost.exe (ppid=716)**
+
+Agent 1's sole flag: orphaned parent (PPID 716 not in process list; expected parent is services.exe).
+
+Let me evaluate each lens:
+
+1. **Command-line plausibility**: `C:\Windows\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService` — this is a completely legitimate, well-known Windows service host invocation. `WpnUserService` (Windows Push Notifications User Service) is a standard per-user service that runs under `UnistackSvcGroup`. The path is canonical System32. No anomaly here.
+
+2. **DLL provenance**: The three DLL lines shown are `svchost.exe` from `C:\Windows\system32\`, `ntdll.dll` from `C:\Windows\SYSTEM32\`, and `KERNEL32.DLL` from `C:\Windows\System32\`. All canonical system paths. No user-writable paths, no random-named DLLs.
+
+3. **Privilege footprint**: The privilege list is the full standard token — nearly all privileges are *not* enabled (no `Present` or `Enabled` flag). Only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege`, `SeUndockPrivilege`, `SeCreateGlobalPrivilege`, `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are Present/Enabled/Default. This is entirely consistent with a standard user-context svchost running a per-user service. The presence of the full privilege list in the token (but not enabled) is normal for Windows tokens — they carry the full set but most are disabled.
+
+4. **Orphaned parent**: PPID 716 is listed as 'unknown'. This is a well-known benign artefact in memory forensics. Per-user services (like `WpnUserService`) are spawned by `svchost.exe -k netsvcs` or `services.exe` early in the session, and by the time of the memory capture, the parent process may have exited or the PPID may refer to a recycled PID. This is extremely common for per-user service instances and is not a reliable indicator of malice on its own.
+
+5. **No malfind, no netscan, no registry persistence, no handles evidence** — nothing else corroborating.
+
+**Verdict: REJECTED.** The orphaned parent is a known benign artefact for per-user service instances. The cmdline, DLL set, and privilege footprint are all consistent with a legitimate Windows component. No corroborating evidence of malice.
+
+---
+
+Now writing the report. Since there is only one finding and it is REJECTED, the body will have no CONFIRMED or INCONCLUSIVE blocks — only the header summary and counts.
+
+---
+
+================================================================
+PIVOT REPORT
+Generated: 2025-08-08T00:00:00Z
+Summary: Only one process was submitted for validation. PID 5292 (svchost.exe hosting WpnUserService) was flagged solely on an orphaned-parent heuristic; all other available evidence — canonical System32 path, standard DLL set, expected privilege posture for a per-user service — is consistent with legitimate Windows behaviour. No confirmed or inconclusive malicious activity was identified in this submission.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+--- REJECTED FINDINGS (count: 1) ---
+PID 5292 (svchost.exe) was rejected. The sole Agent 1 signal was an orphaned parent (PPID 716 absent from the process list). This is a well-documented benign artefact for per-user service instances on Windows: the parent svchost or services.exe that spawned the per-user service may have exited or had its PID recycled by the time of the memory capture. The command line (`svchost.exe -k UnistackSvcGroup -s WpnUserService`) is a canonical invocation of the Windows Push Notifications User Service. All three DLL entries visible in dlllist are from canonical System32 paths. The privilege token carries the standard full-set-but-mostly-disabled pattern normal for user-context service hosts. No malfind sections, no suspicious network connections, no registry persistence, and no anomalous handles were present in the evidence block. No corroborating signal supports malice.
+
+================================================================

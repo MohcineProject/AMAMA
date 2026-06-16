@@ -1,0 +1,423 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:53:08Z
+
+=== PID 6844 (SearchHost.exe, ppid=576) ===
+Cmdline: "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe" -ServerName:CortanaUI.AppXstmwaab17q5s3y22tp6apqz7a45vwv65.mca
+
+--- pslist.txt ---
+L96: 6844	576	SearchHost.exe	0xcd8a12875080	17	-	1	False	2026-05-12 18:23:41.000000 UTC	N/A	Disabled
+L101: 7236	6844	msedgewebview2	0xcd8a12d7b080	50	-	1	False	2026-05-12 18:23:45.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L96: 6844	SearchHost.exe	"C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe" -ServerName:CortanaUI.AppXstmwaab17q5s3y22tp6apqz7a45vwv65.mca
+L101: 7236	msedgewebview2	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\145.0.3800.97\msedgewebview2.exe" --embedded-browser-webview=1 --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 145.0.3800.97)" --lang=en-US --mojo-named-platform-channel-pipe=6844.7216.1864550553894357041 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4
+
+--- privileges.txt ---
+L3190: 6844	SearchHost.exe	2	SeCreateTokenPrivilege		Create a token object
+L3191: 6844	SearchHost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3192: 6844	SearchHost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3193: 6844	SearchHost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3194: 6844	SearchHost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3195: 6844	SearchHost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3196: 6844	SearchHost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L3197: 6844	SearchHost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3198: 6844	SearchHost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3199: 6844	SearchHost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L3200: 6844	SearchHost.exe	12	SeSystemtimePrivilege		Change the system time
+L3201: 6844	SearchHost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3202: 6844	SearchHost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3203: 6844	SearchHost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L3204: 6844	SearchHost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3205: 6844	SearchHost.exe	17	SeBackupPrivilege		Backup files and directories
+L3206: 6844	SearchHost.exe	18	SeRestorePrivilege		Restore files and directories
+L3207: 6844	SearchHost.exe	19	SeShutdownPrivilege		Shut down the system
+L3208: 6844	SearchHost.exe	20	SeDebugPrivilege		Debug programs
+L3209: 6844	SearchHost.exe	21	SeAuditPrivilege		Generate security audits
+L3210: 6844	SearchHost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3211: 6844	SearchHost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3212: 6844	SearchHost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3213: 6844	SearchHost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L3214: 6844	SearchHost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3215: 6844	SearchHost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3216: 6844	SearchHost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L3217: 6844	SearchHost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3218: 6844	SearchHost.exe	30	SeCreateGlobalPrivilege		Create global objects
+L3219: 6844	SearchHost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3220: 6844	SearchHost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3221: 6844	SearchHost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3222: 6844	SearchHost.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L3223: 6844	SearchHost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3224: 6844	SearchHost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L4242: 6844	SearchHost.exe	0x7ff6b8cf0000	0x11000	SearchHost.exe	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4243: 6844	SearchHost.exe	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4244: 6844	SearchHost.exe	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4245: 6844	SearchHost.exe	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4246: 6844	SearchHost.exe	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4247: 6844	SearchHost.exe	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4248: 6844	SearchHost.exe	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4249: 6844	SearchHost.exe	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4250: 6844	SearchHost.exe	0x7fffcc5b0000	0xc000	VCRUNTIME140_1_APP.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\VCRUNTIME140_1_APP.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4251: 6844	SearchHost.exe	0x7fffc42d0000	0x52000	vccorlib140_app.DLL	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\vccorlib140_app.DLL	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4252: 6844	SearchHost.exe	0x7fffcc4e0000	0x1d000	VCRUNTIME140_APP.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\VCRUNTIME140_APP.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4253: 6844	SearchHost.exe	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4254: 6844	SearchHost.exe	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4255: 6844	SearchHost.exe	0x7fffc9050000	0x8c000	MSVCP140_APP.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\MSVCP140_APP.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4256: 6844	SearchHost.exe	0x7fffde480000	0x244000	twinapi.appcore.dll	C:\WINDOWS\SYSTEM32\twinapi.appcore.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4257: 6844	SearchHost.exe	0x7fffe5a00000	0xa5000	bcryptprimitives.dll	C:\WINDOWS\System32\bcryptprimitives.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4258: 6844	SearchHost.exe	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4259: 6844	SearchHost.exe	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4260: 6844	SearchHost.exe	0x7fffda840000	0x1107000	Windows.UI.Xaml.dll	C:\Windows\System32\Windows.UI.Xaml.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4261: 6844	SearchHost.exe	0x7fffd7500000	0x2c4000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4262: 6844	SearchHost.exe	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4263: 6844	SearchHost.exe	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4264: 6844	SearchHost.exe	0x7fffd74a0000	0x29000	srvcli.dll	C:\WINDOWS\SYSTEM32\srvcli.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4265: 6844	SearchHost.exe	0x7fffe40b0000	0xd000	netutils.dll	C:\WINDOWS\SYSTEM32\netutils.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4266: 6844	SearchHost.exe	0x7fffe5cf0000	0x16a000	WinTypes.dll	C:\WINDOWS\System32\WinTypes.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4267: 6844	SearchHost.exe	0x7fffdbf00000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4268: 6844	SearchHost.exe	0x7fffe7e80000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4269: 6844	SearchHost.exe	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4270: 6844	SearchHost.exe	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4271: 6844	SearchHost.exe	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4272: 6844	SearchHost.exe	0x7fffe6ec0000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4273: 6844	SearchHost.exe	0x7fffdb9e0000	0x156000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4274: 6844	SearchHost.exe	0x7fffe2e80000	0x127000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4275: 6844	SearchHost.exe	0x7fffdde20000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4276: 6844	SearchHost.exe	0x7fffe34c0000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4277: 6844	SearchHost.exe	0x7fffd77d0000	0x1dd000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4278: 6844	SearchHost.exe	0x7fffe5f20000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4279: 6844	SearchHost.exe	0x7fffe6f10000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4280: 6844	SearchHost.exe	0x7fffe3610000	0x13e000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4281: 6844	SearchHost.exe	0x7fffe5880000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4282: 6844	SearchHost.exe	0x7fffe5860000	0x14000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4283: 6844	SearchHost.exe	0x7fffd0470000	0x647000	windowsudk.shellcommon.dll	C:\WINDOWS\system32\windowsudk.shellcommon.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4284: 6844	SearchHost.exe	0x7fffe4db0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4285: 6844	SearchHost.exe	0x7fffe35c0000	0x43000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4286: 6844	SearchHost.exe	0x7fffe03f0000	0x60000	directxdatabasehelper.dll	C:\WINDOWS\SYSTEM32\directxdatabasehelper.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4287: 6844	SearchHost.exe	0x7fffe5540000	0x57000	cfgmgr32.dll	C:\WINDOWS\SYSTEM32\cfgmgr32.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4288: 6844	SearchHost.exe	0x7fffda3a0000	0x47000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4289: 6844	SearchHost.exe	0x7fffe25a0000	0x263000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4290: 6844	SearchHost.exe	0x7fffdf190000	0x5aa000	d3d10warp.dll	C:\WINDOWS\SYSTEM32\d3d10warp.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4291: 6844	SearchHost.exe	0x7fffe1cf0000	0x63a000	d2d1.dll	C:\WINDOWS\SYSTEM32\d2d1.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4292: 6844	SearchHost.exe	0x7fffe2330000	0x267000	dwrite.dll	C:\WINDOWS\SYSTEM32\dwrite.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4293: 6844	SearchHost.exe	0x7fffd6d30000	0xb3000	TextShaping.dll	C:\WINDOWS\SYSTEM32\TextShaping.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4294: 6844	SearchHost.exe	0x7fffdeff0000	0x16a000	appxdeploymentclient.dll	C:\WINDOWS\SYSTEM32\appxdeploymentclient.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4295: 6844	SearchHost.exe	0x7fffe8060000	0x20000	imagehlp.dll	C:\WINDOWS\System32\imagehlp.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4296: 6844	SearchHost.exe	0x7fffc27f0000	0xb8c000	SearchUx.UI.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.UI.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4297: 6844	SearchHost.exe	0x7fffca700000	0x420000	uiautomationcore.dll	C:\WINDOWS\SYSTEM32\uiautomationcore.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4298: 6844	SearchHost.exe	0x7fffe3780000	0x2e000	dwmapi.dll	C:\WINDOWS\SYSTEM32\dwmapi.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4299: 6844	SearchHost.exe	0x7fffc1fa0000	0x84a000	SearchUx.InternalWebApi.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.InternalWebApi.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4300: 6844	SearchHost.exe	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4301: 6844	SearchHost.exe	0x7fffe4a30000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4302: 6844	SearchHost.exe	0x7fffd9600000	0x2a000	Cabinet.dll	C:\WINDOWS\SYSTEM32\Cabinet.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4303: 6844	SearchHost.exe	0x7fffd87f0000	0x14f000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4304: 6844	SearchHost.exe	0x7fffc1ee0000	0xb1000	SearchUx.Core.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.Core.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4305: 6844	SearchHost.exe	0x7fffe03a0000	0x43000	XmlLite.dll	C:\WINDOWS\SYSTEM32\XmlLite.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4306: 6844	SearchHost.exe	0x7fffc1e70000	0x65000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4307: 6844	SearchHost.exe	0x7fffdbc80000	0x114000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4308: 6844	SearchHost.exe	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	-1	2026-05-12 18:23:42.000000 UTC	Disabled
+L4309: 6844	SearchHost.exe	0x7fffe4120000	0x30000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4310: 6844	SearchHost.exe	0x7fffe5920000	0x29000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4311: 6844	SearchHost.exe	0x7fffdb950000	0x34000	bcp47mrm.dll	C:\WINDOWS\SYSTEM32\bcp47mrm.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4312: 6844	SearchHost.exe	0x7fffe8120000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4313: 6844	SearchHost.exe	0x7fffc3cd0000	0x153000	Windows.Web.Http.dll	C:\Windows\System32\Windows.Web.Http.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4314: 6844	SearchHost.exe	0x7fffde870000	0x60000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4315: 6844	SearchHost.exe	0x7fffe3ec0000	0x2d000	slc.dll	C:\WINDOWS\SYSTEM32\slc.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4316: 6844	SearchHost.exe	0x7fffe1550000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4317: 6844	SearchHost.exe	0x7fffd6630000	0x18f000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4318: 6844	SearchHost.exe	0x7fffdbf20000	0x5e000	Bcp47Langs.dll	C:\WINDOWS\SYSTEM32\Bcp47Langs.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4319: 6844	SearchHost.exe	0x7fffe0bd0000	0x17000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4320: 6844	SearchHost.exe	0x7fffd91b0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4321: 6844	SearchHost.exe	0x7fffd5040000	0x9c000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4322: 6844	SearchHost.exe	0x7fffd9520000	0xd6000	Windows.ApplicationModel.dll	C:\Windows\System32\Windows.ApplicationModel.dll	6	2026-05-12 18:23:42.000000 UTC	Disabled
+L4323: 6844	SearchHost.exe	0x7fffc3a50000	0x143000	ShellCommonCommonProxyStub.dll	C:\Windows\System32\ShellCommonCommonProxyStub.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4324: 6844	SearchHost.exe	0x7fffc3850000	0x39000	rometadata.dll	C:\WINDOWS\SYSTEM32\rometadata.dll	-1	2026-05-12 18:23:43.000000 UTC	Disabled
+L4325: 6844	SearchHost.exe	0x7fffca510000	0x32000	Windows.Management.Workplace.dll	C:\Windows\System32\Windows.Management.Workplace.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4326: 6844	SearchHost.exe	0x7fffe8d70000	0x15d000	msctf.dll	C:\WINDOWS\System32\msctf.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4327: 6844	SearchHost.exe	0x7fffdfe20000	0x2e2000	CoreUIComponents.dll	C:\WINDOWS\system32\CoreUIComponents.dll	-1	2026-05-12 18:23:43.000000 UTC	Disabled
+L4328: 6844	SearchHost.exe	0x7fffe39d0000	0x36000	RMCLIENT.dll	C:\WINDOWS\SYSTEM32\RMCLIENT.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4329: 6844	SearchHost.exe	0x7fffda5c0000	0x1e3000	InputHost.dll	C:\Windows\System32\InputHost.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4330: 6844	SearchHost.exe	0x7fffe5000000	0xc000	CRYPTBASE.DLL	C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4331: 6844	SearchHost.exe	0x7fffcc350000	0xdb000	UiaManager.dll	C:\Windows\System32\UiaManager.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4332: 6844	SearchHost.exe	0x7fffdf740000	0x1b6000	WindowManagementAPI.dll	C:\WINDOWS\SYSTEM32\WindowManagementAPI.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4333: 6844	SearchHost.exe	0x7fffd0250000	0x16f000	windows.ui.core.textinput.dll	C:\WINDOWS\SYSTEM32\windows.ui.core.textinput.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4334: 6844	SearchHost.exe	0x7fffda470000	0x148000	TextInputFramework.dll	C:\WINDOWS\SYSTEM32\TextInputFramework.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4335: 6844	SearchHost.exe	0x7fffc8ff0000	0x5a000	DataExchange.dll	C:\WINDOWS\system32\DataExchange.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4336: 6844	SearchHost.exe	0x7fffc9210000	0x594000	Microsoft.UI.Xaml.dll	C:\Windows\SystemApps\Microsoft.UI.Xaml.CBS_8wekyb3d8bbwe\Microsoft.UI.Xaml.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4337: 6844	SearchHost.exe	0x7fffd5d90000	0x329000	Windows.UI.Xaml.Controls.dll	C:\WINDOWS\SYSTEM32\Windows.UI.Xaml.Controls.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4338: 6844	SearchHost.exe	0x7fffe1040000	0x103000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4339: 6844	SearchHost.exe	0x7fffcf6b0000	0x16000	threadpoolwinrt.dll	C:\Windows\System32\threadpoolwinrt.dll	6	2026-05-12 18:23:43.000000 UTC	Disabled
+L4340: 6844	SearchHost.exe	0x7fffdd850000	0x94000	Windows.Graphics.dll	C:\Windows\System32\Windows.Graphics.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4341: 6844	SearchHost.exe	0x7fffd6e20000	0x29e000	icu.dll	C:\WINDOWS\SYSTEM32\icu.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4342: 6844	SearchHost.exe	0x7fffd70d0000	0xc0000	StructuredQuery.dll	C:\WINDOWS\System32\StructuredQuery.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4343: 6844	SearchHost.exe	0x7fffd51a0000	0x137000	windows.storage.search.dll	C:\WINDOWS\SYSTEM32\windows.storage.search.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4344: 6844	SearchHost.exe	0x7fffc12c0000	0xe4000	oledb32.dll	C:\Program Files\Common Files\System\Ole DB\oledb32.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4345: 6844	SearchHost.exe	0x7fffc1290000	0x2b000	MSDART.DLL	C:\WINDOWS\SYSTEM32\MSDART.DLL	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4346: 6844	SearchHost.exe	0x7fffc1db0000	0xb4000	Comctl32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.26100.8037_none_87ebc5097a2f9e52\Comctl32.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4347: 6844	SearchHost.exe	0x7fffc0f60000	0x327000	msftedit.dll	C:\WINDOWS\SYSTEM32\msftedit.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4348: 6844	SearchHost.exe	0x7fffd2800000	0x34000	globinputhost.dll	C:\WINDOWS\SYSTEM32\globinputhost.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4349: 6844	SearchHost.exe	0x7fffc0e40000	0xcb000	Microsoft.Web.WebView2.Core.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\Microsoft.Web.WebView2.Core.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4350: 6844	SearchHost.exe	0x7fffe2810000	0x220000	dcomp.dll	C:\Windows\System32\dcomp.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4351: 6844	SearchHost.exe	0x7fffe1cd0000	0x19000	Microsoft.Internal.WarpPal.dll	C:\WINDOWS\SYSTEM32\Microsoft.Internal.WarpPal.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4352: 6844	SearchHost.exe	0x7fffc7270000	0xd4000	twinapi.dll	C:\Windows\System32\twinapi.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4353: 6844	SearchHost.exe	0x7fffc0c80000	0x199000	SearchUx.Model.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.Model.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4354: 6844	SearchHost.exe	0x7fffda2f0000	0xa3000	directmanipulation.dll	C:\WINDOWS\system32\directmanipulation.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4355: 6844	SearchHost.exe	0x7fffc38b0000	0x58000	biwinrt.dll	C:\Windows\System32\biwinrt.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4356: 6844	SearchHost.exe	0x7fffc9a50000	0x54c000	StartTileData.dll	C:\Windows\System32\StartTileData.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4357: 6844	SearchHost.exe	0x7fffce830000	0x87000	MDMRegistration.DLL	C:\WINDOWS\SYSTEM32\MDMRegistration.DLL	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4358: 6844	SearchHost.exe	0x7fffc0af0000	0x18a000	Windows.UI.Input.Inking.dll	C:\Windows\System32\Windows.UI.Input.Inking.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4359: 6844	SearchHost.exe	0x7fffc0a90000	0x54000	wuceffects.dll	C:\WINDOWS\SYSTEM32\wuceffects.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4360: 6844	SearchHost.exe	0x7fffce3f0000	0x2d1000	Windows.CloudStore.dll	C:\Windows\System32\Windows.CloudStore.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+L4361: 6844	SearchHost.exe	0x7fffbff60000	0x70000	WebView2Standalone.dll	C:\Windows\SystemApps\Shared\WebView2SDK\WebView2Standalone.dll	6	2026-05-12 18:23:44.000000 UTC	Disabled
+
+--- pstree.txt ---
+L40: *** 6844	576	SearchHost.exe	0xcd8a12875080	17	-	1	False	2026-05-12 18:23:41.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe	"C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe" -ServerName:CortanaUI.AppXstmwaab17q5s3y22tp6apqz7a45vwv65.mca	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe
+L41: **** 7236	6844	msedgewebview2	0xcd8a12d7b080	50	-	1	False	2026-05-12 18:23:45.000000 UTC	N/A	\Device\HarddiskVolume4\Program Files (x86)\Microsoft\EdgeWebView\Application\145.0.3800.97\msedgewebview2.exe	"C:\Program Files (x86)\Microsoft\EdgeWebView\Application\145.0.3800.97\msedgewebview2.exe" --embedded-browser-webview=1 --webview-exe-name=SearchHost.exe --webview-exe-version=2126.2002.40.0 --user-data-dir="C:\Users\kali\AppData\Local\Packages\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\LocalState\EBWebView" --noerrdialogs --disable-features=msSmartScreenProtection --edge-webview-enable-mojo-ipcz --enable-features=msEdgeFluentOverlayScrollbar --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8037) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200 IsWebView2/True (WebView2Version 145.0.3800.97)" --lang=en-US --mojo-named-platform-channel-pipe=6844.7216.1864550553894357041 /pfhostedapp:52cc498a3431cecdc51630cad9a624337951c2c4	C:\Program Files (x86)\Microsoft\EdgeWebView\Application\145.0.3800.97\msedgewebview2.exe
+
+--- psscan.txt ---
+L142: 6844	576	SearchHost.exe	0xcd8a12875080	17	-	1	False	2026-05-12 18:23:41.000000 UTC	N/A	Disabled
+L153: 7236	6844	msedgewebview2	0xcd8a12d7b080	50	-	1	False	2026-05-12 18:23:45.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L4419: 6844	SearchHost.exe	0x18e28a60000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
+L4420: 6844	SearchHost.exe	0x18e27100000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L4421: 6844	SearchHost.exe	0x18e28990000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.21h1.dll
+L4422: 6844	SearchHost.exe	0x18e28aa0000	False	False	False	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\Cortana.Settings.winmd
+L4423: 6844	SearchHost.exe	0x18e28a90000	False	False	False	\Windows\System32\en-US\combase.dll.mui
+L4424: 6844	SearchHost.exe	0x18e28dd0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L4425: 6844	SearchHost.exe	0x18e28fe0000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L4426: 6844	SearchHost.exe	0x18e28f10000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L4427: 6844	SearchHost.exe	0x18e2a5c0000	False	False	False	\Program Files\Common Files\System\Ole DB\oledb32r.dll
+L4428: 6844	SearchHost.exe	0x18e2a140000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L4429: 6844	SearchHost.exe	0x18e2a000000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L4430: 6844	SearchHost.exe	0x18e2a5f0000	False	False	False	\Windows\System32\en-US\netmsg.dll.mui
+L4431: 6844	SearchHost.exe	0x18e2a5e0000	False	False	False	\Windows\System32\netmsg.dll
+L4432: 6844	SearchHost.exe	0x18e2aa80000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L4433: 6844	SearchHost.exe	0x18e2a9c0000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L4434: 6844	SearchHost.exe	0x18e2aab0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.Common.dll
+L4435: 6844	SearchHost.exe	0x7fffde480000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L4436: 6844	SearchHost.exe	0x7fffcc5b0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\vcruntime140_1_app.dll
+L4437: 6844	SearchHost.exe	0x7fffc1e70000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L4438: 6844	SearchHost.exe	0x7ff6b8cf0000	True	False	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe
+L4439: 6844	SearchHost.exe	0x7fffc0f60000	True	True	True	\Windows\System32\msftedit.dll
+L4440: 6844	SearchHost.exe	0x7fffc0a90000	True	True	True	\Windows\System32\wuceffects.dll
+L4441: 6844	SearchHost.exe	0x7fffbf880000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\145.0.3800.97\EBWebView\x64\EmbeddedBrowserWebView.dll
+L4442: 6844	SearchHost.exe	0x7fffab2c0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\wv2winrt.dll
+L4443: 6844	SearchHost.exe	0x7fffbff60000	True	True	True	\Windows\SystemApps\Shared\WebView2SDK\webview2standalone.dll
+L4444: 6844	SearchHost.exe	0x7fffc0c80000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.Model.dll
+L4445: 6844	SearchHost.exe	0x7fffc0af0000	True	True	True	\Windows\System32\Windows.UI.Input.Inking.dll
+L4446: 6844	SearchHost.exe	0x7fffc0e40000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\Microsoft.Web.WebView2.Core.dll
+L4447: 6844	SearchHost.exe	0x7fffc12c0000	True	True	True	\Program Files\Common Files\System\Ole DB\oledb32.dll
+L4448: 6844	SearchHost.exe	0x7fffc1290000	True	True	True	\Windows\System32\msdart.dll
+L4449: 6844	SearchHost.exe	0x7fffc1db0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.26100.8037_none_87ebc5097a2f9e52\comctl32.dll
+L4450: 6844	SearchHost.exe	0x7fffc1c60000	True	True	True	\Windows\System32\CryptoWinRT.dll
+L4451: 6844	SearchHost.exe	0x7fffc9050000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\msvcp140_app.dll
+L4452: 6844	SearchHost.exe	0x7fffc3cd0000	True	True	True	\Windows\System32\Windows.Web.Http.dll
+L4453: 6844	SearchHost.exe	0x7fffc27f0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.UI.dll
+L4454: 6844	SearchHost.exe	0x7fffc1ee0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.Core.dll
+L4455: 6844	SearchHost.exe	0x7fffc1fa0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.InternalWebApi.dll
+L4456: 6844	SearchHost.exe	0x7fffc38b0000	True	True	True	\Windows\System32\biwinrt.dll
+L4457: 6844	SearchHost.exe	0x7fffc3850000	True	True	True	\Windows\System32\rometadata.dll
+L4458: 6844	SearchHost.exe	0x7fffc3a50000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L4459: 6844	SearchHost.exe	0x7fffc7270000	True	True	True	\Windows\System32\twinapi.dll
+L4460: 6844	SearchHost.exe	0x7fffc42d0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\vccorlib140_app.dll
+L4461: 6844	SearchHost.exe	0x7fffc8ff0000	True	True	True	\Windows\System32\DataExchange.dll
+L4462: 6844	SearchHost.exe	0x7fffca700000	True	True	True	\Windows\System32\UIAutomationCore.dll
+L4463: 6844	SearchHost.exe	0x7fffc9a50000	True	True	True	\Windows\System32\StartTileData.dll
+L4464: 6844	SearchHost.exe	0x7fffc9210000	True	True	True	\Windows\SystemApps\Microsoft.UI.Xaml.CBS_8wekyb3d8bbwe\Microsoft.UI.Xaml.dll
+L4465: 6844	SearchHost.exe	0x7fffca510000	True	True	True	\Windows\System32\Windows.Management.Workplace.dll
+L4466: 6844	SearchHost.exe	0x7fffcbed0000	True	True	True	\Windows\System32\AppResolver.dll
+L4467: 6844	SearchHost.exe	0x7fffcb7a0000	True	True	True	\Windows\System32\tquery.dll
+L4468: 6844	SearchHost.exe	0x7fffcb6b0000	True	True	True	\Windows\System32\SearchIndexerCore.dll
+L4469: 6844	SearchHost.exe	0x7fffcc350000	True	True	True	\Windows\System32\UiaManager.dll
+L4470: 6844	SearchHost.exe	0x7fffcc2b0000	True	True	True	\Windows\System32\TileDataRepository.dll
+L4471: 6844	SearchHost.exe	0x7fffcc4e0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\vcruntime140_app.dll
+L4472: 6844	SearchHost.exe	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L4473: 6844	SearchHost.exe	0x7fffd5040000	True	True	True	\Windows\System32\Windows.Web.dll
+L4474: 6844	SearchHost.exe	0x7fffcf6b0000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L4475: 6844	SearchHost.exe	0x7fffce3f0000	True	True	True	\Windows\System32\Windows.CloudStore.dll
+L4476: 6844	SearchHost.exe	0x7fffcc600000	True	True	True	\Windows\System32\capauthz.dll
+L4477: 6844	SearchHost.exe	0x7fffce7f0000	True	True	True	\Windows\System32\omadmapi.dll
+L4478: 6844	SearchHost.exe	0x7fffce750000	True	True	True	\Windows\System32\msvcp110_win.dll
+L4479: 6844	SearchHost.exe	0x7fffce830000	True	True	True	\Windows\System32\mdmregistration.dll
+L4480: 6844	SearchHost.exe	0x7fffd0470000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L4481: 6844	SearchHost.exe	0x7fffd0250000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L4482: 6844	SearchHost.exe	0x7fffd0090000	True	True	True	\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll
+L4483: 6844	SearchHost.exe	0x7fffd2800000	True	True	True	\Windows\System32\globinputhost.dll
+L4484: 6844	SearchHost.exe	0x7fffd6d30000	True	True	True	\Windows\System32\TextShaping.dll
+L4485: 6844	SearchHost.exe	0x7fffd5d90000	True	True	True	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L4486: 6844	SearchHost.exe	0x7fffd51a0000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L4487: 6844	SearchHost.exe	0x7fffd6630000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L4488: 6844	SearchHost.exe	0x7fffd70d0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L4489: 6844	SearchHost.exe	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L4490: 6844	SearchHost.exe	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L4491: 6844	SearchHost.exe	0x7fffda3a0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L4492: 6844	SearchHost.exe	0x7fffd91b0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L4493: 6844	SearchHost.exe	0x7fffd87f0000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L4494: 6844	SearchHost.exe	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L4495: 6844	SearchHost.exe	0x7fffd7ca0000	True	True	True	\Windows\System32\SystemSettings.DataModel.dll
+L4496: 6844	SearchHost.exe	0x7fffd8e00000	True	True	True	\Windows\System32\version.dll
+L4497: 6844	SearchHost.exe	0x7fffd9600000	True	True	True	\Windows\System32\cabinet.dll
+L4498: 6844	SearchHost.exe	0x7fffd9520000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L4499: 6844	SearchHost.exe	0x7fffda1c0000	True	True	True	\Windows\System32\edputil.dll
+L4500: 6844	SearchHost.exe	0x7fffda0a0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L4501: 6844	SearchHost.exe	0x7fffda2f0000	True	True	True	\Windows\System32\directmanipulation.dll
+L4502: 6844	SearchHost.exe	0x7fffdb9e0000	True	True	True	\Windows\System32\Windows.UI.dll
+L4503: 6844	SearchHost.exe	0x7fffda840000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L4504: 6844	SearchHost.exe	0x7fffda5c0000	True	True	True	\Windows\System32\InputHost.dll
+L4505: 6844	SearchHost.exe	0x7fffda470000	True	True	True	\Windows\System32\TextInputFramework.dll
+L4506: 6844	SearchHost.exe	0x7fffdb950000	True	True	True	\Windows\System32\BCP47mrm.dll
+L4507: 6844	SearchHost.exe	0x7fffdbf20000	True	True	True	\Windows\System32\BCP47Langs.dll
+L4508: 6844	SearchHost.exe	0x7fffdbf00000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L4509: 6844	SearchHost.exe	0x7fffdbc80000	True	True	True	\Windows\System32\MrmCoreR.dll
+L4510: 6844	SearchHost.exe	0x7fffdd850000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L4511: 6844	SearchHost.exe	0x7fffdbf90000	True	True	True	\Windows\System32\StateRepository.Core.dll
+L4512: 6844	SearchHost.exe	0x7fffdc0c0000	True	True	True	\Windows\System32\Windows.StateRepository.dll
+L4513: 6844	SearchHost.exe	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L4514: 6844	SearchHost.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L4515: 6844	SearchHost.exe	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L4516: 6844	SearchHost.exe	0x7fffe1cf0000	True	True	True	\Windows\System32\d2d1.dll
+L4517: 6844	SearchHost.exe	0x7fffe03f0000	True	True	True	\Windows\System32\directxdatabasehelper.dll
+L4518: 6844	SearchHost.exe	0x7fffdf190000	True	True	True	\Windows\System32\d3d10warp.dll
+L4519: 6844	SearchHost.exe	0x7fffdeff0000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L4520: 6844	SearchHost.exe	0x7fffde870000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L4521: 6844	SearchHost.exe	0x7fffdfe20000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L4522: 6844	SearchHost.exe	0x7fffdf740000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L4523: 6844	SearchHost.exe	0x7fffe03a0000	True	True	True	\Windows\System32\xmllite.dll
+L4524: 6844	SearchHost.exe	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L4525: 6844	SearchHost.exe	0x7fffe0bd0000	True	True	True	\Windows\System32\usermgrcli.dll
+L4526: 6844	SearchHost.exe	0x7fffe1550000	True	True	True	\Windows\System32\policymanager.dll
+L4527: 6844	SearchHost.exe	0x7fffe1cd0000	True	True	True	\Windows\System32\Microsoft.Internal.WarpPal.dll
+L4528: 6844	SearchHost.exe	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L4529: 6844	SearchHost.exe	0x7fffe25a0000	True	True	True	\Windows\System32\d3d11.dll
+L4530: 6844	SearchHost.exe	0x7fffe2330000	True	True	True	\Windows\System32\DWrite.dll
+L4531: 6844	SearchHost.exe	0x7fffe2e80000	True	True	True	\Windows\System32\CoreMessaging.dll
+L4532: 6844	SearchHost.exe	0x7fffe2810000	True	True	True	\Windows\System32\dcomp.dll
+L4533: 6844	SearchHost.exe	0x7fffe3260000	True	True	True	\Windows\System32\apphelp.dll
+L4534: 6844	SearchHost.exe	0x7fffe3610000	True	True	True	\Windows\System32\dxgi.dll
+L4535: 6844	SearchHost.exe	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+L4536: 6844	SearchHost.exe	0x7fffe39d0000	True	True	True	\Windows\System32\rmclient.dll
+L4537: 6844	SearchHost.exe	0x7fffe3780000	True	True	True	\Windows\System32\dwmapi.dll
+L4538: 6844	SearchHost.exe	0x7fffe3ec0000	True	True	True	\Windows\System32\slc.dll
+
+--- malware_ldrmodules.txt ---
+L4419: 6844	SearchHost.exe	0x18e28a60000	False	False	False	\Windows\System32\en-US\Windows.Web.dll.mui
+L4420: 6844	SearchHost.exe	0x18e27100000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L4421: 6844	SearchHost.exe	0x18e28990000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.21h1.dll
+L4422: 6844	SearchHost.exe	0x18e28aa0000	False	False	False	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\Cortana.Settings.winmd
+L4423: 6844	SearchHost.exe	0x18e28a90000	False	False	False	\Windows\System32\en-US\combase.dll.mui
+L4424: 6844	SearchHost.exe	0x18e28dd0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Phone.dll
+L4425: 6844	SearchHost.exe	0x18e28fe0000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L4426: 6844	SearchHost.exe	0x18e28f10000	False	False	False	\Windows\System32\Windows.UI.Xaml.InkControls.dll
+L4427: 6844	SearchHost.exe	0x18e2a5c0000	False	False	False	\Program Files\Common Files\System\Ole DB\oledb32r.dll
+L4428: 6844	SearchHost.exe	0x18e2a140000	False	False	False	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L4429: 6844	SearchHost.exe	0x18e2a000000	False	False	False	\Windows\System32\Windows.UI.Xaml.Maps.dll
+L4430: 6844	SearchHost.exe	0x18e2a5f0000	False	False	False	\Windows\System32\en-US\netmsg.dll.mui
+L4431: 6844	SearchHost.exe	0x18e2a5e0000	False	False	False	\Windows\System32\netmsg.dll
+L4432: 6844	SearchHost.exe	0x18e2aa80000	False	False	False	\Windows\System32\WinMetadata\Windows.Foundation.winmd
+L4433: 6844	SearchHost.exe	0x18e2a9c0000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L4434: 6844	SearchHost.exe	0x18e2aab0000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.Common.dll
+L4435: 6844	SearchHost.exe	0x7fffde480000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L4436: 6844	SearchHost.exe	0x7fffcc5b0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\vcruntime140_1_app.dll
+L4437: 6844	SearchHost.exe	0x7fffc1e70000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L4438: 6844	SearchHost.exe	0x7ff6b8cf0000	True	False	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchHost.exe
+L4439: 6844	SearchHost.exe	0x7fffc0f60000	True	True	True	\Windows\System32\msftedit.dll
+L4440: 6844	SearchHost.exe	0x7fffc0a90000	True	True	True	\Windows\System32\wuceffects.dll
+L4441: 6844	SearchHost.exe	0x7fffbf880000	True	True	True	\Program Files (x86)\Microsoft\EdgeWebView\Application\145.0.3800.97\EBWebView\x64\EmbeddedBrowserWebView.dll
+L4442: 6844	SearchHost.exe	0x7fffab2c0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\wv2winrt.dll
+L4443: 6844	SearchHost.exe	0x7fffbff60000	True	True	True	\Windows\SystemApps\Shared\WebView2SDK\webview2standalone.dll
+L4444: 6844	SearchHost.exe	0x7fffc0c80000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.Model.dll
+L4445: 6844	SearchHost.exe	0x7fffc0af0000	True	True	True	\Windows\System32\Windows.UI.Input.Inking.dll
+L4446: 6844	SearchHost.exe	0x7fffc0e40000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\Microsoft.Web.WebView2.Core.dll
+L4447: 6844	SearchHost.exe	0x7fffc12c0000	True	True	True	\Program Files\Common Files\System\Ole DB\oledb32.dll
+L4448: 6844	SearchHost.exe	0x7fffc1290000	True	True	True	\Windows\System32\msdart.dll
+L4449: 6844	SearchHost.exe	0x7fffc1db0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.26100.8037_none_87ebc5097a2f9e52\comctl32.dll
+L4450: 6844	SearchHost.exe	0x7fffc1c60000	True	True	True	\Windows\System32\CryptoWinRT.dll
+L4451: 6844	SearchHost.exe	0x7fffc9050000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\msvcp140_app.dll
+L4452: 6844	SearchHost.exe	0x7fffc3cd0000	True	True	True	\Windows\System32\Windows.Web.Http.dll
+L4453: 6844	SearchHost.exe	0x7fffc27f0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.UI.dll
+L4454: 6844	SearchHost.exe	0x7fffc1ee0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.Core.dll
+L4455: 6844	SearchHost.exe	0x7fffc1fa0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\SearchUx.InternalWebApi.dll
+L4456: 6844	SearchHost.exe	0x7fffc38b0000	True	True	True	\Windows\System32\biwinrt.dll
+L4457: 6844	SearchHost.exe	0x7fffc3850000	True	True	True	\Windows\System32\rometadata.dll
+L4458: 6844	SearchHost.exe	0x7fffc3a50000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L4459: 6844	SearchHost.exe	0x7fffc7270000	True	True	True	\Windows\System32\twinapi.dll
+L4460: 6844	SearchHost.exe	0x7fffc42d0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\vccorlib140_app.dll
+L4461: 6844	SearchHost.exe	0x7fffc8ff0000	True	True	True	\Windows\System32\DataExchange.dll
+L4462: 6844	SearchHost.exe	0x7fffca700000	True	True	True	\Windows\System32\UIAutomationCore.dll
+L4463: 6844	SearchHost.exe	0x7fffc9a50000	True	True	True	\Windows\System32\StartTileData.dll
+L4464: 6844	SearchHost.exe	0x7fffc9210000	True	True	True	\Windows\SystemApps\Microsoft.UI.Xaml.CBS_8wekyb3d8bbwe\Microsoft.UI.Xaml.dll
+L4465: 6844	SearchHost.exe	0x7fffca510000	True	True	True	\Windows\System32\Windows.Management.Workplace.dll
+L4466: 6844	SearchHost.exe	0x7fffcbed0000	True	True	True	\Windows\System32\AppResolver.dll
+L4467: 6844	SearchHost.exe	0x7fffcb7a0000	True	True	True	\Windows\System32\tquery.dll
+L4468: 6844	SearchHost.exe	0x7fffcb6b0000	True	True	True	\Windows\System32\SearchIndexerCore.dll
+L4469: 6844	SearchHost.exe	0x7fffcc350000	True	True	True	\Windows\System32\UiaManager.dll
+L4470: 6844	SearchHost.exe	0x7fffcc2b0000	True	True	True	\Windows\System32\TileDataRepository.dll
+L4471: 6844	SearchHost.exe	0x7fffcc4e0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\vcruntime140_app.dll
+L4472: 6844	SearchHost.exe	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L4473: 6844	SearchHost.exe	0x7fffd5040000	True	True	True	\Windows\System32\Windows.Web.dll
+L4474: 6844	SearchHost.exe	0x7fffcf6b0000	True	True	True	\Windows\System32\threadpoolwinrt.dll
+L4475: 6844	SearchHost.exe	0x7fffce3f0000	True	True	True	\Windows\System32\Windows.CloudStore.dll
+L4476: 6844	SearchHost.exe	0x7fffcc600000	True	True	True	\Windows\System32\capauthz.dll
+L4477: 6844	SearchHost.exe	0x7fffce7f0000	True	True	True	\Windows\System32\omadmapi.dll
+L4478: 6844	SearchHost.exe	0x7fffce750000	True	True	True	\Windows\System32\msvcp110_win.dll
+L4479: 6844	SearchHost.exe	0x7fffce830000	True	True	True	\Windows\System32\mdmregistration.dll
+L4480: 6844	SearchHost.exe	0x7fffd0470000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L4481: 6844	SearchHost.exe	0x7fffd0250000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L4482: 6844	SearchHost.exe	0x7fffd0090000	True	True	True	\Windows\System32\Windows.System.Profile.PlatformDiagnosticsAndUsageDataSettings.dll
+L4483: 6844	SearchHost.exe	0x7fffd2800000	True	True	True	\Windows\System32\globinputhost.dll
+L4484: 6844	SearchHost.exe	0x7fffd6d30000	True	True	True	\Windows\System32\TextShaping.dll
+L4485: 6844	SearchHost.exe	0x7fffd5d90000	True	True	True	\Windows\System32\Windows.UI.Xaml.Controls.dll
+L4486: 6844	SearchHost.exe	0x7fffd51a0000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L4487: 6844	SearchHost.exe	0x7fffd6630000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L4488: 6844	SearchHost.exe	0x7fffd70d0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L4489: 6844	SearchHost.exe	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L4490: 6844	SearchHost.exe	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L4491: 6844	SearchHost.exe	0x7fffda3a0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L4492: 6844	SearchHost.exe	0x7fffd91b0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L4493: 6844	SearchHost.exe	0x7fffd87f0000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L4494: 6844	SearchHost.exe	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L4495: 6844	SearchHost.exe	0x7fffd7ca0000	True	True	True	\Windows\System32\SystemSettings.DataModel.dll
+L4496: 6844	SearchHost.exe	0x7fffd8e00000	True	True	True	\Windows\System32\version.dll
+L4497: 6844	SearchHost.exe	0x7fffd9600000	True	True	True	\Windows\System32\cabinet.dll
+L4498: 6844	SearchHost.exe	0x7fffd9520000	True	True	True	\Windows\System32\Windows.ApplicationModel.dll
+L4499: 6844	SearchHost.exe	0x7fffda1c0000	True	True	True	\Windows\System32\edputil.dll
+L4500: 6844	SearchHost.exe	0x7fffda0a0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L4501: 6844	SearchHost.exe	0x7fffda2f0000	True	True	True	\Windows\System32\directmanipulation.dll
+L4502: 6844	SearchHost.exe	0x7fffdb9e0000	True	True	True	\Windows\System32\Windows.UI.dll
+L4503: 6844	SearchHost.exe	0x7fffda840000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L4504: 6844	SearchHost.exe	0x7fffda5c0000	True	True	True	\Windows\System32\InputHost.dll
+L4505: 6844	SearchHost.exe	0x7fffda470000	True	True	True	\Windows\System32\TextInputFramework.dll
+L4506: 6844	SearchHost.exe	0x7fffdb950000	True	True	True	\Windows\System32\BCP47mrm.dll
+L4507: 6844	SearchHost.exe	0x7fffdbf20000	True	True	True	\Windows\System32\BCP47Langs.dll
+L4508: 6844	SearchHost.exe	0x7fffdbf00000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L4509: 6844	SearchHost.exe	0x7fffdbc80000	True	True	True	\Windows\System32\MrmCoreR.dll
+L4510: 6844	SearchHost.exe	0x7fffdd850000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L4511: 6844	SearchHost.exe	0x7fffdbf90000	True	True	True	\Windows\System32\StateRepository.Core.dll
+L4512: 6844	SearchHost.exe	0x7fffdc0c0000	True	True	True	\Windows\System32\Windows.StateRepository.dll
+L4513: 6844	SearchHost.exe	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L4514: 6844	SearchHost.exe	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L4515: 6844	SearchHost.exe	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L4516: 6844	SearchHost.exe	0x7fffe1cf0000	True	True	True	\Windows\System32\d2d1.dll
+L4517: 6844	SearchHost.exe	0x7fffe03f0000	True	True	True	\Windows\System32\directxdatabasehelper.dll
+L4518: 6844	SearchHost.exe	0x7fffdf190000	True	True	True	\Windows\System32\d3d10warp.dll
+L4519: 6844	SearchHost.exe	0x7fffdeff0000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L4520: 6844	SearchHost.exe	0x7fffde870000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L4521: 6844	SearchHost.exe	0x7fffdfe20000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L4522: 6844	SearchHost.exe	0x7fffdf740000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L4523: 6844	SearchHost.exe	0x7fffe03a0000	True	True	True	\Windows\System32\xmllite.dll
+L4524: 6844	SearchHost.exe	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L4525: 6844	SearchHost.exe	0x7fffe0bd0000	True	True	True	\Windows\System32\usermgrcli.dll
+L4526: 6844	SearchHost.exe	0x7fffe1550000	True	True	True	\Windows\System32\policymanager.dll
+L4527: 6844	SearchHost.exe	0x7fffe1cd0000	True	True	True	\Windows\System32\Microsoft.Internal.WarpPal.dll
+L4528: 6844	SearchHost.exe	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L4529: 6844	SearchHost.exe	0x7fffe25a0000	True	True	True	\Windows\System32\d3d11.dll
+L4530: 6844	SearchHost.exe	0x7fffe2330000	True	True	True	\Windows\System32\DWrite.dll
+L4531: 6844	SearchHost.exe	0x7fffe2e80000	True	True	True	\Windows\System32\CoreMessaging.dll
+L4532: 6844	SearchHost.exe	0x7fffe2810000	True	True	True	\Windows\System32\dcomp.dll
+L4533: 6844	SearchHost.exe	0x7fffe3260000	True	True	True	\Windows\System32\apphelp.dll
+L4534: 6844	SearchHost.exe	0x7fffe3610000	True	True	True	\Windows\System32\dxgi.dll
+L4535: 6844	SearchHost.exe	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+
+=== END OF PIVOT REPORT ===

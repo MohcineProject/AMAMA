@@ -1,0 +1,45 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:35:00Z
+Chunk: chunk_025.txt
+Summary: All five processes share an orphaned parent PID 576 that does not appear in the process list; two short-lived backgroundTaskHost entries and one short-lived dllhost add minor additional signal.
+
+[PROCESS]
+pid: 9344
+ppid: 576
+image: RuntimeBroker.
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 576 does not appear anywhere in the process list | name_truncation_note: 'RuntimeBroker.' is a 14-char EPROCESS truncation of RuntimeBroker.exe — path and cmdline confirm legitimate binary, not a typosquat
+
+[PROCESS]
+pid: 10164
+ppid: 576
+image: RuntimeBroker.
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 576 does not appear anywhere in the process list | name_truncation_note: 'RuntimeBroker.' is a 14-char EPROCESS truncation of RuntimeBroker.exe — path and cmdline confirm legitimate binary, not a typosquat
+
+[PROCESS]
+pid: 9460
+ppid: 576
+image: dllhost.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 576 does not appear anywhere in the process list | short_lived: process exited ~5 seconds after creation (18:31:05 → 18:31:10), no path or cmdline available to confirm legitimacy | missing_path: no image path recorded — file may have been deleted or process was injected
+
+[PROCESS]
+pid: 9812
+ppid: 576
+image: backgroundTask
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 576 does not appear anywhere in the process list | missing_path: no image path or cmdline recorded — cannot confirm legitimate backgroundTaskHost.exe | name_truncation_ambiguity: 'backgroundTask' is exactly 14 chars — could be backgroundTaskHost.exe truncated, but absence of path/cmdline prevents confirmation
+
+[PROCESS]
+pid: 9960
+ppid: 576
+image: backgroundTask
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 576 does not appear anywhere in the process list | missing_path: no image path or cmdline recorded — cannot confirm legitimate backgroundTaskHost.exe | name_truncation_ambiguity: 'backgroundTask' is exactly 14 chars — could be backgroundTaskHost.exe truncated, but absence of path/cmdline prevents confirmation
+

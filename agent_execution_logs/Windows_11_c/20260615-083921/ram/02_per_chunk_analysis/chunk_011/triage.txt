@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:35:00Z
+Chunk: chunk_011.txt
+Summary: userinit.exe has an unknown/missing parent (PID 816 not present in process list); olk.exe (PID 8112) was discovered only via psscan with an unresolvable parent, indicating a hidden or unlinked process.
+
+[PROCESS]
+pid: 5528
+ppid: 816
+image: userinit.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 816 is listed as 'unknown' and does not appear anywhere in the process list | missing_cmdline: no command line recorded for userinit.exe, reducing visibility into how it was invoked | short_lived: exited ~31 seconds after creation (18:23:32 → 18:24:03), which is normal for userinit but warrants confirmation given the orphaned parent
+
+[PROCESS]
+pid: 8112
+ppid: 5556
+image: olk.exe
+cmdline: 
+severity: MEDIUM
+reasons: psscan_only: PID 8112 was discovered exclusively via psscan (discovered_via=psscan), meaning it was not present in the active pslist — indicative of a hidden or unlinked EPROCESS structure | unresolvable_parent: parent annotated as 'unknown' despite PPID 5556 (explorer.exe) existing in the list, suggesting the EPROCESS forward/back-link was manipulated | missing_cmdline: no command line or path recorded, preventing verification of the binary's origin | duplicate_image_name: a second olk.exe (PID 5868) exists with the same parent and start time but a clean pslist entry — possible process hollowing or injection artefact
+

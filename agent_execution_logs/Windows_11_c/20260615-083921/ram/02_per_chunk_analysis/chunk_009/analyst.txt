@@ -1,0 +1,29 @@
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: A single Agent 1 lead was reviewed. The flagged process (sihost.exe, PID 5084) shows an orphaned parent PID but all other observable indicators are consistent with a legitimate Windows Shell Infrastructure Host running under a normal interactive user session. No malicious command-line arguments, no suspicious DLL paths, no enabled high-privilege tokens, and no injection markers were found. The orphaned-parent condition is fully explained by the parent process (likely svchost or winlogon hosting the user session) having exited or been paged out before the memory snapshot was taken — a routine artefact in live captures.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTED FINDINGS — SUMMARY
+================================================================
+
+PID 5084 — sihost.exe — REJECTED
+
+Agent 1 signal: orphaned_parent (PPID 1732 not present in process list).
+
+Reasoning: sihost.exe (Shell Infrastructure Host) is a standard Windows component launched per interactive user session, typically parented by svchost.exe (the UserManager/DcomLaunch group) or winlogon.exe. The absence of PPID 1732 from the pslist snapshot is a well-known Volatility artefact: the parent may have exited after spawning sihost.exe, or its EPROCESS block may simply not have been captured in the memory image. This alone is not a malicious indicator.
+
+All remaining evidence is benign:
+- The executable path resolves to C:\WINDOWS\system32\sihost.exe — the canonical system32 location.
+- The command line is the bare binary name with no arguments, exactly as Windows launches it.
+- The privilege table is the standard full-token list for a user-session process: the only *enabled* privileges are SeShutdownPrivilege (Present), SeChangeNotifyPrivilege (Present/Enabled/Default), SeUndockPrivilege (Present), SeCreateGlobalPrivilege (Default), SeIncreaseWorkingSetPrivilege (Present), and SeTimeZonePrivilege (Present). High-sensitivity privileges such as SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, and SeLoadDriverPrivilege are listed but **not enabled** — this is the normal unelevated user token on Windows 10/11, which carries the full privilege list in a disabled state.
+- Child processes (ShellHost.exe PID 5604, CrossDeviceRes PID 5808) are expected legitimate shell-infrastructure children.
+- No malfind, netscan, or suspicious DLL-path evidence was present in the extracted data.
+
+The orphaned-parent signal is the sole basis for the flag, and it is a known-benign data artefact in this context. Finding rejected.
+
+================================================================

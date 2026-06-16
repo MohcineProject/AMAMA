@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_007.txt
+Summary: vmtoolsd.exe holds an unusually broad set of high-risk privileges for a VMware Tools helper; both processes have orphaned PPIDs not present in the process list.
+
+[PROCESS]
+pid: 3360
+ppid: 716
+image: vmtoolsd.exe
+cmdline: "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+severity: MEDIUM
+reasons: orphaned_parent: PPID 716 not present anywhere in the process list | high_risk_privileges: SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege all enabled simultaneously on a VMware Tools helper process — unusual combination that could indicate token manipulation or process hollowing
+
+[PROCESS]
+pid: 3428
+ppid: 860
+image: RuntimeBroker.
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 860 not present anywhere in the process list | name_truncation_noted: display name 'RuntimeBroker.' is consistent with EPROCESS 14-char truncation of 'RuntimeBroker.exe'; path and cmdline confirm legitimate binary — flagged only due to orphaned PPID
+

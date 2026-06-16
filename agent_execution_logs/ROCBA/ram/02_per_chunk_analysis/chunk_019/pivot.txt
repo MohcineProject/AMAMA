@@ -1,0 +1,425 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:53:54Z
+
+=== PID 8436 (RuntimeBroker.exe, ppid=740) ===
+Cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- pslist.txt ---
+L120: 8436	740	RuntimeBroker.	0xb78cff855300	14	-	1	False	2020-11-11 08:13:51.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L120: 8436	RuntimeBroker.	C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- privileges.txt ---
+L4030: 8436	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+L4031: 8436	RuntimeBroker.	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4032: 8436	RuntimeBroker.	4	SeLockMemoryPrivilege		Lock pages in memory
+L4033: 8436	RuntimeBroker.	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4034: 8436	RuntimeBroker.	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4035: 8436	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+L4036: 8436	RuntimeBroker.	8	SeSecurityPrivilege		Manage auditing and security log
+L4037: 8436	RuntimeBroker.	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4038: 8436	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4039: 8436	RuntimeBroker.	11	SeSystemProfilePrivilege		Profile system performance
+L4040: 8436	RuntimeBroker.	12	SeSystemtimePrivilege		Change the system time
+L4041: 8436	RuntimeBroker.	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4042: 8436	RuntimeBroker.	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4043: 8436	RuntimeBroker.	15	SeCreatePagefilePrivilege		Create a pagefile
+L4044: 8436	RuntimeBroker.	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4045: 8436	RuntimeBroker.	17	SeBackupPrivilege		Backup files and directories
+L4046: 8436	RuntimeBroker.	18	SeRestorePrivilege		Restore files and directories
+L4047: 8436	RuntimeBroker.	19	SeShutdownPrivilege	Present	Shut down the system
+L4048: 8436	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+L4049: 8436	RuntimeBroker.	21	SeAuditPrivilege		Generate security audits
+L4050: 8436	RuntimeBroker.	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4051: 8436	RuntimeBroker.	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4052: 8436	RuntimeBroker.	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4053: 8436	RuntimeBroker.	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4054: 8436	RuntimeBroker.	26	SeSyncAgentPrivilege		Synch directory service data
+L4055: 8436	RuntimeBroker.	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4056: 8436	RuntimeBroker.	28	SeManageVolumePrivilege		Manage the files on a volume
+L4057: 8436	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4058: 8436	RuntimeBroker.	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4059: 8436	RuntimeBroker.	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4060: 8436	RuntimeBroker.	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4061: 8436	RuntimeBroker.	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4062: 8436	RuntimeBroker.	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4063: 8436	RuntimeBroker.	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4064: 8436	RuntimeBroker.	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5715: 8436	RuntimeBroker.	0x7ff642560000	0x1c000	RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5716: 8436	RuntimeBroker.	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5717: 8436	RuntimeBroker.	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5718: 8436	RuntimeBroker.	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5719: 8436	RuntimeBroker.	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5720: 8436	RuntimeBroker.	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5721: 8436	RuntimeBroker.	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5722: 8436	RuntimeBroker.	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5723: 8436	RuntimeBroker.	0x7fff54b90000	0x4b000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5724: 8436	RuntimeBroker.	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5725: 8436	RuntimeBroker.	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5726: 8436	RuntimeBroker.	0x7fff52e20000	0x2a000	RMCLIENT.dll	C:\Windows\System32\RMCLIENT.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5727: 8436	RuntimeBroker.	0x7fff54a90000	0x12000	UMPDC.dll	C:\Windows\System32\UMPDC.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5728: 8436	RuntimeBroker.	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5729: 8436	RuntimeBroker.	0x7fff57540000	0x1a0000	user32.dll	C:\WINDOWS\System32\user32.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5730: 8436	RuntimeBroker.	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5731: 8436	RuntimeBroker.	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5732: 8436	RuntimeBroker.	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5733: 8436	RuntimeBroker.	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5734: 8436	RuntimeBroker.	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5735: 8436	RuntimeBroker.	0x7fff55d80000	0xa9000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5736: 8436	RuntimeBroker.	0x7fff43010000	0x5b000	windows.cortana.onecore.dll	C:\WINDOWS\system32\windows.cortana.onecore.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5737: 8436	RuntimeBroker.	0x7fff55a30000	0xae000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5738: 8436	RuntimeBroker.	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5739: 8436	RuntimeBroker.	0x7fff523a0000	0x156000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5740: 8436	RuntimeBroker.	0x7fff4a170000	0x36000	XmlLite.dll	C:\WINDOWS\system32\XmlLite.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5741: 8436	RuntimeBroker.	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5742: 8436	RuntimeBroker.	0x7fff549f0000	0x2c000	Wldp.dll	C:\WINDOWS\system32\Wldp.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5743: 8436	RuntimeBroker.	0x7fff508e0000	0xf7000	PROPSYS.dll	C:\Windows\System32\PROPSYS.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5744: 8436	RuntimeBroker.	0x7fff52500000	0xf2000	CoreMessaging.dll	C:\Windows\System32\CoreMessaging.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5745: 8436	RuntimeBroker.	0x7fff57800000	0x6b000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5746: 8436	RuntimeBroker.	0x7fff43ed0000	0x795000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5747: 8436	RuntimeBroker.	0x7fff4eb40000	0x208000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2020-11-11 08:13:51.000000 UTC	Disabled
+L5748: 8436	RuntimeBroker.	0x7fff50a20000	0xa0000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5749: 8436	RuntimeBroker.	0x7fff54140000	0x8a000	msvcp110_win.dll	C:\Windows\System32\msvcp110_win.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5750: 8436	RuntimeBroker.	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5751: 8436	RuntimeBroker.	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5752: 8436	RuntimeBroker.	0x7fff468c0000	0x2b0000	iertutil.dll	C:\Windows\System32\iertutil.dll	-1	2020-11-11 08:13:51.000000 UTC	Disabled
+L5753: 8436	RuntimeBroker.	0x7fff37200000	0x8d000	windows.cortana.Desktop.dll	C:\WINDOWS\system32\windows.cortana.Desktop.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L5754: 8436	RuntimeBroker.	0x7fff55910000	0x55000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	-1	2020-11-11 08:13:53.000000 UTC	Disabled
+L5755: 8436	RuntimeBroker.	0x7fff52a60000	0x9e000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L5756: 8436	RuntimeBroker.	0x7fff56050000	0x741000	shell32.dll	C:\WINDOWS\System32\shell32.dll	-1	2020-11-11 08:13:53.000000 UTC	Disabled
+L5757: 8436	RuntimeBroker.	0x7fff56800000	0x12a000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-1	2020-11-11 08:13:53.000000 UTC	Disabled
+L5758: 8436	RuntimeBroker.	0x7fff53bc0000	0x29000	SLC.dll	C:\Windows\System32\SLC.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L5759: 8436	RuntimeBroker.	0x7fff53b90000	0x25000	sppc.dll	C:\Windows\System32\sppc.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L5760: 8436	RuntimeBroker.	0x7fff28c80000	0xd000	LINKINFO.dll	C:\WINDOWS\System32\LINKINFO.dll	-1	2020-11-11 08:13:53.000000 UTC	Disabled
+L5761: 8436	RuntimeBroker.	0x7fff28f60000	0x62000	Windows.FileExplorer.Common.dll	C:\Windows\System32\Windows.FileExplorer.Common.dll	-1	2020-11-11 08:13:53.000000 UTC	Disabled
+L5762: 8436	RuntimeBroker.	0x7fff558c0000	0x4e000	CFGMGR32.dll	C:\WINDOWS\System32\CFGMGR32.dll	-1	2020-11-11 08:13:53.000000 UTC	Disabled
+L5763: 8436	RuntimeBroker.	0x7fff47200000	0xf4000	MrmCoreR.dll	C:\WINDOWS\system32\MrmCoreR.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L5764: 8436	RuntimeBroker.	0x7fff37110000	0x6b000	SystemSettings.DataModel.dll	C:\Windows\System32\SystemSettings.DataModel.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L5765: 8436	RuntimeBroker.	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	-1	2020-11-11 08:13:53.000000 UTC	Disabled
+L5766: 8436	RuntimeBroker.	0x7fff529b0000	0x90000	apphelp.dll	C:\WINDOWS\SYSTEM32\apphelp.dll	-1	2020-11-11 08:13:53.000000 UTC	Disabled
+L5767: 8436	RuntimeBroker.	0x7fff46ea0000	0x152000	InputHost.dll	C:\Windows\System32\InputHost.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L5768: 8436	RuntimeBroker.	0x7fff52600000	0x35e000	CoreUIComponents.dll	C:\Windows\System32\CoreUIComponents.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L5769: 8436	RuntimeBroker.	0x7fff48500000	0x2d000	bcp47mrm.dll	C:\WINDOWS\system32\bcp47mrm.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L5770: 8436	RuntimeBroker.	0x7fff48530000	0x2d000	languageoverlayutil.dll	C:\WINDOWS\SYSTEM32\languageoverlayutil.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L5771: 8436	RuntimeBroker.	0x7fff4db70000	0xfa000	AppXDeploymentClient.dll	C:\Windows\System32\AppXDeploymentClient.dll	6	2020-11-11 08:13:53.000000 UTC	Disabled
+L5772: 8436	RuntimeBroker.	0x7fff557e0000	0x27000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-1	2020-11-11 08:13:55.000000 UTC	Disabled
+L5773: 8436	RuntimeBroker.	0x7fff49ad0000	0x11000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2020-11-11 08:13:55.000000 UTC	Disabled
+L5774: 8436	RuntimeBroker.	0x7fff297d0000	0x22000	cldapi.dll	C:\Windows\System32\cldapi.dll	-1	2020-11-11 08:13:59.000000 UTC	Disabled
+L5775: 8436	RuntimeBroker.	0x7fff446b0000	0xb000	FLTLIB.DLL	C:\Windows\System32\FLTLIB.DLL	-1	2020-11-11 08:13:59.000000 UTC	Disabled
+L5776: 8436	RuntimeBroker.	0x7fff54ea0000	0x3c000	SspiCli.dll	C:\WINDOWS\System32\SspiCli.dll	-1	2020-11-11 08:13:59.000000 UTC	Disabled
+L5777: 8436	RuntimeBroker.	0x7fff29800000	0x24000	edputil.dll	C:\WINDOWS\SYSTEM32\edputil.dll	-1	2020-11-11 08:13:59.000000 UTC	Disabled
+L5778: 8436	RuntimeBroker.	0x7fff479a0000	0xa6000	StructuredQuery.dll	C:\WINDOWS\System32\StructuredQuery.dll	6	2020-11-11 08:13:59.000000 UTC	Disabled
+L5779: 8436	RuntimeBroker.	0x7fff25e30000	0xc6000	Windows.Storage.Search.dll	C:\WINDOWS\system32\Windows.Storage.Search.dll	6	2020-11-11 08:13:59.000000 UTC	Disabled
+L5780: 8436	RuntimeBroker.	0x7fff3dab0000	0x29b000	comctl32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\comctl32.dll	6	2020-11-11 08:13:59.000000 UTC	Disabled
+L5781: 8436	RuntimeBroker.	0x7fff47a50000	0x1b4000	WindowsCodecs.dll	C:\WINDOWS\SYSTEM32\WindowsCodecs.dll	6	2020-11-11 08:13:59.000000 UTC	Disabled
+L5782: 8436	RuntimeBroker.	0x7fff28ee0000	0x7d000	ntshrui.dll	C:\WINDOWS\SYSTEM32\ntshrui.dll	-1	2020-11-11 08:13:59.000000 UTC	Disabled
+L5783: 8436	RuntimeBroker.	0x7fff35cd0000	0x28000	srvcli.dll	C:\WINDOWS\SYSTEM32\srvcli.dll	-1	2020-11-11 08:13:59.000000 UTC	Disabled
+L5784: 8436	RuntimeBroker.	0x7fff4b790000	0x12000	cscapi.dll	C:\Windows\System32\cscapi.dll	6	2020-11-11 08:13:59.000000 UTC	Disabled
+L5785: 8436	RuntimeBroker.	0x7fff55cd0000	0x79000	coml2.dll	C:\WINDOWS\System32\coml2.dll	-1	2020-11-11 08:13:59.000000 UTC	Disabled
+L5786: 8436	RuntimeBroker.	0x7fff36e90000	0x1d000	MPR.dll	C:\WINDOWS\System32\MPR.dll	-1	2020-11-11 08:13:59.000000 UTC	Disabled
+L5787: 8436	RuntimeBroker.	0x7fff547d0000	0x5a000	WINSTA.dll	C:\WINDOWS\System32\WINSTA.dll	-1	2020-11-11 08:13:59.000000 UTC	Disabled
+L5788: 8436	RuntimeBroker.	0x7fff541d0000	0x17000	wkscli.dll	C:\WINDOWS\System32\wkscli.dll	6	2020-11-11 08:13:59.000000 UTC	Disabled
+L5789: 8436	RuntimeBroker.	0x7fff54510000	0xc000	netutils.dll	C:\WINDOWS\System32\netutils.dll	6	2020-11-11 08:13:59.000000 UTC	Disabled
+L5790: 8436	RuntimeBroker.	0x7fff30830000	0x37000	AppExtension.dll	C:\Windows\System32\AppExtension.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5791: 8436	RuntimeBroker.	0x7fff1c8c0000	0x84000	SettingsEnvironment.Desktop.dll	C:\WINDOWS\SYSTEM32\SettingsEnvironment.Desktop.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5792: 8436	RuntimeBroker.	0x7fff54dc0000	0x2c000	DEVOBJ.dll	C:\WINDOWS\SYSTEM32\DEVOBJ.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5793: 8436	RuntimeBroker.	0x7fff4fd60000	0x3b000	REGAPI.dll	C:\WINDOWS\SYSTEM32\REGAPI.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5794: 8436	RuntimeBroker.	0x7fff576e0000	0x115000	MSCTF.dll	C:\WINDOWS\System32\MSCTF.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5795: 8436	RuntimeBroker.	0x7fff4ce20000	0x14000	wtsapi32.dll	C:\WINDOWS\SYSTEM32\wtsapi32.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5796: 8436	RuntimeBroker.	0x7fff322b0000	0x6d000	NetworkUXBroker.dll	C:\Windows\System32\NetworkUXBroker.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5797: 8436	RuntimeBroker.	0x7fff32270000	0x34000	EthernetMediaManager.dll	C:\Windows\System32\EthernetMediaManager.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5798: 8436	RuntimeBroker.	0x7fff54400000	0x3b000	IPHLPAPI.DLL	C:\Windows\System32\IPHLPAPI.DLL	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5799: 8436	RuntimeBroker.	0x7fff4fea0000	0x100000	WINHTTP.dll	C:\Windows\System32\WINHTTP.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5800: 8436	RuntimeBroker.	0x7fff321b0000	0xbd000	WlanMediaManager.dll	C:\Windows\System32\WlanMediaManager.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5801: 8436	RuntimeBroker.	0x7fff4a910000	0x6a000	wlanapi.dll	C:\WINDOWS\SYSTEM32\wlanapi.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5802: 8436	RuntimeBroker.	0x7fff316a0000	0x38000	TetheringStation.dll	C:\Windows\System32\TetheringStation.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5803: 8436	RuntimeBroker.	0x7fff31660000	0x37000	BluetoothApis.dll	C:\Windows\System32\BluetoothApis.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5804: 8436	RuntimeBroker.	0x7fff4fda0000	0x3e000	netprofm.dll	C:\WINDOWS\System32\netprofm.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5805: 8436	RuntimeBroker.	0x7fff4a070000	0x10000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5806: 8436	RuntimeBroker.	0x7fff57450000	0x8000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5807: 8436	RuntimeBroker.	0x7fff26ad0000	0xc4000	ShellCommonCommonProxyStub.dll	C:\Windows\System32\ShellCommonCommonProxyStub.dll	6	2020-11-11 08:14:00.000000 UTC	Disabled
+L5808: 8436	RuntimeBroker.	0x7fff29830000	0x65000	thumbcache.dll	C:\Windows\System32\thumbcache.dll	6	2020-11-11 08:18:41.000000 UTC	Disabled
+L5809: 8436	RuntimeBroker.	0x7fff28dd0000	0x9000	IconCodecService.dll	C:\WINDOWS\system32\IconCodecService.dll	6	2020-11-11 08:18:42.000000 UTC	Disabled
+L5810: 8436	RuntimeBroker.	0x7fff31200000	0x80000	PhotoMetadataHandler.dll	C:\WINDOWS\SYSTEM32\PhotoMetadataHandler.dll	6	2020-11-11 08:18:42.000000 UTC	Disabled
+L5811: 8436	RuntimeBroker.	0x7fff453e0000	0x1ed000	urlmon.dll	C:\Windows\System32\urlmon.dll	6	2020-11-11 08:18:42.000000 UTC	Disabled
+L5812: 8436	RuntimeBroker.	0x7ffed5de0000	0x54000	msIso.dll	C:\Windows\System32\msIso.dll	6	2020-11-11 08:18:43.000000 UTC	Disabled
+L5813: 8436	RuntimeBroker.	0x7fff3bee0000	0xc000	Secur32.dll	C:\Windows\System32\Secur32.dll	6	2020-11-11 08:18:43.000000 UTC	Disabled
+L5814: 8436	RuntimeBroker.	0x7fff36eb0000	0x42000	MLANG.dll	C:\Windows\System32\MLANG.dll	6	2020-11-11 08:18:43.000000 UTC	Disabled
+L5815: 8436	RuntimeBroker.	0x7fff31cc0000	0x4da000	WININET.dll	C:\Windows\System32\WININET.dll	-1	2020-11-11 08:18:43.000000 UTC	Disabled
+L5816: 8436	RuntimeBroker.	0x7fff42fd0000	0x24000	Windows.Cortana.ProxyStub.dll	C:\Windows\System32\Windows.Cortana.ProxyStub.dll	6	2020-11-14 04:39:03.000000 UTC	Disabled
+L5817: 8436	RuntimeBroker.	0x7fff25f00000	0xdb000	windows.internal.shell.broker.dll	C:\Windows\System32\windows.internal.shell.broker.dll	6	2020-11-14 04:39:06.000000 UTC	Disabled
+L5818: 8436	RuntimeBroker.	0x7fff514a0000	0x264000	d3d11.dll	C:\Windows\System32\d3d11.dll	6	2020-11-14 04:39:06.000000 UTC	Disabled
+L5819: 8436	RuntimeBroker.	0x7fff53940000	0xf3000	dxgi.dll	C:\Windows\System32\dxgi.dll	6	2020-11-14 04:39:06.000000 UTC	Disabled
+L5820: 8436	RuntimeBroker.	0x7fff30940000	0x58a000	StartTileData.dll	C:\Windows\System32\StartTileData.dll	6	2020-11-14 04:39:06.000000 UTC	Disabled
+L5821: 8436	RuntimeBroker.	0x7fff54ee0000	0x2e000	USERENV.dll	C:\Windows\System32\USERENV.dll	6	2020-11-14 04:39:06.000000 UTC	Disabled
+L5822: 8436	RuntimeBroker.	0x7fff47340000	0x5b000	Bcp47Langs.dll	C:\Windows\System32\Bcp47Langs.dll	6	2020-11-14 04:39:06.000000 UTC	Disabled
+L5823: 8436	RuntimeBroker.	0x7fff4e500000	0x90000	appresolver.dll	C:\Windows\System32\appresolver.dll	6	2020-11-14 04:39:06.000000 UTC	Disabled
+L5824: 8436	RuntimeBroker.	0x7fff4bcc0000	0x54000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2020-11-14 04:39:06.000000 UTC	Disabled
+L5825: 8436	RuntimeBroker.	0x7fff4db50000	0x16000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2020-11-14 04:39:06.000000 UTC	Disabled
+L5826: 8436	RuntimeBroker.	0x7fff478f0000	0x46000	MSWB7.dll	C:\WINDOWS\System32\MSWB7.dll	6	2020-11-14 04:39:06.000000 UTC	Disabled
+L5827: 8436	RuntimeBroker.	0x7fff470b0000	0x14c000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2020-11-14 04:47:08.000000 UTC	Disabled
+L5828: 8436	RuntimeBroker.	0x7fff47000000	0xa3000	WindowManagementAPI.dll	C:\Windows\System32\WindowManagementAPI.dll	6	2020-11-14 04:47:08.000000 UTC	Disabled
+L5829: 8436	RuntimeBroker.	0x7fff46da0000	0xfc000	TextInputFramework.dll	C:\Windows\System32\TextInputFramework.dll	6	2020-11-14 04:47:08.000000 UTC	Disabled
+L5830: 8436	RuntimeBroker.	0x7fff34f00000	0x1f4000	Windows.CloudStore.dll	C:\Windows\System32\Windows.CloudStore.dll	6	2020-11-14 12:42:53.000000 UTC	Disabled
+L5831: 8436	RuntimeBroker.	0x7fff30710000	0xeb000	Windows.CloudStore.Schema.Shell.dll	C:\Windows\System32\Windows.CloudStore.Schema.Shell.dll	6	2020-11-14 12:42:53.000000 UTC	Disabled
+L5832: 8436	RuntimeBroker.	0x7fff27000000	0x1a6000	gdiplus.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.630_none_fae7a41d761b04f0\gdiplus.dll	6	2020-11-14 12:56:32.000000 UTC	Disabled
+L5833: 8436	RuntimeBroker.	0x7fff45050000	0xac000	TextShaping.dll	C:\Windows\System32\TextShaping.dll	6	2020-11-14 12:58:41.000000 UTC	Disabled
+L5834: 8436	RuntimeBroker.	0x7fff3baa0000	0x16000	pcacli.dll	C:\WINDOWS\SYSTEM32\pcacli.dll	6	2020-11-14 14:03:52.000000 UTC	Disabled
+
+--- pstree.txt ---
+L148: *** 8436	740	RuntimeBroker.	0xb78cff855300	14	-	1	False	2020-11-11 08:13:51.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe -Embedding	C:\Windows\System32\RuntimeBroker.exe
+
+--- psscan.txt ---
+L318: 8436	740	RuntimeBroker.	0xb78cff855300	14	-	1	False	2020-11-11 08:13:51.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L6139: 8436	RuntimeBroker.	0x240a1ba0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L6140: 8436	RuntimeBroker.	0x240a1be0000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L6141: 8436	RuntimeBroker.	0x240a2240000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L6142: 8436	RuntimeBroker.	0x240a26d0000	False	False	False	\Windows\System32\en-US\AppResolver.dll.mui
+L6143: 8436	RuntimeBroker.	0x240a2670000	False	False	False	\Windows\System32\en-US\StartTileData.dll.mui
+L6144: 8436	RuntimeBroker.	0x240a26f0000	False	False	False	\Windows\System32\imageres.dll
+L6145: 8436	RuntimeBroker.	0x240a2730000	False	False	False	\Windows\System32\en-US\combase.dll.mui
+L6146: 8436	RuntimeBroker.	0x240a2a60000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L6147: 8436	RuntimeBroker.	0x240a3a00000	False	False	False	\Windows\System32\prm0009.dll
+L6148: 8436	RuntimeBroker.	0x240a6f00000	False	False	False	\Windows\SystemResources\imageres.dll.mun
+L6149: 8436	RuntimeBroker.	0x240ab3c0000	False	False	False	\Windows\SystemResources\shell32.dll.mun
+L6150: 8436	RuntimeBroker.	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L6151: 8436	RuntimeBroker.	0x7fff43010000	True	True	True	\Windows\System32\Windows.Cortana.OneCore.dll
+L6152: 8436	RuntimeBroker.	0x7fff316a0000	True	True	True	\Windows\System32\TetheringStation.dll
+L6153: 8436	RuntimeBroker.	0x7fff28f60000	True	True	True	\Windows\System32\Windows.FileExplorer.Common.dll
+L6154: 8436	RuntimeBroker.	0x7fff25e30000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L6155: 8436	RuntimeBroker.	0x7ff642560000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L6156: 8436	RuntimeBroker.	0x7fff1c8c0000	True	True	True	\Windows\System32\SettingsEnvironment.Desktop.dll
+L6157: 8436	RuntimeBroker.	0x7ffed5de0000	True	True	True	\Windows\System32\msIso.dll
+L6158: 8436	RuntimeBroker.	0x7fff28c80000	True	True	True	\Windows\System32\linkinfo.dll
+L6159: 8436	RuntimeBroker.	0x7fff26ad0000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L6160: 8436	RuntimeBroker.	0x7fff25f00000	True	True	True	\Windows\System32\Windows.Internal.Shell.Broker.dll
+L6161: 8436	RuntimeBroker.	0x7fff27000000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.630_none_fae7a41d761b04f0\GdiPlus.dll
+L6162: 8436	RuntimeBroker.	0x7fff28dd0000	True	True	True	\Windows\System32\IconCodecService.dll
+L6163: 8436	RuntimeBroker.	0x7fff28ee0000	True	True	True	\Windows\System32\ntshrui.dll
+L6164: 8436	RuntimeBroker.	0x7fff30830000	True	True	True	\Windows\System32\AppExtension.dll
+L6165: 8436	RuntimeBroker.	0x7fff29800000	True	True	True	\Windows\System32\edputil.dll
+L6166: 8436	RuntimeBroker.	0x7fff297d0000	True	True	True	\Windows\System32\cldapi.dll
+L6167: 8436	RuntimeBroker.	0x7fff2ed90000	True	True	True	\Windows\System32\sfc_os.dll
+L6168: 8436	RuntimeBroker.	0x7fff29830000	True	True	True	\Windows\System32\thumbcache.dll
+L6169: 8436	RuntimeBroker.	0x7fff30710000	True	True	True	\Windows\System32\Windows.CloudStore.Schema.Shell.dll
+L6170: 8436	RuntimeBroker.	0x7fff31200000	True	True	True	\Windows\System32\PhotoMetadataHandler.dll
+L6171: 8436	RuntimeBroker.	0x7fff30940000	True	True	True	\Windows\System32\StartTileData.dll
+L6172: 8436	RuntimeBroker.	0x7fff31660000	True	True	True	\Windows\System32\BluetoothApis.dll
+L6173: 8436	RuntimeBroker.	0x7fff36e90000	True	True	True	\Windows\System32\mpr.dll
+L6174: 8436	RuntimeBroker.	0x7fff322b0000	True	True	True	\Windows\System32\NetworkUXBroker.dll
+L6175: 8436	RuntimeBroker.	0x7fff321b0000	True	True	True	\Windows\System32\WlanMediaManager.dll
+L6176: 8436	RuntimeBroker.	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L6177: 8436	RuntimeBroker.	0x7fff32270000	True	True	True	\Windows\System32\EthernetMediaManager.dll
+L6178: 8436	RuntimeBroker.	0x7fff35cd0000	True	True	True	\Windows\System32\srvcli.dll
+L6179: 8436	RuntimeBroker.	0x7fff34f00000	True	True	True	\Windows\System32\Windows.CloudStore.dll
+L6180: 8436	RuntimeBroker.	0x7fff37200000	True	True	True	\Windows\System32\Windows.Cortana.Desktop.dll
+L6181: 8436	RuntimeBroker.	0x7fff36eb0000	True	True	True	\Windows\System32\mlang.dll
+L6182: 8436	RuntimeBroker.	0x7fff37110000	True	True	True	\Windows\System32\SystemSettings.DataModel.dll
+L6183: 8436	RuntimeBroker.	0x7fff3dab0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\comctl32.dll
+L6184: 8436	RuntimeBroker.	0x7fff3baa0000	True	True	True	\Windows\System32\pcacli.dll
+L6185: 8436	RuntimeBroker.	0x7fff3bee0000	True	True	True	\Windows\System32\secur32.dll
+L6186: 8436	RuntimeBroker.	0x7fff42fd0000	True	True	True	\Windows\System32\Windows.Cortana.ProxyStub.dll
+L6187: 8436	RuntimeBroker.	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L6188: 8436	RuntimeBroker.	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L6189: 8436	RuntimeBroker.	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L6190: 8436	RuntimeBroker.	0x7fff446b0000	True	True	True	\Windows\System32\fltLib.dll
+L6191: 8436	RuntimeBroker.	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L6192: 8436	RuntimeBroker.	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L6193: 8436	RuntimeBroker.	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L6194: 8436	RuntimeBroker.	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L6195: 8436	RuntimeBroker.	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L6196: 8436	RuntimeBroker.	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L6197: 8436	RuntimeBroker.	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L6198: 8436	RuntimeBroker.	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L6199: 8436	RuntimeBroker.	0x7fff478f0000	True	True	True	\Windows\System32\MSWB7.dll
+L6200: 8436	RuntimeBroker.	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L6201: 8436	RuntimeBroker.	0x7fff47a50000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L6202: 8436	RuntimeBroker.	0x7fff479a0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L6203: 8436	RuntimeBroker.	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L6204: 8436	RuntimeBroker.	0x7fff48530000	True	True	True	\Windows\System32\LanguageOverlayUtil.dll
+L6205: 8436	RuntimeBroker.	0x7fff4a070000	True	True	True	\Windows\System32\npmproxy.dll
+L6206: 8436	RuntimeBroker.	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L6207: 8436	RuntimeBroker.	0x7fff4ce20000	True	True	True	\Windows\System32\wtsapi32.dll
+L6208: 8436	RuntimeBroker.	0x7fff4b790000	True	True	True	\Windows\System32\cscapi.dll
+L6209: 8436	RuntimeBroker.	0x7fff4a910000	True	True	True	\Windows\System32\wlanapi.dll
+L6210: 8436	RuntimeBroker.	0x7fff4bcc0000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L6211: 8436	RuntimeBroker.	0x7fff4db70000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L6212: 8436	RuntimeBroker.	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L6213: 8436	RuntimeBroker.	0x7fff4e500000	True	True	True	\Windows\System32\AppResolver.dll
+L6214: 8436	RuntimeBroker.	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L6215: 8436	RuntimeBroker.	0x7fff4fda0000	True	True	True	\Windows\System32\netprofm.dll
+L6216: 8436	RuntimeBroker.	0x7fff4fd60000	True	True	True	\Windows\System32\regapi.dll
+L6217: 8436	RuntimeBroker.	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L6218: 8436	RuntimeBroker.	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L6219: 8436	RuntimeBroker.	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L6220: 8436	RuntimeBroker.	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L6221: 8436	RuntimeBroker.	0x7fff53b90000	True	True	True	\Windows\System32\sppc.dll
+L6222: 8436	RuntimeBroker.	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L6223: 8436	RuntimeBroker.	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L6224: 8436	RuntimeBroker.	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L6225: 8436	RuntimeBroker.	0x7fff529b0000	True	True	True	\Windows\System32\apphelp.dll
+L6226: 8436	RuntimeBroker.	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6227: 8436	RuntimeBroker.	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L6228: 8436	RuntimeBroker.	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L6229: 8436	RuntimeBroker.	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L6230: 8436	RuntimeBroker.	0x7fff541d0000	True	True	True	\Windows\System32\wkscli.dll
+L6231: 8436	RuntimeBroker.	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L6232: 8436	RuntimeBroker.	0x7fff53bc0000	True	True	True	\Windows\System32\slc.dll
+L6233: 8436	RuntimeBroker.	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L6234: 8436	RuntimeBroker.	0x7fff547d0000	True	True	True	\Windows\System32\winsta.dll
+L6235: 8436	RuntimeBroker.	0x7fff54510000	True	True	True	\Windows\System32\netutils.dll
+L6236: 8436	RuntimeBroker.	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L6237: 8436	RuntimeBroker.	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L6238: 8436	RuntimeBroker.	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L6239: 8436	RuntimeBroker.	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L6240: 8436	RuntimeBroker.	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L6241: 8436	RuntimeBroker.	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L6242: 8436	RuntimeBroker.	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L6243: 8436	RuntimeBroker.	0x7fff54dc0000	True	True	True	\Windows\System32\devobj.dll
+L6244: 8436	RuntimeBroker.	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L6245: 8436	RuntimeBroker.	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L6246: 8436	RuntimeBroker.	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L6247: 8436	RuntimeBroker.	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6248: 8436	RuntimeBroker.	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L6249: 8436	RuntimeBroker.	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L6250: 8436	RuntimeBroker.	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6251: 8436	RuntimeBroker.	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L6252: 8436	RuntimeBroker.	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L6253: 8436	RuntimeBroker.	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L6254: 8436	RuntimeBroker.	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L6255: 8436	RuntimeBroker.	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L6256: 8436	RuntimeBroker.	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L6257: 8436	RuntimeBroker.	0x7fff55cd0000	True	True	True	\Windows\System32\coml2.dll
+L6258: 8436	RuntimeBroker.	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+
+--- malware_ldrmodules.txt ---
+L6139: 8436	RuntimeBroker.	0x240a1ba0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L6140: 8436	RuntimeBroker.	0x240a1be0000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L6141: 8436	RuntimeBroker.	0x240a2240000	False	False	False	\Windows\System32\en-US\shell32.dll.mui
+L6142: 8436	RuntimeBroker.	0x240a26d0000	False	False	False	\Windows\System32\en-US\AppResolver.dll.mui
+L6143: 8436	RuntimeBroker.	0x240a2670000	False	False	False	\Windows\System32\en-US\StartTileData.dll.mui
+L6144: 8436	RuntimeBroker.	0x240a26f0000	False	False	False	\Windows\System32\imageres.dll
+L6145: 8436	RuntimeBroker.	0x240a2730000	False	False	False	\Windows\System32\en-US\combase.dll.mui
+L6146: 8436	RuntimeBroker.	0x240a2a60000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L6147: 8436	RuntimeBroker.	0x240a3a00000	False	False	False	\Windows\System32\prm0009.dll
+L6148: 8436	RuntimeBroker.	0x240a6f00000	False	False	False	\Windows\SystemResources\imageres.dll.mun
+L6149: 8436	RuntimeBroker.	0x240ab3c0000	False	False	False	\Windows\SystemResources\shell32.dll.mun
+L6150: 8436	RuntimeBroker.	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L6151: 8436	RuntimeBroker.	0x7fff43010000	True	True	True	\Windows\System32\Windows.Cortana.OneCore.dll
+L6152: 8436	RuntimeBroker.	0x7fff316a0000	True	True	True	\Windows\System32\TetheringStation.dll
+L6153: 8436	RuntimeBroker.	0x7fff28f60000	True	True	True	\Windows\System32\Windows.FileExplorer.Common.dll
+L6154: 8436	RuntimeBroker.	0x7fff25e30000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L6155: 8436	RuntimeBroker.	0x7ff642560000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L6156: 8436	RuntimeBroker.	0x7fff1c8c0000	True	True	True	\Windows\System32\SettingsEnvironment.Desktop.dll
+L6157: 8436	RuntimeBroker.	0x7ffed5de0000	True	True	True	\Windows\System32\msIso.dll
+L6158: 8436	RuntimeBroker.	0x7fff28c80000	True	True	True	\Windows\System32\linkinfo.dll
+L6159: 8436	RuntimeBroker.	0x7fff26ad0000	True	True	True	\Windows\System32\ShellCommonCommonProxyStub.dll
+L6160: 8436	RuntimeBroker.	0x7fff25f00000	True	True	True	\Windows\System32\Windows.Internal.Shell.Broker.dll
+L6161: 8436	RuntimeBroker.	0x7fff27000000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.630_none_fae7a41d761b04f0\GdiPlus.dll
+L6162: 8436	RuntimeBroker.	0x7fff28dd0000	True	True	True	\Windows\System32\IconCodecService.dll
+L6163: 8436	RuntimeBroker.	0x7fff28ee0000	True	True	True	\Windows\System32\ntshrui.dll
+L6164: 8436	RuntimeBroker.	0x7fff30830000	True	True	True	\Windows\System32\AppExtension.dll
+L6165: 8436	RuntimeBroker.	0x7fff29800000	True	True	True	\Windows\System32\edputil.dll
+L6166: 8436	RuntimeBroker.	0x7fff297d0000	True	True	True	\Windows\System32\cldapi.dll
+L6167: 8436	RuntimeBroker.	0x7fff2ed90000	True	True	True	\Windows\System32\sfc_os.dll
+L6168: 8436	RuntimeBroker.	0x7fff29830000	True	True	True	\Windows\System32\thumbcache.dll
+L6169: 8436	RuntimeBroker.	0x7fff30710000	True	True	True	\Windows\System32\Windows.CloudStore.Schema.Shell.dll
+L6170: 8436	RuntimeBroker.	0x7fff31200000	True	True	True	\Windows\System32\PhotoMetadataHandler.dll
+L6171: 8436	RuntimeBroker.	0x7fff30940000	True	True	True	\Windows\System32\StartTileData.dll
+L6172: 8436	RuntimeBroker.	0x7fff31660000	True	True	True	\Windows\System32\BluetoothApis.dll
+L6173: 8436	RuntimeBroker.	0x7fff36e90000	True	True	True	\Windows\System32\mpr.dll
+L6174: 8436	RuntimeBroker.	0x7fff322b0000	True	True	True	\Windows\System32\NetworkUXBroker.dll
+L6175: 8436	RuntimeBroker.	0x7fff321b0000	True	True	True	\Windows\System32\WlanMediaManager.dll
+L6176: 8436	RuntimeBroker.	0x7fff31cc0000	True	True	True	\Windows\System32\wininet.dll
+L6177: 8436	RuntimeBroker.	0x7fff32270000	True	True	True	\Windows\System32\EthernetMediaManager.dll
+L6178: 8436	RuntimeBroker.	0x7fff35cd0000	True	True	True	\Windows\System32\srvcli.dll
+L6179: 8436	RuntimeBroker.	0x7fff34f00000	True	True	True	\Windows\System32\Windows.CloudStore.dll
+L6180: 8436	RuntimeBroker.	0x7fff37200000	True	True	True	\Windows\System32\Windows.Cortana.Desktop.dll
+L6181: 8436	RuntimeBroker.	0x7fff36eb0000	True	True	True	\Windows\System32\mlang.dll
+L6182: 8436	RuntimeBroker.	0x7fff37110000	True	True	True	\Windows\System32\SystemSettings.DataModel.dll
+L6183: 8436	RuntimeBroker.	0x7fff3dab0000	True	True	True	\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\comctl32.dll
+L6184: 8436	RuntimeBroker.	0x7fff3baa0000	True	True	True	\Windows\System32\pcacli.dll
+L6185: 8436	RuntimeBroker.	0x7fff3bee0000	True	True	True	\Windows\System32\secur32.dll
+L6186: 8436	RuntimeBroker.	0x7fff42fd0000	True	True	True	\Windows\System32\Windows.Cortana.ProxyStub.dll
+L6187: 8436	RuntimeBroker.	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L6188: 8436	RuntimeBroker.	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L6189: 8436	RuntimeBroker.	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L6190: 8436	RuntimeBroker.	0x7fff446b0000	True	True	True	\Windows\System32\fltLib.dll
+L6191: 8436	RuntimeBroker.	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L6192: 8436	RuntimeBroker.	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L6193: 8436	RuntimeBroker.	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L6194: 8436	RuntimeBroker.	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L6195: 8436	RuntimeBroker.	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L6196: 8436	RuntimeBroker.	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L6197: 8436	RuntimeBroker.	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L6198: 8436	RuntimeBroker.	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L6199: 8436	RuntimeBroker.	0x7fff478f0000	True	True	True	\Windows\System32\MSWB7.dll
+L6200: 8436	RuntimeBroker.	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L6201: 8436	RuntimeBroker.	0x7fff47a50000	True	True	True	\Windows\System32\WindowsCodecs.dll
+L6202: 8436	RuntimeBroker.	0x7fff479a0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L6203: 8436	RuntimeBroker.	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L6204: 8436	RuntimeBroker.	0x7fff48530000	True	True	True	\Windows\System32\LanguageOverlayUtil.dll
+L6205: 8436	RuntimeBroker.	0x7fff4a070000	True	True	True	\Windows\System32\npmproxy.dll
+L6206: 8436	RuntimeBroker.	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L6207: 8436	RuntimeBroker.	0x7fff4ce20000	True	True	True	\Windows\System32\wtsapi32.dll
+L6208: 8436	RuntimeBroker.	0x7fff4b790000	True	True	True	\Windows\System32\cscapi.dll
+L6209: 8436	RuntimeBroker.	0x7fff4a910000	True	True	True	\Windows\System32\wlanapi.dll
+L6210: 8436	RuntimeBroker.	0x7fff4bcc0000	True	True	True	\Windows\System32\UserMgrProxy.dll
+L6211: 8436	RuntimeBroker.	0x7fff4db70000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L6212: 8436	RuntimeBroker.	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L6213: 8436	RuntimeBroker.	0x7fff4e500000	True	True	True	\Windows\System32\AppResolver.dll
+L6214: 8436	RuntimeBroker.	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L6215: 8436	RuntimeBroker.	0x7fff4fda0000	True	True	True	\Windows\System32\netprofm.dll
+L6216: 8436	RuntimeBroker.	0x7fff4fd60000	True	True	True	\Windows\System32\regapi.dll
+L6217: 8436	RuntimeBroker.	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L6218: 8436	RuntimeBroker.	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L6219: 8436	RuntimeBroker.	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L6220: 8436	RuntimeBroker.	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L6221: 8436	RuntimeBroker.	0x7fff53b90000	True	True	True	\Windows\System32\sppc.dll
+L6222: 8436	RuntimeBroker.	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L6223: 8436	RuntimeBroker.	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L6224: 8436	RuntimeBroker.	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L6225: 8436	RuntimeBroker.	0x7fff529b0000	True	True	True	\Windows\System32\apphelp.dll
+L6226: 8436	RuntimeBroker.	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6227: 8436	RuntimeBroker.	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L6228: 8436	RuntimeBroker.	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L6229: 8436	RuntimeBroker.	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L6230: 8436	RuntimeBroker.	0x7fff541d0000	True	True	True	\Windows\System32\wkscli.dll
+L6231: 8436	RuntimeBroker.	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L6232: 8436	RuntimeBroker.	0x7fff53bc0000	True	True	True	\Windows\System32\slc.dll
+L6233: 8436	RuntimeBroker.	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L6234: 8436	RuntimeBroker.	0x7fff547d0000	True	True	True	\Windows\System32\winsta.dll
+L6235: 8436	RuntimeBroker.	0x7fff54510000	True	True	True	\Windows\System32\netutils.dll
+L6236: 8436	RuntimeBroker.	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L6237: 8436	RuntimeBroker.	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L6238: 8436	RuntimeBroker.	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L6239: 8436	RuntimeBroker.	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L6240: 8436	RuntimeBroker.	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L6241: 8436	RuntimeBroker.	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L6242: 8436	RuntimeBroker.	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L6243: 8436	RuntimeBroker.	0x7fff54dc0000	True	True	True	\Windows\System32\devobj.dll
+L6244: 8436	RuntimeBroker.	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L6245: 8436	RuntimeBroker.	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L6246: 8436	RuntimeBroker.	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L6247: 8436	RuntimeBroker.	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6248: 8436	RuntimeBroker.	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L6249: 8436	RuntimeBroker.	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L6250: 8436	RuntimeBroker.	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6251: 8436	RuntimeBroker.	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L6252: 8436	RuntimeBroker.	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L6253: 8436	RuntimeBroker.	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L6254: 8436	RuntimeBroker.	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L6255: 8436	RuntimeBroker.	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L6256: 8436	RuntimeBroker.	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L6257: 8436	RuntimeBroker.	0x7fff55cd0000	True	True	True	\Windows\System32\coml2.dll
+L6258: 8436	RuntimeBroker.	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+
+--- malware_pebmasquerade.txt ---
+L120: 8436	RuntimeBroker.	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	False	False
+
+=== END OF PIVOT REPORT ===

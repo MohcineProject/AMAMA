@@ -1,0 +1,68 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 4936 — TiWorker.exe**
+
+Agent 1 flags: orphaned parent (PPID 576 not in process list), privilege anomaly (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege), path note.
+
+**Reasoning:**
+
+1. **Orphaned parent:** PPID 576 is listed as "unknown." In a live system, TiWorker.exe is normally spawned by TiWorkerW or svchost.exe (Windows Update service). PPID 576 not being present in the process list is a common artifact of memory acquisition timing — the parent (likely svchost.exe hosting the Windows Update service) may have already exited by the time the snapshot was taken. This is a known benign artifact, not inherently suspicious.
+
+2. **Privilege footprint:** The privilege set is enormous — essentially the full SYSTEM token. However, TiWorker.exe runs as SYSTEM and is a legitimate Windows servicing component. The full SYSTEM token includes SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege, and all the others listed. This is entirely normal for a SYSTEM-context process. The privileges are not anomalous for a SYSTEM-level binary.
+
+3. **Path:** `C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.26100.8035_none_a54f1c79772e807e\TiWorker.exe` — this is the canonical winsxs path for the Windows servicing stack. Legitimate.
+
+4. **Command line:** `-Embedding` is the standard COM activation flag used when TiWorker.exe is invoked as a COM server by the Windows Update service. This is textbook legitimate behavior.
+
+5. **DLLs:** All three visible DLLs (TiWorker.exe itself, ntdll.dll, KERNEL32.DLL) are loaded from System32 or the winsxs path. No user-writable path DLLs.
+
+6. **No malfind, no netscan, no registry persistence, no suspicious handles** in the evidence.
+
+**Verdict: REJECTED.** All signals have benign explanations. The orphaned parent is a timing artifact. The privilege set is standard SYSTEM. The path and cmdline are canonical. No corroborating evidence of malice across any artifact type.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Only one process was submitted for validation. That process, TiWorker.exe (PID 4936), presents no credible indicators of compromise after cross-referencing command-line, DLL provenance, privilege context, and path legitimacy. All Agent 1 signals resolve to known-benign explanations. No confirmed or inconclusive findings are present in this batch.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report for this batch.)
+
+================================================================
+REJECTED SUMMARY (count=1)
+================================================================
+
+PID 4936 — TiWorker.exe was rejected on the following grounds:
+
+  1. Orphaned parent (PPID 576 absent from pslist): TiWorker.exe is a COM-activated
+     servicing worker launched by the Windows Update svchost instance. The parent
+     svchost commonly exits before or shortly after spawning TiWorker, making an
+     absent PPID a routine memory-acquisition timing artifact rather than a masquerade
+     signal. No evidence of a suspicious spawning chain exists in the provided data.
+
+  2. Privilege footprint: The full token seen at L5745–L5779 — including SeTcbPrivilege,
+     SeDebugPrivilege, and SeImpersonatePrivilege — is the standard SYSTEM token.
+     TiWorker.exe runs as NT AUTHORITY\SYSTEM by design; every SYSTEM-context process
+     carries this token. These privileges are not anomalous for this binary class.
+
+  3. Command line ("-Embedding"): This flag is the standard OLE/COM in-process server
+     activation argument. It is the canonical invocation for TiWorker.exe when called
+     by the Windows Update service via COM. No download cradle, encoded payload, or
+     LOLBin abuse pattern is present.
+
+  4. DLL set: All visible loaded modules (TiWorker.exe, ntdll.dll, KERNEL32.DLL) load
+     from System32 or the winsxs component path. No user-writable path DLLs observed.
+
+  5. No corroborating signals: No malfind sections, no network connections, no registry
+     persistence, no suspicious handles, and no dropped artefacts were present in the
+     evidence block. With zero cross-artefact corroboration, confirmation is not
+     warranted.
+
+================================================================

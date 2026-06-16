@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-01-30T00:00:00Z
+Chunk: chunk_052.txt
+Summary: Orphaned parent PID for iCloudIE.exe; command-line image name mismatch between process name and invoked executable.
+
+[PROCESS]
+pid: 27740
+ppid: 11004
+image: iCloudIE.exe
+cmdline: "iCloudIE-AppX.exe"
+severity: LOW
+reasons: orphaned_parent: PPID 11004 listed as 'unknown' — parent process not present in process list | cmdline_name_mismatch: process image is iCloudIE.exe but command-line invokes 'iCloudIE-AppX.exe' | network: CLOSE_WAIT connections to public IPs 104.91.97.114:443 and 17.248.138.x:443 — consistent with Apple CDN but worth confirming given parent anomaly
+

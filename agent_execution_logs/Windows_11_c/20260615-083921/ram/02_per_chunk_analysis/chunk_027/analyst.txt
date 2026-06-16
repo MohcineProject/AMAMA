@@ -1,0 +1,25 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T18:45:00Z
+Summary: Three instances of SearchFilterHost.exe were flagged solely because their parent PID (6604) does not appear in the pslist snapshot. All three processes run from the canonical System32 path, carry standard Windows Search filter-host command-line arguments, load only System32 DLLs, and hold a privilege set that is entirely consistent with a SYSTEM-context Windows Search worker. The orphaned-parent condition is most plausibly explained by SearchIndexer.exe (PID 6604) having exited or been paged out before the memory snapshot was taken, leaving the children with a stale PPID — a well-known Volatility artefact. No malicious indicators were found across any artefact type for any of the three PIDs.
+Counts: confirmed=0  inconclusive=0  rejected=3
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+--- REJECTED FINDINGS (detail) ---
+
+All three findings — PID 11948, PID 12188, PID 12200 — were rejected on the same grounds:
+
+1. The sole Agent 1 signal is orphaned_parent (PPID 6604 absent from pslist). This is a common benign artefact when a parent process exits before or during snapshot capture; it does not indicate process injection or masquerading.
+
+2. Command lines for all three match the documented SearchFilterHost.exe invocation pattern exactly: a port number, three pipe handles, a session ID, and a CLSID. No LOLBin abuse, no download cradles, no encoded arguments.
+
+3. All DLLs visible in the dlllist slices load exclusively from C:\WINDOWS\System32 and C:\WINDOWS\SYSTEM32 — no user-writable paths, no random-named DLLs.
+
+4. The privilege sets are large but entirely unenabled (only SeChangeNotifyPrivilege is Present/Enabled/Default across all three). A full unenabled privilege set is normal for a SYSTEM-token process; none of the high-risk privileges (SeDebugPrivilege, SeTcbPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege) are shown as enabled or default.
+
+5. No malfind, netscan, handles, or registry evidence was present in any of the three sections.
+
+Verdict: standard Windows Search filter-host workers whose parent (SearchIndexer.exe) exited before snapshot time. Rejected as benign.
+================================================================

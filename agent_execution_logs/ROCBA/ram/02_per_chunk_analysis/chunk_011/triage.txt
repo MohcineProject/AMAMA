@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_011.txt
+Summary: sihost.exe has an orphaned parent PID (2444) not present in the process list; all other signals are weak but the orphaned parent warrants confirmation.
+
+[PROCESS]
+pid: 6468
+ppid: 2444
+image: sihost.exe
+cmdline: sihost.exe
+severity: LOW
+reasons: orphaned_parent: PPID 2444 (unknown) is not present anywhere in the process list
+

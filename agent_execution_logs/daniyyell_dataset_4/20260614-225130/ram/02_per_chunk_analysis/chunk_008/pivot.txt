@@ -1,0 +1,538 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-14T22:59:05Z
+
+=== PID 3636 (dasHost.exe, ppid=3200) ===
+Cmdline: dashost.exe {89ffcec7-6160-4f6c-b563ba0a9fbb312e}
+
+--- pslist.txt ---
+L68: 3636	3200	dasHost.exe	0xbb0c8f2b4280	3	-	0	False	2025-08-07 19:36:21.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L68: 3636	dasHost.exe	dashost.exe {89ffcec7-6160-4f6c-b563ba0a9fbb312e}
+
+--- privileges.txt ---
+L2210: 3636	dasHost.exe	2	SeCreateTokenPrivilege		Create a token object
+L2211: 3636	dasHost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L2212: 3636	dasHost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L2213: 3636	dasHost.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L2214: 3636	dasHost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2215: 3636	dasHost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L2216: 3636	dasHost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2217: 3636	dasHost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2218: 3636	dasHost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2219: 3636	dasHost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L2220: 3636	dasHost.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L2221: 3636	dasHost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L2222: 3636	dasHost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L2223: 3636	dasHost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L2224: 3636	dasHost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L2225: 3636	dasHost.exe	17	SeBackupPrivilege		Backup files and directories
+L2226: 3636	dasHost.exe	18	SeRestorePrivilege		Restore files and directories
+L2227: 3636	dasHost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2228: 3636	dasHost.exe	20	SeDebugPrivilege		Debug programs
+L2229: 3636	dasHost.exe	21	SeAuditPrivilege	Present	Generate security audits
+L2230: 3636	dasHost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2231: 3636	dasHost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2232: 3636	dasHost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2233: 3636	dasHost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2234: 3636	dasHost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2235: 3636	dasHost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2236: 3636	dasHost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2237: 3636	dasHost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L2238: 3636	dasHost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L2239: 3636	dasHost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2240: 3636	dasHost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2241: 3636	dasHost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L2242: 3636	dasHost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L2243: 3636	dasHost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L2244: 3636	dasHost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L2464: 3636	dasHost.exe	0x7ff6b2150000	0x1d000	dashost.exe	C:\Windows\system32\dashost.exe	-1	2025-08-07 19:36:21.000000 UTC	Disabled
+L2465: 3636	dasHost.exe	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:36:21.000000 UTC	Disabled
+L2466: 3636	dasHost.exe	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2025-08-07 19:36:21.000000 UTC	Disabled
+L2467: 3636	dasHost.exe	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2025-08-07 19:36:21.000000 UTC	Disabled
+L2468: 3636	dasHost.exe	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2469: 3636	dasHost.exe	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2470: 3636	dasHost.exe	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\System32\sechost.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2471: 3636	dasHost.exe	0x7fff5d570000	0x4e000	cfgmgr32.dll	C:\Windows\System32\cfgmgr32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2472: 3636	dasHost.exe	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2473: 3636	dasHost.exe	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\System32\bcryptPrimitives.dll	-1	2025-08-07 19:36:22.000000 UTC	Disabled
+L2474: 3636	dasHost.exe	0x7fff4cf90000	0x32000	dafupnp.dll	C:\Windows\system32\dafupnp.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2475: 3636	dasHost.exe	0x7fff5dcd0000	0xcd000	OLEAUT32.dll	C:\Windows\System32\OLEAUT32.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2476: 3636	dasHost.exe	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2477: 3636	dasHost.exe	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2478: 3636	dasHost.exe	0x7fff5dc60000	0x6b000	WS2_32.dll	C:\Windows\System32\WS2_32.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2479: 3636	dasHost.exe	0x7fff5cf20000	0x27000	bcrypt.dll	C:\Windows\System32\bcrypt.dll	-1	2025-08-07 19:36:22.000000 UTC	Disabled
+L2480: 3636	dasHost.exe	0x7fff5c1a0000	0x3c000	IPHLPAPI.DLL	C:\Windows\system32\IPHLPAPI.DLL	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2481: 3636	dasHost.exe	0x7fff55920000	0x10a000	WINHTTP.dll	C:\Windows\system32\WINHTTP.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2482: 3636	dasHost.exe	0x7fff56bb0000	0x16000	SSDPAPI.dll	C:\Windows\system32\SSDPAPI.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2483: 3636	dasHost.exe	0x7fff53100000	0x12000	deviceassociation.dll	C:\Windows\system32\deviceassociation.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2484: 3636	dasHost.exe	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2485: 3636	dasHost.exe	0x7fff49420000	0x50000	DAFWSD.dll	C:\Windows\system32\DAFWSD.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2486: 3636	dasHost.exe	0x7fff52a20000	0xaf000	wsdapi.dll	C:\Windows\system32\wsdapi.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2487: 3636	dasHost.exe	0x7fff5b9f0000	0xa1000	FirewallAPI.dll	C:\Windows\system32\FirewallAPI.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2488: 3636	dasHost.exe	0x7fff5f140000	0x8000	-	-	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2489: 3636	dasHost.exe	0x7fff5c1e0000	0xcb000	DNSAPI.dll	C:\Windows\system32\DNSAPI.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2490: 3636	dasHost.exe	0x7fff528a0000	0x153000	webservices.dll	C:\Windows\system32\webservices.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2491: 3636	dasHost.exe	0x7fff5b980000	0x3a000	fwbase.dll	C:\Windows\system32\fwbase.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2492: 3636	dasHost.exe	0x7fff5cf50000	0x15e000	CRYPT32.dll	C:\Windows\System32\CRYPT32.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2493: 3636	dasHost.exe	0x7fff5c8e0000	0x12000	MSASN1.dll	C:\Windows\system32\MSASN1.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2494: 3636	dasHost.exe	0x7fff56d50000	0x17000	dhcpcsvc6.DLL	C:\Windows\SYSTEM32\dhcpcsvc6.DLL	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2495: 3636	dasHost.exe	0x7fff56d30000	0x1d000	dhcpcsvc.DLL	C:\Windows\SYSTEM32\dhcpcsvc.DLL	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2496: 3636	dasHost.exe	0x7fff5c4b0000	0x6a000	mswsock.dll	C:\Windows\system32\mswsock.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2497: 3636	dasHost.exe	0x7fff57450000	0xb000	WINNSI.DLL	C:\Windows\SYSTEM32\WINNSI.DLL	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2498: 3636	dasHost.exe	0x7fff5cc40000	0x4b000	powrprof.dll	C:\Windows\SYSTEM32\powrprof.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2499: 3636	dasHost.exe	0x7fff5cc20000	0x12000	UMPDC.dll	C:\Windows\system32\UMPDC.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2500: 3636	dasHost.exe	0x7fff50120000	0x51000	FWPolicyIOMgr.dll	C:\Windows\system32\FWPolicyIOMgr.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2501: 3636	dasHost.exe	0x7fff5c6a0000	0x18000	CRYPTSP.dll	C:\Windows\system32\CRYPTSP.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2502: 3636	dasHost.exe	0x7fff5bdd0000	0x34000	rsaenh.dll	C:\Windows\system32\rsaenh.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2503: 3636	dasHost.exe	0x7fff5c6c0000	0xc000	CRYPTBASE.dll	C:\Windows\system32\CRYPTBASE.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2504: 3636	dasHost.exe	0x7fff58900000	0x36000	XmlLite.dll	C:\Windows\system32\XmlLite.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2505: 3636	dasHost.exe	0x7fff52740000	0xa000	WSDPROVIDERUTIL.dll	C:\Windows\system32\WSDPROVIDERUTIL.dll	6	2025-08-07 19:36:25.000000 UTC	Disabled
+L2506: 3636	dasHost.exe	0x7fff5eff0000	0xaf000	advapi32.dll	C:\Windows\System32\advapi32.dll	6	2025-08-07 19:36:25.000000 UTC	Disabled
+L2507: 3636	dasHost.exe	0x7fff51150000	0x98000	webio.dll	C:\Windows\system32\webio.dll	6	2025-08-07 19:36:25.000000 UTC	Disabled
+L2508: 3636	dasHost.exe	0x7fff5cc90000	0x32000	-	-	6	2025-08-07 19:36:25.000000 UTC	Disabled
+L2509: 3636	dasHost.exe	0x7fff5ead0000	0xa9000	-	-	6	2025-08-07 19:36:25.000000 UTC	Disabled
+L2510: 3636	dasHost.exe	0x7fff586e0000	0x3f000	-	-	6	2025-08-07 19:36:25.000000 UTC	Disabled
+L2511: 3636	dasHost.exe	0x7fff5d910000	0x19d000	user32.dll	C:\Windows\System32\user32.dll	6	2025-08-07 19:36:25.000000 UTC	Disabled
+L2512: 3636	dasHost.exe	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	6	2025-08-07 19:36:25.000000 UTC	Disabled
+L2513: 3636	dasHost.exe	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\System32\GDI32.dll	6	2025-08-07 19:36:25.000000 UTC	Disabled
+L2514: 3636	dasHost.exe	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2025-08-07 19:36:25.000000 UTC	Disabled
+L2515: 3636	dasHost.exe	0x7fff547d0000	0x10000	npmproxy.dll	C:\Windows\System32\npmproxy.dll	6	2025-08-07 19:36:25.000000 UTC	Disabled
+
+--- pstree.txt ---
+L32: *** 3636	3200	dasHost.exe	0xbb0c8f2b4280	3	-	0	False	2025-08-07 19:36:21.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\dasHost.exe	dashost.exe {89ffcec7-6160-4f6c-b563ba0a9fbb312e}	C:\Windows\system32\dashost.exe
+
+--- psscan.txt ---
+L83: 3636	3200	dasHost.exe	0xbb0c8f2b4280	3	-	0	False	2025-08-07 19:36:21.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L65: 0xbb0c8f623270	UDPv4	0.0.0.0	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L66: 0xbb0c8f623720	UDPv4	0.0.0.0	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L67: 0xbb0c8f623d60	UDPv4	0.0.0.0	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L68: 0xbb0c8f623d60	UDPv6	::	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L69: 0xbb0c8f6243a0	UDPv4	0.0.0.0	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L70: 0xbb0c8f6243a0	UDPv6	::	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L71: 0xbb0c8f627410	UDPv4	0.0.0.0	54227	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L72: 0xbb0c8f627be0	UDPv4	0.0.0.0	54228	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L73: 0xbb0c8f627be0	UDPv6	::	54228	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+
+--- netstat.txt ---
+L52: 0xbb0c8f623d60	UDPv4	0.0.0.0	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L53: 0xbb0c8f623d60	UDPv6	::	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L54: 0xbb0c8f6243a0	UDPv4	0.0.0.0	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L55: 0xbb0c8f6243a0	UDPv6	::	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L58: 0xbb0c8f623270	UDPv4	0.0.0.0	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L59: 0xbb0c8f623720	UDPv4	0.0.0.0	3702	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L78: 0xbb0c8f627410	UDPv4	0.0.0.0	54227	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L79: 0xbb0c8f627be0	UDPv4	0.0.0.0	54228	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+L80: 0xbb0c8f627be0	UDPv6	::	54228	*	0		3636	dasHost.exe	2025-08-07 19:36:24.000000 UTC
+
+--- ldrmodules.txt ---
+L2545: 3636	dasHost.exe	0x27895080000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L2546: 3636	dasHost.exe	0x278950a0000	False	False	False	\Windows\System32\en-GB\winnlsres.dll.mui
+L2547: 3636	dasHost.exe	0x27895090000	False	False	False	\Windows\System32\winnlsres.dll
+L2548: 3636	dasHost.exe	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2549: 3636	dasHost.exe	0x7fff55920000	True	True	True	\Windows\System32\winhttp.dll
+L2550: 3636	dasHost.exe	0x7fff4cf90000	True	True	True	\Windows\System32\dafupnp.dll
+L2551: 3636	dasHost.exe	0x7ff6b2150000	True	False	True	\Windows\System32\dasHost.exe
+L2552: 3636	dasHost.exe	0x7fff49420000	True	True	True	\Windows\System32\DAFWSD.dll
+L2553: 3636	dasHost.exe	0x7fff528a0000	True	True	True	\Windows\System32\webservices.dll
+L2554: 3636	dasHost.exe	0x7fff51150000	True	True	True	\Windows\System32\webio.dll
+L2555: 3636	dasHost.exe	0x7fff50120000	True	True	True	\Windows\System32\fwpolicyiomgr.dll
+L2556: 3636	dasHost.exe	0x7fff52740000	True	True	True	\Windows\System32\WsdProviderUtil.dll
+L2557: 3636	dasHost.exe	0x7fff53100000	True	True	True	\Windows\System32\deviceassociation.dll
+L2558: 3636	dasHost.exe	0x7fff52a20000	True	True	True	\Windows\System32\WSDApi.dll
+L2559: 3636	dasHost.exe	0x7fff547d0000	True	True	True	\Windows\System32\npmproxy.dll
+L2560: 3636	dasHost.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2561: 3636	dasHost.exe	0x7fff57450000	True	True	True	\Windows\System32\winnsi.dll
+L2562: 3636	dasHost.exe	0x7fff56d30000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L2563: 3636	dasHost.exe	0x7fff56bb0000	True	True	True	\Windows\System32\ssdpapi.dll
+L2564: 3636	dasHost.exe	0x7fff56d50000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L2565: 3636	dasHost.exe	0x7fff58900000	True	True	True	\Windows\System32\xmllite.dll
+L2566: 3636	dasHost.exe	0x7fff586e0000	True	True	True	\Windows\System32\netprofm.dll
+L2567: 3636	dasHost.exe	0x7fff5b9f0000	True	True	True	\Windows\System32\FirewallAPI.dll
+L2568: 3636	dasHost.exe	0x7fff5b980000	True	True	True	\Windows\System32\fwbase.dll
+L2569: 3636	dasHost.exe	0x7fff5bdd0000	True	True	True	\Windows\System32\rsaenh.dll
+L2570: 3636	dasHost.exe	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L2571: 3636	dasHost.exe	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L2572: 3636	dasHost.exe	0x7fff5c4b0000	True	True	True	\Windows\System32\mswsock.dll
+L2573: 3636	dasHost.exe	0x7fff5c1e0000	True	True	True	\Windows\System32\dnsapi.dll
+L2574: 3636	dasHost.exe	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L2575: 3636	dasHost.exe	0x7fff5c6c0000	True	True	True	\Windows\System32\cryptbase.dll
+L2576: 3636	dasHost.exe	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L2577: 3636	dasHost.exe	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L2578: 3636	dasHost.exe	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L2579: 3636	dasHost.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L2580: 3636	dasHost.exe	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L2581: 3636	dasHost.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L2582: 3636	dasHost.exe	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2583: 3636	dasHost.exe	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L2584: 3636	dasHost.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L2585: 3636	dasHost.exe	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L2586: 3636	dasHost.exe	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L2587: 3636	dasHost.exe	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L2588: 3636	dasHost.exe	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2589: 3636	dasHost.exe	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L2590: 3636	dasHost.exe	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L2591: 3636	dasHost.exe	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L2592: 3636	dasHost.exe	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L2593: 3636	dasHost.exe	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L2594: 3636	dasHost.exe	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L2595: 3636	dasHost.exe	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L2596: 3636	dasHost.exe	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L2597: 3636	dasHost.exe	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L2598: 3636	dasHost.exe	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L2599: 3636	dasHost.exe	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L2545: 3636	dasHost.exe	0x27895080000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L2546: 3636	dasHost.exe	0x278950a0000	False	False	False	\Windows\System32\en-GB\winnlsres.dll.mui
+L2547: 3636	dasHost.exe	0x27895090000	False	False	False	\Windows\System32\winnlsres.dll
+L2548: 3636	dasHost.exe	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2549: 3636	dasHost.exe	0x7fff55920000	True	True	True	\Windows\System32\winhttp.dll
+L2550: 3636	dasHost.exe	0x7fff4cf90000	True	True	True	\Windows\System32\dafupnp.dll
+L2551: 3636	dasHost.exe	0x7ff6b2150000	True	False	True	\Windows\System32\dasHost.exe
+L2552: 3636	dasHost.exe	0x7fff49420000	True	True	True	\Windows\System32\DAFWSD.dll
+L2553: 3636	dasHost.exe	0x7fff528a0000	True	True	True	\Windows\System32\webservices.dll
+L2554: 3636	dasHost.exe	0x7fff51150000	True	True	True	\Windows\System32\webio.dll
+L2555: 3636	dasHost.exe	0x7fff50120000	True	True	True	\Windows\System32\fwpolicyiomgr.dll
+L2556: 3636	dasHost.exe	0x7fff52740000	True	True	True	\Windows\System32\WsdProviderUtil.dll
+L2557: 3636	dasHost.exe	0x7fff53100000	True	True	True	\Windows\System32\deviceassociation.dll
+L2558: 3636	dasHost.exe	0x7fff52a20000	True	True	True	\Windows\System32\WSDApi.dll
+L2559: 3636	dasHost.exe	0x7fff547d0000	True	True	True	\Windows\System32\npmproxy.dll
+L2560: 3636	dasHost.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2561: 3636	dasHost.exe	0x7fff57450000	True	True	True	\Windows\System32\winnsi.dll
+L2562: 3636	dasHost.exe	0x7fff56d30000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L2563: 3636	dasHost.exe	0x7fff56bb0000	True	True	True	\Windows\System32\ssdpapi.dll
+L2564: 3636	dasHost.exe	0x7fff56d50000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L2565: 3636	dasHost.exe	0x7fff58900000	True	True	True	\Windows\System32\xmllite.dll
+L2566: 3636	dasHost.exe	0x7fff586e0000	True	True	True	\Windows\System32\netprofm.dll
+L2567: 3636	dasHost.exe	0x7fff5b9f0000	True	True	True	\Windows\System32\FirewallAPI.dll
+L2568: 3636	dasHost.exe	0x7fff5b980000	True	True	True	\Windows\System32\fwbase.dll
+L2569: 3636	dasHost.exe	0x7fff5bdd0000	True	True	True	\Windows\System32\rsaenh.dll
+L2570: 3636	dasHost.exe	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L2571: 3636	dasHost.exe	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L2572: 3636	dasHost.exe	0x7fff5c4b0000	True	True	True	\Windows\System32\mswsock.dll
+L2573: 3636	dasHost.exe	0x7fff5c1e0000	True	True	True	\Windows\System32\dnsapi.dll
+L2574: 3636	dasHost.exe	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L2575: 3636	dasHost.exe	0x7fff5c6c0000	True	True	True	\Windows\System32\cryptbase.dll
+L2576: 3636	dasHost.exe	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L2577: 3636	dasHost.exe	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L2578: 3636	dasHost.exe	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L2579: 3636	dasHost.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L2580: 3636	dasHost.exe	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L2581: 3636	dasHost.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L2582: 3636	dasHost.exe	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2583: 3636	dasHost.exe	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L2584: 3636	dasHost.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L2585: 3636	dasHost.exe	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L2586: 3636	dasHost.exe	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L2587: 3636	dasHost.exe	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L2588: 3636	dasHost.exe	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2589: 3636	dasHost.exe	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L2590: 3636	dasHost.exe	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L2591: 3636	dasHost.exe	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L2592: 3636	dasHost.exe	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L2593: 3636	dasHost.exe	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L2594: 3636	dasHost.exe	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L2595: 3636	dasHost.exe	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L2596: 3636	dasHost.exe	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L2597: 3636	dasHost.exe	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L2598: 3636	dasHost.exe	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L2599: 3636	dasHost.exe	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L68: 3636	dasHost.exe	\Device\HarddiskVolume3\Windows\System32\dasHost.exe	C:\Windows\system32\dashost.exe	False	False
+
+--- sessions.txt ---
+L62: 0	-	3636	dasHost.exe	NT AUTHORITY/LOCAL SERVICE	2025-08-07 19:36:21.000000 UTC
+
+=== PID 4228 (dllhost.exe, ppid=716) ===
+Cmdline: C:\Windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+
+--- pslist.txt ---
+L74: 4228	716	dllhost.exe	0xbb0c8f5eb080	10	-	0	False	2025-08-07 19:36:23.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L74: 4228	dllhost.exe	C:\Windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+
+--- privileges.txt ---
+L2420: 4228	dllhost.exe	2	SeCreateTokenPrivilege		Create a token object
+L2421: 4228	dllhost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L2422: 4228	dllhost.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L2423: 4228	dllhost.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L2424: 4228	dllhost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2425: 4228	dllhost.exe	7	SeTcbPrivilege	Default	Act as part of the operating system
+L2426: 4228	dllhost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L2427: 4228	dllhost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L2428: 4228	dllhost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L2429: 4228	dllhost.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L2430: 4228	dllhost.exe	12	SeSystemtimePrivilege		Change the system time
+L2431: 4228	dllhost.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L2432: 4228	dllhost.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L2433: 4228	dllhost.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L2434: 4228	dllhost.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L2435: 4228	dllhost.exe	17	SeBackupPrivilege		Backup files and directories
+L2436: 4228	dllhost.exe	18	SeRestorePrivilege		Restore files and directories
+L2437: 4228	dllhost.exe	19	SeShutdownPrivilege		Shut down the system
+L2438: 4228	dllhost.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L2439: 4228	dllhost.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L2440: 4228	dllhost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L2441: 4228	dllhost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2442: 4228	dllhost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2443: 4228	dllhost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L2444: 4228	dllhost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2445: 4228	dllhost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2446: 4228	dllhost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L2447: 4228	dllhost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L2448: 4228	dllhost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L2449: 4228	dllhost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2450: 4228	dllhost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2451: 4228	dllhost.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L2452: 4228	dllhost.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L2453: 4228	dllhost.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L2454: 4228	dllhost.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L2777: 4228	dllhost.exe	0x7ff663920000	0x9000	dllhost.exe	C:\Windows\system32\dllhost.exe	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2778: 4228	dllhost.exe	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2779: 4228	dllhost.exe	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2780: 4228	dllhost.exe	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2781: 4228	dllhost.exe	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2782: 4228	dllhost.exe	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2783: 4228	dllhost.exe	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2784: 4228	dllhost.exe	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2785: 4228	dllhost.exe	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2786: 4228	dllhost.exe	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\System32\bcryptPrimitives.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2787: 4228	dllhost.exe	0x7fff5ead0000	0xa9000	clbcatq.dll	C:\Windows\System32\clbcatq.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2788: 4228	dllhost.exe	0x7fff5d910000	0x19d000	user32.dll	C:\Windows\System32\user32.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2789: 4228	dllhost.exe	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2790: 4228	dllhost.exe	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\System32\GDI32.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2791: 4228	dllhost.exe	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2792: 4228	dllhost.exe	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2793: 4228	dllhost.exe	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\System32\sechost.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2794: 4228	dllhost.exe	0x7fff4bfe0000	0x1aa000	COMSVCS.DLL	C:\Windows\system32\COMSVCS.DLL	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2795: 4228	dllhost.exe	0x7fff5dcd0000	0xcd000	OLEAUT32.dll	C:\Windows\System32\OLEAUT32.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2796: 4228	dllhost.exe	0x7fff5e9a0000	0x12a000	ole32.dll	C:\Windows\System32\ole32.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2797: 4228	dllhost.exe	0x7fff5c6a0000	0x18000	CRYPTSP.dll	C:\Windows\SYSTEM32\CRYPTSP.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2798: 4228	dllhost.exe	0x7fff5bdd0000	0x34000	rsaenh.dll	C:\Windows\system32\rsaenh.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2799: 4228	dllhost.exe	0x7fff5cf20000	0x27000	bcrypt.dll	C:\Windows\System32\bcrypt.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2800: 4228	dllhost.exe	0x7fff5c6c0000	0xc000	CRYPTBASE.dll	C:\Windows\system32\CRYPTBASE.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2801: 4228	dllhost.exe	0x7fff4b5e0000	0x24000	txflog.dll	C:\Windows\system32\txflog.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2802: 4228	dllhost.exe	0x7fff56ad0000	0x6c000	es.dll	C:\Windows\system32\es.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2803: 4228	dllhost.exe	0x7fff58940000	0xf6000	PROPSYS.dll	C:\Windows\system32\PROPSYS.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2804: 4228	dllhost.exe	0x7fff5cb00000	0xa2000	sxs.dll	C:\Windows\SYSTEM32\sxs.dll	-1	2025-08-07 19:36:23.000000 UTC	Disabled
+L2805: 4228	dllhost.exe	0x7fff5eff0000	0xaf000	ADVAPI32.dll	C:\Windows\System32\ADVAPI32.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2806: 4228	dllhost.exe	0x7fff49b80000	0x17000	XOLEHLP.dll	C:\Windows\SYSTEM32\XOLEHLP.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2807: 4228	dllhost.exe	0x7fff49970000	0xe0000	MSDTCPRX.DLL	C:\Windows\SYSTEM32\MSDTCPRX.DLL	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2808: 4228	dllhost.exe	0x7fff5dc60000	0x6b000	WS2_32.dll	C:\Windows\System32\WS2_32.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2809: 4228	dllhost.exe	0x7fff5f150000	0x55000	SHLWAPI.dll	C:\Windows\System32\SHLWAPI.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2810: 4228	dllhost.exe	0x7fff4dcc0000	0x10a000	CLUSAPI.dll	C:\Windows\SYSTEM32\CLUSAPI.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2811: 4228	dllhost.exe	0x7fff4dfa0000	0x9c000	RESUTILS.dll	C:\Windows\SYSTEM32\RESUTILS.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2812: 4228	dllhost.exe	0x7fff4d160000	0xb000	ktmw32.dll	C:\Windows\SYSTEM32\ktmw32.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2813: 4228	dllhost.exe	0x7fff5c1e0000	0xcb000	DNSAPI.dll	C:\Windows\SYSTEM32\DNSAPI.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2814: 4228	dllhost.exe	0x7fff49860000	0x71000	MTXCLU.DLL	C:\Windows\SYSTEM32\MTXCLU.DLL	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2815: 4228	dllhost.exe	0x7fff5c1a0000	0x3c000	IPHLPAPI.DLL	C:\Windows\SYSTEM32\IPHLPAPI.DLL	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2816: 4228	dllhost.exe	0x7fff5f140000	0x8000	NSI.dll	C:\Windows\System32\NSI.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2817: 4228	dllhost.exe	0x7fff5bf30000	0x19000	wkscli.dll	C:\Windows\SYSTEM32\wkscli.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2818: 4228	dllhost.exe	0x7fff49950000	0x12000	cscapi.dll	C:\Windows\system32\cscapi.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2819: 4228	dllhost.exe	0x7fff5c2b0000	0xc000	netutils.dll	C:\Windows\SYSTEM32\netutils.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2820: 4228	dllhost.exe	0x7fff5cc90000	0x32000	sspicli.dll	C:\Windows\system32\sspicli.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2821: 4228	dllhost.exe	0x7fff5c4b0000	0x6a000	mswsock.dll	C:\Windows\System32\mswsock.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2822: 4228	dllhost.exe	0x7fff52400000	0x82000	fwpuclnt.dll	C:\Windows\System32\fwpuclnt.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2823: 4228	dllhost.exe	0x7fff51930000	0xa000	rasadhlp.dll	C:\Windows\System32\rasadhlp.dll	6	2025-08-07 19:36:23.000000 UTC	Disabled
+L2824: 4228	dllhost.exe	0x7fff50000000	0x7d000	catsrv.dll	C:\Windows\system32\catsrv.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2825: 4228	dllhost.exe	0x7fff51360000	0xe000	MfcSubs.dll	C:\Windows\system32\MfcSubs.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2826: 4228	dllhost.exe	0x7fff51350000	0x10000	catsrvps.dll	C:\Windows\system32\catsrvps.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2827: 4228	dllhost.exe	0x7fff49af0000	0x86000	catsrvut.dll	C:\Windows\system32\catsrvut.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+
+--- pstree.txt ---
+L33: ** 4228	716	dllhost.exe	0xbb0c8f5eb080	10	-	0	False	2025-08-07 19:36:23.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\dllhost.exe	C:\Windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}	C:\Windows\system32\dllhost.exe
+
+--- psscan.txt ---
+L92: 4228	716	dllhost.exe	0xbb0c8f5eb080	10	-	0	False	2025-08-07 19:36:23.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L2871: 4228	dllhost.exe	0x1df5a360000	False	False	False	\Windows\System32\stdole2.tlb
+L2872: 4228	dllhost.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L2873: 4228	dllhost.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2874: 4228	dllhost.exe	0x7fff4bfe0000	True	True	True	\Windows\System32\comsvcs.dll
+L2875: 4228	dllhost.exe	0x7ff663920000	True	False	True	\Windows\System32\dllhost.exe
+L2876: 4228	dllhost.exe	0x7fff49970000	True	True	True	\Windows\System32\msdtcprx.dll
+L2877: 4228	dllhost.exe	0x7fff49950000	True	True	True	\Windows\System32\cscapi.dll
+L2878: 4228	dllhost.exe	0x7fff49860000	True	True	True	\Windows\System32\mtxclu.dll
+L2879: 4228	dllhost.exe	0x7fff49b80000	True	True	True	\Windows\System32\xolehlp.dll
+L2880: 4228	dllhost.exe	0x7fff49af0000	True	True	True	\Windows\System32\catsrvut.dll
+L2881: 4228	dllhost.exe	0x7fff4b5e0000	True	True	True	\Windows\System32\txflog.dll
+L2882: 4228	dllhost.exe	0x7fff4dfa0000	True	True	True	\Windows\System32\resutils.dll
+L2883: 4228	dllhost.exe	0x7fff4dcc0000	True	True	True	\Windows\System32\clusapi.dll
+L2884: 4228	dllhost.exe	0x7fff4d160000	True	True	True	\Windows\System32\ktmw32.dll
+L2885: 4228	dllhost.exe	0x7fff51930000	True	True	True	\Windows\System32\rasadhlp.dll
+L2886: 4228	dllhost.exe	0x7fff51350000	True	True	True	\Windows\System32\catsrvps.dll
+L2887: 4228	dllhost.exe	0x7fff50000000	True	True	True	\Windows\System32\catsrv.dll
+L2888: 4228	dllhost.exe	0x7fff51360000	True	True	True	\Windows\System32\mfcsubs.dll
+L2889: 4228	dllhost.exe	0x7fff56ad0000	True	True	True	\Windows\System32\es.dll
+L2890: 4228	dllhost.exe	0x7fff52400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L2891: 4228	dllhost.exe	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L2892: 4228	dllhost.exe	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L2893: 4228	dllhost.exe	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2894: 4228	dllhost.exe	0x7fff5bdd0000	True	True	True	\Windows\System32\rsaenh.dll
+L2895: 4228	dllhost.exe	0x7fff5bf30000	True	True	True	\Windows\System32\wkscli.dll
+L2896: 4228	dllhost.exe	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L2897: 4228	dllhost.exe	0x7fff5c1e0000	True	True	True	\Windows\System32\dnsapi.dll
+L2898: 4228	dllhost.exe	0x7fff5c4b0000	True	True	True	\Windows\System32\mswsock.dll
+L2899: 4228	dllhost.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L2900: 4228	dllhost.exe	0x7fff5cb00000	True	True	True	\Windows\System32\sxs.dll
+L2901: 4228	dllhost.exe	0x7fff5c6c0000	True	True	True	\Windows\System32\cryptbase.dll
+L2902: 4228	dllhost.exe	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L2903: 4228	dllhost.exe	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L2904: 4228	dllhost.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L2905: 4228	dllhost.exe	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2906: 4228	dllhost.exe	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L2907: 4228	dllhost.exe	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L2908: 4228	dllhost.exe	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L2909: 4228	dllhost.exe	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2910: 4228	dllhost.exe	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L2911: 4228	dllhost.exe	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L2912: 4228	dllhost.exe	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L2913: 4228	dllhost.exe	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L2914: 4228	dllhost.exe	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L2915: 4228	dllhost.exe	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L2916: 4228	dllhost.exe	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L2917: 4228	dllhost.exe	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L2918: 4228	dllhost.exe	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L2919: 4228	dllhost.exe	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L2920: 4228	dllhost.exe	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L2921: 4228	dllhost.exe	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L2922: 4228	dllhost.exe	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L2871: 4228	dllhost.exe	0x1df5a360000	False	False	False	\Windows\System32\stdole2.tlb
+L2872: 4228	dllhost.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L2873: 4228	dllhost.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2874: 4228	dllhost.exe	0x7fff4bfe0000	True	True	True	\Windows\System32\comsvcs.dll
+L2875: 4228	dllhost.exe	0x7ff663920000	True	False	True	\Windows\System32\dllhost.exe
+L2876: 4228	dllhost.exe	0x7fff49970000	True	True	True	\Windows\System32\msdtcprx.dll
+L2877: 4228	dllhost.exe	0x7fff49950000	True	True	True	\Windows\System32\cscapi.dll
+L2878: 4228	dllhost.exe	0x7fff49860000	True	True	True	\Windows\System32\mtxclu.dll
+L2879: 4228	dllhost.exe	0x7fff49b80000	True	True	True	\Windows\System32\xolehlp.dll
+L2880: 4228	dllhost.exe	0x7fff49af0000	True	True	True	\Windows\System32\catsrvut.dll
+L2881: 4228	dllhost.exe	0x7fff4b5e0000	True	True	True	\Windows\System32\txflog.dll
+L2882: 4228	dllhost.exe	0x7fff4dfa0000	True	True	True	\Windows\System32\resutils.dll
+L2883: 4228	dllhost.exe	0x7fff4dcc0000	True	True	True	\Windows\System32\clusapi.dll
+L2884: 4228	dllhost.exe	0x7fff4d160000	True	True	True	\Windows\System32\ktmw32.dll
+L2885: 4228	dllhost.exe	0x7fff51930000	True	True	True	\Windows\System32\rasadhlp.dll
+L2886: 4228	dllhost.exe	0x7fff51350000	True	True	True	\Windows\System32\catsrvps.dll
+L2887: 4228	dllhost.exe	0x7fff50000000	True	True	True	\Windows\System32\catsrv.dll
+L2888: 4228	dllhost.exe	0x7fff51360000	True	True	True	\Windows\System32\mfcsubs.dll
+L2889: 4228	dllhost.exe	0x7fff56ad0000	True	True	True	\Windows\System32\es.dll
+L2890: 4228	dllhost.exe	0x7fff52400000	True	True	True	\Windows\System32\FWPUCLNT.DLL
+L2891: 4228	dllhost.exe	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L2892: 4228	dllhost.exe	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L2893: 4228	dllhost.exe	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2894: 4228	dllhost.exe	0x7fff5bdd0000	True	True	True	\Windows\System32\rsaenh.dll
+L2895: 4228	dllhost.exe	0x7fff5bf30000	True	True	True	\Windows\System32\wkscli.dll
+L2896: 4228	dllhost.exe	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L2897: 4228	dllhost.exe	0x7fff5c1e0000	True	True	True	\Windows\System32\dnsapi.dll
+L2898: 4228	dllhost.exe	0x7fff5c4b0000	True	True	True	\Windows\System32\mswsock.dll
+L2899: 4228	dllhost.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L2900: 4228	dllhost.exe	0x7fff5cb00000	True	True	True	\Windows\System32\sxs.dll
+L2901: 4228	dllhost.exe	0x7fff5c6c0000	True	True	True	\Windows\System32\cryptbase.dll
+L2902: 4228	dllhost.exe	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L2903: 4228	dllhost.exe	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L2904: 4228	dllhost.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L2905: 4228	dllhost.exe	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2906: 4228	dllhost.exe	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L2907: 4228	dllhost.exe	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L2908: 4228	dllhost.exe	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L2909: 4228	dllhost.exe	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2910: 4228	dllhost.exe	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L2911: 4228	dllhost.exe	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L2912: 4228	dllhost.exe	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L2913: 4228	dllhost.exe	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L2914: 4228	dllhost.exe	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L2915: 4228	dllhost.exe	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L2916: 4228	dllhost.exe	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L2917: 4228	dllhost.exe	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L2918: 4228	dllhost.exe	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L2919: 4228	dllhost.exe	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L2920: 4228	dllhost.exe	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L2921: 4228	dllhost.exe	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L2922: 4228	dllhost.exe	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L74: 4228	dllhost.exe	\Device\HarddiskVolume3\Windows\System32\dllhost.exe	C:\Windows\system32\dllhost.exe	False	False
+
+--- sessions.txt ---
+L68: 0	-	4228	dllhost.exe	WORKGROUP/DESKTOP-RMH9G1A$	2025-08-07 19:36:23.000000 UTC
+
+=== PID 4892 (svchost.exe, ppid=716) ===
+
+--- pslist.txt ---
+L123: 4892	716	svchost.exe	0xbb0c942a0080	0	-	0	False	2025-08-07 19:38:38.000000 UTC	2025-08-07 19:40:45.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L123: 4892	svchost.exe	-
+
+--- privileges.txt ---
+L4135: 4892	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L4136: 4892	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4137: 4892	svchost.exe	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L4138: 4892	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4139: 4892	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4140: 4892	svchost.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L4141: 4892	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4142: 4892	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4143: 4892	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4144: 4892	svchost.exe	11	SeSystemProfilePrivilege	Default	Profile system performance
+L4145: 4892	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L4146: 4892	svchost.exe	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L4147: 4892	svchost.exe	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L4148: 4892	svchost.exe	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L4149: 4892	svchost.exe	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L4150: 4892	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L4151: 4892	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L4152: 4892	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L4153: 4892	svchost.exe	20	SeDebugPrivilege	Default	Debug programs
+L4154: 4892	svchost.exe	21	SeAuditPrivilege	Default	Generate security audits
+L4155: 4892	svchost.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L4156: 4892	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4157: 4892	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4158: 4892	svchost.exe	25	SeUndockPrivilege		Remove computer from docking station
+L4159: 4892	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L4160: 4892	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4161: 4892	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L4162: 4892	svchost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L4163: 4892	svchost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L4164: 4892	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4165: 4892	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4166: 4892	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L4167: 4892	svchost.exe	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L4168: 4892	svchost.exe	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L4169: 4892	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L67: ** 4892	716	svchost.exe	0xbb0c942a0080	0	-	0	False	2025-08-07 19:38:38.000000 UTC	2025-08-07 19:40:45.000000 UTC	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	-
+
+--- psscan.txt ---
+L153: 4892	716	svchost.exe	0xbb0c942a0080	0	-	0	False	2025-08-07 19:38:38.000000 UTC	2025-08-07 19:40:45.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L123: 4892	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	-	False	False
+
+--- sessions.txt ---
+L89: 0	-	4892	svchost.exe	-	2025-08-07 19:38:38.000000 UTC
+
+=== PID 4580 (svchost.exe, ppid=716) ===
+
+--- psscan.txt ---
+L170: 4580	716	svchost.exe	0xbb0c94c4c340	1	-	0	False	2025-08-07 19:41:34.000000 UTC	N/A	Disabled
+
+=== PID 3884 (TiWorker.exe, ppid=860) ===
+
+--- psscan.txt ---
+L164: 3884	860	TiWorker.exe	0xbb0c948c2080	5	-	0	False	2025-08-07 19:51:30.000000 UTC	N/A	Disabled
+
+=== END OF PIVOT REPORT ===

@@ -1,0 +1,29 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:35:00Z
+Chunk: chunk_024.txt
+Summary: All three processes share an unknown parent PID 576 not present in the process list (orphaned); two are short-lived exited processes visible only via psscan, suggesting possible process hollowing or evasion artefacts.
+
+[PROCESS]
+pid: 8772
+ppid: 576
+image: backgroundTaskHost.exe
+cmdline: "C:\WINDOWS\system32\backgroundTaskHost.exe" -ServerName:WindowsBackup.AppXnn6fnh4raxtmg45ba8k2f4ykb7n0k3y4.mca
+severity: LOW
+reasons: orphaned_process: parent PID 576 not present anywhere in the process list | non-whitelisted_dlls: DLL list includes the host executable itself (C:\WINDOWS\system32\backgroundTaskHost.exe) listed as a loaded module, which is anomalous and may indicate a reporting artefact or tampered loader context | parent_unknown: discovered parent context is 'unknown', preventing normal parent-child validation
+
+[PROCESS]
+pid: 9044
+ppid: 576
+image: backgroundTask
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_process: parent PID 576 not present anywhere in the process list | psscan_only: process discovered exclusively via psscan (not in pslist), indicating it has already exited or was hidden/unlinked from the active process list | short_lived: CreateTime 2026-05-12 18:29:03 UTC, ExitTime 2026-05-12 18:31:08 UTC (~2 min), combined with psscan-only visibility raises evasion concern | missing_commandline: no command line recorded, consistent with process hollowing or deliberate argument suppression
+
+[PROCESS]
+pid: 9168
+ppid: 576
+image: RuntimeBroker.
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_process: parent PID 576 not present anywhere in the process list | psscan_only: process discovered exclusively via psscan, indicating it has already exited or was unlinked from the active process list | truncated_name_anomaly: EPROCESS name shows 'RuntimeBroker.' — the trailing dot is unusual; legitimate kernel truncation of 'RuntimeBroker.exe' would yield 'RuntimeBroker.e' (14 chars), not 'RuntimeBroker.' — warrants path/cmdline verification to rule out typosquat | short_lived: CreateTime 2026-05-12 18:27:59 UTC, ExitTime 2026-05-12 18:31:13 UTC (~3 min), combined with psscan-only visibility and name anomaly raises evasion concern | missing_commandline: no command line recorded
+

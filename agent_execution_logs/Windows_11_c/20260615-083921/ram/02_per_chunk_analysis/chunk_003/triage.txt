@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:30:00Z
+Chunk: chunk_003.txt
+Summary: MsMpEng.exe has an unknown/missing parent PID (888); all three processes are otherwise consistent with legitimate Windows Defender activity from correct paths with expected command lines.
+
+[PROCESS]
+pid: 3328
+ppid: 888
+image: MsMpEng.exe
+cmdline: "C:\Program Files\Windows Defender\MsMpEng.exe"
+severity: LOW
+reasons: orphaned_process: parent PID 888 does not appear anywhere in the process list — cannot verify legitimate spawn chain for MsMpEng.exe
+

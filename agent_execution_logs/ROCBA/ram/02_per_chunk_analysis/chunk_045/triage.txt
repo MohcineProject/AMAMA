@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-01-30T00:00:00Z
+Chunk: chunk_045.txt
+Summary: Orphaned parent PID for Microsoft.Photos process; single LOW-confidence signal requiring pivot confirmation.
+
+[PROCESS]
+pid: 21432
+ppid: 740
+image: Microsoft.Photos.exe
+cmdline: "C:\Program Files\WindowsApps\Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe\Microsoft.Photos.exe" -ServerName:App.AppXzst44mncqdg84v7sv6p7yznqwssy6f7f.mca
+severity: LOW
+reasons: orphaned_parent: PPID 740 does not appear anywhere in the process list | network: outbound TCPv4 connection to public IP 52.167.249.196:443 (CLOSED) — note this is a known Microsoft Azure range consistent with Photos telemetry, but warrants confirmation given orphaned parent
+

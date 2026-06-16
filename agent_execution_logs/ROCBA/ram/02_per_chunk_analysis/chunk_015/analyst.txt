@@ -1,0 +1,74 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 7900 — svchost.exe (ppid=828)**
+
+Agent 1 reasons: orphaned parent (828 not in process list), psscan_only (DKOM unlinking suspected), missing path/cmdline.
+
+Evidence analysis:
+- Two psscan hits at different physical offsets (0xb78d10566080 and 0xf180000c3080) for the same PID 7900 with identical metadata. Two different EPROCESS structures for the same PID is a strong indicator of either PID reuse artefact or a duplicate/ghost entry — but both show `Disabled` for DEP and session 0, no threads listed (`7` handles, `-` threads). Wait — the columns are: PID, PPID, Name, Offset, Handles, Threads(?), Sessions, Wow64, CreateTime, ExitTime, File output. Actually looking at the format: `7900 828 svchost.exe 0xb78d10566080 7 - 0 False 2020-11-16 02:36:35.000000 UTC N/A Disabled`. The `-` in the threads column and `7` handles is unusual for a running svchost. The `N/A` ExitTime means it hasn't exited. Two EPROCESS entries for the same PID at different offsets is a classic DKOM artefact — one may be the real structure unlinked from the active list, one may be a remnant or the process was relaunched with the same PID.
+- No cmdline, no path, no pslist entry — consistent with DKOM unlinking.
+- Parent PID 828 not in process list — orphaned.
+- However: no malfind, no dlllist, no netscan, no privileges evidence. The evidence is thin — only psscan structural anomalies.
+- The dual EPROCESS offset is genuinely suspicious (DKOM indicator), but without cmdline, DLL, network, or malfind corroboration, I cannot confirm malice. This is INCONCLUSIVE — the structural anomaly is real but insufficient alone to confirm.
+
+**PID 8028 — svchost.exe (ppid=828)**
+
+Agent 1 reasons: orphaned parent (828 not in process list), non_whitelisted_dlls (but actually all System32).
+
+Evidence analysis:
+- Cmdline: `C:\WINDOWS\System32\svchost.exe -k UnistackSvcGroup` — this is a completely legitimate svchost invocation. UnistackSvcGroup is a real Windows service group (hosts OneSyncSvc, CDPUserSvc, etc.).
+- Parent PID 828: legitimate svchost instances should parent to services.exe (typically PID ~748 or similar). PID 828 is not in the process list. However, on Windows 10, some svchost instances under UnistackSvcGroup are actually spawned by other svchost instances or by the session manager, and parent PID resolution can fail in memory forensics if the parent exited. This is a weak signal.
+- DLLs: all three shown are from `C:\WINDOWS\System32\` — svchost.exe, ntdll.dll, KERNEL32.DLL. Entirely normal.
+- Privileges: The privilege list is enormous — it includes SeCreateTokenPrivilege, SeTcbPrivilege, SeDebugPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege, etc. However, critically, almost none of these are `Present` or `Enabled`. Only SeShutdownPrivilege (Present), SeChangeNotifyPrivilege (Present, Enabled, Default), SeUndockPrivilege (Present), SeCreateGlobalPrivilege (Default), SeIncreaseWorkingSetPrivilege (Present), SeTimeZonePrivilege (Present) are actually present/enabled. The rest are listed but not present — this is the full token privilege list showing all possible privileges, most of which are not held. This is normal for a SYSTEM-context svchost which has a broad token but most privileges stripped/not present.
+- No malfind, no netscan, no suspicious registry, no suspicious DLL paths.
+- The orphaned parent is the only real signal, and it's weak given the legitimate cmdline, normal DLL set, and normal privilege posture.
+- VERDICT: REJECTED. Standard svchost invocation with legitimate cmdline, System32 DLLs only, normal privilege posture. Orphaned parent is a weak signal that can result from parent process exit before memory capture.
+
+---
+
+Now writing the report.
+
+================================================================
+TRIAGE FINDINGS TO VALIDATE — PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: Two svchost.exe instances were flagged by Agent 1. PID 7900 exhibits a
+genuine structural anomaly (dual EPROCESS entries at different physical offsets,
+absent from pslist, no cmdline or path) consistent with DKOM manipulation, but
+lacks corroborating artefacts (no malfind, no network activity, no DLL evidence)
+to confirm malicious intent. PID 8028 presents a legitimate svchost invocation
+with a clean DLL set and normal privilege posture; its only anomaly is an
+orphaned parent PID, which is a weak signal insufficient to sustain a finding.
+Counts: confirmed=0  inconclusive=1  rejected=1
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      7900
+PPID:     828
+Image:    svchost.exe
+Cmdline:  (none recorded)
+Severity: (n/a — INCONCLUSIVE)
+MITRE:    T1014 — Rootkit (DKOM process unlinking)
+
+Justification:
+  Psscan surfaced two distinct EPROCESS structures at different physical offsets
+  (0xb78d10566080 and 0xf180000c3080) for the same PID 7900, both with identical
+  metadata and neither appearing in pslist. Duplicate EPROCESS entries for a
+  single PID at separate physical addresses are a recognised indicator of Direct
+  Kernel Object Manipulation (DKOM) — one entry may represent the live but
+  unlinked process, the other a stale or shadow structure. The absence of any
+  command line, image path, loaded DLLs, network connections, or malfind regions
+  means the structural anomaly cannot be tied to a specific malicious payload;
+  the finding therefore cannot be confirmed. The anomaly is real enough to
+  warrant retention as INCONCLUSIVE pending further artefact recovery (e.g.
+  VAD walk, handle table inspection, or raw memory carving for the EPROCESS
+  region).
+
+Key Evidence:
+  - L1678: 7900	828	svchost.exe	0xb78d10566080	7	-	0	False	2020-11-16 02:36:35.000000 UTC	N/A	Disabled
+  - L2208: 7900	828	svchost.exe	0xf180000c3080	7	-	0	False	2020-11-16 02:36:35.000000 UTC	N/A	Disabled
+----------------------------------------------------------------
+
+================================================================

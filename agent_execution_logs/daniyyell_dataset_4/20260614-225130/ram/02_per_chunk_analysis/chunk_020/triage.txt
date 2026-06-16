@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:40:00Z
+Chunk: chunk_020.txt
+Summary: Orphaned parent PIDs on RuntimeBroker and taskhostw; taskhostw holds SeImpersonatePrivilege with unknown parent context.
+
+[PROCESS]
+pid: 6536
+ppid: 860
+image: RuntimeBroker.exe
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 860 not present in process list (unknown parent) | note: EPROCESS name truncated to 'RuntimeBroker.' — kernel 14-char artefact, full path confirms legitimate binary at C:\Windows\System32\RuntimeBroker.exe
+
+[PROCESS]
+pid: 6756
+ppid: 1320
+image: taskhostw.exe
+cmdline: taskhostw.exe
+severity: LOW
+reasons: orphaned_parent: PPID 1320 not present in process list (unknown parent) | privilege: SeImpersonatePrivilege enabled on taskhostw.exe with unresolvable parent — potential scheduled-task or token-impersonation abuse context
+

@@ -1,0 +1,525 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-14T22:58:25Z
+
+=== PID 3360 (vmtoolsd.exe, ppid=716) ===
+Cmdline: "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+
+--- pslist.txt ---
+L64: 3360	716	vmtoolsd.exe	0xbb0c8f1cd280	12	-	0	False	2025-08-07 19:36:21.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L64: 3360	vmtoolsd.exe	"C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"
+
+--- privileges.txt ---
+L2070: 3360	vmtoolsd.exe	2	SeCreateTokenPrivilege		Create a token object
+L2071: 3360	vmtoolsd.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L2072: 3360	vmtoolsd.exe	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L2073: 3360	vmtoolsd.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L2074: 3360	vmtoolsd.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L2075: 3360	vmtoolsd.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L2076: 3360	vmtoolsd.exe	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L2077: 3360	vmtoolsd.exe	9	SeTakeOwnershipPrivilege	Present	Take ownership of files/objects
+L2078: 3360	vmtoolsd.exe	10	SeLoadDriverPrivilege	Present	Load and unload device drivers
+L2079: 3360	vmtoolsd.exe	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L2080: 3360	vmtoolsd.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L2081: 3360	vmtoolsd.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L2082: 3360	vmtoolsd.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L2083: 3360	vmtoolsd.exe	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L2084: 3360	vmtoolsd.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L2085: 3360	vmtoolsd.exe	17	SeBackupPrivilege	Present	Backup files and directories
+L2086: 3360	vmtoolsd.exe	18	SeRestorePrivilege	Present	Restore files and directories
+L2087: 3360	vmtoolsd.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L2088: 3360	vmtoolsd.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L2089: 3360	vmtoolsd.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L2090: 3360	vmtoolsd.exe	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L2091: 3360	vmtoolsd.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L2092: 3360	vmtoolsd.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L2093: 3360	vmtoolsd.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L2094: 3360	vmtoolsd.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L2095: 3360	vmtoolsd.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L2096: 3360	vmtoolsd.exe	28	SeManageVolumePrivilege	Present	Manage the files on a volume
+L2097: 3360	vmtoolsd.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L2098: 3360	vmtoolsd.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L2099: 3360	vmtoolsd.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L2100: 3360	vmtoolsd.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L2101: 3360	vmtoolsd.exe	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L2102: 3360	vmtoolsd.exe	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L2103: 3360	vmtoolsd.exe	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L2104: 3360	vmtoolsd.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L2208: 3360	vmtoolsd.exe	0x7ff7f4280000	0x1d000	vmtoolsd.exe	C:\Program Files\VMware\VMware Tools\vmtoolsd.exe	-1	2025-08-07 19:36:21.000000 UTC	Disabled
+L2209: 3360	vmtoolsd.exe	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:36:21.000000 UTC	Disabled
+L2210: 3360	vmtoolsd.exe	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2025-08-07 19:36:21.000000 UTC	Disabled
+L2211: 3360	vmtoolsd.exe	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2025-08-07 19:36:21.000000 UTC	Disabled
+L2212: 3360	vmtoolsd.exe	0x7fff5eff0000	0xaf000	ADVAPI32.dll	C:\Windows\System32\ADVAPI32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2213: 3360	vmtoolsd.exe	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2214: 3360	vmtoolsd.exe	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\System32\sechost.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2215: 3360	vmtoolsd.exe	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2216: 3360	vmtoolsd.exe	0x7fff5e9a0000	0x12a000	ole32.dll	C:\Windows\System32\ole32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2217: 3360	vmtoolsd.exe	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2218: 3360	vmtoolsd.exe	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2219: 3360	vmtoolsd.exe	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\System32\GDI32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2220: 3360	vmtoolsd.exe	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2221: 3360	vmtoolsd.exe	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2222: 3360	vmtoolsd.exe	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2223: 3360	vmtoolsd.exe	0x7fff5d910000	0x19d000	USER32.dll	C:\Windows\System32\USER32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2224: 3360	vmtoolsd.exe	0x7fff5dc60000	0x6b000	WS2_32.dll	C:\Windows\System32\WS2_32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2225: 3360	vmtoolsd.exe	0x7fff54880000	0xa000	VERSION.dll	C:\Windows\SYSTEM32\VERSION.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2226: 3360	vmtoolsd.exe	0x7fff4fe30000	0x18000	intl.dll	C:\Program Files\VMware\VMware Tools\intl.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2227: 3360	vmtoolsd.exe	0x7fff4fc70000	0x54000	gobject-2.0-0.dll	C:\Program Files\VMware\VMware Tools\gobject-2.0-0.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2228: 3360	vmtoolsd.exe	0x7fff4fcd0000	0x14b000	glib-2.0-0.dll	C:\Program Files\VMware\VMware Tools\glib-2.0-0.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2229: 3360	vmtoolsd.exe	0x7fff4fe20000	0xa000	gmodule-2.0-0.dll	C:\Program Files\VMware\VMware Tools\gmodule-2.0-0.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2230: 3360	vmtoolsd.exe	0x7fff4ffa0000	0x1e000	VCRUNTIME140.dll	C:\Windows\SYSTEM32\VCRUNTIME140.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2231: 3360	vmtoolsd.exe	0x7fff5dda0000	0x744000	SHELL32.dll	C:\Windows\System32\SHELL32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2232: 3360	vmtoolsd.exe	0x7fff4fb60000	0xe4000	vmtools.dll	C:\Program Files\VMware\VMware Tools\vmtools.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2233: 3360	vmtoolsd.exe	0x7fff4f650000	0xc000	VCRUNTIME140_1.dll	C:\Windows\SYSTEM32\VCRUNTIME140_1.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2234: 3360	vmtoolsd.exe	0x7fff4f5f0000	0x5a000	pcre2-8.dll	C:\Program Files\VMware\VMware Tools\pcre2-8.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2235: 3360	vmtoolsd.exe	0x7fff5dcd0000	0xcd000	OLEAUT32.dll	C:\Windows\System32\OLEAUT32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2236: 3360	vmtoolsd.exe	0x7fff5cf50000	0x15e000	CRYPT32.dll	C:\Windows\System32\CRYPT32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2237: 3360	vmtoolsd.exe	0x7fff5d450000	0x67000	WINTRUST.dll	C:\Windows\System32\WINTRUST.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2238: 3360	vmtoolsd.exe	0x7fff5c8e0000	0x12000	MSASN1.dll	C:\Windows\SYSTEM32\MSASN1.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2239: 3360	vmtoolsd.exe	0x7fff5c1a0000	0x3c000	IpHlpApi.dll	C:\Windows\SYSTEM32\IpHlpApi.dll	-1	2025-08-07 19:36:21.000000 UTC	Disabled
+L2240: 3360	vmtoolsd.exe	0x7fff5cc90000	0x32000	SspiCli.dll	C:\Windows\SYSTEM32\SspiCli.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2241: 3360	vmtoolsd.exe	0x7fff5bef0000	0x33000	ntmarta.dll	C:\Windows\SYSTEM32\ntmarta.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2242: 3360	vmtoolsd.exe	0x7fff5aeb0000	0x793000	windows.storage.dll	C:\Windows\SYSTEM32\windows.storage.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2243: 3360	vmtoolsd.exe	0x7fff5c750000	0x2e000	Wldp.dll	C:\Windows\SYSTEM32\Wldp.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2244: 3360	vmtoolsd.exe	0x7fff5e8f0000	0xad000	SHCORE.dll	C:\Windows\System32\SHCORE.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2245: 3360	vmtoolsd.exe	0x7fff5f150000	0x55000	shlwapi.dll	C:\Windows\System32\shlwapi.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2246: 3360	vmtoolsd.exe	0x7fff5cd10000	0x1f000	profapi.dll	C:\Windows\SYSTEM32\profapi.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2247: 3360	vmtoolsd.exe	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2248: 3360	vmtoolsd.exe	0x7fff4e330000	0xa000	vsocklib.dll	C:\Windows\system32\vsocklib.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2249: 3360	vmtoolsd.exe	0x7fff4d8f0000	0x59000	guestStoreClient.dll	C:\Program Files\VMware\VMware Tools\guestStoreClient.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2250: 3360	vmtoolsd.exe	0x7fff4d750000	0x89000	hgfsServer.dll	C:\Program Files\VMware\VMware Tools\plugins\common\hgfsServer.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2251: 3360	vmtoolsd.exe	0x7fff4d5e0000	0x1d000	MPR.dll	C:\Windows\SYSTEM32\MPR.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2252: 3360	vmtoolsd.exe	0x7fff4d5b0000	0x2a000	hgfs.dll	C:\Program Files\VMware\VMware Tools\hgfs.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2253: 3360	vmtoolsd.exe	0x7fff4dcb0000	0xd000	hgfsUsability.dll	C:\Program Files\VMware\VMware Tools\plugins\common\hgfsUsability.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2254: 3360	vmtoolsd.exe	0x7fff5ccd0000	0x2e000	USERENV.dll	C:\Windows\SYSTEM32\USERENV.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2255: 3360	vmtoolsd.exe	0x7fff4d4a0000	0x103000	vix.dll	C:\Program Files\VMware\VMware Tools\plugins\common\vix.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2256: 3360	vmtoolsd.exe	0x7fff4f260000	0xc000	Secur32.dll	C:\Windows\SYSTEM32\Secur32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2257: 3360	vmtoolsd.exe	0x7fff4fc50000	0x19000	NETAPI32.dll	C:\Windows\SYSTEM32\NETAPI32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2258: 3360	vmtoolsd.exe	0x7fff5c2b0000	0xc000	NETUTILS.DLL	C:\Windows\SYSTEM32\NETUTILS.DLL	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2259: 3360	vmtoolsd.exe	0x7fff519e0000	0x19000	SAMCLI.DLL	C:\Windows\SYSTEM32\SAMCLI.DLL	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2260: 3360	vmtoolsd.exe	0x7fff4dc20000	0xb000	appInfo.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\appInfo.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2261: 3360	vmtoolsd.exe	0x7fff5f570000	0x8000	PSAPI.DLL	C:\Windows\System32\PSAPI.DLL	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2262: 3360	vmtoolsd.exe	0x7fff4dba0000	0xc000	autoLogon.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\autoLogon.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2263: 3360	vmtoolsd.exe	0x7fff4d410000	0x8d000	MSVCP140.dll	C:\Windows\SYSTEM32\MSVCP140.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2264: 3360	vmtoolsd.exe	0x7fff4d950000	0x9000	autoUpgrade.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\autoUpgrade.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2265: 3360	vmtoolsd.exe	0x7fff58a70000	0x14000	WTSAPI32.dll	C:\Windows\SYSTEM32\WTSAPI32.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2266: 3360	vmtoolsd.exe	0x7fff4d1e0000	0xa000	bitMapper.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\bitMapper.dll	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2267: 3360	vmtoolsd.exe	0x7fff4d1d0000	0xb000	-	-	6	2025-08-07 19:36:21.000000 UTC	Disabled
+L2268: 3360	vmtoolsd.exe	0x7fff5cf20000	0x27000	bcrypt.dll	C:\Windows\System32\bcrypt.dll	-1	2025-08-07 19:36:22.000000 UTC	Disabled
+L2269: 3360	vmtoolsd.exe	0x7fff4d2d0000	0xe000	deviceHelper.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\deviceHelper.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2270: 3360	vmtoolsd.exe	0x7fff5d570000	0x4e000	CFGMGR32.dll	C:\Windows\System32\CFGMGR32.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2271: 3360	vmtoolsd.exe	0x7fff4e340000	0x23000	mi.dll	C:\Windows\SYSTEM32\mi.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2272: 3360	vmtoolsd.exe	0x7fff4e2d0000	0x60000	miutils.dll	C:\Windows\SYSTEM32\miutils.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2273: 3360	vmtoolsd.exe	0x7fff4d2b0000	0x9000	diskWiper.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\diskWiper.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2274: 3360	vmtoolsd.exe	0x7fff4d190000	0x32000	guestInfo.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\guestInfo.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2275: 3360	vmtoolsd.exe	0x7fff4ca70000	0x1f000	hwUpgradeHelper.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\hwUpgradeHelper.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2276: 3360	vmtoolsd.exe	0x7fff5eb80000	0x468000	SETUPAPI.dll	C:\Windows\System32\SETUPAPI.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2277: 3360	vmtoolsd.exe	0x7fff4d020000	0x9000	powerOps.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\powerOps.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2278: 3360	vmtoolsd.exe	0x7fff4ca30000	0xd000	resolutionSet.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\resolutionSet.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2279: 3360	vmtoolsd.exe	0x7fff4b5a0000	0xa000	timeSync.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\timeSync.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2280: 3360	vmtoolsd.exe	0x7fff4b4d0000	0x11000	vmbackup.dll	C:\Program Files\VMware\VMware Tools\plugins\vmsvc\vmbackup.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2281: 3360	vmtoolsd.exe	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\System32\bcryptPrimitives.dll	-1	2025-08-07 19:36:22.000000 UTC	Disabled
+L2282: 3360	vmtoolsd.exe	0x7fff5ead0000	0xa9000	clbcatq.dll	C:\Windows\System32\clbcatq.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2283: 3360	vmtoolsd.exe	0x7fff52a00000	0x11000	wbemprox.dll	C:\Windows\system32\wbem\wbemprox.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2284: 3360	vmtoolsd.exe	0x7fff52810000	0x90000	wbemcomn.dll	C:\Windows\SYSTEM32\wbemcomn.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2285: 3360	vmtoolsd.exe	0x7fff5c6c0000	0xc000	CRYPTBASE.DLL	C:\Windows\SYSTEM32\CRYPTBASE.DLL	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2286: 3360	vmtoolsd.exe	0x7fff5f140000	0x8000	NSI.dll	C:\Windows\System32\NSI.dll	-1	2025-08-07 19:36:22.000000 UTC	Disabled
+L2287: 3360	vmtoolsd.exe	0x7fff56d50000	0x17000	dhcpcsvc6.DLL	C:\Windows\SYSTEM32\dhcpcsvc6.DLL	-1	2025-08-07 19:36:22.000000 UTC	Disabled
+L2288: 3360	vmtoolsd.exe	0x7fff51370000	0x14000	wbemsvc.dll	C:\Windows\system32\wbem\wbemsvc.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2289: 3360	vmtoolsd.exe	0x7fff56d30000	0x1d000	dhcpcsvc.DLL	C:\Windows\SYSTEM32\dhcpcsvc.DLL	-1	2025-08-07 19:36:22.000000 UTC	Disabled
+L2290: 3360	vmtoolsd.exe	0x7fff5c1e0000	0xcb000	DNSAPI.dll	C:\Windows\SYSTEM32\DNSAPI.dll	-1	2025-08-07 19:36:22.000000 UTC	Disabled
+L2291: 3360	vmtoolsd.exe	0x7fff514b0000	0x10b000	fastprox.dll	C:\Windows\system32\wbem\fastprox.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2292: 3360	vmtoolsd.exe	0x7fff5c4b0000	0x6a000	mswsock.dll	C:\Windows\system32\mswsock.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2293: 3360	vmtoolsd.exe	0x7fff510f0000	0x1f000	amsi.dll	C:\Windows\SYSTEM32\amsi.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2294: 3360	vmtoolsd.exe	0x7fff510a0000	0x44000	MpOav.dll	C:\Program Files\Windows Defender\MpOav.dll	6	2025-08-07 19:36:22.000000 UTC	Disabled
+L2295: 3360	vmtoolsd.exe	0x7fff4bfe0000	0x1aa000	comsvcs.dll	C:\Windows\System32\comsvcs.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2296: 3360	vmtoolsd.exe	0x7fff5c6a0000	0x18000	CRYPTSP.dll	C:\Windows\SYSTEM32\CRYPTSP.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2297: 3360	vmtoolsd.exe	0x7fff5bdd0000	0x34000	rsaenh.dll	C:\Windows\system32\rsaenh.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2298: 3360	vmtoolsd.exe	0x7fff5cb00000	0xa2000	sxs.dll	C:\Windows\SYSTEM32\sxs.dll	6	2025-08-07 19:36:24.000000 UTC	Disabled
+L2299: 3360	vmtoolsd.exe	0x7fff5a610000	0x91000	apphelp.dll	C:\Windows\system32\apphelp.dll	-1	2025-08-07 19:36:40.000000 UTC	Disabled
+L2300: 3360	vmtoolsd.exe	0x7fff57450000	0xb000	WINNSI.DLL	C:\Windows\SYSTEM32\WINNSI.DLL	-1	2025-08-07 19:36:52.000000 UTC	Disabled
+
+--- pstree.txt ---
+L68: ** 3360	716	vmtoolsd.exe	0xbb0c8f1cd280	12	-	0	False	2025-08-07 19:36:21.000000 UTC	N/A	\Device\HarddiskVolume3\Program Files\VMware\VMware Tools\vmtoolsd.exe	"C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"	C:\Program Files\VMware\VMware Tools\vmtoolsd.exe
+
+--- psscan.txt ---
+L80: 3360	716	vmtoolsd.exe	0xbb0c8f1cd280	12	-	0	False	2025-08-07 19:36:21.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L2292: 3360	vmtoolsd.exe	0x1ea02180000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2293: 3360	vmtoolsd.exe	0x7fff54880000	True	True	True	\Windows\System32\version.dll
+L2294: 3360	vmtoolsd.exe	0x7fff4d8f0000	True	True	True	\Program Files\VMware\VMware Tools\guestStoreClient.dll
+L2295: 3360	vmtoolsd.exe	0x7fff4d1e0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\bitMapper.dll
+L2296: 3360	vmtoolsd.exe	0x7fff4ca30000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\resolutionSet.dll
+L2297: 3360	vmtoolsd.exe	0x7ff7f4280000	True	False	True	\Program Files\VMware\VMware Tools\vmtoolsd.exe
+L2298: 3360	vmtoolsd.exe	0x7fff4b5a0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\timeSync.dll
+L2299: 3360	vmtoolsd.exe	0x7fff4b4d0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\vmbackup.dll
+L2300: 3360	vmtoolsd.exe	0x7fff4bfe0000	True	True	True	\Windows\System32\comsvcs.dll
+L2301: 3360	vmtoolsd.exe	0x7fff4d020000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\powerOps.dll
+L2302: 3360	vmtoolsd.exe	0x7fff4ca70000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\hwUpgradeHelper.dll
+L2303: 3360	vmtoolsd.exe	0x7fff4d190000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\guestInfo.dll
+L2304: 3360	vmtoolsd.exe	0x7fff4d1d0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\componentMgr.dll
+L2305: 3360	vmtoolsd.exe	0x7fff4d4a0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\common\vix.dll
+L2306: 3360	vmtoolsd.exe	0x7fff4d2d0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\deviceHelper.dll
+L2307: 3360	vmtoolsd.exe	0x7fff4d2b0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\diskWiper.dll
+L2308: 3360	vmtoolsd.exe	0x7fff4d410000	True	True	True	\Windows\System32\msvcp140.dll
+L2309: 3360	vmtoolsd.exe	0x7fff4d5e0000	True	True	True	\Windows\System32\mpr.dll
+L2310: 3360	vmtoolsd.exe	0x7fff4d5b0000	True	True	True	\Program Files\VMware\VMware Tools\hgfs.dll
+L2311: 3360	vmtoolsd.exe	0x7fff4d750000	True	True	True	\Program Files\VMware\VMware Tools\plugins\common\hgfsServer.dll
+L2312: 3360	vmtoolsd.exe	0x7fff4fb60000	True	True	True	\Program Files\VMware\VMware Tools\vmtools.dll
+L2313: 3360	vmtoolsd.exe	0x7fff4e330000	True	True	True	\Windows\System32\vsocklib.dll
+L2314: 3360	vmtoolsd.exe	0x7fff4dc20000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\appInfo.dll
+L2315: 3360	vmtoolsd.exe	0x7fff4dba0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\autoLogon.dll
+L2316: 3360	vmtoolsd.exe	0x7fff4d950000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\autoUpgrade.dll
+L2317: 3360	vmtoolsd.exe	0x7fff4dcb0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\common\hgfsUsability.dll
+L2318: 3360	vmtoolsd.exe	0x7fff4e2d0000	True	True	True	\Windows\System32\miutils.dll
+L2319: 3360	vmtoolsd.exe	0x7fff4f5f0000	True	True	True	\Program Files\VMware\VMware Tools\pcre2-8.dll
+L2320: 3360	vmtoolsd.exe	0x7fff4f260000	True	True	True	\Windows\System32\secur32.dll
+L2321: 3360	vmtoolsd.exe	0x7fff4e340000	True	True	True	\Windows\System32\mi.dll
+L2322: 3360	vmtoolsd.exe	0x7fff4f650000	True	True	True	\Windows\System32\vcruntime140_1.dll
+L2323: 3360	vmtoolsd.exe	0x7fff4fe30000	True	True	True	\Program Files\VMware\VMware Tools\intl.dll
+L2324: 3360	vmtoolsd.exe	0x7fff4fcd0000	True	True	True	\Program Files\VMware\VMware Tools\glib-2.0-0.dll
+L2325: 3360	vmtoolsd.exe	0x7fff4fc70000	True	True	True	\Program Files\VMware\VMware Tools\gobject-2.0-0.dll
+L2326: 3360	vmtoolsd.exe	0x7fff4fc50000	True	True	True	\Windows\System32\netapi32.dll
+L2327: 3360	vmtoolsd.exe	0x7fff4fe20000	True	True	True	\Program Files\VMware\VMware Tools\gmodule-2.0-0.dll
+L2328: 3360	vmtoolsd.exe	0x7fff519e0000	True	True	True	\Windows\System32\samcli.dll
+L2329: 3360	vmtoolsd.exe	0x7fff51370000	True	True	True	\Windows\System32\wbem\wbemsvc.dll
+L2330: 3360	vmtoolsd.exe	0x7fff510a0000	True	True	True	\Program Files\Windows Defender\MpOAV.dll
+L2331: 3360	vmtoolsd.exe	0x7fff4ffa0000	True	True	True	\Windows\System32\vcruntime140.dll
+L2332: 3360	vmtoolsd.exe	0x7fff510f0000	True	True	True	\Windows\System32\amsi.dll
+L2333: 3360	vmtoolsd.exe	0x7fff514b0000	True	True	True	\Windows\System32\wbem\fastprox.dll
+L2334: 3360	vmtoolsd.exe	0x7fff52a00000	True	True	True	\Windows\System32\wbem\wbemprox.dll
+L2335: 3360	vmtoolsd.exe	0x7fff52810000	True	True	True	\Windows\System32\wbemcomn.dll
+L2336: 3360	vmtoolsd.exe	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L2337: 3360	vmtoolsd.exe	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L2338: 3360	vmtoolsd.exe	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2339: 3360	vmtoolsd.exe	0x7fff58a70000	True	True	True	\Windows\System32\wtsapi32.dll
+L2340: 3360	vmtoolsd.exe	0x7fff56d50000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L2341: 3360	vmtoolsd.exe	0x7fff56d30000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L2342: 3360	vmtoolsd.exe	0x7fff57450000	True	True	True	\Windows\System32\winnsi.dll
+L2343: 3360	vmtoolsd.exe	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L2344: 3360	vmtoolsd.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2345: 3360	vmtoolsd.exe	0x7fff5a610000	True	True	True	\Windows\System32\apphelp.dll
+L2346: 3360	vmtoolsd.exe	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L2347: 3360	vmtoolsd.exe	0x7fff5bdd0000	True	True	True	\Windows\System32\rsaenh.dll
+L2348: 3360	vmtoolsd.exe	0x7fff5c4b0000	True	True	True	\Windows\System32\mswsock.dll
+L2349: 3360	vmtoolsd.exe	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L2350: 3360	vmtoolsd.exe	0x7fff5c1e0000	True	True	True	\Windows\System32\dnsapi.dll
+L2351: 3360	vmtoolsd.exe	0x7fff5c6c0000	True	True	True	\Windows\System32\cryptbase.dll
+L2352: 3360	vmtoolsd.exe	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L2353: 3360	vmtoolsd.exe	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L2354: 3360	vmtoolsd.exe	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2355: 3360	vmtoolsd.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L2356: 3360	vmtoolsd.exe	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L2357: 3360	vmtoolsd.exe	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L2358: 3360	vmtoolsd.exe	0x7fff5cb00000	True	True	True	\Windows\System32\sxs.dll
+L2359: 3360	vmtoolsd.exe	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L2360: 3360	vmtoolsd.exe	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L2361: 3360	vmtoolsd.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L2362: 3360	vmtoolsd.exe	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L2363: 3360	vmtoolsd.exe	0x7fff5d450000	True	True	True	\Windows\System32\wintrust.dll
+L2364: 3360	vmtoolsd.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L2365: 3360	vmtoolsd.exe	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L2366: 3360	vmtoolsd.exe	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2367: 3360	vmtoolsd.exe	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L2368: 3360	vmtoolsd.exe	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L2369: 3360	vmtoolsd.exe	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L2370: 3360	vmtoolsd.exe	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L2371: 3360	vmtoolsd.exe	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L2372: 3360	vmtoolsd.exe	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L2373: 3360	vmtoolsd.exe	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L2374: 3360	vmtoolsd.exe	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L2375: 3360	vmtoolsd.exe	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L2376: 3360	vmtoolsd.exe	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L2377: 3360	vmtoolsd.exe	0x7fff5eb80000	True	True	True	\Windows\System32\setupapi.dll
+L2378: 3360	vmtoolsd.exe	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L2379: 3360	vmtoolsd.exe	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L2380: 3360	vmtoolsd.exe	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L2381: 3360	vmtoolsd.exe	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L2382: 3360	vmtoolsd.exe	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L2383: 3360	vmtoolsd.exe	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L2384: 3360	vmtoolsd.exe	0x7fff5f570000	True	True	True	\Windows\System32\psapi.dll
+L2385: 3360	vmtoolsd.exe	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L2292: 3360	vmtoolsd.exe	0x1ea02180000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L2293: 3360	vmtoolsd.exe	0x7fff54880000	True	True	True	\Windows\System32\version.dll
+L2294: 3360	vmtoolsd.exe	0x7fff4d8f0000	True	True	True	\Program Files\VMware\VMware Tools\guestStoreClient.dll
+L2295: 3360	vmtoolsd.exe	0x7fff4d1e0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\bitMapper.dll
+L2296: 3360	vmtoolsd.exe	0x7fff4ca30000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\resolutionSet.dll
+L2297: 3360	vmtoolsd.exe	0x7ff7f4280000	True	False	True	\Program Files\VMware\VMware Tools\vmtoolsd.exe
+L2298: 3360	vmtoolsd.exe	0x7fff4b5a0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\timeSync.dll
+L2299: 3360	vmtoolsd.exe	0x7fff4b4d0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\vmbackup.dll
+L2300: 3360	vmtoolsd.exe	0x7fff4bfe0000	True	True	True	\Windows\System32\comsvcs.dll
+L2301: 3360	vmtoolsd.exe	0x7fff4d020000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\powerOps.dll
+L2302: 3360	vmtoolsd.exe	0x7fff4ca70000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\hwUpgradeHelper.dll
+L2303: 3360	vmtoolsd.exe	0x7fff4d190000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\guestInfo.dll
+L2304: 3360	vmtoolsd.exe	0x7fff4d1d0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\componentMgr.dll
+L2305: 3360	vmtoolsd.exe	0x7fff4d4a0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\common\vix.dll
+L2306: 3360	vmtoolsd.exe	0x7fff4d2d0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\deviceHelper.dll
+L2307: 3360	vmtoolsd.exe	0x7fff4d2b0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\diskWiper.dll
+L2308: 3360	vmtoolsd.exe	0x7fff4d410000	True	True	True	\Windows\System32\msvcp140.dll
+L2309: 3360	vmtoolsd.exe	0x7fff4d5e0000	True	True	True	\Windows\System32\mpr.dll
+L2310: 3360	vmtoolsd.exe	0x7fff4d5b0000	True	True	True	\Program Files\VMware\VMware Tools\hgfs.dll
+L2311: 3360	vmtoolsd.exe	0x7fff4d750000	True	True	True	\Program Files\VMware\VMware Tools\plugins\common\hgfsServer.dll
+L2312: 3360	vmtoolsd.exe	0x7fff4fb60000	True	True	True	\Program Files\VMware\VMware Tools\vmtools.dll
+L2313: 3360	vmtoolsd.exe	0x7fff4e330000	True	True	True	\Windows\System32\vsocklib.dll
+L2314: 3360	vmtoolsd.exe	0x7fff4dc20000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\appInfo.dll
+L2315: 3360	vmtoolsd.exe	0x7fff4dba0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\autoLogon.dll
+L2316: 3360	vmtoolsd.exe	0x7fff4d950000	True	True	True	\Program Files\VMware\VMware Tools\plugins\vmsvc\autoUpgrade.dll
+L2317: 3360	vmtoolsd.exe	0x7fff4dcb0000	True	True	True	\Program Files\VMware\VMware Tools\plugins\common\hgfsUsability.dll
+L2318: 3360	vmtoolsd.exe	0x7fff4e2d0000	True	True	True	\Windows\System32\miutils.dll
+L2319: 3360	vmtoolsd.exe	0x7fff4f5f0000	True	True	True	\Program Files\VMware\VMware Tools\pcre2-8.dll
+L2320: 3360	vmtoolsd.exe	0x7fff4f260000	True	True	True	\Windows\System32\secur32.dll
+L2321: 3360	vmtoolsd.exe	0x7fff4e340000	True	True	True	\Windows\System32\mi.dll
+L2322: 3360	vmtoolsd.exe	0x7fff4f650000	True	True	True	\Windows\System32\vcruntime140_1.dll
+L2323: 3360	vmtoolsd.exe	0x7fff4fe30000	True	True	True	\Program Files\VMware\VMware Tools\intl.dll
+L2324: 3360	vmtoolsd.exe	0x7fff4fcd0000	True	True	True	\Program Files\VMware\VMware Tools\glib-2.0-0.dll
+L2325: 3360	vmtoolsd.exe	0x7fff4fc70000	True	True	True	\Program Files\VMware\VMware Tools\gobject-2.0-0.dll
+L2326: 3360	vmtoolsd.exe	0x7fff4fc50000	True	True	True	\Windows\System32\netapi32.dll
+L2327: 3360	vmtoolsd.exe	0x7fff4fe20000	True	True	True	\Program Files\VMware\VMware Tools\gmodule-2.0-0.dll
+L2328: 3360	vmtoolsd.exe	0x7fff519e0000	True	True	True	\Windows\System32\samcli.dll
+L2329: 3360	vmtoolsd.exe	0x7fff51370000	True	True	True	\Windows\System32\wbem\wbemsvc.dll
+L2330: 3360	vmtoolsd.exe	0x7fff510a0000	True	True	True	\Program Files\Windows Defender\MpOAV.dll
+L2331: 3360	vmtoolsd.exe	0x7fff4ffa0000	True	True	True	\Windows\System32\vcruntime140.dll
+L2332: 3360	vmtoolsd.exe	0x7fff510f0000	True	True	True	\Windows\System32\amsi.dll
+L2333: 3360	vmtoolsd.exe	0x7fff514b0000	True	True	True	\Windows\System32\wbem\fastprox.dll
+L2334: 3360	vmtoolsd.exe	0x7fff52a00000	True	True	True	\Windows\System32\wbem\wbemprox.dll
+L2335: 3360	vmtoolsd.exe	0x7fff52810000	True	True	True	\Windows\System32\wbemcomn.dll
+L2336: 3360	vmtoolsd.exe	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L2337: 3360	vmtoolsd.exe	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L2338: 3360	vmtoolsd.exe	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L2339: 3360	vmtoolsd.exe	0x7fff58a70000	True	True	True	\Windows\System32\wtsapi32.dll
+L2340: 3360	vmtoolsd.exe	0x7fff56d50000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L2341: 3360	vmtoolsd.exe	0x7fff56d30000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L2342: 3360	vmtoolsd.exe	0x7fff57450000	True	True	True	\Windows\System32\winnsi.dll
+L2343: 3360	vmtoolsd.exe	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L2344: 3360	vmtoolsd.exe	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L2345: 3360	vmtoolsd.exe	0x7fff5a610000	True	True	True	\Windows\System32\apphelp.dll
+L2346: 3360	vmtoolsd.exe	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L2347: 3360	vmtoolsd.exe	0x7fff5bdd0000	True	True	True	\Windows\System32\rsaenh.dll
+L2348: 3360	vmtoolsd.exe	0x7fff5c4b0000	True	True	True	\Windows\System32\mswsock.dll
+L2349: 3360	vmtoolsd.exe	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L2350: 3360	vmtoolsd.exe	0x7fff5c1e0000	True	True	True	\Windows\System32\dnsapi.dll
+L2351: 3360	vmtoolsd.exe	0x7fff5c6c0000	True	True	True	\Windows\System32\cryptbase.dll
+L2352: 3360	vmtoolsd.exe	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L2353: 3360	vmtoolsd.exe	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L2354: 3360	vmtoolsd.exe	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L2355: 3360	vmtoolsd.exe	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L2356: 3360	vmtoolsd.exe	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L2357: 3360	vmtoolsd.exe	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L2358: 3360	vmtoolsd.exe	0x7fff5cb00000	True	True	True	\Windows\System32\sxs.dll
+L2359: 3360	vmtoolsd.exe	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L2360: 3360	vmtoolsd.exe	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L2361: 3360	vmtoolsd.exe	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L2362: 3360	vmtoolsd.exe	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L2363: 3360	vmtoolsd.exe	0x7fff5d450000	True	True	True	\Windows\System32\wintrust.dll
+L2364: 3360	vmtoolsd.exe	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L2365: 3360	vmtoolsd.exe	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L2366: 3360	vmtoolsd.exe	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L2367: 3360	vmtoolsd.exe	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L2368: 3360	vmtoolsd.exe	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L2369: 3360	vmtoolsd.exe	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L2370: 3360	vmtoolsd.exe	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L2371: 3360	vmtoolsd.exe	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L2372: 3360	vmtoolsd.exe	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L2373: 3360	vmtoolsd.exe	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L2374: 3360	vmtoolsd.exe	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L2375: 3360	vmtoolsd.exe	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L2376: 3360	vmtoolsd.exe	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L2377: 3360	vmtoolsd.exe	0x7fff5eb80000	True	True	True	\Windows\System32\setupapi.dll
+L2378: 3360	vmtoolsd.exe	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L2379: 3360	vmtoolsd.exe	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L2380: 3360	vmtoolsd.exe	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L2381: 3360	vmtoolsd.exe	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L2382: 3360	vmtoolsd.exe	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L2383: 3360	vmtoolsd.exe	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L2384: 3360	vmtoolsd.exe	0x7fff5f570000	True	True	True	\Windows\System32\psapi.dll
+L2385: 3360	vmtoolsd.exe	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L64: 3360	vmtoolsd.exe	\Device\HarddiskVolume3\Program Files\VMware\VMware Tools\vmtoolsd.exe	C:\Program Files\VMware\VMware Tools\vmtoolsd.exe	False	False
+
+--- sessions.txt ---
+L59: 0	-	3360	vmtoolsd.exe	WORKGROUP/DESKTOP-RMH9G1A$	2025-08-07 19:36:21.000000 UTC
+
+=== PID 3428 (RuntimeBroker., ppid=860) ===
+Cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- pslist.txt ---
+L122: 3428	860	RuntimeBroker.	0xbb0c942fb2c0	7	-	1	False	2025-08-07 19:38:29.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L122: 3428	RuntimeBroker.	C:\Windows\System32\RuntimeBroker.exe -Embedding
+
+--- privileges.txt ---
+L4100: 3428	RuntimeBroker.	2	SeCreateTokenPrivilege		Create a token object
+L4101: 3428	RuntimeBroker.	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4102: 3428	RuntimeBroker.	4	SeLockMemoryPrivilege		Lock pages in memory
+L4103: 3428	RuntimeBroker.	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4104: 3428	RuntimeBroker.	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4105: 3428	RuntimeBroker.	7	SeTcbPrivilege		Act as part of the operating system
+L4106: 3428	RuntimeBroker.	8	SeSecurityPrivilege		Manage auditing and security log
+L4107: 3428	RuntimeBroker.	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4108: 3428	RuntimeBroker.	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4109: 3428	RuntimeBroker.	11	SeSystemProfilePrivilege		Profile system performance
+L4110: 3428	RuntimeBroker.	12	SeSystemtimePrivilege		Change the system time
+L4111: 3428	RuntimeBroker.	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4112: 3428	RuntimeBroker.	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4113: 3428	RuntimeBroker.	15	SeCreatePagefilePrivilege		Create a pagefile
+L4114: 3428	RuntimeBroker.	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4115: 3428	RuntimeBroker.	17	SeBackupPrivilege		Backup files and directories
+L4116: 3428	RuntimeBroker.	18	SeRestorePrivilege		Restore files and directories
+L4117: 3428	RuntimeBroker.	19	SeShutdownPrivilege	Present	Shut down the system
+L4118: 3428	RuntimeBroker.	20	SeDebugPrivilege		Debug programs
+L4119: 3428	RuntimeBroker.	21	SeAuditPrivilege		Generate security audits
+L4120: 3428	RuntimeBroker.	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4121: 3428	RuntimeBroker.	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4122: 3428	RuntimeBroker.	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4123: 3428	RuntimeBroker.	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4124: 3428	RuntimeBroker.	26	SeSyncAgentPrivilege		Synch directory service data
+L4125: 3428	RuntimeBroker.	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4126: 3428	RuntimeBroker.	28	SeManageVolumePrivilege		Manage the files on a volume
+L4127: 3428	RuntimeBroker.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4128: 3428	RuntimeBroker.	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4129: 3428	RuntimeBroker.	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4130: 3428	RuntimeBroker.	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4131: 3428	RuntimeBroker.	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4132: 3428	RuntimeBroker.	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4133: 3428	RuntimeBroker.	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4134: 3428	RuntimeBroker.	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5863: 3428	RuntimeBroker.	0x7ff605390000	0x1c000	RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	-1	2025-08-07 19:38:29.000000 UTC	Disabled
+L5864: 3428	RuntimeBroker.	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:38:29.000000 UTC	Disabled
+L5865: 3428	RuntimeBroker.	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\System32\KERNEL32.DLL	-1	2025-08-07 19:38:29.000000 UTC	Disabled
+L5866: 3428	RuntimeBroker.	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\System32\KERNELBASE.dll	-1	2025-08-07 19:38:29.000000 UTC	Disabled
+L5867: 3428	RuntimeBroker.	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\System32\ucrtbase.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5868: 3428	RuntimeBroker.	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\System32\combase.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5869: 3428	RuntimeBroker.	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\System32\RPCRT4.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5870: 3428	RuntimeBroker.	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\System32\sechost.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5871: 3428	RuntimeBroker.	0x7fff5cc40000	0x4b000	powrprof.dll	C:\Windows\SYSTEM32\powrprof.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5872: 3428	RuntimeBroker.	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5873: 3428	RuntimeBroker.	0x7fff5a9c0000	0x2a000	RMCLIENT.dll	C:\Windows\System32\RMCLIENT.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5874: 3428	RuntimeBroker.	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\System32\msvcrt.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5875: 3428	RuntimeBroker.	0x7fff5cc20000	0x12000	UMPDC.dll	C:\Windows\System32\UMPDC.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5876: 3428	RuntimeBroker.	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\System32\bcryptPrimitives.dll	-1	2025-08-07 19:38:29.000000 UTC	Disabled
+L5877: 3428	RuntimeBroker.	0x7fff5d910000	0x19d000	user32.dll	C:\Windows\System32\user32.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5878: 3428	RuntimeBroker.	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\System32\win32u.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5879: 3428	RuntimeBroker.	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\System32\GDI32.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5880: 3428	RuntimeBroker.	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\System32\gdi32full.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5881: 3428	RuntimeBroker.	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\System32\msvcp_win.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5882: 3428	RuntimeBroker.	0x7fff5db50000	0x30000	IMM32.DLL	C:\Windows\System32\IMM32.DLL	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5883: 3428	RuntimeBroker.	0x7fff5ead0000	0xa9000	clbcatq.dll	C:\Windows\System32\clbcatq.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5884: 3428	RuntimeBroker.	0x7fff5aeb0000	0x793000	windows.storage.dll	C:\Windows\system32\windows.storage.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5885: 3428	RuntimeBroker.	0x7fff5c750000	0x2e000	Wldp.dll	C:\Windows\system32\Wldp.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5886: 3428	RuntimeBroker.	0x7fff5eff0000	0xaf000	advapi32.dll	C:\Windows\System32\advapi32.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5887: 3428	RuntimeBroker.	0x7fff5e8f0000	0xad000	shcore.dll	C:\Windows\System32\shcore.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5888: 3428	RuntimeBroker.	0x7fff5a7e0000	0x9e000	uxtheme.dll	C:\Windows\system32\uxtheme.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5889: 3428	RuntimeBroker.	0x7fff55e30000	0x7cb000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5890: 3428	RuntimeBroker.	0x7fff5e9a0000	0x12a000	ole32.dll	C:\Windows\System32\ole32.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5891: 3428	RuntimeBroker.	0x7fff5f150000	0x55000	shlwapi.dll	C:\Windows\System32\shlwapi.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5892: 3428	RuntimeBroker.	0x7fff5dcd0000	0xcd000	OLEAUT32.dll	C:\Windows\System32\OLEAUT32.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5893: 3428	RuntimeBroker.	0x7fff5d570000	0x4e000	CFGMGR32.dll	C:\Windows\System32\CFGMGR32.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5894: 3428	RuntimeBroker.	0x7fff4cc90000	0xa6000	StructuredQuery.dll	C:\Windows\System32\StructuredQuery.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5895: 3428	RuntimeBroker.	0x7fff58940000	0xf6000	PROPSYS.dll	C:\Windows\system32\PROPSYS.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5896: 3428	RuntimeBroker.	0x7fff5dda0000	0x744000	shell32.dll	C:\Windows\System32\shell32.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5897: 3428	RuntimeBroker.	0x7fff43280000	0x24000	edputil.dll	C:\Windows\system32\edputil.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+L5898: 3428	RuntimeBroker.	0x7fff524f0000	0x11000	windows.staterepositorycore.dll	C:\Windows\SYSTEM32\windows.staterepositorycore.dll	6	2025-08-07 19:38:29.000000 UTC	Disabled
+
+--- pstree.txt ---
+L95: *** 3428	860	RuntimeBroker.	0xbb0c942fb2c0	7	-	1	False	2025-08-07 19:38:29.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe -Embedding	C:\Windows\System32\RuntimeBroker.exe
+
+--- psscan.txt ---
+L159: 3428	860	RuntimeBroker.	0xbb0c942fb2c0	7	-	1	False	2025-08-07 19:38:29.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L6001: 3428	RuntimeBroker.	0x7ff605390000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L6002: 3428	RuntimeBroker.	0x1c93a1d0000	False	False	False	\Windows\System32\en-GB\windows.storage.dll.mui
+L6003: 3428	RuntimeBroker.	0x1c93a1c0000	False	False	False	\Windows\System32\en-GB\propsys.dll.mui
+L6004: 3428	RuntimeBroker.	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L6005: 3428	RuntimeBroker.	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6006: 3428	RuntimeBroker.	0x7fff55e30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L6007: 3428	RuntimeBroker.	0x7fff4cc90000	True	True	True	\Windows\System32\StructuredQuery.dll
+L6008: 3428	RuntimeBroker.	0x7fff43280000	True	True	True	\Windows\System32\edputil.dll
+L6009: 3428	RuntimeBroker.	0x7fff524f0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L6010: 3428	RuntimeBroker.	0x7fff5a7e0000	True	True	True	\Windows\System32\uxtheme.dll
+L6011: 3428	RuntimeBroker.	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L6012: 3428	RuntimeBroker.	0x7fff5a9c0000	True	True	True	\Windows\System32\rmclient.dll
+L6013: 3428	RuntimeBroker.	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L6014: 3428	RuntimeBroker.	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L6015: 3428	RuntimeBroker.	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L6016: 3428	RuntimeBroker.	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L6017: 3428	RuntimeBroker.	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L6018: 3428	RuntimeBroker.	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L6019: 3428	RuntimeBroker.	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6020: 3428	RuntimeBroker.	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L6021: 3428	RuntimeBroker.	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L6022: 3428	RuntimeBroker.	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L6023: 3428	RuntimeBroker.	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6024: 3428	RuntimeBroker.	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L6025: 3428	RuntimeBroker.	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L6026: 3428	RuntimeBroker.	0x7fff5db50000	True	True	True	\Windows\System32\imm32.dll
+L6027: 3428	RuntimeBroker.	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L6028: 3428	RuntimeBroker.	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L6029: 3428	RuntimeBroker.	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L6030: 3428	RuntimeBroker.	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L6031: 3428	RuntimeBroker.	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L6032: 3428	RuntimeBroker.	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L6033: 3428	RuntimeBroker.	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L6034: 3428	RuntimeBroker.	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L6035: 3428	RuntimeBroker.	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L6036: 3428	RuntimeBroker.	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L6037: 3428	RuntimeBroker.	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L6038: 3428	RuntimeBroker.	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L6001: 3428	RuntimeBroker.	0x7ff605390000	True	False	True	\Windows\System32\RuntimeBroker.exe
+L6002: 3428	RuntimeBroker.	0x1c93a1d0000	False	False	False	\Windows\System32\en-GB\windows.storage.dll.mui
+L6003: 3428	RuntimeBroker.	0x1c93a1c0000	False	False	False	\Windows\System32\en-GB\propsys.dll.mui
+L6004: 3428	RuntimeBroker.	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L6005: 3428	RuntimeBroker.	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6006: 3428	RuntimeBroker.	0x7fff55e30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L6007: 3428	RuntimeBroker.	0x7fff4cc90000	True	True	True	\Windows\System32\StructuredQuery.dll
+L6008: 3428	RuntimeBroker.	0x7fff43280000	True	True	True	\Windows\System32\edputil.dll
+L6009: 3428	RuntimeBroker.	0x7fff524f0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L6010: 3428	RuntimeBroker.	0x7fff5a7e0000	True	True	True	\Windows\System32\uxtheme.dll
+L6011: 3428	RuntimeBroker.	0x7fff58940000	True	True	True	\Windows\System32\propsys.dll
+L6012: 3428	RuntimeBroker.	0x7fff5a9c0000	True	True	True	\Windows\System32\rmclient.dll
+L6013: 3428	RuntimeBroker.	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L6014: 3428	RuntimeBroker.	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L6015: 3428	RuntimeBroker.	0x7fff5aeb0000	True	True	True	\Windows\System32\windows.storage.dll
+L6016: 3428	RuntimeBroker.	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L6017: 3428	RuntimeBroker.	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L6018: 3428	RuntimeBroker.	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L6019: 3428	RuntimeBroker.	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6020: 3428	RuntimeBroker.	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L6021: 3428	RuntimeBroker.	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L6022: 3428	RuntimeBroker.	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L6023: 3428	RuntimeBroker.	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6024: 3428	RuntimeBroker.	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L6025: 3428	RuntimeBroker.	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L6026: 3428	RuntimeBroker.	0x7fff5db50000	True	True	True	\Windows\System32\imm32.dll
+L6027: 3428	RuntimeBroker.	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L6028: 3428	RuntimeBroker.	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L6029: 3428	RuntimeBroker.	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L6030: 3428	RuntimeBroker.	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L6031: 3428	RuntimeBroker.	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L6032: 3428	RuntimeBroker.	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L6033: 3428	RuntimeBroker.	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L6034: 3428	RuntimeBroker.	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L6035: 3428	RuntimeBroker.	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L6036: 3428	RuntimeBroker.	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L6037: 3428	RuntimeBroker.	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L6038: 3428	RuntimeBroker.	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L122: 3428	RuntimeBroker.	\Device\HarddiskVolume3\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe	False	False
+
+--- sessions.txt ---
+L134: 1	-	3428	RuntimeBroker.	DESKTOP-RMH9G1A/Lab2	2025-08-07 19:38:29.000000 UTC
+
+=== END OF PIVOT REPORT ===

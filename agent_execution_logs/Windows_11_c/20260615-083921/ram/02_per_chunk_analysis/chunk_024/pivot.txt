@@ -1,0 +1,314 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:58:30Z
+
+=== PID 8772 (backgroundTaskHost.exe, ppid=576) ===
+Cmdline: "C:\WINDOWS\system32\backgroundTaskHost.exe" -ServerName:WindowsBackup.AppXnn6fnh4raxtmg45ba8k2f4ykb7n0k3y4.mca
+
+--- pslist.txt ---
+L168: 8772	576	backgroundTask	0xcd8a1428c080	14	-	1	False	2026-05-12 18:29:05.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L168: 8772	backgroundTask	"C:\WINDOWS\system32\backgroundTaskHost.exe" -ServerName:WindowsBackup.AppXnn6fnh4raxtmg45ba8k2f4ykb7n0k3y4.mca
+
+--- privileges.txt ---
+L5710: 8772	backgroundTask	2	SeCreateTokenPrivilege		Create a token object
+L5711: 8772	backgroundTask	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L5712: 8772	backgroundTask	4	SeLockMemoryPrivilege		Lock pages in memory
+L5713: 8772	backgroundTask	5	SeIncreaseQuotaPrivilege		Increase quotas
+L5714: 8772	backgroundTask	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5715: 8772	backgroundTask	7	SeTcbPrivilege		Act as part of the operating system
+L5716: 8772	backgroundTask	8	SeSecurityPrivilege		Manage auditing and security log
+L5717: 8772	backgroundTask	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L5718: 8772	backgroundTask	10	SeLoadDriverPrivilege		Load and unload device drivers
+L5719: 8772	backgroundTask	11	SeSystemProfilePrivilege		Profile system performance
+L5720: 8772	backgroundTask	12	SeSystemtimePrivilege		Change the system time
+L5721: 8772	backgroundTask	13	SeProfileSingleProcessPrivilege		Profile a single process
+L5722: 8772	backgroundTask	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L5723: 8772	backgroundTask	15	SeCreatePagefilePrivilege		Create a pagefile
+L5724: 8772	backgroundTask	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L5725: 8772	backgroundTask	17	SeBackupPrivilege		Backup files and directories
+L5726: 8772	backgroundTask	18	SeRestorePrivilege		Restore files and directories
+L5727: 8772	backgroundTask	19	SeShutdownPrivilege	Present	Shut down the system
+L5728: 8772	backgroundTask	20	SeDebugPrivilege		Debug programs
+L5729: 8772	backgroundTask	21	SeAuditPrivilege		Generate security audits
+L5730: 8772	backgroundTask	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L5731: 8772	backgroundTask	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5732: 8772	backgroundTask	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L5733: 8772	backgroundTask	25	SeUndockPrivilege	Present	Remove computer from docking station
+L5734: 8772	backgroundTask	26	SeSyncAgentPrivilege		Synch directory service data
+L5735: 8772	backgroundTask	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5736: 8772	backgroundTask	28	SeManageVolumePrivilege		Manage the files on a volume
+L5737: 8772	backgroundTask	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L5738: 8772	backgroundTask	30	SeCreateGlobalPrivilege	Default	Create global objects
+L5739: 8772	backgroundTask	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5740: 8772	backgroundTask	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5741: 8772	backgroundTask	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L5742: 8772	backgroundTask	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L5743: 8772	backgroundTask	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L5744: 8772	backgroundTask	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L7942: 8772	backgroundTask	0x7ff6d5a30000	0xa000	backgroundTaskHost.exe	C:\WINDOWS\system32\backgroundTaskHost.exe	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7943: 8772	backgroundTask	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7944: 8772	backgroundTask	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7945: 8772	backgroundTask	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7946: 8772	backgroundTask	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7947: 8772	backgroundTask	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7948: 8772	backgroundTask	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7949: 8772	backgroundTask	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7950: 8772	backgroundTask	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7951: 8772	backgroundTask	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7952: 8772	backgroundTask	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7953: 8772	backgroundTask	0x7fffde480000	0x244000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7954: 8772	backgroundTask	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7955: 8772	backgroundTask	0x7fffe5cf0000	0x16a000	WinTypes.dll	C:\WINDOWS\System32\WinTypes.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7956: 8772	backgroundTask	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7957: 8772	backgroundTask	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7958: 8772	backgroundTask	0x7fffe7e80000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7959: 8772	backgroundTask	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7960: 8772	backgroundTask	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7961: 8772	backgroundTask	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7962: 8772	backgroundTask	0x7fffe6ec0000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7963: 8772	backgroundTask	0x7fffdbc80000	0x114000	mrmcorer.dll	C:\WINDOWS\SYSTEM32\mrmcorer.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7964: 8772	backgroundTask	0x7fffda3a0000	0x47000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7965: 8772	backgroundTask	0x7fffdbf00000	0x1a000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7966: 8772	backgroundTask	0x7fffdde20000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7967: 8772	backgroundTask	0x7fffe5920000	0x29000	profapi.dll	C:\WINDOWS\system32\profapi.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7968: 8772	backgroundTask	0x7fffdb9e0000	0x156000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7969: 8772	backgroundTask	0x7fffdb950000	0x34000	bcp47mrm.dll	C:\WINDOWS\system32\bcp47mrm.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7970: 8772	backgroundTask	0x7fffe34c0000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7971: 8772	backgroundTask	0x7fffc38b0000	0x58000	biwinrt.dll	C:\Windows\System32\biwinrt.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7972: 8772	backgroundTask	0x7fff989b0000	0x326000	WindowsBackup.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\WindowsBackup.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7973: 8772	backgroundTask	0x7fffe8310000	0xbb000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7974: 8772	backgroundTask	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7975: 8772	backgroundTask	0x7fffc9050000	0x8c000	MSVCP140_APP.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\MSVCP140_APP.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7976: 8772	backgroundTask	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7977: 8772	backgroundTask	0x7fffe6f10000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7978: 8772	backgroundTask	0x7fffcc5b0000	0xc000	VCRUNTIME140_1_APP.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\VCRUNTIME140_1_APP.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7979: 8772	backgroundTask	0x7fffcc4e0000	0x1d000	VCRUNTIME140_APP.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\VCRUNTIME140_APP.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7980: 8772	backgroundTask	0x7fffd9170000	0x38000	clipc.dll	C:\WINDOWS\SYSTEM32\clipc.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7981: 8772	backgroundTask	0x7fffd5040000	0x9c000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7982: 8772	backgroundTask	0x7fffda840000	0x1107000	Windows.UI.Xaml.dll	C:\Windows\System32\Windows.UI.Xaml.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7983: 8772	backgroundTask	0x7fffd7500000	0x2c4000	iertutil.dll	C:\WINDOWS\system32\iertutil.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7984: 8772	backgroundTask	0x7fffd74a0000	0x29000	srvcli.dll	C:\WINDOWS\system32\srvcli.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7985: 8772	backgroundTask	0x7fffe40b0000	0xd000	netutils.dll	C:\WINDOWS\system32\netutils.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7986: 8772	backgroundTask	0x7fffd0470000	0x647000	windowsudk.shellcommon.dll	C:\WINDOWS\system32\windowsudk.shellcommon.dll	6	2026-05-12 18:29:15.000000 UTC	Disabled
+L7987: 8772	backgroundTask	0x7fffe4db0000	0x32000	USERENV.dll	C:\WINDOWS\system32\USERENV.dll	-1	2026-05-12 18:29:15.000000 UTC	Disabled
+L7988: 8772	backgroundTask	0x7fffdeff0000	0x16a000	appxdeploymentclient.dll	C:\WINDOWS\SYSTEM32\appxdeploymentclient.dll	6	2026-05-12 18:29:48.000000 UTC	Disabled
+L7989: 8772	backgroundTask	0x7fffe8060000	0x20000	imagehlp.dll	C:\WINDOWS\System32\imagehlp.dll	6	2026-05-12 18:29:48.000000 UTC	Disabled
+L7990: 8772	backgroundTask	0x7fffa80c0000	0x12a000	IrisService.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\IrisService.dll	6	2026-05-12 18:29:48.000000 UTC	Disabled
+L7991: 8772	backgroundTask	0x7fffc3cd0000	0x153000	Windows.Web.Http.dll	C:\Windows\System32\Windows.Web.Http.dll	6	2026-05-12 18:29:49.000000 UTC	Disabled
+L7992: 8772	backgroundTask	0x7fffe1550000	0xb4000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2026-05-12 18:29:49.000000 UTC	Disabled
+L7993: 8772	backgroundTask	0x7fffccfc0000	0x138000	Windows.Security.Authentication.Web.Core.dll	C:\Windows\System32\Windows.Security.Authentication.Web.Core.dll	6	2026-05-12 18:29:49.000000 UTC	Disabled
+L7994: 8772	backgroundTask	0x7fffd91b0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-12 18:29:49.000000 UTC	Disabled
+L7995: 8772	backgroundTask	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\WINDOWS\system32\bcrypt.dll	-1	2026-05-12 18:29:50.000000 UTC	Disabled
+L7996: 8772	backgroundTask	0x7fffd3af0000	0xe4000	Windows.Security.Authentication.OnlineId.dll	C:\Windows\System32\Windows.Security.Authentication.OnlineId.dll	6	2026-05-12 18:29:50.000000 UTC	Disabled
+L7997: 8772	backgroundTask	0x7fffda0a0000	0xc4000	Windows.StateRepositoryPS.dll	C:\Windows\System32\Windows.StateRepositoryPS.dll	6	2026-05-12 18:29:51.000000 UTC	Disabled
+L7998: 8772	backgroundTask	0x7fffe5b70000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-12 18:29:51.000000 UTC	Disabled
+L7999: 8772	backgroundTask	0x7fffe55a0000	0xa000	DPAPI.DLL	C:\WINDOWS\system32\DPAPI.DLL	6	2026-05-12 18:29:51.000000 UTC	Disabled
+L8000: 8772	backgroundTask	0x7fffe5000000	0xc000	CRYPTBASE.dll	C:\WINDOWS\system32\CRYPTBASE.dll	6	2026-05-12 18:29:51.000000 UTC	Disabled
+L8001: 8772	backgroundTask	0x7fffd6630000	0x18f000	Windows.Globalization.dll	C:\Windows\System32\Windows.Globalization.dll	6	2026-05-12 18:29:51.000000 UTC	Disabled
+L8002: 8772	backgroundTask	0x7fffdbf20000	0x5e000	Bcp47Langs.dll	C:\WINDOWS\system32\Bcp47Langs.dll	6	2026-05-12 18:29:51.000000 UTC	Disabled
+L8003: 8772	backgroundTask	0x7fffcede0000	0x1c000	Windows.System.UserProfile.DiagnosticsSettings.dll	C:\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll	6	2026-05-12 18:29:51.000000 UTC	Disabled
+L8004: 8772	backgroundTask	0x7fffde870000	0x60000	usermgrproxy.dll	C:\Windows\System32\usermgrproxy.dll	6	2026-05-12 18:29:51.000000 UTC	Disabled
+L8005: 8772	backgroundTask	0x7fffe0bd0000	0x17000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8006: 8772	backgroundTask	0x7fffd7ca0000	0x117000	SystemSettings.DataModel.dll	C:\Windows\System32\SystemSettings.DataModel.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8007: 8772	backgroundTask	0x7fffe3ec0000	0x2d000	slc.dll	C:\WINDOWS\SYSTEM32\slc.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8008: 8772	backgroundTask	0x7fffe5f20000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	-1	2026-05-12 18:29:52.000000 UTC	Disabled
+L8009: 8772	backgroundTask	0x7fffe8120000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	-1	2026-05-12 18:29:52.000000 UTC	Disabled
+L8010: 8772	backgroundTask	0x7fffe4a30000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	-1	2026-05-12 18:29:52.000000 UTC	Disabled
+L8011: 8772	backgroundTask	0x7fffe5540000	0x57000	CFGMGR32.dll	C:\WINDOWS\system32\CFGMGR32.dll	-1	2026-05-12 18:29:52.000000 UTC	Disabled
+L8012: 8772	backgroundTask	0x7fffd70d0000	0xc0000	StructuredQuery.dll	C:\WINDOWS\System32\StructuredQuery.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8013: 8772	backgroundTask	0x7fffd6e20000	0x29e000	icu.dll	C:\WINDOWS\system32\icu.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8014: 8772	backgroundTask	0x7fffe1040000	0x103000	PROPSYS.dll	C:\WINDOWS\system32\PROPSYS.dll	-1	2026-05-12 18:29:52.000000 UTC	Disabled
+L8015: 8772	backgroundTask	0x7fffd9280000	0x177000	Windows.System.Launcher.dll	C:\Windows\System32\Windows.System.Launcher.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8016: 8772	backgroundTask	0x7fffd51a0000	0x137000	Windows.Storage.Search.dll	C:\WINDOWS\system32\Windows.Storage.Search.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8017: 8772	backgroundTask	0x7fffda1c0000	0x29000	edputil.dll	C:\WINDOWS\system32\edputil.dll	-1	2026-05-12 18:29:52.000000 UTC	Disabled
+L8018: 8772	backgroundTask	0x7fffd2390000	0x288000	WININET.dll	C:\WINDOWS\system32\WININET.dll	-1	2026-05-12 18:29:52.000000 UTC	Disabled
+L8019: 8772	backgroundTask	0x7fffe7680000	0x74000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8020: 8772	backgroundTask	0x7fffcf6d0000	0x1f000	ondemandconnroutehelper.dll	C:\WINDOWS\SYSTEM32\ondemandconnroutehelper.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8021: 8772	backgroundTask	0x7fffdf900000	0x127000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8022: 8772	backgroundTask	0x7fffe3fc0000	0xae000	firewallapi.dll	C:\WINDOWS\SYSTEM32\firewallapi.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8023: 8772	backgroundTask	0x7fffe3f30000	0x44000	fwbase.dll	C:\WINDOWS\system32\fwbase.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8024: 8772	backgroundTask	0x7fffe4d00000	0x6b000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8025: 8772	backgroundTask	0x7fffe4120000	0x30000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8026: 8772	backgroundTask	0x7fffe40c0000	0x33000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	-1	2026-05-12 18:29:52.000000 UTC	Disabled
+L8027: 8772	backgroundTask	0x7fffe3450000	0xe000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	-1	2026-05-12 18:29:52.000000 UTC	Disabled
+L8028: 8772	backgroundTask	0x7fffe89d0000	0xa000	NSI.dll	C:\WINDOWS\System32\NSI.dll	-1	2026-05-12 18:29:52.000000 UTC	Disabled
+L8029: 8772	backgroundTask	0x7fffd77d0000	0x1dd000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+L8030: 8772	backgroundTask	0x7fffe41e0000	0x12a000	DNSAPI.dll	C:\WINDOWS\SYSTEM32\DNSAPI.dll	-1	2026-05-12 18:29:52.000000 UTC	Disabled
+L8031: 8772	backgroundTask	0x7fffdce60000	0xb000	rasadhlp.dll	C:\Windows\System32\rasadhlp.dll	6	2026-05-12 18:29:52.000000 UTC	Disabled
+
+--- pstree.txt ---
+L23: *** 8772	576	backgroundTask	0xcd8a1428c080	14	-	1	False	2026-05-12 18:29:05.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\backgroundTaskHost.exe	"C:\WINDOWS\system32\backgroundTaskHost.exe" -ServerName:WindowsBackup.AppXnn6fnh4raxtmg45ba8k2f4ykb7n0k3y4.mca	C:\WINDOWS\system32\backgroundTaskHost.exe
+
+--- psscan.txt ---
+L181: 8772	576	backgroundTask	0xcd8a1428c080	14	-	1	False	2026-05-12 18:29:05.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L8304: 8772	backgroundTask	0x27d64e50000	False	False	False	\Windows\System32\en-US\Windows.Security.Authentication.Web.Core.dll.mui
+L8305: 8772	backgroundTask	0x27d68760000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L8306: 8772	backgroundTask	0x27d68a10000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L8307: 8772	backgroundTask	0x27d689f0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L8308: 8772	backgroundTask	0x27d68a40000	False	False	False	\Windows\SystemResources\wininet.dll.mun
+L8309: 8772	backgroundTask	0x27d691a0000	False	False	False	\Windows\System32\en-US\netmsg.dll.mui
+L8310: 8772	backgroundTask	0x27d69180000	False	False	False	\Windows\System32\en-US\wininet.dll.mui
+L8311: 8772	backgroundTask	0x27d69190000	False	False	False	\Windows\System32\netmsg.dll
+L8312: 8772	backgroundTask	0x7fffdbc80000	True	True	True	\Windows\System32\MrmCoreR.dll
+L8313: 8772	backgroundTask	0x7fffcc5b0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\vcruntime140_1_app.dll
+L8314: 8772	backgroundTask	0x7fff989b0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\WindowsBackup.dll
+L8315: 8772	backgroundTask	0x7ff6d5a30000	True	False	True	\Windows\System32\backgroundTaskHost.exe
+L8316: 8772	backgroundTask	0x7fffc9050000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\msvcp140_app.dll
+L8317: 8772	backgroundTask	0x7fffc38b0000	True	True	True	\Windows\System32\biwinrt.dll
+L8318: 8772	backgroundTask	0x7fffa80c0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\IrisService.dll
+L8319: 8772	backgroundTask	0x7fffc3cd0000	True	True	True	\Windows\System32\Windows.Web.Http.dll
+L8320: 8772	backgroundTask	0x7fffcc4e0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\vcruntime140_app.dll
+L8321: 8772	backgroundTask	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L8322: 8772	backgroundTask	0x7fffd5040000	True	True	True	\Windows\System32\Windows.Web.dll
+L8323: 8772	backgroundTask	0x7fffd0470000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L8324: 8772	backgroundTask	0x7fffcede0000	True	True	True	\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll
+L8325: 8772	backgroundTask	0x7fffccfc0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L8326: 8772	backgroundTask	0x7fffcf6d0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L8327: 8772	backgroundTask	0x7fffd3af0000	True	True	True	\Windows\System32\Windows.Security.Authentication.OnlineId.dll
+L8328: 8772	backgroundTask	0x7fffd2390000	True	True	True	\Windows\System32\wininet.dll
+L8329: 8772	backgroundTask	0x7fffd70d0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L8330: 8772	backgroundTask	0x7fffd6630000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L8331: 8772	backgroundTask	0x7fffd51a0000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L8332: 8772	backgroundTask	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L8333: 8772	backgroundTask	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L8334: 8772	backgroundTask	0x7fffda3a0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L8335: 8772	backgroundTask	0x7fffd91b0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L8336: 8772	backgroundTask	0x7fffd7ca0000	True	True	True	\Windows\System32\SystemSettings.DataModel.dll
+L8337: 8772	backgroundTask	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L8338: 8772	backgroundTask	0x7fffd9170000	True	True	True	\Windows\System32\Clipc.dll
+L8339: 8772	backgroundTask	0x7fffda0a0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L8340: 8772	backgroundTask	0x7fffd9280000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L8341: 8772	backgroundTask	0x7fffda1c0000	True	True	True	\Windows\System32\edputil.dll
+L8342: 8772	backgroundTask	0x7fffdb950000	True	True	True	\Windows\System32\BCP47mrm.dll
+L8343: 8772	backgroundTask	0x7fffda840000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L8344: 8772	backgroundTask	0x7fffdb9e0000	True	True	True	\Windows\System32\Windows.UI.dll
+L8345: 8772	backgroundTask	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L8346: 8772	backgroundTask	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L8347: 8772	backgroundTask	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L8348: 8772	backgroundTask	0x7fffdbf20000	True	True	True	\Windows\System32\BCP47Langs.dll
+L8349: 8772	backgroundTask	0x7fffdbf00000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L8350: 8772	backgroundTask	0x7fffdce60000	True	True	True	\Windows\System32\rasadhlp.dll
+L8351: 8772	backgroundTask	0x7fffde480000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L8352: 8772	backgroundTask	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L8353: 8772	backgroundTask	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L8354: 8772	backgroundTask	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L8355: 8772	backgroundTask	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L8356: 8772	backgroundTask	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L8357: 8772	backgroundTask	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L8358: 8772	backgroundTask	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L8359: 8772	backgroundTask	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L8360: 8772	backgroundTask	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L8361: 8772	backgroundTask	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L8362: 8772	backgroundTask	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L8363: 8772	backgroundTask	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L8364: 8772	backgroundTask	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L8365: 8772	backgroundTask	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L8366: 8772	backgroundTask	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L8367: 8772	backgroundTask	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L8368: 8772	backgroundTask	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L8369: 8772	backgroundTask	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L8370: 8772	backgroundTask	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L8371: 8772	backgroundTask	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L8372: 8772	backgroundTask	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L8373: 8772	backgroundTask	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L8374: 8772	backgroundTask	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L8375: 8772	backgroundTask	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L8376: 8772	backgroundTask	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_ldrmodules.txt ---
+L8304: 8772	backgroundTask	0x27d64e50000	False	False	False	\Windows\System32\en-US\Windows.Security.Authentication.Web.Core.dll.mui
+L8305: 8772	backgroundTask	0x27d68760000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L8306: 8772	backgroundTask	0x27d68a10000	False	False	False	\Windows\System32\en-US\windows.storage.dll.mui
+L8307: 8772	backgroundTask	0x27d689f0000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+L8308: 8772	backgroundTask	0x27d68a40000	False	False	False	\Windows\SystemResources\wininet.dll.mun
+L8309: 8772	backgroundTask	0x27d691a0000	False	False	False	\Windows\System32\en-US\netmsg.dll.mui
+L8310: 8772	backgroundTask	0x27d69180000	False	False	False	\Windows\System32\en-US\wininet.dll.mui
+L8311: 8772	backgroundTask	0x27d69190000	False	False	False	\Windows\System32\netmsg.dll
+L8312: 8772	backgroundTask	0x7fffdbc80000	True	True	True	\Windows\System32\MrmCoreR.dll
+L8313: 8772	backgroundTask	0x7fffcc5b0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\vcruntime140_1_app.dll
+L8314: 8772	backgroundTask	0x7fff989b0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\WindowsBackup.dll
+L8315: 8772	backgroundTask	0x7ff6d5a30000	True	False	True	\Windows\System32\backgroundTaskHost.exe
+L8316: 8772	backgroundTask	0x7fffc9050000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\msvcp140_app.dll
+L8317: 8772	backgroundTask	0x7fffc38b0000	True	True	True	\Windows\System32\biwinrt.dll
+L8318: 8772	backgroundTask	0x7fffa80c0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\IrisService.dll
+L8319: 8772	backgroundTask	0x7fffc3cd0000	True	True	True	\Windows\System32\Windows.Web.Http.dll
+L8320: 8772	backgroundTask	0x7fffcc4e0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\vcruntime140_app.dll
+L8321: 8772	backgroundTask	0x7fffd7500000	True	True	True	\Windows\System32\iertutil.dll
+L8322: 8772	backgroundTask	0x7fffd5040000	True	True	True	\Windows\System32\Windows.Web.dll
+L8323: 8772	backgroundTask	0x7fffd0470000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L8324: 8772	backgroundTask	0x7fffcede0000	True	True	True	\Windows\System32\Windows.System.UserProfile.DiagnosticsSettings.dll
+L8325: 8772	backgroundTask	0x7fffccfc0000	True	True	True	\Windows\System32\Windows.Security.Authentication.Web.Core.dll
+L8326: 8772	backgroundTask	0x7fffcf6d0000	True	True	True	\Windows\System32\OnDemandConnRouteHelper.dll
+L8327: 8772	backgroundTask	0x7fffd3af0000	True	True	True	\Windows\System32\Windows.Security.Authentication.OnlineId.dll
+L8328: 8772	backgroundTask	0x7fffd2390000	True	True	True	\Windows\System32\wininet.dll
+L8329: 8772	backgroundTask	0x7fffd70d0000	True	True	True	\Windows\System32\StructuredQuery.dll
+L8330: 8772	backgroundTask	0x7fffd6630000	True	True	True	\Windows\System32\Windows.Globalization.dll
+L8331: 8772	backgroundTask	0x7fffd51a0000	True	True	True	\Windows\System32\Windows.Storage.Search.dll
+L8332: 8772	backgroundTask	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L8333: 8772	backgroundTask	0x7fffd74a0000	True	True	True	\Windows\System32\srvcli.dll
+L8334: 8772	backgroundTask	0x7fffda3a0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L8335: 8772	backgroundTask	0x7fffd91b0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L8336: 8772	backgroundTask	0x7fffd7ca0000	True	True	True	\Windows\System32\SystemSettings.DataModel.dll
+L8337: 8772	backgroundTask	0x7fffd77d0000	True	True	True	\Windows\System32\urlmon.dll
+L8338: 8772	backgroundTask	0x7fffd9170000	True	True	True	\Windows\System32\Clipc.dll
+L8339: 8772	backgroundTask	0x7fffda0a0000	True	True	True	\Windows\System32\Windows.StateRepositoryPS.dll
+L8340: 8772	backgroundTask	0x7fffd9280000	True	True	True	\Windows\System32\Windows.System.Launcher.dll
+L8341: 8772	backgroundTask	0x7fffda1c0000	True	True	True	\Windows\System32\edputil.dll
+L8342: 8772	backgroundTask	0x7fffdb950000	True	True	True	\Windows\System32\BCP47mrm.dll
+L8343: 8772	backgroundTask	0x7fffda840000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L8344: 8772	backgroundTask	0x7fffdb9e0000	True	True	True	\Windows\System32\Windows.UI.dll
+L8345: 8772	backgroundTask	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L8346: 8772	backgroundTask	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L8347: 8772	backgroundTask	0x7fffdde20000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L8348: 8772	backgroundTask	0x7fffdbf20000	True	True	True	\Windows\System32\BCP47Langs.dll
+L8349: 8772	backgroundTask	0x7fffdbf00000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L8350: 8772	backgroundTask	0x7fffdce60000	True	True	True	\Windows\System32\rasadhlp.dll
+L8351: 8772	backgroundTask	0x7fffde480000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L8352: 8772	backgroundTask	0x7fffe34c0000	True	True	True	\Windows\System32\uxtheme.dll
+L8353: 8772	backgroundTask	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L8354: 8772	backgroundTask	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L8355: 8772	backgroundTask	0x7fffe4db0000	True	True	True	\Windows\System32\userenv.dll
+L8356: 8772	backgroundTask	0x7fffe5920000	True	True	True	\Windows\System32\profapi.dll
+L8357: 8772	backgroundTask	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L8358: 8772	backgroundTask	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L8359: 8772	backgroundTask	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L8360: 8772	backgroundTask	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L8361: 8772	backgroundTask	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L8362: 8772	backgroundTask	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L8363: 8772	backgroundTask	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L8364: 8772	backgroundTask	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L8365: 8772	backgroundTask	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L8366: 8772	backgroundTask	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L8367: 8772	backgroundTask	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L8368: 8772	backgroundTask	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L8369: 8772	backgroundTask	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L8370: 8772	backgroundTask	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L8371: 8772	backgroundTask	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L8372: 8772	backgroundTask	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L8373: 8772	backgroundTask	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L8374: 8772	backgroundTask	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L8375: 8772	backgroundTask	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L8376: 8772	backgroundTask	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_pebmasquerade.txt ---
+L168: 8772	backgroundTask	\Device\HarddiskVolume4\Windows\System32\backgroundTaskHost.exe	C:\WINDOWS\system32\backgroundTaskHost.exe	False	False
+
+--- sessions.txt ---
+L172: 1	-	8772	backgroundTask	CLEANWINDOWS11/kali	2026-05-12 18:29:05.000000 UTC
+
+=== PID 9044 (backgroundTask, ppid=576) ===
+
+--- psscan.txt ---
+L164: 9044	576	backgroundTask	0xcd8a13056080	0	-	1	False	2026-05-12 18:29:03.000000 UTC	2026-05-12 18:31:08.000000 UTC	Disabled
+
+=== PID 9168 (RuntimeBroker., ppid=576) ===
+
+--- psscan.txt ---
+L114: 9168	576	RuntimeBroker.	0xcd8a1221c080	0	-	1	False	2026-05-12 18:27:59.000000 UTC	2026-05-12 18:31:13.000000 UTC	Disabled
+
+=== END OF PIVOT REPORT ===

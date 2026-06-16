@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_023.txt
+Summary: Both processes have orphaned PPIDs (parent PIDs not present in the process list); WUDFHost.exe additionally holds SeImpersonatePrivilege which warrants confirmation in context.
+
+[PROCESS]
+pid: 7276
+ppid: 716
+image: WUDFHost.exe
+cmdline: "C:\Windows\System32\WUDFHost.exe" -HostGUID:{193a1820-d9ac-4997-8c55-be817523f6aa} -IoEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-a33f9069-eead-4cd8-8829-d4713f1aeba1 -SystemEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-af667862-765b-429f-9eb4-b4e6cbdea44d -IoCancelEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-8807ba4a-18d9-4d0c-bf5a-b6a652f15a98 -NonStateChangingEventPortName:\UMDFCommunicationPorts\WUDF\HostProcess-c22ea4b7-47a6-463f-b81f-8625a912b167 -LifetimeId:17ea3120-737e-4a69-9d56-cd9fa0c0cc2e -DeviceGroupId:WpdFsGroup -HostArg:0
+severity: LOW
+reasons: orphaned_parent: PPID 716 does not appear anywhere in the process list | privilege: SeImpersonatePrivilege enabled — warrants confirmation that parent context is legitimate
+
+[PROCESS]
+pid: 7408
+ppid: 860
+image: RuntimeBroker.
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 860 does not appear anywhere in the process list | name_truncation_note: displayed name 'RuntimeBroker.' is a 14-char EPROCESS truncation artefact; Path and Cmd confirm legitimate RuntimeBroker.exe — not a typosquat, but orphaned parent still warrants confirmation
+

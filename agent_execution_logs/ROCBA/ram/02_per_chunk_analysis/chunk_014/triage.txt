@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2025-01-30T00:00:00Z
+Chunk: chunk_014.txt
+Summary: Both svchost.exe instances have an unknown parent (PID 828 not present in process list), which is a mild orphan-parent anomaly; all other indicators are clean.
+
+[PROCESS]
+pid: 7052
+ppid: 828
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc
+severity: LOW
+reasons: orphaned_parent: PPID 828 (listed as 'unknown') is not present anywhere in the process list; legitimate svchost.exe should descend from services.exe
+
+[PROCESS]
+pid: 7064
+ppid: 828
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k BthAppGroup -p -s BluetoothUserService
+severity: LOW
+reasons: orphaned_parent: PPID 828 (listed as 'unknown') is not present anywhere in the process list; legitimate svchost.exe should descend from services.exe
+

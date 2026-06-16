@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_002.txt
+Summary: MsMpEng.exe has an orphaned parent (PID 716 not present in process list); path is non-standard ProgramData platform directory rather than expected System32 location — warrants confirmation despite being a known Defender binary.
+
+[PROCESS]
+pid: 2036
+ppid: 716
+image: MsMpEng.exe
+cmdline: "C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\MsMpEng.exe"
+severity: LOW
+reasons: orphaned_parent: PPID 716 (unknown) not present anywhere in the process list | path_note: running from C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\ — legitimate for modern Defender platform updates but outside the classic C:\Windows\System32\ location; pivot analyst should confirm binary hash and signing chain | high_privilege_set: holds SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege, SeTakeOwnershipPrivilege, SeAssignPrimaryTokenPrivilege — expected for Defender but should be corroborated against confirmed-legitimate parent
+

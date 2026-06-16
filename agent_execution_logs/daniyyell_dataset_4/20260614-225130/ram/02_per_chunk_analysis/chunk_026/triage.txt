@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_026.txt
+Summary: Orphaned parent PIDs on multiple processes; backgroundTaskHost with external network connections to public IP and no image path; NisSrv.exe loading DLLs from ProgramData with SeImpersonatePrivilege.
+
+[PROCESS]
+pid: 8336
+ppid: 860
+image: backgroundTask
+cmdline: 
+severity: MEDIUM
+reasons: missing_image_path: no Path or Cmd field present for this process | orphaned_parent: PPID 860 not present in process list | network: established/closed connections to public IP 23.192.26.3:80 from a process with no visible image backing | truncated_name: 'backgroundTask' may be truncated EPROCESS name — full name and path unverifiable without Path/Cmd fields
+
+[PROCESS]
+pid: 8468
+ppid: 716
+image: NisSrv.exe
+cmdline: "C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\NisSrv.exe"
+severity: LOW
+reasons: orphaned_parent: PPID 716 not present in process list | dll_path: MpClient.dll loaded from C:\ProgramData\Microsoft\Windows Defender\platform\4.18.25070.5-0\ (ProgramData is user-writable) | privilege: SeImpersonatePrivilege enabled — confirm legitimacy of Defender NIS service instance
+

@@ -1,0 +1,159 @@
+=== TRIAGE REPORT ===
+Generated: 2026-06-13T13:32:02Z
+Counts:    total_flagged=17  critical=5  high=7  medium=4  low=1
+Summary:   Input contains 14+ days of event logs from SRL-FORGE showing sustained mass brute-force attacks against RDP/SMB from dozens of external IPs, with confirmed successful network logon of user fredr from external IP 52.249.198.56 (hostname "cobra"), followed by explicit credential use targeting a remote domain (SHIELDBASE), RDP client connections to internal host 172.16.6.18, and administrative privilege assignment to fredr — indicating a successful external intrusion with lateral movement indicators.
+
+[FINDING]
+triage_source: events
+type:       brute_force
+key:        193.93.62.32
+secondary:  ADMINISTRATOR, logon_type=3, event_id=4625
+severity:   CRITICAL
+reasons:    brute_force:count=17269_from_193.93.62.32_targeting_ADMINISTRATOR|brute_force:193.93.62.x_subnet_coordinated_campaign_across_30+_IPs_totaling_200000+_failures|automated_attack:logon_type=3_network_logon_all_instances
+source:     events id=4625 (Archive-Security-2020-11-02-08-28-14-656.evtx through Archive-Security-2020-11-15-*.evtx)
+
+[FINDING]
+triage_source: events
+type:       brute_force
+key:        85.14.242.76
+secondary:  janee,muscle,jasmin,mmartin,grover,p,notta,pos8,graphic,jasper, logon_type=3, event_id=4625
+severity:   CRITICAL
+reasons:    password_spray:single_IP_85.14.242.76_targeting_10+_different_usernames|spray_tools:multiple_RDP_client_types_used_(Remmina,Windows2019,Windows2012,Rdesktop,Windows7,Windows8,Windows2016,Windows10,mstsc,FreeRDP)|count_aggregate:~31000_failures_from_single_IP|logon_type=3_all_instances
+source:     events id=4625 (Archive-Security-2020-11-14-00-34-38-448.evtx)
+
+[FINDING]
+triage_source: events
+type:       brute_force
+key:        213.202.233.90
+secondary:  administrator, logon_type=3, event_id=4625
+severity:   CRITICAL
+reasons:    brute_force:count_aggregate=~18000_from_213.202.233.90_targeting_administrator|spray_tools:7_different_RDP_client_strings_(Windows7,Windows2016,Windows8,mstsc,Remmina,Windows10,Windows2012,Rdesktop,Windows2019,FreeRDP)|logon_type=3_all_instances
+source:     events id=4625 (Archive-Security-2020-11-15-12-14-53-899.evtx)
+
+[FINDING]
+triage_source: events
+type:       brute_force
+key:        213.202.233.104
+secondary:  oncall,pauline,officina,owner,mmiller,opc,mr,mjohnson,nidek,ospite, logon_type=3, event_id=4625
+severity:   CRITICAL
+reasons:    password_spray:single_IP_213.202.233.104_targeting_10+_different_usernames|spray_tools:multiple_RDP_client_strings_(Windows2016,Windows2012,Remmina,Windows10,Windows8,Windows2019,Rdesktop,FreeRDP,Windows7,mstsc)|count_aggregate=~12700_failures|logon_type=3_all_instances
+source:     events id=4625 (Archive-Security-2020-11-15-16-23-32-630.evtx)
+
+[FINDING]
+triage_source: events
+type:       auth
+key:        52.249.198.56
+secondary:  fredr, logon_type=3, event_id=4624, 4625, 4648, 4672
+severity:   CRITICAL
+reasons:    successful_external_logon:4624_logon_type=3_from_52.249.198.56_(hostname=cobra)_user=SRL-FORGE\fredr_count=6|preceded_by_4625_failures:cobra_(52.249.198.56)_failed_logon_targeting_fred.rocba@outlook.com_count=2|explicit_credentials:4648_from_52.249.198.56_targeting_MicrosoftAccount\fred.rocba@outlook.com_via_svchost.exe_at_2020-11-14T03:42:52|privilege_assignment:4672_for_fredr_with_SeDebugPrivilege_SeLoadDriverPrivilege_count=12|signal_stack:external_IP_brute_then_success_then_privilege
+source:     events id=4624,4625,4648,4672 (Archive-Security-2020-11-14-07-54-47-237.evtx)
+
+[FINDING]
+triage_source: events
+type:       lateral_movement
+key:        fredr
+secondary:  172.16.6.18, base-rd-08.shieldbase.lan, event_id=4648, 1102
+severity:   CRITICAL
+reasons:    explicit_credentials_to_remote_domain:4648_user=SRL-FORGE\fredr_targeting_SHIELDBASE\frocba_at_base-rd-08.shieldbase.lan_at_2020-11-14T05:00:49|repeated_attempt:second_4648_to_same_target_at_2020-11-14T05:05:37|rdp_client_connection:id=1102_RDP_multi-transport_to_172.16.6.18_at_2020-11-14T05:00:50_and_2020-11-14T05:05:37|cross_domain_credential_use:SRL-FORGE_user_authenticating_to_SHIELDBASE_domain
+source:     events id=4648, id=1102 (Archive-Security-2020-11-14-07-54-47-237.evtx, TerminalServices-RDPClient%4Operational.evtx)
+
+[FINDING]
+triage_source: events
+type:       auth
+key:        174.196.200.9
+secondary:  srl-h, srl-helpdesk@outlook.com, logon_type=3/10, event_id=4624, 4648, 4672
+severity:   HIGH
+reasons:    network_logon_type3:4624_from_174.196.200.9_user=SRL-FORGE\srl-h_logon_type=3_count=1|rdp_logon_type10:4624_logon_type=10_from_174.196.200.9_target=MicrosoftAccount\srl-helpdesk@outlook.com_count=2|explicit_credentials:4648_from_174.196.200.9_targeting_srl-helpdesk@outlook.com_via_svchost.exe_at_2020-11-10T13:26:11|privilege_assignment:4672_for_srl-helpdesk@outlook.com_with_SeDebugPrivilege_count=1|external_IP_logon_type10_RDP_from_non-localhost
+source:     events id=4624,4648,4672 (Archive-Security-2020-11-11-11-51-14-633.evtx)
+
+[FINDING]
+triage_source: events
+type:       brute_force
+key:        194.61.54.121
+secondary:  EMILY, logon_type=3, event_id=4625
+severity:   HIGH
+reasons:    brute_force:count=10310_from_194.61.54.121_targeting_EMILY|logon_type=3_network_logon|automated_attack:high_count_single_target_username
+source:     events id=4625 (Archive-Security-2020-11-06-03-40-39-950.evtx)
+
+[FINDING]
+triage_source: events
+type:       brute_force
+key:        141.98.83.187
+secondary:  A0, logon_type=3, event_id=4625
+severity:   HIGH
+reasons:    brute_force:count=7137_from_141.98.83.187_targeting_A0|logon_type=3_network_logon|automated_attack
+source:     events id=4625 (Archive-Security-2020-11-14-00-34-38-448.evtx)
+
+[FINDING]
+triage_source: events
+type:       brute_force
+key:        201.193.188.114
+secondary:  ADMINISTRATOR, logon_type=3, event_id=4625
+severity:   HIGH
+reasons:    brute_force:count=12804_from_201.193.188.114_targeting_ADMINISTRATOR|logon_type=3_network_logon
+source:     events id=4625 (Archive-Security-2020-11-12-18-03-19-616.evtx)
+
+[FINDING]
+triage_source: events
+type:       brute_force
+key:        81.19.209.101
+secondary:  ADMINISTRATOR, logon_type=3, event_id=4625
+severity:   HIGH
+reasons:    brute_force:count=9743_from_81.19.209.101_targeting_ADMINISTRATOR|logon_type=3_network_logon
+source:     events id=4625 (Archive-Security-2020-11-15-03-14-49-203.evtx)
+
+[FINDING]
+triage_source: events
+type:       privilege
+key:        fredr
+secondary:  SRL-FORGE\fredr, event_id=4672, 4697
+severity:   HIGH
+reasons:    admin_privilege_assigned:4672_SRL-FORGE\fredr_with_SeDebugPrivilege_SeLoadDriverPrivilege_SeBackupPrivilege_SeRestorePrivilege_count=12|service_installed_by_fredr:4697_ServiceName=googledrivefs3229_ServiceFileName=system32\DRIVERS\googledrivefs3229.sys_ServiceType=FileSystemDriver_count=1|suspicious_service_name:googledrivefs3229_kernel_driver_installed_by_non-system_account
+source:     events id=4672,4697 (Archive-Security-2020-11-14-07-54-47-237.evtx, Archive-Security-2020-11-11-11-51-14-633.evtx)
+
+[FINDING]
+triage_source: events
+type:       lateral_movement
+key:        fredr
+secondary:  SRL-FORGE\fredr, IPC$, event_id=5140
+severity:   HIGH
+reasons:    network_share_access:5140_user=SRL-FORGE\fredr_share=\\*\IPC$_from_::1:58187_count=6|IPC$_access_pattern:commonly_used_for_lateral_movement_enumeration_and_remote_execution|correlated_with_confirmed_intrusion_of_fredr_account
+source:     events id=5140 (Archive-Security-2020-11-03-02-55-16-955.evtx)
+
+[FINDING]
+triage_source: events
+type:       privilege
+key:        MicrosoftAccount\fred.rocba@outlook.com
+secondary:  fred.rocba@outlook.com, event_id=4672
+severity:   MEDIUM
+reasons:    admin_privilege_assigned:4672_MicrosoftAccount\fred.rocba@outlook.com_with_SeDebugPrivilege_SeLoadDriverPrivilege_SeBackupPrivilege_SeRestorePrivilege_count=31|microsoft_account_with_full_admin_privileges|correlated_with_repeated_4648_explicit_credential_events_from_svchost.exe_and_lsass.exe
+source:     events id=4672 (Archive-Security-2020-11-02-14-13-50-124.evtx)
+
+[FINDING]
+triage_source: events
+type:       brute_force
+key:        91.241.19.97
+secondary:  Administrator, SRL-FORGE\Administrator, logon_type=3, event_id=4625
+severity:   MEDIUM
+reasons:    password_spray:91.241.19.97_targeting_Administrator_with_multiple_RDP_client_strings_(Rdesktop,Windows10,FreeRDP,mstsc,Windows8,Windows2012,Windows2019,Windows2016,Windows7,Remmina)|count_aggregate=~2300_failures|logon_type=3_all_instances
+source:     events id=4625 (Archive-Security-2020-11-05-19-23-42-982.evtx)
+
+[FINDING]
+triage_source: events
+type:       brute_force
+key:        185.202.1.123
+secondary:  Administrator, SRL-FORGE\Administrator, logon_type=3, event_id=4625
+severity:   MEDIUM
+reasons:    password_spray:185.202.1.123_targeting_Administrator_with_multiple_RDP_client_strings_(Windows7,Windows2016,Remmina,Windows10,Windows2019,Windows8,mstsc,Rdesktop,FreeRDP,Windows2012)|count_aggregate=~2100_failures|logon_type=3_all_instances
+source:     events id=4625 (Archive-Security-2020-11-02-11-31-30-979.evtx)
+
+[FINDING]
+triage_source: events
+type:       auth
+key:        52.249.198.56
+secondary:  fred.rocba@outlook.com, logon_type=7, event_id=4624
+severity:   LOW
+reasons:    interactive_unlock_logon:4624_logon_type=7_from_52.249.198.56_target=MicrosoftAccount\fred.rocba@outlook.com_count=6|external_IP_as_source_for_logon_type7_is_anomalous|correlated_with_confirmed_intrusion_from_same_IP
+source:     events id=4624 (Archive-Security-2020-11-14-07-54-47-237.evtx)
+
+=== END TRIAGE ===

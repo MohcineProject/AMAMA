@@ -1,0 +1,329 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:11:30Z
+
+=== PID 26768 (backgroundTask, ppid=740) ===
+
+--- psscan.txt ---
+L2162: 26768	740	backgroundTask	0xb78d1538f080	0	-	1	False	2020-11-16 02:31:19.000000 UTC	2020-11-16 02:32:20.000000 UTC	Disabled
+
+=== PID 26988 (TextInputHost., ppid=740) ===
+Cmdline: "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInputHost.exe" -ServerName:InputApp.AppX9jnwykgrccxc8by3hsrsh07r423xzvav.mca
+
+--- pslist.txt ---
+L1165: 26988	740	TextInputHost.	0xb78d1147f080	10	-	1	False	2020-11-14 03:43:06.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L1165: 26988	TextInputHost.	"C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInputHost.exe" -ServerName:InputApp.AppX9jnwykgrccxc8by3hsrsh07r423xzvav.mca
+
+--- privileges.txt ---
+L40605: 26988	TextInputHost.	2	SeCreateTokenPrivilege		Create a token object
+L40606: 26988	TextInputHost.	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L40607: 26988	TextInputHost.	4	SeLockMemoryPrivilege		Lock pages in memory
+L40608: 26988	TextInputHost.	5	SeIncreaseQuotaPrivilege		Increase quotas
+L40609: 26988	TextInputHost.	6	SeMachineAccountPrivilege		Add workstations to the domain
+L40610: 26988	TextInputHost.	7	SeTcbPrivilege		Act as part of the operating system
+L40611: 26988	TextInputHost.	8	SeSecurityPrivilege		Manage auditing and security log
+L40612: 26988	TextInputHost.	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L40613: 26988	TextInputHost.	10	SeLoadDriverPrivilege		Load and unload device drivers
+L40614: 26988	TextInputHost.	11	SeSystemProfilePrivilege		Profile system performance
+L40615: 26988	TextInputHost.	12	SeSystemtimePrivilege		Change the system time
+L40616: 26988	TextInputHost.	13	SeProfileSingleProcessPrivilege		Profile a single process
+L40617: 26988	TextInputHost.	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L40618: 26988	TextInputHost.	15	SeCreatePagefilePrivilege		Create a pagefile
+L40619: 26988	TextInputHost.	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L40620: 26988	TextInputHost.	17	SeBackupPrivilege		Backup files and directories
+L40621: 26988	TextInputHost.	18	SeRestorePrivilege		Restore files and directories
+L40622: 26988	TextInputHost.	19	SeShutdownPrivilege		Shut down the system
+L40623: 26988	TextInputHost.	20	SeDebugPrivilege		Debug programs
+L40624: 26988	TextInputHost.	21	SeAuditPrivilege		Generate security audits
+L40625: 26988	TextInputHost.	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L40626: 26988	TextInputHost.	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L40627: 26988	TextInputHost.	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L40628: 26988	TextInputHost.	25	SeUndockPrivilege		Remove computer from docking station
+L40629: 26988	TextInputHost.	26	SeSyncAgentPrivilege		Synch directory service data
+L40630: 26988	TextInputHost.	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L40631: 26988	TextInputHost.	28	SeManageVolumePrivilege		Manage the files on a volume
+L40632: 26988	TextInputHost.	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L40633: 26988	TextInputHost.	30	SeCreateGlobalPrivilege		Create global objects
+L40634: 26988	TextInputHost.	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L40635: 26988	TextInputHost.	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L40636: 26988	TextInputHost.	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L40637: 26988	TextInputHost.	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L40638: 26988	TextInputHost.	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L40639: 26988	TextInputHost.	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L10400: 26988	TextInputHost.	0x7ff6c1110000	0x7000	TextInputHost.exe	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInputHost.exe	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10401: 26988	TextInputHost.	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10402: 26988	TextInputHost.	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10403: 26988	TextInputHost.	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10404: 26988	TextInputHost.	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10405: 26988	TextInputHost.	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10406: 26988	TextInputHost.	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10407: 26988	TextInputHost.	0x7fff2a6d0000	0x19000	VCRUNTIME140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_APP.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10408: 26988	TextInputHost.	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10409: 26988	TextInputHost.	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10410: 26988	TextInputHost.	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10411: 26988	TextInputHost.	0x7fff2a360000	0xd0000	InputApp.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\InputApp.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10412: 26988	TextInputHost.	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10413: 26988	TextInputHost.	0x7fff1ea60000	0x51000	vccorlib140_app.DLL	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.DLL	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10414: 26988	TextInputHost.	0x7fff1eac0000	0x8d000	MSVCP140_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\MSVCP140_APP.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10415: 26988	TextInputHost.	0x7fff1ea50000	0xc000	VCRUNTIME140_1_APP.dll	C:\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\VCRUNTIME140_1_APP.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10416: 26988	TextInputHost.	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10417: 26988	TextInputHost.	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10418: 26988	TextInputHost.	0x7fff455d0000	0x10c1000	Windows.UI.Xaml.dll	C:\Windows\System32\Windows.UI.Xaml.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10419: 26988	TextInputHost.	0x7fff57540000	0x1a0000	user32.dll	C:\WINDOWS\System32\user32.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10420: 26988	TextInputHost.	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10421: 26988	TextInputHost.	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10422: 26988	TextInputHost.	0x7fff52500000	0xf2000	CoreMessaging.dll	C:\WINDOWS\SYSTEM32\CoreMessaging.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10423: 26988	TextInputHost.	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10424: 26988	TextInputHost.	0x7fff57800000	0x6b000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10425: 26988	TextInputHost.	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10426: 26988	TextInputHost.	0x7fff47340000	0x5b000	Bcp47Langs.dll	C:\WINDOWS\SYSTEM32\Bcp47Langs.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10427: 26988	TextInputHost.	0x7fff51cd0000	0x1e5000	dcomp.dll	C:\WINDOWS\SYSTEM32\dcomp.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10428: 26988	TextInputHost.	0x7fff468c0000	0x2b0000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10429: 26988	TextInputHost.	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10430: 26988	TextInputHost.	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10431: 26988	TextInputHost.	0x7fff4eb40000	0x208000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10432: 26988	TextInputHost.	0x7fff523a0000	0x156000	WinTypes.dll	C:\Windows\System32\WinTypes.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10433: 26988	TextInputHost.	0x7fff49ad0000	0x11000	windows.staterepositorycore.dll	C:\WINDOWS\SYSTEM32\windows.staterepositorycore.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10434: 26988	TextInputHost.	0x7fff470b0000	0x14c000	Windows.UI.dll	C:\Windows\System32\Windows.UI.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10435: 26988	TextInputHost.	0x7fff47000000	0xa3000	WindowManagementAPI.dll	C:\WINDOWS\SYSTEM32\WindowManagementAPI.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10436: 26988	TextInputHost.	0x7fff46da0000	0xfc000	TextInputFramework.dll	C:\WINDOWS\SYSTEM32\TextInputFramework.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10437: 26988	TextInputHost.	0x7fff46ea0000	0x152000	InputHost.dll	C:\WINDOWS\SYSTEM32\InputHost.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10438: 26988	TextInputHost.	0x7fff52600000	0x35e000	CoreUIComponents.dll	C:\WINDOWS\SYSTEM32\CoreUIComponents.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10439: 26988	TextInputHost.	0x7fff508e0000	0xf7000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10440: 26988	TextInputHost.	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10441: 26988	TextInputHost.	0x7fff43ed0000	0x795000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10442: 26988	TextInputHost.	0x7fff52a60000	0x9e000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10443: 26988	TextInputHost.	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10444: 26988	TextInputHost.	0x7fff53940000	0xf3000	dxgi.dll	C:\WINDOWS\SYSTEM32\dxgi.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10445: 26988	TextInputHost.	0x7fff1cbd0000	0x973000	TextInput.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInput.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10446: 26988	TextInputHost.	0x7fff3b780000	0x2f5000	uiautomationcore.dll	C:\WINDOWS\SYSTEM32\uiautomationcore.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10447: 26988	TextInputHost.	0x7fff514a0000	0x264000	d3d11.dll	C:\WINDOWS\SYSTEM32\d3d11.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10448: 26988	TextInputHost.	0x7fff51710000	0x5c0000	d2d1.dll	C:\WINDOWS\SYSTEM32\d2d1.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10449: 26988	TextInputHost.	0x7fff42d30000	0x27f000	DWrite.dll	C:\WINDOWS\SYSTEM32\DWrite.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10450: 26988	TextInputHost.	0x7fff41730000	0x1447000	igd10iumd64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10451: 26988	TextInputHost.	0x7fff557e0000	0x27000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10452: 26988	TextInputHost.	0x7fff54a60000	0x27000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10453: 26988	TextInputHost.	0x7fff54a20000	0x3b000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10454: 26988	TextInputHost.	0x7fff21b70000	0x1c7000	LayoutData.dll	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\LayoutData.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10455: 26988	TextInputHost.	0x7fff47200000	0xf4000	MrmCoreR.dll	C:\Windows\System32\MrmCoreR.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10456: 26988	TextInputHost.	0x7fff30ed0000	0x40000	windows.staterepositoryclient.dll	C:\WINDOWS\SYSTEM32\windows.staterepositoryclient.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10457: 26988	TextInputHost.	0x7fff3f820000	0x1f01000	igc64.dll	C:\WINDOWS\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10458: 26988	TextInputHost.	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10459: 26988	TextInputHost.	0x7fff48500000	0x2d000	bcp47mrm.dll	C:\WINDOWS\SYSTEM32\bcp47mrm.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10460: 26988	TextInputHost.	0x7fff3f7e0000	0x3b000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10461: 26988	TextInputHost.	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	-1	2020-11-14 03:43:06.000000 UTC	Disabled
+L10462: 26988	TextInputHost.	0x7fff576e0000	0x115000	msctf.dll	C:\WINDOWS\System32\msctf.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10463: 26988	TextInputHost.	0x7fff45050000	0xac000	TextShaping.dll	C:\WINDOWS\SYSTEM32\TextShaping.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10464: 26988	TextInputHost.	0x7fff52e20000	0x2a000	RMCLIENT.dll	C:\WINDOWS\SYSTEM32\RMCLIENT.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10465: 26988	TextInputHost.	0x7fff328d0000	0xa1000	UiaManager.dll	C:\Windows\System32\UiaManager.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10466: 26988	TextInputHost.	0x7fff26bf0000	0x109000	windows.ui.core.textinput.dll	C:\WINDOWS\SYSTEM32\windows.ui.core.textinput.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10467: 26988	TextInputHost.	0x7fff46730000	0x139000	Windows.UI.Immersive.dll	C:\Windows\System32\Windows.UI.Immersive.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10468: 26988	TextInputHost.	0x7fff29bb0000	0x3e000	DataExchange.dll	C:\WINDOWS\system32\DataExchange.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10469: 26988	TextInputHost.	0x7fff54960000	0xc000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10470: 26988	TextInputHost.	0x7fff286b0000	0x207000	windowsudk.shellcommon.dll	C:\WINDOWS\system32\windowsudk.shellcommon.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10471: 26988	TextInputHost.	0x7fff28630000	0x80000	DictationManager.dll	C:\WINDOWS\SYSTEM32\DictationManager.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10472: 26988	TextInputHost.	0x7fff4e8a0000	0x8d000	Windows.Graphics.dll	C:\Windows\System32\Windows.Graphics.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10473: 26988	TextInputHost.	0x7fff54ee0000	0x2e000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10474: 26988	TextInputHost.	0x7fff53d70000	0x29000	profext.dll	C:\WINDOWS\SYSTEM32\profext.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10475: 26988	TextInputHost.	0x7fff50a20000	0xa0000	policymanager.dll	C:\WINDOWS\SYSTEM32\policymanager.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10476: 26988	TextInputHost.	0x7fff54140000	0x8a000	msvcp110_win.dll	C:\WINDOWS\SYSTEM32\msvcp110_win.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10477: 26988	TextInputHost.	0x7fff31280000	0xa9000	twinapi.dll	C:\Windows\System32\twinapi.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10478: 26988	TextInputHost.	0x7fff55910000	0x55000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10479: 26988	TextInputHost.	0x7fff45100000	0x9e000	directmanipulation.dll	C:\WINDOWS\system32\directmanipulation.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10480: 26988	TextInputHost.	0x7fff3c6c0000	0x3b000	rometadata.dll	C:\WINDOWS\SYSTEM32\rometadata.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10481: 26988	TextInputHost.	0x7fff261e0000	0x61000	Windows.Storage.ApplicationData.dll	C:\Windows\System32\Windows.Storage.ApplicationData.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10482: 26988	TextInputHost.	0x7fff52c30000	0x2f000	dwmapi.dll	C:\WINDOWS\SYSTEM32\dwmapi.dll	6	2020-11-14 03:43:06.000000 UTC	Disabled
+L10483: 26988	TextInputHost.	0x7fff35b00000	0xc3000	Windows.Web.dll	C:\Windows\System32\Windows.Web.dll	6	2020-11-16 02:29:39.000000 UTC	Disabled
+
+--- pstree.txt ---
+L145: *** 26988	740	TextInputHost.	0xb78d1147f080	10	-	1	False	2020-11-14 03:43:06.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInputHost.exe	"C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInputHost.exe" -ServerName:InputApp.AppX9jnwykgrccxc8by3hsrsh07r423xzvav.mca	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInputHost.exe
+
+--- psscan.txt ---
+L1846: 26988	740	TextInputHost.	0xb78d1147f080	10	-	1	False	2020-11-14 03:43:06.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L11053: 26988	TextInputHost.	0x27691600000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.19h1.dll
+L11054: 26988	TextInputHost.	0x276916b0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L11055: 26988	TextInputHost.	0x27691a40000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L11056: 26988	TextInputHost.	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L11057: 26988	TextInputHost.	0x7fff3b780000	True	True	True	\Windows\System32\UIAutomationCore.dll
+L11058: 26988	TextInputHost.	0x7fff29bb0000	True	True	True	\Windows\System32\DataExchange.dll
+L11059: 26988	TextInputHost.	0x7fff1eac0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\msvcp140_app.dll
+L11060: 26988	TextInputHost.	0x7ff6c1110000	True	False	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInputHost.exe
+L11061: 26988	TextInputHost.	0x7fff1ea50000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_1_app.dll
+L11062: 26988	TextInputHost.	0x7fff1cbd0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInput.dll
+L11063: 26988	TextInputHost.	0x7fff1ea60000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.dll
+L11064: 26988	TextInputHost.	0x7fff26bf0000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L11065: 26988	TextInputHost.	0x7fff21b70000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\LayoutData.dll
+L11066: 26988	TextInputHost.	0x7fff261e0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L11067: 26988	TextInputHost.	0x7fff286b0000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L11068: 26988	TextInputHost.	0x7fff28630000	True	True	True	\Windows\System32\DictationManager.dll
+L11069: 26988	TextInputHost.	0x7fff30ed0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L11070: 26988	TextInputHost.	0x7fff2a360000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\InputApp.dll
+L11071: 26988	TextInputHost.	0x7fff2a6d0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_app.dll
+L11072: 26988	TextInputHost.	0x7fff328d0000	True	True	True	\Windows\System32\UiaManager.dll
+L11073: 26988	TextInputHost.	0x7fff31280000	True	True	True	\Windows\System32\twinapi.dll
+L11074: 26988	TextInputHost.	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L11075: 26988	TextInputHost.	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L11076: 26988	TextInputHost.	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L11077: 26988	TextInputHost.	0x7fff3c6c0000	True	True	True	\Windows\System32\rometadata.dll
+L11078: 26988	TextInputHost.	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L11079: 26988	TextInputHost.	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L11080: 26988	TextInputHost.	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L11081: 26988	TextInputHost.	0x7fff45100000	True	True	True	\Windows\System32\directmanipulation.dll
+L11082: 26988	TextInputHost.	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L11083: 26988	TextInputHost.	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L11084: 26988	TextInputHost.	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L11085: 26988	TextInputHost.	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L11086: 26988	TextInputHost.	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L11087: 26988	TextInputHost.	0x7fff46730000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L11088: 26988	TextInputHost.	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L11089: 26988	TextInputHost.	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L11090: 26988	TextInputHost.	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L11091: 26988	TextInputHost.	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L11092: 26988	TextInputHost.	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L11093: 26988	TextInputHost.	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L11094: 26988	TextInputHost.	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L11095: 26988	TextInputHost.	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L11096: 26988	TextInputHost.	0x7fff4e8a0000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L11097: 26988	TextInputHost.	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L11098: 26988	TextInputHost.	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L11099: 26988	TextInputHost.	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L11100: 26988	TextInputHost.	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L11101: 26988	TextInputHost.	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+L11102: 26988	TextInputHost.	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L11103: 26988	TextInputHost.	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L11104: 26988	TextInputHost.	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L11105: 26988	TextInputHost.	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L11106: 26988	TextInputHost.	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L11107: 26988	TextInputHost.	0x7fff52c30000	True	True	True	\Windows\System32\dwmapi.dll
+L11108: 26988	TextInputHost.	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L11109: 26988	TextInputHost.	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L11110: 26988	TextInputHost.	0x7fff54a60000	True	True	True	\Windows\System32\ncrypt.dll
+L11111: 26988	TextInputHost.	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L11112: 26988	TextInputHost.	0x7fff53d70000	True	True	True	\Windows\System32\profext.dll
+L11113: 26988	TextInputHost.	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L11114: 26988	TextInputHost.	0x7fff54a20000	True	True	True	\Windows\System32\ntasn1.dll
+L11115: 26988	TextInputHost.	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L11116: 26988	TextInputHost.	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L11117: 26988	TextInputHost.	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L11118: 26988	TextInputHost.	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L11119: 26988	TextInputHost.	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L11120: 26988	TextInputHost.	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L11121: 26988	TextInputHost.	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L11122: 26988	TextInputHost.	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L11123: 26988	TextInputHost.	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L11124: 26988	TextInputHost.	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L11125: 26988	TextInputHost.	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L11126: 26988	TextInputHost.	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L11127: 26988	TextInputHost.	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L11128: 26988	TextInputHost.	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L11129: 26988	TextInputHost.	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L11130: 26988	TextInputHost.	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L11131: 26988	TextInputHost.	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L11132: 26988	TextInputHost.	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L11133: 26988	TextInputHost.	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L11134: 26988	TextInputHost.	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L11135: 26988	TextInputHost.	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L11136: 26988	TextInputHost.	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L11137: 26988	TextInputHost.	0x7fff576e0000	True	True	True	\Windows\System32\msctf.dll
+L11138: 26988	TextInputHost.	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L11053: 26988	TextInputHost.	0x27691600000	False	False	False	\Windows\System32\Windows.UI.Xaml.Resources.19h1.dll
+L11054: 26988	TextInputHost.	0x276916b0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L11055: 26988	TextInputHost.	0x27691a40000	False	False	False	\Windows\System32\WinMetadata\Windows.UI.winmd
+L11056: 26988	TextInputHost.	0x7fff47340000	True	True	True	\Windows\System32\BCP47Langs.dll
+L11057: 26988	TextInputHost.	0x7fff3b780000	True	True	True	\Windows\System32\UIAutomationCore.dll
+L11058: 26988	TextInputHost.	0x7fff29bb0000	True	True	True	\Windows\System32\DataExchange.dll
+L11059: 26988	TextInputHost.	0x7fff1eac0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\msvcp140_app.dll
+L11060: 26988	TextInputHost.	0x7ff6c1110000	True	False	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInputHost.exe
+L11061: 26988	TextInputHost.	0x7fff1ea50000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_1_app.dll
+L11062: 26988	TextInputHost.	0x7fff1cbd0000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInput.dll
+L11063: 26988	TextInputHost.	0x7fff1ea60000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vccorlib140_app.dll
+L11064: 26988	TextInputHost.	0x7fff26bf0000	True	True	True	\Windows\System32\Windows.UI.Core.TextInput.dll
+L11065: 26988	TextInputHost.	0x7fff21b70000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\LayoutData.dll
+L11066: 26988	TextInputHost.	0x7fff261e0000	True	True	True	\Windows\System32\Windows.Storage.ApplicationData.dll
+L11067: 26988	TextInputHost.	0x7fff286b0000	True	True	True	\Windows\System32\windowsudk.shellcommon.dll
+L11068: 26988	TextInputHost.	0x7fff28630000	True	True	True	\Windows\System32\DictationManager.dll
+L11069: 26988	TextInputHost.	0x7fff30ed0000	True	True	True	\Windows\System32\Windows.StateRepositoryClient.dll
+L11070: 26988	TextInputHost.	0x7fff2a360000	True	True	True	\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\InputApp.dll
+L11071: 26988	TextInputHost.	0x7fff2a6d0000	True	True	True	\Program Files\WindowsApps\microsoft.vclibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe\vcruntime140_app.dll
+L11072: 26988	TextInputHost.	0x7fff328d0000	True	True	True	\Windows\System32\UiaManager.dll
+L11073: 26988	TextInputHost.	0x7fff31280000	True	True	True	\Windows\System32\twinapi.dll
+L11074: 26988	TextInputHost.	0x7fff455d0000	True	True	True	\Windows\System32\Windows.UI.Xaml.dll
+L11075: 26988	TextInputHost.	0x7fff41730000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igd10iumd64.dll
+L11076: 26988	TextInputHost.	0x7fff3f7e0000	True	True	True	\Windows\System32\DXCore.dll
+L11077: 26988	TextInputHost.	0x7fff3c6c0000	True	True	True	\Windows\System32\rometadata.dll
+L11078: 26988	TextInputHost.	0x7fff3f820000	True	True	True	\Windows\System32\DriverStore\FileRepository\64gh6299.inf_amd64_94401bd29769cd59\igc64.dll
+L11079: 26988	TextInputHost.	0x7fff43ed0000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L11080: 26988	TextInputHost.	0x7fff42d30000	True	True	True	\Windows\System32\DWrite.dll
+L11081: 26988	TextInputHost.	0x7fff45100000	True	True	True	\Windows\System32\directmanipulation.dll
+L11082: 26988	TextInputHost.	0x7fff45050000	True	True	True	\Windows\System32\TextShaping.dll
+L11083: 26988	TextInputHost.	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L11084: 26988	TextInputHost.	0x7fff47000000	True	True	True	\Windows\System32\WindowManagementAPI.dll
+L11085: 26988	TextInputHost.	0x7fff46da0000	True	True	True	\Windows\System32\TextInputFramework.dll
+L11086: 26988	TextInputHost.	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L11087: 26988	TextInputHost.	0x7fff46730000	True	True	True	\Windows\System32\Windows.UI.Immersive.dll
+L11088: 26988	TextInputHost.	0x7fff46ea0000	True	True	True	\Windows\System32\InputHost.dll
+L11089: 26988	TextInputHost.	0x7fff470b0000	True	True	True	\Windows\System32\Windows.UI.dll
+L11090: 26988	TextInputHost.	0x7fff47200000	True	True	True	\Windows\System32\MrmCoreR.dll
+L11091: 26988	TextInputHost.	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L11092: 26988	TextInputHost.	0x7fff52500000	True	True	True	\Windows\System32\CoreMessaging.dll
+L11093: 26988	TextInputHost.	0x7fff508e0000	True	True	True	\Windows\System32\propsys.dll
+L11094: 26988	TextInputHost.	0x7fff49ad0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L11095: 26988	TextInputHost.	0x7fff48500000	True	True	True	\Windows\System32\BCP47mrm.dll
+L11096: 26988	TextInputHost.	0x7fff4e8a0000	True	True	True	\Windows\System32\Windows.Graphics.dll
+L11097: 26988	TextInputHost.	0x7fff4eb40000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L11098: 26988	TextInputHost.	0x7fff51cd0000	True	True	True	\Windows\System32\dcomp.dll
+L11099: 26988	TextInputHost.	0x7fff514a0000	True	True	True	\Windows\System32\d3d11.dll
+L11100: 26988	TextInputHost.	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L11101: 26988	TextInputHost.	0x7fff51710000	True	True	True	\Windows\System32\d2d1.dll
+L11102: 26988	TextInputHost.	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L11103: 26988	TextInputHost.	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L11104: 26988	TextInputHost.	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L11105: 26988	TextInputHost.	0x7fff52a60000	True	True	True	\Windows\System32\uxtheme.dll
+L11106: 26988	TextInputHost.	0x7fff52600000	True	True	True	\Windows\System32\CoreUIComponents.dll
+L11107: 26988	TextInputHost.	0x7fff52c30000	True	True	True	\Windows\System32\dwmapi.dll
+L11108: 26988	TextInputHost.	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L11109: 26988	TextInputHost.	0x7fff53940000	True	True	True	\Windows\System32\dxgi.dll
+L11110: 26988	TextInputHost.	0x7fff54a60000	True	True	True	\Windows\System32\ncrypt.dll
+L11111: 26988	TextInputHost.	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L11112: 26988	TextInputHost.	0x7fff53d70000	True	True	True	\Windows\System32\profext.dll
+L11113: 26988	TextInputHost.	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L11114: 26988	TextInputHost.	0x7fff54a20000	True	True	True	\Windows\System32\ntasn1.dll
+L11115: 26988	TextInputHost.	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L11116: 26988	TextInputHost.	0x7fff54ee0000	True	True	True	\Windows\System32\userenv.dll
+L11117: 26988	TextInputHost.	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L11118: 26988	TextInputHost.	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L11119: 26988	TextInputHost.	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L11120: 26988	TextInputHost.	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L11121: 26988	TextInputHost.	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L11122: 26988	TextInputHost.	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L11123: 26988	TextInputHost.	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L11124: 26988	TextInputHost.	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L11125: 26988	TextInputHost.	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L11126: 26988	TextInputHost.	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L11127: 26988	TextInputHost.	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L11128: 26988	TextInputHost.	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L11129: 26988	TextInputHost.	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L11130: 26988	TextInputHost.	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L11131: 26988	TextInputHost.	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L11132: 26988	TextInputHost.	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L11133: 26988	TextInputHost.	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L11134: 26988	TextInputHost.	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L11135: 26988	TextInputHost.	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L11136: 26988	TextInputHost.	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L11137: 26988	TextInputHost.	0x7fff576e0000	True	True	True	\Windows\System32\msctf.dll
+L11138: 26988	TextInputHost.	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L1165: 26988	TextInputHost.	\Device\HarddiskVolume3\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInputHost.exe	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\InputApp\TextInputHost.exe	False	False
+
+--- sessions.txt ---
+L1183: 1	-	26988	TextInputHost.	SRL-FORGE/fredr	2020-11-14 03:43:06.000000 UTC
+
+=== END OF PIVOT REPORT ===

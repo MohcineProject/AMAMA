@@ -1,0 +1,87 @@
+=== TRIAGE REPORT ===
+Generated: 2026-06-13T13:32:02Z
+Counts:    total_flagged=9  critical=0  high=3  medium=4  low=2
+Summary:   Input contained 200 top-scored MFT records dominated by missing_zone_identifier signals across AppData/Temp/ProgramData paths; the highest-priority findings are two vcredist Package Cache executables with ~4.7-year SI/FN timestamp deltas strongly indicating deliberate backdating, a deleted msedge.exe with a ~46-day SI/FN mismatch in a suspicious AppRepository path, and sdelete64.exe (a secure-deletion tool) in Downloads without a Zone.Identifier. Stats note: timestomping_candidates=26695 across the full disk — only the top-scored records are visible here; 267 missing-Zone.Identifier executables exist disk-wide, of which this report surfaces the highest-scored subset. No entropy anomalies were flagged by the scorer (entropy_anomalies=0).
+
+[FINDING]
+triage_source: mft
+type:       timestomp
+key:        ProgramData\Package Cache\{7f51bdb9-ee21-49ee-94d6-90afc321780e}\vcredist_x64.exe
+secondary:  vcredist_x64.exe, score=9, missing_zone_identifier|si_fn_mismatch:147971889s
+severity:   HIGH
+reasons:    timestamp:si_fn_mismatch=147971889s(~4.7_years,SI=2016-02-12_vs_FN=2020-10-20)|dropper:missing_zone_identifier|path:ProgramData\Package_Cache_suspicious_path|context:stats_show_26695_timestomping_candidates_disk-wide
+source:     mft
+
+[FINDING]
+triage_source: mft
+type:       timestomp
+key:        ProgramData\Package Cache\{ce085a78-074e-4823-8dc1-8a721b94b76d}\vcredist_x86.exe
+secondary:  vcredist_x86.exe, score=9, missing_zone_identifier|si_fn_mismatch:147971885s
+severity:   HIGH
+reasons:    timestamp:si_fn_mismatch=147971885s(~4.7_years,SI=2016-02-12_vs_FN=2020-10-20)|dropper:missing_zone_identifier|path:ProgramData\Package_Cache_suspicious_path|note:near-identical_delta_to_vcredist_x64_suggests_coordinated_backdating_of_both_files
+source:     mft
+
+[FINDING]
+triage_source: mft
+type:       mft_anomaly
+key:        DELETED:ProgramData\Microsoft\Windows\AppRepository\a366a047-286a-4e1a-b69a-330f6d9b729c_S-1-5-21-528816539-567677750-276746561-1002_22.rslc\msedge.exe
+secondary:  msedge.exe, score=9, deleted=true, missing_zone_identifier|si_fn_mismatch:4010697s
+severity:   HIGH
+reasons:    timestamp:si_fn_mismatch=4010697s(~46_days,SI=2020-09-27_vs_FN=2020-11-13)|dropper:missing_zone_identifier|deleted:true|path:AppRepository_rslc_staging_path_not_normal_install_location|note:deleted_executable_with_SI_predating_FN_by_46_days_in_non-standard_path
+source:     mft
+
+[FINDING]
+triage_source: mft
+type:       mft_anomaly
+key:        ProgramData\Adobe\Setup\{AC76BA86-7AD7-1033-7B44-AC0F074E4100}\setup.exe
+secondary:  setup.exe, score=9, missing_zone_identifier|si_fn_mismatch:3918802s
+severity:   MEDIUM
+reasons:    timestamp:si_fn_mismatch=3918802s(~45_days,SI=2020-09-11_vs_FN=2020-10-27)|dropper:missing_zone_identifier|path:ProgramData\Adobe\Setup_suspicious_path|note:SI_predates_FN_by_45_days_corroborated_by_missing_zone_identifier
+source:     mft
+
+[FINDING]
+triage_source: mft
+type:       mft_anomaly
+key:        Users\srl-h\Downloads\sdelete64.exe
+secondary:  sdelete64.exe, score=6, missing_zone_identifier
+severity:   MEDIUM
+reasons:    dropper:missing_zone_identifier|tool:sdelete64_is_a_secure-deletion_utility_used_to_wipe_forensic_evidence|path:Users\srl-h\Downloads|note:presence_of_anti-forensics_tool_without_browser_download_mark_warrants_investigation;_file_not_downloaded_via_browser
+source:     mft
+
+[FINDING]
+triage_source: mft
+type:       mft_anomaly
+key:        Users\fredr\AppData\Local\Temp\f4136dbd-be88-4a99-8fb9-c70f12760e2b.bat
+secondary:  f4136dbd-be88-4a99-8fb9-c70f12760e2b.bat, score=6, missing_zone_identifier
+severity:   MEDIUM
+reasons:    dropper:missing_zone_identifier|path:Users\fredr\AppData\Local\Temp|note:GUID-named_batch_script_in_Temp_without_Zone.Identifier_is_consistent_with_programmatic_drop-and-execute_pattern|created:2020-11-10T14:12:21Z
+source:     mft
+
+[FINDING]
+triage_source: mft
+type:       mft_anomaly
+key:        DELETED:ProgramData\Microsoft\Windows\AppRepository\a366a047-286a-4e1a-b69a-330f6d9b729c_S-1-5-21-528816539-567677750-276746561-1002_22.rslc\msedge.exe (cluster representative)
+secondary:  msedge_proxy.exe|pwahelper.exe|msedge_elf.dll|msedge_pwa_launcher.exe|msedgewebview2.exe|cookie_exporter.exe|elevation_service.exe|identity_helper.exe|notification_helper.exe, score=9/6, deleted=true, missing_zone_identifier|si_fn_mismatch:4010697s|ads=WofCompressedData
+severity:   MEDIUM
+reasons:    temporal_cluster:~30+_deleted_executables_and_DLLs_all_created_2020-11-13T00:41:xx_in_same_AppRepository_rslc_staging_path|dropper:missing_zone_identifier_on_all|deleted:true_on_all|ads:WofCompressedData_present_on_most_(compressed_staging_artifact)|note:bulk_deletion_of_Edge_browser_staging_files_is_consistent_with_Windows_Update_cleanup_but_the_rslc_path_and_SI/FN_mismatch_on_msedge.exe_warrant_verification_that_this_is_legitimate_Edge_deployment
+source:     mft
+
+[FINDING]
+triage_source: mft
+type:       mft_anomaly
+key:        Users\fredr\AppData\Local\Temp\~nsu.tmp\Au_.exe
+secondary:  Au_.exe, score=6, missing_zone_identifier
+severity:   LOW
+reasons:    dropper:missing_zone_identifier|path:Users\fredr\AppData\Local\Temp\~nsu.tmp_(NSIS_installer_temp_directory)|note:Au_.exe_is_a_common_NSIS_auto-updater_stub;_no_Zone.Identifier_means_not_browser-downloaded;_low_confidence_without_additional_signals
+source:     mft
+
+[FINDING]
+triage_source: mft
+type:       mft_anomaly
+key:        Users\fredr\Downloads\installbackupandsync.exe
+secondary:  installbackupandsync.exe, score=6, missing_zone_identifier
+severity:   LOW
+reasons:    dropper:missing_zone_identifier|path:Users\fredr\Downloads|note:installer_in_Downloads_without_Zone.Identifier_is_anomalous_(browser_downloads_always_receive_Zone.Identifier);_file_may_have_been_copied_in_rather_than_downloaded|created:2020-10-31T17:05:43Z
+source:     mft
+
+=== END TRIAGE ===

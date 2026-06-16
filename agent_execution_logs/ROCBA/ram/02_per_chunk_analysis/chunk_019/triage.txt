@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-01-30T00:00:00Z
+Chunk: chunk_019.txt
+Summary: RuntimeBroker.exe has an orphaned parent (PID 740 unknown); all other signals are benign.
+
+[PROCESS]
+pid: 8436
+ppid: 740
+image: RuntimeBroker.exe
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 740 (listed as 'unknown') does not appear anywhere in the process list — expected parent is svchost.exe
+

@@ -1,0 +1,69 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 27232 — TabTip.exe**
+
+**Agent 1 signals:**
+1. `orphaned_parent`: PPID 1908 not in process list
+2. `dll_list_artefact`: own executable path appearing in dlllist (ldrmodules anomaly)
+
+**Reasoning:**
+
+*Orphaned parent:* TabTip.exe (Touch Keyboard and Handwriting Panel) is a legitimate Windows accessibility component located at `C:\Program Files\Common Files\microsoft shared\ink\TabTip.exe`. Orphaned parents are extremely common in memory forensics — the parent process (often `explorer.exe` or a session manager) may have exited after spawning the child, or the snapshot was taken mid-session. This alone is a very weak signal for a well-known system binary in a legitimate path.
+
+*DLL ldrmodules anomaly:* The "anomaly" is simply that the process's own executable image appears as the first entry in `dlllist.txt`. This is standard Volatility behaviour — the main module (the EXE itself) is always listed first in the LDR module list. The path is `C:\Program Files\Common Files\microsoft shared\ink\TabTip.exe` — a legitimate, expected system path. This is not an anomaly.
+
+*Privilege footprint:* The privileges list is enormous — 35 entries covering nearly every privilege in the Windows token model, including `SeTcbPrivilege`, `SeDebugPrivilege`, `SeLoadDriverPrivilege`, `SeImpersonatePrivilege`, `SeCreateTokenPrivilege`, `SeAssignPrimaryTokenPrivilege`. However, critically, almost none of these are **enabled** — only `SeShutdownPrivilege (Present)`, `SeChangeNotifyPrivilege (Present, Enabled, Default)`, `SeUndockPrivilege (Present)`, `SeCreateGlobalPrivilege (Default)`, `SeIncreaseWorkingSetPrivilege (Present)`, `SeTimeZonePrivilege (Present)` are active. The rest are merely present in the token but not enabled. This is characteristic of a process running under a **full administrator token** (or SYSTEM token) where the full privilege set is listed but most are disabled by default. TabTip.exe running under an elevated/SYSTEM context is unusual but not unheard of in enterprise environments. None of the dangerous privileges (`SeDebugPrivilege`, `SeTcbPrivilege`, `SeLoadDriverPrivilege`) are shown as enabled. The DLL evidence (only 3 lines shown, all from System32/legitimate paths) shows no suspicious DLL loading.
+
+*Cmdline:* `/QuitInfo:00000000000002DC;0000000000000300;` — this is a standard internal IPC argument used by TabTip.exe for session/window handle communication. Completely normal.
+
+**Verdict: REJECTED.** Both Agent 1 signals are explained by benign behaviour. The orphaned parent is a common forensic artefact for a legitimate system binary. The DLL "anomaly" is standard Volatility EXE-as-first-module behaviour. The privilege set is large but almost entirely disabled, consistent with an elevated token context. No suspicious DLL paths, no malfind hits, no network connections, no encoded cmdline.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Agent 1 submitted one finding for validation. After reviewing all available grep evidence across pslist, cmdline, privileges, and dlllist artefacts, the single finding is rejected as benign. No confirmed or inconclusive malicious activity was identified in this triage batch. The evidence is consistent with a legitimate Windows accessibility component running under an elevated token with no dangerous privileges enabled.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+--- REJECTED FINDINGS SUMMARY (for Agent 3 audit trail) ---
+
+PID 27232 — TabTip.exe
+  Both Agent 1 signals are explained by benign behaviour and known
+  Volatility artefacts:
+
+  1. orphaned_parent: TabTip.exe is a legitimate Windows Touch Keyboard
+     component (C:\Program Files\Common Files\microsoft shared\ink\
+     TabTip.exe). Parent exit after child spawn is a routine forensic
+     condition for UI shell components; the binary path and cmdline are
+     entirely consistent with normal operation.
+
+  2. dll_list_artefact: The "non-whitelisted DLL entry" is simply the
+     process's own executable image appearing as the first entry in the
+     LDR module list — standard Volatility dlllist behaviour. The path
+     is the legitimate system path; no DLLs from user-writable locations
+     were present in the evidence.
+
+  3. Privilege footprint: 35 privileges are listed in the token, but
+     only SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege,
+     SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, and
+     SeTimeZonePrivilege carry Present/Enabled/Default flags. The
+     high-risk privileges (SeDebugPrivilege, SeTcbPrivilege,
+     SeLoadDriverPrivilege, SeImpersonatePrivilege) are present in the
+     token but NOT enabled — consistent with a full administrator token
+     where most privileges remain disabled until explicitly activated.
+     No evidence of privilege abuse.
+
+  Cmdline (/QuitInfo:00000000000002DC;0000000000000300;) is a standard
+  internal IPC handle-passing argument used by TabTip.exe. No malfind
+  hits, no network connections, and no suspicious DLL paths were present
+  in the evidence block.
+
+================================================================

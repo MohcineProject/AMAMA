@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:30:00Z
+Chunk: chunk_006.txt
+Summary: MicrosoftEdgeUpdate.exe (PID 4040) has an orphaned parent (PID 1524 unknown) and holds an unusual combination of high-risk privileges (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege) for an updater process; child instance (PID 8256) inherits the same privilege set.
+
+[PROCESS]
+pid: 4040
+ppid: 1524
+image: MicrosoftEdgeUpdate.exe
+cmdline: "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /c
+severity: MEDIUM
+reasons: orphaned_parent: PPID 1524 does not appear anywhere in the process list | privilege_anomaly: holds SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege simultaneously — atypical for an updater binary | non-whitelisted_dll: entry '-' (empty/missing path) present in loaded DLL list, possible unresolvable or injected module
+
+[PROCESS]
+pid: 8256
+ppid: 4040
+image: MicrosoftEdgeUpdate.exe
+cmdline: "C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe" /ua /installsource core
+severity: LOW
+reasons: privilege_anomaly: inherits SeTcbPrivilege, SeDebugPrivilege, and SeImpersonatePrivilege from suspicious parent PID 4040 | non-whitelisted_dll: entry '-' (empty/missing path) present in loaded DLL list, same as parent | spawned_by_suspicious_parent: parent PID 4040 is itself flagged for orphaned ancestry and privilege anomalies
+

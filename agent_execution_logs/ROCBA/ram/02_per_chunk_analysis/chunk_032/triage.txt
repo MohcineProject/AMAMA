@@ -1,0 +1,5 @@
+=== TRIAGE REPORT ===
+Generated: 2025-01-30T00:00:00Z
+Chunk: chunk_032.txt
+Summary: No suspicious signals detected. ShellExperienceHost.exe runs from its expected SystemApps path with a legitimate command line; the truncated EPROCESS name is a known kernel artefact; the unknown PPID 740 is consistent with the DWM/Window Manager session host lineage and does not constitute an anomaly in isolation.
+

@@ -1,0 +1,43 @@
+================================================================
+PIVOT REPORT
+Generated: 2024-01-15T00:00:00Z
+Summary: Two low-severity Agent 1 leads were reviewed. Both processes (RuntimeBroker.exe PID 11540 and HxTsr.exe PID 11768) share an orphaned PPID of 740, which is consistent with a parent process that exited after spawning them — a normal Windows behaviour for session-manager and COM-activation chains. Neither process shows malicious command lines, suspicious DLL paths, enabled high-privilege tokens, malfind hits, or network connections. Both are rejected as benign.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+--- REJECTED FINDINGS SUMMARY ---
+
+PID 11540 (RuntimeBroker.exe): REJECTED
+  The orphaned PPID 740 is the sole Agent 1 signal. RuntimeBroker.exe is a
+  standard Windows Runtime Broker launched via COM activation (-Embedding flag),
+  whose parent (typically svchost hosting DcomLaunch) routinely exits or is
+  recorded under a different PID by the time a memory snapshot is taken. The
+  command line (C:\Windows\System32\RuntimeBroker.exe -Embedding) is canonical.
+  The DLL list shows only System32 binaries. The privilege table lists the full
+  standard token privilege set but none are marked Present/Enabled beyond the
+  expected defaults (SeChangeNotifyPrivilege, SeShutdownPrivilege,
+  SeIncreaseWorkingSetPrivilege, SeUndockPrivilege, SeTimeZonePrivilege,
+  SeCreateGlobalPrivilege Default) — the remaining high-privilege entries are
+  present in the token but not enabled, which is normal for a user-context
+  process carrying the default full-privilege token template. No malfind, no
+  network, no suspicious DLLs. The EPROCESS name truncation to 'RuntimeBroker.'
+  is the expected 14-character artefact explicitly noted by Agent 1.
+
+PID 11768 (HxTsr.exe): REJECTED
+  The two Agent 1 signals are orphaned PPID 740 (same parent as PID 11540,
+  consistent with a COM/DcomLaunch host that exited) and a ~3-second lifetime.
+  HxTsr.exe is the Microsoft Mail/Calendar background task server, part of the
+  WindowsCommunicationsApps UWP package. Short-lived execution is entirely
+  normal for this component — it activates on demand and exits quickly. The
+  pstree and malware_pebmasquerade artifacts confirm the full path resolves to
+  the legitimate WindowsApps package directory
+  (\Device\HarddiskVolume3\Program Files\WindowsApps\
+  microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\
+  HxTsr.exe) with no masquerade flag set (False/False). The cmdline field is
+  '-' (unavailable at snapshot time due to early exit), which is expected for a
+  process that had already terminated. No malfind, no network connections, no
+  suspicious DLLs. Nothing in the privilege table is anomalously enabled.
+
+================================================================

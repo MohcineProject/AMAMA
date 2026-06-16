@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_035.txt
+Summary: APSDaemon.exe holds an established external connection to 17.57.144.165:5223 (Apple Push Notification Service — plausible but worth confirming); all other processes show orphaned PPIDs consistent with a partial memory snapshot with no other strong IOCs.
+
+[PROCESS]
+pid: 13224
+ppid: 740
+image: APSDaemon.exe
+cmdline: "C:\Program Files\WindowsApps\AppleInc.iCloud_11.4.12.0_x86__nzyj5cx40ttqa\iCloud\APSDaemon.exe" -Embedding
+severity: LOW
+reasons: network: ESTABLISHED connection to public IP 17.57.144.165:5223 — port 5223 is Apple Push Notification Service but warrants confirmation against known Apple ASN | orphaned_parent: PPID 740 not present in process list — cannot verify legitimate parent chain | non-whitelisted DLLs: includes KERNEL32.DLL and KERNELBASE.dll loaded from System32 paths flagged by DLL filter — low concern but noted alongside other signals
+

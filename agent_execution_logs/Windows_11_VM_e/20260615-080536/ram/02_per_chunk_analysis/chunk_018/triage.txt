@@ -1,0 +1,45 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-13T19:30:00Z
+Chunk: chunk_018.txt
+Summary: Orphaned cmd.exe (PID 5568) spawning unknown Client.exe binaries from AppData\Roaming; Client.exe (PID 376) running from user-writable AppData path with suspicious spawn chain; PING.EXE used likely as connectivity check flanking Client.exe execution.
+
+[PROCESS]
+pid: 5568
+ppid: 560
+image: cmd.exe
+cmdline: 
+severity: HIGH
+reasons: orphaned_process: parent PID 560 not present in process list (discovered_via=psscan only) | spawn_chain: directly spawned Client.exe (PID 5836) and PING.EXE (PID 5608), suggesting scripted dropper/beacon sequence | short_lived: exited ~10 seconds after creation in context of suspicious child spawning
+
+[PROCESS]
+pid: 376
+ppid: 7980
+image: Client.exe
+cmdline: "C:\Users\kali\AppData\Roaming\SubDir\Client.exe"
+severity: CRITICAL
+reasons: path: executable running from user-writable C:\Users\kali\AppData\Roaming\SubDir\ | non_standard_name: 'Client.exe' in AppData\Roaming\SubDir is not a known Windows or common legitimate binary | spawn_chain: descended from orphaned cmd.exe (PID 5568) → Client.exe (PID 5836) → cmd.exe (PID 7980) → this process — multi-hop re-execution pattern consistent with staged dropper | dll_load: C:\Users\kali\AppData\Roaming\SubDir\Client.exe listed as loaded module (self-referential DLL entry — possible reflective load or .NET assembly) | still_running: no ExitTime recorded while all ancestor processes have already exited — persistent implant candidate
+
+[PROCESS]
+pid: 5836
+ppid: 5568
+image: Client.exe
+cmdline: 
+severity: HIGH
+reasons: orphaned_ancestry: parent cmd.exe (PID 5568) itself is orphaned (PPID 560 not in process list) | non_standard_name: 'Client.exe' spawned by orphaned cmd.exe with no visible path or commandline — hidden or unresolved image | spawn_chain: spawned cmd.exe (PID 7980) which then spawned another Client.exe (PID 376) — staged re-execution pattern | short_lived: exited ~7 seconds after creation consistent with dropper/launcher role
+
+[PROCESS]
+pid: 7980
+ppid: 5836
+image: cmd.exe
+cmdline: 
+severity: MEDIUM
+reasons: spawn_chain: spawned by Client.exe (PID 5836) which itself descended from orphaned cmd.exe — cmd.exe as intermediary in multi-stage execution | child_spawn: directly spawned Client.exe (PID 376) from AppData\Roaming\SubDir and PING.EXE (PID 7552) | short_lived: exited ~10 seconds after creation consistent with launcher/wrapper role
+
+[PROCESS]
+pid: 5608
+ppid: 5568
+image: PING.EXE
+cmdline: 
+severity: LOW
+reasons: context: PING.EXE spawned by orphaned cmd.exe (PID 5568) alongside Client.exe — likely used as connectivity check or time-delay mechanism in dropper sequence | short_lived: exited ~10 seconds after creation consistent with one-shot connectivity probe
+

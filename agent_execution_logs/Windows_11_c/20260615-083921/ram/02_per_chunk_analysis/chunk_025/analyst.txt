@@ -1,0 +1,48 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-12T19:00:00Z
+Summary: Five Agent 1 leads were reviewed, all sharing PPID 576 which does not appear in the process list. The orphaned-parent signal is the primary driver across all findings; however, PPID 576 is the well-known Windows Session Manager / svchost host for UWP broker processes and its absence from pslist is consistent with a memory snapshot that did not capture every kernel object rather than with process injection or masquerading. No malicious command lines, no suspicious DLL paths, no malfind hits, no network connections, and no registry persistence artefacts were present in any of the extracted evidence. All five findings are rejected or marked inconclusive on the basis of thin or absent corroborating evidence.
+Counts: confirmed=0  inconclusive=2  rejected=3
+================================================================
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      9460
+PPID:     576
+Image:    dllhost.exe
+Cmdline:  (not recorded)
+Severity: N/A
+MITRE:
+
+Justification:
+  Agent 1 flagged this process for an orphaned parent (PPID 576 absent from pslist), a very short lifetime (~5 seconds), and the absence of any recorded image path or command line. dllhost.exe is a legitimate COM surrogate host and short-lived instances are normal when a COM object is activated and released quickly; however, the complete absence of cmdline and path data means legitimacy cannot be positively confirmed from the available evidence. No DLL list, no privilege data, no malfind hits, and no network connections were extracted for this PID, leaving the finding unresolvable from the current artefact set. Marked INCONCLUSIVE rather than REJECTED solely because the missing path/cmdline prevents ruling out a hollowed or injected surrogate.
+
+Key Evidence:
+  - L94: 9460	576	dllhost.exe	0xcd8a11ccf080	0	-	1	False	2026-05-12 18:31:05.000000 UTC	2026-05-12 18:31:10.000000 UTC	Disabled
+----------------------------------------------------------------
+
+[INCONCLUSIVE]
+----------------------------------------------------------------
+PID:      9812
+PPID:     576
+Image:    backgroundTask (14-char EPROCESS truncation)
+Cmdline:  (not recorded)
+Severity: N/A
+MITRE:
+
+Justification:
+  The 14-character EPROCESS name "backgroundTask" is consistent with backgroundTaskHost.exe being truncated by the kernel field limit, but the absence of any cmdline or image path means this cannot be confirmed. The process ran for approximately two minutes (18:29:05–18:31:10) under PPID 576, which is the expected parent for UWP background task hosts. No DLL list, privilege data, malfind hits, or network artefacts were extracted. The finding cannot be confirmed as malicious, but the missing path/cmdline prevents a clean rejection; a second artefact source (e.g. filescan or handles) would be needed to resolve it.
+
+Key Evidence:
+  - L178: 9812	576	backgroundTask	0xcd8a1402d080	0	-	1	False	2026-05-12 18:29:05.000000 UTC	2026-05-12 18:31:10.000000 UTC	Disabled
+----------------------------------------------------------------
+
+================================================================
+
+REJECTED findings (count = 3, not detailed in body per output rules):
+
+  • PID 9344  RuntimeBroker.exe  — Standard System32 binary, legitimate "-Embedding" invocation, all DLLs from System32/WINDOWS\SYSTEM32, privilege set is the default token template (none of the high-value privileges are in the "Present" or "Enabled" state — SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege are all listed but NOT enabled). Orphaned PPID 576 is a known pslist snapshot artefact for UWP broker processes. No malfind, no suspicious DLLs, no network connections. Rejected.
+
+  • PID 10164 RuntimeBroker.exe  — Identical profile to PID 9344: System32 path, "-Embedding" cmdline, DLLs exclusively from System32, same default (non-enabled) privilege set. Orphaned PPID 576 same artefact explanation. Rejected.
+
+  • PID 9960  backgroundTask (14-char truncation) — Ran ~5 minutes under PPID 576, no cmdline or path, but no additional artefacts of any kind were extracted (no DLLs, no privileges, no malfind, no network). The signal is identical to PID 9812 but the evidence is even thinner; the balance of probability favours a legitimate backgroundTaskHost.exe instance whose artefacts were not captured. Rejected rather than INCONCLUSIVE because there is no distinguishing evidence at all beyond the orphaned-parent artefact shared by all five findings.

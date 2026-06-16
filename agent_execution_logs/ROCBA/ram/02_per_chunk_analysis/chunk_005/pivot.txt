@@ -1,0 +1,296 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:39:17Z
+
+=== PID 2772 (dasHost.exe, ppid=2212) ===
+Cmdline: dashost.exe {31e2ec11-4670-4f05-89567a54e4adad61}
+
+--- pslist.txt ---
+L52: 2772	2212	dasHost.exe	0xb78cfee47280	3	-	0	False	2020-11-11 08:13:16.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L52: 2772	dasHost.exe	dashost.exe {31e2ec11-4670-4f05-89567a54e4adad61}
+
+--- privileges.txt ---
+L1650: 2772	dasHost.exe	2	SeCreateTokenPrivilege		Create a token object
+L1651: 2772	dasHost.exe	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L1652: 2772	dasHost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L1653: 2772	dasHost.exe	5	SeIncreaseQuotaPrivilege	Present	Increase quotas
+L1654: 2772	dasHost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L1655: 2772	dasHost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L1656: 2772	dasHost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L1657: 2772	dasHost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L1658: 2772	dasHost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L1659: 2772	dasHost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L1660: 2772	dasHost.exe	12	SeSystemtimePrivilege	Present	Change the system time
+L1661: 2772	dasHost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L1662: 2772	dasHost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L1663: 2772	dasHost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L1664: 2772	dasHost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L1665: 2772	dasHost.exe	17	SeBackupPrivilege		Backup files and directories
+L1666: 2772	dasHost.exe	18	SeRestorePrivilege		Restore files and directories
+L1667: 2772	dasHost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L1668: 2772	dasHost.exe	20	SeDebugPrivilege		Debug programs
+L1669: 2772	dasHost.exe	21	SeAuditPrivilege	Present	Generate security audits
+L1670: 2772	dasHost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L1671: 2772	dasHost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L1672: 2772	dasHost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L1673: 2772	dasHost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L1674: 2772	dasHost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L1675: 2772	dasHost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L1676: 2772	dasHost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L1677: 2772	dasHost.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L1678: 2772	dasHost.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L1679: 2772	dasHost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L1680: 2772	dasHost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L1681: 2772	dasHost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L1682: 2772	dasHost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L1683: 2772	dasHost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L1684: 2772	dasHost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L1672: 2772	dasHost.exe	0x7ff65a4d0000	0x1d000	dashost.exe	C:\WINDOWS\system32\dashost.exe	-1	2020-11-11 08:13:16.000000 UTC	Disabled
+L1673: 2772	dasHost.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:13:16.000000 UTC	Disabled
+L1674: 2772	dasHost.exe	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-11 08:13:16.000000 UTC	Disabled
+L1675: 2772	dasHost.exe	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-11 08:13:16.000000 UTC	Disabled
+L1676: 2772	dasHost.exe	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-11 08:13:16.000000 UTC	Disabled
+L1677: 2772	dasHost.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-11 08:13:16.000000 UTC	Disabled
+L1678: 2772	dasHost.exe	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-11 08:13:16.000000 UTC	Disabled
+L1679: 2772	dasHost.exe	0x7fff558c0000	0x4e000	cfgmgr32.dll	C:\WINDOWS\System32\cfgmgr32.dll	6	2020-11-11 08:13:16.000000 UTC	Disabled
+L1680: 2772	dasHost.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-11 08:13:16.000000 UTC	Disabled
+L1681: 2772	dasHost.exe	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-11 08:13:17.000000 UTC	Disabled
+L1682: 2772	dasHost.exe	0x7fff4a540000	0x34000	dafupnp.dll	C:\WINDOWS\system32\dafupnp.dll	6	2020-11-11 08:13:17.000000 UTC	Disabled
+L1683: 2772	dasHost.exe	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2020-11-11 08:13:17.000000 UTC	Disabled
+L1684: 2772	dasHost.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-11 08:13:17.000000 UTC	Disabled
+L1685: 2772	dasHost.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-11 08:13:17.000000 UTC	Disabled
+L1686: 2772	dasHost.exe	0x7fff57800000	0x6b000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2020-11-11 08:13:17.000000 UTC	Disabled
+L1687: 2772	dasHost.exe	0x7fff557e0000	0x27000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-1	2020-11-11 08:13:17.000000 UTC	Disabled
+L1688: 2772	dasHost.exe	0x7fff54400000	0x3b000	IPHLPAPI.DLL	C:\WINDOWS\system32\IPHLPAPI.DLL	6	2020-11-11 08:13:17.000000 UTC	Disabled
+L1689: 2772	dasHost.exe	0x7fff4fea0000	0x100000	WINHTTP.dll	C:\WINDOWS\system32\WINHTTP.dll	6	2020-11-11 08:13:17.000000 UTC	Disabled
+L1690: 2772	dasHost.exe	0x7fff4b1e0000	0x16000	SSDPAPI.dll	C:\WINDOWS\system32\SSDPAPI.dll	6	2020-11-11 08:13:17.000000 UTC	Disabled
+L1691: 2772	dasHost.exe	0x7fff4a520000	0x12000	deviceassociation.dll	C:\WINDOWS\system32\deviceassociation.dll	6	2020-11-11 08:13:17.000000 UTC	Disabled
+L1692: 2772	dasHost.exe	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2020-11-11 08:13:17.000000 UTC	Disabled
+L1693: 2772	dasHost.exe	0x7fff48d90000	0x59000	DAFWSD.dll	C:\WINDOWS\system32\DAFWSD.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1694: 2772	dasHost.exe	0x7fff48cd0000	0xb2000	wsdapi.dll	C:\WINDOWS\system32\wsdapi.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1695: 2772	dasHost.exe	0x7fff57450000	0x8000	NSI.dll	C:\WINDOWS\System32\NSI.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1696: 2772	dasHost.exe	0x7fff53c90000	0xa0000	FirewallAPI.dll	C:\WINDOWS\system32\FirewallAPI.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1697: 2772	dasHost.exe	0x7fff54440000	0xcb000	DNSAPI.dll	C:\WINDOWS\system32\DNSAPI.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1698: 2772	dasHost.exe	0x7fff48b70000	0x153000	webservices.dll	C:\WINDOWS\system32\webservices.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1699: 2772	dasHost.exe	0x7fff53c60000	0x2f000	fwbase.dll	C:\WINDOWS\system32\fwbase.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1700: 2772	dasHost.exe	0x7fff55650000	0x15d000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1701: 2772	dasHost.exe	0x7fff54be0000	0x12000	MSASN1.dll	C:\WINDOWS\system32\MSASN1.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1702: 2772	dasHost.exe	0x7fff4ae80000	0x17000	dhcpcsvc6.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1703: 2772	dasHost.exe	0x7fff4b730000	0x1d000	dhcpcsvc.DLL	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1704: 2772	dasHost.exe	0x7fff54710000	0x6a000	mswsock.dll	C:\WINDOWS\system32\mswsock.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1705: 2772	dasHost.exe	0x7fff4fe90000	0xb000	WINNSI.DLL	C:\WINDOWS\SYSTEM32\WINNSI.DLL	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1706: 2772	dasHost.exe	0x7fff54b90000	0x4b000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1707: 2772	dasHost.exe	0x7fff54a90000	0x12000	UMPDC.dll	C:\WINDOWS\system32\UMPDC.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1708: 2772	dasHost.exe	0x7fff54940000	0x18000	CRYPTSP.dll	C:\WINDOWS\system32\CRYPTSP.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1709: 2772	dasHost.exe	0x7fff540a0000	0x34000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1710: 2772	dasHost.exe	0x7fff54960000	0xc000	CRYPTBASE.dll	C:\WINDOWS\system32\CRYPTBASE.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1711: 2772	dasHost.exe	0x7fff4a170000	0x36000	XmlLite.dll	C:\WINDOWS\system32\XmlLite.dll	6	2020-11-11 08:13:18.000000 UTC	Disabled
+L1712: 2772	dasHost.exe	0x7fff55d80000	0xa9000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2020-11-11 08:13:26.000000 UTC	Disabled
+L1713: 2772	dasHost.exe	0x7fff49480000	0x261000	msxml6.dll	C:\Windows\System32\msxml6.dll	6	2020-11-11 08:13:26.000000 UTC	Disabled
+L1714: 2772	dasHost.exe	0x7fff3ac20000	0x9d000	webio.dll	C:\WINDOWS\system32\webio.dll	6	2020-11-11 08:13:26.000000 UTC	Disabled
+L1715: 2772	dasHost.exe	0x7fff54ea0000	0x3c000	SspiCli.dll	C:\WINDOWS\system32\SspiCli.dll	6	2020-11-11 08:13:27.000000 UTC	Disabled
+L1716: 2772	dasHost.exe	0x7fff43740000	0x41000	FWPolicyIOMgr.dll	C:\WINDOWS\system32\FWPolicyIOMgr.dll	6	2020-11-11 08:13:27.000000 UTC	Disabled
+L1717: 2772	dasHost.exe	0x7fff4fda0000	0x3e000	netprofm.dll	C:\WINDOWS\System32\netprofm.dll	6	2020-11-11 08:13:27.000000 UTC	Disabled
+L1718: 2772	dasHost.exe	0x7fff57540000	0x1a0000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2020-11-11 08:13:27.000000 UTC	Disabled
+L1719: 2772	dasHost.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-11 08:13:27.000000 UTC	Disabled
+L1720: 2772	dasHost.exe	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-11 08:13:27.000000 UTC	Disabled
+L1721: 2772	dasHost.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-11 08:13:27.000000 UTC	Disabled
+L1722: 2772	dasHost.exe	0x7fff4a070000	0x10000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2020-11-11 08:13:27.000000 UTC	Disabled
+L1723: 2772	dasHost.exe	0x7fff36eb0000	0x42000	MLANG.dll	C:\WINDOWS\system32\MLANG.dll	6	2020-11-11 08:13:27.000000 UTC	Disabled
+L1724: 2772	dasHost.exe	0x7fff36650000	0x11b000	Windows.Media.Streaming.dll	C:\Windows\System32\Windows.Media.Streaming.dll	6	2020-11-11 08:13:29.000000 UTC	Disabled
+L1725: 2772	dasHost.exe	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2020-11-11 08:13:29.000000 UTC	Disabled
+L1726: 2772	dasHost.exe	0x7fff365a0000	0x68000	upnp.dll	C:\WINDOWS\system32\upnp.dll	6	2020-11-11 08:13:29.000000 UTC	Disabled
+L1727: 2772	dasHost.exe	0x7fff453e0000	0x1ed000	urlmon.dll	C:\WINDOWS\system32\urlmon.dll	6	2020-11-11 08:13:29.000000 UTC	Disabled
+L1728: 2772	dasHost.exe	0x7fff468c0000	0x2b0000	iertutil.dll	C:\WINDOWS\system32\iertutil.dll	6	2020-11-11 08:13:29.000000 UTC	Disabled
+L1729: 2772	dasHost.exe	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2020-11-11 08:13:29.000000 UTC	Disabled
+L1730: 2772	dasHost.exe	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	6	2020-11-11 08:13:29.000000 UTC	Disabled
+L1731: 2772	dasHost.exe	0x7fff549f0000	0x2c000	Wldp.dll	C:\Windows\System32\Wldp.dll	6	2020-11-11 08:13:29.000000 UTC	Disabled
+L1732: 2772	dasHost.exe	0x7fff55910000	0x55000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2020-11-11 08:13:29.000000 UTC	Disabled
+L1733: 2772	dasHost.exe	0x7fff54f20000	0x26000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2020-11-11 08:13:29.000000 UTC	Disabled
+L1734: 2772	dasHost.exe	0x7fff4a910000	0x6a000	wlanapi.dll	C:\Windows\System32\wlanapi.dll	6	2020-11-11 08:13:29.000000 UTC	Disabled
+L1735: 2772	dasHost.exe	0x7fff4c530000	0x41000	dialclient.dll	C:\Windows\System32\dialclient.dll	6	2020-11-12 02:33:15.000000 UTC	Disabled
+
+--- pstree.txt ---
+L43: *** 2772	2212	dasHost.exe	0xb78cfee47280	3	-	0	False	2020-11-11 08:13:16.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\dasHost.exe	dashost.exe {31e2ec11-4670-4f05-89567a54e4adad61}	C:\WINDOWS\system32\dashost.exe
+
+--- psscan.txt ---
+L248: 2772	2212	dasHost.exe	0xb78cfee47280	3	-	0	False	2020-11-11 08:13:16.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L22: 0xb78cf356b280	UDPv4	0.0.0.0	3702	*	0		2772	dasHost.exe	2020-11-14 05:00:16.000000 UTC
+L23: 0xb78cf356b280	UDPv6	::	3702	*	0		2772	dasHost.exe	2020-11-14 05:00:16.000000 UTC
+L25: 0xb78cf356b5a0	UDPv4	0.0.0.0	3702	*	0		2772	dasHost.exe	2020-11-14 05:00:16.000000 UTC
+L230: 0xb78d0b3ee070	UDPv4	0.0.0.0	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L231: 0xb78d0b3ee070	UDPv6	::	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L234: 0xb78d0b3ee840	UDPv4	0.0.0.0	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L235: 0xb78d0b3ee840	UDPv6	::	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L236: 0xb78d0b3eee80	UDPv4	0.0.0.0	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L254: 0xb78d0b3f3e30	UDPv4	0.0.0.0	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L306: 0xb78d0dd055b0	UDPv4	0.0.0.0	58846	*	0		2772	dasHost.exe	2020-11-12 06:06:07.000000 UTC
+L307: 0xb78d0dd055b0	UDPv6	::	58846	*	0		2772	dasHost.exe	2020-11-12 06:06:07.000000 UTC
+L319: 0xb78d0dd07cc0	UDPv4	0.0.0.0	58845	*	0		2772	dasHost.exe	2020-11-12 06:06:07.000000 UTC
+L327: 0xb78d0dd0a3d0	UDPv4	0.0.0.0	3702	*	0		2772	dasHost.exe	2020-11-12 06:06:12.000000 UTC
+
+--- netstat.txt ---
+L118: 0xb78d0b3ee070	UDPv4	0.0.0.0	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L119: 0xb78d0b3ee070	UDPv6	::	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L122: 0xb78d0b3ee840	UDPv4	0.0.0.0	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L123: 0xb78d0b3ee840	UDPv6	::	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L126: 0xb78d0b3eee80	UDPv4	0.0.0.0	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L128: 0xb78d0b3f3e30	UDPv4	0.0.0.0	3702	*	0		2772	dasHost.exe	2020-11-14 05:11:17.000000 UTC
+L154: 0xb78d0dd07cc0	UDPv4	0.0.0.0	58845	*	0		2772	dasHost.exe	2020-11-12 06:06:07.000000 UTC
+L155: 0xb78d0dd055b0	UDPv4	0.0.0.0	58846	*	0		2772	dasHost.exe	2020-11-12 06:06:07.000000 UTC
+L156: 0xb78d0dd055b0	UDPv6	::	58846	*	0		2772	dasHost.exe	2020-11-12 06:06:07.000000 UTC
+
+--- ldrmodules.txt ---
+L1761: 2772	dasHost.exe	0x2987cfb0000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L1762: 2772	dasHost.exe	0x2987d2d0000	False	False	False	\Windows\System32\msxml6r.dll
+L1763: 2772	dasHost.exe	0x2987d300000	False	False	False	\Windows\System32\winnlsres.dll
+L1764: 2772	dasHost.exe	0x2987d310000	False	False	False	\Windows\System32\en-US\winnlsres.dll.mui
+L1765: 2772	dasHost.exe	0x2987d7e0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L1766: 2772	dasHost.exe	0x7fff53c90000	True	True	True	\Windows\System32\FirewallAPI.dll
+L1767: 2772	dasHost.exe	0x7fff4a540000	True	True	True	\Windows\System32\dafupnp.dll
+L1768: 2772	dasHost.exe	0x7fff48b70000	True	True	True	\Windows\System32\webservices.dll
+L1769: 2772	dasHost.exe	0x7fff36650000	True	True	True	\Windows\System32\Windows.Media.Streaming.dll
+L1770: 2772	dasHost.exe	0x7ff65a4d0000	True	False	True	\Windows\System32\dasHost.exe
+L1771: 2772	dasHost.exe	0x7fff365a0000	True	True	True	\Windows\System32\upnp.dll
+L1772: 2772	dasHost.exe	0x7fff3ac20000	True	True	True	\Windows\System32\webio.dll
+L1773: 2772	dasHost.exe	0x7fff36eb0000	True	True	True	\Windows\System32\mlang.dll
+L1774: 2772	dasHost.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L1775: 2772	dasHost.exe	0x7fff43740000	True	True	True	\Windows\System32\fwpolicyiomgr.dll
+L1776: 2772	dasHost.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L1777: 2772	dasHost.exe	0x7fff49480000	True	True	True	\Windows\System32\msxml6.dll
+L1778: 2772	dasHost.exe	0x7fff48d90000	True	True	True	\Windows\System32\DAFWSD.dll
+L1779: 2772	dasHost.exe	0x7fff48cd0000	True	True	True	\Windows\System32\WSDApi.dll
+L1780: 2772	dasHost.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L1781: 2772	dasHost.exe	0x7fff4a070000	True	True	True	\Windows\System32\npmproxy.dll
+L1782: 2772	dasHost.exe	0x7fff4a520000	True	True	True	\Windows\System32\deviceassociation.dll
+L1783: 2772	dasHost.exe	0x7fff4fda0000	True	True	True	\Windows\System32\netprofm.dll
+L1784: 2772	dasHost.exe	0x7fff4b1e0000	True	True	True	\Windows\System32\ssdpapi.dll
+L1785: 2772	dasHost.exe	0x7fff4ae80000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L1786: 2772	dasHost.exe	0x7fff4a910000	True	True	True	\Windows\System32\wlanapi.dll
+L1787: 2772	dasHost.exe	0x7fff4b730000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L1788: 2772	dasHost.exe	0x7fff4c530000	True	True	True	\Windows\System32\dialclient.dll
+L1789: 2772	dasHost.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L1790: 2772	dasHost.exe	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L1791: 2772	dasHost.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L1792: 2772	dasHost.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L1793: 2772	dasHost.exe	0x7fff53c60000	True	True	True	\Windows\System32\fwbase.dll
+L1794: 2772	dasHost.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L1795: 2772	dasHost.exe	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L1796: 2772	dasHost.exe	0x7fff54710000	True	True	True	\Windows\System32\mswsock.dll
+L1797: 2772	dasHost.exe	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L1798: 2772	dasHost.exe	0x7fff540a0000	True	True	True	\Windows\System32\rsaenh.dll
+L1799: 2772	dasHost.exe	0x7fff54440000	True	True	True	\Windows\System32\dnsapi.dll
+L1800: 2772	dasHost.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L1801: 2772	dasHost.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L1802: 2772	dasHost.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L1803: 2772	dasHost.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L1804: 2772	dasHost.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L1805: 2772	dasHost.exe	0x7fff54be0000	True	True	True	\Windows\System32\msasn1.dll
+L1806: 2772	dasHost.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L1807: 2772	dasHost.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L1808: 2772	dasHost.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L1809: 2772	dasHost.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L1810: 2772	dasHost.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L1811: 2772	dasHost.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L1812: 2772	dasHost.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L1813: 2772	dasHost.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L1814: 2772	dasHost.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L1815: 2772	dasHost.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L1816: 2772	dasHost.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L1817: 2772	dasHost.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L1818: 2772	dasHost.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L1819: 2772	dasHost.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L1820: 2772	dasHost.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L1821: 2772	dasHost.exe	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L1822: 2772	dasHost.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L1823: 2772	dasHost.exe	0x7fff57450000	True	True	True	\Windows\System32\nsi.dll
+L1824: 2772	dasHost.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L1825: 2772	dasHost.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L1826: 2772	dasHost.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L1827: 2772	dasHost.exe	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L1828: 2772	dasHost.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L1829: 2772	dasHost.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L1761: 2772	dasHost.exe	0x2987cfb0000	False	False	False	\Windows\System32\en-US\mswsock.dll.mui
+L1762: 2772	dasHost.exe	0x2987d2d0000	False	False	False	\Windows\System32\msxml6r.dll
+L1763: 2772	dasHost.exe	0x2987d300000	False	False	False	\Windows\System32\winnlsres.dll
+L1764: 2772	dasHost.exe	0x2987d310000	False	False	False	\Windows\System32\en-US\winnlsres.dll.mui
+L1765: 2772	dasHost.exe	0x2987d7e0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L1766: 2772	dasHost.exe	0x7fff53c90000	True	True	True	\Windows\System32\FirewallAPI.dll
+L1767: 2772	dasHost.exe	0x7fff4a540000	True	True	True	\Windows\System32\dafupnp.dll
+L1768: 2772	dasHost.exe	0x7fff48b70000	True	True	True	\Windows\System32\webservices.dll
+L1769: 2772	dasHost.exe	0x7fff36650000	True	True	True	\Windows\System32\Windows.Media.Streaming.dll
+L1770: 2772	dasHost.exe	0x7ff65a4d0000	True	False	True	\Windows\System32\dasHost.exe
+L1771: 2772	dasHost.exe	0x7fff365a0000	True	True	True	\Windows\System32\upnp.dll
+L1772: 2772	dasHost.exe	0x7fff3ac20000	True	True	True	\Windows\System32\webio.dll
+L1773: 2772	dasHost.exe	0x7fff36eb0000	True	True	True	\Windows\System32\mlang.dll
+L1774: 2772	dasHost.exe	0x7fff453e0000	True	True	True	\Windows\System32\urlmon.dll
+L1775: 2772	dasHost.exe	0x7fff43740000	True	True	True	\Windows\System32\fwpolicyiomgr.dll
+L1776: 2772	dasHost.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L1777: 2772	dasHost.exe	0x7fff49480000	True	True	True	\Windows\System32\msxml6.dll
+L1778: 2772	dasHost.exe	0x7fff48d90000	True	True	True	\Windows\System32\DAFWSD.dll
+L1779: 2772	dasHost.exe	0x7fff48cd0000	True	True	True	\Windows\System32\WSDApi.dll
+L1780: 2772	dasHost.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L1781: 2772	dasHost.exe	0x7fff4a070000	True	True	True	\Windows\System32\npmproxy.dll
+L1782: 2772	dasHost.exe	0x7fff4a520000	True	True	True	\Windows\System32\deviceassociation.dll
+L1783: 2772	dasHost.exe	0x7fff4fda0000	True	True	True	\Windows\System32\netprofm.dll
+L1784: 2772	dasHost.exe	0x7fff4b1e0000	True	True	True	\Windows\System32\ssdpapi.dll
+L1785: 2772	dasHost.exe	0x7fff4ae80000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+L1786: 2772	dasHost.exe	0x7fff4a910000	True	True	True	\Windows\System32\wlanapi.dll
+L1787: 2772	dasHost.exe	0x7fff4b730000	True	True	True	\Windows\System32\dhcpcsvc.dll
+L1788: 2772	dasHost.exe	0x7fff4c530000	True	True	True	\Windows\System32\dialclient.dll
+L1789: 2772	dasHost.exe	0x7fff4fea0000	True	True	True	\Windows\System32\winhttp.dll
+L1790: 2772	dasHost.exe	0x7fff4fe90000	True	True	True	\Windows\System32\winnsi.dll
+L1791: 2772	dasHost.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L1792: 2772	dasHost.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L1793: 2772	dasHost.exe	0x7fff53c60000	True	True	True	\Windows\System32\fwbase.dll
+L1794: 2772	dasHost.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L1795: 2772	dasHost.exe	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L1796: 2772	dasHost.exe	0x7fff54710000	True	True	True	\Windows\System32\mswsock.dll
+L1797: 2772	dasHost.exe	0x7fff54400000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L1798: 2772	dasHost.exe	0x7fff540a0000	True	True	True	\Windows\System32\rsaenh.dll
+L1799: 2772	dasHost.exe	0x7fff54440000	True	True	True	\Windows\System32\dnsapi.dll
+L1800: 2772	dasHost.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L1801: 2772	dasHost.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L1802: 2772	dasHost.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L1803: 2772	dasHost.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L1804: 2772	dasHost.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L1805: 2772	dasHost.exe	0x7fff54be0000	True	True	True	\Windows\System32\msasn1.dll
+L1806: 2772	dasHost.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L1807: 2772	dasHost.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L1808: 2772	dasHost.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L1809: 2772	dasHost.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L1810: 2772	dasHost.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L1811: 2772	dasHost.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L1812: 2772	dasHost.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L1813: 2772	dasHost.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L1814: 2772	dasHost.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L1815: 2772	dasHost.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L1816: 2772	dasHost.exe	0x7fff558c0000	True	True	True	\Windows\System32\cfgmgr32.dll
+L1817: 2772	dasHost.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L1818: 2772	dasHost.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L1819: 2772	dasHost.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L1820: 2772	dasHost.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L1821: 2772	dasHost.exe	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L1822: 2772	dasHost.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L1823: 2772	dasHost.exe	0x7fff57450000	True	True	True	\Windows\System32\nsi.dll
+L1824: 2772	dasHost.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L1825: 2772	dasHost.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L1826: 2772	dasHost.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L1827: 2772	dasHost.exe	0x7fff57800000	True	True	True	\Windows\System32\ws2_32.dll
+L1828: 2772	dasHost.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L1829: 2772	dasHost.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L52: 2772	dasHost.exe	\Device\HarddiskVolume3\Windows\System32\dasHost.exe	C:\WINDOWS\system32\dashost.exe	False	False
+
+--- sessions.txt ---
+L46: 0	-	2772	dasHost.exe	NT AUTHORITY/LOCAL SERVICE	2020-11-11 08:13:16.000000 UTC
+
+=== END OF PIVOT REPORT ===

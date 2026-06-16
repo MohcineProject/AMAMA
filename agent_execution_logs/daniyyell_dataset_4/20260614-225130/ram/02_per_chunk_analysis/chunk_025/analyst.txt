@@ -1,0 +1,39 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 8044 — ApplicationFrameHost.exe**
+
+Agent 1 flagged: orphaned parent (PPID 860 not in process list), but noted name truncation is expected and DLLs are clean.
+
+*Orphaned parent:* PPID 860 is absent from the process list. This can happen legitimately when a parent process exits after spawning a child — common for `ApplicationFrameHost.exe` which is launched by `svchost.exe` or `DWM`-related processes that may have already exited, or it could reflect a PID reuse scenario. By itself, an orphaned parent on a well-known system binary is weak.
+
+*Privileges:* The privileges list is enormous — nearly every privilege in the Windows privilege set is listed, but critically, almost none are `Present` or `Enabled`. Only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present) are active. The rest — including `SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege`, `SeLoadDriverPrivilege` — are listed but **not Present/Enabled**. This is the standard full privilege listing that Volatility outputs for a token; the absence of `Present` or `Enabled` means they are not held. This is normal for a medium-integrity user-context process.
+
+*DLLs:* All from `C:\Windows\system32\` and `C:\Windows\System32\` — clean.
+
+*Cmdline:* `ApplicationFrameHost.exe -Embedding` is the standard invocation for hosting UWP app frames. Completely normal.
+
+*Verdict:* The orphaned parent is the only signal, and it is weak for a system binary with a clean cmdline, clean DLLs, and no enabled dangerous privileges. **REJECTED.**
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-08-07T20:00:00Z
+Summary: Only one process was submitted for validation. PID 8044 (ApplicationFrameHost.exe) was flagged solely on an orphaned-parent signal; all other evidence — command line, DLL provenance, and privilege footprint — is consistent with legitimate system behaviour. No confirmed malicious activity was identified in this triage batch.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTED SUMMARY (count=1)
+================================================================
+
+PID 8044 — ApplicationFrameHost.exe
+  Rejection rationale: The sole actionable Agent 1 signal is an orphaned parent (PPID 860 absent from the process list). This is a weak indicator for a well-known system binary: ApplicationFrameHost.exe is routinely spawned by transient svchost or DWM-related processes that exit after launch, leaving the child with an unresolvable PPID. Every other lens is clean: the command line ("ApplicationFrameHost.exe -Embedding") is the standard UWP-frame-hosting invocation; all loaded DLLs originate from C:\Windows\System32\; and while the privileges list is long, only low-sensitivity privileges (SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege) carry Present/Enabled flags — the dangerous entries (SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege) are listed but not Present or Enabled, which is the normal Volatility full-token enumeration output for a medium-integrity user process. No malfind sections, no suspicious handles, no registry persistence, and no network connections were present in the evidence block. Finding rejected as benign.
+
+================================================================

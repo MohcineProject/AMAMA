@@ -1,0 +1,70 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 5684 — RuntimeBroker.exe**
+
+Agent 1 flagged two things:
+1. `orphaned_parent`: PPID 516 not in process list (expected svchost.exe)
+2. `name_note`: EPROCESS truncation — Agent 1 itself says this is NOT a typosquat
+
+**Reasoning:**
+
+*Orphaned parent:* PPID 516 is listed as "unknown" / not in the process list. This is a real anomaly — legitimate RuntimeBroker.exe should be a child of a svchost.exe instance (specifically the DcomLaunch group). An orphaned parent can indicate PID reuse (the parent exited after the child spawned, which is normal in some cases) OR it can indicate process hollowing/injection where the parent was spoofed. However, orphaned parents due to PID reuse after parent exit are extremely common in long-running systems and are not by themselves malicious.
+
+*Cmdline:* `C:\Windows\System32\RuntimeBroker.exe -Embedding` — this is the canonical, expected command line for RuntimeBroker.exe. The `-Embedding` flag is standard; it's launched by COM infrastructure.
+
+*Path:* System32 — correct.
+
+*Privileges:* This is where things get interesting. The privileges block shows an enormous privilege set — nearly the full NT privilege set is listed. However, looking carefully: most are NOT marked `Present` or `Enabled`. Only a handful are marked Present/Enabled: `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), `SeTimeZonePrivilege` (Present). The rest — including `SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege`, `SeLoadDriverPrivilege`, `SeCreateTokenPrivilege` — are listed but have NO `Present` or `Enabled` marker. In Volatility's privileges output, listing a privilege without "Present" means it is NOT in the token — Volatility enumerates all *possible* privilege LUIDs and marks which ones are actually present. So the dangerous privileges are NOT held by this process. The Present/Enabled set is consistent with a normal user-context process.
+
+*DLLs:* The three shown are all from System32 — RuntimeBroker.exe, ntdll.dll, KERNEL32.DLL. No suspicious DLLs.
+
+*No malfind, no netscan, no registry persistence evidence.*
+
+**Verdict:** The orphaned parent is the only real signal, and it's weak in isolation — PID reuse after parent exit is common. The cmdline, path, DLL set, and actual enabled privileges are all consistent with legitimate RuntimeBroker.exe. The privilege list looks alarming at first glance but the dangerous ones are not Present/Enabled. **REJECTED** — standard RuntimeBroker.exe behavior; orphaned parent is most likely due to parent process (svchost) having exited and its PID being recycled or simply not captured in the snapshot.
+
+Wait — I should reconsider. The privilege set is unusual even if not enabled. A normal user-context RuntimeBroker.exe would typically only have a small set of privileges in its token at all (Present or not). Having the full NT privilege set enumerated could mean Volatility is just showing all possible LUIDs (which is how some versions work — they enumerate all known privileges and mark which are present). This is a known Volatility behavior where it lists all privileges and marks presence. So this is a Volatility artifact, not a real signal.
+
+**Final verdict: REJECTED.** The orphaned parent is the sole real signal; it's weak and commonly benign. Everything else is clean.
+
+---
+
+Now writing the report. Since there is only one finding and it is REJECTED, the body will have no CONFIRMED or INCONCLUSIVE blocks — just the header summary and the rejection count.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2026-05-13T19:45:00Z
+Summary: Only one process was submitted for validation. PID 5684 (RuntimeBroker.exe) was flagged primarily on an orphaned parent (PPID 516 absent from the process list). All other evidence — canonical System32 path, standard -Embedding command line, System32-only DLL set, and a privilege token whose dangerous entries carry no Present/Enabled markers — is consistent with legitimate Windows behavior. No confirmed malicious activity is present in this submission.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+All Agent 1 leads were REJECTED (1 total). See rejection rationale below for audit purposes.
+
+----------------------------------------------------------------
+REJECTED — PID 5684 | RuntimeBroker.exe
+Reason: The sole actionable signal is an orphaned parent (PPID 516 not present in the
+process list). This is a common benign condition: the parent svchost.exe instance may
+have exited after spawning RuntimeBroker.exe, with its PID either recycled or simply
+absent from the memory snapshot. Every other indicator is clean:
+
+  - Cmdline "C:\Windows\System32\RuntimeBroker.exe -Embedding" is the canonical
+    invocation (COM -Embedding flag is standard for this binary).
+  - Executable and all sampled DLLs load exclusively from C:\Windows\System32\.
+  - The privileges block lists a large set of LUIDs, but this reflects Volatility
+    enumerating all known privilege constants. Inspecting the "Present"/"Enabled"
+    markers, only low-sensitivity privileges are actually held:
+      SeShutdownPrivilege (Present), SeChangeNotifyPrivilege (Present/Enabled/Default),
+      SeUndockPrivilege (Present), SeCreateGlobalPrivilege (Default),
+      SeIncreaseWorkingSetPrivilege (Present), SeTimeZonePrivilege (Present).
+    High-sensitivity privileges (SeDebugPrivilege, SeTcbPrivilege,
+    SeImpersonatePrivilege, SeLoadDriverPrivilege, SeCreateTokenPrivilege, etc.)
+    carry no Present or Enabled marker — they are not in the token.
+  - No malfind sections, no network connections, no registry persistence, and no
+    suspicious DLLs were present in the evidence block.
+
+The name_note signal was correctly self-dismissed by Agent 1 (EPROCESS truncation
+artefact, not a typosquat).
+----------------------------------------------------------------

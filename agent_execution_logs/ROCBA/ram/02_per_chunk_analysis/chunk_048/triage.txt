@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_048.txt
+Summary: Orphaned parent PIDs across all three processes; RuntimeBroker.exe DLL list contains its own executable path as a loaded module, which is anomalous.
+
+[PROCESS]
+pid: 25508
+ppid: 740
+image: RuntimeBroker.exe
+cmdline: C:\Windows\System32\RuntimeBroker.exe -Embedding
+severity: LOW
+reasons: orphaned_parent: PPID 740 not present in process list | dll_anomaly: Non-whitelisted DLL list includes the process's own executable path 'C:\Windows\System32\RuntimeBroker.exe' as a loaded module entry, which is structurally abnormal and may indicate collector/parser artefact or memory manipulation | name_truncation: process name shown as 'RuntimeBroker.' consistent with 14-char EPROCESS truncation — path confirms legitimate image, no typosquat
+

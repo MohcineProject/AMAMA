@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:45:00Z
+Chunk: chunk_019.txt
+Summary: taskhostw.exe (PID 7352) has an unknown/missing parent (PPID 1524 not present in process list) and holds an unusually powerful privilege set (SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege); all downstream .NET NGen processes inherit these privileges but are otherwise consistent with legitimate .NET runtime optimization activity.
+
+[PROCESS]
+pid: 7352
+ppid: 1524
+image: taskhostw.exe
+cmdline: taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+severity: MEDIUM
+reasons: orphaned_process: PPID 1524 does not appear anywhere in the process list — parent cannot be verified | privilege_anomaly: holds SeTcbPrivilege + SeDebugPrivilege + SeImpersonatePrivilege simultaneously — unusually powerful for a scheduled-task host | spawn_chain: directly spawned both ngentask.exe instances (PID 6388, PID 8432) which in turn spawned ngen.exe workers — if taskhostw.exe is compromised, the entire NGen chain is tainted
+

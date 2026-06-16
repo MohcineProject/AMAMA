@@ -1,0 +1,240 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:04:39Z
+
+=== PID 15840 (FileCoAuth.exe, ppid=740) ===
+Cmdline: C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe -Embedding
+
+--- pslist.txt ---
+L166: 15840	740	FileCoAuth.exe	0xb78d0d321080	5	-	1	True	2020-11-11 08:14:51.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L166: 15840	FileCoAuth.exe	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe -Embedding
+
+--- privileges.txt ---
+L5640: 15840	FileCoAuth.exe	2	SeCreateTokenPrivilege		Create a token object
+L5641: 15840	FileCoAuth.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L5642: 15840	FileCoAuth.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L5643: 15840	FileCoAuth.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L5644: 15840	FileCoAuth.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5645: 15840	FileCoAuth.exe	7	SeTcbPrivilege		Act as part of the operating system
+L5646: 15840	FileCoAuth.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L5647: 15840	FileCoAuth.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L5648: 15840	FileCoAuth.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L5649: 15840	FileCoAuth.exe	11	SeSystemProfilePrivilege		Profile system performance
+L5650: 15840	FileCoAuth.exe	12	SeSystemtimePrivilege		Change the system time
+L5651: 15840	FileCoAuth.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L5652: 15840	FileCoAuth.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L5653: 15840	FileCoAuth.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L5654: 15840	FileCoAuth.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L5655: 15840	FileCoAuth.exe	17	SeBackupPrivilege		Backup files and directories
+L5656: 15840	FileCoAuth.exe	18	SeRestorePrivilege		Restore files and directories
+L5657: 15840	FileCoAuth.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L5658: 15840	FileCoAuth.exe	20	SeDebugPrivilege		Debug programs
+L5659: 15840	FileCoAuth.exe	21	SeAuditPrivilege		Generate security audits
+L5660: 15840	FileCoAuth.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L5661: 15840	FileCoAuth.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5662: 15840	FileCoAuth.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L5663: 15840	FileCoAuth.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L5664: 15840	FileCoAuth.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L5665: 15840	FileCoAuth.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5666: 15840	FileCoAuth.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L5667: 15840	FileCoAuth.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L5668: 15840	FileCoAuth.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L5669: 15840	FileCoAuth.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5670: 15840	FileCoAuth.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5671: 15840	FileCoAuth.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L5672: 15840	FileCoAuth.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L5673: 15840	FileCoAuth.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L5674: 15840	FileCoAuth.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L9392: 15840	FileCoAuth.exe	0xb40000	0x82000	FileCoAuth.exe	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe	-1	2020-11-11 08:14:51.000000 UTC	Disabled
+L9393: 15840	FileCoAuth.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:14:51.000000 UTC	Disabled
+L9394: 15840	FileCoAuth.exe	0x7fff57190000	0x59000	wow64.dll	C:\WINDOWS\System32\wow64.dll	-1	2020-11-11 08:14:51.000000 UTC	Disabled
+L9395: 15840	FileCoAuth.exe	0x7fff559a0000	0x83000	wow64win.dll	C:\WINDOWS\System32\wow64win.dll	6	2020-11-11 08:14:51.000000 UTC	Disabled
+L9396: 15840	FileCoAuth.exe	0x779c0000	0xa000	wow64cpu.dll	C:\WINDOWS\System32\wow64cpu.dll	6	2020-11-11 08:14:51.000000 UTC	Disabled
+L9397: 15840	FileCoAuth.exe	0xb40000	0x82000	FileCoAuth.exe	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe	-	1678-08-08 10:10:11.000000 UTC	Disabled
+L9398: 15840	FileCoAuth.exe	0x779d0000	0x1a3000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-	1764-12-10 20:14:23.000000 UTC	Disabled
+L9399: 15840	FileCoAuth.exe	0x76cd0000	0xf0000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L9400: 15840	FileCoAuth.exe	0x775f0000	0x214000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L9401: 15840	FileCoAuth.exe	0x75cc0000	0x196000	USER32.dll	C:\WINDOWS\System32\USER32.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L9402: 15840	FileCoAuth.exe	0x75890000	0x18000	win32u.dll	C:\WINDOWS\System32\win32u.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L9403: 15840	FileCoAuth.exe	0x76310000	0x23000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L9404: 15840	FileCoAuth.exe	0x758f0000	0xda000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L9405: 15840	FileCoAuth.exe	0x76290000	0x7b000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L9406: 15840	FileCoAuth.exe	0x75ba0000	0x120000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L9407: 15840	FileCoAuth.exe	0x77050000	0x7a000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	-	2752-08-04 08:22:03.000000 UTC	Disabled
+L9408: 15840	FileCoAuth.exe	0x76180000	0xbf000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	-	1691-02-02 11:31:27.000000 UTC	Disabled
+L9409: 15840	FileCoAuth.exe	0x76a00000	0x75000	sechost.dll	C:\WINDOWS\System32\sechost.dll	-	2746-10-30 22:53:41.000000 UTC	Disabled
+L9410: 15840	FileCoAuth.exe	0x75e60000	0xba000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	-	2746-10-27 14:43:19.000000 UTC	Disabled
+L9411: 15840	FileCoAuth.exe	0x76340000	0x5b3000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	-	2746-10-29 13:29:22.000000 UTC	Disabled
+L9412: 15840	FileCoAuth.exe	0x76be0000	0xe3000	ole32.dll	C:\WINDOWS\System32\ole32.dll	-	2746-05-31 15:24:01.000000 UTC	Disabled
+L9413: 15840	FileCoAuth.exe	0x76dc0000	0x281000	combase.dll	C:\WINDOWS\System32\combase.dll	-	2746-10-27 08:02:27.000000 UTC	Disabled
+L9414: 15840	FileCoAuth.exe	0x76900000	0x96000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	-	2746-10-28 04:05:03.000000 UTC	Disabled
+L9415: 15840	FileCoAuth.exe	0x778a0000	0xff000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	-	2747-01-08 13:09:35.000000 UTC	Disabled
+L9416: 15840	FileCoAuth.exe	0x76240000	0x45000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	-	2746-12-25 17:58:12.000000 UTC	Disabled
+L9417: 15840	FileCoAuth.exe	0x74740000	0x4d000	LoggingPlatform.DLL	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\LoggingPlatform.DLL	-	2746-07-05 23:53:42.000000 UTC	Disabled
+L9418: 15840	FileCoAuth.exe	0x76b60000	0x63000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	-	2746-10-29 20:10:13.000000 UTC	Disabled
+L9419: 15840	FileCoAuth.exe	0x74700000	0x3f000	UpdateRingSettings.dll	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\UpdateRingSettings.dll	-	1702-09-08 13:28:34.000000 UTC	Disabled
+L9420: 15840	FileCoAuth.exe	0x74630000	0xc3000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	-	-	Disabled
+L9421: 15840	FileCoAuth.exe	0x74620000	0xa000	Secur32.dll	C:\WINDOWS\SYSTEM32\Secur32.dll	-	2746-10-30 09:31:57.000000 UTC	Disabled
+L9422: 15840	FileCoAuth.exe	0x747c0000	0x8000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	-	2746-10-30 02:51:05.000000 UTC	Disabled
+L9423: 15840	FileCoAuth.exe	0x749c0000	0x458000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	-	2746-10-29 06:48:30.000000 UTC	Disabled
+L9424: 15840	FileCoAuth.exe	0x742d0000	0xf000	WTSAPI32.dll	C:\WINDOWS\SYSTEM32\WTSAPI32.dll	-	2746-10-29 00:07:38.000000 UTC	Disabled
+L9425: 15840	FileCoAuth.exe	0x745b0000	0x6f000	MSVCP140.dll	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\MSVCP140.dll	-	2746-10-28 17:26:46.000000 UTC	Disabled
+L9426: 15840	FileCoAuth.exe	0x74790000	0x25000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	-	2746-12-27 16:44:15.000000 UTC	Disabled
+L9427: 15840	FileCoAuth.exe	0x74590000	0x14000	VCRUNTIME140.dll	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\VCRUNTIME140.dll	-	2746-10-26 18:40:44.000000 UTC	Disabled
+L9428: 15840	FileCoAuth.exe	0x73cd0000	0x28000	SSPICLI.DLL	C:\WINDOWS\SYSTEM32\SSPICLI.DLL	-	2746-12-29 15:30:17.000000 UTC	Disabled
+L9429: 15840	FileCoAuth.exe	0x770d0000	0x25000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	-	2748-06-19 15:07:52.000000 UTC	Disabled
+L9430: 15840	FileCoAuth.exe	0x741e0000	0x13000	CRYPTSP.dll	C:\WINDOWS\SYSTEM32\CRYPTSP.dll	-	1601-01-01 00:00:03.000000 UTC	Disabled
+L9431: 15840	FileCoAuth.exe	0x741b0000	0x2f000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	-	1702-09-08 09:32:20.000000 UTC	Disabled
+L9432: 15840	FileCoAuth.exe	0x779a0000	0x19000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-	2748-06-22 03:15:38.000000 UTC	Disabled
+L9433: 15840	FileCoAuth.exe	0x74220000	0xa000	CRYPTBASE.dll	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll	-	2748-06-26 00:47:43.000000 UTC	Disabled
+L9434: 15840	FileCoAuth.exe	0x769a0000	0x5c000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-	2748-06-28 12:55:30.000000 UTC	Disabled
+L9435: 15840	FileCoAuth.exe	0x75270000	0x60a000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	-	2747-03-09 21:02:27.000000 UTC	Disabled
+L9436: 15840	FileCoAuth.exe	0x75240000	0x24000	Wldp.dll	C:\WINDOWS\SYSTEM32\Wldp.dll	-	2748-06-27 23:33:46.000000 UTC	Disabled
+L9437: 15840	FileCoAuth.exe	0x77810000	0x87000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	-	2753-05-19 22:14:34.000000 UTC	Disabled
+L9438: 15840	FileCoAuth.exe	0x74200000	0x1d000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	-	2749-06-16 17:16:53.000000 UTC	Disabled
+L9439: 15840	FileCoAuth.exe	0x73b70000	0x14d000	OneDriveTelemetryStable.dll	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\OneDriveTelemetryStable.dll	-	1601-01-01 00:14:44.000000 UTC	Disabled
+L9440: 15840	FileCoAuth.exe	0x750c0000	0x32000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	-	2750-10-27 05:17:26.000000 UTC	Disabled
+L9441: 15840	FileCoAuth.exe	0x75880000	0xf000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	-	2753-05-22 10:22:21.000000 UTC	Disabled
+L9442: 15840	FileCoAuth.exe	0x74240000	0x74000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	-	2748-06-25 11:26:00.000000 UTC	Disabled
+L9443: 15840	FileCoAuth.exe	0x76ae0000	0x7e000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	-	2750-10-21 02:18:26.000000 UTC	Disabled
+L9444: 15840	FileCoAuth.exe	0x6f8e0000	0x39f000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	-	-	Disabled
+L9445: 15840	FileCoAuth.exe	0x67a30000	0x88000	sxs.dll	C:\WINDOWS\SYSTEM32\sxs.dll	-	2746-12-26 14:00:48.000000 UTC	Disabled
+L9446: 15840	FileCoAuth.exe	0x70050000	0x40000	Wscapi.dll	C:\WINDOWS\SYSTEM32\Wscapi.dll	-	N/A	Disabled
+L9447: 15840	FileCoAuth.exe	0x72590000	0x1a9000	urlmon.dll	C:\WINDOWS\SYSTEM32\urlmon.dll	-	2748-06-22 16:37:22.000000 UTC	Disabled
+L9448: 15840	FileCoAuth.exe	0x71dd0000	0x22b000	iertutil.dll	C:\WINDOWS\SYSTEM32\iertutil.dll	-	2750-10-21 08:59:18.000000 UTC	Disabled
+L9449: 15840	FileCoAuth.exe	0x6ea40000	0x2b000	FileCoAuthLib.dll	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuthLib.dll	-	2750-10-22 18:23:37.000000 UTC	Disabled
+
+--- pstree.txt ---
+L135: *** 15840	740	FileCoAuth.exe	0xb78d0d321080	5	-	1	True	2020-11-11 08:14:51.000000 UTC	N/A	\Device\HarddiskVolume3\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe -Embedding	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe
+
+--- psscan.txt ---
+L1075: 15840	740	FileCoAuth.exe	0xb78d0d321080	5	-	1	True	2020-11-11 08:14:51.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L10004: 15840	FileCoAuth.exe	0xb40000	True	False	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe
+L10005: 15840	FileCoAuth.exe	0x75890000	True	True	True	\Windows\SysWOW64\win32u.dll
+L10006: 15840	FileCoAuth.exe	0x73cd0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L10007: 15840	FileCoAuth.exe	0x67a30000	True	True	True	\Windows\SysWOW64\sxs.dll
+L10008: 15840	FileCoAuth.exe	0x70050000	True	True	True	\Windows\SysWOW64\wscapi.dll
+L10009: 15840	FileCoAuth.exe	0x6f8e0000	True	True	True	\Windows\SysWOW64\OneCoreUAPCommonProxyStub.dll
+L10010: 15840	FileCoAuth.exe	0x6ea40000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuthLib.dll
+L10011: 15840	FileCoAuth.exe	0x72590000	True	True	True	\Windows\SysWOW64\urlmon.dll
+L10012: 15840	FileCoAuth.exe	0x71dd0000	True	True	True	\Windows\SysWOW64\iertutil.dll
+L10013: 15840	FileCoAuth.exe	0x73b70000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\OneDriveTelemetryStable.dll
+L10014: 15840	FileCoAuth.exe	0x74620000	True	True	True	\Windows\SysWOW64\secur32.dll
+L10015: 15840	FileCoAuth.exe	0x742d0000	True	True	True	\Windows\SysWOW64\wtsapi32.dll
+L10016: 15840	FileCoAuth.exe	0x741e0000	True	True	True	\Windows\SysWOW64\cryptsp.dll
+L10017: 15840	FileCoAuth.exe	0x741b0000	True	True	True	\Windows\SysWOW64\rsaenh.dll
+L10018: 15840	FileCoAuth.exe	0x74220000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L10019: 15840	FileCoAuth.exe	0x74200000	True	True	True	\Windows\SysWOW64\profapi.dll
+L10020: 15840	FileCoAuth.exe	0x74240000	True	True	True	\Windows\SysWOW64\uxtheme.dll
+L10021: 15840	FileCoAuth.exe	0x74590000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\vcruntime140.dll
+L10022: 15840	FileCoAuth.exe	0x745b0000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\msvcp140.dll
+L10023: 15840	FileCoAuth.exe	0x749c0000	True	True	True	\Windows\SysWOW64\wininet.dll
+L10024: 15840	FileCoAuth.exe	0x74740000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\LoggingPlatform.dll
+L10025: 15840	FileCoAuth.exe	0x74700000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\UpdateRingSettings.dll
+L10026: 15840	FileCoAuth.exe	0x74630000	True	True	True	\Windows\SysWOW64\propsys.dll
+L10027: 15840	FileCoAuth.exe	0x747c0000	True	True	True	\Windows\SysWOW64\version.dll
+L10028: 15840	FileCoAuth.exe	0x74790000	True	True	True	\Windows\SysWOW64\userenv.dll
+L10029: 15840	FileCoAuth.exe	0x75240000	True	True	True	\Windows\SysWOW64\wldp.dll
+L10030: 15840	FileCoAuth.exe	0x750c0000	True	True	True	\Windows\SysWOW64\IPHLPAPI.DLL
+L10031: 15840	FileCoAuth.exe	0x75270000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L10032: 15840	FileCoAuth.exe	0x75880000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L10033: 15840	FileCoAuth.exe	0x76cd0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L10034: 15840	FileCoAuth.exe	0x76290000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L10035: 15840	FileCoAuth.exe	0x75cc0000	True	True	True	\Windows\SysWOW64\user32.dll
+L10036: 15840	FileCoAuth.exe	0x758f0000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L10037: 15840	FileCoAuth.exe	0x75ba0000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L10038: 15840	FileCoAuth.exe	0x76180000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L10039: 15840	FileCoAuth.exe	0x75e60000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L10040: 15840	FileCoAuth.exe	0x76240000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L10041: 15840	FileCoAuth.exe	0x76a00000	True	True	True	\Windows\SysWOW64\sechost.dll
+L10042: 15840	FileCoAuth.exe	0x76340000	True	True	True	\Windows\SysWOW64\shell32.dll
+L10043: 15840	FileCoAuth.exe	0x76310000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L10044: 15840	FileCoAuth.exe	0x76900000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L10045: 15840	FileCoAuth.exe	0x769a0000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L10046: 15840	FileCoAuth.exe	0x76b60000	True	True	True	\Windows\SysWOW64\ws2_32.dll
+L10047: 15840	FileCoAuth.exe	0x76ae0000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L10048: 15840	FileCoAuth.exe	0x76be0000	True	True	True	\Windows\SysWOW64\ole32.dll
+L10049: 15840	FileCoAuth.exe	0x779c0000	True	True	True	\Windows\System32\wow64cpu.dll
+L10050: 15840	FileCoAuth.exe	0x775f0000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L10051: 15840	FileCoAuth.exe	0x77050000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L10052: 15840	FileCoAuth.exe	0x76dc0000	True	True	True	\Windows\SysWOW64\combase.dll
+L10053: 15840	FileCoAuth.exe	0x770d0000	True	True	True	\Windows\SysWOW64\imm32.dll
+L10054: 15840	FileCoAuth.exe	0x778a0000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L10055: 15840	FileCoAuth.exe	0x77810000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L10056: 15840	FileCoAuth.exe	0x779a0000	True	True	True	\Windows\SysWOW64\bcrypt.dll
+L10057: 15840	FileCoAuth.exe	0x779d0000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L10058: 15840	FileCoAuth.exe	0x7fff57190000	True	True	True	\Windows\System32\wow64.dll
+L10059: 15840	FileCoAuth.exe	0x7fff559a0000	True	True	True	\Windows\System32\wow64win.dll
+L10060: 15840	FileCoAuth.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L10004: 15840	FileCoAuth.exe	0xb40000	True	False	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe
+L10005: 15840	FileCoAuth.exe	0x75890000	True	True	True	\Windows\SysWOW64\win32u.dll
+L10006: 15840	FileCoAuth.exe	0x73cd0000	True	True	True	\Windows\SysWOW64\sspicli.dll
+L10007: 15840	FileCoAuth.exe	0x67a30000	True	True	True	\Windows\SysWOW64\sxs.dll
+L10008: 15840	FileCoAuth.exe	0x70050000	True	True	True	\Windows\SysWOW64\wscapi.dll
+L10009: 15840	FileCoAuth.exe	0x6f8e0000	True	True	True	\Windows\SysWOW64\OneCoreUAPCommonProxyStub.dll
+L10010: 15840	FileCoAuth.exe	0x6ea40000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuthLib.dll
+L10011: 15840	FileCoAuth.exe	0x72590000	True	True	True	\Windows\SysWOW64\urlmon.dll
+L10012: 15840	FileCoAuth.exe	0x71dd0000	True	True	True	\Windows\SysWOW64\iertutil.dll
+L10013: 15840	FileCoAuth.exe	0x73b70000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\OneDriveTelemetryStable.dll
+L10014: 15840	FileCoAuth.exe	0x74620000	True	True	True	\Windows\SysWOW64\secur32.dll
+L10015: 15840	FileCoAuth.exe	0x742d0000	True	True	True	\Windows\SysWOW64\wtsapi32.dll
+L10016: 15840	FileCoAuth.exe	0x741e0000	True	True	True	\Windows\SysWOW64\cryptsp.dll
+L10017: 15840	FileCoAuth.exe	0x741b0000	True	True	True	\Windows\SysWOW64\rsaenh.dll
+L10018: 15840	FileCoAuth.exe	0x74220000	True	True	True	\Windows\SysWOW64\cryptbase.dll
+L10019: 15840	FileCoAuth.exe	0x74200000	True	True	True	\Windows\SysWOW64\profapi.dll
+L10020: 15840	FileCoAuth.exe	0x74240000	True	True	True	\Windows\SysWOW64\uxtheme.dll
+L10021: 15840	FileCoAuth.exe	0x74590000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\vcruntime140.dll
+L10022: 15840	FileCoAuth.exe	0x745b0000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\msvcp140.dll
+L10023: 15840	FileCoAuth.exe	0x749c0000	True	True	True	\Windows\SysWOW64\wininet.dll
+L10024: 15840	FileCoAuth.exe	0x74740000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\LoggingPlatform.dll
+L10025: 15840	FileCoAuth.exe	0x74700000	True	True	True	\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\UpdateRingSettings.dll
+L10026: 15840	FileCoAuth.exe	0x74630000	True	True	True	\Windows\SysWOW64\propsys.dll
+L10027: 15840	FileCoAuth.exe	0x747c0000	True	True	True	\Windows\SysWOW64\version.dll
+L10028: 15840	FileCoAuth.exe	0x74790000	True	True	True	\Windows\SysWOW64\userenv.dll
+L10029: 15840	FileCoAuth.exe	0x75240000	True	True	True	\Windows\SysWOW64\wldp.dll
+L10030: 15840	FileCoAuth.exe	0x750c0000	True	True	True	\Windows\SysWOW64\IPHLPAPI.DLL
+L10031: 15840	FileCoAuth.exe	0x75270000	True	True	True	\Windows\SysWOW64\windows.storage.dll
+L10032: 15840	FileCoAuth.exe	0x75880000	True	True	True	\Windows\SysWOW64\kernel.appcore.dll
+L10033: 15840	FileCoAuth.exe	0x76cd0000	True	True	True	\Windows\SysWOW64\kernel32.dll
+L10034: 15840	FileCoAuth.exe	0x76290000	True	True	True	\Windows\SysWOW64\msvcp_win.dll
+L10035: 15840	FileCoAuth.exe	0x75cc0000	True	True	True	\Windows\SysWOW64\user32.dll
+L10036: 15840	FileCoAuth.exe	0x758f0000	True	True	True	\Windows\SysWOW64\gdi32full.dll
+L10037: 15840	FileCoAuth.exe	0x75ba0000	True	True	True	\Windows\SysWOW64\ucrtbase.dll
+L10038: 15840	FileCoAuth.exe	0x76180000	True	True	True	\Windows\SysWOW64\msvcrt.dll
+L10039: 15840	FileCoAuth.exe	0x75e60000	True	True	True	\Windows\SysWOW64\rpcrt4.dll
+L10040: 15840	FileCoAuth.exe	0x76240000	True	True	True	\Windows\SysWOW64\shlwapi.dll
+L10041: 15840	FileCoAuth.exe	0x76a00000	True	True	True	\Windows\SysWOW64\sechost.dll
+L10042: 15840	FileCoAuth.exe	0x76340000	True	True	True	\Windows\SysWOW64\shell32.dll
+L10043: 15840	FileCoAuth.exe	0x76310000	True	True	True	\Windows\SysWOW64\gdi32.dll
+L10044: 15840	FileCoAuth.exe	0x76900000	True	True	True	\Windows\SysWOW64\oleaut32.dll
+L10045: 15840	FileCoAuth.exe	0x769a0000	True	True	True	\Windows\SysWOW64\bcryptprimitives.dll
+L10046: 15840	FileCoAuth.exe	0x76b60000	True	True	True	\Windows\SysWOW64\ws2_32.dll
+L10047: 15840	FileCoAuth.exe	0x76ae0000	True	True	True	\Windows\SysWOW64\clbcatq.dll
+L10048: 15840	FileCoAuth.exe	0x76be0000	True	True	True	\Windows\SysWOW64\ole32.dll
+L10049: 15840	FileCoAuth.exe	0x779c0000	True	True	True	\Windows\System32\wow64cpu.dll
+L10050: 15840	FileCoAuth.exe	0x775f0000	True	True	True	\Windows\SysWOW64\KernelBase.dll
+L10051: 15840	FileCoAuth.exe	0x77050000	True	True	True	\Windows\SysWOW64\advapi32.dll
+L10052: 15840	FileCoAuth.exe	0x76dc0000	True	True	True	\Windows\SysWOW64\combase.dll
+L10053: 15840	FileCoAuth.exe	0x770d0000	True	True	True	\Windows\SysWOW64\imm32.dll
+L10054: 15840	FileCoAuth.exe	0x778a0000	True	True	True	\Windows\SysWOW64\crypt32.dll
+L10055: 15840	FileCoAuth.exe	0x77810000	True	True	True	\Windows\SysWOW64\SHCore.dll
+L10056: 15840	FileCoAuth.exe	0x779a0000	True	True	True	\Windows\SysWOW64\bcrypt.dll
+L10057: 15840	FileCoAuth.exe	0x779d0000	True	True	True	\Windows\SysWOW64\ntdll.dll
+L10058: 15840	FileCoAuth.exe	0x7fff57190000	True	True	True	\Windows\System32\wow64.dll
+L10059: 15840	FileCoAuth.exe	0x7fff559a0000	True	True	True	\Windows\System32\wow64win.dll
+L10060: 15840	FileCoAuth.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L166: 15840	FileCoAuth.exe	\Device\HarddiskVolume3\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe	C:\Users\fredr\AppData\Local\Microsoft\OneDrive\20.169.0823.0008\FileCoAuth.exe	False	False
+
+--- sessions.txt ---
+L195: 1	Console	15840	FileCoAuth.exe	SRL-FORGE/fredr	2020-11-11 08:14:51.000000 UTC
+
+=== END OF PIVOT REPORT ===

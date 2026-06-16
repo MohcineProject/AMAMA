@@ -1,0 +1,289 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T14:07:53Z
+
+=== PID 19652 (HxTsr.exe, ppid=740) ===
+
+--- pslist.txt ---
+L562: 19652	740	HxTsr.exe	0xb78d00172080	0	-	1	False	2020-11-12 11:31:23.000000 UTC	2020-11-12 11:31:26.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L562: 19652	HxTsr.exe	-
+
+--- privileges.txt ---
+L19500: 19652	HxTsr.exe	2	SeCreateTokenPrivilege		Create a token object
+L19501: 19652	HxTsr.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L19502: 19652	HxTsr.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L19503: 19652	HxTsr.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L19504: 19652	HxTsr.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L19505: 19652	HxTsr.exe	7	SeTcbPrivilege		Act as part of the operating system
+L19506: 19652	HxTsr.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L19507: 19652	HxTsr.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L19508: 19652	HxTsr.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L19509: 19652	HxTsr.exe	11	SeSystemProfilePrivilege		Profile system performance
+L19510: 19652	HxTsr.exe	12	SeSystemtimePrivilege		Change the system time
+L19511: 19652	HxTsr.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L19512: 19652	HxTsr.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L19513: 19652	HxTsr.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L19514: 19652	HxTsr.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L19515: 19652	HxTsr.exe	17	SeBackupPrivilege		Backup files and directories
+L19516: 19652	HxTsr.exe	18	SeRestorePrivilege		Restore files and directories
+L19517: 19652	HxTsr.exe	19	SeShutdownPrivilege		Shut down the system
+L19518: 19652	HxTsr.exe	20	SeDebugPrivilege		Debug programs
+L19519: 19652	HxTsr.exe	21	SeAuditPrivilege		Generate security audits
+L19520: 19652	HxTsr.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L19521: 19652	HxTsr.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L19522: 19652	HxTsr.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L19523: 19652	HxTsr.exe	25	SeUndockPrivilege		Remove computer from docking station
+L19524: 19652	HxTsr.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L19525: 19652	HxTsr.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L19526: 19652	HxTsr.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L19527: 19652	HxTsr.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L19528: 19652	HxTsr.exe	30	SeCreateGlobalPrivilege		Create global objects
+L19529: 19652	HxTsr.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L19530: 19652	HxTsr.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L19531: 19652	HxTsr.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L19532: 19652	HxTsr.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L19533: 19652	HxTsr.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L19534: 19652	HxTsr.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L127: *** 19652	740	HxTsr.exe	0xb78d00172080	0	-	1	False	2020-11-12 11:31:23.000000 UTC	2020-11-12 11:31:26.000000 UTC	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	-
+
+--- psscan.txt ---
+L373: 19652	740	HxTsr.exe	0xb78d00172080	0	-	1	False	2020-11-12 11:31:23.000000 UTC	2020-11-12 11:31:26.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L562: 19652	HxTsr.exe	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	False	False
+
+--- sessions.txt ---
+L582: 1	-	19652	HxTsr.exe	-	2020-11-12 11:31:23.000000 UTC
+
+=== PID 19812 (HxTsr.exe, ppid=740) ===
+
+--- pslist.txt ---
+L818: 19812	740	HxTsr.exe	0xb78d0f89b140	0	-	1	False	2020-11-13 04:18:41.000000 UTC	2020-11-13 04:18:45.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L818: 19812	HxTsr.exe	-
+
+--- privileges.txt ---
+L28460: 19812	HxTsr.exe	2	SeCreateTokenPrivilege		Create a token object
+L28461: 19812	HxTsr.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L28462: 19812	HxTsr.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L28463: 19812	HxTsr.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L28464: 19812	HxTsr.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L28465: 19812	HxTsr.exe	7	SeTcbPrivilege		Act as part of the operating system
+L28466: 19812	HxTsr.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L28467: 19812	HxTsr.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L28468: 19812	HxTsr.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L28469: 19812	HxTsr.exe	11	SeSystemProfilePrivilege		Profile system performance
+L28470: 19812	HxTsr.exe	12	SeSystemtimePrivilege		Change the system time
+L28471: 19812	HxTsr.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L28472: 19812	HxTsr.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L28473: 19812	HxTsr.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L28474: 19812	HxTsr.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L28475: 19812	HxTsr.exe	17	SeBackupPrivilege		Backup files and directories
+L28476: 19812	HxTsr.exe	18	SeRestorePrivilege		Restore files and directories
+L28477: 19812	HxTsr.exe	19	SeShutdownPrivilege		Shut down the system
+L28478: 19812	HxTsr.exe	20	SeDebugPrivilege		Debug programs
+L28479: 19812	HxTsr.exe	21	SeAuditPrivilege		Generate security audits
+L28480: 19812	HxTsr.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L28481: 19812	HxTsr.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L28482: 19812	HxTsr.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L28483: 19812	HxTsr.exe	25	SeUndockPrivilege		Remove computer from docking station
+L28484: 19812	HxTsr.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L28485: 19812	HxTsr.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L28486: 19812	HxTsr.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L28487: 19812	HxTsr.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L28488: 19812	HxTsr.exe	30	SeCreateGlobalPrivilege		Create global objects
+L28489: 19812	HxTsr.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L28490: 19812	HxTsr.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L28491: 19812	HxTsr.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L28492: 19812	HxTsr.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L28493: 19812	HxTsr.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L28494: 19812	HxTsr.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L138: *** 19812	740	HxTsr.exe	0xb78d0f89b140	0	-	1	False	2020-11-13 04:18:41.000000 UTC	2020-11-13 04:18:45.000000 UTC	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	-
+
+--- psscan.txt ---
+L1501: 19812	740	HxTsr.exe	0xb78d0f89b140	0	-	1	False	2020-11-13 04:18:41.000000 UTC	2020-11-13 04:18:45.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L818: 19812	HxTsr.exe	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	False	False
+
+--- sessions.txt ---
+L838: 1	-	19812	HxTsr.exe	-	2020-11-13 04:18:41.000000 UTC
+
+=== PID 19944 (HxTsr.exe, ppid=740) ===
+
+--- pslist.txt ---
+L918: 19944	740	HxTsr.exe	0xb78d0d9a72c0	0	-	1	False	2020-11-13 11:24:56.000000 UTC	2020-11-13 11:24:59.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L918: 19944	HxTsr.exe	-
+
+--- privileges.txt ---
+L31960: 19944	HxTsr.exe	2	SeCreateTokenPrivilege		Create a token object
+L31961: 19944	HxTsr.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L31962: 19944	HxTsr.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L31963: 19944	HxTsr.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L31964: 19944	HxTsr.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L31965: 19944	HxTsr.exe	7	SeTcbPrivilege		Act as part of the operating system
+L31966: 19944	HxTsr.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L31967: 19944	HxTsr.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L31968: 19944	HxTsr.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L31969: 19944	HxTsr.exe	11	SeSystemProfilePrivilege		Profile system performance
+L31970: 19944	HxTsr.exe	12	SeSystemtimePrivilege		Change the system time
+L31971: 19944	HxTsr.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L31972: 19944	HxTsr.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L31973: 19944	HxTsr.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L31974: 19944	HxTsr.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L31975: 19944	HxTsr.exe	17	SeBackupPrivilege		Backup files and directories
+L31976: 19944	HxTsr.exe	18	SeRestorePrivilege		Restore files and directories
+L31977: 19944	HxTsr.exe	19	SeShutdownPrivilege		Shut down the system
+L31978: 19944	HxTsr.exe	20	SeDebugPrivilege		Debug programs
+L31979: 19944	HxTsr.exe	21	SeAuditPrivilege		Generate security audits
+L31980: 19944	HxTsr.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L31981: 19944	HxTsr.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L31982: 19944	HxTsr.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L31983: 19944	HxTsr.exe	25	SeUndockPrivilege		Remove computer from docking station
+L31984: 19944	HxTsr.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L31985: 19944	HxTsr.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L31986: 19944	HxTsr.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L31987: 19944	HxTsr.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L31988: 19944	HxTsr.exe	30	SeCreateGlobalPrivilege		Create global objects
+L31989: 19944	HxTsr.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L31990: 19944	HxTsr.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L31991: 19944	HxTsr.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L31992: 19944	HxTsr.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L31993: 19944	HxTsr.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L31994: 19944	HxTsr.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L141: *** 19944	740	HxTsr.exe	0xb78d0d9a72c0	0	-	1	False	2020-11-13 11:24:56.000000 UTC	2020-11-13 11:24:59.000000 UTC	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	-
+
+--- psscan.txt ---
+L1171: 19944	740	HxTsr.exe	0xb78d0d9a72c0	0	-	1	False	2020-11-13 11:24:56.000000 UTC	2020-11-13 11:24:59.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L918: 19944	HxTsr.exe	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	False	False
+
+--- sessions.txt ---
+L938: 1	-	19944	HxTsr.exe	-	2020-11-13 11:24:56.000000 UTC
+
+=== PID 20564 (HxTsr.exe, ppid=740) ===
+
+--- pslist.txt ---
+L852: 20564	740	HxTsr.exe	0xb78d0f5eb080	0	-	1	False	2020-11-13 06:32:48.000000 UTC	2020-11-13 06:32:56.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L852: 20564	HxTsr.exe	-
+
+--- privileges.txt ---
+L29650: 20564	HxTsr.exe	2	SeCreateTokenPrivilege		Create a token object
+L29651: 20564	HxTsr.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L29652: 20564	HxTsr.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L29653: 20564	HxTsr.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L29654: 20564	HxTsr.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L29655: 20564	HxTsr.exe	7	SeTcbPrivilege		Act as part of the operating system
+L29656: 20564	HxTsr.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L29657: 20564	HxTsr.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L29658: 20564	HxTsr.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L29659: 20564	HxTsr.exe	11	SeSystemProfilePrivilege		Profile system performance
+L29660: 20564	HxTsr.exe	12	SeSystemtimePrivilege		Change the system time
+L29661: 20564	HxTsr.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L29662: 20564	HxTsr.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L29663: 20564	HxTsr.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L29664: 20564	HxTsr.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L29665: 20564	HxTsr.exe	17	SeBackupPrivilege		Backup files and directories
+L29666: 20564	HxTsr.exe	18	SeRestorePrivilege		Restore files and directories
+L29667: 20564	HxTsr.exe	19	SeShutdownPrivilege		Shut down the system
+L29668: 20564	HxTsr.exe	20	SeDebugPrivilege		Debug programs
+L29669: 20564	HxTsr.exe	21	SeAuditPrivilege		Generate security audits
+L29670: 20564	HxTsr.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L29671: 20564	HxTsr.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L29672: 20564	HxTsr.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L29673: 20564	HxTsr.exe	25	SeUndockPrivilege		Remove computer from docking station
+L29674: 20564	HxTsr.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L29675: 20564	HxTsr.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L29676: 20564	HxTsr.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L29677: 20564	HxTsr.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L29678: 20564	HxTsr.exe	30	SeCreateGlobalPrivilege		Create global objects
+L29679: 20564	HxTsr.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L29680: 20564	HxTsr.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L29681: 20564	HxTsr.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L29682: 20564	HxTsr.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L29683: 20564	HxTsr.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L29684: 20564	HxTsr.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L133: *** 20564	740	HxTsr.exe	0xb78d0f5eb080	0	-	1	False	2020-11-13 06:32:48.000000 UTC	2020-11-13 06:32:56.000000 UTC	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	-
+
+--- psscan.txt ---
+L1454: 20564	740	HxTsr.exe	0xb78d0f5eb080	0	-	1	False	2020-11-13 06:32:48.000000 UTC	2020-11-13 06:32:56.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L852: 20564	HxTsr.exe	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	False	False
+
+--- sessions.txt ---
+L872: 1	-	20564	HxTsr.exe	-	2020-11-13 06:32:48.000000 UTC
+
+=== PID 20652 (HxTsr.exe, ppid=740) ===
+
+--- pslist.txt ---
+L2143: 20652	740	HxTsr.exe	0xb78d095f9080	0	-	1	False	2020-11-16 00:58:17.000000 UTC	2020-11-16 00:58:20.000000 UTC	Disabled
+
+--- cmdline.txt ---
+L2143: 20652	HxTsr.exe	-
+
+--- privileges.txt ---
+L74835: 20652	HxTsr.exe	2	SeCreateTokenPrivilege		Create a token object
+L74836: 20652	HxTsr.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L74837: 20652	HxTsr.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L74838: 20652	HxTsr.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L74839: 20652	HxTsr.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L74840: 20652	HxTsr.exe	7	SeTcbPrivilege		Act as part of the operating system
+L74841: 20652	HxTsr.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L74842: 20652	HxTsr.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L74843: 20652	HxTsr.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L74844: 20652	HxTsr.exe	11	SeSystemProfilePrivilege		Profile system performance
+L74845: 20652	HxTsr.exe	12	SeSystemtimePrivilege		Change the system time
+L74846: 20652	HxTsr.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L74847: 20652	HxTsr.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L74848: 20652	HxTsr.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L74849: 20652	HxTsr.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L74850: 20652	HxTsr.exe	17	SeBackupPrivilege		Backup files and directories
+L74851: 20652	HxTsr.exe	18	SeRestorePrivilege		Restore files and directories
+L74852: 20652	HxTsr.exe	19	SeShutdownPrivilege		Shut down the system
+L74853: 20652	HxTsr.exe	20	SeDebugPrivilege		Debug programs
+L74854: 20652	HxTsr.exe	21	SeAuditPrivilege		Generate security audits
+L74855: 20652	HxTsr.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L74856: 20652	HxTsr.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L74857: 20652	HxTsr.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L74858: 20652	HxTsr.exe	25	SeUndockPrivilege		Remove computer from docking station
+L74859: 20652	HxTsr.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L74860: 20652	HxTsr.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L74861: 20652	HxTsr.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L74862: 20652	HxTsr.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L74863: 20652	HxTsr.exe	30	SeCreateGlobalPrivilege		Create global objects
+L74864: 20652	HxTsr.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L74865: 20652	HxTsr.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L74866: 20652	HxTsr.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L74867: 20652	HxTsr.exe	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L74868: 20652	HxTsr.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L74869: 20652	HxTsr.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L117: *** 20652	740	HxTsr.exe	0xb78d095f9080	0	-	1	False	2020-11-16 00:58:17.000000 UTC	2020-11-16 00:58:20.000000 UTC	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	-
+
+--- psscan.txt ---
+L595: 20652	740	HxTsr.exe	0xb78d095f9080	0	-	1	False	2020-11-16 00:58:17.000000 UTC	2020-11-16 00:58:20.000000 UTC	Disabled
+
+--- malware_pebmasquerade.txt ---
+L2143: 20652	HxTsr.exe	\Device\HarddiskVolume3\Program Files\WindowsApps\microsoft.windowscommunicationsapps_16005.13228.41011.0_x64__8wekyb3d8bbwe\HxTsr.exe	-	False	False
+
+--- sessions.txt ---
+L2153: 1	-	20652	HxTsr.exe	-	2020-11-16 00:58:17.000000 UTC
+
+=== END OF PIVOT REPORT ===

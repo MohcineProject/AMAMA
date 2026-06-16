@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00.000000Z
+Chunk: chunk_017.txt
+Summary: Orphaned parent PIDs on both processes; svchost.exe parent PID 828 not present in process list (expected services.exe); msedge.exe parent PID 22700 not present in process list.
+
+[PROCESS]
+pid: 8172
+ppid: 22700
+image: msedge.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_process: parent PID 22700 (unknown) not present anywhere in the process list | short_lived: process exited ~2 minutes after creation (04:57:13 to 04:59:17 UTC) with no command-line recorded
+
+[PROCESS]
+pid: 8244
+ppid: 828
+image: svchost.exe
+cmdline: C:\WINDOWS\system32\svchost.exe -k DevicesFlow -s DevicesFlowUserSvc
+severity: LOW
+reasons: orphaned_process: parent PID 828 (unknown) not present in process list — expected parent is services.exe | parent_mismatch: svchost.exe parent is listed as unknown PID 828, not a visible services.exe instance
+

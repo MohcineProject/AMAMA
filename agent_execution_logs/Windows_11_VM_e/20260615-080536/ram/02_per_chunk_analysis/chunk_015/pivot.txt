@@ -1,0 +1,505 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T08:17:48Z
+
+=== PID 5368 (svchost.exe, ppid=896) ===
+Cmdline: C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup
+
+--- pslist.txt ---
+L113: 5368	896	svchost.exe	0x990ef67ed080	2	-	1	False	2026-05-13 19:17:24.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L113: 5368	svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup
+
+--- privileges.txt ---
+L3785: 5368	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L3786: 5368	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3787: 5368	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3788: 5368	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3789: 5368	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3790: 5368	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3791: 5368	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L3792: 5368	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3793: 5368	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3794: 5368	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L3795: 5368	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L3796: 5368	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3797: 5368	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3798: 5368	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L3799: 5368	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3800: 5368	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L3801: 5368	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L3802: 5368	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L3803: 5368	svchost.exe	20	SeDebugPrivilege		Debug programs
+L3804: 5368	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L3805: 5368	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3806: 5368	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3807: 5368	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3808: 5368	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3809: 5368	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3810: 5368	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3811: 5368	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L3812: 5368	svchost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3813: 5368	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L3814: 5368	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3815: 5368	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3816: 5368	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3817: 5368	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3818: 5368	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3819: 5368	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5189: 5368	svchost.exe	0x7ff7d0000000	0x13000	svchost.exe	C:\WINDOWS\system32\svchost.exe	-1	2026-05-13 19:17:24.000000 UTC	Disabled
+L5190: 5368	svchost.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:17:24.000000 UTC	Disabled
+L5191: 5368	svchost.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:17:24.000000 UTC	Disabled
+L5192: 5368	svchost.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:17:24.000000 UTC	Disabled
+L5193: 5368	svchost.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5194: 5368	svchost.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5195: 5368	svchost.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5196: 5368	svchost.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5197: 5368	svchost.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5198: 5368	svchost.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:17:24.000000 UTC	Disabled
+L5199: 5368	svchost.exe	0x7ffff7c20000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5200: 5368	svchost.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5201: 5368	svchost.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5202: 5368	svchost.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5203: 5368	svchost.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5204: 5368	svchost.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5205: 5368	svchost.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5206: 5368	svchost.exe	0x7fffaf9f0000	0x60000	aphostservice.dll	c:\windows\system32\aphostservice.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5207: 5368	svchost.exe	0x7fffaf9d0000	0xf000	MCCSPal.dll	c:\windows\system32\MCCSPal.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5208: 5368	svchost.exe	0x7fffb4310000	0x17000	UserDataPlatformHelperUtil.dll	c:\windows\system32\UserDataPlatformHelperUtil.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5209: 5368	svchost.exe	0x7ffff9630000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5210: 5368	svchost.exe	0x7fffaf960000	0x69000	SYNCUTIL.dll	c:\windows\system32\SYNCUTIL.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5211: 5368	svchost.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5212: 5368	svchost.exe	0x7fffaf930000	0x28000	NetworkHelper.dll	c:\windows\system32\NetworkHelper.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5213: 5368	svchost.exe	0x7ffff61a0000	0x14000	UMPDC.dll	c:\windows\system32\UMPDC.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5214: 5368	svchost.exe	0x7fffaf690000	0x16000	InprocLogger.dll	c:\windows\system32\InprocLogger.dll	6	2026-05-13 19:17:24.000000 UTC	Disabled
+L5215: 5368	svchost.exe	0x7ffff6260000	0x29000	profapi.dll	c:\windows\system32\profapi.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5216: 5368	svchost.exe	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5217: 5368	svchost.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5218: 5368	svchost.exe	0x7fffe3a20000	0x116000	FlightSettings.dll	C:\WINDOWS\System32\FlightSettings.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5219: 5368	svchost.exe	0x7fffdf890000	0xbb000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5220: 5368	svchost.exe	0x7fffedd70000	0x244000	twinapi.appcore.dll	C:\Windows\System32\twinapi.appcore.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5221: 5368	svchost.exe	0x7ffff6340000	0x16a000	WinTypes.dll	C:\WINDOWS\System32\WinTypes.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5222: 5368	svchost.exe	0x7fffeb7e0000	0x19000	npmproxy.dll	C:\WINDOWS\System32\npmproxy.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5223: 5368	svchost.exe	0x7fffed8c0000	0x2c4000	iertutil.dll	c:\windows\system32\iertutil.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5224: 5368	svchost.exe	0x7ffff9820000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5225: 5368	svchost.exe	0x7fffed890000	0x29000	srvcli.dll	c:\windows\system32\srvcli.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5226: 5368	svchost.exe	0x7ffff49f0000	0xd000	netutils.dll	c:\windows\system32\netutils.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5227: 5368	svchost.exe	0x7ffff55a0000	0x94000	msv1_0.DLL	C:\WINDOWS\system32\msv1_0.DLL	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5228: 5368	svchost.exe	0x7ffff56f0000	0x32000	USERENV.dll	C:\WINDOWS\system32\USERENV.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5229: 5368	svchost.exe	0x7ffff5580000	0x17000	NtlmShared.dll	C:\WINDOWS\system32\NtlmShared.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5230: 5368	svchost.exe	0x7fffaf160000	0xa5000	SyncController.dll	C:\Windows\System32\SyncController.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5231: 5368	svchost.exe	0x7fffaf010000	0x106000	PIMSTORE.dll	C:\Windows\System32\PIMSTORE.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5232: 5368	svchost.exe	0x7fffaefc0000	0x4a000	AccountAccessor.dll	C:\Windows\System32\AccountAccessor.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5233: 5368	svchost.exe	0x7fffaef80000	0x35000	MCCSEngineShared.dll	C:\Windows\System32\MCCSEngineShared.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5234: 5368	svchost.exe	0x7fffaf910000	0x12000	UserDataLanguageUtil.dll	C:\Windows\System32\UserDataLanguageUtil.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5235: 5368	svchost.exe	0x7fffaf8f0000	0x19000	APHostClient.dll	C:\Windows\System32\APHostClient.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5236: 5368	svchost.exe	0x7fffe3ee0000	0xca000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5237: 5368	svchost.exe	0x7fffe0370000	0x14000	execmodelproxy.dll	C:\WINDOWS\system32\execmodelproxy.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5238: 5368	svchost.exe	0x7ffff4400000	0x36000	rmclient.dll	C:\WINDOWS\SYSTEM32\rmclient.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5239: 5368	svchost.exe	0x7fffdcc80000	0x4f000	VAULTCLI.dll	c:\windows\system32\VAULTCLI.dll	6	2026-05-13 19:17:25.000000 UTC	Disabled
+L5240: 5368	svchost.exe	0x7ffff61c0000	0x5e000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2026-05-13 19:17:26.000000 UTC	Disabled
+
+--- pstree.txt ---
+L85: ** 5368	896	svchost.exe	0x990ef67ed080	2	-	1	False	2026-05-13 19:17:24.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k UnistackSvcGroup	C:\WINDOWS\system32\svchost.exe
+
+--- psscan.txt ---
+L58: 5368	896	svchost.exe	0x990ef67ed080	2	-	1	False	2026-05-13 19:17:24.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L5505: 5368	svchost.exe	0x1d5f6fc0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L5506: 5368	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5507: 5368	svchost.exe	0x7fffaf9d0000	True	True	True	\Windows\System32\MCCSPal.dll
+L5508: 5368	svchost.exe	0x1d5f9790000	False	False	False	\Windows\System32\SyncRes.dll
+L5509: 5368	svchost.exe	0x7fffaf160000	True	True	True	\Windows\System32\SyncController.dll
+L5510: 5368	svchost.exe	0x7fffaefc0000	True	True	True	\Windows\System32\accountaccessor.dll
+L5511: 5368	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L5512: 5368	svchost.exe	0x7fffaef80000	True	True	True	\Windows\System32\MCCSEngineShared.dll
+L5513: 5368	svchost.exe	0x7fffaf010000	True	True	True	\Windows\System32\Pimstore.dll
+L5514: 5368	svchost.exe	0x7fffaf930000	True	True	True	\Windows\System32\networkhelper.dll
+L5515: 5368	svchost.exe	0x7fffaf8f0000	True	True	True	\Windows\System32\APHostClient.dll
+L5516: 5368	svchost.exe	0x7fffaf690000	True	True	True	\Windows\System32\InprocLogger.dll
+L5517: 5368	svchost.exe	0x7fffaf910000	True	True	True	\Windows\System32\UserDataLanguageUtil.dll
+L5518: 5368	svchost.exe	0x7fffaf960000	True	True	True	\Windows\System32\syncutil.dll
+L5519: 5368	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5520: 5368	svchost.exe	0x7fffe3a20000	True	True	True	\Windows\System32\FlightSettings.dll
+L5521: 5368	svchost.exe	0x7fffb4310000	True	True	True	\Windows\System32\UserDataPlatformHelperUtil.dll
+L5522: 5368	svchost.exe	0x7fffaf9f0000	True	True	True	\Windows\System32\APHostService.dll
+L5523: 5368	svchost.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L5524: 5368	svchost.exe	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
+L5525: 5368	svchost.exe	0x7fffe0370000	True	True	True	\Windows\System32\execmodelproxy.dll
+L5526: 5368	svchost.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L5527: 5368	svchost.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L5528: 5368	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L5529: 5368	svchost.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L5530: 5368	svchost.exe	0x7ffff4400000	True	True	True	\Windows\System32\rmclient.dll
+L5531: 5368	svchost.exe	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L5532: 5368	svchost.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L5533: 5368	svchost.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L5534: 5368	svchost.exe	0x7ffff55a0000	True	True	True	\Windows\System32\msv1_0.dll
+L5535: 5368	svchost.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L5536: 5368	svchost.exe	0x7ffff5580000	True	True	True	\Windows\System32\NtlmShared.dll
+L5537: 5368	svchost.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L5538: 5368	svchost.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L5539: 5368	svchost.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L5540: 5368	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L5541: 5368	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5542: 5368	svchost.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L5543: 5368	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L5544: 5368	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L5545: 5368	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L5546: 5368	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5547: 5368	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L5548: 5368	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L5549: 5368	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L5550: 5368	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L5551: 5368	svchost.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L5552: 5368	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L5553: 5368	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L5554: 5368	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L5555: 5368	svchost.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L5556: 5368	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L5557: 5368	svchost.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L5558: 5368	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L5505: 5368	svchost.exe	0x1d5f6fc0000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L5506: 5368	svchost.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L5507: 5368	svchost.exe	0x7fffaf9d0000	True	True	True	\Windows\System32\MCCSPal.dll
+L5508: 5368	svchost.exe	0x1d5f9790000	False	False	False	\Windows\System32\SyncRes.dll
+L5509: 5368	svchost.exe	0x7fffaf160000	True	True	True	\Windows\System32\SyncController.dll
+L5510: 5368	svchost.exe	0x7fffaefc0000	True	True	True	\Windows\System32\accountaccessor.dll
+L5511: 5368	svchost.exe	0x7ff7d0000000	True	False	True	\Windows\System32\svchost.exe
+L5512: 5368	svchost.exe	0x7fffaef80000	True	True	True	\Windows\System32\MCCSEngineShared.dll
+L5513: 5368	svchost.exe	0x7fffaf010000	True	True	True	\Windows\System32\Pimstore.dll
+L5514: 5368	svchost.exe	0x7fffaf930000	True	True	True	\Windows\System32\networkhelper.dll
+L5515: 5368	svchost.exe	0x7fffaf8f0000	True	True	True	\Windows\System32\APHostClient.dll
+L5516: 5368	svchost.exe	0x7fffaf690000	True	True	True	\Windows\System32\InprocLogger.dll
+L5517: 5368	svchost.exe	0x7fffaf910000	True	True	True	\Windows\System32\UserDataLanguageUtil.dll
+L5518: 5368	svchost.exe	0x7fffaf960000	True	True	True	\Windows\System32\syncutil.dll
+L5519: 5368	svchost.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5520: 5368	svchost.exe	0x7fffe3a20000	True	True	True	\Windows\System32\FlightSettings.dll
+L5521: 5368	svchost.exe	0x7fffb4310000	True	True	True	\Windows\System32\UserDataPlatformHelperUtil.dll
+L5522: 5368	svchost.exe	0x7fffaf9f0000	True	True	True	\Windows\System32\APHostService.dll
+L5523: 5368	svchost.exe	0x7fffdf890000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L5524: 5368	svchost.exe	0x7fffdcc80000	True	True	True	\Windows\System32\vaultcli.dll
+L5525: 5368	svchost.exe	0x7fffe0370000	True	True	True	\Windows\System32\execmodelproxy.dll
+L5526: 5368	svchost.exe	0x7fffed8c0000	True	True	True	\Windows\System32\iertutil.dll
+L5527: 5368	svchost.exe	0x7fffeb7e0000	True	True	True	\Windows\System32\npmproxy.dll
+L5528: 5368	svchost.exe	0x7fffe3ee0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L5529: 5368	svchost.exe	0x7fffed890000	True	True	True	\Windows\System32\srvcli.dll
+L5530: 5368	svchost.exe	0x7ffff4400000	True	True	True	\Windows\System32\rmclient.dll
+L5531: 5368	svchost.exe	0x7fffedd70000	True	True	True	\Windows\System32\twinapi.appcore.dll
+L5532: 5368	svchost.exe	0x7ffff49f0000	True	True	True	\Windows\System32\netutils.dll
+L5533: 5368	svchost.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L5534: 5368	svchost.exe	0x7ffff55a0000	True	True	True	\Windows\System32\msv1_0.dll
+L5535: 5368	svchost.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L5536: 5368	svchost.exe	0x7ffff5580000	True	True	True	\Windows\System32\NtlmShared.dll
+L5537: 5368	svchost.exe	0x7ffff61a0000	True	True	True	\Windows\System32\umpdc.dll
+L5538: 5368	svchost.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L5539: 5368	svchost.exe	0x7ffff61c0000	True	True	True	\Windows\System32\powrprof.dll
+L5540: 5368	svchost.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L5541: 5368	svchost.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5542: 5368	svchost.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L5543: 5368	svchost.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L5544: 5368	svchost.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L5545: 5368	svchost.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L5546: 5368	svchost.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5547: 5368	svchost.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L5548: 5368	svchost.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L5549: 5368	svchost.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L5550: 5368	svchost.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L5551: 5368	svchost.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L5552: 5368	svchost.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L5553: 5368	svchost.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L5554: 5368	svchost.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L5555: 5368	svchost.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L5556: 5368	svchost.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+L5557: 5368	svchost.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L5558: 5368	svchost.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L113: 5368	svchost.exe	\Device\HarddiskVolume4\Windows\System32\svchost.exe	C:\WINDOWS\system32\svchost.exe	False	False
+
+--- sessions.txt ---
+L119: 1	-	5368	svchost.exe	CLEANWINDOWS11/kali	2026-05-13 19:17:24.000000 UTC
+
+=== PID 5356 (FileCoAuth.exe, ppid=516) ===
+Cmdline: "C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe" -Embedding
+
+--- pslist.txt ---
+L132: 5356	516	FileCoAuth.exe	0x990ef630c080	7	-	1	False	2026-05-13 19:25:35.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L132: 5356	FileCoAuth.exe	"C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe" -Embedding
+
+--- privileges.txt ---
+L4450: 5356	FileCoAuth.exe	2	SeCreateTokenPrivilege		Create a token object
+L4451: 5356	FileCoAuth.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L4452: 5356	FileCoAuth.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L4453: 5356	FileCoAuth.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L4454: 5356	FileCoAuth.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L4455: 5356	FileCoAuth.exe	7	SeTcbPrivilege		Act as part of the operating system
+L4456: 5356	FileCoAuth.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L4457: 5356	FileCoAuth.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L4458: 5356	FileCoAuth.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L4459: 5356	FileCoAuth.exe	11	SeSystemProfilePrivilege		Profile system performance
+L4460: 5356	FileCoAuth.exe	12	SeSystemtimePrivilege		Change the system time
+L4461: 5356	FileCoAuth.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L4462: 5356	FileCoAuth.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L4463: 5356	FileCoAuth.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L4464: 5356	FileCoAuth.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L4465: 5356	FileCoAuth.exe	17	SeBackupPrivilege		Backup files and directories
+L4466: 5356	FileCoAuth.exe	18	SeRestorePrivilege		Restore files and directories
+L4467: 5356	FileCoAuth.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L4468: 5356	FileCoAuth.exe	20	SeDebugPrivilege		Debug programs
+L4469: 5356	FileCoAuth.exe	21	SeAuditPrivilege		Generate security audits
+L4470: 5356	FileCoAuth.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L4471: 5356	FileCoAuth.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L4472: 5356	FileCoAuth.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L4473: 5356	FileCoAuth.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L4474: 5356	FileCoAuth.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L4475: 5356	FileCoAuth.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L4476: 5356	FileCoAuth.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L4477: 5356	FileCoAuth.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L4478: 5356	FileCoAuth.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L4479: 5356	FileCoAuth.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L4480: 5356	FileCoAuth.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L4481: 5356	FileCoAuth.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L4482: 5356	FileCoAuth.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L4483: 5356	FileCoAuth.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L4484: 5356	FileCoAuth.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L6172: 5356	FileCoAuth.exe	0x7ff78d6d0000	0x239000	FileCoAuth.exe	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe	-1	2026-05-13 19:25:35.000000 UTC	Disabled
+L6173: 5356	FileCoAuth.exe	0x7ffff9a60000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-13 19:25:35.000000 UTC	Disabled
+L6174: 5356	FileCoAuth.exe	0x7ffff9560000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-13 19:25:35.000000 UTC	Disabled
+L6175: 5356	FileCoAuth.exe	0x7ffff65f0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-13 19:25:35.000000 UTC	Disabled
+L6176: 5356	FileCoAuth.exe	0x7ffff7890000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6177: 5356	FileCoAuth.exe	0x7ffff6ae0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6178: 5356	FileCoAuth.exe	0x7ffff8050000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6179: 5356	FileCoAuth.exe	0x7ffff7c20000	0x1c5000	USER32.dll	C:\WINDOWS\System32\USER32.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6180: 5356	FileCoAuth.exe	0x7ffff69f0000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6181: 5356	FileCoAuth.exe	0x7ffff90f0000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6182: 5356	FileCoAuth.exe	0x7fffb55e0000	0x630000	FileSyncSessions.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncSessions.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6183: 5356	FileCoAuth.exe	0x7fffb7400000	0xb0000	LoggingPlatform.DLL	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\LoggingPlatform.DLL	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6184: 5356	FileCoAuth.exe	0x7ffff9820000	0xbb000	ADVAPI32.dll	C:\WINDOWS\System32\ADVAPI32.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6185: 5356	FileCoAuth.exe	0x7ffff9770000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6186: 5356	FileCoAuth.exe	0x7ffff6c30000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6187: 5356	FileCoAuth.exe	0x7ffff8710000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6188: 5356	FileCoAuth.exe	0x7ffff75d0000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6189: 5356	FileCoAuth.exe	0x7ffff94b0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6190: 5356	FileCoAuth.exe	0x7ffff9120000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6191: 5356	FileCoAuth.exe	0x7ffff8f00000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6192: 5356	FileCoAuth.exe	0x7ffff6340000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6193: 5356	FileCoAuth.exe	0x7ffff7680000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6194: 5356	FileCoAuth.exe	0x7ffff8e80000	0x67000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6195: 5356	FileCoAuth.exe	0x7ffff7810000	0x74000	WS2_32.dll	C:\WINDOWS\System32\WS2_32.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6196: 5356	FileCoAuth.exe	0x7ffff6d60000	0x864000	Windows.Storage.dll	C:\WINDOWS\System32\Windows.Storage.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6197: 5356	FileCoAuth.exe	0x7fffb6130000	0x84000	FileSyncHost.DLL	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncHost.DLL	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6198: 5356	FileCoAuth.exe	0x7fffee2a0000	0x127000	WINHTTP.dll	C:\WINDOWS\SYSTEM32\WINHTTP.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6199: 5356	FileCoAuth.exe	0x7ffff1bd0000	0x103000	PROPSYS.dll	C:\WINDOWS\SYSTEM32\PROPSYS.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6200: 5356	FileCoAuth.exe	0x7ffff6230000	0x2a000	bcrypt.dll	C:\WINDOWS\SYSTEM32\bcrypt.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6201: 5356	FileCoAuth.exe	0x7fffb4840000	0x10b000	Telemetry.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Telemetry.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6202: 5356	FileCoAuth.exe	0x7fffb4770000	0x1c000	credui.dll	C:\WINDOWS\SYSTEM32\credui.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6203: 5356	FileCoAuth.exe	0x7fffb61c0000	0xb5000	UpdateRingSettings.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\UpdateRingSettings.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6204: 5356	FileCoAuth.exe	0x7fffb5ce0000	0x10d000	FileSyncFS.DLL	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFS.DLL	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6205: 5356	FileCoAuth.exe	0x7ffff3c50000	0xd000	Secur32.dll	C:\WINDOWS\SYSTEM32\Secur32.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6206: 5356	FileCoAuth.exe	0x7fffe8ac0000	0xb000	VERSION.dll	C:\WINDOWS\SYSTEM32\VERSION.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6207: 5356	FileCoAuth.exe	0x7fffe8fe0000	0x288000	WININET.dll	C:\WINDOWS\SYSTEM32\WININET.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6208: 5356	FileCoAuth.exe	0x7ffff3c60000	0x29000	WTSAPI32.dll	C:\WINDOWS\SYSTEM32\WTSAPI32.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6209: 5356	FileCoAuth.exe	0x7fffb74b0000	0x88000	MSVCP140.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\MSVCP140.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6210: 5356	FileCoAuth.exe	0x7ffff56f0000	0x32000	USERENV.dll	C:\WINDOWS\SYSTEM32\USERENV.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6211: 5356	FileCoAuth.exe	0x7ffff5b40000	0x30000	ncrypt.dll	C:\WINDOWS\SYSTEM32\ncrypt.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6212: 5356	FileCoAuth.exe	0x7fffea780000	0xb000	VCRUNTIME140_1.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\VCRUNTIME140_1.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6213: 5356	FileCoAuth.exe	0x7fffba420000	0x1e000	VCRUNTIME140.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\VCRUNTIME140.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6214: 5356	FileCoAuth.exe	0x7fffb6fb0000	0x14000	MSVCP140_ATOMIC_WAIT.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\MSVCP140_ATOMIC_WAIT.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6215: 5356	FileCoAuth.exe	0x7fffb5c10000	0x23000	FileSyncEvents.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncEvents.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6216: 5356	FileCoAuth.exe	0x7fffb45f0000	0x176000	adal.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\adal.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6217: 5356	FileCoAuth.exe	0x7fffe9910000	0x43000	XmlLite.dll	C:\WINDOWS\SYSTEM32\XmlLite.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6218: 5356	FileCoAuth.exe	0x7fffb4790000	0xaa000	FileSyncSqlite3.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncSqlite3.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6219: 5356	FileCoAuth.exe	0x7ffff5370000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6220: 5356	FileCoAuth.exe	0x7ffff9730000	0x31000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6221: 5356	FileCoAuth.exe	0x7ffff5920000	0xc000	CRYPTBASE.DLL	C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6222: 5356	FileCoAuth.exe	0x7ffff6540000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-13 19:25:35.000000 UTC	Disabled
+L6223: 5356	FileCoAuth.exe	0x7ffff5af0000	0x3f000	NTASN1.dll	C:\WINDOWS\SYSTEM32\NTASN1.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6224: 5356	FileCoAuth.exe	0x7ffff5930000	0x1b000	CRYPTSP.dll	C:\WINDOWS\SYSTEM32\CRYPTSP.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6225: 5356	FileCoAuth.exe	0x7ffff5030000	0x39000	rsaenh.dll	C:\WINDOWS\system32\rsaenh.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6226: 5356	FileCoAuth.exe	0x7ffff9630000	0xf7000	SHCORE.dll	C:\WINDOWS\System32\SHCORE.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6227: 5356	FileCoAuth.exe	0x7ffff6260000	0x29000	profapi.dll	C:\WINDOWS\SYSTEM32\profapi.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6228: 5356	FileCoAuth.exe	0x7fffb71a0000	0x25b000	OneDriveTelemetryStable.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\OneDriveTelemetryStable.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6229: 5356	FileCoAuth.exe	0x7ffff4a00000	0x33000	IPHLPAPI.DLL	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6230: 5356	FileCoAuth.exe	0x7fffb7090000	0x104000	FileSyncTelemetryExtensions.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncTelemetryExtensions.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6231: 5356	FileCoAuth.exe	0x7ffff60f0000	0x63000	WINSTA.dll	C:\WINDOWS\SYSTEM32\WINSTA.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6232: 5356	FileCoAuth.exe	0x7ffff50d0000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6233: 5356	FileCoAuth.exe	0x7fffb62b0000	0xd6000	FileSyncFSNtfs.DLL	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSNtfs.DLL	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6234: 5356	FileCoAuth.exe	0x7fffb4270000	0x92000	FileSyncFSNtfsWB.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSNtfsWB.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6235: 5356	FileCoAuth.exe	0x7fffb4230000	0x3a000	FileSyncFSDbfsWB.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSDbfsWB.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6236: 5356	FileCoAuth.exe	0x7fffb6280000	0x29000	FileSyncFSCache.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSCache.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6237: 5356	FileCoAuth.exe	0x7fffb4170000	0xb6000	FileSyncFALWB.dll	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFALWB.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6238: 5356	FileCoAuth.exe	0x7fffdc8d0000	0x32000	cldapi.dll	C:\WINDOWS\SYSTEM32\cldapi.dll	-1	2026-05-13 19:25:35.000000 UTC	Disabled
+L6239: 5356	FileCoAuth.exe	0x7fffb86d0000	0x46000	Wscapi.dll	C:\WINDOWS\SYSTEM32\Wscapi.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6240: 5356	FileCoAuth.exe	0x7ffff3d40000	0xaa000	uxtheme.dll	C:\WINDOWS\system32\uxtheme.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6241: 5356	FileCoAuth.exe	0x7ffff9900000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+L6242: 5356	FileCoAuth.exe	0x7fffeca30000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-13 19:25:35.000000 UTC	Disabled
+
+--- pstree.txt ---
+L25: *** 5356	516	FileCoAuth.exe	0x990ef630c080	7	-	1	False	2026-05-13 19:25:35.000000 UTC	N/A	\Device\HarddiskVolume4\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe	"C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe" -Embedding	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe
+
+--- psscan.txt ---
+L49: 5356	516	FileCoAuth.exe	0x990ef630c080	7	-	1	False	2026-05-13 19:25:35.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L6443: 5356	FileCoAuth.exe	0x7fffb7400000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\LoggingPlatform.dll
+L6444: 5356	FileCoAuth.exe	0x7fffb55e0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncSessions.dll
+L6445: 5356	FileCoAuth.exe	0x7fffb4270000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSNtfsWB.dll
+L6446: 5356	FileCoAuth.exe	0x7ff78d6d0000	True	False	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe
+L6447: 5356	FileCoAuth.exe	0x7fffb4230000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSDbfsWB.dll
+L6448: 5356	FileCoAuth.exe	0x7fffb4170000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFALWB.dll
+L6449: 5356	FileCoAuth.exe	0x7fffb4770000	True	True	True	\Windows\System32\credui.dll
+L6450: 5356	FileCoAuth.exe	0x7fffb45f0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\adal.dll
+L6451: 5356	FileCoAuth.exe	0x7fffb4840000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Telemetry.dll
+L6452: 5356	FileCoAuth.exe	0x7fffb4790000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncSqlite3.dll
+L6453: 5356	FileCoAuth.exe	0x7fffb6130000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncHost.dll
+L6454: 5356	FileCoAuth.exe	0x7fffb5ce0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFS.dll
+L6455: 5356	FileCoAuth.exe	0x7fffb5c10000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncEvents.dll
+L6456: 5356	FileCoAuth.exe	0x7fffb6fb0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\msvcp140_atomic_wait.dll
+L6457: 5356	FileCoAuth.exe	0x7fffb6280000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSCache.dll
+L6458: 5356	FileCoAuth.exe	0x7fffb61c0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\UpdateRingSettings.dll
+L6459: 5356	FileCoAuth.exe	0x7fffb62b0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSNtfs.dll
+L6460: 5356	FileCoAuth.exe	0x7fffb71a0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\OneDriveTelemetryStable.dll
+L6461: 5356	FileCoAuth.exe	0x7fffb7090000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncTelemetryExtensions.dll
+L6462: 5356	FileCoAuth.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6463: 5356	FileCoAuth.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L6464: 5356	FileCoAuth.exe	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
+L6465: 5356	FileCoAuth.exe	0x7fffe8fe0000	True	True	True	\Windows\System32\wininet.dll
+L6466: 5356	FileCoAuth.exe	0x7fffba420000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\vcruntime140.dll
+L6467: 5356	FileCoAuth.exe	0x7fffb74b0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\msvcp140.dll
+L6468: 5356	FileCoAuth.exe	0x7fffb86d0000	True	True	True	\Windows\System32\wscapi.dll
+L6469: 5356	FileCoAuth.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L6470: 5356	FileCoAuth.exe	0x7fffdc8d0000	True	True	True	\Windows\System32\cldapi.dll
+L6471: 5356	FileCoAuth.exe	0x7fffea780000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\vcruntime140_1.dll
+L6472: 5356	FileCoAuth.exe	0x7fffe9910000	True	True	True	\Windows\System32\xmllite.dll
+L6473: 5356	FileCoAuth.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L6474: 5356	FileCoAuth.exe	0x7fffeca30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L6475: 5356	FileCoAuth.exe	0x7ffff5030000	True	True	True	\Windows\System32\rsaenh.dll
+L6476: 5356	FileCoAuth.exe	0x7ffff3c60000	True	True	True	\Windows\System32\wtsapi32.dll
+L6477: 5356	FileCoAuth.exe	0x7ffff3c50000	True	True	True	\Windows\System32\secur32.dll
+L6478: 5356	FileCoAuth.exe	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L6479: 5356	FileCoAuth.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L6480: 5356	FileCoAuth.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L6481: 5356	FileCoAuth.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6482: 5356	FileCoAuth.exe	0x7ffff5af0000	True	True	True	\Windows\System32\ntasn1.dll
+L6483: 5356	FileCoAuth.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L6484: 5356	FileCoAuth.exe	0x7ffff5930000	True	True	True	\Windows\System32\cryptsp.dll
+L6485: 5356	FileCoAuth.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L6486: 5356	FileCoAuth.exe	0x7ffff5b40000	True	True	True	\Windows\System32\ncrypt.dll
+L6487: 5356	FileCoAuth.exe	0x7ffff60f0000	True	True	True	\Windows\System32\winsta.dll
+L6488: 5356	FileCoAuth.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L6489: 5356	FileCoAuth.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L6490: 5356	FileCoAuth.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6491: 5356	FileCoAuth.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6492: 5356	FileCoAuth.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6493: 5356	FileCoAuth.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6494: 5356	FileCoAuth.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6495: 5356	FileCoAuth.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6496: 5356	FileCoAuth.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L6497: 5356	FileCoAuth.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L6498: 5356	FileCoAuth.exe	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
+L6499: 5356	FileCoAuth.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6500: 5356	FileCoAuth.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6501: 5356	FileCoAuth.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6502: 5356	FileCoAuth.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L6503: 5356	FileCoAuth.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L6504: 5356	FileCoAuth.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L6505: 5356	FileCoAuth.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6506: 5356	FileCoAuth.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6507: 5356	FileCoAuth.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L6508: 5356	FileCoAuth.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6509: 5356	FileCoAuth.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6510: 5356	FileCoAuth.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6511: 5356	FileCoAuth.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6512: 5356	FileCoAuth.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L6513: 5356	FileCoAuth.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_ldrmodules.txt ---
+L6443: 5356	FileCoAuth.exe	0x7fffb7400000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\LoggingPlatform.dll
+L6444: 5356	FileCoAuth.exe	0x7fffb55e0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncSessions.dll
+L6445: 5356	FileCoAuth.exe	0x7fffb4270000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSNtfsWB.dll
+L6446: 5356	FileCoAuth.exe	0x7ff78d6d0000	True	False	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe
+L6447: 5356	FileCoAuth.exe	0x7fffb4230000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSDbfsWB.dll
+L6448: 5356	FileCoAuth.exe	0x7fffb4170000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFALWB.dll
+L6449: 5356	FileCoAuth.exe	0x7fffb4770000	True	True	True	\Windows\System32\credui.dll
+L6450: 5356	FileCoAuth.exe	0x7fffb45f0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\adal.dll
+L6451: 5356	FileCoAuth.exe	0x7fffb4840000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\Telemetry.dll
+L6452: 5356	FileCoAuth.exe	0x7fffb4790000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncSqlite3.dll
+L6453: 5356	FileCoAuth.exe	0x7fffb6130000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncHost.dll
+L6454: 5356	FileCoAuth.exe	0x7fffb5ce0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFS.dll
+L6455: 5356	FileCoAuth.exe	0x7fffb5c10000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncEvents.dll
+L6456: 5356	FileCoAuth.exe	0x7fffb6fb0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\msvcp140_atomic_wait.dll
+L6457: 5356	FileCoAuth.exe	0x7fffb6280000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSCache.dll
+L6458: 5356	FileCoAuth.exe	0x7fffb61c0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\UpdateRingSettings.dll
+L6459: 5356	FileCoAuth.exe	0x7fffb62b0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncFSNtfs.dll
+L6460: 5356	FileCoAuth.exe	0x7fffb71a0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\OneDriveTelemetryStable.dll
+L6461: 5356	FileCoAuth.exe	0x7fffb7090000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileSyncTelemetryExtensions.dll
+L6462: 5356	FileCoAuth.exe	0x7ffff65f0000	True	True	True	\Windows\System32\KernelBase.dll
+L6463: 5356	FileCoAuth.exe	0x7ffff56f0000	True	True	True	\Windows\System32\userenv.dll
+L6464: 5356	FileCoAuth.exe	0x7ffff1bd0000	True	True	True	\Windows\System32\propsys.dll
+L6465: 5356	FileCoAuth.exe	0x7fffe8fe0000	True	True	True	\Windows\System32\wininet.dll
+L6466: 5356	FileCoAuth.exe	0x7fffba420000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\vcruntime140.dll
+L6467: 5356	FileCoAuth.exe	0x7fffb74b0000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\msvcp140.dll
+L6468: 5356	FileCoAuth.exe	0x7fffb86d0000	True	True	True	\Windows\System32\wscapi.dll
+L6469: 5356	FileCoAuth.exe	0x7fffe8ac0000	True	True	True	\Windows\System32\version.dll
+L6470: 5356	FileCoAuth.exe	0x7fffdc8d0000	True	True	True	\Windows\System32\cldapi.dll
+L6471: 5356	FileCoAuth.exe	0x7fffea780000	True	True	True	\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\vcruntime140_1.dll
+L6472: 5356	FileCoAuth.exe	0x7fffe9910000	True	True	True	\Windows\System32\xmllite.dll
+L6473: 5356	FileCoAuth.exe	0x7fffee2a0000	True	True	True	\Windows\System32\winhttp.dll
+L6474: 5356	FileCoAuth.exe	0x7fffeca30000	True	True	True	\Windows\System32\OneCoreUAPCommonProxyStub.dll
+L6475: 5356	FileCoAuth.exe	0x7ffff5030000	True	True	True	\Windows\System32\rsaenh.dll
+L6476: 5356	FileCoAuth.exe	0x7ffff3c60000	True	True	True	\Windows\System32\wtsapi32.dll
+L6477: 5356	FileCoAuth.exe	0x7ffff3c50000	True	True	True	\Windows\System32\secur32.dll
+L6478: 5356	FileCoAuth.exe	0x7ffff4a00000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L6479: 5356	FileCoAuth.exe	0x7ffff3d40000	True	True	True	\Windows\System32\uxtheme.dll
+L6480: 5356	FileCoAuth.exe	0x7ffff5370000	True	True	True	\Windows\System32\sspicli.dll
+L6481: 5356	FileCoAuth.exe	0x7ffff50d0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L6482: 5356	FileCoAuth.exe	0x7ffff5af0000	True	True	True	\Windows\System32\ntasn1.dll
+L6483: 5356	FileCoAuth.exe	0x7ffff5920000	True	True	True	\Windows\System32\cryptbase.dll
+L6484: 5356	FileCoAuth.exe	0x7ffff5930000	True	True	True	\Windows\System32\cryptsp.dll
+L6485: 5356	FileCoAuth.exe	0x7ffff6230000	True	True	True	\Windows\System32\bcrypt.dll
+L6486: 5356	FileCoAuth.exe	0x7ffff5b40000	True	True	True	\Windows\System32\ncrypt.dll
+L6487: 5356	FileCoAuth.exe	0x7ffff60f0000	True	True	True	\Windows\System32\winsta.dll
+L6488: 5356	FileCoAuth.exe	0x7ffff6340000	True	True	True	\Windows\System32\WinTypes.dll
+L6489: 5356	FileCoAuth.exe	0x7ffff6260000	True	True	True	\Windows\System32\profapi.dll
+L6490: 5356	FileCoAuth.exe	0x7ffff6540000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L6491: 5356	FileCoAuth.exe	0x7ffff7890000	True	True	True	\Windows\System32\combase.dll
+L6492: 5356	FileCoAuth.exe	0x7ffff75d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L6493: 5356	FileCoAuth.exe	0x7ffff6ae0000	True	True	True	\Windows\System32\ucrtbase.dll
+L6494: 5356	FileCoAuth.exe	0x7ffff69f0000	True	True	True	\Windows\System32\win32u.dll
+L6495: 5356	FileCoAuth.exe	0x7ffff6c30000	True	True	True	\Windows\System32\gdi32full.dll
+L6496: 5356	FileCoAuth.exe	0x7ffff6d60000	True	True	True	\Windows\System32\windows.storage.dll
+L6497: 5356	FileCoAuth.exe	0x7ffff7680000	True	True	True	\Windows\System32\crypt32.dll
+L6498: 5356	FileCoAuth.exe	0x7ffff7810000	True	True	True	\Windows\System32\ws2_32.dll
+L6499: 5356	FileCoAuth.exe	0x7ffff90f0000	True	True	True	\Windows\System32\gdi32.dll
+L6500: 5356	FileCoAuth.exe	0x7ffff8050000	True	True	True	\Windows\System32\rpcrt4.dll
+L6501: 5356	FileCoAuth.exe	0x7ffff7c20000	True	True	True	\Windows\System32\user32.dll
+L6502: 5356	FileCoAuth.exe	0x7ffff8e80000	True	True	True	\Windows\System32\shlwapi.dll
+L6503: 5356	FileCoAuth.exe	0x7ffff8710000	True	True	True	\Windows\System32\shell32.dll
+L6504: 5356	FileCoAuth.exe	0x7ffff8f00000	True	True	True	\Windows\System32\oleaut32.dll
+L6505: 5356	FileCoAuth.exe	0x7ffff9560000	True	True	True	\Windows\System32\kernel32.dll
+L6506: 5356	FileCoAuth.exe	0x7ffff94b0000	True	True	True	\Windows\System32\sechost.dll
+L6507: 5356	FileCoAuth.exe	0x7ffff9120000	True	True	True	\Windows\System32\ole32.dll
+L6508: 5356	FileCoAuth.exe	0x7ffff9820000	True	True	True	\Windows\System32\advapi32.dll
+L6509: 5356	FileCoAuth.exe	0x7ffff9730000	True	True	True	\Windows\System32\imm32.dll
+L6510: 5356	FileCoAuth.exe	0x7ffff9630000	True	True	True	\Windows\System32\SHCore.dll
+L6511: 5356	FileCoAuth.exe	0x7ffff9770000	True	True	True	\Windows\System32\msvcrt.dll
+L6512: 5356	FileCoAuth.exe	0x7ffff9a60000	True	True	True	\Windows\System32\ntdll.dll
+L6513: 5356	FileCoAuth.exe	0x7ffff9900000	True	True	True	\Windows\System32\clbcatq.dll
+
+--- malware_pebmasquerade.txt ---
+L132: 5356	FileCoAuth.exe	\Device\HarddiskVolume4\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe	C:\Users\kali\AppData\Local\Microsoft\OneDrive\26.070.0414.0001\FileCoAuth.exe	False	False
+
+--- sessions.txt ---
+L133: 1	Console	5356	FileCoAuth.exe	CLEANWINDOWS11/kali	2026-05-13 19:25:35.000000 UTC
+
+=== END OF PIVOT REPORT ===

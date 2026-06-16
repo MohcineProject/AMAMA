@@ -1,0 +1,79 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 12332 — Video.UI.exe**
+
+Agent 1 flagged: orphaned parent (PPID 740 not in process list) + outbound connection to public IP.
+
+**Orphaned parent:** PPID 740 is absent from the process list. For UWP apps launched via the Windows App Model, the actual launcher (typically `svchost.exe` hosting the `AppXSvc` or `DcomLaunch`) can exit after the app is running, leaving the child with a dangling PPID. This is a well-known benign artefact for UWP/Store apps. Not suspicious on its own.
+
+**Network connection:** CLOSE_WAIT to 23.197.180.10:443 — Akamai CDN range, expected for a media streaming app (Groove/Zune Video). Not suspicious.
+
+**Command line:** Legitimate WindowsApps path, `-ServerName:` argument is the standard UWP out-of-process server activation pattern. Completely normal.
+
+**DLLs:** All from System32 or the WindowsApps package directory. No user-writable paths.
+
+**Privileges:** This is the most interesting signal. The privilege list shows the *full* Windows privilege set (all 35 privileges), but only three are actually `Present` or `Enabled`: `SeChangeNotifyPrivilege` (Present, Enabled, Default) and `SeIncreaseWorkingSetPrivilege` (Present). All others have empty state columns — meaning they are **not present in the token**, just enumerated by the plugin as the full privilege constant list. This is a Volatility `privileges` plugin behaviour: it lists all known privilege constants and marks which ones are actually in the token. Only `SeChangeNotifyPrivilege` and `SeIncreaseWorkingSetPrivilege` are actually held. Both are completely normal for a standard user-context UWP process.
+
+**Verdict:** REJECTED. All signals have benign explanations. Orphaned PPID is normal UWP launcher behaviour; network is CDN; privileges actually held are minimal and normal; DLLs are clean.
+
+---
+
+Now writing the report.
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: Agent 1 submitted one finding for validation. The single candidate process, Video.UI.exe (PID 12332), is a legitimate Microsoft Store (UWP) media application whose orphaned-parent artefact is a known benign consequence of the UWP activation model, whose network connection targets an Akamai CDN range consistent with media streaming, and whose privilege token holds only two standard user-context privileges. No confirmed or inconclusive malicious activity was identified in this triage pass.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+================================================================
+REJECTED SUMMARY (count=1)
+================================================================
+
+PID 12332 — Video.UI.exe was rejected on all Agent 1 signals:
+
+  1. orphaned_parent: PPID 740 is absent from the process list, but this
+     is a well-documented benign artefact of the Windows UWP/App Model
+     activation path. The launcher process (typically a DcomLaunch or
+     AppXSvc svchost instance) exits after handing off the activated
+     package, leaving the child with a dangling PPID. The command-line
+     argument "-ServerName:Microsoft.ZuneVideo.AppX..." is the standard
+     out-of-process COM server activation flag used by every UWP app and
+     confirms legitimate Store-app launch mechanics.
+
+  2. network: The CLOSE_WAIT connection to 23.197.180.10:443 falls within
+     Akamai CDN address space, which is the expected delivery network for
+     Microsoft media content (Groove/Zune Video catalogue, licence
+     checks). CLOSE_WAIT indicates the remote end closed the connection
+     first — consistent with a completed CDN fetch, not an active C2
+     channel.
+
+  3. privileges: The privileges.txt block lists all 35 Windows privilege
+     constants, but the "Present" / "Enabled" state column is populated
+     for only two entries: SeChangeNotifyPrivilege (Present, Enabled,
+     Default) and SeIncreaseWorkingSetPrivilege (Present). All other
+     privileges — including SeDebugPrivilege, SeTcbPrivilege,
+     SeImpersonatePrivilege, etc. — have empty state fields, meaning they
+     are NOT held in the process token. Volatility's privileges plugin
+     enumerates the full privilege constant table and marks which are
+     actually granted; the absence of a state value means the privilege
+     is absent. The two privileges actually held are standard for any
+     normal user-context process.
+
+  4. DLLs: All loaded modules resolve to either the WindowsApps package
+     directory (C:\Program Files\WindowsApps\Microsoft.ZuneVideo_...) or
+     C:\WINDOWS\SYSTEM32. No user-writable paths, no anomalous names.
+
+  Legitimate behaviour explicitly: standard UWP media player launched via
+  the Windows App Model from its signed WindowsApps package directory,
+  holding only default user-context privileges, with a completed HTTPS
+  connection to an Akamai CDN endpoint. No injection markers, no
+  suspicious DLLs, no registry persistence, no malfind hits present in
+  the evidence provided.
+
+================================================================

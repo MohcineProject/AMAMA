@@ -1,0 +1,82 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 7940 — SecurityHealthService.exe**
+
+Agent 1 flags: orphaned parent (PPID 896 absent from process list) + three high-risk privileges simultaneously enabled.
+
+**Orphaned parent:** PPID 896 is not visible in pslist. However, SecurityHealthService.exe is a legitimate Windows Security Health service that runs under the SCM (services.exe, typically PID 896 or similar). The SCM PID can vary and may not always appear in a truncated pslist snapshot, or the SCM process may have exited/restarted. This is a weak signal on its own.
+
+**Privilege footprint:** The process holds SeTcbPrivilege (Present,Enabled,Default), SeDebugPrivilege (Present,Enabled,Default), SeImpersonatePrivilege (Present,Enabled,Default), SeAssignPrimaryTokenPrivilege (Present), SeSystemEnvironmentPrivilege (Present,Enabled), SeBackupPrivilege (Present), SeRestorePrivilege (Present). This is an extremely broad privilege set. However — SecurityHealthService.exe runs as SYSTEM (it's a Windows service), and SYSTEM tokens carry the full privilege set. Many of these are simply "Present" (not enabled), and SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege being Enabled,Default is consistent with a SYSTEM-context service. The full SYSTEM token routinely includes all of these.
+
+**DLL provenance:** The three shown DLLs are all from System32 — no user-writable paths, no suspicious DLLs.
+
+**Cmdline:** Standard `C:\WINDOWS\system32\SecurityHealthService.exe` — no suspicious arguments.
+
+**No malfind, no netscan, no registry hits, no handles evidence.**
+
+The privilege set is consistent with a SYSTEM-context Windows service. The orphaned parent is a weak signal. No corroborating evidence of malice. → **REJECTED** (SYSTEM token explains privileges; standard path and cmdline; no corroborating evidence).
+
+---
+
+**PID 7772 — NisSrv.exe**
+
+Agent 1 flags: orphaned parent (PPID 896) + path under C:\ProgramData rather than C:\Program Files.
+
+**Path:** `C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26030.3011-0\NisSrv.exe` — This is the **legitimate** Windows Defender platform update path. Microsoft Defender's dynamic platform updates are deployed to `C:\ProgramData\Microsoft\Windows Defender\Platform\<version>\`. NisSrv.exe (Network Inspection Service) legitimately lives here. This is well-documented Microsoft behavior.
+
+**Orphaned parent:** Same PPID 896 as SecurityHealthService — likely the SCM. Weak signal.
+
+**Privilege footprint:** SeImpersonatePrivilege (Present,Enabled,Default), SeCreateGlobalPrivilege (Present,Enabled,Default), SeAuditPrivilege (Present), SeIncreaseQuotaPrivilege (Present) — normal for a SYSTEM-context network inspection service. Notably, SeTcbPrivilege and SeDebugPrivilege are NOT enabled (blank), which is actually less alarming than PID 7940.
+
+**DLL provenance:** Shown DLLs are from System32 and the legitimate Defender platform path.
+
+**Cmdline:** Matches the path exactly, no suspicious arguments.
+
+**No malfind, no netscan anomalies, no registry hits.**
+
+The ProgramData path is the legitimate Defender platform update location. No corroborating evidence of malice. → **REJECTED**.
+
+---
+
+Both findings are REJECTED. The report will show confirmed=0, inconclusive=0, rejected=2.
+
+---
+
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T19:30:00Z
+Summary: Both Agent 1 leads examined in this batch resolve to benign, legitimate Windows
+system processes. PID 7940 (SecurityHealthService.exe) and PID 7772 (NisSrv.exe) share
+PPID 896, consistent with the Service Control Manager; the orphaned-parent signal is a
+snapshot artefact rather than an indicator of process injection or masquerading. Privilege
+sets are consistent with SYSTEM-context Windows services. No corroborating evidence of
+malice was found in any artefact type. No confirmed or inconclusive findings to escalate.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings.
+
+--- REJECTED FINDINGS (summary, not in body per format rules) ---
+
+PID 7940 (SecurityHealthService.exe): REJECTED.
+  The orphaned-parent signal is weak — PPID 896 is the typical SCM PID and may simply be
+  absent from the pslist snapshot window. The privilege set (SeTcbPrivilege, SeDebugPrivilege,
+  SeImpersonatePrivilege all Enabled,Default) is alarming in isolation but is entirely
+  consistent with a Windows service running under the SYSTEM token, which carries the full
+  privilege set by design. The binary path is the canonical System32 location, the cmdline
+  carries no suspicious arguments, and the three DLLs shown are all from System32. No
+  malfind hits, no network connections, no suspicious DLL paths, and no registry persistence
+  artefacts were present in the evidence block. No signal survives cross-artefact scrutiny.
+
+PID 7772 (NisSrv.exe): REJECTED.
+  The ProgramData path is the legitimate Microsoft Defender dynamic platform update location
+  (C:\ProgramData\Microsoft\Windows Defender\Platform\<version>\); NisSrv.exe (Network
+  Inspection Service) is documented to reside there after platform updates and is not a
+  masquerade. The orphaned PPID 896 is the same SCM artefact as PID 7940. The privilege
+  footprint is modest for a SYSTEM service — SeTcbPrivilege and SeDebugPrivilege are
+  notably absent or not enabled, making this less anomalous than PID 7940. DLLs shown are
+  from System32 and the legitimate Defender platform path. No malfind, network, or registry
+  persistence evidence was present.
+================================================================

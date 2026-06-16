@@ -1,0 +1,36 @@
+================================================================
+PIVOT REPORT
+Generated: 2026-05-13T19:45:00 UTC
+Summary: A single process was submitted for validation. StartMenuExperienceHost.exe (PID 5432) was flagged solely because its parent PID 516 does not appear in the process list. The path, command line, DLL set, and privilege footprint are all consistent with a legitimate Windows UWP shell component. No malicious indicators were found in any artefact type. The orphaned-parent condition is most plausibly explained by the parent (likely svchost.exe or a session-manager process) having exited after spawning the child, which is normal for this component.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+--- REJECTED FINDINGS SUMMARY ---
+
+PID 5432 — StartMenuExperienceHost.exe
+  Reason for rejection:
+  The sole Agent 1 signal is an orphaned parent (PPID 516 absent from the
+  process list). Agent 1 itself noted the path and command line are clean,
+  and the name truncation to 'StartMenuExper' is a known EPROCESS artefact,
+  not a typosquat. The executable path
+  (C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\)
+  is the canonical Windows 10/11 location for this UWP shell host. The
+  command line matches the documented -ServerName:FullTrustApp launch
+  pattern used by the Start Menu broker. The DLL list shows only
+  System32-resident modules (ntdll.dll, KERNEL32.DLL) with no user-writable
+  paths. The privilege table lists all privileges as NOT enabled (Present or
+  Enabled columns are blank for every high-risk privilege including
+  SeDebugPrivilege, SeTcbPrivilege, SeImpersonatePrivilege, and
+  SeLoadDriverPrivilege); only SeShutdownPrivilege, SeChangeNotifyPrivilege,
+  SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege,
+  SeTimeZonePrivilege, and SeDelegateSessionUserImpersonatePrivilege carry
+  any Present/Enabled/Default flag — all of which are standard for an
+  interactive-session UWP host running under a normal user token. The
+  orphaned-parent condition is consistent with the parent process having
+  exited after launch, a routine occurrence for session-manager or
+  broker-style parents on Windows. No malfind, netscan, handles, or registry
+  evidence was submitted and none is needed to close this finding as benign.
+
+================================================================

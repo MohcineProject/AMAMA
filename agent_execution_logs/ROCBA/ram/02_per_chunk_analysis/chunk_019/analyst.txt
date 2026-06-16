@@ -1,0 +1,39 @@
+I need to reason carefully about this single finding before writing the report.
+
+**PID 8436 — RuntimeBroker.exe**
+
+**Agent 1 signal:** orphaned parent — PPID 740 is listed as 'unknown' (not present in the process list). Expected parent is svchost.exe.
+
+**Reasoning through the lenses:**
+
+1. **Orphaned parent:** PPID 740 not appearing in pslist is a real signal, but it is also a very common benign artefact in memory forensics. When a memory image is captured, short-lived parent processes (especially svchost.exe instances that spawned a COM activation and then exited) may no longer be present in the process list. RuntimeBroker.exe is a COM surrogate for Windows Runtime broker operations and is legitimately spawned by a svchost.exe hosting the DCOM Server Process Launcher (DcomLaunch). That svchost instance can exit after spawning RuntimeBroker, leaving an orphaned PPID. This is a well-known benign pattern.
+
+2. **Command line:** `C:\Windows\System32\RuntimeBroker.exe -Embedding` — the `-Embedding` flag is the canonical COM activation argument. This is exactly what a legitimate RuntimeBroker invocation looks like. Path is System32. No anomaly here.
+
+3. **Privilege footprint:** This is the most interesting signal. The privileges list is enormous — it includes `SeCreateTokenPrivilege`, `SeTcbPrivilege`, `SeDebugPrivilege`, `SeLoadDriverPrivilege`, `SeImpersonatePrivilege`, `SeBackupPrivilege`, `SeRestorePrivilege`, etc. However, looking carefully at the `Present` / `Enabled` column: only `SeShutdownPrivilege` (Present), `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege` (Present), `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege` (Present), and `SeTimeZonePrivilege` (Present) are actually present/enabled. All the dangerous ones (`SeTcbPrivilege`, `SeDebugPrivilege`, `SeLoadDriverPrivilege`, `SeImpersonatePrivilege`, etc.) have **empty** status columns — meaning they are listed in the token's privilege list but are **not present** (i.e., not held). This is the standard full privilege enumeration that Volatility shows for all processes — it lists all possible privilege IDs, not just the ones the process holds. The ones without "Present" are simply not in the token. So the privilege set is entirely normal for a user-context RuntimeBroker.exe.
+
+4. **DLL provenance:** Only 3 DLLs shown: RuntimeBroker.exe from System32, ntdll.dll from SYSTEM32, KERNEL32.DLL from System32. All legitimate, no user-writable paths.
+
+5. **No malfind, no netscan, no cmdline anomaly, no registry persistence evidence.**
+
+6. **No code injection markers.**
+
+**Verdict:** The orphaned parent is a weak signal that is commonly benign for RuntimeBroker.exe (COM activation parent exits). The command line is canonical. The DLLs are clean. The privileges that appear dangerous are NOT present/enabled in the token. There is no corroborating evidence of malice across any artefact type. This should be **REJECTED**.
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-31T00:00:00Z
+Summary: A single process was submitted for validation. The sole finding — an orphaned-parent flag on RuntimeBroker.exe — is not supported by corroborating evidence. The command line, DLL set, and effective privilege footprint are all consistent with a legitimate Windows Runtime Broker COM-activation instance. No confirmed or inconclusive findings remain after review.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+No CONFIRMED or INCONCLUSIVE findings to report.
+
+--- REJECTED FINDINGS (count: 1) ---
+
+PID 8436 (RuntimeBroker.exe) — REJECTED.
+The orphaned-parent signal (PPID 740 absent from pslist) is the sole Agent 1 indicator. This is a well-known benign artefact for RuntimeBroker.exe: the svchost.exe instance hosting DcomLaunch that activates a COM surrogate is legitimately short-lived and may have exited before the memory image was captured, leaving an orphaned PPID. The command line (`C:\Windows\System32\RuntimeBroker.exe -Embedding`) is the canonical COM-activation invocation from System32. The three DLLs visible in dlllist are all from System32 with no user-writable paths. Reviewing the privileges output, every privilege that would be alarming (SeTcbPrivilege, SeDebugPrivilege, SeLoadDriverPrivilege, SeImpersonatePrivilege, SeCreateTokenPrivilege, etc.) has an empty status column — meaning those privileges are enumerated by Volatility as possible privilege IDs but are not actually present in the process token. Only low-risk privileges (SeShutdownPrivilege, SeChangeNotifyPrivilege, SeUndockPrivilege, SeCreateGlobalPrivilege, SeIncreaseWorkingSetPrivilege, SeTimeZonePrivilege) carry a "Present" or "Enabled" marker, which is normal for a standard user-context process. No malfind sections, no network connections, no registry persistence, and no suspicious DLL paths were present in the evidence block. No basis for confirmation.
+
+================================================================

@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_005.txt
+Summary: Orphaned parent PIDs on multiple processes; taskhostw.exe holds an unusually broad high-risk privilege set and has external network connections; SecurityHealth holds high-risk privileges including SeTcbPrivilege and SeDebugPrivilege.
+
+[PROCESS]
+pid: 2972
+ppid: 1320
+image: taskhostw.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_parent: PPID 1320 not present in process list | excessive_privileges: holds SeAssignPrimaryTokenPrivilege, SeTcbPrivilege, SeTakeOwnershipPrivilege, SeLoadDriverPrivilege, SeDebugPrivilege, SeImpersonatePrivilege simultaneously | network: established connections to public IP 150.171.27.10:443 (TCPv4, CLOSED) — unusual for taskhostw.exe to initiate external connections
+
+[PROCESS]
+pid: 2924
+ppid: 716
+image: SecurityHealth
+cmdline: C:\Windows\system32\SecurityHealthService.exe
+severity: LOW
+reasons: orphaned_parent: PPID 716 not present in process list | elevated_privileges: holds SeTcbPrivilege, SeDebugPrivilege, SeImpersonatePrivilege — high-risk set for a security health service process | dll_anomaly: C:\Windows\system32\SecurityHealthService.exe listed as a loaded DLL entry (malformed DLL list — image path appearing as DLL may indicate memory artefact or injection)
+

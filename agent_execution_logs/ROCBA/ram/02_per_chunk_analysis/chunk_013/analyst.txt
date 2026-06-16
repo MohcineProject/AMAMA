@@ -1,0 +1,42 @@
+I'll work through each finding systematically before writing the report.
+
+---
+
+**PID 6700 — taskhostw.exe**
+
+Agent 1 reason: orphaned parent (PPID 2936 not in process list).
+
+Let me assess each lens:
+
+1. **Command-line plausibility**: `taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}` — this is a perfectly normal invocation. `taskhostw.exe` is the Task Scheduler host for COM-based tasks; it is routinely launched with a GUID argument identifying the task trigger. Nothing suspicious here.
+
+2. **DLL provenance**: The three DLL lines shown are `taskhostw.exe` from `C:\WINDOWS\system32\`, `ntdll.dll` from `C:\WINDOWS\SYSTEM32\`, and `KERNEL32.DLL` from `C:\WINDOWS\System32\`. All system paths, no user-writable locations.
+
+3. **Privilege footprint**: The privilege list is very long — it includes `SeDebugPrivilege`, `SeTcbPrivilege`, `SeImpersonatePrivilege`, `SeLoadDriverPrivilege`, etc. However, critically, almost none of these are **enabled** (the `Present` column is blank for most). Only `SeShutdownPrivilege`, `SeChangeNotifyPrivilege` (Present, Enabled, Default), `SeUndockPrivilege`, `SeCreateGlobalPrivilege` (Default), `SeIncreaseWorkingSetPrivilege`, `SeTimeZonePrivilege` are marked Present. This is the standard **full privilege set** that appears when Volatility reads the token of a process running under a highly-privileged account (e.g. SYSTEM or a local admin token) — the privileges are *present in the token* but not *enabled*. `taskhostw.exe` running as SYSTEM or LocalSystem would have this exact profile. This is not anomalous.
+
+4. **Orphaned parent**: PPID 2936 is not in the process list. For `taskhostw.exe`, the legitimate parent is `svchost.exe` (the Task Scheduler service). PPID 2936 being absent could mean the parent exited after spawning the task host (normal — the scheduler service itself may have restarted or the snapshot was taken after the parent exited), or it could indicate process hollowing/injection. However, with no other corroborating signals, this alone is weak.
+
+5. **No malfind, no netscan, no registry persistence, no suspicious handles** — none of these artefact types appear in the evidence block.
+
+6. **Path**: Binary is at `C:\WINDOWS\system32\taskhostw.exe` — legitimate system path.
+
+**Verdict**: The orphaned parent is the sole signal. The binary is in System32, the command line is normal, the DLLs are all from System32, and the privilege set is consistent with a SYSTEM-token process (most privileges not enabled). No corroborating evidence of malice. → **REJECTED**. Legitimate `taskhostw.exe` invocation; orphaned parent is explained by normal task scheduler lifecycle (parent svchost may have exited or restarted before snapshot).
+
+---
+
+**Summary for header**: Only one finding submitted; it is rejected. No confirmed or inconclusive findings.
+
+Counts: confirmed=0, inconclusive=0, rejected=1
+
+---
+
+================================================================
+FIND_EVIL — PIVOT REPORT
+Generated: 2025-01-30T00:00:00Z
+Summary: A single Agent 1 lead was submitted for validation — PID 6700 (taskhostw.exe). After reviewing all available artefact evidence, the finding does not meet the confirmation threshold. The orphaned-parent signal is the sole indicator, and it is not corroborated by any other artefact type; all observable process attributes are consistent with a legitimate scheduled-task host invocation. No confirmed or inconclusive malicious activity was identified in this submission.
+Counts: confirmed=0  inconclusive=0  rejected=1
+================================================================
+
+================================================================
+END OF REPORT — no CONFIRMED or INCONCLUSIVE findings to list.
+================================================================

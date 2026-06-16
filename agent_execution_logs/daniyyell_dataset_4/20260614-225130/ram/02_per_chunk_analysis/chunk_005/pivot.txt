@@ -1,0 +1,385 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-14T22:57:40Z
+
+=== PID 2972 (taskhostw.exe, ppid=1320) ===
+
+--- pslist.txt ---
+L152: 2972	1320	taskhostw.exe	0xbb0c90a54080	6	-	0	False	2025-08-07 19:51:21.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L152: 2972	taskhostw.exe	-
+
+--- privileges.txt ---
+L5115: 2972	taskhostw.exe	2	SeCreateTokenPrivilege		Create a token object
+L5116: 2972	taskhostw.exe	3	SeAssignPrimaryTokenPrivilege	Present,Enabled	Replace a process-level token
+L5117: 2972	taskhostw.exe	4	SeLockMemoryPrivilege	Present,Enabled,Default	Lock pages in memory
+L5118: 2972	taskhostw.exe	5	SeIncreaseQuotaPrivilege	Present,Enabled	Increase quotas
+L5119: 2972	taskhostw.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5120: 2972	taskhostw.exe	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L5121: 2972	taskhostw.exe	8	SeSecurityPrivilege	Present,Enabled	Manage auditing and security log
+L5122: 2972	taskhostw.exe	9	SeTakeOwnershipPrivilege	Present,Enabled	Take ownership of files/objects
+L5123: 2972	taskhostw.exe	10	SeLoadDriverPrivilege	Present,Enabled	Load and unload device drivers
+L5124: 2972	taskhostw.exe	11	SeSystemProfilePrivilege	Present,Enabled,Default	Profile system performance
+L5125: 2972	taskhostw.exe	12	SeSystemtimePrivilege	Present,Enabled	Change the system time
+L5126: 2972	taskhostw.exe	13	SeProfileSingleProcessPrivilege	Present,Enabled,Default	Profile a single process
+L5127: 2972	taskhostw.exe	14	SeIncreaseBasePriorityPrivilege	Present,Enabled,Default	Increase scheduling priority
+L5128: 2972	taskhostw.exe	15	SeCreatePagefilePrivilege	Present,Enabled,Default	Create a pagefile
+L5129: 2972	taskhostw.exe	16	SeCreatePermanentPrivilege	Present,Enabled,Default	Create permanent shared objects
+L5130: 2972	taskhostw.exe	17	SeBackupPrivilege	Present,Enabled	Backup files and directories
+L5131: 2972	taskhostw.exe	18	SeRestorePrivilege	Present,Enabled	Restore files and directories
+L5132: 2972	taskhostw.exe	19	SeShutdownPrivilege	Present,Enabled	Shut down the system
+L5133: 2972	taskhostw.exe	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L5134: 2972	taskhostw.exe	21	SeAuditPrivilege	Present,Enabled,Default	Generate security audits
+L5135: 2972	taskhostw.exe	22	SeSystemEnvironmentPrivilege	Present,Enabled	Edit firmware environment values
+L5136: 2972	taskhostw.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5137: 2972	taskhostw.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L5138: 2972	taskhostw.exe	25	SeUndockPrivilege	Present,Enabled	Remove computer from docking station
+L5139: 2972	taskhostw.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L5140: 2972	taskhostw.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5141: 2972	taskhostw.exe	28	SeManageVolumePrivilege	Present,Enabled	Manage the files on a volume
+L5142: 2972	taskhostw.exe	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L5143: 2972	taskhostw.exe	30	SeCreateGlobalPrivilege	Present,Enabled,Default	Create global objects
+L5144: 2972	taskhostw.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5145: 2972	taskhostw.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5146: 2972	taskhostw.exe	33	SeIncreaseWorkingSetPrivilege	Present,Enabled,Default	Allocate more memory for user applications
+L5147: 2972	taskhostw.exe	34	SeTimeZonePrivilege	Present,Enabled,Default	Adjust the time zone of the computer's internal clock
+L5148: 2972	taskhostw.exe	35	SeCreateSymbolicLinkPrivilege	Present,Enabled,Default	Required to create a symbolic link
+L5149: 2972	taskhostw.exe	36	SeDelegateSessionUserImpersonatePrivilege	Present,Enabled,Default	Obtain an impersonation token for another user in the same session.
+
+--- pstree.txt ---
+L71: *** 2972	1320	taskhostw.exe	0xbb0c90a54080	6	-	0	False	2025-08-07 19:51:21.000000 UTC	N/A	�	-	-
+
+--- psscan.txt ---
+L114: 2972	1320	taskhostw.exe	0xbb0c90a54080	6	-	0	False	2025-08-07 19:51:21.000000 UTC	N/A	Disabled
+
+--- netscan.txt ---
+L94: 0xbb0c945e28a0	TCPv4	192.168.135.59	49946	150.171.27.10	443	CLOSED	2972	taskhostw.exe	2025-08-07 19:48:31.000000 UTC
+L95: 0xbb0c9489aa60	TCPv4	192.168.135.59	49948	150.171.27.10	443	CLOSED	2972	taskhostw.exe	2025-08-07 19:48:46.000000 UTC
+
+--- netstat.txt ---
+L11: 0xbb0c9489aa60	TCPv4	192.168.135.59	49948	150.171.27.10	443	CLOSED	2972	taskhostw.exe	2025-08-07 19:48:46.000000 UTC
+
+--- malware_pebmasquerade.txt ---
+L152: 2972	taskhostw.exe	�	-	False	False
+
+--- sessions.txt ---
+L100: 0	-	2972	taskhostw.exe	-	2025-08-07 19:51:21.000000 UTC
+
+=== PID 2924 (SecurityHealth, ppid=716) ===
+Cmdline: C:\Windows\system32\SecurityHealthService.exe
+
+--- pslist.txt ---
+L103: 2924	716	SecurityHealth	0xbb0c90e1d080	68	-	0	False	2025-08-07 19:36:59.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L103: 2924	SecurityHealth	C:\Windows\system32\SecurityHealthService.exe
+
+--- privileges.txt ---
+L3435: 2924	SecurityHealth	2	SeCreateTokenPrivilege		Create a token object
+L3436: 2924	SecurityHealth	3	SeAssignPrimaryTokenPrivilege	Present	Replace a process-level token
+L3437: 2924	SecurityHealth	4	SeLockMemoryPrivilege	Default	Lock pages in memory
+L3438: 2924	SecurityHealth	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3439: 2924	SecurityHealth	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3440: 2924	SecurityHealth	7	SeTcbPrivilege	Present,Enabled,Default	Act as part of the operating system
+L3441: 2924	SecurityHealth	8	SeSecurityPrivilege	Present	Manage auditing and security log
+L3442: 2924	SecurityHealth	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3443: 2924	SecurityHealth	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3444: 2924	SecurityHealth	11	SeSystemProfilePrivilege	Default	Profile system performance
+L3445: 2924	SecurityHealth	12	SeSystemtimePrivilege		Change the system time
+L3446: 2924	SecurityHealth	13	SeProfileSingleProcessPrivilege	Default	Profile a single process
+L3447: 2924	SecurityHealth	14	SeIncreaseBasePriorityPrivilege	Default	Increase scheduling priority
+L3448: 2924	SecurityHealth	15	SeCreatePagefilePrivilege	Default	Create a pagefile
+L3449: 2924	SecurityHealth	16	SeCreatePermanentPrivilege	Default	Create permanent shared objects
+L3450: 2924	SecurityHealth	17	SeBackupPrivilege	Present	Backup files and directories
+L3451: 2924	SecurityHealth	18	SeRestorePrivilege	Present	Restore files and directories
+L3452: 2924	SecurityHealth	19	SeShutdownPrivilege	Present	Shut down the system
+L3453: 2924	SecurityHealth	20	SeDebugPrivilege	Present,Enabled,Default	Debug programs
+L3454: 2924	SecurityHealth	21	SeAuditPrivilege	Default	Generate security audits
+L3455: 2924	SecurityHealth	22	SeSystemEnvironmentPrivilege	Present	Edit firmware environment values
+L3456: 2924	SecurityHealth	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3457: 2924	SecurityHealth	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3458: 2924	SecurityHealth	25	SeUndockPrivilege		Remove computer from docking station
+L3459: 2924	SecurityHealth	26	SeSyncAgentPrivilege		Synch directory service data
+L3460: 2924	SecurityHealth	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3461: 2924	SecurityHealth	28	SeManageVolumePrivilege		Manage the files on a volume
+L3462: 2924	SecurityHealth	29	SeImpersonatePrivilege	Present,Enabled,Default	Impersonate a client after authentication
+L3463: 2924	SecurityHealth	30	SeCreateGlobalPrivilege	Default	Create global objects
+L3464: 2924	SecurityHealth	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3465: 2924	SecurityHealth	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3466: 2924	SecurityHealth	33	SeIncreaseWorkingSetPrivilege	Default	Allocate more memory for user applications
+L3467: 2924	SecurityHealth	34	SeTimeZonePrivilege	Default	Adjust the time zone of the computer's internal clock
+L3468: 2924	SecurityHealth	35	SeCreateSymbolicLinkPrivilege	Default	Required to create a symbolic link
+L3469: 2924	SecurityHealth	36	SeDelegateSessionUserImpersonatePrivilege	Default	Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L4791: 2924	SecurityHealth	0x7ff7f99c0000	0xf2000	SecurityHealthService.exe	C:\Windows\system32\SecurityHealthService.exe	-1	2025-08-07 19:36:59.000000 UTC	Disabled
+L4792: 2924	SecurityHealth	0x7fff5f6f0000	0x1f8000	ntdll.dll	C:\Windows\SYSTEM32\ntdll.dll	-1	2025-08-07 19:36:59.000000 UTC	Disabled
+L4793: 2924	SecurityHealth	0x7fff5e830000	0xbf000	KERNEL32.DLL	C:\Windows\SYSTEM32\KERNEL32.DLL	-1	2025-08-07 19:36:59.000000 UTC	Disabled
+L4794: 2924	SecurityHealth	0x7fff5d150000	0x2f6000	KERNELBASE.dll	C:\Windows\SYSTEM32\KERNELBASE.dll	-1	2025-08-07 19:36:59.000000 UTC	Disabled
+L4795: 2924	SecurityHealth	0x7fff5d650000	0x100000	ucrtbase.dll	C:\Windows\SYSTEM32\ucrtbase.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4796: 2924	SecurityHealth	0x7fff5e9a0000	0x12a000	OLE32.dll	C:\Windows\system32\OLE32.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4797: 2924	SecurityHealth	0x7fff5f1b0000	0x354000	combase.dll	C:\Windows\SYSTEM32\combase.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4798: 2924	SecurityHealth	0x7fff5f0a0000	0x9c000	sechost.dll	C:\Windows\SYSTEM32\sechost.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4799: 2924	SecurityHealth	0x7fff5eff0000	0xaf000	advapi32.dll	C:\Windows\SYSTEM32\advapi32.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4800: 2924	SecurityHealth	0x7fff5dcd0000	0xcd000	OLEAUT32.dll	C:\Windows\system32\OLEAUT32.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4801: 2924	SecurityHealth	0x7fff5cc40000	0x4b000	powrprof.dll	C:\Windows\SYSTEM32\powrprof.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4802: 2924	SecurityHealth	0x7fff5ccd0000	0x2e000	USERENV.dll	C:\Windows\system32\USERENV.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4803: 2924	SecurityHealth	0x7fff5d570000	0x4e000	cfgmgr32.dll	C:\Windows\SYSTEM32\cfgmgr32.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4804: 2924	SecurityHealth	0x7fff5e8f0000	0xad000	shcore.dll	C:\Windows\SYSTEM32\shcore.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4805: 2924	SecurityHealth	0x7fff5b9f0000	0xa1000	FirewallAPI.dll	C:\Windows\system32\FirewallAPI.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4806: 2924	SecurityHealth	0x7fff5eb80000	0x468000	setupapi.dll	C:\Windows\system32\setupapi.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4807: 2924	SecurityHealth	0x7fff58a70000	0x14000	WTSAPI32.dll	C:\Windows\system32\WTSAPI32.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4808: 2924	SecurityHealth	0x7fff5cf50000	0x15e000	CRYPT32.dll	C:\Windows\system32\CRYPT32.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4809: 2924	SecurityHealth	0x7fff5c750000	0x2e000	Wldp.dll	C:\Windows\system32\Wldp.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4810: 2924	SecurityHealth	0x7fff52d70000	0x148000	drvstore.dll	C:\Windows\system32\drvstore.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4811: 2924	SecurityHealth	0x7fff4c1c0000	0x31000	winbio.dll	C:\Windows\system32\winbio.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4812: 2924	SecurityHealth	0x7fff5d0b0000	0x9d000	msvcp_win.dll	C:\Windows\system32\msvcp_win.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4813: 2924	SecurityHealth	0x7fff5f580000	0x126000	RPCRT4.dll	C:\Windows\system32\RPCRT4.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4814: 2924	SecurityHealth	0x7fff5d910000	0x19d000	USER32.dll	C:\Windows\system32\USER32.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4815: 2924	SecurityHealth	0x7fff5d7d0000	0x2c000	GDI32.dll	C:\Windows\system32\GDI32.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4816: 2924	SecurityHealth	0x7fff5dab0000	0x9e000	msvcrt.dll	C:\Windows\system32\msvcrt.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4817: 2924	SecurityHealth	0x7fff5c1e0000	0xcb000	DNSAPI.dll	C:\Windows\system32\DNSAPI.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4818: 2924	SecurityHealth	0x7fff5cf20000	0x27000	bcrypt.dll	C:\Windows\system32\bcrypt.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4819: 2924	SecurityHealth	0x7fff5cdd0000	0x22000	win32u.dll	C:\Windows\system32\win32u.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4820: 2924	SecurityHealth	0x7fff5ce00000	0x115000	gdi32full.dll	C:\Windows\SYSTEM32\gdi32full.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4821: 2924	SecurityHealth	0x7fff5cc20000	0x12000	UMPDC.dll	C:\Windows\system32\UMPDC.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4822: 2924	SecurityHealth	0x7fff5c1a0000	0x3c000	IPHLPAPI.DLL	C:\Windows\SYSTEM32\IPHLPAPI.DLL	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4823: 2924	SecurityHealth	0x7fff5f140000	0x8000	NSI.dll	C:\Windows\SYSTEM32\NSI.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4824: 2924	SecurityHealth	0x7fff5b980000	0x3a000	fwbase.dll	C:\Windows\system32\fwbase.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4825: 2924	SecurityHealth	0x7fff57e10000	0xa3000	policymanager.dll	C:\Windows\SYSTEM32\policymanager.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4826: 2924	SecurityHealth	0x7fff5be60000	0x8a000	msvcp110_win.dll	C:\Windows\system32\msvcp110_win.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4827: 2924	SecurityHealth	0x7fff54880000	0xa000	version.dll	C:\Windows\system32\version.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4828: 2924	SecurityHealth	0x7fff4e550000	0xe9000	MpClient.dll	C:\Program Files\Windows Defender\MpClient.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4829: 2924	SecurityHealth	0x7fff5acb0000	0x12000	kernel.appcore.dll	C:\Windows\SYSTEM32\kernel.appcore.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4830: 2924	SecurityHealth	0x7fff5d5c0000	0x82000	bcryptPrimitives.dll	C:\Windows\SYSTEM32\bcryptPrimitives.dll	-1	2025-08-07 19:36:59.000000 UTC	Disabled
+L4831: 2924	SecurityHealth	0x7fff5ead0000	0xa9000	clbcatq.dll	C:\Windows\SYSTEM32\clbcatq.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4832: 2924	SecurityHealth	0x7fff5b660000	0x23000	gpapi.dll	C:\Windows\SYSTEM32\gpapi.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4833: 2924	SecurityHealth	0x7fff4c1a0000	0x1f000	SecurityHealthProxyStub.dll	C:\Windows\system32\SecurityHealthProxyStub.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4834: 2924	SecurityHealth	0x7fff5bef0000	0x33000	ntmarta.dll	C:\Windows\SYSTEM32\ntmarta.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4835: 2924	SecurityHealth	0x7fff586e0000	0x3f000	netprofm.dll	C:\Windows\System32\netprofm.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4836: 2924	SecurityHealth	0x7fff49ee0000	0x4d000	wscapi.dll	C:\Windows\System32\wscapi.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4837: 2924	SecurityHealth	0x7fff52b70000	0x1ec000	urlmon.dll	C:\Windows\System32\urlmon.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4838: 2924	SecurityHealth	0x7fff533d0000	0x2b1000	iertutil.dll	C:\Windows\System32\iertutil.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4839: 2924	SecurityHealth	0x7fff52b00000	0x28000	srvcli.dll	C:\Windows\System32\srvcli.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4840: 2924	SecurityHealth	0x7fff5c2b0000	0xc000	netutils.dll	C:\Windows\System32\netutils.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4841: 2924	SecurityHealth	0x7fff4c350000	0x52000	smartscreenps.dll	C:\Windows\System32\smartscreenps.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4842: 2924	SecurityHealth	0x7fff4d1f0000	0x7f000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4843: 2924	SecurityHealth	0x7fff573d0000	0x73000	cryptngc.dll	C:\Windows\system32\cryptngc.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4844: 2924	SecurityHealth	0x7fff5c7c0000	0x28000	ncrypt.dll	C:\Windows\system32\ncrypt.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4845: 2924	SecurityHealth	0x7fff5caa0000	0x2c000	DEVOBJ.dll	C:\Windows\system32\DEVOBJ.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4846: 2924	SecurityHealth	0x7fff5c780000	0x3b000	NTASN1.dll	C:\Windows\system32\NTASN1.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4847: 2924	SecurityHealth	0x7fff59750000	0x14d000	dsreg.dll	C:\Windows\system32\dsreg.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4848: 2924	SecurityHealth	0x7fff5c6a0000	0x18000	cryptsp.dll	C:\Windows\SYSTEM32\cryptsp.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4849: 2924	SecurityHealth	0x7fff5cd10000	0x1f000	profapi.dll	C:\Windows\system32\profapi.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4850: 2924	SecurityHealth	0x7fff5cbb0000	0x64000	winsta.dll	C:\Windows\SYSTEM32\winsta.dll	6	2025-08-07 19:36:59.000000 UTC	Disabled
+L4851: 2924	SecurityHealth	0x7fff5cc90000	0x32000	SspiCli.dll	C:\Windows\System32\SspiCli.dll	6	2025-08-07 19:38:23.000000 UTC	Disabled
+L4852: 2924	SecurityHealth	0x7fff246a0000	0xd000	SecurityCenterBrokerPS.dll	C:\Windows\System32\SecurityCenterBrokerPS.dll	6	2025-08-07 19:38:24.000000 UTC	Disabled
+L4853: 2924	SecurityHealth	0x7fff524f0000	0x11000	windows.staterepositorycore.dll	C:\Windows\SYSTEM32\windows.staterepositorycore.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4854: 2924	SecurityHealth	0x7fff547d0000	0x10000	npmproxy.dll	C:\Windows\System32\npmproxy.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4855: 2924	SecurityHealth	0x7fff5f150000	0x55000	SHLWAPI.dll	C:\Windows\system32\SHLWAPI.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4856: 2924	SecurityHealth	0x7fff52a00000	0x11000	wbemprox.dll	C:\Windows\system32\wbem\wbemprox.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4857: 2924	SecurityHealth	0x7fff5dc60000	0x6b000	WS2_32.dll	C:\Windows\SYSTEM32\WS2_32.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4858: 2924	SecurityHealth	0x7fff52810000	0x90000	wbemcomn.dll	C:\Windows\SYSTEM32\wbemcomn.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4859: 2924	SecurityHealth	0x7fff50120000	0x51000	FWPolicyIOMgr.dll	C:\Windows\system32\FWPolicyIOMgr.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4860: 2924	SecurityHealth	0x7fff51370000	0x14000	wbemsvc.dll	C:\Windows\system32\wbem\wbemsvc.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4861: 2924	SecurityHealth	0x7fff514b0000	0x10b000	fastprox.dll	C:\Windows\system32\wbem\fastprox.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4862: 2924	SecurityHealth	0x7fff510f0000	0x1f000	amsi.dll	C:\Windows\SYSTEM32\amsi.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4863: 2924	SecurityHealth	0x7fff510a0000	0x44000	MpOav.dll	C:\Program Files\Windows Defender\MpOav.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4864: 2924	SecurityHealth	0x7fff56600000	0x74000	wlanapi.dll	C:\Windows\SYSTEM32\wlanapi.dll	6	2025-08-07 19:41:34.000000 UTC	Disabled
+L4865: 2924	SecurityHealth	0x7fff5d450000	0x67000	WINTRUST.dll	C:\Windows\system32\WINTRUST.dll	6	2025-08-07 19:41:41.000000 UTC	Disabled
+L4866: 2924	SecurityHealth	0x7fff5c8e0000	0x12000	MSASN1.dll	C:\Windows\system32\MSASN1.dll	6	2025-08-07 19:41:41.000000 UTC	Disabled
+L4867: 2924	SecurityHealth	0x7fff5bdd0000	0x34000	rsaenh.dll	C:\Windows\system32\rsaenh.dll	6	2025-08-07 19:41:41.000000 UTC	Disabled
+L4868: 2924	SecurityHealth	0x7fff5c6c0000	0xc000	CRYPTBASE.dll	C:\Windows\system32\CRYPTBASE.dll	6	2025-08-07 19:41:41.000000 UTC	Disabled
+L4869: 2924	SecurityHealth	0x7fff5d800000	0x1d000	imagehlp.dll	C:\Windows\system32\imagehlp.dll	6	2025-08-07 19:41:41.000000 UTC	Disabled
+L4870: 2924	SecurityHealth	0x7fff49f90000	0x6d000	SecurityHealthAgent.dll	C:\Windows\system32\SecurityHealthAgent.dll	6	2025-08-07 19:41:44.000000 UTC	Disabled
+L4871: 2924	SecurityHealth	0x7fff5dda0000	0x744000	SHELL32.dll	C:\Windows\system32\SHELL32.dll	6	2025-08-07 19:41:44.000000 UTC	Disabled
+
+--- pstree.txt ---
+L104: ** 2924	716	SecurityHealth	0xbb0c90e1d080	68	-	0	False	2025-08-07 19:36:59.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\SecurityHealthService.exe	C:\Windows\system32\SecurityHealthService.exe	C:\Windows\system32\SecurityHealthService.exe
+
+--- psscan.txt ---
+L135: 2924	716	SecurityHealth	0xbb0c90e1d080	68	-	0	False	2025-08-07 19:36:59.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L4998: 2924	SecurityHealth	0x225f6920000	False	False	False	\Windows\System32\en-GB\crypt32.dll.mui
+L4999: 2924	SecurityHealth	0x225f7030000	False	False	False	\Windows\System32\en-GB\wscapi.dll.mui
+L5000: 2924	SecurityHealth	0x225f74f0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L5001: 2924	SecurityHealth	0x225f7970000	False	False	False	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\en-GB\MpAsDesc.dll.mui
+L5002: 2924	SecurityHealth	0x225f7930000	False	False	False	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\MpAsDesc.dll
+L5003: 2924	SecurityHealth	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L5004: 2924	SecurityHealth	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5005: 2924	SecurityHealth	0x7fff51370000	True	True	True	\Windows\System32\wbem\wbemsvc.dll
+L5006: 2924	SecurityHealth	0x7fff4c1c0000	True	True	True	\Windows\System32\winbio.dll
+L5007: 2924	SecurityHealth	0x7ff7f99c0000	True	False	True	\Windows\System32\SecurityHealthService.exe
+L5008: 2924	SecurityHealth	0x7fff49ee0000	True	True	True	\Windows\System32\wscapi.dll
+L5009: 2924	SecurityHealth	0x7fff246a0000	True	True	True	\Windows\System32\SecurityCenterBrokerPS.dll
+L5010: 2924	SecurityHealth	0x7fff4c1a0000	True	True	True	\Windows\System32\SecurityHealthProxyStub.dll
+L5011: 2924	SecurityHealth	0x7fff49f90000	True	True	True	\Windows\System32\SecurityHealthAgent.dll
+L5012: 2924	SecurityHealth	0x7fff4e550000	True	True	True	\Program Files\Windows Defender\MpClient.dll
+L5013: 2924	SecurityHealth	0x7fff4d1f0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L5014: 2924	SecurityHealth	0x7fff4c350000	True	True	True	\Windows\System32\smartscreenps.dll
+L5015: 2924	SecurityHealth	0x7fff510a0000	True	True	True	\Program Files\Windows Defender\MpOAV.dll
+L5016: 2924	SecurityHealth	0x7fff50120000	True	True	True	\Windows\System32\fwpolicyiomgr.dll
+L5017: 2924	SecurityHealth	0x7fff510f0000	True	True	True	\Windows\System32\amsi.dll
+L5018: 2924	SecurityHealth	0x7fff52d70000	True	True	True	\Windows\System32\drvstore.dll
+L5019: 2924	SecurityHealth	0x7fff52810000	True	True	True	\Windows\System32\wbemcomn.dll
+L5020: 2924	SecurityHealth	0x7fff524f0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L5021: 2924	SecurityHealth	0x7fff514b0000	True	True	True	\Windows\System32\wbem\fastprox.dll
+L5022: 2924	SecurityHealth	0x7fff52b00000	True	True	True	\Windows\System32\srvcli.dll
+L5023: 2924	SecurityHealth	0x7fff52a00000	True	True	True	\Windows\System32\wbem\wbemprox.dll
+L5024: 2924	SecurityHealth	0x7fff52b70000	True	True	True	\Windows\System32\urlmon.dll
+L5025: 2924	SecurityHealth	0x7fff56600000	True	True	True	\Windows\System32\wlanapi.dll
+L5026: 2924	SecurityHealth	0x7fff547d0000	True	True	True	\Windows\System32\npmproxy.dll
+L5027: 2924	SecurityHealth	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L5028: 2924	SecurityHealth	0x7fff54880000	True	True	True	\Windows\System32\version.dll
+L5029: 2924	SecurityHealth	0x7fff57e10000	True	True	True	\Windows\System32\policymanager.dll
+L5030: 2924	SecurityHealth	0x7fff573d0000	True	True	True	\Windows\System32\cryptngc.dll
+L5031: 2924	SecurityHealth	0x7fff58a70000	True	True	True	\Windows\System32\wtsapi32.dll
+L5032: 2924	SecurityHealth	0x7fff586e0000	True	True	True	\Windows\System32\netprofm.dll
+L5033: 2924	SecurityHealth	0x7fff59750000	True	True	True	\Windows\System32\dsreg.dll
+L5034: 2924	SecurityHealth	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L5035: 2924	SecurityHealth	0x7fff5b9f0000	True	True	True	\Windows\System32\FirewallAPI.dll
+L5036: 2924	SecurityHealth	0x7fff5b980000	True	True	True	\Windows\System32\fwbase.dll
+L5037: 2924	SecurityHealth	0x7fff5b660000	True	True	True	\Windows\System32\gpapi.dll
+L5038: 2924	SecurityHealth	0x7fff5be60000	True	True	True	\Windows\System32\msvcp110_win.dll
+L5039: 2924	SecurityHealth	0x7fff5bdd0000	True	True	True	\Windows\System32\rsaenh.dll
+L5040: 2924	SecurityHealth	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L5041: 2924	SecurityHealth	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L5042: 2924	SecurityHealth	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L5043: 2924	SecurityHealth	0x7fff5c1e0000	True	True	True	\Windows\System32\dnsapi.dll
+L5044: 2924	SecurityHealth	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L5045: 2924	SecurityHealth	0x7fff5c6c0000	True	True	True	\Windows\System32\cryptbase.dll
+L5046: 2924	SecurityHealth	0x7fff5caa0000	True	True	True	\Windows\System32\devobj.dll
+L5047: 2924	SecurityHealth	0x7fff5c7c0000	True	True	True	\Windows\System32\ncrypt.dll
+L5048: 2924	SecurityHealth	0x7fff5c780000	True	True	True	\Windows\System32\ntasn1.dll
+L5049: 2924	SecurityHealth	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L5050: 2924	SecurityHealth	0x7fff5cbb0000	True	True	True	\Windows\System32\winsta.dll
+L5051: 2924	SecurityHealth	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L5052: 2924	SecurityHealth	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L5053: 2924	SecurityHealth	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L5054: 2924	SecurityHealth	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L5055: 2924	SecurityHealth	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L5056: 2924	SecurityHealth	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L5057: 2924	SecurityHealth	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L5058: 2924	SecurityHealth	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L5059: 2924	SecurityHealth	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L5060: 2924	SecurityHealth	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L5061: 2924	SecurityHealth	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5062: 2924	SecurityHealth	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L5063: 2924	SecurityHealth	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L5064: 2924	SecurityHealth	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L5065: 2924	SecurityHealth	0x7fff5d450000	True	True	True	\Windows\System32\wintrust.dll
+L5066: 2924	SecurityHealth	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5067: 2924	SecurityHealth	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L5068: 2924	SecurityHealth	0x7fff5d800000	True	True	True	\Windows\System32\imagehlp.dll
+L5069: 2924	SecurityHealth	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L5070: 2924	SecurityHealth	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L5071: 2924	SecurityHealth	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L5072: 2924	SecurityHealth	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L5073: 2924	SecurityHealth	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L5074: 2924	SecurityHealth	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L5075: 2924	SecurityHealth	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L5076: 2924	SecurityHealth	0x7fff5eb80000	True	True	True	\Windows\System32\setupapi.dll
+L5077: 2924	SecurityHealth	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L5078: 2924	SecurityHealth	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L5079: 2924	SecurityHealth	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L5080: 2924	SecurityHealth	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L5081: 2924	SecurityHealth	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L5082: 2924	SecurityHealth	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L5083: 2924	SecurityHealth	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L4998: 2924	SecurityHealth	0x225f6920000	False	False	False	\Windows\System32\en-GB\crypt32.dll.mui
+L4999: 2924	SecurityHealth	0x225f7030000	False	False	False	\Windows\System32\en-GB\wscapi.dll.mui
+L5000: 2924	SecurityHealth	0x225f74f0000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+L5001: 2924	SecurityHealth	0x225f7970000	False	False	False	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\en-GB\MpAsDesc.dll.mui
+L5002: 2924	SecurityHealth	0x225f7930000	False	False	False	\ProgramData\Microsoft\Windows Defender\Platform\4.18.25070.5-0\MpAsDesc.dll
+L5003: 2924	SecurityHealth	0x7fff5cc40000	True	True	True	\Windows\System32\powrprof.dll
+L5004: 2924	SecurityHealth	0x7fff5acb0000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5005: 2924	SecurityHealth	0x7fff51370000	True	True	True	\Windows\System32\wbem\wbemsvc.dll
+L5006: 2924	SecurityHealth	0x7fff4c1c0000	True	True	True	\Windows\System32\winbio.dll
+L5007: 2924	SecurityHealth	0x7ff7f99c0000	True	False	True	\Windows\System32\SecurityHealthService.exe
+L5008: 2924	SecurityHealth	0x7fff49ee0000	True	True	True	\Windows\System32\wscapi.dll
+L5009: 2924	SecurityHealth	0x7fff246a0000	True	True	True	\Windows\System32\SecurityCenterBrokerPS.dll
+L5010: 2924	SecurityHealth	0x7fff4c1a0000	True	True	True	\Windows\System32\SecurityHealthProxyStub.dll
+L5011: 2924	SecurityHealth	0x7fff49f90000	True	True	True	\Windows\System32\SecurityHealthAgent.dll
+L5012: 2924	SecurityHealth	0x7fff4e550000	True	True	True	\Program Files\Windows Defender\MpClient.dll
+L5013: 2924	SecurityHealth	0x7fff4d1f0000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L5014: 2924	SecurityHealth	0x7fff4c350000	True	True	True	\Windows\System32\smartscreenps.dll
+L5015: 2924	SecurityHealth	0x7fff510a0000	True	True	True	\Program Files\Windows Defender\MpOAV.dll
+L5016: 2924	SecurityHealth	0x7fff50120000	True	True	True	\Windows\System32\fwpolicyiomgr.dll
+L5017: 2924	SecurityHealth	0x7fff510f0000	True	True	True	\Windows\System32\amsi.dll
+L5018: 2924	SecurityHealth	0x7fff52d70000	True	True	True	\Windows\System32\drvstore.dll
+L5019: 2924	SecurityHealth	0x7fff52810000	True	True	True	\Windows\System32\wbemcomn.dll
+L5020: 2924	SecurityHealth	0x7fff524f0000	True	True	True	\Windows\System32\Windows.StateRepositoryCore.dll
+L5021: 2924	SecurityHealth	0x7fff514b0000	True	True	True	\Windows\System32\wbem\fastprox.dll
+L5022: 2924	SecurityHealth	0x7fff52b00000	True	True	True	\Windows\System32\srvcli.dll
+L5023: 2924	SecurityHealth	0x7fff52a00000	True	True	True	\Windows\System32\wbem\wbemprox.dll
+L5024: 2924	SecurityHealth	0x7fff52b70000	True	True	True	\Windows\System32\urlmon.dll
+L5025: 2924	SecurityHealth	0x7fff56600000	True	True	True	\Windows\System32\wlanapi.dll
+L5026: 2924	SecurityHealth	0x7fff547d0000	True	True	True	\Windows\System32\npmproxy.dll
+L5027: 2924	SecurityHealth	0x7fff533d0000	True	True	True	\Windows\System32\iertutil.dll
+L5028: 2924	SecurityHealth	0x7fff54880000	True	True	True	\Windows\System32\version.dll
+L5029: 2924	SecurityHealth	0x7fff57e10000	True	True	True	\Windows\System32\policymanager.dll
+L5030: 2924	SecurityHealth	0x7fff573d0000	True	True	True	\Windows\System32\cryptngc.dll
+L5031: 2924	SecurityHealth	0x7fff58a70000	True	True	True	\Windows\System32\wtsapi32.dll
+L5032: 2924	SecurityHealth	0x7fff586e0000	True	True	True	\Windows\System32\netprofm.dll
+L5033: 2924	SecurityHealth	0x7fff59750000	True	True	True	\Windows\System32\dsreg.dll
+L5034: 2924	SecurityHealth	0x7fff5c1a0000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+L5035: 2924	SecurityHealth	0x7fff5b9f0000	True	True	True	\Windows\System32\FirewallAPI.dll
+L5036: 2924	SecurityHealth	0x7fff5b980000	True	True	True	\Windows\System32\fwbase.dll
+L5037: 2924	SecurityHealth	0x7fff5b660000	True	True	True	\Windows\System32\gpapi.dll
+L5038: 2924	SecurityHealth	0x7fff5be60000	True	True	True	\Windows\System32\msvcp110_win.dll
+L5039: 2924	SecurityHealth	0x7fff5bdd0000	True	True	True	\Windows\System32\rsaenh.dll
+L5040: 2924	SecurityHealth	0x7fff5bef0000	True	True	True	\Windows\System32\ntmarta.dll
+L5041: 2924	SecurityHealth	0x7fff5c750000	True	True	True	\Windows\System32\wldp.dll
+L5042: 2924	SecurityHealth	0x7fff5c2b0000	True	True	True	\Windows\System32\netutils.dll
+L5043: 2924	SecurityHealth	0x7fff5c1e0000	True	True	True	\Windows\System32\dnsapi.dll
+L5044: 2924	SecurityHealth	0x7fff5c6a0000	True	True	True	\Windows\System32\cryptsp.dll
+L5045: 2924	SecurityHealth	0x7fff5c6c0000	True	True	True	\Windows\System32\cryptbase.dll
+L5046: 2924	SecurityHealth	0x7fff5caa0000	True	True	True	\Windows\System32\devobj.dll
+L5047: 2924	SecurityHealth	0x7fff5c7c0000	True	True	True	\Windows\System32\ncrypt.dll
+L5048: 2924	SecurityHealth	0x7fff5c780000	True	True	True	\Windows\System32\ntasn1.dll
+L5049: 2924	SecurityHealth	0x7fff5c8e0000	True	True	True	\Windows\System32\msasn1.dll
+L5050: 2924	SecurityHealth	0x7fff5cbb0000	True	True	True	\Windows\System32\winsta.dll
+L5051: 2924	SecurityHealth	0x7fff5cc20000	True	True	True	\Windows\System32\umpdc.dll
+L5052: 2924	SecurityHealth	0x7fff5e830000	True	True	True	\Windows\System32\kernel32.dll
+L5053: 2924	SecurityHealth	0x7fff5d150000	True	True	True	\Windows\System32\KernelBase.dll
+L5054: 2924	SecurityHealth	0x7fff5cf20000	True	True	True	\Windows\System32\bcrypt.dll
+L5055: 2924	SecurityHealth	0x7fff5cdd0000	True	True	True	\Windows\System32\win32u.dll
+L5056: 2924	SecurityHealth	0x7fff5ccd0000	True	True	True	\Windows\System32\userenv.dll
+L5057: 2924	SecurityHealth	0x7fff5cc90000	True	True	True	\Windows\System32\sspicli.dll
+L5058: 2924	SecurityHealth	0x7fff5cd10000	True	True	True	\Windows\System32\profapi.dll
+L5059: 2924	SecurityHealth	0x7fff5ce00000	True	True	True	\Windows\System32\gdi32full.dll
+L5060: 2924	SecurityHealth	0x7fff5cf50000	True	True	True	\Windows\System32\crypt32.dll
+L5061: 2924	SecurityHealth	0x7fff5d0b0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5062: 2924	SecurityHealth	0x7fff5d910000	True	True	True	\Windows\System32\user32.dll
+L5063: 2924	SecurityHealth	0x7fff5d650000	True	True	True	\Windows\System32\ucrtbase.dll
+L5064: 2924	SecurityHealth	0x7fff5d570000	True	True	True	\Windows\System32\cfgmgr32.dll
+L5065: 2924	SecurityHealth	0x7fff5d450000	True	True	True	\Windows\System32\wintrust.dll
+L5066: 2924	SecurityHealth	0x7fff5d5c0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5067: 2924	SecurityHealth	0x7fff5d7d0000	True	True	True	\Windows\System32\gdi32.dll
+L5068: 2924	SecurityHealth	0x7fff5d800000	True	True	True	\Windows\System32\imagehlp.dll
+L5069: 2924	SecurityHealth	0x7fff5dc60000	True	True	True	\Windows\System32\ws2_32.dll
+L5070: 2924	SecurityHealth	0x7fff5dab0000	True	True	True	\Windows\System32\msvcrt.dll
+L5071: 2924	SecurityHealth	0x7fff5dcd0000	True	True	True	\Windows\System32\oleaut32.dll
+L5072: 2924	SecurityHealth	0x7fff5dda0000	True	True	True	\Windows\System32\shell32.dll
+L5073: 2924	SecurityHealth	0x7fff5eff0000	True	True	True	\Windows\System32\advapi32.dll
+L5074: 2924	SecurityHealth	0x7fff5e9a0000	True	True	True	\Windows\System32\ole32.dll
+L5075: 2924	SecurityHealth	0x7fff5e8f0000	True	True	True	\Windows\System32\SHCore.dll
+L5076: 2924	SecurityHealth	0x7fff5eb80000	True	True	True	\Windows\System32\setupapi.dll
+L5077: 2924	SecurityHealth	0x7fff5ead0000	True	True	True	\Windows\System32\clbcatq.dll
+L5078: 2924	SecurityHealth	0x7fff5f1b0000	True	True	True	\Windows\System32\combase.dll
+L5079: 2924	SecurityHealth	0x7fff5f140000	True	True	True	\Windows\System32\nsi.dll
+L5080: 2924	SecurityHealth	0x7fff5f0a0000	True	True	True	\Windows\System32\sechost.dll
+L5081: 2924	SecurityHealth	0x7fff5f150000	True	True	True	\Windows\System32\shlwapi.dll
+L5082: 2924	SecurityHealth	0x7fff5f580000	True	True	True	\Windows\System32\rpcrt4.dll
+L5083: 2924	SecurityHealth	0x7fff5f6f0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L103: 2924	SecurityHealth	\Device\HarddiskVolume3\Windows\System32\SecurityHealthService.exe	C:\Windows\system32\SecurityHealthService.exe	False	False
+
+--- sessions.txt ---
+L78: 0	-	2924	SecurityHealth	WORKGROUP/DESKTOP-RMH9G1A$	2025-08-07 19:36:59.000000 UTC
+
+=== END OF PIVOT REPORT ===

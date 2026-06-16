@@ -1,0 +1,20 @@
+================================================================
+PIVOT REPORT
+Generated: 2025-08-08T00:00:00Z
+Summary: Two Agent 1 leads were reviewed. Both involve legitimate Windows system binaries (WUDFHost.exe and RuntimeBroker.exe) running from System32 with standard command-line arguments. The sole anomaly in each case is an orphaned PPID — a common artefact of memory acquisition timing, parent process exit, or PID reuse — which is insufficient on its own to confirm malice. No suspicious DLL paths, no malfind hits, no network connections, no registry persistence, and no encoded or download-cradle command lines were present in either evidence block. Neither finding is confirmed malicious.
+Counts: confirmed=0  inconclusive=0  rejected=2
+================================================================
+
+(No CONFIRMED or INCONCLUSIVE findings to report.)
+
+================================================================
+REJECTED FINDINGS — SUMMARY
+================================================================
+
+PID 7276 — WUDFHost.exe
+  Reason for rejection: WUDFHost.exe is the Windows User-Mode Driver Framework host process. Its command line is a textbook WUDF invocation: a HostGUID matching the standard WPD (Windows Portable Devices) filesystem group, named UMDF communication ports, and a DeviceGroupId of WpdFsGroup — all consistent with legitimate portable-device driver hosting. The binary path is C:\Windows\System32\WUDFHost.exe. The orphaned PPID (716) is a known benign artefact: the UMDF service manager (svchost hosting the UMDF service) may have exited or been captured before the memory snapshot, leaving the child with a stale PPID. The privilege footprint — SeImpersonatePrivilege and SeCreateGlobalPrivilege enabled — is expected for a UMDF host process running under the LOCAL SERVICE or NETWORK SERVICE account, which legitimately holds these privileges to impersonate device I/O clients. All DLL entries shown are from C:\Windows\System32. No malfind, netscan, or registry persistence evidence was present in the block. No basis for confirmation.
+
+PID 7408 — RuntimeBroker.exe (displayed as RuntimeBroker.)
+  Reason for rejection: The truncated display name "RuntimeBroker." is a 14-character EPROCESS field artefact, explicitly noted by Agent 1 and consistent with the known data-artefact rule; the full name is confirmed by the cmdline and DLL path as RuntimeBroker.exe. The invocation "C:\Windows\System32\RuntimeBroker.exe -Embedding" is the standard COM activation argument used when RuntimeBroker is launched by svchost (DcomLaunch) or the Windows Shell infrastructure to broker permissions for UWP/packaged applications. The orphaned PPID (860) is again a benign timing artefact — the DcomLaunch or svchost parent may have exited or been missed by the snapshot. The privilege set is minimal and normal for a user-session broker: no SeDebugPrivilege, no SeImpersonatePrivilege enabled, no SeLoadDriverPrivilege enabled. All DLL entries shown are from C:\Windows\System32. No malfind, netscan, or registry persistence evidence was present in the block. No basis for confirmation.
+
+================================================================

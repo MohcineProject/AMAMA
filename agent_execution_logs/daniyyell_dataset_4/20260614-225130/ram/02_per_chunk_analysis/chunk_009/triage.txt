@@ -1,0 +1,13 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T19:40:00Z
+Chunk: chunk_009.txt
+Summary: sihost.exe has an orphaned parent (PPID 1492 not present in process list); all other signals are benign.
+
+[PROCESS]
+pid: 5216
+ppid: 1492
+image: sihost.exe
+cmdline: sihost.exe
+severity: LOW
+reasons: orphaned_parent: PPID 1492 (unknown) not present anywhere in the process list
+

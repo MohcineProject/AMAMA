@@ -1,0 +1,45 @@
+=== TRIAGE REPORT ===
+Generated: 2025-08-07T20:00:00Z
+Chunk: chunk_008.txt
+Summary: Privilege anomaly on dasHost.exe (SYSTEM+user SID token impersonation); dllhost.exe holds SeDebugPrivilege unexpectedly; multiple svchost.exe and TiWorker.exe instances with unknown/unresolvable parents; short-lived svchost.exe with high-risk privileges.
+
+[PROCESS]
+pid: 3636
+ppid: 3200
+image: dasHost.exe
+cmdline: dashost.exe {89ffcec7-6160-4f6c-b563ba0a9fbb312e}
+severity: HIGH
+reasons: PRIVILEGE ANOMALY (pre-computed): dasHost.exe holds both SYSTEM and user SIDs — possible token impersonation | privilege: SeImpersonatePrivilege enabled on a Device Association Framework host process | orphaned_parent: PPID 3200 does not resolve to a known process in the process list
+
+[PROCESS]
+pid: 4228
+ppid: 716
+image: dllhost.exe
+cmdline: C:\Windows\system32\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+severity: MEDIUM
+reasons: privilege: SeDebugPrivilege enabled on dllhost.exe — unexpected for a COM surrogate host | privilege: SeImpersonatePrivilege enabled alongside SeDebugPrivilege | orphaned_parent: PPID 716 does not resolve to a known named process in the process list
+
+[PROCESS]
+pid: 4892
+ppid: 716
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: privilege: SeTcbPrivilege enabled on svchost.exe — high-risk privilege indicating possible token manipulation or service abuse | privilege: SeImpersonatePrivilege enabled alongside SeTcbPrivilege | short_lived: process exited ~2 minutes after creation (19:38:38 → 19:40:45 UTC) with high-risk privileges active | orphaned_parent: PPID 716 does not resolve to a known named process (expected services.exe)
+
+[PROCESS]
+pid: 4580
+ppid: 716
+image: svchost.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 716 does not resolve to a known named process (expected parent is services.exe) | discovered_via=psscan only: process not visible in pslist — possible DKOM/process hiding artefact
+
+[PROCESS]
+pid: 3884
+ppid: 860
+image: TiWorker.exe
+cmdline: 
+severity: LOW
+reasons: orphaned_parent: PPID 860 does not resolve to a known named process (expected parent is TrustedInstaller/svchost.exe hosting TrustedInstaller) | discovered_via=psscan only: process not visible in pslist — possible DKOM/process hiding artefact
+

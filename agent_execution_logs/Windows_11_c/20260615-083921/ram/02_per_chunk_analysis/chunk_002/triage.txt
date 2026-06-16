@@ -1,0 +1,21 @@
+=== TRIAGE REPORT ===
+Generated: 2026-05-12T18:35:00Z
+Chunk: chunk_002.txt
+Summary: svchost.exe with orphaned/unknown parent discovered only via psscan and very short-lived; ShellExperienceHost parent PID 576 not present in process list (orphaned).
+
+[PROCESS]
+pid: 3088
+ppid: 888
+image: svchost.exe
+cmdline: 
+severity: MEDIUM
+reasons: orphaned_process: parent PID 888 not present in process list (discovered_via=psscan only, suggesting possible DKOM/process hiding) | very_short_lived: process ran for ~60 seconds (Start 18:29:23 UTC, Exit 18:30:23 UTC) with no visible commandline | psscan_only: process not visible in pslist walk, indicating possible unlinking from active process list
+
+[PROCESS]
+pid: 2448
+ppid: 576
+image: ShellExperienceHost.exe
+cmdline: "C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy\ShellExperienceHost.exe" -ServerName:App.AppXtk181tbxbce2qsex02s8tw7hfxa9xb3t.mca
+severity: LOW
+reasons: orphaned_process: parent PID 576 not present in process list (expected parent is typically explorer.exe or a known UWP broker) | note: path and commandline are consistent with legitimate ShellExperienceHost; flag is solely the unresolved parent PID
+

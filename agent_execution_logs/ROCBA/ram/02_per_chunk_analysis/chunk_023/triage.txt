@@ -1,0 +1,5 @@
+=== TRIAGE REPORT ===
+Generated: 2024-01-15T00:00:00Z
+Chunk: chunk_023.txt
+Summary: No suspicious signals detected. ApplicationFrameHost.exe runs from the expected system32 path with a normal -Embedding argument; orphaned PPID 740 is consistent with a session manager or DWM parent that exited before the snapshot; all loaded DLLs are standard system binaries despite appearing in the non-whitelisted list.
+

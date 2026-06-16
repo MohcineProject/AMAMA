@@ -1,0 +1,506 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-15T09:00:46Z
+
+=== PID 11948 (SearchFilterHost.exe, ppid=6604) ===
+Cmdline: "C:\WINDOWS\System32\SearchFilterHost.exe" 908 2980 2692 892 {8CD34779-9F10-4F9B-ADFB-B3FAEABDAB5A}
+
+--- pslist.txt ---
+L171: 11948	6604	SearchFilterHo	0xcd8a114cd080	6	-	0	False	2026-05-12 18:30:08.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L171: 11948	SearchFilterHo	"C:\WINDOWS\System32\SearchFilterHost.exe" 908 2980 2692 892 {8CD34779-9F10-4F9B-ADFB-B3FAEABDAB5A}
+
+--- privileges.txt ---
+L5815: 11948	SearchFilterHo	2	SeCreateTokenPrivilege		Create a token object
+L5816: 11948	SearchFilterHo	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L5817: 11948	SearchFilterHo	4	SeLockMemoryPrivilege		Lock pages in memory
+L5818: 11948	SearchFilterHo	5	SeIncreaseQuotaPrivilege		Increase quotas
+L5819: 11948	SearchFilterHo	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5820: 11948	SearchFilterHo	7	SeTcbPrivilege		Act as part of the operating system
+L5821: 11948	SearchFilterHo	8	SeSecurityPrivilege		Manage auditing and security log
+L5822: 11948	SearchFilterHo	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L5823: 11948	SearchFilterHo	10	SeLoadDriverPrivilege		Load and unload device drivers
+L5824: 11948	SearchFilterHo	11	SeSystemProfilePrivilege		Profile system performance
+L5825: 11948	SearchFilterHo	12	SeSystemtimePrivilege		Change the system time
+L5826: 11948	SearchFilterHo	13	SeProfileSingleProcessPrivilege		Profile a single process
+L5827: 11948	SearchFilterHo	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L5828: 11948	SearchFilterHo	15	SeCreatePagefilePrivilege		Create a pagefile
+L5829: 11948	SearchFilterHo	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L5830: 11948	SearchFilterHo	17	SeBackupPrivilege		Backup files and directories
+L5831: 11948	SearchFilterHo	18	SeRestorePrivilege		Restore files and directories
+L5832: 11948	SearchFilterHo	19	SeShutdownPrivilege		Shut down the system
+L5833: 11948	SearchFilterHo	20	SeDebugPrivilege		Debug programs
+L5834: 11948	SearchFilterHo	21	SeAuditPrivilege		Generate security audits
+L5835: 11948	SearchFilterHo	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L5836: 11948	SearchFilterHo	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5837: 11948	SearchFilterHo	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L5838: 11948	SearchFilterHo	25	SeUndockPrivilege		Remove computer from docking station
+L5839: 11948	SearchFilterHo	26	SeSyncAgentPrivilege		Synch directory service data
+L5840: 11948	SearchFilterHo	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5841: 11948	SearchFilterHo	28	SeManageVolumePrivilege		Manage the files on a volume
+L5842: 11948	SearchFilterHo	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L5843: 11948	SearchFilterHo	30	SeCreateGlobalPrivilege		Create global objects
+L5844: 11948	SearchFilterHo	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5845: 11948	SearchFilterHo	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5846: 11948	SearchFilterHo	33	SeIncreaseWorkingSetPrivilege		Allocate more memory for user applications
+L5847: 11948	SearchFilterHo	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L5848: 11948	SearchFilterHo	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L5849: 11948	SearchFilterHo	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L8138: 11948	SearchFilterHo	0x7ff693070000	0x89000	SearchFilterHost.exe	C:\WINDOWS\System32\SearchFilterHost.exe	-1	2026-05-12 18:30:08.000000 UTC	Disabled
+L8139: 11948	SearchFilterHo	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:30:08.000000 UTC	Disabled
+L8140: 11948	SearchFilterHo	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:30:08.000000 UTC	Disabled
+L8141: 11948	SearchFilterHo	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:30:08.000000 UTC	Disabled
+L8142: 11948	SearchFilterHo	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8143: 11948	SearchFilterHo	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8144: 11948	SearchFilterHo	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8145: 11948	SearchFilterHo	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8146: 11948	SearchFilterHo	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8147: 11948	SearchFilterHo	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8148: 11948	SearchFilterHo	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8149: 11948	SearchFilterHo	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8150: 11948	SearchFilterHo	0x7fffe7e80000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8151: 11948	SearchFilterHo	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8152: 11948	SearchFilterHo	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8153: 11948	SearchFilterHo	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8154: 11948	SearchFilterHo	0x7fffd6e20000	0x29e000	icu.dll	C:\WINDOWS\System32\icu.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8155: 11948	SearchFilterHo	0x7fffe6ec0000	0x31000	imm32.dll	C:\WINDOWS\System32\imm32.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8156: 11948	SearchFilterHo	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8157: 11948	SearchFilterHo	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:30:08.000000 UTC	Disabled
+L8158: 11948	SearchFilterHo	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8159: 11948	SearchFilterHo	0x7fffd1b50000	0x30000	mssprxy.dll	C:\WINDOWS\system32\mssprxy.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8160: 11948	SearchFilterHo	0x7fffcb7a0000	0x38e000	tquery.dll	C:\WINDOWS\system32\tquery.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8161: 11948	SearchFilterHo	0x7fffe5b70000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8162: 11948	SearchFilterHo	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8163: 11948	SearchFilterHo	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\WINDOWS\system32\bcrypt.dll	-1	2026-05-12 18:30:08.000000 UTC	Disabled
+L8164: 11948	SearchFilterHo	0x7fffcb6b0000	0xde000	SearchIndexerCore.dll	C:\WINDOWS\system32\SearchIndexerCore.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8165: 11948	SearchFilterHo	0x7fffe35c0000	0x43000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8166: 11948	SearchFilterHo	0x7fffe5700000	0xa2000	sxs.dll	C:\WINDOWS\SYSTEM32\sxs.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8167: 11948	SearchFilterHo	0x7fff95360000	0x726000	ieframe.dll	C:\Windows\System32\ieframe.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8168: 11948	SearchFilterHo	0x7fffe8120000	0x67000	SHLWAPI.dll	C:\WINDOWS\System32\SHLWAPI.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8169: 11948	SearchFilterHo	0x7fffe5f20000	0x864000	Windows.Storage.dll	C:\WINDOWS\System32\Windows.Storage.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8170: 11948	SearchFilterHo	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8171: 11948	SearchFilterHo	0x7fffe6f10000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8172: 11948	SearchFilterHo	0x7fffe5cf0000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8173: 11948	SearchFilterHo	0x7fffd7500000	0x2c4000	iertutil.dll	C:\Windows\System32\iertutil.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8174: 11948	SearchFilterHo	0x7fffd74a0000	0x29000	srvcli.dll	C:\Windows\System32\srvcli.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8175: 11948	SearchFilterHo	0x7fffe40b0000	0xd000	netutils.dll	C:\Windows\System32\netutils.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8176: 11948	SearchFilterHo	0x7fffd0b30000	0x293000	comctl32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+L8177: 11948	SearchFilterHo	0x7fffe1040000	0x103000	PROPSYS.dll	C:\WINDOWS\System32\PROPSYS.dll	6	2026-05-12 18:30:08.000000 UTC	Disabled
+
+--- pstree.txt ---
+L129: *** 11948	6604	SearchFilterHo	0xcd8a114cd080	6	-	0	False	2026-05-12 18:30:08.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\SearchFilterHost.exe	"C:\WINDOWS\System32\SearchFilterHost.exe" 908 2980 2692 892 {8CD34779-9F10-4F9B-ADFB-B3FAEABDAB5A}	C:\WINDOWS\System32\SearchFilterHost.exe
+
+--- psscan.txt ---
+L70: 11948	6604	SearchFilterHo	0xcd8a114cd080	6	-	0	False	2026-05-12 18:30:08.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L8489: 11948	SearchFilterHo	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L8490: 11948	SearchFilterHo	0x7fffd1b50000	True	True	True	\Windows\System32\mssprxy.dll
+L8491: 11948	SearchFilterHo	0x7ff693070000	True	False	True	\Windows\System32\SearchFilterHost.exe
+L8492: 11948	SearchFilterHo	0x7fffcb6b0000	True	True	True	\Windows\System32\SearchIndexerCore.dll
+L8493: 11948	SearchFilterHo	0x7fffcb7a0000	True	True	True	\Windows\System32\tquery.dll
+L8494: 11948	SearchFilterHo	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L8495: 11948	SearchFilterHo	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+L8496: 11948	SearchFilterHo	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L8497: 11948	SearchFilterHo	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L8498: 11948	SearchFilterHo	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L8499: 11948	SearchFilterHo	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L8500: 11948	SearchFilterHo	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L8501: 11948	SearchFilterHo	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L8502: 11948	SearchFilterHo	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L8503: 11948	SearchFilterHo	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L8504: 11948	SearchFilterHo	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L8505: 11948	SearchFilterHo	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L8506: 11948	SearchFilterHo	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L8507: 11948	SearchFilterHo	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L8508: 11948	SearchFilterHo	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L8509: 11948	SearchFilterHo	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L8510: 11948	SearchFilterHo	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L8511: 11948	SearchFilterHo	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L8512: 11948	SearchFilterHo	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L8513: 11948	SearchFilterHo	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L8514: 11948	SearchFilterHo	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L8515: 11948	SearchFilterHo	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L8516: 11948	SearchFilterHo	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L8517: 11948	SearchFilterHo	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L8518: 11948	SearchFilterHo	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L8519: 11948	SearchFilterHo	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_ldrmodules.txt ---
+L8489: 11948	SearchFilterHo	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L8490: 11948	SearchFilterHo	0x7fffd1b50000	True	True	True	\Windows\System32\mssprxy.dll
+L8491: 11948	SearchFilterHo	0x7ff693070000	True	False	True	\Windows\System32\SearchFilterHost.exe
+L8492: 11948	SearchFilterHo	0x7fffcb6b0000	True	True	True	\Windows\System32\SearchIndexerCore.dll
+L8493: 11948	SearchFilterHo	0x7fffcb7a0000	True	True	True	\Windows\System32\tquery.dll
+L8494: 11948	SearchFilterHo	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L8495: 11948	SearchFilterHo	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+L8496: 11948	SearchFilterHo	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L8497: 11948	SearchFilterHo	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L8498: 11948	SearchFilterHo	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L8499: 11948	SearchFilterHo	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L8500: 11948	SearchFilterHo	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L8501: 11948	SearchFilterHo	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L8502: 11948	SearchFilterHo	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L8503: 11948	SearchFilterHo	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L8504: 11948	SearchFilterHo	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L8505: 11948	SearchFilterHo	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L8506: 11948	SearchFilterHo	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L8507: 11948	SearchFilterHo	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L8508: 11948	SearchFilterHo	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L8509: 11948	SearchFilterHo	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L8510: 11948	SearchFilterHo	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L8511: 11948	SearchFilterHo	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L8512: 11948	SearchFilterHo	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L8513: 11948	SearchFilterHo	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L8514: 11948	SearchFilterHo	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L8515: 11948	SearchFilterHo	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L8516: 11948	SearchFilterHo	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L8517: 11948	SearchFilterHo	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L8518: 11948	SearchFilterHo	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L8519: 11948	SearchFilterHo	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_pebmasquerade.txt ---
+L171: 11948	SearchFilterHo	\Device\HarddiskVolume4\Windows\System32\SearchFilterHost.exe	C:\WINDOWS\System32\SearchFilterHost.exe	False	False
+
+--- sessions.txt ---
+L111: 0	-	11948	SearchFilterHo	WORKGROUP/CLEANWINDOWS11$	2026-05-12 18:30:08.000000 UTC
+
+=== PID 12188 (SearchFilterHost.exe, ppid=6604) ===
+Cmdline: "C:\WINDOWS\System32\SearchFilterHost.exe" 908 2952 2884 892 {0E5DCEC5-7795-4E38-9621-94DFD9F9A421}
+
+--- pslist.txt ---
+L173: 12188	6604	SearchFilterHo	0xcd8a12ddf080	6	-	0	False	2026-05-12 18:30:10.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L173: 12188	SearchFilterHo	"C:\WINDOWS\System32\SearchFilterHost.exe" 908 2952 2884 892 {0E5DCEC5-7795-4E38-9621-94DFD9F9A421}
+
+--- privileges.txt ---
+L5885: 12188	SearchFilterHo	2	SeCreateTokenPrivilege		Create a token object
+L5886: 12188	SearchFilterHo	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L5887: 12188	SearchFilterHo	4	SeLockMemoryPrivilege		Lock pages in memory
+L5888: 12188	SearchFilterHo	5	SeIncreaseQuotaPrivilege		Increase quotas
+L5889: 12188	SearchFilterHo	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5890: 12188	SearchFilterHo	7	SeTcbPrivilege		Act as part of the operating system
+L5891: 12188	SearchFilterHo	8	SeSecurityPrivilege		Manage auditing and security log
+L5892: 12188	SearchFilterHo	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L5893: 12188	SearchFilterHo	10	SeLoadDriverPrivilege		Load and unload device drivers
+L5894: 12188	SearchFilterHo	11	SeSystemProfilePrivilege		Profile system performance
+L5895: 12188	SearchFilterHo	12	SeSystemtimePrivilege		Change the system time
+L5896: 12188	SearchFilterHo	13	SeProfileSingleProcessPrivilege		Profile a single process
+L5897: 12188	SearchFilterHo	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L5898: 12188	SearchFilterHo	15	SeCreatePagefilePrivilege		Create a pagefile
+L5899: 12188	SearchFilterHo	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L5900: 12188	SearchFilterHo	17	SeBackupPrivilege		Backup files and directories
+L5901: 12188	SearchFilterHo	18	SeRestorePrivilege		Restore files and directories
+L5902: 12188	SearchFilterHo	19	SeShutdownPrivilege		Shut down the system
+L5903: 12188	SearchFilterHo	20	SeDebugPrivilege		Debug programs
+L5904: 12188	SearchFilterHo	21	SeAuditPrivilege		Generate security audits
+L5905: 12188	SearchFilterHo	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L5906: 12188	SearchFilterHo	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5907: 12188	SearchFilterHo	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L5908: 12188	SearchFilterHo	25	SeUndockPrivilege		Remove computer from docking station
+L5909: 12188	SearchFilterHo	26	SeSyncAgentPrivilege		Synch directory service data
+L5910: 12188	SearchFilterHo	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5911: 12188	SearchFilterHo	28	SeManageVolumePrivilege		Manage the files on a volume
+L5912: 12188	SearchFilterHo	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L5913: 12188	SearchFilterHo	30	SeCreateGlobalPrivilege		Create global objects
+L5914: 12188	SearchFilterHo	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5915: 12188	SearchFilterHo	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5916: 12188	SearchFilterHo	33	SeIncreaseWorkingSetPrivilege		Allocate more memory for user applications
+L5917: 12188	SearchFilterHo	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L5918: 12188	SearchFilterHo	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L5919: 12188	SearchFilterHo	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L8209: 12188	SearchFilterHo	0x7ff693070000	0x89000	SearchFilterHost.exe	C:\WINDOWS\System32\SearchFilterHost.exe	-1	2026-05-12 18:30:10.000000 UTC	Disabled
+L8210: 12188	SearchFilterHo	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:30:10.000000 UTC	Disabled
+L8211: 12188	SearchFilterHo	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:30:10.000000 UTC	Disabled
+L8212: 12188	SearchFilterHo	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:30:10.000000 UTC	Disabled
+L8213: 12188	SearchFilterHo	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8214: 12188	SearchFilterHo	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8215: 12188	SearchFilterHo	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8216: 12188	SearchFilterHo	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8217: 12188	SearchFilterHo	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8218: 12188	SearchFilterHo	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8219: 12188	SearchFilterHo	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8220: 12188	SearchFilterHo	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8221: 12188	SearchFilterHo	0x7fffe7e80000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8222: 12188	SearchFilterHo	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8223: 12188	SearchFilterHo	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8224: 12188	SearchFilterHo	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8225: 12188	SearchFilterHo	0x7fffd6e20000	0x29e000	icu.dll	C:\WINDOWS\System32\icu.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8226: 12188	SearchFilterHo	0x7fffe6ec0000	0x31000	imm32.dll	C:\WINDOWS\System32\imm32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8227: 12188	SearchFilterHo	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8228: 12188	SearchFilterHo	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:30:11.000000 UTC	Disabled
+L8229: 12188	SearchFilterHo	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8230: 12188	SearchFilterHo	0x7fffd1b50000	0x30000	mssprxy.dll	C:\WINDOWS\system32\mssprxy.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8231: 12188	SearchFilterHo	0x7fffcb7a0000	0x38e000	tquery.dll	C:\WINDOWS\system32\tquery.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8232: 12188	SearchFilterHo	0x7fffe5b70000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8233: 12188	SearchFilterHo	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8234: 12188	SearchFilterHo	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\WINDOWS\system32\bcrypt.dll	-1	2026-05-12 18:30:11.000000 UTC	Disabled
+L8235: 12188	SearchFilterHo	0x7fffcb6b0000	0xde000	SearchIndexerCore.dll	C:\WINDOWS\system32\SearchIndexerCore.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8236: 12188	SearchFilterHo	0x7fffe35c0000	0x43000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8237: 12188	SearchFilterHo	0x7fffe1040000	0x103000	propsys.dll	C:\WINDOWS\system32\propsys.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8238: 12188	SearchFilterHo	0x7fffe5f20000	0x864000	windows.storage.dll	C:\WINDOWS\System32\windows.storage.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8239: 12188	SearchFilterHo	0x7fffdde20000	0x652000	OneCoreUAPCommonProxyStub.dll	C:\Windows\System32\OneCoreUAPCommonProxyStub.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8240: 12188	SearchFilterHo	0x7fffe4a30000	0x49000	SspiCli.dll	C:\WINDOWS\SYSTEM32\SspiCli.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8241: 12188	SearchFilterHo	0x7fffe8120000	0x67000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8242: 12188	SearchFilterHo	0x7fffe03a0000	0x43000	XmlLite.dll	C:\WINDOWS\System32\XmlLite.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8243: 12188	SearchFilterHo	0x7fffe8ed0000	0x195000	ole32.dll	C:\WINDOWS\System32\ole32.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8244: 12188	SearchFilterHo	0x7fffd77d0000	0x1dd000	urlmon.dll	C:\WINDOWS\System32\urlmon.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8245: 12188	SearchFilterHo	0x7fffe6f10000	0x75f000	SHELL32.dll	C:\WINDOWS\System32\SHELL32.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8246: 12188	SearchFilterHo	0x7fffe5cf0000	0x16a000	wintypes.dll	C:\WINDOWS\System32\wintypes.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8247: 12188	SearchFilterHo	0x7fffd7500000	0x2c4000	iertutil.dll	C:\WINDOWS\System32\iertutil.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8248: 12188	SearchFilterHo	0x7fffd74a0000	0x29000	srvcli.dll	C:\WINDOWS\System32\srvcli.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8249: 12188	SearchFilterHo	0x7fffe40b0000	0xd000	netutils.dll	C:\WINDOWS\System32\netutils.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8250: 12188	SearchFilterHo	0x7fffac5e0000	0x89000	shdocvw.dll	C:\WINDOWS\System32\shdocvw.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8251: 12188	SearchFilterHo	0x7fffdf900000	0x127000	WINHTTP.dll	C:\WINDOWS\System32\WINHTTP.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8252: 12188	SearchFilterHo	0x7fffd31e0000	0x23d000	msxml6.dll	C:\Windows\System32\msxml6.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+L8253: 12188	SearchFilterHo	0x7fffd0b30000	0x293000	comctl32.dll	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8037_none_3e092faae333b53b\comctl32.dll	6	2026-05-12 18:30:11.000000 UTC	Disabled
+
+--- pstree.txt ---
+L128: *** 12188	6604	SearchFilterHo	0xcd8a12ddf080	6	-	0	False	2026-05-12 18:30:10.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\SearchFilterHost.exe	"C:\WINDOWS\System32\SearchFilterHost.exe" 908 2952 2884 892 {0E5DCEC5-7795-4E38-9621-94DFD9F9A421}	C:\WINDOWS\System32\SearchFilterHost.exe
+
+--- psscan.txt ---
+L154: 12188	6604	SearchFilterHo	0xcd8a12ddf080	6	-	0	False	2026-05-12 18:30:10.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L8548: 12188	SearchFilterHo	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L8549: 12188	SearchFilterHo	0x7fffd1b50000	True	True	True	\Windows\System32\mssprxy.dll
+L8550: 12188	SearchFilterHo	0x7ff693070000	True	False	True	\Windows\System32\SearchFilterHost.exe
+L8551: 12188	SearchFilterHo	0x7fffcb6b0000	True	True	True	\Windows\System32\SearchIndexerCore.dll
+L8552: 12188	SearchFilterHo	0x7fffcb7a0000	True	True	True	\Windows\System32\tquery.dll
+L8553: 12188	SearchFilterHo	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L8554: 12188	SearchFilterHo	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L8555: 12188	SearchFilterHo	0x7fffe03a0000	True	True	True	\Windows\System32\xmllite.dll
+L8556: 12188	SearchFilterHo	0x7fffdf900000	True	True	True	\Windows\System32\winhttp.dll
+L8557: 12188	SearchFilterHo	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+L8558: 12188	SearchFilterHo	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L8559: 12188	SearchFilterHo	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L8560: 12188	SearchFilterHo	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L8561: 12188	SearchFilterHo	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L8562: 12188	SearchFilterHo	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L8563: 12188	SearchFilterHo	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L8564: 12188	SearchFilterHo	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L8565: 12188	SearchFilterHo	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L8566: 12188	SearchFilterHo	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L8567: 12188	SearchFilterHo	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L8568: 12188	SearchFilterHo	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L8569: 12188	SearchFilterHo	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L8570: 12188	SearchFilterHo	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L8571: 12188	SearchFilterHo	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L8572: 12188	SearchFilterHo	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L8573: 12188	SearchFilterHo	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L8574: 12188	SearchFilterHo	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L8575: 12188	SearchFilterHo	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L8576: 12188	SearchFilterHo	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L8577: 12188	SearchFilterHo	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L8578: 12188	SearchFilterHo	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L8579: 12188	SearchFilterHo	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L8580: 12188	SearchFilterHo	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L8581: 12188	SearchFilterHo	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L8582: 12188	SearchFilterHo	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L8583: 12188	SearchFilterHo	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L8584: 12188	SearchFilterHo	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L8585: 12188	SearchFilterHo	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_ldrmodules.txt ---
+L8548: 12188	SearchFilterHo	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L8549: 12188	SearchFilterHo	0x7fffd1b50000	True	True	True	\Windows\System32\mssprxy.dll
+L8550: 12188	SearchFilterHo	0x7ff693070000	True	False	True	\Windows\System32\SearchFilterHost.exe
+L8551: 12188	SearchFilterHo	0x7fffcb6b0000	True	True	True	\Windows\System32\SearchIndexerCore.dll
+L8552: 12188	SearchFilterHo	0x7fffcb7a0000	True	True	True	\Windows\System32\tquery.dll
+L8553: 12188	SearchFilterHo	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L8554: 12188	SearchFilterHo	0x7fffe1040000	True	True	True	\Windows\System32\propsys.dll
+L8555: 12188	SearchFilterHo	0x7fffe03a0000	True	True	True	\Windows\System32\xmllite.dll
+L8556: 12188	SearchFilterHo	0x7fffdf900000	True	True	True	\Windows\System32\winhttp.dll
+L8557: 12188	SearchFilterHo	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+L8558: 12188	SearchFilterHo	0x7fffe40b0000	True	True	True	\Windows\System32\netutils.dll
+L8559: 12188	SearchFilterHo	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L8560: 12188	SearchFilterHo	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L8561: 12188	SearchFilterHo	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L8562: 12188	SearchFilterHo	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L8563: 12188	SearchFilterHo	0x7fffe4a30000	True	True	True	\Windows\System32\sspicli.dll
+L8564: 12188	SearchFilterHo	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L8565: 12188	SearchFilterHo	0x7fffe5cf0000	True	True	True	\Windows\System32\WinTypes.dll
+L8566: 12188	SearchFilterHo	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L8567: 12188	SearchFilterHo	0x7fffe5f20000	True	True	True	\Windows\System32\windows.storage.dll
+L8568: 12188	SearchFilterHo	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L8569: 12188	SearchFilterHo	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L8570: 12188	SearchFilterHo	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L8571: 12188	SearchFilterHo	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L8572: 12188	SearchFilterHo	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L8573: 12188	SearchFilterHo	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L8574: 12188	SearchFilterHo	0x7fffe6f10000	True	True	True	\Windows\System32\shell32.dll
+L8575: 12188	SearchFilterHo	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L8576: 12188	SearchFilterHo	0x7fffe8120000	True	True	True	\Windows\System32\shlwapi.dll
+L8577: 12188	SearchFilterHo	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L8578: 12188	SearchFilterHo	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L8579: 12188	SearchFilterHo	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L8580: 12188	SearchFilterHo	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L8581: 12188	SearchFilterHo	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L8582: 12188	SearchFilterHo	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L8583: 12188	SearchFilterHo	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L8584: 12188	SearchFilterHo	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+L8585: 12188	SearchFilterHo	0x7fffe8ed0000	True	True	True	\Windows\System32\ole32.dll
+
+--- malware_pebmasquerade.txt ---
+L173: 12188	SearchFilterHo	\Device\HarddiskVolume4\Windows\System32\SearchFilterHost.exe	C:\WINDOWS\System32\SearchFilterHost.exe	False	False
+
+--- sessions.txt ---
+L113: 0	-	12188	SearchFilterHo	WORKGROUP/CLEANWINDOWS11$	2026-05-12 18:30:10.000000 UTC
+
+=== PID 12200 (SearchFilterHost.exe, ppid=6604) ===
+Cmdline: "C:\WINDOWS\System32\SearchFilterHost.exe" 908 2136 2896 892 {5E941D80-BF96-11CD-B579-08002B30BFEB}
+
+--- pslist.txt ---
+L172: 12200	6604	SearchFilterHo	0xcd8a12d53080	5	-	0	False	2026-05-12 18:30:10.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L172: 12200	SearchFilterHo	"C:\WINDOWS\System32\SearchFilterHost.exe" 908 2136 2896 892 {5E941D80-BF96-11CD-B579-08002B30BFEB}
+
+--- privileges.txt ---
+L5850: 12200	SearchFilterHo	2	SeCreateTokenPrivilege		Create a token object
+L5851: 12200	SearchFilterHo	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L5852: 12200	SearchFilterHo	4	SeLockMemoryPrivilege		Lock pages in memory
+L5853: 12200	SearchFilterHo	5	SeIncreaseQuotaPrivilege		Increase quotas
+L5854: 12200	SearchFilterHo	6	SeMachineAccountPrivilege		Add workstations to the domain
+L5855: 12200	SearchFilterHo	7	SeTcbPrivilege		Act as part of the operating system
+L5856: 12200	SearchFilterHo	8	SeSecurityPrivilege		Manage auditing and security log
+L5857: 12200	SearchFilterHo	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L5858: 12200	SearchFilterHo	10	SeLoadDriverPrivilege		Load and unload device drivers
+L5859: 12200	SearchFilterHo	11	SeSystemProfilePrivilege		Profile system performance
+L5860: 12200	SearchFilterHo	12	SeSystemtimePrivilege		Change the system time
+L5861: 12200	SearchFilterHo	13	SeProfileSingleProcessPrivilege		Profile a single process
+L5862: 12200	SearchFilterHo	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L5863: 12200	SearchFilterHo	15	SeCreatePagefilePrivilege		Create a pagefile
+L5864: 12200	SearchFilterHo	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L5865: 12200	SearchFilterHo	17	SeBackupPrivilege		Backup files and directories
+L5866: 12200	SearchFilterHo	18	SeRestorePrivilege		Restore files and directories
+L5867: 12200	SearchFilterHo	19	SeShutdownPrivilege		Shut down the system
+L5868: 12200	SearchFilterHo	20	SeDebugPrivilege		Debug programs
+L5869: 12200	SearchFilterHo	21	SeAuditPrivilege		Generate security audits
+L5870: 12200	SearchFilterHo	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L5871: 12200	SearchFilterHo	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L5872: 12200	SearchFilterHo	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L5873: 12200	SearchFilterHo	25	SeUndockPrivilege		Remove computer from docking station
+L5874: 12200	SearchFilterHo	26	SeSyncAgentPrivilege		Synch directory service data
+L5875: 12200	SearchFilterHo	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L5876: 12200	SearchFilterHo	28	SeManageVolumePrivilege		Manage the files on a volume
+L5877: 12200	SearchFilterHo	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L5878: 12200	SearchFilterHo	30	SeCreateGlobalPrivilege		Create global objects
+L5879: 12200	SearchFilterHo	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L5880: 12200	SearchFilterHo	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L5881: 12200	SearchFilterHo	33	SeIncreaseWorkingSetPrivilege		Allocate more memory for user applications
+L5882: 12200	SearchFilterHo	34	SeTimeZonePrivilege		Adjust the time zone of the computer's internal clock
+L5883: 12200	SearchFilterHo	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L5884: 12200	SearchFilterHo	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L8178: 12200	SearchFilterHo	0x7ff693070000	0x89000	SearchFilterHost.exe	C:\WINDOWS\System32\SearchFilterHost.exe	-1	2026-05-12 18:30:10.000000 UTC	Disabled
+L8179: 12200	SearchFilterHo	0x7fffe9120000	0x267000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2026-05-12 18:30:10.000000 UTC	Disabled
+L8180: 12200	SearchFilterHo	0x7fffe8570000	0xc9000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2026-05-12 18:30:10.000000 UTC	Disabled
+L8181: 12200	SearchFilterHo	0x7fffe68c0000	0x3f1000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2026-05-12 18:30:10.000000 UTC	Disabled
+L8182: 12200	SearchFilterHo	0x7fffe6e10000	0xa3000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8183: 12200	SearchFilterHo	0x7fffe6cc0000	0x14b000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8184: 12200	SearchFilterHo	0x7fffe83d0000	0xd7000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8185: 12200	SearchFilterHo	0x7fffe89e0000	0x382000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8186: 12200	SearchFilterHo	0x7fffe7d60000	0x118000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8187: 12200	SearchFilterHo	0x7fffe8310000	0xbb000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8188: 12200	SearchFilterHo	0x7fffe8920000	0xa9000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8189: 12200	SearchFilterHo	0x7fffe77f0000	0xa7000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8190: 12200	SearchFilterHo	0x7fffe7e80000	0x1c5000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8191: 12200	SearchFilterHo	0x7fffe5b40000	0x27000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8192: 12200	SearchFilterHo	0x7fffe7d30000	0x2b000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8193: 12200	SearchFilterHo	0x7fffe6790000	0x12b000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8194: 12200	SearchFilterHo	0x7fffd6e20000	0x29e000	icu.dll	C:\WINDOWS\System32\icu.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8195: 12200	SearchFilterHo	0x7fffe6ec0000	0x31000	imm32.dll	C:\WINDOWS\System32\imm32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8196: 12200	SearchFilterHo	0x7fffe4790000	0x1b000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8197: 12200	SearchFilterHo	0x7fffe5a00000	0xa5000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2026-05-12 18:30:10.000000 UTC	Disabled
+L8198: 12200	SearchFilterHo	0x7fffe84b0000	0xae000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8199: 12200	SearchFilterHo	0x7fffd1b50000	0x30000	mssprxy.dll	C:\WINDOWS\system32\mssprxy.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8200: 12200	SearchFilterHo	0x7fffcb7a0000	0x38e000	tquery.dll	C:\WINDOWS\system32\tquery.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8201: 12200	SearchFilterHo	0x7fffe5b70000	0x177000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8202: 12200	SearchFilterHo	0x7fffe8190000	0xf7000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8203: 12200	SearchFilterHo	0x7fffe58f0000	0x2a000	bcrypt.dll	C:\WINDOWS\system32\bcrypt.dll	-1	2026-05-12 18:30:10.000000 UTC	Disabled
+L8204: 12200	SearchFilterHo	0x7fffcb6b0000	0xde000	SearchIndexerCore.dll	C:\WINDOWS\system32\SearchIndexerCore.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8205: 12200	SearchFilterHo	0x7fffe35c0000	0x43000	dxcore.dll	C:\WINDOWS\SYSTEM32\dxcore.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8206: 12200	SearchFilterHo	0x7fffe5700000	0xa2000	sxs.dll	C:\WINDOWS\SYSTEM32\sxs.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8207: 12200	SearchFilterHo	0x7fffda170000	0x2c000	query.dll	C:\WINDOWS\system32\query.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+L8208: 12200	SearchFilterHo	0x7fffe1040000	0x103000	propsys.dll	C:\WINDOWS\system32\propsys.dll	6	2026-05-12 18:30:10.000000 UTC	Disabled
+
+--- pstree.txt ---
+L127: *** 12200	6604	SearchFilterHo	0xcd8a12d53080	5	-	0	False	2026-05-12 18:30:10.000000 UTC	N/A	\Device\HarddiskVolume4\Windows\System32\SearchFilterHost.exe	"C:\WINDOWS\System32\SearchFilterHost.exe" 908 2136 2896 892 {5E941D80-BF96-11CD-B579-08002B30BFEB}	C:\WINDOWS\System32\SearchFilterHost.exe
+
+--- psscan.txt ---
+L150: 12200	6604	SearchFilterHo	0xcd8a12d53080	5	-	0	False	2026-05-12 18:30:10.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L8520: 12200	SearchFilterHo	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L8521: 12200	SearchFilterHo	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L8522: 12200	SearchFilterHo	0x7fffcb7a0000	True	True	True	\Windows\System32\tquery.dll
+L8523: 12200	SearchFilterHo	0x7ff693070000	True	False	True	\Windows\System32\SearchFilterHost.exe
+L8524: 12200	SearchFilterHo	0x7fffcb6b0000	True	True	True	\Windows\System32\SearchIndexerCore.dll
+L8525: 12200	SearchFilterHo	0x7fffd1b50000	True	True	True	\Windows\System32\mssprxy.dll
+L8526: 12200	SearchFilterHo	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L8527: 12200	SearchFilterHo	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L8528: 12200	SearchFilterHo	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+L8529: 12200	SearchFilterHo	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L8530: 12200	SearchFilterHo	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L8531: 12200	SearchFilterHo	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L8532: 12200	SearchFilterHo	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L8533: 12200	SearchFilterHo	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L8534: 12200	SearchFilterHo	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L8535: 12200	SearchFilterHo	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L8536: 12200	SearchFilterHo	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L8537: 12200	SearchFilterHo	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L8538: 12200	SearchFilterHo	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L8539: 12200	SearchFilterHo	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L8540: 12200	SearchFilterHo	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L8541: 12200	SearchFilterHo	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L8542: 12200	SearchFilterHo	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L8543: 12200	SearchFilterHo	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L8544: 12200	SearchFilterHo	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L8545: 12200	SearchFilterHo	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L8546: 12200	SearchFilterHo	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L8547: 12200	SearchFilterHo	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L8520: 12200	SearchFilterHo	0x7fffe6e10000	True	True	True	\Windows\System32\msvcp_win.dll
+L8521: 12200	SearchFilterHo	0x7fffd6e20000	True	True	True	\Windows\System32\icu.dll
+L8522: 12200	SearchFilterHo	0x7fffcb7a0000	True	True	True	\Windows\System32\tquery.dll
+L8523: 12200	SearchFilterHo	0x7ff693070000	True	False	True	\Windows\System32\SearchFilterHost.exe
+L8524: 12200	SearchFilterHo	0x7fffcb6b0000	True	True	True	\Windows\System32\SearchIndexerCore.dll
+L8525: 12200	SearchFilterHo	0x7fffd1b50000	True	True	True	\Windows\System32\mssprxy.dll
+L8526: 12200	SearchFilterHo	0x7fffe5b40000	True	True	True	\Windows\System32\win32u.dll
+L8527: 12200	SearchFilterHo	0x7fffe4790000	True	True	True	\Windows\System32\kernel.appcore.dll
+L8528: 12200	SearchFilterHo	0x7fffe35c0000	True	True	True	\Windows\System32\DXCore.dll
+L8529: 12200	SearchFilterHo	0x7fffe58f0000	True	True	True	\Windows\System32\bcrypt.dll
+L8530: 12200	SearchFilterHo	0x7fffe5a00000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L8531: 12200	SearchFilterHo	0x7fffe68c0000	True	True	True	\Windows\System32\KernelBase.dll
+L8532: 12200	SearchFilterHo	0x7fffe6790000	True	True	True	\Windows\System32\gdi32full.dll
+L8533: 12200	SearchFilterHo	0x7fffe5b70000	True	True	True	\Windows\System32\crypt32.dll
+L8534: 12200	SearchFilterHo	0x7fffe6cc0000	True	True	True	\Windows\System32\ucrtbase.dll
+L8535: 12200	SearchFilterHo	0x7fffe8310000	True	True	True	\Windows\System32\advapi32.dll
+L8536: 12200	SearchFilterHo	0x7fffe7d60000	True	True	True	\Windows\System32\rpcrt4.dll
+L8537: 12200	SearchFilterHo	0x7fffe77f0000	True	True	True	\Windows\System32\sechost.dll
+L8538: 12200	SearchFilterHo	0x7fffe6ec0000	True	True	True	\Windows\System32\imm32.dll
+L8539: 12200	SearchFilterHo	0x7fffe7d30000	True	True	True	\Windows\System32\gdi32.dll
+L8540: 12200	SearchFilterHo	0x7fffe7e80000	True	True	True	\Windows\System32\user32.dll
+L8541: 12200	SearchFilterHo	0x7fffe8190000	True	True	True	\Windows\System32\SHCore.dll
+L8542: 12200	SearchFilterHo	0x7fffe8570000	True	True	True	\Windows\System32\kernel32.dll
+L8543: 12200	SearchFilterHo	0x7fffe83d0000	True	True	True	\Windows\System32\oleaut32.dll
+L8544: 12200	SearchFilterHo	0x7fffe84b0000	True	True	True	\Windows\System32\clbcatq.dll
+L8545: 12200	SearchFilterHo	0x7fffe89e0000	True	True	True	\Windows\System32\combase.dll
+L8546: 12200	SearchFilterHo	0x7fffe8920000	True	True	True	\Windows\System32\msvcrt.dll
+L8547: 12200	SearchFilterHo	0x7fffe9120000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L172: 12200	SearchFilterHo	\Device\HarddiskVolume4\Windows\System32\SearchFilterHost.exe	C:\WINDOWS\System32\SearchFilterHost.exe	False	False
+
+--- sessions.txt ---
+L112: 0	-	12200	SearchFilterHo	WORKGROUP/CLEANWINDOWS11$	2026-05-12 18:30:10.000000 UTC
+
+=== END OF PIVOT REPORT ===

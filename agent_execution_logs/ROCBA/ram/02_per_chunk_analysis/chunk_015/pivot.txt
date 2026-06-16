@@ -1,0 +1,324 @@
+=== PIVOT EVIDENCE REPORT ===
+Generated: 2026-06-13T13:50:39Z
+
+=== PID 7900 (svchost.exe, ppid=828) ===
+
+--- psscan.txt ---
+L1678: 7900	828	svchost.exe	0xb78d10566080	7	-	0	False	2020-11-16 02:36:35.000000 UTC	N/A	Disabled
+L2208: 7900	828	svchost.exe	0xf180000c3080	7	-	0	False	2020-11-16 02:36:35.000000 UTC	N/A	Disabled
+
+=== PID 8028 (svchost.exe, ppid=828) ===
+Cmdline: C:\WINDOWS\System32\svchost.exe -k UnistackSvcGroup
+
+--- pslist.txt ---
+L109: 8028	828	svchost.exe	0xb78d00b7d300	4	-	1	False	2020-11-11 08:13:42.000000 UTC	N/A	Disabled
+
+--- cmdline.txt ---
+L109: 8028	svchost.exe	C:\WINDOWS\System32\svchost.exe -k UnistackSvcGroup
+
+--- privileges.txt ---
+L3645: 8028	svchost.exe	2	SeCreateTokenPrivilege		Create a token object
+L3646: 8028	svchost.exe	3	SeAssignPrimaryTokenPrivilege		Replace a process-level token
+L3647: 8028	svchost.exe	4	SeLockMemoryPrivilege		Lock pages in memory
+L3648: 8028	svchost.exe	5	SeIncreaseQuotaPrivilege		Increase quotas
+L3649: 8028	svchost.exe	6	SeMachineAccountPrivilege		Add workstations to the domain
+L3650: 8028	svchost.exe	7	SeTcbPrivilege		Act as part of the operating system
+L3651: 8028	svchost.exe	8	SeSecurityPrivilege		Manage auditing and security log
+L3652: 8028	svchost.exe	9	SeTakeOwnershipPrivilege		Take ownership of files/objects
+L3653: 8028	svchost.exe	10	SeLoadDriverPrivilege		Load and unload device drivers
+L3654: 8028	svchost.exe	11	SeSystemProfilePrivilege		Profile system performance
+L3655: 8028	svchost.exe	12	SeSystemtimePrivilege		Change the system time
+L3656: 8028	svchost.exe	13	SeProfileSingleProcessPrivilege		Profile a single process
+L3657: 8028	svchost.exe	14	SeIncreaseBasePriorityPrivilege		Increase scheduling priority
+L3658: 8028	svchost.exe	15	SeCreatePagefilePrivilege		Create a pagefile
+L3659: 8028	svchost.exe	16	SeCreatePermanentPrivilege		Create permanent shared objects
+L3660: 8028	svchost.exe	17	SeBackupPrivilege		Backup files and directories
+L3661: 8028	svchost.exe	18	SeRestorePrivilege		Restore files and directories
+L3662: 8028	svchost.exe	19	SeShutdownPrivilege	Present	Shut down the system
+L3663: 8028	svchost.exe	20	SeDebugPrivilege		Debug programs
+L3664: 8028	svchost.exe	21	SeAuditPrivilege		Generate security audits
+L3665: 8028	svchost.exe	22	SeSystemEnvironmentPrivilege		Edit firmware environment values
+L3666: 8028	svchost.exe	23	SeChangeNotifyPrivilege	Present,Enabled,Default	Receive notifications of changes to files or directories
+L3667: 8028	svchost.exe	24	SeRemoteShutdownPrivilege		Force shutdown from a remote system
+L3668: 8028	svchost.exe	25	SeUndockPrivilege	Present	Remove computer from docking station
+L3669: 8028	svchost.exe	26	SeSyncAgentPrivilege		Synch directory service data
+L3670: 8028	svchost.exe	27	SeEnableDelegationPrivilege		Enable user accounts to be trusted for delegation
+L3671: 8028	svchost.exe	28	SeManageVolumePrivilege		Manage the files on a volume
+L3672: 8028	svchost.exe	29	SeImpersonatePrivilege		Impersonate a client after authentication
+L3673: 8028	svchost.exe	30	SeCreateGlobalPrivilege	Default	Create global objects
+L3674: 8028	svchost.exe	31	SeTrustedCredManAccessPrivilege		Access Credential Manager as a trusted caller
+L3675: 8028	svchost.exe	32	SeRelabelPrivilege		Modify the mandatory integrity level of an object
+L3676: 8028	svchost.exe	33	SeIncreaseWorkingSetPrivilege	Present	Allocate more memory for user applications
+L3677: 8028	svchost.exe	34	SeTimeZonePrivilege	Present	Adjust the time zone of the computer's internal clock
+L3678: 8028	svchost.exe	35	SeCreateSymbolicLinkPrivilege		Required to create a symbolic link
+L3679: 8028	svchost.exe	36	SeDelegateSessionUserImpersonatePrivilege		Obtain an impersonation token for another user in the same session.
+
+--- dlllist.txt ---
+L5001: 8028	svchost.exe	0x7ff6ccbe0000	0x11000	svchost.exe	C:\WINDOWS\System32\svchost.exe	-1	2020-11-11 08:13:42.000000 UTC	Disabled
+L5002: 8028	svchost.exe	0x7fff578b0000	0x1f6000	ntdll.dll	C:\WINDOWS\SYSTEM32\ntdll.dll	-1	2020-11-11 08:13:42.000000 UTC	Disabled
+L5003: 8028	svchost.exe	0x7fff55ae0000	0xbd000	KERNEL32.DLL	C:\WINDOWS\System32\KERNEL32.DLL	-1	2020-11-11 08:13:42.000000 UTC	Disabled
+L5004: 8028	svchost.exe	0x7fff55100000	0x2c8000	KERNELBASE.dll	C:\WINDOWS\System32\KERNELBASE.dll	-1	2020-11-11 08:13:42.000000 UTC	Disabled
+L5005: 8028	svchost.exe	0x7fff55ee0000	0x9b000	sechost.dll	C:\WINDOWS\System32\sechost.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5006: 8028	svchost.exe	0x7fff55ba0000	0x124000	RPCRT4.dll	C:\WINDOWS\System32\RPCRT4.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5007: 8028	svchost.exe	0x7fff55470000	0x100000	ucrtbase.dll	C:\WINDOWS\System32\ucrtbase.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5008: 8028	svchost.exe	0x7fff56e30000	0x355000	combase.dll	C:\WINDOWS\System32\combase.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5009: 8028	svchost.exe	0x7fff52f20000	0x12000	kernel.appcore.dll	C:\WINDOWS\SYSTEM32\kernel.appcore.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5010: 8028	svchost.exe	0x7fff55e30000	0x9e000	msvcrt.dll	C:\WINDOWS\System32\msvcrt.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5011: 8028	svchost.exe	0x7fff555d0000	0x7f000	bcryptPrimitives.dll	C:\WINDOWS\System32\bcryptPrimitives.dll	-1	2020-11-11 08:13:42.000000 UTC	Disabled
+L5012: 8028	svchost.exe	0x7fff57540000	0x1a0000	user32.dll	C:\WINDOWS\System32\user32.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5013: 8028	svchost.exe	0x7fff557b0000	0x22000	win32u.dll	C:\WINDOWS\System32\win32u.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5014: 8028	svchost.exe	0x7fff56930000	0x2a000	GDI32.dll	C:\WINDOWS\System32\GDI32.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5015: 8028	svchost.exe	0x7fff54ff0000	0x109000	gdi32full.dll	C:\WINDOWS\System32\gdi32full.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5016: 8028	svchost.exe	0x7fff553d0000	0x9d000	msvcp_win.dll	C:\WINDOWS\System32\msvcp_win.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5017: 8028	svchost.exe	0x7fff55970000	0x30000	IMM32.DLL	C:\WINDOWS\System32\IMM32.DLL	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5018: 8028	svchost.exe	0x7fff2eb40000	0x12a000	unistore.dll	c:\windows\system32\unistore.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5019: 8028	svchost.exe	0x7fff55a30000	0xae000	shcore.dll	C:\WINDOWS\System32\shcore.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5020: 8028	svchost.exe	0x7fff37d10000	0x32b000	ESENT.dll	c:\windows\system32\ESENT.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5021: 8028	svchost.exe	0x7fff549f0000	0x2c000	WLDP.DLL	C:\WINDOWS\SYSTEM32\WLDP.DLL	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5022: 8028	svchost.exe	0x7fff573a0000	0xac000	advapi32.dll	C:\WINDOWS\System32\advapi32.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5023: 8028	svchost.exe	0x7fff468c0000	0x2b0000	iertutil.dll	c:\windows\system32\iertutil.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5024: 8028	svchost.exe	0x7fff50b90000	0x15000	UserDataPlatformHelperUtil.dll	c:\windows\system32\UserDataPlatformHelperUtil.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5025: 8028	svchost.exe	0x7fff54ea0000	0x3c000	sspicli.dll	C:\WINDOWS\System32\sspicli.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5026: 8028	svchost.exe	0x7fff54680000	0x8a000	msv1_0.DLL	C:\WINDOWS\system32\msv1_0.DLL	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5027: 8028	svchost.exe	0x7fff557e0000	0x27000	bcrypt.dll	C:\WINDOWS\System32\bcrypt.dll	-1	2020-11-11 08:13:42.000000 UTC	Disabled
+L5028: 8028	svchost.exe	0x7fff54660000	0x13000	NtlmShared.dll	C:\WINDOWS\System32\NtlmShared.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5029: 8028	svchost.exe	0x7fff54780000	0x15000	cryptdll.dll	C:\WINDOWS\System32\cryptdll.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5030: 8028	svchost.exe	0x7fff2e9b0000	0x182000	userdataservice.dll	c:\windows\system32\userdataservice.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5031: 8028	svchost.exe	0x7fff50480000	0xd000	SystemEventsBrokerClient.dll	c:\windows\system32\SystemEventsBrokerClient.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5032: 8028	svchost.exe	0x7fff50b30000	0x5e000	PhoneUtil.dll	c:\windows\system32\PhoneUtil.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5033: 8028	svchost.exe	0x7fff55f80000	0xcd000	OLEAUT32.dll	C:\WINDOWS\System32\OLEAUT32.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5034: 8028	svchost.exe	0x7fff50c30000	0xf5000	PIMSTORE.dll	c:\windows\system32\PIMSTORE.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5035: 8028	svchost.exe	0x7fff53d30000	0x33000	ntmarta.dll	C:\WINDOWS\SYSTEM32\ntmarta.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5036: 8028	svchost.exe	0x7fff2e8a0000	0x10c000	MessagingDataModel2.DLL	c:\windows\system32\MessagingDataModel2.DLL	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5037: 8028	svchost.exe	0x7fff54940000	0x18000	cryptsp.dll	C:\WINDOWS\SYSTEM32\cryptsp.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5038: 8028	svchost.exe	0x7fff4a170000	0x36000	XmlLite.dll	c:\windows\system32\XmlLite.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5039: 8028	svchost.exe	0x7fff2e880000	0x15000	PimIndexMaintenanceClient.DLL	c:\windows\system32\PimIndexMaintenanceClient.DLL	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5040: 8028	svchost.exe	0x7fff50b10000	0x11000	UserDataTypeHelperUtil.dll	c:\windows\system32\UserDataTypeHelperUtil.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5041: 8028	svchost.exe	0x7fff2e830000	0x44000	CEMAPI.dll	c:\windows\system32\CEMAPI.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5042: 8028	svchost.exe	0x7fff4db50000	0x16000	usermgrcli.dll	C:\WINDOWS\SYSTEM32\usermgrcli.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5043: 8028	svchost.exe	0x7fff55d80000	0xa9000	clbcatq.dll	C:\WINDOWS\System32\clbcatq.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5044: 8028	svchost.exe	0x7fff53140000	0x795000	windows.storage.dll	C:\WINDOWS\SYSTEM32\windows.storage.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5045: 8028	svchost.exe	0x7fff55910000	0x55000	shlwapi.dll	C:\WINDOWS\System32\shlwapi.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5046: 8028	svchost.exe	0x7fff54960000	0xc000	CRYPTBASE.DLL	C:\WINDOWS\System32\CRYPTBASE.DLL	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5047: 8028	svchost.exe	0x7fff2f7c0000	0x34000	pimindexmaintenance.dll	c:\windows\system32\pimindexmaintenance.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5048: 8028	svchost.exe	0x7fff2f4c0000	0x16000	POSyncServices.dll	C:\WINDOWS\System32\POSyncServices.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5049: 8028	svchost.exe	0x7fff54b90000	0x4b000	powrprof.dll	C:\WINDOWS\SYSTEM32\powrprof.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5050: 8028	svchost.exe	0x7fff54a90000	0x12000	UMPDC.dll	C:\WINDOWS\SYSTEM32\UMPDC.dll	6	2020-11-11 08:13:42.000000 UTC	Disabled
+L5051: 8028	svchost.exe	0x7fff2be90000	0xcd000	WinSync.dll	c:\windows\system32\WinSync.dll	6	2020-11-11 08:13:43.000000 UTC	Disabled
+L5052: 8028	svchost.exe	0x7fff4db70000	0xfa000	AppXDeploymentClient.dll	c:\windows\system32\AppXDeploymentClient.dll	6	2020-11-11 08:13:47.000000 UTC	Disabled
+L5053: 8028	svchost.exe	0x7fff364d0000	0x5e000	AppXAllUserStore.dll	C:\WINDOWS\System32\AppXAllUserStore.dll	6	2020-11-11 08:13:47.000000 UTC	Disabled
+L5054: 8028	svchost.exe	0x7ffed0210000	0x5c000	aphostservice.dll	c:\windows\system32\aphostservice.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5055: 8028	svchost.exe	0x7ffeea400000	0xd000	MCCSPal.dll	c:\windows\system32\MCCSPal.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5056: 8028	svchost.exe	0x7ffed01e0000	0x26000	NetworkHelper.dll	c:\windows\system32\NetworkHelper.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5057: 8028	svchost.exe	0x7ffed0170000	0x65000	SYNCUTIL.dll	c:\windows\system32\SYNCUTIL.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5058: 8028	svchost.exe	0x7fff32830000	0x51000	VAULTCLI.dll	c:\windows\system32\VAULTCLI.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5059: 8028	svchost.exe	0x7fff523a0000	0x156000	wintypes.dll	C:\WINDOWS\SYSTEM32\wintypes.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5060: 8028	svchost.exe	0x7ffed9950000	0x20000	DMCfgUtils.dll	c:\windows\system32\DMCfgUtils.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5061: 8028	svchost.exe	0x7fff54140000	0x8a000	msvcp110_win.dll	c:\windows\system32\msvcp110_win.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5062: 8028	svchost.exe	0x7fff47ca0000	0x33000	DMCmnUtils.dll	c:\windows\system32\DMCmnUtils.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5063: 8028	svchost.exe	0x7fff55650000	0x15d000	CRYPT32.dll	C:\WINDOWS\System32\CRYPT32.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5064: 8028	svchost.exe	0x7fff50a20000	0xa0000	policymanager.dll	c:\windows\system32\policymanager.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5065: 8028	svchost.exe	0x7ffed97f0000	0x1f000	dmxmlhelputils.dll	c:\windows\system32\dmxmlhelputils.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5066: 8028	svchost.exe	0x7fff4cec0000	0x14000	InprocLogger.dll	c:\windows\system32\InprocLogger.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5067: 8028	svchost.exe	0x7fff54f20000	0x26000	profapi.dll	c:\windows\system32\profapi.dll	6	2020-11-11 08:15:32.000000 UTC	Disabled
+L5068: 8028	svchost.exe	0x7fff35950000	0xb9000	Windows.Networking.Connectivity.dll	C:\Windows\System32\Windows.Networking.Connectivity.dll	6	2020-11-11 08:15:33.000000 UTC	Disabled
+L5069: 8028	svchost.exe	0x7fff4a910000	0x6a000	wlanapi.dll	C:\WINDOWS\SYSTEM32\wlanapi.dll	6	2020-11-11 08:15:33.000000 UTC	Disabled
+L5070: 8028	svchost.exe	0x7ffecff50000	0x9c000	SyncController.dll	C:\Windows\System32\SyncController.dll	6	2020-11-11 08:15:33.000000 UTC	Disabled
+L5071: 8028	svchost.exe	0x7fff34870000	0x10000	UserDataLanguageUtil.dll	C:\Windows\System32\UserDataLanguageUtil.dll	6	2020-11-11 08:15:33.000000 UTC	Disabled
+L5072: 8028	svchost.exe	0x7ffed9690000	0xf000	dsclient.dll	C:\Windows\System32\dsclient.dll	6	2020-11-11 08:15:33.000000 UTC	Disabled
+L5073: 8028	svchost.exe	0x7ffecff00000	0x47000	AccountAccessor.dll	C:\Windows\System32\AccountAccessor.dll	6	2020-11-11 08:15:33.000000 UTC	Disabled
+L5074: 8028	svchost.exe	0x7ffecfee0000	0x17000	APHostClient.dll	C:\Windows\System32\APHostClient.dll	6	2020-11-11 08:15:33.000000 UTC	Disabled
+L5075: 8028	svchost.exe	0x7ffecfeb0000	0x30000	MCCSEngineShared.dll	C:\Windows\System32\MCCSEngineShared.dll	6	2020-11-11 08:15:33.000000 UTC	Disabled
+L5076: 8028	svchost.exe	0x7fff36410000	0x7d000	OneCoreCommonProxyStub.dll	C:\Windows\System32\OneCoreCommonProxyStub.dll	6	2020-11-11 08:15:33.000000 UTC	Disabled
+L5077: 8028	svchost.exe	0x7fff32710000	0x18000	execmodelproxy.dll	C:\WINDOWS\system32\execmodelproxy.dll	6	2020-11-11 08:15:33.000000 UTC	Disabled
+L5078: 8028	svchost.exe	0x7fff52e20000	0x2a000	rmclient.dll	C:\WINDOWS\SYSTEM32\rmclient.dll	6	2020-11-11 08:15:33.000000 UTC	Disabled
+L5079: 8028	svchost.exe	0x7fff4c9c0000	0x3f000	CapabilityAccessManagerClient.dll	C:\Windows\System32\CapabilityAccessManagerClient.dll	6	2020-11-14 12:31:33.000000 UTC	Disabled
+L5080: 8028	svchost.exe	0x7fff354d0000	0x23000	UserDataTimeUtil.dll	c:\windows\system32\UserDataTimeUtil.dll	6	2020-11-14 13:03:39.000000 UTC	Disabled
+
+--- pstree.txt ---
+L188: ** 8028	828	svchost.exe	0xb78d00b7d300	4	-	1	False	2020-11-11 08:13:42.000000 UTC	N/A	\Device\HarddiskVolume3\Windows\System32\svchost.exe	C:\WINDOWS\System32\svchost.exe -k UnistackSvcGroup	C:\WINDOWS\System32\svchost.exe
+
+--- psscan.txt ---
+L419: 8028	828	svchost.exe	0xb78d00b7d300	4	-	1	False	2020-11-11 08:13:42.000000 UTC	N/A	Disabled
+
+--- ldrmodules.txt ---
+L5365: 8028	svchost.exe	0x1f1d8d80000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L5366: 8028	svchost.exe	0x1f1d8db0000	False	False	False	\Windows\System32\PhoneutilRes.dll
+L5367: 8028	svchost.exe	0x1f1d8dc0000	False	False	False	\Windows\System32\UserDataAccessRes.dll
+L5368: 8028	svchost.exe	0x1f1eb050000	False	False	False	\Windows\System32\en-US\ESENT.dll.mui
+L5369: 8028	svchost.exe	0x1f1eb2f0000	False	False	False	\Windows\System32\SyncRes.dll
+L5370: 8028	svchost.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5371: 8028	svchost.exe	0x7fff37d10000	True	True	True	\Windows\System32\esent.dll
+L5372: 8028	svchost.exe	0x7fff2e9b0000	True	True	True	\Windows\System32\UserDataService.dll
+L5373: 8028	svchost.exe	0x7ffed0210000	True	True	True	\Windows\System32\APHostService.dll
+L5374: 8028	svchost.exe	0x7ff6ccbe0000	True	False	True	\Windows\System32\svchost.exe
+L5375: 8028	svchost.exe	0x7ffecff00000	True	True	True	\Windows\System32\accountaccessor.dll
+L5376: 8028	svchost.exe	0x7ffecfee0000	True	True	True	\Windows\System32\APHostClient.dll
+L5377: 8028	svchost.exe	0x7ffecfeb0000	True	True	True	\Windows\System32\MCCSEngineShared.dll
+L5378: 8028	svchost.exe	0x7ffed0170000	True	True	True	\Windows\System32\syncutil.dll
+L5379: 8028	svchost.exe	0x7ffecff50000	True	True	True	\Windows\System32\SyncController.dll
+L5380: 8028	svchost.exe	0x7ffed01e0000	True	True	True	\Windows\System32\networkhelper.dll
+L5381: 8028	svchost.exe	0x7fff2be90000	True	True	True	\Windows\System32\WinSync.dll
+L5382: 8028	svchost.exe	0x7ffed9950000	True	True	True	\Windows\System32\dmcfgutils.dll
+L5383: 8028	svchost.exe	0x7ffed97f0000	True	True	True	\Windows\System32\dmxmlhelputils.dll
+L5384: 8028	svchost.exe	0x7ffed9690000	True	True	True	\Windows\System32\dsclient.dll
+L5385: 8028	svchost.exe	0x7ffeea400000	True	True	True	\Windows\System32\MCCSPal.dll
+L5386: 8028	svchost.exe	0x7fff2e880000	True	True	True	\Windows\System32\PimIndexMaintenanceClient.dll
+L5387: 8028	svchost.exe	0x7fff2e830000	True	True	True	\Windows\System32\cemapi.dll
+L5388: 8028	svchost.exe	0x7fff2e8a0000	True	True	True	\Windows\System32\MessagingDataModel2.dll
+L5389: 8028	svchost.exe	0x7fff32830000	True	True	True	\Windows\System32\vaultcli.dll
+L5390: 8028	svchost.exe	0x7fff2f4c0000	True	True	True	\Windows\System32\POSyncServices.dll
+L5391: 8028	svchost.exe	0x7fff2eb40000	True	True	True	\Windows\System32\Unistore.dll
+L5392: 8028	svchost.exe	0x7fff2f7c0000	True	True	True	\Windows\System32\PimIndexMaintenance.dll
+L5393: 8028	svchost.exe	0x7fff32710000	True	True	True	\Windows\System32\execmodelproxy.dll
+L5394: 8028	svchost.exe	0x7fff35950000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L5395: 8028	svchost.exe	0x7fff34870000	True	True	True	\Windows\System32\UserDataLanguageUtil.dll
+L5396: 8028	svchost.exe	0x7fff354d0000	True	True	True	\Windows\System32\UserDataTimeUtil.dll
+L5397: 8028	svchost.exe	0x7fff364d0000	True	True	True	\Windows\System32\AppxAllUserStore.dll
+L5398: 8028	svchost.exe	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L5399: 8028	svchost.exe	0x7fff50480000	True	True	True	\Windows\System32\SystemEventsBrokerClient.dll
+L5400: 8028	svchost.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L5401: 8028	svchost.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L5402: 8028	svchost.exe	0x7fff47ca0000	True	True	True	\Windows\System32\dmcmnutils.dll
+L5403: 8028	svchost.exe	0x7fff4cec0000	True	True	True	\Windows\System32\InprocLogger.dll
+L5404: 8028	svchost.exe	0x7fff4a910000	True	True	True	\Windows\System32\wlanapi.dll
+L5405: 8028	svchost.exe	0x7fff4c9c0000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L5406: 8028	svchost.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L5407: 8028	svchost.exe	0x7fff4db70000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L5408: 8028	svchost.exe	0x7fff50b90000	True	True	True	\Windows\System32\UserDataPlatformHelperUtil.dll
+L5409: 8028	svchost.exe	0x7fff50b10000	True	True	True	\Windows\System32\UserDataTypeHelperUtil.dll
+L5410: 8028	svchost.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L5411: 8028	svchost.exe	0x7fff50b30000	True	True	True	\Windows\System32\Phoneutil.dll
+L5412: 8028	svchost.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L5413: 8028	svchost.exe	0x7fff50c30000	True	True	True	\Windows\System32\Pimstore.dll
+L5414: 8028	svchost.exe	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L5415: 8028	svchost.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L5416: 8028	svchost.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L5417: 8028	svchost.exe	0x7fff54680000	True	True	True	\Windows\System32\msv1_0.dll
+L5418: 8028	svchost.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L5419: 8028	svchost.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L5420: 8028	svchost.exe	0x7fff54660000	True	True	True	\Windows\System32\NtlmShared.dll
+L5421: 8028	svchost.exe	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L5422: 8028	svchost.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L5423: 8028	svchost.exe	0x7fff54780000	True	True	True	\Windows\System32\cryptdll.dll
+L5424: 8028	svchost.exe	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L5425: 8028	svchost.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L5426: 8028	svchost.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L5427: 8028	svchost.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L5428: 8028	svchost.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L5429: 8028	svchost.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L5430: 8028	svchost.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L5431: 8028	svchost.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5432: 8028	svchost.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L5433: 8028	svchost.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5434: 8028	svchost.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L5435: 8028	svchost.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L5436: 8028	svchost.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L5437: 8028	svchost.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L5438: 8028	svchost.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L5439: 8028	svchost.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L5440: 8028	svchost.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L5441: 8028	svchost.exe	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L5442: 8028	svchost.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L5443: 8028	svchost.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L5444: 8028	svchost.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L5445: 8028	svchost.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L5446: 8028	svchost.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L5447: 8028	svchost.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L5448: 8028	svchost.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L5449: 8028	svchost.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_ldrmodules.txt ---
+L5365: 8028	svchost.exe	0x1f1d8d80000	False	False	False	\Windows\System32\en-US\svchost.exe.mui
+L5366: 8028	svchost.exe	0x1f1d8db0000	False	False	False	\Windows\System32\PhoneutilRes.dll
+L5367: 8028	svchost.exe	0x1f1d8dc0000	False	False	False	\Windows\System32\UserDataAccessRes.dll
+L5368: 8028	svchost.exe	0x1f1eb050000	False	False	False	\Windows\System32\en-US\ESENT.dll.mui
+L5369: 8028	svchost.exe	0x1f1eb2f0000	False	False	False	\Windows\System32\SyncRes.dll
+L5370: 8028	svchost.exe	0x7fff52f20000	True	True	True	\Windows\System32\kernel.appcore.dll
+L5371: 8028	svchost.exe	0x7fff37d10000	True	True	True	\Windows\System32\esent.dll
+L5372: 8028	svchost.exe	0x7fff2e9b0000	True	True	True	\Windows\System32\UserDataService.dll
+L5373: 8028	svchost.exe	0x7ffed0210000	True	True	True	\Windows\System32\APHostService.dll
+L5374: 8028	svchost.exe	0x7ff6ccbe0000	True	False	True	\Windows\System32\svchost.exe
+L5375: 8028	svchost.exe	0x7ffecff00000	True	True	True	\Windows\System32\accountaccessor.dll
+L5376: 8028	svchost.exe	0x7ffecfee0000	True	True	True	\Windows\System32\APHostClient.dll
+L5377: 8028	svchost.exe	0x7ffecfeb0000	True	True	True	\Windows\System32\MCCSEngineShared.dll
+L5378: 8028	svchost.exe	0x7ffed0170000	True	True	True	\Windows\System32\syncutil.dll
+L5379: 8028	svchost.exe	0x7ffecff50000	True	True	True	\Windows\System32\SyncController.dll
+L5380: 8028	svchost.exe	0x7ffed01e0000	True	True	True	\Windows\System32\networkhelper.dll
+L5381: 8028	svchost.exe	0x7fff2be90000	True	True	True	\Windows\System32\WinSync.dll
+L5382: 8028	svchost.exe	0x7ffed9950000	True	True	True	\Windows\System32\dmcfgutils.dll
+L5383: 8028	svchost.exe	0x7ffed97f0000	True	True	True	\Windows\System32\dmxmlhelputils.dll
+L5384: 8028	svchost.exe	0x7ffed9690000	True	True	True	\Windows\System32\dsclient.dll
+L5385: 8028	svchost.exe	0x7ffeea400000	True	True	True	\Windows\System32\MCCSPal.dll
+L5386: 8028	svchost.exe	0x7fff2e880000	True	True	True	\Windows\System32\PimIndexMaintenanceClient.dll
+L5387: 8028	svchost.exe	0x7fff2e830000	True	True	True	\Windows\System32\cemapi.dll
+L5388: 8028	svchost.exe	0x7fff2e8a0000	True	True	True	\Windows\System32\MessagingDataModel2.dll
+L5389: 8028	svchost.exe	0x7fff32830000	True	True	True	\Windows\System32\vaultcli.dll
+L5390: 8028	svchost.exe	0x7fff2f4c0000	True	True	True	\Windows\System32\POSyncServices.dll
+L5391: 8028	svchost.exe	0x7fff2eb40000	True	True	True	\Windows\System32\Unistore.dll
+L5392: 8028	svchost.exe	0x7fff2f7c0000	True	True	True	\Windows\System32\PimIndexMaintenance.dll
+L5393: 8028	svchost.exe	0x7fff32710000	True	True	True	\Windows\System32\execmodelproxy.dll
+L5394: 8028	svchost.exe	0x7fff35950000	True	True	True	\Windows\System32\Windows.Networking.Connectivity.dll
+L5395: 8028	svchost.exe	0x7fff34870000	True	True	True	\Windows\System32\UserDataLanguageUtil.dll
+L5396: 8028	svchost.exe	0x7fff354d0000	True	True	True	\Windows\System32\UserDataTimeUtil.dll
+L5397: 8028	svchost.exe	0x7fff364d0000	True	True	True	\Windows\System32\AppxAllUserStore.dll
+L5398: 8028	svchost.exe	0x7fff36410000	True	True	True	\Windows\System32\OneCoreCommonProxyStub.dll
+L5399: 8028	svchost.exe	0x7fff50480000	True	True	True	\Windows\System32\SystemEventsBrokerClient.dll
+L5400: 8028	svchost.exe	0x7fff4a170000	True	True	True	\Windows\System32\xmllite.dll
+L5401: 8028	svchost.exe	0x7fff468c0000	True	True	True	\Windows\System32\iertutil.dll
+L5402: 8028	svchost.exe	0x7fff47ca0000	True	True	True	\Windows\System32\dmcmnutils.dll
+L5403: 8028	svchost.exe	0x7fff4cec0000	True	True	True	\Windows\System32\InprocLogger.dll
+L5404: 8028	svchost.exe	0x7fff4a910000	True	True	True	\Windows\System32\wlanapi.dll
+L5405: 8028	svchost.exe	0x7fff4c9c0000	True	True	True	\Windows\System32\CapabilityAccessManagerClient.dll
+L5406: 8028	svchost.exe	0x7fff4db50000	True	True	True	\Windows\System32\usermgrcli.dll
+L5407: 8028	svchost.exe	0x7fff4db70000	True	True	True	\Windows\System32\AppXDeploymentClient.dll
+L5408: 8028	svchost.exe	0x7fff50b90000	True	True	True	\Windows\System32\UserDataPlatformHelperUtil.dll
+L5409: 8028	svchost.exe	0x7fff50b10000	True	True	True	\Windows\System32\UserDataTypeHelperUtil.dll
+L5410: 8028	svchost.exe	0x7fff50a20000	True	True	True	\Windows\System32\policymanager.dll
+L5411: 8028	svchost.exe	0x7fff50b30000	True	True	True	\Windows\System32\Phoneutil.dll
+L5412: 8028	svchost.exe	0x7fff523a0000	True	True	True	\Windows\System32\WinTypes.dll
+L5413: 8028	svchost.exe	0x7fff50c30000	True	True	True	\Windows\System32\Pimstore.dll
+L5414: 8028	svchost.exe	0x7fff52e20000	True	True	True	\Windows\System32\rmclient.dll
+L5415: 8028	svchost.exe	0x7fff55100000	True	True	True	\Windows\System32\KernelBase.dll
+L5416: 8028	svchost.exe	0x7fff549f0000	True	True	True	\Windows\System32\wldp.dll
+L5417: 8028	svchost.exe	0x7fff54680000	True	True	True	\Windows\System32\msv1_0.dll
+L5418: 8028	svchost.exe	0x7fff53d30000	True	True	True	\Windows\System32\ntmarta.dll
+L5419: 8028	svchost.exe	0x7fff53140000	True	True	True	\Windows\System32\windows.storage.dll
+L5420: 8028	svchost.exe	0x7fff54660000	True	True	True	\Windows\System32\NtlmShared.dll
+L5421: 8028	svchost.exe	0x7fff54140000	True	True	True	\Windows\System32\msvcp110_win.dll
+L5422: 8028	svchost.exe	0x7fff54940000	True	True	True	\Windows\System32\cryptsp.dll
+L5423: 8028	svchost.exe	0x7fff54780000	True	True	True	\Windows\System32\cryptdll.dll
+L5424: 8028	svchost.exe	0x7fff54960000	True	True	True	\Windows\System32\cryptbase.dll
+L5425: 8028	svchost.exe	0x7fff54ea0000	True	True	True	\Windows\System32\sspicli.dll
+L5426: 8028	svchost.exe	0x7fff54b90000	True	True	True	\Windows\System32\powrprof.dll
+L5427: 8028	svchost.exe	0x7fff54a90000	True	True	True	\Windows\System32\umpdc.dll
+L5428: 8028	svchost.exe	0x7fff54ff0000	True	True	True	\Windows\System32\gdi32full.dll
+L5429: 8028	svchost.exe	0x7fff54f20000	True	True	True	\Windows\System32\profapi.dll
+L5430: 8028	svchost.exe	0x7fff55ae0000	True	True	True	\Windows\System32\kernel32.dll
+L5431: 8028	svchost.exe	0x7fff555d0000	True	True	True	\Windows\System32\bcryptprimitives.dll
+L5432: 8028	svchost.exe	0x7fff55470000	True	True	True	\Windows\System32\ucrtbase.dll
+L5433: 8028	svchost.exe	0x7fff553d0000	True	True	True	\Windows\System32\msvcp_win.dll
+L5434: 8028	svchost.exe	0x7fff557e0000	True	True	True	\Windows\System32\bcrypt.dll
+L5435: 8028	svchost.exe	0x7fff557b0000	True	True	True	\Windows\System32\win32u.dll
+L5436: 8028	svchost.exe	0x7fff55650000	True	True	True	\Windows\System32\crypt32.dll
+L5437: 8028	svchost.exe	0x7fff55970000	True	True	True	\Windows\System32\imm32.dll
+L5438: 8028	svchost.exe	0x7fff55910000	True	True	True	\Windows\System32\shlwapi.dll
+L5439: 8028	svchost.exe	0x7fff55a30000	True	True	True	\Windows\System32\SHCore.dll
+L5440: 8028	svchost.exe	0x7fff55ee0000	True	True	True	\Windows\System32\sechost.dll
+L5441: 8028	svchost.exe	0x7fff55d80000	True	True	True	\Windows\System32\clbcatq.dll
+L5442: 8028	svchost.exe	0x7fff55ba0000	True	True	True	\Windows\System32\rpcrt4.dll
+L5443: 8028	svchost.exe	0x7fff55e30000	True	True	True	\Windows\System32\msvcrt.dll
+L5444: 8028	svchost.exe	0x7fff56e30000	True	True	True	\Windows\System32\combase.dll
+L5445: 8028	svchost.exe	0x7fff56930000	True	True	True	\Windows\System32\gdi32.dll
+L5446: 8028	svchost.exe	0x7fff55f80000	True	True	True	\Windows\System32\oleaut32.dll
+L5447: 8028	svchost.exe	0x7fff57540000	True	True	True	\Windows\System32\user32.dll
+L5448: 8028	svchost.exe	0x7fff573a0000	True	True	True	\Windows\System32\advapi32.dll
+L5449: 8028	svchost.exe	0x7fff578b0000	True	True	True	\Windows\System32\ntdll.dll
+
+--- malware_pebmasquerade.txt ---
+L109: 8028	svchost.exe	\Device\HarddiskVolume3\Windows\System32\svchost.exe	C:\WINDOWS\System32\svchost.exe	False	False
+
+--- sessions.txt ---
+L147: 1	-	8028	svchost.exe	SRL-FORGE/fredr	2020-11-11 08:13:42.000000 UTC
+
+=== END OF PIVOT REPORT ===
