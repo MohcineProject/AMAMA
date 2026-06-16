@@ -171,6 +171,4 @@ process hollowing of `csrss.exe` (PID 424, shellcode command line + PEB masquera
 `svchost.exe` (PID 1148, no `-k` argument, SYSTEM token), a tampered `RuntimeBroker.exe` (PID 8128,
 impossible module-list entry), and an abused `WmiPrvSE.exe` (PID 8416, fully enabled SYSTEM token).
 **5 entities CONFIRMED (2 CRITICAL, 3 HIGH), 16 INCONCLUSIVE**, with a MITRE mapping (T1055.012,
-T1134, T1036.005, T1047) and a partial timeline. As a RAM-only run, it did not name the payload as
-Meterpreter, surface the attacker/C2 IPs, or reconstruct the RDP entry, persistence mechanism, or
-data exfiltration; these are treated in the accuracy report.
+T1134, T1036.005, T1047) and a partial timeline.

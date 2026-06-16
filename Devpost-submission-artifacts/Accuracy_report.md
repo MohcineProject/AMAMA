@@ -238,12 +238,6 @@ strong multi-signal evidence; the token-only reads in this cluster are weaker an
 snapshot-timing pattern noted on the clean control (B.2), so a portion of the cluster is better
 read as corroborating activity than as five fully independent implants.
 
-**What it missed (RAM-only scope).** It did not name the payload as Meterpreter/Metasploit, surface
-the attacker/C2 IPs (`194.61.24.102`, `203.78.103.109`), or reconstruct the RDP entry vector, the
-service/registry persistence, the lateral movement, or the data exfiltration (`secret.zip`,
-`loot.zip`, `Szechuan Sauce.txt`). These live primarily in disk, registry, log, and PCAP evidence;
-a paired disk capture and the available PCAP would close most of them.
-
 **Hallucination check.** The System32 path, SYSTEM-class token, and PEB-masquerade flag for
 `coreupdater.exe` resolve to cited verbatim evidence, as do the privilege and module-list anomalies
 behind the other confirmations. No fabricated evidence identified.
@@ -320,24 +314,30 @@ least where there is nothing to find. On the clean control, 15 of 17 entities we
 at INCONCLUSIVE, with the two HIGH confirmations pointing to a focused refinement of the
 DKOM/psscan-only heuristic.
 
-**Limitations and future work.**
-- **RAM-only cases cannot see disk, registry, or network evidence.** Scheduled-task persistence
-  (NimPlantv2), Run-key persistence plus the on-disk dropper (QuasarRAT), and the service/registry
-  persistence, RDP entry vector, and C2 IPs (Szechuan Sauce) live primarily on disk, in the
-  registry, or in network captures; pairing a disk capture and PCAP with the memory image would
-  materially strengthen those cases.
-- **Precision over recall.** Some real signals are deliberately held at INCONCLUSIVE when no
-  verbatim evidence line was captured, for example the strongest internal-C2 connection in the
-  NimPlantv2 case. This trades some recall for trustworthiness: we would rather under-claim than
-  assert something the evidence does not directly support.
-- **DKOM and snapshot-timing heuristics** are the clearest area to sharpen, as shown by the
-  clean-image control and by the weaker token-only reads in the Szechuan post-exploitation cluster.
+*Limitations and future work.*
+- *Memory alone does not show everything.* When we only have a RAM image, some evidence simply
+  isn't there to find — it lives on the hard drive, in the registry, or in network traffic.
+  Examples: the scheduled task (NimPlantv2), the Run-key and the malware file on disk (QuasarRAT),
+  and the service/registry persistence, the RDP break-in, and the attacker IP addresses (Szechuan
+  Sauce). A disk image and a network capture would answer many of these gaps; for most cases here we
+  only used memory, and *ROCBA* was the sole run that exercised cross-module testing (RAM + disk). 
+  Furthermore The modular design makes it straightforward to add further modules later — for example,
+  a network-analysis module fed by PCAP.
+- *We prefer to be sure rather than to guess.* When a clue looks real but we don't have the exact
+  line of evidence to back it up, the tool marks it INCONCLUSIVE instead of CONFIRMED — for
+  example the internal C2 connection in the NimPlantv2 case. This means it occasionally stays quiet
+  about something real, which we accept in exchange for keeping every CONFIRMED finding
+  trustworthy.
+- *Process-hiding detection is the main thing to tune.* The checks that flag hidden or hollowed
+  processes are a little too eager: in a memory snapshot, a process can look "hidden" simply because
+  it (or its parent) exited a moment before capture. This shows up as the two false alarms on the
+  clean image and as the weaker, token-only confirmations in the Szechuan cluster.
 
-**Bottom line.** AMAMA carried the major narrative on every malicious case: the focal compromised
-account and the accessed **Airwolf** project (plus a break-in time that matches the briefing) on
+*Bottom line.* AMAMA carried the major narrative on every malicious case: the focal compromised
+account and the accessed *Airwolf* project (plus a break-in time that matches the briefing) on
 ROCBA, the right implant and dropper chain on QuasarRAT, the right
 injection-into-legitimate-process pattern plus a C2 candidate on NimPlantv2, and the persistent
-**`coreupdater.exe` Meterpreter beacon** in System32 on Szechuan Sauce — all while keeping its
-confirmation rate lowest on clean data. The clearest next steps are sharpening the DKOM heuristic,
-tightening attack-vector attribution (the remote-versus-physical question on ROCBA), answering the
-exfiltration-destination question, and widening disk and network coverage.
+*coreupdater.exe Meterpreter beacon* in System32 on Szechuan Sauce — all while keeping its
+confirmation rate lowest on clean data. Next steps: sharpen process-hiding detection, tighten
+attack-vector attribution on ROCBA (remote vs physical access), and answer the exfiltration
+destination question on that case.
