@@ -2,6 +2,8 @@
 
 AMAMA is designed as a **modular DFIR workbench**: the Backbone orchestrator coordinates the investigation, and forensic capabilities plug into it as modules. A module only needs to expose a small contract (`scan`, `query`) and be listed in `Backbone/config/orchestrator.yaml`; Backbone then knows how to run it, add its findings to a case graph, and ask follow-up questions, either to the same module or to another one for cross-module investigation. Today, the built-in modules are **RAM**, **Disk**, and **Threat Intel**, but the same contract is meant for future modules too.
 
+A short demo video walking through a live run is available at https://youtu.be/WyYYYbMxT6E.
+
 In a typical run, with the current setup, AMAMA takes a raw **memory image** and a raw **disk image** and produces an evidence-traceable `incident_report.md`. RAM and Disk run in parallel and follow the same internal architecture: each module first uses deterministic extraction scripts to extract artifacts from the images (for example, Volatility in the RAM module) before handing focused evidence to LLM agents. This avoids sending huge raw inputs to the model while still preserving deep forensic context. Backbone merges their findings into one case graph, enriches confirmed IOCs using the Threat Intel module, which calls the VirusTotal API, routes cross-module follow-up queries, and writes the final report. The goal is to keep the system extensible while making every conclusion traceable back to verbatim artifact evidence. See [`Modules/README.md`](Modules/README.md) for the plug-in contract.
 
 ## Project layout
